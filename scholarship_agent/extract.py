@@ -879,10 +879,10 @@ LIST_BENEFIT_HEAD = re.compile(r"benefits?|will provide|provides the following|c
 COST_OF_ATTENDANCE_RX = re.compile(r"\b(?:entire|full|total|complete) cost of attendance\b|\ball (?:educational )?costs of attendance\b|"
                                    r"\bcovers? (?:the )?(?:entire|full|total) cost of (?:attending|study(?:ing)?)\b", re.I)
 MIXED_EXTENT_RX = re.compile(r"\b(?:full or partial|partial or full|part or all|all or part)\b|\d+ ?% (?:or|and|to) 100 ?%|"
-                             r"ranging from \d+ ?% to 100 ?%|up to 100 ?%|full tuition (?:fee )?discount for (?:the )?first year", re.I)
+                             r"ranging from \d+ ?% to 100 ?%|up to 100 ?%|full tuition fees? ?/ ?partial|full tuition (?:fee )?discount for (?:the )?first year", re.I)
 # tuition support stated as partial: a discount, a reduction, a share, a cap in money ("up to two years" is a duration)
 PARTIAL_TUITION = re.compile(r"partial|(?<!any )part of|part or all|reimburse|discount|reduction|depends on|contribut|"
-                             r"up to (?![\w ]{0,8}\b(?:years?|months?|semesters?|terms?)\b)|\d+ ?%(?<!100%)(?<!100 %)", re.I)
+                             r"up to (?![\w ]{0,8}\b(?:years?|months?|semesters?|terms?|meals?|credits?|hours?)\b)|\d+ ?%(?<!100%)(?<!100 %)", re.I)
 # wording that states full coverage outright, whatever cap or duration follows ("Full tuition ... (worth up to USD 35,000)")
 STRONG_FULL = re.compile(r"full tuition|full (?:course |tuition )?fees? (?:are |is )?(?:covered|waived|paid)|tuition fees? (?:are |is )?"
                          r"fully (?:covered|paid|waived)|full fee (?:waiver|offset)|full funding for (?:the )?tuition|"
@@ -1035,6 +1035,7 @@ def extract_funding(text: str) -> tuple[list[FundingComponent], list[str]]:
     # per academic year") is what the scholar lives on: a stipend. A one-off or unperiodic award stays an award.
     aw = comps.get("award")
     if aw and aw.covered and aw.amount and aw.period in ("month", "year", "semester") \
+            and not re.search(r"\bminimum\b", snippets.get("award", ""), re.I) \
             and not any(comps.get(k) and comps[k].covered for k in ("stipend", "living_allowance")):
         comps["stipend"] = FundingComponent(kind="stipend", covered=True, amount=aw.amount, currency=aw.currency,
                                             period=aw.period, note="a recurring cash grant")

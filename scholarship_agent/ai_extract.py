@@ -507,10 +507,9 @@ def validate(field: str, value, quote: str, page_text: str) -> Optional[str]:
         if field == "stipend_amount":
             from .evidence import LEVEL_WORDS
             if not re.search(r"stipend|allowance|living|maintenance|subsist|monthly|per month|a month|bursary|"
-                             r"stipendium|monatlich|allocation|mensuel|mensual|uang saku|bulanan", quote, re.I) \
-                    and re.search(r"\b(?:grants?|awards?|prizes?|scholarships?)\b", quote, re.I):
+                             r"stipendium|monatlich|allocation|mensuel|mensual|uang saku|bulanan", quote, re.I):
                 # round 31: "The maximum Dissertation Fieldwork Grant is $25,000", "$100,000 scholarships": an award
-                # total, not a living stipend
+                # total, not a living stipend. Round 32: "paid at $5,000 per year" is a cash award of unstated use
                 return Review("the amount is a grant or award total; the quote does not say it is a living stipend")
             lv = {k for k, rx in LEVEL_WORDS.items() if re.search(rx, quote, re.I)}
             levels_rx = "|".join(LEVEL_WORDS[k] for k in ("bachelor", "master", "phd", "postdoc"))

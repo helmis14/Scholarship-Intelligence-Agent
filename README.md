@@ -57,8 +57,8 @@ Every rule change is measured against frozen test sets. Each set holds official 
 
 - The remaining decisions are honest "not stated" answers where the label has a value.
 - Every decision the agent reports as known carries a clean quotation from the programme's own page (37/37 on set O, 45/45 on set P).
-- **Weakest area:** the funding class on university pages where the award is a cash amount or a tuition discount tier (13 right, 16 wrong, 24 sent to review out of 59 on set P).
-- **Claude-assisted extraction** (`tests/decisions_ai.py`) adds a few correct answers on top of the rules without adding wrong claims (+5 correct on 276 decisions, $0.80); every model answer is quote-checked before it counts.
+- **Weakest area:** the funding class on university pages where the award is a cash amount or a tuition discount tier (13 right, 16 wrong, 24 sent to review out of 59 on set P; round 32 fixed six of those on the development pool, so the next fresh set will show whether that holds).
+- **Claude-assisted extraction** (`tests/decisions_ai.py`) adds a few correct answers on top of the rules without adding wrong claims (+5 correct on 276 decisions, $0.80); every model answer is quote-checked before it counts. On set P it added dates and cycle states, not funding classes ($0.66).
 
 See [docs/scholarship-agent/EVALUATION.md](docs/scholarship-agent/EVALUATION.md) for the method and the full history.
 

@@ -28,7 +28,8 @@ def classify(opp: Opportunity) -> dict:
     if t_full and living:
         cls = FundingClass.FULLY_FUNDED
         reasons.append("documented full tuition coverage and a living stipend/allowance")
-    elif assist:
+    elif assist and not t_cov and not any(c.covered and c.amount for c in _get(opp, "award")):
+        # round 32: a scholarship page that also mentions assistantships is still a scholarship
         cls = FundingClass.ASSISTANTSHIP
         reasons.append("funding is tied to an assistantship")
     elif t_cov and living and any(c.full is False for c in t_cov):
@@ -41,12 +42,12 @@ def classify(opp: Opportunity) -> dict:
     elif t_full and not living:
         cls = FundingClass.TUITION_FUNDED
         reasons.append("full tuition documented; no living stipend documented")
-    elif waiver and not living:
-        cls = FundingClass.FEE_WAIVER
-        reasons.append("a tuition fee waiver is mentioned; no stipend documented")
     elif t_cov and any(c.full is False for c in t_cov):
         cls = FundingClass.PARTIALLY_FUNDED
         reasons.append("partial tuition support (an amount, share or discount) documented")
+    elif waiver and not living:
+        cls = FundingClass.FEE_WAIVER
+        reasons.append("a tuition fee waiver is mentioned; no stipend documented")
     elif t_cov:
         cls = FundingClass.UNCLEAR
         reasons.append("tuition support documented; whether in full or in part is not stated")

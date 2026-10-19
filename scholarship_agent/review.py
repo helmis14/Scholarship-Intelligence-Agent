@@ -3,8 +3,9 @@
 Checks: word/character limits, required topics, unsupported claims (numbers,
 years, scores, named organisations, accomplishment verbs) not backed by the
 fact pack, consistency with the applicant's other documents for the same
-application, unfilled placeholders, formatting requirements, and the AI-use
-reminder. Deterministic: it flags, it does not rewrite.
+application, unfilled placeholders, filler phrases and quotation openers that
+committees read as generic, one-block prose, formatting requirements, and the
+AI-use reminder. Deterministic: it flags, it does not rewrite.
 """
 
 from __future__ import annotations
@@ -12,7 +13,7 @@ from __future__ import annotations
 import re
 from typing import Optional
 
-from .documents import fact_pack, fact_text
+from .documents import VOICE_KINDS, fact_pack, fact_text
 
 PLACEHOLDER = re.compile(r"\[(?:YOU WRITE|TODO|PLACEHOLDER|INSERT)[^\]]*\]|lorem ipsum|\bXX+\b|\[[A-Z _]{4,}\]", re.I)
 NUM = re.compile(r"(?<![\w.])(\d+(?:\.\d+)?)(%|\b)")
@@ -24,6 +25,15 @@ CLAIM_VERBS = re.compile(r"\b(published|awarded|won|founded|led|managed|ranked (
 CLAIM_STOP = {"published", "awarded", "managed", "founded", "received", "national", "international", "award", "prize",
               "papers", "paper", "journal", "first", "scholarship", "medal", "competition", "programme", "program",
               "project", "projects", "student", "students", "team", "university", "faculty", "department"}
+# round 32: wording selection committees read as filler; each hit is a warning, not an error (the applicant decides)
+GENERIC_RX = re.compile(r"\b(?:ever since i was (?:a )?(?:child|young|little)|since (?:my )?childhood|my (?:passion|dream)s? (?:for|is|has)|"
+                        r"i am (?:very |truly |extremely )?passionate about|in today'?s (?:world|society|globali[sz]ed world)|"
+                        r"think(?:ing)? outside the box|give back to (?:my|the) community|make a difference|broaden my horizons|"
+                        r"(?:world-class|prestigious|renowned|world-renowned) (?:university|institution|programme|program|faculty)|"
+                        r"it (?:would be|is) (?:a great |an )?honou?r (?:to|for)|i have always (?:been|wanted|dreamed)|"
+                        r"hard-?working and (?:dedicated|motivated)|unique (?:opportunity|perspective)|"
+                        r"webster'?s dictionary|the dictionary defines)", re.I)
+QUOTE_OPEN_RX = re.compile(r'^\s*(?:#[^\n]*\n+)?\s*["\u201c\u2018\']', re.S)
 COMMON_CAPS = {"I", "My", "The", "This", "In", "As", "At", "During", "Dear", "Kind", "Sincerely", "Thank", "When", "After",
                "Before", "Since", "Through", "With", "Our", "We", "It", "Its", "These", "That", "There", "Their",
                "Statement", "Purpose", "Scholarship", "University", "Programme", "Program", "Master", "PhD", "Bachelor"}
@@ -105,6 +115,18 @@ def review(text: str, brief: dict, profile, other_docs: Optional[dict[str, str]]
         if gpas_here and gpas_there and gpas_here != gpas_there:
             issues.append({"type": "consistency", "severity": "error",
                            "detail": f"GPA {sorted(gpas_here)} here vs {sorted(gpas_there)} in {name}"})
+
+    if brief.get("kind") in VOICE_KINDS:
+        hits = sorted({m.group(0).lower() for m in GENERIC_RX.finditer(body)})
+        for h in hits[:6]:
+            issues.append({"type": "generic_phrase", "severity": "warning",
+                           "detail": f"filler a committee has read a thousand times: '{h}' - replace with a specific fact or example"})
+        if QUOTE_OPEN_RX.match(body):
+            issues.append({"type": "generic_opening", "severity": "warning",
+                           "detail": "opens with a quotation; open with a concrete moment or problem of your own"})
+        if n > 150 and "\n\n" not in body.strip():
+            issues.append({"type": "structure", "severity": "warning",
+                           "detail": "one block of text; one idea per paragraph (see brief['standard']['structure'])"})
 
     fmt = (brief.get("format") or "").lower()
     if fmt:

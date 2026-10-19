@@ -62,6 +62,85 @@ RULES = [
 ]
 
 
+# What strong applications do, as taught by university writing centres and selection committees. The orchestrating
+# model follows it when it drafts; skeleton() lays the structure out as slots; review.py checks the mechanical parts
+# (openers, clichés, one-block prose). Nothing here supplies content: every sentence still rests on FACT_PACK.
+STANDARD = {
+    "common": {
+        "do": ["Open with a specific moment, problem or result from your own experience; no quotation, dictionary "
+               "definition or 'ever since I was a child'.",
+               "One idea per paragraph; each paragraph adds a fact, an example or a plan the previous one lacked.",
+               "Show with specifics (what you did, for whom, what changed, numbers where you have them) instead of "
+               "adjectives about yourself (passionate, hard-working, unique).",
+               "Answer the exact prompt and address every selection criterion with an example, in the order the "
+               "prompt uses when it has one.",
+               "Name the programme, the courses, labs, supervisors or services you will use and why they fit your plan; "
+               "the same text must not fit another university.",
+               "Close with what you will do after the award, concretely (where, for whom, what problem), not with "
+               "a thank-you or a restatement.",
+               "Plain, direct sentences in your own voice; British or American spelling, consistently; use 80-100% "
+               "of the word limit."],
+        "avoid": ["clichés: passion, dream, journey, in today's world, since childhood, think outside the box, "
+                  "give back, make a difference, broaden my horizons",
+                  "generic praise of the university or country (prestigious, world-class, renowned)",
+                  "listing the CV again in prose; the essay explains two or three items, it does not repeat all",
+                  "anything the fact pack does not confirm (grades, awards, employers, publications, dates)"],
+    },
+    "sop": {"structure": ["Opening: the question or problem that drives you, through one concrete experience",
+                          "Preparation: the two or three experiences (courses, research, work) that qualify you, with what you did and learned",
+                          "Research or study interests: the specific questions you want to work on and the methods you know",
+                          "Fit: the faculty, groups, courses or facilities of this programme you would use, and why here",
+                          "Goals: career and contribution after the degree, and how this award makes them possible"]},
+    "motivation_letter": {"structure": ["Opening: why this programme and this award, from a specific experience",
+                                        "Evidence: two or three achievements or experiences that match the selection criteria",
+                                        "Fit: what in this programme you will use and what you will contribute to it",
+                                        "Plan: what you will do after the award and where"]},
+    "personal_statement": {"structure": ["Opening: one formative moment, told concretely",
+                                         "What it led you to do: choices, work, study, with results",
+                                         "What you learned about yourself and the field",
+                                         "How this programme and award continue that path, and what comes after"]},
+    "essay": {"structure": ["Opening: a concrete scene or problem tied to the prompt",
+                            "Body: each required topic of the prompt with one specific example and its outcome",
+                            "Reflection: what it changed in your thinking or practice",
+                            "Forward: how the award lets you act on it"]},
+    "research_proposal": {"structure": ["Title and one-paragraph summary",
+                                        "Background and gap: what is known, what is not, with the key references you have read",
+                                        "Research questions or hypotheses (numbered, answerable)",
+                                        "Methods: design, data, analysis, ethics; why they answer the questions",
+                                        "Timeline and feasibility within the award period",
+                                        "Expected results and significance for the field and for your home context"]},
+    "study_plan": {"structure": ["Degree and specialisation, and why this programme",
+                                 "Courses, projects or thesis topic per semester or year",
+                                 "Skills and outputs you will have at the end",
+                                 "Career plan after the degree and its link to the funder's goals"]},
+    "career_goals": {"structure": ["Where you are now, in one concrete paragraph",
+                                   "Short-term goals (first 2-3 years after the degree): role, place, problem",
+                                   "Long-term goals and the change you want to bring",
+                                   "How this programme and award bridge the gap"]},
+    "leadership_essay": {"structure": ["One leadership or community situation, told concretely: context, your role, what you did",
+                                       "The outcome and how it was measured or seen by others",
+                                       "What you would do differently and what it taught you",
+                                       "How you will apply it during and after the award"]},
+    "academic_cv": {"structure": ["Contact and (only if required by the provider) nationality or date of birth",
+                                  "Education, most recent first, with dates, degree, institution, grade or GPA and scale, thesis title",
+                                  "Research and teaching experience; then professional experience, most recent first",
+                                  "Publications and presentations in a consistent citation style; awards with year and awarding body",
+                                  "Skills, tests and languages with levels and dates; references only if asked"],
+                    "do": ["Reverse chronological order, consistent date format, one or two pages for a master's or PhD application",
+                           "Quantify where true (cohort size, grant amount, number of participants); no photo unless the provider asks"]},
+}
+STANDARD["scholarship_cv"] = STANDARD["academic_cv"]
+
+
+def standard(kind: str) -> dict:
+    """Writing standard for a document kind: shared do/avoid lists plus the kind's structure."""
+    out = {k: list(v) for k, v in STANDARD["common"].items()}
+    own = STANDARD.get(kind, {})
+    out["structure"] = list(own.get("structure", []))
+    out["do"] = out["do"] + list(own.get("do", []))
+    return out
+
+
 class LLMProvider(Protocol):
     """Anything that turns a brief into text. Claude Code is the default orchestrator; a hosted model can be
     plugged in by implementing this one method."""
@@ -141,6 +220,7 @@ def brief(kind: str, opp: Opportunity, p: Profile, task: Optional[dict] = None) 
                              "funding": [c.kind for c in opp.funding if c.covered]},
         "FACT_PACK": fact_pack(p),
         "rules": RULES,
+        "standard": standard(kind),
     }
 
 
@@ -222,7 +302,8 @@ def skeleton(kind: str, b: dict) -> str:
         L += [f"> Prompt (from the source): {b['prompt']}", ""]
     if b["word_limit"]:
         L += [f"> Limit: {b['word_limit']} words", ""]
-    L.append("[YOU WRITE: opening - why this scholarship and this field, in your own words]")
+    parts = b.get("standard", {}).get("structure") or ["Opening - why this scholarship and this field"]
+    L.append(f"[YOU WRITE: {parts[0]} - in your own words, from a specific experience]")
     if ed:
         L += ["", f"I hold a {ed['degree']} in {ed['field']} from {ed['institution']}."]
     if fp["experience"]:
@@ -232,7 +313,10 @@ def skeleton(kind: str, b: dict) -> str:
         L.append("My research interests are " + ", ".join(fp["research_interests"]) + ".")
     for t in b["required_topics"][:6]:
         L += ["", f"[YOU WRITE: address '{t}' with a specific example from your own experience]"]
-    L += ["", "[YOU WRITE: plans after the award and how you will use what you learn]"]
+    for part in parts[1:]:
+        L += ["", f"[YOU WRITE: {part}]"]
+    if len(parts) < 2:
+        L += ["", "[YOU WRITE: plans after the award and how you will use what you learn]"]
     return "\n".join(L) + "\n"
 
 

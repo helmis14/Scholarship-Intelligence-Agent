@@ -384,3 +384,31 @@ programmes and 24 planted faults it caught 17 and raised 9 false alarms before r
 accomplishment claim to the matching fact category and demoting selection-criteria words to notes, it catches 24/24 with
 no false alarm, and the assembled CV contains no number, year or name that is not a confirmed fact. The drafts were used
 to make those two fixes, so the figure is diagnostic.
+
+### Round 32 (set P as development data; writing standard)
+
+With P in the pool (K to P, 896 decisions) the baseline was 473 (662 correct, 86 wrong, 103 review). Five funding-class
+changes were kept, all judged on the pool: "up to 21 meals" is not a partial-tuition cap; "Full tuition fees / Partial
+tuition fees" is a mixed extent; a scholarship page that also mentions assistantships is not an assistantship; a stated
+partial extent beats a bare "waiver" note; "the minimum award amount is $2,500 per year" is not a stipend. Pool 473 ->
+492.5 (668 correct, 79 wrong); set P alone 150 / 30 / 38 -> 155 / 24 / 38. Rejected: a covering-verb condition on "cost
+of attendance" (cost two right answers on O and P), an application-fee-waiver guard, a general "yearly cash award is not
+a stipend" rule (-3 correct on earlier sets), and a "monthly payment plan" guard (no effect).
+
+**Claude on set P** (`tests/decisions_ai.py`, targeted, Opus 5.5, effort low, cap $0.70): 52 of 59 pages were
+enriched for $0.66 (7 pages skipped by the cap), 175 values proposed, 58 accepted after quote checks. On the frozen
+round-31 rules: 148 / 33 / 40 against 150 / 30 / 38 for the rules alone, the new wrong claims all "stipend" readings of
+yearly cash awards. `ai_extract.validate` now sends any stipend amount whose quote lacks stipend/allowance/living/monthly
+wording to review; rescored from the cache (no new spend) on the round-32 rules: P 157 / 26 / 39 against 155 / 24 / 38
+(the two extra wrong claims are a monthly-paid award the label calls a close call, and a cash award), O 84 / 5 / 20
+against 81 / 5 / 18, N 118 / 11 / 20 against 116 / 11 / 20. The model adds dates and cycle states the rules abstain on;
+it does not help the funding class.
+
+**Writing standard** (`documents.STANDARD`, `documents.standard()`): every brief now carries the structure of a strong
+document of its kind (statement of purpose, motivation letter, personal statement, essay, research proposal, study plan,
+career goals, leadership essay, academic CV) and the shared do/avoid lists committees and university writing centres
+teach: a concrete opening instead of a quotation or "ever since I was a child", one idea per paragraph, specifics over
+adjectives, every criterion answered with an example, named fit with the programme, a concrete plan at the end. The
+skeleton lays the structure out as [YOU WRITE] slots; `review.py` flags filler phrases, a quotation opener and one-block
+prose as warnings (never errors: the applicant decides). `tests/docs_bench.py` plants 30 faults, 30 caught, 0 false
+alarms. The standard supplies no content; every sentence still rests on the fact pack.

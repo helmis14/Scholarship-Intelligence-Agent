@@ -71,6 +71,8 @@ FAULTS = [
     ("over_word_limit", "word_limit", lambda t: t + (" This sentence pads the essay beyond the limit." * 160)),
     ("missing_topic", "required_topic", lambda t: re.sub(r"leadership|health equity|methods|community service", "work", t, flags=re.I)),
     ("over_char_limit", "char_limit", lambda t: t + (" More words to pass the character limit." * 90)),
+    ("cliche", "generic_phrase", lambda t: "Ever since I was a child I have been passionate about health. " + t),
+    ("quote_opening", "generic_opening", lambda t: '"Health is wealth," as the saying goes. ' + t),
 ]
 
 
