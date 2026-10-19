@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-HK" xml:lang="zh-HK">
+<head>
+<title>資助項目</title>
+<meta name="googlebot" content="noindex" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="http://www.kcwef.org/" />
+<link href="http://www.kcwef.org/image/data/icon.jpg" rel="icon" />
+
+<script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.6.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/kcwong/stylesheet/stylesheet.css" />	
+	
+
+<script type="text/javascript" src="catalog/view/javascript/jquery/tab.js"></script>
+
+
+		<link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/ui.css">
+        <script type="text/javascript" src="catalog/view/javascript/jquery/ui.js"></script>
+
+<!--date picker-->
+<script type="text/javascript" language="javascript" src="catalog/view/javascript/jquery/ui/ui.datepicker.js"></script>
+
+<!--Fancy box-->
+<link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<script type="text/javascript" src="catalog/view/javascript/jquery/fancybox/jquery.fancybox-1.3.4.js"></script>
+
+<!--Coin slider-->
+<link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/coinslider/coin-slider-styles.css" />
+<script type="text/JavaScript" src="catalog/view/javascript/jquery/coinslider/coin-slider.js"></script>
+
+
+<script type="text/javascript" src="catalog/view/javascript/jquery/superfish/js/superfish.js"></script>
+<script type="text/javascript" src="catalog/view/javascript/jquery/jquery.tools.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  if($('#menu').find('.menuleft').find('img').length==0||$('#menu').find('.menuleft').find('img').height()>0)
+	fit_menu();
+  else{
+	var img_num=0;
+	$('#menu').find('.menuleft').find('img').each(function(){
+		$(this).load(function(){
+			img_num++;
+			if(img_num==$('#menu').find('.menuleft').find('img').length){
+				fit_menu();
+			}
+		});
+	});
+  }
+});
+function fit_menu(){
+	var width=($('#menu').width()-document.getElementById('menuul').clientWidth)/8/2 -0.1;
+	if(width<0)
+		width=0;
+	for(var i=0;i<8;i++){
+		$('#li'+i).css('padding','0px '+width+'px '+'0px '+width+'px ');
+	}
+}
+</script>
+
+
+<style type="text/css">
+* {
+  font-family: 新细明體, arial, helvetica, sans-serif;
+}
+body, td, th, input, textarea, select, a {
+  font-family: 新细明體,arial, helvetica, sans-serif;
+}
+.nav a {
+  font: 16px 新细明體, arial, helvetica, sans-serif ;
+}
+.nav li ul a {
+  font: normal 12px 新细明體, arial, helvetica, sans-serif;
+}
+.nav li a:hover {
+    font: 16px 新细明體, arial, helvetica, sans-serif;
+}
+.nav li li:hover, .nav li li.sfhover {
+  font: 新细明體,normal 12px  arial, helvetica, sans-serif;
+}
+.nav li ul li :hover, .nav li li.sfhover {
+      font: normal 12px 新细明體, arial, helvetica, sans-serif;
+}
+#menu a{
+	font-size:16px;
+	padding-top:5px;
+}
+
+</style>
+
+<script language="javascript">
+
+var message="此功能被禁用";
+///////////////////////////////////
+function clickIE4(){
+if (event.button==2){
+alert(message);
+return false;
+}
+}
+function clickNS4(e){
+if (document.layers||document.getElementById&&!document.all){
+if (e.which==2||e.which==3){
+alert(message);
+return false;
+}
+}
+}
+if (document.layers){
+document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown=clickNS4;
+}
+else if (document.all&&!document.getElementById){
+document.onmousedown=clickIE4;
+}
+document.oncontextmenu=new Function("alert(message);return false")
+
+</script>
+
+<script type="text/javascript">
+ 
+    $(document).ready(function(){
+
+        $('img').bind("mousedown",function(e){
+            return false;
+        });
+		
+    });
+ 
+</script>
+
+</head>
+
+<body oncontextmenu="return false;"  onselectstart='return false;' >
+
+<form id="submit_type">
+<input type="hidden" name="submit_type"/>
+</form>
+<div id="container">
+  <div id="header">
+	<div class="logo">
+	  		<a href="http://www.kcwef.org/">
+		<img id="logo" src="http://www.kcwef.org/image/data/logo.jpg" style="height:90px;" /></a>
+	  	</div>
+			  <div id="search">
+				<input type="text" id="keyword" name="keyword" value="搜尋..." onclick="this.value = '';$(this).css('color','#545454')" onmousedown='return true;'/>
+	<!--search end-->
+				<a class="button-search">
+		<img src="catalog/view/theme/kcwong/image/button-search.png" /></a>
+	  </div>
+		<div id="language">
+	  <form action="http://www.kcwef.org/index.php?route=common/home" method="post" enctype="multipart/form-data" id="language_form">
+			<!--						<div class="selected"><a><img src="image/flags/hk.png" alt="繁" />&nbsp;&nbsp;繁</a></div>
+															-->
+		
+				  <a onclick="$('input[name=\'language_code\']').attr('value', 'hk'); $('#language_form').submit();">繁</a>
+		
+		  		  		    
+				  <a onclick="$('input[name=\'language_code\']').attr('value', 'cn'); $('#language_form').submit();">简</a>
+		
+		  		  		    
+				  <a onclick="$('input[name=\'language_code\']').attr('value', 'en'); $('#language_form').submit();">ENG</a>
+		
+		  		    
+				
+		  <input type="hidden" name="language_code" value="" />
+		  <input type="hidden" name="redirect" value="http://www.kcwef.org/sponsorship_programmes" />
+	  </form>
+	</div>    <div style="clear:both;"></div>
+	<div id="menu" >
+		<ul class="nav left" id="menuul" >
+			<li id="li0" class="mmenut"><a href="http://www.kcwef.org/">主頁</a></li>
+		  			
+			<li id="li1"   class="mmenut">
+			<a href="http://www.kcwef.org/about_us" >
+				關於基金會			</a>
+			
+			</li>
+			
+		  			
+			<li id="li2"   class="mmenut">
+			<a href="http://www.kcwef.org/our_founder" >
+				關於創辦人			</a>
+			
+			</li>
+			
+		  			
+			<li id="li3"   class="mmenutchoose">
+			<a href="http://www.kcwef.org/sponsorship_programmes" >
+				資助項目			</a>
+			
+			</li>
+			
+		  			
+			<li id="li4"   class="mmenut">
+			<a href="http://www.kcwef.org/application" >
+				項目申請指引			</a>
+			
+			</li>
+			
+		  			
+			<li id="li5"   class="mmenut">
+			<a href="http://www.kcwef.org/news" >
+				最新消息			</a>
+			
+			</li>
+			
+		  			
+			<li id="li6"   class="mmenut">
+			<a href="http://www.kcwef.org/archive" >
+				資料庫			</a>
+			
+			</li>
+			
+		  			
+			<li id="li7" style="border-right:0px;"  class="mmenut">
+			<a href="http://www.kcwef.org/contact_us" >
+				聯繫我們			</a>
+			
+			</li>
+			
+		  		</ul>
+
+	</div>
+  </div>
+
+<script type="text/javascript">
+$('#search input').keydown(function(e) {
+	if (e.keyCode == 13) {
+		moduleSearch();
+	}
+});
+$('.button-search').click(function(e) {
+	moduleSearch();
+});
+
+function moduleSearch() {
+	url = 'index.php?route=product/search';
+
+	var keyword = $('#keyword').attr('value')
+	
+	if (keyword) {
+		url += '&keyword=' + encodeURIComponent(keyword);
+	}
+
+	location = url;
+}
+</script>
+
+<!--<script type="text/javascript">
+$(document).ready(function() {
+  /*
+  $('.nav').superfish({
+    hoverClass   : 'sfHover',
+    pathClass   : 'overideThisToUse',
+    delay     : 100,
+    animation   : {width: 'show'},
+    speed     : 1000,
+    autoArrows   : false,
+    dropShadows  : false, 
+    disableHI   : false, /* set to true to disable hoverIntent detection 
+    onInit     : function(){},
+    onBeforeShow : function(){},
+    onShow     : function(){},
+    onHide     : function(){}
+  });*/
+  
+  $('.nav').css('display', 'block');
+  
+	//menu fit place
+	
+	/*
+  if($('#menu').find('.menuleft').find('img').length==0||$('#menu').find('.menuleft').find('img').height()>0)
+	fit_menu();
+  else{
+	var img_num=0;
+	$('#menu').find('.menuleft').find('img').each(function(){
+		$(this).load(function(){
+			img_num++;
+			if(img_num==$('#menu').find('.menuleft').find('img').length){
+				fit_menu();
+			}
+		});
+	});
+  }
+  */
+});
+/*
+function fit_menu(){
+	var width=($('#menu').width()-document.getElementById('menuul').clientWidth)/8/2;
+	if(width<0)
+		width=0;
+	for(var i=0;i<8;i++){
+		$('#li'+i).css('padding','0px '+width+'px '+'0px '+width+'px ');
+	}
+}*/
+</script>//--><!--?php echo $column_right; ?-->
+<div id="content">
+  <div class="top">
+    <div class="left"></div>
+    <div class="right"></div>
+    
+  <div class="center">
+	<div id="topbanner">
+		<img class="banner_img" src="http://www.kcwef.org/image/cache/data/banner/b3-950x320.jpg" />
+	</div>
+  </div>    
+  </div>
+  		<div id="breadcrumb">		  <a href="http://www.kcwef.org/">主頁</a>
+				   &gt; <a href="http://www.kcwef.org/sponsorship_programmes">資助項目</a>
+		</div>
+
+  <table class="content_tb" width="100%"><tr><td width="1">
+      	<!--?php if($categories || $modules){ ?>-->
+<div id="column_left">
+
+
+	  <div class="submenu" >
+	  
+		<div class="submenutitle" >
+	資助項目	</div>
+
+
+	<div class="submenu_content" >
+			<table>
+	
+		
+	 	 
+	<tr>
+	<td valign="top">
+	<img src="catalog/view/theme/kcwong/image/kcwong/leftbar_icon.png" class="arrow" />
+	</td>
+	
+	<td valign="top">
+	  <div style="padding-top:10px;">
+	  
+	 
+	  
+	  <a href="http://www.kcwef.org/sponsorship_programmes/mainland_china" >
+		內地科技人才培養項目</a>
+		
+	  	
+		
+			  </div>
+	</td>
+	  
+	  
+
+	</tr>
+		
+		
+	 	 
+	<tr>
+	<td valign="top">
+	<img src="catalog/view/theme/kcwong/image/kcwong/leftbar_icon.png" class="arrow" />
+	</td>
+	
+	<td valign="top">
+	  <div style="padding-top:10px;">
+	  
+	 
+	  
+	  <a href="http://www.kcwef.org/sponsorship_programmes/hkandmc" >
+		港澳項目</a>
+		
+	  	
+		
+			  </div>
+	</td>
+	  
+	  
+
+	</tr>
+		
+		
+	 	 
+	<tr>
+	<td valign="top">
+	<img src="catalog/view/theme/kcwong/image/kcwong/leftbar_icon.png" class="arrow" />
+	</td>
+	
+	<td valign="top">
+	  <div style="padding-top:10px;">
+	  
+	 
+	  
+	  <a href="http://www.kcwef.org/sponsorship_programmes/others" >
+		海外項目</a>
+		
+	  	
+		
+			  </div>
+	</td>
+	  
+	  
+
+	</tr>
+		
+		
+	 	 
+	<tr>
+	<td valign="top">
+	<img src="catalog/view/theme/kcwong/image/kcwong/leftbar_icon.png" class="arrow" />
+	</td>
+	
+	<td valign="top">
+	  <div style="padding-top:10px;">
+	  
+	 
+	  
+	  <a href="http://www.kcwef.org/sponsorship_programmes/awards" >
+		獎勵項目</a>
+		
+	  	
+		
+			  </div>
+	</td>
+	  
+	  
+
+	</tr>
+		
+		</table>
+	
+	    </div> 
+
+	</div>
+
+	
+
+  </div>
+<!--?php } ?>-->
+	  </td><td>
+
+	<div id="middle" class="middle">
+	
+				 				
+		<div id="maintitle">
+				資助項目		</div>
+		
+				
+		
+		<div>
+		<table>
+		<tr>
+				<td>
+				</td>
+		
+		
+					<td >
+		 			<div id="maincontent" style="width:685px;">
+							
+		
+		<span style="font-size:12px;">
+				</span>
+					<ul>
+							<li style="line-height: 28px;"><div class="concate"><a href="http://www.kcwef.org/sponsorship_programmes/mainland_china">內地科技人才培養項目</a></div></li>
+							<li style="line-height: 28px;"><div class="concate"><a href="http://www.kcwef.org/sponsorship_programmes/hkandmc">港澳項目</a></div></li>
+							<li style="line-height: 28px;"><div class="concate"><a href="http://www.kcwef.org/sponsorship_programmes/others">海外項目</a></div></li>
+							<li style="line-height: 28px;"><div class="concate"><a href="http://www.kcwef.org/sponsorship_programmes/awards">獎勵項目</a></div></li>
+						</ul>
+				
+					<ul>
+			  			</ul>
+				</div>
+		</td>
+		
+		<td>
+				</td>
+		
+		
+		</tr>
+		</table>
+	</div>
+
+	
+			<div class="bottom">
+		<div class="left"></div>
+		<div class="right"></div>
+		<div class="center"></div>
+	</div>
+	
+  </td></tr></table>
+</div>
+
+
+<script type="text/javascript"><!--
+if($('.fancybox').length>0){
+  $('.fancybox').fancybox({
+  cyclic: true,
+  'titlePosition'	:	'over'
+  });
+}
+//--></script>
+
+<div id="footer">
+	<div class="div2">
+	  		<a href="http://www.kcwef.org/index.php?route=information/information&information_id=2">版權及免責條款　　</a>
+	  		<a href="http://www.kcwef.org/index.php?route=information/information&information_id=3">私隱政策聲明</a>
+	  	</div>
+	版權 &copy; 王寬誠教育基金會 版權所有 不得轉載</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72141765-1', 'auto');
+  ga('send', 'pageview');
+
+</script></div>
+
+
+</body></html> 

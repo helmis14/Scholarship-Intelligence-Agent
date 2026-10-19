@@ -1,0 +1,2121 @@
+{
+ "set": "Q",
+ "decisions": {
+  "set": "heldout_q",
+  "split": "all",
+  "ambiguous_left_out": true,
+  "adjudicated": false,
+  "today": "2026-10-20",
+  "decisions": {
+   "eligibility": {
+    "correct": 25,
+    "wrong_claim": 12,
+    "flagged": 0,
+    "abstained": 9
+   },
+   "funding": {
+    "correct": 11,
+    "wrong_claim": 11,
+    "flagged": 0,
+    "abstained": 5
+   },
+   "cycle": {
+    "correct": 29,
+    "wrong_claim": 6,
+    "flagged": 0,
+    "abstained": 8
+   },
+   "deadline": {
+    "correct": 33,
+    "wrong_claim": 10,
+    "flagged": 0,
+    "abstained": 5
+   }
+  },
+  "correct_rate": {
+   "eligibility": 0.543,
+   "funding": 0.407,
+   "cycle": 0.674,
+   "deadline": 0.688
+  },
+  "wrong_claim_rate": {
+   "eligibility": 0.261,
+   "funding": 0.407,
+   "cycle": 0.14,
+   "deadline": 0.208
+  },
+  "known_with_clean_quotation": {
+   "eligibility": "0/20",
+   "funding": "0/18",
+   "cycle": "0/20"
+  },
+  "flagged_but_right": {
+   "eligibility": 0,
+   "funding": 0,
+   "cycle": 0,
+   "deadline": 0
+  },
+  "review": {
+   "decisions": 164,
+   "answered_without_review": 164,
+   "correct_without_review": 98,
+   "wrong_claims": 39,
+   "sent_to_review": 0,
+   "correct_but_held_in_review": 0,
+   "share_answered": 1.0,
+   "share_correct_without_review": 0.598,
+   "wrong_claims_among_answered": 0.238
+  },
+  "eligibility_by_label_rule": {
+   "not_stated": {
+    "correct": 17,
+    "wrong_claim": 5,
+    "flagged": 0,
+    "abstained": 0
+   },
+   "any": {
+    "correct": 0,
+    "wrong_claim": 1,
+    "flagged": 0,
+    "abstained": 2
+   },
+   "include": {
+    "correct": 8,
+    "wrong_claim": 6,
+    "flagged": 0,
+    "abstained": 7
+   }
+  },
+  "programmes": 54
+ },
+ "fields": {
+  "rates": {
+   "deadline_exact": {
+    "correct": 17,
+    "total": 25,
+    "accuracy": 0.68
+   },
+   "deadline_status": {
+    "correct": 17,
+    "total": 17,
+    "accuracy": 1.0
+   },
+   "funding_components": {
+    "correct": 22,
+    "total": 68,
+    "accuracy": 0.324
+   },
+   "nationality": {
+    "correct": 31,
+    "total": 54,
+    "accuracy": 0.574
+   },
+   "page_kind": {
+    "correct": 48,
+    "total": 54,
+    "accuracy": 0.889
+   }
+  },
+  "unsupported_values": 29,
+  "scored_values": 75,
+  "missing_values": 58,
+  "labelled_values": 111
+ },
+ "rows": [
+  {
+   "id": "sa-kaust-fellowship",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "de-gerda-henkel",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "any",
+     []
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "funding_unclear",
+    "label": "stipend_only",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "rolling",
+    "label": "rolling",
+    "state": "rolling",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_applicable",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "jp-honjo",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "any",
+     []
+    ],
+    "label": "not_stated",
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "stipend_only",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "upcoming",
+    "label": "open",
+    "state": "upcoming",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-10-31"
+    ],
+    "label": [
+     "2026-10-31"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "sg-temasek",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "ph-ched-scholarship",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "include",
+     [
+      "PH"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "PH"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "fully_funded",
+    "label": "fully_funded",
+    "state": "fully_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2025-06-20"
+    ],
+    "label": [
+     "2025-06-20"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "in-aditya-birla",
+   "funding": {
+    "outcome": "correct",
+    "predicted": "partially_funded",
+    "label": "partially_funded",
+    "state": "partially_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "in-fulbright-nehru",
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2025-05-14"
+    ],
+    "label": [
+     "2025-05-14"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "zw-beit-trust",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "include",
+     [
+      "MW",
+      "ZM",
+      "ZW"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "MW",
+      "ZM",
+      "ZW"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "tuition_funded",
+    "label": "fully_funded",
+    "state": "tuition_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "upcoming",
+    "label": "upcoming",
+    "state": "upcoming",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2026-02-13"
+    ],
+    "label": [
+     "2027-02-12"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "ar-fulbright",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "include",
+     [
+      "AR",
+      "US"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "AR"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "partially_funded",
+    "label": "stipend_only",
+    "state": "partially_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-03-25"
+    ],
+    "label": [
+     "2026-03-25"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-davis-putter",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "open",
+    "label": "not_stated",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "uk-nuffield",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "de-dfg-emmy-noether",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "rolling",
+    "label": "rolling",
+    "state": "rolling",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_applicable",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "de-daimler-benz",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "stipend_only",
+    "label": "not_stated",
+    "state": "stipend_only",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2026-09-30",
+     "2027-06-01",
+     "2027-09-30"
+    ],
+    "label": [
+     "2026-09-30",
+     "2027-09-30"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "dk-novo-nordisk",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-08-20"
+    ],
+    "label": [
+     "2026-08-20"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "ch-jacobs",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "approximate",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "be-fwo",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "stipend_only",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "open",
+    "label": "upcoming",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2027-11-17"
+    ],
+    "label": [
+     "2027-03-01"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "cz-visegrad",
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "upcoming",
+    "label": "upcoming",
+    "state": "upcoming",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2027-04-15"
+    ],
+    "label": [
+     "2027-04-15"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-soroptimist",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "include",
+     [
+      "AR",
+      "BO",
+      "BR",
+      "BZ",
+      "CA",
+      "CL",
+      "CO",
+      "CR",
+      "EC",
+      "GT",
+      "GU",
+      "HN",
+      "JP",
+      "KR",
+      "MX",
+      "NI",
+      "PA",
+      "PE",
+      "PH",
+      "PR",
+      "PY",
+      "SV",
+      "TW",
+      "US",
+      "UY",
+      "VE"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-shpe",
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "stipend_only",
+    "label": "not_stated",
+    "state": "stipend_only",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-02-16"
+    ],
+    "label": [
+     "2026-02-16"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-apsa",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-fulbright-us-student",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-whitaker",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-american-indian-college-fund",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-hispanic-heritage",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2025-11-02",
+     "2026-11-01"
+    ],
+    "label": [
+     "2026-11-01"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "ca-trudeau",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "ca-fqrnt",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "open",
+    "label": "not_stated",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2027-05-01"
+    ],
+    "label": [],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "ca-alberta-innovates",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "include",
+     [
+      "CA"
+     ]
+    ],
+    "label": [
+     "any",
+     []
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "au-fulbright",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "include",
+     [
+      "AU"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "AU"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "nz-woolf-fisher",
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "stipend_only",
+    "label": "fully_funded",
+    "state": "stipend_only",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "at-marshall-plan",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2026-10-30"
+    ],
+    "label": [
+     "2026-10-30",
+     "2027-04-30"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "de-claussen-simon",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "jp-atsumi",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "include",
+     [
+      "JP"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "funding_unclear",
+    "label": "stipend_only",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "jp-jees",
+   "funding": {
+    "outcome": "correct",
+    "predicted": "stipend_only",
+    "label": "stipend_only",
+    "state": "stipend_only",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-05-20"
+    ],
+    "label": [
+     "2026-05-20"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "id-baznas",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "include",
+     [
+      "ID"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "ID"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "partially_funded",
+    "label": "partially_funded",
+    "state": "partially_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "ph-sm-foundation",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "tuition_funded",
+    "label": "fully_funded",
+    "state": "tuition_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-02-28"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "in-icssr",
+   "funding": {
+    "outcome": "correct",
+    "predicted": "stipend_only",
+    "label": "stipend_only",
+    "state": "stipend_only",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "bd-dutch-bangla",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "br-fapesp-pd",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "any",
+     []
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "stipend_only",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2019-10-05"
+    ],
+    "label": [],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "br-instituto-ling",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "BR"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "partially_funded",
+    "label": "partially_funded",
+    "state": "partially_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-04-06"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "it-fulbright-italy",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "IT"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "assistantship",
+    "label": "stipend_only",
+    "state": "assistantship",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-09-14"
+    ],
+    "label": [
+     "2026-09-14"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "fr-fulbright-france",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "FR"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "stipend_only",
+    "label": "stipend_only",
+    "state": "stipend_only",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-12-01"
+    ],
+    "label": [
+     "2026-12-01"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "pl-fulbright-poland",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "PL"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-04-27"
+    ],
+    "label": [
+     "2026-04-27"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "ro-fulbright-romania",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "RO"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "gr-latsis",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "include",
+     [
+      "ZA"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "tr-tubitak-2213",
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "open",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-12-31"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "eg-fulbright-egypt",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "include",
+     [
+      "EG"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "EG"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "za-study-trust",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "include",
+     [
+      "ZA"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "ZA"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "jp-fulbright-japan",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "include",
+     [
+      "JP",
+      "US"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "JP"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "assistantship",
+    "label": "not_stated",
+    "state": "assistantship",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "closed",
+    "label": "not_stated",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2026-07-01"
+    ],
+    "label": [],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "my-fulbright-malaysia",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "include",
+     [
+      "MY",
+      "US"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "MY"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "assistantship",
+    "label": "not_stated",
+    "state": "assistantship",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-05-18"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "ph-fulbright-philippines",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "PH"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "assistantship",
+    "label": "not_stated",
+    "state": "assistantship",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-04-30"
+    ],
+    "label": [
+     "2026-04-30"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "mx-comexus",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "include",
+     [
+      "MX"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "MX"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "open",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2027-01-15"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "ec-fulbright-ecuador",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "EC"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "closed",
+    "label": "not_stated",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2026-08-01"
+    ],
+    "label": [],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "uy-fulbright-uruguay",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "any",
+     []
+    ],
+    "label": [
+     "include",
+     [
+      "UY"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2026-02-04",
+     "2026-05-14"
+    ],
+    "label": [
+     "2026-05-14"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "br-fulbright-brasil",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "BR"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "partially_funded",
+    "label": "stipend_only",
+    "state": "partially_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  }
+ ],
+ "field_misses": {
+  "sa-kaust-fellowship": [
+   "component stipend: predicted not covered, label covered",
+   "component research: predicted not covered, label covered"
+  ],
+  "de-gerda-henkel": [
+   "page_kind: predicted listing, label opportunity",
+   "nationality: predicted unknown [], label ('any', [])",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "jp-honjo": [
+   "nationality: predicted any [], label not_stated",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "sg-temasek": [
+   "page_kind: predicted listing, label opportunity"
+  ],
+  "ph-ched-scholarship": [
+   "component stipend: predicted not covered, label covered"
+  ],
+  "in-aditya-birla": [
+   "component tuition: predicted covered, label partial"
+  ],
+  "in-fulbright-nehru": [
+   "page_kind: predicted news, label opportunity",
+   "component insurance: predicted not covered, label covered"
+  ],
+  "zw-beit-trust": [
+   "deadline missed 2027-02-12",
+   "deadline spurious 2026-02-13",
+   "component living_allowance: predicted not covered, label covered"
+  ],
+  "ar-fulbright": [
+   "nationality: predicted include ['AR', 'US'], label ('include', ['AR'])",
+   "component stipend: predicted not covered, label covered",
+   "component insurance: predicted not covered, label covered",
+   "component tuition: predicted covered, label not_covered"
+  ],
+  "us-davis-putter": [
+   "deadline spurious 2027-04-01"
+  ],
+  "de-daimler-benz": [
+   "deadline spurious 2027-06-01"
+  ],
+  "be-fwo": [
+   "deadline missed 2027-03-01",
+   "deadline spurious 2027-11-17",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "cz-visegrad": [
+   "component stipend: predicted not covered, label covered"
+  ],
+  "us-soroptimist": [
+   "nationality: predicted include ['AR', 'BO', 'BR', 'BZ', 'CA', 'CL'], label not_stated"
+  ],
+  "us-shpe": [
+   "nationality: predicted unknown [], label ('any', [])"
+  ],
+  "us-whitaker": [
+   "nationality: predicted unknown [], label ('include', ['US'])",
+   "component tuition: predicted covered, label partial"
+  ],
+  "us-hispanic-heritage": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "deadline spurious 2025-11-02"
+  ],
+  "ca-trudeau": [
+   "page_kind: predicted guidance, label opportunity",
+   "component living_allowance: predicted not covered, label covered",
+   "component research: predicted not covered, label covered",
+   "component travel: predicted not covered, label covered"
+  ],
+  "ca-fqrnt": [
+   "deadline spurious 2027-05-01"
+  ],
+  "ca-alberta-innovates": [
+   "nationality: predicted include ['CA'], label ('any', [])"
+  ],
+  "au-fulbright": [
+   "component stipend: predicted not covered, label covered",
+   "component tuition: predicted covered, label partial"
+  ],
+  "nz-woolf-fisher": [
+   "component tuition: predicted not covered, label full",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "at-marshall-plan": [
+   "deadline missed 2027-04-30",
+   "nationality: predicted include ['US'], label not_stated",
+   "component travel: predicted not covered, label covered"
+  ],
+  "jp-atsumi": [
+   "nationality: predicted include ['JP'], label not_stated",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "jp-jees": [
+   "component stipend: predicted not covered, label covered"
+  ],
+  "id-baznas": [
+   "component tuition: predicted covered, label partial",
+   "component research: predicted not covered, label covered"
+  ],
+  "ph-sm-foundation": [
+   "deadline missed 2026-02-28",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "in-icssr": [
+   "nationality: predicted unknown [], label ('include', ['IN'])",
+   "component stipend: predicted not covered, label covered",
+   "component research: predicted not covered, label covered"
+  ],
+  "bd-dutch-bangla": [
+   "component stipend: predicted not covered, label covered"
+  ],
+  "br-fapesp-pd": [
+   "deadline spurious 2019-10-05",
+   "nationality: predicted unknown [], label ('any', [])",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "br-instituto-ling": [
+   "deadline missed 2026-04-06",
+   "nationality: predicted unknown [], label ('include', ['BR'])",
+   "component tuition: predicted covered, label partial"
+  ],
+  "it-fulbright-italy": [
+   "nationality: predicted unknown [], label ('include', ['IT'])",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "fr-fulbright-france": [
+   "nationality: predicted unknown [], label ('include', ['FR'])",
+   "component stipend: predicted not covered, label covered",
+   "component travel: predicted not covered, label covered"
+  ],
+  "pl-fulbright-poland": [
+   "nationality: predicted unknown [], label ('include', ['PL'])"
+  ],
+  "ro-fulbright-romania": [
+   "nationality: predicted include ['US'], label ('include', ['RO'])",
+   "component tuition: predicted covered, label partial",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "gr-latsis": [
+   "nationality: predicted include ['ZA'], label not_stated"
+  ],
+  "tr-tubitak-2213": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "deadline missed 2026-12-31",
+   "component stipend: predicted not covered, label covered",
+   "component tuition: predicted not covered, label full",
+   "component insurance: predicted not covered, label covered"
+  ],
+  "jp-fulbright-japan": [
+   "deadline spurious 2026-07-01",
+   "nationality: predicted include ['JP', 'US'], label ('include', ['JP'])"
+  ],
+  "my-fulbright-malaysia": [
+   "deadline missed 2026-05-18",
+   "nationality: predicted include ['MY', 'US'], label ('include', ['MY'])"
+  ],
+  "ph-fulbright-philippines": [
+   "nationality: predicted unknown [], label ('include', ['PH'])"
+  ],
+  "mx-comexus": [
+   "deadline missed 2027-01-15"
+  ],
+  "ec-fulbright-ecuador": [
+   "deadline spurious 2026-08-01",
+   "nationality: predicted include ['US'], label ('include', ['EC'])",
+   "component stipend: predicted not covered, label covered",
+   "component insurance: predicted not covered, label covered",
+   "component travel: predicted not covered, label covered",
+   "component relocation: predicted not covered, label covered"
+  ],
+  "uy-fulbright-uruguay": [
+   "deadline spurious 2026-02-04",
+   "nationality: predicted any [], label ('include', ['UY'])"
+  ],
+  "br-fulbright-brasil": [
+   "nationality: predicted unknown [], label ('include', ['BR'])",
+   "component stipend: predicted not covered, label covered",
+   "component relocation: predicted not covered, label covered"
+  ]
+ }
+}

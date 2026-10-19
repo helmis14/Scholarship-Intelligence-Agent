@@ -653,7 +653,7 @@ def extract_deadlines(text: str, url: str, today: date, title: str = "") -> list
                                 approximate=UNAVAILABLE_NOTE if UNAVAILABLE_RX.search(s) else CLOSED_NOTE,
                                 cycle=detect_cycle(s) or page_cycle, label=clean_snippet(verbatim, 160), source_url=url))
             continue
-        if ROLLING_RX.search(s) and not ROLLING_ASSESSMENT.search(s):
+        if ROLLING_RX.search(s) and not ROLLING_ASSESSMENT.search(s) and re.search(r"applic|apply|admission|deadline|accept|submit", s, re.I):
             out.append(Deadline(kind=DeadlineKind.ROLLING, certainty=DeadlineCertainty.CONFIRMED,
                                 approximate="rolling: applications reviewed as they arrive", cycle=detect_cycle(s) or page_cycle,
                                 label=clean_snippet(verbatim, 160), source_url=url))
@@ -923,6 +923,9 @@ def extract_funding(text: str) -> tuple[list[FundingComponent], list[str]]:
         low = s.lower()
         if OWN_COST.search(s) or NOT_BENEFIT.search(s):
             continue  # expenses the scholar must plan for, or conditions on the applicant: not benefits
+        if s.strip().endswith("?") or re.search(r"\b(?:include|explain|indicate|list|submit|attach|identify) (?:a |the |your )?"
+                                                r"(?:table|budget|justification|source|amount|how|why|what|total)\b", low):
+            continue  # round 33: "How long do holders receive financial support?", "include a table showing ... graduate stipends"
         if COST_OF_ATTENDANCE_RX.search(low):
             # round 31: "cover the entire cost of attendance for four years": tuition and living costs together
             for kind in ("tuition", "living_allowance"):
@@ -1403,6 +1406,15 @@ def extract_nationality(text: str) -> tuple[NationalityRule, list[str]]:
             # "your birth parents must have been born ... as non-US citizens": the parents' status, not the applicant's
         if re.search(r"\bdoes not (?:refer to|include|mean|apply to)\b", s, re.I):
             continue  # round 30: "It does not refer to a citizen of another country ...": a definition, not a ban
+        if re.search(r"\b(?:is|are|be) (?:considered|classified|defined|recognized|recognised|treated) (?:as |to be )?(?:an? )?international|"
+                     r"\binternational (?:student|applicant)s? (?:is|are|means|refers to|includes?) (?:anyone|any|a person|students?|those|applicants?|"
+                     r"someone|an? \w+)\b|\bwho is an international (?:student|applicant)|\bdefinition of (?:an? )?international|"
+                     r"\bshould follow the\b|\bfollow the [\w ]{0,30}(?:requirements|instructions|process)\b", s, re.I):
+            continue  # round 33: "you are considered an international applicant if you are not a U.S. citizen", "U.S. citizens
+            # who completed coursework abroad should follow the international admissions requirements": who the office
+            # calls international and which form to use, not who may apply
+        if re.search(r"\bother (?:scholarships?|awards?|funding|programmes?|programs?|opportunities)\b", s, re.I):
+            continue  # round 33: "other scholarship opportunities ... some are for U.S. citizens only"
         if INTL_GROUP_RX.search(s) and not NEGATOR_RX.search(s):
             continue  # round 30: "US citizens, permanent residents ... and international students": open to almost all
         if FOREIGN_ALSO_RX.search(s):

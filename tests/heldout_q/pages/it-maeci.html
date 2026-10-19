@@ -1,0 +1,400 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title> Study In Italy</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/site.css?v=3KSqk74MllRyA4ED-JMMQIPNPulIMrAH60LHAymptgA" />
+    <script src="/js/site.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+
+    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css />
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js></script>
+
+    <script src="/lib/bootstrap-italia/dist/js/bootstrap-italia.min.js"></script>
+    <link rel="stylesheet" href="/lib/bootstrap-italia/dist/css/bootstrap-italia.min.css" />
+    <script src="/lib/bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+</head>
+<body>
+    <div b-3wq0a7r37g class="modal" id="modal-loading" data-bs-backdrop="static" data-bs-keyboard="false" style="box-shadow: none;">
+        <div b-3wq0a7r37g class="modal-dialog modal-dialog-centered" style="box-shadow: none;">
+            <div b-3wq0a7r37g class="modal-content bg-transparent" style="box-shadow: none;">
+                <div b-3wq0a7r37g class="modal-body d-flex align-items-center justify-content-center" style="box-shadow: none;">
+                    <div b-3wq0a7r37g class="loading-spinner mb-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<header b-3wq0a7r37g>
+
+    <div b-3wq0a7r37g id="header">
+        <div b-3wq0a7r37g class="it-header-slim-wrapper">
+            <div b-3wq0a7r37g class="it-header-slim-wrapper-content col d-flex">
+                <div b-3wq0a7r37g>
+<form action="/Home/Ricerca" method="post">                        <div b-3wq0a7r37g class="d-flex align-items-center">
+                            <input b-3wq0a7r37g class="form-control me-2" id="barraRicerca" name="t" type="search" placeholder="Search" aria-label="Search">
+                                <button b-3wq0a7r37g id="drop" type="submit" class="dropbtn "> <img src="/img/search.png" class="respSrc" alt="Search button" /></button>
+                        </div>
+<input name="XSRF" type="hidden" value="CfDJ8M_-XUASceRNnlfDfGpE18r4wHbLf7S6vMAeQsTZt5SD6y6MXpsYYke2aijZETC7KvvVhvGSIma0jZlpvsy3KpEhXu9a9qReHZBY5uhN2JR4gRGN8R474VcoQ5FyVD4940k_UzrXTfy0Gl5kzswymkE" /></form>                </div>
+            </div>
+           
+
+            <div b-3wq0a7r37g class="it-header-slim-wrapper-content col d-flex justify-content-end mr-5">
+                <div b-3wq0a7r37g class="it-header-slim-wrapper-content">
+                    <form id="selectLanguage" method="post" role="form" action="/Home/SetLanguage?returnUrl=~%2F">
+                        <select name="culture" class="selectLanguage fontNav fw-bold me-4" onchange="this.form.submit();" data-val="true" data-val-required="The Name field is required." id="requestCulture_RequestCulture_UICulture_Name">
+                        <option value="it-IT">ITALIAN </option>
+<option selected="selected" value="en-US">ENGLISH </option>
+</select>
+                    <input name="XSRF" type="hidden" value="CfDJ8M_-XUASceRNnlfDfGpE18r4wHbLf7S6vMAeQsTZt5SD6y6MXpsYYke2aijZETC7KvvVhvGSIma0jZlpvsy3KpEhXu9a9qReHZBY5uhN2JR4gRGN8R474VcoQ5FyVD4940k_UzrXTfy0Gl5kzswymkE" /></form>
+                </div>
+            </div>
+
+            <div b-3wq0a7r37g class="it-header-slim-wrapper-content">
+                    <a id="login" class="text-white fw-bold text-decoration-none fontNav btn btn-sm hoverableText login" href="/Auth/Login"> LOGIN </a>
+                    <a id="register" class="text-white fw-bold text-decoration-none fontNav btn btn-sm login" href="/Auth/Register"> REGISTER </a>
+
+            </div>
+        
+        </div>
+    </div>
+
+    <div b-3wq0a7r37g class="container-fluid">
+        <div b-3wq0a7r37g class="row mb-3">
+            <div b-3wq0a7r37g class="col-3 d-flex align-items-center justify-content-center">
+                <a b-3wq0a7r37g href="https://www.esteri.it/it/" target="_blank">
+                    <img src="/img/Farnesina-logo.png" style="max-width: 15vw; min-width: 80px;" aria-label="Logo Bando" alt="Call Logo" />
+                </a>
+            </div>
+            <div b-3wq0a7r37g class="col-6 d-flex align-items-center justify-content-center">
+                <a href="/">
+                    <img src="/img/StudyLogo.jpg" style="max-width: 17vw; min-width: 160px;" aria-label="Logo Study" alt="Study In Italy Logo" />
+                </a>
+            </div>
+        </div>
+
+
+        <div b-3wq0a7r37g id="sticky" class="row d-flex justify-content-center borderThin mb-5 bgNav">
+            <div b-3wq0a7r37g class="row">
+                <div b-3wq0a7r37g class="col-12 d-flex align-items-center justify-content-center">
+                    <a b-3wq0a7r37g href="https://www.esteri.it/it/" target="_blank">
+                        <img src="/img/Farnesina-logo.png" id="logoSticky2" style="max-width: 120px;" class="visualizza m-4" aria-label="Logo Farnesina" alt="Farnesina Logo" />
+                    </a>
+                    <a href="/">
+                        <img src="/img/StudyLogo.jpg" id="logoSticky" style="max-width: 150px" class="visualizza" aria-label="Logo Study" alt="Study In Italy Logo" />
+                    </a>
+                </div>
+
+                <div b-3wq0a7r37g class="col-3 d-flex align-items-center justify-content-center">
+                </div>
+            </div>
+            <div b-3wq0a7r37g class="col-12 d-flex align-self-center justify-content-center">
+         
+            <div b-3wq0a7r37g class="m-3 dropdown text-center">
+                <div b-3wq0a7r37g class="underline-animation-b">
+                    <a class="btn fontNav btn-dropdown dropdown-toggle" id="MenuHome" toggle="dropdown" href="/">
+                        HOME
+                    </a>
+                </div>
+            </div>
+               
+            <div b-3wq0a7r37g class="m-3 dropdown text-center">
+                   
+                <div b-3wq0a7r37g class="underline-animation-b">
+                    <button b-3wq0a7r37g class="btn fontNav btn-dropdown dropdown-toggle navButton" id="MenuBorse" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-labelledby="Borse di Studio">
+                        GRANTS
+                    </button>
+                    <div b-3wq0a7r37g class="dropdown-menu dark" aria-labelledby="dropMenuBorseDiStudio" id="dropDown">
+                        <div b-3wq0a7r37g class="link-list-wrapper">
+                            <ul b-3wq0a7r37g class="link-list">
+                                <li b-3wq0a7r37g><a class="dropdown-item list-item hoverableText" href="/ListaBandi"><span b-3wq0a7r37g> CALL FOR APPLICATION</span></a></li>
+                                <li b-3wq0a7r37g><a class="dropdown-item list-item hoverableText" href="/Static/GuidaAlSito"><span b-3wq0a7r37g> WEBSITE GUIDELINES</span></a></li>
+                                <li b-3wq0a7r37g><a class="dropdown-item list-item hoverableText" href="/Static/FAQ"><span b-3wq0a7r37g> FAQ </span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div b-3wq0a7r37g class="m-3 dropdown text-center">
+
+                <div b-3wq0a7r37g class="underline-animation-b">
+                    <button b-3wq0a7r37g class="btn fontNav btn-dropdown dropdown-toggle" id="MenuOrientamento" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-labelledby="Orientamento">
+                        ORIENTATION
+                    </button>
+                    <div b-3wq0a7r37g class="dropdown-menu dark" aria-labelledby="dropMenuOrientamento">
+                        <div b-3wq0a7r37g class="link-list-wrapper">
+                            <ul b-3wq0a7r37g class="link-list">
+                                <li b-3wq0a7r37g><a class="dropdown-item list-item hoverableText" href="/Static/TrovaIlTuoCorso"><span b-3wq0a7r37g> FIND YOUR COURSE</span></a></li>
+                                <li b-3wq0a7r37g><a class="dropdown-item list-item hoverableText" href="/Static/ProcedureIscrizione"><span b-3wq0a7r37g> ENROLLMENT PROCEDURES </span></a></li>
+                                <li b-3wq0a7r37g><a class="dropdown-item list-item hoverableText" href="/Static/Visto"><span b-3wq0a7r37g> VISA </span></a></li>
+                                <li b-3wq0a7r37g><a class="dropdown-item list-item hoverableText" href="/Static/InformazioniSoggiorno"><span b-3wq0a7r37g> INFORMATION FOR YOUR STAY IN ITALY </span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div b-3wq0a7r37g class="m-3 dropdown text-center">
+                <div b-3wq0a7r37g class="underline-animation-b">
+                    <a class="btn fontNav btn-dropdown dropdown-toggle" type="button" aria-label="Alumni Farnesina" href="/Static/AlumniFarnesina">
+                        ALUMNI FARNESINA
+                    </a>
+                </div>
+            </div>
+                   
+            <div b-3wq0a7r37g class="m-3 dropdown text-center">
+                <div b-3wq0a7r37g class="underline-animation-b">
+                    <a class="btn fontNav btn-dropdown dropdown-toggle" type="button" aria-label="Stories" href="/Static/Storie"> STORIES </a>
+                </div>
+            </div>
+
+            <div b-3wq0a7r37g class="m-2 dropdown text-center">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</header>
+
+   
+    <div b-3wq0a7r37g class="container">
+        <main b-3wq0a7r37g role="main" class="pb-3">
+            
+
+
+<div class="container">
+
+    <div id="Carousel" class="carousel slide" data-ride="carousel">
+        <!-- Indice -->
+        <ol class="carousel-indicators">
+            <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#Carousel" data-slide-to="1"></li>
+            <li data-target="#Carousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper Slides -->
+        <div class="carousel-inner" role="listbox">
+
+            <div class="item active">
+                <img src="/img/Carousel_1.png" alt="Slide1" class="respCar">
+                <div class="carousel-caption mb-3">
+                    <h2>
+                        <a href="/ListaBandi" class="text-white text-decoration-none underline-animation-w carousel-shadow fw-bold bg-transparent border-0">
+                            CALL 
+                        </a>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="/img/Carousel_2.png" alt="Slide2" class="respCar">
+                <div class="carousel-caption mb-3">
+                    <h2>
+                        <a href="/Static/PercheStudiareInItalia" class="text-white text-decoration-none underline-animation-w carousel-shadow fw-bold bg-transparent border-0">
+                            WHY STUDY IN ITALY
+                        </a>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="/img/Carousel_3.png" alt="Slide2" class="respCar">
+                <div class="carousel-caption mb-3">
+                    <h2>
+                        <a href="/Static/CinquePassiStudy" class="text-white text-decoration-none underline-animation-w carousel-shadow fw-bold bg-transparent border-0">
+                            5 STEPS TO STUDY IN ITALY
+                        </a>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr />
+
+    <div class="row d-flex align-items-center justify-content-center mb-5">
+        <h2 class="row d-flex mb-4 align-items-center justify-content-center colorBlue">
+            FIND YOUR COURSE
+        </h2>
+
+        <div>
+            <p align="center">
+                Italian University just a click away!
+            </p>
+            <p align="center">
+                <a href="https://www.universitaly.it/" target='_blank'>Universitaly</a> is the Italian Ministry of University and Research's online portal, specifically created to accompany Italian and international students on their study path and to provide them with the broadest description of all the components of the Italian university system
+            </p>
+            <p align="center">
+                You can consult <a href='https://www.universitaly.it/' target='_blank'>Universitaly</a> in order to access all the information needed to find the university course you are interested in, to check the terms and conditions for the admission to the various faculties, to discover the opportunities for facilitations and scholarships, and to verify the formalities and obligations required for your entry and stay in Italy.
+            </p>
+        </div>
+    </div>
+
+    <div class="container-fluid mb-5">
+        <div class="justify-content-center d-flex">
+            <div class="row d-flex align-items-center">
+                <div class="col">
+                    <div class=" d-flex justify-content-center">
+                        <a href="/ListaBandi"> <img class="width-img" src="/img/MAECI_Grants_logo3.png" alt="MAECI Grants Logo" /> </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+        </main>
+    </div>
+
+    <footer b-3wq0a7r37g class="it-footer">
+        <div b-3wq0a7r37g class="it-footer-main">
+            <div b-3wq0a7r37g class="container">
+                <section b-3wq0a7r37g class="py-4">
+                    <div b-3wq0a7r37g class="row">
+                        <div b-3wq0a7r37g class="col-lg-8 col-md-4 pb-2">
+                            <h4 b-3wq0a7r37g><a b-3wq0a7r37g> Contact us </a></h4>
+                            <div b-3wq0a7r37g class="link-list-wrapper">
+                                <hr b-3wq0a7r37g>
+
+                                <blockquote b-3wq0a7r37g class="blockquote">
+                                    <p b-3wq0a7r37g class="mb-1">
+                                        <strong b-3wq0a7r37g>
+                                            Ministry of Foreign Affairs and International Cooperation
+                                        </strong><br b-3wq0a7r37g>
+                                        Directorate General for Growth and Export Promotion – Office VII<br b-3wq0a7r37g>
+                                        Promotion of Italophony
+                                    </p>
+                                    <ul b-3wq0a7r37g class="footer-list link-list clearfix">
+                                        <li b-3wq0a7r37g class="d-flex">
+                                            <p b-3wq0a7r37g class="mb-0 fw-bold">
+                                                <a b-3wq0a7r37g class="list-item" href="mailto:borsedistudio@esteri.it" target="_blank"> borsedistudio@esteri.it </a>
+                                            </p>
+                                            <div b-3wq0a7r37g class="mx-2"> for assistance concerning the Call for Applications only </div>
+                                        </li>
+                                        <li b-3wq0a7r37g class="d-flex">
+                                            <p b-3wq0a7r37g class="mb-0 fw-bold">
+                                                <a b-3wq0a7r37g class="list-item" href="mailto:assistenza.studyinitaly@esteri.it" target="_blank"> assistenza.studyinitaly@esteri.it </a>
+                                            </p>
+                                            <div b-3wq0a7r37g class="mx-2"> for technical support only </div>
+                                             
+                                        </li>
+                                        <li b-3wq0a7r37g>
+                                            <p b-3wq0a7r37g class="mb-0 fw-bold">
+                                                <a b-3wq0a7r37g class="list-item" href="https://www.esteri.it/it/" target="_blank" title="Sito ufficiale Ministero Affari Esteri"> www.esteri.it </a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <div b-3wq0a7r37g class="col-lg-4 col-md-4 pb-2">
+                            <h4 b-3wq0a7r37g><a href="/Home/Privacy"> Privacy </a></h4>
+                            <div b-3wq0a7r37g class="link-list-wrapper">
+                                <hr b-3wq0a7r37g>
+                                <blockquote b-3wq0a7r37g class="blockquote">
+                                    <p b-3wq0a7r37g class="mb-0">
+                                        For further information about privacy policy <a class="text-white fw-bold" href="/Home/Privacy"> click here </a>
+                                    </p>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div b-3wq0a7r37g class="it-footer-small-prints clearfix">
+            <div b-3wq0a7r37g class="container d-flex justify-content-end">
+                <ul b-3wq0a7r37g class="it-footer-small-prints-list list-inline mb-0 d-flex align-items-center">
+                    <li b-3wq0a7r37g class="list-inline-item accept-policy text-white"> Powered By </li>
+                    <li b-3wq0a7r37g>  <img src="/img/logo-DGAI-VIII-2.png" class="img-responsive" style="width: 42px;" aria-label="Logo DGAI" /> </li>
+                </ul>
+              
+            </div>
+        </div>
+    </footer>
+</body>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js?v=hjahGxVe9W_m3F-ohx3Xpp3q61hxF2h2sPQli2LdHmM"></script>
+    <script src="/js/Spinner.js"></script>
+    
+
+</html>
+
+<script>
+    $("#register").on('click', function () {
+        Spinner();
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(window).scroll(function () {
+
+            var altezzaPag = $(document).scrollTop();
+
+            if (altezzaPag >= $('#header').height()) {
+                $('#sticky').fadeIn(150).addClass('fixed');
+                $('#logoSticky').removeClass('visualizza').fadeIn(400);
+                $('#logoSticky2').removeClass('visualizza').fadeIn(400);
+            }
+            else {
+                $('#sticky').fadeOut(150).removeClass('fixed');
+                $('#logoSticky').addClass('visualizza').fadeOut(400);
+                $('#logoSticky2').addClass('visualizza').fadeOut(400);
+            }
+        });
+    });
+
+</script>
+
+
+
+<script>
+    $(document).mouseup(function (e) {
+        var container = $("#GestioneProfilo");
+        var id = $("#dropMenu");
+        var myDiv = document.getElementById('GestioneProfilo');
+        
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            if (myDiv.style.display == 'none' && !id.is(e.target) && id.has(e.target).length === 1) {
+                container.show();
+                myDiv.style.display = 'block';
+            } else { 
+                container.hide();
+                myDiv.style.display = 'none';
+            }
+        } else {
+            container.show();
+            myDiv.style.display = 'block';
+        }
+    });
+</script>
+
+
+   

@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head> <script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NK7K7JM');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139121997-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-139121997-1');
+	  	gtag('config', 'AW-748744167');
+    </script>
+	
+	<!-- Event snippet for Subscribe conversion page
+	In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+	<script>
+	function gtag_report_conversion(url) {
+	  var callback = function () {
+		if (typeof(url) != 'undefined') {
+		  window.location = url;
+		}
+	  };
+	  gtag('event', 'conversion', {
+		  'send_to': 'AW-748744167/T5NQCMLe3vEBEOfbg-UC',
+		  'event_callback': callback
+	  });
+	  return false;
+	}
+	</script>
+
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-139121997-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics -->
+	
+
+
+    <script src="https://assets.juicer.io/embed.js" type="text/javascript"></script>
+    <link href="https://assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
+
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v28.5 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Growing research talent in Singapore - A*STAR Research</title>
+	<link rel="canonical" href="https://research.a-star.edu.sg/articles/features/growing-research-talent-in-singapore/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Growing research talent in Singapore - A*STAR Research" />
+	<meta property="og:description" content="For twenty years, A*STAR has secured and developed a pipeline of scientific talent in Singapore through its suite of scholarship schemes." />
+	<meta property="og:url" content="https://research.a-star.edu.sg/articles/features/growing-research-talent-in-singapore/" />
+	<meta property="og:site_name" content="A*STAR Research" />
+	<meta property="article:modified_time" content="2022-03-03T08:04:04+00:00" />
+	<meta property="og:image" content="https://research.a-star.edu.sg/wp-content/uploads/2022/03/growing-research-talent-in-singapore-2.jpg" />
+	<meta property="og:image:width" content="1600" />
+	<meta property="og:image:height" content="1000" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@astar_research" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/research.a-star.edu.sg\/articles\/features\/growing-research-talent-in-singapore\/","url":"https:\/\/research.a-star.edu.sg\/articles\/features\/growing-research-talent-in-singapore\/","name":"Growing research talent in Singapore - A*STAR Research","isPartOf":{"@id":"https:\/\/research.a-star.edu.sg\/#website"},"primaryImageOfPage":{"@id":"https:\/\/research.a-star.edu.sg\/articles\/features\/growing-research-talent-in-singapore\/#primaryimage"},"image":{"@id":"https:\/\/research.a-star.edu.sg\/articles\/features\/growing-research-talent-in-singapore\/#primaryimage"},"thumbnailUrl":"https:\/\/research.a-star.edu.sg\/wp-content\/uploads\/2022\/03\/growing-research-talent-in-singapore-2.jpg","datePublished":"2022-03-02T01:31:00+00:00","dateModified":"2022-03-03T08:04:04+00:00","breadcrumb":{"@id":"https:\/\/research.a-star.edu.sg\/articles\/features\/growing-research-talent-in-singapore\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/research.a-star.edu.sg\/articles\/features\/growing-research-talent-in-singapore\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/research.a-star.edu.sg\/articles\/features\/growing-research-talent-in-singapore\/#primaryimage","url":"https:\/\/research.a-star.edu.sg\/wp-content\/uploads\/2022\/03\/growing-research-talent-in-singapore-2.jpg","contentUrl":"https:\/\/research.a-star.edu.sg\/wp-content\/uploads\/2022\/03\/growing-research-talent-in-singapore-2.jpg","width":1600,"height":1000},{"@type":"BreadcrumbList","@id":"https:\/\/research.a-star.edu.sg\/articles\/features\/growing-research-talent-in-singapore\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/research.a-star.edu.sg\/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https:\/\/research.a-star.edu.sg\/archives\/"},{"@type":"ListItem","position":3,"name":"Growing research talent in Singapore"}]},{"@type":"WebSite","@id":"https:\/\/research.a-star.edu.sg\/#website","url":"https:\/\/research.a-star.edu.sg\/","name":"A*STAR Research","description":"","publisher":{"@id":"https:\/\/research.a-star.edu.sg\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/research.a-star.edu.sg\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/research.a-star.edu.sg\/#organization","name":"A*STAR Research","url":"https:\/\/research.a-star.edu.sg\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/research.a-star.edu.sg\/#\/schema\/logo\/image\/","url":"https:\/\/research.a-star.edu.sg\/wp-content\/uploads\/2022\/10\/astar-research-logo.png","contentUrl":"https:\/\/research.a-star.edu.sg\/wp-content\/uploads\/2022\/10\/astar-research-logo.png","width":7301,"height":1836,"caption":"A*STAR Research"},"image":{"@id":"https:\/\/research.a-star.edu.sg\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/x.com\/astar_research","https:\/\/www.linkedin.com\/company\/astar-research\/"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel="alternate" type="application/rss+xml" title="A*STAR Research &raquo; Feed" href="https://research.a-star.edu.sg/feed/" />
+<link rel="alternate" type="application/rss+xml" title="A*STAR Research &raquo; Comments Feed" href="https://research.a-star.edu.sg/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://research.a-star.edu.sg/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fresearch.a-star.edu.sg%2Farticles%2Ffeatures%2Fgrowing-research-talent-in-singapore%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://research.a-star.edu.sg/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fresearch.a-star.edu.sg%2Farticles%2Ffeatures%2Fgrowing-research-talent-in-singapore%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='asr-style-css' href='https://research.a-star.edu.sg/wp-content/themes/asr/style.css?ver=8f8a3461f7458ad7302a8de6625e892b' media='all' />
+<link rel='stylesheet' id='asr-font-css' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&#038;ver=7.1.3' media='all' />
+<link rel='stylesheet' id='asr-bootstrap-css' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css?ver=8f8a3461f7458ad7302a8de6625e892b' media='all' />
+<link rel='stylesheet' id='asr-fontawesome-css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css?ver=8f8a3461f7458ad7302a8de6625e892b' media='all' />
+<link rel='stylesheet' id='asr-vendor-css' href='https://research.a-star.edu.sg/wp-content/themes/asr/assets/dist/vendor-min.css?ver=8f8a3461f7458ad7302a8de6625e892b' media='all' />
+<link rel='stylesheet' id='asr-slick-css' href='https://research.a-star.edu.sg/wp-content/themes/asr/assets/vendor/slick-1.8.1/slick.css?ver=8f8a3461f7458ad7302a8de6625e892b' media='all' />
+<link rel='stylesheet' id='asr-slick-theme-css' href='https://research.a-star.edu.sg/wp-content/themes/asr/assets/vendor/slick-1.8.1/slick-theme.css?ver=8f8a3461f7458ad7302a8de6625e892b' media='all' />
+<link rel='stylesheet' id='asr-main-css' href='https://research.a-star.edu.sg/wp-content/themes/asr/assets/dist/main-min.css?ver=8f8a3461f7458ad7302a8de6625e892b' media='all' />
+<link rel='stylesheet' id='asr-overrides-css' href='https://research.a-star.edu.sg/wp-content/themes/asr/assets/overrides.css?ver=8f8a3461f7458ad7302a8de6625e892b' media='all' />
+<link rel='stylesheet' id='sib-front-css-css' href='https://research.a-star.edu.sg/wp-content/plugins/mailin/css/mailin-front.css?ver=8f8a3461f7458ad7302a8de6625e892b' media='all' />
+<script id="asr-jquery-js" src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/vendor/jquery/jquery.min.js?ver=8f8a3461f7458ad7302a8de6625e892b"></script>
+<script id="jquery-core-js" src="https://code.jquery.com/jquery-3.5.1.min.js?ver=3.7.1"></script>
+<script id="sib-front-js-js-extra">
+var sibErrMsg = {"invalidMail":"Please fill out valid email address","requiredField":"Please fill out required fields","invalidDateFormat":"Please fill out valid date format","invalidSMSFormat":"Please fill out valid phone number"};
+var ajax_sib_front_object = {"ajax_url":"https://research.a-star.edu.sg/wp-admin/admin-ajax.php","ajax_nonce":"049684dff3","flag_url":"https://research.a-star.edu.sg/wp-content/plugins/mailin/img/flags/"};
+//# sourceURL=sib-front-js-js-extra
+</script>
+<script id="sib-front-js-js" src="https://research.a-star.edu.sg/wp-content/plugins/mailin/js/mailin-front.js?ver=1782190415"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://research.a-star.edu.sg/xmlrpc.php?rsd" />
+<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+			<meta property="og:url" content="https://research.a-star.edu.sg/articles/features/growing-research-talent-in-singapore/" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Growing research talent in Singapore" />
+		<meta property="og:description" content="For twenty years, A*STAR has secured and developed a pipeline of scientific talent in Singapore through its suite of scholarship schemes." />
+        <meta property="og:image" content="https://research.a-star.edu.sg/wp-content/uploads/2022/03/growing-research-talent-in-singapore-2.jpg" />
+        <meta property="og:image:width" content="450"/>
+        <meta property="og:image:height" content="298"/>
+	
+	<!--[if lt IE 9]> <script src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/vendor/css3-mediaqueries/css3-mediaqueries.js"></script> <![endif]-->
+	<!--[if lt IE 9]> <script src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/vendor/html5/html5.js"></script> <![endif]-->
+
+	<!-- icons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/icon/apple-touch-icon-7e53deb46c.png">
+	<link rel="manifest" href="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/icon/site-d0145012af.webmanifest">
+	<link rel="mask-icon" href="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/icon/safari-pinned-tab-57a3f00f6c.svg" color="#02328d">
+	<link rel="shortcut icon" href="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/icon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-config" content="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/icon/browserconfig-3db06316ed.xml">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- <link rel="stylesheet" href="https://research.a-star.edu.sg/wp-content/themes/asr/assets/vendor/animate/animate.css"> -->
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['EmaticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script', '//api.ematicsolutions.com/v1/ematic.min.js','ematics');
+
+        var ematicApikey = "1217e208755911e9a93d0242ac110002-sg1";
+        var opt = {
+            email: "",
+            country_iso: "SG",
+            currency_iso: "SGD",
+            language_iso: "en-GB"
+        };
+
+        //initialize
+        ematics("create", ematicApikey, opt);
+    </script>
+    <script type="text/javascript">
+        (function(e,a){
+            var t,r=e.getElementsByTagName("head")[0],c=e.location.protocol;
+            t=e.createElement("script");t.type="text/javascript";
+            t.charset="utf-8";t.async=!0;t.defer=!0;
+            t.src=c+"//front.optimonk.com/public/"+a+"/js/preload.js";r.appendChild(t);
+        })(document,"149438");
+    </script>
+</head>
+
+<body data-rsssl=1 class="wp-singular article-template-default single single-article postid-14857 wp-theme-asr">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NK7K7JM"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+	<div id="wrapper">
+
+		<header class="asr-header">
+			<div class="asr-header__content">
+				<div class="container h-100">
+					<div class="row h-100 justify-content-between align-items-sm-end align-items-lg-start">
+						<div class="col-auto">
+							<div class="asr-logo">
+								<a href="https://research.a-star.edu.sg"><img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/logo-white.svg" alt="A*Star Research"></a>
+							</div>
+						</div>
+
+						<div class="d-lg-none col-auto pt-2">
+							<button class="hamburger hamburger--slider asr-burger" type="button">
+								<span class="hamburger-box">
+									<span class="hamburger-inner"></span>
+								</span>
+							</button>
+						</div>
+						<div class="col d-none d-lg-block header__content__right">
+
+							<div class="row asr-header__content__right__first justify-content-end align-items-center">
+								<div class="col-auto">
+									<form action="https://research.a-star.edu.sg" method="GET">
+                                        <div class="asr-header__search row align-items-center no-gutters">
+                                            <div class="col-auto">
+                                                <div class="asr-header__search__input float-right">
+                                                    <input type="text" placeholder="Search" name="s">
+                                                    <button type="submit">Go</button>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <a href="#" class="asr-header__search__icon">
+                                                    <!-- <i class="fa fa-search"></i> -->
+                                                    <img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/icon-search.png" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+									</form>
+								</div>
+								<div class="col-auto">
+									<a href="https://research.a-star.edu.sg?scrollto=subscribe" class="asr-header__btn-subscribe">Subscribe</a>
+								</div>
+							</div>
+
+							<nav class="asr-navig asr-navig--primary float-right">
+								<ul id="menu-primary" class="menu"><li id="menu-item-252" class="d-lg-none menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-252"><a href="https://research.a-star.edu.sg/">Home</a></li>
+<li id="menu-item-5732" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5732"><a href="https://research.a-star.edu.sg/category/features/">Features</a></li>
+<li id="menu-item-5733" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5733"><a href="https://research.a-star.edu.sg/category/highlights/">Highlights</a></li>
+<li id="menu-item-5482" class="menu-item menu-item-type-post_type_archive menu-item-object-article menu-item-5482"><a href="https://research.a-star.edu.sg/archives/">Archives</a></li>
+<li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-71"><a href="https://research.a-star.edu.sg/print-magazine/">Print</a></li>
+<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="https://research.a-star.edu.sg/about/">About</a></li>
+<li id="menu-item-146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146"><a href="https://research.a-star.edu.sg/contact/">Contact</a></li>
+</ul>							</nav>
+							<div class="clearfix"></div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- NAV MOBILE -->
+		<div class="asr-navig asr-navig--mobile position-fixed d-lg-none">
+			<div class="container">
+				<form action="https://research.a-star.edu.sg" method="GET">			
+					<div class="asr-navig--mobile__search">
+						<i class="fa fa-search position-absolute center-y"></i>
+						<input type="text" placeholder="Search" name="s">
+					</div>
+				</form>
+				<nav>
+					<ul id="menu-primary-1" class="menu"><li class="d-lg-none menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-252"><a href="https://research.a-star.edu.sg/">Home</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5732"><a href="https://research.a-star.edu.sg/category/features/">Features</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5733"><a href="https://research.a-star.edu.sg/category/highlights/">Highlights</a></li>
+<li class="menu-item menu-item-type-post_type_archive menu-item-object-article menu-item-5482"><a href="https://research.a-star.edu.sg/archives/">Archives</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-71"><a href="https://research.a-star.edu.sg/print-magazine/">Print</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="https://research.a-star.edu.sg/about/">About</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146"><a href="https://research.a-star.edu.sg/contact/">Contact</a></li>
+</ul>                    <div class="asr-navig--mobile__subscribe-wrap">
+                        <a href="https://research.a-star.edu.sg?scrollto=subscribe" class="asr-navig--mobile__subscribe text-uppercase text-center">Subscribe</a>
+                    </div>
+				</nav>
+			</div>
+		</div>
+
+
+		<main id="main">
+    
+    <div id="post-14857" class="article-single-page content post-14857 article type-article status-publish has-post-thumbnail hentry category-features tag-scholarships tag-science-and-engineering-research-council-serc tag-astar-graduate-academy">
+
+        <div class="asr-floating-sharebtns sharebtns">
+            <ul class="list-unstyled row no-gutters">
+                <li class="fb col"><a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fresearch.a-star.edu.sg%2Farticles%2Ffeatures%2Fgrowing-research-talent-in-singapore%2F&title=Growing%20research%20talent%20in%20Singapore&description=For twenty years, A*STAR has secured and developed a pipeline of scientific talent in Singapore through its suite of scholarship schemes.&picture=https://research.a-star.edu.sg/wp-content/uploads/2022/03/growing-research-talent-in-singapore-2.jpg" rel="nofollow noopener"><img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/icon-white-fb.png"></a></li>
+                <li class="twitter col"><a href="https://twitter.com/intent/tweet?text=Growing%20research%20talent%20in%20Singapore%20https%3A%2F%2Fresearch.a-star.edu.sg%2Farticles%2Ffeatures%2Fgrowing-research-talent-in-singapore%2F" rel="nofollow noopener"><img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/icon-white-twitter.png"></a></li>
+                <li class="linkedin col"><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fresearch.a-star.edu.sg%2Farticles%2Ffeatures%2Fgrowing-research-talent-in-singapore%2F&title=Growing%20research%20talent%20in%20Singapore&source=A%2AStar%20Research" rel="nofollow noopener"><img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/icon-white-linkedin.png"></a></li>
+                <li class="email col"><a href="mailto:?subject=Growing%20research%20talent%20in%20Singapore&body=https%3A%2F%2Fresearch.a-star.edu.sg%2Farticles%2Ffeatures%2Fgrowing-research-talent-in-singapore%2F" rel="nofollow noopener"><img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/icon-white-envelope.png"></a></li>
+                <li class="whatsapp col d-xl-none"><a href="https://api.whatsapp.com/send?text=Growing%20research%20talent%20in%20Singapore%20https%3A%2F%2Fresearch.a-star.edu.sg%2Farticles%2Ffeatures%2Fgrowing-research-talent-in-singapore%2F" rel="nofollow noopener"><img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/icon-white-whatsapp.png"></a></li>
+            </ul>
+        </div>
+        
+        <!-- <div class="article-banner article-banner--desktop" style="background-image: url(https://research.a-star.edu.sg/wp-content/uploads/2022/03/growing-research-talent-in-singapore-2.jpg)"> -->
+        <div class="article-banner article-banner--desktop ">
+                            <img src="https://research.a-star.edu.sg/wp-content/uploads/2022/03/growing-research-talent-in-singapore-2.jpg" class="w-100" alt="">
+                        <div class="asr-page-title-wrap">
+                <div class="container">
+                    <div class="asr-page-title">
+                        <h1>Features</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="bgc-white article-banner--desktop__img-caption d-none d-md-block d-xl-none">
+                <div class="container"></div>
+            </div>
+        </div>
+        <div class="container d-md-none">
+            <div class="article-heading article-heading--mob"></div>
+        </div>
+        <section class="article-banner-wrap d-md-none">
+                            <div class="article-banner article-banner--mob" style="background-image: url(https://research.a-star.edu.sg/wp-content/uploads/2022/03/growing-research-talent-in-singapore-2.jpg)"></div>
+                                        <div class="container">
+                    <div class="article-banner-caption article-banner-caption--mob asr-image-caption">
+                        <p><strong>In brief</strong></p>
+                                                    <p>Two decades of the A*STAR Graduate Academy</p>
+                                                                            <p>© A*STAR Research</p>
+                                            </div>
+                </div>
+                    </section>
+
+        <div class="container">
+            <div class="row asr-sidebar-layout">
+                <div class="col-12 col-xl col-content">
+                    <div class="article-heading article-heading--desktop d-none d-md-block">
+                        <h2>Growing research talent in Singapore</h2>
+                        <span class="article-heading__date">2 Mar 2022 </span>
+                                                    <div class="article-heading__excerpt">
+                                <p>For twenty years, A*STAR has secured and developed a pipeline of scientific talent in Singapore through its suite of scholarship schemes.</p>
+                            </div>
+                                            </div>
+                                            <section class="article-content">
+                                                                                                <p>What should a scientist aspire to do with their career? </p>
+<p>If you were to ask the late Nobel Laureate <a target="_blank" href="https://research.a-star.edu.sg/articles/features/commemorating-the-life-of-sydney-brenner/">Sydney Brenner</a>, his answer may have gone beyond making paradigm-shifting scientific breakthroughs or creating innovations that impact the world. On top of research impact, Brenner also cared deeply about nurturing young scientists and giving them the room to grow and take the lead in pushing research frontiers. </p>
+<p>Brenner’s conviction that we must groom the next generation of scientists is something A*STAR has more than taken to heart. In 2001, A*STAR established the <a target="_blank" href="https://www.a-star.edu.sg/About-A-STAR/a-star-graduate-academy">A*STAR Graduate Academy (A*GA)</a>, the office responsible for administering a comprehensive suite of undergraduate, PhD and postdoctoral scholarships. Now some two decades later, A*GA has given over 3,400 aspiring scientists access to top-class education in Singapore and abroad, creating a strong pipeline of scientific talent for the country in the process. </p>
+<p>“Research and development are of strategic importance to Singapore—both in enhancing our economic competitiveness and in helping the country overcome our manpower, land and carbon constraints as well as improving food security and pandemic resilience,” said Ms Lai Fung Chan, Chairman of A*STAR. “The A*STAR scholarships allow us to invest in our young people and build up a pool of scientific talent who will be able to help address not only national challenges but also complex global ones.”</p>
+<p><b>The genesis of A*GA</b> </p>
+<p>As a country that places strategic importance on research and development (R&D), Singapore is more than aware of the value of scientific talent. </p>
+<p>“Twenty years ago, we realized that as much as we valued the contributions of international researchers to Singapore, it was also critical that we build up a core group of Singaporeans who would be the future leaders within our research ecosystem,” recalled Professor Lam Khin Yong, A*GA’s Founding Executive Director and current Senior Vice President (Research) at Nanyang Technology University Singapore (NTU). </p>
+<p>A key component of A*STAR’s strategy to achieve this goal was A*GA. In its early years, the A*GA office was responsible for overseeing numerous aspects of A*STAR’s manpower development efforts and scholarship administration, with the main goal of producing a pool of Singaporeans with PhD degrees—1,000 of them, to be exact—in wide-ranging disciplines from biomedical sciences to materials science and sustainability engineering. </p>
+<p>Why the emphasis on PhD degrees? “While research and innovation do not necessarily require a PhD degree, the rigorous training offered by a PhD will give researchers immense exposure and domain expertise in their chosen field,” explained Lam. </p>
+<p>With that reason in mind, A*GA designed a variety of scholarship schemes that provided students with the opportunity to study and conduct research at top universities in Singapore and abroad. </p>
+<p>For example, the <a target="_blank" href="https://www.a-star.edu.sg/Scholarships/for-undergraduate-studies/national-science-scholarship-(bs)">BS-PhD National Science Scholarship</a> secures promising young Singaporeans right out of junior college, before they commit to other organizations or institutes of higher learning.</p>
+<p>A*GA also partnered with universities both locally and abroad to bolster A*STAR’s education capacities. Scholarships like the <a target="_blank" href="https://www.a-star.edu.sg/Scholarships/for-graduate-studies/a-star-graduate-scholarship-singapore">A*STAR Graduate Scheme (AGS)</a> now allow PhD scholars to receive joint supervision by Nanyang Technological University (NTU) and National University of Singapore (NUS) faculty members as well as A*STAR scientists, while joint programs with international universities and research institutes provide scholars with international exposure. </p>
+<p><b>Going beyond borders</b></p>
+<p>Once A*GA was up and running, the focus in subsequent years shifted to adding breadth and depth. This included expanding its reach internationally and offering scholarship schemes to graduates from outside Singapore. </p>
+<p>“Around 2007, we started the international dimension, a charge led by the <a target="_blank" href="https://www.a-star.edu.sg/Scholarships/for-graduate-studies/singapore-international-graduate-award-singa">Singapore International Graduate Award (SINGA)</a> scholarships,” said former Executive Director Khiang Wee Lim, who pioneered the active search for international scientific talent together with academic leaders from NUS and NTU. </p>
+<p>The motivation was simple: to increase the diversity of the talent pool of students in Singapore. </p>
+<p>In its early years, SINGA offered international students a chance to pursue a PhD degree in Singapore at NUS or NTU, and has since expanded the program to include the Singapore University of Technology and Design (SUTD) and the Singapore Management University (SMU). </p>
+<p>For further flexibility, Lim and his team started the <a target="_blank" href="https://www.a-star.edu.sg/Scholarships/for-graduate-studies/a-star-research-attachment-programme-(arap)">A*STAR Research Attachment Program (ARAP)</a>, a collaboration between A*STAR and partner universities that allowed scholars to complete half of their degrees in their home country and the other half in Singapore as an alternative to SINGA’s full four-year stay in Singapore. </p>
+<p>“It was a win-win solution for everyone involved. It also fostered more collaborative research,” said Lim.</p>
+<p><b>Remembering the human element</b> </p>
+<p>This consideration for scholars and understanding their needs is something that has remained a priority for A*GA. </p>
+<p>“In my time at A*GA, I was very cognizant of the fact that research is a human enterprise,” said Alfred Huan, who served as A*GA’s Executive Director from 2013 to 2017. “When we look at talent, we have to remember we are talking about human individuals with their own differences and needs.” </p>
+<p>Although it may seem obvious, A*GA is mindful to see its scholars as individuals first, with problems that require solutions with a human touch, Huan said. </p>
+<p>From determining reasonable stipend amounts for scholars in various cities to ensuring they received the academic and emotional support they need to complete their degrees, keeping that human aspect at the forefront served as a guiding principle for Huan. </p>
+<p>On top of the overarching goal to secure scientific talent, Huan also prioritized building relationships and trust with the scholars. </p>
+<p>With the wide pool of scholars that joins A*GA’s ranks every year, some will inevitably need a little more support from A*GA, whether in the form of advice, encouragement or counseling. </p>
+<p>Huan, now the Assistant Chief Executive of the <a target="_blank" href="https://www.a-star.edu.sg/Research/science-and-engineering-research-council">Science & Engineering Research Council (SERC)</a> at A*STAR, shared that some new scholars embarking on their PhD degrees sometimes struggled to adapt to the research environment. International scholars were also prone to feeling lonely, being away from their families and friends. </p>
+<p>“Spotting these struggles early is crucial to ensure the scholars can get the support they need,” said Huan, adding that he would befriend scholars over social media to keep up with how they were settling in and provide advice on coping with their PhD training. “After all, the talent pipeline is not a factory line,” he shared.</p>
+<p><b>The shifting sands of research</b> </p>
+<p>Huan’s successor, Professor Huck Hui Ng, recalls that in addition to nurturing existing scholars, one of his main goals as Executive Director was to promote the scholarships and encourage bright young talent to pursue a career in Science and Technology (S&T). </p>
+<p>While A*STAR looks for applicants who display a passion for S&T, A*GA also actively identifies and engages with young talent through extensive outreach programs to ensure a vibrant and diverse community of scientists in Singapore. For Ng, this is a point of pride. </p>
+<p>“One of my most satisfying achievements is engaging with young students and identifying the top candidates for research scholarships,” he said. “Talent is the foundation for Singapore and the world to excel in R&D—without it we will not be able to build the research and innovation ecosystem we need.” </p>
+<p>Besides securing a pipeline of talent, A*GA also needs to remain flexible to anticipate and accommodate Singapore’s changing manpower and research needs over time. In this vein, A*GA regularly reviews its manpower policies to ensure that they remain relevant. </p>
+<p>For example, with Ng at the helm in 2018, A*GA launched the <a target="_blank" href="https://www.a-star.edu.sg/Scholarships/for-graduate-studies/a-star-cis-scholarship">A*STAR Computing and Information Science Scholarship</a> to attract and train students in the increasingly in-demand fields of computer science and artificial intelligence.</p>
+<p><b>Educating the educators</b></p>
+<p>Former A*GA Executive Director Professor Lisa Ng noted that on top of engaging with the students, it is equally important to engage with educators to foster a deeper understanding and appreciation for science, technology, engineering and mathematics, or STEM. </p>
+<p>“In the past, the focus was on the students. But we forget that educators play a very influential role in their students’ lives,” Ng said. “If we have a group of educators who do not feel positively about STEM, how can they transmit that same positivity and strength to their students?” </p>
+<p>To that end, Ng spent her time as Executive Director working closely with the Ministry of Education, science teachers and other stakeholders in the wider school system to highlight the value of STEM education. </p>
+<p>“I mainly shared the different pathways you can take with a STEM degree. They were very appreciative because even if you’ve been a dedicated teacher for a long time, it’s not always easy to see how a career in science can lead to different success pathways.” </p>
+<p>Ng believes showing this diversity of options offered by a research degree is pivotal in attracting scientific talent. </p>
+<p>“As the whole ecosystem matures in Singapore, there are more pathways to succeed in science beyond becoming a research leader or professor,” she said, adding that the skills A*STAR scholars gain in their education will remain applicable to both their heir professional and personal lives for years to come.</p>
+                                                                                                                                <figure class="fig large" style="cursor: default;" data-ce-tag="p" data-editable="">
+                                        <img class="img-fluid" src="">
+                                        <figcaption>
+                                                                                                                                        <p class="credit" title="copyright" data-editable="">© A*STAR Research</p>
+                                                                                    </figcaption>
+                                    </figure>
+                                                                                                                                <p><b>Supporting Singapore's larger ecosystem</b></p>
+<p>A*GA is more than just a standalone suite of scholarships designed to secure a pipeline of scientific talent for the nation. </p>
+<p>As Professor Huck Hui Ng puts it, A*GA’s work does not end at the awarding of scholarships. Instead, A*GA continues to track the progress and wellbeing of its scholars as they progress in their studies and beyond. </p>
+<p>For instance, A*GA takes care to expose current scholars to the wider research context through diverse experiences, arming them with sufficient experience to embark on their careers after graduation. Part of these efforts includes making sure scholars are given opportunities to attend conferences, organizing innovation and entrepreneurship workshops as well as mentorship from their supervisors. </p>
+<p>In recent years, A*GA’s role has expanded to cover the deployment of graduating scholars and to provide support to early career researchers, creating a complete end-to-end ecosystem for aspiring scientists in Singapore. </p>
+<p>For current A*GA Executive Director Timothy Sebastian, the most rewarding part of being involved in A*GA is seeing how its scholars have impacted the S&T landscape in Singapore. </p>
+<p>Many of A*GA’s numerous alumni are now highly accomplished researchers themselves, leading their research groups and laboratories to make significant contributions to the research ecosystem. Other scholar alumni have become entrepreneurs, translating their research innovations to market, while some have taken on senior positions in the private and public sectors. </p>
+<p>“The many positive contributions our scholars are making is a strong testimony to the value of the A*STAR scholarship program and to the hard work of the A*GA team over the past two decades,” said Sebastian.</p>
+<p><b>Going above and beyond</b></p>
+<p>More than two decades since setting its sights on producing 1,000 Singaporean PhD graduates, A*GA has more than met that initial goal. </p>
+<p>“A*GA has always focused on identifying, attracting and nurturing the best talent to create a strong pipeline of research scientists and engineers for A*STAR and the wider Singapore S&T ecosystem,” Sebastian said. “As we move forward, this fundamental objective does not change.” </p>
+<p>However, to continually meet those objectives, A*GA’s strategies have evolved over the years under the hands of its various Executive Directors and through the feedback and recommendations of A*STAR scholars themselves. </p>
+<p>“We will continue to deepen our engagement with scholars to improve the feedback loop,” said Chan, reinforcing A*GA’s commitment to constant growth and improvement. </p>
+<p>At the same time, she expressed her hopes that A*GA alumni will find meaning and fulfillment in their individual careers, and work collectively to build a robust research and innovation ecosystem in Singapore—much like Sydney Brenner wished for all those years ago.</p>
+                                                                                                                                <figure class="fig large" style="cursor: default;" data-ce-tag="p" data-editable="">
+                                        <img class="img-fluid" src="">
+                                        <figcaption>
+                                                                                                                                        <p class="credit" title="copyright" data-editable="">© A*STAR Research</p>
+                                                                                    </figcaption>
+                                    </figure>
+                                                                                    </section>
+                    
+                    <section class="sec--stay-up-to-date">
+                        <h2>Want to stay up to date with breakthroughs from A*STAR? Follow us on <a href="https://twitter.com/astar_research">Twitter</a> and <a href="https://www.linkedin.com/company/astar-research/">LinkedIn</a>!</h2>
+                                                    <div class="asr-tags">
+                                                                    <a href="https://research.a-star.edu.sg/tag/scholarships/" class="asr-tag">scholarships</a>
+                                                                    <a href="https://research.a-star.edu.sg/tag/science-and-engineering-research-council-serc/" class="asr-tag">Science and Engineering Research council (SERC)</a>
+                                                                    <a href="https://research.a-star.edu.sg/tag/astar-graduate-academy/" class="asr-tag">A*STAR Graduate Academy</a>
+                                                            </div>
+                                            </section>
+
+                    
+                                                            <h4 class="heading--article-made-by">
+                                                    This article was made for A*STAR Research by Wildtype Media Group
+                                            </h4>
+                </div>
+
+                <div class="col-12 col-xl-auto">
+                    <!-- SIDEBAR 
+            _______________________________________ -->
+                    <aside class="asr-sidebar asr-sidebar--article d-none d-xl-block">
+                        <div class="asr-sidebar__widget asr-sidebar__widget--banner-caption">
+                            <div class="article-banner-caption article-banner-caption--sidebar asr-image-caption"></div>
+                        </div>
+                        <div class="asr-sidebar__widget asr-sidebar__widget--share">
+                            <h3>Share</h3>
+                            <ul class="list-unstyled sharebtns">
+                                <li><a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fresearch.a-star.edu.sg%2Farticles%2Ffeatures%2Fgrowing-research-talent-in-singapore%2F&title=Growing%20research%20talent%20in%20Singapore&description=For twenty years, A*STAR has secured and developed a pipeline of scientific talent in Singapore through its suite of scholarship schemes.&picture=https://research.a-star.edu.sg/wp-content/uploads/2022/03/growing-research-talent-in-singapore-2.jpg"><img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/sharebtn-fb.png" rel="nofollow noopener"></a></li>
+                                <li><a href="https://twitter.com/intent/tweet?text=Growing%20research%20talent%20in%20Singapore%20https%3A%2F%2Fresearch.a-star.edu.sg%2Farticles%2Ffeatures%2Fgrowing-research-talent-in-singapore%2F"><img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/sharebtn-twitter.png" rel="nofollow noopener"></a></li>
+                                <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fresearch.a-star.edu.sg%2Farticles%2Ffeatures%2Fgrowing-research-talent-in-singapore%2F&title=Growing%20research%20talent%20in%20Singapore&source=A%2AStar%20Research"><img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/sharebtn-linkedin.png" rel="nofollow noopener"></a></li>
+                                <li><a href="mailto:?subject=Growing%20research%20talent%20in%20Singapore&body=https%3A%2F%2Fresearch.a-star.edu.sg%2Farticles%2Ffeatures%2Fgrowing-research-talent-in-singapore%2F"><img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/sharebtn-email.png" rel="nofollow noopener"></a></li>
+                            </ul>
+                        </div>
+
+
+
+
+
+                                                    <div class="asr-sidebar__widget asr-sidebar__widget--related-articles">
+                                <h2>Related Articles</h2>
+                                <div class="row asr-article-list">
+                                                                            <div class="col-12">
+                                            <article class="asr-article">
+                                                                                                    <div class="asr-article__img">
+                                                        <a href="https://research.a-star.edu.sg/articles/features/shaping-science-through-collective-conversation/">
+                                                            <div class="asr-article__img__inner" style="background-image: url(https://research.a-star.edu.sg/wp-content/uploads/2026/05/arp-52-web-banner-feature-sir-john-o-reilly.jpg)"></div>
+                                                        </a>
+                                                    </div>
+                                                                                                <div class="asr-article__info">
+                                                    <div class="asr-article__info__inner">
+                                                        <h3><a href="https://research.a-star.edu.sg/articles/features/shaping-science-through-collective-conversation/">Shaping science through collective conversation</a></h3>
+                                                        <span class="asr-article__date">18 May 2026</span>
+                                                        <div class="asr-article__excerpt">
+                                                            <!-- <p></p> -->
+                                                            <p>After 15 years of shaping A*STAR’s approach to research, innovation and enterprise in the physical sciences and engineering, Sir John O’Reilly highlights the importance of surfacing promising ideas, fostering dialogue and harnessing collective wisdom for impactful science.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                                                            <div class="col-12">
+                                            <article class="asr-article">
+                                                                                                    <div class="asr-article__img">
+                                                        <a href="https://research.a-star.edu.sg/articles/features/translating-innovative-science-into-a-win-for-all/">
+                                                            <div class="asr-article__img__inner" style="background-image: url(https://research.a-star.edu.sg/wp-content/uploads/2025/06/arp-psta-for-web-upload-2.0.jpg)"></div>
+                                                        </a>
+                                                    </div>
+                                                                                                <div class="asr-article__info">
+                                                    <div class="asr-article__info__inner">
+                                                        <h3><a href="https://research.a-star.edu.sg/articles/features/translating-innovative-science-into-a-win-for-all/">Translating innovative science into a win for all</a></h3>
+                                                        <span class="asr-article__date">10 Jun 2025</span>
+                                                        <div class="asr-article__excerpt">
+                                                            <!-- <p></p> -->
+                                                            <p>From innovative medical devices to advanced manufacturing partnerships, the work of A*STAR recipients of the 2024 President’s Science and Technology Awards exemplify the importance of translating research into clinical and commercial outcomes. </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                                                            <div class="col-12">
+                                            <article class="asr-article">
+                                                                                                    <div class="asr-article__img">
+                                                        <a href="https://research.a-star.edu.sg/articles/features/keeping-the-world-moving/">
+                                                            <div class="asr-article__img__inner" style="background-image: url(https://research.a-star.edu.sg/wp-content/uploads/2025/05/arp-46-for-web-upload-cover-story.jpg)"></div>
+                                                        </a>
+                                                    </div>
+                                                                                                <div class="asr-article__info">
+                                                    <div class="asr-article__info__inner">
+                                                        <h3><a href="https://research.a-star.edu.sg/articles/features/keeping-the-world-moving/">Keeping the world moving</a></h3>
+                                                        <span class="asr-article__date">6 May 2025</span>
+                                                        <div class="asr-article__excerpt">
+                                                            <!-- <p></p> -->
+                                                            <p>Through tight-knit collaborations with industry and ecosystem partners, A*STAR is building smart solutions to boost land, sea and air connectivity within Singapore and beyond.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                                                    </div>
+                            </div>
+                                            </aside>
+                </div>
+                                
+                                
+                                    <div class="col-12">
+                        <section class="sec--related-articles">
+                            <div class="asr-sec-title">
+                                <h2>Related Articles</h2>
+                            </div>
+                            <div class="asr-article-carousel-wrap">
+                                                                <div class="asr-article-carousel-buttons-wrap  d-lg-none">
+                                    <div class="asr-article-carousel-buttons" data-target=".asr-article-carousel--related">
+                                        <a href="#" class="prev js-slick-nav"><i class="fa fa-angle-left"></i></a>
+                                        <a href="#" class="next js-slick-nav"><i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                                <div class="asr-article-carousel--related">
+                                                                            <!-- <div class="col-12 col-sm-6 col-md-4"> -->
+                                        <article class="asr-article">
+                                                                                            <div class="asr-article__img">
+                                                    <a href="https://research.a-star.edu.sg/articles/features/shaping-science-through-collective-conversation/">
+                                                        <div class="asr-article__img__inner" style="background-image: url(https://research.a-star.edu.sg/wp-content/uploads/2026/05/arp-52-web-banner-feature-sir-john-o-reilly.jpg)"></div>
+                                                    </a>
+                                                </div>
+                                                                                        <div class="asr-article__info">
+                                                <div class="asr-article__info__inner">
+                                                    <h3><a href="https://research.a-star.edu.sg/articles/features/shaping-science-through-collective-conversation/">Shaping science through collective conversation</a></h3>
+                                                    <span class="asr-article__date">18 May 2026</span>
+                                                    <div class="asr-article__excerpt">
+                                                        <!-- <p></p> -->
+                                                        <p>After 15 years of shaping A*STAR’s approach to research, innovation and enterprise in the physical sciences and engineering, Sir John O’Reilly highlights the importance of surfacing promising ideas, fostering dialogue and harnessing collective wisdom for impactful science.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <!-- </div> -->
+                                                                            <!-- <div class="col-12 col-sm-6 col-md-4"> -->
+                                        <article class="asr-article">
+                                                                                            <div class="asr-article__img">
+                                                    <a href="https://research.a-star.edu.sg/articles/features/translating-innovative-science-into-a-win-for-all/">
+                                                        <div class="asr-article__img__inner" style="background-image: url(https://research.a-star.edu.sg/wp-content/uploads/2025/06/arp-psta-for-web-upload-2.0.jpg)"></div>
+                                                    </a>
+                                                </div>
+                                                                                        <div class="asr-article__info">
+                                                <div class="asr-article__info__inner">
+                                                    <h3><a href="https://research.a-star.edu.sg/articles/features/translating-innovative-science-into-a-win-for-all/">Translating innovative science into a win for all</a></h3>
+                                                    <span class="asr-article__date">10 Jun 2025</span>
+                                                    <div class="asr-article__excerpt">
+                                                        <!-- <p></p> -->
+                                                        <p>From innovative medical devices to advanced manufacturing partnerships, the work of A*STAR recipients of the 2024 President’s Science and Technology Awards exemplify the importance of translating research into clinical and commercial outcomes. </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <!-- </div> -->
+                                                                            <!-- <div class="col-12 col-sm-6 col-md-4"> -->
+                                        <article class="asr-article">
+                                                                                            <div class="asr-article__img">
+                                                    <a href="https://research.a-star.edu.sg/articles/features/keeping-the-world-moving/">
+                                                        <div class="asr-article__img__inner" style="background-image: url(https://research.a-star.edu.sg/wp-content/uploads/2025/05/arp-46-for-web-upload-cover-story.jpg)"></div>
+                                                    </a>
+                                                </div>
+                                                                                        <div class="asr-article__info">
+                                                <div class="asr-article__info__inner">
+                                                    <h3><a href="https://research.a-star.edu.sg/articles/features/keeping-the-world-moving/">Keeping the world moving</a></h3>
+                                                    <span class="asr-article__date">6 May 2025</span>
+                                                    <div class="asr-article__excerpt">
+                                                        <!-- <p></p> -->
+                                                        <p>Through tight-knit collaborations with industry and ecosystem partners, A*STAR is building smart solutions to boost land, sea and air connectivity within Singapore and beyond.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <!-- </div> -->
+                                                                    </div>
+                            </div>
+                        </section>
+                    </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <style type="text/css">
+        @media (min-width: 768px) {
+            .asr-author__desc p {
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+
+        .fig.small {
+            margin: 3rem 0;
+        }
+
+        .fig {
+            border-bottom: solid 1px #53617a;
+        }
+
+        .small,
+        small {
+            font-size: 80%;
+            font-weight: 400;
+        }
+
+        figure {
+            margin: 0 0 1rem;
+        }
+
+        .fig.small img {
+            width: 100%;
+        }
+
+        .fig img {
+            margin: 0 0 10px;
+            border: 1px solid #c6d2e8;
+            width: 100%;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .fig figcaption p,
+        .fig figcaption p[title=caption] {
+            color: #5b75a3;
+            font-family: "PT Sans Caption", sans-serif;
+            font-size: .8rem !important;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: .5rem;
+        }
+
+        .video figcaption p[title=caption] {
+            margin-top: 7px;
+            color: #5b75a3;
+            font-family: "PT Sans Caption", sans-serif;
+            font-size: .8rem !important;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: .5rem;
+        }
+
+        .fig figcaption p.credit {
+            font-size: 80%;
+            font-weight: 400;
+        }
+
+        @media (min-width: 576px) {
+            .fig.small {
+                float: right;
+                width: 300px;
+                margin: 5px 0 2rem 2rem;
+            }
+        }
+
+        .asr-author .row {
+            justify-content: space-between;
+        }
+
+        .asr-author .col-img {
+            width: auto;
+            max-width: 150px;
+        }
+
+        .asr-author .col-content {
+            padding-right: 0px !important;
+        }
+
+        .view-articles {
+            display: block;
+            text-align: right;
+        }
+
+        .view-articles a {
+            display: inline-block;
+            padding: 8px 15px;
+            color: #ffffff;
+            right: 0;
+            top: 0;
+            border: none !important;
+            background: #f25920;
+        }
+    </style>
+		</main>
+
+		<div id="footer-spacer"></div>
+
+		<footer id="footer" class="footer--sticky">
+
+			<div class="container">
+
+				<div class="row justify-content-between">
+
+					
+
+					<div class="col-12 col-xl-auto col-first mb-3">
+
+                        <div class="footer__heading d-md-none mb-0">
+
+							<a href="https://www.a-star.edu.sg/" target="_blank">
+
+								<img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/agency-for-science-technology-and-research-white-update.png" alt="">
+
+							</a>
+
+						</div>
+
+
+
+						<div class="row no-gutters footer-nav">
+
+                            <div class="col-12 col-sm-6">
+
+                                <ul class="list-unstyled">
+
+									
+										<li>
+
+											<a href="https://research.a-star.edu.sg/" target=""
+
+												class="footer-nav-link ">
+
+												Home
+											</a>
+
+										</li>
+
+									
+										<li>
+
+											<a href="https://research.a-star.edu.sg/category/features/" target=""
+
+												class="footer-nav-link ">
+
+												Features
+											</a>
+
+										</li>
+
+									
+										<li>
+
+											<a href="https://research.a-star.edu.sg/category/highlights/" target=""
+
+												class="footer-nav-link ">
+
+												Highlights
+											</a>
+
+										</li>
+
+									
+										<li>
+
+											<a href="https://research.a-star.edu.sg/archives/" target=""
+
+												class="footer-nav-link ">
+
+												Archives
+											</a>
+
+										</li>
+
+									
+										<li>
+
+											<a href="https://research.a-star.edu.sg/print-magazine/" target=""
+
+												class="footer-nav-link ">
+
+												Print Magazine
+											</a>
+
+										</li>
+
+									
+                                </ul>
+
+                            </div>
+
+                            <div class="col-12 col-sm-6">
+
+								<ul class="list-unstyled">
+
+									
+										<li>
+
+											<a href="https://research.a-star.edu.sg/about/" target=""
+
+												class="footer-nav-link ">
+
+												About A*STAR Research
+											</a>
+
+										</li>
+
+									
+										<li>
+
+											<a href="https://research.a-star.edu.sg/?scrollto=subscribe" target=""
+
+												class="footer-nav-link ">
+
+												Subscribe
+											</a>
+
+										</li>
+
+									
+										<li>
+
+											<a href="https://www.a-star.edu.sg/privacy-statement" target="_blank"
+
+												class="footer-nav-link footer-nav-link--visible-mob">
+
+												Privacy Statement
+											</a>
+
+										</li>
+
+									
+										<li>
+
+											<a href="https://www.a-star.edu.sg/terms-and-conditions" target="_blank"
+
+												class="footer-nav-link footer-nav-link--visible-mob">
+
+												Terms & Conditions
+											</a>
+
+										</li>
+
+									
+										<li>
+
+											<a href="https://research.a-star.edu.sg/contact/" target=""
+
+												class="footer-nav-link footer-nav-link--visible-mob">
+
+												Contact
+											</a>
+
+										</li>
+
+									
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+					</div>
+
+
+
+					<div class="col-12 col-xl-auto col-second">
+
+						<div class="footer__heading d-none d-md-block">
+
+							<a href="https://www.a-star.edu.sg/" target="_blank">
+
+								<img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/agency-for-science-technology-and-research-white-update.png" alt="">
+
+							</a>
+
+						</div>
+
+						<ul class="list-unstyled d-flex align-items-center footer-socmedia">
+
+							
+								<li><a target="_blank" href="https://twitter.com/astar_research"><img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/icon-white-twitter.png" alt=""></a></li>
+
+							
+							
+								<li><a target="_blank" href="https://www.linkedin.com/company/astar-research/"><img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/icon-white-linkedin.png" alt=""></a></li>
+
+							
+							
+								<li><a target="_blank" href="https://research.a-star.edu.sg/rss"><img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/icon-white-signal.png" alt=""></a></li>
+
+							
+						</ul>
+
+					</div>
+
+
+
+				</div>
+
+
+
+				<div class="footer__copyright">
+
+					<p>
+					    A*STAR Research EISSN 2010-0523					    <br>
+					    © 2026 Agency for Science, Technology and Research					</p>
+
+				</div>
+
+			</div>
+
+		</footer>
+
+	</div> <!-- //.wrapper -->
+
+
+
+    <script>var pageScrollto = '';</script>
+
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/asr/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="asr-vendor-js" src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/dist/vendor-min.js?ver=8f8a3461f7458ad7302a8de6625e892b"></script>
+<script id="asr-slick-js" src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/vendor/slick-1.8.1/slick.min.js?ver=8f8a3461f7458ad7302a8de6625e892b"></script>
+<script id="asr-main-js" src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/dist/main-min.js?ver=8f8a3461f7458ad7302a8de6625e892b"></script>
+<script id="asr-navigation-js" src="https://research.a-star.edu.sg/wp-content/themes/asr/js/navigation.js?ver=20151215"></script>
+<script id="asr-skip-link-focus-fix-js" src="https://research.a-star.edu.sg/wp-content/themes/asr/js/skip-link-focus-fix.js?ver=20151215"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://research.a-star.edu.sg/wp-includes/js/wp-emoji-release.min.js?ver=8f8a3461f7458ad7302a8de6625e892b"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://research.a-star.edu.sg/wp-includes/js/wp-emoji-loader.min.js
+</script>
+
+<!--DOWNLOAD PDF MODALS START-->
+<script>
+    //$(document).on('keyup input change','#input_4_1',function(){
+    //    setdlemail();
+    //});
+	$(document).ready(function(){
+		$('.ginput_container input').each(function(){
+		    if($(this).attr('id')=='input_4_1'){
+		        $(this).on('keyup input',function(){
+        			setdlemail2($(this).val());
+        		});
+		    }
+		});
+		
+		
+
+		modalDownload=new Custombox.modal({content:{effect:"slide",target:"#modal-download"},close:function(){ pdfModalClosed(); }});
+		
+				
+		
+		
+	});
+	console.log('check-');
+	function openPdfModal(url,name,blocker){
+		setfileurl(url,name);
+		$('#file_url').val(url);
+		
+		modalDownload.open();
+		console.log(blocker+'-block');
+		if(blocker!=1){
+		/*< ? p h p //if( isset($_COOKIE['dl_email_new']) ){ ? > */
+			setTimeout(function(){
+				sendPdfMail(url);
+		        console.log(blocker+'-init');
+			}, 1500);
+		/* < ? p h p //} ? > */
+		}
+		
+	}
+	
+	function pdfModalClosed(){
+		$('#dlimdesk').css('background-image','url(https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/pdfdl/03.jpg)');
+		$('#dldesk1').html("Thank you for downloading. <br/>We have delivered the PDF <br/>to your inbox.");
+		$('#dldesk2').html("Enjoy!");
+		$('#dlmodesk').attr('src','https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/pdfdl/06.jpg');
+		$('#dlmop').html("Thank you for downloading. <br/>We have delivered the PDF <br/>to your inbox.");
+		$('#dlmoh').html("Enjoy!");
+	}
+	
+	function setfileurl(url,name){
+		$.ajax({
+			type: 'POST',
+			url: 'https://research.a-star.edu.sg/wp-content/themes/asr/setfileurl.php',
+			data:  {
+				file_url:url,
+                name:name
+			}
+		}).done(function(res){
+			console.log(res);
+		});
+	}
+	
+	function setdlemail2(email){
+		var dl_email = false;
+		//if($('#input_4_1').length > 0){
+			dl_email = email;
+			$.ajax({
+				type: 'POST',
+				url: 'https://research.a-star.edu.sg/wp-content/themes/asr/setdlemail.php',
+				data:  {
+					dl_email:dl_email,
+					file_url:$('#file_url').val()
+				}
+			}).done(function(res){
+				console.log(res);
+			});
+		//}
+		
+	}
+
+	
+	function setdlemail(){
+		var dl_email = false;
+		//if($('#input_4_1').length > 0){
+			dl_email = $('#input_4_1').val();
+			$.ajax({
+				type: 'POST',
+				url: 'https://research.a-star.edu.sg/wp-content/themes/asr/setdlemail.php',
+				data:  {
+					dl_email:dl_email,
+					file_url:$('#file_url').val()
+				}
+			}).done(function(res){
+				console.log(res);
+			});
+		//}
+		
+	}
+	function sendPdfMail(url){
+		$.ajax({
+			type: 'POST',
+			url: 'https://research.a-star.edu.sg/wp-content/themes/asr/sendemail.php',
+			data:  {
+			
+			}
+		}).done(function(res){
+			console.log(res);
+		});
+	}
+</script>
+
+<style>
+	.pdf-modal{
+		background:#000fa6;
+		padding: 0px !important;
+	}
+	.pdf-modal .w-100{
+		margin:0px;
+		padding:0px;
+		min-height: 450px;
+		min-width:850px;
+	}
+	.pdf-modal .w-90{
+		margin:0px;
+		padding:0px;
+		width:85vw;
+	}
+	.modal-download-body{
+		padding:20px 0px 30px 30px;
+		color:#fff;
+	}
+	.modal-download-body-small{
+		padding:20px 0px 20px 0px;
+		color:#fff;
+	}
+	.modal-download-body h2{
+		font-size: 28px;
+		margin: 20px 0px;
+	}
+	.pdf-modal .gfield_label{
+		display:none;
+	}
+	.pdf-modal input{
+		padding: 10px 20px;
+		margin: 0px;
+		width: 100%;
+	}
+	.pdf-modal .gform_fields {
+		padding: 0px;
+		margin: 0px;
+	}
+	.pdf-modal .gform_body{
+		width: 60%;
+		float:left
+	}
+	.pdf-modal .modal-subscribe-body-desc{
+		padding-top: 30px;
+	}
+	.pdf-modal .modal-subscribe-body-desc-small{
+		padding-top: 0px;
+	}
+	.pdf-modal .gform_footer{
+		width: 20%;
+		float:left
+	}
+	.pdf-modal .gform_footer div{
+		padding-left:0px;
+		margin-left:0px;
+	}
+	.pdf-modal .gform_footer .btn{
+		width:100px!important;
+		min-width: 100px!important;
+		padding: 16px;
+		background-color: #f2591d!important;
+	}
+	.pdf-modal .mobil .gform_footer .btn{
+		width:100%!important;
+		min-width: 100%!important;
+		padding: 16px;
+		background-color: #f2591d!important;
+	}
+	.pdf-spacer{
+		width: 40px;
+		border:1px solid #fff;
+		margin-top: 30px
+	}
+	.pdf-modal .mobil .gform_footer .btn{
+		padding:12px;
+	}
+	.pdf-modal .mobil .pdf-spacer{
+		margin:10px;
+	}
+	.pdf-modal .mobil .gfield {
+		margin-bottom:0px;
+	}
+	.clr{
+		clear: both;
+	}
+	.pdf-modal .mobil #mobilegf .gform_footer{
+		width: 40%;
+		float:left
+	}
+
+	.pdf-modal .mobil #mobilegf .gform_footer .btn{
+		padding: 5px;
+		font-size: 12px;
+	}
+	.pdf-modal .mobil #mobilegf input{
+		height: 28px!important;
+		min-height: 28px!important;
+	}
+	.pdf-modal #mobilegf .gform_footer div{
+		padding: 0px;
+		margin: 0px;
+	}
+	.pdf-modal #mobilegf div{
+		display: inline-block;
+	}
+</style>
+    <script> console.log('gform_show_modal_4-0'); </script>
+    <script> console.log('gform_after_submission_4-0'); </script>
+<div id="modal-download" class="asr-modal px-3 pdf-modal">
+	<div class="asr-modal-content d-flex align-items-center justify-content-center">
+		<input type="hidden" id="file_url" />
+		<div class="d-none d-lg-block d-xl-block">
+			<div class="row w-100">
+								    <script>console.log(1);</script>
+					<div class="col-12 col-lg-4" style="background-image:url(https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/pdfdl/01.jpg);
+														background-size:100% auto;
+														background-repeat: no-repeat;
+														">
+						&nbsp;
+					</div>
+								<div class="col-12 col-lg-8 ">
+					<a href="javascript:void(0)" onclick="Custombox.modal.closeAll();" class="modal-close-icon d-flex align-items-center justify-content-center"
+					   style="
+							  color:white;
+							  font-size:32px;
+							  float:right;
+							  margin:20px;
+							  -webkit-text-stroke: 4px #000fa6;
+							  -webkit-text-stroke-width: 4px;
+							  "
+					   >
+						<i class="fa fa-remove"></i>
+					</a>
+					<div class="modal-download-body">
+						<a href="https://www.a-star.edu.sg/" class="d-none d-lg-block">
+							<img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/agency-for-science-technology-and-research-white-update.png" class="modal-subscribe-logo" alt="" style="width:250px">
+						</a>
+						<div class="modal-subscribe-body-desc">
+															<h2>Get the PDF delivered<br/>to your inbox.</h2>
+								
+                <div class='gf_browser_chrome gform_wrapper gform_legacy_markup_wrapper gform-theme--no-framework' data-form-theme='legacy' data-form-index='0' id='gform_wrapper_4' ><form method='post' enctype='multipart/form-data'  id='gform_4'  action='/articles/features/growing-research-talent-in-singapore/' data-formid='4' novalidate>
+                        <div class='gform-body gform_body'><ul id='gform_fields_4' class='gform_fields top_label form_sublabel_below description_below validation_below'><div id="field_4_1" class="gfield gfield--type-email field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible form-group"><label class='gfield_label gform-field-label' for='input_4_1'>Email</label><div class='ginput_container ginput_container_email'>
+                            <input class='form-control ' name='input_1' id='input_4_1' type='email' value='' class='medium'     aria-invalid="false"  />
+                        </div></div></ul></div>
+        <div class='gform-footer gform_footer top_label'> <div class="col-lg-4 col-md-5 wow fadeInUp"><button onsubmit="return gtag_report_conversion('https://research.a-star.edu.sg/articles/features/growing-research-talent-in-singapore')" id="gform_submit_button_4" type="submit" class="btn btn-primary text-uppercase">Submit</button></div> 
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_4' value='postback' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_4' id='gform_theme_4' value='legacy' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_4' id='gform_style_settings_4' value='[]' />
+            <input type='hidden' class='gform_hidden' name='is_submit_4' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='4' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_currency' data-currency='SGD' value='ftT4vXF+dZ0RKU0nflEMtHOd4+sjRqV36jyNZDKAZ0sVEyqL1w4Try7/LHw8c+PS0VnZ0R1+sB3nTf8LmxYiuzXG1LBRkZwlgtoJ7ws+Y4HxMVw=' />
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_4' value='WyJbXSIsImFkMWQxMTBiMTkzNmY4OWUzMzY5NTFiMTFhNTk0YzMwIl0=' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_4' id='gform_target_page_number_4' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_4' id='gform_source_page_number_4' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div><script>
+gform.initializeOnLoaded( function() {gformInitSpinner( 4, 'https://research.a-star.edu.sg/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_4').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_4');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_4').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_4').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_4').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_4').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */  }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_4').val();gformInitSpinner( 4, 'https://research.a-star.edu.sg/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [4, current_page]);window['gf_submitting_4'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_4').replaceWith(confirmation_content);jQuery(document).trigger('gform_confirmation_loaded', [4]);window['gf_submitting_4'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_4').text());}else{jQuery('#gform_4').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "4", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_4" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_4";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_4" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 4, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+</script>
+								<div class="clr"></div>
+								<p><i>By entering your email, you also agree to be added<br/>to the A*STAR Research mailing list.</i></p>
+														<div class="pdf-spacer"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row w-90 d-block d-md-none d-lg-none d-xl-none" style="position:relative">
+			<a href="javascript:void(0)" onclick="Custombox.modal.closeAll();" class="modal-close-icon d-flex align-items-center justify-content-center"
+			   style="
+					  color: transparent;
+					  font-size: 32px;
+					  margin: 4px;
+					  position: absolute;
+					  right: 0;
+					  top: 0;
+					  "
+			   >
+				<i class="fa fa-remove"></i>
+			</a>
+							<img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/pdfdl/04.jpg" width="100%" />
+						<div class="modal-download-body-small" style="text-align:center">
+				<div class="mobil" >
+					<div class="modal-subscribe-body-desc-small" style="text-align:center">
+												<h2 style="font-size:16px">Get the PDF delivered<br/>to your inbox.</h2>
+						<div id="mobilegf" style="padding:10px;width: 80%;margin: 0px 10%;">
+						
+                <div class='gf_browser_chrome gform_wrapper gform_legacy_markup_wrapper gform-theme--no-framework' data-form-theme='legacy' data-form-index='0' id='gform_wrapper_4' ><form method='post' enctype='multipart/form-data'  id='gform_4'  action='/articles/features/growing-research-talent-in-singapore/' data-formid='4' novalidate>
+                        <div class='gform-body gform_body'><ul id='gform_fields_4' class='gform_fields top_label form_sublabel_below description_below validation_below'><div id="field_4_1" class="gfield gfield--type-email field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible form-group"><label class='gfield_label gform-field-label' for='input_4_1'>Email</label><div class='ginput_container ginput_container_email'>
+                            <input class='form-control ' name='input_1' id='input_4_1' type='email' value='' class='medium'     aria-invalid="false"  />
+                        </div></div></ul></div>
+        <div class='gform-footer gform_footer top_label'> <div class="col-lg-4 col-md-5 wow fadeInUp"><button onsubmit="return gtag_report_conversion('https://research.a-star.edu.sg/articles/features/growing-research-talent-in-singapore')" id="gform_submit_button_4" type="submit" class="btn btn-primary text-uppercase">Submit</button></div> 
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_4' value='postback' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_4' id='gform_theme_4' value='legacy' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_4' id='gform_style_settings_4' value='[]' />
+            <input type='hidden' class='gform_hidden' name='is_submit_4' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='4' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_currency' data-currency='SGD' value='FYXCOpW9rgg8x8JTJqXD3rNSaxvjdSLxad1aL0dfxy9IH4fOWQxEezzHscl+aSY2pA2rY1vX7+AHP5gGzV23P9lpREdhrhsH0b029zzQyslma1g=' />
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_4' value='WyJbXSIsImFkMWQxMTBiMTkzNmY4OWUzMzY5NTFiMTFhNTk0YzMwIl0=' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_4' id='gform_target_page_number_4' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_4' id='gform_source_page_number_4' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div><script>
+gform.initializeOnLoaded( function() {gformInitSpinner( 4, 'https://research.a-star.edu.sg/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_4').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_4');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_4').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_4').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_4').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_4').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */  }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_4').val();gformInitSpinner( 4, 'https://research.a-star.edu.sg/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [4, current_page]);window['gf_submitting_4'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_4').replaceWith(confirmation_content);jQuery(document).trigger('gform_confirmation_loaded', [4]);window['gf_submitting_4'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_4').text());}else{jQuery('#gform_4').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "4", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_4" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_4";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_4" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 4, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+</script>
+						</div>
+						<div class="clr"></div>
+						<p style="font-size:10px;"><i>By entering your email, you also agree to be added<br/>to the A*STAR Research mailing list.</i></p>
+												<div class="pdf-spacer" style="display:inline-block"></div>
+					</div>
+					<a href="https://www.a-star.edu.sg/" >
+						<img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/agency-for-science-technology-and-research-white-update.png" class="modal-subscribe-logo" alt="" style="width:100px">
+					</a>
+					<div class="clr"></div>
+				</div>
+			</div>
+		</div>
+		
+			</div>
+</div>
+<!--DOWNLOAD PDF MODALS END-->
+
+	
+		<!-- MODAL
+		________________________- -->
+		<div id="modal-subscribe" class="asr-modal px-3">
+			<div class="asr-modal-content d-flex align-items-center justify-content-center">
+				<a href="javascript:void(0)" onclick="Custombox.modal.closeAll();" class="modal-close-icon d-flex align-items-center justify-content-center"><i class="fa fa-remove"></i></a>
+				<div class="row w-100">
+					<div class="col-12 d-lg-none">
+						<a href="https://www.a-star.edu.sg/">
+							<img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/agency-for-science-technology-and-research.png" class="modal-subscribe-logo" alt="">
+						</a>
+					</div>
+					<div class="col-12 order-2 col-lg-6 order-lg-1">
+						<div class="modal-subscribe-body">
+							<a href="https://www.a-star.edu.sg/" class="d-none d-lg-block">
+								<img src="https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/agency-for-science-technology-and-research.png" class="modal-subscribe-logo" alt="">
+							</a>
+							<div class="modal-subscribe-body-desc">
+																	<h2>Join our mailing list</h2>
+									<p>Stay up to date with the latest research highlights from A*Star.</p>
+															</div>
+
+                            
+                <div class='gf_browser_chrome gform_wrapper gform_legacy_markup_wrapper gform-theme--no-framework' data-form-theme='legacy' data-form-index='0' id='gform_wrapper_3' ><form method='post' enctype='multipart/form-data'  id='gform_3'  action='/articles/features/growing-research-talent-in-singapore/' data-formid='3' novalidate>
+                        <div class='gform-body gform_body'><ul id='gform_fields_3' class='gform_fields top_label form_sublabel_below description_below validation_below'><div id="field_3_1" class="gfield gfield--type-email gfield_contains_required field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible form-group"><label class='gfield_label gform-field-label' for='input_3_1'>Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input class='form-control ' name='input_1' id='input_3_1' type='email' value='' class='medium'   placeholder='Enter your email here' aria-required="true" aria-invalid="false"  />
+                        </div></div></ul></div>
+        <div class='gform-footer gform_footer top_label'> <div class="col-lg-4 col-md-5 wow fadeInUp"><button onsubmit="return gtag_report_conversion('https://research.a-star.edu.sg/articles/features/growing-research-talent-in-singapore')" id="gform_submit_button_3" type="submit" class="btn btn-primary text-uppercase">Subscribe</button></div> 
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_3' value='postback' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_3' id='gform_theme_3' value='legacy' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_3' id='gform_style_settings_3' value='[]' />
+            <input type='hidden' class='gform_hidden' name='is_submit_3' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='3' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_currency' data-currency='SGD' value='uTjAxM9K++SAGSYO2dJDCweE9tlwhWAxMGcjtOzgJGDj+p1NN9Hi8APfw9k3XRvhTgv+DnoF5XGvFyv7bvmbyOVRwQ3iHCp81KWy9eEQJB+ftmE=' />
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_3' value='WyJbXSIsImFkMWQxMTBiMTkzNmY4OWUzMzY5NTFiMTFhNTk0YzMwIl0=' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_3' id='gform_target_page_number_3' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_3' id='gform_source_page_number_3' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div><script>
+gform.initializeOnLoaded( function() {gformInitSpinner( 3, 'https://research.a-star.edu.sg/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_3').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_3');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_3').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_3').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_3').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_3').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */  }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_3').val();gformInitSpinner( 3, 'https://research.a-star.edu.sg/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [3, current_page]);window['gf_submitting_3'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_3').replaceWith(confirmation_content);jQuery(document).trigger('gform_confirmation_loaded', [3]);window['gf_submitting_3'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_3').text());}else{jQuery('#gform_3').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "3", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_3" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_3";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_3" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 3, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+</script>
+														
+						</div>
+					</div>
+					<div class="col-12 order-1 col-lg-6 order-lg-2">
+						<div class="modal-subscribe-bg-img" style="background-image:url(https://research.a-star.edu.sg/wp-content/themes/asr/assets/img/modal-subscribe-bg.jpg)"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	
+	
+
+
+	<script>
+
+		jQuery(document).ready(function($) {
+
+			$header = $('header');
+
+			$wpAdminBar = $('#wpadminbar');
+
+			if( $wpAdminBar.length > 0 ) {
+
+				function fixHeaderSpacing() {
+
+					if( window.innerWidth > 600) {
+
+						$header.css('top', $wpAdminBar.outerHeight());
+
+					} else {
+
+						$header.css('top', 0);
+
+					}
+
+				}
+
+				window.addEventListener('resize', fixHeaderSpacing);
+
+				fixHeaderSpacing();
+
+			}
+
+
+
+			$('#gform_fields_2').append('<div class="gfield col-12 col-md-auto form-group btn-submit--contact"></div>')
+
+			$('#gform_submit_button_2').appendTo('.btn-submit--contact');
+
+
+
+			var top =0, left =0;
+
+			$('.sharebtns a').click(function() {
+
+				top = (window.outerHeight / 2) - (470 / 2);
+
+				left = (window.outerWidth / 2) - (555 / 2);
+
+				window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=no,width=555,height=470,top='+top+',left='+left+''); return false;
+
+			});
+
+		});
+
+	</script>
+
+</body>
+
+
+
+</html>

@@ -41,7 +41,8 @@ class TestCycle(unittest.TestCase):
         self.assertEqual(self.state(dl(K.OPENING, "2026-12-01")), "upcoming")
         self.assertEqual(self.state(dl(K.SCHOLARSHIP, "2026-03-01", C.HISTORICAL)), "closed")
         self.assertEqual(self.state(dl(K.SCHOLARSHIP, cert=C.UNKNOWN, approx="not yet published")), "not_announced")
-        self.assertEqual(self.state(dl(K.SCHOLARSHIP, cert=C.EXPECTED, approx="usually in November")), "expected")
+        # round 33: an approximate date ("usually in November") says nothing about the current cycle
+        self.assertEqual(self.state(dl(K.SCHOLARSHIP, cert=C.EXPECTED, approx="usually in November")), "not_stated")
         self.assertEqual(self.state(dl(K.ROLLING, approx="rolling")), "rolling")
         self.assertEqual(self.state(), "not_stated")
         self.assertEqual(self.state(dl(K.INSTITUTIONAL, "2027-01-15")), "not_stated")   # not an applicant date

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+                            
+  <meta name="title" content="Thomas J. Watson Fellowship | Watson Foundation" />
+  <meta name="description" content="The Thomas J. Watson Fellowship is a one-year grant for purposeful, independent exploration outside the United States, awarded to graduating seniors nominated b">
+  <meta name="author" content="Familiar Studio - http://familiar.nyc">
+
+  <!-- facebook meta tags -->
+  <meta property="og:title" content="Thomas J. Watson Fellowship | Watson Foundation" />
+  <meta property="og:description" content="The Thomas J. Watson Fellowship is a one-year grant for purposeful, independent exploration outside the United States, awarded to graduating seniors nominated b" />   <meta property="og:image" content="/assets/site-images/TJ-SkyBanner.png" />  <meta property="og:url" content="https://watson.foundation/fellowships/tj" />
+
+  <meta property="og:site_name" content="Watson Foundation" />
+  <meta property="og:type" content="website" />
+  <meta property="fb:app_id" content="679955795409364" />
+
+  <!-- twitter-->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Thomas J. Watson Fellowship | Watson Foundation" />
+  <meta name="twitter:description" content="The Thomas J. Watson Fellowship is a one-year grant for purposeful, independent exploration outside the United States, awarded to graduating seniors nominated b" />   <meta name="twitter:image" content="/assets/site-images/TJ-SkyBanner.png" />  <meta name="twitter:url" content="https://watson.foundation/fellowships/tj" />
+
+
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>Thomas J. Watson Fellowship | Watson Foundation</title>
+
+        <!-- OneTrust Cookies Consent Notice start for watson.foundation production -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="0193887a-4653-7526-a941-47e89fba6490" ></script>
+    <script type="text/javascript">
+      function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for watson.foundation -->
+  
+  <!-- Bootstrap core CSS -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6960112/757666/css/fonts.css" />
+<!--  <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/a5ea9b84-0e64-44c4-9244-24b164bbd7bc.css" />-->
+  <link href="/styles/my-fonts.css" rel="stylesheet">
+  <link href="/styles/styles.css?v=4" rel="stylesheet">
+  <link href="/favIcon.ico" rel="Shortcut Icon" type="image/x-icon" />
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <script>
+    function timestamp() {
+      var response = document.getElementById("g-recaptcha-response");
+      if (!response || response.value.trim() == "") {
+        var el = document.getElementsByName("captcha_settings")[0]
+        if (el) {
+          var elems = JSON.parse(el.value);
+          elems["ts"] = JSON.stringify(new Date().getTime());
+          el.value = JSON.stringify(elems);
+        }
+      }
+    }
+    setInterval(timestamp, 500);
+   </script>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7EPK8HD1WM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7EPK8HD1WM');
+  </script>
+
+
+  
+  <style>
+    .watson-footer-text {
+      font-size: 20px;
+    }
+    .watson-navbar {
+      width: 100%;
+      padding: 65px 20px 25px;
+      background: #f53d46;
+      position: fixed;
+      top: 0;
+      right: -800px;
+      opacity: 0;
+      height: 100%;
+      z-index: 99997;
+    }
+
+    .navbar-toggle .icon-bar {
+      width: 28px;
+      height: 3px;
+    }
+
+    .watson-navbar.scrollable {
+      overflow-y: scroll;
+    }
+
+    .menu-clickable {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 99999999999;
+      cursor: pointer;
+      transition: .4s linear;
+    }
+
+    .menu-card .back,
+    .menu-card .front {
+      transition: .4s linear;
+      top: 0;
+    }
+
+    .menu-card .front.flipped-over,
+    .menu-card .back.flipped-over {
+      backface-visibility: hidden;
+      opacity: 0;
+      transform: rotateX(180deg);
+      -webkit-transform: rotateX(180deg);
+    }
+
+    .menu-card .front.flipped-back,
+    .menu-card .back.flipped-back {
+      backface-visibility: visible;
+      opacity: 1;
+      transform: rotateX(360deg);
+      -webkit-transform: rotateX(360deg);
+    }
+
+    .watson-navbar small {
+      color:#E8E8E8;
+    }
+
+    .watson-navbar .white-line {
+      width: 100%;
+      border-bottom: 1px solid white;
+      margin: 25px 0 0;
+    }
+
+    .watson-navbar .text-uppercase {
+      font-family: avenir, "Avenir W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin-top: 18px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .watson-navbar h3 {
+      margin: 15px 0;
+    }
+
+    .watson-navbar .navbar-login {
+      position: absolute;
+      bottom: -5px;
+    }
+
+    .watson-navbar h3 {
+      font-family: "Archer SSm A", "Archer SSm B", Georgia, "Times New Roman", Times, serif;
+      font-weight: 600;
+      font-size: 29px !important;
+    }
+
+    .watson-navbar a:hover,
+    .watson-navbar a:focus {
+      text-decoration: none !important;
+      border: none !important;
+    }
+
+    .watson-navbar a:hover h3,
+    .watson-navbar a:focus h3 {
+      color: black;
+    }
+
+    .watson-navbar .navbar-toggle {
+      border: none !important;
+      float: none !important;
+      position: absolute;
+      top: 0px;
+      right: 0;
+      margin-right: 0;
+      padding-right: 0;
+      margin-top: 15px;
+    }
+
+    .watson-navbar .navbar-toggle:hover,
+    .watson-navbar .navbar-toggle:focus {
+      background: #f53d46;
+    }
+
+    .watson-navbar .navbar-toggle:hover .icon-bar,
+    .watson-navbar .navbar-toggle:focus .icon-bar {
+      background-color: black !important;
+    }
+
+    .watson-navbar .back {
+      position: relative;
+      opacity: 1;
+    }
+
+    .watson-navbar .back {
+      position: relative;
+    }
+
+    .watson-navbar .icon-bar {
+      background-color: white !important;
+    }
+
+    .watson-navbar svg {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: transparent;
+      opacity: 1;
+      stroke: #ffffff;
+      stroke-width: 20;
+    }
+
+    .main-navbar {
+      transition: .4s linear;
+      /*top: 44px;*/
+    }
+
+    .main-navbar.with-header-spacing {
+      top: 0;
+    }
+
+    .navbar-header .main-navbar {
+      padding-bottom: 30px;
+    }
+
+    /* Tablet*/
+    @media (min-width: 768px) {
+      .watson-navbar {
+        width: 370px;
+        padding: 0px 35px 35px;
+      }
+
+      .main-navbar.with-header-spacing {
+        top: 44px;
+      }
+
+      .main-navbar.with-header-spacing .menu-card .back,
+      .main-navbar.with-header-spacing .menu-card .front,
+      .main-navbar.with-header-spacing .menu-clickable {
+        top: -53px
+      }
+
+      .watson-navbar .white-line {
+        margin: 30px 0 0;
+      }
+
+      .watson-navbar .text-uppercase {
+        margin-top: 57px;
+      }
+
+      .watson-navbar h3 {
+        margin: 23px 0 35px;
+      }
+
+      .watson-navbar .navbar-toggle {
+        top: -45px;
+      }
+
+      .watson-navbar svg {
+        display: none;
+      }
+    }
+
+
+  </style>
+
+   
+
+</head>
+
+<body class="body-fellowships" id="body">
+
+    <div class="navbar navbar-default navbar-static-top" role="navigation" style="position:relative;z-index:1000000;">
+
+          <div class="navbar-header main-navbar">
+        
+
+        <div class="menu-toggle navbar-right">
+
+          <div class="menu-clickable"></div>
+          <div class="menu-card">
+            <figure class="front flipped-back">
+              <button type="button" class="navbar-toggle navbar-right collapsed" data-toggle="watson-navbar" data-target=".watson-navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+            </figure>
+            <figure class="back flipped-over">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="watson-navbar" data-target=".watson-navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+            </figure>
+          </div>
+
+        </div>
+
+        <a href="/">
+          <div class="brand-icon">
+            
+<svg id="test" width="58px" height="45px" viewBox="0 0 953 759" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+  <title>watson-logo</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g fill="none" fill-rule="evenodd" >
+    <g >
+      <path d="M816.79401,64.3026018 L675.753828,484.592705 L534.713646,64.3026018 C523.864401,31.911637 488.820599,14.4532041 456.470573,25.3492473 C424.120547,36.2452905 406,70.3026032 419.596172,110.775995 L615.304505,692.954767 C623.978958,718.808106 648.074661,735.152171 673.850885,735.152171 C674.493437,735.152171 675.13599,735.003589 675.753828,734.978825 C676.39638,735.003589 677.038932,735.152171 677.656771,735.152171 C703.457708,735.152171 727.528698,718.808106 736.203151,692.954767 L933.911484,103.775995 C944.785443,71.3602661 927.387109,36.2452905 895.061797,25.3492473 C862.711771,14.4532041 827.667969,31.8868732 816.79401,64.3026018 Z"  ></path>
+      <path d="M416.79401,64.3026018 L275.753828,484.592705 L134.713646,64.3026018 C123.864401,31.911637 88.820599,14.4532041 56.4705729,25.3492473 C24.1205469,36.2452905 5.99999991,70.3026032 19.5961719,110.775995 L215.304505,692.954767 C223.978958,718.808106 248.074661,735.152171 273.850885,735.152171 C274.493437,735.152171 275.13599,735.003589 275.753828,734.978825 C276.39638,735.003589 277.038932,735.152171 277.656771,735.152171 C303.457708,735.152171 327.528698,718.808106 336.203151,692.954767 L533.911484,103.775995 C544.785443,71.3602661 527.387109,36.2452905 495.061797,25.3492473 C462.711771,14.4532041 427.667969,31.8868732 416.79401,64.3026018 Z"   transform="translate(276.092798, 378.628148) scale(-1, 1) translate(-276.092798, -378.628148) "></path>
+    </g>
+  </g>
+</svg>
+          </div>
+        </a>
+        <a class="navbar-brand hidden-xs hidden-sm" href="/">
+          <div class="logo">
+            
+<svg xmlns="http://www.w3.org/2000/svg" width="334" height="53" viewBox="0 0 334 53"><title>watson_logo2</title><path d="M0,2.26H9.56L18.77,37.9h.14l11-35.64h8.59L49.31,37.9h.14L59.08,2.26h8.86L53.67,51.74H45.36L34,14.07h-.14L22.51,51.74h-8Zm94,0h7.55l21.13,49.48h-10l-4.57-11.32H86.88L82.45,51.74H72.68ZM105.1,32.87,97.55,12.74,89.86,32.87Zm34.17-22.64h-15v-8H163v8H148V51.74h-8.73Zm61.19,2.65a8.11,8.11,0,0,0-3.71-3A12.81,12.81,0,0,0,191.87,9a12.47,12.47,0,0,0-3,.35,8,8,0,0,0-2.56,1.12,5.67,5.67,0,0,0-2.53,4.89,4.54,4.54,0,0,0,1.73,3.84,16.87,16.87,0,0,0,4.3,2.31q2.56,1,5.61,1.89a22.6,22.6,0,0,1,5.61,2.51,13.87,13.87,0,0,1,4.29,4.27,12.7,12.7,0,0,1,1.73,7.06,15.63,15.63,0,0,1-1.45,6.95,14.2,14.2,0,0,1-3.91,4.93A16.93,16.93,0,0,1,196,52a23.73,23.73,0,0,1-6.85,1,25.43,25.43,0,0,1-8.8-1.54,16.89,16.89,0,0,1-7.27-5.17l6.58-6.43a11.06,11.06,0,0,0,4.19,3.81,11.63,11.63,0,0,0,5.5,1.36,11.39,11.39,0,0,0,3-.42,9.55,9.55,0,0,0,2.77-1.25,6.53,6.53,0,0,0,2-2.14,5.71,5.71,0,0,0,.76-3,5.21,5.21,0,0,0-1.73-4.19,15,15,0,0,0-4.29-2.48q-2.56-1-5.61-1.92a24.09,24.09,0,0,1-5.61-2.48,13.77,13.77,0,0,1-4.3-4.2,12.6,12.6,0,0,1-1.73-7,13.42,13.42,0,0,1,1.56-6.64,14.41,14.41,0,0,1,4.09-4.65,17.88,17.88,0,0,1,5.78-2.76A24.87,24.87,0,0,1,192.77,1a24.08,24.08,0,0,1,7.51,1.19,17.42,17.42,0,0,1,6.55,3.91ZM222,27.21A28.76,28.76,0,0,1,224,16.41a24.22,24.22,0,0,1,5.36-8.28,23.64,23.64,0,0,1,8.18-5.28A28.48,28.48,0,0,1,247.92,1a29.25,29.25,0,0,1,10.53,1.71,23.11,23.11,0,0,1,8.24,5.21,23.94,23.94,0,0,1,5.4,8.25A28.64,28.64,0,0,1,274,26.93a27.69,27.69,0,0,1-1.94,10.55,24.12,24.12,0,0,1-5.4,8.18A24.75,24.75,0,0,1,258.45,51a29.06,29.06,0,0,1-10.53,2,28.48,28.48,0,0,1-10.42-1.85,23.83,23.83,0,0,1-8.18-5.24A24.14,24.14,0,0,1,224,37.76,27.5,27.5,0,0,1,222,27.21Zm9.14-.56A21.41,21.41,0,0,0,232.37,34a17.22,17.22,0,0,0,3.43,5.8,15.91,15.91,0,0,0,5.3,3.84A16.35,16.35,0,0,0,248,45a16.63,16.63,0,0,0,6.93-1.4,15.93,15.93,0,0,0,5.33-3.84,17.22,17.22,0,0,0,3.43-5.8,21.65,21.65,0,0,0,1.21-7.34,19.66,19.66,0,0,0-1.21-6.92,17.09,17.09,0,0,0-3.43-5.62,15.77,15.77,0,0,0-5.33-3.78A17.11,17.11,0,0,0,248,9a16.81,16.81,0,0,0-6.89,1.36,15.75,15.75,0,0,0-5.3,3.78,17.09,17.09,0,0,0-3.43,5.62A19.44,19.44,0,0,0,231.16,26.65ZM289.81,2.26h11.57L325.14,39h.13V2.26H334V51.74H322.92L298.68,13.79h-.14v38h-8.73Z" style="fill:#fff"/></svg>
+          </div>
+        </a>
+      </div>
+
+      <div class="watson-navbar">
+
+          <h3 class="text-uppercase"><small>Programs</small></h3>
+
+                      <a href="/fellowships/tj" class="">
+              <h3>Thomas J. Watson Fellowship</h3>
+            </a>
+                      <a href="/fellowships/jk" class="">
+              <h3>Jeannette K. Watson Fellowship</h3>
+            </a>
+                      <a href="/watson-futures" class="">
+              <h3>Watson Futures</h3>
+            </a>
+          
+          <div class="white-line"></div>
+
+          
+            <a href="https://watson.foundation/about/history"><h3>About Us</h3></a>
+
+          
+            <a href="https://watson.foundation/contact"><h3>Contact</h3></a>
+
+          
+            <a href="https://watson.foundation/policies"><h3>Policies</h3></a>
+
+          
+          <div class="white-line"></div>
+
+          <div class="navbar-login">
+                          <a href="/login" class=""><h3>Login</h3></a>
+                      </div>
+
+      </div>
+      <!--/.nav-collapse -->
+
+    </div>
+    <div id="wrap">
+      <div id="main" >
+        
+
+
+<section class="page-header">
+
+	<div class="bg-image-cover jumbotron" style="background-image: url(' /assets/site-images/TJ-SkyBanner.png');">
+
+		<div class="bg-gradient">
+		</div>
+		<div class="title">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1">
+						<h1 class="">Thomas J. Watson Fellowship</h1>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="nav-block">
+
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-offset-1">
+
+							<ul class="nav nav-pills">
+								<li class="active">
+									<a href="/fellowships/tj">Overview</a>
+								</li>
+								<li class="">
+									<a href="/fellowships/tj/fellows">Our Fellows</a>
+								</li>
+								<li class="">
+									<a href="/fellowships/tj/partners">Partners</a>
+								</li>
+								<li class="">
+									<a href="/fellowships/tj/faqs">FAQ</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+</section>
+
+	
+<div class="fellow-overview">
+
+	<section class="intro">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 col-lg-offset-1">
+					<h2>Overview</h2>
+					<div class="lead"><p>The Thomas J. Wat­son Fel­low­ship is a&nbsp;one-year grant for pur­pose­ful, inde­pen­dent explo­ration out­side the Unit­ed States, award­ed to grad­u­at­ing seniors nom­i­nat­ed by one of <span class="numbers">39</span> <a href="http://watson.foundation/fellowships/tj/partners"><u>part­ner insti­tu­tions</u></a>.</p></div>
+
+					
+					
+						
+						<div id="overview-video-wrapper">
+						
+																						<div class="video-wrapper" style="width: 100%; padding-bottom: 56.25%">
+									<iframe src="https://player.vimeo.com/video/396525001?app_id=122963" width="1280" height="720" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Thomas J. Watson Fellowship 2020"></iframe>
+								</div>
+							
+						
+															<span style="margin-top: 1rem">For a transcript of the video please click <a href="/transcript?slug=tj"><u>here</u></a></span>
+							
+							<a href="https://watson.foundation/webinar" class="btn btn-default" id="btn-video" target="_blank">Watch a webinar here</a>
+
+
+						</div>
+					
+				</div>
+			</div>
+
+		</div>
+
+	</section>
+
+
+	
+
+
+	<section class="become-watson">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 col-lg-offset-1">
+					<h2>Become a Watson Fellow</h2>
+					<div class="row">
+						<div class="col-md-6">
+
+															<div class="become-block">
+									
+									<p>The Watson Fellowship is a rare window after college and pre-career to engage your deepest interest on a global scale. Fellows conceive original projects, execute them outside of the United States for one year and embrace the ensuing journey. They decide where to go, who to meet and when to change course. They do not affiliate with academic institutions and may not hold formal employment.</p>
+<p>The program produces a year of personal insight, perspective and confidence that shapes the arc of fellows' lives. Started in 1968, Watson Fellows comprise leaders in every field. The one year stipend is $40,000. In addition, the foundation provides health insurance, the equivalent of 12-months of payments on outstanding institutional and federally guaranteed (Perkins, Stafford) loans, and an additional stipend for the support of <a href="https://www.dol.gov/agencies/odep/program-areas/employment-supports/personal-assistance-services" target="_blank"><u>Personal Assistance Services (PAS)</u></a> or spouse. Only <a href="http://watson.foundation/fellowships/tj/partners"><u>partner colleges</u></a> may nominate students.</p>
+								</div>
+
+															<div class="become-block">
+																			<h5 class="text-capitalize">Am I Eligible?</h5>
+									
+									<p>
+	You are eligible to apply for the Watson if you are a US Citizen or international student applying in the academic year that you receive your bachelor’s degree and are nominated by one of our 39 <a href="http://watson.foundation/fellowships/tj/partners"><u>partner institutions</u></a>. Additionally, you must be able to remain outside of the United States or your home country if different from the US, for 12 consecutive months (the duration of the fellowship period).<em><br></em></p>
+<p>We do not accept at-large applications. All majors and fields of inquiry are eligible. We recommend that applicants and fellows are up-to-date on their Covid-19 vaccinations.</p>
+<p>The foundation's <a href="https://watson.foundation/about/history"><u>vision</u></a> and <a href="https://watson.foundation/about/values"><u>values</u></a> grow from the belief that a diversity of people, ideas, and experiences is critical to creating more humane and effective leaders; Watson Fellows are selected without regard to race, color, religion, sex, gender identity, sexual orientation, national origin, or disability.</p>
+<p>We encourage you to contact your <a href="https://watson.foundation/fellowships/tj/partners" target="_blank"><u>campus advisor</u></a> with questions regarding eligibility and accommodations.</p>
+								</div>
+
+															<div class="become-block">
+																			<h5 class="text-capitalize">Selection Criteria</h5>
+									
+									<p>
+	Qualities sought in the selection of fellows include:<br><br>Person Criteria</p>
+<ul>
+	<li>Leadership</li>
+	<li>Imagination</li><li>Independence</li>
+	<li>Emotional Maturity</li>
+	<li>Courage</li>
+	<li>Integrity</li>
+	<li>Resourcefulness</li>
+	<li>Responsibility</li>
+</ul>
+<p>Project Criteria</p>
+<ul><li>Organic</li><li>Inspiring</li><li>Open</li><li>Bold</li><li>Realistic</li><li>Connected</li><li>3-Dimensional</li></ul>
+<ol></ol>
+<p>Please see our <a href="https://watson.foundation/fellowships/tj/faqs" target="_blank"><strong><u>FAQ</u></strong></a> for a description of each criteria.</p>
+								</div>
+
+													</div>
+
+            <div class="col-md-6">
+
+                            <div class="become-block">
+                                <h5 class="text-capitalize">Fellow Expectations</h5>
+                
+                <p dir="ltr">Everyone who participates in the program must be able to do the following, either independently or with the support of <a href="https://www.dol.gov/agencies/odep/program-areas/employment-supports/personal-assistance-services" target="_blank" rel="noreferrer noopener"><u>Personal Assistance Services (PAS)</u></a>.</p>
+<ul><li dir="ltr"><p dir="ltr">Attend the pre-departure webinar (spring)<br /></p></li><li dir="ltr"><p dir="ltr">Depart by August 1 of the award year<br /></p></li><li dir="ltr"><p dir="ltr">Remain outside of the United States for twelve consecutive months<br /></p></li><li dir="ltr"><p dir="ltr">Remain outside countries that are<a href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html" target="_blank" rel="noreferrer noopener"> <u><u>US State Department Level 3 or 4</u></u></a> (or areas within countries listed as "Do Not Travel" and "Reconsider Travel") on<a href="https://www.treasury.gov/resource-center/sanctions/Programs/Pages/Programs.aspx" target="_blank" rel="noreferrer noopener"> <u><u>US Treasury Sanction</u></u></a>, or designated<a href="http://wwwnc.cdc.gov/travel/notices" target="_blank" rel="noreferrer noopener"> <u><u>CDC Level 3</u></u></a>.<br /></p></li><li dir="ltr"><p dir="ltr">Submit quarterly reports and an end of year expense report<br /></p></li><li dir="ltr"><p dir="ltr">Attend the returning fellows' conference (August)</p></li></ul>
+              </div>
+
+                            <div class="become-block">
+                                <h5 class="text-capitalize">Application Process</h5>
+                
+                <ul><li>Ensure eligibility</li><li>Meet with your <a href="https://watson.foundation/fellowships/tj"></a><a href="http://watson.foundation/fellowships/tj/partners"><u>campus advisor</u></a></li><li>Complete the application including:</li></ul>
+<ul><li><ul><li><strong>Your Personal Statement</strong> - What has convinced you to apply for the Watson? What do you hope to benefit from the year?<br /></li><li><strong>Your Project Statement</strong> - Your project must sustain your interest amidst the highs and lows of a year in unfamiliar places. What is your plan for the 12-month period? What opportunities and challenges are unique to your project?</li></ul></li></ul>
+<ul><li>2 Recommendations</li><li>Transcript</li><li>Complete the campus selection process</li></ul>
+<p>If nominated by your college you will enter the national selection process and have a one-hour interview with a foundation representative. Please ask your <a href="http://watson.foundation/fellowships/tj/partners"><u>campus advisor</u></a> about internal deadlines. The national selection process begins in November. Awards are announced in mid-March.</p>
+<p><strong>Accommodations: </strong>The fellowship provides reasonable disability, medical, and religious accommodations to ensure that all fellows can meet the program’s expectations. Please contact your <a href="https://watson.foundation/fellowships/tj/partners" target="_blank" rel="noreferrer noopener"><u>campus advisor</u></a> with questions regarding accommodations to complete your application and Watson interview. Please see our <a href="https://watson.foundation/fellowships/tj/faqs" target="_blank" rel="noreferrer noopener"><u>website FAQs</u></a> for additional information about accommodations. Reasonable accommodations do not impact fellowship selection.</p>
+              </div>
+
+                          </div>
+					</div>
+				</div>
+			</div>
+		</div><!--end of containter-->
+
+
+	</section>
+
+</div>
+
+
+
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="logo">
+            <a href="/">
+                
+<svg xmlns="http://www.w3.org/2000/svg" width="334" height="53" viewBox="0 0 334 53"><title>watson_logo2</title><path d="M0,2.26H9.56L18.77,37.9h.14l11-35.64h8.59L49.31,37.9h.14L59.08,2.26h8.86L53.67,51.74H45.36L34,14.07h-.14L22.51,51.74h-8Zm94,0h7.55l21.13,49.48h-10l-4.57-11.32H86.88L82.45,51.74H72.68ZM105.1,32.87,97.55,12.74,89.86,32.87Zm34.17-22.64h-15v-8H163v8H148V51.74h-8.73Zm61.19,2.65a8.11,8.11,0,0,0-3.71-3A12.81,12.81,0,0,0,191.87,9a12.47,12.47,0,0,0-3,.35,8,8,0,0,0-2.56,1.12,5.67,5.67,0,0,0-2.53,4.89,4.54,4.54,0,0,0,1.73,3.84,16.87,16.87,0,0,0,4.3,2.31q2.56,1,5.61,1.89a22.6,22.6,0,0,1,5.61,2.51,13.87,13.87,0,0,1,4.29,4.27,12.7,12.7,0,0,1,1.73,7.06,15.63,15.63,0,0,1-1.45,6.95,14.2,14.2,0,0,1-3.91,4.93A16.93,16.93,0,0,1,196,52a23.73,23.73,0,0,1-6.85,1,25.43,25.43,0,0,1-8.8-1.54,16.89,16.89,0,0,1-7.27-5.17l6.58-6.43a11.06,11.06,0,0,0,4.19,3.81,11.63,11.63,0,0,0,5.5,1.36,11.39,11.39,0,0,0,3-.42,9.55,9.55,0,0,0,2.77-1.25,6.53,6.53,0,0,0,2-2.14,5.71,5.71,0,0,0,.76-3,5.21,5.21,0,0,0-1.73-4.19,15,15,0,0,0-4.29-2.48q-2.56-1-5.61-1.92a24.09,24.09,0,0,1-5.61-2.48,13.77,13.77,0,0,1-4.3-4.2,12.6,12.6,0,0,1-1.73-7,13.42,13.42,0,0,1,1.56-6.64,14.41,14.41,0,0,1,4.09-4.65,17.88,17.88,0,0,1,5.78-2.76A24.87,24.87,0,0,1,192.77,1a24.08,24.08,0,0,1,7.51,1.19,17.42,17.42,0,0,1,6.55,3.91ZM222,27.21A28.76,28.76,0,0,1,224,16.41a24.22,24.22,0,0,1,5.36-8.28,23.64,23.64,0,0,1,8.18-5.28A28.48,28.48,0,0,1,247.92,1a29.25,29.25,0,0,1,10.53,1.71,23.11,23.11,0,0,1,8.24,5.21,23.94,23.94,0,0,1,5.4,8.25A28.64,28.64,0,0,1,274,26.93a27.69,27.69,0,0,1-1.94,10.55,24.12,24.12,0,0,1-5.4,8.18A24.75,24.75,0,0,1,258.45,51a29.06,29.06,0,0,1-10.53,2,28.48,28.48,0,0,1-10.42-1.85,23.83,23.83,0,0,1-8.18-5.24A24.14,24.14,0,0,1,224,37.76,27.5,27.5,0,0,1,222,27.21Zm9.14-.56A21.41,21.41,0,0,0,232.37,34a17.22,17.22,0,0,0,3.43,5.8,15.91,15.91,0,0,0,5.3,3.84A16.35,16.35,0,0,0,248,45a16.63,16.63,0,0,0,6.93-1.4,15.93,15.93,0,0,0,5.33-3.84,17.22,17.22,0,0,0,3.43-5.8,21.65,21.65,0,0,0,1.21-7.34,19.66,19.66,0,0,0-1.21-6.92,17.09,17.09,0,0,0-3.43-5.62,15.77,15.77,0,0,0-5.33-3.78A17.11,17.11,0,0,0,248,9a16.81,16.81,0,0,0-6.89,1.36,15.75,15.75,0,0,0-5.3,3.78,17.09,17.09,0,0,0-3.43,5.62A19.44,19.44,0,0,0,231.16,26.65ZM289.81,2.26h11.57L325.14,39h.13V2.26H334V51.74H322.92L298.68,13.79h-.14v38h-8.73Z" style="fill:#fff"/></svg>
+              </a>
+          </div>
+        </div>
+
+
+        <div class="col-md-8">
+          <ul class="nav nav-pills">
+                        <li>
+              <a class="watson-footer-text" href="https://watson.foundation/about/history">About Us</a>
+            </li>
+                        <li>
+              <a class="watson-footer-text" href="https://watson.foundation/contact">Contact</a>
+            </li>
+                        <li>
+              <a class="watson-footer-text" href="https://watson.foundation/policies">Policies</a>
+            </li>
+                        <!-- <li>
+                  <ul class="list-inline list-unstyled social"> -->
+              
+            <!-- </ul>
+                </li> -->
+          </ul>
+        </div>
+
+
+      </div>
+      <h4 id="site-by">
+        <small>
+            <span> &#xa9; 2026 Thomas J. Watson Foundation</span> | All Maps <a href="https://www.mapbox.com/about/maps/">&#xa9;Mapbox &#xa9;OpenStreetMap</a>
+          </small>
+      </h4>
+    </footer>
+    <!-- Bootstrap core JavaScript
+      ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="/scripts/vendor.js"></script>
+    <script src="/scripts/scripts.js"></script>
+
+    <script>
+      new WOW().init();
+
+    </script>
+
+    <script>$(function () {
+		$('.fellowship-collapse').collapse();
+	});</script>
+
+    <script>
+      $(window).ready(function() {
+        var navbarSelector = $('.watson-navbar'),
+            menuOpen = $('.menu-card .front'),
+            menuClose = $('.menu-card .back'),
+            navbarHeader = $('.navbar-header'),
+            navClick = $('.menu-clickable');
+
+        navbarSelector.css('right', getNavbarRight());
+
+        checkHeight();
+
+        $(window).resize(function() {
+          if (!navbarSelector.hasClass('open')) {
+            navbarSelector.css('right', getNavbarRight());
+          }
+
+          checkHeight();
+        });
+
+        navClick.click(function() {
+          if (menuOpen.hasClass('flipped-back')) {
+            if (window.innerWidth > 767) {
+              navbarSelector.addClass('open').animate({
+                opacity: 1,
+                right: '0'
+              }, 500);
+            } else {
+              navbarSelector.addClass('open').css({
+                opacity: 1,
+                right: '0'
+              });
+            }
+
+            menuOpen.removeClass('flipped-back').addClass('flipped-over');
+            menuClose.removeClass('flipped-over').addClass('flipped-back');
+
+            navbarHeader.css('position', 'fixed');
+
+            if(window.location.pathname === '/') {
+              $('.main-navbar').addClass('with-header-spacing');
+            }
+          } else {
+            if (window.innerWidth > 767) {
+              navbarSelector.removeClass('open').animate({
+                opacity: 0,
+                right: getNavbarRight()
+              }, 500);
+            } else {
+              navbarSelector.removeClass('open').css({
+                opacity: 0,
+                right: getNavbarRight()
+              });
+            }
+
+            menuClose.removeClass('flipped-back').addClass('flipped-over');
+            menuOpen.removeClass('flipped-over').addClass('flipped-back');
+
+            navbarHeader.css('position', 'absolute');
+
+                      }
+        });
+
+        var video = document.getElementById("hero-video"),
+            loops = 0,
+            playButtonPressed = false;
+
+        if (video) {
+          video.play();
+
+
+          video.addEventListener("playing", function() {
+            if (!playButtonPressed) {
+              loops++;
+
+              if (loops >= 3) {
+                video.pause();
+                $('.fa-pause').toggleClass('fa-play').toggleClass('fa-pause');
+              }
+            } else {
+              playButtonPressed = false;
+            }
+          });
+
+          // Custom video controls
+          $('body').on('click', '.fa-pause', function() {
+            // Pause the video
+            video.pause();
+            $(this).toggleClass('fa-play').toggleClass('fa-pause');
+          });
+
+          $('body').on('click', '.fa-play', function() {
+            playButtonPressed = true;
+            video.play();
+            $(this).toggleClass('fa-play').toggleClass('fa-pause');
+          });
+        }
+
+        $('.captcha-form').submit(function() {
+          if ($('.g-recaptcha').length && grecaptcha.getResponse().length) {
+            return true;
+          }
+          $('.captcha-error').show();
+          return false;
+        });
+
+        $('.captcha-form').click(function() {
+          if ($('.captcha-error').is(":visible"))
+            $('.captcha-error').hide();
+        })
+      });
+
+      function getNavbarRight() {
+        return window.innerWidth > 767 ? '-370px' : ('-' + window.innerWidth + 'px');
+      }
+
+      function checkHeight() {
+        if (window.innerHeight < 695) {
+          $('.navbar-login').css({
+            position: 'relative'
+          });
+          $('.watson-navbar').addClass('scrollable');
+        } else {
+          $('.navbar-login').css({
+            position: 'absolute'
+          });
+          $('.watson-navbar').removeClass('scrollable');
+        }
+      }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,671 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--c:set var="datePattern"><!--fmt:message key="date.format"/><!--/c:set-->
+
+
+
+<!doctype html>
+<html class="fixed">
+   <head>    
+   	  <meta charset="UTF-8">
+      <!-- <meta charset="UTF-8"> -->
+      <title>:: DBBL Scholarship ::</title>
+      <meta name="keywords" content="DBBL Scholarship Template" />
+      <meta name="description" content="DBBL Scholarship Template">
+      <meta name="author" content="Sarkar Zahir Ahamed">
+      <meta name="author" content="Ahasan Habib">   
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />     
+	  <link href="assets/stylesheets/google-fonts.css" rel="stylesheet" type="text/css">     
+      <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.css" />
+      <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.css" />
+      <link rel="stylesheet" href="assets/vendor/magnific-popup/magnific-popup.css" />
+      <link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />     
+      <link rel="stylesheet" href="assets/vendor/jquery-datatables-bs3/assets/css/datatables.css" />
+      <link rel="stylesheet" href="assets/vendor/jquery-datatables/extras/TableTools/css/dataTables.tableTools.css" />     
+      <link rel="stylesheet" href="assets/vendor/pnotify/pnotify.custom.css" />     
+      <link rel="stylesheet" href="assets/stylesheets/theme.css" />     
+      <link rel="stylesheet" href="assets/stylesheets/skins/default.css" />     
+      <link rel="stylesheet" href="assets/stylesheets/theme-custom.css">   
+      <link rel="stylesheet" href="assets/stylesheets/theme-custom.css">   
+      <link rel="stylesheet" href="assets/stylesheets/theme-applicant.css">   
+      <link rel="stylesheet" href="assets/vendor/select2/select2.css" />
+      <!-- Smart Ticker not for use-->
+      <!-- <link rel="stylesheet" href="assets/smartSticker/jquery.smarticker.css" /> -->     
+      <link rel="stylesheet" href="assets/javascripts/countdown/jquery.classycountdown.min.css" />     
+      <link rel="stylesheet" href="assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.css" />     
+      <script src="assets/vendor/modernizr/modernizr.js"></script>
+      
+      <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+      
+      
+   </head>
+   <body>
+      <!-- NoScript Check -->
+      <noscript>
+         <div class="modal-block modal-full-color modal-block-danger">
+            <section class="panel">
+               <header class="panel-heading">
+                  <h2 class="panel-title">Javascript Disabled!!</h2>
+               </header>
+               <div class="panel-body">
+                  <div class="modal-wrapper">
+                     <div class="modal-icon">
+                        <i class="fa fa-times-circle"></i>
+                     </div>
+                     <div class="modal-text">
+                        <h4>Danger</h4>
+                        <p>Your Browser JavaScript is disabled! Please enable JavaScript to use this website!!</p>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+         <style type="text/css">
+            #mainContents { display:none !important; }
+         </style>
+      </noscript>
+      <section class="body" id="mainContents">
+         <!-- start: header -->
+         <header class="header">
+            <div class="logo-container">
+               <a href="http://www.dutchbanglabank.com/" class="logo">
+               <img src="assets/images/logo.png" height="35" alt="DBBL" />
+               </a>
+               <!-- <h3 id="showInternetExp" style="text-align: center; font-size:50px;">This Web site does not support Internet Explorer Please use Mozilla/Chorme/Safari/Opera</h3> -->
+               
+                  
+                     <h3 class="rgtAlign">Dutch-Bangla Bank Scholarship</h3>
+                  
+                  
+               
+               <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+                  <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+               </div>
+            </div>
+            
+               
+                  <!------------------------- Newfeeds ------------------>	
+                  <div class="newsTracontainer">
+                     
+                     
+                     <p>Please use latest version of Mozilla (version 30 or heigher)  or Chrome for Better application experience!!</p>
+                  </div>
+                  <!-----------------------End of Newfeeds ------------------>
+               
+               
+            
+            
+               
+               
+               
+            
+            <tr>
+    <td class="tdLabel"></td>
+    <td 
+            class="tdInput"            
+><input type="hidden" name="appNotification" value="" id="appNotification"/></td>
+</tr>
+
+
+         </header>       
+         <div class="inner-wrapper">        
+         <aside id="sidebar-left" class="sidebar-left">
+            <div class="sidebar-header">
+               <div class="sidebar-title">
+                  <i class="fa fa-folder-open-o"></i> Scholarship Navigation
+               </div>
+               <!-- <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+                  <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+               </div> -->
+               
+               <div class="sidebar-toggle hidden-xs"  data-target="html" data-fire-event="sidebar-left-toggle">
+                  <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+               </div>
+            </div>
+            <div class="nano">
+               <div class="nano-content">
+                  <nav id="menu" class="nav-main" role="navigation">
+                     <form id="ScholarshipApplicationAction" name="ScholarshipApplicationAction" action="/DBBLScholarship/ScholarshipApplicationAction.action;jsessionid=FC5C0AC8817A97C055DA0A6B37D17495" method="post">
+                        <ul class="nav nav-main">
+                           <li>
+                              <a href="/DBBLScholarship">
+                              <i class="fa fa-laptop" aria-hidden="true"></i>
+                              <span>Scholarship Home</span>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="scholarshipinfoScholarshipApplicationAction.action">												
+                              <i class="fa fa-codepen" aria-hidden="true"></i>
+                              <span>Scholarship Information</span>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="applyforscholarshipScholarshipApplicationAction.action">
+                              <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                              <span>Apply for HSC/Graduation Scholarship</span>
+                              </a>
+                           </li>
+                           
+                           
+                           
+                           <li>
+                              <a href="primarySelectedBatchGlobalParemetersAction.action">
+                              <i class="fa fa-delicious aria-hidden="true"></i>
+                              <span>Primary Selected List</span>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="downloadAcknowledgeScholarshipApplicationAction.action">
+                              <i class="fa fa-print aria-hidden="true"></i>
+                              <span>Print HSC/Grad. Primary Selection Letter</span>
+                              </a>
+                           </li>
+			   				<!-- <li>
+                              <a href="searchAcknowledgementPostGradApplicationAction">
+                              <i class="fa fa-print aria-hidden="true"></i>
+                              <span>Print Post Grad. Primary Selection Letter</span>
+                              </a>
+                           </li>  -->
+                           <li>
+                              <a href="scholarshipResultsGlobalParemetersAction.action">
+                              <i class="fa fa-file-text" aria-hidden="true"></i>
+                              <span>Scholarship Results</span>
+                              </a>
+                           </li>
+                           <li class="nav-parent">
+                              <a>
+                              <i class="fa fa-outdent" aria-hidden="true"></i>
+                              <span>All Scholarship Results</span>
+                              </a>
+                              <ul class="nav nav-children">
+                                 <li>
+                                    <a href="hsc2015ResultsGlobalParemetersAction.action">
+                                    <i class="fa fa-angle-double-right"></i> H.S.C Scholarship - 2015
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="ssc2015ResultsGlobalParemetersAction.action">
+                                    <i class="fa fa-angle-double-right"></i> S.S.C Scholarship - 2015
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="hsc2014ResultsGlobalParemetersAction.action">
+                                    <i class="fa fa-angle-double-right"></i> H.S.C Scholarship - 2014
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="hsc2013ResultsGlobalParemetersAction.action">
+                                    <i class="fa fa-angle-double-right"></i>H.S.C Scholarship - 2013
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="ssc2013ResultsGlobalParemetersAction.action">
+                                    <i class="fa fa-angle-double-right"></i>S.S.C Scholarship - 2013
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="hsc2012ResultsGlobalParemetersAction.action">
+                                    <i class="fa fa-angle-double-right"></i> H.S.C Scholarship - 2012
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="ssc2012ResultsGlobalParemetersAction.action">
+                                    <i class="fa fa-angle-double-right"></i>S.S.C Scholarship - 2012
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="scholarship2011ResultsGlobalParemetersAction.action">
+                                    <i class="fa fa-angle-double-right"></i>Scholarship - 2011
+                                    </a>
+                                 </li>
+                              </ul>
+                           </li>
+                           
+                              <li>
+                                 <a href="awardeeLoginsGlobalParemetersAction.action">
+                                 <i class="fa fa-lock aria-hidden="true"></i>
+                                 <span>DBBL Scholar Login</span>
+                                 </a>
+                              </li>
+                           
+                           
+                           
+                              
+                              
+                              
+                           
+                           
+                           <li class="nav-parent">
+                              <a>
+                              <i class="fa fa-envelope" aria-hidden="true"></i>
+                              <span>Contact Us</span>
+                              </a>
+                              <ul class="nav nav-children">
+                                 <li>
+                                    <a href="#">
+                                    Dutch-Bangla Bank Foundation<br>
+                                    47, Motijheel Commercial Area<br>
+                                    Dhaka - 1000,<br>                                    
+                                    Phone: 02223354196-8<br> Ext-165, 167 &amp; 171
+                                    </a>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </form>
+
+
+
+                  </nav>
+                  <hr class="separator" />
+                  <img class="schlarshipLeftBaner" src="assets/images/Scholarship1.jpg" height="" alt="DBBLScholarship" />
+               </div>
+        	</div>
+         </aside>       
+         <section role="main" class="content-body">
+	         <header class="page-header">
+	         <h2><i class="fa fa-tree"></i> Helping to Build Your Secured Future</h2>	
+	         <div class="messagewrap">
+	         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--c:set var="datePattern"><!--fmt:message key="date.format"/><!--/c:set-->
+
+
+
+ 
+
+
+
+	         
+	         <div id="customErrorMessage" style="color: red; display: none;font-size : 15px; padding: 13px 20px 0 5px;">
+	        	 
+	         </div>
+	         
+	         </div>
+	         
+	         </header>       
+	         
+	         <!--c:set var="datePattern"><!--fmt:message key="date.format"/><!--/c:set-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--c:set var="datePattern"><!--fmt:message key="date.format"/><!--/c:set-->
+
+
+
+
+<!-- Enable For SSC Scholarship Info -->
+<!-- For SSC -->
+ <style>
+ 	.center-cell{
+ 		text-align: center; 
+ 		vertical-align: middle;
+ 	}
+ </style>
+ 
+<section class="panel form-wizard appear-animation fadeInRight appear-animation-visible" data-appear-animation="fadeInRight">
+					
+	
+		<div class="timeline">
+			<div class="tm-body">
+				<div class="tm-title">
+					<h3 class="h5 text-uppercase"><strong>SSC-2026 Batch</strong> <br> Scholarship Information</h3>
+				</div>
+				<ol class="tm-items">
+					<li>
+						<div class="tm-info">
+							<div class="tm-icon"><i class="fa fa-angle-double-right"></i></div>							
+						</div>
+						<div data-appear-animation-delay="100" data-appear-animation="fadeInRight" class="tm-box appear-animation fadeInRight appear-animation-visible" style="animation-delay: 100ms;">
+							<p class="text-justify">
+								1. Dutch-Bangla Bank, under its social cause program, has been awarding scholarships to the meritorious students in need of financial aid studying at different levels of education since its 	beginning. Dutch-Bangla Bank awards new scholarships every year along with renewal of existing awardees.
+							</p>
+							
+							
+							
+						</div>
+					</li>
+					
+					<li>
+						<div class="tm-info">
+							<div class="tm-icon"><i class="fa fa-angle-double-right"></i></div>							
+						</div>
+						<div data-appear-animation-delay="100" data-appear-animation="fadeInRight" class="tm-box appear-animation fadeInRight appear-animation-visible" style="animation-delay: 100ms;">
+							<p class="text-justify">
+								2. The Bank has given scholarships to the deserving students from huge applications following a set of 	criteria such as the applicant's academic results, financial capability, physical conditions etc. Around 90% 	of the scholarships have been given to the rural students and 50% to the female students.
+
+							</p>
+							
+							
+							
+						</div>
+					</li>
+					
+					<li>
+						<div class="tm-info">
+							<div class="tm-icon"><i class="fa fa-angle-double-right"></i></div>							
+						</div>
+						<div data-appear-animation-delay="100" data-appear-animation="fadeInRight" class="tm-box appear-animation fadeInRight appear-animation-visible" style="animation-delay: 100ms;">
+							<p class="text-justify">
+								<!-- 3.	Dutch-Bangla Bank has been awarding scholarships to meritorious students in need of financial aid studying at higher secondary, graduation & post-graduation levels. In continuation of this program applications are invited for Dutch-Bangla Bank scholarships from meritorious students in need of financial aid who passed S.S.C./equivalent examination in 2026 and meet the following requirements: --> 
+								3.	Dutch-Bangla Bank has been awarding scholarships to meritorious students in need of financial aid studying at higher secondary and graduation levels. In continuation of this program, applications are invited for Dutch-Bangla Bank scholarships from meritorious students in need of financial aid who passed S.S.C./equivalent examination in 2026 and meet the following requirements: 
+
+							</p>
+							
+							
+							
+						</div>
+					</li>
+					
+					
+					
+				</ol>
+				
+				
+				
+				
+				<div class="tm-title">
+					<h3 class="h5 text-uppercase">Eligibility for the scholarship</h3>
+				</div>
+				<ol class="tm-items">
+				
+					<li>
+						<div class="tm-info">
+							<div class="tm-icon"><i class="fa fa-angle-double-right"></i></div>
+					
+						</div>
+						<div data-appear-animation-delay="400" data-appear-animation="fadeInRight" class="tm-box appear-animation fadeInRight appear-animation-visible" style="animation-delay: 400ms;">
+							<table class="table table-bordered table-striped tablcustom">
+								<tr>
+									<td rowspan="2"  style="text-align: center; vertical-align: middle;">Academic level</td>
+									<td colspan="3"  style="text-align: center; vertical-align: middle;"><strong>Minimum CGPA (Without 4th subject), for all Groups</strong></td>
+								</tr>
+								
+								<tr>
+									
+									<td  style="text-align: center; vertical-align: middle;">School/Institutions situated in city corporation areas</td>
+									<td  style="text-align: center; vertical-align: middle;">School/Institutions situated in district town areas</td>
+									<td  style="text-align: center; vertical-align: middle;">School/Institutions situated in rural/other areas</td>
+								</tr>
+								
+								<tr>
+									<td  style="text-align: center; vertical-align: middle;">S.S.C. or equivalent examination</td>
+									<td  style="text-align: center; vertical-align: middle;">5.00</td>
+									<td  style="text-align: center; vertical-align: middle;">5.00</td>
+									<td  style="text-align: center; vertical-align: middle;">4.83</td>
+								</tr>
+							</table>
+						</div>
+						
+						
+						
+					</li>
+					
+				</ol>
+											
+				
+				<div class="tm-title">
+					<h3 class="h5 text-uppercase">Amount &amp; duration of scholarship</h3>
+				</div>
+				<ol class="tm-items">
+					<li>
+						<div class="tm-info">
+							<div class="tm-icon"><i class="fa fa-angle-double-right"></i></div>
+							
+						</div>
+						<div data-appear-animation-delay="400" data-appear-animation="fadeInRight" class="tm-box appear-animation fadeInRight appear-animation-visible" style="animation-delay: 400ms;">
+							<table class="table table-bordered table-striped tablcustom">				
+		
+								<tr>
+									<th  style="text-align: center; vertical-align: middle;">Academic Level</th>
+									<th  style="text-align: center; vertical-align: middle;">Scholarship Period</th>
+									<th  style="text-align: center; vertical-align: middle;">Monthly Scholarship (Taka)</th>
+									<th  style="text-align: center; vertical-align: middle;">Annual grant for reading materials (Taka)</th>
+									<th  style="text-align: center; vertical-align: middle;">Annual grant for clothing (Taka)</th>
+								</tr>
+								
+								<tr>
+									<td  style="text-align: center; vertical-align: middle;">H.S.C. </td>
+									<td  style="text-align: center; vertical-align: middle;">2  Years </td>
+									<td  style="text-align: center; vertical-align: middle;">2,500.00</td>
+									<td  style="text-align: center; vertical-align: middle;">2,500.00</td>
+									<td  style="text-align: center; vertical-align: middle;">1,000.00</td>
+								</tr>
+							</table>
+						</div>
+					</li>
+					
+				</ol>
+				
+				
+				
+				<div class="tm-title">
+					<h3 class="h5 text-uppercase">Other Criteria</h3>
+				</div>
+				<ol class="tm-items">
+					<li>
+						<div class="tm-info">
+							<div class="tm-icon"><i class="fa fa-angle-double-right"></i></div>
+							
+						</div>
+						<div data-appear-animation-delay="400" data-appear-animation="fadeInRight" class="tm-box appear-animation fadeInRight appear-animation-visible" style="animation-delay: 400ms;">
+							<strong>Other criteria of the Scholarship:</strong>
+							
+							<ul>
+								<li>Students availing scholarship from other sources (except Government scholarship) will not qualify for Dutch-Bangla Bank's scholarship.</li>
+								<li>90% of total scholarships will be earmarked for students who passed S.S.C./equivalent examination from the Institutions in rural areas and 50% of total scholarships will be earmarked for female students.</li>								
+								<li style="color:red;">Applicants must provide correct GPA without 4th subject. Otherwise, the application will not be considered at primary selection stage.</li>
+								<li>Eligible and interested students who passed S.S.C./equivalent examination in 2026, are requested to apply through online at: <em style="color:blue;"><strong>app.dutchbanglabank.com/DBBLScholarship</strong></em> along with the following:</li>
+								
+								<li style="list-style:none">
+									<ul>
+										<li>Scanned color photograph of student (image Dimension- width:500px to 600px, Height:700px to 800px and Image Size Max-150kb)</li>
+										<li>Scanned color photographs of student's father and mother (image Dimension- width:500px to 600px, Height:700px to 800px and Image Size Max-150kb)</li>
+										<li>Scanned marksheet and testimonial of S.S.C./equivalent examinations (image Dimension- width:500px to 600px, Height:700px to 800px and Image Size Max-150kb)</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</li>
+				
+				</ol>
+				
+				<div class="tm-title">
+					<h3 class="h5 text-uppercase">Some important dates for applicants</h3>
+				</div>
+				<ol class="tm-items">
+					<li>
+						<div class="tm-info">
+							<div class="tm-icon"><i class="fa fa-angle-double-right"></i></div>
+				
+						</div>
+						<div data-appear-animation-delay="400" data-appear-animation="fadeInRight" class="tm-box appear-animation fadeInRight appear-animation-visible" style="animation-delay: 400ms;">
+							
+							<ul>
+								<li>Application Opening : August 11, 2026</li>
+								<li>Application Closing :  September 04, 2026</li>								
+								<li>Publication of preliminary selection list through Website : September 22, 2026</li>
+								<li>Primarily selected applicants shall print out 'Primary Selection Letter' from the above mentioned Dutch-Bangla Bank website and submit the original copy of all documents for verification to any Branches/Mobile Banking offices of Dutch-Bangla Bank: From September 23, 2026 to October 13, 2026</li>
+								<li>Publication of final result: To be notified later through Website.</li>								
+								<li style="color:red; font-size:18px"><strong>No direct application  will be accepted.</strong></li>
+								
+							</ul>
+						</div>
+					</li>
+				
+				</ol>
+				
+			</div>
+		</div>
+		
+</section>
+<!-- Enable For HSC Scholarship Info -->  
+	         
+		         <!-- Confirmation Modal -->
+				<div id="confirmModal">
+					<!-- Modal Overlay -->
+					<div id="modalOverlay"
+						style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 9998;"></div>
+		
+					<!-- Modal Box -->
+					<div id="confirmationModal"
+						style="display: none; position: fixed; top: 30%; left: 35%; background: white; border: 1px solid #ccc; padding: 20px; z-index: 9999; box-shadow: 0 0 10px #000;">
+						<p id="confirmationText">Are you sure you want to proceed?</p>
+						<button id="confirmYesBtn">Yes</button>
+						<button id="confirmNoBtn">No</button>
+					</div>
+				</div>
+
+			</section>
+         </div>
+         <aside id="sidebar-right" class="sidebar-right">
+            <div class="nano">
+               <div class="nano-content">
+                  <a href="#" class="mobile-close visible-xs">
+                  Collapse <i class="fa fa-chevron-right"></i>
+                  </a>
+                  <div class="sidebar-right-wrapper">
+                     <div class="sidebar-widget widget-calendar">
+                        <h6>Upcoming Tasks</h6>
+                        <div data-plugin-datepicker data-plugin-skin="dark" ></div>
+                        <ul>
+                           <li>
+                              <time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
+                              <span>Company Meeting</span>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="sidebar-widget widget-friends">
+                        <h6>Friends</h6>
+                        <ul>
+                           <li class="status-online">
+                              <figure class="profile-picture">
+                                 <img src="assets/images/!sample-user.jpg" alt="DBBL" class="img-circle">
+                              </figure>
+                              <div class="profile-info">
+                                 <span class="name">DBBL Says</span>
+                                 <span class="title">Hey, how are you?</span>
+                              </div>
+                           </li>
+                           <li class="status-online">
+                              <figure class="profile-picture">
+                                 <img src="assets/images/!sample-user.jpg" alt="DBBL" class="img-circle">
+                              </figure>
+                              <div class="profile-info">
+                                 <span class="name">DBBL Says</span>
+                                 <span class="title">Hey, how are you?</span>
+                              </div>
+                           </li>
+                           <li class="status-offline">
+                              <figure class="profile-picture">
+                                 <img src="assets/images/!sample-user.jpg" alt="DBBL" class="img-circle">
+                              </figure>
+                              <div class="profile-info">
+                                 <span class="name">DBBL Says</span>
+                                 <span class="title">Hey, how are you?</span>
+                              </div>
+                           </li>
+                           <li class="status-offline">
+                              <figure class="profile-picture">
+                                 <img src="assets/images/!sample-user.jpg" alt="DBBL" class="img-circle">
+                              </figure>
+                              <div class="profile-info">
+                                 <span class="name">DBBL Says</span>
+                                 <span class="title">Hey, how are you?</span>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </aside>
+         <!-- Vendor -->
+         
+         <script src="assets/vendor/jquery/jquery-v1.9.js"></script>
+         <script src="assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+         <script src="assets/vendor/bootstrap/js/bootstrap.js"></script>
+         <script src="assets/vendor/nanoscroller/nanoscroller.js"></script>
+         <script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+         <script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
+         <script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+         <script src="assets/vendor/jquery-validation/jquery.validate.js"></script>
+         <script src="assets/vendor/bootstrap-wizard/jquery.bootstrap.wizard.js"></script>
+         <script src="assets/vendor/pnotify/pnotify.custom.js"></script>
+         <script src="assets/vendor/bootstrap-maxlength/bootstrap-maxlength.js"></script>
+         <script src="assets/vendor/jquery-alphanum/jquery.alphanum.js"></script>
+         <script src="assets/vendor/select2/select2.js"></script>
+         <script src="assets/vendor/Jquery_number_formatter/numberFormatter.js"></script>
+         <script src="assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+         <script src="assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
+         <script src="assets/vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
+         <script src="assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
+         <script src="assets/javascripts/theme.js"></script>
+         <script src="assets/javascripts/theme.custom.js"></script>
+         <script src="assets/javascripts/jQuery.print.js"></script>
+         <script src="assets/javascripts/theme.init.js"></script>     
+         <!-- Smart Ticker not for use-->   
+        <!--<script src="assets/smartSticker/jquery.smarticker.min.js"></script> -->
+         <script src="assets/smartSticker/jquery.animate.colors.min.js"></script>        						
+         <script src="assets/javascripts/countdown/jquery.classycountdown.min.js"></script>
+         <script src="assets/javascripts/countdown/jquery.knob.js"></script>
+         <script src="assets/javascripts/countdown/jquery.throttle.js"></script>
+         <!-- Google Captcha -->
+
+
+         <!-- Validation -->
+         <script src="assets/javascripts/ApplicantValidation/validateApplicant.js"></script>
+         <script src="assets/javascripts/theme.awardee.js"></script>         
+         <!-- Post Graduation Scholarship -->
+         <script src="assets/javascripts/postGradApplication.js"></script>
+         <!-- Primary Slection -->
+         <script src="assets/javascripts/theme.primarySelection.js"></script>
+         <script src="assets/javascripts/theme.applicant.js"></script>
+         
+         <script src="assets/vendor/jspdf/jspdf.umd.min.js"></script>
+         <script src="assets/vendor/jspdf/jspdf.plugin.autotable.min.js"></script>
+      </section>
+   </body>
+</html>
+

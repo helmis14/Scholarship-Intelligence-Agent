@@ -116,7 +116,7 @@ def cycle_status(o: Opportunity, today: date) -> dict:
     """Where the application cycle stands, from the applicant dates the official pages state:
     open (a confirmed deadline ahead, the window started or no opening date), upcoming (the window opens later),
     closed (only past applicant deadlines: the next cycle is not published yet), not_announced (the page says the
-    dates will be announced), expected (only an approximate date), rolling, or not_stated."""
+    dates will be announced), rolling, or not_stated (also when the page gives only an approximate date)."""
     appl = [d for d in o.deadlines if d.kind in APPLICANT_KINDS]
     opening = [d for d in o.deadlines if d.kind == DeadlineKind.OPENING and d.date]
     ahead = sorted(d.date for d in appl if d.date and d.certainty == DeadlineCertainty.CONFIRMED
@@ -141,8 +141,7 @@ def cycle_status(o: Opportunity, today: date) -> dict:
     past = [d.date for d in appl if d.date]
     if past:
         return _s("closed", f"last deadline {max(past)}; next cycle not published")
-    if any(d.certainty == DeadlineCertainty.EXPECTED or d.approximate for d in appl):
-        return _s("expected", next(d.approximate for d in appl if d.approximate))
+    # round 33: "typically in early October" says nothing about the current cycle; the applicant checks the page
     return _s("not_stated")
 
 

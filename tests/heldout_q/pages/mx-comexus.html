@@ -1,0 +1,982 @@
+<!doctype html>
+<html>    
+    <base href="/">   
+    <meta charset="utf-8">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://x.com/comexus" />
+<meta name="twitter:creator" content="https://x.com/comexus" />
+<meta property="og:url" content="https://comexus.com.mx">
+<meta property="og:site_name" content="Comexus">
+<meta property="og:title" content="Comexus" />
+<meta property="og:description" content="Con 35 años de trayectoria, la Comisión México-Estados Unidos para el Intercambio Educativo y Cultural (COMEXUS) es un organismo establecido el 27 de noviembre de 1990 mediante un convenio entre México y Estados Unidos. Su misión principal es administrar los prestigiosos programas de becas Fulbright-García Robles.">
+<meta property="og:type" content="website" />
+<meta property="og:updated_time" content="1440432930" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Comexus</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/favicon/android-icon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="images/favicon/favicon.ico" />
+<link rel="shortcut icon" href="images/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png" />
+<meta name="apple-mobile-web-app-title" content="Odisea México" />
+<link rel="manifest" href="images/favicon/manifest.json" />
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="core/bootstrap-4.6.2/css/bootstrap.min.css">
+
+<!-- Custom styles for this site -->
+<link href="css/ab_style.css?ids=215" rel="stylesheet">
+<link href="css/ab_style_m.css?ids=601" rel="stylesheet">
+<link href="css/ab_style_e.css?ids=404" rel="stylesheet">
+
+
+<!-- Jquery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"  crossorigin="anonymous"></script>
+
+
+<!-- Bootstrap JS -->
+<script src="core/bootstrap-4.6.2/js/bootstrap.min.js"></script>
+<!--script src="core/bootstrap-4.6.2/js/bootstrap.bundle.js" type="text/javascript"></script -->
+
+<!-- Owl Carousel -->
+<link rel="stylesheet" href="core/OwlCarousel2-2.3.4/owl.carousel.min.css">
+<link rel="stylesheet" href="core/OwlCarousel2-2.3.4/owl.theme.default.min.css">
+<script src="core/OwlCarousel2-2.3.4/owl.carousel.min.js"></script>
+
+<!-- usmap.js  -->
+<script src="core/us-map-1.0.1/lib/raphael.js"></script>
+<script src="core/us-map-1.0.1/jquery.usmap.js"></script>
+<script src="core/us-map-1.0.1/jquery.mxmap.js"></script>
+
+<!-- mxmap.js  -->
+<link rel='stylesheet' href="core/mx-map/jquery-jvectormap.css"></link>
+<script src="core/mx-map/jquery-jvectormap.js"></script>
+
+<!-- Fonts -->
+<link rel="stylesheet" href="fonts/DM/stylesheet.css">
+<link rel="stylesheet" href="fonts/mark/stylesheet.css">
+<!--<link rel="stylesheet" href="fonts/neuehaas/stylesheet.css">
+<link rel="stylesheet" href="fonts/roboto/stylesheet.css">
+<link rel="stylesheet" href="fonts/nunito/stylesheet.css">
+<link rel="stylesheet" href="fonts/din/stylesheet.css">-->
+
+
+
+
+<!-- __TESTIMONIALES -->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css'>
+<!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>-->
+<link rel="stylesheet" href="css/testimoniales.css">
+<link rel="stylesheet" href="css/testimoniales_circulos.css">
+
+
+<!-- Alert -->
+<script src="core/lib/sweet-alert.min.js" defer></script>
+<link rel="stylesheet" type="text/css" href="core/lib/sweet-alert.min.css">
+<script src="https://www.google.com/recaptcha/api.js?render=6LdX1o0sAAAAAIh6GXIaWxwGFtUDPQwBDwWM2ixR"></script>
+<!-- Form -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#formulario").submit(function (e) {
+            e.preventDefault();
+
+            // Validar campos requeridos
+            var errores = [];
+
+            $("#formulario [required]").each(function () {
+                var $this = $(this);
+                var valor = $this.val().trim();
+
+                if (valor === "") {
+                    var mensaje = $this.data("mensaje") ||
+                            "El campo " + ($this.attr('placeholder') || $this.attr('name')) + " es requerido";
+                    errores.push(mensaje);
+                }
+            });
+
+// Validar email (usando el del formulario)
+            var $email = $("#formulario #email");
+            if ($email.length) {
+                var emailVal = $email.val().trim();
+                if (emailVal !== "") {
+                    var regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+                    if (!regexEmail.test(emailVal)) {
+                        errores.push("El email no tiene formato válido");
+                    }
+                }
+            }
+
+            console.log("Errores encontrados:", errores);
+
+            if (errores.length > 0) {
+                swal("Validación de campos", errores.join("\n"), "error");
+                return false;
+            }
+
+            // Enviar con reCAPTCHA
+            $("#envia").prop('disabled', true);
+            grecaptcha.ready(function () {
+                grecaptcha.execute('6LdX1o0sAAAAAIh6GXIaWxwGFtUDPQwBDwWM2ixR', {action: 'submit'}).then(function (token) {
+                    var formData = $("#formulario").serializeArray();
+                    formData.push({name: "recaptcha_token", value: token});
+                    formData.push({name: "recaptcha_action", value: "submit"});
+
+                    $.ajax({
+                        url: "includes/mails.php",
+                        type: "POST",
+                        dataType: "json",
+                        data: formData,
+                        success: function (respuesta) {
+                            if (respuesta.status) {
+                                swal("Información", "Su correo se ha enviado correctamente.", "success");
+                                $("#formulario")[0].reset();
+                            }
+                            else {
+                                swal("Error", respuesta.error, "error");
+                            }
+                            $("#envia").prop('disabled', false);
+                        },
+                        error: function () {
+                            swal("Error", "Hubo un problema al enviar el formulario", "error");
+                            $("#envia").prop('disabled', false);
+                        }
+                    });
+                });
+            });
+        });
+
+        $("#formulario-exbecarios").submit(function (e) {
+            e.preventDefault();
+
+            // Validar campos requeridos
+            var errores = [];
+
+            $("#formulario-exbecarios [required]").each(function () {
+                var $this = $(this);
+                var valor = $this.val().trim();
+
+                // Para selects, verificar que no sea el valor por defecto
+                if ($this.is('select')) {
+                    if (valor === "" || $this.find('option:selected').index() === 0) {
+                        var mensaje = $this.data("mensaje") ||
+                                "El campo " + ($this.attr('placeholder') || $this.attr('name')) + " es requerido";
+                        errores.push(mensaje);
+                    }
+                }
+                else if (valor === "") {
+                    var mensaje = $this.data("mensaje") ||
+                            "El campo " + ($this.attr('placeholder') || $this.attr('name')) + " es requerido";
+                    errores.push(mensaje);
+                }
+            });
+
+            // Validar email
+            var $email = $("#formulario-exbecarios #email");
+            if ($email.length) {
+                var emailVal = $email.val().trim();
+                if (emailVal === "") {
+                    errores.push("El email es requerido");
+                }
+                else {
+                    var regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+                    if (!regexEmail.test(emailVal)) {
+                        errores.push("El email no tiene formato válido");
+                    }
+                }
+            }
+
+            // Validar años (opcional - que sean números)
+            var inicio = $("#inicio_datos").val().trim();
+            // var fin = $("#fin_datos").val().trim();
+
+            if (inicio && !/^\d{4}$/.test(inicio)) {
+                errores.push("El año de inicio debe ser un año válido (4 dígitos)");
+            }
+            // if (fin && !/^\d{4}$/.test(fin)) {
+            //     errores.push("El año de partida debe ser un año válido (4 dígitos)");
+            // }
+
+            console.log("Errores encontrados:", errores);
+
+            if (errores.length > 0) {
+                swal("Validación de campos", errores.join("\n"), "error");
+                return false;
+            }
+
+            // Enviar con reCAPTCHA
+            $("#envia_exbecarios").prop('disabled', true);
+            grecaptcha.ready(function () {
+                grecaptcha.execute('6LdX1o0sAAAAAIh6GXIaWxwGFtUDPQwBDwWM2ixR', {action: 'submit_exbecarios'}).then(function (token) {
+                    var formData = $("#formulario-exbecarios").serializeArray();
+                    formData.push({name: "recaptcha_token", value: token});
+                    formData.push({name: "recaptcha_action", value: "submit_exbecarios"});
+
+                    $.ajax({
+                        url: "includes/mail_exbecarios.php",
+                        type: "POST",
+                        dataType: "json",
+                        data: formData,
+                        success: function (respuesta) {
+                            if (respuesta.status) {
+                                swal("Información", "Su información se ha enviado correctamente.", "success");
+                                $("#formulario-exbecarios")[0].reset();
+                            }
+                            else {
+                                swal("Error", respuesta.error, "error");
+                            }
+                            $("#envia_exbecarios").prop('disabled', false);
+                        },
+                        error: function () {
+                            swal("Error", "Hubo un problema al enviar el formulario", "error");
+                            $("#envia_exbecarios").prop('disabled', false);
+                        }
+                    });
+                });
+            });
+        });
+
+        $("#formulario-actualizacion").submit(function (e) {
+            e.preventDefault();
+
+            // Validar campos requeridos
+            var errores = [];
+
+            // Validar email
+            var email = $("#email_actualizacion").val().trim();
+            if (email === "") {
+                errores.push("El email es requerido");
+            }
+            else {
+                var regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+                if (!regexEmail.test(email)) {
+                    errores.push("El email no tiene formato válido");
+                }
+            }
+
+            // Validar actualización de datos
+            var actualizacion = $("#actualizacion").val().trim();
+            if (actualizacion === "") {
+                errores.push("La actualización de datos es requerida");
+            }
+
+            // Validar archivo (opcional, pero con restricciones)
+            var archivo = $("#archivo")[0].files[0];
+            if (archivo) {
+                // Validar tamaño (5MB máximo)
+                if (archivo.size > 5 * 1024 * 1024) {
+                    errores.push("El archivo no puede ser mayor a 5MB");
+                }
+
+                // Validar tipo de archivo
+                var tipoPermitido = /(\.jpg|\.jpeg|\.png|\.pdf|\.doc|\.docx)$/i;
+                if (!tipoPermitido.test(archivo.name)) {
+                    errores.push("Tipo de archivo no permitido. Usa: JPG, PNG, PDF, DOC, DOCX");
+                }
+            }
+
+            console.log("Errores encontrados:", errores);
+
+            if (errores.length > 0) {
+                swal("Validación de campos", errores.join("\n"), "error");
+                return false;
+            }
+
+            // Enviar con reCAPTCHA
+            $("#envia_actualizacion").prop('disabled', true);
+            grecaptcha.ready(function () {
+                grecaptcha.execute('6LdX1o0sAAAAAIh6GXIaWxwGFtUDPQwBDwWM2ixR', {action: 'submit_actualizacion'}).then(function (token) {
+
+                    // Usar FormData para incluir archivos
+                    var formData = new FormData($("#formulario-actualizacion")[0]);
+                    formData.append("recaptcha_token", token);
+                    formData.append("recaptcha_action", "submit_actualizacion");
+
+                    $.ajax({
+                        url: "includes/mail_actualizacion.php",
+                        type: "POST",
+                        dataType: "json",
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function (respuesta) {
+                            if (respuesta.status) {
+                                swal("Información", "Su actualización se ha enviado correctamente.", "success");
+                                $("#formulario-actualizacion")[0].reset();
+                            }
+                            else {
+                                swal("Error", respuesta.error, "error");
+                            }
+                            $("#envia_actualizacion").prop('disabled', false);
+                        },
+                        error: function (xhr, status, error) {
+                            console.error("Error AJAX:", error);
+                            swal("Error", "Hubo un problema al enviar el formulario", "error");
+                            $("#envia_actualizacion").prop('disabled', false);
+                        }
+                    });
+                });
+            });
+        });
+
+
+    });
+</script>
+
+<!-- Submenu -->
+<script>
+    $(document).ready(function () {
+        $('.dropdown-submenu a.dropdown-toggle').on("click", function (e) {
+            if (!$(this).next('div').hasClass('show')) {
+                $('.dropdown-submenu .dropdown-menu').removeClass('show');
+            }
+            $(this).next('div').toggleClass('show');
+            return false;
+        });
+
+        $('.dropdown-submenu').on("mouseleave", function () {
+            $(this).children('.dropdown-menu').removeClass('show');
+        });
+    });
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VNWLV6472K"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-VNWLV6472K');
+</script>    <link href="css/tablas.css" rel="stylesheet" type="text/css"/>
+
+    <script>
+        $(document).ready(function () {
+
+
+            $('[data-toggle="collapse"]').on('click', function () {
+                const $this = $(this);
+                const targetId = $this.attr('href');
+                const $target = $(targetId);
+
+                if ($target.length && !$target.hasClass('show')) {
+                    setTimeout(function () {
+                        const $cardHeader = $this.closest('.card-header');
+                        if ($cardHeader.length) {
+                            $('html, body').animate({
+                                scrollTop: $cardHeader.offset().top - 120
+                            }, 500);
+                        }
+                    }, 300);
+                }
+            });
+
+
+        });
+
+    </script>
+
+    <body>
+        <!-- Start Menu -->
+        <div class="nav-int">
+
+            
+<body class="bodypadding">    
+
+    <script>
+        $(document).ready(function () {
+            $('.navbar-interior').parent().addClass('nav-fijo');
+        });
+    </script>
+
+<div class="navbar-interior">
+    <nav class="navbar navbar-expand-custom bg-dark navbar-dark">
+        <!-- Barra superior con botones -->
+        <div class="bg-nav-top" id="top">
+            <div class="d-flex">
+                <!-- Buscador estilo Amazon (más compacto) -->
+                <div class="search-container">
+                    <form class="search-form" action="https://www.comexus.org.mx/busqueda/" method="GET" onsubmit="event.preventDefault(); window.location.href = 'https://www.comexus.org.mx/busqueda/' + encodeURIComponent(document.getElementById('search-input').value);">
+                        <input type="text" 
+                               class="search-input" 
+                               id="search-input"
+                               placeholder="Buscar..." 
+                               aria-label="Buscar">
+                        <button class="search-button" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <button type="button" onclick="location.href = 'https://www.comexus.org.mx/donativos.php'" class="btn btn-menu-top fondo_menu">Donar</button>                                
+                <!--<button type="button" onclick="location.href = '/en/becas-para-mexicanos.php'" class="btn btn-menu-top flag_eng">English</button>-->
+                <div id = "lang">
+                    <button type="button" onclick="location.href = '/en/'" class="btn btn-menu-top flag_eng">English</button>   
+                </div>
+            </div>
+        </div>
+
+        <!-- Logo -->
+        <a class="navbar-brand" href="https://www.comexus.org.mx/index.php">
+            <img class="logo-nav" src="images/logo.svg" alt="Logo">
+        </a>
+
+        <!-- Botón móvil para menú (solo visible en móvil y en home) -->
+
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <!-- Menú principal -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto fontmenu">
+                <li class="nav-item ">
+                    <a class="nav-link" href="https://www.comexus.org.mx/nosotros_home.php">Nosotros</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://www.comexus.org.mx/becas_mexicanos_home.php">Becas Mexicanos</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="https://www.comexus.org.mx/becas_estadounidenses_home.php">Becas Estadounidenses</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="https://www.comexus.org.mx/exbecarios.php">Exbecarios</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="https://www.comexus.org.mx/cultura_home.php">Cultura</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="https://www.comexus.org.mx/instituciones_home.php">Instituciones</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="https://www.comexus.org.mx/oportunidades.php">Oportunidades</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="https://www.comexus.org.mx/contacto.php">Contacto</a>
+                </li>
+
+                <!-- Elementos móviles solo para home -->
+
+                <li class="nav-item mobile-search-item">
+                    <div class="search-container mobile-search">
+                        <form class="search-form" action="busqueda/" method="GET" onsubmit="event.preventDefault(); window.location.href = 'busqueda/' + encodeURIComponent(this.querySelector('.search-input-mobile').value);">
+                            <input type="text" class="search-input search-input-mobile" placeholder="Buscar..." aria-label="Buscar">
+                            <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                </li>
+                <li class="nav-item mobile-donar-item">
+                    <button onclick="location.href = 'https://www.comexus.org.mx/donativos.php'" class="btn btn-menu-top fondo_menu mobile-btn">Donar</button>
+                </li>
+                <li class="nav-item mobile-english-item">
+                    <button onclick="location.href = '/en/'" class="btn btn-menu-top flag_eng mobile-btn">English</button>
+                    <!--<button onclick="location.href = '/en/becas-para-mexicanos.php'" class="btn btn-menu-top flag_eng mobile-btn">English</button>-->
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</div>           
+        </div>
+        <section>
+            <div class="container-fluid" style="padding-bottom: 15px; background-color: #1b449c;">
+                <div class="row">
+                    <div class="fondo_becas_mexicanos" style='background-image:url(documentos/imagenes/mex_postgrado_regular_2025-08-05_H_13-15-31.jpg);background-position: top;'>
+                        <div class="">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-6"></div>
+                                <div class="col-lg-4 col-md-6">
+                                    <h1 class="title-1"></h1>
+                                    <h1 class="title-1">Beca Posgrado Regular</h1>
+                                    <h1 class="title-2">para estudios en Estados Unidos</h1>
+                                    <div class="margen_left">
+                                        <p class="subtituloo_m"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="becas_mexicanos_home.php">Becas para Mexicanos</a></li>                    <li class="breadcrumb-item active" aria-current="page">Beca Posgrado Regular</li>
+                </ol>
+            </nav>
+        </div>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="container-beca-descripcion">
+                        <div class="col-lg-12">
+                            <div class="frase">
+                                <h1><p>CONVOCATORIA ABIERTA</p><p>Del 2 de septiembre de 2026 al 15 de enero de 2027, para iniciar estudios en agosto de 2028 sin excepción.</p></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-faq">
+                        <div class="faq_wrapper">
+                            <div id="faqAccordion" role="tablist">
+                                                                        <div class="card bg-transparent border-0 mb-3">
+                                            <div class="card-header" role="tab" id="headingfaq0">
+                                                <h5 class="mb-0 d-flex justify-content-between align-items-center">
+                                                    <a class=" text-white d-block w-100 text-decoration-none d-flex justify-content-between align-items-center" 
+                                                       data-toggle="collapse" 
+                                                       href="#collapsefaq0" 
+                                                       aria-expanded="true" 
+                                                       aria-controls="collapsefaq0">
+                                                           Descripción del programa                                                        <span class="arrow-icon"></span>
+                                                    </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapsefaq0" 
+                                                 class="collapse show" 
+                                                 data-parent="#faqAccordion" 
+                                                 role="tabpanel" 
+                                                 aria-labelledby="headingfaq0">
+                                                <div class="card-body">
+                                                    <p>Oportunidad para estudiantes mexicanos de estudiar un posgrado (maestría/doctorado) en Estados Unidos. La Comisión apoyará a los becarios con el proceso de solicitud de admisión (pago y seguimiento) en hasta cinco universidades, y con hasta $37,000 dólares por año escolar hasta 18 meses para maestría, y hasta $25,000 por año escolar por hasta tres años para doctorado.</p><p>Convocatoria abierta del 2 de septiembre de 2026 al 15 de enero de 2027, para iniciar estudios en agosto de 2028 sin excepción.</p><p>Convocatoria abierta a todas las disciplinas, excepto las incluidas en las áreas clínicas de la medicina, la odontología y la veterinaria que involucren atención al paciente.</p><p>Se dará prioridad a las Ciencias, Tecnología, Matemáticas, Ingenierías (STEM por sus siglas en inglés) y a los estudios sobre Estados Unidos.</p>                                                </div>
+                                            </div>
+                                        </div>
+                                                                                <div class="card bg-transparent border-0 mb-3">
+                                            <div class="card-header" role="tab" id="headingfaq1">
+                                                <h5 class="mb-0 d-flex justify-content-between align-items-center">
+                                                    <a class="collapsed text-white d-block w-100 text-decoration-none d-flex justify-content-between align-items-center" 
+                                                       data-toggle="collapse" 
+                                                       href="#collapsefaq1" 
+                                                       aria-expanded="false" 
+                                                       aria-controls="collapsefaq1">
+                                                           Elegibilidad                                                        <span class="arrow-icon"></span>
+                                                    </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapsefaq1" 
+                                                 class="collapse " 
+                                                 data-parent="#faqAccordion" 
+                                                 role="tabpanel" 
+                                                 aria-labelledby="headingfaq1">
+                                                <div class="card-body">
+                                                    <p>La beca Fulbright-García Robles es otorgada a estudiantes de nacionalidad MEXICANA.</p><p>No son elegibles:</p><p style="margin-left: 20px;">• Quienes ya cuenten con aceptación en una universidad.</p><p style="margin-left: 20px;">• Quienes cuenten con residencia o nacionalidad estadounidense (o doble mexicana-estadounidense).</p><p style="margin-left: 20px;">• Ex becarios Fulbright-García Robles de maestría o doctorado.</p><p style="margin-left: 20px;">• Quienes radiquen, trabajen o estudien en Estados Unidos.</p><p style="margin-left: 20px;">• Quienes deseen apoyo complementario para continuar con estudios ya iniciados en Estados Unidos.</p><p style="margin-left: 20px;">• Quienes hayan residido en Estados Unidos durante más de un año, en los cinco años previos al cierre de la convocatoria.</p><p style="margin-left: 20px;">• Quienes hayan estudiado la licenciatura o la maestría en Estados Unidos.</p><p style="margin-left: 20px;">• Los empleados y sus familiares directos del Departamento de Estado de Estados Unidos, así como de las Secretarías de Educación Pública y Relaciones Exteriores en México y otras dependencias de ambos países, no son elegibles.*</p><p><span style="font-size: 13px;">* El manual de Fulbright Foreign Scholarship Board (FFSB) dice a la letra que: "525.1/ 727.1/ 926.1 Personas Asociadas con Agencias y Organizaciones Específicas y miembros de sus Familias.</span></p>                                                </div>
+                                            </div>
+                                        </div>
+                                                                                <div class="card bg-transparent border-0 mb-3">
+                                            <div class="card-header" role="tab" id="headingfaq2">
+                                                <h5 class="mb-0 d-flex justify-content-between align-items-center">
+                                                    <a class="collapsed text-white d-block w-100 text-decoration-none d-flex justify-content-between align-items-center" 
+                                                       data-toggle="collapse" 
+                                                       href="#collapsefaq2" 
+                                                       aria-expanded="false" 
+                                                       aria-controls="collapsefaq2">
+                                                           Requisitos                                                        <span class="arrow-icon"></span>
+                                                    </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapsefaq2" 
+                                                 class="collapse " 
+                                                 data-parent="#faqAccordion" 
+                                                 role="tabpanel" 
+                                                 aria-labelledby="headingfaq2">
+                                                <div class="card-body">
+                                                    <ul><li>Tener promedio mínimo de 8 en el grado completo más reciente de una institución acreditada, mismo que deberá comprobarse con una carta de la universidad o el certificado final de calificaciones.   </li><li>Presentar resultados vigentes y oficiales del examen TOEFL iBT (versión presencial), IELTS Academic (versión presencial) o Duolingo English Test (versión en línea, ya que no cuenta con una versión presencial). La vigencia de los resultados es de 2 años. Se requiere un puntaje mínimo de 80 (escala anterior) o 4.0 (nueva escala) en TOEFL iBT, 6.5 en IELTS Academic o 120 en Duolingo English Test. Los resultados deben estar vigentes al cierre de la convocatoria.</li><li>Presentar resultados vigentes y oficiales del examen GRE (versión presencial). La vigencia de los resultados es de 5 años. Este es obligatorio, aunque la universidad de su interés no lo pida. Se pide un puntaje mínimo de 152 en UNA de las secciones del GRE de acuerdo al área de interés del candidato:<ul><li>Mínimo de 152 en la sección verbal, aplica para: Ciencias Sociales y Humanidades.</li><li>Mínimo de 152 en la sección cuantitativa, aplica para: Ciencias, Tecnologías, Ingenierías y Matemáticas. </li><li>Mínimo de 152 en cualquiera de las dos secciones, aplica para: Artes, Administración de Empresas, Derecho y Administración Pública.</li></ul></li><li>Obtener un mínimo de 55 puntos en la escala de calidad COMEXUS, que pondera el promedio y los resultados de los exámenes antes mencionados. Para ver la <b>escala de calidad</b> revisar el documento en la parte inferior en “Descargar convocatoria y preguntas frecuentes” para buscar las áreas: STEM, Ciencias Sociales / Humanidades, Grados profesionales (MBA, MPP, MPA, LLM), Artes.</li><li>Tres cartas de recomendación en inglés que se llenarán en línea en el apartado de la solicitud que corresponde.</li><li>Tira de materias oficial de cada grado obtenido (o en curso): carta firmada y sellada por el Departamento de Control Escolar de su universidad. Si la tira de materias no incluye el promedio, es necesario solicitar y entregar una carta de promedio. En caso de haber estudiado en una universidad fuera de México, es necesario entregar un documento oficial por parte de la universidad anfitriona que confirme la conversión del promedio a la escala mexicana. Ojo: no es necesario entregar traducciones al inglés de los documentos, ese será el siguiente paso en caso de quedar seleccionado como finalista.   </li><li>Título, acta de titulación o carta de compromiso de titularse de todos los grados obtenidos o en curso para la solicitud. La carta de compromiso debe estar en inglés y no tiene un formato específico, pero debe precisar que el candidato se compromete a titularse a más tardar en marzo de 2028.   </li><li>Ensayo personal (personal statement entre 400-600 palabras), objetivos de estudio (study objectives)* y currículum vitae en inglés en formato PDF. La solicitud en línea incluye información sobre el contenido de estos documentos. Los candidatos que soliciten la beca para realizar estudios en una disciplina o área distinta a la de su grado anterior, deben justificar el cambio en sus ensayos. Por ejemplo, un becario que estudió ingeniería eléctrica en la licenciatura, pero ahora quiere estudiar una maestría en ingeniería petrolera debe explicar este cambio de interés y proporcionar argumentos que apoyen su nueva elección y sus posibilidades de llevarla a buen término</li><li>Para candidatos de doctorado, ejemplo o muestra de un trabajo escrito en su área de especialización, o disciplina, en inglés, de 10 a 15 páginas de extensión (aproximadamente 10,000 palabras).</li><li>Para candidatos de artes, se requiere un portafolio digitalizado.</li><li>Registrarse para la solicitud en línea: <a href="https://solicitudes.comexus.org.mx" target="_blank">Comexus en línea</a>. Los registros enviados en convocatorias anteriores no podrán ser reutilizados ya que son eliminados de nuestro sistema.  </li></ul>                                                </div>
+                                            </div>
+                                        </div>
+                                                                                <div class="card bg-transparent border-0 mb-3">
+                                            <div class="card-header" role="tab" id="headingfaq3">
+                                                <h5 class="mb-0 d-flex justify-content-between align-items-center">
+                                                    <a class="collapsed text-white d-block w-100 text-decoration-none d-flex justify-content-between align-items-center" 
+                                                       data-toggle="collapse" 
+                                                       href="#collapsefaq3" 
+                                                       aria-expanded="false" 
+                                                       aria-controls="collapsefaq3">
+                                                           Apoyos                                                        <span class="arrow-icon"></span>
+                                                    </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapsefaq3" 
+                                                 class="collapse " 
+                                                 data-parent="#faqAccordion" 
+                                                 role="tabpanel" 
+                                                 aria-labelledby="headingfaq3">
+                                                <div class="card-body">
+                                                    <ul><li>Pago de la cuota para la realización de exámenes estandarizados una vez seleccionados como becarios Fulbright-García Robles: TOEFL iBT por hasta $230 USD y GRE por hasta $249 USD.</li><li>Solicitud de admisión hasta por $400 USD por hasta cuatro universidades para maestría, y hasta $500 USD por hasta cinco universidades para doctorado, incluyendo asesoría.</li><li>Hasta $37,000 dólares por año escolar hasta 18 meses para para maestría, y hasta $25,000 por año escolar por tres años para doctorado. Esta cantidad no está etiquetada por lo que el becario puede utilizar los fondos para manutención (según el tabulador del Departamento de Estado), colegiatura, cuotas y/o libros.   </li><li>Seguro de gastos médicos Fulbright (ASPE).</li><li>Trámite de la visa J1. Todos los becarios Fulbright viajan con visa J1 (visitante de intercambio) tramitada por la Comisión. Revise la información acerca de este tipo de visa que contempla restricciones de residencia al termino de la beca, en la siguiente liga: <a href="https://www.comexus.org.mx/visa.php" target="_blank">VISA</a>.</li><li>Los estudiantes de doctorado deberán transferir el patrocinio de su visa J1 a su universidad anfitriona una vez que concluya el financiamiento de Fulbright-García Robles, ya que la beca contempla financiamiento por un periodo de hasta tres años. Los estudiantes trabajarán con su universidad anfitriona para presentar ante USCIS la solicitud de extensión de estancia. Asimismo, recibirán un beneficio adicional de $420 USD para cubrir la cuota correspondiente a la solicitud electrónica.</li><li>Cursos pre-académicos y de enriquecimiento en Estados Unidos, sujetos a aprobación y presupuesto del Departamento de Estado.</li></ul>                                                </div>
+                                            </div>
+                                        </div>
+                                                                                <div class="card bg-transparent border-0 mb-3">
+                                            <div class="card-header" role="tab" id="headingfaq4">
+                                                <h5 class="mb-0 d-flex justify-content-between align-items-center">
+                                                    <a class="collapsed text-white d-block w-100 text-decoration-none d-flex justify-content-between align-items-center" 
+                                                       data-toggle="collapse" 
+                                                       href="#collapsefaq4" 
+                                                       aria-expanded="false" 
+                                                       aria-controls="collapsefaq4">
+                                                           Fechas importantes                                                        <span class="arrow-icon"></span>
+                                                    </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapsefaq4" 
+                                                 class="collapse " 
+                                                 data-parent="#faqAccordion" 
+                                                 role="tabpanel" 
+                                                 aria-labelledby="headingfaq4">
+                                                <div class="card-body">
+                                                    <div class="timeline"><div class="timeline-row"><div class="btn-eiminar-timeline" onclick="$(this).closest('.timeline-row').remove();"><i class="fa fa-times" aria-hidden="true"></i></div><div class="timeline-time" data-id="7">2 de septiembre de 2026</div><div class="timeline-dot fb-bg"></div><div class="timeline-content" ><span class="icon-gen icon-megaphone"></span><h4>Inicio de convocatoria</h4></div></div><div class="timeline-row"><div class="btn-eiminar-timeline" onclick="$(this).closest('.timeline-row').remove();"><i class="fa fa-times" aria-hidden="true"></i></div><div class="timeline-time" data-id="1">15 de enero de 2027 </div><div class="timeline-dot fb-bg"></div><div class="timeline-content" ><span class="icon-gen icon-calendar"></span><h4>Cierre de convocatoria</h4></div></div><div class="timeline-row"><div class="btn-eiminar-timeline" onclick="$(this).closest('.timeline-row').remove();"><i class="fa fa-times" aria-hidden="true"></i></div><div class="timeline-time" data-id="2">Febrero-Marzo 2027</div><div class="timeline-dot fb-bg"></div><div class="timeline-content" ><span class="icon-gen icon-telefono"></span><h4>Notificación para etapa de entrevistas</h4></div></div><div class="timeline-row"><div class="btn-eiminar-timeline" onclick="$(this).closest('.timeline-row').remove();"><i class="fa fa-times" aria-hidden="true"></i></div><div class="timeline-time" data-id="3">Marzo-Mayo 2027 </div><div class="timeline-dot fb-bg"></div><div class="timeline-content" ><span class="icon-gen icon-dialogo"></span><h4>Etapa de entrevistas</h4></div></div><div class="timeline-row"><div class="btn-eiminar-timeline" onclick="$(this).closest('.timeline-row').remove();"><i class="fa fa-times" aria-hidden="true"></i></div><div class="timeline-time" data-id="4">May-June 2027</div><div class="timeline-dot fb-bg"></div><div class="timeline-content" ><span class="icon-gen icon-lista"></span><h4>Evaluaciones</h4></div></div><div class="timeline-row"><div class="btn-eiminar-timeline" onclick="$(this).closest('.timeline-row').remove();"><i class="fa fa-times" aria-hidden="true"></i></div><div class="timeline-time" data-id="5">Junio 2027 </div><div class="timeline-dot fb-bg"></div><div class="timeline-content" ><span class="icon-gen icon-email"></span><h4>Notificaciones</h4></div></div><div class="timeline-row"><div class="btn-eiminar-timeline" onclick="$(this).closest('.timeline-row').remove();"><i class="fa fa-times" aria-hidden="true"></i></div><div class="timeline-time" data-id="6"> Julio 2027 </div><div class="timeline-dot fb-bg"></div><div class="timeline-content" ><span class="icon-gen icon-educacion"></span><h4>Inicio del programa de la beca</h4></div></div></div>                                                </div>
+                                            </div>
+                                        </div>
+                                                                                <div class="card bg-transparent border-0 mb-3">
+                                            <div class="card-header" role="tab" id="headingfaq5">
+                                                <h5 class="mb-0 d-flex justify-content-between align-items-center">
+                                                    <a class="collapsed text-white d-block w-100 text-decoration-none d-flex justify-content-between align-items-center" 
+                                                       data-toggle="collapse" 
+                                                       href="#collapsefaq5" 
+                                                       aria-expanded="false" 
+                                                       aria-controls="collapsefaq5">
+                                                           Información de contacto                                                        <span class="arrow-icon"></span>
+                                                    </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapsefaq5" 
+                                                 class="collapse " 
+                                                 data-parent="#faqAccordion" 
+                                                 role="tabpanel" 
+                                                 aria-labelledby="headingfaq5">
+                                                <div class="card-body">
+                                                    <p><a href="mailto:becas@comexus.org.mx" id="isPasted">becas@comexus.org.mx</a></p>                                                </div>
+                                            </div>
+                                        </div>
+                                                                                <div class="card bg-transparent border-0 mb-3">
+                                            <div class="card-header" role="tab" id="headingfaq6">
+                                                <h5 class="mb-0 d-flex justify-content-between align-items-center">
+                                                    <a class="collapsed text-white d-block w-100 text-decoration-none d-flex justify-content-between align-items-center" 
+                                                       data-toggle="collapse" 
+                                                       href="#collapsefaq6" 
+                                                       aria-expanded="false" 
+                                                       aria-controls="collapsefaq6">
+                                                           Notas                                                        <span class="arrow-icon"></span>
+                                                    </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapsefaq6" 
+                                                 class="collapse " 
+                                                 data-parent="#faqAccordion" 
+                                                 role="tabpanel" 
+                                                 aria-labelledby="headingfaq6">
+                                                <div class="card-body">
+                                                    <p>a) Las solicitudes que no cumplan con el puntaje mínimo de 55 puntos no serán consideradas para la etapa de entrevistas.</p><p>b) Los candidatos de todas las disciplinas (incluso Administración de Empresas, Artes, Derecho, etc.) deberán presentar el examen GRE. Ya no se acepta el GMAT.</p><p>c) Se sumarán los puntos de ambas secciones del GRE para determinar el puntaje final, aunque se pida un 152 en UNA sección del examen basado en el área de interés.</p><p>d) Los candidatos deben adjuntar los resultados de los exámenes que se reciben de ETS por correo electrónico, en formato PDF, a la solicitud en línea previo al cierre de la convocatoria. Si no recibimos los resultados oficiales antes del cierre, no aceptaremos su solicitud. No habrá prórrogas.</p><p>e) Se solicitará un portafolio digitalizado a los candidatos de las disciplinas siguientes:</p><p style="margin-left: 20px;">• Literatura</p><p style="margin-left: 20px;">• Cine</p><p style="margin-left: 20px;">• Pintura y Artes Visuales</p><p style="margin-left: 20px;">• Diseño y Artes Afines</p><p style="margin-left: 20px;">• Música</p><p style="margin-left: 20px;">• Danza, Teatro y Actuación</p><p>Al adjuntarlo a su solicitud electrónica, recibirán 5 puntos adicionales en la escala de calidad COMEXUS. Las especificaciones sobre el formato del portafolio digital figuran en la solicitud en línea.</p><p>f) Los candidatos deben enviar la solicitud una vez completa. Al momento de dar click en la opción “enviar solicitud” recibirán un correo automático de COMEXUS donde se les informa que su solicitud fue recibida. COMEXUS no se hará responsable en caso de que el candidato omita este paso.</p><p>Los candidatos recibirán los resultados de la primera etapa por correo electrónico, a la dirección con la que se registraron. Los candidatos que pasen los primeros filtros accederán a la etapa de entrevistas con un panel de expertos en su área de estudio. Las entrevistas se llevarán a cabo vía Zoom, en las fechas y horas asignadas. No es posible cambiar la hora y fecha asignadas de la entrevista.</p><p>Los resultados del proceso de selección son inapelables.</p><p>La beca Fulbright-García Robles Posgrado Regular es mutuamente excluyente de la beca Opportunity Funds de EducationUSA. En caso de que una persona sea notificada como beneficiaria de ambos apoyos, deberá elegir aquella que mejor se adecue a sus necesidades académicas y profesionales. No será posible recibir simultáneamente los beneficios de los dos programas.</p>                                                </div>
+                                            </div>
+                                        </div>
+                                                                                <div class="card bg-transparent border-0 mb-3">
+                                            <div class="card-header" role="tab" id="headingfaq7">
+                                                <h5 class="mb-0 d-flex justify-content-between align-items-center">
+                                                    <a class="collapsed text-white d-block w-100 text-decoration-none d-flex justify-content-between align-items-center" 
+                                                       data-toggle="collapse" 
+                                                       href="#collapsefaq7" 
+                                                       aria-expanded="false" 
+                                                       aria-controls="collapsefaq7">
+                                                           Recursos adicionales                                                        <span class="arrow-icon"></span>
+                                                    </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapsefaq7" 
+                                                 class="collapse " 
+                                                 data-parent="#faqAccordion" 
+                                                 role="tabpanel" 
+                                                 aria-labelledby="headingfaq7">
+                                                <div class="card-body">
+                                                    <p>Consulta los siguientes recursos para prepararte para el proceso de solicitud de la beca, conocer opciones de asesoría y fortalecer tu perfil académico.</p><p><a href="https://edusamx.wordpress.com/recursos-fgr/" target="_blank">Recursos de EducationUSA México para candidatos a las becas Fulbright-García Robles</a></p><p>Encuentra materiales y sesiones de preparación para practicar inglés y para los exámenes estandarizados de inglés (TOEFL y IELTS) y GRE, así como orientación para elaborar ensayos, CV y cartas de recomendación. También podrás consultar opciones de asesoría gratuita a través de los distintos centros de EducationUSA a lo largo del país. Recuerda que para esta beca NO es necesario aplicar a universidades en Estados Unidos ya que COMEXUS te apoya en todo el proceso de selección y aplicación.</p><p><a href="https://mx.usembassy.gov/es/education-exchanges-es/american-spaces-es/" target="_blank">American Spaces de la Embajada de Estados Unidos en México</a></p><p>Conoce los espacios y recursos educativos impulsados por la Embajada de Estados Unidos en México a través de su red American Spaces, donde podrás acceder a actividades, información y oportunidades para fortalecer tus conocimientos de inglés, desarrollar habilidades académicas y acercarte a la cultura y las oportunidades educativas en Estados Unidos.</p>                                                </div>
+                                            </div>
+                                        </div>
+                                                                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-botones-becas">
+                    <div class="row justify-content-end ">
+
+                        <div class="col-12 px-sm-5">
+                            <div class="row">
+                                                                    <div class="col-12 col-sm-4">
+                                        <a class="btn btn-primary btn-block btn-convocatoria" target='_blank' href="https://solicitudes.comexus.org.mx/" role="button" style='padding: 12px;'>INICIA TU SOLICITUD</a>
+                                    </div>
+                                                                                                    <div class="col-12 col-sm-4">
+                                        <a class="btn btn-primary btn-block btn-convocatoria" target='_blank' href="documentos/becas/PosgradoRegular-ESP_2026-10-02_H_18-13-34.pdf" role="button" >DESCARGAR CONVOCATORIA Y PREGUNTAS FRECUENTES<span class="icon-descargar"></span></a>
+                                    </div>
+                                                                                                    <div class="col-12 col-sm-4">
+                                        <!--<a class="btn btn-primary btn-block btn-convocatoria" target='_blank' href="documentos/becas/One-pagerTablacomparativaMXPosgradoRegular2026_2026-10-07_H_18-53-19.pdf" role="button" >INFORMACIÓN ADICIONAL<span class="icon-descargar"></span></a>-->
+                                        <a class="btn btn-primary btn-block btn-convocatoria" target='_blank' href="documentos/becas/One-pagerTablacomparativaMXPosgradoRegular2026_2026-10-07_H_18-53-19.pdf" role="button" >CÓMO SE COMPARA VS OTROS PROGRAMAS<span class="icon-descargar"></span></a>
+                                    </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Start Form -->
+        <section>
+    <div class="container-fuid" style="margin-bottom: 30px;">
+        <div class="back_contacto">
+            <div class="tituloo color_blanco">Contacto</div>
+            <div class="contenedor_contacto">
+                <div class="col-md-6 col-lg-5 relativo">
+                    <div class="color_blanco">Llámanos: (+52) 55 5592 2861 / 55 5566 9153
+                        </br>becas@comexus.org.mx</div>
+                    <p class="color_blanco">Berlín 18, 2do Piso, Col. Juárez, C.P. 06600 México, CDMX.</p>
+                </div>
+
+                <div class="col-md-7 col-lg-7 relativo">
+                    <div class="container-form-1">
+                        <div class="container-inside-title">
+                            <div class="container-inside-title-txt">
+                                <div class="container-inside-title-txt-left subtituloo">
+                                    <h1 style="padding-left: 0; color:#1b449c; font-family: 'mark_promedium' !important; text-transform: uppercase !important;">Contáctanos</h1>
+                                </div>
+                            </div>
+                            <p class="mt-3">Estamos aquí para ayudar. Llámanos, envíanos un correo electrónico o completa nuestro formulario de contacto. Para darte una respuesta más rápida y precisa, por favor indica en tu mensaje el programa en el que estás interesado.</p>
+                        </div>
+                        <form method="post" id="formulario" name="formulario">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre" required data-mensaje="El nombre es requerido" value="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="email" class="form-control" placeholder="Email" name="email" id="email" required data-mensaje="El email es requerido" value="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="tel" class="form-control" placeholder="Teléfono" name="telefono" id="telefono" required data-mensaje="El teléfono es requerido" value="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="text" class="form-control" placeholder="Ciudad" name="empresa" id="empresa" value="">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <textarea class="form-control" placeholder="Mensaje" name="mensaje" id="mensaje" rows="3" required data-mensaje="El mensaje es requerido"></textarea>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <button type="submit" id="envia" class="btn btn-primary btn-submit">Enviar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>        <!-- End Form -->
+        <!-- Start Footer -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="chatbot/css/chatboot.css" rel="stylesheet" type="text/css"/>
+<script src="chatbot/js/chatboot.js" type="text/javascript"></script>
+<div class="chatbot-widget">
+    <!-- Botón flotante -->
+    <button class="chatbot-button" id="chatbotToggle">
+        <i class="fas fa-comment"></i>
+        <span class="unread-badge" id="unreadBadge" style="display: none;">1</span>
+    </button>
+
+    <!-- Ventana del chat -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chat-header">
+            <div>
+                <h3><i class="fas fa-robot mr-2"></i>Chat COMEXUS</h3>
+                <p>Preguntas sobre becas Fulbright</p>
+            </div>
+            <button class="close-button" id="closeChat">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="message-content">
+                    <i class="fas fa-robot mr-2"></i>
+                    ¡Hola! Soy el asistente virtual de COMEXUS. ¿En qué puedo ayudarte?
+                </div>
+            </div>
+        </div>
+
+        <div class="suggested-questions">
+            <h6><i class="fas fa-lightbulb mr-2"></i>Preguntas rápidas:</h6>
+            <div class="suggested-buttons" id="suggestedButtons"></div>
+        </div>
+
+        <div class="chat-input-container">
+            <div class="input-group">
+                <input type="text" class="form-control" id="userInput" placeholder="Escribe tu pregunta..." autocomplete="off">
+                <div class="input-group-append">
+                    <button class="btn-send" id="sendButton" type="button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <i class="far fa-envelope mr-1"></i> ¿No encuentras? 
+            <a href="mailto:becas@comexus.org.mx?subject=Solicitud de Información&body=Hola equipo de COMEXUS, me gustaría saber más sobre...">
+                Contactar
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de contacto (más pequeño) -->
+<!-- Modal de contacto corregido -->
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 350px;" role="document">
+        <div class="modal-content" style="border-radius: 15px;">
+            <div class="modal-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 15px 15px 0 0;">
+                <h5 class="modal-title" id="contactModalLabel">
+                    <i class="fas fa-envelope mr-2"></i>Contactar COMEXUS
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white; opacity: 0.8;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding: 20px;">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="nombre" style="font-weight: 500; color: #495057; font-size: 13px;">
+                            <i class="fas fa-user mr-1" style="color: #667eea;"></i>Nombre completo
+                        </label>
+                        <input type="text" class="form-control form-control-sm" id="nombre" 
+                               style="border-radius: 8px; border: 1px solid #dee2e6; padding: 8px 12px; font-size: 13px;" 
+                               placeholder="Ej. Juan Pérez" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" style="font-weight: 500; color: #495057; font-size: 13px;">
+                            <i class="fas fa-at mr-1" style="color: #667eea;"></i>Correo electrónico
+                        </label>
+                        <input type="email" class="form-control form-control-sm" id="email" 
+                               style="border-radius: 8px; border: 1px solid #dee2e6; padding: 8px 12px; font-size: 13px;" 
+                               placeholder="ejemplo@correo.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="programa" style="font-weight: 500; color: #495057; font-size: 13px;">
+                            <i class="fas fa-graduation-cap mr-1" style="color: #667eea;"></i>Programa de interés
+                        </label>
+                        <select class="form-control form-control-sm" id="programa" 
+                                style="border-radius: 8px; border: 1px solid #dee2e6; padding: 8px 12px; font-size: 13px; height: auto;">
+                            <option value="Fulbright-García Robles">Fulbright-García Robles</option>
+                            <option value="FLTA">FLTA</option>
+                            <option value="Cátedra de EE. UU.">Cátedra de EE. UU.</option>
+                            <option value="Otro">Otro programa</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="consulta" style="font-weight: 500; color: #495057; font-size: 13px;">
+                            <i class="fas fa-question-circle mr-1" style="color: #667eea;"></i>Tu consulta
+                        </label>
+                        <textarea class="form-control form-control-sm" id="consulta" rows="3" 
+                                  style="border-radius: 8px; border: 1px solid #dee2e6; padding: 8px 12px; font-size: 13px; resize: none;" 
+                                  placeholder="Escribe aquí tu pregunta..." required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" style="border-top: 1px solid #dee2e6; padding: 15px;">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal" 
+                        style="border-radius: 8px; padding: 8px 15px; font-size: 13px; background: #6c757d; border: none;">
+                    <i class="fas fa-times mr-1"></i>Cancelar
+                </button>
+                <button type="button" class="btn btn-primary btn-sm" id="sendContactForm" 
+                        style="border-radius: 8px; padding: 8px 15px; font-size: 13px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;">
+                    <i class="fas fa-paper-plane mr-1"></i>Enviar consulta
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="footer-bg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg col-sm-12">
+                    <div class="logo-footer"></div>
+                    <a href="contacto.php" style="color: #0056a3; font-family: 'mark_promedium'; font-size: 16px; text-decoration: none; margin-top: 5px;">Contacto </a>
+                    <p><a class="tel-footer" href="tel:+525555922861">(+52) 55 5592 2861 - </a>  <a class="tel-footer" href="tel:+525555669153"> 55 5566 9153</a></p>
+                    <p><a class="tel-footer" href="mailto:becas@comexus.org.mx" style="width: 100% !important;">becas@comexus.org.mx</a></p>
+                    <p class="mt-2">Berlín 18, 2do Piso, Col. Juárez,</br>
+                        C.P. 06600 México, CDMX.</p>
+                                            <!-- <p class="horario">L-V 09:00-17:00 hrs </p>
+                                            <p class="horario">S 09:00-13:00 hrs</p>-->
+                    <div class="container-redes">
+                        <div class="container-redes-txt"><p class="txt-siguenos">Síguenos</p></div>
+                        <div class="container-redes-icons">
+                            <a class="bt-redes" href="https://www.facebook.com/COMEXUSFulbrightGR" target="_blank"><div class="facebook"></div></a>
+                            <a class="bt-redes" href="https://www.instagram.com/comexusfgr" target="_blank"><div class="instagram"></div></a>
+                            <a class="bt-redes" href="https://www.linkedin.com/company/comexus-fulbright-garc%C3%ADa-robles/" target="_blank"><div class="linkedin"></div></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg col-sm-12">
+                    <div class="container-footer-links">
+
+                        <div class="container-footer-items">
+                            <ul class="no-bullets">
+                                <li><a href="nosotros_home.php">Nosotros </a></li>
+                                <li><a href="becas_mexicanos_home.php">Becas Mexicanos</a></li>
+                                <li><a href="becas_estadounidenses_home.php">Becas Estadounidenses</a></li>
+                                <li><a href="exbecarios.php">Exbecarios</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg col-sm-12">
+                    <div class="container-footer-links">
+
+                        <div class="container-footer-items">
+                            <ul class="no-bullets">
+                                <li><a href="cultura_home.php">Cultura</a></li>
+                                <li><a href="instituciones_home.php">Instituciones</a></li>
+                                <li><a href="oportunidades.php">Oportunidades </a></li>
+                                <li><a href="informes.php">Informe anual </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg col-sm-12">
+                    <div class="container-footer-links">
+
+                        <div class="container-footer-items">
+                            <ul class="no-bullets">
+                                <li><a href="aviso.php">Aviso de privacidad</a></li>
+                                <li><a href="visa.php">Visa</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-12">
+                    <div class="container-footer-copy">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><span class="footer-derechos">Derechos Reservados 2026 Comexus   </span><!--  <span> <a class="aviso" href="aviso.php"> Aviso de Privacidad</a></span><span class="footer-derechos"> |  </span><span><a class="aviso" href="visa.php">Visa</a></span>--></p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="powerby"><p><a href="http://abugaber.com" target="blank"><span>Powered by</span> abugaber.com</a></p></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src='/core/lang.js'></script>
+        <!-- End Footer -->
+    </body>
+</html>

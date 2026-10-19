@@ -52,12 +52,13 @@ Every rule change is measured against frozen test sets. Each set holds official 
 | Set M (round 28) | 160 | 64% | 18% | 10% |
 | Set N (round 29) | 156 | 62% | 18% | 13% |
 | Set O (round 30) | 120 | 58% | 14% | 14% |
-| Set P (round 31) | 236 | 64% | 13% | 16% |
-| *Round-26 baseline on set P* | 236 | 69% | 23% | 0% |
+| Set P (round 31, universities) | 236 | 64% | 13% | 16% |
+| Set Q (round 33, governments, foundations, companies) | 216 | 60% | 17% | 8% |
+| *Round-26 baseline on set Q* | 216 | 58% | 25% | 0% |
 
 - The remaining decisions are honest "not stated" answers where the label has a value.
-- Every decision the agent reports as known carries a clean quotation from the programme's own page (37/37 on set O, 45/45 on set P).
-- **Weakest area:** the funding class on university pages where the award is a cash amount or a tuition discount tier (13 right, 16 wrong, 24 sent to review out of 59 on set P; round 32 fixed six of those on the development pool, so the next fresh set will show whether that holds).
+- Every decision the agent reports as known carries a clean quotation from the programme's own page (37/37 on set O, 45/45 on set P, 66/66 on set Q).
+- **Weakest areas:** the funding class when the award is a cash amount or a tuition discount tier (university pages, set P), and the applicant deadline on funder pages that list a whole timeline (set Q: 10 wrong deadlines out of 54). Wrong claims are 13-17% of decisions; the target for a public site is under 5%.
 - **Claude-assisted extraction** (`tests/decisions_ai.py`) adds a few correct answers on top of the rules without adding wrong claims (+5 correct on 276 decisions, $0.80); every model answer is quote-checked before it counts. On set P it added dates and cycle states, not funding classes ($0.66).
 
 See [docs/scholarship-agent/EVALUATION.md](docs/scholarship-agent/EVALUATION.md) for the method and the full history.

@@ -1,0 +1,2083 @@
+
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>eViza | Ministerul Afacerilor Externe</title>
+			<link rel="stylesheet" type="text/css" href="css/styleSiteMAE_2.11.158.0_3.css">
+			<link rel="stylesheet" type="text/css" href="css/flexslider.css" media="screen" />
+			<link rel="stylesheet" type="text/css" href="kendo/kendo.common.min.css">
+			<link rel="stylesheet" type="text/css" href="kendo/kendo.bootstrap.min.css">
+			<link rel="stylesheet" type="text/css" href="css/ng-grid.min.css">
+			
+			<link rel="SHORTCUT ICON" href="media/1513/favicon-evisa.ico"/>
+			
+			<script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+			<script type="text/javascript" src="scripts/jquery.flexslider-min.js"></script>
+			<script type="text/javascript" src="scripts/jquery.easing.1.3.min.js"></script>
+			
+			<!-- dupa jquery dar inainte de kendo -->
+			<!--[if lt IE 10]>
+			<script type="text/javascript" src="scripts/jquery.iecors.js"> </script>
+			<![endif]-->			
+			
+			<script type="text/javascript" src="scripts/homeLanguageScript_2.11.158.0.js"> </script>
+			<script type="text/javascript" src="scripts/angular.js"> </script>
+			<script type="text/javascript" src="scripts/ng-grid-2.0.7.min.js"> </script>
+			<script type="text/javascript" src="scripts/kendo.core.min.js"> </script>
+			<script type="text/javascript" src="scripts/kendo.data.min.js"> </script>
+			<script type="text/javascript" src="scripts/kendo.popup.min.js"> </script>
+			<script type="text/javascript" src="scripts/kendo.list.min.js"> </script>
+			<script type="text/javascript" src="scripts/kendo.combobox.min.js"> </script>
+			<script type="text/javascript" src="scripts/kendo.aspnetmvc.min.js"> </script>
+			<script type="text/javascript" src="scripts/kendo.panelbar.min.js"> </script>
+			<script type="text/javascript" src="scripts/kendo.window.min.js"> </script>
+			
+			
+			<!-- Modernizr -->
+  			<script type="text/javascript" src="scripts/modernizr.js"></script>
+			
+			<script type="text/javascript" >
+				var cultureParameter = "lang=" + getCurrentCulture();
+			</script>
+			
+			<!-- NOTA -->
+			
+			<script type="text/javascript">
+				$(document).ready(function () {									
+					
+					loadScripts([
+								 "scripts/kendo.panelbar.min.js"
+								], function() { initialize(); });
+					
+					 $(window).load(function(){
+						  $('.flexslider').flexslider({
+							animation: "fade",
+							pauseOnHover: true,
+							pauseOnAction: false,
+							slideshowSpeed: 4000,
+							animationSpeed: 1000
+						  });
+						});
+					findAndUpdateLinks('');
+				});
+				function loadScripts(array, callback) {
+					var loader = function(src, handler) {
+						var script = document.createElement("script");
+						script.src = src;
+						script.onload = script.onreadystatechange = function() {
+							script.onreadystatechange = script.onload = null;
+							handler();
+						}
+						
+						var head = document.getElementsByTagName("head")[0];
+						head.appendChild(script);
+					};
+					
+					(function() {
+						if(array.length != 0) {
+							loader(array.shift(), arguments.callee);
+						}else {
+							callback && callback();
+						}
+					})();						
+				}
+			</script>
+		
+			
+			
+	
+			
+			
+		</head>
+		<body>
+		<div class="wrapper">
+			<!--<div class="contact">
+				<a class="link" href="Contact">Contact </a></div>	-->
+			<div class="flags">
+				<a href="#" onclick="changeLanguage('en', '')"><img src="media/1017/en.png" width="16" alt="Engleza" border="0" align="left"/></a>
+				<a href="#" onclick="changeLanguage('ro', '')"><img src="media/1022/ro.png" width="16" alt="Romana" border="0" align="left"/></a>								
+			</div>
+		</div>
+		<header id="top_area">		
+			<div class="wrapper">
+				<a class="logolink" href='https://eviza.mae.ro/'>
+				<div class="logo_mae">
+					<div class="rmae">Ministry of Foreign Affairs</div>
+				</div>
+				</a>
+				<a class="logolink" href="home"><div class="logo_eviza">E-VISA - Apply for a Visa Online</div></a>
+			</div>
+		</header>
+		<!--<div class="wrapper">
+			<div  style="display: block; position: relative; top: 20px;">
+				<div  style="border-radius: 5px; border: 2px solid #c9d0d6;
+ 						float: left; width: 100%; width: 980px; color:red; align-items: center;
+						padding: 5px 5px 5px 5px;">
+						<strong>Between July 8th and July 22th, the new headquarters of the Embassy of Romania in New Delhi shall be undergoing setup and maintenance works. During this period of time no activities can be conducted at the Embassy's service desk and all consular services shall be temporarily suspended, with this to include the receiving of visa applications.</strong>
+					</div>		
+			</div>
+	    </div>-->
+		<div class="page_content" style="padding-top: 10px;">
+			<div style="border-radius: 5px;background:orange; color:blue; font-size:14px; padding:10px; margin-bottom:20px; width:960px; text-align: center; margin-left:auto; margin-right: auto;">
+				<div>
+					<div>
+						<div>
+							<div>
+								<span style="font-size:large !important">NEW!!!</span>
+								<span>
+									Registration procedures at the borders for non-EU nationals – Entry Exit. Click <a class="link" href="EES">here</a> for more details.
+								</span>
+								<span style="font-size:large !important">   !!!</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="wrapper">				
+				
+	
+	<div class="spage-bg">
+	<div class="mainLinks minimum_height">
+		<center><h2>Supporting documents required in order to lodge a visa application</h2></center>
+		
+		<p><font size="2"><b>IMPORTANT!</b>
+			</font>&nbsp;A visa application is lodged at the diplomatic missions or consular posts of Romania competent in the area of domicile or residence of the applicant. In particular or emergency cases, a visa application can be lodged at the diplomatic missions or consular posts of Romania from the state where the applicant is legally present.
+<br>
+To consult the websites of Romanian diplomatic missions and consular posts, click <a href="https://www.mae.ro/en/romanian-missions">here</a>.</p>
+		
+		<h4>I. CATEGORIES OF THIRD STATE NATIONALS WHO CAN SUBMIT VISA APPLICATIONS:</h4>
+		<ul class="liststl">
+			<li>citizens of the state of residence;</li>
+			<li>third-state nationals residing in the country where the diplomatic mission or consular post is located and who can provide proof of their legal status in that country;</li>
+			<li>persons in whose country of origin there is no Romanian diplomatic mission or consular post;</li>
+			<li>third-state nationals who temporarily and legally reside on the territory of the country where the Romanian diplomatic mission or consular post is located.</li>
+		</ul>
+		
+		  <p>They may apply for a visa in the following ways:</p>
+<ul class="liststl">
+<li>in person or, in the case of minors, through a legal representative;</li>
+<li>through a legal representative;li>
+ <li>through an accredited travel agency, in the case of an organised trip;.</li>
+<li>by the authorised representative of the group, in the case of group travel.</li>
+</ul><br></br>
+<p>Visa applicants whose fingerprints have never been collected (no previous uniform visa applications) or whose fingerprints have been collected more than 59 months before the date of submission of the visa application will present in person at the diplomatic mission or consular post for the collection of biometric data.</p>
+			
+		
+		<h4>II. GENERAL CONDITIONS THAT HAVE TO BE FULFILLED IN ORDER TO APPLY FOR A VISA</h4>
+		<p><b>Any third-country national who wishes to apply for a <u>Schengen visa</u> has to:</b></p>
+		<!--<ul class="liststl">
+			<li>the visa application form, appropriately filled-in and signed by the visa applicant;</li>
+			<li>a valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago;</li>
+			<li>two recent 3 x 4 cm coloured photographs;</li>
+			<li>supporting documents as provided for by the legal framework;</li>
+			<li>proof of the intention and possibility of returning to one’s state of origin, or of continuation of one’s journey towards another state, after the intended stay on the territory of Romania.</li>
+			<li>when ambiguity still prevails subsequent to the results of the interview, or from the submitted documents, as well as from the personal circumstances of the applicant, documents additional to those provided for in national legislation may be required.</li>
+		</ul>-->
+		
+		 <ul class="liststl">
+<li><u>submit a duly</u> filled in and signed <u>harmonised application form</u>; minors shall submit a form signed by both parents or by a person who exercises, permanently or temporarily, parental authority or guardianship;</li>
+<li>present a valid travel document on which the visa shall be applied and which has to:</li>
+<p>-	be valid for at least three months after the estimated day of exit from the territory of the Member States;<br>
+-	contain at least two free pages;<br>
+-	have been issued within the last 10 years.</p><br>
+<li>submit one photo, color, ¾, of recent date; </li>
+<li>allow fingerprinting;</li>
+<li>provide supporting documents specific to the purpose of the journey;</li>
+<li>provide proof of appropriate and valid travel medical insurance;</li>
+<li>provide proof of means of subsistence during the stay; </li>
+</ul> 
+		<ul class="liststl" style="margin-top: -10px;">
+<li>provide proof of the possibility of returning to their country of origin or continuing their journey in another country at the end of their stay in the Schengen area;</li>
+<li>provide proof of payment of the visa fee.</li>
+</ul>
+<br></br>
+<p><b>The Member State competent for examining and deciding on an application for a uniform visa</p></b>  
+		 <p>(a) the Member State whose territory constitutes the sole destination of the visit(s); <br>
+(b) if the visit includes more than one destination, or if several separate visits are to be carried out within a period of two months, the Member State whose territory constitutes the main destination of the visit(s) in terms of the length of stay, counted in days, or the purpose of stay; or <br>
+(c) if no main destination can be determined, the Member State whose external border the applicant intends to cross in order to enter the territory of the Member States.<br></br>
+<b>The Member State competent for examining and deciding on an application for an airport transit visa</b> shall be: 
+(a) in the case of a single airport transit, the Member State on whose territory the transit airport is situated; or <br>
+(b) in the case of double or multiple airport transit, the Member State on whose territory the first transit airport is situated.</p>
+		<p><b>Any third-country national who wishes to apply for a national visa to enter Romania has to:</p></b>
+<ul class="liststl">
+<li><u>submit a duly</u> filled in and signed <u>application form</u>; minors shall submit a form signed by both parents or by a person who exercises, permanently or temporarily, parental authority or guardianship; </li><br>
+<li>present a valid travel document on which the visa shall be applied and which has to:</li><br>
+<p>-	 be valid for at least three months after the estimated day of exit from Romania;<br>
+-	contain at least two free pages;<br>
+-	have been issued within the last 10 years.</p><br>
+<li>submit 2 photos, color, ¾, of recent date;</li><br>
+</ul>
+		<ul class="liststl" style="margin-top: -10px;">
+<li>provide supporting documents specific to the purpose of the journey in accordance with the <a href="/media/3429/5-oug-194-2002_en.pdf">Government Emergency Ordinance No.194/2002</a> on the regime of foreigners in Romania, republished, with its latest amendments and completions;</li>
+<li>provide proof of payment of the visa fee.</li>
+</ul>
+		
+		
+		
+		
+		
+		<p>Also, each visa applicant must fulfil the <a class="link" href="ConditionsOfEntry">
+			conditions of entry.</a></p>
+		
+		
+		<h4>III. <a name="simbolA" class="anchor_link">DOCUMENTS REQUIRED FOR UNIFORM VISA (Type C)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>HARMONIZED APPLICATION FORM</td>
+					<td>Completed and signed application form. Minors submit an application form signed by a person who permanently or temporarily exercises parental authority or guardianship.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>Valid travel document that meets the following criteria: <br>
+      a) its validity must exceed by at least three months the expected date of leaving the territory of the member states or, in the case of multiple visas, the last expected date of leaving the territory of the member states. However, in cases of justified urgency, this obligation may be waived; <br>
+      b) the document must contain at least two blank pages; <br>
+      c) the document must have been issued within the last ten years.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>PHOTOGRAPHS</td>
+					<td>A photo in accordance with Schengen standards 35x45 mm, not older than 6 months; the head should take up 70%-80% of the photo. The facial image can also be taken in digital format at the Schengen visa interview.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>FINGERPRINTS</td>
+					<td>The applicant will allow ten fingerprints to be taken, in accordance with the guarantees stipulated in the Convention for the Protection of Human Rights and Fundamental Freedoms of the Council of Europe, in the Charter of Fundamental Rights of the European Union and in the United Nations Convention on the Rights of the Child.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>SUPPORTING DOCUMENTS</td>
+					<td><b>A. DOCUMENTATION RELATING TO THE PURPOSE OF THE JOURNEY<b><br>
+<b>1. for business trips:</b> 
+<br>a) an invitation from a firm or an authority to attend meetings, conferences or events connected with trade, industry or work;
+<br>b) other documents which show the existence of trade relations or relations for work purposes; 
+<br>c) entry tickets for fairs and congresses, if appropriate;
+<br>d) documents proving the business activities of the company;
+<br>e) documents proving the applicant’s employment status in the company;
+<br><b>2. for journeys undertaken for the purposes of study or other types of training: </b> 
+<br>a) certificate of enrolment at an educational establishment for the purposes of attending vocational or theoretical courses within the framework of basic and further training; 
+<br>b) student cards or certificates of the courses to be attended;
+					<br>3. for journeys undertaken for the purposes of tourism or for private reasons:
+<br>a) documents relating to accommodation: 
+<p>- an invitation from the host if staying with one,
+<br>- a document from the establishment providing accommodation or any other appropriate document indicating the proof of accommodation; </p>
+<br>b) documents relating to the travel itinerary: 
+<p>- confirmation of the booking of an organised trip or any other appropriate document indicating the envisaged travel plans,
+<br>- in the case of transit: visa or other entry permit for the third country of destination; tickets for onward journey;</p>
+					<br><b>4. for journeys undertaken for political, scientific, cultural, sports or religious events or other reasons:</b>
+<br><p>- invitation, entry tickets, enrolments or programmes stating (wherever possible) the name of the host organisation and the length of stay or any other appropriate document indicating the purpose of the journey;</p>
+<br><b>5. for journeys of members of official delegations who, following an official invitation addressed to the government of the third country concerned, participate in meetings, consultations, negotiations or exchange programmes, as well as in events held in the territory of a Member State by intergovernmental organisations:</b>
+<br><p>- a letter issued by an authority of the third country concerned confirming that the applicant is a member of the official delegation travelling to a Member State to participate in the abovementioned events, accompanied by a copy of the official invitation;</p>
+					<br><p>6. for journeys undertaken for medical reasons:</p>
+<br><p>- an official document of the medical institution confirming necessity for medical care in that institution and proof of sufficient financial means to pay for the medical treatment.</p>
+<br><p>B. DOCUMENTATION ALLOWING FOR THE ASSESSMENT OF THE APPLICANT’S INTENTION TO LEAVE THE TERRITORY OF THE MEMBER STATES</p>
+<br>1. the reservation of or return or round ticket;
+<br>2. proof of financial means in the country of residence; 
+<br>3. proof of employment: bank statements; 
+<br>4. proof of real estate property;
+<br>5. proof of integration into the country of residence: family ties; professional status.
+					<br><b>C. DOCUMENTATION IN RELAION TO THE APPLICANT'S FAMILY SITUATION </b>
+<br>1. the consent of parental authority or legal guardian (when a minor does not travel with them); 
+<br>2. proof of family ties with the host/inviting person.
+<br></br>Some countries are subject to <b>Commission implementing decisions establishing harmonised lists of supporting documents to be submitted by visa applicants of these countries in order to obtain a uniform visa.</b>
+<br></br>The documents required of third-country nationals, resident in these countries and nationals of these countries who apply for a uniform visa are listed <a href="http://eviza.mae.ro/Decisions">here</a>
+					When consulting the above-mentioned supporting documents, it should be taken into account that the <b>national form for taking charge and/or private accommodation is the invitation approved by the General Inspectorate for Immigration</b>, provided for in Article 38 of <a href="/media/3429/5-oug-194-2002_en.pdf">GEO 194/2002</a>for short-stay visas for the purposes of visits, tourism and business.<br></br>
+<i>As per the provisions of Annex I to REGULATION (EU) 2018/1806 of 14 November 2018 listing the third countries whose nationals must be in possession of visas when crossing the external borders and those whose nationals are exempt from that requirement, depending on your nationality, you must obtain a visa in order to enter the territory of the European Union, as well as in Romania.<i>
+					<br></br><i>Also, if you are a national of one of the third-states listed in Order no.422/2024 of the Minister of Foreign Affairs regarding the amendments to the Annex to Order no.1743/2010 of the Minister of Foreign Affairs regarding the approval of the revised list of states for whose citizens the invitation procedure is mandatory for granting short-stay visas for entrance into the territory of Romania, you are subject to the obligation of obtaining an invitation approved by the Inspectorate General for Immigration - Ministry of Internal Affairs, prior to applying for a short-stay visa.
+The invitations must be filled-in in double copy, and subsequently submitted for approval to the local units of the Inspectorate General of Immigration – Ministry of Internal Affairs.
+The requests for approval of the invitations are processed within 45 days from the date of submission. In duly justified cases, should more detailed checks be carried out, the deadline may be extended by 15 days.<i>
+					<br><i>In case of approval, one copy of the invitation will be returned to the inviting host, to be forwarded to the third-state national invited, who will submit the original form to the diplomatic mission or the consular post of Romania abroad, where the visa application is lodged.
+The third-state national may lodge their visa application within 30 days from the date of approval of the invitation.<i>
+					</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Applicants for a single or double entry uniform visa must provide proof that they have adequate and valid travel medical insurance covering all expenses, including repatriation on medical grounds, emergency medical treatment and/or hospitalization emergency or death, anytime during their stay on Schengen territory.<br></br>
+Multiple entry visa applicants must provide proof that they hold appropriate and valid travel medical insurance covering the period of their first intended visit. The visa applicant will also sign a declaration included in the application form, stating that for the following stays they are aware that a medical insurance must be provided.<br></br>
+					<br></br>The insurance must be valid throughout the territory of the member states and fully cover the expected period of stay or transit of the person in question. The minimum coverage is EUR 30,000.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		<a name="simbolA" class="anchor_link">
+		<h4>IV. DOCUMENTS REQUIRED FOR AIRPORT TRANSIT VISA (Type A)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>HARMONIZED APPLICATION FORM</td>
+					<td>Completed and signed application form. Minors submit an application form signed by a person who permanently or temporarily exercises parental authority or guardianship.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>Valid travel document that meets the following criteria: <br>
+      a) its validity must exceed by at least three months the expected date of leaving the territory of the member states or, in the case of multiple visas, the last expected date of leaving the territory of the member states. However, in cases of justified urgency, this obligation may be waived; <br>
+      b) the document must contain at least two blank pages; <br>
+      c) the document must have been issued within the last ten years.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>PHOTOGRAPHS</td>
+					<td>A photo in accordance with Schengen standards 35x45 mm, not older than 6 months; the head should take up 70%-80% of the photo. The facial image can also be taken in digital format at the Schengen visa interview.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>FINGERPRINTS</td>
+					<td>The applicant will allow ten fingerprints to be taken, in accordance with the guarantees stipulated in the Convention for the Protection of Human Rights and Fundamental Freedoms of the Council of Europe, in the Charter of Fundamental Rights of the European Union and in the United Nations Convention on the Rights of the Child.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>SUPPORTING DOCUMENTS</td>
+					<td>a) documents regarding the final destination after the expected airport transit; <br>
+b) information that allows the assessment of the applicant's intention not to enter the territory of the member states.<br>
+In addition to those listed, the member states can request a series of supporting documents regarding the applicant's intention to leave the member states or the family situation, according to the non-exhaustive list in Annex II Regulation no. 810/2009 of the European Parliament and of the Council on the establishment of a Community Visa Code. (link Annex II)</td>
+				</tr>
+			</tbody>
+		</table>
+<!--
+		<a name="simbolB" class="anchor_link"><h4>IV. SUPPORTING DOCUMENTS FOR THE TRANSIT VISA (marked B)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>HARMONIZED APPLICATION FORM</td>
+					<td>Valid travel document that meets the following criteria: <br>
+      a) its validity must exceed by at least three months the expected date of leaving the territory of the member states or, in the case of multiple visas, the last expected date of leaving the territory of the member states. However, in cases of justified urgency, this obligation may be waived; <br>
+      b) the document must contain at least two blank pages; <br>
+      c) the document must have been issued within the last ten years.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>A photo in accordance with Schengen standards 35x45 mm, not older than 6 months; the head should take up 70%-80% of the photo. The facial image can also be taken in digital format at the Schengen visa interview.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>VISA FOR THE STATE OF DESTINATION (OR OTHER DOCUMENTS THAT ATTEST THE CONTINUATION OF THE ONWARD JOURNEY)</td>
+					<td>Visa for the state of destination, allowing the alien to continue their onward journey (when the applicant is subject to the visa requirement for the state of destination)</td>
+				</tr>
+				<tr class="darkRow">
+					<td>TRAVEL TICKET</td>
+					<td>Valid airplane ticket valid to destination</td>
+				</tr>
+				<tr class="lightRow">
+					<td>VEHICLE SUPPORTING DOCUMENTS</td>
+					<td>Valid driver's license, Green Card (International Motor Insurance Card) and registration documents of the means of transport for vehicle drivers.</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<h4>V. SUPPORTING DOCUMENTS FOR THE SHORT-STAY VISA (marked C)</h4>
+		<a name="simbolCM" class="anchor_link"><h4>Short-Stay Visa for Official Missions (marked C/M)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>Valid travel document that meets the following criteria: <br>
+      a) its validity must exceed by at least three months the expected date of leaving the territory of the member states or, in the case of multiple visas, the last expected date of leaving the territory of the member states. However, in cases of justified urgency, this obligation may be waived; <br>
+      b) the document must contain at least two blank pages; <br>
+      c) the document must have been issued within the last ten years.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>A photo in accordance with Schengen standards 35x45 mm, not older than 6 months; the head should take up 70%-80% of the photo. The facial image can also be taken in digital format at the Schengen visa interview.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>NOTE VERBALE</td>
+					<td>Drafted by the diplomatic mission or consular post accredited to Romania</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PROOF OF BEING A FAMILY MEMBER</td>
+					<td>Documents that attest that applicants are family members who accompany a person traveling for an official visit</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<a name="simbolCTU" class="anchor_link"><h4>Short-Stay Visa for Tourism (marked C/TU)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>Valid travel document that meets the following criteria: <br>
+      a) its validity must exceed by at least three months the expected date of leaving the territory of the member states or, in the case of multiple visas, the last expected date of leaving the territory of the member states. However, in cases of justified urgency, this obligation may be waived; <br>
+      b) the document must contain at least two blank pages; <br>
+      c) the document must have been issued within the last ten years.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>A photo in accordance with Schengen standards 35x45 mm, not older than 6 months; the head should take up 70%-80% of the photo. The facial image can also be taken in digital format at the Schengen visa interview.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>ACCOMMODATION</td>
+					<td>Voucher or firm reservation with a tourist accommodation unit</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PROOF OF ITINERARY</td>
+					<td>Itinerary of the trip, should more than one entry be requested</td>
+				</tr>
+				<tr class="lightRow">
+					<td>INVITATION APPROVED BY THE INSPECTORATE GENERAL FOR IMMIGRATION – MINISTRY OF INTERNAL AFFAIRS OF ROMANIA *</td>
+					<td>
+						<p>As per the provisions of Annex I to 
+							<i>REGULATION (EU) 2018/1806 of 14 November 2018 listing the third countries whose nationals must be in possession of visas when crossing the external borders and those whose nationals are exempt from that requirement,</i>
+							depending on your nationality, you must obtain a visa in order to enter the territory of the European Union, as well as in Romania.
+						</p>
+						
+						<p>Also, if you are a national of one of the third-states listed in 
+							<i>Order no.1626 of September 6th 2017 of the Minister of Foreign Affairs regarding the amendments to the Annex to Order no.1743/2010 of the Minister of Foreign Affairs regarding the approval of the
+								revised list
+								<!--<a target="_blank" href=''>
+									revised list
+								</a>
+								of states for whose citizens the invitation procedure is mandatory for granting short-stay visas for entrance into the territory of Romania,
+							</i>
+							you are subject to the obligation of obtaining an invitation approved by the  Inspectorate General for Immigration - Ministry of Internal Affairs, prior to applying for a short-stay tourist visa (C/TU).
+						</p>
+						<p>Invitations can be made, for each invited third-state national, by Romanian travel agencies, provided they submit the following supporting documents to the bureaus of the Inspectorate General for Immigration - Ministry of Internal Affairs: </p>
+						<ul class="liststl">
+							<li>the registration certificate and the by-laws of the company that makes the invitation;</li>
+							<li>a certificate from the National Trade Register Office and, accordingly, a power of attorney, on behalf of the company, naming the person entitled to make the invitation in the name of the company;</li>
+							<li>the identity card or, depending on the case, the residence permit of the person entitled to make the invitation;</li>
+							<li>a copy of the invited third-country national’s travel document;</li>
+							<li>two 3 x 4 cm coloured photos of the invited third-country national.</li>
+						</ul>
+						<p>The company that makes the invitation must fill-in two copies of the invitation form, which are subsequently submitted for approval to the local units of the Inspectorate General of Immigration. </p>
+						<p>The requests for approval of the invitations are processed within 45 days from the date of submission. In duly justified cases, should more detailed checks be carried out, the deadline may be extended by 15 days. </p>
+						<p>For aliens who travel to Romania for tourism, in organized groups of at least 20 persons, upon request from companies established on the grounds of Law nº31/1990, republished, y amended and supplemented, that are members of the Romanian National Association of Tourist Agencies, approval of the invitations shall be granted in 30 days from the date of submission. </p>
+						<p>In case of approval, one copy of the invitation will be returned to the inviting host, to be forwarded to the third-state national invited, who will submit the original form to the diplomatic mission or the consular post of Romania abroad, where the visa application is lodged. </p>
+						<p>The third-state national may lodge their visa application within 30 days from the date of approval of the invitation. </p>
+						
+					</td>
+				</tr>				
+				<tr class="darkRow">
+					<td>VEHICLE SUPPORTING DOCUMENTS</td>
+					<td>Valid driver's license, Green Card (International Motor Insurance Card) and registration documents of the means of transport for vehicle drivers.</td>
+				</tr>				
+				<tr class="lightRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEANS OF SUPPORT</td>
+					<td>Proof of financial means in the amount of 50 euro / day for the entire period, but not less than 500 EUR or the equivalent in convertible currency. Visa applicants who make the proof of an anticipated and whole payment of tourist package services as regards at least accommodation and nourishment are exempt from submitting the proof of financial means of support.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>For the following countries: Albania, Armenia, Bosnia and Herzegovina, the Russian Federation, Macedonia, Republic of Moldova, Montenegro, Serbia, Azerbaijan, Turkey and Ukraine, depending on the reason for which you intend to travel to Romania, please take into consideration the provisions of the Visa Facilitation Agreement, which you may access 
+			<a href="javascript:toTheAnchor('Legislation#acorduriviza')">here</a>.
+			For the supporting documents necessary in order to attest the purpose of your journey, please see the text of the corresponding agreement.
+		</p>
+		
+		<a name="simbolCVV" class="anchor_link"><h4>Short-Stay Visa for Private Visits (marked C/VV)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>Valid travel document that meets the following criteria: <br>
+      a) its validity must exceed by at least three months the expected date of leaving the territory of the member states or, in the case of multiple visas, the last expected date of leaving the territory of the member states. However, in cases of justified urgency, this obligation may be waived; <br>
+      b) the document must contain at least two blank pages; <br>
+      c) the document must have been issued within the last ten years.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>A photo in accordance with Schengen standards 35x45 mm, not older than 6 months; the head should take up 70%-80% of the photo. The facial image can also be taken in digital format at the Schengen visa interview.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>ACCOMMODATION</td>
+					<td>Accommodation assumed by the host through the invitation submitted or proof of accommodation with a tourist accommodation unit</td>
+				</tr>
+				<tr class="darkRow">
+					<td>TRAVEL TICKET</td>
+					<td>Valid airplane ticket valid to destination</td>
+				</tr>
+				<tr class="lightRow">
+					<td>AUTHENTICATED INVITATION</td>
+					<td>Authenticated invitation on behalf of the host, attesting that the host will cover any and all costs regarding repatriation, should the invited third-state national not leave Romania by the date their right of stay granted through the visa expires, as well as the  means of support and accommodation, in case the host undertakes to cover such costs</td>
+				</tr>
+				<tr class="darkRow">
+					<td>INVITATION APPROVED BY THE INSPECTORATE GENERAL FOR IMMIGRATION – MINISTRY OF INTERNAL AFFAIRS OF ROMANIA *</td>
+					<td>
+						<p>As per the provisions of Annex I to 
+							<i>REGULATION (EU) 2018/1806 of 14 November 2018 listing the third countries whose nationals must be in possession of visas when crossing the external borders and those whose nationals are exempt from that requirement,</i>
+							depending on your nationality, you must obtain a visa in order to enter the territory of the European Union, as well as in Romania.
+						</p>
+						
+						<p>Also, if you are a national of one of the third-states listed in 
+							<i>Order no.1626 of September 6th 2017 of the Minister of Foreign Affairs regarding the amendments to the Annex to Order no.1743/2010 of the Minister of Foreign Affairs regarding the approval of the
+								revised list
+								<!--<a target="_blank" href=''>
+									revised list
+								</a>
+								of states for whose citizens the invitation procedure is mandatory for granting short-stay visas for entrance into the territory of Romania,
+							</i>
+							you are subject to the obligation of obtaining an invitation approved by the  Inspectorate General for Immigration - Ministry of Internal Affairs, prior to applying for a short-stay visa for private visits (C/VV).
+						</p>
+						<p>Invitations necessary for third-state nationals who intend to travel to Romania for personal visits, can be made by Romanian citizens, citizens of another EU Member State, of a member state of the European Economic Area, of the Swiss Confederation, or by third-country nationals who hold a valid document that attests their residence or right of stay on the territory of Romania. The supporting documents to be submitted for this purpose, are the following, depending on the case: </p>
+						<ul class="liststl">
+							<li>identity card or passport for Romanian citizens, the identity card or passport and registration certificate, temporary residence permit or permanent residence permit for citizens of EU Member States, of the Member States of the European Economic Area, and of the Swiss Confederation, as well as for their family members, as well as the passport and residence permit for third-country nationals, in original and in copy;</li>
+							<li>proof of accommodation;</li>
+							<li>proof of ensuring the financial means for the third-state national, in amount of at least EUR 30/day for the entire period of their stay in Romania;</li>
+							<li>copy of the travel document of the invited third-state national;</li>
+							<li>two coloured 3 x 4 cm photos of the invited third-state national.</li>
+						</ul>
+						<p>The invitations must be filled-in in double copy, and subsequently submitted for approval to the local units of the Inspectorate General of Immigration – Ministry of Internal Affairs. </p>
+						<p>The requests for approval of the invitations are processed within 45 days from the date of submission. In duly justified cases, should more detailed checks be carried out, the deadline may be extended by 15 days. </p>
+						<p>In case of approval, one copy of the invitation will be returned to the inviting host, to be forwarded to the third-state national invited, who will submit the original form to the diplomatic mission or the consular post of Romania abroad, where the visa application is lodged. </p>
+						<p>The third-state national may lodge their visa application within 30 days from the date of approval of the invitation. </p>
+						
+					</td>
+				</tr>				
+				<tr class="lightRow">
+					<td>VEHICLE SUPPORTING DOCUMENTS</td>
+					<td>Valid driver's license, Green Card (International Motor Insurance Card) and registration documents of the means of transport for vehicle drivers.</td>
+				</tr>				
+				<tr class="darkRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>MEANS OF SUPPORT</td>
+					<td>Proof of financial means in the amount of 50 euro / day for the entire period, but not less than 500 EUR or the equivalent in convertible currency.</td>
+				</tr>	
+			</tbody>
+		</table>
+		
+		<p>The supporting documents that must be submitted along with a short-stay visa application for visit (marked C/VV) by aliens who are family members of Romanian citizens, namely the spouse of the Romanian citizen; the direct descendants of the Romanian citizen, aged no more than 21; the direct ascendants of the Romanian citizen or of their spouse who are also their dependants, are the following:</p>
+		
+		<ul class="liststl">
+			<li>
+				VALID TRAVEL DOCUMENT -
+				Valid travel document that meets the following criteria: <br>
+      a) its validity must exceed by at least three months the expected date of leaving the territory of the member states or, in the case of multiple visas, the last expected date of leaving the territory of the member states. However, in cases of justified urgency, this obligation may be waived; <br>
+      b) the document must contain at least two blank pages; <br>
+      c) the document must have been issued within the last ten years.
+			</li>
+			<li>
+				PHOTOGRAPHS -
+				Two recent 3 x 4 cm coloured photographs;
+			</li>
+			<li>
+				TRAVEL TICKET -
+				Valid airplane ticket valid to destination
+			</li>
+			<li>
+				TRAVEL MEDICAL INSURANCE -
+				Travel medical insurance that covers the entire duration of the requested period of stay;
+			</li>
+			<li>
+				In case of the alien accompanied by the Romanian citizen whose family member they are: The passport or the identity document of the Romanian citizen - in original, accompanied by a declaration on behalf of the Romanian citizen asserting as to the assurance of accommodation;
+			</li>
+			<li>
+				In case of the alien who is not accompanied by the Romanian citizen whose family member they are: a notarized invitation on behalf of the Romanian citizen asserting as to the assurance of accommodation, accompanied by a copy of the passport or of the identity document of the Romanian citizen;
+			</li>
+			<li>
+				Depending on the case, documents that make the proof of the marriage to a Romanian citizen - issued in accordance with Romanian legislation in force, or documents that make the proof of the family ties with the Romanian citizen.
+			</li>
+		</ul>
+		
+		<p>For the following countries: Albania, Armenia, Bosnia and Herzegovina, the Russian Federation, Macedonia, Republic of Moldova, Montenegro, Serbia, Azerbaijan, Turkey and Ukraine, depending on the reason for which you intend to travel to Romania, please take into consideration the provisions of the Visa Facilitation Agreement, which you may access 
+			<a href="javascript:toTheAnchor('Legislation#acorduriviza')">here</a>.
+			For the supporting documents necessary in order to attest the purpose of your journey, please see the text of the corresponding agreement.
+		</p>
+		
+			<a name="simbolCA" class="anchor_link"><h4>Short-Stay Visa for Business Trips (marked C/A)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>Valid travel document that meets the following criteria: <br>
+      a) its validity must exceed by at least three months the expected date of leaving the territory of the member states or, in the case of multiple visas, the last expected date of leaving the territory of the member states. However, in cases of justified urgency, this obligation may be waived; <br>
+      b) the document must contain at least two blank pages; <br>
+      c) the document must have been issued within the last ten years.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>A photo in accordance with Schengen standards 35x45 mm, not older than 6 months; the head should take up 70%-80% of the photo. The facial image can also be taken in digital format at the Schengen visa interview.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>TRAVEL TICKET</td>
+					<td>Valid airplane ticket valid to destination</td>
+				</tr>
+				<tr class="darkRow">
+					<td>INVITATION FROM A ROMANIAN COMPANY</td>
+					<td>An invitation from a company or from a public authority, for the purpose of participating in meetings, conferences, trade fairs or congresses related to trade or industry, which attests that the respective company or public authority undertakes any and all costs as regards repatriation, should the invited  third-state national not leave Romania upon expiry of the right of stay granted through the visa expires, or stated through any other documents that prove the purpose of the journey</td>
+				</tr>
+				<tr class="lightRow">
+					<td>INVITATION APPROVED BY THE INSPECTORATE GENERAL FOR IMMIGRATION – MINISTRY OF INTERNAL AFFAIRS OF ROMANIA *</td>
+					<td>
+						<p>As per the provisions of Annex I to 
+							<i>REGULATION (EU) 2018/1806 of 14 November 2018 listing the third countries whose nationals must be in possession of visas when crossing the external borders and those whose nationals are exempt from that requirement,</i>
+							depending on your nationality, you must obtain a visa in order to enter the territory of the European Union, as well as in Romania.
+						</p>
+						
+						<p>Also, if you are a national of one of the third-states listed in 
+							<i>Order no.1626 of September 6th 2017 of the Minister of Foreign Affairs regarding the amendments to the Annex to Order no.1743/2010 of the Minister of Foreign Affairs regarding the approval of the
+								revised list
+								<!--<a target="_blank" href=''>
+									revised list
+								</a>
+								of states for whose citizens the invitation procedure is mandatory for granting short-stay visas for entrance into the territory of Romania,
+							</i>
+							you are subject to the obligation of obtaining an invitation approved by the  Inspectorate General for Immigration - Ministry of Internal Affairs, prior to applying for a short-stay visa for business (C/A).
+						</p>
+						<p>As a rule, for business journeys, invitations can be made by companies with headquarters in Romania, for 3 third-state nationals invited simultaneously. Invitations on behalf of the host company can be made only by persons who are designated, to represent the company, in accordance with legal provisions, or who are majority shareholders. The documents to be submitted for this purpose are the following: </p>
+						<ul class="liststl">
+							<li>registration certificate and the bylaws of the company;</li>
+							<li>a certificate from the National Trade Register Office and, accordingly, a power of attorney, on behalf of the company, designating the person entitled to make the invitation in the name of the company;</li>
+							<li>the identity card or residence permit of the person who holds a power of attorney;</li>
+							<li>copy of the travel document of the invited third-state national;</li>
+							<li>two coloured 3 x 4 cm photos of the invited third-state national.</li>
+							<li>proof of ensuring accommodation for the invited third-state national throughout their stay in Romania.</li>
+						</ul>
+						<p>The invitations must be filled-in in double copy, and subsequently submitted for approval to the local units of the Inspectorate General of Immigration – Ministry of Internal Affairs. </p>
+						<p>The requests for approval of the invitations are processed within 45 days from the date of submission. In duly justified cases, should more detailed checks be carried out, the deadline may be extended by 15 days. </p>
+						<p>In case of approval, one copy of the invitation will be returned to the inviting host, to be forwarded to the third-state national invited, who will submit the original form to the diplomatic mission or the consular post of Romania abroad, where the visa application is lodged. </p>
+						<p>The third-state national may lodge their visa application within 30 days from the date of approval of the invitation. </p>
+						
+					</td>
+				</tr>				
+				<tr class="darkRow">
+					<td>VEHICLE SUPPORTING DOCUMENTS</td>
+					<td>Valid driver's license, Green Card (International Motor Insurance Card) and registration documents of the means of transport for vehicle drivers.</td>
+				</tr>				
+				<tr class="lightRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEANS OF SUPPORT</td>
+					<td>Proof of financial means in the amount of 50 euro / day for the entire period, but not less than 500 EUR or the equivalent in convertible currency.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>ACCOMMODATION</td>
+					<td>Voucher or firm reservation with a tourist accommodation resort or, proof of accommodation being ensured by the host company, if the case should be.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>For the following countries: Albania, Armenia, Bosnia and Herzegovina, the Russian Federation, Macedonia, Republic of Moldova, Montenegro, Serbia, Azerbaijan, Turkey and Ukraine, depending on the reason for which you intend to travel to Romania, please take into consideration the provisions of the Visa Facilitation Agreement, which you may access 
+			<a href="javascript:toTheAnchor('Legislation#acorduriviza')">here</a>.
+			For the supporting documents necessary in order to attest the purpose of your journey, please see the text of the corresponding agreement.
+		</p>
+		<p>* Exceptions from the obligation of previously obtaining an invitation approved by the Inspectorate General for Immigration - Ministry of Internal Affairs:</p>
+		<p>Should you find yourself in any of the following situations, you are exempt from the procedure of previously obtaining an invitation approved by the Inspectorate General for Immigration - Ministry of Internal Affairs, as provided for the short-stay visas marked C/TU, C/VV and C/A.</p>
+		<p>N.B. : In order to fit into one of the following situations, the exemption must be attested by supporting documents.</p>
+		<p>The fact that you may find yourself in any of the situations listed below, does not exempt you from submitting all the other supporting documents required by Romanian legislation in force, when a short-stay visa is applied for.</p>
+		<p>Therefore, a short-stay visa marked C/TU, C/VV or C/A may be granted without previously obtaining the special invitation form from the Inspectorate General for Immigration - Ministry of Internal Affairs, to the following categories of third-state nationals:</p>
+		<ul class="liststl">
+			<li>underage third-state nationals, should one of their parents benefit from the refugee status, or from subsidiary protection, or should they hold a Romanian residence permit, provided that the permit is valid for at least 90 days from the date of issuance of the entry visa;</li>
+			<li>the spouse and parents of a third-state national, who benefits from the refugee status, or from subsidiary protection, or who holds a Romanian residence permit, provided that the permit is valid for at least 90 days from the date of issuance of the entry visa;</li>
+			<li>third-country nationals of age, should one of their parents be a Romanian citizen;</li>
+			<li>third-country nationals who are parents of a Romanian national;</li>
+			<li>third-state nationals married to Romanian citizens;</li>
+			<li>third-state nationals who are underage children of Romanian citizens;</li>
+			<li>third-state nationals who are in possession of a valid residence permit in one of the member states of the European Union, of the European Economic Area or in states that are party to the Schengen Agreement, provided that the validity of the visa does not exceed the validity of the residence permit;</li>
+			<li>third-state nationals who are in possession of a valid residence permit in states the nationals of which are exempt from the obligation of an entry visa for the members states of the European Union, of the European Economic Area or of states that are party to the Schengen Agreement;</li>
+			<li>third-state nationals who hold visas for the member states of the European Union, of the European Economic Area, of states that are party to the Schengen Agreement or of states the nationals of which are exempt from the visa obligation for the aforementioned states. The Romanian visa may not exceed the validity of those visas;</li>
+			<li>
+		    	third-state nationals who intend to travel to Romania for business, upon request on behalf of the administrative authorities and companies registered on the lists of contributors to the state budget as established by order of the president of the National Agency for Fiscal Administration, published in the Romanian Official Gazette and who undertake, as per a letter of guarantee ( 
+					<a target="_blank" href='/media/1621/scrisoare-de-garantie.pdf'>
+						see template
+					</a>	
+				    and 
+				    <a target="_blank" href='/media/1622/norme-de-redactare.pdf'>
+						instructions regarding the drafting of a letter of guarantee
+					</a>
+				) addressed, in original form, to the National Visa Center, the obligation to bear all expenses as regards financial and medical assistance, as well as those of execution of repatriation measures;
+			</li>
+
+			<li>third-state nationals who intend to travel to Romania for private visits, upon request from diplomatic missions or foreign consular posts accredited to Romania;</li>
+			<li>third-state nationals for which the granting of a visa is requested, in writing, to Romanian diplomatic missions or consular posts, on behalf of foreign central public authorities or foreign chambers of commerce;</li>
+			<li>third-state nationals for whom the granting of the Romanian entry visa is requested at the National Visa Centre, by the following Romanian institutions: the Presidential Administration, the Parliament, the Government and other central and local public authorities, from the Romanian Chamber of Commerce and Industry, the Chamber of Commerce and Industry of Bucharest, as well as any territorial Chambers of Commerce and Prefectures that undertake to bear all material and healthcare expenses, as well as those expenses related to the execution of repatriation measures,   through a letter of guarantee, sent in original;</li>
+			<li>truck drivers;</li>
+			<li>personalities of the Romanian diaspora and their descendants;</li>
+			<li>parents of pupils or students from third-state, accepted for studies in Romania, arriving for their first settlement, provided that they submit a document with an apostille or, accordingly, a superlegalized document which attests their family ties, issued by the authorities of the state of origin.</li>
+			<li>
+		    	third-state nationals who intend to travel to Romania upon request from a legal person of public interest that functions legally and undertakes to bear all material and healthcare expenses, as well as those expenses related to the execution of repatriation measures, through a letter of guarantee, sent in original to the National Visa Center. 
+				In case the host non-patrimonial legal person of public interest is listed in the tables accessible 
+					<a target="_blank" href='http://www.just.ro/MinisterulJusti%C8%9Biei/RegistrulNa%C5%A3ionalONG/tabid/91/Default.aspx'>
+						HERE
+					</a>	
+				, you may benefit from this exemption.
+			</li>
+		</ul>
+		
+			<a name="simbolCSP" class="anchor_link"><h4>Short-Stay Visa for Sports (marked C/SP)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>Valid travel document that meets the following criteria: <br>
+      a) its validity must exceed by at least three months the expected date of leaving the territory of the member states or, in the case of multiple visas, the last expected date of leaving the territory of the member states. However, in cases of justified urgency, this obligation may be waived; <br>
+      b) the document must contain at least two blank pages; <br>
+      c) the document must have been issued within the last ten years.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>A photo in accordance with Schengen standards 35x45 mm, not older than 6 months; the head should take up 70%-80% of the photo. The facial image can also be taken in digital format at the Schengen visa interview.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>INVITATION FROM THE ORGANIZERS</td>
+					<td>An invitation from the organizers, also attesting as to the existence of the travel medical insurance and accommodation</td>
+				</tr>
+				<tr class="darkRow">
+					<td>DELEGATION LIST</td>
+					<td>Official list of the foreign sports delegation, specifying the position of each member</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>For the following countries: Albania, Armenia, Bosnia and Herzegovina, the Russian Federation, Macedonia, Republic of Moldova, Montenegro, Serbia, Azerbaijan, Turkey and Ukraine, depending on the reason for which you intend to travel to Romania, please take into consideration the provisions of the Visa Facilitation Agreement, which you may access 
+			<a href="javascript:toTheAnchor('Legislation#acorduriviza')">here</a>.
+			For the supporting documents necessary in order to attest the purpose of your journey, please see the text of the corresponding agreement.
+		</p>
+		
+			<a name="simbolCTR" class="anchor_link"><h4>Short-Stay Visa for Transport (marked C/TR)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>Valid travel document that meets the following criteria: <br>
+      a) its validity must exceed by at least three months the expected date of leaving the territory of the member states or, in the case of multiple visas, the last expected date of leaving the territory of the member states. However, in cases of justified urgency, this obligation may be waived; <br>
+      b) the document must contain at least two blank pages; <br>
+      c) the document must have been issued within the last ten years.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>A photo in accordance with Schengen standards 35x45 mm, not older than 6 months; the head should take up 70%-80% of the photo. The facial image can also be taken in digital format at the Schengen visa interview.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>TRANSPORTER CERTIFICATE</td>
+					<td>Documents that attest the profession of the visa applicant, as well as the activity that is to be conducted for the duration of the stay</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>VEHICLE SUPPORTING DOCUMENTS</td>
+					<td>Valid driver's license, Green Card (International Motor Insurance Card) and registration documents of the means of transport for vehicle drivers.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>TRANSPORT LICENSE</td>
+					<td></td>
+				</tr>
+				<tr class="lightRow">
+					<td>EXECUTION LICENSE</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		<p>For the following countries: Albania, Armenia, Bosnia and Herzegovina, the Russian Federation, Macedonia, Republic of Moldova, Montenegro, Serbia, Azerbaijan, Turkey and Ukraine, depending on the reason for which you intend to travel to Romania, please take into consideration the provisions of the Visa Facilitation Agreement, which you may access 
+			<a href="javascript:toTheAnchor('Legislation#acorduriviza')">here</a>.
+			For the supporting documents necessary in order to attest the purpose of your journey, please see the text of the corresponding agreement.
+		</p>
+		
+			<a name="simbolCZA" class="anchor_link"><h4>Short-Stay Visa for Cultural, Scientific and Humanitarian Activities, as well as Short-Term Medical Treatment or Any Other Activities That Do Not Breach Romanian Laws (marked C/ZA)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>Valid travel document that meets the following criteria: <br>
+      a) its validity must exceed by at least three months the expected date of leaving the territory of the member states or, in the case of multiple visas, the last expected date of leaving the territory of the member states. However, in cases of justified urgency, this obligation may be waived; <br>
+      b) the document must contain at least two blank pages; <br>
+      c) the document must have been issued within the last ten years.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>A photo in accordance with Schengen standards 35x45 mm, not older than 6 months; the head should take up 70%-80% of the photo. The facial image can also be taken in digital format at the Schengen visa interview.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>SUPPORTING DOCUMENT REGARDING THE PURPOSE OF THE JOURNEY</td>
+					<td>Invitation issued by the institution the third-state national intends to travel to, so as to justify the necessity of the journey to Romania</td>
+				</tr>
+				<tr class="lightRow">
+					<td>VEHICLE SUPPORTING DOCUMENTS</td>
+					<td>Valid driver's license, Green Card (International Motor Insurance Card) and registration documents of the means of transport for vehicle drivers.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>TRAVEL TICKET</td>
+					<td>Valid airplane ticket valid to destination</td>
+				</tr>
+				<tr class="lightRow">
+					<td>MEANS OF SUPPORT</td>
+					<td>Proof of financial means in the amount of 50 euro / day for the entire period, but not less than 500 EUR or the equivalent in convertible currency.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>ACCOMMODATION</td>
+					<td>Voucher or firm reservation with a tourist accommodation resort or, proof of accommodation being ensured by the host company, if the case should be.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>For the following countries: Albania, Armenia, Bosnia and Herzegovina, the Russian Federation, Macedonia, Republic of Moldova, Montenegro, Serbia, Azerbaijan, Turkey and Ukraine, depending on the reason for which you intend to travel to Romania, please take into consideration the provisions of the Visa Facilitation Agreement, which you may access 
+			<a href="javascript:toTheAnchor('Legislation#acorduriviza')">here</a>.
+			For the supporting documents necessary in order to attest the purpose of your journey, please see the text of the corresponding agreement.
+		</p>
+-->
+		
+		<h4>V. SUPPORTING DOCUMENTS FOR THE LONG-STAY VISA (marked D)</h4>
+			<a name="simbolDAE" class="anchor_link"><h4>The Long-Stay Visa for Economic Activities (marked D/AE)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>PROOF OF PROFESSIONAL TRAINING</td>
+					<td>
+						Proof of meeting the conditions regarding provided for in special legislation.
+						<p>
+							The provisions of GEO no. 44/2008 ( 
+							<a target="blank" href=''>click here</a>
+						</p>
+						<p>N.B.: The particular provisions of GEO no. 44/2008 regulate the applicability of this legal instrument with regard to Romanian and Eu nationals. However, these are, in fac, also applicable in the case of third-state nationals.</p>
+					</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CRIMINAL RECORD CERTIFICATE</td>
+					<td>Criminal record certificate or other document with the same legal value issued by the authorities of the country of origin or residence, translated into Romanian, English or French, as the case may be, and legalized in accordance with the law.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>A valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>PHOTOGRAPHS</td>
+					<td>Two recent 3 x 4 cm coloured photographs</td>
+				</tr>
+				<tr class="darkRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+			</tbody>
+		</table>
+		
+			<a name="simbolDAP" class="anchor_link"><h4>The Long-Stay Visa for Professional Activities (marked D/AP)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>CERTIFICATE / AUTHORIZATION FOR EXERCISING A PROFESSION</td>
+					<td>Proof of meeting the legal conditions for exercising liberal professions as regulated through special legislation</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PROFESSION CERTIFICATE/ AUTHORIZATION FROM THE COUNTRY OF ORIGIN</td>
+					<td>Proof of the fact that in the country of origin, the visa applicant exercises a profession similar to the one they intend to exercise in Romania</td>
+				</tr>
+				<tr class="lightRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>CRIMINAL RECORD CERTIFICATE</td>
+					<td>Criminal record certificate or other document with the same legal value issued by the authorities of the country of origin or residence, translated into Romanian, English or French, as the case may be, and legalized in accordance with the law.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>A valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>Two recent 3 x 4 cm coloured photographs</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+			</tbody>
+		</table>
+		
+			<a name="simbolDAC" class="anchor_link"><h4>The Long-Stay Visa for Commercial Activities (marked D/AC)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>SPECIALIZED TECHNICAL OPINION ON THE BUSINESS PLAN OF FOREIGN INVESTORS OF THE ROMANIAN AGENCY FOR INVESTMENTS AND FOREIGN TRADE</td>
+					<td>In accordance with the provisions of article 3 (2)(B) point 19 of Decision of the Romanian Government nr.153/2023 regarding the organisation and functioning of the Romanian Agency for Investments and External Commerce (ARICE), ARICE grants a specialized technical endorsement on the business plan of foreign investors in view of lodging an application for a long-stay Romanian visa for commercial activities.
+<br>
+Therefore, in order to obtain the above-mentioned endorsement, please address said ARICE (<a href=" https://arice.gov.ro/1/">https://arice.gov.ro/1/</a>).
+				</tr>
+				<tr class="darkRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CRIMINAL RECORD CERTIFICATE</td>
+					<td>Criminal record certificate or other document with the same legal value issued by the authorities of the country of origin or residence, translated into Romanian, English or French, as the case may be, and legalized in accordance with the law.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>A valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>PHOTOGRAPHS</td>
+					<td>Two recent 3 x 4 cm coloured photographs</td>
+				</tr>
+				<tr class="darkRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+			</tbody>
+		</table>
+		
+			<a name="simbolDAM" class="anchor_link"><h4>The Long-Stay Visa for Employment (marked D/AM)</h4></a>
+		<h4> Supporting documents for D/AM1 visa:</h4>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<!--<tr class="darkRow">
+					<td>WORK AUTHORISATION</td>
+					<td>
+						<p>The long-stay visa for employment (marked D/AM) is granted to third-state nationals in view of employment on the territory of Romania.</p>
+						<p>The work authorization issued in accordance with the provisions of special legislation can be submitted in copy.</p>
+						<p>The long-stay visa for employment is granted <u>without the submission of a copy of the work authorisation</u>, only provided documents are submitted to make the proof of the fact that the visa applicant falls into one of the following catgoeries:</p>
+						<ul class="liststl">
+							<li>to third-state nationals whose free access on the Romanian labour market is established through treaties concluded by Romania with other states;</li>
+							<li>to third-state nationals who are bound to carry out didactic, scientific or other categories of specific activities in specialized institutions that are accredited or temporarily authorized in Romania, on the grounds of bilateral agreements and to especially qualified staff, on the grounds of the order of the minister of national education, as well as to third-state nationals who carry out artistic activities in cultural institutions from Romania, on the grounds of the order of the minister of culture;</li>
+							<li>to third-state nationals who are bound to carry out, in Romania, activities required by ministries or other entities of the central public or local administration, or by autonomous administrative authorities;</li>
+							<li>to third-state nationals who are appointed as heads of subsidiary offices, offices of representation or of branch offices of a company from the territory of Romania or with headquarters abroad, and whom, at the date of application, are not associates, shareholders or administrators within a Romanian company, and in the subsidiary office, office of representation or the branch office, there is no other third-state national who holds a right of stay for this purpose;</li>
+							<li>to citizens of the Republic of Moldova, of the Republic of Serbia and of Ukraine, employed in Romania with a full-time individual employment contract, for a maximum period of 9 months throughout a calendar year (it is hereby highlighted that the “calendar year” has 365 days and is counted from January 1st to December 31st).</li>
+						</ul>
+						<p>Insetad of the work authorisation, citizens of the Republic of Moldova, of the Republic of Serbia and of Ukraine, employed in Romania with a full-time individual employment contract, for a maximum period of 9 months throughout a calendar year shall submit proof of an individual employment contract.</p>
+						<p>The application for a D/AM-type visa can be lodged within 180 days from the date of issuance of the work authorisation.</p>
+					</td>
+				</tr>-->
+					<tr class="lightRow">	
+					<td>INDIVIDUAL EMPLOYMENT CONTRACT</td>
+					<td>The individual employment contract registered in the General Register of Employees in accordance with Government Decision No 295/2025 on the General Register of Employees – REGES-ONLINE, as amended.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+					
+				</tr>
+				<tr class="lightRow">
+					<td>CRIMINAL RECORD CERTIFICATE</td>
+					<td>Criminal record certificate or other document with the same legal value issued by the authorities of the country of origin or residence, translated into Romanian, English or French, as the case may be, and legalized in accordance with the law.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEANS OF SUPPORT</td>
+					<td>Proof of means of subsistence at the level of the minimum gross basic salary per country guaranteed in payment for a period of 90 days.<br></br>
+<b>NOTE:</b><br></br>
+<b>Highly qualified persons shall be exempt from proof of financial means</b></td>
+				</tr>
+					<tr class="lightRow">
+					<!--<td>ACCOMMODATION (for long-stay visas for employment applied for by seasonal workers).
+<br></br>
+<b><u>Please take note !</b></u>
+<br></br>
+<b><u>The proof of accommodation, as specified, is only necessary when the visa application is lodged by a holder of a work authorisation </b></u>issued for seasonal workers that does not attest the fact that the employer ensures the accommodation of the visa applicant.</td>
+					<td>
+						<p>In addition to the supporting documents listed above, the long–stay visa for employment lodged on the grounds of a work authorisation issued for seasonal workers that does not attest the fact that the employer ensures the accommodation of the visa applicant, must be accompanied by a <u>proof of accommodation that ensures an adequate standard of living for the entire length of stay</u>, namely a firm reservation with an accommodation unit, a property or rent contract for a home in Romania, in the name of the applicant, or an authenticated declaration that shall attest to the adequate accommodation of the applicant, on behalf of the holder of a right of property or use of a home on the territory of Romania.</p>
+						<p style="border: 1px solid black; ">NOTICE:<br> 
+Any of the following supporting documents will contain proof of conditions of accommodation which ensure an adequate living standard:<br> 
+- Firm reservation at a suitable accommodation unit;<br>
+- Property or lease contract for accommodation in Romania, in the name of the applicant;<br>
+- Authenticated declaration regarding the assurance of the conditions of accommodation for the applicant, given by the owner of the property.</p>
+						</td>
+				</tr>
+				<tr class="darkRow">-->
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>A valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>Two recent 3 x 4 cm coloured photographs</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<a name="simbolDAM2" class="anchor_link"><h4>Supporting documents for D/AM2 visa for permanent, seasonal and cross-border workers:<br></br>A. If the visa application is from the Foreigner Placement Agency:</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>PLACEMENT CONTRACT<br></br>
+SERVICE CONTRACT <br></br>
+INDIVIDUAL EMPLOYMENT CONTRACT</td>
+					<td>
+						<p><b>The placement contract </b>is the tripartite civil contract, concluded in written form between the placement agency of foreigners, the registered employer and the foreigner, both in Romanian and in the language of the foreigner's home state or in a language of international circulation that the foreigner understands or is reasonably supposed to understand, by which the rights and obligations of the parties are established.<br></br>
+<b>The service contract is the contract</b> concluded in written form between the placement agency and the registered employer establishing the rights and obligations of the parties and includes the binding job offer.<br></br>
+<b>The individual employment contract</b> of the foreigner is the contract concluded between the employer and the foreign employee, in which the elements of the binding offer must also be included.</p>
+					</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CRIMINAL RECORD CERTIFICATE</td>
+					<td>Criminal record certificate or other document with the same legal value issued by the authorities of the country of origin or residence, translated into Romanian, English or French, as the case may be, and legalized in accordance with the law.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEANS OF SUPPORT</td>
+					<td>Proof of means of subsistence at the level of the minimum gross basic salary per country guaranteed in payment for a period of 90 days.<br></br>
+<b>NOTE:</b><br></br>
+<b>Highly qualified persons shall be exempt from proof of financial means</b></td>
+				</tr>
+				<tr class="lightRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>A valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>Two recent 3 x 4 cm coloured photographs</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		<a name="simbolDAM2" class="anchor_link"><h4>B.	If the visa application is from the Authorised Employer:</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>INDIVIDUAL EMPLOYMENT CONTRACT</td>
+					<td>The individual employment contract of the foreigner is the contract concluded between the employer and the foreign employee, in which the elements of the binding offer must also be included.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CRIMINAL RECORD CERTIFICATE</td>
+					<td>Criminal record certificate or other document with the same legal value issued by the authorities of the country of origin or residence, translated into Romanian, English or French, as the case may be, and legalized in accordance with the law.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEANS OF SUPPORT</td>
+					<td>Proof of means of subsistence at the level of the minimum gross basic salary per country guaranteed in payment for a period of 90 days.<br></br>
+<b>NOTE:</b><br></br>
+<b>Highly qualified persons shall be exempt from proof of financial means</b></td>
+				</tr>
+				<tr class="lightRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>A valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>Two recent 3 x 4 cm coloured photographs</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<div style="border: 1px solid black; padding: 5px 5px 5px 20px;">
+			Note: <br></br>
+The individual employment contract of the foreigner is the contract concluded between the employer and the foreign employee, in which the elements of the binding offer must also be included. The binding tender must contain at least the following elements:
+			<ul style="margin 0;padding-left:20px;">
+			<li>the function, trade or occupation and the requirements necessary for its occupation;    
+<li>duration of employment in months/days, conditions of employment, termination of employment or re-employment;</li>
+<li>the maximum duration of working time, the minimum duration of periodic rests, compensation for overtime;</li>
+<li>the gross and net remuneration or the gross and net monthly salary, as applicable, as well as the hourly rate, the arrangements for payment and the dates for payment of the salary or remuneration, as applicable;</li>
+<li>the gross national minimum wage guaranteed in payment according to the Romanian legislation and the applicable collective labour agreement, as the case may be;</li>
+<li>bonuses and other rights of a wage nature;</li></li>
+			<li>the cases in which salary entitlements can be pursued;</li>
+<li>the minimum duration of paid annual leave, the method of granting and the monetary rights related to the leave, provided by the law and the applicable collective labour agreement, as the case may be;</li>
+<li>working conditions and occupational health and safety, occupational hygiene and social security measures;</li>
+<li>taxes, levies and charges on the income of foreign workers, ensuring, where appropriate, that double taxation or double collection of social security contributions is avoided;</li>
+<li>compensation in the event of occupational diseases, accidents at work or death.</li>
+		</ul>
+			<p> The following elements shall be included in the binding offer and must specify unequivocally whether they are the responsibility of the employer or of the foreign national, as follows: <br></br>
+a) if the employer provides accommodation, with the obligation to mention the accommodation conditions that the foreigner will benefit from throughout the stay, as well as the provision of food, as the case may be;<br></br>
+b ) if the employer provides transport, with the obligation to mention the conditions of transport of the foreign worker, from the country of origin or residence, to Romania, of the transport from the place of accommodation to the place of activity on the territory of Romania, as well as the conditions of transport and repatriation thereof, including in case of occupational diseases, accidents at work or death.</p> 
+			<b>The placement contract</b> is the tripartite civil contract, concluded in written form between the placement agency of foreigners, the registered employer and the foreigner, both in Romanian and in the language of the foreigner's state of origin or in a language of international circulation that the foreigner understands or is reasonably supposed to understand, by which the rights and obligations of the parties are established, and which must include:<br>
+(i) the elements to be contained in the binding offer under the individual employment contract; <br>
+			(ii) the fees charged by the Romanian authorities to the foreign national;<br>
+(iii) the contact details of the Labour Inspectorate, the General Inspectorate for Immigration, the Romanian Police, the National Agency Against Trafficking in Persons and the National Agency for Employment, where foreigners may report violations of their rights and freedoms;<br>
+(iv) elements from which the foreign national’s consent to the processing of his or her personal data is expressed;
+			<br></br><b>The service contract</b> is the contract concluded in written form between the foreigners placement agency and the registered employer establishing the rights and obligations of the parties and includes the binding job offer.
+		</div>
+		
+			<a name="simbolDDT" class="anchor_link"><h4>The long stay visa for secondment (marked D/DT)</h4></a>
+		<h4><u>A.	In the case of the seconded worker</u></h4>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>RESIDENCE PERMIT</td>
+					<td>
+						<p>Valid residence permit, issued by the State where the employer has its registered office, in original and copy;</p>
+					</td>
+				</tr>
+				<tr class="darkRow">
+					<td>INDIVIDUAL EMPLOYMENT CCONTRACT</td>
+					<td>Copy of the individual employment contract, registered with the competent authorities of the Member State concerned, translated and legalised;</td>
+				</tr>
+				<tr class="lightRow">
+					<td>ACT OF SECONDMENT</td>
+					<td>Copy of the secondment document, translated and legalized in accordance with the law;</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEANS OF SUPPORT</td>
+					<td>Proof of means of subsistence at the level of the minimum gross basic salary per country guaranteed in payment for the entire period entered in the visa;</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CRIMINAL RECORD CERTIFICATE</td>
+					<td>Criminal record certificate or other document with the same legal value issued by the authorities of the country of origin or residence, translated into Romanian, English or French, as the case may be, and legalized in accordance with the law.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>A valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>Two recent 3 x 4 cm coloured photographs</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+			</tbody>
+		</table>
+	
+		<h4><u>B.	For the ICT worker:</u></h4>
+		
+	
+		
+		<!--<p>The long-stay visa for secondment (marked D/DT) is granted <u>without submission of a copy of the authorisation of secondment</u>, to the following categories, only provided that  applicants submit appropriate documents that make the proof that they fall into one of these categories :</p>
+		<ul class="liststl none">
+			<li>a. to third-state nationals hired by legal persons located in one of the member states of the European Union, of the European Economic Area or in the Swiss Confederation, seconded in Romania, provided that they submit the residence permit issued by that state;</li>
+			<li>b. to third-state nationals who are bound to carry out didactic, scientific or other categories of temporary specific activities in specialized institutions that are accredited or temporarily authorized in Romania, on the grounds of bilateral agreements and to especially qualified staff, on the grounds of the order of the minister of national education, as well as to third-state nationals who carry out artistic activities in cultural institutions from Romania, on the grounds of the order of the minister of culture;</li>
+			<li>c. to third-state nationals who are bound to carry out, in Romania, temporary activities required by ministries or other entities of the central public or local administration, or by autonomous administrative authorities.</li>
+		</ul>
+		<p>For visa applicants who fall into one of the categories listed above, the endorsement of the Inspectorate General for Immigration is necessary in order for the visa to be granted. The endorsement can be issued in a term of 30 days.</p>-->
+		
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>CERTIFICATE OF FINDINGS</td>
+					<td>The certificate of establishment issued by the Trade Register or other document issued by the competent Romanian authorities showing that the beneficiary of the provision of services is the branch, subsidiary or representative office in Romania of the undertaking or undertakings belonging to the same group of undertakings as the undertaking from which the posting is made;</td>
+				</tr>
+				<tr class="darkRow">
+					<td>DOCUMENTS RELATING TO THE UNDERTAKING FROM WHICH THE POSTING IS MADE</td>
+					<td>Any documents, translated and legalized in accordance with the law, showing that the beneficiary of the provision of services and the undertaking from which the posting is made are directly or indirectly affiliated;</td>					
+				</tr>
+				<tr class="lightRow">
+					<td>ACT OF SECONDMENT</td>
+					<td>Copy of the deed of posting containing information on:<br></br>(i) the duration of the intra-corporate transfer, with a separate mention of the periods of posting to the territory of each Member State of the European Union, and the registered or professional seat of the entity or entities to which the posting takes place;<br></br>(ii) the position to be occupied by the foreign national during the intra-corporate transfer, namely senior manager, specialist or trainee employee; <br></br>(iii) the salary and the periodicity of its payment, as well as other terms and conditions of employment provided for during the intra-corporate transfer;<br></br>(iv) taking back to work the foreign national at the undertaking from which the posting is made or at another undertaking established in a third country belonging to the same group of undertakings, at the end of the intra-corporate transfer;</td>
+				</tr>
+				<tr class="darkRow">
+					<td>CRIMINAL RECORD CERTIFICATE</td>
+					<td>Criminal record certificate or other document with the same legal value, issued by the authorities of the state of domicile or residence, translated and legalized in accordance with the law;</td>					
+				</tr>
+				<!--<tr class="darkRow">
+					<td>RESIDENCE PERMIT</td>
+					<td>Residence permit issued by the state where the employer’s headquarters is located, in original and in copy;</td>					
+				</tr>
+				<tr class="lightRow">
+					<td>CONTRACT FOR SECONDMENT</td>
+					<td>Copy of the translated and notarised official document that attests the secondment;</td>					
+				</tr>
+				<tr class="lightRow">
+					<td>MEANS OF SUPPORT</td>
+					<td>Proof of means of subsistence at the level of the minimum gross basic salary per country guaranteed in payment for a period of 90 days.<br></br>
+<b>NOTE:</b><br></br>
+<b>Highly qualified persons shall be exempt from proof of financial means</b></td>
+				</tr>
+				<tr class="darkRow">
+					<td>CRIMINAL RECORD CERTIFICATE</td>
+					<td>Criminal record certificate or other document with the same legal value issued by the authorities of the country of origin or residence, translated into Romanian, English or French, as the case may be, and legalized in accordance with the law.</td>
+				</tr>-->
+				<tr class="lightRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>A valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>PHOTOGRAPHS</td>
+					<td>Two recent 3 x 4 cm coloured photographs</td>
+				</tr>
+				<tr class="darkRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<h4>C.	In the case of C+D:</h4>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>TRAVEL PURPOSE DOCUMENT</td>
+					<td>Copy of the document certifying the purpose of the journey</td>
+				</tr>
+				<tr class="darkRow">
+					<td>CRIMINAL RECORD CERTIFICATE</td>
+					<td>Criminal record certificate or other document with the same legal value, issued by the authorities of the state of domicile or residence, translated and legalized in accordance with the law;</td>					
+				</tr>
+				<tr class="lightRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEANS OF SUPPORT</td>
+					<td>Proof of means of subsistence at the level of the minimum gross basic salary per country guaranteed in payment for the entire period entered in the visa;</td>
+				</tr>
+				<tr class="lightRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>A valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>Two recent 3 x 4 cm coloured photographs</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+			</tbody>
+		</table>
+		
+			
+			<a name="simbolDSD" class="anchor_link"><h4>The Long-Stay Visa for Studies (marked D/SD)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr>
+					<th colspan="2"><b>The photographs and the conditions of validity of the travel document (passport) are valid regardless of the situation in which you find yourself (student, researcher, third-country national participating in a pupil exchange scheme or educational project, trainee participating in an unpaid training programme)</b></th>					
+				</tr>
+				<tr class="lightRow">
+					<td>PHOTOGRAPHS</td>
+					<td>Two recent 3 x 4 cm coloured photographs</td>
+				</tr>
+				<tr class="darkRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>A valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+				<tr id="docStudenti">
+					<th colspan="2"><b>For students</b></th>					
+				</tr>
+				<tr class="lightRow">
+					<td>PROOF OF ACCEPTANCE FOR STUDIES</td>
+					<td>Proof of acceptance for studies from the Romanian Ministry of Education, attesting that the visa applicant will attend a full-time course of study at a state or private higher education institution, accredited or provisionally authorized according to Law;
+					</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PROOF OF PAYMENT OF FEES</td>
+					<td>Proof of payment of the tuition fee for at least one academic year;</td>
+				</tr>
+				<tr class="lightRow">
+					<td>MEANS OF SUPPORT</td>
+					<td>Proof of means of support at the level of the minimum guaranteed gross salary, monthly, for the entire period specified in the visa;</td>
+				</tr>
+				<tr class="darkRow">
+					<td>CRIMINAL RECORD CERTIFICATE</td>
+					<td>Criminal record or any other document of equivalent legal value;</td>
+				</tr>
+				<tr class="lightRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE</td>
+					<td>If you are underage, the consent of your parents or of your legal guardian for the purpose of residing in Romania for studies;</td>
+				</tr>
+				<tr class="lightRow">
+					<td>ACCOMMODATION</td>
+					<td>Proof of accommodation;</td>
+				</tr>
+				<tr class="darkRow">
+					<td></td>
+					<td>Proof of knowledge of the language of the study programme to be followed, with the exception of the preparatory year of Romanian language for foreign citizens.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+				<tr id="docStraini">
+					<th colspan="2"><b>For third-country nationals who participate in a pupil exchange scheme or in an educational project</b></th>					
+				</tr>
+				<tr class="lightRow">
+					<td>PROOF OF ACCEPTANCE FOR STUDIES</td>
+					<td>Proof of acceptance for studies from the  Romanian Ministry of Education, attesting that the visa applicant will attend a full-time course of study;
+					</td>
+				</tr>
+				<tr class="darkRow">
+					<td></td>
+					<td>Proof of participation in a pupil exchange scheme or in an educational project, conducted by an organisation/entity established in line with legal provisions and thereby recognized for this purpose;
+					</td>
+				</tr>
+				<tr class="lightRow">
+					<td></td>
+					<td>Proof on behalf of the organisation/entity that conducts the pupil exchange programme or the educational project, that attests that the organiser will ensure the means of support, including education costs, as well as the possible costs for the execution of return measures;
+					</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>ACCOMMODATION</td>
+					<td>Proof of accommodation with a family selected by the organisation that implements/conducts the pupil exchange scheme or the educational project, who hold a dwelling space that is considered as normal for a Romanian family, or in a special accommodation establishment selected by the above-mentioned organisation;</td>
+				</tr>
+				<tr class="darkRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE</td>
+					<td>If you are underage, the consent of your parents or of your legal guardian for the purpose of residing in Romania for studies;</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+				<tr id="docBursieri">
+					<th colspan="2"><b>For third-country nationals of Romanian origin, holders of scholarships granted by the Romanian state or exempt from schooling fees, registered with a state pre-university educational institution, for frequency  highschool studies</b></th>					
+				</tr>
+				<tr class="lightRow">
+					<td>PROOF OF ACCEPTANCE FOR STUDIES</td>
+					<td>Letter of acceptance from the Romanian Ministry of Education, attesting that the visa applicant will attend a frequency full-time course of study, at a state pre-univesity education institution, high school level;
+					</td>
+				</tr>
+				<tr class="darkRow">
+					<td>ACCOMMODATION</td>
+					<td>Proof of accommodation;
+					</td>
+				</tr>
+				<tr class="lightRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.
+					</td>
+				</tr>
+				<tr class="darkRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE</td>
+					<td>If the case of minors, the consent of parents or the legal guardian for the purpose of residing in Romania for studies;
+					</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+				<tr id="docStagiari">
+					<th colspan="2"><b>For trainees who partake in an unpaid training program</b></th>					
+				</tr>
+				<tr class="lightRow">
+					<td>PROFESSIONAL TRAINING AGREEMENT</td>
+					<td>The professional training agreement shall contain at least the following elements:</br></br>
+(i)  a description of the training programme, including the educational objective or learning components;</br>
+(ii) the duration of the traineeship;</br>
+(iii) the placement and supervision conditions of the traineeship;
+(iv) the traineeship hours;</br>
+(v)  the legal relationship between the trainee and the host entity.
+					</td>
+				</tr>
+				<tr class="darkRow">
+					<td></td>
+					<td>Written undertaking on behalf of the host entity that, in the event that a trainee remains illegally in the territory of Romania, that host entity is responsible for reimbursing the costs related to the stay and return incurred by public funds;
+					</td>
+				</tr>
+				<tr class="lightRow">
+					<td></td>
+					<td>Provide evidence of having obtained a higher education degree within the two years preceding the date of application or of pursuing a course of study that leads to a higher education degree;
+					</td>
+				</tr>
+				<tr class="darkRow">
+					<td></td>
+					<td>Proof of means of support at the level of the minimum guaranteed gross salary, monthly, for the entire period specified in the visa;</td>
+				</tr>
+				<tr class="lightRow">
+					<td></td>
+					<td>Proof of providing accommodation conditions by the host entity.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+				<!--<tr class="darkRow">
+					<td>PROOF IN THE CASE OF A PUPILS-EXCHANGE PROGRAM</td>
+					<td>
+						<p>Proof of participation in a student-exchange program conducted by an organization established according to national legislation and acknowledged for this purpose</p>
+						<p>Proof from the organization that conducts the exchange of pupils, attesting to the fact that it will provide the financial support and any potential costs related to repatriation.</p>
+					</td>
+				</tr>-->
+				
+				
+				
+			</tbody>
+		</table>
+		
+			<a name="simbolDVF" class="anchor_link"><h4>The Long-Stay Visa for Family Reunification (marked D/VF)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="lightRow">
+					<td>COMMUNICATION FROM THE INSPECTORATE GENERAL FOR IMMIGRATION – MINISTRY OF INTERNAL AFFAIRS, FOR FAMILY REUNIFICATION BETWEEN TWO THIRD-STATE NATIONALS</td>
+					<td>
+						<p>This document is issued by the Inspectorate General for Immigration  and is valid 60 days from the date of issue</p>
+						<p>The standard application form must be submitted to the local units of the Inspectorate General for Immigration from the Romanian Ministry of Internal Affairs, under the territorial jurisdiction of which, the applicant legally resides. It must be accompanied by the following supporting documents:</p>
+						<ul class="liststl none">
+							<li>a) marriage certificate or proof of kinship, as the case may be;</li>
+							<li>b) the applicant’s authenticated statement, attesting that the applicant will live together with their family members;</li>
+							<li>c) a copy of the document that makes the proof of the right of stay on the territory of Romania;</li>
+							<li>d) proof of legal ownership of a dwelling place deemed as appropriate for a similar family in Romania;</li>
+							<li>e) proof of means of support;</li>
+							<li>f) proof of social health insurance of the applicant;</li>
+							<li>g) written statement from the person whom, along with the sponsor, holds joint custody of the minor for whom family reunification was requested, stating that they consent to the decision that the minor lives with the sponsor on the territory of Romania;</li>
+							<li>h) copy of the travel document held by the family member for whom family reunification was requested.</li>
+						</ul>
+						<p>For the beneficiaries of the refugee status or of subsidiary protection, who apply for family reunification, the documents presented under points d) – f) from above, are not mandatory.</p>
+					</td>
+				</tr>
+				<tr class="darkRow">
+					<td>DOCUMENTS FOR FAMILY REUNIFICATION BETWEEN A ROMANIAN CITIZEN AND A THIRD-STATE NATIONAL</td>
+					<td>Marriage certificate issued by Romanian authorities or transcribed in accordance with the law, or, depending on the case, proof of family ties or partnership.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>DOCUMENTS FOR FAMILY REUNIFICATION BETWEEN A ROMANIAN CITIZEN AND A THIRD-STATE NATIONAL, HOLDER OF A RIGHT OF RESIDENCE IN ANOTHER MEMBER STATE</td>
+					<td>Proof of documents that attest being registered with a right of residence in another member state, as family member of a Romanian citizen.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CRIMINAL RECORD CERTIFICATE</td>
+					<td>Criminal record certificate or other document with the same legal value issued by the authorities of the country of origin or residence, translated into Romanian, English or French, as the case may be, and legalized in accordance with the law.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>A valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>PHOTOGRAPHS</td>
+					<td>Two recent 3 x 4 cm coloured photographs</td>
+				</tr>
+				<tr class="darkRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>The sponsor holding a temporary residence permit valid for one year, an EU Blue Card, a permanent residence permit, or the sponsor who benefits from the refugee status or from subsidiary protection, may request family reunification for the following:</p>
+		<ul class="liststl">
+			<li>spouse;</li>
+			<li>unmarried minor children of the sponsor and of their spouse, including adopted children;</li>
+			<li>unmarried minor children of the sponsor, including adopted children, under the sponsor’s care and over whom the sponsor exercises their parental rights. If parental rights are exercised in common, the approval of the other holder of these rights, is compulsory, in order to achieve the family reunification requested by the sponsor;</li>
+			<li>unmarried minor children of the spouse, including adopted children, under the spouse’s care and over whom the spouse exercises their parental rights. If parental rights are exercised in common, the approval of the other holder of these rights, is compulsory, in order to achieve the family reunification requested by the sponsor.</li>
+		</ul>
+		<p>N.B. The categories of third-country nationals indicated above, holders of a right of stay granted for the purpose of scientific research and third-country nationals who hold an EU Blue Card, may request family reunification even when the residence permit is valid less than one year.</p>
+		<p>Provided that legal conditions are met, the Inspectorate General for Immigration from the Romanian Ministry of Internal Affairs may also approve family reunification for the following categories:</p>
+		<ul class="liststl none">
+			<li>a. next-of-kin, in ascending line, of the sponsor or spouse, if these persons cannot care for themselves and do not benefit from appropriate family support in their country of origin;</li>
+			<li>b. unmarried adult children of the sponsor or of the spouse, if due to medical reasons, they are unable to care for themselves.</li>
+		</ul>
+		<p>Unaccompanied underage children who benefit from the refugee status or from subsidiary protection may request family reunification for:</p>
+		<ul class="liststl none">
+			<li>a. next-of-kin, in ascending line, or for their legal guardian; or</li>
+			<li>b. when such persons do not exist or cannot be identified, for any other relative of the underage child.</li>
+		</ul>
+		<p>The long-stay visa for family reunification (marked D/VF) is issued by the diplomatic missions or consular posts of Romania from the home country or from the country of residence of the family members.</p>
+		<p>The following categories of people may also request a Romanian long-stay visa for family reunification:</p>
+		<ul class="liststl none">
+			<li>a. third-country nationals married to Romanian citizens;</li>
+			<li>b. unmarried third-country nationals who cohabit with unmarried Romanian citizens, provided they have at least one child together, hereinafter referred to as partners;</li>
+			<li>
+				<p>c. children of a Romanian citizen, of their spouse or partner, including adopted children, who:</p>
+				<ul class="liststl none">
+					<li>i) are not yet 21 years of age;</li>
+					<li>ii) continue their studies and have not surpassed 26 years of age;</li>
+					<li>iii) although they are adults, they cannot care for themselves for medical reasons.</li>
+				</ul>
+				<p>N.B. The adoption must be decided upon by a competent Romanian authority, in accordance with legal provisions, or by an authority of another state, that takes effect on the territory of Romania;</p>
+			</li>
+			<li>d. next-of-kin in ascending line, of the Romanian citizen or of their spouse;</li>
+			<li>e. the third-country national who is the parent of an underage Romanian citizen, provided that they can make proof of the fact that the underage citizen is in their care or prove the existence of an obligation of payment of a support pension, provided that this obligation is regularly fulfilled by the third-country citizen;</li>
+			<li>f. third-country nationals, family members of Romanian citizens, who prove being registered with a right of residence as family members, in another member state.</li>
+		</ul>
+		
+			<a name="simbolDAR" class="anchor_link"><h4>The Long-Stay Visa for Religious Activities (marked D/AR)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="darkRow">
+					<td>ENDORSEMENT OF THE STATE SECRETARIAT FOR FAITHS</td>
+					<td>The endorsement is granted to third-state nationals who carry out similar activities in their country of origin or of residence
+					</td>
+				</tr>
+				<tr class="lightRow">
+					<td>PROOF OF STATUS AS REPRESENTATIVE OF RELIGIOUS ORGANIZATION</td>
+					<td>Proof of the visa applicant’s status as representative of a religious organization legally established in Romania
+					</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEANS OF SUPPORT</td>
+					<td>Dovada mijloacelor de întreţinere la nivelul a 3 salarii medii pe economia naţională;</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CRIMINAL RECORD CERTIFICATE</td>
+					<td>Criminal record certificate or other document with the same legal value issued by the authorities of the country of origin or residence, translated into Romanian, English or French, as the case may be, and legalized in accordance with the law.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>TRAVEL MEDICAL INSURANCE AND PROOF THE APPLICANT DOES NOT SUFFER FROM ILNESSES THAT COULD ENDANGER PUBLIC HEALTH</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>ACCOMMODATION</td>
+					<td>Voucher or firm reservation with a tourist accommodation unit</td>
+				</tr>
+				<tr class="darkRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>A valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>PHOTOGRAPHS</td>
+					<td>Two recent 3 x 4 cm coloured photographs</td>
+				</tr>
+				<tr class="darkRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+			</tbody>
+		</table>
+		
+			<a name="simbolDCS" class="anchor_link"><h4>The Long-Stay Visa for Scientific Research (marked D/CS)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<!--<tr class="darkRow">
+					<td>ENDORSEMENT OF THE NATIONAL AUTHORITY FOR SCIENTIFIC RESEARCH</td>
+					<td>
+						<p>PLEASE NOTE: The approval of the National Authority for Scientific Research is issued upon request from research and development units and institutions, provided that the following conditions are met:</p>
+						<ul class="liststl">
+							<li>a) the research and development units be attested in accordance with the law;</li>
+							<li>b) an agreement of receipt between the units specified under letter a) and the researcher accepted to conduct activities as part of a scientific research project, exists.</li>
+						</ul>
+						
+					</td>
+				</tr>-->
+				<tr class="darkRow">
+					<td rowspan="2">Hosting Agreement of the Romanian Ministry for Research and Innovation (MCI)</td>
+					<td>The hosting agreement of the Romanian Ministry for Research and Innovation must contain at least the following elements:<br/><br/>
+a) the title or purpose of the research activity or of the research area;<br/>
+b) an undertaking by the third-country national to endeavour to complete the research activity;<br/>
+c) an undertaking by the research and development organisation to host the third-country national for the purpose of completing the research activity;<br/>
+d) the start and end date or the estimated duration of the research activity;<br/>
+e) information on the intended mobility in other Member States if the mobility is known at the time of lodging the application;<br/>
+f) a statement regarding the fact that the hosting agreement shall automatically lapse if the third-country national is not admitted or when the legal relationship between the researcher and the research organisation is terminated.<br/><br/></td>
+				</tr>
+				<tr class="darkRow">					
+					<td>The endorsement of the MCI as regards the hosting agreement shall be issued upon request of the  research and development organisations, provided that the following conditions are met:<br/><br/>
+a) the research and development organisations must be legally established;<br/>
+b) a reception agreement  is in place between the organisations referred to in let.a) and the researcher who has been accepted to carry out activities within a scientific research project. The format and conditions under which the reception agreement is concluded shall be determined by Order of the Minister of Research and Innovation.</td>
+				</tr>					
+				<tr class="lightRow">
+					<td>CRIMINAL RECORD CERTIFICATE</td>
+					<td>Criminal record certificate or other document with the same legal value issued by the authorities of the country of origin or residence, translated into Romanian, English or French, as the case may be, and legalized in accordance with the law.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>A valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>Two recent 3 x 4 cm coloured photographs</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+			</tbody>
+		</table>
+		
+			<a name="simbolDAS" class="anchor_link"><h4>The Long-Stay Visa for Other Purposes (marked D/AS)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="darkRow">
+					<td>DOCUMENT THAT SUBSTANTIATES THE PURPOSE OF THE APPLICATION</td>
+					<td>In order to establish the supporting documents that correspond to your personal circumstance, click 
+						<a href="javascript:toTheAnchor('TypeOfVisa#DASreturn')">here</a>
+					</td>
+				</tr>
+				<tr class="lightRow">
+					<td>ACCOMMODATION</td>
+					<td>Voucher or firm reservation with a tourist accommodation unit</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance during the period of validity of the visa, covering in full the intended period of stay of the foreign national concerned, all expenses which might arise from repatriation on medical grounds, emergency medical treatment and/or emergency hospitalisation or death, shall be valid throughout the territory of the Member States and shall have a minimum coverage of EUR 30,000.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>A valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>Two recent 3 x 4 cm coloured photographs</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CRIMINAL RECORD CERTIFICATE</td>
+					<td>Criminal record certificate or other document with the same legal value issued by the authorities of the country of origin or residence, translated into Romanian, English or French, as the case may be, and legalized in accordance with the law.</td>
+					</tr>
+				<tr class="darkRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document for digital nomad</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="darkRow">
+					<td>EMPLOYMENT CONTRACT</td>
+					<td>The employment contract, in original form, together with its authenticated translation into Romanian, concluded with a company registered outside Romania, proving the provision of remote services through the use of information and communication technology, or proof of remote management and through the use of information and communication technology of a company registered outside Romania, for at least three years at the date of his visa application.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>OFFICIAL DOCUMENT ATTESTING THE UP TO DATE FUNCTIONING OF THE FOREIGN COMPANY</td>
+					<td>An original document in original, together with its authenticated translation into Romanian, issued by the company registered outside Romania with which he/she has concluded an employment contract or by the company registered outside Romania that the foreigner owns, presenting all the identification and contact details of the company, as well as its field of activity, the foreigner's participation in the company and information on the company's legal representatives.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>LETTER OF INTENT</td>
+					<td>A letter of intent in original, with its authenticated translation into Romanian, in which the foreigner details the purpose of the trip to Romania and the activities he/she intends to carry out on Romanian territory.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>TAX CERTIFICATE AND FISCAL RESIDENCE CERTIFICATE</td>
+					<td>A document with apostille or superlegalisation, as the case may be, in original, with its  authenticated translation into Romanian, issued by the specialized office of the competent central or local government institution of the place of fiscal residence, attesting that, at the date of the visa application, the employed foreigner or, as the case may be, the company he owns paid taxes, duties and other compulsory contributions up to date, as well as that he is not registered with acts and facts that have or have had the effect of tax evasion and tax fraud.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>TRAVEL TICKET/VEHICLE SUPPORTING DOCUMENTS</td>
+					<td>Valid airplane ticket reservation valid to destination / Valid driver's license, Green Card (International Motor Insurance Card) and registration documents of the means of transport for vehicle drivers.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>MEDICAL INSURANCE</td>
+					<td>Travel medical insurance that covers the entire duration of the requested period of stay. The travel medical insurance shall have a coverage of at least 30000 EUR.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>MEANS OF SUPPORT</td>
+					<td>Proof of means of subsistence obtained from the activity carried out, in the amount of at least three times the average gross monthly salary in Romania for each of the last 6 months prior to the date of submission of the visa application, as well as for the entire period covered by the visa.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>ACCOMMODATION</td>
+					<td>Voucher or firm reservation with a tourist accommodation resort or, proof of accommodation being ensured by the host company, if the case should be.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>CRIMINAL RECORD CERTIFICATE</td>
+					<td>Criminal record certificate or other document with the same legal value, apostilled or over-legalised, as the case may be, and translated in authentic form, in Romanian, certificate issued by the authorities of the country of origin and, if applicable, from the state in which the foreigner is legally resident and in which he/she obtains income from the performance of the employment contract in a company registered outside Romania or from activities carried out through a company registered by the foreigner outside Romania, proving that there are no records of criminal offences.</td>
+				</tr>
+				<tr class="lightRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>A valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>PHOTOGRAPHS</td>
+					<td>Two recent 3 x 4 cm coloured photographs</td>
+				</tr>
+				<tr class="lightRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+				<tr>
+					<th colspan="2"><b>Attention:</b> The visa applicant must provide to the competent Romanian authorities (the consular staff) other supporting documents that they request, in addition to those provided for above.</th>					
+				</tr>
+			</tbody>
+		</table>
+		
+		----
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting documents for those appointed to the management of a subsidiary, representative office or branch on the territory of Romania of a company that has its headquarters abroad</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="darkRow">
+					<td>INDIVIDUAL EMPLOYMENT CONTRACT</td>
+					<td>Translated and notarized copy of the individual contract of employment, registered with the competent authorities from the respective member state;</td>
+				</tr>
+				<tr class="lightRow">
+					<td>AUTHENTICATED DECLARATION</td>
+					<td>Authentic declaration of the employer regarding the insurance of the expenses of maintenance, accommodation and social health insurance;</td>
+				</tr>
+				<tr class="darkRow">
+					<td>GRADUATION DIPLOMA</td>
+					<td>Diploma of completion of lower secondary education;</td>
+				</tr>
+				<tr class="lightRow">
+					<td>AUTHENTICATED DECLARATION</td>
+					<td>Authentic declaration of the employer that he has no kinship up to the fourth degree or affinity with the foreigner he employs.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+			</tbody>
+		</table>
+			
+			<a name="simbolDS" class="anchor_link"><h4>The Diplomatic and Service Visa (marked DS)</h4></a>
+		<table width="100%" ceellspacing="0" cellpadding="0" align="center" class="taxevize_t">
+			<thead width="100%">
+				<tr>
+				<th width="30%">Supporting Document</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody  align="left">
+				<tr class="darkRow">
+					<td>NOTE VERBALE</td>
+					<td>Drafted by the diplomatic mission or consular post accredited to Romania</td>
+				</tr>
+				<tr class="lightRow">
+					<td>VALID TRAVEL DOCUMENT</td>
+					<td>A valid travel document accepted by Romania, on which a visa can be affixed. The validity of the travel document must exceed the validity of the visa you apply for, by at least 3 months, and must have been issued no later than 10 years ago.</td>
+				</tr>
+				<tr class="darkRow">
+					<td>CONSENT OF THE LEGAL REPRESENTATIVE FOR THE MINOR</td>
+					<td>Minor legal representative agreement (for the minor alien, a notarized, apostilled or supralegalized document is presented, as the case may be, and accompanied by the translation into Romanian of the notarized document to be legalized and to include the approval regarding the stay on the territory of Romania for the purpose for which the visa is requested).</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+	</div>
+<script type="text/javascript">
+		function initialize() {}
+	</script>
+
+	<div class="fix-sidebar">
+		<a class="link headerlink" href="Info">Useful links</a>
+		<div class="permanentLinks">
+				
+			<div class="infoLink">
+				<a class = "link" href="QASchengen">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					<b>Q&A - Schengen</b></a>
+		</div>
+	
+			<div class="infoLink">
+				<a class = "link" href="Latest">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					Latest Information of Interest</a>
+		</div>
+				<div class="infoLink">
+				<a class = "link" href="Decisions">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					Commission implementing decisions establishing harmonised lists of supporting documents</a>
+		</div>
+			
+			    <div class="infoLink">
+                <a class = "link" href="Intelegeridereprezentare">
+                    <img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+	                Representation Arrangements<Br></Br></a>
+	    </div>
+			
+				<div class="infoLink">
+						<div class="infoLink">
+				<a class = "link" href="Ucraina">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					Information of interest for Ukrainian citizens / Важлива інформація для громадян України</a>
+		</div>
+				<div class="infoLink">
+						<div class="infoLink">
+				<a class = "link" href="British">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					Information of interest to British nationals, starting with January 1<sup>st</sup>2021</a>
+		</div>
+				<div class="infoLink">
+					<a class = "link" href="Brexit">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					Information of interest to British nationals and their respective family members, who are covered by the Withdrawal Agreement, starting with January 1<sup>st</sup> 2021</a>
+		</div>
+				<a class = "link" href="COVID19">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					COVID-19 – Information to the attention of third-state nationals and stateless persons who are required to hold an entry visa for Romania
+<br>
+- LATEST UPDATE on March 11<sup>th</sup> 2022 -</a>
+		</div>
+			
+			<!--<div class="infoLink">
+				<a class = "link" href="Euro2020">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					General Information on Romania’s Visa Regulations in Preparation for UEFA EURO 2020</a>
+		</div>-->
+
+			
+
+			<div class="infoLink">
+				<a class="link" href="DataProtection">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					Personal data protection</a>	
+			</div>
+			<div class="anViza">
+				<a class = "link" href="NeedVisa">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					Do you need a visa?</a>
+			</div>				
+			<div class="infoLink">
+				<a class="link" href="VisaDetails">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					<b>Calculation of the right of stay</b></a>
+			</div>
+			<div class="infoLink">
+				<a class="link" href="ConditionsOfEntry">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					<b>Entry conditions</b></a>
+			</div>
+			<div class="infoLink">
+				<a class="link" href="EES">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					<b>Information campaign European Entry/Exit System (EES)</b></a>
+			</div>
+			<div class="infoLink">
+				<a class="link" href="ShortStayVisa">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					<B>Countries the nationals of which are required to be in possession of a visa when crossing the external borders of the Member States</B></a>
+			</div>
+			<div class="infoLink">
+				<a class="link" href="LongStayVisa">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					Countries the nationals of which are exempt from the requirement to be in possession of a visa when crossing the external borders of the member states for stays of no more than 90 days in any 180-day period</a>
+			</div>
+					<div class="infoLink">
+				<a class="link" href="PassDiplomatic">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					The regime applicable to the holders of diplomatic, service/official and special passports</a>
+			</div>
+			<div class="infoLink">
+				<a class="link" href="TypeOfVisa">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					Types of visas and the purpose of your trip</a>
+			</div>			
+			<div class="infoLink">
+				<a class="link" href="SupportingDocuments">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					Supporting documents required in order to lodge a visa application</a>
+			</div>
+			<div class="infoLink">
+				<a class="link" href="VisaFees">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					Visa fees</a>
+			</div>
+			<div class="infoLink">
+				<a class="link" href="HowTo">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					How to apply</a>
+			</div>
+			<div class="infoLink">
+				<a class="link" href="Legislation">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					Relevant legislation</a>
+			</div>
+			
+			<div class="infoLink">
+				<a href="#" onClick="javascript:redirectToAppPage('');">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					Apply for a visa</a>
+			</div>
+			<div class="infoLink">
+				<a class = "link" href="SpecificRules">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					Specific Rules Relating to Visa Applicants who are Family Members of EU, EEA or Swiss Citizens</a>
+			</div>
+			<div class="infoLink">					
+				<a href='http://www.mae.ro/en/node/10251' target="_blank">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					Studying in Romania</a>
+			</div>
+					<!--<div class="infoLink">
+				<a class = "link" href="FAQ">
+					<img src="media/1090/links_arrow.png" style="padding-right:4px;" alt="" border="0">
+					F.A.Q.</a>-->
+			</div>
+		</div>
+	</div>
+	
+	
+
+
+				<div class="white-bg">
+    	<div class="white-band"></div>
+		<div class="paddings">
+				<center>
+					<a><img src="media/1060/ue_logo2.png" alt="" width="120" style="margin:0 20px;" border="0"></a>
+					<a><img src="media/1525/gov_logo2.png" alt="" width="120" style="margin:0 20px;" border="0"></a>
+					<a><img src="media/1063/logo_podca.png" width="120" alt="" style="margin:0 20px;" border="0"></a>
+					<a><img src="media/1005/istruct_logo.png" alt="" width="120" style="margin:0 20px;" border="0"></a>
+				</center>
+				<p class="disclaimer">For detailed information about other programs financed by the European Union, please visit <a href="http://www.fonduri-ue.ro/" target="_blank">www.fonduri-ue.ro</a></p>
+				<p class="disclaimer">This material does not represent the official position of the European Union or the Romanian Government
+				</p>
+		</div>
+		</div>	
+			</div>
+		</div>
+		
+		<footer>
+			<div class="wrapper">
+				<nav>
+					<li><a class="link" href="AboutWebsite">About the website</a><span>|</span></li>
+					<li><a class="link" href="Info">Useful links</a><span>|</span></li>					
+					<li><a href='http://www.mae.ro/en/romanian-missions' target="_blank">Diplomatic missions of Romania</a></li>
+					
+				</nav>
+				<p class="copy">&copy; Copyright 2014-<script type="text/javascript">document.write(new Date().getFullYear())</script> MAE. All rights reserved.</p>
+			</div>
+		</footer>
+				
+</body>
+</html>
+	
+	
+
+		
+	
+

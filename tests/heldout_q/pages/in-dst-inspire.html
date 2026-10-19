@@ -1,0 +1,615 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta charset="utf-8" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="PRAGMA" content="NO-CACHE" />
+
+    <title>INSPIRE Programme - Inspire</title>
+    <script type="text/javascript">
+        var TmzAjaxDependetValueUrl = "/TmzMvcAjax/TmzAjax/GetDependentValues";
+        var TmzAjaxUploadFileUrl = "/TmzMvcAjax/TmzAjax/UploadFile";
+        var TmzAjaxUploadFileDeleteUrl = "/TmzMvcAjax/TmzAjax/DeleteFile";
+        var TmzAjaxGetFileDetailsUrl = "/TmzMvcAjax/TmzAjax/GetFileDetails";
+        var TmzAjaxDownloadFileUrl = "/TmzMvcAjax/TmzAjax/DownloadFile";
+        var BroserOffLineMessage = "Application can not be accessed while working Offline.";
+
+        var ajaxLoaderImage = "/Images/ajax-loader1.gif";
+    </script>
+    <link href="/Content/css?v=elaZdvQoq8Eqd1IDvkxu-DyhAFilNo9Mp-oRMyKa3q01" rel="stylesheet"/>
+
+    <link href="/Content/themes/base/css?v=KjHg8mMSJZGl4HbzxTrqFz8p8FOo58IisVQfyYEVx1k1" rel="stylesheet"/>
+
+    <script src="/bundles/modernizr?v=nTzd1MLD0qIJcqtuSgKUvqWezbUQ2f5A9IS7fHrj-SQ1"></script>
+
+    <script src="/bundles/jquery?v=LKoKZ-UGHqW8R0StYKRbzW-HrMOe9tohE7y8LmISw741"></script>
+
+    <script src="/bundles/jqueryui?v=V1ptuvpFDzVzpPZ6WnlvxzjIamQo0vJcqy3jofy_tJQ1"></script>
+
+    <script src="/bundles/jqueryval?v=lNPBKNjsRyAaq1g-_vZTu64LQWXLqwQObgdVmyHfN1o1"></script>
+
+    <script src="/bundles/jquery-fupload?v=NR3f4QNSBOzDl82b_59ofQuW7A7em8j-tROzLg2NO1U1"></script>
+
+    <script src="/bundles/TmzJs?v=J7eZLLDkJXkUWE3K8S2ld0yng6VMeoT2UYyefsS9Njo1"></script>
+
+    <script src="/bundles/chosen?v=fEGPOmji4idXu_zokpKwCp9ioi3wctl-1drTDwJ4fOg1"></script>
+
+    <script src="/scripts/UserDependent?v=zj4sINmV7ooHipiK5_szdqDDfVuFYT8GKyP0McLVlK41"></script>
+
+    <link media="screen" type="text/css" href="/Content/nivo-slider.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <script src="/Scripts/ddsmoothmenu.js" type="text/javascript"></script>
+    <link href="/Content/ddsmoothmenu.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/all.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/Scripts/prototype/prototype.js"></script>
+    <script src="/Scripts/jquery-3.5.1/jquery-3.5.1.js"></script>
+    <script src="/Scripts/bootstrap-dropdown.js"></script>
+    <script src="/Scripts/all.min.js"></script>
+    <script type="text/javascript">var $j = jQuery.noConflict();</script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            handleAjaxMessages();
+            displayMessages();
+        });
+        //ajax loader progress
+        $(document).ajaxStart(function () {
+            inspireBlockUI();
+        }).ajaxStop(function () {
+            $.unblockUI();
+        });
+        function displayMessage(message, messageType) {
+            $("#messagewrapper").html('<div class="messagebox ' + messageType.toLowerCase() + '"></div>');
+            $("#messagewrapper .messagebox").text(message);
+            displayMessages();
+        }
+
+        function displayMessages() {
+            if ($("#messagewrapper").children().length > 0) {
+                $("#messagewrapper").show();
+                $(document).click(function () {
+                    clearMessages();
+                });
+            }
+            else {
+                $("#messagewrapper").hide();
+            }
+        }
+
+        function clearMessages() {
+            $("#messagewrapper").fadeOut(500, function () {
+                $("#messagewrapper").empty();
+            });
+        }
+
+        function handleAjaxMessages() {
+            $(document).ajaxSuccess(function (event, request) {
+                checkAndHandleMessageFromHeader(request);
+            }).ajaxError(function (event, request) {
+                displayMessage(request.responseText, "error");
+            });
+        }
+
+        function checkAndHandleMessageFromHeader(request) {
+            var msg = request.getResponseHeader('X-Message');
+            if (msg) {
+                displayMessage(msg, request.getResponseHeader('X-Message-Type'));
+            }
+        }
+    </script>
+    <style>
+        li.app_link {
+            float: right !important;
+        }
+
+            li.app_link a {
+                padding: 0px !important;
+            }
+
+            li.app_link:hover a {
+                color: #fff !important;
+                background: #e06314 !important;
+            }
+ .Internship {
+            background: #dc1c02 !important;
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+<body onload="OnLoad ();" ononline="OnOnline ();" onoffline="OnOffline ();">
+    <div id="messagewrapper" style="display: none">
+        
+    </div>
+    <div id="notificationwrapper" style="display: none">
+        
+    </div>
+    <header>
+        <div class="container" role="img">
+
+
+            <div id="container"></div>
+
+
+
+            <div class="span-24">
+                <div class="logo"><img src="/images/dst-logo.jpg" alt="Online Inspire" title="DST" /></div>
+                <!--<div class="logo"><a href="/~/AdminController/Index"><img src="/images/dst-logo.png" alt="DST"/></a></div>-->
+                <!--DST Logo is displayed as simple image-->
+                <div class="logo-right-side" style="margin-top:15px;">
+                    <div class="lang-area-new">
+                        <ul class="language-switch">
+                            <li class="social">
+
+                                <a href="https://www.facebook.com/IndiaDST/" alt="Facebook" target="_blank">
+                                    <img src="..\Images\facebook-logo.png" alt="Facebook" />
+                                </a>
+
+                                <a href="https://twitter.com/IndiaDST" alt="Twitter" target="_blank">
+                                    <img src="..\Images\twitter-logo.png" alt="Twitter" />
+                                </a>
+
+                            </li>
+                            <li class="btn-group accessibility-dropdown">
+                                <a class="btn dropdown-toggle" title="Accessibility Dropdown" data-toggle="dropdown" href="#">
+                                    <i class="fas fa-wheelchair"></i>
+
+                                </a>
+                                <div class="dropdown-menu accessibility">
+                                    <a tabindex="-1" href="javascript:void(0);" onclick="setFontSize('plus');">A<sup>+</sup></a>
+                                    <a tabindex="-1" href="javascript:void(0);" onclick="setFontSize('default');">A</a>
+                                    <a tabindex="-1" href="javascript:void(0);" onclick="setFontSize('minus');">A<sup>-</sup></a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="/Account/ScreenReader" alt="Screen Reader" class="screen-reader">
+                                    <img src="/Images/screenreader.png" alt="Screen Reader" />
+                                </a>
+                            </li>
+
+                            <li class="btn-group language">
+                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" alt="Language">
+                                    Language
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu language">
+                                    <a href="/Account/Language?cultureCode=en-US" alt="English">English</a>
+                                    <a href="/Account/Language?cultureCode=hi-IN" alt='हिंदी'>हिंदी</a>
+                                </div>
+                            </li>
+
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div><!-- span-24 div ends-->
+
+            <script type="text/javascript">
+                ddsmoothmenu.init({
+                    mainmenuid: "tmz-hmenu1", //menu DIV id
+                    orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+                    classname: 'tmz-hmenu', //class added to menu's outer DIV
+                    //customtheme: ["#1c5a80", "#18374a"],
+                    contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+                })
+            </script>
+
+
+        </div><!--container div ends-->
+
+        <div class="navigation">
+            <div class="tmz-hmenu-container">
+                <div class="tmz-hmenu" id="tmz-hmenu1">
+                    
+                    <ul>
+
+                        <li><a alt="Home" href="/">Home</a></li>
+                        <li><a href="/Account/AboutDST" alt="About DST">About DST</a></li>
+                        <li>
+                            <a href="/Account/INSPIREProgramme" alt="INSPIRE Scheme">INSPIRE Scheme</a>
+
+                        </li>
+
+                        <li>
+                            <a href="#" alt="FAQs">FAQs</a>
+
+                            <ul>
+
+                                  <li><a href="/Account/FAQInternship" class="internship" alt="FAQs">Internship</a></li>
+                                <li><a href="/Content/SHEFAQs2024.pdf" target="_blank" class="scholar" alt="FAQs">Scholarship for Higher Education(SHE)</a></li>
+                                <li><a href="/Content/FellowshipFAQ2024.pdf" class="fellowship" alt="FAQs">Fellowship</a></li>
+                                <li><a href="/Content/GuideLine/FAQsFacultyfellowship25.pdf" class="faculty" alt="FAQs">Faculty Fellowship</a></li>
+
+                            </ul>
+
+                        </li>
+
+
+                        <li>
+                            <a href="#">Guidelines &amp; Formats</a>
+
+                            <ul>
+
+                                <li>
+                                      <a class="Internship" href="#" title="#">Internship</a>
+                                    <ul>
+                                        <li>
+                                            <a class="Internship" href="/Content/GuideLine/GuidelinesInternship24112023.pdf" target="_blank">Guidelines</a>
+
+                                        </li>
+
+                                        <li>
+                                            <a class="Internship" href="#">Formats</a>
+                                            <ul>
+                                                <li><a class="Internship" href="/Content/GuideLine/Mandate_Form_Format.pdf" target="_blank">Mandate Form </a></li>
+                                                <li><a class="Internship" href="/Content/GuideLine/Internshipcompletionreport.pdf" target="_blank">Internship Camp Completion Report </a></li>
+                                                <li>
+                                                    <a class="Internship" href="/Content/GuideLine/FormatsInternship.pdf" target="_blank">Other Formats</a>
+                                                </li>
+
+
+
+                                            </ul>
+
+
+                                        </li>
+
+                                        <li>
+                                            <a class="Internship" href="/Content/GuideLine/AddMentor.pdf" target="_blank">
+                                                Steps For Adding New Mentor
+                                            </a>
+
+                                        </li>
+
+                                    </ul>
+                                </li>  
+
+                                <li>
+                                    <a class="scholar" href="#" alt="#">Scholarship for Higher Education (SHE)</a>
+                                    <ul>
+                                        <li>
+                                            <a class="scholar" href="#">Guidelines</a>
+                                            <ul>
+                                                <li><a class="scholar" href="/Content/guidelines.pdf" target="_blank">Guidelines for Filling Online Applications</a></li>
+                                                <li><a class="scholar" href="/Content/SHEPostofferImplementationGuidelines2024.pdf" target="_blank">Post offer Implementation Guidelines</a></li>
+
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="scholar" href="#">Formats</a>
+                                            <ul>
+                                                <li>
+                                                    <a class="scholar" href="/Content/EndorsementFormForB.Sc2024.pdf" target="_blank">Endorsement Form  For B.Sc</a></listyle="width:400%">
+                                                </li>
+                                                <li><a class="scholar" href="/Content/FormatSHEPerformanceReport2024.pdf" target="_blank">Performance Report For B.Sc./M.Sc.</a></li>
+                                                <li><a class="scholar" href="/Content/Enrolment Form M.Sc.pdf" target="_blank">Enrolment Form M.Sc</a></li>
+                                                <li><a class="scholar" href="/Content/Format SHE Proj Completion Cert & Project Report.pdf" target="_blank">Project Completion Certificate & Project Report</a></li>
+
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="fellowship" href="#" title="FAQs">Fellowship</a>
+                                    <ul>
+                                        <li>
+                                            <a class="fellowship" href="#">Guidelines</a>
+                                            <ul>
+                                                <li><a class="fellowship" href="/Content/GuideLine/FellowShipGuidelines2024.pdf" target="_blank">INSPIRE Fellowship Guidelines</a></li>
+                                                <li><a class="fellowship" href="/Content/GuideLine/JRFtoSRF_Upgradation_Guidelines.pdf" target="_blank">JRF to SRF Upgradation Guidelines</a></li>
+
+
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="fellowship" href="#">Formats</a>
+                                            <ul>
+                                                <li><a class="fellowship" href="/Content/GuideLine/Rank_Certificate_Template.pdf" target="_blank">Rank Certificate Template</a></li>
+
+
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="fellowship" href="/Account/reevaluation">Re-evaluation</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a class="faculty" href="#" title="FAQs">Faculty Fellowship</a>
+                                    <ul>
+                                        <li>
+                                            <a class="faculty" href="#">Guidelines</a>
+                                            <ul>
+                                                <li><a class="faculty" href="/Content/GuideLine/FacultyFellowshipGuidelines25.pdf" target="_blank">INSPIRE Faculty Fellowship Guidelines</a></li>
+
+
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a class="faculty" href="#">Formats</a>
+                                            <ul>
+                                                <li><a class="faculty" href="/Content/GuideLine/TemplateforJoiningReport2021.pdf" target="_blank">Format for Joining Report</a></li>
+                                                <li><a class="faculty" href="/Content/GuideLine/UNDERTAKINGFacultyFellow2024.pdf" target="_blank">Undertaking from INSPIRE Faculty Fellow</a></li>
+                                                <li><a class="faculty" href="/Content/GuideLine/UndertakingbyHostInstitute24.pdf" target="_blank">Undertaking from the Host Institute</a></li>
+
+
+
+                                            </ul>
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+
+
+                            </ul>
+
+                        </li>
+                        <li>
+                            <a href="#" alt="Research Exposure Trg">Res Exposure Trg </a><!--Res Exposure Trg-->
+
+                            <ul>
+                                <li><a href="/Account/ResExposure" alt="Registration in Research Exposure Training Programme">Registration in Research Exposure Training Programme</a></li>
+                                <li><a href="/Images/Notice/Guidelines_for_NE_Exposure_Programme.pdf" alt="Guidelines for NE Exposure Programme" target="_blank">Guidelines for NE Exposure Programme</a></li>
+                                <li><a href="/Images/Notice/SampleResearchExposure.pdf" target="_blank" alt="Format for submission of Proposal">Format for submission of Proposal</a></li>
+                                <li><a href="/Images/Notice/Format_for_Program_Completion_Report.pdf" target="_blank" alt="Format for Program Completion Report">Format for Program Completion Report</a></li>
+                            </ul>
+
+                        </li>
+                        <li>
+                            <a href="/Account/BoardData" alt="Edu Boards Data">Edu Boards Data </a>
+
+                        </li>
+
+                        <li>
+                            <a href="#" alt="KVPY">KVPY</a>
+                            <ul>
+
+                                <li><a href="/Images/Notice/Notice_for_KVPY.pdf" target="_blank" alt="Notice">Notice</a></li>
+                                <li><a href="/Images/Notice/Formats_for_KVPY.pdf" target="_blank">Format</a></li>
+                            </ul>
+
+                        </li>
+
+                        <li><a href="/Account/Notices" alt="Notice Board">Notice Board</a></li>
+
+
+                        <li><a href="/Account/ContactUs" alt="Contact Us">Contact Us</a></li>
+
+                    </ul>
+
+
+                </div><!-- navigation div ends-->
+            </div>
+
+        </div>
+
+    </header>
+    <div id="body">
+        <div class="wrapper">
+            <link rel="stylesheet" href="/Content/mainLogin.css">
+
+<div class="content">
+    <h1 class="head">INSPIRE Programme</h1>
+    <p class="head-content" style="text-align: justify;">
+      Generation and nurturing of a human talent pool capable of utilizing and developing first principles in science is both a pre-condition and integral part 
+    of such an innovation infrastructure. An India specific model for attracting talent with an aptitude for research and innovation, for a career in Basic &amp; Natural 
+    sciences is required. Department of Science &amp; Technology (DST) has developed an innovative programme named <b>Innovation in Science Pursuit for Inspired Research (INSPIRE)</b> 
+    to attract talent to the excitement and study of science at an early age, and to help the country build the required critical resource pool for strengthening and expanding the 
+    S&amp;T system and R&amp;D base with a long term foresight.<br />
+    <br />
+    Government of India has approved the INSPIRE Scheme  in November 2008 at a total cost of about Rs 1979.25 crores in the 
+    11th Plan Period and Honourable Prime Minister launched the programme on 13th December 2008. 
+    The programme is continuing in the 12th Plan period at a budgetary allocation of Rs. 2200 crores.<br />
+    <br />
+    INSPIRE has three components: <br />
+    (i) Scheme for Early Attraction of Talent  (SEATS),
+    (ii) Scholarship for Higher Education (SHE) and 
+    (iii) Assured Opportunity for Research Careers (AORC).
+    the component wise details can be found here. <a href="https://online-inspire.gov.in/content/INSPIRE_Brochure.pdf"  target="_blank">https://online-inspire.gov.in/content/INSPIRE_Brochure.pdf</a>
+    <br />
+    <br />
+       <div align="center"><img src="/Images/inspire_scheme.gif"/></div> 
+         <br />
+    <br />
+    (i) <b>Scheme for Early Attraction of Talent (SEATS)</b> aims to attract talented youth to study science by providing 
+    <b>INSPIRE Award</b> of Rs 5000 to one million young learners of the age group 10-15 years, ranging from Class VI to Class X standards,
+     and also by arranging summer camps for about 50,000 science students of Class XI with global leaders in science to experience the joy of innovations 
+    on an annual basis through <b>INSPIRE Internship</b>.
+    <br />
+    <br />
+
+    (ii) <b>Scholarship for Higher Education (SHE)</b> aims to enhance rates of attachment of talented youth to undertake higher education
+     in science intensive programmes, by providing scholarships and mentorship. The scheme offers 10,000 Scholarship every year at Rs 0.80 lakh per year for 
+    the talented youth in the age group 17-22 years, for undertaking Bachelor and Masters level education in natural sciences. The main feature of the scheme 
+    is the mentorship support provided to every scholar.
+    <br />
+    <br />
+
+    (iii) <b>Assured Opportunity for Research Careers (AORC)</b> aims to attract, attach, retain and nourish talented young scientific Human Resource for strengthening the R&amp;D
+     foundation and base. It has two sub-components. In the first component i.e. <b>INSPIRE Fellowship</b> (age group of 22-27 years), it offers 1000 fellowships every year, 
+    for carrying out doctoral degree in both basic and applied sciences including engineering and medicine. In the second component i.e. <b>INSPIRE Faculty Scheme</b>, 
+    it offers assured opportunity every year for 1000 post- doctoral researchers in the age group of 27-32 years, through contractual and tenure track positions
+     for 5 years in both basic and applied sciences area. 
+
+
+    </p>
+</div>
+
+
+
+
+        </div>
+    </div>
+
+   
+        <div class="footer">
+            <div class="footer-inner">
+                <p class="copy" style="color:white !important;">Copyright &#169; 2013 Department of Science and Technology</p>
+                <span class="view-div" style="color:white !important;">This site is best viewed with Internet Explorer 11+, Firefox 27+ and Chrome 38+</span>
+                <span style="color:white; float:right">Visitors:&nbsp;23,34,18,005</span>
+               
+                        <script type="text/javascript">
+                            (function (i, s, o, g, r, a, m) {
+                                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                                    (i[r].q = i[r].q || []).push(arguments)
+                                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+                            ga('create', 'UA-42336988-2', 'online-inspire.gov.in');
+                            ga('send', 'pageview');
+                        </script>
+
+            </div>
+        </div>
+  
+    
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function () {
+        $(".dialogNotification").dialog();
+    });
+    $(document).ready(function () {
+        //// Extended and collasible image handling on Search panel
+        $(".collapsibleContainerTitle").toggle(
+            function () {
+                $(this).attr("class", "collapsibleContainerTitle ui-widget-header-close");
+            },
+            function () {
+                $(this).attr("class", "collapsibleContainerTitle ui-widget-header");
+            });
+
+    });
+
+    /*********Font size resize**********/
+
+    var fontSize = 14;
+    jQuery(document).ready(function () {
+        //console.log(theme);
+        if (_getCookie("nccfontSize") != null) {
+            var fontSize = _getCookie("nccfontSize");
+        } else {
+            var fontSize = 14;
+        }
+        jQuery("body .container,#body,#body div,#body .content,#body .content span,.ui-accordion-content a b,form p,input,h2,h3,.footer-inner,.footer-inner .copy,.footer-inner .view-div").css("font-size", fontSize + "px");
+        jQuery(".tmz-hmenu a").css("font-size", fontSize + "px");
+
+    });
+    function _deleteCookie(name, path, domain) {
+        if (_getCookie(name)) {
+            document.cookie = name + "=" +
+                ((path) ? "; path=" + path : "") +
+                ((domain) ? "; domain=" + domain : "") +
+                "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+        }
+    }
+    function _getCookie(name) {
+        var arg = name + "=";
+        var alen = arg.length;
+        var clen = document.cookie.length;
+        var i = 0;
+        while (i < clen) {
+            var j = i + alen;
+            if (document.cookie.substring(i, j) == arg) {
+                return _getCookieVal(j);
+            }
+            i = document.cookie.indexOf(" ", i) + 1;
+            if (i == 0)
+                break;
+        }
+        return null;
+    }
+
+    function _getCookieVal(offset) {
+        var endstr = document.cookie.indexOf(";", offset);
+        if (endstr == -1) { endstr = document.cookie.length; }
+        return unescape(document.cookie.substring(offset, endstr));
+    }
+    function _setCookie(name, value, expires, path, domain, secure) {
+        var vurl = true;
+        if (path != '' && path != undefined) {
+            vurl = validUrl(path);
+        }
+        if (jQuery.type(name) == "string" && vurl) {
+            // document.cookie = name + "=" + escape(value)  +
+            //     ((expires) ? "; expires=" + expires.toGMTString() : "") +
+            //   ((path) ? "; path=" + "/" : "") +
+            //     ((domain) ? "; domain=" + domain : "") +
+            //      ((secure) ? "; secure" : "");
+            document.cookie = name + "=" + (value || "") + ((expires) ? "; expires=" + expires.toGMTString() : "") + ((domain) ? "; domain=" + domain : "") + "; path=/";
+        }
+    }
+
+
+
+    function setFontSize(fontType) {
+
+        if (fontType == "plus") {
+            if (fontSize <= 15) {
+                fontSize = parseInt(fontSize) + 1;
+            }
+            if (fontSize > 16) {
+                fontSize = parseInt(fontSize) + 1;
+            }
+        } else if (fontType == "minus") {
+            if (fontSize > 12) {
+                fontSize = parseInt(fontSize) - 1 + 1;
+
+            }
+
+            if (fontSize > 12) {
+
+                fontSize = parseInt(fontSize) - 1;
+
+            }
+
+        }
+
+        else {
+            fontSize = 14; 
+
+        }
+
+        _setCookie("nccfontSize", fontSize);
+        jQuery("body .container,#body,#body div,#body .content,#body .content span,.ui-accordion-content a b,form p,input,h2,h3,.footer-inner,.footer-inner .copy,.footer-inner .view-div").css("font-size", fontSize + "px");
+        jQuery(".tmz-hmenu a").css("font-size", fontSize + "px"); 
+
+
+    }
+
+    $(document).ready(function () {
+        $('.btn-group.accessibility-dropdown').click(function (e) {
+            $(this).find('.dropdown-menu.accessibility').slideToggle('fast');
+        });
+    });
+    $(document).on("click", function (e) {
+        var $drop = $('.btn-group.accessibility-dropdown');
+        if ($drop !== e.target && !$drop.has(e.target).length) {
+            $('.dropdown-menu.accessibility').slideUp('fast');
+        }
+    });
+    $(document).ready(function () {
+        $('.btn-group.language').click(function (e) {
+            $(this).find('.dropdown-menu.language').slideToggle('fast');
+        });
+    });
+    $(document).on("click", function (e) {
+        var $drop = $('.btn-group.language');
+        if ($drop !== e.target && !$drop.has(e.target).length) {
+            $('.dropdown-menu.language').slideUp('fast');
+        }
+    });
+</script>

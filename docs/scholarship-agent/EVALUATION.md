@@ -366,6 +366,7 @@ by `score_<x>.py`) before scoring. A set is scored once as a test set; afterward
 | N (round 29) | 156 | 96 / 28 / 21 | 95 / 41 / 2 |
 | O (round 30) | 120 | 70 / 17 / 17 | 71 / 26 / 4 |
 | P (round 31) | 236 | 150 / 30 / 38 | 163 / 54 / 0 |
+| Q (round 33, non-university funders) | 216 | 129 / 36 / 17 | 126 / 53 / 0 |
 
 Since round 30 a rule change is kept only when `tests/devpool.py` (all used sets pooled; utility = correct - 2 x wrong -
 0.5 x right answers held in review) rises without any set falling. Round 31 (dates stage 4, bracketed exclusion lists,
@@ -412,3 +413,37 @@ adjectives, every criterion answered with an example, named fit with the program
 skeleton lays the structure out as [YOU WRITE] slots; `review.py` flags filler phrases, a quotation opener and one-block
 prose as warnings (never errors: the applicant decides). `tests/docs_bench.py` plants 30 faults, 30 caught, 0 false
 alarms. The standard supplies no content; every sentence still rests on the fact pack.
+
+### Round 33 (pool K to P; set Q)
+
+Baseline with set P adjudicated (Miami OH: the label missed "you must hold citizenship in a country outside the United
+States", `tests/heldout_p/adjudication.json`) and the round-32 rules: 523.5 is the figure after the round; the round
+started from 492.5. Kept, each on the pool: a sentence about *other* scholarships states no nationality rule for this one;
+a definition of "international student" or a procedural sentence ("U.S. citizens who studied abroad should follow the
+international admissions requirements") is not a nationality rule; an approximate date ("typically in early October") is
+no longer reported as a cycle state ("expected" removed: it was wrong four times in six); "rolling" is a cycle only when
+the sentence is about applications, not about awards being made on a rolling basis; a question ("How long do holders
+receive financial support?") or a budget instruction ("include a table showing ... graduate stipends") is not a funding
+benefit. Rejected: treating a page whose only dates are over 15 months old as "not stated" rather than closed (lost three
+right answers), moving "financial support" from stipend to award (lost nine), "may be offered" as undocumented (no gain),
+and the definition guard on its own (no effect without the procedural clause). Pool 492.5 -> 523.5 (677 correct, 68
+wrong, 102 review on 896 decisions); set P 155 / 24 -> 162 / 16 with the adjudication.
+
+**Set Q** (`tests/heldout_q/`, 54 programmes from 178 pages, fetched 2026-10-20 from 178 hosts no earlier set used): the first
+set with no university pages. The funders are governments and their agencies, binational commissions (Fulbright
+commissions in 14 countries), foundations, companies and research councils, in 29 countries and 9 languages. 421 candidate
+programmes were searched; 243 were not fetched (overlap with an earlier set's host, robots.txt refusing automated clients,
+or no result on the official domain), and 124 fetched pages were excluded with the reason recorded (lists, home pages,
+news, PDFs and pages not reviewed). Scored once: round-33 code 129 correct / 36 wrong / 17 review on 216 decisions; the
+round-32 code gives the same 129 / 36 / 17 (the round-33 rules changed nothing on Q); round 30 128 / 38 / 18; round 26
+126 / 53 / 0. Leaving out the close calls (164 decisions): 104 / 24 / 11 (round 26: 98 / 39 / 0). Clean quotations on
+every claimed answer: 66/66. Per decision (round 33): eligibility 31 / 8 / 6, funding 25 / 10 / 9, cycle 35 / 8 / 2,
+deadline 38 / 10 / 0.
+
+What Q shows that P did not: **deadlines** are the weak decision on funder pages (10 wrong claims), because these pages
+carry timelines (opening, closing, interviews, feedback, start dates, the previous cycle's dates) and the rules pick the
+wrong one or an old one; on university pages (P) this decision was 55 / 2. **Eligibility**: "must not be a dual citizen
+of the U.S." is read as including the US (five Fulbright pages), and "international students and Japanese students" as
+"any". **Funding**: cash awards without a stated use are still read as stipends (five cases), and "fees" or
+"assistantship" words on Fulbright benefit lists pull the class the wrong way. Q is now development data; the next
+fresh set is R.
