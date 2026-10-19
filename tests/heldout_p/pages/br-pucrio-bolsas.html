@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+
+<head>
+
+
+<title>PUC-Rio - Pontifícia Universidade Católica do Rio de Janeiro</title>
+	
+<!-- Inicio slideshow responsivo -->
+<!-- Adicione antes do seu script principal -->
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/js/puc_efeito_slideshow_responsivo_v2/puc_efeito_slideshow_responsivo_v2.js"></script>
+<link rel="stylesheet" href="/js/puc_efeito_slideshow_responsivo_v2/estilo_slideshow_responsivo_v2.css">
+<!-- Fim slideshow responsivo -->
+<script src="/js/controle_de_agenda_e_slideshowcard/controle_de_agenda_e_slideshowcard.js"></script>
+
+    <!-- Elementos diversos para todo o site PUC -->
+	
+	
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+<!-- SIMBOLOS -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+<!-- ÍCONE -->
+<link rel="shortcut icon" href="https://www.puc-rio.br/imagens/puc_brasao_icone_browser.png" type="image/x-icon" />
+
+
+<!-- CSS PUC - BRANDING -->
+<link href="https://www.puc-rio.br/styles/puc_interna_branding.css" rel="stylesheet" type="text/css" />
+
+
+<!-- EFEITO : JQUERY (VERSÃO 3.7.1) -->
+<script src="https://www.puc-rio.br/js/jquery/jquery-3.7.1.min.js"></script>
+
+
+<!-- EFEITO : LIGHTBOX DATA-LITY PARA ELEMENTOS DIVERSOS -->
+<link href="https://www.puc-rio.br/js/puc_efeito_lity/dist/lity.css" rel="stylesheet">
+<script src="https://www.puc-rio.br/js/puc_efeito_lity/dist/lity.js"></script>
+
+
+<!-- EFEITO : APARECER E SUMIR -->
+<script src="https://www.puc-rio.br/js/puc_efeito_aparecer_sumir/puc_efeito_aparecer_sumir.js"></script>
+
+
+<!-- EFEITO : DRAG AND DROP PARA CONTEÚDO VAZADO NA LATERAL -->
+<script src="https://www.puc-rio.br/js/puc_efeito_drag_and_drop/puc_efeito_drag_and_drop.js"></script>
+
+
+<!-- EFEITO : BOTÕES "VOLTAR AO TOPO" e "VOLTAR ANTERIOR" -->
+<script src="https://www.puc-rio.br/js/puc_efeito_navegacao/puc_efeito_navegacao_botoes.js"></script>
+
+
+<!-- EFEITO : SLIDESHOW RESPONSIVO -->
+<script src="https://www.puc-rio.br/js/puc_efeito_slideshow_responsivo/puc_efeito_slideshow_responsivo.js"></script>
+
+
+<!-- EFEITO : PLAYER VIMEO -->
+<script src="https://www.puc-rio.br/js/puc_efeito_vimeo/puc_efeito_vimeo.js"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+
+
+
+
+
+
+
+
+
+<!-- EFEITO : ADICIONAR GRAFISMOS NO BACKGROUND -->
+<script>
+
+window.addEventListener("load", getElementsByClassContaining);
+
+function getElementsByClassContaining() {
+  
+	const allElementsWithClass = document.querySelectorAll('[class]');
+	const matchingElements = [];
+
+	var notatag = document.querySelectorAll(".tag");
+
+	var grafbkg = "<div class=\"grafismobkg\"></div>";
+	
+	// const span1 = "antes" "<span style=\"background:#00FF00; width:20px; height:20px;\">";
+	// const span2 = "depois" "</span>";
+
+	allElementsWithClass.forEach(element => {
+  
+  
+		if (element.className.includes('grafismo') && !(element.className.includes('nota'))) {
+		
+			element.insertAdjacentHTML("beforeend", grafbkg);
+			matchingElements.push(element); }
+
+
+		if (element.className.includes('grafismo') && element.className.includes('nota')) {
+			
+			// element.querySelector('.tag').insertAdjacentHTML("afterbegin", span1);
+			// element.querySelector('.tag').insertAdjacentHTML("beforeend", span2);
+			
+			element.querySelector('.tag').insertAdjacentHTML("beforeend", grafbkg);
+			matchingElements.push(element); }
+  
+  });
+
+}
+
+</script>
+
+
+
+
+
+<!-- EFEITO : BACKGROUND POSITION P/ GRAFISMOS - ORIGINAL
+<script>
+
+window.addEventListener("load", getElementsByClassContaining);
+window.addEventListener("resize", getElementsByClassContaining);
+
+function getElementsByClassContaining() {
+  
+  const allElementsWithClass = document.querySelectorAll('[class]');
+  const matchingElements = [];
+
+  allElementsWithClass.forEach(element => {
+  
+		if (element.className.includes('grafismo')) {
+
+		setTimeout(function() {
+		element.style.backgroundPosition = "0 " + element.offsetHeight * 0.5 + "px" ;
+		matchingElements.push(element);
+		}, 1000);
+		}
+
+		if (element.className.includes('g100')) {
+
+		setTimeout(function() {
+		element.style.backgroundSize = "100% auto";
+		matchingElements.push(element);
+		}, 1000);
+		}
+		
+		if (element.className.includes('gvertical')) {
+
+		setTimeout(function() {
+		element.style.backgroundSize = "auto 100%";
+		matchingElements.push(element);
+		}, 1000);
+		}
+  
+  });
+
+}
+
+</script> -->
+
+
+
+
+
+<!-- EFEITO : APLICAR SETA NOS CARDS -->
+<script>
+
+window.addEventListener("load", cardseta);
+
+function cardseta() {
+
+	var card = document.querySelectorAll(".card");
+	var seta = "<span class=\"material-symbols-outlined cardseta\">arrow_outward</span>";
+
+	for (let i = 0; i < card.length; i++) {
+	card[i].insertAdjacentHTML("beforeend", seta); }
+	
+	}
+
+</script>
+
+
+
+
+
+<!-- EFEITO : APLICA TARGET BLANK EM LINKS PARA ARQUIVO PDF -->
+<script>
+
+window.addEventListener("load", linkpdf);
+
+function linkpdf() {
+
+	var links = document.querySelectorAll("a");
+
+	for (let i = 0; i < links.length; i++) {
+		if ( links[i].href.includes('.pdf') ) {
+			 links[i].target = "_blank"; } }
+	}
+
+</script>
+
+
+
+
+
+<!-- EFEITO : APLICA SETA NOS LINKS/BOTÕES "VOLTAR" -->
+<script>
+
+window.addEventListener("load", getElementsByClassContainingVoltar);
+
+function getElementsByClassContainingVoltar() {
+  
+  const allElementsWithClass = document.querySelectorAll('[class]');
+  const matchingElements = [];
+  var seta = "<span class=\"material-symbols-outlined\">stat_minus_1</span>";
+
+  allElementsWithClass.forEach(element => {
+    if ( element.className.includes('voltaraotopo') ) {
+		element.insertAdjacentHTML("beforeend", seta);
+		matchingElements.push(element); }
+  });
+  
+  allElementsWithClass.forEach(element => {
+    if ( element.className.includes('voltaranterior') ) {
+		element.insertAdjacentHTML("afterbegin", seta);
+		matchingElements.push(element); }
+  });
+
+}
+
+</script>
+
+
+
+
+
+<!-- ============================== PUC-RIO - GTAG GLOBAL - INÍCIO ============================== -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-205JBFW571"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtagGlobalPUC(){dataLayer.push(arguments);}
+  gtagGlobalPUC('js', new Date());
+
+  gtagGlobalPUC('config', 'G-205JBFW571');
+</script>
+
+<script>
+var getArrayFromTag = function(tagname) {
+     //get the NodeList and transform it into an array
+     return Array.prototype.slice.call(document.getElementsByTagName(tagname)); }
+
+setTimeout(function(){ 
+var links = getArrayFromTag("a");
+var buttons = getArrayFromTag("button");
+links = links.concat(buttons);
+
+for(var i=0, max=links.length; i<max; i++) {
+    var linkHref = links[i].href;
+    var linkText = links[i].innerText;
+    if (linkText === '' || linkText == null){
+       var linkImg = links[i].getElementsByTagName('img')[0];
+       if (linkImg == null)
+          continue;
+       var imgAlt = linkImg.getAttribute("alt");
+       if (imgAlt !== '' && imgAlt != null)
+           linkText = imgAlt;       
+       else{
+           var imgTitle = linkImg.getAttribute("title");
+           if (imgTitle !== '' && imgTitle != null)
+               linkText = imgTitle;
+           else
+               continue;
+       }
+    }
+    var currentPage = removeIndexFromUrl(window.location.href);
+    linkHref = removeIndexFromUrl(linkHref);
+
+    var gtagContent = "gtagGlobalPUC( \'event\', \'clique\', { \'event_category\':\'" + currentPage + "\', \'event_label\': \'" + linkText + "\', \'origin_url\':\'" + currentPage + "\', \'href\':\'" + linkHref + "\'});";
+    var defaultOnMouseDown = links[i].getAttribute("onmousedown");
+    if (defaultOnMouseDown != null)
+        var gtagContent = gtagContent + defaultOnMouseDown;
+    links[i].setAttribute("onmousedown", gtagContent);
+}
+}, 2000);
+
+function removeIndexFromUrl(url){
+    if (url == "undefined")
+        return url;
+
+    if (url.endsWith("/index.html"))
+    {
+        url = url.replace("/index.html","/");    
+    }
+    else if (url.endsWith("/#"))
+    {
+        url = url.replace("/#","/");    
+    }
+
+    return url;
+}
+</script>
+
+<!-- ============================== PUC-RIO - GTAG GLOBAL - FIM ============================== -->
+
+
+
+
+
+<!-- PLUGIN DE ACESSIBILIDADE FREE -->
+
+<script src="https://www.puc-rio.br/js/acessibilidade_acctoolbar.min.js"></script>
+<script>
+  window.onload = function() {
+    window.micAccessTool = new MicAccessTool({
+      link: 'http://your-awesome-website.com/your-accessibility-declaration.pdf',
+      contact: 'mailto:webrdc@puc-rio.br',
+      buttonPosition: 'right', // default is 'left'
+       forceLang: 'pt-br' // default is 'en' may be 'he-IL', 'ru-RU', or 'fr_FR'
+    });
+  }
+</script>
+
+
+
+
+
+    
+    <!-- CSS específico -->
+	<link rel="stylesheet" href="/js/controle_de_agenda_e_slideshowcard/controle_de_agenda_e_slideshowcard.css">
+	
+
+    <link href="kit_site_branding/css/estilos.css" rel="stylesheet" type="text/css" />
+
+	<style>
+	/* ============================Slide show========================*/
+
+
+
+.slide-texto{
+  color: #f5f5f0;
+  z-index:100;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 45px;
+	left: 0;
+  width: 100%;
+  text-shadow: 2px 2px 2px rgba(17, 17, 17, 0.3);
+}
+
+
+
+.slide-texto-gradiente{
+  background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(34,193,195,0) 50%,  rgba(34,193,195,0) 100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height:100%;
+  width: 100%;}
+
+.slide-ttl{font-size: 2.5em;
+  line-height: 1em !important;
+  font-weight: 500;
+  margin: 0 50px 20px 50px;
+  text-align: center;
+  font-family: "Rethink Sans", sans-serif; }
+
+.slide-stl{
+  line-height: 1em !important;
+  font-weight: 400;
+  margin: 0 50px;
+  text-align: center;
+  font-size: 18px;
+}
+@media (max-width:680px) {
+	.slide-ttl{font-size: 2em !important; margin: 0 20px 20px 20px;}
+	.slide-stl{font-size: 17px !important; margin: 0 20px 0 20px;}
+}		
+	.slide-geral-v2 {
+    min-height: 510px !important; 
+}	
+		
+.slideshow-container {
+    touch-action: pan-y;
+    user-select: none;
+    cursor: grab;
+}
+.slideshow-container:active {
+    cursor: grabbing;
+}
+		
+		
+		
+	</style>
+</head>
+
+
+
+
+
+<!-- ============================================================================== ABRE PÁGINA == -->
+
+
+<body>
+
+
+<!-- ===================================================================================== TOPO == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<header>
+
+
+<!-- Link acessibilidade, cabeçalho, brasão, título -->
+
+
+<!-- Link acessibilidade -->
+<a href="#link_pular_conteudo" id="puc_link_pular_para_conteudo">Pular para o conteúdo da página</a><span></span>
+
+<!-- Cabeçalho PUC (busca e índice de A a Z) -->
+<iframe src="https://www.puc-rio.br/includes/puc_cabecalho.html#branding" name="cabecalho" title="Cabeçalho PUC-Rio"></iframe>
+
+
+
+<div id="puc_topo_brasao_titulo_caminho">
+
+<!-- Brasão PUC -->
+<a href="https://www.puc-rio.br" target="_parent" title="Ir para a página inicial do site PUC-Rio" id="puc_cabecalho_brasao">
+<img src="https://www.puc-rio.br/imagens/brasao_preto_vertical.svg" alt="Brasão da PUC-Rio" /></a>
+
+	<div id="puc_topo_titulo_caminho">
+
+	<h1>Bolsas e Financiamentos</h1>
+
+
+<!-- fecha #puc_topo_titulo_caminho e #puc_topo_brasao_titulo_caminho no include do menu -->
+
+
+
+<!-- Caminho
+<nav><a href="#">Include caminho</a> &gt; <a href="#">Include caminho</a></nav> -->
+
+
+<!-- Menu -->
+</div><!-- fecha #puc_topo_titulo_caminho -->
+</div><!-- fecha #puc_topo_brasao_titulo_caminho -->
+
+
+<!-- Para laytout sem menu -->
+<div id="puc_menu_vazio"></div>
+
+
+
+
+<!-- Para layout com menu -->
+<!-- <div id="puc_menu_faixa">
+<button type="button" onclick="javascript:efeito_aparecer_sumir_menu('menu')">Menu</button>
+<div id="menu" class="puc_efeito_menu_sumir">
+
+
+
+<a href="index.html">PÁGINA INICIAL</a>
+
+<div class="puc_menu_submenu_conjunto">
+<div class="puc_menu_submenu_linkmestre">SEM LINK 1</div>
+	<ul class="puc_menu_submenu_links">
+	<li><a href="#">Exemplo de link 1.1</a></li>
+	<li><a href="#">Link 1.2</a></li>
+	<li><a href="#">Link 1.3</a></li>
+	</ul>
+</div>
+
+<div class="puc_menu_submenu_conjunto">
+<a href="#" class="puc_menu_submenu_linkmestre">LINK 2</a>
+	<ul class="puc_menu_submenu_links">
+	<li><a href="#">Link 2.1</a></li>
+	<li><a href="#">Link 2.2</a></li>
+	<li><a href="#">Link 2.3</a></li>
+	</ul>
+</div>
+
+<a href="#">LINK 3</a>
+
+<a href="#">LINK 4</a>
+
+<a href="#">LINK 5</a>
+
+
+</div>
+</div> -->
+
+
+
+</header>
+
+
+
+
+
+<!-- ===================================================================================== MEIO == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<section id="conteudo">
+
+
+<!-- ================================================================== MEIO > COLUNA PRINCIPAL == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<!-- destino do link de acessibilidade "pular para conteúdo" -->
+<a id="link_pular_conteudo"></a>
+
+
+<article>
+
+
+
+
+<div class="colunas">
+
+
+<div class="w25 w100_tablet w100_mobile">
+
+	<a href="https://www.puc-rio.br/ensinopesq/ccg/bolsas.html" class="card azul1 h50"><span class="conteudo"><!--span class="tag">Instruções</span--><span class="texto">Bolsas de Graduação</span></span></a>
+	
+	<a href="https://www.puc-rio.br/ensinopesq/ccpg/bolsas.html" class="card azul2 h50"><span class="conteudo"><!--span class="tag">Instruções</span--><span class="texto">Bolsas de <br>Pós-Graduação</span></span></a>
+
+</div>
+
+
+
+
+	 <div class="slide-geral-v2 w50 w100_tablet w100_mobile">
+        
+        <div class="slideshow-container">
+
+
+            
+            <div class="slide" data-duration="7000">
+            <a href="#sobre">
+			<img src="imagens/bolsas_slider_escadaria_pilotis.jpeg" alt="Futura aluna vendo seu resultado">
+				
+			<div class="slide-texto" bis_skin_checked="1">
+			<p class="slide-ttl">Uma Universidade de oportunidades</p>
+			<p class="slide-stl">O amplo programa de bolsas e financiamentos de estudos da PUC-Rio é pioneiro no Brasil</p>	
+			</div>	
+			<span class="slide-texto-gradiente"></span>
+			 	
+			</a> 	
+            </div>
+
+            
+        </div>
+
+        <button class="nav-arrow left">&lt;</button>
+        <button class="nav-arrow right">&gt;</button>
+        
+        <div class="bullets">
+            </div>
+
+    </div>	
+
+
+
+
+
+<div class=" w25 w100_tablet w100_mobile">
+
+<!-- Slides específicos -->
+
+
+
+<!-- Informação 
+
+<div class="card slideshow-card turquesa2 grafismoasa h75 h100_mobile">
+<span class="conteudo">
+<span class="tag">Processo Seletivo<br>Vestibular 2027</span>
+<span class="texto">Antecipação da Etapa Adicional – Bolsas Socioeconômicas.<br>
+<br>
+<a class="botao" href="https://www.puc-rio.br/sobrepuc/admin/vrc/inclusao_social/cba/processobolsas/index.html#vestibular">Mais informações</a>
+</span>
+</span>
+</div>-->
+
+
+<!-- Aviso 1 -->
+
+<div class="card slideshow-card turquesa2 grafismoasa h75 h100_mobile" data-fim="2026-10-13">
+<span class="conteudo">
+<span class="tag">Avisos</span>
+<span class="texto">FESP/VRC<br>Período de ajuste dos auxílios<br>
+<br>
+<a class="botao" href="#a20261013">Mais informações</a>
+</span>
+</span>
+</div>
+
+	
+<div class="sem_informacao"></div>	
+
+	    <a href="#veja" class="card cinza1 h25"><span class="conteudo"><!--span class="tag">Instruções</span--><span class="texto">Veja também</span></span></a>
+
+    </div>
+
+
+</div>
+
+
+	<!-- /puc_colunas -->
+	
+<p><br></p>
+
+<h2 id="sobre" style="width: 550px">Sobre o programa de bolsas e financiamentos de estudos da PUC-Rio</h2>
+
+	<p class="colunas_corrido" style="margin-top:0">
+	A PUC-Rio é uma universidade pioneira e inovadora na implementação de um amplo programa de bolsas e financiamentos de estudos voltados para atender alunos a nivel de Graduação e Pós-graduação. Através de financiamentos com recursos da própria instituição, de parcerias com entidades externas e de programas de incentivo aos alunos por desempenho acadêmico a PUC tem criado condições e oportunidades de estudos para um grande número de alunos de Graduação. As atividades de Pós-graduação também contam com um programa de bolsas de fomento a pesquisa acadêmica e para a formação de Mestres e Doutores. 
+	</p>
+
+	<p><br></p>
+
+<!--h2>Avisos</h2-->
+	
+<div class="colunas">
+	
+<a id="a20261013" href="https://sgu.rdc.puc-rio.br/sguweb/Aluno/LoginFESP.aspx" class="card agenda-card turquesa2 linha w100 turquesa2_hover" data-fim="2026-10-13">
+<span class="conteudo">
+<span class="tag">FESP: Período de ajuste dos auxílios</span>
+<span class="texto">Estudantes atendidos pelo FESP que desejarem solicitar ajustes nos auxílios de transporte e alimentação para o mês de novembro poderão realizar o pedido de 9 a 13 de outubro.</span>
+</span>
+</a>
+
+<div class="sem_informacao"></div>
+
+</div>
+	
+<p><br></p>
+
+<h2 id="veja">Veja também</h2>
+	
+			<div class="colunas">
+
+
+				<a href="/ensinopesq/ccg" 
+				   class="card cinza2 w25 w50_tablet w100_mobile" 
+				   style="background-position: 0px 70px;">
+					<span class="conteudo"><span class="texto">Graduação</span></span>
+				</a>
+
+				<a href="/ensinopesq/ccpg" 
+				   class="card cinza2 w25 w50_tablet w100_mobile"  
+				   style="background-position: 0px 70px;">
+					<span class="conteudo"><span class="texto">Pós-Graduação</span></span>
+				</a>
+
+				<a href="/ensinopesq/ccci" 
+				   class="card cinza2 w25 w50_tablet w100_mobile"  
+				   style="background-position: 0px 70px;">
+					<span class="conteudo"><span class="texto">Intercâmbio Internacional</span></span>
+				</a>
+
+				<a href="http://www.cce.puc-rio.br" 
+				   class="card cinza2 w25 w50_tablet w100_mobile"  
+				   style="background-position: 0px 70px;">
+					<span class="conteudo"><span class="texto">Educação Continuada</span></span>
+				</a>
+
+				<!--a href="http://www.ccead.puc-rio.br/" 
+				   class="card cinza2 w25 w50_tablet w100_mobile"  
+				   style="background-position: 0px 70px;">
+					<span class="conteudo"><span class="texto">Educação a Distância</span></span>
+				</a>
+
+				<a href="https://www.puc-rio.br/sobrepuc/depto/dar/index.html" 
+				   class="card cinza2 w25 w50_tablet w100_mobile"  
+				   style="background-position: 0px 70px;">
+					<span class="conteudo"><span class="texto">Admissão e Registro</span></span>
+				</a>
+
+				<a href="https://www.puc-rio.br/sobrepuc/depto/dar/calendario/" 
+				   class="card cinza2 w25 w50_tablet w100_mobile"  
+				   style="background-position: 0px 70px;">
+					<span class="conteudo"><span class="texto">Calendário Escolar</span></span>
+				</a>
+
+				<a href="https://www.puc-rio.br/ensinopesq/academicas/index.html" 
+				   class="card branco w25 w50_tablet w100_mobile"  
+				   style="background-position: 0px 70px;">
+					<span class="conteudo"><span class="texto">PUC Online para<br>Alunos</span></span>
+				</a>
+
+				<a href="https://www.puc-rio.br/ensinopesq/academicas/indexprof.html" 
+				   class="card branco w25 w50_tablet w100_mobile"  
+				   style="background-position: 0px 70px;">
+					<span class="conteudo"><span class="texto">PUC Online para<br>Professores e Funcionários</span></span>
+				</a-->
+				
+
+</div>
+
+
+<p><br></p>
+			<!-- ==== VOLTAR ao TOPO ======= -->
+			<button onclick="voltaraotopo();" class="voltaraotopo">Voltar ao topo<span class="material-symbols-outlined">stat_minus_1</span></button>
+        </article>
+
+
+
+
+
+<!-- =============================================================================== FECHA MEIO == -->
+
+
+</section>
+
+
+<!-- =================================================================================== RODAPÉ == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<footer>
+
+<!-- Rodapé PUC -->
+
+
+
+
+
+
+<iframe src="https://www.puc-rio.br/includes/puc_rodape_completo.html" name="rodape" 
+title="Rodapé PUC-Rio - endereço e copyright" id="iframe_rodape_completo"></iframe>
+
+
+
+
+
+</footer>
+
+
+
+<!-- ============================================================================= FECHA PÁGINA == -->
+
+
+
+
+</body>
+</html>

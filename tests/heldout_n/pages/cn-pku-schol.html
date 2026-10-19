@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link href="/en/Public/static/themes/bdlb/favicon.ico" type="image/x-icon" rel="shortcut icon">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="author" content="http://www.fractal-technology.com">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no,email=no,adress=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="keywords" content="keywords">
+	<meta name="description"
+		content="Peking University was founded in 1898, initially named Jingshi University. It was the first national comprehensive university in China and the highest educational administrative agency at that time. After the Xinhai Revolution, it was renamed to its current name in 1912.">
+	<title>Scholarships - International Students Division, Office of International Relations, Peking University</title>
+	<script type="text/javascript">
+		if (!window.matchMedia) {
+			var el = document.createElement('div');
+			el.style.cssText = "position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: #575757; z-index: 999999;";
+			el.innerHTML = '<div style="position: absolute; top: 40%; left: 0; right: 0; margin: auto; width: 80%; font-family: Microsoft YaHei; font-size: 2em; font-weight: bold; text-align: center; color: #fff;">您当前使用的浏览器版本过低，<br>建议尽快升级您的浏览器，以获得更好的浏览体验！</div>';
+			document.documentElement.appendChild(el);
+		}
+	</script>
+	<link rel="stylesheet" href="css/vendor.css">
+	<!-- inject:css -->
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/campus.css">
+	<!-- endinject -->
+	<script src="js/vendor.js"></script>
+	<!-- inject:js -->
+	<script src="js/main.js"></script>
+	<!-- endinject -->
+
+</head>
+
+<body id="body" class="en">
+	<style>
+		.empty-data {
+			width: 100%;
+			font-size: 25px;
+			padding-top: 8%;
+			padding-bottom: 8%;
+			text-align: center;
+		}
+	</style>
+	<!--      -->
+	<div class="sidebar-mod" style="min-height:10px;min-width:20px;"><a href="about.php#about4" class="sidebar-item">
+			<div class="sidebar-cont"><img src="./Public/static/themes/bdlb/image/png12.png" alt=""></div>
+		</a>
+		<div class="sidebar-item suds-mod">
+			<div class="sidebar-cont"><img src="./Public/static/themes/bdlb/image/png13.png" alt=""></div>
+			<div class="suds-pop at-l">
+				<div class="code"><img src="./Uploads/Bdlb/Picture/2024/04/08/s66136ce09fd40.png" alt="" title=""
+						alt=""></div>
+			</div>
+		</div>
+		<div class="sidebar-item sidebar-topping">
+			<div class="sidebar-cont"><img src="./Public/static/themes/bdlb/image/png14.png" alt=""></div>
+		</div>
+	</div>
+	<style>
+		#myalert {
+			display: none;
+		}
+
+		.recruit .block1 {
+			height: auto
+		}
+
+		.layer {
+			background: url(./Public/static/themes/bdlb/image/con_mask.png);
+			;
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1000000;
+		}
+
+		.layer .myalert {
+			padding: 30px;
+			background: #fff;
+			width: 240px;
+			position: absolute;
+			margin-top: -100px;
+			top: 50%;
+			left: 50%;
+			margin-left: -120px;
+			text-align: center;
+			z-index: 100000
+		}
+
+		.layer .guan {
+			background: url(./Public/static/themes/bdlb/image/clos.png) no-repeat center;
+			display: block;
+			width: 23px;
+			height: 23px;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+		}
+
+		.layer .text {
+			padding-bottom: 15px;
+			font-size: 16px;
+			color: #474747;
+		}
+
+		.layer .button {
+			background: none;
+			border: 1px solid #bbbbbb;
+			width: 91px;
+			height: 29px;
+			font: 14px/100% "Microsoft YaHei", Arial, Tahoma, Helvetica, sans-serif;
+			color: #707070;
+		}
+	</style>
+	<div id="myalert" class="layer">
+		<div class="myalert">
+			<a href="javascript:;" onclick="myalert_hide();" class="guan"></a>
+			<div class="text">请输入关键字</div>
+			<a><button class="button" id="my_ok"
+					style="cursor:pointer ;opacity: 1;transform: translateY(0px);">OK</button></a>
+		</div>
+	</div>
+	<script>
+		function my_alert(text, callback) {
+			$('#myalert').show();
+			$('#myalert .myalert div').html(text);
+
+			$('#my_ok').click(function () {
+				$('#myalert').hide();
+
+				if (typeof (callback) == 'function') {
+					callback();
+					return false;
+				}
+			});
+		}
+
+		function myalert_hide() {
+			$('#myalert').hide();
+		}
+	</script>
+	<div class="x-layout">
+		<style type="text/css">
+			.logo .widget-area-edit {
+				top: 0px
+			}
+		</style>
+		<div class="x-header hz-nav pos-fix">
+    <div class="htop">
+        <div class="x-wrap">
+            <div class="menu-mod">
+                <div class="logo" style="min-height:10px;min-width:20px;"><a href=""><img
+                            src="./Uploads/Bdlb/Picture/2021/12/02/s61a8973c3de37.png" alt="" title=""
+                            class="i"></a></div>
+                <div class="menu-btn"><span class="line"></span></div>
+            </div>
+            <div class="tools-mod">
+                <div class="tools-item search-mod at-l">
+                    <div class="search-tap xicon icon-search"></div>
+                    <div class="search-box">
+                        <div class="search-txt"><input type="text" class="search-input" placeholder="search..."
+                                onkeydown="searchkeydown(event, '#searchOk')" id="searchKeyword"></div>
+                        <div class="search-btn"><button class="search-submit xicon icon-search" type="submit"
+                                id="searchOk" onclick="bingsearch();return false;"></button></div>
+                    </div>
+                </div>
+                
+                <div class="fl" style="min-height:10px;min-width:20px;">
+                    <div class="tools-item xicon old">
+                        <a class="lang" href="https://isd.pku.edu.cn/cn/">Cn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hbot">
+        <div class="x-wrap">
+            <div class="nav-mod">
+                <div class="bgbox">
+                    <div class="nav-box nav-lv1">
+                        <div class="nav-item nav-lv1-item" data-id="0">
+                            <div class="nav-tit nav-lv1-tit"><a class="nav-link nav-lv1-link" href="/en">Home</a>
+                            </div>
+                        </div>
+                        <div class="nav-item nav-lv1-item" data-id="0">
+                            <div class="nav-tit nav-lv1-tit"><a class="nav-link nav-lv1-link"
+                                    href="/en/about.php">About Us</a>
+                                <div class="arr xicon icon-down"></div>
+                            </div>
+                            <div class="nav-lv nav-lv2">
+                                <div class="nav-grp">
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/about.php#about1">About PKU</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/about.php#about2">Message from the Division Leader</a>
+                                        </div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/about.php#about3">Reach Us</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/about.php#about4">Contact Us</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav-item nav-lv1-item" data-id="145">
+                            <div class="nav-tit nav-lv1-tit"><a class="nav-link nav-lv1-link"
+                                    href="/en/admission.php">Admission</a>
+                                <div class="arr xicon icon-down"></div>
+                            </div>
+                            <div class="nav-lv nav-lv2">
+                                <div class="nav-grp">
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/undergraduate_program.php">Undergraduate Program</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/graduate_program.php">Graduate Program</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/exchange_program.php">Exchange Program</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/visiting_student_program.php">Visiting Student Program</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/yuke_pre_university_program.php">Yuke/Pre-university Program</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/international_summer_institute.php">International Summer Institute</a>
+                                        </div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/international_short_term_courses.php">International Short-term Courses</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="https://www.oir.pku.edu.cn/goc/">PKU Global Open
+                                                Courses</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav-item nav-lv1-item" data-id="112">
+                            <div class="nav-tit nav-lv1-tit"><a class="nav-link nav-lv1-link"
+                                    href="/en/scholarship.php">Scholarships</a>
+                                <div class="arr xicon icon-down"></div>
+                            </div>
+                            <div class="nav-lv nav-lv2">
+                                <div class="nav-grp">
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/scholarship.php">Scholarship Notices</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/scholarship.php#widget-area-article-index-category-673bf513eb0079780">Scholarship
+                                                Programs</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav-item nav-lv1-item" data-id="120">
+                            <div class="nav-tit nav-lv1-tit"><a class="nav-link nav-lv1-link"
+                                    href="/en/culture.php">Campus Culture</a>
+                                <div class="arr xicon icon-down"></div>
+                            </div>
+                            <div class="nav-lv nav-lv2">
+                                <div class="nav-grp">
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/activity.php">Diverse Activities</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/china.php">Understanding China</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/world.php">Understanding the World</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav-item nav-lv1-item" data-id="120">
+                            <div class="nav-tit nav-lv1-tit"><a class="nav-link nav-lv1-link" href="/en/campus.php">Daily Guidance</a>
+                                <div class="arr xicon icon-down"></div>
+                            </div>
+                            <div class="nav-lv nav-lv2">
+                                <div class="nav-grp">
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit">
+                                            <a class="nav-link nav-lv2-link" href="/en/campus.php#campus2">Academic Guidance</a>
+                                        </div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit">
+                                            <a class="nav-link nav-lv2-link" href="/en/campus.php#campus4">Daily Service</a>
+                                        </div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit">
+                                            <a class="nav-link nav-lv2-link" href="/en/campus.php#campus8">Accommodation</a>
+                                        </div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit">
+                                            <a class="nav-link nav-lv2-link" href="/en/campus.php#campus3">Visa Procedures</a>
+                                        </div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit">
+                                            <a class="nav-link nav-lv2-link" href="/en/campus.php#campus6">Graduation Procedures</a>
+                                        </div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit">
+                                            <a class="nav-link nav-lv2-link" href="/en/campus.php#campus7">Regulations</a>
+                                        </div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit">
+                                            <a class="nav-link nav-lv2-link" href="/en/Academic.php">Academic Qualifications and Degree
+                                                Matters</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav-item nav-lv1-item" data-id="128">
+                            <div class="nav-tit nav-lv1-tit"><a class="nav-link nav-lv1-link"
+                                    href="/en/Policy.php">Internships and Employment</a>
+                                <div class="arr xicon icon-down"></div>
+                            </div>
+                            <div class="nav-lv nav-lv2">
+                                <div class="nav-grp">
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/Policy.php">Policies</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/information.php">Employment Information</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/Internship.php">Internship Information</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav-item nav-lv1-item" data-id="0">
+                            <div class="nav-tit nav-lv1-tit"><a class="nav-link nav-lv1-link"
+                                    href="https://isdplus.pku.edu.cn/lxsxy1/zw.htm" target="_blank">Alumni</a>
+                            </div>
+                        </div>
+                        <div class="nav-item nav-lv1-item" data-id="132">
+                            <div class="nav-tit nav-lv1-tit"><a class="nav-link nav-lv1-link"
+                                    href="/en/downloads.php">Downloads</a>
+                                <div class="arr xicon icon-down"></div>
+                            </div>
+                            <div class="nav-lv nav-lv2">
+                                <div class="nav-grp">
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/downloads.php">Program Brochures</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/downloads.php?cate=13">Applications</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/downloads.php?cate=14">Scholarships</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/downloads.php?cate=15">Handbooks</a></div>
+                                    </div>
+                                    <div class="nav-item nav-lv2-item">
+                                        <div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link"
+                                                href="/en/downloads.php?cate=16">Department/School-related</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                //一级高亮
+                var nowurl = ("/en/index.php" != 'javascript:void(0);') ? "/en/index.php" : window.location.pathname;
+                var _nowurl = "/en/index.php";
+                $('.nav-lv1-item').each(function() {
+                    var ornow = $(this).find('a').attr('href');
+                    var category_parent = $(this).attr('data-id');
+                    if (ornow == nowurl || category_parent == "195" || category_parent == "") {
+                        $(this).addClass('cur').siblings().removeClass('cur');
+                    };
+                });
+            </script>
+        </div>
+    </div>
+    <!-- 手机版搜索 -->
+    <div class="pop-search pop-mod">
+        <div class="pop-close xicon icon-close"></div>
+        <div class="search-mod">
+            <div class="search-box">
+                <div class="search-txt"><input type="text" id="searchKeyword2" class="search-input"
+                        placeholder="search..." onkeydown="searchkeydown(event, '#searchOk2')"></div>
+                <div class="search-btn"><button class="search-submit xicon icon-search" type="submit"
+                        id="searchOk2" onclick="bingsearch2();return false;"></button></div>
+            </div>
+        </div>
+    </div>
+</div>		<script>
+			function bingsearch() {
+				if ($("input#searchKeyword").val() == "") {
+					my_alert('Please enter keywords');
+					return false;
+				}
+				var key = $("input#searchKeyword").val() + "+site:www.isd.pku.edu.cn";
+				var url = 'https://cn.bing.com/search?ensearch=1&q=' + encodeURI(key);
+				window.open(url);
+				hidelayer('#search')
+				$("input#searchKeyword").val("");
+			}
+			function bingsearch2() {
+				if ($("input#searchKeyword2").val() == "") {
+					my_alert('Please enter keywords');
+					return false;
+				}
+				var key = $("input#searchKeyword2").val() + "+site:www.isd.pku.edu.cn";
+				var url = 'https://cn.bing.com/search?ensearch=1&q=' + encodeURI(key);
+				window.open(url);
+				hidelayer('#search')
+				$("input#searchKeyword2").val("");
+			}
+			function searchkeydown(e, but) {
+				var currKey = 0, e = e || event;
+				var _this = $(but);
+				if (e.keyCode == 13) {
+					_this.click();
+					return false;
+				}
+			}
+		</script>
+		<div class="x-container">
+			<div class="campus_top scholarships_top">SCHOLARSHIPS</div>
+			<div class="preppie2 scholarship2">
+				<div class="x-wrap">
+					<div class="con">
+						<div class="x_tit tac">Scholarship Notices</div>
+                        <div class="ul">
+                                                            <div class="li">
+                                    <a href="detail.php?id=835">
+                                        <div class="item">
+                                            <div class="tit">2026 Beijing Government Scholarship Applications Are Now Open  for Current International Students of Peking University</div>
+                                            <div class="date">2026-09-03</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                                            <div class="li">
+                                    <a href="detail.php?id=824">
+                                        <div class="item">
+                                            <div class="tit">2026 Application Information for the Atomic Energy Scholarship Program of China</div>
+                                            <div class="date">2026-03-11</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                                            <div class="li">
+                                    <a href="detail.php?id=666">
+                                        <div class="item">
+                                            <div class="tit">2026年北京大学国际中文教师奖学金汉语国际教育专业硕士研究生项目申请通知</div>
+                                            <div class="date">2026-03-05</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                                            <div class="li">
+                                    <a href="detail.php?id=6">
+                                        <div class="item">
+                                            <div class="tit">2026年北京大学国际中文教师奖学金项目申请通知——普通进修/预科</div>
+                                            <div class="date">2026-03-05</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                                            <div class="li">
+                                    <a href="detail.php?id=819">
+                                        <div class="item">
+                                            <div class="tit">2026 Scholarship Applications Are Now Open for  Prospective International Graduate Students of Peking University</div>
+                                            <div class="date">2026-01-12</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                                    </div>
+						<div class="moremod" id="scholarship3">
+							<a class="more1" href="news.php">
+								<div class="t">More</div>
+								<div class="icon">
+									<img class="i1" src="./Public/static/themes/bdlb/image/png1.png" alt="">
+									<div class="r">
+										<img class="i2" src="./Public/static/themes/bdlb/image/png1.png" alt="">
+										<img class="i3" src="./Public/static/themes/bdlb/image/png15.png" alt="">
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="scholarship3">
+				<div class="x-wrap">
+					<div class="x_tit" style="min-height:14px;min-width:14px;">Scholarships Programs</div>
+					<div class="list">
+						<div class="item item1"><i class="i1"></i>
+							<i class="i2"></i>
+							<div class="pic">
+								<img src="./Uploads/Bdlb/Picture/2025/01/21/s678f48d1c76c3_1296_1297_4_460.jpg" alt=""
+									title="" class="i">
+								<div class="mask" style="background: #000;opacity: 0.4;"></div>
+								<div class="con">
+									<div class="t">Chinese Government Scholarship</div>
+									<a href="/en/list.php?cate=20&cate2=5" target="_blank" class="link">Type A&gt;&gt;</a> <a
+										href="/en/list.php?cate=20&cate2=6" target="_blank" class="link">Type B&gt;&gt;</a>
+								</div>
+							</div>
+						</div>
+						<div class="item item2">
+							<div class="pic">
+								<img src="./Uploads/Bdlb/Picture/2024/03/29/s66067b5984a8c.jpg" alt="" title=""
+									class="i">
+								<div class="mask" style="background: #000;opacity: 0.4;"></div>
+								<div class="con">
+									<div class="t">Center for Language Education and Coorperation Scholarships</div>
+									<a href="/en/list.php?cate=21&cate2=7" class="link">China Studies Program&gt;&gt;</a> <a
+										href="/en/list.php?cate=21&cate2=8" class="link">International Chinese Language Teachers
+										Scholarship&gt;&gt;</a>
+								</div>
+							</div>
+						</div>
+						<div class="item item3"><i class="i1"></i>
+							<i class="i2"></i>
+							<div class="pic">
+								<img src="./Uploads/Bdlb/Picture/2024/03/29/s66067a90629cd.jpg" alt="" title=""
+									class="i">
+								<div class="mask" style="background: #000;opacity: 0.4;"></div>
+								<div class="con">
+									<div class="t">Beijing Government Scholarship</div>
+									<a href="list.php?cate=22" class="link">More&gt;&gt;</a>
+								</div>
+							</div>
+						</div>
+						<div class="item item4"><i class="i1"></i>
+							<div class="pic">
+								<img src="./Uploads/Bdlb/Picture/2024/03/29/s66067bab27800.jpg" alt="" title=""
+									class="i">
+								<div class="mask" style="background: #000;opacity: 0.4;"></div>
+								<div class="con">
+									<div class="t">PKU Scholarship for International Students </div>
+									<a href="/en/list.php?cate=23" class="link">More&gt;&gt;</a>
+								</div>
+							</div>
+						</div>
+						<div class="item item5"><i class="i1"></i>
+							<div class="pic">
+								<img src="./Uploads/Bdlb/Picture/2024/03/29/s66067bc23bba6.jpg" alt="" title=""
+									class="i">
+								<div class="mask" style="background: #000;opacity: 0.4;"></div>
+								<div class="con">
+									<div class="t">Social Donation Scholarship</div>
+									<a href="/en/list.php?cate=24" class="link">More&gt;&gt;</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="scholarship4"></div>
+				</div>
+			</div>
+			<div class="home4 scholarship4">
+				<div class="x-wrap">
+					<div class="bg1">
+						<style type="text/css">
+							.home4 .bg1 {
+								background: url(./Uploads/Bdlb/Picture/2024/04/09/s6615030ea2f88.jpg);
+							}
+						</style>
+					</div>
+					<div class="bg2"></div>
+					<div class="box1">
+						<div class="x_tit">Scholarship Programs</div>
+						<div class="p"></div>
+					</div>
+					<div class="box2">
+						<div class="item">
+							<a href="youxiu.php">
+								<div class="in">
+									<div class="t">Scholarships from National and Municipal Governments1<br></div>
+									<div class="more2" href="/en/scholarship/youxiu.php"><img class="i"
+											src="./Public/static/themes/bdlb/image/png2.png" alt=""></div>
+								</div>
+							</a>
+						</div>
+						<div class="item">
+							<a href="jiaoyu.php">
+								<div class="in">
+									<div class="t"> Scholarships from Center for Language Education and Coorperation<br>
+									</div>
+									<div class="more2" href="/en/scholarship/jiaoyu.php"><img class="i"
+											src="./Public/static/themes/bdlb/image/png2.png" alt=""></div>
+								</div>
+							</a>
+						</div>
+						<div class="item">
+							<a href="shehui.php">
+								<div class="in">
+									<div class="t">Scholarships from Peking University<br></div>
+									<div class="more2" href="/en/scholarship/shehui.php"><img class="i"
+											src="./Public/static/themes/bdlb/image/png2.png" alt=""></div>
+								</div>
+							</a>
+						</div>
+						<div class="item">
+							<a href="others.php">
+								<div class="in">
+									<div class="t">Donation-based Scholarships<br></div>
+									<div class="more2" href="/en/scholarship/others.php"><img class="i"
+											src="./Public/static/themes/bdlb/image/png2.png" alt=""></div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pubBottom" style="background-image: url(./Public/static/themes/bdlb/image/lyj/pub1.jpg);">
+				<div class="x-wrap">
+					<div class="cont">
+						<div class="list" style="min-height:10px;min-width:20px;">
+							<div class="item item1">
+								<div class="inner">
+									<a href="procedures.php" target="_blank">
+										<div class="icon">
+											<img src="./Public/static/themes/bdlb/image/lyj/icon11a.png" alt=""
+												class="i i1">
+											<img src="./Public/static/themes/bdlb/image/lyj/icon11b.png" alt=""
+												class="i i2">
+										</div>
+										<div class="txt">Visa</div>
+									</a>
+								</div>
+							</div>
+							<div class="item item2">
+								<div class="inner">
+									<a href="stay.php">
+										<div class="icon">
+											<img src="./Public/static/themes/bdlb/image/lyj/icon12a.png" alt=""
+												class="i i1">
+											<img src="./Public/static/themes/bdlb/image/lyj/icon12b.png" alt=""
+												class="i i2">
+										</div>
+										<div class="txt">Accommodation</div>
+									</a>
+								</div>
+							</div>
+							<div class="item item3">
+								<div class="inner">
+									<a href="5584.php">
+										<div class="icon">
+											<img src="./Public/static/themes/bdlb/image/lyj/icon13a.png" alt=""
+												class="i i1">
+											<img src="./Public/static/themes/bdlb/image/lyj/icon13b.png" alt=""
+												class="i i2">
+										</div>
+										<div class="txt">Insurance</div>
+									</a>
+								</div>
+							</div>
+							<div class="item item4">
+								<div class="inner">
+									<a href="about.php#about4">
+										<div class="icon">
+											<img src="./Public/static/themes/bdlb/image/lyj/icon14a.png" alt=""
+												class="i i1">
+											<img src="./Public/static/themes/bdlb/image/lyj/icon14b.png" alt=""
+												class="i i2">
+										</div>
+										<div class="txt">Contact us</div>
+									</a>
+								</div>
+							</div>
+							<div class="item item5">
+								<div class="inner">
+									<a href="about.php#about3">
+										<div class="icon">
+											<img src="./Public/static/themes/bdlb/image/lyj/icon15a.png" alt=""
+												class="i i1">
+											<img src="./Public/static/themes/bdlb/image/lyj/icon15b.png" alt=""
+												class="i i2">
+										</div>
+										<div class="txt">Reach Us</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			"use strict";
+
+			$(function () {
+				$(window).scroll(function () {
+					scrollact(".scholarship3", 6, function () { }, function () { });
+					scrollact(".home4", 6, function () { }, function () { });
+				}); ///  
+			});
+		</script>
+		<div class="x-footer">
+			<div class="ftop">
+				<div class="x-wrap">
+					<div class="box">
+						<div class="l">
+							<div class="lcont1" style="min-height:10px;min-width:20px;">
+								<div class="li">
+									<div class="icon"><img class="i" src="./Public/static/themes/bdlb/image/png17.png"
+											alt=""></div>
+									<div class="t">International Students Division (New Sun Student Center), Office of
+										International Relations, Peking University, Haidian District, Beijing</div>
+								</div>
+								<div class="li">
+									<div class="icon"><img class="i" src="./Public/static/themes/bdlb/image/png18.png"
+											alt=""></div>
+									<div class="t">86-10-62751230</div>
+								</div>
+							</div>
+							<div class="lcont2">
+								<div class="item" style="min-height:10px;min-width:20px;"><a
+										href="https://www.facebook.com/PKU1898" target="_blank">
+										<div class="icon"><img class="i"
+												src="./Uploads/Bdlb/Picture/2021/12/02/s61a8987cb4d98.png" alt=""
+												title=""></div>
+									</a></div>
+								<div class="item" style="min-height:10px;min-width:20px;"><a
+										href="https://twitter.com/PKU1898" target="_blank">
+										<div class="icon"><img class="i"
+												src="./Uploads/Bdlb/Picture/2021/12/02/s61a8988cdd1b0.png" alt=""
+												title=""></div>
+									</a></div>
+								<div class="item" style="min-height:10px;min-width:20px;"><a
+										href="https://www.linkedin.cn/incareer/school/20289" target="_blank">
+										<div class="icon"><img class="i"
+												src="./Uploads/Bdlb/Picture/2021/11/29/s61a48ffee9a05.png" alt=""
+												title=""></div>
+									</a></div>
+								<div class="item" style="min-height:10px;min-width:20px;"><a style="cursor:default">
+										<div class="icon"><img class="i"
+												src="./Uploads/Bdlb/Picture/2021/11/29/s61a4900a500aa.png" alt=""
+												title=""></div>
+									</a></div>
+								<div class="item" style="min-height:10px;min-width:20px;"><a
+										href="https://www.youtube.com/channel/UCE4U908y-nBHcNazDnX0xvw" target="_blank">
+										<div class="icon"><img class="i"
+												src="./Uploads/Bdlb/Picture/2021/11/29/s61a490169b287.png" alt=""
+												title=""></div>
+									</a></div>
+								<div class="item suds-mod" style="min-height:10px;min-width:20px;">
+									<div class="icon"><img class="i"
+											src="./Uploads/Bdlb/Picture/2024/04/03/s660d14259915e.png" alt="" title="">
+									</div>
+									<div class="suds-pop at-t">
+										<div class="img"><img src="./Uploads/Bdlb/Picture/2025/02/14/s67aeb84605d67.png"
+												alt="" title=""></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="r">
+							<div class="qr" style="min-height:10px;min-width:20px;"><img class="i"
+									src="./Uploads/Bdlb/Picture/2021/12/02/s61a89960b8bab.jpg" alt="" title=""></div>
+							<style type="text/css">
+								.qr .widget-area-edit {
+									top: 0px
+								}
+							</style>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="fbot">
+				<div class="x-wrap">
+					<div class="link"><a href="https://english.pku.edu.cn" target="_blank">Peking University</a>
+						<span>|</span><a href="https://www.oir.pku.edu.cn" target="_blank">PKU Office of International
+							Relations</a>
+						<span>|</span><a href="https://english.bjmu.edu.cn/newsevents/news/" target="_blank">PKU Health
+							Science Center</a>
+						<span>|</span><a href="https://english.pkusz.edu.cn/" target="_blank">PKU Shenzhen Graduate
+							School</a>
+						<span>|</span><a href="https://www.cpc.pku.edu.cn/index.htm" target="_blank">PKU New Yanyuan</a>
+						<span>|</span><a href="https://www.campuschina.org/" target="_blank">China Scholarship
+							Council</a>
+						<span>|</span><a href="http://www.chinese.cn/page/#/pcpage/mainpage" target="_blank">Center For
+							Language Education and Cooperation</a>
+						<span>|</span><a href="https://www.cscse.cn/" target="_blank">Chinese Service Center for
+							Scholarly Exchange</a>
+						<span>|</span><a href="https://www.studyinchina.edu.cn/" target="_blank">Study In China</a>
+						<span>|</span><a href="https://oldisd.pku.edu.cn/info/1490/2668.htm" target="_blank">Student
+							Insurance</a>
+					</div>
+					<div class="copy">
+						<div class="item">COPyright 2021 Peking University INTERNATIONAL STUDENTS DIVISION ALL RIGHTS
+							RESERVED </div>
+						<div class="item">
+							<a href="http://beian.miit.gov.cn/" target="_blank">Jing ICP Bei No.05065075-1</a>
+						</div>
+					</div>
+					<!--            <div class="ftbj tac"><a href="http://www.fractal-technology.com" target="_blank">网站建设</a>：<a href="http://www.fractal-technology.com" target="_blank">北京分形科技</a></div>-->
+				</div>
+			</div>
+		</div>
+		<script>
+			var _hmt = _hmt || [];
+			(function () {
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?1490e658d5a8dd5b0f8cab440ce92feb";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+	</div>
+</body>
+
+</html>

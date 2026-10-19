@@ -1,0 +1,595 @@
+{
+  "set": "held-out real pages",
+  "pages": 28,
+  "evaluated": 28,
+  "missing_snapshots": [],
+  "labels_sha": "165e6c01c016",
+  "mode": "deterministic",
+  "fields": {
+    "deadlines": {
+      "tp": 9,
+      "fp": 2,
+      "fn": 3,
+      "precision": 0.818,
+      "recall": 0.75,
+      "f1": 0.783
+    },
+    "levels": {
+      "tp": 19,
+      "fp": 9,
+      "fn": 5,
+      "precision": 0.679,
+      "recall": 0.792,
+      "f1": 0.731
+    },
+    "nationality_countries": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 110,
+      "precision": 0.667,
+      "recall": 0.035,
+      "f1": 0.067
+    },
+    "openings": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 1,
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1": 0.889
+    }
+  },
+  "rates": {
+    "age": {
+      "correct": 1,
+      "total": 4,
+      "accuracy": 0.25
+    },
+    "age_by_level": {
+      "correct": 0,
+      "total": 1,
+      "accuracy": 0.0
+    },
+    "cycle": {
+      "correct": 6,
+      "total": 11,
+      "accuracy": 0.545
+    },
+    "deadline_exact": {
+      "correct": 9,
+      "total": 12,
+      "accuracy": 0.75
+    },
+    "deadline_status": {
+      "correct": 8,
+      "total": 9,
+      "accuracy": 0.889
+    },
+    "duration": {
+      "correct": 1,
+      "total": 5,
+      "accuracy": 0.2
+    },
+    "funder_identity": {
+      "correct": 0,
+      "total": 11,
+      "accuracy": 0.0
+    },
+    "funding_amount": {
+      "correct": 1,
+      "total": 5,
+      "accuracy": 0.2
+    },
+    "funding_components": {
+      "correct": 13,
+      "total": 21,
+      "accuracy": 0.619
+    },
+    "funding_period": {
+      "correct": 1,
+      "total": 1,
+      "accuracy": 1.0
+    },
+    "language": {
+      "correct": 2,
+      "total": 2,
+      "accuracy": 1.0
+    },
+    "nationality": {
+      "correct": 2,
+      "total": 8,
+      "accuracy": 0.25
+    },
+    "page_kind": {
+      "correct": 22,
+      "total": 28,
+      "accuracy": 0.786
+    },
+    "per_level_amount_not_collapsed": {
+      "correct": 0,
+      "total": 2,
+      "accuracy": 0.0
+    },
+    "stipend_present": {
+      "correct": 4,
+      "total": 4,
+      "accuracy": 1.0
+    },
+    "tuition": {
+      "correct": 0,
+      "total": 3,
+      "accuracy": 0.0
+    }
+  },
+  "attribution": {
+    "correct": 217,
+    "total": 220,
+    "accuracy": 0.986
+  },
+  "unsupported_rate": 0.277,
+  "unsupported_values": 13,
+  "scored_values": 47,
+  "missing_rate": 0.419,
+  "missing_values": 31,
+  "labelled_values": 74,
+  "ai": null,
+  "misses": {
+    "ch-sges-main": [
+      "max_age: predicted None, label 35",
+      "stipend: predicted None None, label {'amount': [2450], 'currency': 'CHF', 'period': 'month'}"
+    ],
+    "ch-sges-glance": [
+      "tuition: predicted None, label not_covered",
+      "duration: predicted '12 months', label 36 months"
+    ],
+    "za-dhet-switzerland": [
+      "nationality: predicted include ['CH', 'ZA'], label ('include', ['ZA'])",
+      "duration: predicted '12 months', label 36 months"
+    ],
+    "au-awards-id-en": [
+      "nationality: predicted include ['AU'], label not_stated"
+    ],
+    "uk-gates-timeline": [
+      "cycle: predicted '2027', label '2027/2028'"
+    ],
+    "za-mandela-rhodes": [
+      "nationality: predicted include ['ZA'], label ('include', ['AO', 'BF', 'BI', 'BJ', 'BW', 'CD'])",
+      "min_age: predicted None, label 19",
+      "max_age: predicted 30, label 29",
+      "component insurance: predicted not covered, label covered",
+      "component travel: predicted not covered, label covered",
+      "component living_allowance: predicted not covered, label covered",
+      "duration: predicted '', label 24 months"
+    ],
+    "sa-kaust-funding": [
+      "stipend amounts differ by level but one amount was stored",
+      "component insurance: predicted not covered, label covered",
+      "component travel: predicted not covered, label covered",
+      "tuition: predicted None, label full"
+    ],
+    "tw-icdf-list": [
+      "page_kind: predicted not_relevant, label opportunity"
+    ],
+    "tw-roc-israel": [
+      "deadline missed 2026-04-30",
+      "stipend: predicted None None, label {'amount': [20000], 'currency': 'TWD', 'period': 'month'}"
+    ],
+    "my-mis": [
+      "page_kind: predicted not_relevant, label opportunity",
+      "deadline spurious 2026-12-31"
+    ],
+    "de-studienstiftung-faq": [
+      "page_kind: predicted opportunity, label guidance"
+    ],
+    "de-kas-pdf": [
+      "duration: predicted '', label 36 months"
+    ],
+    "ca-vanier": [
+      "page_kind: predicted guidance, label opportunity",
+      "deadline spurious 2024-10-30",
+      "award amount: predicted [], label {'amount': [50000], 'currency': 'CAD'}"
+    ],
+    "ca-mcgill-mcf-elig": [
+      "nationality: predicted unknown [], label ('include', ['AO', 'BF', 'BI', 'BJ', 'BW', 'CD'])"
+    ],
+    "cz-studyin-340": [
+      "nationality: predicted include ['BA', 'CZ'], label ('include', ['BA', 'GE', 'UA', 'BY'])",
+      "cycle: predicted '2027', label '2027/2028'",
+      "component accommodation: predicted covered, label own_cost"
+    ],
+    "jp-utokyo-k-mext": [
+      "deadline missed 2027-01-22"
+    ],
+    "jp-mext-guidelines-pdf": [
+      "stipend amounts differ by level but one amount was stored",
+      "tuition: predicted None, label full"
+    ],
+    "hk-hkpfs": [
+      "nationality: predicted unknown [], label ('any', [])"
+    ],
+    "hk-hku-hkpfs": [
+      "deadline missed 2026-12-01",
+      "component tuition: predicted not covered, label covered",
+      "component accommodation: predicted not covered, label covered",
+      "stipend: predicted None None, label {'amount': [28700], 'currency': 'HKD', 'period': 'month'}"
+    ],
+    "be-ares-belgique": [
+      "page_kind: predicted not_relevant, label opportunity"
+    ],
+    "int-mastercard-fdn": [
+      "page_kind: predicted opportunity, label guidance"
+    ]
+  },
+  "validator": {
+    "set": "heldout_d",
+    "split": "all",
+    "positives": 59,
+    "false_rejections": 11,
+    "false_rejection_rate": 0.186,
+    "negatives": 46,
+    "false_acceptances": 18,
+    "false_acceptance_rate": 0.391,
+    "by_area": {
+      "age": {
+        "positives": 4,
+        "false_rejections": 2,
+        "false_rejection_rate": 0.5,
+        "negatives": 5,
+        "false_acceptances": 0,
+        "false_acceptance_rate": 0.0
+      },
+      "conflicts": {
+        "positives": 1,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 0,
+        "false_acceptances": 0,
+        "false_acceptance_rate": null
+      },
+      "cycle": {
+        "positives": 1,
+        "false_rejections": 1,
+        "false_rejection_rate": 1.0,
+        "negatives": 3,
+        "false_acceptances": 2,
+        "false_acceptance_rate": 0.667
+      },
+      "deadline": {
+        "positives": 16,
+        "false_rejections": 5,
+        "false_rejection_rate": 0.312,
+        "negatives": 6,
+        "false_acceptances": 1,
+        "false_acceptance_rate": 0.167
+      },
+      "funding amount": {
+        "positives": 3,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 4,
+        "false_acceptances": 3,
+        "false_acceptance_rate": 0.75
+      },
+      "funding components": {
+        "positives": 13,
+        "false_rejections": 2,
+        "false_rejection_rate": 0.154,
+        "negatives": 4,
+        "false_acceptances": 2,
+        "false_acceptance_rate": 0.5
+      },
+      "funding duration": {
+        "positives": 1,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 3,
+        "false_acceptances": 2,
+        "false_acceptance_rate": 0.667
+      },
+      "funding source": {
+        "positives": 4,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 9,
+        "false_acceptances": 0,
+        "false_acceptance_rate": 0.0
+      },
+      "ielts_min": {
+        "positives": 2,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 2,
+        "false_acceptances": 2,
+        "false_acceptance_rate": 1.0
+      },
+      "min_gpa": {
+        "positives": 2,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 0,
+        "false_acceptances": 0,
+        "false_acceptance_rate": null
+      },
+      "nationality": {
+        "positives": 4,
+        "false_rejections": 1,
+        "false_rejection_rate": 0.25,
+        "negatives": 2,
+        "false_acceptances": 1,
+        "false_acceptance_rate": 0.5
+      },
+      "residency": {
+        "positives": 1,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 2,
+        "false_acceptances": 0,
+        "false_acceptance_rate": 0.0
+      },
+      "study_levels": {
+        "positives": 6,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 6,
+        "false_acceptances": 5,
+        "false_acceptance_rate": 0.833
+      },
+      "toefl_min": {
+        "positives": 1,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 0,
+        "false_acceptances": 0,
+        "false_acceptance_rate": null
+      }
+    },
+    "wrong_verdicts": [
+      {
+        "page": "ch-sges-main",
+        "field": "academic_cycle",
+        "value": "2028/2029",
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "a future cycle, not this call"
+      },
+      {
+        "page": "ch-sges-glance",
+        "field": "tuition_coverage",
+        "value": "full",
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "tuition not covered"
+      },
+      {
+        "page": "ch-sges-glance",
+        "field": "study_levels",
+        "value": [
+          "master"
+        ],
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "a completed master's is the prerequisite of the PhD scholarship"
+      },
+      {
+        "page": "au-awards-id-en",
+        "field": "ielts_min",
+        "value": 6.0,
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "6.0 is the band minimum, not the overall"
+      },
+      {
+        "page": "au-awards-id-id",
+        "field": "ielts_min",
+        "value": 6.5,
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "one cell of a table: applies only to PhD non-target applicants"
+      },
+      {
+        "page": "uk-gates-timeline",
+        "field": "deadline_scholarship",
+        "value": "2027-01-06",
+        "expected": "accept",
+        "got": "rejected: quote has no deadline wording (a start, event or other date)",
+        "why_expected": "course-dependent round"
+      },
+      {
+        "page": "uk-gates-timeline",
+        "field": "academic_cycle",
+        "value": "2027/2028",
+        "expected": "accept",
+        "got": "rejected: cycle not stated in quote",
+        "why_expected": "2027/8"
+      },
+      {
+        "page": "za-mandela-rhodes",
+        "field": "max_age",
+        "value": 29,
+        "expected": "accept",
+        "got": "rejected: quote does not state an upper age limit",
+        "why_expected": "stated"
+      },
+      {
+        "page": "za-mandela-rhodes",
+        "field": "min_age",
+        "value": 19,
+        "expected": "accept",
+        "got": "rejected: quote does not state a lower age limit",
+        "why_expected": "stated"
+      },
+      {
+        "page": "za-mandela-rhodes",
+        "field": "study_levels",
+        "value": [
+          "phd"
+        ],
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "no PhD"
+      },
+      {
+        "page": "sa-kaust-funding",
+        "field": "stipend_amount",
+        "value": 30000,
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "amounts differ by level"
+      },
+      {
+        "page": "sa-kaust-funding",
+        "field": "tuition_coverage",
+        "value": "full",
+        "expected": "accept",
+        "got": "rejected: quote describes a contribution, not full tuition",
+        "why_expected": "stated"
+      },
+      {
+        "page": "tw-icdf-list",
+        "field": "deadline_scholarship",
+        "value": "2027-03-15",
+        "expected": "accept",
+        "got": "rejected: quote describes an opening date, not a deadline",
+        "why_expected": "end of window"
+      },
+      {
+        "page": "tw-roc-israel",
+        "field": "deadline_scholarship",
+        "value": "2026-04-30",
+        "expected": "accept",
+        "got": "rejected: quote has no deadline wording (a start, event or other date)",
+        "why_expected": "historical (previous cycle)"
+      },
+      {
+        "page": "tw-roc-israel",
+        "field": "funding_duration_months",
+        "value": 48,
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "programme length heading, not a funding statement"
+      },
+      {
+        "page": "bn-ubd-scholarship",
+        "field": "eligible_nationalities",
+        "value": [
+          "Brunei"
+        ],
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "applies only to the local-student scheme, not the international one"
+      },
+      {
+        "page": "my-mis",
+        "field": "deadline_scholarship",
+        "value": "2026-12-31",
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "status-checking period, not an application deadline"
+      },
+      {
+        "page": "de-kas-pdf",
+        "field": "stipend_amount",
+        "value": 920,
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "a bare amount; the page does not say which level it is for in this quote"
+      },
+      {
+        "page": "ca-vanier",
+        "field": "funding_duration_months",
+        "value": 36,
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "a bare duration heading (no funding wording in the quote); conservative"
+      },
+      {
+        "page": "ca-mcgill-mcf-elig",
+        "field": "study_levels",
+        "value": [
+          "master"
+        ],
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "an exclusion, not the level offered"
+      },
+      {
+        "page": "cz-studyin-340",
+        "field": "deadline_scholarship",
+        "value": "2026-09-30",
+        "expected": "accept",
+        "got": "rejected: quote has no deadline wording (a start, event or other date)",
+        "why_expected": "historical"
+      },
+      {
+        "page": "cz-studyin-340",
+        "field": "covers_accommodation",
+        "value": true,
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "paid by the holder"
+      },
+      {
+        "page": "cz-studyin-340",
+        "field": "study_levels",
+        "value": [
+          "bachelor"
+        ],
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "contradicts 'follow-up master's'; conflicting"
+      },
+      {
+        "page": "jp-mext-guidelines-pdf",
+        "field": "stipend_amount",
+        "value": 145000,
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "doctoral-only amount; amounts differ by level"
+      },
+      {
+        "page": "hk-hku-hkpfs",
+        "field": "deadline_scholarship",
+        "value": "2026-12-01",
+        "expected": "accept",
+        "got": "rejected: quote has no deadline wording (a start, event or other date)",
+        "why_expected": "stated"
+      },
+      {
+        "page": "hk-hku-hkpfs",
+        "field": "covers_accommodation",
+        "value": true,
+        "expected": "accept",
+        "got": "rejected: quote does not mention this benefit",
+        "why_expected": "hall place provided"
+      },
+      {
+        "page": "be-ares-formations",
+        "field": "academic_cycle",
+        "value": "2027/2028",
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "closed"
+      },
+      {
+        "page": "be-ares-formations",
+        "field": "eligible_nationalities",
+        "value": [
+          "Palestine"
+        ],
+        "expected": "accept",
+        "got": "rejected: country not named in quote",
+        "why_expected": "explicit exception"
+      },
+      {
+        "page": "int-mastercard-fdn",
+        "field": "study_levels",
+        "value": [
+          "phd"
+        ],
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "excluded"
+      }
+    ]
+  }
+}

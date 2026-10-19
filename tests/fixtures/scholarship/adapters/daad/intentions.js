@@ -1,0 +1,1 @@
+var persIntentions = TAFFY([{"id":2,"nameDe":"Forschung\/Promotion","nameEn":"Research\/Doctorate\/PhD"},{"id":5,"nameDe":"Lehrt\u00e4tigkeit","nameEn":"Teaching"},{"id":4,"nameDe":"Praktikum","nameEn":"Internship"},{"id":3,"nameDe":"Sprachkurs","nameEn":"Language Course"},{"id":1,"nameDe":"Studium","nameEn":"Study"}]);

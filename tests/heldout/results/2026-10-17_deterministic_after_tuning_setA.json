@@ -1,0 +1,155 @@
+{
+ "set": "held-out real pages",
+ "pages": 30,
+ "evaluated": 30,
+ "missing_snapshots": [],
+ "labels_sha": "8358201c62d3",
+ "mode": "deterministic",
+ "fields": {
+  "deadlines": {
+   "tp": 19,
+   "fp": 8,
+   "fn": 1,
+   "precision": 0.704,
+   "recall": 0.95,
+   "f1": 0.809
+  },
+  "documents": {
+   "tp": 2,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0
+  },
+  "levels": {
+   "tp": 26,
+   "fp": 9,
+   "fn": 3,
+   "precision": 0.743,
+   "recall": 0.897,
+   "f1": 0.812
+  },
+  "nationality_countries": {
+   "tp": 18,
+   "fp": 2,
+   "fn": 2,
+   "precision": 0.9,
+   "recall": 0.9,
+   "f1": 0.9
+  },
+  "openings": {
+   "tp": 8,
+   "fp": 0,
+   "fn": 1,
+   "precision": 1.0,
+   "recall": 0.889,
+   "f1": 0.941
+  }
+ },
+ "rates": {
+  "age": {
+   "correct": 17,
+   "total": 18,
+   "accuracy": 0.944
+  },
+  "deadline_exact": {
+   "correct": 19,
+   "total": 20,
+   "accuracy": 0.95
+  },
+  "deadline_status": {
+   "correct": 19,
+   "total": 19,
+   "accuracy": 1.0
+  },
+  "duration": {
+   "correct": 5,
+   "total": 5,
+   "accuracy": 1.0
+  },
+  "funding_amount": {
+   "correct": 9,
+   "total": 10,
+   "accuracy": 0.9
+  },
+  "funding_period": {
+   "correct": 2,
+   "total": 2,
+   "accuracy": 1.0
+  },
+  "language": {
+   "correct": 4,
+   "total": 4,
+   "accuracy": 1.0
+  },
+  "nationality": {
+   "correct": 10,
+   "total": 11,
+   "accuracy": 0.909
+  },
+  "page_kind": {
+   "correct": 30,
+   "total": 30,
+   "accuracy": 1.0
+  },
+  "stipend_present": {
+   "correct": 5,
+   "total": 5,
+   "accuracy": 1.0
+  },
+  "travel": {
+   "correct": 4,
+   "total": 5,
+   "accuracy": 0.8
+  },
+  "tuition": {
+   "correct": 4,
+   "total": 5,
+   "accuracy": 0.8
+  }
+ },
+ "attribution": {
+  "correct": 176,
+  "total": 180,
+  "accuracy": 0.978
+ },
+ "unsupported_rate": 0.205,
+ "unsupported_values": 9,
+ "scored_values": 44,
+ "missing_rate": 0.065,
+ "missing_values": 3,
+ "labelled_values": 46,
+ "misses": {
+  "nz-vocational": [
+   "nationality: predicted include ['FJ', 'FM', 'FR', 'KI', 'MH', 'NC'], label ('include', ['FM', 'FJ', 'PF', 'KI', 'MH', 'NR'])"
+  ],
+  "jp-jsps-pd": [
+   "deadline spurious 2027-03-31",
+   "stipend: predicted None None, label {'amount': [362000, 200000, 230000, 464000], 'currency': 'JPY', 'period': 'month'}"
+  ],
+  "int-twas-phd": [
+   "deadline spurious 2026-10-20"
+  ],
+  "int-twas-swaminathan": [
+   "deadline spurious 2026-10-20"
+  ],
+  "fr-eiffel": [
+   "max_age: predicted None, label [29, 35]"
+  ],
+  "za-nrf-2027": [
+   "deadline spurious 2027-01-29",
+   "deadline spurious 2026-09-04",
+   "deadline spurious 2026-09-30",
+   "deadline spurious 2026-07-15",
+   "deadline spurious 2026-07-07"
+  ],
+  "kr-gks-ko": [
+   "tuition: predicted None, label covered"
+  ],
+  "es-carolina-press-pdf": [
+   "deadline missed 2026-04-09"
+  ]
+ },
+ "note": "TUNED on set A."
+}

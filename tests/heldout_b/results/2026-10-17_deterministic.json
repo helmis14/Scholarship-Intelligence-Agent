@@ -1,0 +1,160 @@
+{
+ "set": "held-out real pages",
+ "pages": 13,
+ "evaluated": 13,
+ "missing_snapshots": [],
+ "labels_sha": "e3842f5006ac",
+ "mode": "deterministic",
+ "fields": {
+  "deadlines": {
+   "tp": 3,
+   "fp": 1,
+   "fn": 2,
+   "precision": 0.75,
+   "recall": 0.6,
+   "f1": 0.667
+  },
+  "levels": {
+   "tp": 6,
+   "fp": 9,
+   "fn": 2,
+   "precision": 0.4,
+   "recall": 0.75,
+   "f1": 0.522
+  },
+  "nationality_countries": {
+   "tp": 37,
+   "fp": 2,
+   "fn": 92,
+   "precision": 0.949,
+   "recall": 0.287,
+   "f1": 0.44
+  },
+  "openings": {
+   "tp": 2,
+   "fp": 0,
+   "fn": 1,
+   "precision": 1.0,
+   "recall": 0.667,
+   "f1": 0.8
+  }
+ },
+ "rates": {
+  "age": {
+   "correct": 3,
+   "total": 6,
+   "accuracy": 0.5
+  },
+  "deadline_exact": {
+   "correct": 3,
+   "total": 5,
+   "accuracy": 0.6
+  },
+  "deadline_status": {
+   "correct": 3,
+   "total": 3,
+   "accuracy": 1.0
+  },
+  "duration": {
+   "correct": 0,
+   "total": 2,
+   "accuracy": 0.0
+  },
+  "funding_amount": {
+   "correct": 2,
+   "total": 3,
+   "accuracy": 0.667
+  },
+  "funding_period": {
+   "correct": 2,
+   "total": 2,
+   "accuracy": 1.0
+  },
+  "language": {
+   "correct": 1,
+   "total": 1,
+   "accuracy": 1.0
+  },
+  "nationality": {
+   "correct": 3,
+   "total": 8,
+   "accuracy": 0.375
+  },
+  "page_kind": {
+   "correct": 9,
+   "total": 13,
+   "accuracy": 0.692
+  },
+  "stipend_present": {
+   "correct": 4,
+   "total": 4,
+   "accuracy": 1.0
+  },
+  "travel": {
+   "correct": 2,
+   "total": 2,
+   "accuracy": 1.0
+  },
+  "tuition": {
+   "correct": 1,
+   "total": 3,
+   "accuracy": 0.333
+  }
+ },
+ "attribution": {
+  "correct": 63,
+  "total": 79,
+  "accuracy": 0.797
+ },
+ "unsupported_rate": 0.333,
+ "unsupported_values": 5,
+ "scored_values": 15,
+ "missing_rate": 0.286,
+ "missing_values": 6,
+ "labelled_values": 21,
+ "misses": {
+  "gb-csc-masters": [
+   "deadline missed 2026-10-20",
+   "nationality: predicted include ['GB'], label ('include', ['BD', 'BZ', 'BW', 'DM', 'SZ', 'FJ'])",
+   "tuition: predicted None, label full"
+  ],
+  "gb-csc-shared": [
+   "nationality: predicted unknown [], label ('include', ['BD', 'BZ', 'BW', 'CM', 'DM', 'SZ'])",
+   "tuition: predicted None, label full"
+  ],
+  "fi-ba-ma-scholarships": [
+   "page_kind: predicted opportunity, label guidance"
+  ],
+  "fi-doctoral-funding": [
+   "page_kind: predicted opportunity, label guidance"
+  ],
+  "de-boell": [
+   "nationality: predicted unknown [], label ('any', [])"
+  ],
+  "int-jjwbgsp": [
+   "deadline spurious 2026-04-17",
+   "nationality: predicted include ['JP'], label not_stated"
+  ],
+  "lt-masters": [
+   "stipend: predicted None None, label {'amount': [592], 'currency': 'EUR', 'period': 'month'}"
+  ],
+  "lt-short-term": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "duration: predicted '', label 6 months"
+  ],
+  "be-vliruos-nutrition": [
+   "deadline missed 2027-02-28",
+   "min_age: predicted 35, label [19]",
+   "max_age: predicted None, label [35, 45]"
+  ],
+  "at-ernst-mach-asea": [
+   "nationality: predicted include ['AT'], label ('include', ['ID', 'MY', 'PH', 'TH', 'VN'])",
+   "max_age: predicted None, label [35, 45]",
+   "duration: predicted '9 months', label 36 months"
+  ],
+  "gb-edinburgh-online": [
+   "page_kind: predicted opportunity, label guidance"
+  ]
+ },
+ "note": "Independent: set B was labelled after rules were frozen and never used for tuning."
+}

@@ -1,0 +1,209 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>
+	A*STAR Scholarship Applicant Portal
+</title><link id="ctl00_iconLink" rel="shortcut icon" href="images/favicon.ico" /><link href="Styles/jquery-ui.css" rel="stylesheet" type="text/css" />
+
+    <script src="scripts/applicant/Common.js" language="javascript" type="text/javascript"></script>
+    <script src="scripts/applicant/App.js" language="javascript" type="text/javascript"></script>
+
+        
+    
+      <script type="text/javascript">
+
+
+          function backToHome() {
+
+              window.location = "ApplicantHome.aspx";
+
+          }
+
+
+          function goTo2FASetUpPage() {
+
+              window.location = "TwoFASetup.aspx";
+
+          }
+
+      </script>
+
+    
+    <!-- Facebook Pixel Code -->
+    <!--
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1807319519567560');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1807319519567560&ev=PageView&noscript=1" />
+    </noscript>
+    -->
+    <!-- End Facebook Pixel Code -->
+
+<link href="App_Themes/Applicant/Applicant.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Applicant/RadUploader.css" type="text/css" rel="stylesheet" /><script type="text/javascript" src="Scripts\EG_rum.js"></script></head>
+<body>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-7B9J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({ 'gtm.start':
+new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+'//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-7B9J');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Code for Remarketing Tag -->
+<!--------------------------------------------------
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+--------------------------------------------------->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 957701170;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="Scripts/conversion.js">
+</script>
+ 
+
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/957701170/?guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+    <form name="aspnetForm" method="post" action="./" id="aspnetForm" autocomplete="off">
+<input type="hidden" name="ctl00_RadScriptManager1_TSM" id="ctl00_RadScriptManager1_TSM" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl00_RadScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3bdIrv9gg1ySpJIYwcrNcRAaa0nTGCTICQev7ugyxN5lPOzF+drvuVBXAb/bhFpp+2sKLRRFW8VSHDN7+lzvlQukcMg0PdtvB1XvtzAgSHzpF+2/CcadCFbzU7Tk6ExoQYireKEB0Q1XxaiVO2XFUZlUy3nE9P8l6vUG8PY0D0ElM1VYwxfDkt8UqY6LXrBeHe9Lk/P+ecz6FHd66MliyS0bltRMKNqDtjtVmsRGB71HyTzQSg7mdohqwtLbvCk7SayH8ngy0Q6m75bt8ywe8ETbkOAQCf8I14k0U7iS/6OCOCMa2Ys+/G2fz3Pr33h/jBedopaU9kUMrqW0mQX/K471IVEv7deIvRSj/7FKY8iJVWz/i4u+ZG0L5iXnjkTl9YRmJpiIm4PEXkSZImRU+sKHERHaRS1ebUzlnKOEN9Bwg=" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="Scripts/jquery.min.js" type="text/javascript"></script>
+<script src="Scripts/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="Scripts/jquery-ui.min.js" type="text/javascript"></script>
+<script src="Scripts/maxlength.js" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C2EE9ABB" />
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="QJouebst995FSIMAQmeTH3k1dOMXReHDd12x0PsrA26BHP64d0yMHyZJOILd4dNec65TSSBnh98FoPBrSg1nGmebjRPTpdggzvWt9P4w67SPahWdCRk3cpI/Da1Q1OdB/D2OOKP+P4BA95zCJ75TCvCInuFOd5w/gN1vvTKpvBY=" />
+
+     
+
+    <!-- Header -->
+        <div id="header" class="applicant_banner wrapper">
+            <div class="logo">
+
+                 <a id="ctl00_lnkBtnHome" title="Logo" href="javascript:__doPostBack(&#39;ctl00$lnkBtnHome&#39;,&#39;&#39;)">
+                <img src="App_Themes/Applicant/images/astar_logo.jpg" alt="" style="border: none" /></a></div>
+            <div class="middleNav">
+            </div>
+            <div class="fix">
+            </div>
+        </div>
+         <div class="applicant_login_background wrapper">
+
+                
+        <!-- Left navigation -->
+        <div class="leftNav">
+        </div>
+        <!-- Content -->
+        <div class="content">
+            <div class="divHeader1">
+                <b>A*STAR Scholarship Portal</b></div>
+            <span id="ctl00_MainContent_lblInstruction"><p style="margin-bottom:12.0pt;"><span style="font-family:Arial, Helvetica, sans-serif;">Please note that we have migrated to a new application platform, and applications are no longer accepted through this portal. Please visit the respective scholarship websites below for more information.</span></p><p><span style="font-family:Arial, Helvetica, sans-serif;">• </span><a href="https://www.a-star.edu.sg/scholarships/home/scholarships/national-science-scholarship-(bs-phd)" target="_blank"><span style="font-family:Arial, Helvetica, sans-serif;">National Science Scholarship (BS-PhD)</span></a></p><p><span style="font-family:Arial, Helvetica, sans-serif;">• </span><a href="https://www.a-star.edu.sg/scholarships/home/scholarships/national-science-scholarship-(phd)" target="_blank"><span style="font-family:Arial, Helvetica, sans-serif;">National Science Scholarship (PhD)</span></a></p><p><span style="font-family:Arial, Helvetica, sans-serif;">• </span><a href="https://www.a-star.edu.sg/scholarships/home/scholarships/ags--scholarship" target="_blank"><span style="font-family:Arial, Helvetica, sans-serif;">A*STAR Graduate Scholarship</span></a></p><p><span style="font-family:Arial, Helvetica, sans-serif;">• </span><a href="https://www.a-star.edu.sg/scholarships/home/scholarships/astar-international-fellowship" target="_blank"><span style="font-family:Arial, Helvetica, sans-serif;">A*STAR International Fellowship</span></a><br /><br /><span style="font-family:Arial, Helvetica, sans-serif;"><em>For applicants who applied from </em></span><span style="color:#000000;font-family:Arial, Helvetica, sans-serif;"><em>2 August 2025&nbsp;</em></span><span style="font-family:Arial, Helvetica, sans-serif;color:#000000;"><em>to 1 April 2026</em></span><span style="font-family:Arial, Helvetica, sans-serif;"><em>, you may still login&nbsp;to this portal to manage your ongoing application.</em></span></p><p style="color:#424242;font-family:Arial, Helvetica, sans-serif;line-height:20px;text-align:justify;"><span style="text-decoration:underline;color:#000000;">Enquiries</span></p><p style="color:#424242;font-family:Arial, Helvetica, sans-serif;line-height:20px;text-align:justify;"><span lang="EN-SG" style="color:#000000;font-size:9pt;text-align:justify;background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;font-family:Arial, Helvetica, sans-serif;">For scholarship related queries, please contact us&nbsp;</span><a href="mailto:student_services@a-star.edu.sg?subject=A*STAR%20Scholarships%20Enquiries" style="color:#2b6893;font-family:Arial, Helvetica, sans-serif;text-align:justify;text-decoration-line:none;"><span style="text-decoration-line:underline;font-family:Arial, Helvetica, sans-serif;">here</span><span style="font-family:Arial, Helvetica, sans-serif;">.</span></a><span style="color:#424242;font-family:Arial, Helvetica, sans-serif;text-align:justify;">&nbsp;</span></p><p style="color:#424242;font-family:Arial, Helvetica,sans-serif;line-height:20px;text-align:justify;"></p><p style="color:#424242;font-family:Arial, Helvetica,sans-serif;line-height:20px;text-align:justify;"><span style="color:#424242;font-family:Arial, Helvetica, sans-serif;text-align:justify;"><strong></strong></span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:12.0pt;margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:15.0pt;"><span lang="EN-SG" style="font-size:9pt;font-family:Arial, Helvetica, sans-serif;color:#000000;background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;">For technical issues (e.g. account registration / login / password recovery), please refer to technical FAQ</span><strong><span lang="EN-SG" style="font-size:9pt;font-family:Arial, sans-serif;color:#00a2e8;background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;">&nbsp;</span></strong><a href="SMS Applicant Portal Related FAQ.pdf" style="color:#2b6893;font-family:Arial, Helvetica, sans-serif;text-align:justify;text-decoration-line:none;"><span style="text-decoration-line:underline;">here</span></a><span style="font-size:9.0pt;font-family:Arial,sans-serif;color:#424242;">. </span><span lang="EN-SG" style="font-size:9pt;font-family:Arial, sans-serif;color:#000000;background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;">For further assistance, please contact us</span>&nbsp;<a href="mailto:scholartechhelp@a-star.edu.sg" style="color:#2b6893;font-family:Arial, Helvetica, sans-serif;text-align:justify;text-decoration-line:none;"><span style="text-decoration-line:underline;">here</span></a>&nbsp;<span lang="EN-SG" style="font-size:9pt;font-family:Arial, sans-serif;color:#000000;background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;">with a screenshot of the issue faced</span><span style="font-size:9pt;font-family:Arial, sans-serif;color:#000000;">.</span></p><p style="margin-top:0in;margin-right:0in;margin-bottom:12.0pt;margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:15.0pt;"><span style="font-size:9pt;font-family:Arial, sans-serif;color:#000000;text-decoration:underline;">Login via SingPass</span></p><p style="color:#424242;font-family:Arial, Helvetica,sans-serif;line-height:20px;text-align:justify;"><span style="color:#424242;font-family:Arial, Helvetica, sans-serif;text-align:justify;text-decoration:underline;"></span></p><p style="color:#424242;font-family:Arial, Helvetica,sans-serif;line-height:20px;text-align:justify;"><span style="color:#424242;font-family:Arial, Helvetica, sans-serif;text-align:justify;"></span></p><ul><li><span style="font-size:9pt;font-family:Arial, sans-serif;color:#000000;">For Singaporean Citizen/Permanent Resident, please login using SingPass.</span></li><li><span style="font-size:9pt;font-family:Arial, sans-serif;color:#000000;">If you do not have a SingPass, you are required to setup Multifactor Authentication</span><span style="font-size:9pt;font-family:Arial, sans-serif;color:#000000;"> (<a href="https://sms-applicant-app.a-star.edu.sg/Help%20Guide%20-%202FASetup%20Applicant.pdf" target="_blank">Guide</a></span><span style="font-size:9pt;font-family:Arial, sans-serif;">)</span></li></ul><p><span style="font-family:Arial, Helvetica, sans-serif;text-align:justify;">The use of this website is restricted to the application for A*STAR scholarships and awards only.</span></p><p style="text-align:justify;"><span style="font-family:Arial, Helvetica, sans-serif;">Please note: This system records user activities, unauthorized use of the system is prohibited and subject to criminal and civil penalties. Use of system indicates consent to the monitoring of user activities.</span></p><p></p></span>
+
+            <br />
+            <span id="ctl00_MainContent_MaintenanceMsg" class="Message1"></span>
+        </div>
+        <div id="ctl00_MainContent_divLogin" class="loginWrapper">
+            <table cellpadding="10" cellspacing="0" class="loginform" width="220px">
+                <tr valign="middle" align="justify">
+                    <th align="justify" valign="middle">
+                        <b>Account Login</b>
+                    </th>
+                </tr>
+
+               <tr id="ctl00_MainContent_trSingPass">
+	<td>
+                        Singapore Citizen /
+                        <br />Permanent Resident:
+                        <br />
+                        
+                        <input type="image" name="ctl00$MainContent$btnLoginSP" id="ctl00_MainContent_btnLoginSP" Text="LOG IN WITH SingPass" src="/images/singpass-login.png" border="0" />
+                    </td>
+</tr>
+
+                <tr>
+                    <td>
+                        Login without SingPass
+                        <br />
+                        <input type="submit" name="ctl00$MainContent$btnSubmit" value="LOG IN" id="ctl00_MainContent_btnSubmit" class="applicantBtn" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Need help?<br />
+                        <a href="Help Guide - Applicant.pdf" target="_blank">User Guide</a>
+                    </td>
+                </tr>
+                    
+                <tr>
+                    <td>
+                       
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+ 
+         <div class="fix">
+         </div>
+         
+
+<!-- Footer -->
+<div id="footer">
+  <div class="wrapper" style="height:38px">
+  <table class="fmenu" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><a href="TermConditions.aspx" target="_blank">Terms of Use</a></td>
+    <td><a href="PrivacyStatementwPDPA.aspx" target="_blank">Privacy Statement</a></td>
+    <td><a href="https://tech.gov.sg/report_vulnerability" target="_blank">Report Vulnerability</a></td>
+    <td><a href="SiteRequirements.html">Site Requirements</a></td>
+    <td>&nbsp;&nbsp;Copyright &copy; 2014 Agency for Science, Technology and Research</td>
+  </tr>
+  </table>
+    <div style="clear:both;"/>
+  </div>
+</div>
+        </div>
+        
+    
+
+<script type="text/javascript">
+//<![CDATA[
+window.__TsmHiddenField = $get('ctl00_RadScriptManager1_TSM');//]]>
+</script>
+</form>
+</body>
+</html>

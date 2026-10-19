@@ -1,0 +1,2650 @@
+{
+ "set": "P",
+ "decisions": {
+  "set": "heldout_p",
+  "split": "all",
+  "ambiguous_left_out": false,
+  "adjudicated": false,
+  "today": "2026-10-19",
+  "decisions": {
+   "eligibility": {
+    "correct": 41,
+    "wrong_claim": 3,
+    "flagged": 10,
+    "abstained": 5
+   },
+   "funding": {
+    "correct": 11,
+    "wrong_claim": 18,
+    "flagged": 24,
+    "abstained": 6
+   },
+   "cycle": {
+    "correct": 41,
+    "wrong_claim": 8,
+    "flagged": 5,
+    "abstained": 5
+   },
+   "deadline": {
+    "correct": 55,
+    "wrong_claim": 2,
+    "flagged": 0,
+    "abstained": 2
+   }
+  },
+  "correct_rate": {
+   "eligibility": 0.695,
+   "funding": 0.186,
+   "cycle": 0.695,
+   "deadline": 0.932
+  },
+  "wrong_claim_rate": {
+   "eligibility": 0.051,
+   "funding": 0.305,
+   "cycle": 0.136,
+   "deadline": 0.034
+  },
+  "known_with_clean_quotation": {
+   "eligibility": "7/7",
+   "funding": "21/21",
+   "cycle": "15/15"
+  },
+  "flagged_but_right": {
+   "eligibility": 3,
+   "funding": 2,
+   "cycle": 3,
+   "deadline": 0
+  },
+  "review": {
+   "decisions": 236,
+   "answered_without_review": 197,
+   "correct_without_review": 148,
+   "wrong_claims": 31,
+   "sent_to_review": 39,
+   "correct_but_held_in_review": 8,
+   "share_answered": 0.835,
+   "share_correct_without_review": 0.627,
+   "wrong_claims_among_answered": 0.157
+  },
+  "eligibility_by_label_rule": {
+   "not_stated": {
+    "correct": 37,
+    "wrong_claim": 2,
+    "flagged": 6,
+    "abstained": 0
+   },
+   "exclude": {
+    "correct": 2,
+    "wrong_claim": 1,
+    "flagged": 3,
+    "abstained": 2
+   },
+   "include": {
+    "correct": 2,
+    "wrong_claim": 0,
+    "flagged": 1,
+    "abstained": 2
+   },
+   "any": {
+    "correct": 0,
+    "wrong_claim": 0,
+    "flagged": 0,
+    "abstained": 1
+   }
+  },
+  "programmes": 59
+ },
+ "fields": {
+  "rates": {
+   "deadline_exact": {
+    "correct": 12,
+    "total": 14,
+    "accuracy": 0.857
+   },
+   "deadline_status": {
+    "correct": 12,
+    "total": 12,
+    "accuracy": 1.0
+   },
+   "funding_amount": {
+    "correct": 0,
+    "total": 2,
+    "accuracy": 0.0
+   },
+   "funding_components": {
+    "correct": 29,
+    "total": 48,
+    "accuracy": 0.604
+   },
+   "nationality": {
+    "correct": 44,
+    "total": 59,
+    "accuracy": 0.746
+   },
+   "page_kind": {
+    "correct": 46,
+    "total": 59,
+    "accuracy": 0.78
+   },
+   "stipend_present": {
+    "correct": 0,
+    "total": 2,
+    "accuracy": 0.0
+   },
+   "tuition": {
+    "correct": 12,
+    "total": 13,
+    "accuracy": 0.923
+   }
+  },
+  "unsupported_values": 19,
+  "scored_values": 78,
+  "missing_values": 25,
+  "labelled_values": 86
+ },
+ "rows": [
+  {
+   "id": "us-berkeley-regents",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "stipend_only",
+    "label": "not_stated",
+    "state": "stipend_only",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-mit-presidential",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "funding_unclear",
+    "label": "fully_funded",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-duke-robertson",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "label": [
+     "exclude",
+     [
+      "US"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "funding_unclear",
+    "label": "fully_funded",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-northwestern-presidential",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "funding_unclear",
+    "label": "fully_funded",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2027-02-01"
+    ],
+    "label": [
+     "2027-02-01"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-rice-wagoner",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "stipend_only",
+    "label": "not_stated",
+    "state": "stipend_only",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "expected",
+    "label": "open",
+    "state": "expected",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-11-05"
+    ],
+    "state": "approximate",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-vanderbilt-cornelius",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "fully_funded",
+    "label": "tuition_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "open",
+    "label": "open",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-12-01"
+    ],
+    "label": [
+     "2026-12-01"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-wisc-chancellor",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "tuition_funded",
+    "label": "tuition_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a scholarship_catalog page, not the programme's own page"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-umd-banneker",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "tuition_funded",
+    "label": "fully_funded",
+    "state": "tuition_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "expected",
+    "label": "not_stated",
+    "state": "expected",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "approximate",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-colorado-chancellor",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "not_announced",
+    "label": "not_stated",
+    "state": "not_announced",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_published",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-uoregon-icsp",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "fee_waiver",
+    "label": "partially_funded",
+    "state": "fee_waiver",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2027-02-01"
+    ],
+    "label": [
+     "2027-02-01"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-ucsd-regents",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "quotation does not state who is eligible"
+    ]
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-uci-regents",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-ucsb-regents",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-nd-stamps",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "tuition_funded",
+    "label": "tuition_funded",
+    "state": "tuition_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-uga-foundation",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "stipend_only",
+    "label": "fully_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a scholarship_catalog page, not the programme's own page",
+     "the quotation names another programme: Zell Miller Scholarship"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-miami-stamps",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "fully_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation is a heading or label, not a funding statement",
+     "the quotation names another programme: Music's Scholarships"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-iastate-international",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "stipend_only",
+    "label": "partially_funded",
+    "state": "stipend_only",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-olemiss-international",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "partially_funded",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a scholarship_catalog page, not the programme's own page"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-villanova-presidential",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "partially_funded",
+    "label": "fully_funded",
+    "state": "partially_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-nmsu-international",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "assistantship",
+    "label": "partially_funded",
+    "state": "assistantship",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-uidaho-international",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "assistantship",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a scholarship_catalog page, not the programme's own page"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "ca-lakehead-international",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "exclude",
+     [
+      "CA"
+     ]
+    ],
+    "label": [
+     "exclude",
+     [
+      "CA"
+     ]
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "quotation does not state who is eligible"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "assistantship",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "the quotation names another programme: Your Entrance Scholarship",
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "ca-laurentian-international",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "assistantship",
+    "label": "not_stated",
+    "state": "assistantship",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "kr-kookmin-international",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "exclude",
+     [
+      "KR"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "funding_unclear",
+    "label": "fully_funded",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "cn-hit-international",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "exclude",
+     [
+      "CN"
+     ]
+    ],
+    "label": [
+     "exclude",
+     [
+      "CN"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "tuition_funded",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-05-31"
+    ],
+    "label": [
+     "2026-05-31"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "cn-tju-international",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "exclude",
+     [
+      "CN"
+     ]
+    ],
+    "label": [
+     "exclude",
+     [
+      "CN"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "fully_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2025-05-31"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "id-ipb-international",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "fee_waiver",
+    "label": "tuition_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "id-binus-international",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "stipend_only",
+    "label": "not_stated",
+    "state": "stipend_only",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "my-utp-international",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "MY"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "tuition_funded",
+    "label": "partially_funded",
+    "state": "tuition_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "not_announced",
+    "label": "closed",
+    "state": "not_announced",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-09-22"
+    ],
+    "label": [
+     "2026-09-22"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "co-eafit-becas",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "CO"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation is a heading or label, not an eligibility statement"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "tuition_funded",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2026-11-16",
+     "2026-12-14",
+     "2027-01-14"
+    ],
+    "label": [
+     "2026-11-16"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "de-uni-ulm",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "stipend_only",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "de-uni-regensburg",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "BG",
+      "CZ",
+      "HR",
+      "HU",
+      "PL",
+      "RO",
+      "RS",
+      "RU",
+      "SK",
+      "UA"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-12-01",
+     "2027-02-28"
+    ],
+    "label": [
+     "2026-12-01",
+     "2027-02-28"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "de-uni-bayreuth",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "stipend_only",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-10-21"
+    ],
+    "label": [
+     "2026-10-21"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "de-uni-kassel",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "stipend_only",
+    "label": "stipend_only",
+    "state": "stipend_only",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "it-unige",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "PS"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a general_guidance page, not the programme's own page"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a general_guidance page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-07-31"
+    ],
+    "label": [
+     "2026-07-31"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "it-luiss",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "any",
+     []
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "not_announced",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "it-imtlucca",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "stipend_only",
+    "label": "fully_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a scholarship_catalog page, not the programme's own page"
+    ]
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "open",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "no-nmbu",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "tuition_funded",
+    "label": "fully_funded",
+    "state": "tuition_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2024-12-01"
+    ],
+    "label": [
+     "2024-12-01"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-kent-international",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "assistantship",
+    "label": "partially_funded",
+    "state": "assistantship",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-memphis-international",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "exclude",
+     [
+      "US"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "assistantship",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-colostate-international",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-nau-international",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "assistantship",
+    "label": "partially_funded",
+    "state": "assistantship",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "rolling",
+    "label": "not_stated",
+    "state": "rolling",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_applicable",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-ndsu-international",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-uab-international",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "rolling",
+    "label": "not_stated",
+    "state": "rolling",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_applicable",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-bentley-intl",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2020-04-13"
+    ],
+    "label": [
+     "2020-04-13"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-providence-intl",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "exclude",
+     [
+      "US"
+     ]
+    ],
+    "label": [
+     "exclude",
+     [
+      "US"
+     ]
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "quotation does not state who is eligible"
+    ]
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "tuition_funded",
+    "label": "not_stated",
+    "state": "tuition_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-umassd-intl",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation does not state who is eligible"
+    ]
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "stipend_only",
+    "label": "not_stated",
+    "state": "stipend_only",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-duq-intl",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "funding_unclear",
+    "label": "partially_funded",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-usm-intl",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "tuition_funded",
+    "label": "not_stated",
+    "state": "tuition_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-trinity-intl",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-umkc-intl",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "tuition_funded",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a scholarship_catalog page, not the programme's own page"
+    ]
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "not_announced",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a scholarship_catalog page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_published",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-stthomas-intl",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "partially_funded",
+    "label": "partially_funded",
+    "state": "partially_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "closed",
+    "label": "not_stated",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2024-01-05",
+     "2024-02-02",
+     "2024-03-07"
+    ],
+    "label": [],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-gustavus-intl",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "AU",
+      "CA",
+      "GB",
+      "IE",
+      "NZ"
+     ]
+    ],
+    "label": [
+     "exclude",
+     [
+      "US"
+     ]
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation does not state who is eligible"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-miamioh-intl",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "exclude",
+     [
+      "US"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "fully_funded",
+    "label": "partially_funded",
+    "state": "fully_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "not_announced",
+    "label": "not_stated",
+    "state": "not_announced",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_published",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-oberlin-intl",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "CA",
+      "US"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation does not state who is eligible"
+    ]
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-wmich-intl",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a general_guidance page, not the programme's own page"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "assistantship",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a general_guidance page, not the programme's own page",
+     "the quotation names another programme: Our Global Education Merit Scholarship"
+    ]
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "rolling",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a general_guidance page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_applicable",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-hope-intl",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-pugetsound-intl",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "us-ucr-intl",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "exclude",
+     [
+      "US"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation does not state who is eligible"
+    ]
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "fee_waiver",
+    "label": "not_stated",
+    "state": "fee_waiver",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  }
+ ],
+ "field_misses": {
+  "us-mit-presidential": [
+   "component stipend: predicted not covered, label covered"
+  ],
+  "us-duke-robertson": [
+   "nationality: predicted include ['US'], label ('exclude', ['US'])",
+   "component accommodation: predicted not covered, label covered",
+   "component living_allowance: predicted not covered, label covered"
+  ],
+  "us-northwestern-presidential": [
+   "component stipend: predicted not covered, label covered"
+  ],
+  "us-rice-wagoner": [
+   "deadline missed 2026-11-05"
+  ],
+  "us-vanderbilt-cornelius": [
+   "page_kind: predicted news, label opportunity"
+  ],
+  "us-wisc-chancellor": [
+   "page_kind: predicted listing, label opportunity"
+  ],
+  "us-umd-banneker": [
+   "component living_allowance: predicted not covered, label covered"
+  ],
+  "us-uga-foundation": [
+   "page_kind: predicted listing, label opportunity",
+   "component stipend: predicted not covered, label covered",
+   "component tuition: predicted not covered, label full"
+  ],
+  "us-miami-stamps": [
+   "component living_allowance: predicted not covered, label covered"
+  ],
+  "us-olemiss-international": [
+   "page_kind: predicted listing, label opportunity"
+  ],
+  "us-villanova-presidential": [
+   "component living_allowance: predicted not covered, label covered"
+  ],
+  "us-uidaho-international": [
+   "page_kind: predicted listing, label opportunity"
+  ],
+  "kr-kookmin-international": [
+   "nationality: predicted unknown [], label ('exclude', ['KR'])",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "cn-tju-international": [
+   "deadline missed 2025-05-31"
+  ],
+  "id-ipb-international": [
+   "component accommodation: predicted not covered, label covered",
+   "component travel: predicted not covered, label covered"
+  ],
+  "my-utp-international": [
+   "nationality: predicted unknown [], label ('include', ['MY'])"
+  ],
+  "co-eafit-becas": [
+   "deadline spurious 2026-12-14",
+   "deadline spurious 2027-01-14",
+   "nationality: predicted include ['CO'], label not_stated"
+  ],
+  "de-uni-ulm": [
+   "stipend: predicted None , label {'amount': [250], 'currency': 'EUR', 'period': 'month'}"
+  ],
+  "de-uni-regensburg": [
+   "nationality: predicted unknown [], label ('include', ['BG', 'HR', 'CZ', 'HU', 'PL', 'RO'])"
+  ],
+  "de-uni-bayreuth": [
+   "stipend: predicted None , label {'amount': [500], 'currency': 'EUR', 'period': 'month'}"
+  ],
+  "it-unige": [
+   "page_kind: predicted guidance, label opportunity",
+   "nationality: predicted include ['PS'], label not_stated"
+  ],
+  "it-luiss": [
+   "nationality: predicted unknown [], label ('any', [])"
+  ],
+  "it-imtlucca": [
+   "page_kind: predicted listing, label opportunity",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "no-nmbu": [
+   "component stipend: predicted not covered, label covered",
+   "component relocation: predicted not covered, label covered"
+  ],
+  "us-kent-international": [
+   "nationality: predicted include ['US'], label not_stated",
+   "tuition: predicted None, label partial"
+  ],
+  "us-memphis-international": [
+   "nationality: predicted unknown [], label ('exclude', ['US'])"
+  ],
+  "us-nau-international": [
+   "page_kind: predicted listing, label opportunity"
+  ],
+  "us-uab-international": [
+   "page_kind: predicted listing, label opportunity"
+  ],
+  "us-bentley-intl": [
+   "page_kind: predicted news, label opportunity"
+  ],
+  "us-umassd-intl": [
+   "nationality: predicted include ['US'], label not_stated"
+  ],
+  "us-umkc-intl": [
+   "page_kind: predicted listing, label opportunity",
+   "component tuition: predicted covered, label partial"
+  ],
+  "us-stthomas-intl": [
+   "deadline spurious 2024-02-02",
+   "deadline spurious 2024-03-07",
+   "deadline spurious 2024-01-05",
+   "component tuition: predicted covered, label partial"
+  ],
+  "us-gustavus-intl": [
+   "nationality: predicted include ['AU', 'CA', 'GB', 'IE', 'NZ'], label ('exclude', ['US'])"
+  ],
+  "us-miamioh-intl": [
+   "page_kind: predicted listing, label opportunity",
+   "nationality: predicted exclude ['US'], label not_stated",
+   "component tuition: predicted covered, label partial"
+  ],
+  "us-oberlin-intl": [
+   "nationality: predicted include ['CA', 'US'], label not_stated"
+  ],
+  "us-wmich-intl": [
+   "page_kind: predicted guidance, label opportunity",
+   "nationality: predicted include ['US'], label not_stated",
+   "component tuition: predicted covered, label partial"
+  ],
+  "us-ucr-intl": [
+   "nationality: predicted exclude ['US'], label not_stated"
+  ]
+ }
+}

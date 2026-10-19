@@ -1,0 +1,956 @@
+{
+ "_comment": "Collect set L (round 27, decision benchmark; frozen test set, never used for development): one official programme page per named programme.",
+ "pages": [
+  {
+   "id": "uk-sussex-chancellor",
+   "url": "https://www.sussex.ac.uk/study/fees-funding/undergraduate-scholarships/view/1870-Chancellor-s-International-Scholarships",
+   "domain": "sussex.ac.uk",
+   "query": "Chancellor's International Scholarship",
+   "split": "test"
+  },
+  {
+   "id": "uk-kcl-intl",
+   "url": "https://www.kcl.ac.uk/global-affairs/scholarships",
+   "domain": "kcl.ac.uk",
+   "query": "King's International Scholarship",
+   "split": "excluded",
+   "excluded_because": "scholarships portal (many awards)"
+  },
+  {
+   "id": "uk-lse-gss",
+   "url": "https://www.lse.ac.uk/study-at-lse/Graduate/fees-and-funding/secure/graduate-support-scheme",
+   "domain": "lse.ac.uk",
+   "query": "Graduate Support Scheme",
+   "split": "test"
+  },
+  {
+   "id": "uk-standrews-intl",
+   "url": "https://www.st-andrews.ac.uk/study/scholarships/",
+   "domain": "st-andrews.ac.uk",
+   "query": "international scholarships postgraduate",
+   "split": "excluded",
+   "excluded_because": "scholarships list"
+  },
+  {
+   "id": "ie-galway-intl",
+   "url": "https://www.universityofgalway.ie/internationalscholarships/",
+   "domain": "universityofgalway.ie",
+   "query": "international student scholarships",
+   "split": "excluded",
+   "excluded_because": "portal page without one programme's terms"
+  },
+  {
+   "id": "nl-tudelft-effen",
+   "url": "https://www.tudelft.nl/onderwijs/studievoorlichting/praktische-zaken/scholarships",
+   "domain": "tudelft.nl",
+   "query": "Justus Louise van Effen Excellence Scholarships",
+   "split": "test"
+  },
+  {
+   "id": "nl-leiden-lexs",
+   "url": "https://www.universiteitleiden.nl/en/scholarships/sea/leiden-university-excellence-scholarship-lexs",
+   "domain": "universiteitleiden.nl",
+   "query": "Leiden Excellence Scholarship",
+   "split": "test"
+  },
+  {
+   "id": "nl-tue-lundqvist",
+   "url": "https://www.tue.nl/en/our-university/about-the-university/publications",
+   "domain": "tue.nl",
+   "query": "Amandus Lundqvist Scholarship",
+   "split": "excluded",
+   "excluded_because": "publications page, not the scholarship"
+  },
+  {
+   "id": "nl-ihe-delft",
+   "url": "https://www.un-ihe.org/education/master-programmes/sids-scholarships",
+   "domain": "un-ihe.org",
+   "query": "scholarships fellowships",
+   "split": "test"
+  },
+  {
+   "id": "de-humboldt-fellow",
+   "url": "https://www.humboldt-foundation.de/en/apply/sponsorship-programmes/humboldt-research-fellowship",
+   "domain": "humboldt-foundation.de",
+   "query": "Humboldt Research Fellowship",
+   "split": "test"
+  },
+  {
+   "id": "de-hertie-schol",
+   "url": "https://www.hertie-school.org/en/mia/funding",
+   "domain": "hertie-school.org",
+   "query": "scholarships financial aid master",
+   "split": "excluded",
+   "excluded_because": "funding options overview (several awards)"
+  },
+  {
+   "id": "de-constructor-schol",
+   "url": "https://constructor.university/scholarships",
+   "domain": "constructor.university",
+   "query": "scholarships",
+   "split": "excluded",
+   "excluded_because": "table of nine scholarships"
+  },
+  {
+   "id": "fr-saclay-ims",
+   "url": "https://www.universite-paris-saclay.fr/en/admission/bourses-et-aides-financieres/international-masters-scholarships-program",
+   "domain": "universite-paris-saclay.fr",
+   "query": "International Master's Scholarship Program",
+   "split": "test"
+  },
+  {
+   "id": "fr-sciencespo-boutmy",
+   "url": "https://www.sciencespo.fr/students/en/fees-funding/bursaries-financial-aid/emile-boutmy-scholarship/",
+   "domain": "sciencespo.fr",
+   "query": "Emile Boutmy scholarship",
+   "split": "test"
+  },
+  {
+   "id": "fr-enslyon-ampere",
+   "url": "https://economie.ens-lyon.fr/en/news/bursar-ampere-scholarship-excellence",
+   "domain": "ens-lyon.fr",
+   "query": "Ampere excellence scholarships",
+   "split": "excluded",
+   "excluded_because": "2023 news item about awardees"
+  },
+  {
+   "id": "ch-unil-master",
+   "url": "https://iris.unil.ch/entities/publication/323c067b-af68-42c6-919f-b06d1d99c277",
+   "domain": "unil.ch",
+   "query": "master's grants foreign students",
+   "split": "excluded",
+   "excluded_because": "a history publication, not the grant"
+  },
+  {
+   "id": "fi-helsinki-schol",
+   "url": "https://www.helsinki.fi/en/admissions-and-education/apply-bachelors-and-masters-programmes/tuition-fees-and-scholarship-programme",
+   "domain": "helsinki.fi",
+   "query": "scholarships international master's",
+   "split": "test"
+  },
+  {
+   "id": "se-kth-schol",
+   "url": "https://www.kth.se/en/studies/master/admissions/scholarships/kth-scholarship-1.72827",
+   "domain": "kth.se",
+   "query": "KTH Scholarship",
+   "split": "test"
+  },
+  {
+   "id": "se-chalmers-schol",
+   "url": "https://www.chalmers.se/en/education/application-and-admission/scholarships-for-fee-paying-students/",
+   "domain": "chalmers.se",
+   "query": "scholarships IPOET",
+   "split": "excluded",
+   "excluded_because": "list of Chalmers and external scholarships"
+  },
+  {
+   "id": "it-bocconi-awards",
+   "url": "https://www.unibocconi.it/en/current-students/funding/funding-bachelor-science-and-law-programs",
+   "domain": "unibocconi.it",
+   "query": "International Awards scholarship",
+   "split": "excluded",
+   "excluded_because": "funding overview (several awards)"
+  },
+  {
+   "id": "at-ista-phd",
+   "url": "https://phd.pages.ista.ac.at/funding-and-awards/",
+   "domain": "ista.ac.at",
+   "query": "PhD program funding salary",
+   "split": "test"
+  },
+  {
+   "id": "it-eui-grants",
+   "url": "https://www.eui.eu/apply?id=max-weber-fellowships",
+   "domain": "eui.eu",
+   "query": "PhD grants funding",
+   "split": "test"
+  },
+  {
+   "id": "be-coleurope-schol",
+   "url": "https://www.coleurope.eu/admission/scholarships/other-sources-possible-scholarships",
+   "domain": "coleurope.eu",
+   "query": "scholarships",
+   "split": "excluded",
+   "excluded_because": "page about other sources and a guest lecture"
+  },
+  {
+   "id": "kr-kaist-intl",
+   "url": "https://admission.kaist.ac.kr/graduate/",
+   "domain": "kaist.ac.kr",
+   "query": "international students scholarship",
+   "split": "excluded",
+   "excluded_because": "empty page"
+  },
+  {
+   "id": "au-monash-merit",
+   "url": "https://www.monash.edu/study/fees-scholarships/scholarships/find-a-scholarship/international-merit-5770",
+   "domain": "monash.edu",
+   "query": "Monash International Merit Scholarship",
+   "split": "test"
+  },
+  {
+   "id": "au-uq-rtp",
+   "url": "https://qbi.uq.edu.au/study/student-research-programs",
+   "domain": "uq.edu.au",
+   "query": "Research Training Program scholarship",
+   "split": "excluded",
+   "excluded_because": "list of research programs"
+  },
+  {
+   "id": "au-unsw-scientia",
+   "url": "https://www.unsw.edu.au/research/hdr/find-a-project/scientia-phd-projects",
+   "domain": "unsw.edu.au",
+   "query": "Scientia PhD scholarship",
+   "split": "excluded",
+   "excluded_because": "list of PhD projects"
+  },
+  {
+   "id": "ca-toronto-pearson",
+   "url": "https://future.utoronto.ca/pearson-scholarships",
+   "domain": "future.utoronto.ca",
+   "query": "Lester B. Pearson International Scholarship",
+   "split": "test"
+  },
+  {
+   "id": "us-obama-scholars",
+   "url": "https://www.obama.org/programs/scholars/",
+   "domain": "obama.org",
+   "query": "Obama Foundation Scholars",
+   "split": "test"
+  },
+  {
+   "id": "int-opec-fund",
+   "url": "https://opecfund.org/",
+   "domain": "opecfund.org",
+   "query": "scholarship program",
+   "split": "excluded",
+   "excluded_because": "organisation home page"
+  },
+  {
+   "id": "cn-yenching",
+   "url": "https://yenchingacademy.pku.edu.cn/",
+   "domain": "yenchingacademy.pku.edu.cn",
+   "query": "scholarship",
+   "split": "test"
+  },
+  {
+   "id": "us-mitchell",
+   "url": "https://us-irelandalliance.org/mitchellscholarship",
+   "domain": "us-irelandalliance.org",
+   "query": "Mitchell Scholarship",
+   "split": "test"
+  },
+  {
+   "id": "uk-marshall",
+   "url": "https://www.marshallscholarship.org/apply/eligibility/",
+   "domain": "marshallscholarship.org",
+   "query": "Marshall Scholarship eligibility",
+   "split": "test"
+  },
+  {
+   "id": "jp-ashinaga",
+   "url": "https://www.ashinaga.org/en/our-work/ashinaga-africa-initiative/",
+   "domain": "ashinaga.org",
+   "query": "Ashinaga Africa Initiative",
+   "split": "test"
+  },
+  {
+   "id": "il-weizmann-fgs",
+   "url": "https://wis-wander.weizmann.ac.il/sites/default/files/images/Books/The%20Graduates.pdf",
+   "domain": "weizmann.ac.il",
+   "query": "Feinberg Graduate School scholarship",
+   "split": "excluded",
+   "excluded_because": "anniversary booklet (PDF)"
+  },
+  {
+   "id": "za-aims",
+   "url": "https://ai.aims.ac.za/",
+   "domain": "aims.ac.za",
+   "query": "scholarships",
+   "split": "test"
+  },
+  {
+   "id": "eg-auc-intl",
+   "url": "https://www.aucegypt.edu/admissions/fellowships/listings/international-graduate",
+   "domain": "aucegypt.edu",
+   "query": "international graduate fellowships",
+   "split": "test"
+  },
+  {
+   "id": "nl-studyinnl-holland",
+   "url": "https://www.studyinnl.org/",
+   "domain": "studyinnl.org",
+   "query": "Holland Scholarship",
+   "split": "excluded",
+   "excluded_because": "home page"
+  },
+  {
+   "id": "eu-erasmus-mundus",
+   "url": "https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters",
+   "domain": "erasmus-plus.ec.europa.eu",
+   "query": "Erasmus Mundus Joint Masters scholarships",
+   "split": "test"
+  },
+  {
+   "id": "hk-hkust-pg",
+   "url": "https://seng.hkust.edu.hk/academics/research-postgraduate/scholarships-studentships-awards",
+   "domain": "hkust.edu.hk",
+   "query": "postgraduate studentship",
+   "split": "excluded",
+   "excluded_because": "list of studentships and awards"
+  },
+  {
+   "id": "cn-tsinghua-intl",
+   "url": "https://yz.tsinghua.edu.cn/en/Financial_Aid/Scholarship_Application.htm",
+   "domain": "tsinghua.edu.cn",
+   "query": "international students scholarship",
+   "split": "excluded",
+   "excluded_because": "application instructions for several scholarships"
+  },
+  {
+   "id": "nz-otago-doctoral",
+   "url": "https://www.otago.ac.nz/courses/scholarships/phd",
+   "domain": "otago.ac.nz",
+   "query": "doctoral scholarship",
+   "split": "excluded",
+   "excluded_because": "list of doctoral scholarships"
+  },
+  {
+   "id": "ca-waterloo-intl",
+   "url": "https://uwaterloo.ca/future-students/financing/international-scholarships",
+   "domain": "uwaterloo.ca",
+   "query": "international student entrance scholarships",
+   "split": "excluded",
+   "excluded_because": "list of scholarships"
+  },
+  {
+   "id": "us-aauw-intl",
+   "url": "https://www.aauw.org/resources/programs/fellowships-grants/aauw-international-fellowships/",
+   "domain": "aauw.org",
+   "query": "International Fellowships",
+   "split": "test"
+  },
+  {
+   "id": "ro-gov-schol",
+   "url": "https://scholarships.studyinromania.gov.ro/",
+   "domain": "studyinromania.gov.ro",
+   "query": "scholarships Romanian government",
+   "split": "excluded",
+   "excluded_because": "login page"
+  },
+  {
+   "id": "ee-dora",
+   "url": "https://harno.ee/en/scholarships-and-grants/scholarships-studying-and-working-estonia/scholarships-international",
+   "domain": "harno.ee",
+   "query": "scholarships international students",
+   "split": "excluded",
+   "excluded_because": "list of scholarships"
+  },
+  {
+   "id": "mx-amexcid",
+   "url": "https://sigca.sre.gob.mx/",
+   "domain": "gob.mx",
+   "query": "becas excelencia gobierno de mexico extranjeros",
+   "split": "excluded",
+   "excluded_because": "login page"
+  },
+  {
+   "id": "pt-gulbenkian",
+   "url": "https://gulbenkian.pt/bolsas-gulbenkian/",
+   "domain": "gulbenkian.pt",
+   "query": "bolsas de estudo",
+   "split": "excluded",
+   "excluded_because": "portal of several grants"
+  },
+  {
+   "id": "uk-exeter-gex",
+   "url": "https://www.exeter.ac.uk/study/funding/exeterexcellence/",
+   "domain": "exeter.ac.uk",
+   "query": "Global Excellence Scholarship international",
+   "split": "test"
+  },
+  {
+   "id": "uk-nottingham-dsms",
+   "url": "https://www.nottingham.ac.uk/pgstudy/funding/developing-solutions-masters-scholarship",
+   "domain": "nottingham.ac.uk",
+   "query": "Developing Solutions Masters Scholarship",
+   "split": "test"
+  },
+  {
+   "id": "uk-bath-intl",
+   "url": "https://www.bath.ac.uk/topics/taught-postgraduate-scholarships-bursaries-and-other-funding/",
+   "domain": "bath.ac.uk",
+   "query": "international scholarships postgraduate taught",
+   "split": "excluded",
+   "excluded_because": "list of scholarships"
+  },
+  {
+   "id": "uk-york-gex",
+   "url": "https://www.york.ac.uk/study/undergraduate/fees-funding/international/scholarships/dean-global-excellence-scholarship/",
+   "domain": "york.ac.uk",
+   "query": "Global Excellence Scholarships",
+   "split": "test"
+  },
+  {
+   "id": "uk-cardiff-vc",
+   "url": "https://www.cardiff.ac.uk/study/international/funding-and-fees/international-scholarships/vc-international-scholarship",
+   "domain": "cardiff.ac.uk",
+   "query": "Vice-Chancellor's International Scholarship",
+   "split": "test"
+  },
+  {
+   "id": "uk-aberdeen-intl",
+   "url": "https://www.abdn.ac.uk/study/funding/644",
+   "domain": "abdn.ac.uk",
+   "query": "international scholarship postgraduate",
+   "split": "test"
+  },
+  {
+   "id": "uk-strath-intl",
+   "url": "https://www.strath.ac.uk/engineering/studywithus/scholarships/internationalscholarships/",
+   "domain": "strath.ac.uk",
+   "query": "international scholarships",
+   "split": "excluded",
+   "excluded_because": "three faculty awards on one page"
+  },
+  {
+   "id": "ie-dcu-intl",
+   "url": "https://www.dcu.ie/scholarships/international-scholarships",
+   "domain": "dcu.ie",
+   "query": "international scholarships",
+   "split": "excluded",
+   "excluded_because": "list"
+  },
+  {
+   "id": "ie-maynooth-intl",
+   "url": "https://www.maynoothuniversity.ie/international/scholarships",
+   "domain": "maynoothuniversity.ie",
+   "query": "international scholarships",
+   "split": "excluded",
+   "excluded_because": "international office portal"
+  },
+  {
+   "id": "nl-wur-avdb",
+   "url": "https://www.wur.nl/en/education/master/study-expenses-masters/scholarships",
+   "domain": "wur.nl",
+   "query": "Anne van den Ban Fund",
+   "split": "excluded",
+   "excluded_because": "list of master's scholarships"
+  },
+  {
+   "id": "nl-radboud-rsp",
+   "url": "https://www.ru.nl/en/education/scholarships/radboud-scholarship-programme",
+   "domain": "ru.nl",
+   "query": "Radboud Scholarship Programme",
+   "split": "test"
+  },
+  {
+   "id": "nl-vu-fellowship",
+   "url": "https://research.vu.nl/",
+   "domain": "vu.nl",
+   "query": "VU Amsterdam Fellowship Programme",
+   "split": "excluded",
+   "excluded_because": "research portal home"
+  },
+  {
+   "id": "nl-eur-holland",
+   "url": "https://www.eur.nl/en/esl/education/scholarships",
+   "domain": "eur.nl",
+   "query": "Erasmus University Holland Scholarship",
+   "split": "excluded",
+   "excluded_because": "law school scholarships list"
+  },
+  {
+   "id": "be-ugent-topup",
+   "url": "https://imanema.ugent.be/apply/scholarships/",
+   "domain": "ugent.be",
+   "query": "Top-up grants scholarship",
+   "split": "excluded",
+   "excluded_because": "list of scholarships for one master"
+  },
+  {
+   "id": "be-antwerp-schol",
+   "url": "https://www.uantwerpen.be/en/study/scholarships/",
+   "domain": "uantwerpen.be",
+   "query": "scholarships international master",
+   "split": "excluded",
+   "excluded_because": "list of scholarships"
+  },
+  {
+   "id": "de-naumann-schol",
+   "url": "https://www.freiheit.org/student-scholarships",
+   "domain": "freiheit.org",
+   "query": "scholarship international students",
+   "split": "excluded",
+   "excluded_because": "overview with links per group"
+  },
+  {
+   "id": "de-villigst-intl",
+   "url": "https://www.evstudienwerk.de/english/scholarship-for-students/",
+   "domain": "evstudienwerk.de",
+   "query": "international scholarship",
+   "split": "test"
+  },
+  {
+   "id": "ch-uzh-schol",
+   "url": "https://www.uzh.ch/en/explore/portrait/profile.html",
+   "domain": "uzh.ch",
+   "query": "master's scholarship",
+   "split": "excluded",
+   "excluded_because": "university profile page"
+  },
+  {
+   "id": "ch-iheid-schol",
+   "url": "https://www.graduateinstitute.ch/fees-financial-aid",
+   "domain": "graduateinstitute.ch",
+   "query": "scholarships financial aid",
+   "split": "excluded",
+   "excluded_because": "fees and financial aid overview"
+  },
+  {
+   "id": "dk-aarhus-schol",
+   "url": "https://masters.au.dk/scholarships-and-grants",
+   "domain": "au.dk",
+   "query": "scholarships tuition waiver",
+   "split": "excluded",
+   "excluded_because": "list of grants"
+  },
+  {
+   "id": "dk-ku-schol",
+   "url": "https://www.ku.dk/studies/admission/application-deposit-fee-and-tuition-fees",
+   "domain": "ku.dk",
+   "query": "scholarships tuition waiver",
+   "split": "excluded",
+   "excluded_because": "tuition fee page"
+  },
+  {
+   "id": "fi-tuni-schol",
+   "url": "https://www.tuni.fi/en/tau/financial-matters/tuition-fees-and-scholarships",
+   "domain": "tuni.fi",
+   "query": "scholarships international",
+   "split": "test"
+  },
+  {
+   "id": "at-wu-schol",
+   "url": "https://www.wu.ac.at/en/the-university/news-and-events/news/details-news/detail/new-scholarship-program-for-international-students",
+   "domain": "wu.ac.at",
+   "query": "scholarships international",
+   "split": "excluded",
+   "excluded_because": "2021 news item"
+  },
+  {
+   "id": "jp-yoneyama",
+   "url": "https://www.rotary-yoneyama.or.jp/overseas-s/index_english.html",
+   "domain": "rotary-yoneyama.or.jp",
+   "query": "scholarship",
+   "split": "test"
+  },
+  {
+   "id": "kr-korea-univ",
+   "url": "https://www.korea.edu/en/1032/subview.do",
+   "domain": "korea.edu",
+   "query": "international graduate scholarship",
+   "split": "excluded",
+   "excluded_because": "graduate admissions page"
+  },
+  {
+   "id": "tw-nthu-intl",
+   "url": "https://apply.nthu.edu.tw/en/article/102-nthu-scholarship",
+   "domain": "nthu.edu.tw",
+   "query": "international student scholarship",
+   "split": "test"
+  },
+  {
+   "id": "tw-ncku-intl",
+   "url": "https://oia.ncku.edu.tw/p/404-1032-229890.php?Lang=en",
+   "domain": "ncku.edu.tw",
+   "query": "international scholarship",
+   "split": "excluded",
+   "excluded_because": "navigation page"
+  },
+  {
+   "id": "in-nsf-pg",
+   "url": "https://pg.nsfoundation.co.in/",
+   "domain": "nsfoundation.co.in",
+   "query": "postgraduate scholarship",
+   "split": "test"
+  },
+  {
+   "id": "in-kcmahindra",
+   "url": "https://www.kcmet.org/what-we-do-Scholarship-Grants.aspx",
+   "domain": "kcmet.org",
+   "query": "scholarship postgraduate abroad",
+   "split": "excluded",
+   "excluded_because": "list of grants"
+  },
+  {
+   "id": "lb-aub-schol",
+   "url": "https://www.aub.edu.lb/faid/Pages/Scholarships-Graduate-Students.aspx",
+   "domain": "aub.edu.lb",
+   "query": "scholarships graduate",
+   "split": "excluded",
+   "excluded_because": "list page"
+  },
+  {
+   "id": "za-wits-pg",
+   "url": "https://www.wits.ac.za/study-at-wits/financial-aid-and-scholarships-administration/scholarships-and-bursaries/",
+   "domain": "wits.ac.za",
+   "query": "postgraduate merit award",
+   "split": "excluded",
+   "excluded_because": "list of bursaries"
+  },
+  {
+   "id": "za-up-pg",
+   "url": "https://www.up.ac.za/students/postgraduate-funding-opportunities",
+   "domain": "up.ac.za",
+   "query": "postgraduate bursaries",
+   "split": "excluded",
+   "excluded_because": "list of funding"
+  },
+  {
+   "id": "ca-banting",
+   "url": "https://banting.fellowships-bourses.gc.ca/en/app-dem_elig-adm.html?wbdisable=true",
+   "domain": "banting.fellowships-bourses.gc.ca",
+   "query": "eligibility",
+   "split": "test"
+  },
+  {
+   "id": "ca-trudeau",
+   "url": "https://www.trudeaufoundation.ca/scholarship/",
+   "domain": "trudeaufoundation.ca",
+   "query": "doctoral scholarship",
+   "split": "test"
+  },
+  {
+   "id": "us-pdsoros",
+   "url": "https://pdsoros.org/eligibility/",
+   "domain": "pdsoros.org",
+   "query": "fellowship eligibility",
+   "split": "test"
+  },
+  {
+   "id": "us-jkcf-grad",
+   "url": "https://www.jkcf.org/cooke-scholar-community/graduate-scholarship/",
+   "domain": "jkcf.org",
+   "query": "graduate arts award",
+   "split": "test"
+  },
+  {
+   "id": "nz-massey-intl",
+   "url": "https://www.massey.ac.nz/study/international-students/",
+   "domain": "massey.ac.nz",
+   "query": "international scholarship",
+   "split": "excluded",
+   "excluded_because": "international students portal"
+  },
+  {
+   "id": "nz-waikato-intl",
+   "url": "https://www.waikato.ac.nz/study/scholarships/find-a-scholarship/vice-chancellors-international-excellence-scholarship/",
+   "domain": "waikato.ac.nz",
+   "query": "international excellence scholarship",
+   "split": "test"
+  },
+  {
+   "id": "au-macquarie-vc",
+   "url": "https://www.mq.edu.au/study/admissions-and-entry/scholarships",
+   "domain": "mq.edu.au",
+   "query": "Vice-Chancellor's International Scholarship",
+   "split": "excluded",
+   "excluded_because": "scholarships portal"
+  },
+  {
+   "id": "au-rmit-intl",
+   "url": "https://www.rmit.edu.au/scholarships/international-scholarships",
+   "domain": "rmit.edu.au",
+   "query": "international scholarship",
+   "split": "excluded",
+   "excluded_because": "list of scholarships"
+  },
+  {
+   "id": "au-deakin-intl",
+   "url": "https://www.deakin.edu.au/international-students/international-student-scholarships",
+   "domain": "deakin.edu.au",
+   "query": "Vice-Chancellor's International Scholarship",
+   "split": "excluded",
+   "excluded_because": "list of scholarships"
+  },
+  {
+   "id": "au-uwa-gex",
+   "url": "https://www.uwa.edu.au/study/scholarships-and-fees/scholarships/international-scholarships",
+   "domain": "uwa.edu.au",
+   "query": "Global Excellence Scholarship",
+   "split": "excluded",
+   "excluded_because": "list of scholarships"
+  },
+  {
+   "id": "uk-essex-gex",
+   "url": "https://online.essex.ac.uk/courses/msc-global-digital-marketing/",
+   "domain": "essex.ac.uk",
+   "query": "Global Excellence Scholarship",
+   "split": "excluded",
+   "excluded_because": "an online MSc course page"
+  },
+  {
+   "id": "uk-kent-intl",
+   "url": "https://www.kent.ac.uk/international/international-scholarships",
+   "domain": "kent.ac.uk",
+   "query": "Kent International Scholarship",
+   "split": "excluded",
+   "excluded_because": "list"
+  },
+  {
+   "id": "uk-lboro-intl",
+   "url": "https://www.lboro.ac.uk/study/postgraduate/fees-funding/masters-funding/excellence-scholarship/",
+   "domain": "lboro.ac.uk",
+   "query": "International Scholarship postgraduate",
+   "split": "test"
+  },
+  {
+   "id": "uk-soton-merit",
+   "url": "https://www.southampton.ac.uk/study/fees-funding/scholarships",
+   "domain": "southampton.ac.uk",
+   "query": "Global Merit Scholarship",
+   "split": "excluded",
+   "excluded_because": "list of university scholarships"
+  },
+  {
+   "id": "ie-tud-intl",
+   "url": "https://www.tudublin.ie/for-students/student-services-and-support/financial-support/ipas/",
+   "domain": "tudublin.ie",
+   "query": "international scholarships",
+   "split": "test"
+  },
+  {
+   "id": "nl-hanze-holland",
+   "url": "https://www.hanze.nl/en/studychoice/studying-at-hanze",
+   "domain": "hanze.nl",
+   "query": "Holland Scholarship",
+   "split": "excluded",
+   "excluded_because": "general study page"
+  },
+  {
+   "id": "de-kit-schol",
+   "url": "https://www.intl.kit.edu/istudies/8372.php",
+   "domain": "kit.edu",
+   "query": "scholarship international students",
+   "split": "excluded",
+   "excluded_because": "financing overview"
+  },
+  {
+   "id": "se-ju-schol",
+   "url": "https://ju.se/en/study-at-ju/application-and-admission/scholarships-and-funding.html",
+   "domain": "ju.se",
+   "query": "scholarship tuition",
+   "split": "excluded",
+   "excluded_because": "list of scholarships"
+  },
+  {
+   "id": "kr-unist-schol",
+   "url": "https://admu-intl.unist.ac.kr/admission-eng/index.do",
+   "domain": "unist.ac.kr",
+   "query": "international scholarship",
+   "split": "excluded",
+   "excluded_because": "admissions home"
+  },
+  {
+   "id": "au-qut-merit",
+   "url": "https://www.qut.edu.au/study/fees-and-scholarships/scholarships/international-merit-scholarship",
+   "domain": "qut.edu.au",
+   "query": "International Merit Scholarship",
+   "split": "test"
+  },
+  {
+   "id": "au-latrobe-gex",
+   "url": "https://www.latrobe.edu.au/international/applying/scholarships",
+   "domain": "latrobe.edu.au",
+   "query": "Global Excellence Scholarship",
+   "split": "excluded",
+   "excluded_because": "list"
+  },
+  {
+   "id": "au-swin-intl",
+   "url": "https://www.swinburne.edu.au/courses/scholarships/international-scholarships/",
+   "domain": "swinburne.edu.au",
+   "query": "International Excellence Scholarship",
+   "split": "excluded",
+   "excluded_because": "list"
+  },
+  {
+   "id": "ca-concordia-ita",
+   "url": "https://www.concordia.ca/gradstudies/funding/entrance-awards/international-tuition-award-of-excellence.html",
+   "domain": "concordia.ca",
+   "query": "International Tuition Award of Excellence",
+   "split": "test"
+  },
+  {
+   "id": "ca-uvic-intl",
+   "url": "https://webfilters.uvic.ca/scholarships?fsselect=Entrance+scholarship%2CInternational+students",
+   "domain": "uvic.ca",
+   "query": "international entrance scholarship",
+   "split": "excluded",
+   "excluded_because": "search results list"
+  },
+  {
+   "id": "uk-hull-intl",
+   "url": "https://www.hull.ac.uk/study/international-students",
+   "domain": "hull.ac.uk",
+   "query": "international scholarship",
+   "split": "excluded",
+   "excluded_because": "international students portal"
+  }
+ ],
+ "skipped": [
+  {
+   "id": "uk-bristol-thinkbig",
+   "url": "https://www.bristol.ac.uk/students/support/finances/scholarships/think-big-scholarships/",
+   "why": "robots.txt unreachable (URLError) - permission unconfirmed, not fetching"
+  },
+  {
+   "id": "uk-cambridge-trust",
+   "url": "https://www.cambridgetrust.org/",
+   "why": "robots.txt answered HTTP 403: the site blocks automated clients - not bypassed; check the page manually or via an official API/feed"
+  },
+  {
+   "id": "uk-oxford-clarendon",
+   "url": "https://www.ox.ac.uk/admissions/graduate/fees-and-funding/funding/clarendon",
+   "why": "robots.txt answered HTTP 403: the site blocks automated clients - not bypassed; check the page manually or via an official API/feed"
+  },
+  {
+   "id": "ie-ucd-global",
+   "url": "https://www.ucd.ie/global/study-at-ucd/scholarshipsfinances/scholarships/globalexcellencescholarships/",
+   "why": "robots.txt answered HTTP 403: the site blocks automated clients - not bypassed; check the page manually or via an official API/feed"
+  },
+  {
+   "id": "be-kuleuven-science",
+   "url": "https://www.kuleuven.be/scholarships/year/2026-2027/science-leuven-scholarship",
+   "why": "robots.txt unreachable (URLError) - permission unconfirmed, not fetching"
+  },
+  {
+   "id": "es-lacaixa-inphinit",
+   "why": "no result on the official domain"
+  },
+  {
+   "id": "hu-ceu-schol",
+   "url": "http://envsci.ceu.edu/ms-tuition-financial-aid",
+   "why": "robots.txt answered HTTP 200 - permission unconfirmed, not fetching"
+  },
+  {
+   "id": "cn-csc-gov",
+   "url": "https://campuschina.org/universities/index.html",
+   "why": "robots.txt unreachable (URLError) - permission unconfirmed, not fetching"
+  },
+  {
+   "id": "sg-nus-rs",
+   "url": "https://fass.nus.edu.sg/graduate/research/scholarships/nus-research-scholarship/",
+   "why": "robots.txt answered HTTP 200 - permission unconfirmed, not fetching"
+  },
+  {
+   "id": "in-iccr-schemes",
+   "url": "https://a2ascholarships.iccr.gov.in/",
+   "why": "robots.txt answered HTTP 200 - permission unconfirmed, not fetching"
+  },
+  {
+   "id": "au-adelaide-gae",
+   "url": "https://international.uni-qa.adelaide.edu.au/admissions/scholarships/global-academic-excellence-scholarship",
+   "why": "robots.txt unreachable (URLError) - permission unconfirmed, not fetching"
+  },
+  {
+   "id": "ca-ubc-imes",
+   "url": "https://you.ubc.ca/financial-planning/scholarships-awards-international-students/",
+   "why": "gave up after 1 attempts (URLError: <urlopen error [Errno 54] Connection reset by peer>)"
+  },
+  {
+   "id": "int-rotary-peace",
+   "url": "https://www.rotary.org/get-involved/our-programs/peace-fellowships",
+   "why": "gave up after 1 attempts (HTTP 429)"
+  },
+  {
+   "id": "jp-oist-phd",
+   "url": "https://www.oist.jp/admissions",
+   "why": "robots.txt answered HTTP 200 - permission unconfirmed, not fetching"
+  },
+  {
+   "id": "ae-mbzuai-schol",
+   "url": "https://mbzuai.ac.ae/admissions-aid",
+   "why": "robots.txt answered HTTP 403: the site blocks automated clients - not bypassed; check the page manually or via an official API/feed"
+  },
+  {
+   "id": "th-ait-schol",
+   "url": "https://ait.ac.th/financial/ait-scholarships/",
+   "why": "robots.txt answered HTTP 403: the site blocks automated clients - not bypassed; check the page manually or via an official API/feed"
+  },
+  {
+   "id": "tw-moe-taiwan",
+   "why": "no result on the official domain"
+  },
+  {
+   "id": "uk-edinburgh-napier",
+   "url": "https://www.napier.ac.uk/study-with-us/international-students/fees-scholarships-and-funding",
+   "why": "robots.txt unreachable (URLError) - permission unconfirmed, not fetching"
+  },
+  {
+   "id": "de-kaad-lateinamerika",
+   "url": "https://www.kaad.de/en/",
+   "why": "overlap with set heldout_k"
+  },
+  {
+   "id": "sk-gov-schol",
+   "url": "https://www.scholarships.sk/",
+   "why": "robots.txt answered HTTP 403: the site blocks automated clients - not bypassed; check the page manually or via an official API/feed"
+  },
+  {
+   "id": "br-pec-pg",
+   "url": "https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/bolsas/bolsas-e-auxilios-internacionais/encontre-aqui/paises/multinacional/programa-de-estudantes-convenio-de-pos-graduacao-pec-pg",
+   "why": "overlap with set dev_r21"
+  },
+  {
+   "id": "ar-uba-becas",
+   "url": "https://www.uba.ar/",
+   "why": "overlap with set heldout_k"
+  },
+  {
+   "id": "uk-qub-intl",
+   "url": "https://www.qub.ac.uk/Study/international-students/international-scholarships/",
+   "why": "robots.txt answered HTTP 403: the site blocks automated clients - not bypassed; check the page manually or via an official API/feed"
+  },
+  {
+   "id": "ie-ucc-intl",
+   "url": "https://www.ucc.ie/en/scholarships/internationaltable/",
+   "why": "robots.txt unreachable (URLError) - permission unconfirmed, not fetching"
+  },
+  {
+   "id": "fi-oulu-schol",
+   "url": "https://oulurepo.oulu.fi/handle/10024/54078",
+   "why": "robots.txt answered HTTP 403: the site blocks automated clients - not bypassed; check the page manually or via an official API/feed"
+  },
+  {
+   "id": "jp-honjo",
+   "why": "no result on the official domain"
+  },
+  {
+   "id": "uk-dundee-gex",
+   "url": "https://www.dundee.ac.uk/scholarships/global-excellence-scholarship-undergraduate-september-2026",
+   "why": "robots.txt answered HTTP 403: the site blocks automated clients - not bypassed; check the page manually or via an official API/feed"
+  },
+  {
+   "id": "uk-surrey-intl",
+   "url": "https://www.surrey.ac.uk/fees-and-funding/scholarships-and-bursaries/international-excellence-award-undergraduate",
+   "why": "robots.txt unreachable (URLError) - permission unconfirmed, not fetching"
+  },
+  {
+   "id": "jp-mext-id",
+   "url": "https://www.id.emb-japan.go.jp/itpr_id/sch.html",
+   "why": "robots.txt answered HTTP 403: the site blocks automated clients - not bypassed; check the page manually or via an official API/feed"
+  },
+  {
+   "id": "sg-smu-schol",
+   "url": "https://www.smu.edu.sg/moe-start/overseas-pg-scholarship",
+   "why": "robots.txt answered HTTP 200 - permission unconfirmed, not fetching"
+  },
+  {
+   "id": "nz-lincoln-intl",
+   "url": "https://www.lincoln.ac.nz/study/scholarships/international-scholarships/",
+   "why": "HTTP 403 - access restricted, not bypassed"
+  }
+ ]
+}

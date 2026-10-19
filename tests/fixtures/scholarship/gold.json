@@ -1,0 +1,354 @@
+{
+ "_comment": "Hand-labelled expected extraction for fixture pages. Used by scholarship_agent.quality and the tests. Only facts the page states explicitly are labelled.",
+ "fixtures": {
+  "official_page.html": {
+   "url": "https://www.example.ac.uk/scholarships/excellence",
+   "source_type": "official",
+   "nationality": {
+    "mode": "include",
+    "countries": [
+     "ID",
+     "KE",
+     "VN"
+    ]
+   },
+   "deadlines": [
+    [
+     "scholarship",
+     "2027-01-15"
+    ],
+    [
+     "admission",
+     "2026-12-01"
+    ],
+    [
+     "reference",
+     "2025-01-15"
+    ]
+   ],
+   "funding": {
+    "tuition": {
+     "full": true
+    },
+    "stipend": {
+     "amount": 1200,
+     "currency": "EUR",
+     "period": "month"
+    },
+    "travel": {
+     "amount": 1000,
+     "currency": "EUR",
+     "period": "total"
+    },
+    "insurance": {}
+   },
+   "language": {
+    "IELTS": 6.5,
+    "TOEFL_IBT": 90
+   },
+   "documents": [
+    "Passport",
+    "Academic transcripts",
+    "Degree certificate",
+    "CV",
+    "Recommendation letters",
+    "Motivation letter",
+    "Scholarship essay"
+   ],
+   "levels": [
+    "master"
+   ],
+   "min_gpa": 3.0,
+   "max_age": 35
+  },
+  "research.html": {
+   "url": "https://www.example.ac.uk/scholarships/research",
+   "source_type": "official",
+   "nationality": {
+    "mode": "any",
+    "countries": []
+   },
+   "deadlines": [],
+   "funding": {
+    "tuition": {},
+    "stipend": {
+     "amount": 19000,
+     "currency": "GBP",
+     "period": "year"
+    }
+   },
+   "language": {},
+   "documents": [
+    "Research proposal"
+   ],
+   "levels": [
+    "phd"
+   ]
+  },
+  "de_stipendium.html": {
+   "url": "https://www.beispiel-stiftung.de/stipendium",
+   "source_type": "official",
+   "nationality": {
+    "mode": "include",
+    "countries": [
+     "ID",
+     "KE",
+     "VN"
+    ]
+   },
+   "deadlines": [
+    [
+     "scholarship",
+     "2027-01-15"
+    ]
+   ],
+   "funding": {
+    "tuition": {
+     "full": true
+    },
+    "stipend": {
+     "amount": 1300,
+     "currency": "EUR",
+     "period": "month"
+    },
+    "insurance": {}
+   },
+   "language": {
+    "TESTDAF": 4,
+    "IELTS": 6.5
+   },
+   "documents": [
+    "CV",
+    "Motivation letter",
+    "Recommendation letters",
+    "Degree certificate",
+    "Academic transcripts"
+   ],
+   "levels": [
+    "phd"
+   ]
+  },
+  "fr_bourse.html": {
+   "url": "https://www.exemple-universite.fr/bourse",
+   "source_type": "official",
+   "nationality": {
+    "mode": "include",
+    "countries": [
+     "MA",
+     "SN",
+     "TN"
+    ]
+   },
+   "deadlines": [
+    [
+     "scholarship",
+     "2027-01-10"
+    ]
+   ],
+   "funding": {
+    "tuition": {
+     "full": true
+    },
+    "stipend": {
+     "amount": 1181,
+     "currency": "EUR",
+     "period": "month"
+    },
+    "travel": {}
+   },
+   "language": {
+    "DELF_DALF": 4
+   },
+   "documents": [
+    "CV",
+    "Motivation letter",
+    "Recommendation letters",
+    "Academic transcripts"
+   ],
+   "levels": [
+    "master"
+   ]
+  },
+  "es_beca.html": {
+   "url": "https://www.fundacion-ejemplo.es/becas",
+   "source_type": "official",
+   "nationality": {
+    "mode": "include",
+    "countries": [
+     "CO",
+     "MX",
+     "PE"
+    ]
+   },
+   "deadlines": [
+    [
+     "scholarship",
+     "2027-03-30"
+    ]
+   ],
+   "funding": {
+    "tuition": {
+     "full": true
+    },
+    "stipend": {
+     "amount": 1200,
+     "currency": "EUR",
+     "period": "month"
+    },
+    "insurance": {}
+   },
+   "language": {},
+   "documents": [
+    "Passport",
+    "Degree certificate",
+    "Academic transcripts",
+    "Motivation letter",
+    "Recommendation letters"
+   ],
+   "levels": [
+    "master"
+   ]
+  },
+  "id_beasiswa.html": {
+   "url": "https://www.lembaga-contoh.go.id/beasiswa",
+   "source_type": "official",
+   "nationality": {
+    "mode": "include",
+    "countries": [
+     "ID"
+    ]
+   },
+   "deadlines": [
+    [
+     "scholarship",
+     "2027-02-28"
+    ]
+   ],
+   "funding": {
+    "tuition": {
+     "full": true
+    },
+    "stipend": {
+     "amount": 5000000,
+     "currency": "IDR",
+     "period": "month"
+    },
+    "insurance": {}
+   },
+   "language": {
+    "IELTS": 6.0,
+    "TOEFL_IBT": 80
+   },
+   "documents": [
+    "Passport",
+    "Degree certificate",
+    "Academic transcripts",
+    "Recommendation letters",
+    "Scholarship essay"
+   ],
+   "levels": [
+    "master"
+   ]
+  },
+  "jsonld_grant.html": {
+   "url": "https://www.example-marine.org/fellowship",
+   "source_type": "official",
+   "nationality": {
+    "mode": "include",
+    "countries": [
+     "FJ",
+     "TO",
+     "WS"
+    ]
+   },
+   "deadlines": [
+    [
+     "scholarship",
+     "2027-02-01"
+    ]
+   ],
+   "funding": {
+    "other": {
+     "amount": 25000,
+     "currency": "USD"
+    }
+   },
+   "language": {},
+   "documents": [],
+   "levels": []
+  },
+  "conflict_deadline.html": {
+   "url": "https://www.example.edu/leadership",
+   "source_type": "official",
+   "nationality": {
+    "mode": "any",
+    "countries": []
+   },
+   "deadlines": [
+    [
+     "scholarship",
+     "2027-03-01"
+    ],
+    [
+     "scholarship",
+     "2027-03-15"
+    ]
+   ],
+   "funding": {
+    "tuition": {
+     "full": true
+    }
+   },
+   "language": {},
+   "documents": [],
+   "levels": [
+    "master"
+   ],
+   "expect_conflict": true
+  },
+  "call_pdf": {
+   "url": "https://www.example-agency.gov/call.pdf",
+   "source_type": "official",
+   "pdf_lines": [
+    "Call for applications: Example Government Master's Scholarship 2027",
+    "Eligibility: open to citizens of Nepal and Bhutan.",
+    "The scholarship covers full tuition fees and a monthly stipend of USD 900 per month.",
+    "The application deadline is 31 January 2027.",
+    "Required documents: passport, academic transcripts, CV and a personal statement of maximum 600 words."
+   ],
+   "nationality": {
+    "mode": "include",
+    "countries": [
+     "BT",
+     "NP"
+    ]
+   },
+   "deadlines": [
+    [
+     "scholarship",
+     "2027-01-31"
+    ]
+   ],
+   "funding": {
+    "tuition": {
+     "full": true
+    },
+    "stipend": {
+     "amount": 900,
+     "currency": "USD",
+     "period": "month"
+    }
+   },
+   "language": {},
+   "documents": [
+    "Passport",
+    "Academic transcripts",
+    "CV",
+    "Personal statement"
+   ],
+   "levels": [
+    "master"
+   ]
+  }
+ }
+}

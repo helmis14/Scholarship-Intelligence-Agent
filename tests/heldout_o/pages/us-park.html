@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+<script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://park.ncsu.edu/xmlrpc.php">
+
+	<!-- Prefetch all Roboto font weights -->
+	<link rel="preload" href="https://fonts.gstatic.com/s/robotoslab/v16/BngMUXZYTXPIvIBgJJSb6ufN5qWr4xCC.woff2" as="font" type="font/woff2" crossorigin />
+	<link rel="preload" href="https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2" as="font" type="font/woff2" crossorigin />
+	<link rel="preload" href="https://fonts.gstatic.com/s/robotocondensed/v19/ieVg2ZhZI2eCN5jzbjEETS9weq8-19eDpCEobdNZUSdy4Q.woff2" as="font" type="font/woff2" crossorigin />
+
+	<link rel="icon" type="image/x-ico" href="https://park.ncsu.edu/wp-content/themes/hillsborough/dist/img/favicon.ico" />
+
+<title>Park Scholarships</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//cdn.ncsu.edu' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel="alternate" type="application/rss+xml" title="Park Scholarships &raquo; Feed" href="https://park.ncsu.edu/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Park Scholarships &raquo; Comments Feed" href="https://park.ncsu.edu/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://park.ncsu.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpark.ncsu.edu%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://park.ncsu.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpark.ncsu.edu%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel='stylesheet' id='sbi-tokens-local-css' href='https://park.ncsu.edu/wp-content/plugins/instagram-feed-pro/assets/tokens/sb-tokens-local.css?ver=6.13.0' media='all' />
+<link rel='stylesheet' id='sbi_styles-css' href='https://park.ncsu.edu/wp-content/plugins/instagram-feed-pro/css/sbi-styles.min.css?ver=6.13.0' media='all' />
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="wp-block-heading-inline-css">
+h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+/*# sourceURL=https://park.ncsu.edu/wp-includes/blocks/heading/style.min.css */
+</style>
+<style id="wp-block-image-inline-css">
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;backdrop-filter:blur(16px) saturate(180%);background-color:rgba(90,90,90,.25);border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto rgba(90,90,90,.25);outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:rgba(90,90,90,.25);border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .wp-lightbox-close-button{align-items:center;cursor:pointer;display:flex;font-family:inherit;gap:8px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 4px;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .wp-lightbox-close-button:focus,.wp-lightbox-overlay .wp-lightbox-close-button:hover,.wp-lightbox-overlay .wp-lightbox-close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .wp-lightbox-close-button:has(.wp-lightbox-close-text:not([hidden])) .wp-lightbox-close-icon svg{height:1em;width:1em}.wp-lightbox-overlay .wp-lightbox-close-icon svg{display:block}.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{align-items:center;bottom:16px;cursor:pointer;display:flex;font-family:inherit;gap:4px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 8px;position:absolute;z-index:2000002}.wp-lightbox-overlay .wp-lightbox-navigation-button-next[hidden],.wp-lightbox-overlay .wp-lightbox-navigation-button-prev[hidden]{display:none}@media (min-width:960px){.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{bottom:50%;transform:translateY(-50%)}}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:not(:hover):not(:active):not(.has-background),.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:not(:hover):not(:active):not(.has-background){background:none;border:none;padding:0 8px}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg{display:block;height:1.5em;width:1.5em}.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{left:calc(env(safe-area-inset-left) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-button-next{right:calc(env(safe-area-inset-right) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-icon svg{vertical-align:middle}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:2000001}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+/*# sourceURL=https://park.ncsu.edu/wp-includes/blocks/image/style.min.css */
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=https://park.ncsu.edu/wp-includes/blocks/paragraph/style.min.css */
+</style>
+<style id="wp-block-columns-inline-css">
+.wp-block-columns{box-sizing:border-box;display:flex;flex-wrap:wrap!important}@media (min-width:782px){.wp-block-columns{flex-wrap:nowrap!important}}.wp-block-columns{align-items:normal!important}.wp-block-columns.are-vertically-aligned-top{align-items:flex-start}.wp-block-columns.are-vertically-aligned-center{align-items:center}.wp-block-columns.are-vertically-aligned-bottom{align-items:flex-end}@media (max-width:781px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:100%!important}}@media (min-width:782px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column[style*=flex-basis]{flex-grow:0}}.wp-block-columns.is-not-stacked-on-mobile{flex-wrap:nowrap!important}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column[style*=flex-basis]{flex-grow:0}:where(.wp-block-columns){margin-bottom:1.75em}:where(.wp-block-columns.has-background){padding:1.25em 2.375em}.wp-block-column{flex-grow:1;min-width:0;overflow-wrap:break-word;word-break:break-word}.wp-block-column.is-vertically-aligned-top{align-self:flex-start}.wp-block-column.is-vertically-aligned-center{align-self:center}.wp-block-column.is-vertically-aligned-bottom{align-self:flex-end}.wp-block-column.is-vertically-aligned-stretch{align-self:stretch}.wp-block-column.is-vertically-aligned-bottom,.wp-block-column.is-vertically-aligned-center,.wp-block-column.is-vertically-aligned-top{width:100%}
+/*# sourceURL=https://park.ncsu.edu/wp-includes/blocks/columns/style.min.css */
+</style>
+<style id="wp-block-embed-inline-css">
+.wp-block-embed.alignleft,.wp-block-embed.alignright,.wp-block[data-align=left]>[data-type="core/embed"],.wp-block[data-align=right]>[data-type="core/embed"]{max-width:360px;width:100%}.wp-block-embed.alignleft .wp-block-embed__wrapper,.wp-block-embed.alignright .wp-block-embed__wrapper,.wp-block[data-align=left]>[data-type="core/embed"] .wp-block-embed__wrapper,.wp-block[data-align=right]>[data-type="core/embed"] .wp-block-embed__wrapper{min-width:280px}.wp-block-cover .wp-block-embed{min-height:240px;min-width:320px}.wp-block-group.is-layout-flex .wp-block-embed{flex:1 1 0%;min-width:0}.wp-block-embed{overflow-wrap:break-word}.wp-block-embed :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-embed iframe{max-width:100%}.wp-block-embed__wrapper{position:relative}.wp-embed-responsive .wp-has-aspect-ratio .wp-block-embed__wrapper:before{content:"";display:block;padding-top:50%}.wp-embed-responsive .wp-has-aspect-ratio iframe{bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.wp-embed-responsive .wp-embed-aspect-21-9 .wp-block-embed__wrapper:before{padding-top:42.85%}.wp-embed-responsive .wp-embed-aspect-18-9 .wp-block-embed__wrapper:before{padding-top:50%}.wp-embed-responsive .wp-embed-aspect-16-9 .wp-block-embed__wrapper:before{padding-top:56.25%}.wp-embed-responsive .wp-embed-aspect-4-3 .wp-block-embed__wrapper:before{padding-top:75%}.wp-embed-responsive .wp-embed-aspect-1-1 .wp-block-embed__wrapper:before{padding-top:100%}.wp-embed-responsive .wp-embed-aspect-9-16 .wp-block-embed__wrapper:before{padding-top:177.77%}.wp-embed-responsive .wp-embed-aspect-1-2 .wp-block-embed__wrapper:before{padding-top:200%}
+/*# sourceURL=https://park.ncsu.edu/wp-includes/blocks/embed/style.min.css */
+</style>
+<style id="wp-block-social-links-inline-css">
+.wp-block-social-links{background:none;box-sizing:border-box;margin-left:0;padding-left:0;padding-right:0;text-indent:0}.wp-block-social-links .wp-social-link a,.wp-block-social-links .wp-social-link a:hover{border-bottom:0;box-shadow:none;text-decoration:none}.wp-block-social-links .wp-social-link svg{height:1em;width:1em}.wp-block-social-links .wp-social-link span:not(.screen-reader-text){font-size:.65em;margin-left:.5em;margin-right:.5em}.wp-block-social-links.has-small-icon-size{font-size:16px}.wp-block-social-links,.wp-block-social-links.has-normal-icon-size{font-size:24px}.wp-block-social-links.has-large-icon-size{font-size:36px}.wp-block-social-links.has-huge-icon-size{font-size:48px}.wp-block-social-links.aligncenter{display:flex;justify-content:center}.wp-block-social-links.alignright{justify-content:flex-end}.wp-block-social-link{border-radius:9999px;display:block}@media not (prefers-reduced-motion){.wp-block-social-link{transition:transform .1s ease}}.wp-block-social-link{height:auto}.wp-block-social-link a{align-items:center;display:flex;line-height:0}.wp-block-social-link:hover{transform:scale(1.1)}.wp-block-social-links .wp-block-social-link.wp-social-link{display:inline-block;margin:0;padding:0}.wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor,.wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor svg,.wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor:active,.wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor:hover,.wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor:visited{fill:currentColor;color:currentColor}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link{background-color:#f0f0f0;color:#444}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-amazon{background-color:#f90;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-bandcamp{background-color:#1ea0c3;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-behance{background-color:#0757fe;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-bluesky{background-color:#0a7aff;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-codepen{background-color:#1e1f26;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-deviantart{background-color:#02e49b;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-discord{background-color:#5865f2;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-dribbble{background-color:#e94c89;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-dropbox{background-color:#4280ff;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-etsy{background-color:#f45800;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-facebook{background-color:#0866ff;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-fivehundredpx{background-color:#000;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-flickr{background-color:#0461dd;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-foursquare{background-color:#e65678;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-github{background-color:#24292d;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-goodreads{background-color:#eceadd;color:#382110}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-google{background-color:#ea4434;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-gravatar{background-color:#1d4fc4;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-instagram{background-color:#f00075;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-lastfm{background-color:#e21b24;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-linkedin{background-color:#0d66c2;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-mastodon{background-color:#3288d4;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-medium{background-color:#000;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-meetup{background-color:#f6405f;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-patreon{background-color:#000;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-pinterest{background-color:#e60122;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-pocket{background-color:#ef4155;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-reddit{background-color:#ff4500;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-skype{background-color:#0478d7;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-snapchat{stroke:#000;background-color:#fefc00;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-soundcloud{background-color:#ff5600;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-spotify{background-color:#1bd760;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-telegram{background-color:#2aabee;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-threads{background-color:#000;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-tiktok{background-color:#000;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-tumblr{background-color:#011835;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-twitch{background-color:#6440a4;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-twitter{background-color:#1da1f2;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-vimeo{background-color:#1eb7ea;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-vk{background-color:#4680c2;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-wordpress{background-color:#3499cd;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-whatsapp{background-color:#25d366;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-x{background-color:#000;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-yelp{background-color:#d32422;color:#fff}:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-youtube{background-color:red;color:#fff}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link{background:none}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link svg{height:1.25em;width:1.25em}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-amazon{color:#f90}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-bandcamp{color:#1ea0c3}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-behance{color:#0757fe}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-bluesky{color:#0a7aff}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-codepen{color:#1e1f26}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-deviantart{color:#02e49b}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-discord{color:#5865f2}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-dribbble{color:#e94c89}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-dropbox{color:#4280ff}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-etsy{color:#f45800}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-facebook{color:#0866ff}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-fivehundredpx{color:#000}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-flickr{color:#0461dd}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-foursquare{color:#e65678}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-github{color:#24292d}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-goodreads{color:#382110}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-google{color:#ea4434}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-gravatar{color:#1d4fc4}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-instagram{color:#f00075}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-lastfm{color:#e21b24}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-linkedin{color:#0d66c2}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-mastodon{color:#3288d4}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-medium{color:#000}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-meetup{color:#f6405f}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-patreon{color:#000}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-pinterest{color:#e60122}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-pocket{color:#ef4155}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-reddit{color:#ff4500}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-skype{color:#0478d7}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-snapchat{stroke:#000;color:#fff}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-soundcloud{color:#ff5600}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-spotify{color:#1bd760}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-telegram{color:#2aabee}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-threads{color:#000}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-tiktok{color:#000}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-tumblr{color:#011835}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-twitch{color:#6440a4}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-twitter{color:#1da1f2}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-vimeo{color:#1eb7ea}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-vk{color:#4680c2}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-whatsapp{color:#25d366}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-wordpress{color:#3499cd}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-x{color:#000}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-yelp{color:#d32422}:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-youtube{color:red}.wp-block-social-links.is-style-pill-shape .wp-social-link{width:auto}:root :where(.wp-block-social-links .wp-social-link a){padding:.25em}:root :where(.wp-block-social-links.is-style-logos-only .wp-social-link a){padding:0}:root :where(.wp-block-social-links.is-style-pill-shape .wp-social-link a){padding-left:.6666666667em;padding-right:.6666666667em}.wp-block-social-links:not(.has-icon-color):not(.has-icon-background-color) .wp-social-link-snapchat .wp-block-social-link-label{color:#000}
+/*# sourceURL=https://park.ncsu.edu/wp-includes/blocks/social-links/style.min.css */
+</style>
+<style id="wp-block-spacer-inline-css">
+.wp-block-spacer{clear:both}
+/*# sourceURL=https://park.ncsu.edu/wp-includes/blocks/spacer/style.min.css */
+</style>
+
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<link rel='stylesheet' id='wp-theme-css' href='https://park.ncsu.edu/wp-includes/css/dist/theme/design-tokens.min.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='wp-components-css' href='https://park.ncsu.edu/wp-includes/css/dist/components/style.min.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='wp-preferences-css' href='https://park.ncsu.edu/wp-includes/css/dist/preferences/style.min.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='wp-block-editor-css' href='https://park.ncsu.edu/wp-includes/css/dist/block-editor/style.min.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='ncsu-blocks-style-css-css' href='https://park.ncsu.edu/wp-content/plugins/ncsu-blocks/dist/blocks.style.build.css?ver=1.3.0' media='all' />
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--wolfpack-red: #cc0000;--wp--preset--color--gray-10: #f2f2f2;--wp--preset--color--gray-25: #cccccc;--wp--preset--color--gray-60: #666666;--wp--preset--color--gray-90: #333333;--wp--preset--color--reynolds-red: #990000;--wp--preset--color--pyroman-flame: #D14905;--wp--preset--color--hunt-yellow: #FAC800;--wp--preset--color--genomic-green: #6F7D1C;--wp--preset--color--carmichael-aqua: #008473;--wp--preset--color--innovation-blue: #427E93;--wp--preset--color--bio-indigo: #4156A1;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--very-small: 12px;--wp--preset--font-size--slightly-smaller: 15px;--wp--preset--font-size--normal: 17px;--wp--preset--font-size--slightly-larger: 25px;--wp--preset--font-size--very-large: 48px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-wolfpack-red-color{color: var(--wp--preset--color--wolfpack-red) !important;}.has-gray-10-color{color: var(--wp--preset--color--gray-10) !important;}.has-gray-25-color{color: var(--wp--preset--color--gray-25) !important;}.has-gray-60-color{color: var(--wp--preset--color--gray-60) !important;}.has-gray-90-color{color: var(--wp--preset--color--gray-90) !important;}.has-reynolds-red-color{color: var(--wp--preset--color--reynolds-red) !important;}.has-pyroman-flame-color{color: var(--wp--preset--color--pyroman-flame) !important;}.has-hunt-yellow-color{color: var(--wp--preset--color--hunt-yellow) !important;}.has-genomic-green-color{color: var(--wp--preset--color--genomic-green) !important;}.has-carmichael-aqua-color{color: var(--wp--preset--color--carmichael-aqua) !important;}.has-innovation-blue-color{color: var(--wp--preset--color--innovation-blue) !important;}.has-bio-indigo-color{color: var(--wp--preset--color--bio-indigo) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-wolfpack-red-background-color{background-color: var(--wp--preset--color--wolfpack-red) !important;}.has-gray-10-background-color{background-color: var(--wp--preset--color--gray-10) !important;}.has-gray-25-background-color{background-color: var(--wp--preset--color--gray-25) !important;}.has-gray-60-background-color{background-color: var(--wp--preset--color--gray-60) !important;}.has-gray-90-background-color{background-color: var(--wp--preset--color--gray-90) !important;}.has-reynolds-red-background-color{background-color: var(--wp--preset--color--reynolds-red) !important;}.has-pyroman-flame-background-color{background-color: var(--wp--preset--color--pyroman-flame) !important;}.has-hunt-yellow-background-color{background-color: var(--wp--preset--color--hunt-yellow) !important;}.has-genomic-green-background-color{background-color: var(--wp--preset--color--genomic-green) !important;}.has-carmichael-aqua-background-color{background-color: var(--wp--preset--color--carmichael-aqua) !important;}.has-innovation-blue-background-color{background-color: var(--wp--preset--color--innovation-blue) !important;}.has-bio-indigo-background-color{background-color: var(--wp--preset--color--bio-indigo) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-wolfpack-red-border-color{border-color: var(--wp--preset--color--wolfpack-red) !important;}.has-gray-10-border-color{border-color: var(--wp--preset--color--gray-10) !important;}.has-gray-25-border-color{border-color: var(--wp--preset--color--gray-25) !important;}.has-gray-60-border-color{border-color: var(--wp--preset--color--gray-60) !important;}.has-gray-90-border-color{border-color: var(--wp--preset--color--gray-90) !important;}.has-reynolds-red-border-color{border-color: var(--wp--preset--color--reynolds-red) !important;}.has-pyroman-flame-border-color{border-color: var(--wp--preset--color--pyroman-flame) !important;}.has-hunt-yellow-border-color{border-color: var(--wp--preset--color--hunt-yellow) !important;}.has-genomic-green-border-color{border-color: var(--wp--preset--color--genomic-green) !important;}.has-carmichael-aqua-border-color{border-color: var(--wp--preset--color--carmichael-aqua) !important;}.has-innovation-blue-border-color{border-color: var(--wp--preset--color--innovation-blue) !important;}.has-bio-indigo-border-color{border-color: var(--wp--preset--color--bio-indigo) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-very-small-font-size{font-size: var(--wp--preset--font-size--very-small) !important;}.has-slightly-smaller-font-size{font-size: var(--wp--preset--font-size--slightly-smaller) !important;}.has-normal-font-size{font-size: var(--wp--preset--font-size--normal) !important;}.has-slightly-larger-font-size{font-size: var(--wp--preset--font-size--slightly-larger) !important;}.has-very-large-font-size{font-size: var(--wp--preset--font-size--very-large) !important;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='ctf_styles-css' href='https://park.ncsu.edu/wp-content/plugins/custom-twitter-feeds/css/ctf-styles.min.css?ver=2.8.0' media='all' />
+<link rel='stylesheet' id='legacy-styles-css' href='https://park.ncsu.edu/wp-content/plugins/ncsu-shortcodes/old/shortcode-styles.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='ncsu_bootstrap_css-css' href='https://cdn.ncsu.edu/brand-assets/bootstrap/css/bootstrap.css?ver=3.1.0' media='all' />
+<link rel='stylesheet' id='hlb-styles-css' href='https://park.ncsu.edu/wp-content/themes/hillsborough/dist/style.css?ver=0.6.5' media='all' />
+<link rel='stylesheet' id='shortcodes_styles-css' href='https://park.ncsu.edu/wp-content/plugins/ncsu-shortcodes/assets/css/main.css?ver=7.1' media='all' />
+<script id="jquery-core-js" src="https://park.ncsu.edu/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://park.ncsu.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script id="shortcodes_scripts-js" src="https://park.ncsu.edu/wp-content/plugins/ncsu-shortcodes/assets/js/build/main.js?ver=7.1"></script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+<!-- Google Analytics snippet added by Site Kit -->
+<script id="google_gtagjs-js" src="https://www.googletagmanager.com/gtag/js?id=G-SEQMQ7L87Q" async></script>
+<script id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["park.ncsu.edu"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "G-SEQMQ7L87Q");
+//# sourceURL=google_gtagjs-js-after
+</script>
+<link rel="https://api.w.org/" href="https://park.ncsu.edu/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://park.ncsu.edu/wp-json/wp/v2/pages/5796" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://park.ncsu.edu/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1" />
+<link rel="canonical" href="https://park.ncsu.edu/" />
+<link rel='shortlink' href='https://park.ncsu.edu/' />
+<!-- Stream WordPress user activity plugin v4.4.0 -->
+<meta name="generator" content="Site Kit by Google 1.187.0" /><meta name="google-site-verification" content="2jMT12krgAJ8uisGQi7SDSQajWj63ALDwvCLYqwCbBA"><style id="wp-custom-css">
+.post-5796 {
+	overflow: hidden;
+}
+
+.row > .featured-image {
+	max-height: 350px;
+	overflow:hidden
+}
+
+.home-column--wider {
+	flex: 1 1 50%;
+	max-width:100%
+}
+
+.home-column--thinner {
+	margin-left:3.5rem;
+	flex: 1 1 15%;
+	max-width:100%
+}
+
+.flex-responsive {
+	flex-flow: row;
+}
+
+.c1-1x2 > .wp-block-column {
+	padding: 0 2em;
+}
+
+.c1-1x2 .wp-block-image figure {
+	padding-bottom: 0.5em;
+	padding-right: 0.5em;
+}
+
+.smallout {
+
+	font-size: 1.5rem;
+	height: calc(100% - 1.5rem);
+}
+
+.park-intro {
+	height: calc(100% - 1.5rem);
+}
+
+.ncsu-callout--thin-padding {
+	padding: 0.75em;
+}
+
+@media screen and (max-width: 992px) {
+	.flex-responsive {
+		flex-flow: column
+	}
+	.home-column--thinner {
+	margin-left:0;
+		margin-bottom:1.5em;
+	}
+}
+
+.dib {
+	display: inline-block
+}
+
+.recent-block {
+	background-color: #f2f2f2;
+	padding: 1em 10.6em;
+	margin: 0 -10.6em 0 -10.6em;
+}
+
+main#post-5796 {
+	margin-bottom: 0
+}
+
+.nav>li>a {
+	padding: 15px 25px;
+}
+
+#colophon .widget-title {
+	padding-top:0
+}
+
+@media screen and (max-width: 992px) {
+	
+	.wp-block-column {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+	
+	.wp-block-column .wp-block-button.alignright {
+		float: none;
+		text-align: center;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.wp-block-column .wp-block-button.alignleft {
+		float: none;
+		text-align: center;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.btn-green {
+	Background-color: #6F7D1C;
+}
+
+#input_1_1 {
+	color: black;
+}
+
+.gform_footer input[type="submit"] {
+	background-color: white;
+	color: #900;
+	border: 1px solid #900;
+}
+
+.gform_footer input[type="submit"]:hover {
+	background-color: #5e0000;
+	color: white;
+	border: 1px solid #900;
+}
+
+.post-template-default .featured-image {
+	display: none;
+}
+</style>
+
+<link rel='stylesheet' id='gravity_forms_theme_reset-css' href='https://park.ncsu.edu/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-reset.min.css?ver=3.1.1.2' media='all' />
+<link rel='stylesheet' id='gravity_forms_theme_foundation-css' href='https://park.ncsu.edu/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-foundation.min.css?ver=3.1.1.2' media='all' />
+<link rel='stylesheet' id='gravity_forms_theme_framework-css' href='https://park.ncsu.edu/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-framework.min.css?ver=3.1.1.2' media='all' />
+<link rel='stylesheet' id='gravity_forms_orbital_theme-css' href='https://park.ncsu.edu/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-orbital-theme.min.css?ver=3.1.1.2' media='all' />
+<style id="core-block-supports-inline-css">
+.wp-container-core-columns-is-layout-8f761849{flex-wrap:nowrap;}
+/*# sourceURL=core-block-supports-inline-css */
+</style>
+
+</head>
+
+<body class="home wp-singular page-template page-template-page-landing page-template-page-landing-php page page-id-5796 wp-embed-responsive wp-theme-hillsborough">
+
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<div id="ncstate-utility-bar"></div>
+
+	<header id="masthead" class="site-header container-fluid" role="banner">
+
+		<div class="container">
+			<div class="row">
+				<div class="site-branding modern "><a href="https://park.ncsu.edu" rel="home"><span class="site-title">Park Scholarships</span></a></div><!-- .site-branding -->											</div><!-- .row -->
+		</div><!-- .container -->
+
+		<div class="container-fluid">
+			<div class="row">
+				
+<nav id="site-navigation" class="main-navigation navbar navbar-default white modern hover" role="navigation">
+
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div><!-- .navbar-header -->
+
+	<div class="container">
+		<div class="row">
+			<div class="collapse navbar-collapse" id="navbar-collapse-main">
+				<ul id="menu-mainmenu" class="nav navbar-nav"><li class="dropdown menu-about-the-program"><a  href="https://park.ncsu.edu/about/" class="dropdown-toggle" aria-haspopup="true" data-toggle="dropdown" data-target="#">About the Program <span class="nav-down-bracket" aria-hidden="true"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <path d="M15.688 22.438l-10.5-10.5 1.375-1.313 9.125 9.125 9.75-9.75 1.375 1.313z"></path>
+</svg></span></a>
+<ul class="dropdown-menu">
+	<li class="menu-about-the-program"><a  href="https://park.ncsu.edu/about/">About the Program</a></li>
+	<li class="menu-the-park-scholars"><a  href="https://park.ncsu.edu/about/the-park-scholars/">The Park Scholars</a></li>
+	<li class="menu-staff-and-faculty"><a  href="https://park.ncsu.edu/about/the-program-community/">Staff and Faculty</a></li>
+	<li class="menu-park-alumni"><a  href="https://park.ncsu.edu/about/park-alumni/">Park Alumni</a></li>
+	<li class="menu-careers"><a  href="https://park.ncsu.edu/careers/">Careers</a></li>
+	<li class="menu-selection-committee"><a  href="https://park.ncsu.edu/apply/selection-commitee/">Selection Committee</a></li>
+	<li class="menu-parents-families"><a  href="https://park.ncsu.edu/?page_id=87">Parents &amp; Families</a></li>
+	<li class="menu-partnership-with-stamps-scholars-program"><a  href="https://park.ncsu.edu/about/park-partners-with-the-stamps-scholars-program/">Partnership with Stamps Scholars Program</a></li>
+	<li class="menu-nc-state-park-store"><a  href="https://park.ncsu.edu/nc-state-park-store/">NC State + Park Store</a></li>
+</ul>
+</li>
+<li class="dropdown menu-scholars"><a  href="https://park.ncsu.edu/the-park-experience/" class="dropdown-toggle" aria-haspopup="true" data-toggle="dropdown" data-target="#">Scholars <span class="nav-down-bracket" aria-hidden="true"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <path d="M15.688 22.438l-10.5-10.5 1.375-1.313 9.125 9.125 9.75-9.75 1.375 1.313z"></path>
+</svg></span></a>
+<ul class="dropdown-menu">
+	<li class="menu-park-enrichment-academy"><a  href="https://park.ncsu.edu/the-park-experience/">Park Enrichment Academy</a></li>
+	<li class="menu-enrichment-experiences"><a  href="https://park.ncsu.edu/the-park-experience/leadership/">Enrichment Experiences</a></li>
+	<li class="menu-park-scholar-initiatives"><a  href="https://park.ncsu.edu/the-park-experience/service/">Park Scholar Initiatives</a></li>
+	<li class="menu-faculty-mentoring"><a  href="https://park.ncsu.edu/the-park-experience/faculty-mentoring/">Faculty Mentoring</a></li>
+	<li class="menu-william-c-friday-award"><a  href="https://park.ncsu.edu/the-park-experience/friday-award/">William C. Friday Award</a></li>
+	<li class="menu-gerald-h-elkan-distinguished-lecture-in-science-and-society"><a  href="https://park.ncsu.edu/the-park-experience/elkan-lecture/">Gerald H. Elkan Distinguished Lecture in Science and Society</a></li>
+</ul>
+</li>
+<li class="menu-news"><a  href="https://park.ncsu.edu/?page_id=6712">News</a></li>
+<li class="dropdown menu-give"><a  href="https://park.ncsu.edu/give/" class="dropdown-toggle" aria-haspopup="true" data-toggle="dropdown" data-target="#">Give <span class="nav-down-bracket" aria-hidden="true"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <path d="M15.688 22.438l-10.5-10.5 1.375-1.313 9.125 9.125 9.75-9.75 1.375 1.313z"></path>
+</svg></span></a>
+<ul class="dropdown-menu">
+	<li class="menu-support-park-scholarships"><a  href="https://park.ncsu.edu/give/">Support Park Scholarships</a></li>
+	<li class="menu-ways-to-give"><a  href="https://park.ncsu.edu/give/ways-to-give/">Ways to Give</a></li>
+	<li class="menu-park-scholarships-funds"><a  href="https://park.ncsu.edu/give/funds/">Park Scholarships Funds</a></li>
+	<li class="menu-park-scholarships-endowment"><a  href="https://park.ncsu.edu/park-scholarships-endowment/">Park Scholarships Endowment</a></li>
+	<li class="menu-get-involved"><a  href="https://park.ncsu.edu/give/get-involved/">Get Involved</a></li>
+	<li class="menu-park-scholarships-day-of-giving"><a  href="https://park.ncsu.edu/give/dayofgiving/">Park Scholarships Day of Giving</a></li>
+</ul>
+</li>
+<li class="dropdown menu-apply"><a  href="https://park.ncsu.edu/apply/" class="dropdown-toggle" aria-haspopup="true" data-toggle="dropdown" data-target="#">Apply <span class="nav-down-bracket" aria-hidden="true"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <path d="M15.688 22.438l-10.5-10.5 1.375-1.313 9.125 9.125 9.75-9.75 1.375 1.313z"></path>
+</svg></span></a>
+<ul class="dropdown-menu">
+	<li class="menu-apply"><a  href="https://park.ncsu.edu/apply/">Apply</a></li>
+	<li class="menu-park-under-resourced-assistance"><a  href="https://park.ncsu.edu/apply/pura/">Park Under-Resourced Assistance</a></li>
+	<li class="menu-selection-criteria-process"><a  href="https://park.ncsu.edu/apply/selection-criteria/">Selection Criteria &amp; Process</a></li>
+	<li class="menu-for-counselors-advisors"><a  href="https://park.ncsu.edu/apply/for-counselors/">For Counselors &amp; Advisors</a></li>
+	<li class="menu-for-recommenders"><a  href="https://park.ncsu.edu/apply/for-recommenders/">For Recommenders</a></li>
+</ul>
+</li>
+<li class="menu-faq"><a  href="https://park.ncsu.edu/faq/">FAQ</a></li>
+</ul>
+				<div class="navbar-right">
+				<div class="pull-right"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="sr-only">Search</span><span class="header-search" aria-hidden="true"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <path d="M27.875 25l-7.125-7.188c0.938-1.438 1.438-3.125 1.438-4.875 0-2.375-0.938-4.688-2.688-6.375-1.688-1.688-3.938-2.625-6.375-2.625s-4.688 0.938-6.375 2.625c-1.75 1.688-2.688 4-2.688 6.375 0 2.438 0.938 4.688 2.688 6.438 1.688 1.688 3.938 2.625 6.375 2.625 1.75 0 3.438-0.5 4.875-1.438l7.125 7.125zM8.875 17.188c-1.125-1.125-1.75-2.625-1.75-4.25 0-1.563 0.625-3.063 1.75-4.188 1.125-1.188 2.625-1.75 4.25-1.75s3.125 0.563 4.25 1.75c1.125 1.125 1.75 2.625 1.75 4.188 0 1.625-0.625 3.125-1.75 4.25s-2.625 1.75-4.25 1.75-3.125-0.625-4.25-1.75z"></path>
+</svg></span></a><div class="nav-search dropdown-menu pull-right"><form role="search" method="get" class="search-form" action="https://park.ncsu.edu/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field"
+			placeholder="Search..."
+			value="" name="s"
+			title="Search for:" />
+	</label>
+	<button type="submit" class="search-submit btn"><span class="search-icon" aria-hidden="true"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <path d="M27.875 25l-7.125-7.188c0.938-1.438 1.438-3.125 1.438-4.875 0-2.375-0.938-4.688-2.688-6.375-1.688-1.688-3.938-2.625-6.375-2.625s-4.688 0.938-6.375 2.625c-1.75 1.688-2.688 4-2.688 6.375 0 2.438 0.938 4.688 2.688 6.438 1.688 1.688 3.938 2.625 6.375 2.625 1.75 0 3.438-0.5 4.875-1.438l7.125 7.125zM8.875 17.188c-1.125-1.125-1.75-2.625-1.75-4.25 0-1.563 0.625-3.063 1.75-4.188 1.125-1.188 2.625-1.75 4.25-1.75s3.125 0.563 4.25 1.75c1.125 1.125 1.75 2.625 1.75 4.188 0 1.625-0.625 3.125-1.75 4.25s-2.625 1.75-4.25 1.75-3.125-0.625-4.25-1.75z"></path>
+</svg></span><span class="screen-reader-text">Search</span></button>
+</form>
+</div></div>				</div><!-- .navbar-right -->
+			</div><!-- /.navbar-collapse -->
+		</div><!-- .row -->
+	</div>
+
+</nav><!-- #site-navigation -->
+			</div><!-- .row -->
+		</div><!-- .container-fluid -->
+
+	</header><!-- #masthead -->
+
+
+
+<div id="content" class="site-content">
+
+	<div class="container-fluid">
+		<div class="row">
+
+							
+					
+<main id="post-5796" role="main" class="post-5796 page type-page status-publish hentry">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<header class="entry-header sr-only">
+					<h1 class="entry-title">Home</h1>
+				</header>
+
+				</div><!-- .column --></div><!-- .row --></div><!-- .container --><div class="container-fluid test "><div class="ncsu-callout-bgimg nomargin">
+                        <div class="callout-media-wrapper callout-img"><div class="bgimg" style="background: url(https://park.ncsu.edu/wp-content/uploads/sites/28/2026/09/IMG_5935-scaled.jpg);"></div> <!-- .bgimg --></div>
+                        <div class="callout-content-container container">
+                            <div class="callout-content ncsu-callout white textcenter nomargin col-lg-6 col-md-6 col-sm-12 col-xs-12 bottom left"><a href="https://park.ncsu.edu/2026/09/18/30-years-of-impact-read-the-park-scholarships-annual-report-2025-2026/" target="_blank"><p class="callout-heading universcondensed">Read the Park Annual Report 2025-2026</p><p class="universroman"> <span class="right-arrow" aria-hidden="true"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generated by IcoMoon.io -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<path d="M8 14.625h10.438l-4.125-3.875 2.125-2.188 7.625 7.625-7.625 7.625-2.125-2.125 4.125-3.938h-10.438v-3.125z"></path>
+</svg>
+</span></p></a></div>
+                        </div><!-- .callout-img -->
+                    </div><!-- .ncsu-callout-bgimg --></div><!-- .container-fluid --><div class="container"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
+
+<div class="wp-block-columns are-vertically-aligned-bottom is-layout-flex wp-container-core-columns-is-layout-8f761849 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-vertically-aligned-bottom is-layout-flow wp-block-column-is-layout-flow">
+<p class="has-gray-10-background-color has-background wp-block-paragraph" style="font-size:24px">The&nbsp;<strong><a href="https://park.ncsu.edu/about/">Park Scholarships program</a></strong> provides a four-year scholarship to NC State University awarded on the basis of outstanding accomplishments and potential in scholarship, leadership, service and character.</p>
+</div>
+
+
+
+<div class="wp-block-column is-vertically-aligned-bottom is-layout-flow wp-block-column-is-layout-flow">
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe title="The Impact of NC State Park Scholars" width="1500" height="844" src="https://www.youtube.com/embed/hpco_lHa_04?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+</div>
+</div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-8f761849 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><div class="ncsu-callout innovationblue textcenter nomargin smallout"><a href="https://park.ncsu.edu/give/" target="_blank"><p class="callout-heading universcondensed"><span class="heading-icon" aria-hidden="true"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+<g>
+	<g>
+		<path d="M30.5-0.1C25-0.1,25,6.4,25,6.4h5.4c5.4,0,5.4-6.5,5.4-6.5H30.5z"/>
+		<path d="M19.6-0.1h-5.4c0,0,0,6.5,5.4,6.5H25C25,6.4,25-0.1,19.6-0.1z"/>
+	</g>
+	<g>
+		<path d="M18.6,9.7l-3.8,3.8C11,17.4,15.6,22,15.6,22l3.8-3.8C23.2,14.3,18.6,9.7,18.6,9.7z"/>
+		<path d="M7.1,21.2L3.3,25c0,0,4.6,4.6,8.4,0.8l3.8-3.8C15.6,22,11,17.4,7.1,21.2z"/>
+	</g>
+	<g>
+		<path d="M31.6,15.6l3.8,3.8c3.8,3.8-0.8,8.4-0.8,8.4L30.9,24C27,20.2,31.6,15.6,31.6,15.6z"/>
+		<path d="M43.1,27.1l3.8,3.8c0,0-4.6,4.6-8.4,0.8l-3.8-3.8C34.7,27.9,39.3,23.3,43.1,27.1z"/>
+	</g>
+	<path d="M25,41.1c-11.6,0-21.4,3.7-25,8.9h50C46.4,44.8,36.6,41.1,25,41.1z"/>
+	<g>
+		<polygon points="23.4,40.1 26.7,40.1 26.7,37.9 35.1,29.6 33,27.5 26.7,33.7 26.7,7.4 23.4,7.4 23.4,27.9 
+			17.2,21.7 15.1,23.8 23.4,32 		"/>
+	</g>
+</g>
+</svg>
+</span>Give Today</p><p class="universroman">Support the next generation of Park Scholars as they learn, lead, serve and grow <span class="right-arrow" aria-hidden="true"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generated by IcoMoon.io -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<path d="M8 14.625h10.438l-4.125-3.875 2.125-2.188 7.625 7.625-7.625 7.625-2.125-2.125 4.125-3.938h-10.438v-3.125z"></path>
+</svg>
+</span></p></a></div><!-- .ncsu-callout -->
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><div class="ncsu-callout reynoldsred textcenter nomargin smallout"><a href="https://park.ncsu.edu/apply/" target="_blank"><p class="callout-heading universcondensed"><span class="heading-icon" aria-hidden="true"><?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+	<g>
+		<path d="M25.5,16.4l6.5-1.9l-16-9L0,14.6l2,0.5v0.9c-0.6,0.2-1,0.8-1,1.4c0,0.4,0.2,0.8,0.5,1.1V26H2v0.5h1V26h0.5
+		v-7.4C3.8,18.3,4,17.9,4,17.5c0-0.7-0.4-1.2-1-1.4v-0.7l3.5,0.9v-0.9v-0.2l0.2-0.1c2-1.5,5.4-2.4,9.3-2.4s7.3,0.9,9.3,2.4l0.2,0.1
+		v0.2V16.4z"></path>
+		<g>
+			<path d="M7,21.5h18c0,0,0-2,0-6c-4-3-14-3-18,0V21.5z"></path>
+		</g>
+	</g>
+</svg></span>Become a Park Scholar</p><p class="universroman">Apply <span class="right-arrow" aria-hidden="true"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generated by IcoMoon.io -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<path d="M8 14.625h10.438l-4.125-3.875 2.125-2.188 7.625 7.625-7.625 7.625-2.125-2.125 4.125-3.938h-10.438v-3.125z"></path>
+</svg>
+</span></p></a></div><!-- .ncsu-callout -->
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><div class="ncsu-callout genomicgreen textcenter nomargin smallout"><a href="https://park.ncsu.edu/the-park-experience/leadership/" target="_blank"><p class="callout-heading universcondensed"><span class="heading-icon" aria-hidden="true"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+<g id="Layer_5">
+</g>
+<g id="Layer_3">
+</g>
+<g id="Layer_2">
+	<g>
+		<path d="M25,2.8c12.3,0,22.2,10,22.2,22.2c0,12.3-10,22.2-22.2,22.2c-12.3,0-22.2-10-22.2-22.2
+			C2.8,12.7,12.7,2.8,25,2.8 M25,0C11.2,0,0,11.2,0,25c0,13.8,11.2,25,25,25c13.8,0,25-11.2,25-25C50,11.2,38.8,0,25,0L25,0z"/>
+		<rect x="41.8" y="23.6" width="3.9" height="2.8"/>
+		<rect x="4.3" y="23.6" width="3.9" height="2.8"/>
+		<rect x="23.6" y="41.8" width="2.8" height="3.9"/>
+		<path d="M38.9,25.7v-1.4h-7.3l4.3-10l-10.4,4.4v-7.5h-1.4v8L20.4,21l0,0L19,24.3h-8.2v1.4h7.6l-4.6,10.8L24.2,32
+			v7.5h1.4v-8l3.7-1.6l0,0l1.8-4.1H38.9z M21.7,22.2l6.4,6.4l-11.3,4.8L21.7,22.2z"/>
+		<rect x="23.5" y="4.3" width="2.8" height="3.9"/>
+	</g>
+</g>
+</svg>
+</span>Enrichment</p><p class="universroman">Park Scholars participate in a series of enrichment experiences for personal and professional growth <span class="right-arrow" aria-hidden="true"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generated by IcoMoon.io -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<path d="M8 14.625h10.438l-4.125-3.875 2.125-2.188 7.625 7.625-7.625 7.625-2.125-2.125 4.125-3.938h-10.438v-3.125z"></path>
+</svg>
+</span></p></a></div><!-- .ncsu-callout -->
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><div class="ncsu-callout bioindigo textcenter nomargin smallout"><a href="https://park.ncsu.edu/about/park-alumni/" target="_blank"><p class="callout-heading universcondensed"><span class="heading-icon" aria-hidden="true"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+<g>
+	<path d="M14.9,34.8l1.1-1.9l4.4,2.5l0.9-1.9l3.2,2.1l1.5-2.6l2.7,1.6c0,0-1.6,4.2-3,6.4c-1.2,2-3.6,0.7-4-0.2
+		c-1.1,0.5-3.2,0.5-4.3-1.3C14,39.6,13,37,13,37s-2.6,1.1-3.6-1.1c-0.9-2.1,0.3-4.1,0.3-4.1L14.9,34.8z"/>
+	<path d="M9.8,31.8l5.2,3l1.1-1.9l4.4,2.5l0.9-1.9l3.2,2.1l1.5-2.6l2.7,1.6c0,0-1.6,4.2-3,6.4
+		c-0.5,0.8-1.1,1.1-1.8,1.1c-1,0-2-0.7-2.2-1.3c-0.4,0.2-0.9,0.3-1.4,0.3c-1,0-2.1-0.4-2.9-1.6c-0.1,0-0.1,0-0.2,0
+		C14,39.5,13,37,13,37s-0.7,0.3-1.4,0.3c-0.8,0-1.7-0.3-2.1-1.3C8.5,33.8,9.8,31.8,9.8,31.8"/>
+</g>
+<g>
+	<polygon points="15.8,16.2 12.1,14.2 6,30 9.3,31.8 	"/>
+</g>
+<path d="M27.5,13.5c2.7,0,3.8,0.9,6.1,2.7l6.5,15.6l-15.4-9.9l-0.9-0.5l-5.4,3.9l-2.2-3.9
+	C16.3,21.4,24.4,13.5,27.5,13.5"/>
+<g>
+	<polygon points="40.9,31.3 43.9,29.7 37.7,14 34.4,15.8 34.5,15.9 	"/>
+</g>
+<g>
+	<polygon points="50,7.9 38.4,13.5 46.7,34.4 50,32.7 	"/>
+	<path d="M50,7.9v24.7l-3.3,1.7l-8.2-20.9L50,7.9 M50.9,6.5"/>
+</g>
+<g>
+	<polygon points="0,8 0,32.7 3.3,34.4 11.5,13.5 	"/>
+	<path d="M0,8l11.5,5.5L3.3,34.4L0,32.7V8 M-0.9,6.5"/>
+</g>
+<path d="M41.6,33.8l-2-1.3l-15.3-9.8l-0.4-0.2L19,26l-0.8,0.6l-0.5-0.9l-2.2-3.9l-0.3-0.6l0.5-0.5
+	c4-3.9,6.8-5.9,8.7-7c-0.4-0.2-0.8-0.3-1.2-0.3c-2.7,0-3.8,0.9-6.1,2.7l-6.3,15.1l3.8,2.3l0.6-1.1l0.4-0.8l0.8,0.5l3.5,2l0.5-1
+	l0.5-0.9l0.9,0.6l2.4,1.6l1-1.7l0.5-0.8l0.8,0.5l2.7,1.6l0.7,0.4L29.5,35c-0.1,0.2-1.6,4.3-3,6.6c-0.1,0.2-0.2,0.3-0.4,0.4
+	c1.2,0.5,2.6-0.4,2.9-1.1c1.1,0.5,3.2,0.5,4.3-1.3c3.3,0.1,4.3-2.6,4.3-2.6s2.7,1.1,3.7-1.1C41.7,35.1,41.7,34.4,41.6,33.8z"/>
+</svg>
+</span>Park Alumni</p><p class="universroman">The Park Scholarships network is a thriving resource for current students and alumni alike <span class="right-arrow" aria-hidden="true"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generated by IcoMoon.io -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<path d="M8 14.625h10.438l-4.125-3.875 2.125-2.188 7.625 7.625-7.625 7.625-2.125-2.125 4.125-3.938h-10.438v-3.125z"></path>
+</svg>
+</span></p></a></div><!-- .ncsu-callout -->
+</div>
+</div>
+
+
+
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<a id="pillars"></a>
+
+
+<div class="ncsu-callout white textcenter nomargin ncsu-callout--thin-padding"><div><p class="callout-heading universcondensed">What Makes a Park Scholar?</p><p class="universroman"> </p></div></div><!-- .ncsu-callout -->
+
+
+
+<div class="wp-block-columns has-2-columns c1-1x2 is-layout-flex wp-container-core-columns-is-layout-8f761849 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<div style="height:11px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+<span class="enhanced-heading-container"><h3 class='enhanced-heading h2 glypha text ncsu-text-wolfpackred stacked '><span class="heading-icon clean" aria-hidden="true"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+<g>
+	<g>
+		<path d="M8.9,15.9c0-0.9-0.6-1.7-1.4-1.9l0-0.9l-1.4-0.3v1.3c-0.8,0.3-1.4,1-1.4,1.9c0,0.6,0.3,1.2,0.7,1.5v10.2
+			h0.7v0.7h1.4v-0.7h0.7V17.4C8.6,17,8.9,16.5,8.9,15.9z"/>
+	</g>
+	<path d="M12.6,11.9c0.4-0.3,0.8-0.5,1.2-0.8c1.7-1,3.8-1.7,6-2.1c0.6-0.1,1.1-0.2,1.7-0.3c1.2-0.1,2.4-0.2,3.5-0.2
+		h0c2.4,0,4.8,0.3,6.9,0.8s4.1,1.4,5.6,2.5c0,0.7,0,1.2,0,1.8l9.5-2.8L25,0L3,11.1l9.6,2.4V11.9z"/>
+	<g>
+		<path d="M25,9.5c4.6,0,8.9,1.1,11.6,2.9v3.8H13.5v-3.8C16.1,10.6,20.4,9.5,25,9.5"/>
+	</g>
+	<g>
+		<g>
+			<polygon points="13.4,17.1 13.4,32.4 18.3,37.3 18.3,40.3 31.8,40.3 31.8,37.1 36.5,32.4 36.5,17.1 			"/>
+		</g>
+	</g>
+	<path d="M40.8,41.6H32L25,50l-6.7-8.4H9.2c0,0-9.2,0-9.2,8.5c1.8,0,45.6,0,50,0C50,41.6,40.8,41.6,40.8,41.6z"/>
+</g>
+</svg>
+</span> <span class='heading-content'>Scholarship</span></h3></span>
+
+
+
+<p class="has-gray-10-background-color has-background wp-block-paragraph" style="font-size:19px">Park Scholars are intellectually curious students who seek learning experiences beyond the classroom. </p>
+
+
+<div class="wp-block-image">
+<figure class="alignleft size-large"><a href="https://park.ncsu.edu/2020/05/15/daniel-haller/"><img decoding="async" width="130" height="130" src="https://park.ncsu.edu/wp-content/uploads/sites/28/2021/04/icon-danielhaller-130.jpg" alt="Daniel Haller &apos;22" class="wp-image-12826" /></a></figure>
+</div>
+
+
+<p class="wp-block-paragraph">Daniel Haller &#8217;22, a 2020 Goldwater Scholar, knew when he came to NC State he wanted to study global infectious diseases. <a href="https://park.ncsu.edu/2019/05/21/intelligent-life/ahttps://park.ncsu.edu/2020/05/15/daniel-haller/">More »</a></p>
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+<span class="enhanced-heading-container"><h3 class='enhanced-heading h2 glypha text ncsu-text-wolfpackred stacked '><span class="heading-icon clean" aria-hidden="true"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generated by IcoMoon.io -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+<path d="M5 18v-15h-2v15h2zM6 12v-8c3-1 7 1 11 0v8c-3 1.27-8-1-11 0z"></path>
+</svg>
+</span> <span class='heading-content'>Leadership</span></h3></span>
+
+
+
+<p class="has-gray-10-background-color has-background wp-block-paragraph" style="font-size:19px">Park Scholars listen well, lead by example, take risks, and champion original ideas. </p>
+
+
+<div class="wp-block-image">
+<figure class="alignleft size-large"><a href="https://park.ncsu.edu/timothy-reid/"><img decoding="async" width="130" height="130" src="https://park.ncsu.edu/wp-content/uploads/sites/28/2021/01/icon-reid-130-1.jpg" alt="Timothy Reid &apos;24" class="wp-image-11878" /></a></figure>
+</div>
+
+
+<p class="wp-block-paragraph">As Student Body President, Timothy Reid &#8217;24 is working to advance policies to improve student well-being. <a href="https://park.ncsu.edu/timothy-reid/">More »</a></p>
+</div>
+</div>
+
+
+
+<div class="wp-block-columns has-2-columns c1-1x2 is-layout-flex wp-container-core-columns-is-layout-8f761849 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><span class="enhanced-heading-container"><h3 class='enhanced-heading h2 glypha text ncsu-text-wolfpackred stacked '><span class="heading-icon clean" aria-hidden="true"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generated by IcoMoon.io -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+<path d="M17.7 6.32l1.41 1.42-3.47 3.41-1.42-1.42 0.84-0.82c-0.32-0.76-0.81-1.57-1.51-2.31l-4.61 6.59-5.26 4.7c-0.39 0.39-1.020 0.39-1.42 0l-1.2-1.21c-0.39-0.39-0.39-1.020 0-1.41l10.97-9.92c-1.37-0.86-3.21-1.46-5.67-1.48 2.7-0.82 4.95-0.93 6.58-0.3 1.7 0.66 2.82 2.2 3.91 3.58z"></path>
+</svg>
+</span> <span class='heading-content'>Service</span></h3></span>
+
+
+
+<p class="has-gray-10-background-color has-background wp-block-paragraph" style="font-size:19px">Park Scholars dedicate themselves to making a positive difference in their communities.</p>
+
+
+<div class="wp-block-image">
+<figure class="alignleft size-full"><a href="https://park.ncsu.edu/2021/10/16/pura-spotlight-jalen-lucas-sam-dotson/"><img loading="lazy" decoding="async" width="130" height="130" src="https://park.ncsu.edu/wp-content/uploads/sites/28/2021/10/pura-icon-2.jpg" alt="Nicholas Oyarzun ’24 and Sam Dotson ’24" class="wp-image-15123" /></a></figure>
+</div>
+
+
+<p class="wp-block-paragraph">Nicholas Oyarzun ’24 and Sam Dotson ’24 created Park Under-Resourced Assistance (PURA) to help bring outstanding students to NC State and the Park Scholarships program. <a href="https://park.ncsu.edu/2021/10/16/pura-spotlight-jalen-lucas-sam-dotson/">More »</a></p>
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><span class="enhanced-heading-container"><h3 class='enhanced-heading h2 glypha text ncsu-text-wolfpackred stacked '><span class="heading-icon clean" aria-hidden="true"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generated by IcoMoon.io -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+<path d="M8.030 4.46c-0.29 1.28 0.55 3.46 1.97 3.46 1.41 0 2.25-2.18 1.96-3.46-0.22-0.98-1.080-1.63-1.96-1.63-0.89 0-1.74 0.65-1.97 1.63zM3.9 5.36c-0.25 1.080 0.47 2.93 1.67 2.93s1.92-1.85 1.67-2.93c-0.19-0.83-0.92-1.39-1.67-1.39s-1.48 0.56-1.67 1.39zM12.76 5.36c-0.25 1.080 0.47 2.93 1.66 2.93 1.2 0 1.92-1.85 1.67-2.93-0.19-0.83-0.92-1.39-1.67-1.39-0.74 0-1.47 0.56-1.66 1.39zM12.17 16.79l1.25-4.3c0.78-2.49-0.71-4.020-3.42-4.020-2.72 0-4.21 1.53-3.44 4.020l1.26 4.3c0.23 0.72 1.18 1.21 2.18 1.21 0.98 0 1.94-0.49 2.17-1.21zM6.070 9.16c-0.49 0.67-0.96 1.83-0.42 3.59l1.12 3.79c-0.34 0.2-0.77 0.31-1.2 0.31-0.85 0-1.65-0.41-1.85-1.030l-1.070-3.65c-0.65-2.11 0.61-3.4 2.92-3.4 0.27 0 0.54 0.020 0.79 0.060-0.1 0.1-0.2 0.22-0.29 0.33zM14.42 8.77c2.31 0 3.58 1.29 2.92 3.4l-1.070 3.65c-0.2 0.62-1 1.030-1.85 1.030-0.43 0-0.86-0.11-1.2-0.31l1.11-3.77c0.55-1.78 0.080-2.94-0.42-3.61-0.080-0.11-0.18-0.23-0.28-0.33 0.25-0.040 0.51-0.060 0.79-0.060z"></path>
+</svg>
+</span> <span class='heading-content'>Character</span></h3></span>
+
+
+
+<p class="has-gray-10-background-color has-background wp-block-paragraph" style="font-size:19px">Park Scholars demonstrate the highest levels of integrity, honesty, and conscientiousness.</p>
+
+
+<div class="wp-block-image">
+<figure class="alignleft size-full is-resized"><img loading="lazy" decoding="async" width="815" height="734" src="https://park.ncsu.edu/wp-content/uploads/sites/28/2021/02/ElizabethDogbe-screenshot-DoG2020.png" alt="Elizabeth Dogbe" class="wp-image-12195" style="width:130px;height:130px" srcset="https://park.ncsu.edu/wp-content/uploads/sites/28/2021/02/ElizabethDogbe-screenshot-DoG2020.png 815w, https://park.ncsu.edu/wp-content/uploads/sites/28/2021/02/ElizabethDogbe-screenshot-DoG2020-600x540.png 600w, https://park.ncsu.edu/wp-content/uploads/sites/28/2021/02/ElizabethDogbe-screenshot-DoG2020-768x692.png 768w" sizes="auto, (max-width: 815px) 100vw, 815px" /></figure>
+</div>
+
+
+<p class="wp-block-paragraph">Elizabeth Dogbe &#8217;21 is passionate about transportation planning and traffic operations and will graduate ready to pursue a meaningful career making transit systems more equitable. <a href="https://park.ncsu.edu/elizabeth-dogbe">More »</a></p>
+</div>
+</div>
+
+
+<div class="recent-block">
+<div>
+<h3 class="h6 dib">Recent News</h3>
+<p class="dib">| <a class="dib" href="https://park.ncsu.edu/news/">More Stories</a></p>
+</div>
+<div class="recent-posts row grid "><a href="https://park.ncsu.edu/2026/10/13/from-raleigh-to-capitol-hill-jillian-stone-interns-in-congress/" class="recent-post col-lg-4 col-md-4 col-sm-12 col-xs-12"><p class="recent-post-meta">Oct 13, 2026 <span class="recent-posts-meta-sep" aria-hidden="true">|</span> <span class="recent-post-cats">newswire, Park News</span></p><p class="recent-post-title">From Raleigh to Capitol Hill: Jillian Stone Interns In Congress</p><p class="recent-post-byline">By mgkorneg</p><p class="recent-post-excerpt">Originally published by SPIA News This summer, Jillian Stone ’28, a junior majoring in political science and philosophy of law with minors in science, technology... <span class="right-arrow" aria-hidden="true"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generated by IcoMoon.io -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<path d="M16.438 9.563l-0.625 0.625 5.563 5.563h-13.375v0.875h13.375l-5.563 5.563 0.625 0.625 6.625-6.625z"></path>
+</svg>
+</span></p></a><a href="https://park.ncsu.edu/2026/09/18/30-years-of-impact-read-the-park-scholarships-annual-report-2025-2026/" class="recent-post col-lg-4 col-md-4 col-sm-12 col-xs-12"><p class="recent-post-meta">Sep 18, 2026 <span class="recent-posts-meta-sep" aria-hidden="true">|</span> <span class="recent-post-cats">Park News</span></p><p class="recent-post-title">30 Years of Impact: Read the Park Scholarships Annual Report 2025–2026</p><p class="recent-post-byline">By mgkorneg</p><p class="recent-post-excerpt">We are excited to share the Park Scholarships Annual Report 2025–2026. Since the first class arrived in 1996, the program has grown into a community... <span class="right-arrow" aria-hidden="true"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generated by IcoMoon.io -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<path d="M16.438 9.563l-0.625 0.625 5.563 5.563h-13.375v0.875h13.375l-5.563 5.563 0.625 0.625 6.625-6.625z"></path>
+</svg>
+</span></p></a><a href="https://park.ncsu.edu/2026/09/15/freshman-retreat-reflections-from-the-class-of-2030/" class="recent-post col-lg-4 col-md-4 col-sm-12 col-xs-12"><p class="recent-post-meta">Sep 15, 2026 <span class="recent-posts-meta-sep" aria-hidden="true">|</span> <span class="recent-post-cats">Park News</span></p><p class="recent-post-title">Freshman Retreat Reflections from the Class of 2030</p><p class="recent-post-byline">By mgkorneg</p><p class="recent-post-excerpt">Every August, the newest cohort of Park Scholars embarks on a trip to the mountains of North Carolina for the annual Freshman Retreat. This weekend... <span class="right-arrow" aria-hidden="true"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generated by IcoMoon.io -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<path d="M16.438 9.563l-0.625 0.625 5.563 5.563h-13.375v0.875h13.375l-5.563 5.563 0.625 0.625 6.625-6.625z"></path>
+</svg>
+</span></p></a></div>
+</div>
+
+
+<div style="height:60px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<ul class="wp-block-social-links has-large-icon-size is-layout-flex wp-block-social-links-is-layout-flex"><li class="wp-social-link wp-social-link-facebook wp-block-social-link"><a href="https://www.facebook.com/parkscholars" class="wp-block-social-link-anchor"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M12 2C6.5 2 2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12c0-5.5-4.5-10-10-10z"></path></svg><span class="wp-block-social-link-label screen-reader-text">Facebook</span></a></li>
+
+<li class="wp-social-link wp-social-link-instagram wp-block-social-link"><a href="https://www.instagram.com/park_scholarships/" class="wp-block-social-link-anchor"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M12,4.622c2.403,0,2.688,0.009,3.637,0.052c0.877,0.04,1.354,0.187,1.671,0.31c0.42,0.163,0.72,0.358,1.035,0.673 c0.315,0.315,0.51,0.615,0.673,1.035c0.123,0.317,0.27,0.794,0.31,1.671c0.043,0.949,0.052,1.234,0.052,3.637 s-0.009,2.688-0.052,3.637c-0.04,0.877-0.187,1.354-0.31,1.671c-0.163,0.42-0.358,0.72-0.673,1.035 c-0.315,0.315-0.615,0.51-1.035,0.673c-0.317,0.123-0.794,0.27-1.671,0.31c-0.949,0.043-1.233,0.052-3.637,0.052 s-2.688-0.009-3.637-0.052c-0.877-0.04-1.354-0.187-1.671-0.31c-0.42-0.163-0.72-0.358-1.035-0.673 c-0.315-0.315-0.51-0.615-0.673-1.035c-0.123-0.317-0.27-0.794-0.31-1.671C4.631,14.688,4.622,14.403,4.622,12 s0.009-2.688,0.052-3.637c0.04-0.877,0.187-1.354,0.31-1.671c0.163-0.42,0.358-0.72,0.673-1.035 c0.315-0.315,0.615-0.51,1.035-0.673c0.317-0.123,0.794-0.27,1.671-0.31C9.312,4.631,9.597,4.622,12,4.622 M12,3 C9.556,3,9.249,3.01,8.289,3.054C7.331,3.098,6.677,3.25,6.105,3.472C5.513,3.702,5.011,4.01,4.511,4.511 c-0.5,0.5-0.808,1.002-1.038,1.594C3.25,6.677,3.098,7.331,3.054,8.289C3.01,9.249,3,9.556,3,12c0,2.444,0.01,2.751,0.054,3.711 c0.044,0.958,0.196,1.612,0.418,2.185c0.23,0.592,0.538,1.094,1.038,1.594c0.5,0.5,1.002,0.808,1.594,1.038 c0.572,0.222,1.227,0.375,2.185,0.418C9.249,20.99,9.556,21,12,21s2.751-0.01,3.711-0.054c0.958-0.044,1.612-0.196,2.185-0.418 c0.592-0.23,1.094-0.538,1.594-1.038c0.5-0.5,0.808-1.002,1.038-1.594c0.222-0.572,0.375-1.227,0.418-2.185 C20.99,14.751,21,14.444,21,12s-0.01-2.751-0.054-3.711c-0.044-0.958-0.196-1.612-0.418-2.185c-0.23-0.592-0.538-1.094-1.038-1.594 c-0.5-0.5-1.002-0.808-1.594-1.038c-0.572-0.222-1.227-0.375-2.185-0.418C14.751,3.01,14.444,3,12,3L12,3z M12,7.378 c-2.552,0-4.622,2.069-4.622,4.622S9.448,16.622,12,16.622s4.622-2.069,4.622-4.622S14.552,7.378,12,7.378z M12,15 c-1.657,0-3-1.343-3-3s1.343-3,3-3s3,1.343,3,3S13.657,15,12,15z M16.804,6.116c-0.596,0-1.08,0.484-1.08,1.08 s0.484,1.08,1.08,1.08c0.596,0,1.08-0.484,1.08-1.08S17.401,6.116,16.804,6.116z"></path></svg><span class="wp-block-social-link-label screen-reader-text">Instagram</span></a></li>
+
+<li class="wp-social-link wp-social-link-twitter wp-block-social-link"><a href="https://twitter.com/parkscholarship" class="wp-block-social-link-anchor"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M22.23,5.924c-0.736,0.326-1.527,0.547-2.357,0.646c0.847-0.508,1.498-1.312,1.804-2.27 c-0.793,0.47-1.671,0.812-2.606,0.996C18.324,4.498,17.257,4,16.077,4c-2.266,0-4.103,1.837-4.103,4.103 c0,0.322,0.036,0.635,0.106,0.935C8.67,8.867,5.647,7.234,3.623,4.751C3.27,5.357,3.067,6.062,3.067,6.814 c0,1.424,0.724,2.679,1.825,3.415c-0.673-0.021-1.305-0.206-1.859-0.513c0,0.017,0,0.034,0,0.052c0,1.988,1.414,3.647,3.292,4.023 c-0.344,0.094-0.707,0.144-1.081,0.144c-0.264,0-0.521-0.026-0.772-0.074c0.522,1.63,2.038,2.816,3.833,2.85 c-1.404,1.1-3.174,1.756-5.096,1.756c-0.331,0-0.658-0.019-0.979-0.057c1.816,1.164,3.973,1.843,6.29,1.843 c7.547,0,11.675-6.252,11.675-11.675c0-0.178-0.004-0.355-0.012-0.531C20.985,7.47,21.68,6.747,22.23,5.924z"></path></svg><span class="wp-block-social-link-label screen-reader-text">Twitter</span></a></li>
+
+<li class="wp-social-link wp-social-link-linkedin wp-block-social-link"><a href="https://www.linkedin.com/groups/8255052/" class="wp-block-social-link-anchor"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M19.7,3H4.3C3.582,3,3,3.582,3,4.3v15.4C3,20.418,3.582,21,4.3,21h15.4c0.718,0,1.3-0.582,1.3-1.3V4.3 C21,3.582,20.418,3,19.7,3z M8.339,18.338H5.667v-8.59h2.672V18.338z M7.004,8.574c-0.857,0-1.549-0.694-1.549-1.548 c0-0.855,0.691-1.548,1.549-1.548c0.854,0,1.547,0.694,1.547,1.548C8.551,7.881,7.858,8.574,7.004,8.574z M18.339,18.338h-2.669 v-4.177c0-0.996-0.017-2.278-1.387-2.278c-1.389,0-1.601,1.086-1.601,2.206v4.249h-2.667v-8.59h2.559v1.174h0.037 c0.356-0.675,1.227-1.387,2.526-1.387c2.703,0,3.203,1.779,3.203,4.092V18.338z"></path></svg><span class="wp-block-social-link-label screen-reader-text">LinkedIn</span></a></li></ul>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-8f761849 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-vertically-aligned-top is-layout-flow wp-block-column-is-layout-flow"></div>
+</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+					
+				
+		</div><!-- .row -->
+	</div><!-- .container-fluid -->
+
+</div><!-- .site-content -->
+
+		<footer role="contentinfo">
+
+			<div id="colophon" class="container-fluid">
+
+				<div class="container">
+
+				
+					<div class="row footer-widgets">
+						<div class='col-lg-3 col-md-6 col-xs-12 col-sm-12'>
+							<section id="text-4" class="widget widget_text"><h2 class="widget-title">Park Scholarships</h2>			<div class="textwidget"><address>NC State University<br />
+Campus Box 7009<br />
+Raleigh, NC 27695-7009</address>
+<address>919.515.3794<br />
+<a href="/cdn-cgi/l/email-protection#651504170e16060d0a09041716250b0616104b000110"><span class="__cf_email__" data-cfemail="3d4d5c4f564e5e5552515c4f4e7d535e4e4813585948">[email&#160;protected]</span></a></address>
+<p>&nbsp;</p>
+</div>
+		</section>						</div>
+						<div class='col-lg-3 col-md-6 col-xs-12 col-sm-12'>
+													</div>
+						<div class='col-lg-3 col-md-6 col-xs-12 col-sm-12'>
+							<section id="gform_widget-3" class="widget gform_widget"><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script id="wp-dom-ready-js" src="https://park.ncsu.edu/wp-includes/js/dist/dom-ready.min.js?ver=3fe927cab37bf38d6a23"></script>
+<script id="wp-hooks-js" src="https://park.ncsu.edu/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255"></script>
+<script id="wp-i18n-js" src="https://park.ncsu.edu/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="wp-a11y-js" src="https://park.ncsu.edu/wp-includes/js/dist/a11y.min.js?ver=31c6cec5a4ff7aff483d"></script>
+<script id="gform_json-js" defer='defer' src="https://park.ncsu.edu/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=3.1.1.2"></script>
+<script id="gform_gravityforms-js-extra">
+var gform_i18n = {"datepicker":{"wdOffset":1,"helpTextShort":"Press F1 for help","helpText":"Press the arrow keys to navigate by day, PageUp and PageDown to navigate by month, Alt+PageUp and Alt+PageDown to navigate by year, or Escape to cancel.","openOnFocusHelpText":"Press Down arrow to browse the calendar, or Escape to close.","tooltipTxt":"Press Escape to cancel","disabledTxt":"Disabled","markedTxt":"Selected","prevTxt":"Previous","nextTxt":"Next","monthTxt":"Month","yearTxt":"Year","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"days":[{"s":"S","l":"Sunday"},{"s":"M","l":"Monday"},{"s":"T","l":"Tuesday"},{"s":"W","l":"Wednesday"},{"s":"T","l":"Thursday"},{"s":"F","l":"Friday"},{"s":"S","l":"Saturday"}]}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","file_uploaded":"File uploaded","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled","error":"Error","message":"Message"},"vars":{"images_url":"https://park.ncsu.edu/wp-content/plugins/gravityforms/images"}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https://park.ncsu.edu/wp-content/plugins/gravityforms","number_formats":[],"version_hash":"dfd3652b39703061a8947c9023a22ad4","countries":{"AF":"Afghanistan","AX":"\u00c5land Islands","AL":"Albania","DZ":"Algeria","AS":"American Samoa","AD":"Andorra","AO":"Angola","AI":"Anguilla","AQ":"Antarctica","AG":"Antigua and Barbuda","AR":"Argentina","AM":"Armenia","AW":"Aruba","AU":"Australia","AT":"Austria","AZ":"Azerbaijan","BS":"Bahamas","BH":"Bahrain","BD":"Bangladesh","BB":"Barbados","BY":"Belarus","BE":"Belgium","BZ":"Belize","BJ":"Benin","BM":"Bermuda","BT":"Bhutan","BO":"Bolivia","BQ":"Bonaire, Sint Eustatius and Saba","BA":"Bosnia and Herzegovina","BW":"Botswana","BV":"Bouvet Island","BR":"Brazil","IO":"British Indian Ocean Territory","BN":"Brunei Darussalam","BG":"Bulgaria","BF":"Burkina Faso","BI":"Burundi","CV":"Cabo Verde","KH":"Cambodia","CM":"Cameroon","CA":"Canada","KY":"Cayman Islands","CF":"Central African Republic","TD":"Chad","CL":"Chile","CN":"China","CX":"Christmas Island","CC":"Cocos Islands","CO":"Colombia","KM":"Comoros","CD":"Congo, Democratic Republic of the","CG":"Congo","CK":"Cook Islands","CR":"Costa Rica","CI":"C\u00f4te d'Ivoire","HR":"Croatia","CU":"Cuba","CW":"Cura\u00e7ao","CY":"Cyprus","CZ":"Czechia","DK":"Denmark","DJ":"Djibouti","DM":"Dominica","DO":"Dominican Republic","EC":"Ecuador","EG":"Egypt","SV":"El Salvador","GQ":"Equatorial Guinea","ER":"Eritrea","EE":"Estonia","SZ":"Eswatini","ET":"Ethiopia","FK":"Falkland Islands","FO":"Faroe Islands","FJ":"Fiji","FI":"Finland","FR":"France","GF":"French Guiana","PF":"French Polynesia","TF":"French Southern Territories","GA":"Gabon","GM":"Gambia","GE":"Georgia","DE":"Germany","GH":"Ghana","GI":"Gibraltar","GR":"Greece","GL":"Greenland","GD":"Grenada","GP":"Guadeloupe","GU":"Guam","GT":"Guatemala","GG":"Guernsey","GN":"Guinea","GW":"Guinea-Bissau","GY":"Guyana","HT":"Haiti","HM":"Heard Island and McDonald Islands","VA":"Holy See","HN":"Honduras","HK":"Hong Kong","HU":"Hungary","IS":"Iceland","IN":"India","ID":"Indonesia","IR":"Iran","IQ":"Iraq","IE":"Ireland","IM":"Isle of Man","IL":"Israel","IT":"Italy","JM":"Jamaica","JP":"Japan","JE":"Jersey","JO":"Jordan","KZ":"Kazakhstan","KE":"Kenya","KI":"Kiribati","KP":"Korea, Democratic People's Republic of","KR":"Korea, Republic of","KW":"Kuwait","KG":"Kyrgyzstan","LA":"Lao People's Democratic Republic","LV":"Latvia","LB":"Lebanon","LS":"Lesotho","LR":"Liberia","LY":"Libya","LI":"Liechtenstein","LT":"Lithuania","LU":"Luxembourg","MO":"Macao","MG":"Madagascar","MW":"Malawi","MY":"Malaysia","MV":"Maldives","ML":"Mali","MT":"Malta","MH":"Marshall Islands","MQ":"Martinique","MR":"Mauritania","MU":"Mauritius","YT":"Mayotte","MX":"Mexico","FM":"Micronesia","MD":"Moldova","MC":"Monaco","MN":"Mongolia","ME":"Montenegro","MS":"Montserrat","MA":"Morocco","MZ":"Mozambique","MM":"Myanmar","NA":"Namibia","NR":"Nauru","NP":"Nepal","NL":"Netherlands","NC":"New Caledonia","NZ":"New Zealand","NI":"Nicaragua","NE":"Niger","NG":"Nigeria","NU":"Niue","NF":"Norfolk Island","MK":"North Macedonia","MP":"Northern Mariana Islands","NO":"Norway","OM":"Oman","PK":"Pakistan","PW":"Palau","PS":"Palestine, State of","PA":"Panama","PG":"Papua New Guinea","PY":"Paraguay","PE":"Peru","PH":"Philippines","PN":"Pitcairn","PL":"Poland","PT":"Portugal","PR":"Puerto Rico","QA":"Qatar","RE":"R\u00e9union","RO":"Romania","RU":"Russian Federation","RW":"Rwanda","BL":"Saint Barth\u00e9lemy","SH":"Saint Helena, Ascension and Tristan da Cunha","KN":"Saint Kitts and Nevis","LC":"Saint Lucia","MF":"Saint Martin","PM":"Saint Pierre and Miquelon","VC":"Saint Vincent and the Grenadines","WS":"Samoa","SM":"San Marino","ST":"Sao Tome and Principe","SA":"Saudi Arabia","SN":"Senegal","RS":"Serbia","SC":"Seychelles","SL":"Sierra Leone","SG":"Singapore","SX":"Sint Maarten","SK":"Slovakia","SI":"Slovenia","SB":"Solomon Islands","SO":"Somalia","ZA":"South Africa","GS":"South Georgia and the South Sandwich Islands","SS":"South Sudan","ES":"Spain","LK":"Sri Lanka","SD":"Sudan","SR":"Suriname","SJ":"Svalbard and Jan Mayen","SE":"Sweden","CH":"Switzerland","SY":"Syria Arab Republic","TW":"Taiwan","TJ":"Tajikistan","TZ":"Tanzania, the United Republic of","TH":"Thailand","TL":"Timor-Leste","TG":"Togo","TK":"Tokelau","TO":"Tonga","TT":"Trinidad and Tobago","TN":"Tunisia","TR":"T\u00fcrkiye","TM":"Turkmenistan","TC":"Turks and Caicos Islands","TV":"Tuvalu","UG":"Uganda","UA":"Ukraine","AE":"United Arab Emirates","GB":"United Kingdom","US":"United States","UY":"Uruguay","UM":"US Minor Outlying Islands","UZ":"Uzbekistan","VU":"Vanuatu","VE":"Venezuela","VN":"Viet Nam","VG":"Virgin Islands, British","VI":"Virgin Islands, U.S.","WF":"Wallis and Futuna","EH":"Western Sahara","YE":"Yemen","ZM":"Zambia","ZW":"Zimbabwe"},"strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+//# sourceURL=gform_gravityforms-js-extra
+</script>
+<script id="gform_gravityforms-js" defer='defer' src="https://park.ncsu.edu/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=3.1.1.2"></script>
+
+                <div class='gf_browser_unknown gform_wrapper gform-theme gform-theme--foundation gform-theme--framework gform-theme--orbital' data-form-theme='orbital' data-form-index='0' id='gform_wrapper_1' ><style>#gform_wrapper_1[data-form-index="0"].gform-theme{--gf-color-primary: #204ce5;--gf-color-primary-rgb: 32, 76, 229;--gf-color-primary-contrast: #fff;--gf-color-primary-contrast-rgb: 255, 255, 255;--gf-color-primary-darker: #001AB3;--gf-color-primary-lighter: #527EFF;--gf-color-secondary: #fff;--gf-color-secondary-rgb: 255, 255, 255;--gf-color-secondary-contrast: #112337;--gf-color-secondary-contrast-rgb: 17, 35, 55;--gf-color-secondary-darker: #F5F5F5;--gf-color-secondary-lighter: #FFFFFF;--gf-color-out-ctrl-light: rgba(17, 35, 55, 0.1);--gf-color-out-ctrl-light-rgb: 17, 35, 55;--gf-color-out-ctrl-light-darker: rgba(104, 110, 119, 0.35);--gf-color-out-ctrl-light-lighter: #F5F5F5;--gf-color-out-ctrl-dark: #585e6a;--gf-color-out-ctrl-dark-rgb: 88, 94, 106;--gf-color-out-ctrl-dark-darker: #112337;--gf-color-out-ctrl-dark-lighter: rgba(17, 35, 55, 0.65);--gf-color-in-ctrl: #fff;--gf-color-in-ctrl-rgb: 255, 255, 255;--gf-color-in-ctrl-contrast: #112337;--gf-color-in-ctrl-contrast-rgb: 17, 35, 55;--gf-color-in-ctrl-darker: #F5F5F5;--gf-color-in-ctrl-lighter: #FFFFFF;--gf-color-in-ctrl-primary: #204ce5;--gf-color-in-ctrl-primary-rgb: 32, 76, 229;--gf-color-in-ctrl-primary-contrast: #fff;--gf-color-in-ctrl-primary-contrast-rgb: 255, 255, 255;--gf-color-in-ctrl-primary-darker: #001AB3;--gf-color-in-ctrl-primary-lighter: #527EFF;--gf-color-in-ctrl-light: rgba(17, 35, 55, 0.1);--gf-color-in-ctrl-light-rgb: 17, 35, 55;--gf-color-in-ctrl-light-darker: rgba(104, 110, 119, 0.35);--gf-color-in-ctrl-light-lighter: #F5F5F5;--gf-color-in-ctrl-dark: #585e6a;--gf-color-in-ctrl-dark-rgb: 88, 94, 106;--gf-color-in-ctrl-dark-darker: #112337;--gf-color-in-ctrl-dark-lighter: rgba(17, 35, 55, 0.65);--gf-radius: 3px;--gf-font-size-secondary: 14px;--gf-font-size-tertiary: 13px;--gf-icon-ctrl-number: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4 0C4.26522 5.96046e-08 4.51957 0.105357 4.70711 0.292893L7.70711 3.29289C8.09763 3.68342 8.09763 4.31658 7.70711 4.70711C7.31658 5.09763 6.68342 5.09763 6.29289 4.70711L4 2.41421L1.70711 4.70711C1.31658 5.09763 0.683417 5.09763 0.292893 4.70711C-0.0976311 4.31658 -0.097631 3.68342 0.292893 3.29289L3.29289 0.292893C3.48043 0.105357 3.73478 0 4 0ZM0.292893 9.29289C0.683417 8.90237 1.31658 8.90237 1.70711 9.29289L4 11.5858L6.29289 9.29289C6.68342 8.90237 7.31658 8.90237 7.70711 9.29289C8.09763 9.68342 8.09763 10.3166 7.70711 10.7071L4.70711 13.7071C4.31658 14.0976 3.68342 14.0976 3.29289 13.7071L0.292893 10.7071C-0.0976311 10.3166 -0.0976311 9.68342 0.292893 9.29289Z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-icon-ctrl-select: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.292893 0.292893C0.683417 -0.097631 1.31658 -0.097631 1.70711 0.292893L5 3.58579L8.29289 0.292893C8.68342 -0.0976311 9.31658 -0.0976311 9.70711 0.292893C10.0976 0.683417 10.0976 1.31658 9.70711 1.70711L5.70711 5.70711C5.31658 6.09763 4.68342 6.09763 4.29289 5.70711L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683418 0.292893 0.292893Z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-icon-ctrl-search: url("data:image/svg+xml,%3Csvg width='640' height='640' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M256 128c-70.692 0-128 57.308-128 128 0 70.691 57.308 128 128 128 70.691 0 128-57.309 128-128 0-70.692-57.309-128-128-128zM64 256c0-106.039 85.961-192 192-192s192 85.961 192 192c0 41.466-13.146 79.863-35.498 111.248l154.125 154.125c12.496 12.496 12.496 32.758 0 45.254s-32.758 12.496-45.254 0L367.248 412.502C335.862 434.854 297.467 448 256 448c-106.039 0-192-85.962-192-192z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-label-space-y-secondary: var(--gf-label-space-y-md-secondary);--gf-ctrl-border-color: #686e77;--gf-ctrl-size: var(--gf-ctrl-size-md);--gf-ctrl-label-color-primary: #112337;--gf-ctrl-label-color-secondary: #112337;--gf-ctrl-choice-size: var(--gf-ctrl-choice-size-md);--gf-ctrl-checkbox-check-size: var(--gf-ctrl-checkbox-check-size-md);--gf-ctrl-radio-check-size: var(--gf-ctrl-radio-check-size-md);--gf-ctrl-btn-font-size: var(--gf-ctrl-btn-font-size-md);--gf-ctrl-btn-padding-x: var(--gf-ctrl-btn-padding-x-md);--gf-ctrl-btn-size: var(--gf-ctrl-btn-size-md);--gf-ctrl-btn-border-color-secondary: #686e77;--gf-ctrl-btn-bg-color-hover-tertiary: #EBEBEB;--gf-field-img-choice-size: var(--gf-field-img-choice-size-md);--gf-field-img-choice-card-space: var(--gf-field-img-choice-card-space-md);--gf-field-img-choice-check-ind-size: var(--gf-field-img-choice-check-ind-size-md);--gf-field-img-choice-check-ind-icon-size: var(--gf-field-img-choice-check-ind-icon-size-md);--gf-field-pg-steps-number-color: rgba(17, 35, 55, 0.8);}</style><form method='post' enctype='multipart/form-data'  id='gform_1'  action='/' data-formid='1' novalidate>
+                        <div class='gform-body gform_body'><div id='gform_fields_1' class='gform_fields top_label form_sublabel_below description_below validation_below'><div id="field_1_1" class="gfield gfield--type-email field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_1_1'><span class='gform-field-label__text'>Subscribe to the Newsletter</span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_1' id='input_1_1' type='email' value='' class='large'     aria-invalid="false"  />
+                        </div></div></div></div>
+        <div class='gform-footer gform_footer top_label'> <button type='submit' id='gform_submit_button_1' class='gform_button button' onclick='gform.submission.handleButtonClick(this);' data-submission-type='submit' >Submit</button> 
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_1' value='postback' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_1' id='gform_theme_1' value='orbital' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_1' id='gform_style_settings_1' value='' />
+            <input type='hidden' class='gform_hidden' name='is_submit_1' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='1' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_currency' data-currency='USD' value='DHRBurc3z3/DA3feDhFS32zq4/+bBQXVUyvqKEOBTSjEDvlPrxGMFpMXrLhG8lcii4I+neSvGd0p0egMQszL2E5lqtcN1W8r+fHzZ+hJftas0S8=' />
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_1' value='WyJ7XCJnZm9ybV9zdWJtaXNzaW9uX21ldGhvZFwiOltcImIwZGE4NWZhZDI3MGQxZDdiMDUxZjdkYjNjZjljYWM2XCIsXCI3N2UxMGZjOGQ0OTUyM2I4MDdkOWIzNjg5ZWMzODM2YlwiXSxcImdmb3JtX3RoZW1lXCI6XCJkMGNjYWNkMmU0MzY4NTUyZDM0Zjc3MDA3OTcyMzYxNlwiLFwiZ2Zvcm1fc3R5bGVfc2V0dGluZ3NcIjpcIjI1ZTY3ZjdmMTNhOWRiZTUxZmNhMGM3NjczZjUxOTFhXCIsXCJmb3JtX2lkXCI6XCJlMmM2NTViYjkwNGE1YWUxMGYxMzdlNzJjNGI5MTAwNFwiLFwidXJsXCI6XCIyZDNlZGJiM2QwYTZlNjBkZWQ0NmFmZjM3YTE2NDZhM1wiLFwic3RhdGVfdGltZXN0YW1wXCI6XCJmZjZhMGRiYzM0YWEzOGZmNmU4OWFmMTUzNjA1YmE0OFwifSIsIjFlMDI0Y2Y0MDI0N2U1MWU1N2VhNmEyZmRiZTFjMmU0IiwxNzkyMTcyMjIxXQ==' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_1' id='gform_target_page_number_1' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_1' id='gform_source_page_number_1' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div></section>						</div>
+						<div class='col-lg-3 col-md-6 col-xs-12 col-sm-12'>
+							<section id="text-20" class="widget widget_text">			<div class="textwidget"><ul id="menu-secondarymenu" class="menu">
+<li class="menu-wolfpaw"><a href="https://wolfpaw.ncsu.edu/">wolfPAW</a></li>
+<li class="menu-spiffy"><a href="http://members.parkscholars.org/">SPIFFY</a></li>
+<li class="menu-park-alumni-society"><a href="http://www.parkscholars.org/">Park Alumni Society</a></li>
+<li class="menu-park-foundation"><a href="http://parkfoundation.org/">Park Foundation</a></li>
+</ul>
+</div>
+		</section>						</div>
+					</div>
+
+					<div class="row">
+						<div class="site-info col-lg-12 col-md-12 col-xs-12 col-sm-12">
+							<ul class="social-channels list-unstyled" aria-label="Social Media channels"><li><a class="social" href="https://www.facebook.com/parkscholars" target="_blank"><span class="icon-facebook" aria-hidden="true"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <path d="M19.938 9.5h3.938v-5.25h-4.438c-3.438 0-6.063 2.625-6.063 5.25v2.625h-3.938v5.25h3.938v10.5h5.25v-10.5h3.938v-5.25h-3.938v-1.313c0-0.813 0.875-1.313 1.313-1.313z"></path>
+</svg></span><span class="sr-only">facebook</span></a></li><li><a class="social" href="https://twitter.com/parkscholarship" target="_blank"><span class="icon-twitter" aria-hidden="true"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <path d="M29.938 7.25c-1 0.438-2.125 0.75-3.25 0.875v-0.063c1.188-0.688 2.125-1.813 2.563-3.125-0.375 0.188-2 1.125-3.688 1.438-1.063-1.125-2.563-1.875-4.313-1.875-3.625 0-5.875 2.938-5.875 5.813 0 0.25 0.125 1.188 0.125 1.25-4.813-0.125-9.125-2.438-11.938-6.063-2 3.625 0.125 6.75 1.563 7.875-0.875 0-1.625-0.188-2.375-0.5 0.188 2.813 2.188 5.063 4.813 5.625-1.063 0.313-2.313 0.125-2.813-0.063 0.813 2.375 2.938 4.063 5.5 4.188-3.938 2.875-8.188 2.563-8.25 2.563 2.5 1.5 5.438 2.375 8.5 2.375 11.438-0.063 17.25-10.188 16.563-17.438 1.25-0.563 2.25-1.625 2.875-2.875z"></path>
+</svg></span><span class="sr-only">twitter</span></a></li><li><a class="social" href="https://www.instagram.com/park_scholarships" target="_blank"><span class="icon-instagram" aria-hidden="true"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <path d="M23.25 4.25h-14.5c-2.5 0-4.563 2.063-4.563 4.563v14.5c0 2.5 2.063 4.563 4.563 4.563h14.5c2.5 0 4.563-2.063 4.563-4.563v-14.5c0-2.5-2.063-4.563-4.563-4.563zM24.563 7h0.5v4h-4v-4h3.5zM12.625 13.625c0.75-1 2-1.688 3.375-1.688s2.625 0.688 3.375 1.688c0.5 0.688 0.75 1.563 0.75 2.438 0 2.313-1.813 4.125-4.125 4.125s-4.125-1.813-4.125-4.125c0-0.875 0.25-1.75 0.75-2.438zM25.5 23.313c0 1.25-1 2.25-2.25 2.25h-14.5c-1.25 0-2.25-1-2.25-2.25v-9.688h3.5c-0.25 0.75-0.438 1.563-0.438 2.438 0 3.563 2.875 6.438 6.438 6.438s6.438-2.875 6.438-6.438c0-0.875-0.188-1.688-0.438-2.438h3.5v9.688z"></path>
+</svg></span><span class="sr-only">instagram</span></a></li></ul><!-- .social-channels -->							Park Scholarships<br />
+
+							<ul>
+								<li>Copyright &copy; 2026</li>
+								<li><span aria-hidden="true">&#183;</span> <a href="https://www.ncsu.edu/" target="NC State University">NC State University</a></li>
+								<li><span aria-hidden="true">&#183;</span> <a href="http://accessibility.ncsu.edu/" target="Accessibility">Accessibility</a></li>
+								<li><span aria-hidden="true">&#183;</span> <a href="http://www.ncsu.edu/privacy/" target="Privacy">Privacy</a></li>
+								<li><span aria-hidden="true">&#183;</span> <a href="http://policies.ncsu.edu/" target="Policies">University Policies</a></li>
+								<li><span aria-hidden="true">&#183;</span> <a href="https://park.ncsu.edu/wp-login.php">Log in</a></li>
+							</ul>
+						</div><!-- .site-info -->
+					</div>
+
+				</div>
+
+			</div><!-- #colophon -->
+
+			
+				<div class="sub-footer">
+					<div class="container">
+						<a href="https://www.ncsu.edu/" class="ncstate"><strong>NC State</strong> University</a>
+						<address>
+							<span><strong>North Carolina State University</strong></span>
+							<span>Raleigh, NC 27695</span>
+							<span>919.515.2011</span>
+						</address>
+					</div><!-- .container -->
+				</div><!-- .sub-footer -->
+
+			
+		</footer>
+
+		<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/sites/28/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/hillsborough/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- Custom Feeds for Instagram JS -->
+<script type="text/javascript">
+var sbiajaxurl = "https://park.ncsu.edu/wp-admin/admin-ajax.php";
+
+</script>
+<script id="react-js" src="https://park.ncsu.edu/wp-includes/js/dist/vendor/react.min.js?ver=18.3.1.1"></script>
+<script id="react-jsx-runtime-js" src="https://park.ncsu.edu/wp-includes/js/dist/vendor/react-jsx-runtime.min.js?ver=18.3.1"></script>
+<script id="wp-autop-js" src="https://park.ncsu.edu/wp-includes/js/dist/autop.min.js?ver=4e10a18cb6f21a043fc0"></script>
+<script id="wp-blob-js" src="https://park.ncsu.edu/wp-includes/js/dist/blob.min.js?ver=c7582a735ddd2edc9731"></script>
+<script id="wp-block-serialization-default-parser-js" src="https://park.ncsu.edu/wp-includes/js/dist/block-serialization-default-parser.min.js?ver=4c6f3dd40077f7c17604"></script>
+<script id="wp-deprecated-js" src="https://park.ncsu.edu/wp-includes/js/dist/deprecated.min.js?ver=fe587bac92b7d0ef760e"></script>
+<script id="wp-dom-js" src="https://park.ncsu.edu/wp-includes/js/dist/dom.min.js?ver=c95f94cbbc1ac3fde84f"></script>
+<script id="react-dom-js" src="https://park.ncsu.edu/wp-includes/js/dist/vendor/react-dom.min.js?ver=18.3.1.1"></script>
+<script id="wp-escape-html-js" src="https://park.ncsu.edu/wp-includes/js/dist/escape-html.min.js?ver=87ebe53e97bba59805a5"></script>
+<script id="wp-element-js" src="https://park.ncsu.edu/wp-includes/js/dist/element.min.js?ver=4a4370b2b349066fd440"></script>
+<script id="wp-is-shallow-equal-js" src="https://park.ncsu.edu/wp-includes/js/dist/is-shallow-equal.min.js?ver=7ad271045c1fe60f5496"></script>
+<script id="wp-keycodes-js" src="https://park.ncsu.edu/wp-includes/js/dist/keycodes.min.js?ver=d0b4204e4bbeb412df6e"></script>
+<script id="wp-priority-queue-js" src="https://park.ncsu.edu/wp-includes/js/dist/priority-queue.min.js?ver=6c0aa59b65d55dfd509b"></script>
+<script id="wp-private-apis-js" src="https://park.ncsu.edu/wp-includes/js/dist/private-apis.min.js?ver=eb85f28c4c729bb4f002"></script>
+<script id="wp-undo-manager-js" src="https://park.ncsu.edu/wp-includes/js/dist/undo-manager.min.js?ver=4554fce6276d8910a4ae"></script>
+<script id="wp-compose-js" src="https://park.ncsu.edu/wp-includes/js/dist/compose.min.js?ver=0e8bde2a499ea6073b42"></script>
+<script id="wp-redux-routine-js" src="https://park.ncsu.edu/wp-includes/js/dist/redux-routine.min.js?ver=acca2b4857d83ad1790e"></script>
+<script id="wp-data-js" src="https://park.ncsu.edu/wp-includes/js/dist/data.min.js?ver=14a216e0932d72c22976"></script>
+<script id="wp-data-js-after">
+( function() {
+	var userId = 0;
+	var storageKey = "WP_DATA_USER_" + userId;
+	wp.data
+		.use( wp.data.plugins.persistence, { storageKey: storageKey } );
+} )();
+//# sourceURL=wp-data-js-after
+</script>
+<script id="wp-html-entities-js" src="https://park.ncsu.edu/wp-includes/js/dist/html-entities.min.js?ver=a976ff3a0f00bc2999a3"></script>
+<script id="wp-rich-text-js" src="https://park.ncsu.edu/wp-includes/js/dist/rich-text.min.js?ver=3e5852e42cee1c239bae"></script>
+<script id="wp-shortcode-js" src="https://park.ncsu.edu/wp-includes/js/dist/shortcode.min.js?ver=f6273476300cc5fad4cd"></script>
+<script id="wp-warning-js" src="https://park.ncsu.edu/wp-includes/js/dist/warning.min.js?ver=a0978839debc564a6608"></script>
+<script id="wp-blocks-js" src="https://park.ncsu.edu/wp-includes/js/dist/blocks.min.js?ver=c0e57a630a0b6f6c3bb5"></script>
+<script id="ncsu-blocks-public-js-js" src="https://park.ncsu.edu/wp-content/plugins/ncsu-blocks/dist/public.build.js?ver=1.3.0"></script>
+<script id="ncsu_brand_bar-js" src="https://cdn.ncsu.edu/brand-assets/utility-bar/ub.php?color=gray&#038;showBrick=1&#038;ver=v3.3.5"></script>
+<script id="ncsu_bootstrap_js-js" src="https://cdn.ncsu.edu/brand-assets/bootstrap/js/bootstrap.min.js?ver=v3.3.5"></script>
+<script id="main-js" src="https://park.ncsu.edu/wp-content/themes/hillsborough/inc/js/main.js?ver=v3.3.5"></script>
+<script id="shortcake-bakery-js" src="https://park.ncsu.edu/wp-content/plugins/ncsu-shortcodes/assets/js/shortcake-bakery.js?ver=0.4.2.8"></script>
+<script id="gform_gravityforms_utils-js" defer='defer' src="https://park.ncsu.edu/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=69a9db57304a9f86c3d1a0bea5fd2cf9"></script>
+<script id="gform_gravityforms_theme_vendors-js" defer='defer' src="https://park.ncsu.edu/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=0c901cb641ce64b99c20ea1a4d208cc9"></script>
+<script id="gform_gravityforms_theme-js-extra">
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"dfd3652b39703061a8947c9023a22ad4"},"ajax":{"ajaxurl":"https://park.ncsu.edu/wp-admin/admin-ajax.php","ajax_submission_nonce":"e1077e365f","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again.","error_403":"The request was blocked (403 error) for unknown security reasons. Remove any code-like text (scripts or DB queries) and try again."}}}},"hmr_dev":"","public_path":"https://park.ncsu.edu/wp-content/plugins/gravityforms/assets/js/dist/","config_nonce":"317cc7bd96"};
+//# sourceURL=gform_gravityforms_theme-js-extra
+</script>
+<script id="gform_gravityforms_theme-js" defer='defer' src="https://park.ncsu.edu/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=e27d9712159624c99129c8c208f022ad"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://park.ncsu.edu/wp-includes/js/wp-emoji-release.min.js?ver=7.1"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://park.ncsu.edu/wp-includes/js/wp-emoji-loader.min.js
+</script>
+<script>
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 1) {} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script>
+gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "1", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_1" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_1";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_1" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 1, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );
+</script>
+
+	<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4ccd5e1ed0aaa34',t:'MTc5MjM4MjAwMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

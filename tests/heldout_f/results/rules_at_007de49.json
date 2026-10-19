@@ -1,0 +1,158 @@
+{
+  "set": "held-out real pages",
+  "pages": 18,
+  "evaluated": 18,
+  "missing_snapshots": [],
+  "labels_sha": "4d5c43b0d9e3",
+  "mode": "deterministic",
+  "fields": {
+    "deadlines": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5
+    },
+    "levels": {
+      "tp": 13,
+      "fp": 2,
+      "fn": 4,
+      "precision": 0.867,
+      "recall": 0.765,
+      "f1": 0.812
+    },
+    "nationality_countries": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 54,
+      "precision": 0.667,
+      "recall": 0.036,
+      "f1": 0.068
+    }
+  },
+  "rates": {
+    "age": {
+      "correct": 0,
+      "total": 1,
+      "accuracy": 0.0
+    },
+    "cycle": {
+      "correct": 3,
+      "total": 6,
+      "accuracy": 0.5
+    },
+    "deadline_exact": {
+      "correct": 1,
+      "total": 2,
+      "accuracy": 0.5
+    },
+    "deadline_status": {
+      "correct": 1,
+      "total": 1,
+      "accuracy": 1.0
+    },
+    "duration": {
+      "correct": 0,
+      "total": 2,
+      "accuracy": 0.0
+    },
+    "funder_identity": {
+      "correct": 1,
+      "total": 7,
+      "accuracy": 0.143
+    },
+    "funder_identity_alias": {
+      "correct": 1,
+      "total": 7,
+      "accuracy": 0.143
+    },
+    "funding_amount": {
+      "correct": 0,
+      "total": 1,
+      "accuracy": 0.0
+    },
+    "funding_components": {
+      "correct": 0,
+      "total": 6,
+      "accuracy": 0.0
+    },
+    "nationality": {
+      "correct": 2,
+      "total": 5,
+      "accuracy": 0.4
+    },
+    "page_kind": {
+      "correct": 12,
+      "total": 18,
+      "accuracy": 0.667
+    },
+    "per_level_amount_not_collapsed": {
+      "correct": 1,
+      "total": 1,
+      "accuracy": 1.0
+    }
+  },
+  "attribution": {
+    "correct": 62,
+    "total": 63,
+    "accuracy": 0.984
+  },
+  "unsupported_rate": 0.417,
+  "unsupported_values": 5,
+  "scored_values": 12,
+  "missing_rate": 0.654,
+  "missing_values": 17,
+  "labelled_values": 26,
+  "ai": null,
+  "misses": {
+    "ec-senescyt-2026": [
+      "deadline missed 2026-03-27",
+      "nationality: predicted unknown [], label ('include', ['EC'])"
+    ],
+    "gh-gsa-programmes": [
+      "page_kind: predicted opportunity, label guidance"
+    ],
+    "gh-gsa-opportunities": [
+      "page_kind: predicted opportunity, label guidance"
+    ],
+    "om-moheri-a": [
+      "page_kind: predicted opportunity, label guidance"
+    ],
+    "lv-viaa-state": [
+      "nationality: predicted unknown [], label ('include', ['AZ', 'BE', 'BG', 'HR', 'CY', 'EG'])"
+    ],
+    "lv-rsu-state": [
+      "component travel: predicted covered, label not_covered",
+      "component insurance: predicted covered, label not_covered",
+      "duration: predicted '', label 11 months"
+    ],
+    "eg-study-in-egypt": [
+      "page_kind: predicted opportunity, label guidance"
+    ],
+    "az-studyinaz": [
+      "page_kind: predicted opportunity, label guidance"
+    ],
+    "az-heydar-aliyev-grant": [
+      "component tuition: predicted not covered, label covered",
+      "component accommodation: predicted not covered, label covered",
+      "component living_allowance: predicted not covered, label covered",
+      "component travel: predicted not covered, label covered"
+    ],
+    "az-mfa-hanoi-grant": [
+      "page_kind: predicted news, label opportunity"
+    ],
+    "gh-gsa-pwasi-2026": [
+      "deadline spurious 2026-08-14",
+      "nationality: predicted include ['GH'], label ('include', ['BJ', 'BF', 'CV', 'CI', 'GM', 'GN'])",
+      "duration: predicted '', label 48 months"
+    ],
+    "gh-gsa-algeria-2026": [
+      "max_age: predicted None, label 23"
+    ],
+    "ph-ched-cmsp": [
+      "cycle: predicted '2024', label '2024/2025'",
+      "award amount: predicted [], label {'amount': [120000], 'currency': 'PHP'}"
+    ]
+  }
+}

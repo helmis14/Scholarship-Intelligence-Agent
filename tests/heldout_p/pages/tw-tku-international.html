@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name='robots' content='max-image-preview:large' />
+<title>International Student Scholarship &#8211; 國際處</title>
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//use.fontawesome.com' />
+<link rel="alternate" type="application/rss+xml" title="國際處 &raquo; Feed" href="/oieie/?feed=rss2" />
+<link rel="alternate" type="application/rss+xml" title="國際處 &raquo; Comments Feed" href="/oieie/?feed=comments-rss2" />
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"wpemoji":"\/oieie\/wp-includes\/js\/wp-emoji.js?ver=6.3.1","twemoji":"\/oieie\/wp-includes\/js\/twemoji.js?ver=6.3.1"}};
+/**
+ * @output wp-includes/js/wp-emoji-loader.js
+ */
+
+/**
+ * Emoji Settings as exported in PHP via _print_emoji_detection_script().
+ * @typedef WPEmojiSettings
+ * @type {object}
+ * @property {?object} source
+ * @property {?string} source.concatemoji
+ * @property {?string} source.twemoji
+ * @property {?string} source.wpemoji
+ * @property {?boolean} DOMReady
+ * @property {?Function} readyCallback
+ */
+
+/**
+ * Support tests.
+ * @typedef SupportTests
+ * @type {object}
+ * @property {?boolean} flag
+ * @property {?boolean} emoji
+ */
+
+/**
+ * IIFE to detect emoji support and load Twemoji if needed.
+ *
+ * @param {Window} window
+ * @param {Document} document
+ * @param {WPEmojiSettings} settings
+ */
+( function wpEmojiLoader( window, document, settings ) {
+	if ( typeof Promise === 'undefined' ) {
+		return;
+	}
+
+	var sessionStorageKey = 'wpEmojiSettingsSupports';
+	var tests = [ 'flag', 'emoji' ];
+
+	/**
+	 * Checks whether the browser supports offloading to a Worker.
+	 *
+	 * @since 6.3.0
+	 *
+	 * @private
+	 *
+	 * @returns {boolean}
+	 */
+	function supportsWorkerOffloading() {
+		return (
+			typeof Worker !== 'undefined' &&
+			typeof OffscreenCanvas !== 'undefined' &&
+			typeof URL !== 'undefined' &&
+			URL.createObjectURL &&
+			typeof Blob !== 'undefined'
+		);
+	}
+
+	/**
+	 * @typedef SessionSupportTests
+	 * @type {object}
+	 * @property {number} timestamp
+	 * @property {SupportTests} supportTests
+	 */
+
+	/**
+	 * Get support tests from session.
+	 *
+	 * @since 6.3.0
+	 *
+	 * @private
+	 *
+	 * @returns {?SupportTests} Support tests, or null if not set or older than 1 week.
+	 */
+	function getSessionSupportTests() {
+		try {
+			/** @type {SessionSupportTests} */
+			var item = JSON.parse(
+				sessionStorage.getItem( sessionStorageKey )
+			);
+			if (
+				typeof item === 'object' &&
+				typeof item.timestamp === 'number' &&
+				new Date().valueOf() < item.timestamp + 604800 && // Note: Number is a week in seconds.
+				typeof item.supportTests === 'object'
+			) {
+				return item.supportTests;
+			}
+		} catch ( e ) {}
+		return null;
+	}
+
+	/**
+	 * Persist the supports in session storage.
+	 *
+	 * @since 6.3.0
+	 *
+	 * @private
+	 *
+	 * @param {SupportTests} supportTests Support tests.
+	 */
+	function setSessionSupportTests( supportTests ) {
+		try {
+			/** @type {SessionSupportTests} */
+			var item = {
+				supportTests: supportTests,
+				timestamp: new Date().valueOf()
+			};
+
+			sessionStorage.setItem(
+				sessionStorageKey,
+				JSON.stringify( item )
+			);
+		} catch ( e ) {}
+	}
+
+	/**
+	 * Checks if two sets of Emoji characters render the same visually.
+	 *
+	 * This function may be serialized to run in a Worker. Therefore, it cannot refer to variables from the containing
+	 * scope. Everything must be passed by parameters.
+	 *
+	 * @since 4.9.0
+	 *
+	 * @private
+	 *
+	 * @param {CanvasRenderingContext2D} context 2D Context.
+	 * @param {string} set1 Set of Emoji to test.
+	 * @param {string} set2 Set of Emoji to test.
+	 *
+	 * @return {boolean} True if the two sets render the same.
+	 */
+	function emojiSetsRenderIdentically( context, set1, set2 ) {
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, context.canvas.width, context.canvas.height );
+		context.fillText( set1, 0, 0 );
+		var rendered1 = new Uint32Array(
+			context.getImageData(
+				0,
+				0,
+				context.canvas.width,
+				context.canvas.height
+			).data
+		);
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, context.canvas.width, context.canvas.height );
+		context.fillText( set2, 0, 0 );
+		var rendered2 = new Uint32Array(
+			context.getImageData(
+				0,
+				0,
+				context.canvas.width,
+				context.canvas.height
+			).data
+		);
+
+		return rendered1.every( function ( rendered2Data, index ) {
+			return rendered2Data === rendered2[ index ];
+		} );
+	}
+
+	/**
+	 * Determines if the browser properly renders Emoji that Twemoji can supplement.
+	 *
+	 * This function may be serialized to run in a Worker. Therefore, it cannot refer to variables from the containing
+	 * scope. Everything must be passed by parameters.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @private
+	 *
+	 * @param {CanvasRenderingContext2D} context 2D Context.
+	 * @param {string} type Whether to test for support of "flag" or "emoji".
+	 * @param {Function} emojiSetsRenderIdentically Reference to emojiSetsRenderIdentically function, needed due to minification.
+	 *
+	 * @return {boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( context, type, emojiSetsRenderIdentically ) {
+		var isIdentical;
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * Test for Transgender flag compatibility. Added in Unicode 13.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (white flag emoji + transgender symbol).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					context,
+					'\uD83C\uDFF3\uFE0F\u200D\u26A7\uFE0F', // as a zero-width joiner sequence
+					'\uD83C\uDFF3\uFE0F\u200B\u26A7\uFE0F' // separated by a zero-width space
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for UN flag compatibility. This is the least supported of the letter locale flags,
+				 * so gives us an easy test for full support.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly ([U] + [N]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					context,
+					'\uD83C\uDDFA\uD83C\uDDF3', // as the sequence of two code points
+					'\uD83C\uDDFA\u200B\uD83C\uDDF3' // as the two code points separated by a zero-width space
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for English flag compatibility. England is a country in the United Kingdom, it
+				 * does not have a two letter locale code but rather a five letter sub-division code.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (black flag emoji + [G] + [B] + [E] + [N] + [G]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					context,
+					// as the flag sequence
+					'\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67\uDB40\uDC7F',
+					// with each code point separated by a zero-width space
+					'\uD83C\uDFF4\u200B\uDB40\uDC67\u200B\uDB40\uDC62\u200B\uDB40\uDC65\u200B\uDB40\uDC6E\u200B\uDB40\uDC67\u200B\uDB40\uDC7F'
+				);
+
+				return ! isIdentical;
+			case 'emoji':
+				/*
+				 * Why can't we be friends? Everyone can now shake hands in emoji, regardless of skin tone!
+				 *
+				 * To test for Emoji 14.0 support, try to render a new emoji: Handshake: Light Skin Tone, Dark Skin Tone.
+				 *
+				 * The Handshake: Light Skin Tone, Dark Skin Tone emoji is a ZWJ sequence combining 🫱 Rightwards Hand,
+				 * 🏻 Light Skin Tone, a Zero Width Joiner, 🫲 Leftwards Hand, and 🏿 Dark Skin Tone.
+				 *
+				 * 0x1FAF1 == Rightwards Hand
+				 * 0x1F3FB == Light Skin Tone
+				 * 0x200D == Zero-Width Joiner (ZWJ) that links the code points for the new emoji or
+				 * 0x200B == Zero-Width Space (ZWS) that is rendered for clients not supporting the new emoji.
+				 * 0x1FAF2 == Leftwards Hand
+				 * 0x1F3FF == Dark Skin Tone.
+				 *
+				 * When updating this test for future Emoji releases, ensure that individual emoji that make up the
+				 * sequence come from older emoji standards.
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					context,
+					'\uD83E\uDEF1\uD83C\uDFFB\u200D\uD83E\uDEF2\uD83C\uDFFF', // as the zero-width joiner sequence
+					'\uD83E\uDEF1\uD83C\uDFFB\u200B\uD83E\uDEF2\uD83C\uDFFF' // separated by a zero-width space
+				);
+
+				return ! isIdentical;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Checks emoji support tests.
+	 *
+	 * This function may be serialized to run in a Worker. Therefore, it cannot refer to variables from the containing
+	 * scope. Everything must be passed by parameters.
+	 *
+	 * @since 6.3.0
+	 *
+	 * @private
+	 *
+	 * @param {string[]} tests Tests.
+	 * @param {Function} browserSupportsEmoji Reference to browserSupportsEmoji function, needed due to minification.
+	 * @param {Function} emojiSetsRenderIdentically Reference to emojiSetsRenderIdentically function, needed due to minification.
+	 *
+	 * @return {SupportTests} Support tests.
+	 */
+	function testEmojiSupports( tests, browserSupportsEmoji, emojiSetsRenderIdentically ) {
+		var canvas;
+		if (
+			typeof WorkerGlobalScope !== 'undefined' &&
+			self instanceof WorkerGlobalScope
+		) {
+			canvas = new OffscreenCanvas( 300, 150 ); // Dimensions are default for HTMLCanvasElement.
+		} else {
+			canvas = document.createElement( 'canvas' );
+		}
+
+		var context = canvas.getContext( '2d', { willReadFrequently: true } );
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		var supports = {};
+		tests.forEach( function ( test ) {
+			supports[ test ] = browserSupportsEmoji( context, test, emojiSetsRenderIdentically );
+		} );
+		return supports;
+	}
+
+	/**
+	 * Adds a script to the head of the document.
+	 *
+	 * @ignore
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param {string} src The url where the script is located.
+	 *
+	 * @return {void}
+	 */
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+		script.src = src;
+		script.defer = true;
+		document.head.appendChild( script );
+	}
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	// Create a promise for DOMContentLoaded since the worker logic may finish after the event has fired.
+	var domReadyPromise = new Promise( function ( resolve ) {
+		document.addEventListener( 'DOMContentLoaded', resolve, {
+			once: true
+		} );
+	} );
+
+	// Obtain the emoji support from the browser, asynchronously when possible.
+	new Promise( function ( resolve ) {
+		var supportTests = getSessionSupportTests();
+		if ( supportTests ) {
+			resolve( supportTests );
+			return;
+		}
+
+		if ( supportsWorkerOffloading() ) {
+			try {
+				// Note that the functions are being passed as arguments due to minification.
+				var workerScript =
+					'postMessage(' +
+					testEmojiSupports.toString() +
+					'(' +
+					[
+						JSON.stringify( tests ),
+						browserSupportsEmoji.toString(),
+						emojiSetsRenderIdentically.toString()
+					].join( ',' ) +
+					'));';
+				var blob = new Blob( [ workerScript ], {
+					type: 'text/javascript'
+				} );
+				var worker = new Worker( URL.createObjectURL( blob ), { name: 'wpTestEmojiSupports' } );
+				worker.onmessage = function ( event ) {
+					supportTests = event.data;
+					setSessionSupportTests( supportTests );
+					worker.terminate();
+					resolve( supportTests );
+				};
+				return;
+			} catch ( e ) {}
+		}
+
+		supportTests = testEmojiSupports( tests, browserSupportsEmoji, emojiSetsRenderIdentically );
+		setSessionSupportTests( supportTests );
+		resolve( supportTests );
+	} )
+		// Once the browser emoji support has been obtained from the session, finalize the settings.
+		.then( function ( supportTests ) {
+			/*
+			 * Tests the browser support for flag emojis and other emojis, and adjusts the
+			 * support settings accordingly.
+			 */
+			for ( var test in supportTests ) {
+				settings.supports[ test ] = supportTests[ test ];
+
+				settings.supports.everything =
+					settings.supports.everything && settings.supports[ test ];
+
+				if ( 'flag' !== test ) {
+					settings.supports.everythingExceptFlag =
+						settings.supports.everythingExceptFlag &&
+						settings.supports[ test ];
+				}
+			}
+
+			settings.supports.everythingExceptFlag =
+				settings.supports.everythingExceptFlag &&
+				! settings.supports.flag;
+
+			// Sets DOMReady to false and assigns a ready function to settings.
+			settings.DOMReady = false;
+			settings.readyCallback = function () {
+				settings.DOMReady = true;
+			};
+		} )
+		.then( function () {
+			return domReadyPromise;
+		} )
+		.then( function () {
+			// When the browser can not render everything we need to load a polyfill.
+			if ( ! settings.supports.everything ) {
+				settings.readyCallback();
+
+				var src = settings.source || {};
+
+				if ( src.concatemoji ) {
+					addScript( src.concatemoji );
+				} else if ( src.wpemoji && src.twemoji ) {
+					addScript( src.twemoji );
+					addScript( src.wpemoji );
+				}
+			}
+		} );
+} )( window, document, window._wpemojiSettings );
+</script>
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='font-awesome-css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css?ver=6.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome4.7-css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css?ver=6.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tku_bs5_navigation_menu_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/tku_bs5_blocks_kpc/tku_bs5_navigation_menu/tku_bs5_navigation_menu.css?ver=1723700857' type='text/css' media='all' />
+<link rel='stylesheet' id='tku_bs5_sitemap_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/tku_bs5_blocks_kpc/tku_bs5_sitemap/tku_bs5_sitemap.css?ver=6.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='lightbox2_style-css' href='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css?ver=6.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tku_bs5_block_util_editor_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/util/tku_bs5_blocks_util.css?ver=1741829706' type='text/css' media='all' />
+<link rel='stylesheet' id='tku_bs5_div_editor_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/tku_bs5_blocks_kpc/tku_bs5_div/tku_bs5_div.css?ver=1723700857' type='text/css' media='all' />
+<link rel='stylesheet' id='aos_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/tku_bs5_blocks_kpc/tku_bs5_div/aos.css?ver=1723700857' type='text/css' media='all' />
+<link rel='stylesheet' id='tku_bs5_heading_editor_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/tku_bs5_blocks_kpc/tku_bs5_heading/tku_bs5_heading.css?ver=6.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tku_bs5_frame_editor_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/tku_bs5_blocks_kpc/tku_bs5_frame/tku_bs5_frame.css?ver=1723700857' type='text/css' media='all' />
+<link rel='stylesheet' id='tku_bs5_card_editor_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/tku_bs5_blocks_kpc/tku_bs5_card/tku_bs5_card.css?ver=1723700857' type='text/css' media='all' />
+<link rel='stylesheet' id='tku_bs5_search_editor_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/tku_bs5_blocks_kpc/tku_bs5_search/tku_bs5_search.css?ver=1723700857' type='text/css' media='all' />
+<link rel='stylesheet' id='tku_bs5_members_editor_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/tku_bs5_blocks_kpc/tku_bs5_members/tku_bs5_members.css?ver=1723700857' type='text/css' media='all' />
+<link rel='stylesheet' id='tku_bs5_isotope_editor_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/m_bs5_blocks/tku_bs5_isotope/tku_bs5_isotope.css?ver=1785315950' type='text/css' media='all' />
+<link rel='stylesheet' id='tku_bs5_list_item_editor_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/m_bs5_blocks/tku_bs5_list_item/tku_bs5_list_item.css?ver=1785315950' type='text/css' media='all' />
+<link rel='stylesheet' id='load-fa-css' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css?ver=6.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='lightgallery_min_css-css' href='https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.21/css/lightgallery.min.css?ver=6.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tku_bs5_gallery_editor_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/m_bs5_blocks/tku_bs5_gallery/tku_bs5_gallery.css?ver=1785315950' type='text/css' media='all' />
+<link rel='stylesheet' id='tku_bs5_filedownload_editor_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/m_bs5_blocks/tku_bs5_filedownload/tku_bs5_filedownload.css?ver=1785315950' type='text/css' media='all' />
+<link rel='stylesheet' id='mytku_bs5_image_editor_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/mytku_bs5_blocks/mytku_bs5_image/mytku_bs5_image.css?ver=1785315916' type='text/css' media='all' />
+<link rel='stylesheet' id='mytku_bs5_preloader_editor_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/mytku_bs5_blocks/mytku_bs5_preloader/mytku_bs5_preloader.css?ver=1785315916' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrapicon-css' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css?ver=6.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='owlcss-css' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css?ver=6.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='animatecss-css' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css?ver=6.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='mytku_bs5_bannerslides2_editor_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/mytku_bs5_blocks/mytku_bs5_bannerslides2/mytku_bs5_bannerslides2.css?ver=6.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='owltheme-css' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.css?ver=6.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='mytku_bs5_bannerslides3_editor_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/mytku_bs5_blocks/mytku_bs5_bannerslides3/mytku_bs5_bannerslides3.css?ver=1785315916' type='text/css' media='all' />
+<link rel='stylesheet' id='mytku_bs5_imageHover_editor_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/mytku_bs5_blocks/mytku_bs5_image_hover/mytku_bs5_image_hover.css?ver=1785315916' type='text/css' media='all' />
+<link rel='stylesheet' id='mytku_bs5_image_style-css' href='/oieie/wp-content/plugins/tku_bs5_blocks/mytku_bs5_blocks/mytku_bs5_image/mytku_bs5_image.css?ver=6.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css' href='/oieie/wp-includes/css/dist/block-library/style.css?ver=6.3.1' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}body { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: 0px; margin-block-end: 0; }:where(.wp-site-blocks) > :first-child:first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child:last-child { margin-block-end: 0; }body { --wp--style--block-gap: 0px; }:where(body .is-layout-flow)  > :first-child:first-child{margin-block-start: 0;}:where(body .is-layout-flow)  > :last-child:last-child{margin-block-end: 0;}:where(body .is-layout-flow)  > *{margin-block-start: 0px;margin-block-end: 0;}:where(body .is-layout-constrained)  > :first-child:first-child{margin-block-start: 0;}:where(body .is-layout-constrained)  > :last-child:last-child{margin-block-end: 0;}:where(body .is-layout-constrained)  > *{margin-block-start: 0px;margin-block-end: 0;}:where(body .is-layout-flex) {gap: 0px;}:where(body .is-layout-grid) {gap: 0px;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}.wp-element-button, .wp-block-button__link{background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<style id='core-block-supports-inline-css' type='text/css'>
+/**
+ * Core styles: block-supports
+ */
+
+</style>
+<link rel='stylesheet' id='bootstrap5_style-css' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css?ver=6.3.1' type='text/css' media='all' />
+<script type='text/javascript' src='/oieie/wp-content/plugins/tku_bs5_blocks/tku_bs5_blocks_kpc/tku_bs5_navigation_menu/sticky-top.js?ver=1723700857' id='stickytop-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js?ver=6.3.1' id='jquery3.4.1-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js?ver=6.3.1' id='jqueryui1.13.2-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js?ver=6.3.1' id='monent2.29.4-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js?ver=6.3.1' id='lightbox2_scripts-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/vendor/wp-polyfill-inert.js?ver=3.1.2' id='wp-polyfill-inert-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/vendor/regenerator-runtime.js?ver=0.13.11' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/vendor/wp-polyfill.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/autop.js?ver=b745c6fbf05b78fb082d' id='wp-autop-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/blob.js?ver=c8cd0ee72e8256295689' id='wp-blob-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/block-serialization-default-parser.js?ver=659c02a916d332d198d3' id='wp-block-serialization-default-parser-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/development/react-refresh-runtime.js?ver=d4cdced5a2afff4a8cc2' id='wp-react-refresh-runtime-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/development/react-refresh-entry.js?ver=794dd7047e2302828128' id='wp-react-refresh-entry-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/vendor/react.js?ver=18.2.0' id='react-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/hooks.js?ver=cb3553927d7ab6049113' id='wp-hooks-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/deprecated.js?ver=e7be1e59b3a3f3f2de93' id='wp-deprecated-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/dom.js?ver=2859d23ff0f3c3599c5f' id='wp-dom-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/vendor/react-dom.js?ver=18.2.0' id='react-dom-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/escape-html.js?ver=6cf743ecc1ac531a8ee6' id='wp-escape-html-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/element.js?ver=b368b38a89162c1a2dd4' id='wp-element-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/is-shallow-equal.js?ver=6db118482717025592c3' id='wp-is-shallow-equal-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/i18n.js?ver=28325ce370dfa8a48974' id='wp-i18n-js'></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/keycodes.js?ver=3ea3f757df3faecf5b53' id='wp-keycodes-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/priority-queue.js?ver=c1d62738f06e87528f62' id='wp-priority-queue-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/compose.js?ver=6861d91c4896ce3aecda' id='wp-compose-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/private-apis.js?ver=4aec745137be5ec003ec' id='wp-private-apis-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/redux-routine.js?ver=5864c15205ae69892f05' id='wp-redux-routine-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/data.js?ver=16121b61f8bc66f02ac6' id='wp-data-js'></script>
+<script id="wp-data-js-after">
+( function() {
+	var userId = 0;
+	var storageKey = "WP_DATA_USER_" + userId;
+	wp.data
+		.use( wp.data.plugins.persistence, { storageKey: storageKey } );
+} )();
+</script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/html-entities.js?ver=87ef261e846b76e5a37b' id='wp-html-entities-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/shortcode.js?ver=0a7e6e9696d74a96cbbc' id='wp-shortcode-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/blocks.js?ver=6307ec40356a2e0670e0' id='wp-blocks-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/dom-ready.js?ver=7c25017459f1da90355d' id='wp-dom-ready-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/a11y.js?ver=f5d24347216c445a8c01' id='wp-a11y-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/url.js?ver=b8dc9f774df8e318bec4' id='wp-url-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/api-fetch.js?ver=c6922e5e289e31508e9e' id='wp-api-fetch-js'></script>
+<script id="wp-api-fetch-js-after">
+wp.apiFetch.use( wp.apiFetch.createRootURLMiddleware( "/oieie/index.php?rest_route=/" ) );
+wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware( "2331615a1a" );
+wp.apiFetch.use( wp.apiFetch.nonceMiddleware );
+wp.apiFetch.use( wp.apiFetch.mediaUploadMiddleware );
+wp.apiFetch.nonceEndpoint = "/oieie/wp-admin/admin-ajax.php?action=rest-nonce";
+</script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/vendor/lodash.js?ver=4.17.19' id='lodash-js'></script>
+<script id="lodash-js-after">
+window.lodash = _.noConflict();
+</script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/vendor/moment.js?ver=2.29.4' id='moment-js'></script>
+<script id="moment-js-after">
+moment.updateLocale( 'en_US', {"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"week":{"dow":1},"longDateFormat":{"LT":"H:i","LTS":null,"L":null,"LL":"Y-m-d","LLL":"F j, Y g:i a","LLLL":null}} );
+</script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/date.js?ver=74ec621209ef5f985502' id='wp-date-js'></script>
+<script id="wp-date-js-after">
+wp.date.setSettings( {"l10n":{"locale":"en_US","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"meridiem":{"am":"am","pm":"pm","AM":"AM","PM":"PM"},"relative":{"future":"%s from now","past":"%s ago"},"startOfWeek":1},"formats":{"time":"H:i","date":"Y-m-d","datetime":"F j, Y g:i a","datetimeAbbreviated":"M j, Y g:i a"},"timezone":{"offset":8,"string":"","abbr":""}} );
+</script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/primitives.js?ver=9a5b77281b914496cc3f' id='wp-primitives-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/rich-text.js?ver=ad3aca3abfd414c65cd3' id='wp-rich-text-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/warning.js?ver=aa73c6d9a1563e863795' id='wp-warning-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/components.js?ver=32407b70de56366bfd74' id='wp-components-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/keyboard-shortcuts.js?ver=0dd9d7a2fc055546ac02' id='wp-keyboard-shortcuts-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/notices.js?ver=89066af3709002b265aa' id='wp-notices-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/preferences-persistence.js?ver=6359e081d54254a8095f' id='wp-preferences-persistence-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/preferences.js?ver=77e5d89bcb85ec728c47' id='wp-preferences-js'></script>
+<script id="wp-preferences-js-after">
+( function() {
+				var serverData = false;
+				var userId = "0";
+				var persistenceLayer = wp.preferencesPersistence.__unstableCreatePersistenceLayer( serverData, userId );
+				var preferencesStore = wp.preferences.store;
+				wp.data.dispatch( preferencesStore ).setPersistenceLayer( persistenceLayer );
+			} ) ();
+</script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/style-engine.js?ver=ed586d7be92a16524d2a' id='wp-style-engine-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/token-list.js?ver=59593bbd84ae7c0d4c03' id='wp-token-list-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/wordcount.js?ver=02aee9969304892b0e50' id='wp-wordcount-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/block-editor.js?ver=87e92f80c4626dbe1274' id='wp-block-editor-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/core-data.js?ver=419176f02b850abf99ea' id='wp-core-data-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/media-utils.js?ver=64f965a73c9014525194' id='wp-media-utils-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/reusable-blocks.js?ver=28127b0e26dd1f5e354e' id='wp-reusable-blocks-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/server-side-render.js?ver=75db96a643c7c526dd9b' id='wp-server-side-render-js'></script>
+<script type='text/javascript' src='/oieie/wp-includes/js/dist/editor.js?ver=a8b90ee878cbbbb021a9' id='wp-editor-js'></script>
+<script id="wp-editor-js-after">
+Object.assign( window.wp.editor, window.wp.oldEditor );
+</script>
+<script type='text/javascript' src='/oieie/wp-content/plugins/tku_bs5_blocks/tku_bs5_blocks_kpc/tku_bs5_search/tku_bs5_search_view.js?ver=1785397298' id='tku_bs5_search_view_script-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js?ver=6.3.1' id='isotope_pkgd_js-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.min.js?ver=6.3.1' id='tokenfield-clear-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.21/js/lightgallery-all.min.js?ver=6.3.1' id='lightgallery_all_js-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js?ver=6.3.1' id='imagesloaded_pkgd_js-js'></script>
+<script type='text/javascript' src='/oieie/wp-content/plugins/tku_bs5_blocks/m_bs5_blocks/tku_bs5_gallery/custom-gallery-filter.js?ver=1785315950' id='custom_gallery_filter-js'></script>
+<script type='text/javascript' src='/oieie/wp-content/plugins/tku_bs5_blocks/mytku_bs5_blocks/mytku_bs5_preloader/potenza.js?ver=1785315916' id='potenza-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js?ver=6.3.1' id='owljs-js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js?ver=6.3.1' id='bootstrap5_scripts-js'></script>
+<link rel="https://api.w.org/" href="/oieie/index.php?rest_route=/" /><link rel="alternate" type="application/json" href="/oieie/index.php?rest_route=/wp/v2/pages/20591" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/oieie/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.3.1" />
+<link rel="canonical" href="/oieie/?page_id=20591" />
+<link rel='shortlink' href='/oieie/?p=20591' />
+<link rel="alternate" type="application/json+oembed" href="/oieie/index.php?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=https%3A%2F%2Fiweb20wpa.url.tku.edu.tw%2Foieie%2F%3Fpage_id%3D20591" />
+<link rel="alternate" type="text/xml+oembed" href="/oieie/index.php?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=https%3A%2F%2Fiweb20wpa.url.tku.edu.tw%2Foieie%2F%3Fpage_id%3D20591&#038;format=xml" />
+<!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-F9ZCPQJXRZ"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-F9ZCPQJXRZ');
+            </script><link rel="icon" href="/oieie/wp-content/uploads/2024/11/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/oieie/wp-content/uploads/2024/11/favicon.ico" sizes="192x192" />
+<link rel="apple-touch-icon" href="/oieie/wp-content/uploads/2024/11/favicon.ico" />
+<meta name="msapplication-TileImage" content="/oieie/wp-content/uploads/2024/11/favicon.ico" />
+</head>
+
+<body class="page-template page-template-wp-custom-template-detail-4-page-en page page-id-20591 wp-embed-responsive">
+
+<div class="wp-site-blocks"><header class="wp-block-template-part">
+<div class="wp-block-tkuwpbs5-bs5-container container" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);position:relative" block_id="lvc2ace36m3o97xgw13"><style></style>
+<div class="wp-block-tkuwpbs5-bs5-row row navtop">
+<div class="wp-block-tkuwpbs5-bs5-column col-md-6 align-self-start"><a href="/oieie/" target="_blank"><img decoding="async" src="/oieie/wp-content/uploads/2024/11/Logo_oieie.png" class="img-fluid img-fluid me-auto d-block" alt="上傳圖片"></a></div>
+
+
+
+<div class="wp-block-tkuwpbs5-bs5-column col-md-6 align-self-start align-self-center has-text-align-right">
+<div class="wp-block-tkuwpbs5-bs5-search dv-search" style="padding-top:var(--wp--preset--spacing--20)"><style></style><div action="https://www.google.com/search" class="form-inline" id="cse-search-box" target="_new" title="連結Google搜尋結果頁面(另開新視窗)"><div id="block-search" class="form-group d-flex" style="justify-content:flex-end"><input accesskey="S" id="q" aria-labelledby="Google自訂搜尋" title="Google搜尋" class="form-control" name="q" type="text" style="width:200px" placeholder="input keywords"/><input type="hidden" name="site" id="site" value="site:www.oieie.tku.edu.tw"/><button id="block-search-btn" type="submit" class="btn btn-secondary" style="margin:0px 1px" name="sa"> <i class="fa fa-search" aria-hidden="true"></i></button></div></div></div>
+
+
+
+<p class="dv-login"><a href="https://iweb20a.url.tku.edu.tw/msisso/oieie">Login</a></p>
+
+
+
+<div class="wp-block-tkuwpbs5-bs5-row row" style="padding-top:0;padding-bottom:0">
+<p class="has-text-align-right toplink"><a href="/oieie/?page_id=602">Sitemap</a> &nbsp;|&nbsp; <a href="https://www.tku.edu.tw">Tamkang University</a> &nbsp;|&nbsp; <a href="/oieie/">繁中</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+<nav class="col-12 navbar navbar-expand-lg g-0 fkwx-navbar  " id="block-79a64ef1-1cbd-4d15-8cbc-fe6799dd9253"><div class="container-fluid"><span style="font-weight:bold;font-size:20px;color:black;"></span><button class="navbar-toggler me-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContentblock-79a64ef1-1cbd-4d15-8cbc-fe6799dd9253" aria-controls="navbarSupportedContentblock-79a64ef1-1cbd-4d15-8cbc-fe6799dd9253" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                 <div class="collapse navbar-collapse" id="navbarSupportedContentblock-79a64ef1-1cbd-4d15-8cbc-fe6799dd9253">
+                 <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto me-auto"><li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle"  href="#" title="提供News連結"  id="navbarDropdownMenuList" role="button" data-bs-toggle="dropdown" aria-expanded="false">News</a>
+                        <ul class="dropdown-menu dropdown-submenu " style="background:#efefef" aria-labelledby="navbarDropdownMenuList"><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=18185&#038;ckl=scholarship" title="提供Scholarships連結" >Scholarships</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=18185&#038;ckl=short-term%20exchange" title="提供Short-Term Exchange連結" >Short-Term Exchange</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=18185&#038;ckl=exchange%20student%20program" title="提供Exchange Student Program連結" >Exchange Student Program</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=18185&#038;ckl=on-campus%20activities" title="提供On-Campus Activities連結" >On-Campus Activities</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=18185&#038;ckl=external%20news" title="提供External News連結" >External News</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=18185&#038;ckl=micro%20talent" title="提供Recruitment連結" >Recruitment</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=18185&#038;ckl=international%20students" title="提供International Student連結" >International Student</a></li>
+                        </ul>
+                    </li><li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle"  href="#" title="提供About連結"  id="navbarDropdownMenuList" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                        <ul class="dropdown-menu dropdown-submenu " style="background:#efefef" aria-labelledby="navbarDropdownMenuList"><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=14609" title="提供Introduction連結" >Introduction</a></li><li class="nav-item dropdown"><a class="dropdown-item dropdown-toggle"  href="#" style="color:black" role="button" data-bs-toggle="dropdown" title="提供Member連結" >Member</a><ul class="dropdown-menu  dropdown-submenu " style="background:#efefef;"><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=21326" title="提供Main Office連結"><i class="fas fa-caret-right pe-2"></i>Main Office</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=21352" title="提供International and Cross-Strait Exchange Section連結"><i class="fas fa-caret-right pe-2"></i>International and Cross-Strait Exchange Section</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=21356" title="提供International and Mainland Students Guidance Section連結"><i class="fas fa-caret-right pe-2"></i>International and Mainland Students Guidance Section</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=21359" title="提供International Programs Division連結"><i class="fas fa-caret-right pe-2"></i>International Programs Division</a></li></ul></li>
+                        </ul>
+                    </li><li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle"  href="#" title="提供Programs連結"  id="navbarDropdownMenuList" role="button" data-bs-toggle="dropdown" aria-expanded="false">Programs</a>
+                        <ul class="dropdown-menu dropdown-submenu " style="background:#efefef" aria-labelledby="navbarDropdownMenuList"><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19652" title="提供Application Information連結" >Application Information</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19648" title="提供Academic Information連結" >Academic Information</a></li>
+                        </ul>
+                    </li><li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle"  href="#" title="提供Exchange連結"  id="navbarDropdownMenuList" role="button" data-bs-toggle="dropdown" aria-expanded="false">Exchange</a>
+                        <ul class="dropdown-menu dropdown-submenu " style="background:#efefef" aria-labelledby="navbarDropdownMenuList"><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19640" title="提供Sister School Exchange連結" >Sister School Exchange</a></li><li><a class="dropdown-item" style="color:black" href="https://www.facebook.com/TKUOICSA/?locale=zh_TW" title="提供Exchange Activities連結" >Exchange Activities</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=21390" title="提供International Exchange Association連結" >International Exchange Association</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=21394" title="提供Cross-Strait Group連結" >Cross-Strait Group</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=21742" title="提供Cross-Strait Exchanges連結" >Cross-Strait Exchanges</a></li>
+                        </ul>
+                    </li><li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle"  href="#" title="提供Admissions連結"  id="navbarDropdownMenuList" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admissions</a>
+                        <ul class="dropdown-menu dropdown-submenu " style="background:#efefef" aria-labelledby="navbarDropdownMenuList"><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19638" title="提供Promotional Videos連結" >Promotional Videos</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=20970" title="提供Scholarships for International Students連結" >Scholarships for International Students</a></li><li><a class="dropdown-item" style="color:black" href="https://english.tku.edu.tw/StudyinTKU.asp" title="提供Admissions Information (Study in TKU)連結" >Admissions Information (Study in TKU)</a></li><li><a class="dropdown-item" style="color:black" href="https://english.tku.edu.tw/faq.asp" title="提供FAQs連結" >FAQs</a></li>
+                        </ul>
+                    </li><li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle"  href="#" title="提供Student連結"  id="navbarDropdownMenuList" role="button" data-bs-toggle="dropdown" aria-expanded="false">Student</a>
+                        <ul class="dropdown-menu dropdown-submenu " style="background:#efefef" aria-labelledby="navbarDropdownMenuList"><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19621" title="提供New Student Area連結" >New Student Area</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=20591" title="提供Scholarships for International Students連結" >Scholarships for International Students</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19629" title="提供International Student Insurance連結" >International Student Insurance</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19631" title="提供Residence Permit Application連結" >Residence Permit Application</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19635" title="提供Work Permit Application連結" >Work Permit Application</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=20972" title="提供International Student Community連結" >International Student Community</a></li>
+                        </ul>
+                    </li><li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle"  href="#" title="提供Inbound連結"  id="navbarDropdownMenuList" role="button" data-bs-toggle="dropdown" aria-expanded="false">Inbound</a>
+                        <ul class="dropdown-menu dropdown-submenu " style="background:#efefef" aria-labelledby="navbarDropdownMenuList"><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19613" title="提供International Exchange Students連結" >International Exchange Students</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19607" title="提供Mainland China Exchange Students連結" >Mainland China Exchange Students</a></li>
+                        </ul>
+                    </li><li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle"  href="#" title="提供Abroad連結"  id="navbarDropdownMenuList" role="button" data-bs-toggle="dropdown" aria-expanded="false">Abroad</a>
+                        <ul class="dropdown-menu dropdown-submenu " style="background:#efefef" aria-labelledby="navbarDropdownMenuList"><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19605" title="提供Overseas Exchange Students連結" >Overseas Exchange Students</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19603" title="提供Dual-Degree Students連結" >Dual-Degree Students</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=21396" title="提供Sister School Short-Term Courses and Activities連結" >Sister School Short-Term Courses and Activities</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19599" title="提供Scholarships連結" >Scholarships</a></li>
+                        </ul>
+                    </li><li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle"  href="#" title="提供Faculty連結"  id="navbarDropdownMenuList" role="button" data-bs-toggle="dropdown" aria-expanded="false">Faculty</a>
+                        <ul class="dropdown-menu dropdown-submenu " style="background:#efefef" aria-labelledby="navbarDropdownMenuList"><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=20975" title="提供International Student Advisor連結" >International Student Advisor</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19595" title="提供Learning Program連結" >Learning Program</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19591" title="提供Southbound Study Abroad Program連結" >Southbound Study Abroad Program</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19580" title="提供Materials on Strengthening Southbound Exchanges and Cooperation with Southeast Asian Countries連結" >Materials on Strengthening Southbound Exchanges and Cooperation with Southeast Asian Countries</a></li>
+                        </ul>
+                    </li><li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle"  href="#" title="提供Resources連結"  id="navbarDropdownMenuList" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+                        <ul class="dropdown-menu dropdown-submenu " style="background:#efefef" aria-labelledby="navbarDropdownMenuList"><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=22120" title="提供International Degree Student Population連結" >International Degree Student Population</a></li><li class="nav-item dropdown"><a class="dropdown-item dropdown-toggle"  href="#" style="color:black" role="button" data-bs-toggle="dropdown" title="提供Download連結" >Download</a><ul class="dropdown-menu  dropdown-submenu " style="background:#efefef;"><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19576" title="提供Manuals連結"><i class="fas fa-caret-right pe-2"></i>Manuals</a></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19578" title="提供Global Village連結"><i class="fas fa-caret-right pe-2"></i>Global Village</a></li></ul></li><li><a class="dropdown-item" style="color:black" href="/oieie/?page_id=19572" title="提供Links連結" >Links</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+    </div></nav><style>
+        @media (pointer: fine) {
+        
+            #block-79a64ef1-1cbd-4d15-8cbc-fe6799dd9253 .dropdown:hover > .dropdown-menu {
+                display: block;
+            }
+
+            #block-79a64ef1-1cbd-4d15-8cbc-fe6799dd9253 .dropdown > .dropdown-menu > .dropdown-submenu:hover > .dropdown-submenu {
+                display: block;
+            }
+        }
+        </style>
+        <script>
+        document.addEventListener("DOMContentLoaded",function () {
+            var path = window.location.pathname + window.location.search;
+            var target = $('.fkwx-navbar a[href="'+ path + '"]');
+            if (target.length == 0) {
+                path = decodeURI(path);
+                target = $('.fkwx-navbar a[href="'+ path + '"]');
+            }
+            target.addClass('fkwx-active');
+            target.parents('li').addClass('fkwx-active');
+            //target.parents('li.fkwx-active').find('a').first().addClass('fkwx-active');
+        
+            let activeLiElements = document.querySelectorAll('li.fkwx-active');
+            activeLiElements.forEach(li => {
+                const firstAnchor = li.querySelector('a');
+                if (firstAnchor) {
+                    firstAnchor.classList.add('fkwx-active');
+                }
+            });
+        });
+        </script>
+    <style>
+                #block-79a64ef1-1cbd-4d15-8cbc-fe6799dd9253 .nav-link {
+                    color: #ffffff;
+                }
+                #block-79a64ef1-1cbd-4d15-8cbc-fe6799dd9253 {    
+                    background-color: #991c22;
+                }
+            </style>
+
+<style>
+.dv-search, .dv-login{
+   display: inline-block;
+   margin-bottom: 0.25rem;
+}
+.navtop .form-control {
+    padding: 0 0.75rem;
+    font-size: 0.85rem;
+    line-height: 100%;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.navtop [type=submit]:not(:disabled), .navtop button:not(:disabled) {
+  --bs-btn-padding-y: 0.175rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  margin-left: 0 !important;
+}
+.navtop p.toplink{
+   color: #5a5a5a;
+   margin: 6px 0;
+   margin-right: -15px;
+   font-weight: bold;
+}
+/*
+.navtop p.toplink a{ color: #5a5a5a; }
+*/
+.navtop p a{  color: #5a5a5a; }
+.navtop p a:hover{  color: #a0050d; }
+
+.navbar{
+  /*--bs-navbar-padding-y: 0.15rem;*/
+   --bs-navbar-nav-link-padding-x: 1rem;
+}
+ul.navbar-nav > .nav-item{
+   font-size: 1.125rem;
+   font-weight: bold;
+/*   padding: 0 8px; */
+}
+ul.navbar-nav li.fkwx-active > a{
+    color: #c19c04 !important;
+}
+
+.nav-link:focus, .nav-link:hover{
+   color: #c19c04 !important;
+}
+
+.dropdown-menu {
+   --bs-dropdown-border-radius: 0;
+   --bs-dropdown-item-padding-y: 0.5rem;
+   padding: 0;
+}
+.dropdown-menu li{
+   /*padding: 8px; */
+   border-bottom: 1px #ddd solid;
+}
+.dropdown-item{
+   padding: 0.5rem 1rem;
+   font-weight: bold !important;
+}
+.dropdown-item:focus, .dropdown-item:hover{
+   color: #fff !important;
+   background: #480307;
+}
+@media (max-width: 1024px) {
+    .navbar-nav .dropdown-item {
+        padding:8px !important;
+        text-wrap: wrap;
+    }
+    .navbar-nav .dropdown-menu {
+        width: 280px;
+    }
+}
+@media (max-width: 480px) {
+    .navbar-nav {
+       padding-left:0 !important;
+    }
+    .navbar-nav .dropdown-menu {
+        width: 175px;
+    }
+}
+</style></header>
+
+
+<div class="wp-block-tkuwpbs5-bs5-container container bfpage" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);position:relative" block_id="lvn7sn7vqx8qr6dz2y"><style>div[block_id=lvn7sn7vqx8qr6dz2y]::before { 
+                    content: '';
+                    background-image: url('/oieie/wp-content/uploads/2024/11/footer_bg.png');
+                    background-repeat: no-repeat;
+                    opacity: 0.5;
+                    background-size: undefined; 
+                    background-position: right bottom;                  
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                }</style>
+<div class="wp-block-tkuwpbs5-bs5-div detail-title" style="margin-bottom:var(--wp--preset--spacing--60)" data-aos="normal"><h2 class="wp-block-post-title">International Student Scholarship</h2></div>
+
+
+
+<div class="wp-block-tkuwpbs5-bs5-row row">
+<div class="wp-block-tkuwpbs5-bs5-column col-md-12 align-self-start"><div class="entry-content wp-block-post-content is-layout-flow wp-block-post-content-is-layout-flow"><table class="table" border="1" cellspacing="1" cellpadding="1">
+<thead>
+<tr>
+<th colspan="2" scope="col">
+<blockquote><p>International Degree Students</p></blockquote>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entrance Scholarships for Outstanding Overseas Students</strong></p>
+<ol>
+<li>The Tamkang University (TKU) Guidelines Governing the Allocation of Entrance Scholarships for Outstanding Overseas Students (hereinafter referred to as “These Guidelines”) were specially formulated to promote internationalization at TKU, encourage outstanding overseas students to come to TKU for study, and subsidize miscellaneous fees associated with such study.</li>
+<li>A portion of the TKU budget has been allocated to fund entrance scholarships for outstanding overseas students.</li>
+<li>The scholarships are offered to newly-enrolled overseas students seeking degrees at TKU who have been approved by TKU’s Scholarship Review Committee.</li>
+<li>Specific items and quotas concerning TKU entrance scholarships for outstanding overseas students are outlined as follows (for the number of scholarship places offered in any given year, refer to the quota in the Admissions Booklet for that year):
+<ul>
+<li>The Entrance Scholarship for Outstanding International Students (16 places)</li>
+<li>The Malaysian Student Scholarship (19 places)</li>
+<li>The Entrance Scholarship for Outstanding International Master’s and Doctoral Students (26 places in total, including 2 alternating places from each department of the College of Science / College of Engineering / master&#8217;s degree programs taught in English)</li>
+<li>The Hong Kong &amp; The Macau Student Entrance scholarship (up to 5 places)</li>
+<li>The Mainland Chinese Student Entrance Scholarship (A total of 10 places for bachelor’s and master’s programs; the scholarship quota for PhD programs will be equivalent to the admissions quota for that year.)</li>
+<li>The Thai Student Entrance Scholarship (up to 5 places)</li>
+<li>The Indonesian Student Entrance Scholarship (up to 10 places)</li>
+<li>Overseas Alliance High School Student Entrance Scholarship (Each alliance high school can recommend up to 2 candidates in principle.)</li>
+</ul>
+</li>
+</ol>
+<ol start="5">
+<li>Scholarship details:
+<ul>
+<li>The following scholarships cover one year of student tuition and miscellaneous fees: The Entrance Scholarship for Outstanding International Students, the Malaysian Student Entrance Scholarship, the Outstanding Master’s and Doctoral International Student Scholarship, the Hong Kong Student Entrance scholarship, the Macau Student Entrance Scholarship, the Thai Student Entrance Scholarship, the Indonesian Student Entrance Scholarship, and the Overseas Alliance High School Student Entrance Scholarship: the scholarship equals to the tuition and fees for one year.</li>
+<li>The Mainland Chinese Student Entrance Scholarship covers student tuition and miscellaneous fees for two academic years for doctoral students; while undergraduate and master&#8217;s students are awarded NTD $15,000.</li>
+</ul>
+</li>
+<li>Application review/evaluation procedures:
+<ul>
+<li>The Entrance Scholarship for Outstanding International Students: Applicants must mark the scholarship type they are applying for on the entrance application form. The application information of students admitted to TKU will be passed to the Scholarship Review Committee, which will then review the candidates and devise a list of successful scholarship recipients.</li>
+<li>The Malaysian Student Entrance Scholarship: Lists of scholarship candidates will be submitted by Universiti Tunku Abdul Rahman, New Era College, Southern University College, One World Hanxing College and the Tamkang University Taiwan Alumni Association of Malaysia, and then passed to the Scholarship Review Committee, which will further review the candidates and devise a list of scholarship recipients.</li>
+<li>The Outstanding Master’s and Doctoral International Student Scholarship: Applicants must mark the scholarship type they are applying for on the entrance application form. The application information of students admitted to TKU will be passed by each department to the Office of International and Cross-Strait Affairs and then submitted to the Scholarship Review Committee, which will review the candidates and produce a list of scholarship recipients.</li>
+<li>The Hong Kong Student Entrance Scholarship: A name list of scholarship candidates will be submitted by the Tamkang University Taiwan Alumni Association of Hong Kong to the Scholarship Review Committee, which will review the candidates and devise the final list of scholarship recipients.</li>
+<li>The Mainland Chinese Student Entrance Scholarship: New students from Mainland China will be automatically placed on the scholarship application name list submitted to the Mainland China Student Scholarship Committee, which will review the candidates and devise the final list of scholarship recipients.</li>
+<li>The Macau Student Entrance Scholarship: The name list of scholarship candidates will be submitted by the Tamkang University Taiwan Alumni Association of Macau to the Scholarship Review Committee, which will review the candidates and decide the final list of scholarship recipients.</li>
+<li>Entrance Scholarships for Students from Thailand: Applicants must choose which scholarship they want to apply for on the TKU application form. If accepted, the applicant’s information will be submitted to the Scholarship Review Committee for review and deliberation, and the list of scholarship recipients will be finalized.</li>
+<li>Indonesian Student Entrance Scholarship: The Tamkang University Alumni Association of Indonesia will recommend scholarship candidates to the Scholarship Review Committee, which will review the candidates and decide the final list of scholarship recipients.</li>
+<li>Overseas Alliance High School Student Entrance Scholarship: The overseas alliance high schools will recommend scholarship candidates to the Scholarship Review Committee which will review the candidates and decide the final list of scholarship recipients<span style="background-color: rgba(0, 0, 0, 0); font-family: inherit; font-size: inherit; font-weight: inherit;">.</span></li>
+</ul>
+</li>
+<li>Applicants may submit documents which are beneficial to evaluation, such as Chinese proficiency certificate (TOCFL, HSK, etc.) or an English proficiency certificate (TOEFL, IELTS, TOEIC, etc.) along with their application documents for admission to TKU.</li>
+<li>Students who have been approved to receive an one-year scholarship for tuition and miscellaneous fees may apply for outstanding international student and low-income student scholarships starting from their second year of enrolled study. In addition, students who have been approved to receive a two-year scholarship covering tuition and miscellaneous fees must fulfill the following criteria to ensure the continued receipt of scholarship funds in their second academic year:
+<ul>
+<li>Academic performance: The average grade of undergraduate students in the preceding academic year must be 70 or above, while the average grade of graduate school students in the preceding academic year must be 80 or above.</li>
+<li>Conduct: Students must not have any negative conduct records and must maintain a conduct grade of 80 or above every semester.</li>
+</ul>
+</li>
+<li>In the case of any of the following situations, scholarship payments shall cease from the month following the occurrence:
+<ul>
+<li>The student leaves Taiwan for purposes other than academic needs and fails to return to Taiwan within thirty days of the expected time of return; and, moreover, failed to gain the signed approval of their advising professor and authorization from their department prior to leaving.</li>
+<li>The student violates TKU regulations and is issued a major demerit or more serious punishment by the Student Disciplinary Committee.</li>
+<li>The student violates relevant laws and regulations of Taiwan.</li>
+</ul>
+</li>
+<li>If students defer their studies, are expelled, or transfer to another institution, the resulting refund of tuition will be handled according to the Tuition Refund Table.</li>
+<li>Each student can only apply for one scholarship.</li>
+<li>Students awarded a large amount of scholarship funds by a relevant institution in the Taiwanese government cannot apply for any scholarships hereunder. In the event of an approved recipient simultaneously collecting a separate scholarship, funds already conferred under this scholarship must be returned.</li>
+<li>These Guidelines shall be implemented from the date of their publication after first being passed in a meeting of the Internationalization and International Exchange Committee and then being submitted to the TKU president for approval. The same applies to any amendments to These Guidelines.</li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table" border="1" cellspacing="1" cellpadding="1">
+<tbody>
+<tr>
+<td>
+<blockquote><p><strong>The Outstanding Foreign Student Scholarship</strong></p></blockquote>
+<p>1. This document is based on the &#8220;Guidelines for granting international student scholarships for colleges and their Chinese language teaching institutions from the Ministry of Education&#8221;, with the purpose to encourage outstanding foreign students to study in the university and to help solve their living difficulties in Taiwan, thereby speeding up the university&#8217;s internationalization process.</td>
+</tr>
+<tr>
+<td>2. Amount：(1) Undergraduate and Master students shall receive NT $30,000 per semester.(2) Ph.D. students shall receive NT $40,000 per semester.</p>
+<p>(3) The Scholarship will be disbursed the following semester.</td>
+</tr>
+<tr>
+<td>3. Funding and quota：(1) The scholarships are funded by the Ministry of Education and related school expenses.(2) The number of scholarships granted each year may vary according to the Ministry of Education’s annual budget.</td>
+</tr>
+<tr>
+<td>4. Application Eligibility：(1) Foreign students with formal application and enrollment of TKU, and in accordance with the Ministry of Education &#8220;International students Undertaking Studies in Taiwan&#8221;.(2) In the following semester, applicants must be students of foreign nationality who are not receiving government scholarships or the TKU Tuition Waiver Scholarship.(3) Completed at least one semester in TKU, scored 80 points or more in the current semester for Conduct, must be of good behavior, does not have any bad records and who satisfied the following criteria:</p>
+<ol>
+<li>Undergraduate students must take the minimum credits comply with the “TKU Regulations on Student Course Selection” per semester, with an average academic grade of 70 or above for the current semester and keep a clean behavioral record.</li>
+<li>Graduate students must take at least 4 credits per semester, with an average academic grade of 80 or above for the previous semester. From their sixth and fourth years of study respectively, PhD candidates and graduate students will not be eligible to apply for this scholarship.</li>
+<li>Graduate students who are working on their master or doctoral dissertations and are unable to provide an academic record for the previous semester should submit recommendation letters from their advisors of the departments or graduate institutes at which they are enrolled, as well as a dissertation plan. This should include: your research motivation, research structure, sources of research materials, research outline, research references, and etc. Graduate students who are working on their dissertations without taking at least 4 credits can only apply for the scholarship twice.</li>
+</ol>
+<p>(4) Applicants must view participation in “Chat Corner” as a priority in the period in which they are receiving the scholarship.</td>
+</tr>
+<tr>
+<td>5. Application Process:(1) The scholarship is open for application in the fourteenth week of each semester, with the deadline in the sixteenth week. Students need to submit online application to the Office of International and Cross-Strait Affairs (OICSA). Once completed, all application documents must be submitted to the Office of International and Cross-Strait Affairs (OICSA) the week before the final semester examination.(2) All scholarship applications and their supporting documents will be evaluated by the Overseas Student Scholarship Review Committee.</td>
+</tr>
+<tr>
+<td>6. Documents required:(1) Chinese transcripts for every academic year (OICSA will collect students’ transcripts from Office of Academic Affairs, students do not need to hand in.)(2) Proof of priority participation in 20 hours of TKU Office of International and Cross-Strait Affairs (OICSA) activities for the previous semester—not required for first time applicants (activity content and times shall be determined by the OICSA, which will assume a supervisory role during such activities).</p>
+<p>(3) Low-income Certificate if any, for audit purposes</p>
+<p>(4) Proof of excellent performance (e.g. journal publications, awards, extracurricular activities) and other documents that may be helpful.</td>
+</tr>
+<tr>
+<td>7. Scholarship recipients must prioritize participation in TKU activities for 20 hours per semester. Activity content and times shall be determined by the OICSA, which will assume a supervisory role during such activities.</td>
+</tr>
+<tr>
+<td>8. Students who did not complete their registration in the following semester will not be awarded the scholarship. Scholarship disbursement that has been awarded will be taken back.</td>
+</tr>
+<tr>
+<td>9. The above regulations take effect from the date of their promulgation, after being approved by the International and Exchange Student Committee. The same applies to any amendments made thereafter.</td>
+</tr>
+</tbody>
+</table>
+<blockquote><p><strong>TKU Foreign Students Financial Aid</strong></p></blockquote>
+<p>1. The purpose of this document is to help foreign students solve their living or school’s difficulties in Taiwan.</p>
+<p>2. Those who applied for the scholarship will have to do English or other language teaching, translation, or other relating work arranged by the Office of International and Cross-Strait Affairs (OICSA).</p>
+<p>3. The number of scholarships granted each year may vary according to the school’s annual budget.</p>
+<p>4. Funding：Each student will receive NT $10,000 per month, up to three months.</p>
+<p>5. Application Eligibility：</p>
+<ul>
+<li>Foreign students with formal application and enrollment of TKU, and in accordance with the Ministry of Education &#8220;International students Undertaking Studies in Taiwan&#8221;.</li>
+<li>Those who already received Taiwan Government Scholarships, TKU Entrance Scholarships and The Outstanding Foreign Student Scholarship are not qualified to apply.</li>
+<li>For freshman that do not have any score record need to submit Chinese or English proficiency certificate and other documents. Those who already completed at least one semester in TKU, scored 80 points or more in the current semester for Conduct, must be of good behavior, does not have any bad records and who satisfied the following criteria:</li>
+</ul>
+<ol>
+<li style="list-style-type: none;">
+<ol>
+<li>Undergraduate students must take the minimum credits comply with the “TKU Regulations on Student Course Selection” per semester, with an average academic grade of 60 or above for the current semester and keep a clean behavioral record.</li>
+<li>Graduate students must take at least 4 credits per semester, with an average academic grade of 80 or above for the previous semester. From their sixth and fourth years of study respectively, PhD candidates and graduate students will not be eligible to apply for this scholarship.</li>
+<li>Graduate students who are working on their master or doctoral dissertations and are unable to provide an academic record for the previous semester should submit recommendation letters from their advisors of the departments or graduate institutes at which they are enrolled, as well as a dissertation plan. This should include: your research motivation, research structure, sources of research materials, research outline, research references, and etc. Graduate students who are working on their dissertations without taking at least 4 credits can only apply for the scholarship twice.</li>
+</ol>
+</li>
+</ol>
+<p>6. Audit criteria：All scholarship applications will be evaluated by the Overseas Student Scholarship Review Committee based on the students’ whole performance and language ability documents provided by the applicants.</p>
+<p>7. Those who receive the scholarship are required to do English teaching or translation work for 30 hours per month. (please provide a photocopy of a valid Work Permit)</p>
+<p>8. The above regulations take effect from the date of their promulgation, after being approved by the International and Exchange Student Committee. The same applies to any amendments made thereafter.</p>
+<blockquote><p><strong>Tamkang University&#8217;s Chang Yeo Lan Scholarship</strong></p></blockquote>
+<p>1. Application Eligibility：Newly-admitted overseas students are automatically included in the list of candidates for “Tamkang University’s Chang Yeo Lan Scholarship”.<br />
+2. Amout&amp; Numbers of Recipient:<br />
+Bachelor’s Program: each receives NT$50,000.<br />
+Master’s &amp; Doctoral Program: 10 students as a principle, each receives NT$100,000.<br />
+Please refer to the following document for detailed information: Yeo Lan Scholarship for TKU Overseas Students.</p>
+<table style="height: 94px;" border="1" width="689" cellspacing="1" cellpadding="1">
+<tbody>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://oa.tku.edu.tw/Law.nsf/8a19663a9342a6a748256e6b00446781/1c6540a48efc322448258625001e91f1/$FILE/6-49-1%20Tamkang%20University%20Chang%20Yeo%20Lan%20Scholarship%20Management%20Implementation%20Guidelines(20250121).pdf">Tamkang University Chang Yeo Lan Scholarship Management Implementation Guidelines</a></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote><p><strong>Tamkang University </strong><strong>Incoming Exchange Students Scholarship</strong></p></blockquote>
+<p>1. This scholarship was initiated to encourage students from Tamkang University’s (TKU) partner universities to study at TKU, and to enhance the academic cooperation between TKU and partner universities as well as promote the university internationalization.</p>
+<p>2. Funding: Each student will receive NT $10,000 per semester, up to one academic year.</p>
+<p>3. Quota: The number of scholarships granted may vary according to the university’s annual budget.</p>
+<p>4. Application eligibility:</p>
+<ul>
+<li>This scholarship is open to the exchange students from the partner universities that have had an established academic collaboration agreement with TKU, but not applicable to the students from Mainland China partner universities. To be eligible, undergraduate students must maintain an average academic grade of 65 or above (or GPA 2.5); graduate students must maintain an average academic grade of 75 or above (or GPA 3). Students must also display good conduct and keep a clean behavioral record.</li>
+<li>For new students, the scholarship is open for application when students apply for admission to TKU. For students who have enrolled in TKU, they can send in their scholarship applications three weeks before the final examination week in the first semester and the application deadline is one week before the final examination.</li>
+</ul>
+<p>5. Required documents:</p>
+<ol>
+<li>Application Form</li>
+<li>Official academic transcript from home institution. (Students currently study at TKU do not need to hand in. TKU will collect students’ transcripts from the Office of Academic Affairs.)</li>
+</ol>
+<p>6. Applicants must view participation in “Chat Corner” as a priority in the period in which they are receiving the scholarship.</p>
+<p>7. Based on the principle of equal reciprocity, if partner universities grant scholarships to exchange students from TKU, the latter will respond in kind by apportioning an equivalent number of scholarships to exchange students from such universities. The remaining scholarship places will then be open for regular scholarship application.</p>
+<p>8. All scholarship applications and their supporting documents will be evaluated by the Overseas Student Scholarship Review Committee.</p>
+<p>9. The above regulations take effect from the date of their promulgation, after being approved by the International and Exchange Student Committee. The same applies to any amendments made thereafter.</p>
+</div></div>
+</div>
+</div>
+
+
+<footer class="wp-block-template-part">
+<div class="wp-block-tkuwpbs5-bs5-container container-fluid has-background" style="background-color:#403c3e;padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);position:relative" block_id="lvd6ew9bim1wd4dr9k"><style>div[block_id=lvd6ew9bim1wd4dr9k]::before { 
+                    content: '';
+                    background-image: url('/bf/wp-content/uploads/2024/04/footer-bg-img-2.png');
+                    background-repeat: no-repeat;
+                    opacity: 0.4;
+                    background-size: contain; 
+                    background-position: undefined;                  
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                }</style>
+<div class="wp-block-tkuwpbs5-bs5-container container has-text-color" style="color:#dddddd;position:relative" block_id="lvd719mztlhus8pzy0f"><style></style>
+<div class="wp-block-tkuwpbs5-bs5-row row">
+<div class="wp-block-tkuwpbs5-bs5-column col-lg-4 align-self-start p-3 col-md-6">
+<h5 class="wp-block-heading">Info.</h5>
+
+
+
+<p><strong>Office of International and Cross-Strait Affairs, Tamkang University&nbsp;© All RIGHTS RESERVED</strong></p>
+
+
+
+<p>Tel: +886-2-2629-6579<br>       +886-2-2621-5656 #3796</p>
+
+
+
+<p>Fax: +886-2-2629-6582</p>
+
+
+
+<p>Addr.: No.151,Yingzhuan Rd.,Danshui Dist.,New TaipeiCity 25137,Taiwan( R.O.C)</p>
+
+
+
+<p>E-mail：<a href="mailto:au@oa.tku.edu.tw" target="_blank" rel="noreferrer noopener">au@oa.tku.edu.tw</a></p>
+
+
+
+<div class="wp-block-tkuwpbs5-bs5-row row">
+<div class="wp-block-tkuwpbs5-bs5-column col-md-6 align-self-start">
+<div class="wp-block-tkuwpbs5-bs5-div footer_social d-flex" data-aos="normal"><img decoding="async" src="/oieie/wp-content/uploads/2024/11/facebook-new.png" class="img-fluid img-fluid " alt="上傳圖片">
+
+<img decoding="async" src="/oieie/wp-content/uploads/2024/11/twitter-circled.png" class="img-fluid img-fluid " alt="上傳圖片">
+
+<img decoding="async" src="/oieie/wp-content/uploads/2024/11/instagram-new-2.png" class="img-fluid img-fluid " alt="上傳圖片"></div>
+</div>
+</div>
+</div>
+
+
+
+<div class="wp-block-tkuwpbs5-bs5-column col-lg-4 align-self-start p-3 col-md-6">
+<h5 class="wp-block-heading">GoogleMAP</h5>
+
+
+
+<iframe allowfullscreen="" frameborder="0" height="200" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1805.4282578919483!2d121.44859185652489!3d25.17432227185682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442affea9dbda8b%3A0xf63530951f3c5e1!2z6ama6IGy57SA5b-15aSn5qiTIChUKQ!5e0!3m2!1szh-TW!2stw!4v1731636533881!5m2!1szh-TW!2stw" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+
+
+<div class="wp-block-tkuwpbs5-bs5-column col-lg-4 align-self-start p-3 col-md-12">
+<h5 class="wp-block-heading">Contact</h5>
+
+
+
+<p><strong>WebSite Maintain</strong>:</p>
+
+
+
+<p style="margin-left:1rem"><i class="fa fa-user"></i> <strong>Danny Hsu,</strong>&nbsp;International and Cross-Strait Exchange Section<br><i class="fa fa-user"></i> <strong>Cadence Wang</strong>, International and Mainland Students Guidance Section</p>
+
+
+
+<p style="margin-top:var(--wp--preset--spacing--40);margin-left:var(--wp--preset--spacing--40)"><a href="https://www.tku.edu.tw/pdp.asp">TKU Persoanl Information and Data Protection Act</a></p>
+
+
+
+<p style="margin-top:var(--wp--preset--spacing--40);margin-left:var(--wp--preset--spacing--40)"><strong>Julia Yen,</strong> <strong>Office of International and Cross-Strait Affairs</strong><br>Phone：(02)2629-6579<br>E-mail：097809@o365.tku.edu.tw</p>
+
+
+
+<p></p>
+
+
+
+<p style="margin-top:var(--wp--preset--spacing--40);margin-left:var(--wp--preset--spacing--40)"><br></p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="wp-block-tkuwpbs5-bs5-container container-fluid has-background" style="background-color:#444444;padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);position:relative" block_id="lvew8jq1nckmsq9vbki"><style></style>
+<div class="wp-block-tkuwpbs5-bs5-row row">
+<div class="wp-block-tkuwpbs5-bs5-column col-md-12 align-self-start">
+<p class="has-text-align-center copyright has-text-color" style="color:#dddddd">Copyright© 2024  Office of International and  Cross-Strait Affairs, Tamkang University　|　Powered by iWeb2.0</p>
+</div>
+</div>
+</div>
+
+
+<style>
+footer{
+   clear: both;
+}
+footer .container-fluid:before{
+  z-index: auto !important;
+}
+footer h5{
+   color: #ffffff;
+   font-weight: bold;
+   border-bottom: 1px #999 solid;
+   margin:15px 0;
+   padding-bottom: 5px;
+}
+footer a{
+    color: #ffffff /*052a3f*/;
+    text-decoration: none;
+}
+footer a:hover{
+   color: #fe5b0f;
+}
+footer h3{
+    font-size: 1.175rem;
+    font-weight: 600;
+}
+
+footer p{
+    line-height: 1.8rem;
+    margin-bottom:0;
+}
+
+footer .copyright{
+   font-size: 0.9375rem;
+}
+
+</style>
+<script>
+// 為迴避 CDN 快取，採用動態載入的方式
+function loadScript(url, callback) {
+var scriptTag = document.createElement('script');
+scriptTag.src = url + '?_=' + new Date().getTime();
+scriptTag.onload = function () {
+if (callback) {
+callback();
+}
+};
+document.head.appendChild(scriptTag);
+}
+loadScript('https://cai.ipcnet.tku.edu.tw/webchat/caiwebchat-config.js', function () {
+loadScript('https://cai.ipcnet.tku.edu.tw/webchat/caiwebchat-loader.js');
+});
+// 頁面剛載入時 CaiWebChat.init 仍會是 `undefined`，
+// 故此處採用宣告指定 handler 的方式，於載入完畢後自動呼叫
+window.onCaiWebChatLoaded = function () {
+CaiWebChat.init({ botId: '0601' });
+};
+</script></footer>
+
+<div class="wp-block-template-part"><style>
+body {
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    color: #333;
+    font-family: 微軟正黑體, 蘋果正黑體, "Roboto","Noto Sans TC","Microsoft JhengHei UI","Microsoft JhengHei",Sans-serif;
+    font-weight: normal;
+    background-color: #fff;
+}
+
+.row > *{
+   padding-left: 15px;
+   padding-right: 15px;
+}
+
+a{ color: #a88804 /*#0345bf*/; text-decoration: none; }
+a:hover, a:focus{ color: #a0050d /*#fe5b0f*/; }
+
+
+h2.bf_title{
+   font-weight: bold;
+   color: #5a5a5a;
+   margin-bottom: 1rem;
+}
+h2.bf_title:before{
+   content: " ";
+   width:48px;
+   height: 48px;
+   display: inline-block;
+   background-image: url(/bf/wp-content/uploads/2024/04/title_icon.svg);
+   position: relative;
+   top: 0.5rem;
+}
+h2.bf_title span{
+   font-size: 0.65em;
+   color: #009CFF;
+}
+
+h3.wp-block-heading code{ color: #000; }
+h3.wp-block-heading{
+   color: #2980b9;
+   font-weight: bold;
+}
+
+.bfpage, .page_cont{
+   min-height: 500px;
+}
+.page_cont > .wp-block-post-content{
+   position: relative;
+   z-index: 99;
+}
+div.page_cont:before{
+   z-index: 0;
+}
+.notice{
+   border: 1px rgba(255, 0, 0, 0.3) solid;
+   border-left: 10px red solid;
+}
+.detail-title h2{
+   padding-left:0.5rem;
+   font-weight: bold;
+}
+.detail-title h2:before{
+    content: "\f02e";
+    font-family: "FontAwesome";
+    font-weight: normal;
+    margin-right: 8px;
+    color: #991c22;
+}
+.detail-title {
+   margin-bottom:1rem;
+   padding-bottom: 0.5rem;
+   position: relative;
+   border-bottom: 2px solid #cacaca;
+}
+.detail-title .wp-block-post-date time:before {
+    content: "\f073";
+    font-family: "FontAwesome";
+    margin-right: 8px;
+}
+.detail-title .wp-block-post-author-name:before {
+    content: "\f007";
+    font-family: "FontAwesome";
+    margin-right: 8px;
+}
+
+p.btn a{ color:#fff; }
+p.btn a:hover{ color:#000; }
+p.btn-info{
+   --bs-btn-bg: #009CFF;
+   color: #fff;
+   margin-top: 1rem;
+}
+.btn-warning{
+   --bs-btn-bg: #79050b;
+   --bs-btn-hover-bg: #dab005;
+   color: #fff;
+}
+div.filter-btns { z-index: 2; }
+a.filter-btn2 {
+    background: #e1e1e1;
+    border: 1px solid rgba(3, 32, 30, 0.3) !important;
+    color: #5a5a5a /*537894*/;
+    border-radius: 0;
+    font-weight: bold;
+}
+a.filter-btn2:hover{
+   color: yellow;
+   background: #dab005;
+}
+a.filter-btn2.active {
+    background-color: #79050b;
+    position: relative;
+}
+
+.wp-block-post-content .newspage{
+   margin-top:1rem;
+   padding-top: 0.5rem;
+   position: relative;
+   border-bottom: 2px solid #cacaca;
+}
+.list-group {
+    border: 1px #0d6efd solid;
+}
+.list-group > div {
+    padding: 8px 16px;
+}
+.tku_bs5_members_section .member_box_txt i{
+    font-size: 0.975rem;
+    width: 22px;
+}
+.tku_bs5_members_section .member_box_txt p{
+   line-height: 180%;
+}
+ol.job-detail{
+   margin-top: -1rem;
+}
+
+@media (min-width: 1200px){
+   .container {
+       max-width: 1500px;
+   }
+
+}
+
+@media (min-width: 992px) and (max-width: 1200px){
+   h2.bf_title {
+      font-size:1.5rem;
+   }
+}
+</style></div>
+
+<div class="wp-block-template-part"><style>
+.dropdown-item {
+    text-wrap: wrap;
+}
+@media (min-width: 1025px) {
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        width: 15rem;
+    }
+}
+@media (min-width: 1200px) {
+    .h3, h3 {
+        font-size: 1.5rem;
+    }
+    .h4, h4 {
+        font-size: 1.275rem;
+    }
+}
+</style></div></div>
+
+		<style id="skip-link-styles">
+		.skip-link.screen-reader-text {
+			border: 0;
+			clip: rect(1px,1px,1px,1px);
+			clip-path: inset(50%);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute !important;
+			width: 1px;
+			word-wrap: normal !important;
+		}
+
+		.skip-link.screen-reader-text:focus {
+			background-color: #eee;
+			clip: auto !important;
+			clip-path: none;
+			color: #444;
+			display: block;
+			font-size: 1em;
+			height: auto;
+			left: 5px;
+			line-height: normal;
+			padding: 15px 23px 14px;
+			text-decoration: none;
+			top: 5px;
+			width: auto;
+			z-index: 100000;
+		}
+	</style>
+		<script>
+	( function() {
+		var skipLinkTarget = document.querySelector( 'main' ),
+			sibling,
+			skipLinkTargetID,
+			skipLink;
+
+		// Early exit if a skip-link target can't be located.
+		if ( ! skipLinkTarget ) {
+			return;
+		}
+
+		/*
+		 * Get the site wrapper.
+		 * The skip-link will be injected in the beginning of it.
+		 */
+		sibling = document.querySelector( '.wp-site-blocks' );
+
+		// Early exit if the root element was not found.
+		if ( ! sibling ) {
+			return;
+		}
+
+		// Get the skip-link target's ID, and generate one if it doesn't exist.
+		skipLinkTargetID = skipLinkTarget.id;
+		if ( ! skipLinkTargetID ) {
+			skipLinkTargetID = 'wp--skip-link--target';
+			skipLinkTarget.id = skipLinkTargetID;
+		}
+
+		// Create the skip link.
+		skipLink = document.createElement( 'a' );
+		skipLink.classList.add( 'skip-link', 'screen-reader-text' );
+		skipLink.href = '#' + skipLinkTargetID;
+		skipLink.innerHTML = 'Skip to content';
+
+		// Inject the skip link.
+		sibling.parentElement.insertBefore( skipLink, sibling );
+	}() );
+	</script>
+	<!-- Default Statcounter code for TKU iWeb 2.0
+            https://www.tku.edu.tw -->
+            <script type="text/javascript">
+            let currentHost = window.location.host.toLowerCase();
+            var server_suffixs = ["af01.in.tku.edu.tw", "azurewebsites.net", "url.tku.edu.tw", "localhost"];
+            var add_statcounter = true;
+            for (let server_suffix of server_suffixs) {
+                if (currentHost.indexOf(server_suffix)>=0) {
+                    add_statcounter = false;
+                }
+            }
+            var sc_project=12974712; 
+            var sc_invisible=1; 
+            var sc_security="574971f9"; 
+            if (add_statcounter) {
+                sc_project=12910686; 
+                sc_invisible=1; 
+                sc_security="15eeb835"; 
+            }
+            </script>
+            <script type="text/javascript"
+            src="https://www.statcounter.com/counter/counter.js"
+            async></script>
+            <noscript><div class="statcounter"><a title="Web Analytics"
+            href="https://statcounter.com/" target="_blank"><img
+            class="statcounter"
+            src="https://c.statcounter.com/12910686/0/15eeb835/1/"
+            alt="Web Analytics"
+            referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+            <!-- End of Statcounter Code --><script type='text/javascript' src='/oieie/wp-content/plugins/tku_bs5_blocks/tku_bs5_blocks_kpc/tku_bs5_navigation_menu/tku_bs5_navigation_menu_view.js?ver=1785397919' id='tku_bs5_navigation_menu_view_script-js'></script>
+<script type='text/javascript' src='/oieie/wp-content/plugins/tku_bs5_blocks/tku_bs5_blocks_kpc/tku_bs5_div/aos.js?ver=1723700857' id='aos_script-js'></script>
+<script type='text/javascript' src='/oieie/wp-content/plugins/tku_bs5_blocks/tku_bs5_blocks_kpc/tku_bs5_div/aosinit.js?ver=1723700857' id='aosinit_script-js'></script>
+</body>
+</html>

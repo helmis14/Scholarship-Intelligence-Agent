@@ -1,0 +1,73 @@
+{
+ "_comment": "Round 30: separate adjudication of three set-O labels questioned in the error analysis after the first scoring. labels.json and the frozen O results are NOT changed; decisions.py --adjudicate applies these overrides in memory and reports them as a separate result.",
+ "decided": "2026-10-19",
+ "cases": {
+  "se-his": {
+   "verdict": "label wrong",
+   "fields": {
+    "nationality": {
+     "mode": "exclude",
+     "countries": [
+      "AT",
+      "BE",
+      "BG",
+      "HR",
+      "CY",
+      "CZ",
+      "DK",
+      "EE",
+      "FI",
+      "FR",
+      "DE",
+      "GR",
+      "HU",
+      "IE",
+      "IT",
+      "LV",
+      "LT",
+      "LU",
+      "MT",
+      "NL",
+      "PL",
+      "PT",
+      "RO",
+      "SK",
+      "SI",
+      "ES",
+      "SE",
+      "IS",
+      "LI",
+      "NO",
+      "CH"
+     ]
+    }
+   },
+   "quote": "Citizens of a country outside the EU/EEA and Switzerland.",
+   "why": "the eligibility list further down the page states the nationality rule; the label read only the fee-status sentence"
+  },
+  "uk-carnegie": {
+   "verdict": "label wrong",
+   "fields": {
+    "deadlines": [
+     {
+      "kind": "scholarship",
+      "date": "2026-02-13",
+      "status": "historical"
+     }
+    ],
+    "openings": [
+     "2025-11-17"
+    ],
+    "cycle_status": "closed"
+   },
+   "quote": "Application portal opens 17 Nov 2025 Closing date for applications 13 Feb 2026, 5PM",
+   "why": "the label missed the key-dates block at the bottom of the page"
+  },
+  "us-acls": {
+   "verdict": "label confirmed",
+   "fields": {},
+   "quote": "be a US citizen, a permanent resident, ... In addition, a foreign national who has been living in the United States or US territories for the three years immediately preceding",
+   "why": "US citizens and foreign nationals resident in the US for three years may apply: a residence rule, not a nationality rule (not_stated), and certainly not an exclusion of US citizens"
+  }
+ }
+}

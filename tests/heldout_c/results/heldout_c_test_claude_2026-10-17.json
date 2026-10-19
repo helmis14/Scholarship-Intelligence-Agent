@@ -1,0 +1,255 @@
+{
+  "set": "held-out real pages",
+  "pages": 10,
+  "evaluated": 10,
+  "missing_snapshots": [],
+  "labels_sha": "db4954dfc3c9",
+  "mode": "deterministic + anthropic:claude-opus-5-5",
+  "fields": {
+    "deadlines": {
+      "tp": 7,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1": 0.933
+    },
+    "nationality_countries": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "openings": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "rates": {
+    "age": {
+      "correct": 1,
+      "total": 1,
+      "accuracy": 1.0
+    },
+    "age_by_level": {
+      "correct": 6,
+      "total": 6,
+      "accuracy": 1.0
+    },
+    "deadline_exact": {
+      "correct": 7,
+      "total": 7,
+      "accuracy": 1.0
+    },
+    "deadline_status": {
+      "correct": 7,
+      "total": 7,
+      "accuracy": 1.0
+    },
+    "duration": {
+      "correct": 2,
+      "total": 2,
+      "accuracy": 1.0
+    },
+    "funding_amount": {
+      "correct": 2,
+      "total": 2,
+      "accuracy": 1.0
+    },
+    "funding_components": {
+      "correct": 11,
+      "total": 12,
+      "accuracy": 0.917
+    },
+    "funding_period": {
+      "correct": 1,
+      "total": 1,
+      "accuracy": 1.0
+    },
+    "nationality": {
+      "correct": 5,
+      "total": 5,
+      "accuracy": 1.0
+    },
+    "page_kind": {
+      "correct": 10,
+      "total": 10,
+      "accuracy": 1.0
+    },
+    "stipend_present": {
+      "correct": 1,
+      "total": 1,
+      "accuracy": 1.0
+    },
+    "travel": {
+      "correct": 2,
+      "total": 2,
+      "accuracy": 1.0
+    },
+    "tuition": {
+      "correct": 2,
+      "total": 2,
+      "accuracy": 1.0
+    }
+  },
+  "attribution": {
+    "correct": 101,
+    "total": 101,
+    "accuracy": 1.0
+  },
+  "unsupported_rate": 0.08,
+  "unsupported_values": 2,
+  "scored_values": 25,
+  "missing_rate": 0.0,
+  "missing_values": 0,
+  "labelled_values": 24,
+  "ai": {
+    "pages": 10,
+    "proposed": 93,
+    "accepted": 25,
+    "rejected_by_reason": {
+      "quote describes the study programme's length, not a funding period": 2,
+      "not a single academic year": 1,
+      "field of study not in quote": 1,
+      "names a website, not the funder": 1,
+      "quote has no deadline wording (a start, event or other date)": 1,
+      "quote does not mention tuition": 1,
+      "quote does not say this organisation funds or runs the scholarship": 3
+    },
+    "disagreements_with_rules": 1,
+    "errors": {},
+    "evidence_verbatim": 25,
+    "evidence_total": 25
+  },
+  "misses": {
+    "be-vliruos-icp-calls": [
+      "component tuition: predicted covered, label from_allowance"
+    ],
+    "nl-utwente-nl": [
+      "deadline spurious 2026-10-15"
+    ]
+  },
+  "ai_usage": {
+    "paid": {
+      "requests": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_cost_usd": 0.0
+    },
+    "dry_run": {
+      "requests": 0,
+      "estimated_input_tokens": 0,
+      "estimated_cost_usd": 0.0,
+      "worst_case_cost_usd": 0.0,
+      "note": "dry-run input tokens estimated at ~3.5 characters per token and 800 output tokens per request (worst case: the full output cap); actual counts differ"
+    },
+    "limits": {
+      "requests": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0
+    },
+    "provider": "anthropic",
+    "model": "claude-opus-5-5",
+    "paid_calls_enabled": false,
+    "cache_hits": 10,
+    "latency_ms": {
+      "requests": 0,
+      "total": 0,
+      "mean": null,
+      "max": null
+    }
+  },
+  "validator": {
+    "set": "heldout_c",
+    "split": "test",
+    "positives": 38,
+    "false_rejections": 0,
+    "false_rejection_rate": 0.0,
+    "negatives": 19,
+    "false_acceptances": 1,
+    "false_acceptance_rate": 0.053,
+    "by_area": {
+      "age": {
+        "positives": 7,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 6,
+        "false_acceptances": 0,
+        "false_acceptance_rate": 0.0
+      },
+      "cycle": {
+        "positives": 3,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 0,
+        "false_acceptances": 0,
+        "false_acceptance_rate": null
+      },
+      "deadline": {
+        "positives": 11,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 1,
+        "false_acceptances": 0,
+        "false_acceptance_rate": 0.0
+      },
+      "funding amount": {
+        "positives": 1,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 1,
+        "false_acceptances": 1,
+        "false_acceptance_rate": 1.0
+      },
+      "funding components": {
+        "positives": 7,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 6,
+        "false_acceptances": 0,
+        "false_acceptance_rate": 0.0
+      },
+      "funding duration": {
+        "positives": 3,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 3,
+        "false_acceptances": 0,
+        "false_acceptance_rate": 0.0
+      },
+      "funding source": {
+        "positives": 5,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 2,
+        "false_acceptances": 0,
+        "false_acceptance_rate": 0.0
+      },
+      "nationality": {
+        "positives": 1,
+        "false_rejections": 0,
+        "false_rejection_rate": 0.0,
+        "negatives": 0,
+        "false_acceptances": 0,
+        "false_acceptance_rate": null
+      }
+    },
+    "wrong_verdicts": [
+      {
+        "page": "tr-burslari-why",
+        "field": "stipend_amount",
+        "value": 13000,
+        "expected": "reject",
+        "got": "accepted",
+        "why_expected": "amounts differ by level"
+      }
+    ]
+  }
+}

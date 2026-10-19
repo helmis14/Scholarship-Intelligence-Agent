@@ -1,0 +1,600 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="renderer" content="webkit">
+        <title>International School of education, Tianjin University</title>
+        <script type="text/javascript" src="../../../images/jquery-1.8.4.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../../images/en_index98.css">  
+        <script type="text/javascript" src="../../../images/jquery.banner.revolution.min.js"></script>
+        <script type="text/javascript" src="../../../images/banner.js"></script>
+        <script type="text/javascript" src="../../../images/SimpleTree.js"></script>
+        <script language="javascript" type="text/javascript" src="../../../images/custom63.js"></script>
+        <script type="text/javascript" src="../../../images/prefixfree.min.js"></script>
+        <script type="text/javascript" src="../../../images/mosaic.1.0.1.js"></script>
+        <script type="text/javascript" src="../../../images/lrtk.js"></script>
+        <script type="text/javascript" src="../../../images/html5.js"></script>
+        <script type="text/javascript" language="javascript">  
+            function AddFavorite(sURL, sTitle)  
+            {  
+                try  
+                {  
+                    window.external.addFavorite(sURL, sTitle);  
+                }  
+                catch (e)  
+                {  
+                    try  
+                    {  
+                        window.sidebar.addPanel(sTitle, sURL, "");  
+                    }  
+                    catch (e)  
+                    {  
+                        alert("Add the collection failed, please use Ctrl+D to add");  
+                    }  
+                }  
+            }  
+            function SetHome(obj,vrl)  
+            {  
+                try  
+                {  
+                        obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);  
+                }  
+                catch(e){  
+                        if(window.netscape) {  
+                                try {  
+                                        netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");   
+                                }   
+                                catch (e) {   
+                                        alert("This operation was rejected by the browser! \nPlease enter the browser address bar “about:config” and enter\nAnd then [signed.applets.codebase_principal_support] set to'true'");   
+                                }  
+                                var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);  
+                                prefs.setCharPref('browser.startup.homepage',vrl);  
+                         }  
+                }  
+            } 
+            
+        </script> 
+        <style type="text/css">
+			#main .news .news_center ul li a:hover img{
+			  transform: scale(1.15, 1.15);
+			  transition: .3s transform;
+			}
+			#center	.right .images ul li a:hover img{
+			  transform: scale(1.15, 1.15);
+			  transition: .3s transform;
+			}
+		</style> 
+		<script type="text/javascript">
+            $(function(){
+
+					$("#header .top .headline .middle .headerline_right li").mouseover(function(){
+
+						$(this).find("a").css("color","#ffffff");
+
+
+					});
+					$("#header .top .headline .middle .headerline_right li").mouseout(function(){
+
+						$(this).find("a").css("color","#888888");
+
+					});
+				});
+		</script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="top">
+                <div class="headline">
+                    <div class="middle">
+                        <div class="headerline_right">
+                            <ul>
+                                <li>                  
+                                    <a href="../../../">中文</a>
+                                </li>
+                                <li class="fav">
+                                    <a href="javascript:void(0)" onclick="SetHome(this,window.location)">Set as Homepage</a>
+                                </li>
+                                <li class="fav">
+                                    <a href="javascript:void(0)" onclick="AddFavorite(window.location,document.title)">Add to favorites</a>
+                                </li>
+                                <li>
+                                    <a href="../../../en/zddt">Map</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="headerline_left">
+                            <label>
+                                Welcome to School of International Education Tianjin University！
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+                <div class="title">
+                    <div class="logo">
+                        <a href="http://www.tju.edu.cn/english/"  target="_blank"><img src="../../../images/logo4.png" /></a>
+                        <img src="../../../images/logo3.png" />
+                    </div>
+
+                </div>
+            </div>
+            <div class="bottom" >
+                <div class="menu navwrap">
+
+                    <ul id="nav">
+                        <li class="current_page_item">
+                            <a href="../../../en/" class="shouye anow">Home</a>
+                        </li>
+                        <li>
+                            <a href="../../../en/gytd/" rel="gytd">Why TJU</a>
+                        </li>
+                        <li class="page_item">
+                            <a href="../../../en/xygk/yzzc/" rel="xygk">About SIE</a>
+                            <ul class="children"> 
+						        <li class="page_item"><a href="../../../en/xygk/yzzc/">Welcome from the Dean</a></li> 
+						        <li class="page_item">
+						        	<a href="../../../en/xygk/xyjj/xyjs/">Overview of SIE</a>
+								    <ul class="children"> 
+								        <li class="page_item"><a href="../../../en/xygk/xyjj/xyjs/">College introduction</a></li> 
+								        <li class="page_item"><a href="../../../en/xygk/xyjj/kzxy/">Confucius Institute</a></li>
+								        <li class="page_item"><a href="../../../en/xygk/xyjj/hwjyjd/">Chinese education base</a></li> 
+								    </ul>
+						        </li>
+						        <li class="page_item"><a href="../../../en/xygk/xrld">Current leadership</a></li> 
+						        <li class="page_item">
+						        	<a href="../../../en/xygk/zzjg/xzjg/">Organization structure</a>
+						        	<ul class="children"> 
+								        <li class="page_item"><a href="../../../en/xygk/zzjg/xzjg/">Administrative units</a></li> 
+								        <li class="page_item"><a href="../../../en/xygk/zzjg/jxjg/">Academic departments</a></li>
+								    </ul>
+						        </li>
+						        <li class="page_item"><a href="../../../en/xygk/szjs">Teacher introduction</a></li> 
+						    </ul>
+                        </li>
+
+                        <li>
+                            <a href="../../../en/xwxm/qywskxwxm/bk" rel="xwxm">ADMISSIONS</a>
+                            <ul class="children"> 
+						         <li class="page_item">
+						            <a href="../../../en/xwxm/UNDERGRADUATE">UNDERGRADUATE</a>
+						        </li> 
+ <li class="page_item">
+						            <a href="../../../en/xwxm/MASTERPROGRAMS">MASTER PROGRAMS</a>
+						        </li> 
+ <li class="page_item">
+						            <a href="../../../en/xwxm/DOCTORALPROGRAMS">DOCTORAL PROGRAMS</a>
+						        </li> 
+ <li class="page_item">
+						            <a href="../../../en/xwxm/FOUNDATIONPROGRAM">FOUNDATION PROGRAM</a>
+						        </li> 
+ <li class="page_item">
+						            <a href="../../../en/xwxm/CHINESELANGUAGEPRORAM">CHINESE LANGUAGE PRORAM</a>
+						        </li> 
+ <li class="page_item">
+						            <a href="../../../en/xwxm/VISITINGSTUDENTPROGRAM">VISITING STUDENT PROGRAM</a>
+						        </li> 
+ <li class="page_item">
+						            <a href="../../../en/xwxm/SHORTTERMPROGRAM">SHORT TERM PROGRAM</a>
+						        </li> 
+						    </ul>
+                        </li>
+                        <li>
+                            <a href="../../../en/COLLEGESANDSCHOOLS" rel="ykxm">COLLEGES AND SCHOOLS</a>
+
+
+                        </li>
+                        <li>
+                            <a href="../../../en/jxj/zgzfjxj" rel="jxj">Scholarship</a>
+                            <ul class="children right"> 
+		
+					<li><a href="../../../en/jxj/zgzfjxj">Chinese Government Scholarship
+</a></li>
+					<li><a href="../../../en/jxj/tjszfjxj">Tianjin Government Scholarship</a></li>
+					<li><a href="../../../en/jxj/ChineseLanguageTeachers">International Chinese Language Teachers Scholarship</a></li>
+					<li><a href="../../../en/jxj/PeiyangFutureScholarScholarship">Peiyang Future Scholar Scholarship</a></li>
+					<li><a href="../../../en/jxj/QiushiScholarship">Qiushi Scholarship</a></li>
+				        <li><a href="../../../en/jxj/tjdxjxj">Tianjin University International Student Scholarship</a></li>
+					<li><a href="../../../en/jxj/OtherScholarships">Other Scholarships</a></li>
+					<li><a href="../../../en/jxj/jxjcjwt">Faqs</a></li>
+							      
+						    </ul>
+                        </li>
+                        <li>
+                            <a href="../../../en/xysh/201508/t20150804_263600.html"  rel="xysh">Student Life</a>
+                    		<ul class="children"> 
+						        <li class="page_item"><a href="../../../en/xysh/201508/t20150804_263600.html">Campus map</a></li> 
+						        <li class="page_item"><a href="../../../en/xysh/201508/t20150804_263601.html">Accommodation</a></li>
+						        <li class="page_item"><a href="../../../en/xysh/201508/t20150804_263602.html">Traffic</a></li>
+						        <li class="page_item"><a href="../../../en/xysh/201508/t20150804_263603.html">Catering</a></li> 
+						        <li class="page_item"><a href="../../../en/xysh/201508/t20150804_263604.html">Campus shopping</a></li>
+						        <li class="page_item"><a href="../../../en/xysh/201508/t20150804_263605.html">Bank</a></li>
+						        <li class="page_item"><a href="../../../en/xysh/201508/t20150804_263606.html">Post office</a></li> 
+						        <li class="page_item"><a href="../../../en/xysh/201508/t20150804_263607.html">Bookshop</a></li>
+						        <li class="page_item"><a href="../../../en/xysh/201508/t20150804_263608.html">Insurance</a></li>
+						        <li class="page_item"><a href="../../../en/xysh/201508/t20150804_263609.html">Entertainment</a></li> 
+						        <li class="page_item"><a href="../../../en/xysh/201508/t20150804_263610.html">Students' association</a></li>
+						    </ul>
+                        </li>
+<li>
+ <a href="../../../en/DOWNLOAD/ADMISSIONSRELATED/" rel="jxxm">DOWNLOAD</a>
+                            <ul class="children"> 
+						        <li class="page_item">
+						            <a href="../../../en/DOWNLOAD/ADMISSIONSRELATED/">ADMISSIONS RELATED</a>
+		                            						        </li> 
+						        <li class="page_item">
+						            <a href="../../../en/DOWNLOAD/ACADEMICRELATED/">ACADEMIC RELATED</a>
+						            						        </li>
+<li class="page_item">
+						            <a href="../../../en/DOWNLOAD/OTHERS/">OTHERS</a>
+						            						        </li>
+
+						    </ul>
+                        </li>
+
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+            <div id="banner">
+     
+				<div id="wrapper">
+					<div class="fullwidthbanner-container">
+						<div class="fullwidthbanner">
+							<ul>
+							       
+								<li data-transition="slideleft" data-slotamount="15" data-masterspeed="300">
+           						    <a href='https://sie.tju.edu.cn/en/xwxm/UNDERGRADUATE/' target="_blank"><img src='../../lbxw/202512/W020251229594811335508.jpg' width="1400" height="454" /></a>	
+
+								</li>
+								   
+								<li data-transition="slideleft" data-slotamount="15" data-masterspeed="300">
+           						    <a href='https://sie.tju.edu.cn/en/xwxm/DOCTORALPROGRAMS/' target="_blank"><img src='../../lbxw/202512/W020251229594724386129.jpg' width="1400" height="454" /></a>	
+
+								</li>
+								   
+								<li data-transition="slideleft" data-slotamount="15" data-masterspeed="300">
+           						    <a href='https://sie.tju.edu.cn/en/xwxm/MASTERPROGRAMS/' target="_blank"><img src='../../lbxw/202512/W020251229594617447731.jpg' width="1400" height="454" /></a>	
+
+								</li>
+								   
+								<li data-transition="slideleft" data-slotamount="15" data-masterspeed="300">
+           						    <a href='https://sie.tju.edu.cn/en/xwxm/CHINESELANGUAGEPRORAM/' target="_blank"><img src='../../lbxw/202512/W020251229594492038618.jpg' width="1400" height="454" /></a>	
+
+								</li>
+								   
+								<li data-transition="slideleft" data-slotamount="15" data-masterspeed="300">
+           						    <a href='https://sie.tju.edu.cn/en/xwxm/FOUNDATIONPROGRAM/' target="_blank"><img src='../../lbxw/202512/W020251229588145269957.jpg' width="1400" height="454" /></a>	
+
+								</li>
+													
+							</ul>
+						</div>
+					</div>
+				</div>
+            </div>
+
+<div id="center">
+	<div class="middle">
+		<div class="left">
+			<div class="title">Scholarship</div>
+            <div class="st_tree">
+						<ul>
+		<li><a href="../../../en/jxj/zgzfjxj" >Chinese Government Scholarship
+</a></li>
+					<li><a href="../../../en/jxj/tjszfjxj" >Tianjin Government Scholarship</a></li>
+					<li><a href="../../../en/jxj/tjdxjxj" >Tianjin University International Student Scholarship</a></li>
+					<li><a href="../../../en/jxj/kzxyjxj">Confucius Institute Scholarship </a></li>
+					<li><a href="../../../en/jxj/zxjxj" >Special Scholarship</a></li>
+				        <li><a href="../../../en/jxj/sbjh">Chinese Government Scholarship-Bilateral Program</a></li>
+					<li><a href="../../../en/jxj/jxjcjwt" >Faqs</a></li>
+				</ul>
+			</div>
+		</div>
+			<div class="right">
+            <div class="header">
+                <img src="../../../images/title.png" />
+                <h1 class="tit" >Tianjin Government Scholarship</h1>
+            	<p class="pic_r_mb_nv">You are here：<a href="../../../" title="首页" class='nv_now CurrChnlCls'>首页</a>><a href="../../" title="English" class='nv_now CurrChnlCls'>English</a>><a href="../" title="Scholarship" class='nv_now CurrChnlCls'>Scholarship</a>><a href="./" title="Tianjin Government Scholarship" class='nv_now CurrChnlCls'>Tianjin Government Scholarship</a></p>
+                
+            </div>
+	        <div class="details">
+		        <div class="news_ny">
+			        
+					      <div class=TRS_Editor><p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><b><span style="letter-spacing: 0pt;">I. When and Where to Apply</span></b><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Applicants should complete an Online Application on our website（</span><a href="http://tju.at0086.cn/student"><span class="15" style="color: rgb(136, 136, 136); letter-spacing: 0pt;">tju.at0086.cn/student</span></a><span style="letter-spacing: 0pt;">）according to the application schedule.&nbsp;</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><b><span style="color: rgb(255, 255, 255); letter-spacing: 0pt; background: rgb(0, 0, 139);">Application Schedule</span></b><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">October</span><span style="letter-spacing: 0pt;">&nbsp;15, 202</span><span style="letter-spacing: 0pt;">4</span><span style="letter-spacing: 0pt;">-&nbsp;May&nbsp;31, 202</span><span style="letter-spacing: 0pt;">5</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">&nbsp;</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><b><span style="letter-spacing: 0pt;">II. Supporting Categories and Scholarship Duration</span></b><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<table class="MsoNormalTable" border="0" cellspacing="0" style="border-collapse: collapse; width: 429.75pt; margin-left: 4.65pt; border-width: initial; border-style: none; border-color: initial;">
+    <tbody>
+        <tr style="height:37.5000pt;">
+            <td width="72" valign="center" style="width:54.0000pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:1.0000pt solid rgb(0,0,0);&#10;mso-border-left-alt:1.0000pt solid rgb(0,0,0);border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:1.0000pt solid rgb(0,0,0);mso-border-top-alt:1.0000pt solid rgb(0,0,0);border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><b><span style="letter-spacing: 0pt;">Program</span></b><o:p></o:p></font></p>
+            </td>
+            <td width="98" valign="center" style="width:73.5000pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:none;&#10;mso-border-left-alt:none;border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:1.0000pt solid rgb(0,0,0);mso-border-top-alt:1.0000pt solid rgb(0,0,0);border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><b><span style="letter-spacing: 0pt;">Program Duration</span></b><o:p></o:p></font></p>
+            </td>
+            <td width="91" valign="center" style="width:68.4000pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:none;&#10;mso-border-left-alt:none;border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:1.0000pt solid rgb(0,0,0);mso-border-top-alt:1.0000pt solid rgb(0,0,0);border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><b><span style="letter-spacing: 0pt;">Scholarship Duration</span></b><o:p></o:p></font></p>
+            </td>
+            <td width="86" valign="center" style="width:65.0000pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:none;&#10;mso-border-left-alt:none;border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:1.0000pt solid rgb(0,0,0);mso-border-top-alt:1.0000pt solid rgb(0,0,0);border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><b><span style="letter-spacing: 0pt;">Scholarship Type</span></b><o:p></o:p></font></p>
+            </td>
+            <td width="225" valign="center" style="width:168.7500pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:none;&#10;mso-border-left-alt:none;border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:1.0000pt solid rgb(0,0,0);mso-border-top-alt:1.0000pt solid rgb(0,0,0);border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><b><span style="letter-spacing: 0pt;">Scholarship Standard</span></b><o:p></o:p></font></p>
+            </td>
+        </tr>
+        <tr style="height:45.0000pt;">
+            <td width="72" valign="center" rowspan="2" style="width:54.0000pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:1.0000pt solid rgb(0,0,0);&#10;mso-border-left-alt:1.0000pt solid rgb(0,0,0);border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:none;mso-border-top-alt:none;border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Master</span><o:p></o:p></font></p>
+            </td>
+            <td width="98" valign="center" rowspan="2" style="width:73.5000pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:none;&#10;mso-border-left-alt:none;border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:none;mso-border-top-alt:none;border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">2-3 years</span><o:p></o:p></font></p>
+            </td>
+            <td width="91" valign="center" rowspan="2" style="width:68.4000pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:none;&#10;mso-border-left-alt:none;border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:none;mso-border-top-alt:none;border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">1 year</span><o:p></o:p></font></p>
+            </td>
+            <td width="86" valign="center" style="width:65.0000pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:none;&#10;mso-border-left-alt:none;border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:none;mso-border-top-alt:none;border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">First Prize</span><o:p></o:p></font></p>
+            </td>
+            <td width="225" valign="center" style="width:168.7500pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:none;&#10;mso-border-left-alt:none;border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:none;mso-border-top-alt:none;border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Tuition: 30000RMB,&nbsp; </span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Living allowance: 1700RMB/month&nbsp;&nbsp;&nbsp;&nbsp;(10 months in total)</span><o:p></o:p></font></p>
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Comprehensive medical insurance</span><span style="letter-spacing: 0pt;">：</span><span style="letter-spacing: 0pt;">&nbsp;800RMB</span><o:p></o:p></font></p>
+            </td>
+        </tr>
+        <tr style="height:16.5000pt;">
+            <td width="86" valign="center" style="width:65.0000pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:none;&#10;mso-border-left-alt:none;border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:none;mso-border-top-alt:none;border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Second Prize</span><o:p></o:p></font></p>
+            </td>
+            <td width="225" valign="center" style="width:168.7500pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:none;&#10;mso-border-left-alt:none;border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:none;mso-border-top-alt:none;border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Tuition: 30000RMB</span><o:p></o:p></font></p>
+            </td>
+        </tr>
+        <tr style="height:46.5000pt;">
+            <td width="72" valign="center" rowspan="2" style="width:54.0000pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:1.0000pt solid rgb(0,0,0);&#10;mso-border-left-alt:1.0000pt solid rgb(0,0,0);border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:none;mso-border-top-alt:none;border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3">Bachelor<o:p></o:p></font></p>
+            </td>
+            <td width="98" valign="center" rowspan="2" style="width:73.5000pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:none;&#10;mso-border-left-alt:none;border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:none;mso-border-top-alt:none;border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">4</span><span style="letter-spacing: 0pt;">-5</span><span style="letter-spacing: 0pt;">&nbsp;years</span><o:p></o:p></font></p>
+            </td>
+            <td width="91" valign="center" rowspan="2" style="width:68.4000pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:none;&#10;mso-border-left-alt:none;border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:none;mso-border-top-alt:none;border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">1 year</span><o:p></o:p></font></p>
+            </td>
+            <td width="86" valign="center" style="width:65.0000pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:none;&#10;mso-border-left-alt:none;border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:none;mso-border-top-alt:none;border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">First Prize</span><o:p></o:p></font></p>
+            </td>
+            <td width="225" valign="center" style="width:168.7500pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:none;&#10;mso-border-left-alt:none;border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:none;mso-border-top-alt:none;border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Tuition: </span><span style="letter-spacing: 0pt;">20</span><span style="letter-spacing: 0pt;">000RMB,&nbsp; </span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Living allowance: </span><span style="letter-spacing: 0pt;">14</span><span style="letter-spacing: 0pt;">00RMB/month&nbsp;&nbsp;&nbsp;&nbsp;(10 months in total)</span><o:p></o:p></font></p>
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Comprehensive medical insurance</span><span style="letter-spacing: 0pt;">：</span><span style="letter-spacing: 0pt;">&nbsp;800RMB</span><o:p></o:p></font></p>
+            </td>
+        </tr>
+        <tr style="height:18.7500pt;">
+            <td width="86" valign="center" style="width:65.0000pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:none;&#10;mso-border-left-alt:none;border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:none;mso-border-top-alt:none;border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Second Prize</span><o:p></o:p></font></p>
+            </td>
+            <td width="225" valign="center" style="width:168.7500pt;padding:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;border-left:none;&#10;mso-border-left-alt:none;border-right:1.0000pt solid rgb(0,0,0);mso-border-right-alt:1.0000pt solid rgb(0,0,0);&#10;border-top:none;mso-border-top-alt:none;border-bottom:1.0000pt solid rgb(0,0,0);&#10;mso-border-bottom-alt:1.0000pt solid rgb(0,0,0);">
+            <p class="p" align="center" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;&#10;text-align:center;vertical-align:middle;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Tuition: </span><span style="letter-spacing: 0pt;">20</span><span style="letter-spacing: 0pt;">000RMB</span><o:p></o:p></font></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><i><span style="letter-spacing: 0pt;">Note：Tianjin Government Scholarship is a one-year duration scholarship open for both prospective students and current students at Tianjin University, it could be applied year by year.</span></i><i>&nbsp;</i><i><span style="letter-spacing: 0pt;">For current students at TJU, please contact Office of Academic Affairs (Phone: 27400919;&nbsp;Email:jwies@tju.edu.cn) for more application details.</span></i><i><span style="letter-spacing: 0pt;"><o:p></o:p></span></i></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">&nbsp;</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><b><span style="letter-spacing: 0pt;">III. Eligibility&nbsp;</span></b><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">1. Applicants must be a citizen of a country other than the People’s Republic of China, and be in good health;</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">2. Requirements for applicants’ degree and age:</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Applicant applying for a Bachelor degree should hold a high school diploma and be under the age of </span><span style="letter-spacing: 0pt;">25;</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Applicant applying for a Master degree should hold a Bachelor diploma and be under the age of 35</span><span style="letter-spacing: 0pt;">.</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">3.&nbsp;Language Proficiency requirements:</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">①&nbsp;For Chinese-instructed program applicants:&nbsp;Students are required to submit HSK-5&nbsp;certificates with the minimum score of 180. Native Chinese speakers and applicants who complete the undergraduate/master&nbsp;study in Chinese are allowed to be exempted from providing HSK Certificates.</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">②&nbsp;For English-instructed program applicants:&nbsp;Students are required to submit English Proficiency Certificates. TOEFL 80 or IELTS 6.0 is mandatory. Native English speakers are allowed to be exempted from providing relevant certificates. For applicants who complete the undergraduate/master&nbsp;study in English can submit&nbsp;Certificate of Undergraduate Study in English&nbsp;as alternative language certificate instead of TOEFL or IELTS.</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">* The minimum language requirement for English MBA Program is TOEFL 85 or IELTS 6.5.</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">4. Applicants should have good conduct, good physical and mental health, and be willing to abide by the laws and regulations of China and Tianjin University.</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">&nbsp;</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><b><span style="letter-spacing: 0pt;">IV. Program Catalogue</span></b><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><a href="./202410/W020241029407473009966.xls" OLDSRC="W020241029407473009966.xls"><span class="15" style="color: rgb(136, 136, 136); letter-spacing: 0pt;">For programs covered by this scholarship, please click</span></a><span style="color: rgb(136, 136, 136); letter-spacing: 0pt;">;</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">&nbsp;</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><b><span style="letter-spacing: 0pt;">V. Application Materials&nbsp;</span></b><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Please upload all the listed documents below to the application system:</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">1.</span><b><span style="letter-spacing: 0pt;">&nbsp;Scanned Copy of Highest Diploma.&nbsp;</span></b><span style="letter-spacing: 0pt;">Scan copy of Pre-graduation Certificate is required if the applicant has not gained degree certificate before the application deadline. Once admitted, students are required to present their original Degree Certificate with the Degree Authentication Document upon registration for enrollment qualification review. Students who fail the enrollment qualification review will be disqualified from enrollment.</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">2.&nbsp;</span><b><span style="letter-spacing: 0pt;">Scan of notarized copy of the academic transcripts.</span></b><span style="letter-spacing: 0pt;">&nbsp;Applicants who will not graduate before the application deadline must provide their current academic transcript. In this case, the completed academic transcripts must be submitted before registration.</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">3.&nbsp;</span><b><span style="letter-spacing: 0pt;">Photocopy of passport.&nbsp;</span></b><span style="letter-spacing: 0pt;">Ordinary passport with valid period</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">4.</span><span style="letter-spacing: 0pt;">&nbsp;</span><b><span style="letter-spacing: 0pt;">Tianjin Government Scholarship Application Form</span></b><b>&nbsp;</b><span style="letter-spacing: 0pt;">.</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">5.&nbsp;</span><b><span style="letter-spacing: 0pt;">Chinese or English Proficiency Certificate.</span></b><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">6.&nbsp;</span><b><span style="letter-spacing: 0pt;">Study Experience Resume</span></b><span style="letter-spacing: 0pt;">&nbsp;(The start and end time of each education experience must be uninterrupted, and education level should start from senior middle school).</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">7.&nbsp;</span><b><span style="letter-spacing: 0pt;">Study or Research Plan</span></b><b>&nbsp;</b><span style="letter-spacing: 0pt;">(Bachelor</span><span style="letter-spacing: 0pt;">: </span><span style="letter-spacing: 0pt;">600 words at least</span><span style="letter-spacing: 0pt;">; Master: 8</span><span style="letter-spacing: 0pt;">00 words at least, in Chinese or English</span><span style="letter-spacing: 0pt;">)</span><span style="letter-spacing: 0pt;">.</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">8.&nbsp;</span><b><span style="letter-spacing: 0pt;">Two Recommendation Letters</span></b><span style="letter-spacing: 0pt;">&nbsp;in English or Chinese from two professors or associate professors</span><span style="letter-spacing: 0pt;">&nbsp;(only for Master applicants)</span><span style="letter-spacing: 0pt;">.</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">9.&nbsp;</span><b><span style="letter-spacing: 0pt;">Acceptance Letter&nbsp;</span></b><span style="letter-spacing: 0pt;">from TJU Supervisor. Remember to upload it to the application system if you get the Acceptance Letter</span><span style="letter-spacing: 0pt;">&nbsp;(only for Master applicants)</span><span style="letter-spacing: 0pt;">.&nbsp;</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">10.&nbsp;</span><b><span style="letter-spacing: 0pt;">Physical Examination Record for Foreigners.</span></b><span style="letter-spacing: 0pt;">&nbsp;The medical examinations must cover all the items listed and should be conducted after October, 202</span><span style="letter-spacing: 0pt;">4</span><span style="letter-spacing: 0pt;">.</span><span style="letter-spacing: 0pt;">&nbsp;</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">11.&nbsp;Applicants who are now in China must submit&nbsp;</span><b><span style="letter-spacing: 0pt;">Scan of Photocopy of Visa and Transfer Certificate</span></b><span style="letter-spacing: 0pt;">&nbsp;from present university.</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">12.&nbsp;</span><b><span style="letter-spacing: 0pt;">Scan of Non-Criminal Record or Student Performance Letter.</span></b><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">13.&nbsp;</span><b><span style="letter-spacing: 0pt;">Financial Statement</span></b><span style="letter-spacing: 0pt;">&nbsp;(Bank deposit certificate or the work income certificate of the financial guarantor).</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">14.</span><b><span style="letter-spacing: 0pt;">&nbsp;Other Attachments</span></b><b>&nbsp;</b><span style="letter-spacing: 0pt;">(A</span><span style="letter-spacing: 0pt;">pplicants of School of Architecture are requested to submit E-work Collection and Video Presentation, etc</span><span style="letter-spacing: 0pt;">).</span><span style="letter-spacing: 0pt;">&nbsp;&nbsp;</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;mso-pagination:widow-orphan;text-align:justify;text-justify:inter-ideograph;&#10;line-height:18.0000pt;"><font face="Times New Roman" size="3"><b><span style="letter-spacing: 0.4pt;">Note:&nbsp;Please download&nbsp;related&nbsp;templates&nbsp;from&nbsp;our&nbsp;download center.</span></b><b><span style="letter-spacing: 0pt;"><o:p></o:p></span></b></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;mso-pagination:widow-orphan;text-align:justify;text-justify:inter-ideograph;&#10;line-height:18.0000pt;"><font face="Times New Roman" size="3"><a href="https://sie.tju.edu.cn/en/DOWNLOAD/ADMISSIONSRELATED/"><u><span class="15" style="color: rgb(136, 136, 136); letter-spacing: 0.4pt;">https://sie.tju.edu.cn/en/DOWNLOAD/ADMISSIONSRELATED/</span></u></a><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><b><span style="color: rgb(255, 255, 255); letter-spacing: 0pt; background: rgb(0, 0, 139);">Application Remarks</span></b><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Applicants are required to submit scanned images of all required documents at the time of application. All uploaded documents should be in Chinese or in English; otherwise notarial translations in Chinese or English are required. Once translated, the original documents and certified translations are to be submitted together to the application system.</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Please scan the original or notarized application documents in color using a scanner. Images captured by mobile phone or camera are not acceptable. Copies are also not acceptable.</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">TJU has the right to request the applicants to provide the original or notarized hard copies of application documents for further qualification checks if the uploaded documents are not sufficient. Applicants shall guarantee all the information and application documents submitted in this application are authentic and accurate, otherwise they will be disqualified from admission.</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">&nbsp;</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><b><span style="letter-spacing: 0pt;">VI. Admission Procedures</span></b><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:18.0000pt;text-indent:-18.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">1. Application:</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:18.0000pt;text-indent:-18.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">October</span><span style="letter-spacing: 0pt;">&nbsp;15, 202</span><span style="letter-spacing: 0pt;">4</span><span style="letter-spacing: 0pt;">-&nbsp;May&nbsp;31, 202</span><span style="letter-spacing: 0pt;">5</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:18.0000pt;text-indent:-18.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">2. TJU and Tianjin Government Review:&nbsp;Jun 1, 202</span><span style="letter-spacing: 0pt;">5</span><span style="letter-spacing: 0pt;">- Jun 30, 202</span><span style="letter-spacing: 0pt;">5</span><span style="letter-spacing: 0pt;">;</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">3. Result Release: Tianjin University will announce the admission result officially on website, and </span><span style="letter-spacing: 0pt;">send</span><span style="letter-spacing: 0pt;">&nbsp;Admission Notice and Visa Application Form for Study in China (JW202) to scholarship winners from July 1 to&nbsp;August&nbsp;31;</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">&nbsp;</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><b><span style="letter-spacing: 0pt;">VII. Contact</span></b><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Program Coordinator：Ms. Chai</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">International Admissions Office, School of International Education, Tianjin University</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Address: 92 Weijin Road, Nankai District, Tianjin, China</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Zip code: 300072 </span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Tel: 86-22-27406691</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Fax: 86-22-27406147</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">E-mail: graduate@tju.edu.cn</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Website: http://sie.tju.edu.cn/en/</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><span style="letter-spacing: 0pt;"><font face="Times New Roman" size="3">&nbsp;</font></span></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Please follow us for more informaiton of TJU：</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">WeChat ID: StudyatTJU</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Facebook: https://www.facebook.com/TJUadmissions</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Instagram: https://www.instagram.com/tju.admission/</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="p" align="justify" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;&#10;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;&#10;text-autospace:ideograph-numeric;mso-pagination:widow-orphan;text-align:justify;&#10;text-justify:inter-ideograph;line-height:26.0000pt;mso-line-height-rule:exactly;"><font face="Times New Roman" size="3"><span style="letter-spacing: 0pt;">Youtube: https://www.youtube.com/@TJUAdmissions</span><span style="letter-spacing: 0pt;"><o:p></o:p></span></font></p>
+<p class="MsoNormal" style="text-autospace:ideograph-numeric;mso-pagination:none;line-height:26.0000pt;&#10;mso-line-height-rule:exactly;"><font face="Times New Roman" style="" size="3">&nbsp;</font></p></div>
+					
+
+
+		        </div>
+		    </div>
+		</div>
+	</div>
+</div>
+<div id="footer">
+        <div class="footer_head">
+            <div class="link">
+                    <h2><a href="../../../en/yqlj/">Links</a></h2>
+                    <ul>
+		                
+		                <li> 	
+		                    <p>
+		                        <a href="http://en.moe.gov.cn/">Ministry of Education</a>
+		                    </p>
+		                </li>
+		                
+		                <li> 	
+		                    <p>
+		                        <a href="http://www.csc.edu.cn">China Scholarship Council</a>
+		                    </p>
+		                </li>
+		                
+		                <li> 	
+		                    <p>
+		                        <a href="http://english.hanban.org/">Confucius Institute Headquarters</a>
+		                    </p>
+		                </li>
+		                
+		                <li> 	
+		                    <p>
+		                        <a href="http://www.uq.edu.au/confucius/">Confucius Institute</a>
+		                    </p>
+		                </li>
+		                
+                    </ul>
+            </div>
+        </div>
+        <div class="footer_top">
+            <div class="all">
+                <div class="navigation">
+                    <ul>
+                        <li class="first">
+                            Other Topic
+                        </li>
+
+
+                        <li>
+                            <a href="../../../en/gytj/201508/t20150804_263636.html">About Tianjin</a>
+                        </li>
+                        <li>
+                            <a href="../../../en/wmdxs/201508/t20150804_263637.html">Meet our students</a>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li class="first">
+
+                        </li>
+                        <li>
+                            <a href="../../../en/xwdt/xw/">News dynamics</a>
+                        </li>
+                        <li>
+                            <a href="../../../en/cjwt/">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="../../../en/lxwm/201508/t20150804_263635.html">Contact us</a>
+                        </li>
+
+                    </ul>
+
+                    <ul>
+                        <li class="first">
+                             
+                        </li>
+
+                        <li>
+                            <a href="../../../en/sp/">Video</a>
+                        </li>
+                        <li>
+                            <a href="../../../en/xz/">Downloads</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="contact">
+                    <ul>
+                        <li class="qq">
+                            <a href="###"></a>
+                            <p>
+                                QQ
+                            </p>
+                        </li>
+                        <li class="weixin">
+                            <div class="side-bar"> 
+								<a class="icon-chat"><div class="chat-tips"><i></i><img style="width:138px;height:138px;" src="../../../images/weixin2.jpg" alt="微信订阅号" /></div></a> 
+							</div>
+                            <p>
+                               Wechat
+                            </p>
+                        </li>
+                        <li class="xinxiang">
+                            <a href="###"></a>
+                            <p>
+                                Dean mail
+                            </p>
+                        </li>
+                        <li class="weibo">
+                            <div class="side-bar"> 
+								<a  class="icon-chat"><div class="chat-tips"><i></i><img style="width:138px;height:138px;" src="../../../images/code2.jpg" alt="微博" /></div></a> 
+							</div>
+                            <p>
+                                Microblog
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="tel">
+                        <p>
+                            <img src="../../../images/tel.png" /><span>Enrollment Hotline：</span>+86-22-27406691
+                        </p>
+                        <p>
+                            <img src="../../../images/letter.png" /><span>Contact E-mail：</span><br>
+                            undergraduate@tju.edu.cn (For Undergraduate Programs)<br>
+graduate@tju.edu.cn (For Graduate Programs)<br>
+iso@tju.edu.cn (For Chinese Language Program and Foundation Programs)                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="end">
+                <p>
+                    Address: 92 Weijin Road, Nankai District, Tianjin, P.R.China
+
+                </p>
+                <p>
+                    Copyright ？ 2011 The President and Tianjin University 
+                </p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+		var pl = document.querySelector(".pic_r_mb_nv");
+		var lis = pl.querySelectorAll("a");
+        lis[0].remove();
+    </script>
+</body>
+</html>

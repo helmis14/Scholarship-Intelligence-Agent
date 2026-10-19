@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="en" class="no-js ">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    var hidecookiecontrol = false;
+  </script>
+
+<script>
+    // Include the following lines to define the gtag() function
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // Call the default command before Tag Manager runs
+    gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+    });
+</script>
+
+<!-- Form tracking function -->
+<script>console.log("Tracking allowed");</script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-54HRKX');
+    </script>
+    <!-- End Google Tag Manager -->
+    
+    <script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js"></script>
+    <script>
+        var config = {
+            apiKey: "6083b9c08a2f568ceccbbe0ad3fca860c19f0e60",
+            product: "PRO",
+            necessaryCookies: ["gold", "PHPSESSID", "info.gold.ac.uk", "appView", "resolution", "AWSALB", "UB_UUID", "redux:authState", "__cfduid", "pusherTransportTLS", "Firebase Device ID"],
+            initialState: "notify",
+            notifyDismissButton: !1,
+            acceptBehaviour: "recommended",
+            rejectButton: !1,
+            closeStyle: "button",
+            settingsStyle: "button",
+            layout: "slideout",
+            notifyOnce: !1,
+            position: "left",
+            theme: "dark",
+            text: {
+                notifyTitle: "Your choice regarding cookies on this site",
+                notifyDescription: "Cookies and similar technologies are used to provide functionality, understand how people use our website, and personalise content on and off gold.ac.uk. This includes matching visitors with their details held by other platforms.",
+                accept: "Accept and continue",
+                settings: "Review cookie settings",
+                acceptRecommended: "Accept all cookies",
+                closeLabel: "Close panel",
+                title: "This website uses cookies",
+                intro: "Cookies and similar technologies are used to provide functionality, understand how people use our website, and personalise content on and off gold.ac.uk. This includes matching visitors with their details held by other platforms. ",
+                necessaryTitle: "Necessary Cookies",
+                necessaryDescription: "These are technically essential to the provision of the gold.ac.uk website. For example, to enable secure sign-in to restricted areas."
+            },
+            statement: {
+                description: "We use cookies as the collective term for these technologies. For more detailed information on what we use, please see our",
+                name: "cookies page",
+                url: "https://www.gold.ac.uk/cookies-statement/",
+                updated: "01/12/2020"
+            },
+            optionalCookies: [{
+                name: "analytics",
+                label: "Analytics",
+                description: "These help us understand how people use our website and make improvements to what we do.",
+                cookies: ["_ga", "_gid", "_gat", "__utma", "__utmb", "__utmc", "__utmt", "__utmz"],
+                recommendedState: "on",
+                onAccept: function() {
+                    dataLayer.push({
+                        civic_cookies_analytics: "consent_given",
+                        event: "analytics_consent_given"
+                    });
+                    gtag("consent", "update", {
+                        analytics_storage: "granted"
+                    })
+                },
+                onRevoke: function() {
+                    dataLayer.push({
+                        event: "analytics_revoked"
+                    }), gtag("consent", "update", {
+                        analytics_storage: "denied"
+                    })
+                }
+            }, {
+                name: "embedded",
+                label: "Embedded content",
+                description: "Our videos, maps and some other content is embedded from other websites (eg Vimeo and Google Maps) that will use their own cookies.",
+                thirdPartyCookies: [{
+                    name: "Airtable",
+                    optOutLink: "https://airtable.com/privacy"
+                }, {
+                    name: "Google/YouTube",
+                    optOutLink: "https://policies.google.com/technologies/types?hl=en"
+                }, {
+                    name: "Issuu",
+                    optOutLink: "https://issuu.com/legal/cookies"
+                }, {
+                    name: "Soundcloud",
+                    optOutLink: "https://soundcloud.com/pages/cookies"
+                }, {
+                    name: "Vimeo",
+                    optOutLink: "https://vimeo.com/cookie_policy"
+                }],
+                recommendedState: "on",
+                onAccept: function() {
+                    dataLayer.push({
+                        civic_cookies_embedded: "consent_given",
+                        event: "embedded_consent_given"
+                    });
+                    var e = new Event("embeddedConsentGiven");
+                    document.dispatchEvent(e)
+                },
+                onRevoke: function() {
+                    dataLayer.push({
+                        civic_cookies_embedded: "consent_revoked"
+                    })
+                }
+            }, {
+                name: "advertising",
+                label: "Advertising/targeting cookies",
+                description: "These are used by companies we use to help us monitor the effectiveness of our advertising. \n\n Sometimes we use remarketing advertising services, which use cookies to show adverts from Goldsmiths on other websites that you visit. \n\n We have advanced matching enabled on forms used by visitors who are enquiring about coming to study at Goldsmiths (for example open day registration). This securely checks to see if the information provided matches users of other services.",
+                cookies: ["ad-id", "ad-privacy", "fr", "_fbp", "IDE", "DSID", "bscookie", "_uetvid", "_uetsid"],
+                recommendedState: "on",
+                onAccept: function() {
+                    dataLayer.push({
+                        civic_cookies_marketing: "consent_given",
+                        event: "marketing_consent_given"
+                    });
+                    gtag('consent', 'update', {
+                        'ad_storage': 'granted',
+                        'ad_user_data': 'granted',
+                        'ad_personalization': 'granted'
+                    });
+                },
+                onRevoke: function() {
+                    dataLayer.push({
+                        civic_cookies_marketing: "consent_revoked"
+                    });
+                    gtag('consent', 'update', {
+                        'ad_storage': 'denied',
+                        'ad_user_data': 'denied',
+                        'ad_personalization': 'denied'
+                    });
+                    CookieControl.delete("ad-id"), CookieControl.delete("ad-privacy"), CookieControl.delete("fr"), CookieControl.delete("_fbp"), CookieControl.delete("IDE"), CookieControl.delete("DSID"), CookieControl.delete("bscookie"), CookieControl.delete("_uetvid"), CookieControl.delete("_uetsid")
+                }
+            }],
+            branding: {
+                acceptBackground: "#ffcd6e",
+                acceptText: "#333",
+                fontColor: "#FFF",
+                fontSizeTitle: "1.2em",
+                fontSizeIntro: "1em",
+                fontSizeHeaders: "1.2em",
+                fontSize: "1em",
+                backgroundColor: "#37424a",
+                toggleText: "#fff",
+                toggleColor: "#f6f7f7",
+                toggleBackground: "#111125",
+                closeBackground: "#333",
+                closeText: "#FFF",
+                buttonIcon: null,
+                buttonIconWidth: "32px",
+                buttonIconHeight: "32px",
+                removeIcon: !1,
+                removeAbout: !1
+            },
+            accessibility: {
+                outline: !0
+            }
+        };
+        CookieControl.load(config);
+    </script>
+    <meta property="fb:pages" content="196821702848">
+<!-- Metadata -->
+ 
+
+<link rel="canonical" href="https://www.gold.ac.uk/giving-to-goldsmiths/">
+<title>Give back to your university | Goldsmiths, University of London</title>
+<meta name="description"          content="Support specific scholarships, funds, bursaries and create more opportunities for students around the world to get a great education.">
+<meta name="name"                 content="Give back to your university">
+<meta name="summary"              content="Support specific scholarships, funds, bursaries and create more opportunities for students around the world to get a great education.">
+<meta name="image"                content="https://www.gold.ac.uk/media/images-by-section/alumni-and-friends/giving-to-goldsmiths/heroes/giving-social.jpg">
+<meta property="og:url"           content="https://www.gold.ac.uk/giving-to-goldsmiths/">
+<meta property="og:type"          content="article">
+<meta property="og:title"         content="Give back to your university">
+<meta property="og:description"   content="Support specific scholarships, funds, bursaries and create more opportunities for students around the world to get a great education.">
+<meta property="og:site_name"     content="Goldsmiths, University of London">
+<meta name="twitter:card"         content="summary">
+<meta name="twitter:site"         content="@goldsmithsuol">
+<meta name="twitter:title"        content="Give back to your university">
+<meta name="twitter:description"  content="Support specific scholarships, funds, bursaries and create more opportunities for students around the world to get a great education.">
+<meta property="og:image"         content="https://www.gold.ac.uk/media/images-by-section/alumni-and-friends/giving-to-goldsmiths/heroes/giving-social.jpg">
+<meta name="twitter:image"        content="https://www.gold.ac.uk/media/images-by-section/alumni-and-friends/giving-to-goldsmiths/heroes/giving-social.jpg">
+<meta name="theme-color" content="#37424A">
+<meta name='breadcrumb' content="&lt;a href=&quot;/giving-to-goldsmiths/&quot;&gt;Giving to Goldsmiths&lt;/a&gt;">
+<script>document.cookie='resolution='+Math.max(screen.width,screen.height)+("devicePixelRatio" in window ? ","+devicePixelRatio : ",1")+'; path=/';</script>
+<!-- Set the head no-js/js class before the browsers had chance to render anything. -->
+<script>
+  (function(H) {
+    H.className = H.className.replace(/\bno-js\b/, 'js')
+  })(document.documentElement);
+</script>
+
+<link href="/assets/css/styles.9ffa5b86a2e668a0b335908fc0b523a6.css" rel="stylesheet">
+<!-- New padding css -->
+<link href="/assets/css/new-padding.4d42bb4a2cec71cfdf70c66fe638d9a4.css" rel="stylesheet">
+
+<!-- navigation object:  Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="mask-icon" href="/safari-pinned-tab1.svg" color="#37424A">
+
+  <noscript><style>.noscripthide {display:none;}</style></noscript>
+</head>
+
+<body class="menu-closed staff-students-closed search-closed">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54HRKX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="site-wrapper">
+
+  <header id="top" class="header new-navigation">
+    <div id="skiptocontent"><a href="#maincontent">skip to main content</a></div>
+    <div class="header-container">
+      <a href="/"><span class="site-logo header__logo">Goldsmiths - University of London</span></a>
+      <div class="top-nav-right">
+        <ul class="top-upper-nav desktop">
+          <li>
+            <a class="header__charm header__charm--text" href="#" aria-label="Toggles staff and students menu">Students, Staff and Alumni</a>
+          </li>
+        </ul>
+        <ul class="top-upper-nav mobile">
+          <li>
+            <a class="header__charm charm-search" href="/search-results/" aria-label="Toggles search">Search</a>
+            <a class="header__charm header__charm--text" href="#" aria-label="Toggles staff and students menu">Students, Staff and Alumni</a>
+          </li>
+        </ul>
+        <ul class="header__charms desktop-header-menu">
+          <li><a class="" href="/study">Study</a></li>
+          <li><a class="" href="/course-finder">Course finder</a></li>
+          <li><a class="" href="/international">International</a></li>
+          <li class="more-menu"><a class="text-menu more" href="#" aria-label="Toggles staff and students menu">More</a></li>
+          <li class="search-parent"><a class="header__charm charm-search" href="/search-results/" aria-label="Toggles search">Search</a></li>
+        </ul>
+    </div>
+    </div>
+      <div class="mobile-top-nav">
+        <ul class="header__charms mobile-header-menu">
+          <li><a class="" href="/study">Study</a></li>
+          <li><a class="" href="/course-finder">Courses</a></li>
+          <li><a class="" href="/international">International</a></li>
+          <li class="more-menu"><a class="text-menu more" href="#" aria-label="Toggles staff and students menu">More</a></li>
+        </ul>
+      </div>
+  </header>
+
+  <!-- Drop down search  -->
+  <nav class="section section--site-search" tabindex="-1" aria-hidden="true">
+    <div class="wrapper clearfix">
+      <div class="full-width fluid-search">
+        <form role="search" id="main-search" action="/search-results" method="GET">
+        <div class="search-wrapper">
+          <div class="search-icon">&nbsp;</div>
+          <div class="search-form-wrapper">
+            <div class="search-form">
+              <div class="search-form-input">
+                <label for="search-site" id="searchTitle">Search Goldsmiths</label>
+                <input type="hidden" name="collection" value="goldsmiths~sp-meta">
+                <input type="text" name="query" class="meta-query" id="search-site" aria-describedby="searchTitle">
+              </div>
+              <div class="search-cta-button">
+                <input type="submit" class="button search-submit-button" value="Search">
+                <!-- GO button only on mobile -->
+                <input type="submit" class="button go-submit-button" value="Go">
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  </nav>
+
+  <main aria-label="Main page content">
+    <div class="pusher-wrapper">
+      <div class="charm-menu--no-js"><a class="header__charm charm-menu" href="#">Main menu</a></div>
+      <nav id="primary-nav" class="primary-nav pusher" aria-hidden="true">
+        <h2 id="primaryNavigationTitle" class="visuallyhidden">Primary</h2>
+        <ul role="menu" aria-describedby="primaryNavigationTitle">
+                    <li role="menuitem"><a href="/about/">About Goldsmiths</a></li>
+          <li role="menuitem"><a href="/study/">Study with us</a></li>
+          <li role="menuitem"><a href="/research/">Research</a></li>
+          <li role="menuitem"><a href="/business/">Business and partnerships</a></li>
+          <li role="menuitem"><a href="/community/">For the local community</a></li>
+          <li role="menuitem"><a href="/schools/">Faculties and Schools</a></li>
+          <li role="menuitem"><a href="/news/">News and features</a></li>
+          <li role="menuitem"><a href="/events/">Events</a></li>
+
+<a class="button donateBtn" href="/giving-to-goldsmiths/">Give to Goldsmiths</a>
+        </ul>
+      </nav>
+
+      <div class="charm-students--no-js"><a class="header__charm header__charm--text" href="#">Staff & students</a></div>
+      <nav id="student-nav" class="staff-students-nav pusher" aria-hidden="true">
+        <h2 id="studentNavigationTitle" class="visuallyhidden">Staff + students</h2>
+        <ul role="menu" aria-describedby="studentNavigationTitle">
+                    <li role="menuitem"><a href="/new-students/">New students</a></li>
+          <li role="menuitem"><a href="/students/">Current students</a></li>
+          <li role="menuitem"><a href="/alumni/">Alumni</a></li>
+          <li role="menuitem"><a href="/library/">Library</a></li>
+          <li role="menuitem"><a href="/students/timetable/">Timetable</a></li>
+          <li role="menuitem"><a href="https://learn.gold.ac.uk/">Learn.gold - VLE</a></li>
+          <li role="menuitem"><a href="https://outlook.com/gold.ac.uk">Email - Outlook</a></li>
+          <li role="menuitem"><a href="/it/">IT support</a></li>
+          <li role="menuitem"><a href="/staff-directory/">Staff directory</a></li>
+          <li role="menuitem"><a href="https://goldsmithscollege.sharepoint.com/sites/goldmine">Staff intranet - Goldmine</a></li>
+          <li role="menuitem"><a href="/graduate-school/">Graduate School - PGR students</a></li>
+          <li role="menuitem"><a href="/talic/">Teaching and Learning Innovation Centre</a></li>
+          <li role="menuitem"><a href="/calendar/?action=admin">Events admin</a></li>
+        </ul>
+      </nav>
+
+      <div class="main-container push-this">
+        <div class="breadcrumb" role="navigation" aria-label="Secondary">
+          <div class="breadcrumb-wrapper">
+          <div class="dropdown-nav">In this section<div class="touchButton" role="button" tabindex="0" aria-label="Toggle breadcrumb menu" aria-expanded="false"><span class="touchButton--plus"></span><span class="touchButton--minus"></span></div>
+            </div>
+            <nav class="secondary-nav">
+              <h2 id="breadcrumbTitle" class="visuallyhidden">Breadcrumbs</h2>
+              <ul aria-describedby="breadcrumbTitle">
+                
+<li class="expanded">
+	<a href="/giving-to-goldsmiths/">Giving to Goldsmiths</a>
+	<ul role="menu" aria-label="Giving to Goldsmiths submenu"><li><a href="/giving-to-goldsmiths/donate/">Donate now</a></li><li><a href="/giving-to-goldsmiths/appeal/">Equity appeal</a></li><li><a href="/equity-awards/">Goldsmiths Equity Awards</a></li><li><a href="/giving-to-goldsmiths/inclusion-appeal/">Inclusion appeal</a></li>
+	</ul>
+</li>
+
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+
+        <article id="maincontent" class="standard page-full-width">
+          <header class="section hero hero--new-vi hero--yellow">
+            <div class="hero__content">
+              <h1>Give to Goldsmiths</h1>
+            </div>
+            <div class="hero__image" style="background-image:url('/media/images-by-section/alumni-and-friends/giving-to-goldsmiths/heroes/giving-standard-hero.jpg');"></div>
+          </header>
+          
+
+
+
+<style>
+	.image-and-text-fullwidth .caption {
+		max-width: 75%;
+    }
+</style>
+<a id="d.en.2551942"></a>
+
+<div class="section">
+            <div class="full-width-wrapper">
+                <div class="fifty-fifty-image-and-text">      <div class="image-and-text-fullwidth">
+        <h2>Transforming lives at Goldsmiths</h2>
+<p>Goldsmiths thrives thanks to our community – staff, alumni and friends like you – who come together to support students from all backgrounds to pursue an education and achieve their academic goals.</p>
+<p>Yet, many students still face financial hardship, struggling to cover basic living expenses. Your support can ensure that no student faces hunger or homelessness.</p>
+<p>For students from low-income families or those who are the first in their family to attend university, your contribution towards a scholarship or award could open the door to a brighter future.</p>
+<p>Your support is vital to Goldsmiths students.</p>
+      </div>
+      <figure class="media-block media-block--overlapping-caption image-and-text-fullwidth">
+        <div class="media-block__media">
+          <img loading="lazy" alt="A student walks past the Ben Pimlott Building" src="/media/images-by-section/alumni-and-friends/giving-to-goldsmiths/walking-past-bpb-630x430.jpg">
+        </div>
+        
+      </figure>
+</div>
+          </div>
+        </div>
+<div class="section section-sticky sticky-slice">
+  <div class="full-width-wrapper">
+    <h2 class="section__heading visuallyhidden">Content navigation menu</h2>
+
+    <div class="sticky-nav">
+      <div class="sticky-nav-expand-container">
+        <button class="sticky-nav-item-mob" id="sticky-nav-button">On this page</button>
+        <div class="sticky-nav-expand" id="sticky-nav-expandable">
+
+                      <div class="sticky-nav-item-cta sticky-nav-item-mob-hide">
+              <a href="https://www.gold.ac.uk/giving-to-goldsmiths/donate/" class="button">Donate now</a>
+            </div>
+          
+                      <div class="sticky-nav-item-custom">
+              <a href="https://www.gold.ac.uk/giving-to-goldsmiths/inclusion-appeal/">Inclusion appeal</a>
+            </div>
+          
+                      <div class="sticky-nav-item-custom">
+              <a href="https://www.gold.ac.uk/giving-to-goldsmiths/donate/legacy/">Leave a gift in your will</a>
+            </div>
+          
+                      <div class="sticky-nav-item-custom">
+              <a href="https://www.gold.ac.uk/giving-to-goldsmiths/appeal/">Equity Appeal</a>
+            </div>
+          
+          
+        </div>
+      </div>
+
+      <!-- Mobile CTA button -->
+              <div class="sticky-nav-item-mob">
+          <a href="https://www.gold.ac.uk/giving-to-goldsmiths/donate/" class="button">Donate now</a>
+        </div>
+      
+    </div>
+  </div>
+</div><a id="d.en.2551944"></a>
+<div class="section text-slice">
+	<div class="full-width-wrapper">
+   		<div class="section-fullwidth-pinched pinched-text">
+      	<h2>Goldsmiths is a beacon of academic excellence</h2>
+<p>Established in 1891, Goldsmiths is renowned globally for our contributions to the arts, humanities, social sciences, business, entrepreneurship, law and computing.</p>
+<p>Goldsmiths is changing the world through:</p>
+   		</div>
+	</div>
+</div>
+
+<a id="d.en.2551945"></a>
+<div class="section">
+	<div class="full-width-wrapper">
+        <div class="section-fullwidth-pinched">
+      	<div class="fact-container prog-section-divider">    
+      
+<div class="fact">
+  <div class="fact-img iconbg fact-icon-research"></div>  <div class="fact-details">
+    <div class="fact-title">Impactful research </div>
+    <div class="fact-text">Our groundbreaking research, like the Turner Prize-nominated &lsquo;Precarious Trajectories&rsquo; by Goldsmiths Forensic Architecture, exposed human rights abuses and was used in evidence in international courts of law.</div>
+  </div>
+</div>
+     
+<div class="fact">
+  <div class="fact-img iconbg fact-icon-ranked"></div>  <div class="fact-details">
+    <div class="fact-title">Leadership in arts education and culture</div>
+    <div class="fact-text">Through innovative programmes we foster talent and creativity. With 7 Turner Prize winners, 51 nominees, and numerous winners and nominees for BAFTAs, Mercury Prize, Booker Prize, Pulitzer Prize, Grammys and BRIT Awards, Goldsmiths alumni and academics continue to shape the cultural landscape.</div>
+  </div>
+</div>          
+
+           
+<div class="fact">
+  <div class="fact-img iconbg fact-icon-welcome"></div>  <div class="fact-details">
+    <div class="fact-title">Commitment to Equity and Justice</div>
+    <div class="fact-text">As the first London institution to develop a Civic University Agreement, we actively engage with our local community in Lewisham, addressing issues of poverty and supporting initiatives like Alchemy, which supports young people &lsquo;at risk&rsquo; of exclusion from education through music.</div>
+  </div>
+</div>         
+   
+
+   
+
+   
+
+   
+
+      </div>
+      </div>
+	</div>
+</div><style>.svg-divider{display:block;margin:auto;max-width:100%}</style>
+
+<div class="section">
+	<div class="full-width-wrapper">
+		<div class="section-fullwidth-pinched unsightly">
+			<div class="media-block__media full-viewport-image svg-divider-wrapper">
+              <svg class="svg-divider" viewBox="0 0 1283 27" width="1283" height="27" fill="none">
+                <path d="M 0.5 24.5 C 38.799 25.864 924.679 23.5 964.414 25.576 C 968.646 25.473 972.986 25.324 976.878 23.908 C 980.771 22.493 984.162 19.507 984.453 15.914 C 984.731 12.429 982.03 9.155 978.559 7.301 C 975.089 5.448 970.949 4.753 966.899 4.223 C 955.637 2.756 943.161 2.504 934.341 9.252 C 932.3 10.812 931.277 13.185 931.9 15.461 C 932.957 19.311 937.776 20.068 941.868 20.258 C 951.878 20.717 961.955 20.053 971.766 18.297 C 988.731 15.26 1005.488 8.928 1022.698 10.75 C 1033.887 11.934 1044.145 16.485 1054.946 19.224 C 1092.375 27 1263.77 24 1283.5 24" stroke="#666666" stroke-miterlimit="10"></path>
+			  </svg>
+			</div>
+		</div>
+	</div>
+</div><a id="d.en.2551950"></a>
+<div class="section text-slice">
+	<div class="full-width-wrapper">
+   		<div class="section-fullwidth-pinched pinched-text">
+      	<h2>Your gift can make an impact</h2>
+   		</div>
+	</div>
+</div>
+<a id="d.en.2551946"></a>
+<div class="section">
+    
+    <div class="full-width-wrapper">
+   		<div class="section-fullwidth-pinched pinched-text">
+      <div class="primary-content">
+        <div class="content">
+                    <div class="minibio">
+                      <div class="wide-content">
+                        <div class="minibio--img" style="background-image:url('/media/images-by-section/alumni-and-friends/giving-to-goldsmiths/pearse-300.jpg');">
+                          <img alt="A student at her desk in her flat" src="/media/images-by-section/alumni-and-friends/giving-to-goldsmiths/pearse-300.jpg">
+                        </div>
+                      </div>
+                      <div class="minibio--content">
+                                                <h3 class="minibio--heading">&pound;10 a month</h3>
+                                                  
+                        <p>Could provide essential support to vulnerable students facing emergency situations through the Student Hardship Fund.</p>
+<p><a href="/giving-to-goldsmiths/donate/#d.en.2688049">Donate £10 a month now</a></p>
+
+                                                  
+                        
+                      </div>
+                    </div>
+          
+          
+          
+          
+        </div>
+      </div>
+        </div>
+    </div>
+  </div><a id="d.en.2551947"></a>
+<div class="section">
+    
+    <div class="full-width-wrapper">
+   		<div class="section-fullwidth-pinched pinched-text">
+      <div class="primary-content">
+        <div class="content">
+                    <div class="minibio">
+                      <div class="wide-content">
+                        <div class="minibio--img" style="background-image:url('/media/images-by-section/alumni-and-friends/giving-to-goldsmiths/matthew-400.jpg');">
+                          <img alt="Equity Awards student Matthew" src="/media/images-by-section/alumni-and-friends/giving-to-goldsmiths/matthew-400.jpg">
+                        </div>
+                      </div>
+                      <div class="minibio--content">
+                                                <h3 class="minibio--heading">&pound;100 gift</h3>
+                                                  
+                        <p>Could help give the gift of an education to a student of colour through the Equity Awards programme.</p>
+<p><a href="/giving-to-goldsmiths/donate/#d.en.2688049">Donate £100 now</a></p>
+
+                                                  
+                        
+                      </div>
+                    </div>
+          
+          
+          
+          
+        </div>
+      </div>
+        </div>
+    </div>
+  </div><a id="d.en.2551948"></a>
+<div class="section">
+    
+    <div class="full-width-wrapper">
+   		<div class="section-fullwidth-pinched pinched-text">
+      <div class="primary-content">
+        <div class="content">
+                    <div class="minibio">
+                      <div class="wide-content">
+                        <div class="minibio--img" style="background-image:url('/media/images-by-section/alumni-and-friends/giving-to-goldsmiths/melina-300.jpg');">
+                          <img alt="Equity Awards student Melina" src="/media/images-by-section/alumni-and-friends/giving-to-goldsmiths/melina-300.jpg">
+                        </div>
+                      </div>
+                      <div class="minibio--content">
+                                                <h3 class="minibio--heading">&pound;10,000 gift in a Will</h3>
+                                                  
+                        <p>Leaving a gift in your Will of any amount is one of the most meaningful ways you can support Goldsmiths. Your legacy will help Goldsmiths continue to provide financial aid for underrepresented students, conduct ground-breaking research, or support a department or initiative of your choice.</p>
+<p><a href="/giving-to-goldsmiths/donate/legacy/">Leave a gift in your will</a></p>
+
+                                                  
+                        
+                      </div>
+                    </div>
+          
+          
+          
+          
+        </div>
+      </div>
+        </div>
+    </div>
+  </div><a id="d.en.2684370"></a>
+<div class="section text-slice">
+	<div class="full-width-wrapper">
+   		<div class="section-fullwidth-pinched pinched-text">
+      	<p>Together, let's continue to make a difference. Your support is a lifeline for countless students, paving the way for a brighter, more inclusive future.</p>
+<p>Thank you for supporting Goldsmiths.</p>
+   		</div>
+	</div>
+</div>
+
+
+
+
+
+        </article>
+<!--<a id="d.en.2551942"></a>--><!--<a id="d.en.3354489"></a>--><!--<a id="d.en.2551944"></a>--><!--<a id="d.en.2551945"></a>--><!--<a id="d.en.2551949"></a>--><!--<a id="d.en.2551950"></a>--><!--<a id="d.en.2551946"></a>--><!--<a id="d.en.2551947"></a>--><!--<a id="d.en.2551948"></a>--><!--<a id="d.en.2684370"></a>--><!-- navigation object : Pull Twitter feed into footer -->
+
+</div>
+</div>
+</main>
+<!-- navigation object : Pull promotion to above footer -->
+
+<footer class="section" aria-label="Footer links and social sharing options">
+<div class="footer">
+<ul class="site-map">
+  <li><a href="/about/">About us</a></li>
+  <li><a href="/contact/">Contact us</a></li>
+  <li><a href="/find-us/">Find us</a></li>
+  <li><a href="/working/">Jobs</a></li>
+  <li><a href="/accessibility/">Accessibility statement</a></li>
+  <li><a href="/cookies-statement/">Cookie use</a></li>
+	<li><a href="/disclaimer/">Copyright and disclaimer</a></li>
+  <li><a href="/governance/public-information/statements-reports/slavery-and-human-trafficking/">Slavery and human trafficking statement</a></li>
+</ul>
+<ul class="cms-login">
+<li>
+<a class="admin-login" href="https://cms.gold.ac.uk/terminalfour/page/section#edit/28494/contents">Admin login</a></li>
+</ul>
+<ul class="social-hubs social-hubs--footer">
+  <li><a href="https://twitter.com/goldsmithsuol">Twitter</a> </li>
+  <li><a href="https://www.linkedin.com/edu/school?id=12593">LinkedIn</a> </li>
+	<li><a href="https://www.tiktok.com/@goldsmithsuol/">TikTok</a> </li>
+  <li><a href="https://instagram.com/goldsmithsuol/">Instagram</a> </li>
+  <li><a href="https://www.youtube.com/user/GoldsmithsLondon">YouTube</a></li>
+</ul>
+</div>
+<div class="footer__meta">
+<small class="footer__copyright">© <script>document.write(new Date().getFullYear())</script> Goldsmiths, University of London</small>
+<small><a class="footer__back-top" href="#top">Back to top</a></small>
+</div>
+</footer>
+
+</div>
+
+<script src="/assets/js/common.db4883317972066f90bf76e18054abcd.js"></script>
+<script src="/assets/js/main.f9743a01c858cd21f4460b022e084bdc.js"></script>
+<script src="/assets/js/search.ef961bf8b6235c7f903e4bace268c28c.js"></script>
+<script src="/assets/js/helpful.37c29487f605a04e5c3324db64f4a0ea.js"></script>
+<!-- text/code content -->
+<script>
+  // set the height of the site-wrapper container so that position:sticky can be used
+  // even though the site-wrapper has overflow set
+  //console.log('sticky height script');
+  const siteWrapper = document.querySelector('.site-wrapper');
+  // listen for changes to the window size
+  window.addEventListener("resize", resetHeight);
+  // set the height initially
+  resetHeight();
+
+  function resetHeight() {
+    // set the sitewrapper height to that of the inner height of the browser window
+    // seeing a rounding issue on some browsers, eg Chrome
+    let pixelCorrection = window.devicePixelRatio == 1 ? 0 : 1;
+    // siteWrapper.style.height = window.innerHeight - pixelCorrection + "px";
+    siteWrapper.style.height = document.documentElement.clientHeight - pixelCorrection + "px";
+  }
+</script>
+
+<style>
+  .sticky-nav-item-custom {
+    margin:20px 0;
+  }
+</style>
+	
+    
+<script>
+const el1 = document.querySelectorAll('[data-class="gecko-chat-link"]');
+  // el1.setAttribute("gecko-chat-open", '1mYW4GRU1TET4Se');
+  const el1_rayaa = Array.from(el1);
+  el1_rayaa.forEach((item) => { item.setAttribute("gecko-chat-open", '1mYW4GRU1TET4Se');});
+</script>
+
+<script>
+if ((document.querySelector('.vimeoVideo')) || (document.querySelector('.vimeoPlaylist')) || (document.querySelector('.youtubeVideo')) || (document.querySelector('.bilibiliVideo')) || (document.querySelector('.youtube-stream'))) {
+    dataLayer.push({
+        'event': 'video_found'
+    });
+}
+if (document.querySelector('.soundcloud')) {
+    dataLayer.push({
+        'event': 'soundcloud_found'
+    });
+}
+  if (document.querySelector('.issuu')) {
+    dataLayer.push({
+        'event': 'issuu_found'
+    });
+}
+if (document.querySelector('.airtable')) {
+    dataLayer.push({
+        'event': 'airtable_found'
+    });
+}
+  if (document.querySelector('.unibuddy')) {
+    dataLayer.push({
+        'event': 'unibuddy_found'
+    });
+}
+</script>
+</body>
+</html>

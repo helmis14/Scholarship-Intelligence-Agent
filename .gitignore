@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Secrets: settings live in your shell. Only the empty template is tracked.
+.env
+.env.*
+!.env.example
+
+# Agent stores: public catalog and PRIVATE applicant data (profile, drafts, exports). Never commit.
+data/
+
+# Claude Code user-specific files
+.claude/settings.local.json
+.claude/projects/
+
+# Evaluation snapshots of third-party pages that are kept locally only (re-fetch with the set's collect.py).
+# Sets L-O are tracked in full so their frozen scores can be reproduced.
+tests/heldout/pages/
+tests/heldout_b/pages/
+tests/heldout_c/pages/
+tests/heldout_d/pages/
+tests/heldout_e/pages/
+tests/heldout_f/pages/
+tests/heldout_g/pages/
+tests/heldout_h/pages/
+tests/heldout_i/pages/
+tests/heldout_j/pages/
+tests/heldout_k/pages/
+tests/dev_r21/pages/
+tests/dev_r22/pages/
+tests/dev_r23/pages/
+*.pdf
+!tests/heldout_l/pages/*.pdf
+!tests/heldout_m/pages/*.pdf
+!tests/heldout_n/pages/*.pdf
+!tests/heldout_o/pages/*.pdf
+!tests/heldout_p/pages/*.pdf

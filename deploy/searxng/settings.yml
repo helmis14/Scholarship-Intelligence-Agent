@@ -1,0 +1,72 @@
+# SearXNG settings for the Scholarship Intelligence Agent (local, private instance).
+# Copied to ~/.config/scholarship-agent/searxng/settings.yml by start.sh, which also fills in secret_key.
+use_default_settings: true
+
+general:
+  instance_name: "scholarship-agent-local"
+  debug: false
+
+server:
+  # Only reachable from this machine: start.sh publishes the port on 127.0.0.1.
+  bind_address: "0.0.0.0"
+  port: 8080
+  secret_key: "__GENERATED_BY_START_SH__"
+  limiter: false          # no public traffic; the agent throttles itself
+  public_instance: false
+  image_proxy: false
+  method: "GET"
+
+search:
+  safe_search: 0
+  autocomplete: ""
+  # SearXNG's own back-off after an engine refuses; the agent also waits these out (search_health.COOLDOWNS)
+  suspended_times:
+    SearxEngineAccessDenied: 86400
+    SearxEngineCaptcha: 86400
+    SearxEngineTooManyRequests: 3600
+    cf_SearxEngineCaptcha: 1296000
+    cf_SearxEngineAccessDenied: 86400
+    recaptcha_SearxEngineCaptcha: 604800
+  formats:
+    - html
+    - json                # the agent reads /search?format=json
+
+outgoing:
+  request_timeout: 4.0    # per upstream engine
+  max_request_timeout: 10.0
+  pool_connections: 50
+  pool_maxsize: 10
+  enable_http2: true
+
+engines:
+  # General web engines. The agent sends each query to only two healthy ones (search_health.py), so no engine
+  # sees every query. Engines this network or the engine itself refuses are off: they are not worked around.
+  - name: google cse
+    disabled: false
+  - name: bing
+    disabled: false
+  - name: brave
+    disabled: false
+  - name: google
+    disabled: false
+  - name: yahoo
+    disabled: false
+  - name: yep
+    disabled: false
+  - name: mwmbl
+    disabled: false
+  # language-specific indexes, used for queries in their language
+  - name: naver
+    disabled: false
+  - name: seznam
+    disabled: false
+  # off: DuckDuckGo is blocked on this network (TLS answered with a self-signed certificate), Qwant answers
+  # "access denied", Wikipedia/Wikidata only add encyclopedia pages to scholarship queries
+  - name: duckduckgo
+    disabled: true
+  - name: qwant
+    disabled: true
+  - name: wikipedia
+    disabled: true
+  - name: wikidata
+    disabled: true

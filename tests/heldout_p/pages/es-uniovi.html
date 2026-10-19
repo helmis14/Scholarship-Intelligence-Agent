@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="en" xml:lang="en">
+
+    <head>
+        
+        
+        <script>
+            window.PCIENCIA = window.PCIENCIA || {};
+            (function (P) {
+                var cola = [];
+                P.ready = function (fn) {
+                    if (P.ready.done) {
+                        fn();
+                    } else {
+                        cola.push(fn);
+                    }
+                };
+                P.ready.done = false;
+                function vaciar() {
+                    P.ready.done = true;
+                    var pendientes = cola;
+                    cola = [];
+                    pendientes.forEach(function (fn) {
+                        try {
+                            fn();
+                        } catch (e) {
+                            console.error(e);   // un inicializador roto no se lleva a los demás
+                        }
+                    });
+                }
+                function cargarPesadas(enlaces) {
+                    var quedan = enlaces.length;
+                    var acabado = function () {
+                        if (--quedan === 0) {
+                            vaciar();
+                        }
+                    };
+                    for (var i = 0; i < enlaces.length; i++) {
+                        var script = document.createElement('script');
+                        script.src = enlaces[i].href;
+                        script.async = false;   // insertados dinámicamente, así se ejecutan en orden
+                        script.onload = acabado;
+                        script.onerror = acabado;
+                        document.head.appendChild(script);   // el <link> se queda: lleva el id y los data-* que lee el script
+                    }
+                }
+                document.addEventListener('DOMContentLoaded', function () {
+                    var pesadas = document.querySelectorAll('link[data-lazy][href]');
+                    if (pesadas.length === 0) {
+                        vaciar();
+                        return;
+                    }
+                    // tras el primer pintado: un frame y un tick, para no robarle el hilo al pintado
+                    requestAnimationFrame(function () {
+                        setTimeout(function () {
+                            cargarPesadas(pesadas);
+                        }, 0);
+                    });
+                });
+            })(window.PCIENCIA);
+        </script>
+                
+        
+        
+        
+        <title>La enseñanza-aprendizaje del español de los negocios en China: los estudiantes de 3º y 4º curso de la Universidad de Estudios Internacionales de Shanghai | Documents - Universidad de Oviedo</title>
+        
+        
+    
+        <meta name="description" content="Universidad de Oviedo research portal: researchers, research groups, publications, projects and research data." />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <meta name="display-level" content="standard" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons&amp;display=block" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&amp;family=Roboto+Mono&amp;family=Slabo+27px&amp;display=swap" />
+
+        <link media="all" type="text/css" rel="stylesheet" href="/css/theme_base-541bcd9d1fb5bb9eb8277dfe624d404f.css" />
+        <link media="all" type="text/css" rel="stylesheet" href="/css/theme_16-b6e85836acbea442ca53347ea9a44185.css" />
+        <link media="all" type="text/css" rel="stylesheet" href="/css/style-8525600ca0f07bb4b0571c17dfe53609.css" />
+        
+        <link media="all" type="text/css" rel="stylesheet" href="/css/filter-bar-e051f4fcc8f63d372132f1107f056ada.css" />
+
+        
+        <script defer src="/js/htmx.min-2e713ba95db2e33981bb607ae5183305.js"></script>
+        <script defer src="/js/jquery.min-2c872dbe60f4ba70fb85356113d8b35e.js"></script>
+        <script defer src="/js/app-b867693ed4c153436f03061c89c1a33e.js"></script>
+        <script defer src="/js/filter-bar-c078341eeef3cec288ecc365c9942be0.js"></script>
+        
+        <script defer src="/js/export-datos-b1cc337ec0910c5ba8566a3cab20c534.js"></script>
+        
+        <script defer src="/js/distribuciones-205663f06cee9f30a1f7f66e1ec287e0.js"></script>
+        <script defer src="/js/vista-datos-7a25f5f41b6c387c50037c81a7f1d862.js"></script>
+        
+        
+        <script type="text/javascript">
+            PCIENCIA.config = {
+                exportarDatos: true,
+                maxFilasExportacion: 100000,
+                exportarContacto: null
+            };
+        </script>
+    
+        
+        <script type="text/javascript">
+            PCIENCIA.lang = {
+                exportar: "Export",
+                exportarDatos: "Export data",
+                exportarGrafico: "Export the chart or its data",
+                exportarImagen: "Download image (PNG)",
+                exportarCsv: "Download CSV",
+                exportarExcel: "Download Excel",
+                exportarExportando: "Exporting\u2026",
+                exportarError: "The download could not be prepared",
+                // el resultado no cabe en una exportación: NO se descarga nada y el botón lo
+                // dice antes de pulsar (tarea #13635). {0} son los registros de la selección,
+                // {1} el techo del portal (PreferenciasCliente.Ui#maxFilasExportacion)
+                exportarBloqueado: "Too many rows",
+                exportarBloqueadoCifras: "({0}; max. {1})",
+                exportarBloqueadoTitulo: "This selection cannot be exported",
+                exportarBloqueadoDetalle: "This view contains {0} records and the export limit is {1}.",
+                exportarBloqueadoAyuda: "What can I do?",
+                exportarBloqueadoReducir: "Apply filters, a search or a narrower time range until the result has {0} records or fewer. You will then be able to download it.",
+                // solo si el portal mantiene un canal de contacto (PCIENCIA.config.exportarContacto)
+                exportarContactoAviso: "If you need the complete download, {0}.",
+                exportarContacto: "contact the portal administrators",
+                // la leyenda de las tartas (PCIENCIA.donuts): {0} es el nombre de la categoría
+                leyendaSolo: "Show only {0}",
+                leyendaTodos: "Show all",
+                leyendaAtajos: "Ctrl+click adds or removes"
+            };
+        </script>
+
+        
+        
+        <link media="print" onload="this.media='all'" type="text/css" rel="stylesheet" href="/cookies/cookieconsent-670b37e75a82edfd7af1776c3081eac5.css"/>
+        <noscript><link media="all" type="text/css" rel="stylesheet" href="/cookies/cookieconsent-670b37e75a82edfd7af1776c3081eac5.css"/></noscript>
+        <script defer src="/cookies/cookieconsent-0a3c8bda3a0c2359787caa8bfe0cae04.js"></script>
+    
+        
+        <link rel="alternate" hreflang="es" href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47"/><link rel="alternate" hreflang="ca" href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang=ca"/><link rel="alternate" hreflang="eu" href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang=eu"/><link rel="alternate" hreflang="gl" href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang=gl"/><link rel="alternate" hreflang="en" href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang=en"/><link rel="alternate" hreflang="fr" href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang=fr"/><link rel="alternate" hreflang="de" href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang=de"/>
+        <link rel="alternate" hreflang="x-default" href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47"/>
+        <link rel="canonical" href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang=en"/>
+    
+        
+        
+    
+        
+        <script defer src="/js/afiliaciones-54d081f3af82d02afcab1bffe65f3506.js"></script>
+        <script defer src="/js/autorias-12e450663314dd1e85cd898345ecd8a4.js"></script>
+        <script defer src="/js/indicadores-6ee571978c93d7604ededeedb80859fd.js"></script>
+        <script defer src="/js/financiacion-2642b9a6d241ce379e0af7bdeafb5395.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        
+            
+        <meta name="citation_title" content="La enseñanza-aprendizaje del español de los negocios en China: los estudiantes de 3º y 4º curso de la Universidad de Estudios Internacionales de Shanghai"/>
+        <meta name="citation_author" content="Li, Tao"/>
+        
+        <meta name="citation_date" content="2019"/>
+        <meta name="citation_language" content="spa"/>
+        
+        
+
+        
+            
+        
+
+        
+        
+        
+        
+        
+        
+        
+        <meta name="citation_dissertation_institution" content="Universidad de Alcalá"/>
+        
+
+        
+    
+            
+        <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/>
+        <meta name="DC.title" content="La enseñanza-aprendizaje del español de los negocios en China: los estudiantes de 3º y 4º curso de la Universidad de Estudios Internacionales de Shanghai"/>
+        <meta name="DC.creator" content="Li, Tao"/>
+        <meta name="DC.contributor" content="María Ángeles Álvarez Martínez"/><meta name="DC.contributor" content="Rafael Martín Rodríguez"/>
+        <meta name="DC.type" scheme="DCMITYPE" content="http://purl.org/dc/dcmitype/Text"/>
+        
+        
+        <meta name="DC.description" content="Esta investigación tiene los siguientes objetivos: a) ampliar el campo de investigación en la enseñanza-aprendizaje de ELE en China, en concreto, la enseñanza del español de los negocios para los estudiantes chinos. b) analizar las necesidades de la enseñanza y aprendizaje del ¿Español con mención en Administración y Dirección de Empresas¿ de los estudiantes del tercer y cuarto curso de SISU. c) aportar nuestras sugerencias de explotaciones didácticas sobre ¿qué enseñar¿ y ¿cómo enseñar¿, con el objetivo de facilitar el aprendizaje de ENE a los alumnos chinos así como beneficiar la labor en la práctica didáctica para los profesores chinos de ELE. 
+La tesis comienza con el examen de las teorías generales de ASL (innatistas, medioambientales e interaccionistas). Analizamos los estudios de lenguas de especialidad que derivan del análisis de semántica estructural y que se manifiestan en los estudio de la terminologi¿a (teoría comunicativa y teoría general de la terminología). Revisamos los distintos enfoques y denominaciones terminológicas de la enseñanza de lenguas con fines específicos, sobre todo, la enseñanza del español de los negocios.
+Con esta base iniciamos una investigación orientada a descubrir las necesidades del aprendizaje del español de los negocios de los alumnos chinos. Analizamos la situación actual y los problemas que existen en la enseñanza de ELE y ENE en las universidades en China. Realizamos el análisis de necesidades de los estudiantes de 3° y 4° cursos de la Universidad de Estudios Internacionales de Shanghai (SISU). La herramienta principal han sido los cuestionarios repartidos a los 18 estudiantes del tercer curso y 24 del cuarto curso que optan por el estudio de ¿Español con mención en Administración y Dirección de Empresas ¿ de SISU y observación directa en clase del proceso de enseñanza y aprendizaje. A través de este análisis identificamos las necesidades reales del alumno chino, tales como las motivaciones, las dificultades durante el aprendizaje, la efectividad de recursos didácticos y metodología etc. Investigamos un tema que consideramos de alta relevancia en el proceso de enseñanza y aprendizaje de ENE de los alumnos chinos, que es el componente cultural. Estudiamos la relación entre cultura y lengua y la importancia que tiene el desarrollo de la competencia cultural en la enseñanza y el aprendizaje de ENE. 
+A través del análisis de necesidades descubrimos las necesidades reales y dificultades del aprendizaje de ENE de los alumnos chinos, para satisfacer estas necesidades y facilitar el estudio de ENE de ellos proponemos nuestra planificación curricular para la enseñanza de ENE a los alumnos chinos y elaboramos materiales didácticos que sirven como una enseñanza de introducción para los alumnos que estudian el español de los negocios de SISU"/>
+        
+        
+        
+        <meta name="DC.date" content="2019"/>
+        <meta name="DC.language" content="spa"/>
+        <meta name="DC.source" content="La enseñanza-aprendizaje del español de los negocios en China: los estudiantes de 3º y 4º curso de la Universidad de Estudios Internacionales de Shanghai"/>
+    
+            
+        <meta name="bepress_citation_title" content="La enseñanza-aprendizaje del español de los negocios en China: los estudiantes de 3º y 4º curso de la Universidad de Estudios Internacionales de Shanghai"/>
+        <meta name="bepress_citation_author" content="Li, Tao"/>
+        <meta name="bepress_citation_date" content="2019"/>
+        
+        <meta name="bepress_citation_pdf_url" content="https://aplicaciones.ciencia.gob.es/teseo-rest/api/documento/download/public/1433"/>
+        
+        
+        
+    
+            
+        <link rel="schema.prism" href="http://prismstandard.org/namespaces/basic/3.0/" />
+        <meta name="prism.publicationName" content="La enseñanza-aprendizaje del español de los negocios en China: los estudiantes de 3º y 4º curso de la Universidad de Estudios Internacionales de Shanghai"/>
+        
+        <meta name="prism.publicationDate" content="2019"/>
+        <meta name="prism.person" content="Li, Tao"/>
+        
+        
+        
+        
+        <meta name="prism.organization" content="Universidad de Alcalá"/>
+        
+        
+    
+            
+        <meta name="eprints.title" content="La enseñanza-aprendizaje del español de los negocios en China: los estudiantes de 3º y 4º curso de la Universidad de Estudios Internacionales de Shanghai"/>
+        
+        <meta name="eprints.abstract" content="Esta investigación tiene los siguientes objetivos: a) ampliar el campo de investigación en la enseñanza-aprendizaje de ELE en China, en concreto, la enseñanza del español de los negocios para los estudiantes chinos. b) analizar las necesidades de la enseñanza y aprendizaje del ¿Español con mención en Administración y Dirección de Empresas¿ de los estudiantes del tercer y cuarto curso de SISU. c) aportar nuestras sugerencias de explotaciones didácticas sobre ¿qué enseñar¿ y ¿cómo enseñar¿, con el objetivo de facilitar el aprendizaje de ENE a los alumnos chinos así como beneficiar la labor en la práctica didáctica para los profesores chinos de ELE. 
+La tesis comienza con el examen de las teorías generales de ASL (innatistas, medioambientales e interaccionistas). Analizamos los estudios de lenguas de especialidad que derivan del análisis de semántica estructural y que se manifiestan en los estudio de la terminologi¿a (teoría comunicativa y teoría general de la terminología). Revisamos los distintos enfoques y denominaciones terminológicas de la enseñanza de lenguas con fines específicos, sobre todo, la enseñanza del español de los negocios.
+Con esta base iniciamos una investigación orientada a descubrir las necesidades del aprendizaje del español de los negocios de los alumnos chinos. Analizamos la situación actual y los problemas que existen en la enseñanza de ELE y ENE en las universidades en China. Realizamos el análisis de necesidades de los estudiantes de 3° y 4° cursos de la Universidad de Estudios Internacionales de Shanghai (SISU). La herramienta principal han sido los cuestionarios repartidos a los 18 estudiantes del tercer curso y 24 del cuarto curso que optan por el estudio de ¿Español con mención en Administración y Dirección de Empresas ¿ de SISU y observación directa en clase del proceso de enseñanza y aprendizaje. A través de este análisis identificamos las necesidades reales del alumno chino, tales como las motivaciones, las dificultades durante el aprendizaje, la efectividad de recursos didácticos y metodología etc. Investigamos un tema que consideramos de alta relevancia en el proceso de enseñanza y aprendizaje de ENE de los alumnos chinos, que es el componente cultural. Estudiamos la relación entre cultura y lengua y la importancia que tiene el desarrollo de la competencia cultural en la enseñanza y el aprendizaje de ENE. 
+A través del análisis de necesidades descubrimos las necesidades reales y dificultades del aprendizaje de ENE de los alumnos chinos, para satisfacer estas necesidades y facilitar el estudio de ENE de ellos proponemos nuestra planificación curricular para la enseñanza de ENE a los alumnos chinos y elaboramos materiales didácticos que sirven como una enseñanza de introducción para los alumnos que estudian el español de los negocios de SISU"/>
+        
+        
+        <meta name="eprints.languages_3char" content="spa" />
+        <meta name="eprints.document_url" content="https://aplicaciones.ciencia.gob.es/teseo-rest/api/documento/download/public/1433" />
+        <meta name="eprints.date" content="2019"/>
+        
+        
+        
+        <meta name="eprints.creators_name" content="Li, Tao"/>
+        <meta name="eprints.contributors_name" content="María Ángeles Álvarez Martínez"/><meta name="eprints.contributors_name" content="Rafael Martín Rodríguez"/>
+        
+        <meta name="eprints.source" content="La enseñanza-aprendizaje del español de los negocios en China: los estudiantes de 3º y 4º curso de la Universidad de Estudios Internacionales de Shanghai"/>
+    
+        
+    </head>
+    <body hx-history="false">   
+        
+        
+        <!--button type="button" data-cc="c-settings">Show cookie settings</button-->
+        <script>
+            window.addEventListener('load', function () {
+                /**
+                 * All config. options available here:
+                 * https://cookieconsent.orestbida.com/reference/configuration-reference.html
+                 */
+                CookieConsent.run({
+
+                    // root: 'body',
+                    // autoShow: true,
+                    // disablePageInteraction: true,
+                    // hideFromBots: true,
+                    // mode: 'opt-in',
+                    // revision: 0,
+
+                    cookie: {
+                        name: 'cc_cookie',
+                        // domain: location.hostname,
+                        // path: '/',
+                        // sameSite: "Lax",
+                        // expiresAfterDays: 365,
+                    },
+
+                    // https://cookieconsent.orestbida.com/reference/configuration-reference.html#guioptions
+                    guiOptions: {
+                        consentModal: {
+                            layout: 'bar',
+                            position: 'bottom',
+                            equalWeightButtons: true,
+                            flipButtons: false
+                        },
+                        preferencesModal: {
+                            layout: 'box',
+                            equalWeightButtons: true,
+                            flipButtons: false
+                        }
+                    },
+
+                    categories: {
+                        necessary: {
+                            enabled: true, // this category is enabled by default
+                            readOnly: true  // this category cannot be disabled
+                        },
+                        analytics: {
+                            autoClear: {
+                                cookies: [
+                                    {
+                                        name: /^(_ga|_gid)/
+                                    }
+                                ]
+                            }
+                        }                        
+                    },
+
+                    language: {
+                        default: 'en',
+                        translations: {
+                            en: {
+                                consentModal: {
+                                    title: "This website uses cookies",
+                                    description: "This portal uses its own and third-party cookies for analytical purposes. Those related to analytical purposes will only be taken into account if you accept the cookies.",
+                                    acceptAllBtn: "Allow all",
+                                    acceptNecessaryBtn: "Allow only necessary",
+                                    showPreferencesBtn: "Manage cookies",
+                                    // closeIconLabel: 'Reject all and close modal',
+                                    footer: `<a href="/aviso_legal#cookies" target="_blank">Política de cookies</a>`,
+                                },
+                                preferencesModal: {
+                                    title: "Manage cookies",
+                                    acceptAllBtn: "Allow all",
+                                    acceptNecessaryBtn: "Allow only necessary",
+                                    savePreferencesBtn: "Save preferences",
+                                    closeIconLabel: "Close",
+                                    serviceCounterLabel: 'Service|Services',
+                                    sections: [
+                                        {
+                                            title: "Use of Cookies\uD83D\uDCE2",
+                                            description: "The use of cookies guarantees the basic functionalities of the website and improves your user experience. You can choose for each category whether or not to accept at any time. For more details about cookies and other sensitive data, please read the <a href=\"\/aviso_legal#cookies\" class=\"cc-link\">Cookie Policy<\/a>."
+                                        },
+                                        {
+                                            title: "Technical and Functional (Strictly necessary)",
+                                            description: "Strictly necessary cookies help make a website navigable by activating basic functions, such as language selection, page navigation and access to secure areas of the website. Without these cookies, the site could not function properly.",
+
+                                            //this field will generate a toggle linked to the 'necessary' category
+                                            linkedCategory: 'necessary'
+                                        },
+                                        {
+                                            title: "Statistics",
+                                            description: "Statistical cookies help the website owner understand how visitors interact with the site, collecting and reporting information.",
+                                            linkedCategory: 'analytics',
+                                            cookieTable: {
+                                                headers: {
+                                                    name: "Name",
+                                                    domain: "Domain",
+                                                    vencimiento: "Expiration",
+                                                    desc: "Description"
+                                                },
+                                                body: [
+                                                    {
+                                                        name: '_ga',
+                                                        domain: 'google.com',
+                                                        vencimiento: "2 years",
+                                                        desc: "This cookie is installed by Google Analytics. The cookie is used to calculate the data of visitors, sessions, campaigns and to track the use of the website for the analytical report of said website. Cookies store information anonymously and assign a randomly generated number to identify unique visitors."
+                                                    },
+                                                    {
+                                                        name: '_gat',
+                                                        domain: 'google.com',
+                                                        vencimiento: "1 minute",
+                                                        desc: "This cookie is installed by Google Analytics. The cookie is used to store information about how visitors use the website and helps create an analytical report on how the website is performing. The data collected, including the number of visitors, the source from which they came and the pages, appeared anonymously."
+                                                    },
+                                                    {
+                                                        name: '_gid',
+                                                        domain: 'google.com',
+                                                        vencimiento: "24 hours",
+                                                        desc: "Google Universal Analytics sets these cookies to slow down the request rate and limit data collection on high-traffic sites."
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            title: "More information",
+                                            description: "Any questions or concerns regarding the cookie policy, please <a class=\"cc-link\" href=\"\/contacto\">contact us<\/a>."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+    
+        <header class="site-header">
+            
+    
+    
+        <section class="site-header__container">
+            <nav>
+                <span class="site-header__logos">
+                    <a class="site-header__logo site-header__logo--portal" href="/">
+                        <img fetchpriority="high" src="/img/logo-a41eeda6d21dfaa1b863a086b230aa03.png" alt="Research Portal Logo: Universidad de Oviedo"/>
+                    </a>
+                    <a target="_blank" class="site-header__logo site-header__logo--parent" href="https://www.uniovi.es/">
+                        <img src="/img/parent-logo-20d80e325a34b9860623f288c21b34ef.png" alt="Logo: Universidad de Oviedo"/>
+                    </a>
+                </span>
+                <span class="site-header__push"></span>
+                
+        <span class="site-header__authentication" >
+            <span class="site-header__login">
+                
+                
+                    <button type="submit" form="login-form" class="site-header__link">Sign in</button>
+                    <form id="login-form" action="/sso/login?redirect_uri=https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang%3Deu" method="post" hidden></form>
+                
+
+                
+            </span>
+        </span>
+    
+            </nav>
+        </section>
+        
+
+
+        </header>
+
+        <nav class="site-navbar">
+            
+    
+    
+        <div class="site-navbar__container">
+            <div class="site-navbar__links">
+                <a class="navbar__grupos" href="/grupos">Groups</a>
+                <a class="navbar__investigadores" href="/investigadores">Researchers</a>   
+                <a class="navbar__proyectos" href="/financiaciones">Funding</a>
+                <a class="navbar__produccion" href="/resultados">Results</a>              
+            </div>
+        </div>
+    
+
+
+
+
+
+        </nav>
+
+        <main class="content">            
+            
+            
+
+            <div class="documento-detalle-wrapper">
+                <div class='documento-detalle__buttons'>
+                                       
+                    
+                </div>
+                <div class="main-content documento-detalle">
+                    <h1 class="documento-detalle__titulo">
+                        <span>La enseñanza-aprendizaje del español de los negocios en China</span><span class="documento-detalle__subtitulo">los estudiantes de 3º y 4º curso de la Universidad de Estudios Internacionales de Shanghai</span>   
+                        
+                    </h1>
+                    <ol class="documento__autores">
+                        <li class="documento__autor">
+                            
+                            <span>Li, Tao</span>                        
+                              
+                            
+                        </li>
+                    </ol>               
+
+                    <div class="row">
+                        <div class="col" style="margin-bottom: 1rem;">
+                            <div id="documento-afiliaciones" class="documento__afiliaciones" >
+                                <ol>
+                                                                      
+                                </ol>                        
+                                 
+                            </div>
+
+                            <section class="documento-detalle__localizacion">
+                                <span class="negrita" >Supervised by</span>:
+                                <ol class="documento__directores">   
+                                    <li class="documento__director" >
+                                        
+                                            <span>María Ángeles Álvarez Martínez</span>
+                                        <span class="documento__rol">Director</span>
+                                    </li>   
+                                    <li class="documento__director" >
+                                        
+                                            <span>Rafael Martín Rodríguez</span>
+                                        <span class="documento__rol">Co-director</span>
+                                    </li>
+                                </ol>
+                            </section>
+
+                            <p class="documento-detalle__localizacion">
+                                <span class="negrita">Defence university</span>:
+                                <span class="documento-detalle__localizacion">Universidad de Alcalá</span>
+                            </p>
+
+                            
+
+                            <p class="documento-detalle__localizacion">
+                                <span class="negrita">Defense date</span>:
+                                <span class="documento-detalle__localizacion">28 February 2019</span>
+                            </p>
+
+                            <section class="documento-detalle__localizacion">
+                                <span class="negrita">Committee</span>:
+                                <ol class="documento__tribunales">
+                                    <li class="documento__tribunal">
+                                        
+                                            <span>María Aída Díaz Bild</span>
+                                        <span class="documento__rol">Chair</span>
+                                    </li>
+                                    <li class="documento__tribunal">
+                                        
+                                            <span>María Teresa del Val Núñez</span>
+                                        <span class="documento__rol">Secretary</span>
+                                    </li>
+                                    <li class="documento__tribunal">
+                                        <a href="/investigadores/216852/detalle">
+                                            <span>Alfredo Ignacio Álvarez Menéndez</span></a>
+                                        <span class="documento__rol">Committee member</span>
+                                    </li>
+                                </ol>
+                            </section>
+
+                            
+
+                            
+                            
+
+                            
+
+                            <p class="documento-detalle__localizacion">
+                                <span class="negrita">Type</span>:
+                                <span class="documento-detalle__localizacion">Dissertation</span>
+                            </p>
+                        </div>
+
+                        <div class="col-12 col-md-auto">
+        
+    </div>
+                    </div>
+
+                    <div class="documento-detalle__exportacion">
+
+                        <button id="btnExportar" type="button" class="btn btn-secondary">
+                            Export
+                        </button>
+
+                        <div class="modal fade documento-detalle__exportacion__modal" id="formatosExportacionModal" tabindex="-1" role="dialog" aria-labelledby="formatosExportacionModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <span class="modal-title titulo" id="exampleModalLabel">Export</span>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <div class="row mb-2">
+                                                <div class="col-md-2 format-name">
+                                                    <a rel="nofollow"
+                                                       href="/documentos/5ea7fc5329995203c8bc3b47/export/fileFormat/modern-language-association">
+                                                        MLA
+                                                    </a>
+                                                </div>
+                                                <div id="modern-language-association" class="format-value col-md-10">modern-language-association</div>
+                                            </div>
+                                            <div class="row mb-2">
+                                                <div class="col-md-2 format-name">
+                                                    <a rel="nofollow"
+                                                       href="/documentos/5ea7fc5329995203c8bc3b47/export/fileFormat/apa">
+                                                        APA
+                                                    </a>
+                                                </div>
+                                                <div id="apa" class="format-value col-md-10">apa</div>
+                                            </div>
+                                            <div class="row mb-2">
+                                                <div class="col-md-2 format-name">
+                                                    <a rel="nofollow"
+                                                       href="/documentos/5ea7fc5329995203c8bc3b47/export/fileFormat/chicago-fullnote-bibliography">
+                                                        Chicago
+                                                    </a>
+                                                </div>
+                                                <div id="chicago-fullnote-bibliography" class="format-value col-md-10">chicago-fullnote-bibliography</div>
+                                            </div>
+                                            <div class="row mb-2">
+                                                <div class="col-md-2 format-name">
+                                                    <a rel="nofollow"
+                                                       href="/documentos/5ea7fc5329995203c8bc3b47/export/fileFormat/harvard-cite-them-right">
+                                                        Harvard
+                                                    </a>
+                                                </div>
+                                                <div id="harvard-cite-them-right" class="format-value col-md-10">harvard-cite-them-right</div>
+                                            </div>
+                                            <div class="row mb-2">
+                                                <div class="col-md-2 format-name">
+                                                    <a rel="nofollow"
+                                                       href="/documentos/5ea7fc5329995203c8bc3b47/export/fileFormat/vancouver-author-date">
+                                                        Vancouver
+                                                    </a>
+                                                </div>
+                                                <div id="vancouver-author-date" class="format-value col-md-10">vancouver-author-date</div>
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="d-flex justify-content-center">
+                                            <a class="mx-2" rel="nofollow" href="/documentos/5ea7fc5329995203c8bc3b47/export/ris">RIS</a>
+                                            <a class="mx-2" rel="nofollow" href="/documentos/5ea7fc5329995203c8bc3b47/export/fileFormat/bibtex">BibTex</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade documento-detalle__exportacion__modal" id="mensajeDocumentoNoPortal" tabindex="-1" role="dialog" aria-labelledby="formatosExportacionModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <span class="modal-title titulo" id="exampleModalLabel">Export</span>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="alert alert-warning">
+                                            This document cannot be exported because it belongs to another portal.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <style>
+                        .modal-body{
+                            font-size: 0.9rem;
+                        }
+
+                        .format-name{
+                            text-align: right;
+                        }
+                    </style>
+                    <script>
+                        PCIENCIA.ready(function () {
+                            var documentId = "5ea7fc5329995203c8bc3b47";
+                            var isDocumentoDelCliente = true;
+
+                            $("#btnExportar").on("click", null, firstTimeClickHandler);
+
+                            function firstTimeClickHandler() {
+                                if (isDocumentoDelCliente) {
+                                    showExportarModal();
+                                } else {
+                                    $("#mensajeDocumentoNoPortal").modal();
+                                }
+                            }
+
+                            function multipleClickHandler() {
+                                $("#formatosExportacionModal").modal();
+                            }
+
+                            function showExportarModal() {
+                                //Hacemos las llamadas ajax y cuando se hayan completado mostramos el modal
+                                $.when.apply($, ajaxCalls()).then(function () {
+                                    $("#formatosExportacionModal").modal();
+
+                                    $(".format-value").click(function (element) {
+                                        selectText(element)
+                                    });
+
+                                    $(".format-value").mousedown(function (element) {
+                                        selectText(element)
+                                    });
+
+                                    //Modificamos el comportamiento del boton 'exportar' para que ya no haga las peticiones ajax
+                                    $("#btnExportar").off("click", null, firstTimeClickHandler);
+                                    $("#btnExportar").on("click", null, multipleClickHandler);
+                                })
+                            }
+
+                            function ajaxCalls() {
+                                var calls = [];
+
+                                $(".format-value").each(function (i, element) {
+                                    var call = $.ajax({
+                                        url: '/documentos/' + documentId + '/export/textFormat/' + element.id,
+                                        success: function (data) {
+                                            element.innerHTML = data
+                                        }
+                                    });
+
+                                    calls.push(call);
+                                })
+
+                                return calls;
+                            }
+
+                            function selectText(element) {
+                                node = element.currentTarget;
+
+                                if (document.body.createTextRange) {
+                                    const range = document.body.createTextRange();
+                                    range.moveToElementText(node);
+                                    range.select();
+                                } else if (window.getSelection) {
+                                    const selection = window.getSelection();
+                                    const range = document.createRange();
+                                    range.selectNodeContents(node);
+                                    selection.removeAllRanges();
+                                    selection.addRange(range);
+                                } else {
+                                    console.warn("Could not select text in node: Unsupported browser.");
+                                }
+                            }
+                        });
+                    </script>
+
+                    <div class="documento-detalle__textoCompleto">
+    <div id="textoCompleto" class="btn-group dropdown">
+        <a type="button" class="btn btn-secondary" target="_blank"
+           href="https://aplicaciones.ciencia.gob.es/teseo-rest/api/documento/download/public/1433"
+           title="Link to open access publication">
+            Full text
+            <img class="open-access img-fluid" src="/img/social/open_access-59bc92308d6eec7532b45533fb864e44.svg" alt="Open access"/>
+        </a>
+        
+
+        <button id="textoCompleto-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                class="btn btn-secondary dropdown-toggle dropdown-toggle-split textoCompleto-dropdown ocultar">
+        </button>
+
+        <div id="textoCompleto-menu" class="dropdown-menu textoCompleto-menu">
+            <span title="Link to open access publication" class="dropdown-item menu-item">
+                <a target="_blank"
+                   href="https://aplicaciones.ciencia.gob.es/teseo-rest/api/documento/download/public/1433">
+                    <i class="material-icons">lock_open</i>TESEO
+                    <span class="texto-version" title="Linked">externo</span>
+                </a>               
+            </span>
+        </div>
+    </div>
+    <script>
+        var texto = "<img class=\"open-access img-fluid\" src=\"\/img\/social\/open_access.svg\" title=\"Acceso Abierto\" alt=\"Acceso Abierto\"\/>";
+        PCIENCIA.ready(function () {
+            if($("#textoCompleto-dropdown").hasClass("ocultar")) {
+                $("#textoCompleto").children().first().addClass("borde");
+            }
+        });
+    </script>
+    
+</div>
+
+                    <div class="documento-detalle__row">
+                        <!-- Buscar una forma de visualizar todos los identificadores? -->
+                        
+                        
+                        
+                        
+                        <span class="documento-detalle__tipo">
+                            Teseo:
+                            <a target="_blank" href="https://aplicaciones.ciencia.gob.es/teseo/#/tesis/O149778/detalle">O149778</a>
+                        </span>
+                        <span class="documento-detalle__tipo">
+                            <a target="_blank" href="https://dialnet.unirioja.es/servlet/tesis?codigo=251153">DIALNET</a>
+                        </span>
+                        <span class="documento-detalle__enlace">                    
+                            <a target="_blank" href="https://aplicaciones.ciencia.gob.es/teseo-rest/api/documento/download/public/1433" title="Link to open access publication"><i class="material-icons">lock_open</i>TESEO</a> <span class="texto-version" title="Publishers layout version">editor</span>
+                        </span>
+                        
+                        <!-- /* 
+                        Código para buscar si unpaywall tiene el enlace al texto completo
+                        */ -->
+                        
+
+                        <span id="upw"></span>
+                    </div>
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    <div class="documento-sdgs" style="margin-top: 1rem">
+                        <h2>Sustainable development goals</h2>
+                        <ul>
+                            <li>
+                                <a href="https://sdgs.un.org/goals/goal4"
+                                   title="Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all"
+                                   class="sdg-goal sdg-goal--4"
+                                   target="_blank">
+                                    <img src="/img/sdgs/en/4-3f57354b8431f1d1c195903151c3cdfb.png"
+                                         title="Quality Education" alt="Quality Education"/>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    
+        
+        
+    
+                    
+                    <div class="documento-detalle__resumen">
+                        <h2>Abstract</h2>
+                        <p style="white-space: pre-wrap">Esta investigación tiene los siguientes objetivos: a) ampliar el campo de investigación en la enseñanza-aprendizaje de ELE en China, en concreto, la enseñanza del español de los negocios para los estudiantes chinos. b) analizar las necesidades de la enseñanza y aprendizaje del ¿Español con mención en Administración y Dirección de Empresas¿ de los estudiantes del tercer y cuarto curso de SISU. c) aportar nuestras sugerencias de explotaciones didácticas sobre ¿qué enseñar¿ y ¿cómo enseñar¿, con el objetivo de facilitar el aprendizaje de ENE a los alumnos chinos así como beneficiar la labor en la práctica didáctica para los profesores chinos de ELE. 
+La tesis comienza con el examen de las teorías generales de ASL (innatistas, medioambientales e interaccionistas). Analizamos los estudios de lenguas de especialidad que derivan del análisis de semántica estructural y que se manifiestan en los estudio de la terminologi¿a (teoría comunicativa y teoría general de la terminología). Revisamos los distintos enfoques y denominaciones terminológicas de la enseñanza de lenguas con fines específicos, sobre todo, la enseñanza del español de los negocios.
+Con esta base iniciamos una investigación orientada a descubrir las necesidades del aprendizaje del español de los negocios de los alumnos chinos. Analizamos la situación actual y los problemas que existen en la enseñanza de ELE y ENE en las universidades en China. Realizamos el análisis de necesidades de los estudiantes de 3° y 4° cursos de la Universidad de Estudios Internacionales de Shanghai (SISU). La herramienta principal han sido los cuestionarios repartidos a los 18 estudiantes del tercer curso y 24 del cuarto curso que optan por el estudio de ¿Español con mención en Administración y Dirección de Empresas ¿ de SISU y observación directa en clase del proceso de enseñanza y aprendizaje. A través de este análisis identificamos las necesidades reales del alumno chino, tales como las motivaciones, las dificultades durante el aprendizaje, la efectividad de recursos didácticos y metodología etc. Investigamos un tema que consideramos de alta relevancia en el proceso de enseñanza y aprendizaje de ENE de los alumnos chinos, que es el componente cultural. Estudiamos la relación entre cultura y lengua y la importancia que tiene el desarrollo de la competencia cultural en la enseñanza y el aprendizaje de ENE. 
+A través del análisis de necesidades descubrimos las necesidades reales y dificultades del aprendizaje de ENE de los alumnos chinos, para satisfacer estas necesidades y facilitar el estudio de ENE de ellos proponemos nuestra planificación curricular para la enseñanza de ENE a los alumnos chinos y elaboramos materiales didácticos que sirven como una enseñanza de introducción para los alumnos que estudian el español de los negocios de SISU</p>
+                    </div>
+
+                    
+
+                    
+
+                    
+                    <div class="documento-detalle__source">
+                        <em><a class="external" target="_blank" href="https://dialnet.unirioja.es/servlet/tesis?codigo=251153">Data source: Dialnet</a></em>
+                    </div>
+                    
+
+                </div>
+
+                
+                
+        
+    
+
+                
+            </div>
+
+        
+        </main>
+
+        <nav class="site-navfooter">
+            
+    
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul>
+                        
+                        <li><a href="/contacto">Contact</a></li>
+                        
+                        <li><a href="/aviso_legal">Legal notice</a></li>
+                        <li><a href="/mapa_sitio">Site map</a></li>
+                        
+                    </ul>                                        
+                </div>
+                <div>
+        <div class="c-langselect">
+            <a href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang=eu" tabindex="0" class="c-langselect--trigger" title="Change language">
+                <i class="material-icons material-icons--translate">translate</i> en <i class="material-icons">arrow_drop_down</i>
+            </a>
+            
+            <div class="mdc-menu mdc-menu-surface">
+                <div class="mdc-list">
+                    <a href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang=en" title="English">
+                        <i class="material-icons material-icons--translate">translate</i> en <i class="material-icons">arrow_drop_down</i>
+                    </a>
+                    <a class="mdc-list-item" href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang=es"
+                       data-lang="es"
+                       onclick="document.cookie=&#39;pciencia.LOCALE=&#39;+this.dataset.lang"
+                       title="Español">
+                        es
+                    </a><a class="mdc-list-item" href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang=ca"
+                       data-lang="ca"
+                       onclick="document.cookie=&#39;pciencia.LOCALE=&#39;+this.dataset.lang"
+                       title="Català i valencià">
+                        ca
+                    </a><a class="mdc-list-item" href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang=eu"
+                       data-lang="eu"
+                       onclick="document.cookie=&#39;pciencia.LOCALE=&#39;+this.dataset.lang"
+                       title="Euskara">
+                        eu
+                    </a><a class="mdc-list-item" href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang=gl"
+                       data-lang="gl"
+                       onclick="document.cookie=&#39;pciencia.LOCALE=&#39;+this.dataset.lang"
+                       title="Galego">
+                        gl
+                    </a><a class="mdc-list-item" href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang=fr"
+                       data-lang="fr"
+                       onclick="document.cookie=&#39;pciencia.LOCALE=&#39;+this.dataset.lang"
+                       title="Francais">
+                        fr
+                    </a><a class="mdc-list-item" href="https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang=de"
+                       data-lang="de"
+                       onclick="document.cookie=&#39;pciencia.LOCALE=&#39;+this.dataset.lang"
+                       title="Deutsch">
+                        de
+                    </a>
+                </div>
+            </div>
+        </div>        
+    </div>
+            </div>
+        </div>
+    
+
+        </nav>
+        <footer class="site-footer">
+            
+    
+    
+        <section class="site-footer__container">
+            <div class="site-footer__inner">
+                <div class="site-footer__column">
+                    <span class="site-footer__column-title">Relevants</span>
+                    <ul class="site-footer__nav">
+                        <li><a target="_blank" href="https://www.uniovi.es/">Oviedo University</a></li>
+                        <li><a target="_blank" href="https://buo.uniovi.es/">Library</a></li>
+                        <li><a target="_blank" href="https://digibuo.uniovi.es/dspace/">RUO</a></li>
+                        <li><a target="_blank" href="https://accesoabiertouniovi.wordpress.com/">Blog Difunde Uniovi</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer__column">
+                    <span class="site-footer__column-title">Research</span>
+                    <ul class="site-footer__nav">
+                        <li><a target="_blank" href="https://www.uniovi.es/en/conocenos/gobierno/vicerrectorados/investigacion">Research Vice-rectorate</a></li>
+                        <li><a target="_blank" href="https://www.uniovi.es/conocenos/gobierno/vicerrectorados/transferencia">Knowledge Transfer Vice-rectorate</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer__column">
+                    
+
+    
+        <div class="site-footer__column--social">
+            <span class="site-footer__column-title">UniOvi in the network</span>
+            <ul>
+                <li>
+                    <a target="_blank" href="https://www.facebook.com/UniversidadOviedo">
+                        <img src="/img/social/facebook.png" alt="Facebook"/>
+                        Facebook
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://bsky.app/profile/universidadoviedo.bsky.social">
+                        <img src="/img/social/bsky.png" alt="BlueSky"/>
+                        BlueSky
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.instagram.com/accounts/login/?next=/universidad_de_oviedo/">
+                        <img src="/img/social/instagram.png" alt="Instagram"/>
+                        Instagram
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.youtube.com/user/uniovi">
+                        <img src="/img/social/youtube.png" alt="Youtube"/>
+                        Youtube
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.linkedin.com/school/uniovi/mycompany/verification/">
+                        <img src="/img/social/linkedin.png" alt="LinkedIn"/>
+                        LinkedIn
+                    </a>
+                </li>
+            </ul>
+        </div>
+    
+    
+
+                </div>
+            </div>
+            <div class="site-footer__colaboracion">
+                <p>With the collaboration of: </p>
+                <div class="site-footer__logo">
+                    <img src="/img/ministerio-fecyt-con-banderas-01_JPG.jpg" alt="Logo Ministerio Fecyt"/>
+                </div>
+            </div>
+        </section>
+    
+    
+
+            
+    
+    
+        <div class="site-actualizacion__container">
+            <div class="info-container">
+                Data updated as of:
+                18-10-2026
+                <i class="material-icons">info</i>
+                <div class="info-content">
+                    <p>Portal documents are updated daily. This date refers to the updating of information related to the portal structure (people, research groups, organizational units, projects...).</p>
+                </div>
+            </div>
+        </div>
+    
+
+            
+    
+    
+        <div class="site-footer__copyright">
+            <div>
+                <span>CRIS project developed in collaboration with <strong><a target="_blank" href="https://fundaciondialnet.unirioja.es/" class="externo">Fundación Dialnet</a> (<a target="_blank" href="https://www.unirioja.es/" class="externo">University of La Rioja</a>)</strong></span>
+            </div>
+        </div>       
+        
+
+
+        </footer>
+
+        
+
+
+
+
+
+
+        
+
+    
+
+    
+    
+
+        
+    </body>
+</html>

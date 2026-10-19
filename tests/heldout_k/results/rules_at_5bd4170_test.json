@@ -1,0 +1,257 @@
+{
+ "set": "K",
+ "pages": 22,
+ "evaluated": 22,
+ "missing_snapshots": [],
+ "labels_sha": "b0764765f70d",
+ "mode": "deterministic",
+ "fields": {
+  "deadlines": {
+   "tp": 5,
+   "fp": 4,
+   "fn": 6,
+   "precision": 0.556,
+   "recall": 0.455,
+   "f1": 0.5
+  },
+  "levels": {
+   "tp": 24,
+   "fp": 9,
+   "fn": 4,
+   "precision": 0.727,
+   "recall": 0.857,
+   "f1": 0.787
+  },
+  "nationality_countries": {
+   "tp": 6,
+   "fp": 2,
+   "fn": 104,
+   "precision": 0.75,
+   "recall": 0.055,
+   "f1": 0.102
+  },
+  "openings": {
+   "tp": 1,
+   "fp": 0,
+   "fn": 1,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667
+  }
+ },
+ "rates": {
+  "age": {
+   "correct": 2,
+   "total": 3,
+   "accuracy": 0.667
+  },
+  "cycle": {
+   "correct": 3,
+   "total": 10,
+   "accuracy": 0.3
+  },
+  "deadline_exact": {
+   "correct": 5,
+   "total": 11,
+   "accuracy": 0.455
+  },
+  "deadline_status": {
+   "correct": 5,
+   "total": 5,
+   "accuracy": 1.0
+  },
+  "funder_identity": {
+   "correct": 2,
+   "total": 3,
+   "accuracy": 0.667
+  },
+  "funder_identity_alias": {
+   "correct": 2,
+   "total": 3,
+   "accuracy": 0.667
+  },
+  "funding_amount": {
+   "correct": 8,
+   "total": 16,
+   "accuracy": 0.5
+  },
+  "funding_components": {
+   "correct": 22,
+   "total": 30,
+   "accuracy": 0.733
+  },
+  "funding_period": {
+   "correct": 1,
+   "total": 3,
+   "accuracy": 0.333
+  },
+  "nationality": {
+   "correct": 11,
+   "total": 22,
+   "accuracy": 0.5
+  },
+  "page_kind": {
+   "correct": 16,
+   "total": 22,
+   "accuracy": 0.727
+  },
+  "stipend_present": {
+   "correct": 7,
+   "total": 9,
+   "accuracy": 0.778
+  },
+  "tuition": {
+   "correct": 8,
+   "total": 13,
+   "accuracy": 0.615
+  },
+  "funding_class": {
+   "correct": 9,
+   "total": 22,
+   "accuracy": 0.409
+  },
+  "cycle_status": {
+   "correct": 12,
+   "total": 21,
+   "accuracy": 0.571
+  },
+  "residency": {
+   "correct": 1,
+   "total": 2,
+   "accuracy": 0.5
+  }
+ },
+ "attribution": {
+  "correct": 192,
+  "total": 193,
+  "accuracy": 0.995
+ },
+ "unsupported_rate": 0.266,
+ "unsupported_values": 17,
+ "scored_values": 64,
+ "missing_rate": 0.33,
+ "missing_values": 30,
+ "labelled_values": 91,
+ "ai": null,
+ "misses": {
+  "cz-gov-schol": [
+   "nationality: predicted include ['BA', 'BY', 'CZ', 'GE', 'UA'], label ('include', ['BA', 'GE', 'UA', 'BY', 'ET', 'GA'])",
+   "cycle: predicted '2027', label '2027/2028'"
+  ],
+  "cn-schwarzman": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "cycle_status: predicted expected, label upcoming"
+  ],
+  "us-humphrey": [
+   "page_kind: predicted listing, label opportunity"
+  ],
+  "eu-ec-marie": [
+   "page_kind: predicted listing, label opportunity",
+   "nationality: predicted unknown [], label ('any', [])",
+   "component living_allowance: predicted not covered, label covered",
+   "funding_class: predicted funding_unclear, label stipend_only"
+  ],
+  "au-unimelb-grs": [
+   "page_kind: predicted listing, label opportunity",
+   "nationality: predicted include ['CN'], label ('any', [])",
+   "component tuition: predicted not covered, label full",
+   "component insurance: predicted not covered, label covered",
+   "stipend: predicted 41100.0 USD, label {'amount': [41100], 'currency': 'AUD', 'period': 'year'}",
+   "tuition: predicted None, label full",
+   "funding_class: predicted stipend_only, label fully_funded"
+  ],
+  "in-inlaks": [
+   "max_age: predicted None, label 30",
+   "funding_class: predicted partially_funded, label fully_funded",
+   "cycle_status: predicted not_stated, label closed"
+  ],
+  "in-tata": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "funding_class: predicted funding_unclear, label not_stated"
+  ],
+  "ch-eth-esop2": [
+   "deadline missed 2026-11-30",
+   "cycle: predicted '2027', label '2027/2028'",
+   "stipend: predicted None None, label {'amount': [12000, 13500], 'currency': 'CHF', 'period': 'semester'}",
+   "tuition: predicted None, label full",
+   "funding_class: predicted partially_funded, label fully_funded",
+   "cycle_status: predicted not_stated, label upcoming"
+  ],
+  "se-lund-gs": [
+   "nationality: predicted include ['CH'], label ('exclude', ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ'])",
+   "funding_class: predicted tuition_funded, label partially_funded"
+  ],
+  "uk-ucl-gms": [
+   "nationality: predicted unknown [], label ('exclude', ['GB'])",
+   "award amount: predicted [], label {'amount': [15000], 'currency': 'GBP'}"
+  ],
+  "uk-imperial-pres": [
+   "nationality: predicted unknown [], label ('any', [])",
+   "component research: predicted not covered, label covered",
+   "tuition: predicted None, label full",
+   "funding_class: predicted partially_funded, label fully_funded"
+  ],
+  "au-anu-chancellor": [
+   "nationality: predicted any [], label not_stated",
+   "cycle_status: predicted rolling, label not_announced"
+  ],
+  "ca-uottawa-intl": [
+   "nationality: predicted exclude ['CA'], label not_stated",
+   "award amount: predicted [], label {'amount': [7500, 60000], 'currency': 'CAD'}"
+  ],
+  "be-masterminds": [
+   "cycle: predicted '2027', label '2026/2027'",
+   "component living_allowance: predicted not covered, label covered",
+   "stipend: predicted None , label {'amount': [10225], 'currency': 'EUR', 'period': 'year'}",
+   "funding_class: predicted tuition_funded, label fully_funded",
+   "cycle_status: predicted not_stated, label closed"
+  ],
+  "ie-tcd-global": [
+   "deadline missed 2026-05-01",
+   "deadline missed 2026-04-01",
+   "deadline missed 2026-07-15",
+   "deadline missed 2026-06-15",
+   "nationality: predicted unknown [], label ('exclude', ['CN'])",
+   "cycle: predicted '2026', label '2026/2027'",
+   "award amount: predicted [], label {'amount': [2000, 5000], 'currency': 'EUR'}",
+   "cycle_status: predicted rolling, label closed"
+  ],
+  "de-tum-dstip": [
+   "component living_allowance: predicted not covered, label covered",
+   "stipend: predicted 160000.0 EUR, label {'amount': [300], 'currency': 'EUR', 'period': 'month'}",
+   "funding_class: predicted funding_unclear, label stipend_only",
+   "cycle_status: predicted closed, label not_stated"
+  ],
+  "nl-maastricht": [
+   "deadline missed 2026-12-10",
+   "deadline spurious 2027-02-01",
+   "deadline spurious 2028-07-16",
+   "deadline spurious 2027-09-02",
+   "nationality: predicted any [], label ('exclude', ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ'])",
+   "component tuition: predicted not covered, label full",
+   "tuition: predicted None, label full",
+   "funding_class: predicted assistantship, label fully_funded"
+  ],
+  "nl-rug-excellence": [
+   "nationality: predicted exclude ['ZA'], label ('exclude', ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ'])",
+   "cycle_status: predicted open, label not_stated"
+  ],
+  "ch-unige-excellence": [
+   "deadline spurious 2026-09-14",
+   "component living_allowance: predicted not covered, label covered",
+   "stipend: predicted None , label {'amount': [10000, 15000], 'currency': 'CHF', 'period': 'year'}",
+   "funding_class: predicted not_stated, label stipend_only"
+  ],
+  "au-uts-intl": [
+   "page_kind: predicted listing, label opportunity",
+   "tuition: predicted None, label full",
+   "funding_class: predicted partially_funded, label tuition_funded",
+   "cycle_status: predicted not_stated, label closed"
+  ],
+  "uk-manchester-gf": [
+   "residency: predicted [], label ['AE', 'BD', 'BW', 'CA', 'EG', 'GH', 'ID', 'IN', 'KE', 'LK', 'MU', 'MY', 'NG', 'PK', 'SA', 'SG', 'TH', 'TR', 'TW', 'US', 'VN', 'ZA', 'ZW']",
+   "funding_class: predicted not_stated, label partially_funded"
+  ]
+ },
+ "split": "test"
+}

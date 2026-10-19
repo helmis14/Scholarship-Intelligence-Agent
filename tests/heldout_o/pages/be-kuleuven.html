@@ -1,0 +1,240 @@
+	
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Central Login</title>
+
+    <link rel="stylesheet" href="https://stijl.kuleuven.be/shibboleth/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://stijl.kuleuven.be/shibboleth/css/v13/main.css" type="text/css">
+    
+
+    <script src="https://stijl.kuleuven.be/shibboleth/js/jquery-3.5.1.min.js"></script>
+    <script src="https://stijl.kuleuven.be/shibboleth/js/popper-1.16.1.min.js"></script>
+    <script src="https://stijl.kuleuven.be/shibboleth/js/bootstrap-4.6.0.min.js"></script>
+    <script src="https://stijl.kuleuven.be/shibboleth/js/jcookie.js" type="application/javascript"></script>
+
+    <script language="Javascript">
+"use strict";
+
+function createCookie(name, value, seconds) {
+    var secure = "; secure";
+    var samesite = "; samesite=none";
+    var date = new Date();
+    date.setTime(date.getTime() + (seconds * 1000));
+    var expires = "; expires=" + date.toGMTString();
+    
+    var path = '/';
+    if (path.length > 0)
+        path = "; path=" + path;
+    document.cookie = name + "=" + value + secure + samesite + expires + path;
+}
+
+function eraseCookie(name) {
+    createCookie(name, "", -31536000);
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ')
+            c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0)
+            return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+function load(id) {
+    var checkbox = document.getElementById(id);
+    if (checkbox != null) {
+        var checked = readCookie(checkbox.name);
+        checkbox.checked = (checked == "1");
+    }
+}
+
+function check(checkbox) {
+    if (checkbox.checked) {
+        createCookie(checkbox.name, "1", 94608000);
+    } else {
+        eraseCookie(checkbox.name);
+    }
+}
+
+function checkForMonth(checkbox) {
+    if (checkbox.checked) {
+        createCookie(checkbox.name, "1", "2630000");
+    } else {
+        eraseCookie(checkbox.name);
+    }
+}
+
+$(document).ready(function () {
+        $(".choose_language").click(function () {
+            const newLocale = $(this).attr("data-locale");
+            if (typeof newLocale != 'undefined') {
+                createCookie("locale", newLocale, 94608000);
+                window.location.reload();
+            }
+        });
+});
+    </script>
+    
+</head>
+
+<body onload="">
+    <div class="vw-100 vh-100 m-0 p-0 bd-highlight">
+      <div class="d-flex bd-highlight m-0 p-0 h-100">
+        <div id="background" class="d-none d-md-flex flex-grow-1 bd-highlight h-100">
+          <div id="background-footer" class="bd-highlight p-2 d-flex align-self-end flex-fill">
+            <a href="https://www.kuleuven.be/kuleuven" title="KU Leuven Association"><img class="logo-img" src="https://stijl.kuleuven.be/shibboleth/images/hostedby_associatie.svg" height="40"></a>
+            <div class="art4campus ml-3 align-self-end">
+                    <a href="https://associatie.kuleuven.be/p/art4campus/wedstrijd-2026/art4campus-2026-info" target="_blank"><i class="material-icons icon-art4campus-info">&#xe88e;</i>Art4Campus <span class="d-none d-lg-inline">- Rebel - Silke Martens</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar bd-highlight h-100 flex-md-grow-1 flex-lg-grow-0 flex-grow-1 flex-md-fill
+        ">
+
+          <div class="d-flex align-items-end flex-column h-100 bd-highlight overflow-auto">
+            <div id="language" class="bd-highlight align-self-end">
+              <ul class="nav justify-content-end float-end">
+                  <li class="nav-item">
+                    <a class="nav-link choose_language p-1" data-locale="nl" href="#">Nederlands</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link choose_language p-1" data-locale="en" href="#">English</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link p-1 text-muted" href="/idp/profile/user/prefs"><i class="material-icons material-icons-outlined settings">&#xe8b8;</i></a>
+                  </li>
+              </ul>
+            </div>
+            <div id="content" class="d-flex bd-highlight w-100 flex-fill flex-column justify-content-center px-4">
+            <div id="rss-status" style="display: none" class="alert alert-warning"></div>
+
+
+
+
+
+
+    <div class="alert alert-danger alert-dismissible clearfix" role="alert">
+        <h6>Stale Request</h6>
+<p>You may be seeing this page because you used the Back button while browsing a secure web site or application. Alternatively, you may have mistakenly bookmarked the web login form instead of the actual web site you wanted to bookmark or used a link created by somebody else who made the same mistake.</p> <br/> <p>Left unchecked, this can cause errors on some browsers or result in you returning to the web site you tried to leave, so this page is presented instead.</p>    </div>
+
+				</div>
+      <div id="footer" class="bd-highlight align-self-end w-100">
+        <div class="d-flex justify-content-around p-2">
+          <div class="">
+            <a href="https://www.kuleuven.be/kuleuven" class="logo" title="KU Leuven">
+              <img class="footer-img" src="https://stijl.kuleuven.be/shibboleth/images/kuleuven.svg">
+              </a>
+            </div>
+            <div class="">
+              <a href="https://www.luca-arts.be" class="logo" title="LUCA">
+                <img class="footer-img" src="https://stijl.kuleuven.be/shibboleth/images/luca.svg">
+                </a>
+              </div>
+              <div class="">
+                <a href="https://www.odisee.be" class="logo" title="Odisee">
+                  <img class="footer-img" src="https://stijl.kuleuven.be/shibboleth/images/odisee.svg">
+                  </a>
+                </div>
+                <div class="">
+                  <a href="https://www.thomasmore.be" class="logo" title="Thomas More">
+                    <img class="footer-img" src="https://stijl.kuleuven.be/shibboleth/images/thomasmore.svg">
+                    </a>
+                  </div>
+                  <div class="">
+                    <a href="https://www.ucll.be" class="logo" title="UC Leuven-Limburg">
+                      <img class="footer-img" src="https://stijl.kuleuven.be/shibboleth/images/ucll.svg">
+                      </a>
+                    </div>
+                    <div class="">
+                      <a href="https://www.vives.be" class="logo" title="Vives">
+                        <img class="footer-img" src="https://stijl.kuleuven.be/shibboleth/images/vives.svg">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+  <!-- Footer -->
+
+  <script>
+    $(window).bind('resize load', function () {
+      if ($(this).width() > 768) {
+        $('#serviceDescription').addClass('show');
+      } else {
+        $('#serviceDescription').removeClass('show');
+      }
+    });
+
+    $(document).ready(function() {
+      $('[data-toggle="tooltip"]').tooltip({ boundary: 'window'});
+      var feed = 'https://status.kuleuven.io/feed?lang=en&statuses=open%2Cplanned&searchTags=idp';
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', feed);
+      xhr.onload = function () {
+      if (xhr.status == 200) {
+        var parser = new DOMParser();
+        var data = parser.parseFromString(xhr.responseText, "text/xml");
+        var items = data.getElementsByTagName("item");
+        var output = document.getElementById("rss-status");
+        output.innerHTML = "";
+
+        for (var i = 0; i < items.length; i++) {
+          var item = items[i];
+          var titleNode = item.getElementsByTagName("title")[0];
+          var linkNode = item.getElementsByTagName("link")[0];
+
+          var title = titleNode ? titleNode.textContent : '';
+          var link = linkNode ? linkNode.textContent : '';
+
+          var div = document.createElement("div");
+          div.className = "item";
+
+          var titleDiv = document.createElement("div");
+          titleDiv.className = "item-title";
+          titleDiv.textContent = title;
+
+          var linkDiv = document.createElement("div");
+          var a = document.createElement("a");
+          a.href = link;
+          a.target = "_blank";
+          a.textContent = "More info";
+          linkDiv.appendChild(a);
+
+          div.appendChild(titleDiv);
+          div.appendChild(linkDiv);
+
+          output.appendChild(div);
+          output.style.display="block";
+        }
+      } else {
+        console.error('Failed to load feed');
+      }
+    };
+    xhr.onerror = function () {
+      console.error('Failed to load feed');
+    };
+    xhr.send();
+    });
+
+  </script>
+</body>
+</html>

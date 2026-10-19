@@ -1,0 +1,169 @@
+{
+ "set": "K",
+ "pages": 8,
+ "evaluated": 8,
+ "missing_snapshots": [],
+ "labels_sha": "b0764765f70d",
+ "mode": "deterministic",
+ "fields": {
+  "deadlines": {
+   "tp": 4,
+   "fp": 4,
+   "fn": 1,
+   "precision": 0.5,
+   "recall": 0.8,
+   "f1": 0.615
+  },
+  "levels": {
+   "tp": 7,
+   "fp": 3,
+   "fn": 4,
+   "precision": 0.7,
+   "recall": 0.636,
+   "f1": 0.667
+  },
+  "nationality_countries": {
+   "tp": 0,
+   "fp": 0,
+   "fn": 32,
+   "precision": null,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  "openings": {
+   "tp": 2,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0
+  }
+ },
+ "rates": {
+  "cycle": {
+   "correct": 0,
+   "total": 3,
+   "accuracy": 0.0
+  },
+  "deadline_exact": {
+   "correct": 4,
+   "total": 5,
+   "accuracy": 0.8
+  },
+  "deadline_status": {
+   "correct": 4,
+   "total": 4,
+   "accuracy": 1.0
+  },
+  "funder_identity": {
+   "correct": 1,
+   "total": 1,
+   "accuracy": 1.0
+  },
+  "funder_identity_alias": {
+   "correct": 1,
+   "total": 1,
+   "accuracy": 1.0
+  },
+  "funding_amount": {
+   "correct": 5,
+   "total": 6,
+   "accuracy": 0.833
+  },
+  "funding_components": {
+   "correct": 12,
+   "total": 15,
+   "accuracy": 0.8
+  },
+  "funding_period": {
+   "correct": 1,
+   "total": 2,
+   "accuracy": 0.5
+  },
+  "nationality": {
+   "correct": 3,
+   "total": 7,
+   "accuracy": 0.429
+  },
+  "page_kind": {
+   "correct": 8,
+   "total": 8,
+   "accuracy": 1.0
+  },
+  "stipend_present": {
+   "correct": 3,
+   "total": 3,
+   "accuracy": 1.0
+  },
+  "tuition": {
+   "correct": 2,
+   "total": 5,
+   "accuracy": 0.4
+  },
+  "funding_class": {
+   "correct": 2,
+   "total": 8,
+   "accuracy": 0.25
+  },
+  "cycle_status": {
+   "correct": 6,
+   "total": 8,
+   "accuracy": 0.75
+  }
+ },
+ "attribution": {
+  "correct": 54,
+  "total": 54,
+  "accuracy": 1.0
+ },
+ "unsupported_rate": 0.24,
+ "unsupported_values": 6,
+ "scored_values": 25,
+ "missing_rate": 0.344,
+ "missing_values": 11,
+ "labelled_values": 32,
+ "ai": null,
+ "misses": {
+  "ie-goi-iesp": [
+   "nationality: predicted unknown [], label ('exclude', ['BY', 'RU'])"
+  ],
+  "ch-epfl-excellence": [
+   "deadline missed 2026-12-15",
+   "component living_allowance: predicted not covered, label covered",
+   "stipend: predicted None None, label {'amount': [10000], 'currency': 'CHF', 'period': 'semester'}",
+   "funding_class: predicted funding_unclear, label stipend_only",
+   "cycle_status: predicted not_stated, label open"
+  ],
+  "nl-uva-ams": [
+   "nationality: predicted unknown [], label ('exclude', ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ'])"
+  ],
+  "uk-leeds-intl": [
+   "deadline spurious 2027-05-16",
+   "deadline spurious 2027-06-11",
+   "deadline spurious 2027-04-02",
+   "component tuition: predicted not covered, label covered",
+   "tuition: predicted None, label partial",
+   "funding_class: predicted funding_unclear, label partially_funded"
+  ],
+  "se-uu-ipk": [
+   "component tuition: predicted not covered, label full",
+   "tuition: predicted None, label full",
+   "funding_class: predicted funding_unclear, label tuition_funded"
+  ],
+  "dev-rhodes": [
+   "nationality: predicted any [], label not_stated",
+   "tuition: predicted None, label full",
+   "funding_class: predicted partially_funded, label fully_funded",
+   "cycle_status: predicted not_stated, label closed"
+  ],
+  "dev-jjwbgsp": [
+   "deadline spurious 2026-04-17",
+   "nationality: predicted include ['JP'], label not_stated",
+   "funding_class: predicted partially_funded, label fully_funded"
+  ],
+  "us-fulbright-foreign": [
+   "funding_class: predicted partially_funded, label not_stated"
+  ]
+ },
+ "split": "dev"
+}

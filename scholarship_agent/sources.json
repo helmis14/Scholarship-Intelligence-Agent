@@ -1,0 +1,2831 @@
+{
+  "_comment": "Seed source registry. Each URL is an official programme or portal home page known at authoring time; none is assumed current. `python3 -m scholarship_agent sources --check` re-checks reachability and robots permission and records the result. Add your own sources in data/sources.local.json (same shape); local entries override seed entries with the same id.",
+  "sources": [
+    {
+      "id": "uk-chevening",
+      "name": "Chevening Scholarships",
+      "provider": "UK Foreign, Commonwealth & Development Office",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "GB"
+      ],
+      "levels": [
+        "master"
+      ],
+      "kind": "listing",
+      "url": "https://www.chevening.org/scholarships/",
+      "official_domains": [
+        "chevening.org"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 14
+    },
+    {
+      "id": "uk-csc",
+      "name": "Commonwealth Scholarships (CSC UK)",
+      "provider": "Commonwealth Scholarship Commission in the UK",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "GB"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://cscuk.fcdo.gov.uk/scholarships/",
+      "official_domains": [
+        "cscuk.fcdo.gov.uk"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 14
+    },
+    {
+      "id": "uk-gates-cambridge",
+      "name": "Gates Cambridge Scholarship",
+      "provider": "Gates Cambridge Trust",
+      "provider_type": "foundation",
+      "source_type": "official",
+      "countries": [
+        "GB"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "opportunity",
+      "url": "https://www.gatescambridge.org/",
+      "official_domains": [
+        "gatescambridge.org",
+        "cam.ac.uk"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "uk-rhodes",
+      "name": "Rhodes Scholarships",
+      "provider": "Rhodes Trust",
+      "provider_type": "foundation",
+      "source_type": "official",
+      "countries": [
+        "GB"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.rhodeshouse.ox.ac.uk/scholarships/",
+      "official_domains": [
+        "rhodeshouse.ox.ac.uk",
+        "ox.ac.uk"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "uk-clarendon",
+      "name": "Clarendon Fund",
+      "provider": "University of Oxford",
+      "provider_type": "university",
+      "source_type": "official",
+      "countries": [
+        "GB"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "opportunity",
+      "url": "https://www.ox.ac.uk/clarendon",
+      "official_domains": [
+        "ox.ac.uk"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "de-daad",
+      "name": "DAAD Scholarship Database",
+      "provider": "German Academic Exchange Service (DAAD)",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "DE"
+      ],
+      "levels": [
+        "master",
+        "phd",
+        "postdoc",
+        "short_course"
+      ],
+      "kind": "listing",
+      "url": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/",
+      "official_domains": [
+        "daad.de"
+      ],
+      "languages": [
+        "en",
+        "de"
+      ],
+      "refresh_days": 14
+    },
+    {
+      "id": "eu-erasmus-mundus",
+      "name": "Erasmus Mundus Joint Masters catalogue",
+      "provider": "European Education and Culture Executive Agency",
+      "provider_type": "international_org",
+      "source_type": "official",
+      "countries": [
+        "*EU"
+      ],
+      "levels": [
+        "master"
+      ],
+      "kind": "listing",
+      "url": "https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en",
+      "official_domains": [
+        "europa.eu"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 14
+    },
+    {
+      "id": "eu-euraxess",
+      "name": "EURAXESS funding and jobs",
+      "provider": "European Commission",
+      "provider_type": "international_org",
+      "source_type": "official",
+      "countries": [
+        "*EU"
+      ],
+      "levels": [
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://euraxess.ec.europa.eu/",
+      "official_domains": [
+        "europa.eu"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 7
+    },
+    {
+      "id": "us-fulbright-foreign",
+      "name": "Fulbright Foreign Student Program",
+      "provider": "U.S. Department of State",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "US"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://foreign.fulbrightonline.org/",
+      "official_domains": [
+        "fulbrightonline.org",
+        "state.gov"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "au-australia-awards",
+      "name": "Australia Awards",
+      "provider": "Australian Department of Foreign Affairs and Trade",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "AU"
+      ],
+      "levels": [
+        "master",
+        "phd",
+        "short_course"
+      ],
+      "kind": "listing",
+      "url": "https://www.dfat.gov.au/people-to-people/australia-awards",
+      "official_domains": [
+        "dfat.gov.au",
+        "australiaawards.gov.au"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "nz-manaaki",
+      "name": "Manaaki New Zealand Scholarships",
+      "provider": "New Zealand Ministry of Foreign Affairs and Trade",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "NZ"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd",
+        "short_course"
+      ],
+      "kind": "listing",
+      "url": "https://www.nzscholarships.govt.nz/",
+      "official_domains": [
+        "nzscholarships.govt.nz",
+        "mfat.govt.nz"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "ca-educanada",
+      "name": "EduCanada scholarships for international students",
+      "provider": "Global Affairs Canada",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "CA"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd",
+        "exchange"
+      ],
+      "kind": "listing",
+      "url": "https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng",
+      "official_domains": [
+        "educanada.ca",
+        "international.gc.ca"
+      ],
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "se-si",
+      "name": "Swedish Institute Scholarships",
+      "provider": "Swedish Institute",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "SE"
+      ],
+      "levels": [
+        "master"
+      ],
+      "kind": "listing",
+      "url": "https://si.se/en/apply/scholarships/",
+      "official_domains": [
+        "si.se"
+      ],
+      "languages": [
+        "en",
+        "sv"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "nl-studyinnl",
+      "name": "Study in NL scholarships",
+      "provider": "Nuffic",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "NL"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.studyinnl.org/",
+      "official_domains": [
+        "studyinnl.org",
+        "nuffic.nl"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "fr-campusfrance",
+      "name": "Campus France scholarships",
+      "provider": "Campus France",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "FR"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.campusfrance.org/en",
+      "official_domains": [
+        "campusfrance.org"
+      ],
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "fr-eiffel",
+      "name": "Eiffel Excellence Scholarship Programme",
+      "provider": "French Ministry for Europe and Foreign Affairs",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "FR"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "opportunity",
+      "url": "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence",
+      "official_domains": [
+        "campusfrance.org"
+      ],
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "ch-eskas",
+      "name": "Swiss Government Excellence Scholarships",
+      "provider": "Swiss State Secretariat for Education, Research and Innovation",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "CH"
+      ],
+      "levels": [
+        "phd",
+        "postdoc"
+      ],
+      "kind": "opportunity",
+      "url": "https://www.sbfi.admin.ch/sbfi/en/home/education/scholarships-and-grants/swiss-government-excellence-scholarships.html",
+      "official_domains": [
+        "admin.ch"
+      ],
+      "languages": [
+        "en",
+        "de",
+        "fr"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "at-oead",
+      "name": "OeAD scholarships (Austria)",
+      "provider": "OeAD - Austria's Agency for Education and Internationalisation",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "AT"
+      ],
+      "levels": [
+        "master",
+        "phd",
+        "postdoc",
+        "short_course"
+      ],
+      "kind": "listing",
+      "url": "https://oead.at/en/",
+      "official_domains": [
+        "oead.at",
+        "grants.at"
+      ],
+      "languages": [
+        "en",
+        "de"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "be-vliruos",
+      "name": "VLIR-UOS scholarships",
+      "provider": "VLIR-UOS",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "BE"
+      ],
+      "levels": [
+        "master",
+        "short_course"
+      ],
+      "kind": "listing",
+      "url": "https://www.vliruos.be/",
+      "official_domains": [
+        "vliruos.be"
+      ],
+      "languages": [
+        "en",
+        "nl"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "it-studyinitaly",
+      "name": "Invest Your Talent / Italian government scholarships",
+      "provider": "Italian Ministry of Foreign Affairs",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "IT"
+      ],
+      "levels": [
+        "master",
+        "phd",
+        "short_course"
+      ],
+      "kind": "listing",
+      "url": "https://studyinitaly.esteri.it/",
+      "official_domains": [
+        "esteri.it"
+      ],
+      "languages": [
+        "en",
+        "it"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "hu-stipendium-hungaricum",
+      "name": "Stipendium Hungaricum",
+      "provider": "Tempus Public Foundation",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "HU"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "opportunity",
+      "url": "https://stipendiumhungaricum.hu/",
+      "official_domains": [
+        "stipendiumhungaricum.hu",
+        "tpf.hu"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "pl-nawa",
+      "name": "NAWA programmes (Poland)",
+      "provider": "Polish National Agency for Academic Exchange",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "PL"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://nawa.gov.pl/en/",
+      "official_domains": [
+        "nawa.gov.pl"
+      ],
+      "languages": [
+        "en",
+        "pl"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "cz-studyin",
+      "name": "Study in Czechia scholarships",
+      "provider": "Czech National Agency for International Education and Research",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "CZ"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.studyin.cz/",
+      "official_domains": [
+        "studyin.cz"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "tr-turkiye-burslari",
+      "name": "Türkiye Bursları",
+      "provider": "Presidency for Turks Abroad and Related Communities",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "TR"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd",
+        "short_course"
+      ],
+      "kind": "opportunity",
+      "url": "https://www.turkiyeburslari.gov.tr/",
+      "official_domains": [
+        "turkiyeburslari.gov.tr"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "jp-studyinjapan",
+      "name": "Study in Japan scholarships (incl. MEXT)",
+      "provider": "Japan Student Services Organization / MEXT",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "JP"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd",
+        "short_course"
+      ],
+      "kind": "listing",
+      "url": "https://www.studyinjapan.go.jp/en/",
+      "official_domains": [
+        "studyinjapan.go.jp",
+        "mext.go.jp",
+        "jasso.go.jp"
+      ],
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "kr-gks",
+      "name": "Global Korea Scholarship",
+      "provider": "National Institute for International Education (NIIED)",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "KR"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.studyinkorea.go.kr/",
+      "official_domains": [
+        "studyinkorea.go.kr",
+        "niied.go.kr"
+      ],
+      "languages": [
+        "en",
+        "ko"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "cn-campuschina",
+      "name": "Chinese Government Scholarship",
+      "provider": "China Scholarship Council",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "CN"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.campuschina.org/",
+      "official_domains": [
+        "campuschina.org",
+        "csc.edu.cn"
+      ],
+      "languages": [
+        "en",
+        "zh"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "tw-moe",
+      "name": "Taiwan Scholarship (MOE)",
+      "provider": "Taiwan Ministry of Education",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "TW"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "opportunity",
+      "url": "https://taiwanscholarship.moe.gov.tw/",
+      "official_domains": [
+        "moe.gov.tw"
+      ],
+      "languages": [
+        "en",
+        "zh"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "tw-icdf",
+      "name": "TaiwanICDF International Higher Education Scholarship",
+      "provider": "International Cooperation and Development Fund",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "TW"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.icdf.org.tw/",
+      "official_domains": [
+        "icdf.org.tw"
+      ],
+      "languages": [
+        "en",
+        "zh"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "sg-singa",
+      "name": "Singapore International Graduate Award (SINGA)",
+      "provider": "A*STAR",
+      "provider_type": "research_institute",
+      "source_type": "official",
+      "countries": [
+        "SG"
+      ],
+      "levels": [
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.a-star.edu.sg/",
+      "official_domains": [
+        "a-star.edu.sg"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "in-iccr",
+      "name": "ICCR scholarships (A2A portal)",
+      "provider": "Indian Council for Cultural Relations",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "IN"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://a2ascholarships.iccr.gov.in/",
+      "official_domains": [
+        "iccr.gov.in"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "id-lpdp",
+      "name": "LPDP scholarship (Indonesia Endowment Fund for Education)",
+      "provider": "Lembaga Pengelola Dana Pendidikan",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "*"
+      ],
+      "eligible_nationalities": [
+        "ID"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://lpdp.kemenkeu.go.id/",
+      "official_domains": [
+        "kemenkeu.go.id"
+      ],
+      "languages": [
+        "id",
+        "en"
+      ],
+      "refresh_days": 14,
+      "notes": "Restricted to Indonesian citizens; destination may be Indonesia or abroad."
+    },
+    {
+      "id": "sa-kaust",
+      "name": "KAUST graduate fellowship",
+      "provider": "King Abdullah University of Science and Technology",
+      "provider_type": "university",
+      "source_type": "official",
+      "countries": [
+        "SA"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.kaust.edu.sa/en/study",
+      "official_domains": [
+        "kaust.edu.sa"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "ie-hea",
+      "name": "Government of Ireland International Education Scholarships",
+      "provider": "Higher Education Authority",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "IE"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://hea.ie/",
+      "official_domains": [
+        "hea.ie"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "mx-amexcid",
+      "name": "Mexican Government Scholarships for International Students",
+      "provider": "AMEXCID",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "MX"
+      ],
+      "levels": [
+        "master",
+        "phd",
+        "postdoc",
+        "short_course"
+      ],
+      "kind": "listing",
+      "url": "https://www.gob.mx/amexcid",
+      "official_domains": [
+        "gob.mx"
+      ],
+      "languages": [
+        "es",
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "int-oas",
+      "name": "OAS Academic Scholarship Program",
+      "provider": "Organization of American States",
+      "provider_type": "international_org",
+      "source_type": "official",
+      "countries": [
+        "*Americas"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.oas.org/en/scholarships/",
+      "official_domains": [
+        "oas.org"
+      ],
+      "languages": [
+        "en",
+        "es"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "int-adb-jsp",
+      "name": "ADB-Japan Scholarship Program",
+      "provider": "Asian Development Bank",
+      "provider_type": "international_org",
+      "source_type": "official",
+      "countries": [
+        "*Asia"
+      ],
+      "levels": [
+        "master"
+      ],
+      "kind": "opportunity",
+      "url": "https://www.adb.org/work-with-us/careers/japan-scholarship-program",
+      "official_domains": [
+        "adb.org"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "int-mastercard-fdn",
+      "name": "Mastercard Foundation Scholars Program",
+      "provider": "Mastercard Foundation",
+      "provider_type": "foundation",
+      "source_type": "official",
+      "countries": [
+        "*"
+      ],
+      "eligible_nationalities": [
+        "*Africa"
+      ],
+      "levels": [
+        "bachelor",
+        "master"
+      ],
+      "kind": "listing",
+      "url": "https://mastercardfdn.org/",
+      "official_domains": [
+        "mastercardfdn.org"
+      ],
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "agg-scholarshipportal",
+      "name": "ScholarshipPortal",
+      "provider": "Studyportals",
+      "provider_type": "aggregator",
+      "source_type": "aggregator",
+      "countries": [
+        "*"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.scholarshipportal.com/",
+      "official_domains": [],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 7,
+      "notes": "Discovery aid only; every claim must be re-verified on the provider's own site."
+    },
+    {
+      "id": "agg-findaphd",
+      "name": "FindAPhD",
+      "provider": "FindAUniversity Ltd",
+      "provider_type": "aggregator",
+      "source_type": "aggregator",
+      "countries": [
+        "*"
+      ],
+      "levels": [
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.findaphd.com/",
+      "official_domains": [],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 7,
+      "notes": "Discovery aid for funded PhD projects; verify on the university page."
+    },
+    {
+      "id": "za-nrf",
+      "name": "NRF postgraduate scholarships",
+      "provider": "National Research Foundation (South Africa)",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "ZA"
+      ],
+      "levels": [
+        "master",
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://www.nrf.ac.za/",
+      "official_domains": [
+        "nrf.ac.za"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "both"
+    },
+    {
+      "id": "za-nsfas",
+      "name": "NSFAS bursary",
+      "provider": "National Student Financial Aid Scheme",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "ZA"
+      ],
+      "levels": [
+        "bachelor"
+      ],
+      "kind": "listing",
+      "url": "https://www.nsfas.org.za/",
+      "official_domains": [
+        "nsfas.org.za"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "domestic",
+      "eligible_nationalities": [
+        "ZA"
+      ],
+      "notes": "South African citizens only."
+    },
+    {
+      "id": "ke-helb",
+      "name": "HELB loans and bursaries",
+      "provider": "Higher Education Loans Board (Kenya)",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "KE"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.helb.co.ke/",
+      "official_domains": [
+        "helb.co.ke"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "domestic",
+      "eligible_nationalities": [
+        "KE"
+      ]
+    },
+    {
+      "id": "ng-ptdf",
+      "name": "PTDF Overseas Scholarship Scheme",
+      "provider": "Petroleum Technology Development Fund",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "*"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://ptdf.gov.ng/",
+      "official_domains": [
+        "ptdf.gov.ng"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "domestic",
+      "eligible_nationalities": [
+        "NG"
+      ],
+      "notes": "Nigerian citizens; study abroad."
+    },
+    {
+      "id": "gh-gsa",
+      "name": "Ghana Scholarships Authority",
+      "provider": "Ghana Scholarships Authority",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "*"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://scholarships.gov.gh/",
+      "official_domains": [
+        "scholarships.gov.gh"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "domestic",
+      "eligible_nationalities": [
+        "GH"
+      ]
+    },
+    {
+      "id": "ma-amci",
+      "name": "AMCI scholarships for foreign students",
+      "provider": "Moroccan Agency for International Cooperation",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "MA"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.amci.ma/",
+      "official_domains": [
+        "amci.ma"
+      ],
+      "languages": [
+        "fr",
+        "ar"
+      ],
+      "refresh_days": 30,
+      "scope": "international",
+      "notes": "Mainly for nationals of partner countries."
+    },
+    {
+      "id": "int-aims",
+      "name": "AIMS master's in mathematical sciences",
+      "provider": "African Institute for Mathematical Sciences",
+      "provider_type": "research_institute",
+      "source_type": "official",
+      "countries": [
+        "*Africa"
+      ],
+      "levels": [
+        "master"
+      ],
+      "kind": "listing",
+      "url": "https://nexteinstein.org/",
+      "official_domains": [
+        "nexteinstein.org",
+        "aims.ac.za"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international",
+      "eligible_nationalities": [
+        "*Africa"
+      ]
+    },
+    {
+      "id": "int-mo-ibrahim",
+      "name": "Ibrahim Leadership Fellowships",
+      "provider": "Mo Ibrahim Foundation",
+      "provider_type": "foundation",
+      "source_type": "official",
+      "countries": [
+        "*"
+      ],
+      "levels": [
+        "short_course"
+      ],
+      "kind": "listing",
+      "url": "https://mo.ibrahim.foundation/",
+      "official_domains": [
+        "mo.ibrahim.foundation"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international",
+      "eligible_nationalities": [
+        "*Africa"
+      ]
+    },
+    {
+      "id": "my-mohe",
+      "name": "Malaysia higher education scholarships",
+      "provider": "Ministry of Higher Education Malaysia",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "MY"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.mohe.gov.my/",
+      "official_domains": [
+        "mohe.gov.my"
+      ],
+      "languages": [
+        "ms",
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "both"
+    },
+    {
+      "id": "bn-mofa",
+      "name": "Brunei Darussalam Government Scholarship",
+      "provider": "Ministry of Foreign Affairs Brunei",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "BN"
+      ],
+      "levels": [
+        "bachelor",
+        "master"
+      ],
+      "kind": "listing",
+      "url": "https://www.mofa.gov.bn/",
+      "official_domains": [
+        "mofa.gov.bn"
+      ],
+      "languages": [
+        "ms",
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "th-tica",
+      "name": "Thailand International Cooperation Agency scholarships",
+      "provider": "TICA",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "TH"
+      ],
+      "levels": [
+        "master",
+        "short_course"
+      ],
+      "kind": "listing",
+      "url": "https://tica-thaigov.mfa.go.th/",
+      "official_domains": [
+        "mfa.go.th"
+      ],
+      "languages": [
+        "th",
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "ph-dost-sei",
+      "name": "DOST-SEI scholarships",
+      "provider": "Department of Science and Technology - Science Education Institute",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "PH"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.sei.dost.gov.ph/",
+      "official_domains": [
+        "dost.gov.ph"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "domestic",
+      "eligible_nationalities": [
+        "PH"
+      ]
+    },
+    {
+      "id": "pk-hec",
+      "name": "HEC scholarships",
+      "provider": "Higher Education Commission Pakistan",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "*"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.hec.gov.pk/",
+      "official_domains": [
+        "hec.gov.pk"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "domestic",
+      "eligible_nationalities": [
+        "PK"
+      ]
+    },
+    {
+      "id": "in-nos",
+      "name": "National Overseas Scholarship",
+      "provider": "Ministry of Social Justice and Empowerment (India)",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "*"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://nosmsje.gov.in/",
+      "official_domains": [
+        "nosmsje.gov.in"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "domestic",
+      "eligible_nationalities": [
+        "IN"
+      ],
+      "notes": "Indian citizens from eligible social categories."
+    },
+    {
+      "id": "jp-jasso",
+      "name": "JASSO scholarships",
+      "provider": "Japan Student Services Organization",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "JP"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd",
+        "exchange"
+      ],
+      "kind": "listing",
+      "url": "https://www.jasso.go.jp/en/",
+      "official_domains": [
+        "jasso.go.jp"
+      ],
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "refresh_days": 30,
+      "scope": "both"
+    },
+    {
+      "id": "jp-jsps",
+      "name": "JSPS fellowships",
+      "provider": "Japan Society for the Promotion of Science",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "JP"
+      ],
+      "levels": [
+        "postdoc",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.jsps.go.jp/english/",
+      "official_domains": [
+        "jsps.go.jp"
+      ],
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "cn-schwarzman",
+      "name": "Schwarzman Scholars",
+      "provider": "Schwarzman Scholars",
+      "provider_type": "foundation",
+      "source_type": "official",
+      "countries": [
+        "CN"
+      ],
+      "levels": [
+        "master"
+      ],
+      "kind": "listing",
+      "url": "https://www.schwarzmanscholars.org/",
+      "official_domains": [
+        "schwarzmanscholars.org"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "cn-yenching",
+      "name": "Yenching Academy of Peking University",
+      "provider": "Peking University",
+      "provider_type": "university",
+      "source_type": "official",
+      "countries": [
+        "CN"
+      ],
+      "levels": [
+        "master"
+      ],
+      "kind": "listing",
+      "url": "https://yenchingacademy.pku.edu.cn/",
+      "official_domains": [
+        "pku.edu.cn"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "qa-hbku",
+      "name": "HBKU graduate scholarships",
+      "provider": "Hamad Bin Khalifa University",
+      "provider_type": "university",
+      "source_type": "official",
+      "countries": [
+        "QA"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.hbku.edu.qa/",
+      "official_domains": [
+        "hbku.edu.qa"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "both"
+    },
+    {
+      "id": "kz-bolashak",
+      "name": "Bolashak International Scholarship",
+      "provider": "Center for International Programs (Kazakhstan)",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "*"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.bolashak.gov.kz/",
+      "official_domains": [
+        "bolashak.gov.kz"
+      ],
+      "languages": [
+        "kk",
+        "ru",
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "domestic",
+      "eligible_nationalities": [
+        "KZ"
+      ]
+    },
+    {
+      "id": "fi-studyinfinland",
+      "name": "Study in Finland scholarships",
+      "provider": "Finnish National Agency for Education",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "FI"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.studyinfinland.fi/",
+      "official_domains": [
+        "studyinfinland.fi",
+        "oph.fi"
+      ],
+      "languages": [
+        "en",
+        "fi"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "ee-studyinestonia",
+      "name": "Study in Estonia scholarships",
+      "provider": "Education and Youth Board of Estonia",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "EE"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.studyinestonia.ee/",
+      "official_domains": [
+        "studyinestonia.ee",
+        "harno.ee"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "lt-studyin",
+      "name": "Study in Lithuania scholarships",
+      "provider": "Education Exchanges Support Foundation",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "LT"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd",
+        "short_course"
+      ],
+      "kind": "listing",
+      "url": "https://www.studyin.lt/",
+      "official_domains": [
+        "studyin.lt"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "lv-studyin",
+      "name": "Study in Latvia",
+      "provider": "State Education Development Agency",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "LV"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.studyinlatvia.lv/",
+      "official_domains": [
+        "studyinlatvia.lv",
+        "viaa.gov.lv"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "sk-saia",
+      "name": "National Scholarship Programme of Slovakia",
+      "provider": "SAIA",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "SK"
+      ],
+      "levels": [
+        "master",
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://www.saia.sk/en/",
+      "official_domains": [
+        "saia.sk",
+        "scholarships.sk"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "si-cmepius",
+      "name": "Slovenian scholarships for foreigners",
+      "provider": "CMEPIUS",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "SI"
+      ],
+      "levels": [
+        "master",
+        "phd",
+        "short_course"
+      ],
+      "kind": "listing",
+      "url": "https://www.cmepius.si/",
+      "official_domains": [
+        "cmepius.si"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "es-fundacion-carolina",
+      "name": "Fundación Carolina becas",
+      "provider": "Fundación Carolina",
+      "provider_type": "foundation",
+      "source_type": "official",
+      "countries": [
+        "ES"
+      ],
+      "levels": [
+        "master",
+        "phd",
+        "postdoc",
+        "short_course"
+      ],
+      "kind": "listing",
+      "url": "https://www.fundacioncarolina.es/",
+      "official_domains": [
+        "fundacioncarolina.es"
+      ],
+      "languages": [
+        "es"
+      ],
+      "refresh_days": 30,
+      "scope": "international",
+      "eligible_nationalities": [
+        "*Americas"
+      ],
+      "notes": "Mainly for nationals of Latin American countries."
+    },
+    {
+      "id": "ie-irc",
+      "name": "Irish Research Council postgraduate scholarships",
+      "provider": "Irish Research Council",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "IE"
+      ],
+      "levels": [
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://research.ie/",
+      "official_domains": [
+        "research.ie"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "both"
+    },
+    {
+      "id": "gb-edinburgh",
+      "name": "University of Edinburgh scholarships and student funding",
+      "provider": "University of Edinburgh",
+      "provider_type": "university",
+      "source_type": "official",
+      "countries": [
+        "GB"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.ed.ac.uk/student-funding",
+      "official_domains": [
+        "ed.ac.uk"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "both"
+    },
+    {
+      "id": "gb-wellcome",
+      "name": "Wellcome funding schemes",
+      "provider": "Wellcome Trust",
+      "provider_type": "foundation",
+      "source_type": "official",
+      "countries": [
+        "GB"
+      ],
+      "levels": [
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://wellcome.org/",
+      "official_domains": [
+        "wellcome.org"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "both"
+    },
+    {
+      "id": "de-boell",
+      "name": "Heinrich Böll Foundation scholarships",
+      "provider": "Heinrich-Böll-Stiftung",
+      "provider_type": "foundation",
+      "source_type": "official",
+      "countries": [
+        "DE"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.boell.de/en/scholarships",
+      "official_domains": [
+        "boell.de"
+      ],
+      "languages": [
+        "de",
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "both"
+    },
+    {
+      "id": "de-kas",
+      "name": "Konrad-Adenauer-Stiftung scholarships",
+      "provider": "Konrad-Adenauer-Stiftung",
+      "provider_type": "foundation",
+      "source_type": "official",
+      "countries": [
+        "DE"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.kas.de/",
+      "official_domains": [
+        "kas.de"
+      ],
+      "languages": [
+        "de",
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "both"
+    },
+    {
+      "id": "de-mpg",
+      "name": "Max Planck doctoral programmes (IMPRS)",
+      "provider": "Max Planck Society",
+      "provider_type": "research_institute",
+      "source_type": "official",
+      "countries": [
+        "DE"
+      ],
+      "levels": [
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://www.mpg.de/",
+      "official_domains": [
+        "mpg.de"
+      ],
+      "languages": [
+        "en",
+        "de"
+      ],
+      "refresh_days": 30,
+      "scope": "both"
+    },
+    {
+      "id": "ch-ethz",
+      "name": "ETH Zurich Excellence Scholarship",
+      "provider": "ETH Zurich",
+      "provider_type": "university",
+      "source_type": "official",
+      "countries": [
+        "CH"
+      ],
+      "levels": [
+        "master"
+      ],
+      "kind": "listing",
+      "url": "https://ethz.ch/",
+      "official_domains": [
+        "ethz.ch"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "both"
+    },
+    {
+      "id": "br-capes",
+      "name": "CAPES scholarships",
+      "provider": "Coordination for the Improvement of Higher Education Personnel",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "BR"
+      ],
+      "levels": [
+        "master",
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://www.gov.br/capes/",
+      "official_domains": [
+        "gov.br"
+      ],
+      "languages": [
+        "pt"
+      ],
+      "refresh_days": 30,
+      "scope": "both"
+    },
+    {
+      "id": "br-cnpq",
+      "name": "CNPq research and study grants",
+      "provider": "National Council for Scientific and Technological Development",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "BR"
+      ],
+      "levels": [
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://www.gov.br/cnpq/",
+      "official_domains": [
+        "gov.br"
+      ],
+      "languages": [
+        "pt"
+      ],
+      "refresh_days": 30,
+      "scope": "both"
+    },
+    {
+      "id": "cl-anid",
+      "name": "ANID scholarships (Becas Chile)",
+      "provider": "Agencia Nacional de Investigación y Desarrollo",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "*"
+      ],
+      "levels": [
+        "master",
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://www.anid.cl/",
+      "official_domains": [
+        "anid.cl"
+      ],
+      "languages": [
+        "es"
+      ],
+      "refresh_days": 30,
+      "scope": "domestic",
+      "eligible_nationalities": [
+        "CL"
+      ]
+    },
+    {
+      "id": "co-colfuturo",
+      "name": "COLFUTURO scholarship-loan",
+      "provider": "COLFUTURO",
+      "provider_type": "foundation",
+      "source_type": "official",
+      "countries": [
+        "*"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.colfuturo.org/",
+      "official_domains": [
+        "colfuturo.org"
+      ],
+      "languages": [
+        "es"
+      ],
+      "refresh_days": 30,
+      "scope": "domestic",
+      "eligible_nationalities": [
+        "CO"
+      ]
+    },
+    {
+      "id": "pe-pronabec",
+      "name": "PRONABEC scholarships",
+      "provider": "Programa Nacional de Becas y Crédito Educativo",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "*"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.pronabec.gob.pe/",
+      "official_domains": [
+        "pronabec.gob.pe"
+      ],
+      "languages": [
+        "es"
+      ],
+      "refresh_days": 30,
+      "scope": "domestic",
+      "eligible_nationalities": [
+        "PE"
+      ]
+    },
+    {
+      "id": "ca-mitacs",
+      "name": "Mitacs Globalink",
+      "provider": "Mitacs",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "CA"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.mitacs.ca/",
+      "official_domains": [
+        "mitacs.ca"
+      ],
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "ca-utoronto-pearson",
+      "name": "Lester B. Pearson International Scholarship",
+      "provider": "University of Toronto",
+      "provider_type": "university",
+      "source_type": "official",
+      "countries": [
+        "CA"
+      ],
+      "levels": [
+        "bachelor"
+      ],
+      "kind": "listing",
+      "url": "https://future.utoronto.ca/pearson/",
+      "official_domains": [
+        "utoronto.ca"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "us-knight-hennessy",
+      "name": "Knight-Hennessy Scholars",
+      "provider": "Stanford University",
+      "provider_type": "university",
+      "source_type": "official",
+      "countries": [
+        "US"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://knight-hennessy.stanford.edu/",
+      "official_domains": [
+        "stanford.edu"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "both"
+    },
+    {
+      "id": "us-aauw",
+      "name": "AAUW International Fellowships",
+      "provider": "American Association of University Women",
+      "provider_type": "foundation",
+      "source_type": "official",
+      "countries": [
+        "US"
+      ],
+      "levels": [
+        "master",
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://www.aauw.org/",
+      "official_domains": [
+        "aauw.org"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international",
+      "notes": "For women who are not US citizens or permanent residents."
+    },
+    {
+      "id": "int-jjwbgsp",
+      "name": "Joint Japan/World Bank Graduate Scholarship Program",
+      "provider": "World Bank",
+      "provider_type": "international_org",
+      "source_type": "official",
+      "countries": [
+        "*"
+      ],
+      "levels": [
+        "master"
+      ],
+      "kind": "listing",
+      "url": "https://www.worldbank.org/en/programs/scholarships",
+      "official_domains": [
+        "worldbank.org"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "au-rtp",
+      "name": "Research Training Program",
+      "provider": "Australian Department of Education",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "AU"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.education.gov.au/research-block-grants/research-training-program",
+      "official_domains": [
+        "education.gov.au"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "both"
+    },
+    {
+      "id": "int-isdb",
+      "name": "IsDB Scholarship Programme",
+      "provider": "Islamic Development Bank",
+      "provider_type": "international_org",
+      "source_type": "official",
+      "countries": [
+        "*"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://www.isdb.org/",
+      "official_domains": [
+        "isdb.org"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "int-opecfund",
+      "name": "OPEC Fund scholarship",
+      "provider": "OPEC Fund for International Development",
+      "provider_type": "international_org",
+      "source_type": "official",
+      "countries": [
+        "*"
+      ],
+      "levels": [
+        "master"
+      ],
+      "kind": "listing",
+      "url": "https://opecfund.org/",
+      "official_domains": [
+        "opecfund.org"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "it-ictp",
+      "name": "ICTP postgraduate and research programmes",
+      "provider": "Abdus Salam International Centre for Theoretical Physics",
+      "provider_type": "research_institute",
+      "source_type": "official",
+      "countries": [
+        "IT"
+      ],
+      "levels": [
+        "master",
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://www.ictp.it/",
+      "official_domains": [
+        "ictp.it"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "int-twas",
+      "name": "TWAS fellowships",
+      "provider": "The World Academy of Sciences",
+      "provider_type": "international_org",
+      "source_type": "official",
+      "countries": [
+        "*"
+      ],
+      "levels": [
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://twas.org/",
+      "official_domains": [
+        "twas.org"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international",
+      "notes": "For scientists from developing countries."
+    },
+    {
+      "id": "ch-cern",
+      "name": "CERN doctoral student programme",
+      "provider": "CERN",
+      "provider_type": "research_institute",
+      "source_type": "official",
+      "countries": [
+        "CH",
+        "FR"
+      ],
+      "levels": [
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://careers.cern/",
+      "official_domains": [
+        "cern"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "int-embl",
+      "name": "EMBL International PhD Programme",
+      "provider": "European Molecular Biology Laboratory",
+      "provider_type": "research_institute",
+      "source_type": "official",
+      "countries": [
+        "DE",
+        "GB",
+        "IT",
+        "FR",
+        "ES"
+      ],
+      "levels": [
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://www.embl.org/",
+      "official_domains": [
+        "embl.org"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "co-google-phd",
+      "name": "Google PhD Fellowship Program",
+      "provider": "Google",
+      "provider_type": "company",
+      "source_type": "official",
+      "countries": [
+        "*"
+      ],
+      "levels": [
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://research.google/programs-and-events/phd-fellowship/",
+      "official_domains": [
+        "research.google"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30,
+      "scope": "international"
+    },
+    {
+      "id": "no-forskningsradet-calls",
+      "name": "Research Council of Norway calls (utlysninger)",
+      "provider": "Norges forskningsråd",
+      "provider_type": "public_agency",
+      "source_type": "official",
+      "countries": [
+        "NO"
+      ],
+      "levels": [
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://www.forskningsradet.no/utlysninger/",
+      "official_domains": [
+        "forskningsradet.no"
+      ],
+      "languages": [
+        "no",
+        "en"
+      ],
+      "refresh_days": 7,
+      "url_pattern": "/(?:utlysninger|en/call-for-proposals)/20\\d\\d/",
+      "sitemap": "https://www.forskningsradet.no/sitemap.xml",
+      "notes": "Official call list and sitemap; most calls fund research organisations, some fund doctoral and early-career projects"
+    },
+    {
+      "id": "no-studyinnorway-degree",
+      "name": "Study in Norway: scholarships for degree students",
+      "provider": "HK-dir (Directorate for Higher Education and Skills)",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "NO"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://studyinnorway.no/scholarships-degree-students",
+      "official_domains": [
+        "studyinnorway.no",
+        "hkdir.no"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "no-studyinnorway-exchange",
+      "name": "Study in Norway: scholarships for exchange students",
+      "provider": "HK-dir (Directorate for Higher Education and Skills)",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "NO"
+      ],
+      "levels": [
+        "exchange"
+      ],
+      "kind": "listing",
+      "url": "https://studyinnorway.no/scholarships-exchange-students",
+      "official_domains": [
+        "studyinnorway.no",
+        "hkdir.no"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "no-hkdir-calls",
+      "name": "HK-dir calls and grants (utlysninger og tilskudd)",
+      "provider": "HK-dir",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "NO"
+      ],
+      "levels": [],
+      "kind": "listing",
+      "url": "https://hkdir.no/utlysninger-og-tilskudd",
+      "official_domains": [
+        "hkdir.no"
+      ],
+      "languages": [
+        "no"
+      ],
+      "refresh_days": 14
+    },
+    {
+      "id": "no-lanekassen-abroad",
+      "name": "Lånekassen grants and loans for study abroad",
+      "provider": "Statens lånekasse for utdanning",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "NO"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd",
+        "exchange"
+      ],
+      "kind": "listing",
+      "url": "https://lanekassen.no/en-US/grants-and-loans/",
+      "official_domains": [
+        "lanekassen.no"
+      ],
+      "languages": [
+        "en",
+        "no"
+      ],
+      "refresh_days": 30,
+      "scope": "domestic",
+      "eligible_nationalities": [
+        "NO"
+      ],
+      "url_pattern": "/grants-and-loans/(?:abroad|norden)/",
+      "notes": "State education loan fund: grants and loans for people entitled to Norwegian student support"
+    },
+    {
+      "id": "no-ntnu-financing",
+      "name": "NTNU financing and scholarships",
+      "provider": "Norwegian University of Science and Technology (NTNU)",
+      "provider_type": "university",
+      "source_type": "official",
+      "countries": [
+        "NO"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.ntnu.edu/studies/financing-and-scholarships",
+      "official_domains": [
+        "ntnu.edu",
+        "ntnu.no"
+      ],
+      "languages": [
+        "en",
+        "no"
+      ],
+      "refresh_days": 30
+    },
+    {
+      "id": "id-kemenag-beasiswa",
+      "name": "Beasiswa Kementerian Agama (BIB and others)",
+      "provider": "Kementerian Agama Republik Indonesia",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "ID",
+        "*"
+      ],
+      "eligible_nationalities": [
+        "ID"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://beasiswa.kemenag.go.id/",
+      "official_domains": [
+        "kemenag.go.id"
+      ],
+      "languages": [
+        "id"
+      ],
+      "refresh_days": 14,
+      "scope": "both",
+      "notes": "Indonesian citizens; study in Indonesia or abroad; checked reachable and robots-permitted on 2026-10-18 (round 20)"
+    },
+    {
+      "id": "id-beasiswa-unggulan",
+      "name": "Beasiswa Unggulan",
+      "provider": "Kementerian Pendidikan Dasar dan Menengah",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "ID"
+      ],
+      "eligible_nationalities": [
+        "ID"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://beasiswaunggulan.kemendikdasmen.go.id/",
+      "official_domains": [
+        "kemendikdasmen.go.id"
+      ],
+      "languages": [
+        "id"
+      ],
+      "refresh_days": 14,
+      "scope": "domestic",
+      "notes": "Indonesian citizens; checked reachable and robots-permitted on 2026-10-18 (round 20)"
+    },
+    {
+      "id": "id-kip-kuliah",
+      "name": "KIP Kuliah",
+      "provider": "Kementerian Pendidikan Tinggi, Sains, dan Teknologi",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "ID"
+      ],
+      "eligible_nationalities": [
+        "ID"
+      ],
+      "levels": [
+        "bachelor"
+      ],
+      "kind": "listing",
+      "url": "https://kip-kuliah.kemdiktisaintek.go.id/",
+      "official_domains": [
+        "kemdiktisaintek.go.id"
+      ],
+      "languages": [
+        "id"
+      ],
+      "refresh_days": 14,
+      "scope": "domestic",
+      "notes": "need-based aid for Indonesian students; checked reachable and robots-permitted on 2026-10-18 (round 20)"
+    },
+    {
+      "id": "vn-vnu-hoc-bong",
+      "name": "VNU scholarship notices",
+      "provider": "Vietnam National University, Hanoi",
+      "provider_type": "university",
+      "source_type": "official",
+      "countries": [
+        "VN"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://vnu.edu.vn/thong-bao/hoc-bong",
+      "official_domains": [
+        "vnu.edu.vn"
+      ],
+      "languages": [
+        "vi",
+        "en"
+      ],
+      "refresh_days": 14,
+      "scope": "both",
+      "notes": "scholarship notices of VNU and partners; checked reachable and robots-permitted on 2026-10-18 (round 20)"
+    },
+    {
+      "id": "vn-vnu-is-hoc-bong",
+      "name": "VNU International School scholarships",
+      "provider": "VNU International School",
+      "provider_type": "university",
+      "source_type": "official",
+      "countries": [
+        "VN"
+      ],
+      "levels": [
+        "bachelor",
+        "master"
+      ],
+      "kind": "listing",
+      "url": "https://www.is.vnu.edu.vn/tuyen-sinh/hoc-bong/",
+      "official_domains": [
+        "vnu.edu.vn"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "refresh_days": 14,
+      "scope": "both",
+      "notes": "admission scholarships; checked reachable and robots-permitted on 2026-10-18 (round 20)"
+    },
+    {
+      "id": "pk-nust-scholarships",
+      "name": "NUST scholarships",
+      "provider": "National University of Sciences and Technology",
+      "provider_type": "university",
+      "source_type": "official",
+      "countries": [
+        "PK"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://nust.edu.pk/admissions/scholarships/",
+      "official_domains": [
+        "nust.edu.pk"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 14,
+      "scope": "domestic",
+      "notes": "need- and merit-based; checked reachable and robots-permitted on 2026-10-18 (round 20)"
+    },
+    {
+      "id": "pk-lums-financial-aid",
+      "name": "LUMS financial aid options",
+      "provider": "Lahore University of Management Sciences",
+      "provider_type": "university",
+      "source_type": "official",
+      "countries": [
+        "PK"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://financial-aid.lums.edu.pk/financial-aid-options-fa",
+      "official_domains": [
+        "lums.edu.pk"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 14,
+      "scope": "domestic",
+      "notes": "includes the Honhaar scholarship; checked reachable and robots-permitted on 2026-10-18 (round 20)"
+    },
+    {
+      "id": "ng-tetfund",
+      "name": "TETFund scholarships (TSAS)",
+      "provider": "Tertiary Education Trust Fund",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "NG",
+        "*"
+      ],
+      "eligible_nationalities": [
+        "NG"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://tetfund.gov.ng/",
+      "official_domains": [
+        "tetfund.gov.ng"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 14,
+      "scope": "both",
+      "notes": "academic staff training; Nigerian public institutions; checked reachable and robots-permitted on 2026-10-18 (round 20)"
+    },
+    {
+      "id": "ng-nddc",
+      "name": "NDDC scholarships",
+      "provider": "Niger Delta Development Commission",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "NG",
+        "*"
+      ],
+      "eligible_nationalities": [
+        "NG"
+      ],
+      "levels": [
+        "master",
+        "phd"
+      ],
+      "kind": "listing",
+      "url": "https://www.nddc.gov.ng/",
+      "official_domains": [
+        "nddc.gov.ng"
+      ],
+      "languages": [
+        "en"
+      ],
+      "refresh_days": 14,
+      "scope": "both",
+      "notes": "Niger Delta indigenes; checked reachable and robots-permitted on 2026-10-18 (round 20)"
+    },
+    {
+      "id": "co-icetex-becas",
+      "name": "ICETEX becas",
+      "provider": "ICETEX",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "CO",
+        "*"
+      ],
+      "levels": [
+        "bachelor",
+        "master",
+        "phd",
+        "short_course"
+      ],
+      "kind": "listing",
+      "url": "https://web.icetex.gov.co/es/becas",
+      "official_domains": [
+        "icetex.gov.co"
+      ],
+      "languages": [
+        "es"
+      ],
+      "refresh_days": 14,
+      "scope": "both",
+      "notes": "becas for Colombians abroad and foreigners in Colombia; checked reachable and robots-permitted on 2026-10-18 (round 20)"
+    },
+    {
+      "id": "co-minciencias-convocatorias",
+      "name": "Minciencias convocatorias",
+      "provider": "Ministerio de Ciencia, Tecnología e Innovación",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "CO",
+        "*"
+      ],
+      "levels": [
+        "master",
+        "phd",
+        "postdoc"
+      ],
+      "kind": "listing",
+      "url": "https://minciencias.gov.co/convocatorias",
+      "official_domains": [
+        "minciencias.gov.co"
+      ],
+      "languages": [
+        "es"
+      ],
+      "refresh_days": 14,
+      "scope": "both",
+      "notes": "calls include doctoral scholarships and institutional calls; checked reachable and robots-permitted on 2026-10-18 (round 20)"
+    },
+    {
+      "id": "cl-agcid-becas",
+      "name": "AGCID becas",
+      "provider": "Agencia Chilena de Cooperación Internacional para el Desarrollo",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "CL"
+      ],
+      "levels": [
+        "master",
+        "short_course"
+      ],
+      "kind": "listing",
+      "url": "https://www.agcid.gob.cl/becas",
+      "official_domains": [
+        "agcid.gob.cl"
+      ],
+      "languages": [
+        "es"
+      ],
+      "refresh_days": 14,
+      "scope": "international",
+      "notes": "scholarships for foreigners in Chile; checked reachable and robots-permitted on 2026-10-18 (round 20)"
+    },
+    {
+      "id": "cl-chileatiende-becas",
+      "name": "ChileAtiende becas y créditos",
+      "provider": "Gobierno de Chile",
+      "provider_type": "government",
+      "source_type": "official",
+      "countries": [
+        "CL"
+      ],
+      "eligible_nationalities": [
+        "CL"
+      ],
+      "levels": [
+        "bachelor",
+        "master"
+      ],
+      "kind": "listing",
+      "url": "https://www.chileatiende.gob.cl/temas/becas-y-creditos",
+      "official_domains": [
+        "chileatiende.gob.cl"
+      ],
+      "languages": [
+        "es"
+      ],
+      "refresh_days": 14,
+      "scope": "domestic",
+      "notes": "state scholarships for Chilean students; checked reachable and robots-permitted on 2026-10-18 (round 20)"
+    }
+  ]
+}

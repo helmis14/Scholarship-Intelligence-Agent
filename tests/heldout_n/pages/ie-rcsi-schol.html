@@ -1,0 +1,1338 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PRMMPS9');
+        </script>
+
+        <script>
+            
+            delete_cookie();
+                var now = new Date();
+                now.setTime(now.getTime() + 1 * 3600 * 1000 * 24 * 365);
+                function delete_cookie() {
+                    if (!getCookie('cleared-onetrust-cookies')) {
+                        document.cookie = "OptanonAlertBoxClosed" + "=" + "; path=/" + ';expires=Thu, 01 Jan 1970 00:00:01 GMT';
+                        document.cookie = "OptanonConsent" + "=" + "; path=/" + ';expires=Thu, 01 Jan 1970 00:00:01 GMT';
+                    }
+                    document.cookie = "cleared-onetrust-cookies" + "=" + "; path=/" + "; domain=[.www.rcsi.com]" + "; expires=" + now;
+                }
+
+                function getCookie(cookieName) {
+                    var value = '; ' + document.cookie;
+                    var parts = value.split('; ' + cookieName + '=');
+                    if (parts.length == 2) {
+                        return true;
+                    }
+            }
+            
+
+    function Othandlers() {
+        var OABCcookie = null;
+        var PageReadyCalled = false;
+        //Start - Change Optanon Cookie Expiry
+        var OABCcookieName = "OptanonAlertBoxClosed";
+        var bannerAcceptBtn = document.getElementById("onetrust-accept-btn-handler");
+        var pcAllowAllBtn = document.getElementById("accept-recommended-btn-handler");
+        var pcSaveBtn = document.getElementsByClassName("save-preference-btn-handler onetrust-close-btn-handler")[0];
+        var OABCcookie = getCookie(OABCcookieName);
+        if (!OABCcookie && bannerAcceptBtn) {
+            bannerAcceptBtn.addEventListener('click', function () {
+                console.log("Allowed all via Banner");
+                location.reload();
+            });
+        }
+        if (pcAllowAllBtn)
+            pcAllowAllBtn.addEventListener('click', function () {
+            console.log("Allowed all via Preference Center");
+            location.reload();
+        });
+        pcSaveBtn.addEventListener('click', function () {
+            console.log("Set custom settings via Preference Center");
+            location.reload();
+        });
+    }
+    function optanonCategoryEnabled(name, cat) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length == 2) {
+            var cookieValue = parts.pop().split(";").shift();
+            var cookieDetails = cookieValue.split('&');
+            for (i = 0; i < cookieDetails.length; i++) {
+                var details = cookieDetails[i].split("=");
+                if (details[0] == "groups") {
+                    var categories = decodeURIComponent(details[1]).split(",");
+                    for (c = 0; c < categories.length; c++) {
+                        var category = categories[c].split(":");
+                        if (category[0] == cat && category[1] == "1") {
+                            return true
+                            }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    function getCookie(name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length == 2)
+            return parts.pop().split(";").shift();
+    }
+    function CookieSettingsUpdated() {
+        setTimeout(function () {
+            HandleCustomScripts();
+            //update cookie expiry date
+            if (!OABCcookie) {
+                updateOTExpiration();
+            }
+        }, 1000);
+    }
+    function updateOTExpiration() {
+        //var domain = "neptune.arekibo.com"
+        var date = new Date();
+        //set to 6 months
+        date.setTime(date.getTime() + (180 * 24 * 60 * 60 * 1000));
+        var expires = "; expires=" + date.toGMTString();
+        // uncomment the domain portion of this for Production CDN scripts
+        var OABCcookie = getCookie(OABCcookieName);
+        document.cookie = OABCcookieName + "=" + OABCcookie + expires + ";path=/; Samesite=Lax;" //domain=" + domain + ";";
+        }
+    function HandleCustomScripts() {
+        HandleYoutubeScript();
+        HandleIframes();
+        zingTreeEmbed();
+    }
+    function HandleYoutubeScript() {
+        var mobile = false;
+        var isVideosAllowed = optanonCategoryEnabled("OptanonConsent", "C0004");
+            $('a[href*="youtube.com/watch"],a[href*="player.vimeo"],a[href*="vimeo.com/showcase"],a[href*="vimeo.com/album"]').addClass("d-none");
+
+        if (isVideosAllowed) {
+                $(".video-prompt").remove();
+                $('a[href*="youtube.com/watch"],a[href*="player.vimeo"],a[href*="vimeo.com/showcase"],a[href*="vimeo.com/album"]').removeClass("scripted");
+            youtubeVideoPlay();
+            vimeoVideoPlay();
+        } else {
+                $('main').find('a[href*="youtube.com/watch"],a[href*="player.vimeo"],a[href*="vimeo.com/showcase"],a[href*="vimeo.com/album"]').each(function () {
+                //console.log('outside blocks ', $(this).attr('href'));
+                if ($(this).attr('href').indexOf('dnt=true')!=-1 || $(this).attr('href').indexOf('dnt=1')!=-1){
+                        //console.log('block 1 ', $(this).attr('href'));
+                        $(".video-prompt").remove();
+                        $('a[href*="youtube.com/watch"],a[href*="player.vimeo"],a[href*="vimeo.com/showcase"],a[href*="vimeo.com/album"]').removeClass("scripted");
+                    youtubeVideoPlay($(this).parent());
+                    vimeoVideoPlay($(this).parent());
+                } else {
+                        $(".video-wrap").remove();
+                        $('a[href*="youtube.com/watch"],a[href*="player.vimeo"],a[href*="vimeo.com/showcase"],a[href*="vimeo.com/album"]').removeClass("replaced");
+                    if ($(this).hasClass("scripted") === false) {
+                            $(this).addClass("scripted");
+                            $(this).parent().prepend('<span class="c-prompt-box-wrapper"><span class="c-prompt">You need to consent to targeting cookies to load this media </span><a class="optanon-toggle-display btn btn-default" href="javascript:;">Cookie Settings</a></span>');
+                    }
+                }
+            });
+        }
+    }
+    var wrapIframes = true;
+    function HandleIframes() {
+        console.log('HandleIframes');
+        var videosAllowed = optanonCategoryEnabled("OptanonConsent", "C0004");
+        //var iFrames = Array.from(document.querySelectorAll(".standard-content-wrap iframe, .modal iframe"));
+        var iFrames = Array.from(document.querySelectorAll(".standard-content-wrap iframe:not([src*='youtube-nocookie']):not([src*='dnt=true']):not([src*='dnt=1']), .modal iframe:not([src*='youtube-nocookie']):not([src*='dnt=true']):not([src*='dnt=1'])"));
+        for (var f = 0; f < iFrames.length; f++) {
+            if (wrapIframes) {
+                var objectToWrap = iFrames[f];
+                var newTagName = "div";
+                var newWrapperTag = document.createElement(newTagName);
+                objectToWrap.parentNode.insertBefore(newWrapperTag, objectToWrap);
+                newWrapperTag.appendChild(objectToWrap);
+                newWrapperTag.classList.add("iframe-box");
+            }
+            if (videosAllowed) {
+                var cBoxes = Array.from(document.querySelectorAll(".no-c0004"));
+                for (var c = 0; c < cBoxes.length; c++) {
+                    cBoxes[c].classList.remove("no-c0004");
+                }
+            } else {
+                var nextSiblingClassName = "";
+                if (iFrames[f].nextSibling) {
+                    if (iFrames[f].nextSibling.nextElementSibling && iFrames[f].nextSibling.nextElementSibling) {
+                        nextSiblingClassName = iFrames[f].nextSibling.nextElementSibling.className;
+                    }
+                }
+                if (nextSiblingClassName == "") {
+                    var markup = '<span class="c-prompt-box-wrapper"><span class="c-prompt">You need to consent to targeting cookies to load this media </span><a class="optanon-toggle-display btn btn-default" href="javascript:;">Cookie Settings</a></span>'
+                        var node = document.createElement("span");
+                    node.innerHTML = markup;
+                    node.classList.add("c-prompt-box");
+                    iFrames[f].parentNode.appendChild(node);
+                }
+                iFrames[f].parentNode.classList.add("no-c0004");
+            }
+        }//end for
+        wrapIframes = false;
+    }
+    function hasClass(elem, className) {
+        return elem.className.split(' ').indexOf(className) > -1;
+    }
+        </script>
+        <!-- End Cookie consent -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <script>
+        var contentAttr = "";
+        if ((/iPad|iPod/.test(navigator.platform) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1))) {
+            //Add new meta tag in head
+            contentAttr = "viewport-fit=cover";
+        } else {
+            //Add old meta tag which we already have
+            contentAttr = "width=device-width, initial-scale=1";
+        }
+        var link = document.createElement('meta');
+        link.setAttribute('name', 'viewport');
+        link.content = contentAttr;
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <!--<link rel="manifest" href="/assets/manifest.json">-->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+
+
+<title>RCSI – Homepage - RCSI University of Medicine and Health Sciences</title>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="keywords" content="" />
+<meta name="description" content="Founded as the national training body for surgery in Ireland, RCSI has been at the forefront of healthcare education and research since 1784. Today, we are an innovative, world-leading international health sciences university. More ..." />
+
+<meta property="og:title" content="RCSI – Homepage" />
+<meta name="twitter:title" content="RCSI – Homepage" />
+<meta property="og:description" content="Founded as the national training body for surgery in Ireland, RCSI has been at the forefront of healthcare education and research since 1784. Today, we are an innovative, world-leading international health sciences university. More ..." />
+<meta name="twitter:description" content="Founded as the national training body for surgery in Ireland, RCSI has been at the forefront of healthcare education and research since 1784. Today, we are an innovative, world-leading international health sciences university. More ..." />
+    <meta property="og:url" content="https://www.rcsi.com/" />
+    <meta name="twitter:url" content="https://www.rcsi.com/" />
+
+
+<meta property="og:image" content="https:/assets/images/social//assets/images/social/www.rcsi.com/assets/images/social/social-share-default.png" />
+<meta name="twitter:image" content="https:/assets/images/social//assets/images/social/www.rcsi.com/assets/images/social/social-share-default.png" />
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    
+    
+
+    <link rel="stylesheet" href="https://use.typekit.net/aza2wnq.css">
+        <!-- Gulped styles-->
+            <link href="/assets/css/gulp_default.min.css?v=1792373728730" rel="stylesheet" />
+
+
+
+    <script type="text/javascript">
+        /*!
+         * enquire.js v2.1.2 - Awesome Media Queries in JavaScript
+         * Copyright (c) 2014 Nick Williams - http://wicky.nillia.ms/enquire.js
+         * License: MIT (http://www.opensource.org/licenses/mit-license.php)
+         */
+        !function (a, b, c) { var d = window.matchMedia; "undefined" != typeof module && module.exports ? module.exports = c(d) : "function" == typeof define && define.amd ? define(function () { return b[a] = c(d) }) : b[a] = c(d) }("enquire", this, function (a) { "use strict"; function b(a, b) { var c, d = 0, e = a.length; for (d; e > d && (c = b(a[d], d), c !== !1); d++); } function c(a) { return "[object Array]" === Object.prototype.toString.apply(a) } function d(a) { return "function" == typeof a } function e(a) { this.options = a, !a.deferSetup && this.setup() } function f(b, c) { this.query = b, this.isUnconditional = c, this.handlers = [], this.mql = a(b); var d = this; this.listener = function (a) { d.mql = a, d.assess() }, this.mql.addListener(this.listener) } function g() { if (!a) throw new Error("matchMedia not present, legacy browsers require a polyfill"); this.queries = {}, this.browserIsIncapable = !a("only all").matches } return e.prototype = { setup: function () { this.options.setup && this.options.setup(), this.initialised = !0 }, on: function () { !this.initialised && this.setup(), this.options.match && this.options.match() }, off: function () { this.options.unmatch && this.options.unmatch() }, destroy: function () { this.options.destroy ? this.options.destroy() : this.off() }, equals: function (a) { return this.options === a || this.options.match === a } }, f.prototype = { addHandler: function (a) { var b = new e(a); this.handlers.push(b), this.matches() && b.on() }, removeHandler: function (a) { var c = this.handlers; b(c, function (b, d) { return b.equals(a) ? (b.destroy(), !c.splice(d, 1)) : void 0 }) }, matches: function () { return this.mql.matches || this.isUnconditional }, clear: function () { b(this.handlers, function (a) { a.destroy() }), this.mql.removeListener(this.listener), this.handlers.length = 0 }, assess: function () { var a = this.matches() ? "on" : "off"; b(this.handlers, function (b) { b[a]() }) } }, g.prototype = { register: function (a, e, g) { var h = this.queries, i = g && this.browserIsIncapable; return h[a] || (h[a] = new f(a, i)), d(e) && (e = { match: e }), c(e) || (e = [e]), b(e, function (b) { d(b) && (b = { match: b }), h[a].addHandler(b) }), this }, unregister: function (a, b) { var c = this.queries[a]; return c && (b ? c.removeHandler(b) : (c.clear(), delete this.queries[a])), this } }, new g });
+
+    </script>
+
+    <script>
+        /* Cookie - check Cookie function */
+        /*  function getCookie(e) { var t, o, i, n = document.cookie.split(";"); for (t = 0; t < n.length; t++)if (o = n[t].substr(0, n[t].indexOf("=")), i = n[t].substr(n[t].indexOf("=") + 1), (o = o.replace(/^\s+|\s+$/g, "")) == e) return unescape(i) } function setCookie(e, t, o) { var i = new Date; i.setDate(i.getDate() + o); var n = escape(t) + (null == o ? "" : "; expires=" + i.toUTCString()); document.cookie = e + "=" + n + "; path=/" } function deleteCookie(e, t) { if (t) for (var o = document.cookie.split(";"), i = 0; i < o.length; i++) { var n = o[i].trim().split("=")[0]; 0 === n.indexOf(e) && (document.cookie = n + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;") } else document.cookie = e + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;" }*/
+        function getCookie(e) {
+            let cookie = {};
+            document.cookie.split(';').forEach(function (el) {
+                let [key, value] = el.split('=');
+                cookie[key.trim()] = value;
+            });
+            var tempcookeValue = cookie[e];
+            var tempcookePopupCookievalue = cookie["PopupCookievalue"];
+            if (tempcookeValue != undefined) {
+                setTimeout(function () {
+                    if (typeof (setPop) == "function") {
+                        setPop();
+                    }
+                }, 1000);
+            }
+
+            var t, o, i, n = document.cookie.split(";");
+            for (t = 0; t < n.length; t++) {
+                if (o = n[t].substr(0, n[t].indexOf("=")), i = n[t].substr(n[t].indexOf("=") + 1), (o = o.replace(/^\s+|\s+$/g, "")) == e) return unescape(i)
+            }
+
+
+        }
+
+        function setCookie(e, t, o) {
+            var i = new Date;
+            i.setDate(i.getDate() + o);
+            var n = escape(t) + (null == o ? "" : "; expires=" + i.toUTCString());
+            document.cookie = e + "=" + n + "; path=/"
+        }
+
+        function deleteCookie(e, t) {
+            if (t)
+                for (var o = document.cookie.split(";"), i = 0; i < o.length; i++) {
+                    var n = o[i].trim().split("=")[0];
+                    0 === n.indexOf(e) && (document.cookie = n + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;")
+                } else document.cookie = e + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+        }
+
+    </script>
+
+    <script>
+        /*! lazysizes - v5.1.0 */
+        !function (a, b) { var c = b(a, a.document); a.lazySizes = c, "object" == typeof module && module.exports && (module.exports = c) }("undefined" != typeof window ? window : {}, function (a, b) { "use strict"; var c, d; if (function () { var b, c = { lazyClass: "lazyload", loadedClass: "lazyloaded", loadingClass: "lazyloading", preloadClass: "lazypreload", errorClass: "lazyerror", autosizesClass: "lazyautosizes", srcAttr: "data-src", srcsetAttr: "data-srcset", sizesAttr: "data-sizes", minSize: 40, customMedia: {}, init: !0, expFactor: 1.5, hFac: .8, loadMode: 2, loadHidden: !0, ricTimeout: 0, throttleDelay: 125 }; d = a.lazySizesConfig || a.lazysizesConfig || {}; for (b in c) b in d || (d[b] = c[b]) }(), !b || !b.getElementsByClassName) return { init: function () { }, cfg: d, noSupport: !0 }; var e = b.documentElement, f = a.Date, g = a.HTMLPictureElement, h = "addEventListener", i = "getAttribute", j = a[h], k = a.setTimeout, l = a.requestAnimationFrame || k, m = a.requestIdleCallback, n = /^picture$/i, o = ["load", "error", "lazyincluded", "_lazyloaded"], p = {}, q = Array.prototype.forEach, r = function (a, b) { return p[b] || (p[b] = new RegExp("(\\s|^)" + b + "(\\s|$)")), p[b].test(a[i]("class") || "") && p[b] }, s = function (a, b) { r(a, b) || a.setAttribute("class", (a[i]("class") || "").trim() + " " + b) }, t = function (a, b) { var c; (c = r(a, b)) && a.setAttribute("class", (a[i]("class") || "").replace(c, " ")) }, u = function (a, b, c) { var d = c ? h : "removeEventListener"; c && u(a, b), o.forEach(function (c) { a[d](c, b) }) }, v = function (a, d, e, f, g) { var h = b.createEvent("Event"); return e || (e = {}), e.instance = c, h.initEvent(d, !f, !g), h.detail = e, a.dispatchEvent(h), h }, w = function (b, c) { var e; !g && (e = a.picturefill || d.pf) ? (c && c.src && !b[i]("srcset") && b.setAttribute("srcset", c.src), e({ reevaluate: !0, elements: [b] })) : c && c.src && (b.src = c.src) }, x = function (a, b) { return (getComputedStyle(a, null) || {})[b] }, y = function (a, b, c) { for (c = c || a.offsetWidth; c < d.minSize && b && !a._lazysizesWidth;)c = b.offsetWidth, b = b.parentNode; return c }, z = function () { var a, c, d = [], e = [], f = d, g = function () { var b = f; for (f = d.length ? e : d, a = !0, c = !1; b.length;)b.shift()(); a = !1 }, h = function (d, e) { a && !e ? d.apply(this, arguments) : (f.push(d), c || (c = !0, (b.hidden ? k : l)(g))) }; return h._lsFlush = g, h }(), A = function (a, b) { return b ? function () { z(a) } : function () { var b = this, c = arguments; z(function () { a.apply(b, c) }) } }, B = function (a) { var b, c = 0, e = d.throttleDelay, g = d.ricTimeout, h = function () { b = !1, c = f.now(), a() }, i = m && g > 49 ? function () { m(h, { timeout: g }), g !== d.ricTimeout && (g = d.ricTimeout) } : A(function () { k(h) }, !0); return function (a) { var d; (a = !0 === a) && (g = 33), b || (b = !0, d = e - (f.now() - c), d < 0 && (d = 0), a || d < 9 ? i() : k(i, d)) } }, C = function (a) { var b, c, d = 99, e = function () { b = null, a() }, g = function () { var a = f.now() - c; a < d ? k(g, d - a) : (m || e)(e) }; return function () { c = f.now(), b || (b = k(g, d)) } }, D = function () { var g, l, m, o, p, y, D, F, G, H, I, J, K = /^img$/i, L = /^iframe$/i, M = "onscroll" in a && !/(gle|ing)bot/.test(navigator.userAgent), N = 0, O = 0, P = 0, Q = -1, R = function (a) { P--, (!a || P < 0 || !a.target) && (P = 0) }, S = function (a) { return null == J && (J = "hidden" == x(b.body, "visibility")), J || "hidden" != x(a.parentNode, "visibility") && "hidden" != x(a, "visibility") }, T = function (a, c) { var d, f = a, g = S(a); for (F -= c, I += c, G -= c, H += c; g && (f = f.offsetParent) && f != b.body && f != e;)(g = (x(f, "opacity") || 1) > 0) && "visible" != x(f, "overflow") && (d = f.getBoundingClientRect(), g = H > d.left && G < d.right && I > d.top - 1 && F < d.bottom + 1); return g }, U = function () { var a, f, h, j, k, m, n, p, q, r, s, t, u = c.elements; if ((o = d.loadMode) && P < 8 && (a = u.length)) { for (f = 0, Q++; f < a; f++)if (u[f] && !u[f]._lazyRace) if (!M || c.prematureUnveil && c.prematureUnveil(u[f])) aa(u[f]); else if ((p = u[f][i]("data-expand")) && (m = 1 * p) || (m = O), r || (r = !d.expand || d.expand < 1 ? e.clientHeight > 500 && e.clientWidth > 500 ? 500 : 370 : d.expand, c._defEx = r, s = r * d.expFactor, t = d.hFac, J = null, O < s && P < 1 && Q > 2 && o > 2 && !b.hidden ? (O = s, Q = 0) : O = o > 1 && Q > 1 && P < 6 ? r : N), q !== m && (y = innerWidth + m * t, D = innerHeight + m, n = -1 * m, q = m), h = u[f].getBoundingClientRect(), (I = h.bottom) >= n && (F = h.top) <= D && (H = h.right) >= n * t && (G = h.left) <= y && (I || H || G || F) && (d.loadHidden || S(u[f])) && (l && P < 3 && !p && (o < 3 || Q < 4) || T(u[f], m))) { if (aa(u[f]), k = !0, P > 9) break } else !k && l && !j && P < 4 && Q < 4 && o > 2 && (g[0] || d.preloadAfterLoad) && (g[0] || !p && (I || H || G || F || "auto" != u[f][i](d.sizesAttr))) && (j = g[0] || u[f]); j && !k && aa(j) } }, V = B(U), W = function (a) { var b = a.target; if (b._lazyCache) return void delete b._lazyCache; R(a), s(b, d.loadedClass), t(b, d.loadingClass), u(b, Y), v(b, "lazyloaded") }, X = A(W), Y = function (a) { X({ target: a.target }) }, Z = function (a, b) { try { a.contentWindow.location.replace(b) } catch (c) { a.src = b } }, $ = function (a) { var b, c = a[i](d.srcsetAttr); (b = d.customMedia[a[i]("data-media") || a[i]("media")]) && a.setAttribute("media", b), c && a.setAttribute("srcset", c) }, _ = A(function (a, b, c, e, f) { var g, h, j, l, o, p; (o = v(a, "lazybeforeunveil", b)).defaultPrevented || (e && (c ? s(a, d.autosizesClass) : a.setAttribute("sizes", e)), h = a[i](d.srcsetAttr), g = a[i](d.srcAttr), f && (j = a.parentNode, l = j && n.test(j.nodeName || "")), p = b.firesLoad || "src" in a && (h || g || l), o = { target: a }, s(a, d.loadingClass), p && (clearTimeout(m), m = k(R, 2500), u(a, Y, !0)), l && q.call(j.getElementsByTagName("source"), $), h ? a.setAttribute("srcset", h) : g && !l && (L.test(a.nodeName) ? Z(a, g) : a.src = g), f && (h || l) && w(a, { src: g })), a._lazyRace && delete a._lazyRace, t(a, d.lazyClass), z(function () { var b = a.complete && a.naturalWidth > 1; p && !b || (b && s(a, "ls-is-cached"), W(o), a._lazyCache = !0, k(function () { "_lazyCache" in a && delete a._lazyCache }, 9)), "lazy" == a.loading && P-- }, !0) }), aa = function (a) { if (!a._lazyRace) { var b, c = K.test(a.nodeName), e = c && (a[i](d.sizesAttr) || a[i]("sizes")), f = "auto" == e; (!f && l || !c || !a[i]("src") && !a.srcset || a.complete || r(a, d.errorClass) || !r(a, d.lazyClass)) && (b = v(a, "lazyunveilread").detail, f && E.updateElem(a, !0, a.offsetWidth), a._lazyRace = !0, P++, _(a, b, f, e, c)) } }, ba = C(function () { d.loadMode = 3, V() }), ca = function () { 3 == d.loadMode && (d.loadMode = 2), ba() }, da = function () { if (!l) { if (f.now() - p < 999) return void k(da, 999); l = !0, d.loadMode = 3, V(), j("scroll", ca, !0) } }; return { _: function () { p = f.now(), c.elements = b.getElementsByClassName(d.lazyClass), g = b.getElementsByClassName(d.lazyClass + " " + d.preloadClass), j("scroll", V, !0), j("resize", V, !0), a.MutationObserver ? new MutationObserver(V).observe(e, { childList: !0, subtree: !0, attributes: !0 }) : (e[h]("DOMNodeInserted", V, !0), e[h]("DOMAttrModified", V, !0), setInterval(V, 999)), j("hashchange", V, !0), ["focus", "mouseover", "click", "load", "transitionend", "animationend"].forEach(function (a) { b[h](a, V, !0) }), /d$|^c/.test(b.readyState) ? da() : (j("load", da), b[h]("DOMContentLoaded", V), k(da, 2e4)), c.elements.length ? (U(), z._lsFlush()) : V() }, checkElems: V, unveil: aa, _aLSL: ca } }(), E = function () { var a, c = A(function (a, b, c, d) { var e, f, g; if (a._lazysizesWidth = d, d += "px", a.setAttribute("sizes", d), n.test(b.nodeName || "")) for (e = b.getElementsByTagName("source"), f = 0, g = e.length; f < g; f++)e[f].setAttribute("sizes", d); c.detail.dataAttr || w(a, c.detail) }), e = function (a, b, d) { var e, f = a.parentNode; f && (d = y(a, f, d), e = v(a, "lazybeforesizes", { width: d, dataAttr: !!b }), e.defaultPrevented || (d = e.detail.width) && d !== a._lazysizesWidth && c(a, f, e, d)) }, f = function () { var b, c = a.length; if (c) for (b = 0; b < c; b++)e(a[b]) }, g = C(f); return { _: function () { a = b.getElementsByClassName(d.autosizesClass), j("resize", g) }, checkElems: g, updateElem: e } }(), F = function () { !F.i && b.getElementsByClassName && (F.i = !0, E._(), D._()) }; return k(function () { d.init && F() }), c = { cfg: d, autoSizer: E, loader: D, init: F, uP: w, aC: s, rC: t, hC: r, fire: v, gW: y, rAF: z } });
+    </script>
+
+    
+    <style>
+        .bh-btn-position {
+            position: absolute;
+            height: 48px !important;
+            padding: 16px 30px 14px 30px !important;
+        }
+    </style>
+</head>
+<body class="inc header-static ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRMMPS9"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!--[if lte IE 9]>
+    <div id="browser-upgrade">
+        <div class="container">
+                    <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+                        your browser</a> to improve your experience.</p>
+        </div>
+    </div>
+    <![endif]-->
+    <noscript>
+        <div id="browser-warning" class="no-print user-warning">
+            <div class="container">
+                <p>
+                    <i class="glyphicon glyphicon-info-sign"></i>It appears JavaScript is disabled. To get the most out of the website we recommend enabling JavaScript in your browser.
+                </p>
+            </div>
+        </div>
+    </noscript>
+
+    <a href="#content" class="skip-content hidden-xs"><span>Skip to Content</span></a>
+
+    <!-- Header -->
+    
+
+    <div id="wrapper">
+        <header id="nav_drop_down" data-expand-on-hover="yes" data-expand-on-touch="yes" class="expand-on-touch">
+            <div id="nav_drop_down_box">
+                                <div class="container">
+                    <div class="row">
+                        <div class="logo-column">
+                            <a href="/">
+                            <!-- logo -->
+                                    <img class="logo-main lazyload fadeHover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/images/logos/logo-uni.svg" alt="RCSI logo">
+
+                            </a>
+                        </div>
+                        
+                            <div class="mobile-menu hidden-md hidden-lg">
+                                <button type="button" id="user_drop_down"><i class="sr-only">User icon</i></button>
+                                <button type="button" id="menu_drop_down"><i class="sr-only">Menu icon</i></button>
+                            </div>
+                        <nav role="navigation" aria-label="Main Menu" class="nav-column nav-with-search">
+
+
+                            <!-- Main navigation -->
+                            
+<div id="tns_drop_down">
+    <!-- Utilitiy Navigation -->
+    
+    <ul class="tns_drop_down_list">
+            <li class="">
+                <a href="/about"  title="About RCSI">
+                    About RCSI
+                </a>
+            </li>
+            <li class="">
+                <a href="/alumni"  title="Alumni">
+                    Alumni
+                </a>
+            </li>
+            <li class="">
+                <a href="/support-us"  title="Support us">
+                    Support us
+                </a>
+            </li>
+            <li class="">
+                <a href="/careers"  title="Careers">
+                    Careers
+                </a>
+            </li>
+            <li class="">
+                <a href="/education/study-with-us"  title="Study with us">
+                    Study with us
+                </a>
+            </li>
+            <li class="">
+                <a href="/impact"  title="Impact">
+                    Impact
+                </a>
+            </li>
+
+            <li class="divider-left dropdown">
+                <a href="#" title="Quick links" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" touch-action="auto">
+                    Quick links
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/dublin/">Dublin</a></li>
+                    <li><a href="/surgery/">Surgery</a></li>
+                    <li><a href="/online/">Online</a></li>
+                    <li><a href="/bahrain">Bahrain</a></li>
+                    <li><a href="https://www.humanarium.ie/">Humanarium</a></li>
+                    <li><a href="https://people.rcsi.com/">People</a></li>
+                </ul>
+            </li>
+
+
+    </ul>
+    <!-- Social Media Icons -->
+    
+
+
+
+</div>
+    <ul id="gns_drop_down">
+                <li class=" active">
+                        <a class="" href="/" >
+                            Home
+                        </a>
+                </li>
+                <li class=" dropdown">
+                        <a href="/education" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Education
+                        </a>
+                        <ul class="dropdown-menu">
+                                <li class="">
+                                    <a href="/education/study-with-us" >Undergraduate</a>
+                                </li>
+                                <li class="">
+                                    <a href="/dublin/postgraduate" >Postgraduate</a>
+                                </li>
+                                <li class="">
+                                    <a href="/dublin/professional-cpd" >Professional</a>
+                                </li>
+                        </ul>
+                </li>
+                <li class=" dropdown">
+                        <a href="/research" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Research
+                        </a>
+                        <ul class="dropdown-menu">
+                                <li class="">
+                                    <a href="/research/lung-health" >Lung health</a>
+                                </li>
+                                <li class="">
+                                    <a href="/research/medical-devices-and-drug-delivery" >Medical devices and drug delivery</a>
+                                </li>
+                                <li class="">
+                                    <a href="/research/brain-and-mental-health" >Brain and mental health</a>
+                                </li>
+                        </ul>
+                </li>
+                <li class=" dropdown">
+                        <a href="/society" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Society
+                        </a>
+                        <ul class="dropdown-menu">
+                                <li class="">
+                                    <a href="/society/global-health" >Global health</a>
+                                </li>
+                                <li class="">
+                                    <a href="/society/engage" >Community, public and patient engagement</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://www.humanarium.ie/" >Humanarium at 118 St Stephen&#39;s Green</a>
+                                </li>
+                                <li class="">
+                                    <a href="/society/sustainability" >Sustainability and climate health</a>
+                                </li>
+                                <li class="">
+                                    <a href="/society/un-sustainable-development-goals" >UN Sustainable Development Goals</a>
+                                </li>
+                                <li class="">
+                                    <a href="/society/humanitarian-response" >Humanitarian response</a>
+                                </li>
+                                <li class="">
+                                    <a href="/society/arts-cultural-heritage" >Arts and cultural heritage</a>
+                                </li>
+                        </ul>
+                </li>
+                <li class="">
+                        <a class="" href="/surgery" >
+                            Surgery
+                        </a>
+                </li>
+    </ul>
+
+<div class="header-search-desktop">
+    <button id="showSearch" role="button" aria-haspopup="true" aria-expanded="false" touch-action="auto">
+        <span class="svg-search"></span>
+        <span class="sr-only">click here to search</span>
+    </button>
+    <div class="header-search-wrapper" id="headerSearch">
+        <div class="header-search-inner">
+            <form action="/search-results" class="navbar-form" role="search">
+                <div class="form-group center">
+                    <div class="input-group">
+                        <label for="searchInputBox">
+                            <span class="sr-only">Search</span>
+                        </label>
+                        <input type="text" name="query" id="searchInputBox" placeholder="Search" class="form-control" autocomplete="off">
+                        <span class="input-group-btn">
+                            <button id="headerSearchSubmit" class="btn" type="submit">Submit</button>
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </header>
+        <main role="main" id="content" class="">
+                <h1 class="sr-only">Welcome</h1><!-- health check -->
+
+
+<div class="accordion-slider four">
+    <div class="slider-wrapper">
+        <div class="slider-inner">
+                <div class="slide active">
+                    <div class="slider-item">
+                        <div class="slider-image">
+                            <picture>
+                                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                                <source srcset="/-/media/feature/media/homepage-split-banner-item/inc/education-desktop/education-mobile.jpg" media="(max-width: 992px)">
+                                <source srcset="/-/media/feature/media/homepage-split-banner-item/inc/education-desktop.jpg" media="(min-width: 993px)">
+                                <!--[if IE 9]></video><![endif]-->
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" class="">
+                            </picture>
+                        </div>
+                        <div class="slider-caption">
+                            <span class="h1">
+                                Education
+                            </span>
+                            <p>We are educating global healthcare leaders</p>
+                            <a class="btn btn-primary" href="/education">Learn more</a>
+                        </div>
+                        <a href="#" class="btn btn-primary">
+                            Education
+                        </a>
+                    </div>
+                </div>
+                <div class="slide ">
+                    <div class="slider-item">
+                        <div class="slider-image">
+                            <picture>
+                                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                                <source srcset="/-/media/feature/media/homepage-split-banner-item/inc/research---desktop/research---mobile.jpg" media="(max-width: 992px)">
+                                <source srcset="/-/media/feature/media/homepage-split-banner-item/inc/research---desktop.jpg" media="(min-width: 993px)">
+                                <!--[if IE 9]></video><![endif]-->
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" class="">
+                            </picture>
+                        </div>
+                        <div class="slider-caption">
+                            <span class="h1">
+                                Research
+                            </span>
+                            <p>Breakthrough science for better patient outcomes</p>
+                            <a class="btn btn-primary" href="/research">Explore how</a>
+                        </div>
+                        <a href="#" class="btn btn-primary">
+                            Research
+                        </a>
+                    </div>
+                </div>
+                <div class="slide ">
+                    <div class="slider-item">
+                        <div class="slider-image">
+                            <picture>
+                                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                                <source srcset="/-/media/feature/media/homepage-split-banner-item/inc/society---desktop/society---mobile.jpg" media="(max-width: 992px)">
+                                <source srcset="/-/media/feature/media/homepage-split-banner-item/inc/society---desktop.jpg" media="(min-width: 993px)">
+                                <!--[if IE 9]></video><![endif]-->
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" class="">
+                            </picture>
+                        </div>
+                        <div class="slider-caption">
+                            <span class="h1">
+                                Society
+                            </span>
+                            <p>We are supporting healthcare and society</p>
+                            <a class="btn btn-primary" href="/society">Find out more</a>
+                        </div>
+                        <a href="#" class="btn btn-primary">
+                            Society
+                        </a>
+                    </div>
+                </div>
+                <div class="slide ">
+                    <div class="slider-item">
+                        <div class="slider-image">
+                            <picture>
+                                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                                <source srcset="/-/media/feature/media/homepage-split-banner-item/inc/surgery-slide/surgery-slide-mobile.jpg" media="(max-width: 992px)">
+                                <source srcset="/-/media/feature/media/homepage-split-banner-item/inc/surgery-slide.jpg" media="(min-width: 993px)">
+                                <!--[if IE 9]></video><![endif]-->
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" class="">
+                            </picture>
+                        </div>
+                        <div class="slider-caption">
+                            <span class="h1">
+                                Surgery
+                            </span>
+                            <p>We are delivering excellence in surgical training</p>
+                            <a class="btn btn-primary" href="https://www.rcsi.com/surgery/">Find out more</a>
+                        </div>
+                        <a href="#" class="btn btn-primary">
+                            Surgery
+                        </a>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<section>
+    <!-- Vue App -->
+    <div class="container">
+        <!-- Vue App -->
+        <div class="insights-wrap">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="spotlight impact-solid" style="background-image: url('');">
+                        <span class="title">Explore our impact</span>
+                        <p>RCSI is driven by a deeply rooted sense of professional responsibility for enhancing human health through education, research and service.</p>
+                        <a href="/impact" class="btn btn-default ourImpButton">View all stories</a>
+                    </div>
+                </div>
+                        <div class="col-sm-3">
+                            <a href="/impact/details/2026/10/the-patient-encounter-that-strengthened-breast-cancer-care-in-malawi" class="spotlight spotlight-vertical impact" target="">
+                                <div class="image-wrapper ">
+                                    <img data-src="/-/media/feature/insights/insight-image-spotlight/2026/akazi-the-kitchen.jpg" alt="People preparing food at a row of large cooking stoves in The Kitchen in Malawi." class=" lazyload" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                                </div>
+                                <div class="spot-content ">
+                                    <span class="spot-cat">International</span>
+                                    <p>Akazi – the patient encounter that strengthened breast cancer care in Malawi</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="/impact/details/2026/10/university-workload-model-support-gender-equality" class="spotlight spotlight-vertical impact" target="">
+                                <div class="image-wrapper ">
+                                    <img data-src="/-/media/feature/insights/insight-image-spotlight/2026/woman-in-office.jpg" alt="Businessperson using computer in empty office with desks without other coworkers." class=" lazyload" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                                </div>
+                                <div class="spot-content ">
+                                    <span class="spot-cat">Research</span>
+                                    <p>Does your university workload allocation model support gender equality?</p>
+                                </div>
+                            </a>
+                        </div>
+
+            </div>
+                <div class="insight-card">
+                    <picture>
+                        <!--[if IE 9]><video style="display: none;"><![endif]-->
+                        <!-- TODO - add mobile image -->
+                        <source data-srcset="/-/media/feature/insights/insight-banner-image/2026/sepsis-petri-dish-desktop/sepsis-petri-dish-mobile.jpg" media="(max-width: 992px)">
+                        <source data-srcset="/-/media/feature/insights/insight-banner-image/2026/sepsis-petri-dish-desktop.jpg" media="(min-width: 993px)">
+                        <!--[if IE 9]></video><![endif]-->
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Close-up of streptococcus pyogenes in a petri dish being held." class="lazyload">
+                        
+                    </picture>
+                    <div class="content">
+                        <div class="tag">
+                                    <span>Research</span>
+
+                        </div>
+                        <div class="h1">Post‑sepsis syndrome – when the body recovers but the brain doesn’t</div>
+                        <a class="btn btn-primary" href="/impact/details/2026/05/post-sepsis-syndrome">READ MORE</a>
+                    </div>
+                </div>
+
+            <div class="row">
+                        <div class="col-sm-3">
+                            <a href="/impact/details/2026/10/another-black-death-is-unlikely" class="spotlight spotlight-vertical impact" target="">
+                                <div class="image-wrapper ">
+                                    <img data-src="/-/media/feature/insights/insight-image-spotlight/2026/researcher-in-lab.jpg" alt="alt=&quot;&quot;" class=" lazyload" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                                </div>
+                                <div class="spot-content ">
+                                    <span class="spot-cat">Society</span>
+                                    <p>Plague is still deadly, but another Black Death is highly unlikely</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="/impact/details/2026/09/debunking-the-myths" class="spotlight spotlight-vertical impact" target="">
+                                <div class="image-wrapper ">
+                                    <img data-src="/-/media/feature/insights/insight-image-spotlight/2026/sex-ed.jpg" alt="alt=&quot;&quot;" class=" lazyload" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                                </div>
+                                <div class="spot-content ">
+                                    <span class="spot-cat">Society</span>
+                                    <p>Debunking the myths: The science behind our sexual health</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="/impact/details/2026/09/pharmacists-of-the-future" class="spotlight spotlight-vertical impact" target="">
+                                <div class="image-wrapper ">
+                                    <img data-src="/-/media/feature/insights/insight-image-spotlight/2026/pharmacy-students.jpg" alt="Two people in white laboratory coats conducting a finger-prick blood test at a table while another participant observes, with laboratory equipment visible in the foreground." class=" lazyload" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                                </div>
+                                <div class="spot-content ">
+                                    <span class="spot-cat">Education</span>
+                                    <p>Pharmacists of the future: preparing students for expanding roles in patient care</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="/impact/details/2026/09/build-better-doctors" class="spotlight spotlight-vertical impact" target="">
+                                <div class="image-wrapper ">
+                                    <img data-src="/-/media/feature/insights/insight-image-spotlight/2025/build-better-doctors.jpg" alt="alt=&quot;&quot;" class=" lazyload" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                                </div>
+                                <div class="spot-content ">
+                                    <span class="spot-cat">Education</span>
+                                    <p>Build better doctors with programmatic assessment</p>
+                                </div>
+                            </a>
+                        </div>
+            </div>
+
+
+        </div>
+    </div>
+</section> 
+<section  class="bg-image">
+     <picture>
+        <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source data-srcset="/-/media/project/common/content-types/section-block-with-media/inc/humanarium-background-block---desktop.jpg" media="(min-width: 993px)">
+        <source data-srcset="/-/media/project/common/content-types/section-block-with-media/inc/humanarium-background-block---desktop/humanarium-background-block---mobile.jpg" media="(max-width: 992px)">
+        <!--[if IE 9]></video><![endif]-->
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" class="lazyload"/>
+    </picture>
+    <div class="container">
+          <div class="row">
+    <div class="col-sm-6">
+      
+    <h2>Humanarium</h2>
+
+<p>Humanarium is the latest initiative from RCSI aimed at bridging science, expertise and society. This new public exhibition space and caf&eacute; in 118 St Stephen's Green will offer a rolling programme of free exhibitions and events exploring health sciences and medical research. It&rsquo;s a place for everyone to join conversations about how to live longer, healthier and happier lives.
+</p>
+
+
+<a href="https://www.humanarium.ie/" class="btn btn-primary">
+    Learn more
+
+</a>
+    </div>
+    <div class="col-sm-6">
+      
+<p><a href="https://www.youtube.com/watch?v=4VfMHDS1vvE">Watch this intro video about Humanarium</a></p>
+    </div>
+  </div>
+ 
+
+ 
+    </div>
+</section>    <div class="strapline ">
+        <div class="container">
+            <div class="strapline-wrapper">
+
+
+                    <span class="title">RCSI Strategy 2023-2027</span>
+                                    <p>
+                        Everything we do is shaped by our mission: ‘To educate, nurture and discover for the benefit of human health’. Through our strategic plan we set out a roadmap for how we will enhance our contribution and innovate for a healthier future.
+
+                    </p>
+
+                <a class="btn btn-primary" href="/about/strategy">
+                    Find out more
+
+                        <span class="sr-only">Find out more</span>
+                </a>
+            </div>
+        </div>
+    </div>
+ 
+<section  class="bg-image">
+     <picture>
+        <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source data-srcset="/-/media/project/common/content-types/section-block-with-media/inc/study-with-us-background---desktop.jpg" media="(min-width: 993px)">
+        <source data-srcset="/-/media/project/common/content-types/section-block-with-media/inc/study-with-us-background---desktop/study-with-us-background---mobile.jpg" media="(max-width: 992px)">
+        <!--[if IE 9]></video><![endif]-->
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" class="lazyload"/>
+    </picture>
+    <div class="container">
+          <div class="row">
+    <div class="col-sm-6">
+      
+    <h2>Study with us</h2>
+
+<p> RCSI is a transnational, health-sciences focused university with campuses in Ireland, the Middle East and South-East Asia, and international student and alumni communities.</p>
+
+
+<a href="/education/study-with-us" class="btn btn-primary">
+    Learn more
+
+</a>
+    </div>
+    <div class="col-sm-6">
+      
+<img src="/-/media/feature/page-content/content-block/555x315/undergraduate-students-outside-123-ssg.jpg" alt="Undergraduate students outside 123 SSG" />
+    </div>
+  </div>
+ 
+
+ 
+    </div>
+</section>    <div class="strapline ">
+        <div class="container">
+            <div class="strapline-wrapper">
+
+                    <span class="icon-strapline"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/-/media/feature/teasers/strapline/global-reduced-size.png" alt="alt=&quot;&quot;" class="lazyload"></span>
+
+                    <span class="title">Top 10 for Good Health and Well-being</span>
+                                    <p>
+                        RCSI has ranked in the top 10 universities in the world for 'Good Health and Well-being' in the Times Higher Education Sustainability Impact Ratings 2026.
+
+                    </p>
+
+                <a class="btn btn-primary" href="https://www.timeshighereducation.com/impactrankings/good-health-and-well-being">
+                    Read more
+
+                        <span class="sr-only">Read more</span>
+                </a>
+            </div>
+        </div>
+    </div>
+ 
+
+<section class="bg-color">
+    <div class="container">
+          <div class="row">
+    <div class="col-sm-6">
+      
+    <h2>Meet our alumni</h2>
+
+<p><img src="/-/media/feature/page-content/content-block/555x315/rcsi-graduate-2.jpg" alt="RCSI graduate" class="img-responsive" /></p>
+<p>Our alumni are world leaders making meaningful change in the medical fields in which they work. Meet our inspiring graduates and read their stories. </p>
+
+
+<a href="/alumni" class="btn btn-default">
+    Learn more about our Alumni
+
+</a>
+    </div>
+    <div class="col-sm-6">
+      
+    <h2>Join our team</h2>
+
+<p><img src="/-/media/feature/page-content/content-block/555x315/male-rcsi-employee-in-scrubs-in-erc-beaumont.jpg" alt="Male RCSI employee in scrubs in ERC Beaumont" class="img-responsive" /></p>
+<p>At RCSI, history meets cutting-edge technology. With inspiring culture and world-class facilities, RCSI is an incredible place to work. </p>
+
+
+<a href="/careers" class="btn btn-default">
+    Explore careers at RCSI
+
+</a>
+    </div>
+  </div>
+ 
+
+ 
+    </div>
+</section>    <div class="strapline ">
+        <div class="container">
+            <div class="strapline-wrapper">
+
+                    <span class="icon-strapline"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/-/media/feature/teasers/strapline/shake-hands-icon.jpg" alt="alt=&quot;&quot;" class="lazyload"></span>
+
+                    <span class="title">Support us</span>
+                                    <p>
+                        Help us to achieve our mission of 'leading the world to better health' by making a donation to support our work. 
+
+                    </p>
+
+                <a class="btn btn-primary" href="/support-us">
+                    Find out more
+
+                        <span class="sr-only">Find out more</span>
+                </a>
+            </div>
+        </div>
+    </div>
+        </main>
+
+
+        <footer class="footer-main">
+            
+
+<div class="inc-footer">
+    
+        <div class="footer-links-wrap footer-links-wrap-iol">
+            <div class="container">
+                <span class="h4">Global sites</span>
+                <div class="row white-btns">
+                    <!--Footer links  -->
+                    <div class="col-xs-6 col-sm-5ths">
+                        <a href="/dublin/" class="btn btn-default">RCSI Dublin</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-5ths">
+                        <a href="/online/" class="btn btn-default">RCSI Online</a>
+                    </div>
+                    <!--Footer links  -->
+                    <div class="col-xs-6 col-sm-5ths">
+                        <a href="/surgery/" class="btn btn-default">Surgery</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-5ths">
+                        <a href="/bahrain/" class="btn btn-default">RCSI Bahrain</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-5ths">
+                        <a href="https://people.rcsi.com/" class="btn btn-default">RCSI People</a>
+                    </div>
+                    
+                </div>
+                <div class="row">
+
+                    <!--Footer links  col 1 -->
+                    <div class="col-xs-12 col-md-3">
+                        
+<ul class="nav nav-stacked">
+    <li class="">    
+    <a href="/support-us" class="dropdown-item" target="_self" title="Support us">
+        <span>Support us</span>
+    </a>
+</li>
+    <li class="">    
+    <a href="/dublin/news-and-events/news" class="dropdown-item" target="_self" title="Latest news">
+        <span>Latest news</span>
+    </a>
+</li>
+    <li class="">    
+    <a href="/equality-diversity-and-inclusion" class="dropdown-item" target="_self" title="Equality,  diversity and inclusion">
+        <span>Equality,  diversity and inclusion</span>
+    </a>
+</li>
+    <li class="">    
+    <a href="/dublin/news-and-events/expert-directory" class="dropdown-item" target="_self" title="MyHealth Expert Directory">
+        <span>MyHealth Expert Directory</span>
+    </a>
+</li>
+</ul>
+                    </div>
+                    <!--Footer links col 2  -->
+                    <div class="col-xs-12 col-md-3">
+                        
+<ul class="nav nav-stacked">
+    <li class="">    
+    <a href="/accessibility" class="dropdown-item" target="_self" title="Accessibility">
+        <span>Accessibility</span>
+    </a>
+</li>
+    <li class="">    
+    <a href="/quality-enhancement-office" class="dropdown-item" target="_self" title="Quality Enhancement Office">
+        <span>Quality Enhancement Office</span>
+    </a>
+</li>
+    <li class="">    
+    <a href="/an-ghaeilge" class="dropdown-item" target="_self" title="Gaeilge">
+        <span>Gaeilge</span>
+    </a>
+</li>
+    <li class="">    
+    <a href="/freedom-of-information" class="dropdown-item" target="_self" title="Freedom of Information">
+        <span>Freedom of Information</span>
+    </a>
+</li>
+</ul>
+                    </div>
+                    <!--Footer links col 3  -->
+                    <div class="col-xs-12 col-md-3">
+                        
+<ul class="nav nav-stacked">
+    <li class="">    
+    <a href="/privacy-policy" class="dropdown-item" target="_self" title="Privacy Policy">
+        <span>Privacy Policy</span>
+    </a>
+</li>
+    <li class="">    
+    <a href="/cookie-policy" class="dropdown-item" target="_self" title="Cookie Policy">
+        <span>Cookie Policy</span>
+    </a>
+</li>
+    <li class="">    
+    <a href="#" class="dropdown-item optanon-toggle-display" target="_self" title="Cookie settings">
+        <span>Cookie settings</span>
+    </a>
+</li>
+</ul>
+                    </div>
+                    <div class="clearfix visible-xs-block"></div>
+
+                    <div class="col-xs-12  col-md-3 footer-contact">
+                        <!-- Social media -->
+                        
+
+<ul class="footer-social-icons list-inline">
+        <li>
+            <a href="https://www.facebook.com/rcsi123" target="_self" title="Facebook" class="svg-desktop-mobile-footer-facebook-icon">
+
+                <span class="sr-only">Facebook</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/rcsi_irl" target="_self" title="Instagram" class="svg-desktop-mobile-footer-instagram-icon">
+
+                <span class="sr-only">Instagram</span>
+            </a>
+        </li>
+        <li>
+            <a href="http://www.linkedin.com/company/rcsi" target="_self" title="LinkedIn" class="svg-desktop-mobile-footer-linkedin-icon">
+
+                <span class="sr-only">LinkedIn</span>
+            </a>
+        </li>
+</ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <!--Footer links  -->
+                    <div class="col-md-3">
+                        <p class="copyright">
+                            <small>&#169; RCSI Royal College of Surgeons in Ireland</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Footer RCSI  brand -->
+    <div class="footer-rcsi-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-9 col-md-7">
+                    <p><strong>RCSI University of Medicine and Health Sciences </strong> RCSI Ollscoil an Leighis agus na hEola&#237;ochta&#237; Sl&#225;inte</p>
+                </div>
+
+                <div class="col-xs-3 col-md-5">
+                    <picture>
+                        <!--[if IE 9]><video style="display: none;"><![endif]-->
+                        <source data-srcset="/assets/images/footer/logos/crest-download.svg" media="(max-width: 992px)">
+                        <source data-srcset="/assets/images/footer/logos/footer_logo_fill.png" media="(min-width: 993px)">
+                        <!--[if IE 9]></video><![endif]-->
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="RCSI logo" class="footer-logo lazyload">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer Partners -->
+    <div class="footer-partners-wrap">
+        <div class="container">
+            
+                <div class="logo-grid-wrapper">
+                    
+
+    <a href="http://eufunds.gov.ie/" target="_self" title="Link will open in a new window.">
+        <img class="footer-logo lazyload logo-eu-funds" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/images/footer/logos/ireland-eu-funds-logo.svg" alt="Irish Harp - Ireland&#39;s EU Structural Fund Programme" />
+    </a>
+    <a href="http://ec.europa.eu/regional_policy/en/funding/erdf/" target="_self" title="Link will open in a new window.">
+        <img class="footer-logo lazyload logo-eu-flag" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/images/footer/logos/eu-flag-logo.svg" alt="EU Flag - European Regional Developement Fund" />
+    </a>
+    <a href="http://www.nui.ie/" target="_self" title="Link will open in a new window.">
+        <img class="footer-logo lazyload logo-nui" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/images/footer/logos/nui-logo.svg" alt="National University of Ireland" />
+    </a>
+    <a href="https://euraxess.ec.europa.eu" target="_self" title="Link will open in a new window.">
+        <img class="footer-logo lazyload logo-hr" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/images/footer/logos/hr_logo.svg" alt="HR excellence in research" />
+    </a>
+    <a href="https://www.advance-he.ac.uk/equality-charters/international-charters/athena-swan-ireland" target="_blank" title="Link will open in a new window.">
+        <img class="footer-logo lazyload logo-swan-member" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/images/footer/logos/athena-swan-member.svg" alt="Anthea Swan" />
+    </a>
+    <a href=" https://www.trustedireland.ie/" target="_blank" title="Link will open in a new window.">
+        <img class="footer-logo lazyload logo-trusted" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/images/footer/logos/trusted.svg" alt="TrustEd Ireland" />
+    </a>
+
+                </div>
+        </div>
+    </div>
+
+</div>
+
+        </footer>
+    </div>
+    
+    <script type="text/javascript">
+        var isLiveSite=true;
+    </script>
+
+        <!-- JS References block-->
+        <!--we can write function name(s) that would  be called after loading all js files-->
+        <script type="text/javascript">
+           // Add a script element as a child of the body
+        function initJS() {
+            'use strict';
+            //load jQuery
+            //if browser is ie9 or older then returm document.addEventListener
+            if (document.all && !window.atob) {
+                return;
+            }
+            //Distribute mode started now
+                         
+            if (typeof (jQuery) != 'undefined') {
+                loadResourceFiles();
+            } else {
+                downloadJS("/assets/js/jquery.min.js?v=1792373728730", function () {
+                    loadResourceFiles();
+                });
+            }
+                    
+            }
+    function loadResourceFiles() {
+        if (document.querySelector('.job-list-filter-wrapper') !== null) {
+            downloadJS("/assets/js/gulp_script.min.uglify.js?v=1792373728730", function () {
+                downloadJS("/assets/js/vue.min.js?v=1792373728730", function () {
+                    downloadJS("/assets/js/pollyfill.js?v=1792373728730", function () {
+                        downloadJS("/assets/js/app/components/jobs/job-filter.js?v=1792373728730", function () {
+                            onPageReady();
+                        })
+                    })
+                })
+            });
+        }
+        else if (document.querySelector('#insightFilter') !== null) {
+            downloadJS("/assets/js/gulp_script.min.uglify.js?v=1792373728730", function () {
+                downloadJS("/assets/js/vue.min.js?v=1792373728730", function () {
+                    downloadJS("/assets/js/pollyfill.js?v=1792373728730", function () {
+                        downloadJS("/assets/js/app/components/insights/insights-filter.js?v=1792373728730", function () {
+                            onPageReady();
+                        })
+                    })
+                })
+            });
+        } else {
+            if (false) {
+                 downloadJS("/assets/js/jquery.min.js?v=1792373728730", function () {
+                    downloadJS("/assets/js/gulp_script.min.uglify.js?v=1792373728730", function () {
+                        onPageReady();
+                     });
+                 });
+            }
+            else {
+                downloadJS("/assets/js/gulp_script.min.uglify.js?v=1792373728730", function () {
+                    onPageReady();
+                });
+            }
+        }
+    }
+        </script>
+        <!-- JS References deferred loading block-->
+        <script type="text/javascript">
+            var mobileSize = 640;
+            var desktop = true;
+            var mobile = false;
+            //this variable will be add from code behind in CMS System
+
+            function downloadJS(scriptSrc, callback) {
+                'use strict';
+                var element = document.createElement("script");
+                element.src = scriptSrc;
+                element.onload = function () {
+                    callback();
+                };
+                document.body.appendChild(element);
+            }
+            // Check for browser support of event handling capability
+            if (window.addEventListener) {
+                window.addEventListener("load", initJS, false);
+            } else if (window.attachEvent) {
+                window.attachEvent("onload", initJS);
+            } else {
+                window.onload = initJS;
+            }
+            function onPageReady() {
+                enquire.register("screen and (min-width: " + (mobileSize + 1) + "px)", {
+                    match: function () {
+                        desktop = true;
+                        mobile = false;
+                        screenChange();
+                    },
+                    unmatch: function () {
+                        desktop = false;
+                    }
+                });
+                enquire.register("screen and (max-width: " + mobileSize + "px)", {
+                    match: function () {
+                        mobile = true;
+                        desktop = false;
+                        screenChange();
+                    },
+                    unmatch: function () {
+                        mobile = false;
+                        desktop = true;
+                    }
+                });
+
+                HandleCustomScripts();
+
+                //call page ready from all loaded files
+                if (typeof (page_ready_carousel_banner) == "function") { page_ready_carousel_banner(); } if (typeof (page_ready_image_spotlight) == "function") { page_ready_image_spotlight(); } if (typeof (page_ready_navigation_dropdowns) == "function") { page_ready_navigation_dropdowns(); } if (typeof (page_ready_carousel_testimony) == "function") { page_ready_carousel_testimony(); } if (typeof (page_ready_tab_accordion) == "function") { page_ready_tab_accordion(); } if (typeof (page_ready_tabbed_subnav) == "function") { page_ready_tabbed_subnav(); }
+                if (typeof (page_ready_default) == "function") {
+                    page_ready_default();
+                }
+
+                if (typeof (loadAdditionalJs) == "function") {
+                    loadAdditionalJs();
+                }
+                if (typeof (page_ready_form_builder) == "function") { page_ready_form_builder(); }
+
+            }
+            function screenChange() {
+                //call screen_change from all loaded files
+                if (typeof (screen_change_carousel_banner) == "function") { screen_change_carousel_banner(); } if (typeof (screen_change_image_spotlight) == "function") { screen_change_image_spotlight(); } if (typeof (screen_change_navigation_dropdowns) == "function") { screen_change_navigation_dropdowns(); } if (typeof (screen_change_carousel_testimony) == "function") { screen_change_carousel_testimony(); } if (typeof (screen_change_tab_accordion) == "function") { screen_change_tab_accordion(); } if (typeof (screen_change_tabbed_subnav) == "function") { screen_change_tabbed_subnav(); }
+                if (typeof (screen_change_default) == "function") {
+                    screen_change_default();
+                }
+                if (typeof (screen_change_cookie) == "function") {
+                    screen_change_cookie();
+                }
+            }
+        </script>
+        <script type="text/plain" class="optanon-category-C0001">
+            //unibuddy
+            if (document.getElementById("unibuddy-iframe") != null) {
+            //load  script
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.src = "https://cdn.unibuddy.co/unibuddy-iframe.js";
+            script.type = 'text/javascript';
+            head.appendChild(script);
+            }
+            if (document.getElementById("unibuddy-buddyframe") != null) {
+            //load  script
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.src = "https://cdn.unibuddy.co/unibuddy-buddyframe.js";
+            script.type = 'text/javascript';
+            head.appendChild(script);
+            }
+        </script>
+        
+
+    
+    
+    <script>
+        var url = window.location.href;
+        if (url.indexOf("/dublin/library") > -1) {
+            //load chat script
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.src = "https://region-eu.libanswers.com/load_chat.php?hash=15252c83e5b37836bfc22c34022985c6";
+            script.type = 'text/javascript';
+            head.appendChild(script);
+
+            //Add markup to body tag
+            var div1 = document.createElement("div");
+            div1.classList.add("libchat-test");
+
+            var div2 = document.createElement("div");
+            div2.classList.add("container");
+
+            var div3 = document.createElement("div");
+            div3.id = "libchat_15252c83e5b37836bfc22c34022985c6";
+
+            div1.append(div2);
+            div2.append(div3);
+            document.body.append(div1);
+        }
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            document.addEventListener("sc-forms-submit-success", function (e) {
+                setTimeout(function () {
+                    var myForm = e.detail;
+                    var url = readCookie("SuccessURL");
+                    if (url != null && url != "" && url != undefined) {
+                        window.location.replace(url);
+                    }
+
+                }, 100);
+
+            }, false);
+
+            function readCookie(name) {
+                return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
+            }
+
+        });
+        window.removeEventListener("sc-forms-submit-success", this, false);
+
+    </script>
+    <script>
+        // Sets cookies from query string if present
+        function setCookieFromQueryString(queryStringKey, cookieName, expirationDays = 30) {
+            var params = new URLSearchParams(window.location.search);
+            var queryValue = params.get(queryStringKey);
+            if (queryValue) {
+                // Clean value: allow a-zA-Z0-9_. and spaces, remove invalid chars
+                queryValue = queryValue.replace(/[^a-zA-Z0-9_. \-]/g, '').replace(/_/g, ' ');
+                // Replace encoded spaces with actual space
+                queryValue = queryValue.replace(/%20|\+/g, ' ');
+                var expires = '';
+                if (expirationDays) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
+                    expires = '; expires=' + date.toUTCString();
+                }
+                document.cookie = cookieName + '=' + encodeURIComponent(queryValue) + expires + '; path=/';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            setCookieFromQueryString('campaign', 'crm_campaign');
+            setCookieFromQueryString('lead', 'crm_lead');
+            setCookieFromQueryString('creative', 'crm_creative');
+            setCookieFromQueryString('site', 'crm_site');
+            setCookieFromQueryString('provider', 'crm_provider');
+            setCookieFromQueryString('category', 'crm_sourcecategory');
+            setCookieFromQueryString('method', 'crm_sourcemethod');
+        });
+    </script>
+</body>
+</html>

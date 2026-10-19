@@ -1,0 +1,3654 @@
+{
+ "set": "P",
+ "version": "P-1",
+ "fetched": "2026-10-19",
+ "frozen_code_commit": "round-31 rules (the clean tree's first commit); finished before set P was fetched",
+ "labels_sha256": "9bf936667717c6881a24ba973fc5819df7b6221305e0818e2566210de04ecfbe",
+ "code_sha256": {
+  "extract.py": "419160a4c8e5cbeb8bccc63b43fac4cce34d89a8e5cb85cdf5784d2316d4677a",
+  "identity.py": "07590b023af61d8572baf57e5e61949bb640cfb0c0f2cb7c1abb8d19c4e362f1",
+  "evidence.py": "afcca19af6ff552d45ec65a453f7748b562a7f098ba2b8e50de0be755acbb24d",
+  "countries.py": "43d96b676dfd36e3e6f785bf693f20150350f90cf4010308900abfec282e07c7",
+  "languages.py": "6c6d9b5a1e62b89143542881bd2b9e040a0c6f3defef53d591792dbc1e7b78aa",
+  "languages.json": "ce32dffb21eb14e7bfc0ffc631ecad35db34052f6d5cad6b19bc914f861e6e46",
+  "retrieval.py": "ab5e4cb3ab3b3b19e8eb50319849536ead9e04865fb4b1bf52596e349d4fe934",
+  "audit.py": "f1e4e4cd8041e067dfb60716bc63da8b399a51a2ddbc14d567365e660f31e510",
+  "funding.py": "b617383c2b7663c7dbfc8d2dc5f711c49d6e3196ae9dd624b4f7cf6cda1e6e0d",
+  "parties.py": "71f248b4860f216e8efcbf8c1f0f32164d34b42ddb6dd1a67341218587c3641b",
+  "heldout.py": "801f0702083c46dd2252b6abf3a015e30039eeff16a81db4cd7e18dfb7162726",
+  "models.py": "905ab011c7a0c3dc4820823cf1010a7976c5a1b3b4bf9e264c8ee7be8ab1e6ae"
+ },
+ "scorer_sha256": {
+  "decisions.py": "5da0c07ecf2ebfeb00cef5c9503b297665838ba19286b8aa5dc44dc98dd0cad1",
+  "heldout_p/score_p.py": "a6e563da51b77fbc319afec8d3180d1525aae46b7f6b64f8e41818cededc6c16"
+ },
+ "pages": [
+  {
+   "id": "nl-leiden-excellence",
+   "url": "https://liacs.leidenuniv.nl/",
+   "split": "excluded",
+   "file": "nl-leiden-excellence.html",
+   "sha256": "dcfdb4114ce239392d24958955db2f98d4bd2833d1dfa8890d346cb757d5e5d1"
+  },
+  {
+   "id": "us-asu-nae",
+   "url": "https://admission.asu.edu/cost-aid/international",
+   "split": "excluded",
+   "file": "us-asu-nae.html",
+   "sha256": "87b6d24499af0ddfb0448e5e368e141b91a307ca1cbbc3d09d2605dd696e3e60"
+  },
+  {
+   "id": "us-berkeley-regents",
+   "url": "https://financialaid.berkeley.edu/types-of-aid-at-berkeley/scholarships/regents-and-chancellors-scholarship/",
+   "split": "test",
+   "file": "us-berkeley-regents.html",
+   "sha256": "db5e257510bd75056773765c8ca668ea1404888e8c0e2e93b6bdefe41b9edee5"
+  },
+  {
+   "id": "us-ucla-regents",
+   "url": "https://financialaid.ucla.edu/types-of-aid/scholarships",
+   "split": "excluded",
+   "file": "us-ucla-regents.html",
+   "sha256": "882c8440fb63dfbf0e25521bb575bf3f31e73dda70d527536a9aa8a7f3f171a2"
+  },
+  {
+   "id": "us-mit-presidential",
+   "url": "https://oge.mit.edu/fellowships/presidential-graduate-fellowship-program/",
+   "split": "test",
+   "file": "us-mit-presidential.html",
+   "sha256": "2d7885fa19154f682550ad450f91bdf9a08020e3599ac630282bca87a1217010"
+  },
+  {
+   "id": "us-cornell-sage",
+   "url": "https://gradschool.cornell.edu/financial-support/fellowships/new-student-fellowships/",
+   "split": "excluded",
+   "file": "us-cornell-sage.html",
+   "sha256": "5aab82ea63842aa717192196ec54a0df8451c13d381332b2bef5635831404429"
+  },
+  {
+   "id": "us-duke-robertson",
+   "url": "https://ousf.duke.edu/merit-scholarships/karsh-international-scholars-program/",
+   "split": "test",
+   "file": "us-duke-robertson.html",
+   "sha256": "0d6b6baeff41c083e03933237f0bacd0680da8d74b40d18d005376fa4cbb7efb"
+  },
+  {
+   "id": "us-northwestern-presidential",
+   "url": "https://www.tgs.northwestern.edu/funding/fellowships-and-grants/internal-fellowships-grants/presidential-fellowship/",
+   "split": "test",
+   "file": "us-northwestern-presidential.html",
+   "sha256": "0125312949118b4dd5ee4366daab7951ed40eaa2e0f3022b09788a2c51cb6fbc"
+  },
+  {
+   "id": "us-rice-wagoner",
+   "url": "https://graduate.rice.edu/academics/finance/wagoneraward",
+   "split": "test",
+   "file": "us-rice-wagoner.html",
+   "sha256": "1af16e555c9ec47fa2f8d32ef230a15d95c520ef81f134ccc790952f1a0a8a5b"
+  },
+  {
+   "id": "us-vanderbilt-cornelius",
+   "url": "https://www.vanderbilt.edu/scholarships/signature/",
+   "split": "test",
+   "file": "us-vanderbilt-cornelius.html",
+   "sha256": "aecc55c04350709e9bbc5a3bca6085b5fcb3ca9be0b2b2983943f51c3647feb8"
+  },
+  {
+   "id": "us-emory-scholars",
+   "url": "https://apply.emory.edu/financial-aid/scholar-program",
+   "split": "excluded",
+   "file": "us-emory-scholars.html",
+   "sha256": "1e8a51a8ad3ab73671e0498a22049d3ac7203a4bfe81c821c209dd03017c6fea"
+  },
+  {
+   "id": "us-bu-trustee",
+   "url": "https://www.bu.edu/",
+   "split": "excluded",
+   "file": "us-bu-trustee.html",
+   "sha256": "6cba57cb30675349d565dddaa37a5b2713f9cb7a1f32d086fc627bd467ab6e81"
+  },
+  {
+   "id": "us-usc-trustee",
+   "url": "https://giving.usc.edu/usc-associates/usc-associates-scholarships/",
+   "split": "excluded",
+   "file": "us-usc-trustee.html",
+   "sha256": "d4f35afbb37eb9b4522210700f78554ba6968290e2cc9d70f3ac5356de1bb8ff"
+  },
+  {
+   "id": "us-wisc-chancellor",
+   "url": "https://mjlsp.wisc.edu/",
+   "split": "test",
+   "file": "us-wisc-chancellor.html",
+   "sha256": "2044e4b96d2dfecf1cb1dcc430548a77a38cf2203d5a85c8707602bbc2a9cd9a"
+  },
+  {
+   "id": "us-illinois-fellowship",
+   "url": "https://slcl.illinois.edu/graduate/graduate-fellowships-and-awards/illinois-distinguished-fellowship",
+   "split": "excluded",
+   "file": "us-illinois-fellowship.html",
+   "sha256": "77c5612dc76e26f89f463eb8b15dcf439bea2a462663d219c03617380f26d40c"
+  },
+  {
+   "id": "us-purdue-trustees",
+   "url": "https://admissions.purdue.edu/cost-financial-aid/scholarships/",
+   "split": "excluded",
+   "file": "us-purdue-trustees.html",
+   "sha256": "b7b17b2e0c5eaf39f2558d3a379a38bb661e649078b73566c084ccc06a3a64a6"
+  },
+  {
+   "id": "us-osu-morrill",
+   "url": "https://undergrad.osu.edu/cost-and-aid/merit-based-scholarships",
+   "split": "excluded",
+   "file": "us-osu-morrill.html",
+   "sha256": "77eb6fd3b121809872644fbe3f8e0986a2d59bf857c31ea4b549ccbb2f36b0b6"
+  },
+  {
+   "id": "us-psu-schreyer",
+   "url": "https://www.shc.psu.edu/admissions/cost-aid/",
+   "split": "excluded",
+   "file": "us-psu-schreyer.html",
+   "sha256": "75b436d02b556552039887b50e4c1401f5610cbb8c07316e3df07423c01046d3"
+  },
+  {
+   "id": "us-utexas-forty",
+   "url": "https://give.utexas.edu/schools/UniversityofTexasatAustin/2025-40-hours-for-the-forty-acres/pages/texas-exes/forty-acres-scholars-program-and-forty-acres-society",
+   "split": "excluded",
+   "file": "us-utexas-forty.html",
+   "sha256": "5e67eebcae52e550f547ddeec14d364be634a0e6653e0a19746c779424a99a2d"
+  },
+  {
+   "id": "us-tamu-presidents",
+   "url": "https://stories.tamu.edu/news/2018/08/30/texas-am-presidents-endowed-scholarship-program-celebrates-50-years/",
+   "split": "excluded",
+   "file": "us-tamu-presidents.html",
+   "sha256": "a7a4d95b0100079ff93a69814d13e186b1922ffe2290a3d12e453d565a38cda6"
+  },
+  {
+   "id": "us-ufl-presidential",
+   "url": "https://admissions.ufl.edu/cost-and-aid/scholarships",
+   "split": "excluded",
+   "file": "us-ufl-presidential.html",
+   "sha256": "6313930e6dbec4fb9ba0844b29e6996d5e5e70d932b84c51c0c18c13ef407e7e"
+  },
+  {
+   "id": "us-gatech-stamps",
+   "url": "https://stampsps.gatech.edu/",
+   "split": "excluded",
+   "file": "us-gatech-stamps.html",
+   "sha256": "36d9946105b4c8f6cda9dbe8013a62e51c03e537af9ed772a863d996486077f3"
+  },
+  {
+   "id": "us-unc-morehead",
+   "url": "https://chancellorssciencescholars.unc.edu/",
+   "split": "excluded",
+   "file": "us-unc-morehead.html",
+   "sha256": "12ae7f23cb49f82da144c0909723ae52dd6acb2a4791655ed907faa2abe4c6b8"
+  },
+  {
+   "id": "us-umd-banneker",
+   "url": "https://honors.umd.edu/scholarships-financial-aid/banneker-key-scholars/",
+   "split": "test",
+   "file": "us-umd-banneker.html",
+   "sha256": "b7d6802258a82058b242ddcadae2302354212d50923b04bf261a3c191cc72413"
+  },
+  {
+   "id": "us-rutgers-presidential",
+   "url": "https://admissions.rutgers.edu/newark-scholarships",
+   "split": "excluded",
+   "file": "us-rutgers-presidential.html",
+   "sha256": "4d399afad75d681d4a9ff11cfa5072c279fd40031dea4b105922adc6e2a0cdba"
+  },
+  {
+   "id": "us-pitt-chancellor",
+   "url": "https://www.pittwire.pitt.edu/features-articles/2025/06/10/2025-chancellors-scholarship-recipients",
+   "split": "excluded",
+   "file": "us-pitt-chancellor.html",
+   "sha256": "e18cafdfd9ce756832cd8af6d5dfcf8ed6a1a2c037e49a336f6eb24821a99ff4"
+  },
+  {
+   "id": "us-indiana-wells",
+   "url": "https://wellsscholars.indiana.edu/",
+   "split": "excluded",
+   "file": "us-indiana-wells.html",
+   "sha256": "03b3276d04aef2585fb8721a3298fee2a9b8d6d2f8f2d5035989d2414abb4743"
+  },
+  {
+   "id": "us-uiowa-presidential",
+   "url": "https://www.lib.uiowa.edu/",
+   "split": "excluded",
+   "file": "us-uiowa-presidential.html",
+   "sha256": "08e120134c8fd26c97d88d81c944a18726bcdc57cfcce7e814cc8fc3b8ad2d2e"
+  },
+  {
+   "id": "us-colorado-chancellor",
+   "url": "https://www.colorado.edu/scholarships/chancellors-achievement-scholarship",
+   "split": "test",
+   "file": "us-colorado-chancellor.html",
+   "sha256": "035d6127512daef1e7ddedd30ac9363cb6c570d30a1fb9336480edd5bed7f324"
+  },
+  {
+   "id": "us-utah-presidential",
+   "url": "https://academic-affairs.utah.edu/presidential-scholar-award/",
+   "split": "excluded",
+   "file": "us-utah-presidential.html",
+   "sha256": "5128be0919461b5906713230ca1628272a0300498ba029b4a14675bd98fe41dc"
+  },
+  {
+   "id": "us-oregonstate-international",
+   "url": "https://admissions.oregonstate.edu/international/prices-scholarships/scholarships-international-students/undergraduate-scholarships",
+   "split": "excluded",
+   "file": "us-oregonstate-international.html",
+   "sha256": "438477b5936c7d80dce0fbcb53da9c39f7077b276c804f630522a98737236289"
+  },
+  {
+   "id": "us-uoregon-icsp",
+   "url": "https://isss.uoregon.edu/icsp",
+   "split": "test",
+   "file": "us-uoregon-icsp.html",
+   "sha256": "e323f6f032a9989379e4f623ac0779c8ca87b034333d73c634f1da535cfa2c15"
+  },
+  {
+   "id": "us-ucsd-regents",
+   "url": "https://fas.ucsd.edu/types/scholarships/regents-scholarships-for-entering-freshmen.html",
+   "split": "test",
+   "file": "us-ucsd-regents.html",
+   "sha256": "40e5cb6ae16cf2e8c3ad25eb84bf3a8a1ae3fe24115cb5c6be7b5032ccef64ed"
+  },
+  {
+   "id": "us-uci-regents",
+   "url": "https://ofas.uci.edu/scholarships/uci-scholarships/regents-scholar.php",
+   "split": "test",
+   "file": "us-uci-regents.html",
+   "sha256": "9dd1571764bcfb84107eeb0aaad8c604616e9f359fc935442ca657d3f1649fc6"
+  },
+  {
+   "id": "us-ucsb-regents",
+   "url": "https://www.finaid.ucsb.edu/types-aid/scholarship-awards/regents-scholarship",
+   "split": "test",
+   "file": "us-ucsb-regents.html",
+   "sha256": "468be18b3a666874b43d3013c9883c5cf272c6202d697b831f57fb9a8a2fefe0"
+  },
+  {
+   "id": "us-byu-international",
+   "url": "https://catalog.byu.edu/policy/financial-aid-and-scholarships",
+   "split": "excluded",
+   "file": "us-byu-international.html",
+   "sha256": "4e1ca9f5968910dfbafc8a6b9fe4951a791549c0726270cdc171bf9956e3ad9a"
+  },
+  {
+   "id": "us-tulane-dhs",
+   "url": "https://admission.tulane.edu/tuition-aid/merit-scholarships",
+   "split": "excluded",
+   "file": "us-tulane-dhs.html",
+   "sha256": "4243851f2df88366693e94adf2f35a43ce80a9dbbb61c80176a34b6ecda0b116"
+  },
+  {
+   "id": "us-wustl-danforth",
+   "url": "https://english.washu.edu/phd-program-english-and-american-literature",
+   "split": "excluded",
+   "file": "us-wustl-danforth.html",
+   "sha256": "831ead8c799ac82a65faaa96c4cf064edd8364d1438a1aeb5bc60d2c02a572c0"
+  },
+  {
+   "id": "us-nd-stamps",
+   "url": "https://stampsscholars.nd.edu/",
+   "split": "test",
+   "file": "us-nd-stamps.html",
+   "sha256": "8d37023748762d793fccca70c7b9ea60a8a4dcaba1ec5fa8d590677a072a9ca5"
+  },
+  {
+   "id": "us-georgetown-ggd",
+   "url": "https://gsp.georgetown.edu/",
+   "split": "excluded",
+   "file": "us-georgetown-ggd.html",
+   "sha256": "f2dca4cf5aabfce42c67d72fdb0a21121fcefc73b6ed187a1921e3b6d428fdd1"
+  },
+  {
+   "id": "us-rochester-international",
+   "url": "https://www.rochester.edu/education-abroad/finances/scholarships/",
+   "split": "excluded",
+   "file": "us-rochester-international.html",
+   "sha256": "30d8ed9c9e97078c3e570e4daaa03dbbc180fd3c6b6149dd2d1a83bb92001114"
+  },
+  {
+   "id": "us-syr-international",
+   "url": "https://financialaid.syr.edu/international-students/",
+   "split": "excluded",
+   "file": "us-syr-international.html",
+   "sha256": "db676473692c36cbaadcd659ef5ca19d53c7820a3b5441f1a949b9a7ad7c74e4"
+  },
+  {
+   "id": "us-buffalo-international",
+   "url": "https://www.buffalo.edu/admissions/costs/scholarships.html",
+   "split": "excluded",
+   "file": "us-buffalo-international.html",
+   "sha256": "cd867ba399948b2978f9301dd5bcc3810027fa2c2d09421ab20f48b867474a52"
+  },
+  {
+   "id": "us-stonybrook-international",
+   "url": "https://www.stonybrook.edu/commcms/finaid/students/International.php",
+   "split": "excluded",
+   "file": "us-stonybrook-international.html",
+   "sha256": "0d1c5b8985c4bac9f4ab8a384ffa892f9fd6564e473d8872fd24076e3948f5f5"
+  },
+  {
+   "id": "us-umass-chancellor",
+   "url": "https://www.isenberg.umass.edu/programs/depts/finance",
+   "split": "excluded",
+   "file": "us-umass-chancellor.html",
+   "sha256": "d0413f2ee6d0a9fb1e7ca97c547678953c834616e16a71f39711806873f7123a"
+  },
+  {
+   "id": "us-uconn-international",
+   "url": "https://admissions.uconn.edu/cost-aid/scholarship/",
+   "split": "excluded",
+   "file": "us-uconn-international.html",
+   "sha256": "7544e2262677d1a7be7b361b50658826c8d49234f1762058f486603e67967b29"
+  },
+  {
+   "id": "us-udel-international",
+   "url": "https://www.udel.edu/apply/undergraduate-admissions/financing-your-degree/international-students/",
+   "split": "excluded",
+   "file": "us-udel-international.html",
+   "sha256": "d6cbc9efedc3d5e20619a6654fd08d3e5f6950912f02ed29d6a34fcc9ff0b5e8"
+  },
+  {
+   "id": "us-uky-international",
+   "url": "https://international.uky.edu/apply/scholarships",
+   "split": "excluded",
+   "file": "us-uky-international.html",
+   "sha256": "b405433cf9c36d0e3a27f3094ea79a8d891812661d315d0d17732755e3e5890f"
+  },
+  {
+   "id": "us-lsu-international",
+   "url": "https://online.lsu.edu/international-students/",
+   "split": "excluded",
+   "file": "us-lsu-international.html",
+   "sha256": "7b1add0ab33fa1ae34b7e3cf7be2cf74dbde712a44acf75b0c5df5a941ab7f36"
+  },
+  {
+   "id": "us-ua-international",
+   "url": "https://international.ua.edu/isss/",
+   "split": "excluded",
+   "file": "us-ua-international.html",
+   "sha256": "4ec11258628c8fe172ab232a1900f6564d30bd266751088d7ce36468996f18fe"
+  },
+  {
+   "id": "us-auburn-international",
+   "url": "https://www.auburn.edu/academic/international/isss/cost.php",
+   "split": "excluded",
+   "file": "us-auburn-international.html",
+   "sha256": "3a9f07f67049a7e8ea3bf8a217f71556191db66944b5dced144380afb6881494"
+  },
+  {
+   "id": "us-uga-foundation",
+   "url": "https://honors.uga.edu/scholarships/prospective-students/foundation-fellowship/",
+   "split": "test",
+   "file": "us-uga-foundation.html",
+   "sha256": "0a454be869d50021de0a7a2ffd3428c5d85e77990ca7f3bb288f674d9499cfcc"
+  },
+  {
+   "id": "us-fsu-international",
+   "url": "https://global.fsu.edu/undergraduate-students/going-abroad/fellowships-scholarships",
+   "split": "excluded",
+   "file": "us-fsu-international.html",
+   "sha256": "3690c2caf6759a83bb6b6bfc4042178c3561a6bf642105c8abc4d3c12e90b5db"
+  },
+  {
+   "id": "us-miami-stamps",
+   "url": "https://admissions.miami.edu/undergraduate/financial-aid/scholarships/stamps/index.html",
+   "split": "test",
+   "file": "us-miami-stamps.html",
+   "sha256": "a3cfbd1764c419b7980294709451ab3c9ae51094373afb4130cea4be8b75e8e9"
+  },
+  {
+   "id": "us-ucf-international",
+   "url": "https://www.ucf.edu/financial-aid/apply/international/",
+   "split": "excluded",
+   "file": "us-ucf-international.html",
+   "sha256": "c55ace27e12eeac1c8204316b1e46b79a4210df8bb13ececefbd38db619f2b4f"
+  },
+  {
+   "id": "us-usf-international",
+   "url": "https://www.usf.edu/",
+   "split": "excluded",
+   "file": "us-usf-international.html",
+   "sha256": "bd499e26058f3ce49edbb73d5f141db8d0ff3981fc53b3e495953aaef9213f71"
+  },
+  {
+   "id": "us-fiu-international",
+   "url": "https://admissions.fiu.edu/international/cost-and-aid/",
+   "split": "excluded",
+   "file": "us-fiu-international.html",
+   "sha256": "f6254d0e124b6d4f3dddad86b3777aef0e8fe003d0aea3c58f7d2e1858e34668"
+  },
+  {
+   "id": "us-uh-international",
+   "url": "https://www.uh.edu/issso/",
+   "split": "excluded",
+   "file": "us-uh-international.html",
+   "sha256": "a15a97e0e2c654f4e5f9adc212fe6a40e87caa063f423a06c3f19fc47afd868c"
+  },
+  {
+   "id": "us-ttu-international",
+   "url": "https://www.depts.ttu.edu/admissions/value/",
+   "split": "excluded",
+   "file": "us-ttu-international.html",
+   "sha256": "593435835a6aa2257d9cdd1df7c5218c65cc1673a4aa0181e703919c10527cd5"
+  },
+  {
+   "id": "us-okstate-international",
+   "url": "https://go.okstate.edu/scholarships-financial-aid/types-of-aid/scholarships-and-grants/international-scholarships",
+   "split": "excluded",
+   "file": "us-okstate-international.html",
+   "sha256": "d8644d5c25b681b287682f9c3d7eb8d1f122065551d40ebf5ecd29248ef90481"
+  },
+  {
+   "id": "us-ou-international",
+   "url": "https://online.ou.edu/program/llm-in-international-business-law/",
+   "split": "excluded",
+   "file": "us-ou-international.html",
+   "sha256": "7674d48e0fdbf383efd21235017b3bc8740dc8c81fd6439c73d12bb58f38f26c"
+  },
+  {
+   "id": "us-ku-international",
+   "url": "https://world.ku.edu/scholarships",
+   "split": "excluded",
+   "file": "us-ku-international.html",
+   "sha256": "492840e8c0d76fc5ef3945abf53cccaac0323105386fcaa94948e7f6f13c1166"
+  },
+  {
+   "id": "us-kstate-international",
+   "url": "https://www.k-state.edu/isss/resources/scholarships_kstate.html",
+   "split": "excluded",
+   "file": "us-kstate-international.html",
+   "sha256": "a7e1d8f05d25808c60c21ffc83ab846b0f1c61e9885409835a012752695837f9"
+  },
+  {
+   "id": "us-unl-global",
+   "url": "https://admissions.unl.edu/cost/scholarships/",
+   "split": "excluded",
+   "file": "us-unl-global.html",
+   "sha256": "adba68541aef79d8db9b44a5cdcc17534b62ac3518ebb4d0c4d899e6b284efbd"
+  },
+  {
+   "id": "us-iastate-international",
+   "url": "https://www.iastate.edu/admission-and-aid/admissions/international-admissions/international-merit-scholarships",
+   "split": "test",
+   "file": "us-iastate-international.html",
+   "sha256": "00ea4c7296d5e0b5db2fc2cda7d317deb51b01e0ec0270539edf1ba78be6179c"
+  },
+  {
+   "id": "us-vt-international",
+   "url": "https://stegercenter.vt.edu/",
+   "split": "excluded",
+   "file": "us-vt-international.html",
+   "sha256": "a21a35166cd3996c018fc7d5c3dc73b9ef3da4c0eeb29016f5c5724908f1a9a1"
+  },
+  {
+   "id": "us-clemson-international",
+   "url": "https://news.clemson.edu/19-clemson-students-win-national-scholarships-to-study-abroad/",
+   "split": "excluded",
+   "file": "us-clemson-international.html",
+   "sha256": "957ca0bc69650cb342629eaf388ff6fba3f9b90138437ffdf4391eaaadfd5952"
+  },
+  {
+   "id": "us-sc-international",
+   "url": "https://sc.edu/about/offices_and_divisions/global_carolina/give/index.php",
+   "split": "excluded",
+   "file": "us-sc-international.html",
+   "sha256": "f79be53d9e3ab166e99886e601a5e34dae2db0ca76a8abb4f7c996ad7e1a0e08"
+  },
+  {
+   "id": "us-uark-international",
+   "url": "https://awards.uark.edu/applying/international.php",
+   "split": "excluded",
+   "file": "us-uark-international.html",
+   "sha256": "34b29092cae64b38e2e6ba0eadfeceea9ca05563d3957423d59f7325cfb1607d"
+  },
+  {
+   "id": "us-olemiss-international",
+   "url": "https://olemiss.edu/global/international-students-oge/scholarships-international-students/",
+   "split": "test",
+   "file": "us-olemiss-international.html",
+   "sha256": "d1f3935ca67755b7cef2d50beefb3eeac70b04aa3c3e7d083f5a9f11ed21ca3c"
+  },
+  {
+   "id": "us-msstate-international",
+   "url": "https://www.admissions.msstate.edu/scholarships/scholarship-details",
+   "split": "excluded",
+   "file": "us-msstate-international.html",
+   "sha256": "4c77d6445e16640455c9991c5076baafd6dbe05fcb8074c127c872813a8acdc2"
+  },
+  {
+   "id": "us-temple-international",
+   "url": "https://payingforcollege.temple.edu/what-financial-aid/financial-aid-offer/scholarships/international-student-scholarships",
+   "split": "excluded",
+   "file": "us-temple-international.html",
+   "sha256": "e9b640b663e8cd63a2914220ba087ada3e088e770ef7ce057381661e0372f9e4"
+  },
+  {
+   "id": "us-drexel-international",
+   "url": "https://drexel.edu/studentlife/student-success/international-student-support/new-international-students",
+   "split": "excluded",
+   "file": "us-drexel-international.html",
+   "sha256": "4bfe9dc7a4da8988ac43a5868999d357ea92a5a542799d2a75ecedbaf4ad38ba"
+  },
+  {
+   "id": "us-villanova-presidential",
+   "url": "https://www.villanova.edu/university/research-scholarship/crf/presidential-scholars.html",
+   "split": "test",
+   "file": "us-villanova-presidential.html",
+   "sha256": "87082716fbd9097d42c0c218d963b9ec3fb1cc685e765f5d45616155fef68670"
+  },
+  {
+   "id": "us-fordham-international",
+   "url": "https://www.fordham.edu/student-financial-services/types-of-financial-aid/international-student-scholarships/",
+   "split": "excluded",
+   "file": "us-fordham-international.html",
+   "sha256": "65da7bf3e8fe271843faedca086c5df5c5a3070fd9ac7c06cbfcdfbe7fad3300"
+  },
+  {
+   "id": "us-howard-international",
+   "url": "https://financialservices.howard.edu/financial-aid/schedule-appointment/2026-27-fafsa-changes/international-student-aid",
+   "split": "excluded",
+   "file": "us-howard-international.html",
+   "sha256": "405144ebc448788f54d3ef564752078826b74404005b6b7b912cf78c52245ff7"
+  },
+  {
+   "id": "us-unm-amigo",
+   "url": "https://scholarship.unm.edu/",
+   "split": "excluded",
+   "file": "us-unm-amigo.html",
+   "sha256": "89ad392f70c69e2ae2dc82773fe9a94b60d4c280e7ca27f1e7d8599b68665db5"
+  },
+  {
+   "id": "us-nmsu-international",
+   "url": "https://isss.nmsu.edu/current-students/scholarships.html",
+   "split": "test",
+   "file": "us-nmsu-international.html",
+   "sha256": "3968da4c1e216c74e817d16d59fc5fb001c64c3929b481fbfb6a55464d99a4d8"
+  },
+  {
+   "id": "us-unlv-international",
+   "url": "https://www.unlv.edu/csun/scholarships",
+   "split": "excluded",
+   "file": "us-unlv-international.html",
+   "sha256": "bd6c278fae35ecd8764bede35cd538d5c2dc8853230782e18a4e0101a1770e1d"
+  },
+  {
+   "id": "us-unr-international",
+   "url": "https://www.unr.edu/oiss/scholarships",
+   "split": "excluded",
+   "file": "us-unr-international.html",
+   "sha256": "2d4d6dcea35044cbe9bf68ec619adcce82fe6aaabb125ab8c3dbc01d93e62818"
+  },
+  {
+   "id": "us-boisestate-international",
+   "url": "https://www.boisestate.edu/financialaid/types-of-aid/scholarships/",
+   "split": "excluded",
+   "file": "us-boisestate-international.html",
+   "sha256": "d815e9978258ad1c1d8233c515e48c1e4196fbad43c99298ffe7312b788b7682"
+  },
+  {
+   "id": "us-uidaho-international",
+   "url": "https://www.uidaho.edu/international/scholarships-funding",
+   "split": "test",
+   "file": "us-uidaho-international.html",
+   "sha256": "ee703fe9de4426c274b42ab529cf83084ca1df95370bb030ad8f50990a1a3057"
+  },
+  {
+   "id": "us-montana-international",
+   "url": "https://www.montana.edu/admissions/scholarships/",
+   "split": "excluded",
+   "file": "us-montana-international.html",
+   "sha256": "bcd2668cbbdb71871bf18a3094e504980be445be98b019e85783f55a2801667b"
+  },
+  {
+   "id": "us-uwyo-international",
+   "url": "https://www.uwyo.edu/iss/current-students/scholarship-and-financial-resources.html",
+   "split": "excluded",
+   "file": "us-uwyo-international.html",
+   "sha256": "89b61ec8f36c0ad4f676c9b7a49c4f5c4d4cbcff237bb255ff63bcdb1fd244be"
+  },
+  {
+   "id": "us-usu-international",
+   "url": "https://www.usu.edu/global-engagement/scholarships/international-graduate-students",
+   "split": "excluded",
+   "file": "us-usu-international.html",
+   "sha256": "490ceee1c8e4460e198471bc264a4044771465b601770a509975296bd09662f8"
+  },
+  {
+   "id": "us-hawaii-international",
+   "url": "https://manoa.hawaii.edu/fas/types-of-aid/scholarships/",
+   "split": "excluded",
+   "file": "us-hawaii-international.html",
+   "sha256": "7a0f06b4f1951e4ea821f195cc6c58eafb7e0483e3bcd16fd2ffd29fe6121504"
+  },
+  {
+   "id": "ca-usherbrooke",
+   "url": "https://www.usherbrooke.ca/international/fr/etudier-a-udes/bourses-admission-bourses-excellence",
+   "split": "excluded",
+   "file": "ca-usherbrooke.html",
+   "sha256": "28ed94e055242d30a689cb4dcf4fd1dc76354f560bca6c77f0e91f4e8b4aa951"
+  },
+  {
+   "id": "ca-unb-international",
+   "url": "https://www.unb.ca/moneymatters/scholarships/international.html",
+   "split": "excluded",
+   "file": "ca-unb-international.html",
+   "sha256": "5d191a97514befe7664dc94e0e5a10a5593bd8144c0955502842b14e3cf3a57e"
+  },
+  {
+   "id": "ca-uregina-international",
+   "url": "https://www.uregina.ca/ur-international/scholarships.html",
+   "split": "excluded",
+   "file": "ca-uregina-international.html",
+   "sha256": "c1f04cbb2f5f8beda84e06202c9b93b166ed2af4e1fec7489076142df6f1ea8b"
+  },
+  {
+   "id": "ca-uwindsor-international",
+   "url": "https://www.uwindsor.ca/studentawards/international-students-scholarships",
+   "split": "excluded",
+   "file": "ca-uwindsor-international.html",
+   "sha256": "8cd0239aa8fe57fe84fcbc540552cae1b9e31a09a93149ae286f6eac4399423a"
+  },
+  {
+   "id": "ca-lakehead-international",
+   "url": "https://www.lakeheadu.ca/international/future/scholarships-awards",
+   "split": "test",
+   "file": "ca-lakehead-international.html",
+   "sha256": "9fec39c36268c9a95162e81581e4fadb8c4503268f568c1116d785df7b9fc176"
+  },
+  {
+   "id": "ca-laurentian-international",
+   "url": "https://laurentian.ca/academics/international/scholarships",
+   "split": "test",
+   "file": "ca-laurentian-international.html",
+   "sha256": "0aedeae9639010cb87840ab5e23d1d9f889e954097ba64c58e9813b985f2c74c"
+  },
+  {
+   "id": "ca-trentu-international",
+   "url": "https://www.trentu.ca/international/",
+   "split": "excluded",
+   "file": "ca-trentu-international.html",
+   "sha256": "29f7a4c2c30ddc742657d5030a23c1a8445438d754743fc5b5e665c9c2afe578"
+  },
+  {
+   "id": "ca-wlu-international",
+   "url": "https://www.wlu.ca/future-students/undergraduate/applicants/international/tuition-and-finances.html",
+   "split": "excluded",
+   "file": "ca-wlu-international.html",
+   "sha256": "88636eada0467b8589049d487ef7b7c310b663b84c1883c7363565d01c00b0a3"
+  },
+  {
+   "id": "ca-ontariotech-international",
+   "url": "https://safa.ontariotechu.ca/awards-bursaries-and-scholarships/undergraduate-student-finances/scholarships/scholarships-and-awards-for-international-students.php",
+   "split": "excluded",
+   "file": "ca-ontariotech-international.html",
+   "sha256": "b69fb11254747edad37965b271e0bab9ea0b7542983f28ab6c850b22e0229849"
+  },
+  {
+   "id": "ca-uqam-bourse",
+   "url": "https://bourses.uqam.ca/",
+   "split": "excluded",
+   "file": "ca-uqam-bourse.html",
+   "sha256": "71d612e64584e5ca352b491eb40982b9e2d35c1b4a1257afbcf37969ab2f1992"
+  },
+  {
+   "id": "ca-tru-international",
+   "url": "https://www.tru.ca/truworld/future-students/scholarships.html",
+   "split": "excluded",
+   "file": "ca-tru-international.html",
+   "sha256": "df2e4e9088cfc1453d48e2fdb0b8ca5b637e00f97c69d949bedfaab18ab74168"
+  },
+  {
+   "id": "ca-unbc-international",
+   "url": "https://www.unbc.ca/financial-aid",
+   "split": "excluded",
+   "file": "ca-unbc-international.html",
+   "sha256": "7403dfcc952914abb9b8c22b659d5c4406dd0bab1ebc326a8c756fb70cfc0177"
+  },
+  {
+   "id": "ca-uleth-international",
+   "url": "https://opus.uleth.ca/",
+   "split": "excluded",
+   "file": "ca-uleth-international.html",
+   "sha256": "539765527c4db1395a645acc4d80a72893be7d107c9a9c6d87b759bb1ca723ab"
+  },
+  {
+   "id": "ca-mtroyal-international",
+   "url": "https://www.mtroyal.ca/",
+   "split": "excluded",
+   "file": "ca-mtroyal-international.html",
+   "sha256": "40d9e29e4fdb580d9c1ce117d117d768595b3e2e10c42008ea95365de26844a1"
+  },
+  {
+   "id": "ca-upei-international",
+   "url": "https://www.upei.ca/scholarships-and-awards/international-student-scholarships",
+   "split": "excluded",
+   "file": "ca-upei-international.html",
+   "sha256": "dc6bca8a1bbc5c4d0f20946ef9560e3cad33ab078b477aa3d2bdb6e203f43ca6"
+  },
+  {
+   "id": "ca-smu-international",
+   "url": "https://www.smu.ca/academics/scholarships/scholarships.html",
+   "split": "excluded",
+   "file": "ca-smu-international.html",
+   "sha256": "1cb5a7d901589dc09ca616f8e8eabaed3dce208690217b9e222da2b4fdac23dd"
+  },
+  {
+   "id": "ca-acadia-international",
+   "url": "https://www2.acadiau.ca/student-services/scholarships-financial-aid/international-students.html",
+   "split": "excluded",
+   "file": "ca-acadia-international.html",
+   "sha256": "2abe7cc353a70cd75ae122fad78736488a9507c4b2a15b49aedf14eaab35e030"
+  },
+  {
+   "id": "au-usq-international",
+   "url": "https://scholarships-apply.usq.edu.au/",
+   "split": "excluded",
+   "file": "au-usq-international.html",
+   "sha256": "23d376efc1f042c55fd8414dd42cbb2f46bc7d8ee5f4c1586073da33df1434b7"
+  },
+  {
+   "id": "au-nd-international",
+   "url": "https://researchonline.nd.edu.au/media_release/203/",
+   "split": "excluded",
+   "file": "au-nd-international.html",
+   "sha256": "0349861d35e431b1e6e8433d7bd72a947e4ac607c5b170ac250f9efdc7292d1c"
+  },
+  {
+   "id": "au-torrens-international",
+   "url": "https://www.torrens.edu.au/how-to-apply/fees-scholarships/scholarships/international-scholarships",
+   "split": "excluded",
+   "file": "au-torrens-international.html",
+   "sha256": "e9a85bed9864bf857d238fdbe6330700d996510c1f7a37ee75b742decbccf65e"
+  },
+  {
+   "id": "hk-ust-international",
+   "url": "https://www.cse.ust.hk/~raywong/",
+   "split": "excluded",
+   "file": "hk-ust-international.html",
+   "sha256": "7ccfe6c031c4066d40430e1c8c00e0002a4ca310a0da2aed7c31b4abee3e041c"
+  },
+  {
+   "id": "hk-eduhk-international",
+   "url": "https://gs.eduhk.hk/",
+   "split": "excluded",
+   "file": "hk-eduhk-international.html",
+   "sha256": "1f9693d1d988c7f7fc5e20e89311150ef9058d1c1c34500ce7dc067f9dfcbd2d"
+  },
+  {
+   "id": "tw-ncu-international",
+   "url": "https://cis.ncu.edu.tw/admissions/",
+   "split": "excluded",
+   "file": "tw-ncu-international.html",
+   "sha256": "59bc1033d1db35ee53791f609db3adfa1827c210358a80bfe8b32a5d5d99163f"
+  },
+  {
+   "id": "tw-nchu-international",
+   "url": "https://www.oia.nchu.edu.tw/index.php/4-current-student-en/4-1-international-degree-and-dual-degree-students-en/4-1-2-current-students-en/4-1-2-5-scholarship-en",
+   "split": "excluded",
+   "file": "tw-nchu-international.html",
+   "sha256": "9906a2c64de966da66455aeca8ad6b23cac86a34bdbd4ec2277cd8f8322c2009"
+  },
+  {
+   "id": "tw-ccu-international",
+   "url": "https://www.ccu.edu.tw/?Lang=en",
+   "split": "excluded",
+   "file": "tw-ccu-international.html",
+   "sha256": "06907510191af3b63c233790e51fb346d8446409a2527150ab425619c69baaf5"
+  },
+  {
+   "id": "tw-ndhu-international",
+   "url": "https://oia.ndhu.edu.tw/p/412-1027-21532.php?Lang=en",
+   "split": "excluded",
+   "file": "tw-ndhu-international.html",
+   "sha256": "1f2f367c4e70e21f6ce2812c3f05b4c78ec05b0e1fecdaa968c71966b9dce012"
+  },
+  {
+   "id": "tw-tku-international",
+   "url": "https://www.oieie.tku.edu.tw/oieie/?page_id=20591",
+   "split": "excluded",
+   "file": "tw-tku-international.html",
+   "sha256": "23e93993667689e563231478723047e72a2a4f23f6b93e952bf2c0ead8863a61"
+  },
+  {
+   "id": "kr-pusan-international",
+   "url": "https://www.pusan.ac.kr/eng/CMS/Contents/Contents.do?mCode=MN016",
+   "split": "excluded",
+   "file": "kr-pusan-international.html",
+   "sha256": "20529adda94860184cb7f76fdf02d9c1fae85c6dbce28ce78ccbcd37c3c5ee44"
+  },
+  {
+   "id": "kr-knu-international",
+   "url": "https://cse.knu.ac.kr/",
+   "split": "excluded",
+   "file": "kr-knu-international.html",
+   "sha256": "82690316141b4c8b56bba3eb4973effe7fe8789ebfe8ecf47cddfc9f742b55f0"
+  },
+  {
+   "id": "kr-inha-international",
+   "url": "https://www.inha.ac.kr/kr/index.do",
+   "split": "excluded",
+   "file": "kr-inha-international.html",
+   "sha256": "80f8e4c9ef18fcf58facb3db97454c502109a629637ba03a3014118268277c21"
+  },
+  {
+   "id": "kr-ajou-international",
+   "url": "https://www.ajou.ac.kr/kr/index.do",
+   "split": "excluded",
+   "file": "kr-ajou-international.html",
+   "sha256": "4ebeb800766b5fab97172e2d9e1ad9ab2173fc0e46b9530abaa5f9a4610fd128"
+  },
+  {
+   "id": "kr-cau-international",
+   "url": "https://neweng.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=380",
+   "split": "excluded",
+   "file": "kr-cau-international.html",
+   "sha256": "eeddda31c5dbbf490b40026d3506f9bf1b41990372cda42b11770a1bbd85b018"
+  },
+  {
+   "id": "kr-hufs-international",
+   "url": "https://hellohufs.hufs.ac.kr/Scholarships/Scholarship-Info",
+   "split": "excluded",
+   "file": "kr-hufs-international.html",
+   "sha256": "021abfa0c4cb039551748af3f22564d98e21d5100a32935c60bc1e29f9505a6d"
+  },
+  {
+   "id": "kr-sejong-international",
+   "url": "https://www.sejong.ac.kr/kor/index.do",
+   "split": "excluded",
+   "file": "kr-sejong-international.html",
+   "sha256": "5971cde2d0eaebf533ba68ad3f5794d6fe36ca8d1c7e95564648ab393627da99"
+  },
+  {
+   "id": "kr-kookmin-international",
+   "url": "https://english.kookmin.ac.kr/admissions/scholarship",
+   "split": "test",
+   "file": "kr-kookmin-international.html",
+   "sha256": "69f3671c4cdee09ded402cd98a464d68c08c1fb452fb89678617dc68c68309cf"
+  },
+  {
+   "id": "jp-chuo-international",
+   "url": "https://www.chuo-u.ac.jp/english/admissions/scholarships/degree/",
+   "split": "excluded",
+   "file": "jp-chuo-international.html",
+   "sha256": "b10827e1eff00fa7427deb3c20aeeb789394fc1c380c8e8415c4acc2ece61b41"
+  },
+  {
+   "id": "jp-hosei-international",
+   "url": "https://iist.hosei.ac.jp/scholarships-grants/",
+   "split": "excluded",
+   "file": "jp-hosei-international.html",
+   "sha256": "d55f2b6634e5a9871f3daa64e5a66aa791b4347542c60845368fc24c95be2960"
+  },
+  {
+   "id": "jp-rikkyo-international",
+   "url": "https://portal.rikkyo.ac.jp/student_affairs/scholarships",
+   "split": "excluded",
+   "file": "jp-rikkyo-international.html",
+   "sha256": "97e9587e19713edb89c4d78b2c85d50cb20f78fb8b864e7594c16a5ccb921cfb"
+  },
+  {
+   "id": "jp-kansai-international",
+   "url": "https://www.kansai-u.ac.jp/English/international/foreign/",
+   "split": "excluded",
+   "file": "jp-kansai-international.html",
+   "sha256": "927a7d817cb1d14b9e2b16184f2b477c9ed7a996b1773fb90cadbeb8decf448a"
+  },
+  {
+   "id": "jp-kwansei-international",
+   "url": "https://www.kwansei.ac.jp/en/admissions-aid/financial-information.html",
+   "split": "excluded",
+   "file": "jp-kwansei-international.html",
+   "sha256": "4f3ba101d5d409a2209ba688c94e05cf157f257390a799da00f0f28c0e432ad9"
+  },
+  {
+   "id": "jp-okayama-international",
+   "url": "https://discovery.okayama-u.ac.jp/en/prospective_students/s/",
+   "split": "excluded",
+   "file": "jp-okayama-international.html",
+   "sha256": "30a7185b341f4bf362ec4def1367c825eee183623d33517cf01b53b91b539ae4"
+  },
+  {
+   "id": "jp-kanazawa-international",
+   "url": "https://www.kanazawa-u.ac.jp/en/global-network/",
+   "split": "excluded",
+   "file": "jp-kanazawa-international.html",
+   "sha256": "d367f68c8dc126f6c8b8f2507feafea4ce39509f956562caed782d9fc9fc7be3"
+  },
+  {
+   "id": "jp-chiba-international",
+   "url": "https://www.f-eng.chiba-u.jp/students/exchange.html",
+   "split": "excluded",
+   "file": "jp-chiba-international.html",
+   "sha256": "396192fd8fb6864dfd7f4a8d7b7becc03c0f7d7c136617c631404eeb5232baf3"
+  },
+  {
+   "id": "jp-niigata-international",
+   "url": "https://www.niigata-u.ac.jp/en/study/tuition/scholarships/",
+   "split": "excluded",
+   "file": "jp-niigata-international.html",
+   "sha256": "12133a419c755e1d495de2f0904e934eacbaf4b9c54f97283ebd287bbe2ba7c2"
+  },
+  {
+   "id": "jp-kumamoto-international",
+   "url": "https://ewww.kumamoto-u.ac.jp/media/medialibrary/2024/12/Scholarship_EN20241206updated_1.pdf",
+   "split": "excluded",
+   "file": "jp-kumamoto-international.pdf",
+   "sha256": "846c618bf93ecc26e17680c0346be054123ac6b45cee853dd22d17d7abca2e30"
+  },
+  {
+   "id": "jp-tmu-international",
+   "url": "https://www.ic.tmu.ac.jp/english/study_abroad/scholarship.html",
+   "split": "excluded",
+   "file": "jp-tmu-international.html",
+   "sha256": "975e0b07fe912e87469d32956bd5f83f05caf4be47c493db4726ad826735231e"
+  },
+  {
+   "id": "cn-hust-international",
+   "url": "https://iso.hust.edu.cn/info/1195/5114.htm",
+   "split": "excluded",
+   "file": "cn-hust-international.html",
+   "sha256": "ca3a5ef5945e87643c5220243ba8b17b63518e70f0c21bf44f5d261e9943c5db"
+  },
+  {
+   "id": "cn-sysu-international",
+   "url": "https://www.sysu.edu.cn/sysuen/info/1018/24121.htm",
+   "split": "excluded",
+   "file": "cn-sysu-international.html",
+   "sha256": "214e2852a0d869c34d1f83d3511a2fe77d75314d88d6557880f4b51cfedcd9ea"
+  },
+  {
+   "id": "cn-xjtu-international",
+   "url": "https://en.xjtu.edu.cn/scholarship.html",
+   "split": "excluded",
+   "file": "cn-xjtu-international.html",
+   "sha256": "95c3f63c4120fc899a82cbf29fb59c64ab24144df7010a7dbe72ee43cb3f74e0"
+  },
+  {
+   "id": "cn-tongji-international",
+   "url": "https://study.tongji.edu.cn/en/",
+   "split": "excluded",
+   "file": "cn-tongji-international.html",
+   "sha256": "146cc031084d440a670692819bf72bf441913afc3af47669f2a8f47e7981bd0c"
+  },
+  {
+   "id": "cn-seu-international",
+   "url": "https://cis.seu.edu.cn/hwenglish/",
+   "split": "excluded",
+   "file": "cn-seu-international.html",
+   "sha256": "0dbb1876073a321e6146b40c3e20e0516934df237cbe52035603d529a131d2a5"
+  },
+  {
+   "id": "cn-hit-international",
+   "url": "https://studyathit.hit.edu.cn/18367/list.htm",
+   "split": "test",
+   "file": "cn-hit-international.html",
+   "sha256": "5f61a8c0b3fd57a04b2d7a8c2fcc4cc56365b6ef22ad2493805accabf399b503"
+  },
+  {
+   "id": "cn-nankai-international",
+   "url": "https://ensie.nankai.edu.cn/SCHOLARSHIP.htm",
+   "split": "excluded",
+   "file": "cn-nankai-international.html",
+   "sha256": "85e79da9f849ea4c60bfbdc964fc6c65a4acf9413c3c3514d2b43a5bffbec171"
+  },
+  {
+   "id": "cn-tju-international",
+   "url": "https://sie.tju.edu.cn/en/jxj/tjszfjxj/",
+   "split": "test",
+   "file": "cn-tju-international.html",
+   "sha256": "284ae6a420da297a5f90f67f91ce704261731fa5be6c2ad59985112655a1addb"
+  },
+  {
+   "id": "cn-bnu-international",
+   "url": "https://admission-is.bnu.edu.cn/english/international/bnuscholarships/studentscholarship1/index.html",
+   "split": "excluded",
+   "file": "cn-bnu-international.html",
+   "sha256": "146067ab49fcc5ccb317591f58027fff0967f078860a96d1e43bea659a2277b9"
+  },
+  {
+   "id": "cn-ruc-international",
+   "url": "https://mbaen.rmbs.ruc.edu.cn/Our_Programs/FullTime_International_MBA/Features/index.htm",
+   "split": "excluded",
+   "file": "cn-ruc-international.html",
+   "sha256": "a8d4d03172b8e9076937c84383096628cebb0c877d30a7773c7bcd810a7ba7bf"
+  },
+  {
+   "id": "cn-buaa-international",
+   "url": "https://is.buaa.edu.cn/en/",
+   "split": "excluded",
+   "file": "cn-buaa-international.html",
+   "sha256": "14caffbfafa87f1c5d69db8ce7f93700d3429beffd7b7fdbd76158222cb8a19b"
+  },
+  {
+   "id": "cn-scu-international",
+   "url": "https://international.scu.edu.cn/info/1045/1263.htm",
+   "split": "excluded",
+   "file": "cn-scu-international.html",
+   "sha256": "133f9c69e12a487535b4d11e30516946b9b637c3d9fc669f900365bf0661db25"
+  },
+  {
+   "id": "cn-xmu-international",
+   "url": "https://en.xmu.edu.cn/",
+   "split": "excluded",
+   "file": "cn-xmu-international.html",
+   "sha256": "f61c161da85fa28c0980fa87c3a86dde84bf61512f8921d390cac65d6c1b90ee"
+  },
+  {
+   "id": "in-iitb-international",
+   "url": "https://www.ee.iitb.ac.in/~imaps/student_fellowship.htm",
+   "split": "excluded",
+   "file": "in-iitb-international.html",
+   "sha256": "cb7e97c6e607795b75e1bf949cd90a7ef3ffe2b3abafa36f3442f59b9be1ce32"
+  },
+  {
+   "id": "in-iitm-international",
+   "url": "https://ge.iitm.ac.in/programs/student-inbound",
+   "split": "excluded",
+   "file": "in-iitm-international.html",
+   "sha256": "7b816d083860fe2c21d23811bbba3c963ff35860b8f4a1e2cac5323fde53bbe2"
+  },
+  {
+   "id": "in-du-international",
+   "url": "https://www.du.ac.in/index.php?page=opportunities-scholarships",
+   "split": "excluded",
+   "file": "in-du-international.html",
+   "sha256": "a8d82d926d7f5feebf541a15f3c6532252b8602deff6cc4c57a94a5653714b81"
+  },
+  {
+   "id": "in-bits-international",
+   "url": "https://admissions.bits-pilani.ac.in/FD/scholarship.html",
+   "split": "excluded",
+   "file": "in-bits-international.html",
+   "sha256": "d263f3b8b9b0ff0137c5f28e0255350d96320e5ea93f559174eec8f294012afa"
+  },
+  {
+   "id": "in-vit-international",
+   "url": "https://vit.ac.in/scholarship",
+   "split": "excluded",
+   "file": "in-vit-international.html",
+   "sha256": "eebb14b734af83b95d59e51aeab8571c6203c29ccb9393e3ac378459935d37d8"
+  },
+  {
+   "id": "in-manipal-international",
+   "url": "https://www.manipal.edu/admissions/admission-overview",
+   "split": "excluded",
+   "file": "in-manipal-international.html",
+   "sha256": "4466f29c9731ea439c0790f7d0bc9dd35062970d00807b009ee59a50fd454891"
+  },
+  {
+   "id": "in-snu-international",
+   "url": "https://snu.edu.in/admissions/",
+   "split": "excluded",
+   "file": "in-snu-international.html",
+   "sha256": "1f96c28c53d498ee4aca4c6a6669fe1dfaa9514f8b52a7e3b205b4371f4b2bf4"
+  },
+  {
+   "id": "id-ui-international",
+   "url": "https://lbifib.ui.ac.id/id/blog/artikel/4-beasiswa-kuliah-ke-jerman-untuk-mahasiswa-indonesia",
+   "split": "excluded",
+   "file": "id-ui-international.html",
+   "sha256": "4b87a78276d7fee97ef7e20d26d4cd805f7da5910c24750df8c856bf20053fe5"
+  },
+  {
+   "id": "id-ipb-international",
+   "url": "https://global.ipb.ac.id/rector-scholarship/",
+   "split": "test",
+   "file": "id-ipb-international.html",
+   "sha256": "15d96c75943539ade86442ac6e030b64706938a09195d727988582ade07adb6d"
+  },
+  {
+   "id": "id-undip-international",
+   "url": "http://dikl.undip.ac.id/2020/01/28/informasi-beasiswa-s2-s3-2020-2021-shaanxi-normal-university-international-student-scholarship-program/",
+   "split": "excluded",
+   "file": "id-undip-international.html",
+   "sha256": "4fd178f58c848ea297a304991538652f04bd5d7676e2c04aaad34eb515af71f2"
+  },
+  {
+   "id": "id-unpad-international",
+   "url": "https://info.admission.unpad.ac.id/padjadjaranuniversityscholarship",
+   "split": "excluded",
+   "file": "id-unpad-international.html",
+   "sha256": "465bbf95c5984cc4f802a87415ec3a0765fa723755da690248fbb4e258319ba6"
+  },
+  {
+   "id": "id-binus-international",
+   "url": "https://binus.ac.id/scholarship/list/binus-international-scholarship/",
+   "split": "test",
+   "file": "id-binus-international.html",
+   "sha256": "da8f99043f3f925dade914d39ae36dd76745da188f0bd888aaca673a94b31936"
+  },
+  {
+   "id": "id-telkom-international",
+   "url": "https://io.telkomuniversity.ac.id/future-student/international-student-program/",
+   "split": "excluded",
+   "file": "id-telkom-international.html",
+   "sha256": "e7883a6ae04f1f2e66e740696d106c953033e9267a35c55e3c2d5879429474a8"
+  },
+  {
+   "id": "my-utp-international",
+   "url": "https://www.utp.edu.my/Pages/The-University/YUTP/Types-of-Funds/Scholarship.aspx",
+   "split": "test",
+   "file": "my-utp-international.html",
+   "sha256": "f05322354c06faaa34c4e4f1165b83f8e9bfbb548694de7081e03aade0eaa853"
+  },
+  {
+   "id": "my-iium-international",
+   "url": "https://division.iium.edu.my/finance/scholarship/",
+   "split": "excluded",
+   "file": "my-iium-international.html",
+   "sha256": "bd9ca500f65d8616422a7c38dacab5353e87ac75804387a6bcf296e9ec09f611"
+  },
+  {
+   "id": "my-monash-international",
+   "url": "https://www.monash.edu.my/",
+   "split": "excluded",
+   "file": "my-monash-international.html",
+   "sha256": "a4e9313877716868a7e7af2f42b1158badf31606820809befca5899274451a6c"
+  },
+  {
+   "id": "my-nottingham-international",
+   "url": "https://www.nottingham.edu.my/Study/Fees-and-Scholarships/Scholarships/Scholarships-financial-assistance.aspx",
+   "split": "excluded",
+   "file": "my-nottingham-international.html",
+   "sha256": "e99bd33db4cda7c1ea689daef20b181821130b701e611dbc22b9273d554b6dd9"
+  },
+  {
+   "id": "th-ku-international",
+   "url": "https://kuic.ku.ac.th/scholarships/",
+   "split": "excluded",
+   "file": "th-ku-international.html",
+   "sha256": "dec8f6d70bffb191f642aa0c62e9464419a9d872e8803c619b34bab7a2f7940a"
+  },
+  {
+   "id": "th-kku-international",
+   "url": "https://sc.kku.ac.th/en/scholarship/",
+   "split": "excluded",
+   "file": "th-kku-international.html",
+   "sha256": "54a70349a8dfe8deff38fc336d84faa47606fd6c4aa2e9ac5637d983097379eb"
+  },
+  {
+   "id": "th-psu-international",
+   "url": "https://gao.psu.ac.th/students/scholarships",
+   "split": "excluded",
+   "file": "th-psu-international.html",
+   "sha256": "dbc89529b6a952f117af4b1cd5c3a215aa8ee5d73307052f4d9ee6eca3f6911e"
+  },
+  {
+   "id": "ph-up-international",
+   "url": "https://up.edu.ph/",
+   "split": "excluded",
+   "file": "ph-up-international.html",
+   "sha256": "19e702b43762e5afd1848001da144db36771c5024376c1a42999f1dc551d9c20"
+  },
+  {
+   "id": "ph-ateneo-international",
+   "url": "https://archium.ateneo.edu/journals.html",
+   "split": "excluded",
+   "file": "ph-ateneo-international.html",
+   "sha256": "354db8ee1b28d67ff684a94020f87a3452c33fdcc36e96ca97725b2be845ab31"
+  },
+  {
+   "id": "ph-ust-international",
+   "url": "https://ofad.ust.edu.ph/scholarships/",
+   "split": "excluded",
+   "file": "ph-ust-international.html",
+   "sha256": "bbe5a0175ca97b119732ac37917057807a67f806d19060c4708328fd94f90d06"
+  },
+  {
+   "id": "vn-tdtu-international",
+   "url": "https://international.tdtu.edu.vn/en",
+   "split": "excluded",
+   "file": "vn-tdtu-international.html",
+   "sha256": "3f8775e7cf1ad9a27f313f840dc2a8aa6de3e385bc52046347e7acebbc471cb9"
+  },
+  {
+   "id": "za-unisa-international",
+   "url": "https://www.unisa.ac.za/sites/myunisa/default/Student-Affairs-&-SRC/Student-funding:-bursaries-&-loans/Postgraduate-Bursaries/Master%E2%80%99s-and-doctoral-bursary",
+   "split": "excluded",
+   "file": "za-unisa-international.html",
+   "sha256": "1b5c49963b805eaa9638fe6e7db010e05a20419b8bbec14028de8cecae599c43"
+  },
+  {
+   "id": "ng-ui-international",
+   "url": "https://ui.edu.ng/news/ui-students-win-mtn-stem-scholarship",
+   "split": "excluded",
+   "file": "ng-ui-international.html",
+   "sha256": "dafaebbeee2aa96d865fba9392179f525faa48675a9547e9985ffa13afb15cc5"
+  },
+  {
+   "id": "ng-oau-international",
+   "url": "https://cgs.oauife.edu.ng/scholarships/",
+   "split": "excluded",
+   "file": "ng-oau-international.html",
+   "sha256": "645315d8f3d2691eed2d7e4f3e0ec21abdb90be81f8c51a7c0c64d50a8be3d43"
+  },
+  {
+   "id": "ng-unn-international",
+   "url": "https://www.unn.edu.ng/",
+   "split": "excluded",
+   "file": "ng-unn-international.html",
+   "sha256": "b2e7d1ee90bd123b38c135a9d22a51e77f5627454f19c4e38de5dcdac837403e"
+  },
+  {
+   "id": "eg-cu-international",
+   "url": "https://cu.edu.eg/International_student_services",
+   "split": "excluded",
+   "file": "eg-cu-international.html",
+   "sha256": "b384c7613e8e5d3112c0b5a7f104478aa7783c02520fdf4923ef1fe9d9f592e4"
+  },
+  {
+   "id": "eg-alexu-international",
+   "url": "https://alexu.edu.eg/index.php/en/international-students",
+   "split": "excluded",
+   "file": "eg-alexu-international.html",
+   "sha256": "fd0e898d8d150d6077a36ca9035d9bc265997215808f46100ae4c90cd70c963b"
+  },
+  {
+   "id": "ma-uca-international",
+   "url": "https://www.ests.uca.ma/?p=5259",
+   "split": "excluded",
+   "file": "ma-uca-international.html",
+   "sha256": "54e76f2abd3e1e5a4818a7722ff98677a7898c74bbaaa20defd7a09108c132c7"
+  },
+  {
+   "id": "mx-uanl-becas",
+   "url": "https://www.uanl.mx/tramites/intercambio-internacional-de-estudiantes-de-la-uanl/",
+   "split": "excluded",
+   "file": "mx-uanl-becas.html",
+   "sha256": "cf8b19a7c3719852c149de96a2c105eb25b4ad097a0e7bf3f16fe600ba9cec17"
+  },
+  {
+   "id": "mx-buap-becas",
+   "url": "https://internacionalizacion.buap.mx/content/convocatoria-de-movilidad-internacional-primavera-2026",
+   "split": "excluded",
+   "file": "mx-buap-becas.html",
+   "sha256": "d01f6e71fa9ea4cca90ae6d3fd397f9e1b8b34fd03047010b61146bc8bc07b7e"
+  },
+  {
+   "id": "mx-ibero-becas",
+   "url": "https://internacional.ibero.mx/relaciones-academicas/becas-para-estudiantes-ibero/",
+   "split": "excluded",
+   "file": "mx-ibero-becas.html",
+   "sha256": "c774884cea76d707b606bfa8d89b805f73d0dc4678c7ce775c63b7a7a4d151f5"
+  },
+  {
+   "id": "mx-anahuac-becas",
+   "url": "https://merida.anahuac.mx/intercambios/becas_old",
+   "split": "excluded",
+   "file": "mx-anahuac-becas.html",
+   "sha256": "d44f6d1d5fe36191cbc6bdb7149bdae5c3aa803df753619c69e19b60985907f5"
+  },
+  {
+   "id": "ar-unlp-becas",
+   "url": "https://unlp.edu.ar/institucional/secretaria_relaciones_institucionales/relaciones-internacionales/convocatorias/becas-campus-argentina-global-88715/",
+   "split": "excluded",
+   "file": "ar-unlp-becas.html",
+   "sha256": "0d90ca68d3d7f6a8b6dfb375771aeb3157a75fcc18310516fbd0b8cfeb53819c"
+  },
+  {
+   "id": "ar-unc-becas",
+   "url": "https://www.unc.edu.ar/convocatoria-becas-de-excelencia-del-gobierno-de-m%C3%A9xico-para-extranjeros-2025",
+   "split": "excluded",
+   "file": "ar-unc-becas.html",
+   "sha256": "ad9fc691e607c1bbd823102e6736f570ed3eb655f791442add8632dafd35fb5c"
+  },
+  {
+   "id": "ar-udesa-becas",
+   "url": "https://www.udesa.edu.ar/departamento-de-ciencias-sociales/maestria-en-politica-y-economia-internacionales",
+   "split": "excluded",
+   "file": "ar-udesa-becas.html",
+   "sha256": "aa0d579385b757243419fcbd34f8aa92214725cfcb0ce06954fdaeabd0b4cc38"
+  },
+  {
+   "id": "ar-uca-becas",
+   "url": "https://uca.edu.ar/es/facultades/facultad-de-ciencias-sociales/carrera-de-grado/relaciones-internacionales",
+   "split": "excluded",
+   "file": "ar-uca-becas.html",
+   "sha256": "cde3605e6d629570477b648d6d98332c98a56000546053098faf13420aead387"
+  },
+  {
+   "id": "ar-austral-becas",
+   "url": "https://www.austral.edu.ar/admisiones/becas/",
+   "split": "excluded",
+   "file": "ar-austral-becas.html",
+   "sha256": "bbfc591683ff82bcb3a95b9f58b9ef67a56897795ae04456f46ff4318cd23e7d"
+  },
+  {
+   "id": "br-ufrj-bolsas",
+   "url": "https://ppe.coppe.ufrj.br/2025/07/09/capes-lanca-edital-para-estudantes-estrangeiros/",
+   "split": "excluded",
+   "file": "br-ufrj-bolsas.html",
+   "sha256": "38c531be9282d5c81912dcf0bbbc735e6196c4d3b29c8a48121b19f101cca5e5"
+  },
+  {
+   "id": "br-ufmg-bolsas",
+   "url": "https://www.ufmg.br/dri/noticia/bolsa-de-talentos-para-estudantes-internacionais-da-ule/",
+   "split": "excluded",
+   "file": "br-ufmg-bolsas.html",
+   "sha256": "517933840361f5090e48cc146c556d81755d33f3fe7c4a44931749ebfed6c9ee"
+  },
+  {
+   "id": "br-unesp-bolsas",
+   "url": "https://www2.unesp.br/proex/guia/113.htm",
+   "split": "excluded",
+   "file": "br-unesp-bolsas.html",
+   "sha256": "5ed95d8b49ca813801df494f05466e0276b1519b90a37e626c9acf4ac93d07af"
+  },
+  {
+   "id": "br-pucrio-bolsas",
+   "url": "https://www.puc-rio.br/ensinopesq/bolsasefinanciamentos/",
+   "split": "excluded",
+   "file": "br-pucrio-bolsas.html",
+   "sha256": "8f2678f113ffba309c3d82a492bf3394f61a0c8fd11f28e767ec35e1235ce07f"
+  },
+  {
+   "id": "br-ufsc-bolsas",
+   "url": "https://oportunidadesinternacionais.ufsc.br/lista-de-instituicoes-que-oferecem-bolsa-de-estudos/",
+   "split": "excluded",
+   "file": "br-ufsc-bolsas.html",
+   "sha256": "8f39ea617bda9d48de663d9402564f14e9957368c54e146490b46e3a7425824c"
+  },
+  {
+   "id": "br-ufpr-bolsas",
+   "url": "https://internacional.ufpr.br/portal/pec-g/",
+   "split": "excluded",
+   "file": "br-ufpr-bolsas.html",
+   "sha256": "b7b32ec14d59b5b2b857e4b36344ae1bf323403c9e1f527141c8efb2ec17bf04"
+  },
+  {
+   "id": "br-unb-bolsas",
+   "url": "https://int.unb.br/estude-no-exterior/",
+   "split": "excluded",
+   "file": "br-unb-bolsas.html",
+   "sha256": "a1687e3aff5510e73b8b8d7f45063f0756ea66025d7f7abef034d23a6e478bf1"
+  },
+  {
+   "id": "br-ufpe-bolsas",
+   "url": "https://portal.cin.ufpe.br/2020/03/04/divulgado-edital-do-programa-de-intercambio-brafitec-2020/",
+   "split": "excluded",
+   "file": "br-ufpe-bolsas.html",
+   "sha256": "c1452e5201d5a1244517a25df0962351fe1225dfa3e34823580115a0cecfefe5"
+  },
+  {
+   "id": "br-ufba-bolsas",
+   "url": "https://proae.ufba.br/sites/proae.ufba.br/files/pec-g_2026.1_promisaes_1.pdf",
+   "split": "excluded",
+   "file": "br-ufba-bolsas.pdf",
+   "sha256": "2800db36698c9c66ebe78812e504c3aa57ba00d6e59723fab92e8d3f38f65626"
+  },
+  {
+   "id": "cl-usach-becas",
+   "url": "https://www.drii.usach.cl/es/noticia/estudiantesegresadosbecas-fundaci%C3%B3n-bayer-en-alemania",
+   "split": "excluded",
+   "file": "cl-usach-becas.html",
+   "sha256": "de32d54e4e8e4a37b850b2ab29aeecf572ce35765701a011c00c7f48c1bbd44a"
+  },
+  {
+   "id": "cl-uai-becas",
+   "url": "https://www.uai.cl/internacional",
+   "split": "excluded",
+   "file": "cl-uai-becas.html",
+   "sha256": "44336802582ffa2da0d909e1973aaed5bd67b3b6f80754188cda1930af7b3b6f"
+  },
+  {
+   "id": "cl-udp-becas",
+   "url": "https://internacional.udp.cl/mas-de-20-estudiantes-udp-reciben-becas-para-realizar-intercambios-academicos-en-el-extranjero/",
+   "split": "excluded",
+   "file": "cl-udp-becas.html",
+   "sha256": "221e4172d887c3e24c0248cdd196adcf39503f57010bb3115e8ee2a6de3b70ec"
+  },
+  {
+   "id": "co-eafit-becas",
+   "url": "https://www.eafit.edu.co/becas-y-financiacion/becas-talento-eafit",
+   "split": "test",
+   "file": "co-eafit-becas.html",
+   "sha256": "ce07ee672a00e1433a4d9064c2ca2a626ac313e83a539b0797a371fa32fb562c"
+  },
+  {
+   "id": "uy-udelar-becas",
+   "url": "https://udelar.edu.uy/migrantes",
+   "split": "excluded",
+   "file": "uy-udelar-becas.html",
+   "sha256": "d1f2a74ff9031976fe4001fdba896507ac65cf552d71dd5f876b179ed12005ed"
+  },
+  {
+   "id": "uy-ort-becas",
+   "url": "https://www.ort.edu.uy/",
+   "split": "excluded",
+   "file": "uy-ort-becas.html",
+   "sha256": "40c9243d15e6cc1f77d528a8c623529f21d1f96815401c2fc43760dfd0937764"
+  },
+  {
+   "id": "uy-ucu-becas",
+   "url": "https://www.ucu.edu.uy/categoria/Internacionales-321",
+   "split": "excluded",
+   "file": "uy-ucu-becas.html",
+   "sha256": "30f7c141944d11c0a1b2be9946a7dce24f6602fca2493ec61980bc0083f9d7f8"
+  },
+  {
+   "id": "de-uni-frankfurt",
+   "url": "https://www.uni-frankfurt.de/en/international",
+   "split": "excluded",
+   "file": "de-uni-frankfurt.html",
+   "sha256": "c202343641423583990571b25d837466530672c2308570c98b57eb5df96cee10"
+  },
+  {
+   "id": "de-uni-mainz",
+   "url": "https://www.studium.uni-mainz.de/meine-bewerbung/bewerbung-international/bewerbung-internationale-studierende/",
+   "split": "excluded",
+   "file": "de-uni-mainz.html",
+   "sha256": "63cf2860210eba0de70b6b91c90ac95ef2a56dcdb9f119cac1dc0b3cf6df22f9"
+  },
+  {
+   "id": "de-uni-wuerzburg",
+   "url": "https://www.uni-wuerzburg.de/en/international/studying-in-wuerzburg/scholarships/",
+   "split": "excluded",
+   "file": "de-uni-wuerzburg.html",
+   "sha256": "44ce93f2994fdbd84d50b321f17b3c0b430e79e932efc75cfa0e03704d4448bf"
+  },
+  {
+   "id": "de-uni-ulm",
+   "url": "https://www.uni-ulm.de/en/io/degree-phd/students/scholarships/",
+   "split": "test",
+   "file": "de-uni-ulm.html",
+   "sha256": "79e118be6d62f061b1f3c439ed1a1e29c3a6fdbbd2ca261f573f50a16b3c1531"
+  },
+  {
+   "id": "de-uni-bremen",
+   "url": "https://www.uni-bremen.de/studium/starten-studieren/studium-international/studieren-im-ausland/stipendien-und-foerdermoeglichkeiten",
+   "split": "excluded",
+   "file": "de-uni-bremen.html",
+   "sha256": "c46a3ed2d79db1e4564010a97401ee78b8abf9f3113069a772bde25c9f408e8e"
+  },
+  {
+   "id": "de-uni-kiel",
+   "url": "https://asta.uni-kiel.de/en/referate/international/",
+   "split": "excluded",
+   "file": "de-uni-kiel.html",
+   "sha256": "390e06f5fb3e5f310f685915506d4681f76b58e5be1a7e3224d97819a7707977"
+  },
+  {
+   "id": "de-uni-leipzig",
+   "url": "https://www.uni-leipzig.de/en/studying/prospective-students/student-finance/scholarships",
+   "split": "excluded",
+   "file": "de-uni-leipzig.html",
+   "sha256": "8bba82abccd5ca7112fe230f89cfea3db231c9560fb6e58770c9e793cf9a2531"
+  },
+  {
+   "id": "de-uni-jena",
+   "url": "https://www.uni-jena.de/en/1955/guest-studies",
+   "split": "excluded",
+   "file": "de-uni-jena.html",
+   "sha256": "f02a1a603f54ec7cdb40dfceb3cc8f35cee72c9ae444233cccb8d18443847d63"
+  },
+  {
+   "id": "de-tu-darmstadt",
+   "url": "https://www.tu-darmstadt.de/studieren/studierende_tu/internationale_studierende_1/studienfinanzierung_und_stipendien_international/studienfinanzierung_stipendien/index.en.jsp",
+   "split": "excluded",
+   "file": "de-tu-darmstadt.html",
+   "sha256": "37c67e7123615055b488471f2d1fae818d52415e69f3ad2a0e2d51601eeb7e88"
+  },
+  {
+   "id": "de-hhu",
+   "url": "https://www.sozwiss.hhu.de/institut/abteilungen/politikwissenschaft/politik-iii/prof-dr-thomas-winzen",
+   "split": "excluded",
+   "file": "de-hhu.html",
+   "sha256": "c88cf21c56004664052ff4450310a4f5016558a05cb7d41a4f70e11d34b7172d"
+  },
+  {
+   "id": "de-uni-bielefeld",
+   "url": "https://www.uni-bielefeld.de/fakultaeten/geschichtswissenschaft/studium/studiengaenge/world-studies/costs-and-financing/",
+   "split": "excluded",
+   "file": "de-uni-bielefeld.html",
+   "sha256": "f0db41dce97f59de8e93ff5da992568e82312dc5c89dc0c08512003db4546f38"
+  },
+  {
+   "id": "de-uni-regensburg",
+   "url": "https://www.uni-regensburg.de/en/bayhost/funding-and-scholarships/coming-to-bavaria/study-in-bavaria",
+   "split": "test",
+   "file": "de-uni-regensburg.html",
+   "sha256": "ece3b28ed513786ce53f6816293b175ac355feec4ba010751f7ff1ad2c819729"
+  },
+  {
+   "id": "de-uni-hannover",
+   "url": "https://www.uni-hannover.de/en/studium/finanzierung-foerderung/finanzielle-beihilfen-fuer-internationale-studierende",
+   "split": "excluded",
+   "file": "de-uni-hannover.html",
+   "sha256": "0cb77957f118f4416aa40dea92dcb05a7da6fde9313a83fecd3e989857716a57"
+  },
+  {
+   "id": "de-tu-braunschweig",
+   "url": "https://www.tu-braunschweig.de/en/stipendien/ausstudienbeitraegen",
+   "split": "excluded",
+   "file": "de-tu-braunschweig.html",
+   "sha256": "fb74fbbb3c35673c97ea943fa4d695829948cb8a78a1a4247d84a39f31c3be53"
+  },
+  {
+   "id": "de-uni-potsdam",
+   "url": "https://www.uni-potsdam.de/en/international/incoming/international-students/exchange",
+   "split": "excluded",
+   "file": "de-uni-potsdam.html",
+   "sha256": "f8abf6469ec1db1bb897cfec0924e5683313f74055cfb290ba8bfaee357b9556"
+  },
+  {
+   "id": "de-uni-bayreuth",
+   "url": "https://www.international-office.uni-bayreuth.de/en/come-to-bayreuth/scholarships/index.html",
+   "split": "test",
+   "file": "de-uni-bayreuth.html",
+   "sha256": "5d9e5e623d36504c643dbfd3270cab47a62837b7a8d323ce20f47d9c5b42c8ec"
+  },
+  {
+   "id": "de-uni-passau",
+   "url": "https://www.uni-passau.de/en/international-office",
+   "split": "excluded",
+   "file": "de-uni-passau.html",
+   "sha256": "f4c2253df2a6c299615fac5c79bf4a1ea74962399ffc48392d7457c94ce17cd6"
+  },
+  {
+   "id": "de-uni-paderborn",
+   "url": "https://www.uni-paderborn.de/en/studies/students",
+   "split": "excluded",
+   "file": "de-uni-paderborn.html",
+   "sha256": "6b5800bcb7f11a19ee20d51528571a8963bc7dce15fea320840306b4f949a1be"
+  },
+  {
+   "id": "de-uni-kassel",
+   "url": "https://www.uni-kassel.de/uni/en/study/during-studies/international-students-during-their-studies-and-after-graduation/stibet-final-exam-scholarships-for-international-students.html",
+   "split": "test",
+   "file": "de-uni-kassel.html",
+   "sha256": "77bf9ef78f254d1455d7f80c44ca43ec14194d1b1640e9fd5889f5c32226e640"
+  },
+  {
+   "id": "de-uni-oldenburg",
+   "url": "http://oops.uni-oldenburg.de/5629/",
+   "split": "excluded",
+   "file": "de-uni-oldenburg.html",
+   "sha256": "effb916c2c5ed27d13593d2a3469d74956f692a1f1c3d253388a809e97edc51a"
+  },
+  {
+   "id": "de-uni-due",
+   "url": "https://www.uni-due.de/international/index_en.shtml",
+   "split": "excluded",
+   "file": "de-uni-due.html",
+   "sha256": "db5b209aecd269434b4d7fc321cb06dfffd8b0a17716e0fdf6f82884131fa368"
+  },
+  {
+   "id": "de-rub",
+   "url": "https://www.igsn.ruhr-uni-bochum.de/",
+   "split": "excluded",
+   "file": "de-rub.html",
+   "sha256": "95cd26283af8ff3df94c0cc034855de9386efcd71a4920ea23c92e7abc348279"
+  },
+  {
+   "id": "de-tu-dortmund",
+   "url": "https://www.tu-dortmund.de/studierende/finanzierung/stipendien/",
+   "split": "excluded",
+   "file": "de-tu-dortmund.html",
+   "sha256": "f265ff2500c37d597cb450b8547ffae8586fd15464fd86a7580b3a79b04fe6c4"
+  },
+  {
+   "id": "de-uni-hohenheim",
+   "url": "https://hiddenhunger.uni-hohenheim.de/robots.txt",
+   "split": "excluded",
+   "file": "de-uni-hohenheim.html",
+   "sha256": "500898f8dc2df9de035c6c8d6e2edd93194b30c8ac401461588abc9da0e5b510"
+  },
+  {
+   "id": "de-uni-bamberg",
+   "url": "https://fis.uni-bamberg.de/entities/publication/0d9c4370-0bb8-41e3-9bb2-b5b95f9e11c7",
+   "split": "excluded",
+   "file": "de-uni-bamberg.html",
+   "sha256": "458f4dd7b6001b6f755f0899e3852cc89b8e87eee7498a80ec2cdf2223393b7d"
+  },
+  {
+   "id": "fr-univ-lyon1",
+   "url": "https://www.univ-lyon1.fr/etudiant-international",
+   "split": "excluded",
+   "file": "fr-univ-lyon1.html",
+   "sha256": "3cdb6fc35543f9f3ed9b0690a76f8d215061d648e1900d61c7e4374281b9335a"
+  },
+  {
+   "id": "fr-univ-lille",
+   "url": "https://initiative-excellence.univ-lille.fr/former-aux-metiers-de-demain/grael",
+   "split": "excluded",
+   "file": "fr-univ-lille.html",
+   "sha256": "63a1cc22a73af002082d42e5830ddaf82562846834716054bf938e89e06a07d9"
+  },
+  {
+   "id": "fr-univ-nantes",
+   "url": "https://i-fle.univ-nantes.fr/fr/accueil/journal-des-etudiants-internationaux-du-sul",
+   "split": "excluded",
+   "file": "fr-univ-nantes.html",
+   "sha256": "c896dc0aae5c73abd256a0387abe545a94f95d2e3d310a9bdc0ada9838be0fb3"
+  },
+  {
+   "id": "fr-univ-cotedazur",
+   "url": "https://univ-cotedazur.fr/international/partir-a-l-etranger/dans-le-cadre-dun-stage/stages-erasmus",
+   "split": "excluded",
+   "file": "fr-univ-cotedazur.html",
+   "sha256": "f02d69e71b578196c34b24576feb9d82c41b4d6f01901c1065d03e0fb1a810d1"
+  },
+  {
+   "id": "fr-escp",
+   "url": "https://escp.eu/sites/default/files/PDF/Programmes/Master-in-Management/scholarships/Scholarships-Master-in-Management-ESCP-Business-School.pdf",
+   "split": "excluded",
+   "file": "fr-escp.pdf",
+   "sha256": "04dce6f4c0e04052431db113080db942c42a560b894448291aafca7c9a38054c"
+  },
+  {
+   "id": "fr-audencia",
+   "url": "https://www.audencia.com/en/student-experience/financing-assistance",
+   "split": "excluded",
+   "file": "fr-audencia.html",
+   "sha256": "e91f82891a0e65ebaa7d4dab5f7f8256b4b4c0a1a9c456a302c2dc7225a6d720"
+  },
+  {
+   "id": "fr-neoma",
+   "url": "http://preprod.neoma-bs.fr/decouvrez-neoma-bs/linternational-au-coeur-de-ladn-de-neoma/etudiants-internationaux",
+   "split": "excluded",
+   "file": "fr-neoma.html",
+   "sha256": "99c4e354863b8f8e090ad38e89f4dadc747e2a890381e85022ac6327dd6fb928"
+  },
+  {
+   "id": "fr-kedge",
+   "url": "https://student.kedge.edu/student-services/prepare-my-studies-abroad/scholarships-in-france",
+   "split": "excluded",
+   "file": "fr-kedge.html",
+   "sha256": "2385c9e1d0c592a6db17c988ff3c6323d4538557f90bde53edaf4215c6726942"
+  },
+  {
+   "id": "fr-tbs",
+   "url": "https://www.tbs-education.fr/tbs/fondation-tbs/",
+   "split": "excluded",
+   "file": "fr-tbs.html",
+   "sha256": "1942ac3e7dac3bbeaf44aeb61fd1dfb6c1b087247ca918bea134df2f5de73373"
+  },
+  {
+   "id": "fr-centralesupelec",
+   "url": "https://www.centralesupelec.fr/programmes/bachelor-global-engineering",
+   "split": "excluded",
+   "file": "fr-centralesupelec.html",
+   "sha256": "bd2b4932cf41e4be727a70be27aa23dcbe03ce326c31e22079df896b57d47d79"
+  },
+  {
+   "id": "it-unina",
+   "url": "https://www.international.unina.it/education/international-students-opportunities/",
+   "split": "excluded",
+   "file": "it-unina.html",
+   "sha256": "7588d7213173d0473702c8cec3d333cb2c57febfac32c2ab692d4e31550494b2"
+  },
+  {
+   "id": "it-univr",
+   "url": "https://www.univr.it/en/our-services/international-degree-seeking-students",
+   "split": "excluded",
+   "file": "it-univr.html",
+   "sha256": "e94229c271a2fedcb7466144791c4f8d7646ddfe1f154fe2799d4c997c4fe77b"
+  },
+  {
+   "id": "it-unige",
+   "url": "https://unige.it/en/welcoming-international-students",
+   "split": "test",
+   "file": "it-unige.html",
+   "sha256": "2e4356a6951af24d19b4eff63ae46133f25543f709e5eb32d62f363b2ef2b5ee"
+  },
+  {
+   "id": "it-uniroma2",
+   "url": "https://web.uniroma2.it/en/contenuto/call-for-applications-100-scholarships-for-students-with-international-protection-to-enroll-in-bachelor-master-degree-and-phd-programs-without-scholar",
+   "split": "excluded",
+   "file": "it-uniroma2.html",
+   "sha256": "698ced87151d819a7ccfe0fbcfc825fd46dd95e68f1ef45cae9aaf9bfd7b3e12"
+  },
+  {
+   "id": "it-uniroma3",
+   "url": "https://www.uniroma3.it/en/students/prospective-students/international-students/",
+   "split": "excluded",
+   "file": "it-uniroma3.html",
+   "sha256": "b951e2ba90355e90c3375e3b5265db2c1ac8f53fee29a8bc055b93de1cbb8162"
+  },
+  {
+   "id": "it-unipv",
+   "url": "http://cicops.unipv.it/",
+   "split": "excluded",
+   "file": "it-unipv.html",
+   "sha256": "fc17e3b06a4bf00e95d82873532d9fbca77d83d7827b449aab496df40f3e235a"
+  },
+  {
+   "id": "it-unipr",
+   "url": "https://www.unipr.it/en/node/100498",
+   "split": "excluded",
+   "file": "it-unipr.html",
+   "sha256": "2b8c28d2d3ab6e452aaaa7000e7956078c93c86c9a8e5b282b153c2935412b02"
+  },
+  {
+   "id": "it-unife",
+   "url": "https://www.unife.it/en/come-to-study/enroll/how-to-enroll/scholarships-and-other-benefits",
+   "split": "excluded",
+   "file": "it-unife.html",
+   "sha256": "cd9789b6ee9dd991d95b060a1ea389c3de6fc8a7f7a8da3e03d56a8ebb1ccc84"
+  },
+  {
+   "id": "it-uniud",
+   "url": "https://www.uniud.it/en/uniud-international/International_Students",
+   "split": "excluded",
+   "file": "it-uniud.html",
+   "sha256": "48e3528552aebfaeb7fc75bb4d9f761d8e07f5037ccf44b134f18acf0f5d395a"
+  },
+  {
+   "id": "it-unicatt",
+   "url": "https://international.unicatt.it/",
+   "split": "excluded",
+   "file": "it-unicatt.html",
+   "sha256": "717eb3a92bc1d5324a55e2a6320c3899be14bc8542a097372a9ac734c29d77a0"
+  },
+  {
+   "id": "it-luiss",
+   "url": "https://www.luiss.it/en/orientation-and-admissions/incentives-and-support/scholarship-exemptions/exemptions-and-scholarships-prospective-students/luiss-scholarships-prospective-students-masters-degrees/scholarships-international-students-admitted-masters-degree-programs",
+   "split": "test",
+   "file": "it-luiss.html",
+   "sha256": "d05336e4d5c3d69f58d01c350c3d2235f240029e1efdc74edc0cb48ea59a9787"
+  },
+  {
+   "id": "it-imtlucca",
+   "url": "https://eads.imtlucca.it/",
+   "split": "test",
+   "file": "it-imtlucca.html",
+   "sha256": "88b0b51fef0d3fcc65203e20325e9a9c87d888a9075b4eb725877aa24650f781"
+  },
+  {
+   "id": "it-gssi",
+   "url": "https://applications.gssi.it/",
+   "split": "excluded",
+   "file": "it-gssi.html",
+   "sha256": "fc536a0fe8eec6a5f8d22eddadbac72835fdad5d38ca276e08a9c058bfd2dad8"
+  },
+  {
+   "id": "es-ucm",
+   "url": "https://www.ucm.es/latinas",
+   "split": "excluded",
+   "file": "es-ucm.html",
+   "sha256": "baf5fbbd78fabb1f0d7cd7b54136680d13428dc8888e3f9414df65720b096b04"
+  },
+  {
+   "id": "es-upm",
+   "url": "https://www.upm.es/Estudiantes",
+   "split": "excluded",
+   "file": "es-upm.html",
+   "sha256": "e032297e92073ba0d743aefbcbbe01a5b461dcdc97197489fc8fd10d35216331"
+  },
+  {
+   "id": "es-uab",
+   "url": "https://www.uab.cat/",
+   "split": "excluded",
+   "file": "es-uab.html",
+   "sha256": "ed42e66767d764f8e8ca94912e0be557d88a035437b3881e865d31b00b93a1d3"
+  },
+  {
+   "id": "es-upc",
+   "url": "https://www.upc.edu/es",
+   "split": "excluded",
+   "file": "es-upc.html",
+   "sha256": "e6c72a5143b8ce5003f7725c43211f8b164943446c4904bcc35cc6a43bc61cb3"
+  },
+  {
+   "id": "es-uv",
+   "url": "https://www.uv.es/coopweb/2023/Anexo%20III%20informe%20final%20beca%20coop%20intern%20estudiantes.pdf",
+   "split": "excluded",
+   "file": "es-uv.pdf",
+   "sha256": "34eceb81fcf9a07e541316d7fa5ddfb417ae7781c618463a9b9911f4f9dc245b"
+  },
+  {
+   "id": "es-unizar",
+   "url": "https://eina.unizar.es/internacional-eina",
+   "split": "excluded",
+   "file": "es-unizar.html",
+   "sha256": "894c62a2f31fe371f7fd8eacebccab3edf8e6e570fb95b72acd64ea92c59a757"
+  },
+  {
+   "id": "es-ehu",
+   "url": "https://www.hegoa.ehu.eus/es/masters/2",
+   "split": "excluded",
+   "file": "es-ehu.html",
+   "sha256": "f1ea4d3d4225f64f03c29be9cd7ad1730a5a5a881b15ab9e1478b75231cedc4f"
+  },
+  {
+   "id": "es-uma",
+   "url": "https://www.uma.es/oficinapuentecorea/noticias/programa-de-becas-para-estudiantes-internacionales-gks-program-convocatoria-2015/",
+   "split": "excluded",
+   "file": "es-uma.html",
+   "sha256": "c76c25ff3c40555fe6ca9ec61aa1e2ad7e302655fadeb542e8a1ab6da329ce3a"
+  },
+  {
+   "id": "es-upv",
+   "url": "https://www.upv.es/entidades/vic/convocatoria-beca-talento-internacional/",
+   "split": "excluded",
+   "file": "es-upv.html",
+   "sha256": "a1f94108c6dc03e6634e65441ac738e7f7d963bb09718f7ccb4fe28f860dfdb9"
+  },
+  {
+   "id": "es-udc",
+   "url": "https://www.fundacion.udc.es/noticia.asp?id=706",
+   "split": "excluded",
+   "file": "es-udc.html",
+   "sha256": "0d00eaea596afb73c098c3e0c4f0d943cfab7c65506d7f60a83e1b5333eb6a32"
+  },
+  {
+   "id": "es-uvigo",
+   "url": "https://frrii.uvigo.es/es/estudiantes/becas-y-ayudas",
+   "split": "excluded",
+   "file": "es-uvigo.html",
+   "sha256": "6eff9bca59909feb1cc754448f0582b8d20e98f8b4e5ad93669ded484684abe4"
+  },
+  {
+   "id": "es-usc",
+   "url": "https://eamo.usc.es/pub/mte/noticias-master/becas-de-la-udc-para-estudiantes.html",
+   "split": "excluded",
+   "file": "es-usc.html",
+   "sha256": "7aeb5febc0ed0744603f1c2adcb63db229026e28bb0f79448636a97daeb1c97a"
+  },
+  {
+   "id": "es-unican",
+   "url": "https://web.unican.es/unidades/oficina-relaciones-internacionales/Paginas/Movilidad-estudiantes-UC-Erasmus+-KA107.aspx",
+   "split": "excluded",
+   "file": "es-unican.html",
+   "sha256": "7c62c107d66611d21a655344d260c62259c5c3cef2a4b4db05ac69b01b421782"
+  },
+  {
+   "id": "es-uniovi",
+   "url": "https://portalinvestigacion.uniovi.es/documentos/5ea7fc5329995203c8bc3b47?lang=eu",
+   "split": "excluded",
+   "file": "es-uniovi.html",
+   "sha256": "9c23149d1e86e0900cc0dbe198370465062b5e710bf0c8b422bc57e42679e28e"
+  },
+  {
+   "id": "es-ull",
+   "url": "https://www.ull.es/portal/convocatorias/categorias/becas-y-ayudas/",
+   "split": "excluded",
+   "file": "es-ull.html",
+   "sha256": "d79181827edc4af43a51338f9c1cf385e952b141b453ae087d2cc9c88051451a"
+  },
+  {
+   "id": "es-urv",
+   "url": "https://www.urv.cat/es/",
+   "split": "excluded",
+   "file": "es-urv.html",
+   "sha256": "ab6ae4f8c403cda1b5483fe607eee59a5798fdeb86615734d35764bf6024d19e"
+  },
+  {
+   "id": "es-udg",
+   "url": "https://www.udg.edu/ca/internacional/participante-en-programas-de-movilidad",
+   "split": "excluded",
+   "file": "es-udg.html",
+   "sha256": "3597abec6c29997c53967fa5af235889195c671608636ae9d9d2605b3c0f62c7"
+  },
+  {
+   "id": "es-iese",
+   "url": "https://www.iese.edu/loans-scholarships/",
+   "split": "excluded",
+   "file": "es-iese.html",
+   "sha256": "346a1c07936cf2dc597356c807282214d8a4fdf46ce1347201df02389a8016f9"
+  },
+  {
+   "id": "pt-uc",
+   "url": "https://impactum-journals.uc.pt/rppedagogia/article/view/9144",
+   "split": "excluded",
+   "file": "pt-uc.html",
+   "sha256": "a8ecae9250632bb7c97e72007fbb8d39f93c81fa5d10561bda58569865624c61"
+  },
+  {
+   "id": "pt-ua",
+   "url": "https://www.ua.pt/pt/publico-estudantes-internacionais",
+   "split": "excluded",
+   "file": "pt-ua.html",
+   "sha256": "8a952394ce4adf25b39672851d93a4bbc62215dc09c0af24f0104a62480d22ed"
+  },
+  {
+   "id": "pt-unl",
+   "url": "https://www.fct.unl.pt/ensino/mestrados",
+   "split": "excluded",
+   "file": "pt-unl.html",
+   "sha256": "e56825555ca9b5007b48d779dd965f17874723409a25214736197130b3ba25e7"
+  },
+  {
+   "id": "pt-ualg",
+   "url": "https://ccmar.ualg.pt/news/direccao-geral-do-ensino-superior-distingue-dois-estudantes-pelas-suas-teses-de-mestrado",
+   "split": "excluded",
+   "file": "pt-ualg.html",
+   "sha256": "29593e4c53d1c1f68d8aa007ea3ca779d0d13867e9fc5459ae5f3a0f3d996ea3"
+  },
+  {
+   "id": "pt-uevora",
+   "url": "https://www.uevora.pt/estudar/candidaturas/licenciaturas-mestrados-integrados/Concursos-para-Estudantes-Fora-da-Uniao-Europeia/estudantes-internacionais",
+   "split": "excluded",
+   "file": "pt-uevora.html",
+   "sha256": "067f56e80fe66407ca3459fe5cd490af84a9f184d5afb48cfb8be8ce0a746c76"
+  },
+  {
+   "id": "pt-ubi",
+   "url": "https://www.ubi.pt/",
+   "split": "excluded",
+   "file": "pt-ubi.html",
+   "sha256": "a18021fe5857606d2db7ea496c0144238e8dcf2e00ab586f00d782a17734fc61"
+  },
+  {
+   "id": "dk-itu",
+   "url": "https://itustudent.itu.dk/Study-Administration/Apply-for/Study-Abroad/Grants",
+   "split": "excluded",
+   "file": "dk-itu.html",
+   "sha256": "e90179d75b19489e691d423e69a575db4b98eef07ef0702a714526e29f621a23"
+  },
+  {
+   "id": "no-uio",
+   "url": "https://www.uio.no/english/studies/admission/scholarships/",
+   "split": "excluded",
+   "file": "no-uio.html",
+   "sha256": "aa53976897238fa0afe07e1ed117f31989b2c4d76ddb816e909c740dbfe154e3"
+  },
+  {
+   "id": "no-ntnu",
+   "url": "https://i.ntnu.no/wiki/-/wiki/English/Exchange+scholarships+administered+by+NTNU",
+   "split": "excluded",
+   "file": "no-ntnu.html",
+   "sha256": "be2c2f3e7f4b5c12d42d7a93b40f29893bb87f27a460d9ca82a2cbf825d77f7f"
+  },
+  {
+   "id": "no-uit",
+   "url": "https://en.uit.no/admission",
+   "split": "excluded",
+   "file": "no-uit.html",
+   "sha256": "86b05c625445c75925315d67f5d615d66af827927e884144cc8aceee561fc8cd"
+  },
+  {
+   "id": "no-nmbu",
+   "url": "https://www.nmbu.no/en/studies/norstip-scholarship-scheme",
+   "split": "test",
+   "file": "no-nmbu.html",
+   "sha256": "4619ffc4f51e78475e3a2645affbbec938b3fb326e8b52369ec4315c05be4460"
+  },
+  {
+   "id": "no-oslomet",
+   "url": "https://www.oslomet.no/en/study/admission/admission-master",
+   "split": "excluded",
+   "file": "no-oslomet.html",
+   "sha256": "47eb99e3a901906df047fd898f42cf28f2e75970639c8480db692167f2c9b24b"
+  },
+  {
+   "id": "no-uis",
+   "url": "https://www.uis.no/en/student/scholarships-and-costs",
+   "split": "excluded",
+   "file": "no-uis.html",
+   "sha256": "67772dcfec08ed846c521f8cc13a76b6d05cfdd2f64a9091bd8bb1718f22b466"
+  },
+  {
+   "id": "is-ru",
+   "url": "https://www.ru.is/en/namid/nemandinn/althjodaskrifstofa",
+   "split": "excluded",
+   "file": "is-ru.html",
+   "sha256": "f92c8c6273fce16e6e7dab9229be473c8eda74b9761310966742b800fb02deee"
+  },
+  {
+   "id": "pl-pw",
+   "url": "https://www.ee.pw.edu.pl/en/studia/rekrutacja/",
+   "split": "excluded",
+   "file": "pl-pw.html",
+   "sha256": "a6911140596f24bde87e381405b065f4e52d32ceea40b5d979afb51cfcc7ee69"
+  },
+  {
+   "id": "pl-agh",
+   "url": "https://sd.agh.edu.pl/en/",
+   "split": "excluded",
+   "file": "pl-agh.html",
+   "sha256": "e7340ef9406089d034cc98188b777f054b954d21f0d13605da6bb2c4a37e0b4e"
+  },
+  {
+   "id": "pl-put",
+   "url": "https://phdschool.put.poznan.pl/en/ster",
+   "split": "excluded",
+   "file": "pl-put.html",
+   "sha256": "2f6cabfb5b867c40e76cce4e01e54930534a08b791b96892734e2c586d7a0592"
+  },
+  {
+   "id": "pl-pwr",
+   "url": "https://rekrutacja.pwr.edu.pl/en/for-foreigners/fee-paying-basis-of-studies-and-scholarship-holders/admission/scholarship-programs-and-tuition-free-studies/",
+   "split": "excluded",
+   "file": "pl-pwr.html",
+   "sha256": "865982a029abb75471cd95dc606a5c948ec23ea3d719f3491d5c028d79e3f17a"
+  },
+  {
+   "id": "pl-amu",
+   "url": "https://erasmus.amu.edu.pl/wyjazdy-studentow/praktyki/oferty-praktyk/call-for-scholarship-international-summer-school-on-coruna",
+   "split": "excluded",
+   "file": "pl-amu.html",
+   "sha256": "d913054918ec3ed57ec6676d7f51a0cc69a2e72709c028de5ffe2b185167b8c2"
+  },
+  {
+   "id": "pl-umk",
+   "url": "https://www.umk.pl/en/study-and-courses/scholarships-and-tuition-fees/",
+   "split": "excluded",
+   "file": "pl-umk.html",
+   "sha256": "af09e6f03e1d7031c9881a66fd2c8704e0b01e2f00f54da3578efaa03a79a6a8"
+  },
+  {
+   "id": "pl-ug",
+   "url": "https://en.ug.edu.pl/incoming-students/candidates/bachelors-and-masters-courses/freshman-students/ug-scholarships",
+   "split": "excluded",
+   "file": "pl-ug.html",
+   "sha256": "c65af703bdd3bff29f4d70c21ab99c37ac91d8d6255cbc54ff345382ebf9beec"
+  },
+  {
+   "id": "cz-vscht",
+   "url": "https://study.vscht.cz/studying-at-uct/scholarship?jazyk=en&lang=en",
+   "split": "excluded",
+   "file": "cz-vscht.html",
+   "sha256": "7af43c1ed4b15d335816f87974a935d3f5fb23b105e2cf744ec6a457d2d75256"
+  },
+  {
+   "id": "cz-mendelu",
+   "url": "https://frrms.mendelu.cz/en/student-frdis/requests-scholarships/",
+   "split": "excluded",
+   "file": "cz-mendelu.html",
+   "sha256": "3b025ae0011297c932412c0faf837ed75fd1df1af3ebd247491ed6b2acd0c027"
+  },
+  {
+   "id": "cz-upol",
+   "url": "https://www.upol.cz/en/students/degree-students/scholarships-and-bursaries/",
+   "split": "excluded",
+   "file": "cz-upol.html",
+   "sha256": "1b9df39d0bd6ca2bf64809f51c5b544575dfee5310a222d9836be381e064c836"
+  },
+  {
+   "id": "cz-zcu",
+   "url": "https://www.international.zcu.cz/en/Full_Time_Student/interstud_scholarship.html",
+   "split": "excluded",
+   "file": "cz-zcu.html",
+   "sha256": "7d1ca16206a86e9f324c1c08b3a8c0aaac160945ffa2140c0cfcb041bf2288f4"
+  },
+  {
+   "id": "cz-tul",
+   "url": "https://www.tul.cz/en/students/scholarship/",
+   "split": "excluded",
+   "file": "cz-tul.html",
+   "sha256": "cb9ace7d5f8b69b87bfcb2539527cff26b9dd4e3eced80099dfd8cc220ca0e8f"
+  },
+  {
+   "id": "hu-sze",
+   "url": "https://admissions.sze.hu/scholarship-opportunities-for-international-students-at-sze",
+   "split": "excluded",
+   "file": "hu-sze.html",
+   "sha256": "e4fa04872e846908e8ae6e41c9e9e1dfedf9186827e4829b738a862f1b88e365"
+  },
+  {
+   "id": "hu-szeged",
+   "url": "https://u-szeged.hu/scholarships",
+   "split": "excluded",
+   "file": "hu-szeged.html",
+   "sha256": "42d5e570b22e735eddc1d8563411c70d13a9c5bf0fbab8eb2db6321b4375f15c"
+  },
+  {
+   "id": "hu-unideb",
+   "url": "https://edu.unideb.hu/p/scholarships-and-loans",
+   "split": "excluded",
+   "file": "hu-unideb.html",
+   "sha256": "ea6b8e497c3747a75ffed8f043be3107c249a35703719d3adc039baad6815fbc"
+  },
+  {
+   "id": "hu-pte",
+   "url": "https://international.pte.hu/admission/scholarship",
+   "split": "excluded",
+   "file": "hu-pte.html",
+   "sha256": "460a4c0ceb3ab14056b199fa0209f58e39894933085dc41e65bb7258ec7f2a24"
+  },
+  {
+   "id": "hu-corvinus",
+   "url": "https://www.uni-corvinus.hu/post/landing-page/application/scholarships-and-discounts/?lang=en",
+   "split": "excluded",
+   "file": "hu-corvinus.html",
+   "sha256": "09f43c3280647d7f51da2c1893a5ece4bd3516532ca6ad61b00287234925066a"
+  },
+  {
+   "id": "ro-unibuc",
+   "url": "https://unibuc.ro/international/scholarships-and-financial-aid-offered-by-the-university-of-bucharest/?lang=en",
+   "split": "excluded",
+   "file": "ro-unibuc.html",
+   "sha256": "f835c58f2faac462c8bc856926c7a1b205d2f25785bc506e30410706cbe74efe"
+  },
+  {
+   "id": "ro-upb",
+   "url": "https://upb.ro/en/erasmus/",
+   "split": "excluded",
+   "file": "ro-upb.html",
+   "sha256": "a99c58822b856af62c973b8fe71a87a380efacf50a78a1460497b79c62f71bb3"
+  },
+  {
+   "id": "ro-uaic",
+   "url": "https://www.uaic.ro/en/international/international-students/full-degree-students/",
+   "split": "excluded",
+   "file": "ro-uaic.html",
+   "sha256": "8e3c5832fb64ed986dba308983566c6aa4f547809d085d54feb3bd520d9065fc"
+  },
+  {
+   "id": "ro-utcluj",
+   "url": "https://iosud.utcluj.ro/EN-anunturi/fulbright-student-and-fulbright-visiting-scholar-scholarships-in-the-united-states-of-america.html",
+   "split": "excluded",
+   "file": "ro-utcluj.html",
+   "sha256": "729771dc4836546c31595506104b42a34535ef189a298ecdd1a1d7b50eea6c5e"
+  },
+  {
+   "id": "ro-uvt",
+   "url": "https://admitere.uvt.ro/en/student-la-uvt/burse/",
+   "split": "excluded",
+   "file": "ro-uvt.html",
+   "sha256": "31951cf2372ea53982a7be3a70f64d1a0c85bcbb5870797ab353728304406224"
+  },
+  {
+   "id": "bg-uni-sofia",
+   "url": "https://www.uni-sofia.bg/index.php/eng/admission/international_students/application_procedure",
+   "split": "excluded",
+   "file": "bg-uni-sofia.html",
+   "sha256": "995d44bf3bed62079ff1f5903e0681f8c3e621c498883fc1d1cf6b408efa181c"
+  },
+  {
+   "id": "si-um",
+   "url": "https://www.erasmusplus.um.si/summer-schools/scholarships/",
+   "split": "excluded",
+   "file": "si-um.html",
+   "sha256": "8d0e4e7530852164731d1833a113975bb3c465909da1ff0f3cbea65f12863146"
+  },
+  {
+   "id": "hr-unist",
+   "url": "https://marjan.unist.hr/UserDocsImages/Portals/0/EasyDNNNewsDocuments/12306/call%20for%2010%20scholarships%20for%20international%20students%202019_2020_UNIMC.pdf",
+   "split": "excluded",
+   "file": "hr-unist.pdf",
+   "sha256": "2fa9f33bc458754d9d794c4a3d0aee84a690970ede533fc1b7187f806ed28ba2"
+  },
+  {
+   "id": "hr-uniri",
+   "url": "https://uniri.hr/en/vijesti/call-for-10-adriatic-ionian-initiative-scholarships-for-international-students/",
+   "split": "excluded",
+   "file": "hr-uniri.html",
+   "sha256": "87b0ad06cd393b867401dcf6321fab079313d7b7dab22d4c44435242b2f35bbb"
+  },
+  {
+   "id": "sk-uniza",
+   "url": "https://www.uniza.sk/document/uniza_brochureZU.pdf",
+   "split": "excluded",
+   "file": "sk-uniza.pdf",
+   "sha256": "336ae78553265a628fa07678d07d51b8cfe10aea25a8f8d119e7d9037e4f76ed"
+  },
+  {
+   "id": "sk-tuke",
+   "url": "https://data.kemt.fei.tuke.sk/BiometrickeSystemyBezpecnosti/multiforesee/multiforesee.com/2020/02/19/still-available-scholarships-for-students-postd/index.html",
+   "split": "excluded",
+   "file": "sk-tuke.html",
+   "sha256": "a9249fe5453f1304a90f408e4044d1367b9a710423ce8d54735cf2258023932f"
+  },
+  {
+   "id": "ee-tlu",
+   "url": "https://www.tlu.ee/en/scholarships",
+   "split": "excluded",
+   "file": "ee-tlu.html",
+   "sha256": "0db41d2f5079a6939541699afada659fe62ca7e34faffdf0b74518b936e6e503"
+  },
+  {
+   "id": "ee-emu",
+   "url": "https://www.emu.ee/en/scholarships-for-students",
+   "split": "excluded",
+   "file": "ee-emu.html",
+   "sha256": "bf874631edd9c52ceb6238e7487a4da62093f957b40ae04bccde15920eedd4f4"
+  },
+  {
+   "id": "lv-lu",
+   "url": "https://www.lu.lv/en/admission/scholarships-and-student-loans/fees-grants-and-scholarships/",
+   "split": "excluded",
+   "file": "lv-lu.html",
+   "sha256": "4a73e0a9376e2697430116e45d2037e62bee29ebee686d5eaac26013d4c50f91"
+  },
+  {
+   "id": "lv-rtu",
+   "url": "https://apply.rtu.lv/",
+   "split": "excluded",
+   "file": "lv-rtu.html",
+   "sha256": "9afa4e74f166dd86b443478b6e1226ee1fcd848ef14fc70dd63ba8f54e9c3da4"
+  },
+  {
+   "id": "lt-ktu",
+   "url": "https://www.inzeko.ktu.lt/index.php/EE/article/view/971",
+   "split": "excluded",
+   "file": "lt-ktu.html",
+   "sha256": "3337977544b831b82cb591446d2e1c895efc228c83bc8c9115314af28b1b9533"
+  },
+  {
+   "id": "lt-lsmu",
+   "url": "https://lsmu.lt/en/for-students/studies/academic-mobility/erasmus-studies-and-traineeships-for-incoming-students/",
+   "split": "excluded",
+   "file": "lt-lsmu.html",
+   "sha256": "2696dd33b1024986e55f57f850cf1d8a5505848beda018564f4773937a42014a"
+  },
+  {
+   "id": "gr-uoa",
+   "url": "https://issu.uoa.gr/guide_for_all_students/scholarship_and_financial_aid",
+   "split": "excluded",
+   "file": "gr-uoa.html",
+   "sha256": "738854da655e98787a0e040b03c9e7055262c4e1ace55e43e24493138bae5f36"
+  },
+  {
+   "id": "gr-auth",
+   "url": "https://www.auth.gr/en/scholarships-en/",
+   "split": "excluded",
+   "file": "gr-auth.html",
+   "sha256": "56e2cda2ca07a4a69ef12ed1b71b24beb26946f832dae21be8576f9afbd307c1"
+  },
+  {
+   "id": "gr-ntua",
+   "url": "http://erasmus.ntua.gr/en/",
+   "split": "excluded",
+   "file": "gr-ntua.html",
+   "sha256": "1482f4a288eed0e6999b085c4428211ae6827750e3834d479fc35376f828b830"
+  },
+  {
+   "id": "cy-cut",
+   "url": "https://www.cut.ac.cy/studies/admissions/bachelor-programmes-admissions/international-students/?languageId=1",
+   "split": "excluded",
+   "file": "cy-cut.html",
+   "sha256": "f6cc089d15ceec1bf6b8932b2bff19eb5df806f330d83db6dabd28f8a6f3be7d"
+  },
+  {
+   "id": "tr-boun",
+   "url": "https://getem.boun.edu.tr/?q=node%2F64845",
+   "split": "excluded",
+   "file": "tr-boun.html",
+   "sha256": "8a35eaf870129ff33ae8d7f1f2fba58657ec33312433c746c08ea2ac84d0f43f"
+  },
+  {
+   "id": "ae-sharjah",
+   "url": "https://www.sharjah.ac.ae/en/Student-Life/NS",
+   "split": "excluded",
+   "file": "ae-sharjah.html",
+   "sha256": "f71879c745e00af93f573d073e8ee963ca814f9d5835b03c5bf8ae471055a0ec"
+  },
+  {
+   "id": "sa-ksu",
+   "url": "https://dgsinitiative.ksu.edu.sa/",
+   "split": "excluded",
+   "file": "sa-ksu.html",
+   "sha256": "14c54098dff23c372c86f035cab828bfcd5ea4920b9f64a3e0a17140f31a9b18"
+  },
+  {
+   "id": "kz-kbtu",
+   "url": "https://kbtu.kz/en/news/5195-kbtu-rector-awards-100-scholarships-to-winners-of-the-international-robotics-championship-in-houston",
+   "split": "excluded",
+   "file": "kz-kbtu.html",
+   "sha256": "d3f6f0fd4fd28139821ca29f10a7c2fbac43627a354533d1ffbc705356a92cd6"
+  },
+  {
+   "id": "ge-tsu",
+   "url": "https://www.tsu.ge/en/page/Scholarships",
+   "split": "excluded",
+   "file": "ge-tsu.html",
+   "sha256": "bed9b08143e47b4d9de11e6ade679c0116f6223389eac26f8350657d83030cd7"
+  },
+  {
+   "id": "am-aua",
+   "url": "https://scholarships.aua.am/",
+   "split": "excluded",
+   "file": "am-aua.html",
+   "sha256": "decf7dd71b34475b8df7f09de9da8f5a3419a0e430391c306dc32182669fe397"
+  },
+  {
+   "id": "at-jku",
+   "url": "http://www.econ.jku.at/papers/2013/wp1303.pdf",
+   "split": "excluded",
+   "file": "at-jku.pdf",
+   "sha256": "8def0fe3649e2b80fd87e3d9d4463370d0105ee71e91941336fbc41a8d8b570e"
+  },
+  {
+   "id": "at-boku",
+   "url": "https://boku.ac.at/en/international",
+   "split": "excluded",
+   "file": "at-boku.html",
+   "sha256": "23f23659906086f4c445d6e765319942f6c1bc07b08a7afb1fe47fa118c77b93"
+  },
+  {
+   "id": "at-plus",
+   "url": "https://www.plus.ac.at/studium/grants-and-scholarships/uni-internally-coordinated-grants-and-scholarships/scholarships-abroad/?lang=en",
+   "split": "excluded",
+   "file": "at-plus.html",
+   "sha256": "cf298857dd8dd09bd97f2c63be983a8caf9c2712376589dd3406a7092a869428"
+  },
+  {
+   "id": "be-unamur",
+   "url": "https://www.unamur.be/fr/international/mobilite/out/etudiants/bourses",
+   "split": "excluded",
+   "file": "be-unamur.html",
+   "sha256": "36f3f9ee56ff9dce23c4f0972fcd295b145cda4d02a6580a6c758544351a2b1f"
+  },
+  {
+   "id": "be-umons",
+   "url": "https://web.umons.ac.be/fr/international/bourses-etudiants-de-lares-cci/",
+   "split": "excluded",
+   "file": "be-umons.html",
+   "sha256": "9ba5c4b769128befc5cc70144e952ec9cb769ee40fb648fd18dfa73b719aa12e"
+  },
+  {
+   "id": "us-wm-1693",
+   "url": "https://www.wm.edu/as/1693scholars/",
+   "split": "excluded",
+   "file": "us-wm-1693.html",
+   "sha256": "93cc32bbf884200bb50452a4b178d6b0c7ada7e0c02a727e80e2f22a6bba350d"
+  },
+  {
+   "id": "us-gmu-international",
+   "url": "https://www.gmu.edu/international/financial-aid",
+   "split": "excluded",
+   "file": "us-gmu-international.html",
+   "sha256": "5d6293ff8e6571b18ffb66cdaa1ddddbb6d76f07be87a6b3952204efb8bb0721"
+  },
+  {
+   "id": "us-vcu-international",
+   "url": "https://nso.vcu.edu/resources/international-students/",
+   "split": "excluded",
+   "file": "us-vcu-international.html",
+   "sha256": "0e2bb44ab93c30e0d0e25d238702a655d306298b2d130ad2224a6fe05404028c"
+  },
+  {
+   "id": "us-odu-international",
+   "url": "https://www.odu.edu/",
+   "split": "excluded",
+   "file": "us-odu-international.html",
+   "sha256": "9608271047c99b535ff655e703cc63dd05a6b82b4b83b0e5df0d791985c37795"
+  },
+  {
+   "id": "us-jmu-international",
+   "url": "https://www.jmu.edu/index.shtml",
+   "split": "excluded",
+   "file": "us-jmu-international.html",
+   "sha256": "8e41e1468b8f35676b97c945d2eaed280e14c0e1343b4597302317d1e0c3cbab"
+  },
+  {
+   "id": "us-uvm-presidential",
+   "url": "https://www.uvm.edu/studentfinancialservices/scholarships-prospective-out-state-resident-and-international-students",
+   "split": "excluded",
+   "file": "us-uvm-presidential.html",
+   "sha256": "7680b5a1f1e368ac8e6cd4fc0d6db09d8d65419a932c5e97e2bfde818eb6a1b5"
+  },
+  {
+   "id": "us-unh-international",
+   "url": "https://www.unh.edu/admissions-aid/international-students",
+   "split": "excluded",
+   "file": "us-unh-international.html",
+   "sha256": "186af5df4d9ea6586b99898387e6271fd99aadf842b5ec412b80f51b9a1f9a43"
+  },
+  {
+   "id": "us-uri-international",
+   "url": "https://web.uri.edu/admission/international/",
+   "split": "excluded",
+   "file": "us-uri-international.html",
+   "sha256": "8bc4f64aab4384939733bbbbfca295c429ce16aa953c75be1c64b0b7022188ac"
+  },
+  {
+   "id": "us-binghamton-international",
+   "url": "https://www.binghamton.edu/financial-aid/types-of-aid/scholarships/",
+   "split": "excluded",
+   "file": "us-binghamton-international.html",
+   "sha256": "55827a47791a426d1af5633364333f76f43a8ff236171988cd24ff97a0b6786f"
+  },
+  {
+   "id": "us-albany-international",
+   "url": "https://www.albany.edu/international-student-scholar-services",
+   "split": "excluded",
+   "file": "us-albany-international.html",
+   "sha256": "0738303547d412c132090d47dbee486d7a0fffa9d1d8230683491cde6ba64495"
+  },
+  {
+   "id": "us-njit-international",
+   "url": "https://www.njit.edu/financialaid/international",
+   "split": "excluded",
+   "file": "us-njit-international.html",
+   "sha256": "b5e48e5fda2c18894ff4c2614c16cac7c1ff668a4a7061387fa9a6e6471d4105"
+  },
+  {
+   "id": "us-stevens-international",
+   "url": "https://www.stevens.edu/admission-aid/international-students",
+   "split": "excluded",
+   "file": "us-stevens-international.html",
+   "sha256": "c3d33e03720e6f31ce6ed52eb870a4fcdc361195966bd90f530e82e7668e6d46"
+  },
+  {
+   "id": "us-lehigh-international",
+   "url": "https://www2.lehigh.edu/admissions/international-students",
+   "split": "excluded",
+   "file": "us-lehigh-international.html",
+   "sha256": "e8888ec37a31f07bb13ff323a9972e3632c9dd1f58892754ed6f7da84a7ae803"
+  },
+  {
+   "id": "us-tufts-international",
+   "url": "https://admissions.tufts.edu/tuition-and-aid/applying-for-aid/international-student-aid/",
+   "split": "excluded",
+   "file": "us-tufts-international.html",
+   "sha256": "baa4aa534c63db442d94686ea42a42ac7a42c890a00437c99d625b8a8a90d4e7"
+  },
+  {
+   "id": "us-northeastern-international",
+   "url": "https://studentfinance.northeastern.edu/applying-for-aid/international-students/",
+   "split": "excluded",
+   "file": "us-northeastern-international.html",
+   "sha256": "cd07a9475c053789f74b53b90a56a3037cfd226751dccfdf78c3b0a7f3b54ae9"
+  },
+  {
+   "id": "us-wpi-international",
+   "url": "https://www.wpi.edu/admissions/tuition-aid/types-of-aid/scholarships-grants/global",
+   "split": "excluded",
+   "file": "us-wpi-international.html",
+   "sha256": "c089d712d9f40e5da0a5f4481253bd1715ca15658b09ad962ba5193af26beffc"
+  },
+  {
+   "id": "us-rpi-international",
+   "url": "https://undergrad.admissions.rpi.edu/apply/international-applicants",
+   "split": "excluded",
+   "file": "us-rpi-international.html",
+   "sha256": "4d43562189569d6d428e5affc08d8e3ca6014cc003a88b75feba266533cd9141"
+  },
+  {
+   "id": "us-case-international",
+   "url": "https://case.edu/studentlife/educationabroad/finances/scholarships",
+   "split": "excluded",
+   "file": "us-case-international.html",
+   "sha256": "273c1a32486aa52182b609af79e69ce4f2cdef506bc446d034d20e73eb622118"
+  },
+  {
+   "id": "us-ohio-international",
+   "url": "https://www.ohio.edu/cas/international-studies/student-alumni-resources/scholarships-fellowships",
+   "split": "excluded",
+   "file": "us-ohio-international.html",
+   "sha256": "f8f091e3839f91df6b07dd6e4f43d4009f8f9cf6e81805982328e887add73a91"
+  },
+  {
+   "id": "us-kent-international",
+   "url": "https://www.kent.edu/admissions/international-students-scholarship-resources",
+   "split": "test",
+   "file": "us-kent-international.html",
+   "sha256": "83e15e3bdb3be41147cbb7b4206897cf54eb49eda5501cb0182b16a7520b357d"
+  },
+  {
+   "id": "us-uc-international",
+   "url": "https://www.admissions.uc.edu/tuition-aid/scholarships.html",
+   "split": "excluded",
+   "file": "us-uc-international.html",
+   "sha256": "18edb522a629200e5f4fcf5a0b6fb8b19ca3f9e7d6a8e723c7242d2d7b4a906f"
+  },
+  {
+   "id": "us-louisville-international",
+   "url": "https://louisville.edu/cost-aid/undergraduate-scholarships-aid/international-scholarships-aid",
+   "split": "excluded",
+   "file": "us-louisville-international.html",
+   "sha256": "c59b75da4ee2561cdad004898b2e761c85124adbc75b2d994b1038ff2cb36c48"
+  },
+  {
+   "id": "us-memphis-international",
+   "url": "https://www.memphis.edu/scholarships/international_students/",
+   "split": "test",
+   "file": "us-memphis-international.html",
+   "sha256": "510b3e438732ef9bda04059f03098bbd1e3c0b701c5b17150f44d07b4a548107"
+  },
+  {
+   "id": "us-tcu-international",
+   "url": "https://admissions.tcu.edu/afford/scholarship-aid/international.php",
+   "split": "excluded",
+   "file": "us-tcu-international.html",
+   "sha256": "4c625965bd83b239f95653282c94fd04842cb983fab9b2ddb4a444659aea4bcb"
+  },
+  {
+   "id": "us-smu-international",
+   "url": "https://www.smu.edu/enrollment-services/student-financial-services/scholarships",
+   "split": "excluded",
+   "file": "us-smu-international.html",
+   "sha256": "1fbc7bc3a57ffad5ecd901b90006bd0c75353b6b370e47f88c0cd4e55a280805"
+  },
+  {
+   "id": "us-baylor-international",
+   "url": "https://engagedlearning.web.baylor.edu/fellowships-awards/international-students",
+   "split": "excluded",
+   "file": "us-baylor-international.html",
+   "sha256": "809a027008a97dab8f2d0b1540063a6b8e701af0ecf7784ea2a2530646866baa"
+  },
+  {
+   "id": "us-utdallas-international",
+   "url": "https://utdallas.edu/international/",
+   "split": "excluded",
+   "file": "us-utdallas-international.html",
+   "sha256": "236272a023bce9f12e897977fc83754df486f250f463430cd9feb15f935ff009"
+  },
+  {
+   "id": "us-uta-international",
+   "url": "https://www.uta.edu/administration/fao/apply-for-aid/international-students",
+   "split": "excluded",
+   "file": "us-uta-international.html",
+   "sha256": "e2052530567166d16c95f9efad2c5d57d78aba7d1695847198664ecded5fae36"
+  },
+  {
+   "id": "us-unt-international",
+   "url": "https://financialaid.unt.edu/international-scholarship-opportunities.html",
+   "split": "excluded",
+   "file": "us-unt-international.html",
+   "sha256": "a03746a1cc6846f407f06e7202d852ed47cace9cd4f52f52481377cdc8281853"
+  },
+  {
+   "id": "us-utsa-international",
+   "url": "https://onestop.utsa.edu/financialaid/apply/financial-aid-for-international-students/",
+   "split": "excluded",
+   "file": "us-utsa-international.html",
+   "sha256": "ccbea9ee51e64d3db39ae5a8669f62a18ad2d317e30443e5e8e3b0ecc8ac3765"
+  },
+  {
+   "id": "us-du-international",
+   "url": "https://www.du.edu/admission-aid/undergraduate/international-applicants/tuition",
+   "split": "excluded",
+   "file": "us-du-international.html",
+   "sha256": "bf858eaa3d9570880db1b5f745ded2fef8b5ddebe7ed9cd871592459ae2b0405"
+  },
+  {
+   "id": "us-colostate-international",
+   "url": "https://international.colostate.edu/iec/international-admissions/scholarships-and-tuition/",
+   "split": "test",
+   "file": "us-colostate-international.html",
+   "sha256": "0007ddbac90748be8b06aa885924f91c09b5bf582083bfbabd72acc80e0f022e"
+  },
+  {
+   "id": "us-nau-international",
+   "url": "https://in.nau.edu/isss/scholarships/",
+   "split": "test",
+   "file": "us-nau-international.html",
+   "sha256": "bfbd70876a4413d94f36e166a542577ffe488e37e1cdeb3a801d5916b29b58eb"
+  },
+  {
+   "id": "us-sdsu-international",
+   "url": "https://psfa.sdsu.edu/international/international-scholarships",
+   "split": "excluded",
+   "file": "us-sdsu-international.html",
+   "sha256": "a8c7849b2429539cc2550db134efb7f53176dde6cb67e9e16cfc5c2f72d8dbde"
+  },
+  {
+   "id": "us-sjsu-international",
+   "url": "https://www.sjsu.edu/isss/index.php",
+   "split": "excluded",
+   "file": "us-sjsu-international.html",
+   "sha256": "134ea4ef423b299ccf0fad95e90a0816eeb838ae43ed9eb01d760155aadfb1ff"
+  },
+  {
+   "id": "us-pepperdine-international",
+   "url": "https://gsep.pepperdine.edu/admission/financial-aid/international-students/",
+   "split": "excluded",
+   "file": "us-pepperdine-international.html",
+   "sha256": "59bac9a2e50266304274951c80eb9462aa829b9f14e04e7427e290c6a9764286"
+  },
+  {
+   "id": "us-scu-international",
+   "url": "https://www.scu.edu/globalengagement/international-students/",
+   "split": "excluded",
+   "file": "us-scu-international.html",
+   "sha256": "f6aaf66f72cdb8ddc96e77e05164a7d1e663b0f624025523aa65340156f0b66c"
+  },
+  {
+   "id": "us-chapman-international",
+   "url": "https://www.chapman.edu/admission/undergraduate/how-to-apply/international-students/tuition-and-costs.aspx",
+   "split": "excluded",
+   "file": "us-chapman-international.html",
+   "sha256": "720a61d17d423fe1876ccab903f7f9fe70af6a4136895d4287b72ad94830b413"
+  },
+  {
+   "id": "us-gonzaga-international",
+   "url": "https://www.gonzaga.edu/admission/international-admission/costs-scholarships-international-students",
+   "split": "excluded",
+   "file": "us-gonzaga-international.html",
+   "sha256": "f841a47b2186df1890d9ffce3734705f1af8322af6f5bdccb34466a30d91956f"
+  },
+  {
+   "id": "us-seattleu-international",
+   "url": "https://www.seattleu.edu/academics/all-programs/international-studies-ba/scholarships/",
+   "split": "excluded",
+   "file": "us-seattleu-international.html",
+   "sha256": "f5b08ab195d0dd71e99f0162e657aea96518dec3449a1d38afc0075ddcb0a064"
+  },
+  {
+   "id": "us-wsu-international",
+   "url": "https://ip.wsu.edu/future-students/tuition-fees/scholarships-funding/",
+   "split": "excluded",
+   "file": "us-wsu-international.html",
+   "sha256": "b50138c2fc6ddb1b59fde119aa1f0369f47cd8c6c895260da5bdfe8b5bf852e2"
+  },
+  {
+   "id": "us-pdx-international",
+   "url": "https://www.pdx.edu/student-finance/scholarships",
+   "split": "excluded",
+   "file": "us-pdx-international.html",
+   "sha256": "796fb8820cb542d09806150aca28f7025f5fb14ba976c69d1b573b4d875554af"
+  },
+  {
+   "id": "us-umt-international",
+   "url": "https://www.umt.edu/admissions/admission-requirements/international/apply-international.php",
+   "split": "excluded",
+   "file": "us-umt-international.html",
+   "sha256": "6086659908874abe6ec94d44d77a6214b69f419b9e678d56fb6f4516fc1e27c8"
+  },
+  {
+   "id": "us-ndsu-international",
+   "url": "https://www.ndsu.edu/international/apply/scholarships",
+   "split": "test",
+   "file": "us-ndsu-international.html",
+   "sha256": "00967a04f09a176251485b063157989d325a9958214a75fadd87d9d2e9c515e8"
+  },
+  {
+   "id": "us-und-international",
+   "url": "https://und.edu/admissions/international/index.html",
+   "split": "excluded",
+   "file": "us-und-international.html",
+   "sha256": "553339ec4efc1d5824c1ff6254fce73730c5c2a7d7101e5ad829f2c0bec4ff77"
+  },
+  {
+   "id": "us-drake-international",
+   "url": "https://www.drake.edu/admission-aid/international-students",
+   "split": "excluded",
+   "file": "us-drake-international.html",
+   "sha256": "0c03a47418427bb4514b8d30847cfb927a8f00734263e4d49145cfcb26cb3925"
+  },
+  {
+   "id": "us-marquette-international",
+   "url": "https://www.marquette.edu/tuition-financial-aid/scholarships-overview.php",
+   "split": "excluded",
+   "file": "us-marquette-international.html",
+   "sha256": "757d54bc12f89d182d7be8f39ed56b2decdd382fed64caafda0e9cf58319f37f"
+  },
+  {
+   "id": "us-uwm-international",
+   "url": "https://uwm.edu/international-students/",
+   "split": "excluded",
+   "file": "us-uwm-international.html",
+   "sha256": "19d4b113b14c2ef6143c77da0635a290e982a07d172d3176ed8f155eb4ffa90c"
+  },
+  {
+   "id": "us-depaul-international",
+   "url": "https://www.depaul.edu/admission/international-admission",
+   "split": "excluded",
+   "file": "us-depaul-international.html",
+   "sha256": "55a47f5227c35ada775f930a1150067c46afcb4b0d356b749dff49b3be909b35"
+  },
+  {
+   "id": "us-luc-international",
+   "url": "https://www.luc.edu/undergrad/admissions/internationalstudents/",
+   "split": "excluded",
+   "file": "us-luc-international.html",
+   "sha256": "a410b764e8bb7ae5a400b62d713789cf8fd069bde2a064887f8093bceae171d4"
+  },
+  {
+   "id": "us-uic-international",
+   "url": "https://financialaid.uic.edu/types-of-aid/scholarships/",
+   "split": "excluded",
+   "file": "us-uic-international.html",
+   "sha256": "debe2049d70f561cdd308e1fa582e1a7b4a9352f064128d1f82db8af00c2a73f"
+  },
+  {
+   "id": "us-slu-international",
+   "url": "https://www.slu.edu/financial-aid/types-of-aid/scholarships.php",
+   "split": "excluded",
+   "file": "us-slu-international.html",
+   "sha256": "1af9e2b6bd2fe90c04a6cc66da752e766fab322e1e073e74b5f8be49912d94fc"
+  },
+  {
+   "id": "us-tulsa-international",
+   "url": "https://utulsa.edu/tuition-aid/scholarships/",
+   "split": "excluded",
+   "file": "us-tulsa-international.html",
+   "sha256": "90f821c4712e59666864e1883cfe99395cd17aba1df649b92d23e3be6e9484ff"
+  },
+  {
+   "id": "us-utep-international",
+   "url": "https://www.utep.edu/student-affairs/oipsa/study-abroad/sa-scholarships.html",
+   "split": "excluded",
+   "file": "us-utep-international.html",
+   "sha256": "5c9dc43f536d79a51d40c31416d52e5b3ebfd9e5d9faf0ccf42e2205895dce16"
+  },
+  {
+   "id": "us-txstate-international",
+   "url": "https://mycatalog.txstate.edu/undergraduate/general-information/admissions/international/",
+   "split": "excluded",
+   "file": "us-txstate-international.html",
+   "sha256": "c62de4406215d623668025917909e4aa3d224240a6bf44537187fddc594ea9d4"
+  },
+  {
+   "id": "us-fau-international",
+   "url": "https://www.fau.edu/finaid/types-of-aid/scholarships/",
+   "split": "excluded",
+   "file": "us-fau-international.html",
+   "sha256": "2ad4f5a50d9baf7d631604df711ad60d8f3e2d051b7d18094d241f3340ffe65a"
+  },
+  {
+   "id": "us-uab-international",
+   "url": "https://www.uab.edu/admissions/cost/scholarships/international-students",
+   "split": "test",
+   "file": "us-uab-international.html",
+   "sha256": "079b4c8309a6f2b5998af3d4607d7bdd09bd0a5eabc4bbfd58ab41286bc1ff1a"
+  },
+  {
+   "id": "us-ecu-international",
+   "url": "https://thescholarship.ecu.edu/",
+   "split": "excluded",
+   "file": "us-ecu-international.html",
+   "sha256": "7d2c989b33bab1f73d4b31d3ebdcc0149534b57d277b916509f4e598723b48fe"
+  },
+  {
+   "id": "us-uncc-international",
+   "url": "https://engineering.charlotte.edu/",
+   "split": "excluded",
+   "file": "us-uncc-international.html",
+   "sha256": "5e2bcb8446d5d1798ce787d2800a063854f4d409948b54c41c8aeadc34299e51"
+  },
+  {
+   "id": "us-wfu-international",
+   "url": "https://financialaid.wfu.edu/",
+   "split": "excluded",
+   "file": "us-wfu-international.html",
+   "sha256": "f921355bf648180faf0415b93ba655b9b62488494d9e022980f7f9e583ef02e9"
+  },
+  {
+   "id": "us-umbc-international",
+   "url": "https://scholarships.umbc.edu/international/",
+   "split": "excluded",
+   "file": "us-umbc-international.html",
+   "sha256": "41718f0fb05e2f11578f0176a2041a2de0775356ca5c51327fa15fdbde913355"
+  },
+  {
+   "id": "us-american-international",
+   "url": "https://www.american.edu/student-affairs/isss/scholarships-for-international-students.cfm",
+   "split": "excluded",
+   "file": "us-american-international.html",
+   "sha256": "e792dc86d98a3cabea690adda4cb71733e3663be6e8cc9574352d7c5704b6d65"
+  },
+  {
+   "id": "us-udayton-international",
+   "url": "https://udayton.edu/apply/international/index.php",
+   "split": "excluded",
+   "file": "us-udayton-international.html",
+   "sha256": "3c952046500656af9189105d6596b64eb784c193289724f26d33d52b3351fbed"
+  },
+  {
+   "id": "us-xavier-international",
+   "url": "https://www.xavier.edu/international-admission/scholarships/",
+   "split": "excluded",
+   "file": "us-xavier-international.html",
+   "sha256": "67ca4e4de1875052c62091a184f4bb129fea3088d23832c5ce0fc78e20690f7d"
+  },
+  {
+   "id": "us-bentley-intl",
+   "url": "https://careeredge.bentley.edu/blog/2020/02/18/millimans-opportunity-scholarship-is-now-open-for-application-asc-ma-and-fda-students-are-eligible/",
+   "split": "test",
+   "file": "us-bentley-intl.html",
+   "sha256": "ac1ead467047dd48e6d3a1a5676e5a4fc7f55a00b2f65bd2491e9c3994c45cbf"
+  },
+  {
+   "id": "us-babson-intl",
+   "url": "https://www.babson.edu/undergraduate/tuition-and-financial-aid/international-students/",
+   "split": "excluded",
+   "file": "us-babson-intl.html",
+   "sha256": "cf03dbf6ba3f7e9dabce5c9dc39566cf0b3182c02da9d045ef566ba1f80496d2"
+  },
+  {
+   "id": "us-bryant-intl",
+   "url": "https://www.bryant.edu/undergraduate/undergraduate-admission/applying-bryant/international-students",
+   "split": "excluded",
+   "file": "us-bryant-intl.html",
+   "sha256": "5820c10acaeeb009b90a439ec5b5abb0e863b925249fbe6fb9a0d06aa57a8d1d"
+  },
+  {
+   "id": "us-quinnipiac-intl",
+   "url": "https://admissions.quinnipiac.edu/portal/virtual_firstyear_interviews",
+   "split": "excluded",
+   "file": "us-quinnipiac-intl.html",
+   "sha256": "dc6ff70fcfe6dc790596a21a4cabcaecbb9b2dad0d5acb9222f99ecb8861a151"
+  },
+  {
+   "id": "us-fairfield-intl",
+   "url": "https://www.fairfield.edu/admission-and-aid/apply/international-students/",
+   "split": "excluded",
+   "file": "us-fairfield-intl.html",
+   "sha256": "4e3a980a61bf6b655226899ee1f577630764b64cf5735c2fd8ed2c27fdcb41ea"
+  },
+  {
+   "id": "us-providence-intl",
+   "url": "https://admission.providence.edu/international-applicants-2/cost-financial-aid/",
+   "split": "test",
+   "file": "us-providence-intl.html",
+   "sha256": "dea1758fd8f13150fef5f002e99dbcf76e5dd52b67c5763af216a139870ef506"
+  },
+  {
+   "id": "us-holycross-intl",
+   "url": "https://www.holycross.edu/admissions-aid/tuition-financial-aid/financial-aid",
+   "split": "excluded",
+   "file": "us-holycross-intl.html",
+   "sha256": "ec2fd9144da30c995a4517543230cb430dbb08287817aa2ad59e68572297f4cb"
+  },
+  {
+   "id": "us-suffolk-intl",
+   "url": "https://www.suffolk.edu/undergraduate-admission/information-for/international-students",
+   "split": "excluded",
+   "file": "us-suffolk-intl.html",
+   "sha256": "f039790a7fce33e1392a813959cbe96088183944b9c6ce39aee54590797edf0d"
+  },
+  {
+   "id": "us-umassd-intl",
+   "url": "https://www.umassd.edu/undergraduate/international/financial/",
+   "split": "test",
+   "file": "us-umassd-intl.html",
+   "sha256": "1a05995cae7cc261abad30d28b7814b36683b3d7f773f191edc9c2f6d12b32f3"
+  },
+  {
+   "id": "us-wit-intl",
+   "url": "https://wit.edu/admissions/international",
+   "split": "excluded",
+   "file": "us-wit-intl.html",
+   "sha256": "2bdb5c5758139f4f86efa262c05eed44e17f431891ae0da311dac7aeb38cbe88"
+  },
+  {
+   "id": "us-emerson-intl",
+   "url": "https://emerson.edu/admission-aid/undergraduate-admission/undergraduate-financial-aid/",
+   "split": "excluded",
+   "file": "us-emerson-intl.html",
+   "sha256": "6c0a671c60b155829f5fa7b111b63813f3601d7e7a3faa990ef10995e4df1aa7"
+  },
+  {
+   "id": "us-simmons-intl",
+   "url": "https://www.simmons.edu/admission-aid/financial-aid/scholarships",
+   "split": "excluded",
+   "file": "us-simmons-intl.html",
+   "sha256": "3a66bc743780218b9b6236bdac39ec6f8fd5cb37f343ede2af4f49ac4c04664d"
+  },
+  {
+   "id": "us-clarku-intl",
+   "url": "https://www.clarku.edu/undergraduate-admissions/apply/international-students/",
+   "split": "excluded",
+   "file": "us-clarku-intl.html",
+   "sha256": "6034ca2b3f30bda6bbec209f39c2ddc811961a67fdbd9d155fd04cd1e8003d3c"
+  },
+  {
+   "id": "us-hofstra-intl",
+   "url": "https://www.hofstra.edu/admission/international/",
+   "split": "excluded",
+   "file": "us-hofstra-intl.html",
+   "sha256": "9a1b19249192c034fbf4957255a468d980eef05c36fd927cc0f2eb8a302a4f7a"
+  },
+  {
+   "id": "us-adelphi-intl",
+   "url": "https://www.adelphi.edu/one-stop/financial-aid/applying-for-aid/international-students/",
+   "split": "excluded",
+   "file": "us-adelphi-intl.html",
+   "sha256": "890fbb9f81db6b053c99cb5b633acbe896ae6063ed19fd917305c60d67c33c43"
+  },
+  {
+   "id": "us-pace-intl",
+   "url": "https://www.pace.edu/iss/legal-and-financial-resources/financial-aid-international-students",
+   "split": "excluded",
+   "file": "us-pace-intl.html",
+   "sha256": "f70ed03286984347556857b8515ac77dd3de73c62376aac5bf3b9b50c98525bc"
+  },
+  {
+   "id": "us-stjohns-intl",
+   "url": "https://www.stjohns.edu/admission/scholarships",
+   "split": "excluded",
+   "file": "us-stjohns-intl.html",
+   "sha256": "846d2bd75f5b32696f28ab22582bb22ddd8a0448986e49c674a8da7c827ed542"
+  },
+  {
+   "id": "us-pratt-intl",
+   "url": "https://www.pratt.edu/admissions/undergraduate-admissions/finance-your-education/financial-aid-options/scholarships/",
+   "split": "excluded",
+   "file": "us-pratt-intl.html",
+   "sha256": "ce21e0848bd5caeb0abb7f7d31c5f0aded2aab4244322552ce6bb9642bc1f529"
+  },
+  {
+   "id": "us-rit-intl",
+   "url": "https://www.rit.edu/admissions/international",
+   "split": "excluded",
+   "file": "us-rit-intl.html",
+   "sha256": "783492c3fc7740141ddc0c03858c0404b32aa5b430925f74ac35624a2b89e7cd"
+  },
+  {
+   "id": "us-ithaca-intl",
+   "url": "https://www.ithaca.edu/tuition-financial-aid",
+   "split": "excluded",
+   "file": "us-ithaca-intl.html",
+   "sha256": "feb0b4d956627f5577c5e11cf053426c5fbc88be96ada33c6ed5c6e07782e3cf"
+  },
+  {
+   "id": "us-skidmore-intl",
+   "url": "https://www.skidmore.edu/admissions/apply/international.php",
+   "split": "excluded",
+   "file": "us-skidmore-intl.html",
+   "sha256": "576f2a8c2d6911e63a4618f8ba89702a76653dee8cd3a7761d8732399b6636bb"
+  },
+  {
+   "id": "us-union-intl",
+   "url": "https://www.union.edu/international-programs",
+   "split": "excluded",
+   "file": "us-union-intl.html",
+   "sha256": "6048184a2465db100874a1c1a9444b83aa75f30aa6e0d90bd6936e416520a7be"
+  },
+  {
+   "id": "us-vassar-intl",
+   "url": "https://www.vassar.edu/news/students-earn-voyager-scholarships-obama-foundation",
+   "split": "excluded",
+   "file": "us-vassar-intl.html",
+   "sha256": "5ee5b04c8299c74656536d63f709b6b83a0721d6108e0ed9433510e35736eb09"
+  },
+  {
+   "id": "us-bard-intl",
+   "url": "https://www.bard.edu/sfs/international/",
+   "split": "excluded",
+   "file": "us-bard-intl.html",
+   "sha256": "3fa303496daac8f7112ae7c2f83f7c81f0e05d3c02f5d7e5e245be381dd57592"
+  },
+  {
+   "id": "us-siena-intl",
+   "url": "https://www.siena.edu/offices/financial-aid/your-financial-aid-journey/applying-for-aid/siena-scholarships-and-grants/",
+   "split": "excluded",
+   "file": "us-siena-intl.html",
+   "sha256": "b967bc53f539e43e3ea70bacefac875c6e29fc6c253daeb7608f50f0b95db87d"
+  },
+  {
+   "id": "us-rowan-intl",
+   "url": "https://admissions.rowan.edu/financing-education/scholarships.html",
+   "split": "excluded",
+   "file": "us-rowan-intl.html",
+   "sha256": "44080916c463587484e3c7c995cc788a2234a241b3de82bf8d44ebf84eece0d0"
+  },
+  {
+   "id": "us-montclair-intl",
+   "url": "https://www.montclair.edu/admissions-aid/international-admissions",
+   "split": "excluded",
+   "file": "us-montclair-intl.html",
+   "sha256": "19bd87166d766e1ed2ea1538ada08cd5380c6b3566c81d25997924362558e544"
+  },
+  {
+   "id": "us-rider-intl",
+   "url": "https://www.rider.edu/about/offices-services/student-navigation-office/experiential-travel/scholarships",
+   "split": "excluded",
+   "file": "us-rider-intl.html",
+   "sha256": "50126e7a8430d4a73d5b1db7e5c919acf9467bc99454179c88ed616d61eab16a"
+  },
+  {
+   "id": "us-shu-intl",
+   "url": "https://www.shu.edu/international-programs/international-students/scholarships-and-assistantships.html",
+   "split": "excluded",
+   "file": "us-shu-intl.html",
+   "sha256": "383888dd38a59d772eb59caf39f5735111a73422e45b6e1e7d9479135925ad8a"
+  },
+  {
+   "id": "us-drew-intl",
+   "url": "https://drew.edu/admissions-and-aid/student-financial-services/financial-aid-scholarships/grants-scholarships/",
+   "split": "excluded",
+   "file": "us-drew-intl.html",
+   "sha256": "c6180564e045c50d6c6c695b90ce6aea1ef2d23da16fd63dc11ab5b8d5787743"
+  },
+  {
+   "id": "us-kean-intl",
+   "url": "https://www.kean.edu/offices/international-education/program-provider",
+   "split": "excluded",
+   "file": "us-kean-intl.html",
+   "sha256": "02c671c7ffa55c1fa1c91f807f60e404f1f9c18a97ba80c7b5c99986d54a1de5"
+  },
+  {
+   "id": "us-scranton-intl",
+   "url": "https://admissions.scranton.edu/apply/international/index.shtml",
+   "split": "excluded",
+   "file": "us-scranton-intl.html",
+   "sha256": "eac564a1f2f9001ff6c47ad8371a762afb2f5367e969ac88b7dfda07ede03df4"
+  },
+  {
+   "id": "us-duq-intl",
+   "url": "https://www.duq.edu/admission-and-aid/how-to-apply/international/costs-and-scholarships.php",
+   "split": "test",
+   "file": "us-duq-intl.html",
+   "sha256": "d7255c8321325cfb4aaeda4d21367456d5184a861df8f9d8d57280a5100b3f51"
+  },
+  {
+   "id": "us-lasalle-intl",
+   "url": "https://www.lasalle.edu/admissions-and-aid/international/",
+   "split": "excluded",
+   "file": "us-lasalle-intl.html",
+   "sha256": "074a42fae932fb92f4aec546eae58a5551bb4ca7acfbf117de35381954b5a3ff"
+  },
+  {
+   "id": "us-sju-intl",
+   "url": "https://www.sju.edu/scholarships",
+   "split": "excluded",
+   "file": "us-sju-intl.html",
+   "sha256": "ac44d90b4df27d7f9d9e191c93f920b6b38d1fe9cbbc61a323a7770f084b71f4"
+  },
+  {
+   "id": "us-ursinus-intl",
+   "url": "https://www.ursinus.edu/admission/applying/transfer-students/financial-aid-scholarships/",
+   "split": "excluded",
+   "file": "us-ursinus-intl.html",
+   "sha256": "de09304f2f953783bb0bb0710b6dc9765192ced53981aed1580d0533b197c199"
+  },
+  {
+   "id": "us-gettysburg-intl",
+   "url": "https://www.gettysburg.edu/admissions-aid/financial-aid",
+   "split": "excluded",
+   "file": "us-gettysburg-intl.html",
+   "sha256": "8015d4ac5fa8146c92ec6c21b8048eda0b8e7442a2a4fdabe19bcf57c7246206"
+  },
+  {
+   "id": "us-dickinson-intl",
+   "url": "https://www.dickinson.edu/info/20045/admissions/1176/international_student_admissions_information",
+   "split": "excluded",
+   "file": "us-dickinson-intl.html",
+   "sha256": "d40a980b512957db718ad06d2151891ee62d2d8ed964b8c59802cc0fbdb2812d"
+  },
+  {
+   "id": "us-fandm-intl",
+   "url": "https://www.fandm.edu/apply/international-student-admission/",
+   "split": "excluded",
+   "file": "us-fandm-intl.html",
+   "sha256": "9e3c06bd0b0654064c8ce04cb3b210225a8ce53d971329a81c764dda8b17e34b"
+  },
+  {
+   "id": "us-bucknell-intl",
+   "url": "https://www.bucknell.edu/azdirectory/student-affairs/equity-inclusion-belonging/international-student-scholar-services",
+   "split": "excluded",
+   "file": "us-bucknell-intl.html",
+   "sha256": "bfd67dc94885793b1235568d85382190c0b61c289626a6e275539643e95eee97"
+  },
+  {
+   "id": "us-lafayette-intl",
+   "url": "https://gateway.lafayette.edu/resources/study-com-scholarship-for-latin-american-students/",
+   "split": "excluded",
+   "file": "us-lafayette-intl.html",
+   "sha256": "ca3025cddb36560a33fc7ae9e0afc950edbb3ebd255af2bed0948dd49c4eb5c8"
+  },
+  {
+   "id": "us-towson-intl",
+   "url": "https://www.towson.edu/admissions/financialaid/programs/scholarships/international.html",
+   "split": "excluded",
+   "file": "us-towson-intl.html",
+   "sha256": "37043468a39b2824b55bc2d768f1a1cf85e7a6edd86af1af3a565cf5225461aa"
+  },
+  {
+   "id": "us-loyola-intl",
+   "url": "https://www.loyola.edu/department/financial-aid/undergraduate/programs/scholarships.html",
+   "split": "excluded",
+   "file": "us-loyola-intl.html",
+   "sha256": "17571084f61bcabb9e233c01896a48884578df2e661a61de04ec20e376a9ba46"
+  },
+  {
+   "id": "us-jhu-intl",
+   "url": "https://education.jhu.edu/admissions/international-students-admissions/",
+   "split": "excluded",
+   "file": "us-jhu-intl.html",
+   "sha256": "a142f13912acf41e54c773f9fda8961150040be0545afd2261f1ee87e3e55f69"
+  },
+  {
+   "id": "us-goucher-intl",
+   "url": "https://www.goucher.edu/learn/study-abroad/costs-financial-aid-scholarships/",
+   "split": "excluded",
+   "file": "us-goucher-intl.html",
+   "sha256": "947544ed23da07d079b167c55b53372968c13bb4eaee47d15ecf44aa96617785"
+  },
+  {
+   "id": "us-uncw-intl",
+   "url": "https://www.uncw.edu/myuncw/academics/colleges/chssa/departments/international-studies/student-resources/scholarships",
+   "split": "excluded",
+   "file": "us-uncw-intl.html",
+   "sha256": "82ce019ebad474f6a82b545123ea6cfdb30f94e89ab4cf2689972755b95c0172"
+  },
+  {
+   "id": "us-elon-intl",
+   "url": "https://www.elon.edu/u/admissions/undergraduate/international-admissions/admissions-requirements/",
+   "split": "excluded",
+   "file": "us-elon-intl.html",
+   "sha256": "5a032290189ea01a9c9098993fe199a9333e3efa8e704a5e95297598c397fe59"
+  },
+  {
+   "id": "us-highpoint-intl",
+   "url": "https://discover.highpoint.edu/portal/isr",
+   "split": "excluded",
+   "file": "us-highpoint-intl.html",
+   "sha256": "b74793cc3a6ef8465d7de6f8c8a7af027056eee4a2da2c2d1e6f89c81f91f936"
+  },
+  {
+   "id": "us-campbell-intl",
+   "url": "https://www.campbell.edu/admissions/undergraduate/international/",
+   "split": "excluded",
+   "file": "us-campbell-intl.html",
+   "sha256": "8a36ec124739622f1f53a164090a2d12e31a531813a51e4ba1d94419d6962d52"
+  },
+  {
+   "id": "us-furman-intl",
+   "url": "https://www.furman.edu/admissions-aid/apply/international-students/",
+   "split": "excluded",
+   "file": "us-furman-intl.html",
+   "sha256": "7409b7ac3076911241748290fa23179cfedae70b466f107672aa492ca37a7ab9"
+  },
+  {
+   "id": "us-wofford-intl",
+   "url": "https://www.wofford.edu/academics/international-programs/scholarship-opportunities",
+   "split": "excluded",
+   "file": "us-wofford-intl.html",
+   "sha256": "e832fd7a08cb8d44b2a003a895f8b9041594ad245bac8c14f154d0007f944737"
+  },
+  {
+   "id": "us-georgiasouthern-intl",
+   "url": "https://www.georgiasouthern.edu/admissions-aid/international-students",
+   "split": "excluded",
+   "file": "us-georgiasouthern-intl.html",
+   "sha256": "284863cd1deec1641bf7482853fbf98ebc8c600d05b06fe57a0b9069e6089f10"
+  },
+  {
+   "id": "us-kennesaw-intl",
+   "url": "https://campus.kennesaw.edu/current-students/academics/global-education/education-abroad/students/scholarships.php",
+   "split": "excluded",
+   "file": "us-kennesaw-intl.html",
+   "sha256": "888f13b453c5694f219746567270abfdcd5ba3ef6f8c149c1c2849324e6b2f7b"
+  },
+  {
+   "id": "us-mercer-intl",
+   "url": "https://www.mercer.edu/global-impact/international-students/",
+   "split": "excluded",
+   "file": "us-mercer-intl.html",
+   "sha256": "cd9a5e8be075aab59456ea2b84a2ec75fd7ecaa43d682e3c4612b891cbcfe8ad"
+  },
+  {
+   "id": "us-agnesscott-intl",
+   "url": "https://www.agnesscott.edu/admission/undergraduate-admission/scholarships-financial-aid/index.html",
+   "split": "excluded",
+   "file": "us-agnesscott-intl.html",
+   "sha256": "dd808454572ba045dcaaed1e8ecad75fdd2b0daaf422aa611c6d0ce2c6b7dba4"
+  },
+  {
+   "id": "us-spelman-intl",
+   "url": "https://www.spelman.edu/financial-aid/explore-types-of-financial-aid/scholarships/scholarships-for-future-students.html",
+   "split": "excluded",
+   "file": "us-spelman-intl.html",
+   "sha256": "6e796eb4c49089ba13c636b8838dc890d260ae224e45fc0add55964efcc27014"
+  },
+  {
+   "id": "us-morehouse-intl",
+   "url": "https://morehouse.edu/",
+   "split": "excluded",
+   "file": "us-morehouse-intl.html",
+   "sha256": "10a55f3a7e765c1ddd992411d3a4efeb28ed1adf1119ddba5180535f96ae3df3"
+  },
+  {
+   "id": "us-fit-intl",
+   "url": "https://www.fit.edu/international-student-and-scholar-services/",
+   "split": "excluded",
+   "file": "us-fit-intl.html",
+   "sha256": "d6429bc940cf5e56461aff046f7b5c0bc2526127985e7b4e8051407d17bc0470"
+  },
+  {
+   "id": "us-rollins-intl",
+   "url": "https://www.rollins.edu/apply/international/",
+   "split": "excluded",
+   "file": "us-rollins-intl.html",
+   "sha256": "f4ed15e73bb6a449219c226e0176d38e85c1e88430fe28334f45810caa8d7f81"
+  },
+  {
+   "id": "us-eckerd-intl",
+   "url": "https://www.eckerd.edu/admissions/international/",
+   "split": "excluded",
+   "file": "us-eckerd-intl.html",
+   "sha256": "a1fd1f8cee807d3a72263eb9a628c5ba3b69ab665302ec93914ad630f0f7b932"
+  },
+  {
+   "id": "us-nova-intl",
+   "url": "https://www.nova.edu/international-affairs/students/index.html",
+   "split": "excluded",
+   "file": "us-nova-intl.html",
+   "sha256": "1d1c42cb7ccb743a6de4e4446d1568e586620d90fee8e8d27e67c384e4e2cc22"
+  },
+  {
+   "id": "us-samford-intl",
+   "url": "https://www.samford.edu/admission/international-students",
+   "split": "excluded",
+   "file": "us-samford-intl.html",
+   "sha256": "f90be2440286b3632eae0f06a8a26153647295dfc118fad6dd5f20172c3f7255"
+  },
+  {
+   "id": "us-centre-intl",
+   "url": "https://www.centre.edu/admission-aid/scholarships-fellowships",
+   "split": "excluded",
+   "file": "us-centre-intl.html",
+   "sha256": "77b667dafa099ae03cba60b881a51ea0404686e7c2c793fc2d5cc4d78d1df832"
+  },
+  {
+   "id": "us-transy-intl",
+   "url": "https://www.transy.edu/admission/international-student-applications/",
+   "split": "excluded",
+   "file": "us-transy-intl.html",
+   "sha256": "1739a931e3c6125e066d00789e7d657fdc5e126471b77dc8bbb893c940cbdec0"
+  },
+  {
+   "id": "us-usm-intl",
+   "url": "https://www.usm.edu/scholarships-financial-wellness/freshman_scholarships/academicexcellence.php",
+   "split": "test",
+   "file": "us-usm-intl.html",
+   "sha256": "9c1dc9ee77a7c31e55ad88012889c15983cc52a64f482894db4f9d38c2459d7e"
+  },
+  {
+   "id": "us-millsaps-intl",
+   "url": "https://millsaps.edu/apply-to-millsaps/international-students/",
+   "split": "excluded",
+   "file": "us-millsaps-intl.html",
+   "sha256": "fc654e832659cc31680c92c6c196f5d5bc0d661ecd8752134b3fc78b16e7af03"
+  },
+  {
+   "id": "us-loyno-intl",
+   "url": "https://www.loyno.edu/admissions/tuition-financial-aid/scholarships",
+   "split": "excluded",
+   "file": "us-loyno-intl.html",
+   "sha256": "69ba2b808304f47526b32cbfe977796f6a08b2135c4c9c2b09f5667267e4a4ab"
+  },
+  {
+   "id": "us-latech-intl",
+   "url": "https://www.latech.edu/student-life/international-affairs/undergaduate-admissions.php",
+   "split": "excluded",
+   "file": "us-latech-intl.html",
+   "sha256": "75ac9990a384ab45c30f61b502c6a1d28a5ca37a2015e9f6daf47146787a0c0a"
+  },
+  {
+   "id": "us-trinity-intl",
+   "url": "https://trinity.edu/admissions/aid/types/scholarships/international-scholarship",
+   "split": "test",
+   "file": "us-trinity-intl.html",
+   "sha256": "4ade37e973f3dff867cf4b9bb9a5991b265e233f1779af3d7f5527693e0b8a0a"
+  },
+  {
+   "id": "us-stedwards-intl",
+   "url": "https://www.stedwards.edu/admission/international",
+   "split": "excluded",
+   "file": "us-stedwards-intl.html",
+   "sha256": "909f812cef22dfb623986045c14200512db648d1d3f97c3bb05289915e20e35c"
+  },
+  {
+   "id": "us-oru-intl",
+   "url": "https://oru.edu/tuition-and-financial-aid/international-tuition-and-financial-aid/index.php",
+   "split": "excluded",
+   "file": "us-oru-intl.html",
+   "sha256": "795bb20347fc5e303ab12bedb9809e5b994e71ab7209776e20d166f197c32cb4"
+  },
+  {
+   "id": "us-hendrix-intl",
+   "url": "https://via.hendrix.edu/admission-aid/",
+   "split": "excluded",
+   "file": "us-hendrix-intl.html",
+   "sha256": "546507fa6ab63def1c0d7a7f7f46f410caa986880bb4d476c2b1634968f4055a"
+  },
+  {
+   "id": "us-umkc-intl",
+   "url": "https://www.umkc.edu/international-students/future-students/scholarships.html",
+   "split": "test",
+   "file": "us-umkc-intl.html",
+   "sha256": "5152fcccdb4ff407b241012fc404e78cf194ff7d3e1035cc56076509ecc424d2"
+  },
+  {
+   "id": "us-unomaha-intl",
+   "url": "https://www.unomaha.edu/international-at-uno/student-support/scholarships-and-funding.php",
+   "split": "excluded",
+   "file": "us-unomaha-intl.html",
+   "sha256": "6f3a08b860b7cf7be0cecf15d904e28de0a1bc87ffa9bb1313bedc8c46e42775"
+  },
+  {
+   "id": "us-uni-intl",
+   "url": "https://admissions.uni.edu/international/undergraduate-students/scholarships",
+   "split": "excluded",
+   "file": "us-uni-intl.html",
+   "sha256": "7361123ca1a0f5b4fc10f2ebbdf3567c5a6346bd25fe9db74eaffdc2ede1482b"
+  },
+  {
+   "id": "us-grinnell-intl",
+   "url": "https://career.grinnell.edu/resources/resources-for-international-students/",
+   "split": "excluded",
+   "file": "us-grinnell-intl.html",
+   "sha256": "b1dfa94d19ed9e1870945cb9571ebb060f14b0f576b668609e7a62c25c765ca3"
+  },
+  {
+   "id": "us-luther-intl",
+   "url": "https://www.luther.edu/offices/financial-aid",
+   "split": "excluded",
+   "file": "us-luther-intl.html",
+   "sha256": "d0e42adb4bd1e9439a5a25248196322962b4ac0675742dd6482edc2fe001e919"
+  },
+  {
+   "id": "us-stthomas-intl",
+   "url": "https://www.stthomas.edu/admissions/international/undergraduate/merit-based-scholarships/",
+   "split": "test",
+   "file": "us-stthomas-intl.html",
+   "sha256": "b5a132b9e8a9b9d7e792717c2c7ae90e438c704072f1e07b8220f9dc41ffc650"
+  },
+  {
+   "id": "us-carleton-intl",
+   "url": "https://www.carleton.edu/international/applying/",
+   "split": "excluded",
+   "file": "us-carleton-intl.html",
+   "sha256": "a146ff5537da7f24afd6351f61de04eb6903a8980bc849ad8186f51ff02ebce1"
+  },
+  {
+   "id": "us-stolaf-intl",
+   "url": "https://wp.stolaf.edu/admissions/students/international/",
+   "split": "excluded",
+   "file": "us-stolaf-intl.html",
+   "sha256": "d0fc5ff020d75e86c85c25c14462ae4d8b08bbb5368e241b67f0dcc60430ac63"
+  },
+  {
+   "id": "us-gustavus-intl",
+   "url": "https://gustavus.edu/admission-aid/apply/international-student-admission",
+   "split": "test",
+   "file": "us-gustavus-intl.html",
+   "sha256": "e792753282105be1a4f96d47bf4d2276ec6702ea5bc2a2bd042c39dfda85ecc3"
+  },
+  {
+   "id": "us-lawrence-intl",
+   "url": "https://www.lawrence.edu/admissions-aid/aid-affordability/scholarships/",
+   "split": "excluded",
+   "file": "us-lawrence-intl.html",
+   "sha256": "b436f6afb063427d87c011422f3f7d7a244eabeb534b8dd36e0a4d9812c4da3e"
+  },
+  {
+   "id": "us-beloit-intl",
+   "url": "https://www.beloit.edu/",
+   "split": "excluded",
+   "file": "us-beloit-intl.html",
+   "sha256": "0fdac89c226508d87aef58e9880c5ea59833d7f6bdffb0992e70e77de1770e62"
+  },
+  {
+   "id": "us-niu-intl",
+   "url": "https://www.niu.edu/international-admissions/paying-for-college/scholarships.shtml",
+   "split": "excluded",
+   "file": "us-niu-intl.html",
+   "sha256": "c58b41916033d0ac8523e8855a304e55649a32ef5bb248b6967d1576dfb830ac"
+  },
+  {
+   "id": "us-siu-intl",
+   "url": "https://news.siu.edu/2019/05/051719-scholarship-gives-new-opportunities-in-international-studies.php",
+   "split": "excluded",
+   "file": "us-siu-intl.html",
+   "sha256": "79b6fc2e5b0031373c081d76a538c0dc016f00b88f2ed9212d73d1d786ee14da"
+  },
+  {
+   "id": "us-bradley-intl",
+   "url": "https://www.bradley.edu/news-articles/senior-tyler-beason-wins-two-awards-at-the-2014-student-scholarship-expo/",
+   "split": "excluded",
+   "file": "us-bradley-intl.html",
+   "sha256": "b210caffa660e2fd3e72b13684afeee95678e08913e4ea3bfb74761bf0c0d3ea"
+  },
+  {
+   "id": "us-knox-intl",
+   "url": "https://prairiefire.knox.edu/sports/2019/7/8/student-athlete-required-forms",
+   "split": "excluded",
+   "file": "us-knox-intl.html",
+   "sha256": "234e0919cada38308a92c2aec5e94219805a32301ae59d023ab7e0450e2c094d"
+  },
+  {
+   "id": "us-butler-intl",
+   "url": "https://www.butler.edu/admission-aid/financial-aid-scholarships/international/",
+   "split": "excluded",
+   "file": "us-butler-intl.html",
+   "sha256": "0de4dd53705fc44fc62faede9d2609468991c3e8413f3ac49ef2348a940a232b"
+  },
+  {
+   "id": "us-depauw-intl",
+   "url": "https://www.depauw.edu/admission-aid/scholarships-aid/",
+   "split": "excluded",
+   "file": "us-depauw-intl.html",
+   "sha256": "c41640d216fe8ac67a45c44cb3de01fde0ca93309283d1bb98a462bf539daa94"
+  },
+  {
+   "id": "us-earlham-intl",
+   "url": "https://earlham.edu/admissions/how-to-apply/international-admissions/",
+   "split": "excluded",
+   "file": "us-earlham-intl.html",
+   "sha256": "b42afc70f26d30cb064819f3370050220177c6f0b5c7b86acdd50f613a7fc7e5"
+  },
+  {
+   "id": "us-bgsu-intl",
+   "url": "https://www.bgsu.edu/admissions/international/tuition-and-scholarships.html",
+   "split": "excluded",
+   "file": "us-bgsu-intl.html",
+   "sha256": "27a4c6aa74284c70a562326736bb9f09d99c9c8cda8ad8fd9a679898e65d204a"
+  },
+  {
+   "id": "us-miamioh-intl",
+   "url": "https://miamioh.edu/onestop/financial-aid/funding-opportunities/scholarships/international-scholarships.html",
+   "split": "test",
+   "file": "us-miamioh-intl.html",
+   "sha256": "f8fcb976243783d7882195ad8590b3169f9c69d6ba79578f79dae00addbb09b3"
+  },
+  {
+   "id": "us-oberlin-intl",
+   "url": "https://www.oberlin.edu/admissions-and-aid/financial-aid/applying-aid-international-students",
+   "split": "test",
+   "file": "us-oberlin-intl.html",
+   "sha256": "3b6855286bdb00c208c8df90f643d7e0104a951a51cd8b372184fc803b22d358"
+  },
+  {
+   "id": "us-kenyon-intl",
+   "url": "https://www.kenyon.edu/admissions-aid/financial-aid-scholarships/estimate-financial-aid/",
+   "split": "excluded",
+   "file": "us-kenyon-intl.html",
+   "sha256": "242430952c5a2001eebd93e83eacb80b73dcb9787d4aa6600921b0e80c452796"
+  },
+  {
+   "id": "us-denison-intl",
+   "url": "https://denison.edu/campus/admission/international-applicant-financial-aid",
+   "split": "excluded",
+   "file": "us-denison-intl.html",
+   "sha256": "fc7651e3c779ab3da684965816b98faf536c7aa5b15d00bf3229658bcea329b1"
+  },
+  {
+   "id": "us-wooster-intl",
+   "url": "https://wooster.edu/admissions/international-students",
+   "split": "excluded",
+   "file": "us-wooster-intl.html",
+   "sha256": "edf23bb83cb244827a4ffd7e22d3b292af7e46c0d695d8e0ebbce1cb937f64d1"
+  },
+  {
+   "id": "us-wayne-intl",
+   "url": "https://wayne.edu/scholarships/international",
+   "split": "excluded",
+   "file": "us-wayne-intl.html",
+   "sha256": "be40fa9e8c7c94662e90d8f5aa49c9bd6e73d3d5b1f96e61e3d3d2f7937eb750"
+  },
+  {
+   "id": "us-wmich-intl",
+   "url": "https://wmich.edu/international/funding",
+   "split": "test",
+   "file": "us-wmich-intl.html",
+   "sha256": "ed5f74244048a745cce89e2405fb207750219db72ec8e6d5be50436ff030e243"
+  },
+  {
+   "id": "us-emich-intl",
+   "url": "https://commons.emich.edu/theses/473/",
+   "split": "excluded",
+   "file": "us-emich-intl.html",
+   "sha256": "70f03d81ab8ea6e55544ec8482eb2944239781ab74da6771472b405fd6c3ddc0"
+  },
+  {
+   "id": "us-gvsu-intl",
+   "url": "https://www.gvsu.edu/admissions/international-scholarships-and-assistantships-24",
+   "split": "excluded",
+   "file": "us-gvsu-intl.html",
+   "sha256": "6a5359f1a80bc97c74bcf3f188bb340fb8ad54ec5d68a7687784f0af20b1c9d9"
+  },
+  {
+   "id": "us-kzoo-intl",
+   "url": "https://finaid.kzoo.edu/types-of-financial-aid/scholarships-and-grants/",
+   "split": "excluded",
+   "file": "us-kzoo-intl.html",
+   "sha256": "99e0d66c98d4255ce1ac7479d3250d28934c1a56d561916ca3c4031c47f36848"
+  },
+  {
+   "id": "us-hope-intl",
+   "url": "https://hope.edu/admissions/international-students.html",
+   "split": "test",
+   "file": "us-hope-intl.html",
+   "sha256": "975dd427d7c3626ed37230493afcb7dbfe8d061e7008f59ba39f5a69358ca20e"
+  },
+  {
+   "id": "us-calvin-intl",
+   "url": "https://calvin.edu/admissions/international/process",
+   "split": "excluded",
+   "file": "us-calvin-intl.html",
+   "sha256": "2a6ac39694bd5abc71c04301c862f846db07f5314ccf17b1d883623933f794e4"
+  },
+  {
+   "id": "us-mines-intl",
+   "url": "https://nationalscholarships.mines.edu/",
+   "split": "excluded",
+   "file": "us-mines-intl.html",
+   "sha256": "3824107568ba0cd8ce70da272e3e35d445cafb2c4d4c464713dc2c3c655c3fcf"
+  },
+  {
+   "id": "us-willamette-intl",
+   "url": "https://pnca.willamette.edu/cost-aid/financial-aid/undergraduate/",
+   "split": "excluded",
+   "file": "us-willamette-intl.html",
+   "sha256": "d22707702b7b184fadb7e7273a3f56ac4244b0d35972423441843a04be63a89a"
+  },
+  {
+   "id": "us-lclark-intl",
+   "url": "https://www.lclark.edu/offices/financial_aid/undergrad/scholarships/",
+   "split": "excluded",
+   "file": "us-lclark-intl.html",
+   "sha256": "64dc6a96869a37a57995c86ea59bef08ac697c5e412530488530303a392f74ae"
+  },
+  {
+   "id": "us-reed-intl",
+   "url": "https://www.reed.edu/admission-aid/how-to-apply/international.html",
+   "split": "excluded",
+   "file": "us-reed-intl.html",
+   "sha256": "720074c4b4f433689bc066f60e99f2a37158f82f9be3bb3fbaed988a034dcfbc"
+  },
+  {
+   "id": "us-washington-intl",
+   "url": "https://www.washington.edu/studyabroad/students/resources/finances/scholarships/",
+   "split": "excluded",
+   "file": "us-washington-intl.html",
+   "sha256": "8110b0591b72735b06e5c5eec187ab6a6a564ff11be5b013d1614f5a7e263171"
+  },
+  {
+   "id": "us-whitman-intl",
+   "url": "https://www.whitman.edu/admission-and-aid/financial-aid-and-costs/international-and-daca-students",
+   "split": "excluded",
+   "file": "us-whitman-intl.html",
+   "sha256": "c2b488f28262427cc997e7371707a0e51573d67323223dbd9fb64facb326b387"
+  },
+  {
+   "id": "us-pugetsound-intl",
+   "url": "https://www.pugetsound.edu/student-financial-services-current-undergraduate-students/scholarships-grants/scholarships/incoming/deans-scholarship",
+   "split": "test",
+   "file": "us-pugetsound-intl.html",
+   "sha256": "89090ab683ba6b8307b9966ef8d85250cfe28dea1da7a5a341bf84f1ae220a70"
+  },
+  {
+   "id": "us-ucdavis-intl",
+   "url": "https://financialaid.ucdavis.edu/undergraduate/apply/international",
+   "split": "excluded",
+   "file": "us-ucdavis-intl.html",
+   "sha256": "fdb92b08b735311bd367cb0e820394ed9da9268eda9933cf1adcf8099591f213"
+  },
+  {
+   "id": "us-ucsc-intl",
+   "url": "https://admissions.ucsc.edu/international-students",
+   "split": "excluded",
+   "file": "us-ucsc-intl.html",
+   "sha256": "e0eded2e2313dd004d5db23bb4816e62fd85007a5d73db0e1fc007677a2c2358"
+  },
+  {
+   "id": "us-ucr-intl",
+   "url": "https://admissions.ucr.edu/international",
+   "split": "test",
+   "file": "us-ucr-intl.html",
+   "sha256": "7c48080581150e1e6ad25c92ca35de1e0119dc3155b45c0ec07cd8f8fc3e52f1"
+  },
+  {
+   "id": "us-caltech-intl",
+   "url": "https://gradoffice.caltech.edu/financialsupport/ExternalInternational",
+   "split": "excluded",
+   "file": "us-caltech-intl.html",
+   "sha256": "e8508eab592f8037ab7c074c40101b60b71cf0adc5e8c8b486d1cb22fbfb6211"
+  },
+  {
+   "id": "us-lmu-intl",
+   "url": "https://financialaid.lmu.edu/international/",
+   "split": "excluded",
+   "file": "us-lmu-intl.html",
+   "sha256": "ff5bd47a6657cad7a1d4da27ea4163ace913ae2ea268b0f46a4942552e8d96e5"
+  },
+  {
+   "id": "us-csulb-intl",
+   "url": "https://www.csulb.edu/international/csulb-study-abroad-programs/financial-aid-and-scholarships",
+   "split": "excluded",
+   "file": "us-csulb-intl.html",
+   "sha256": "4cf42ea3459a64072ea9b87fd10d3b6c376e2482320678608ebfcf373dd10311"
+  },
+  {
+   "id": "us-calpoly-intl",
+   "url": "https://international.calpoly.edu/",
+   "split": "excluded",
+   "file": "us-calpoly-intl.html",
+   "sha256": "2f955cf00209286bb7cce65030449255c56a079ac9d1464af58789d75c90d3af"
+  },
+  {
+   "id": "us-pomona-intl",
+   "url": "https://www.pomona.edu/financial-aid/applying-for-aid/international-aid",
+   "split": "excluded",
+   "file": "us-pomona-intl.html",
+   "sha256": "73642f64bac00d03a433cdbbba4fe1af1792f15981f7f7f58dce43c94fea3490"
+  },
+  {
+   "id": "us-cmc-intl",
+   "url": "https://cmc.edu/news/cmc-students-honored-with-prestigious-fellowships-and-awards",
+   "split": "excluded",
+   "file": "us-cmc-intl.html",
+   "sha256": "77d443146941d418c92bf185466382ee6448367e565a52815a146a28673ab862"
+  },
+  {
+   "id": "us-pitzer-intl",
+   "url": "https://www.pitzer.edu/offices/fellowships/international",
+   "split": "excluded",
+   "file": "us-pitzer-intl.html",
+   "sha256": "f6875c1bdaeaf748aec3cc258f0813f2b6079b0526b0bdadd017d5bf77d772b0"
+  },
+  {
+   "id": "us-whittier-intl",
+   "url": "https://www.whittier.edu/financialaid/scholarships",
+   "split": "excluded",
+   "file": "us-whittier-intl.html",
+   "sha256": "27d10297712f64182f834515d4f66c772af690ed812bd5475bede6c55ecd2d05"
+  },
+  {
+   "id": "us-redlands-intl",
+   "url": "https://www.redlands.edu/admissions-and-aid/international/how-to-apply",
+   "split": "excluded",
+   "file": "us-redlands-intl.html",
+   "sha256": "c2b10deb7d3b184a9572958be81ae4fbc7407f77bd45b23ebbadfed480aab881"
+  },
+  {
+   "id": "us-usfca-intl",
+   "url": "https://www.usfca.edu/",
+   "split": "excluded",
+   "file": "us-usfca-intl.html",
+   "sha256": "2e7807e925b2b1db02f5f387c2b234e64b1c56d36fa10988f1db6cdcddfca8ad"
+  },
+  {
+   "id": "us-alaska-intl",
+   "url": "https://www.uaa.alaska.edu/students/financial-aid/types-of-aid/scholarships/index.cshtml",
+   "split": "excluded",
+   "file": "us-alaska-intl.html",
+   "sha256": "af7a57bfba015b4c4a6511652b509da9c5bc2ee7dc7eecc7657cfd4b5f8fbac8"
+  }
+ ],
+ "redactions": "third-party site keys embedded in the saved pages (Google Maps keys, a Mapbox public token) were replaced with placeholders before the pages were committed; this changes the page hashes, not the page text the extractor reads; files: am-aua.html, ar-austral-becas.html, be-umons.html, br-ufmg-bolsas.html, es-udg.html, es-uma.html, hr-uniri.html, it-imtlucca.html, kr-hufs-international.html, mx-ibero-becas.html, ro-uvt.html, us-eckerd-intl.html"
+}

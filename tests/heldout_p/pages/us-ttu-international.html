@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html class="ttu no-js" lang="en-us">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta charset="UTF-8">
+   <meta name="theme-color" content="#e90802">
+   <meta name="apple-mobile-web-app-status-bar-style" content="#e90802">
+   <meta name="mobile-web-app-capable" content="yes">
+   <title>Value | Undergraduate Admissions  | Texas Tech</title>
+   <link rel="icon" type="image/png" href="/favicon-96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Texas Tech University" />
+<!--link rel="manifest" href="/site.webmanifest" /> For Android. .webmanifest extension needs to be enabled on web servers -->
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<!-- jquery migrate script -->
+<script src="https://code.jquery.com/jquery-migrate-3.6.0.min.js"></script>
+
+
+<link rel="stylesheet" href="/_ttu-template/_global/stylesheets/styles_v2_1_7.min.css" media="all" />
+
+<script src="/_ttu-template/2017/js/modernizr.js"></script>
+<script src="/_ttu-template/2017/js/scroll.js"></script>
+   
+   <link rel="stylesheet" href="/_ttu-template/_global/stylesheets/2026_update.css" media="all">
+   <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N8TWBRS');</script>
+<!-- End Google Tag Manager -->
+<link rel="stylesheet" id="silktide-consent-manager-css" href="/_ttu-template/_global/includes/cookie-banner/silktide-consent-manager.css">
+<style id="silktide-consent-manager-overrides">
+    #stcm-wrapper {
+        --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+        --fontFamily: Inter, Tahoma, sans-serif;
+        --primaryColor: #E90802;
+        --backgroundColor: #ffffff;
+        --textColor: #333;
+        --backdropBackgroundColor: #00000033;
+        --backdropBackgroundBlur: 0px;
+        --iconColor: #000000;
+        --iconBackgroundColor: #FFFFFF;
+    }
+
+    #stcm-banner {
+        width: 700px;
+    }
+
+
+    #stcm-wrapper #stcm-banner button:focus,
+    #stcm-wrapper #stcm-modal button:focus,
+    #stcm-wrapper .stcm-preferences-button:focus {
+        border-radius: 62.4375rem !important;
+        transition: .5s all ease-in-out;
+    }
+
+    #stcm-wrapper .stcm-button,
+    #stcm-wrapper .stcm-preferences-button {
+        border-radius: 62.4375rem;
+        padding: .5rem 2.1875rem .5rem 1rem;
+        transition: .5s all ease-in-out;
+    }
+
+    #stcm-wrapper .stcm-actions button {
+        padding-right: 1rem;
+    }
+
+    #stcm-wrapper .stcm-actions button:after {
+        display: none;
+    }
+
+    #stcm-wrapper .stcm-button:hover {
+        background: #000;
+        border: .125rem solid #000;
+        color: #fff;
+
+    }
+
+    #stcm-modal h1 {
+        font-weight: 700;
+    }
+
+    #stcm-modal .stcm-modal-close {
+        border-radius: 62.4375rem;
+        transition: .5s all ease-in-out;
+    }
+
+    #stcm-modal .stcm-modal-close:hover {
+        background: #000;
+    }
+
+    #stcm-modal .stcm-modal-close:hover svg {
+        fill: #fff;
+    }
+
+    #stcm-wrapper #stcm-icon:hover {
+        background: var(--primaryColor);
+    }
+
+    #stcm-wrapper #stcm-icon:after,
+    #stcm-wrapper .stcm-modal-close:after {
+        display: none;
+    }
+
+    label.stcm-toggle:hover {
+        outline: 2px solid #fff !important;
+        box-shadow: 0 0 0 4px #757575 !important;
+        border-radius: 25px;
+    }
+</style>
+<script src="/_ttu-template/_global/includes/cookie-banner/silktide-consent-manager.js"></script>
+<script>
+	/**
+     * Helper class to synchronize Silktide Consent Manager (STCM) state with a domain level cookie
+     * to ensure the consent state is retained across ttu.edu subdomains
+     */
+    class AnalyticsConsentHelper {
+        settings = {
+            namespace: 'stcm',
+
+            timestampKey: 'stcm._updated',
+            gtagEventName: 'stcm_consent_update',
+            
+            cookieDomain: 'ttu.edu',
+            cookieDuration: 12 // in Months
+            
+        }
+
+        /**
+         * Syncs localStorage and cookie consent data with the version that contains the most resent timestamp.
+         */
+        constructor() {
+            let self = this;
+            let cookie = self.cookie.get(self.settings.namespace);
+            let ls_time = localStorage.getItem(self.settings.timestampKey);
+                    
+            // If cookie exists and timestamp is a number
+            if (cookie && !isNaN(cookie[self.settings.timestampKey])) {
+                let cookie_time = cookie[self.settings.timestampKey];
+
+                /** CASE: timestamps are equal **/
+                // If dates are equal, then no data sync is needed
+                if (cookie_time === ls_time) return;
+
+
+                /** CASE: Cookie's timestamp is newer **/
+                // if localStorage doesn't exist or is older than cookie last updated date
+                if (!ls_time || (cookie_time > ls_time)) {
+                    
+                    self.localStorage.set(cookie);
+                    
+                    return; // sync finished
+                }
+            }
+            
+            /** CASE: Either localStorage only OR no data */
+            let dataForCookie = self.localStorage.get();
+
+            // If no timestamp, create it for both data sources
+            if (!ls_time) {
+                ls_time = new Date().getTime();
+
+                localStorage.setItem(self.settings.timestampKey, ls_time);
+                dataForCookie[self.settings.timestampKey] = ls_time;
+            }
+
+            self.cookie.set(dataForCookie);
+        }
+
+        
+        /** 
+         * LocalStorage accesor methods
+         * 
+         */
+        localStorage = {
+
+            /**
+             * Gets localStorage values that start with the value set in `localStorageName`
+             * 
+             * @returns {Object} JSON object of localstorage data
+            */
+            get: () => {
+                const data = {};
+                
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    
+                    // e.g. starts with "stcm."
+                    if(key.startsWith(this.settings.namespace + '.')) {
+                        data[key] = localStorage.getItem(key);
+                    }
+                }
+                
+                return data;
+            },
+            
+            
+            set: (data) => {
+                Object.entries(data).forEach(([key, value]) => {
+                    if (value) localStorage.setItem(key, value);
+                });
+            }
+        }
+
+        /** cookie accesor methods */
+        cookie = {
+
+            /**
+             * Get cookie by name
+             * 
+             * @this {AnalyticsConsentHelper}
+             * @returns {string} Returns the cookie value or undefined
+             */
+            get: () => {
+
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${this.settings.namespace}=`);
+                if (parts.length === 2) {
+                    let cookieString = parts.pop().split(';').shift();
+
+                    try {
+                        return JSON.parse(cookieString);
+                    } catch {
+                        return undefined;
+                    }
+                }
+            },
+
+            /**
+             * Updates a cookie with with provided JSON data
+             * 
+             * @param {object} data A JSON object containing the cookie data
+             * @this {AnalyticsConsentHelper}
+             */
+            set: (data) => {
+                // encoded data object
+                var cookieString = JSON.stringify(data);
+                
+                // Create date offset
+                var expireDate = new Date();
+                expireDate.setMonth(expireDate.getMonth() + this.settings.cookieDuration);
+
+                // create/overwrite cookie
+                document.cookie = this.settings.namespace + "=" + cookieString + ";expires=" + expireDate + ";domain=" + this.settings.cookieDomain + ";path=/";
+            },
+
+            /**
+             * Syncs cookie with localStorage and updates the timestamp for both
+             * 
+             * @this {AnalyticsConsentHelper}
+             */
+            sync: () => {
+                // delay to prevent edge case where localstorage hasn't finished updating yet
+                setTimeout(() => {
+                    let dataForCookie = this.localStorage.get();
+                
+                // Update timestamp
+                let timestamp = new Date().getTime();
+                localStorage.setItem(this.settings.timestampKey, timestamp);
+                dataForCookie[this.settings.timestampKey] = timestamp;
+
+                this.cookie.set(dataForCookie);
+                }, 200);
+                
+            }
+        }
+    }
+	window.analyticsConsentHelper = new AnalyticsConsentHelper();
+	
+    window.silktideConsentManager.init({
+        backdrop: {
+            show: true
+        },
+        icon: {
+            position: "bottomLeft"
+        },
+        prompt: {
+            position: "bottomRight"
+        },
+        consentTypes: [
+            {
+                id: "essential",
+                label: "Essential",
+                description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+                required: true,
+                onAccept: function ()
+                {
+                    // Add logic for the required Essential consent type here
+                    // console.log('Add logic for the required Essential consent type here');
+                }
+            },
+            {
+                id: "analytics",
+                label: "Analytics",
+                description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+                required: false,
+                gtag: "analytics_storage"
+            },
+            {
+                id: "marketing",
+                label: "Marketing",
+                description: "<p>These cookies are used by us and our advertising partners to show relevant ads on this site and elsewhere, and to measure how those campaigns perform.</p>",
+                required: false,
+                gtag: [
+                    "ad_storage",
+                    "ad_user_data",
+                    "ad_personalization"
+                ]
+            }
+        ],
+        text: {
+            prompt: {
+                description: "<p>This site uses cookies to enhance user experience, provide personalized content, and analyze traffic.</p>",
+                acceptAllButtonText: "Accept all",
+                acceptAllButtonAccessibleLabel: "Accept all cookies",
+                rejectNonEssentialButtonText: "Reject non-essential",
+                rejectNonEssentialButtonAccessibleLabel: "Reject all non-essential cookies",
+                preferencesButtonText: "Preferences",
+                preferencesButtonAccessibleLabel: "Toggle preferences"
+            },
+            preferences: {
+                title: "Customize your cookie preferences",
+                description: "<p>We respect your right to privacy. You can choose to deny some types of cookies. Cookie preferences will apply across the website.</p>",
+                saveButtonText: "Save and close",
+                saveButtonAccessibleLabel: "Save your cookie preferences",
+                creditLinkText: " ",
+                creditLinkAccessibleLabel: " "
+            }
+        },
+		// Sync cookie with localstorage data
+        onPreferencesClose: window.analyticsConsentHelper.cookie.sync,
+        onPromptClose: window.analyticsConsentHelper.cookie.sync
+    });
+</script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag()
+    {
+        dataLayer.push(arguments);
+    }
+
+    gtag('consent', 'default', {
+        analytics_storage: localStorage.getItem('stcm.consent.analytics') === 'true' ? 'granted' : 'denied',
+        ad_storage: localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+        ad_user_data: localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+        ad_personalization: localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+        functionality_storage: localStorage.getItem('stcm.consent.essential') === 'true' ? 'granted' : 'denied',
+        security_storage: localStorage.getItem('stcm.consent.essential') === 'true' ? 'granted' : 'denied'
+    });
+</script>   
+   <meta name="Author" content="State of Texas and Texas Tech University">
+   <meta name="Keywords" content="Texas Tech University">
+   <meta name="Description" content="Texas Tech University">
+   <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '582761736315448');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src=https://www.facebook.com/tr?id=582761736315448&ev=PageView&noscript=1
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+<!-- Meta Pixel Code -->
+<script>
+	!function(f,b,e,v,n,t,s)
+	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	 n.queue=[];t=b.createElement(e);t.async=!0;
+	 t.src=v;s=b.getElementsByTagName(e)[0];
+	 s.parentNode.insertBefore(t,s)}(window, document,'script',
+									 'https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '637589781055978');
+	fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+			   src="https://www.facebook.com/tr?id=637589781055978&ev=PageView&noscript=1"
+			   /></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- VPA Genius Monkey -->
+
+<script type="text/javascript" async src="https://pm.geniusmonkey.com/gm.js?id=1028351446&z=1"></script>
+
+<!-- VPA Genius Monkey -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-31759164-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-31759164-1');
+</script>
+   <script type="text/javascript">
+			var page_id="https://www.depts.ttu.edu/admissions/value/index.php";
+			
+				var site_has_own_hostname="no";
+			</script>
+   
+   <link xmlns:ouc="http://omniupdate.com/XSL/Variables" rel="stylesheet" href="/admissions/includes/stylesheets/internal-v1.min.css" media="all">
+   
+   </head><body><!-- This file is included immediately after the <body> tag. -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8TWBRS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip-btn" href="#ttu_main_content" tabindex="1">Skip to main content</a>   
+   <!-- Main-header Logo Links = = = = = = = = = = = = = = = = = = = = = = = = = -->
+   <div class="university--head"><span class="university--head__title"><a href="http://www.ttu.edu/">Texas Tech University</a></span>
+      <nav class="university--head__nav">
+	<ul>
+	<li><a href="http://directory.texastech.edu/" tabindex="2" aria-label="TTU System Online Directory">Directory</a></li>
+	<li><a href="http://raiderlink.ttu.edu/" tabindex="3" aria-label="Raiderlink">Raiderlink</a></li>
+	<li><a href="http://www.ttu.edu/site/" tabindex="4" aria-label="Site Index">A-Z Index</a></li>
+</ul></nav>
+<div class="university--head__search"> 
+	<!-- <a class="university__button" href="#">Menu<span></span></a>--> 
+	<a class="ttu-search-trigger" href="#ttu-search" aria-label="Open Search"><span></span></a>
+</div>
+      </div>
+   <!-- Page Header Navigation = = = = = = = = = = = = = = = = = = = = = = = = = -->
+   <header class="ttu-main-header" id="nav">
+      <div class="logo__lockup"><a class="ttu-logo" href="https://www.depts.ttu.edu/admissions/" aria-label=" Undergraduate Admissions  Home"><img src="/_ttu-template/2017/img/dbl__T.svg" alt=""></a><p> Undergraduate Admissions </p>
+      </div>
+      <ul class="ttu-header-buttons">
+	<li><a class="ttu-nav-trigger" href="#cd-primary-nav">Menu<span></span></a></li>
+	<li><a class="ttu-search-trigger mobile-search" href="#ttu-search" aria-label="Search">Search<span></span></a></li>
+</ul>
+      
+      </header>
+   <main class="ttu-main-content"><!-- Breadcrumbs = = = = = = = = = = = = = = = = = = = = = = = -->
+      <section class="breadcrumb">
+         <ul class="breadcrumbs">
+            
+            <li class="breadcrumbs-item"><a href="https://www.ttu.edu/" class="text-center icon-home">Texas Tech</a></li>
+            <li class="breadcrumbs-item"><a href="/admissions/">Undergraduate Admissions </a></li>  </ul>
+      </section>
+      <!-- End Breadcrumbs = = = = = = = = = = = = = = = = = = = = = = = --><!-- Main content = = = = = = = = = = = = = = = = = = = = = = = -->
+      <section class="l-main-pagecontent">
+         <section class="standard-content">
+            <div class="row">
+               <div class="large-9 columns large-centered">
+                  
+                     
+                     <p><img src="/admissions/value/images/SelectTech_Banner-v2.jpg" alt="Go anywhere, start here"></p>
+                     <div class="callout graybg">
+                        <h3 style="margin-top: 0;">No Red Raider Rides Alone</h3>
+                        <p>At Texas Tech University, we&#x92;re committed to realizing your academic goals through
+                           an affordable education. It&#x92;s no wonder we&#x92;re recognized nationally for being a best
+                           value university with the biggest return on your investment. We&#x92;ll set you up for
+                           success at a cost that is affordable!</p>
+                        <p>- 84% of students receive aid (fall 2024)<br>- $230M in scholarships &amp; grants (fall 2024)</p>
+                        <p>Apply for admission today to maximize your aid opportunities!</p>
+                        <div class="flow-space-700 cluster-top"><a class="btn" href="/admissions/apply/" target="_blank" rel="noopener" data-type="primary"> APPLY NOW </a></div>
+                     </div>
+                     <p>Jump to: <a href="#B_Important">Important Dates</a> | <a href="#C_Financial">Financial Aid</a> | <a href="#D_Scholarships">Scholarships</a> | <a href="#F_Freshman">Freshman Merit Scholarships</a> | <a href="#E_Transfer">Transfer Scholarships</a> | <a href="#G_Cost">Net Cost Calculator</a> | <a href="#H_Guarantee">Red Raider Guarantee</a> | <a href="#I_Business">Student Business Services</a></p>
+                     <h2 class="divider"><a id="B_Important"></a>Important Dates</h2>
+                     <p>The 2026-2027 FAFSA/TASFA will open <strong>October 1, 2025</strong>.</p>
+                     <p><strong>December 1</strong> - Fall Priority Admission/Scholarship Deadline (New First Time)<br><strong>April 1</strong> - Fall Priority Scholarship Deadline (Transfer)<br><strong>March 15</strong>- Red Raider Guarantee FAFSA Priority Deadline<br><strong>January 15</strong> - Merit Scholarship Thank You Letter Deadline</p>
+                     <p><em>Apply for admission and financial aid by the priority dates to ensure maximum eligibility.</em></p>
+                     <h2 class="divider"><a id="C_Financial"></a>Financial Aid</h2>
+                     <p>Grants, work-study, loans and scholarships, which are awarded based on academic achievement,
+                        financial need and extracurricular involvement, make your education more affordable.
+                        Start exploring your options now.</p>
+                     <p><a href="http://www.depts.ttu.edu/financialaid/">www.financialaid.ttu.edu</a></p>
+                     <h2 class="divider"><a id="D_Scholarships"></a>Scholarships</h2>
+                     <p>High school and transfer students quality for merit scholarships when meeting the
+                        criteria below. Additional competitive-based university, college and departmental
+                        scholarships are also available. Students should apply for admission for consideration
+                        (<a href="http://goapplytexas.org">ApplyTexas</a>&nbsp;or <a href="http://commonapp.org">CommonApp</a>). No additional scholarship application is needed.</p>
+                     <p>The priority scholarship application deadline is December 1. Applications received
+                        after this date will be considered in the order they are received.</p>
+                     <p><a href="http://www.depts.ttu.edu/scholarships/">www.scholarships.ttu.edu</a></p>
+                     <h2 class="divider"><a id="F_Freshman"></a>Freshman Merit Scholarships</h2>
+                     <p>Presidential Merit Scholarships are awarded to entering first-time freshmen who show
+                        exceptional academic ability. Annual award amounts pay one-half toward fall and one-half
+                        toward spring terms. If you are a non-resident awarded a Presidential Scholarship,
+                        you may qualify to pay in-state tuition. All merit awards are guaranteed for students
+                        admitted by May 1. TTU Costa Rica Students are not eligible for scholarships.</p>
+                     <p><div class="adm-values__table">
+<table><caption>Award amount is determined by test score and unweighted high school GPA.</caption>
+<thead>
+<tr>
+<td class="med-grey-bg" colspan="2" rowspan="2"><strong>National Merit Finalist</strong> <br />100% of originally federally approved cost of attendance</td>
+<th class="dark-grey-bg" colspan="6" scope="col">HIGH SCHOOL GPA (UNWEIGHTED)</th>
+</tr>
+<tr>
+<th class="grey-bg">4.0-3.96</th>
+<th>3.95-3.86</th>
+<th class="grey-bg">3.85-3.76</th>
+<th>3.75-3.66</th>
+<th class="grey-bg">3.65-3.5</th>
+<th>3.49-3.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="vertical-text dark-grey-bg" rowspan="5" scope="row"><span>TEST SCORE</span></th>
+<th scope="row">1500-1600 SAT <br />or 34-36 ACT</th>
+<td class="grey-bg">$9,000 per year</td>
+<td>$8,000 per year</td>
+<td class="grey-bg">$7,000 per year</td>
+<td>$5,500 per year</td>
+<td class="grey-bg">$5,000 per year</td>
+<td>$4,000 per year</td>
+</tr>
+<tr>
+<th>1400-1490 SAT <br />or 31-33 ACT</th>
+<td class="grey-bg">$8,000 per year</td>
+<td>$7,000 per year</td>
+<td class="grey-bg">$6,000 per year</td>
+<td>$4,500 per year</td>
+<td class="grey-bg">$4,000 per year</td>
+<td>$3,000 per year</td>
+</tr>
+<tr>
+<th>1300-1390 SAT <br />or 28-30 ACT</th>
+<td class="grey-bg">$6,500 per year</td>
+<td>$5,500 per year</td>
+<td class="grey-bg">$4,500 per year</td>
+<td>$3,000 per year</td>
+<td class="grey-bg">$2,500 per year</td>
+<td>$1,500 per year</td>
+</tr>
+<tr>
+<th>1200-1290 SAT <br />or 25-27 ACT</th>
+<td class="grey-bg">$6,000 per year</td>
+<td>$5,000 per year</td>
+<td class="grey-bg">$4,000 per year</td>
+<td>$2,500 per year</td>
+<td class="grey-bg">$2,000 per year</td>
+<td>$1,000 per year</td>
+</tr>
+<tr>
+<th>1100-1190 SAT <br />or 22-24 ACT</th>
+<td class="grey-bg">$5,000 per year</td>
+<td>$4,000 per year</td>
+<td class="grey-bg">$3,000 per year</td>
+<td>$1,500 per year</td>
+<td class="grey-bg">$1,000 per year</td>
+<td>$1,000 per year</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td class="med-grey-bg"><strong>*Test Optional</strong> <br />Add $1,000 if Top 10%</td>
+<td class="grey-bg">*$4,000 per year</td>
+<td>*$3,000 per year</td>
+<td class="grey-bg">*$2,000 per year</td>
+<td>*$1,500 per year</td>
+<td class="grey-bg">*$1,000 per year</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="footnote">ACT composite score; SAT reflects evidence-based reading and writing, and math; the highest section scores from multiple tests on the ACT and SAT will be used to maximize score <br />These awards are for the 2026-2027 academic year and are subject to change without notice. No additional application is required. Student must enroll in a minimum of 12 hours for fall &amp; spring terms.</p>
+<h4 class="separator">Renewal Requirements:</h4>
+<ul>
+<li><strong>Awards of $7,000-$9,000</strong>: 3.5 Cumulative GPA &amp; 30 TTU hours</li>
+<li><strong>Awards of $3000-$6500:</strong> 3.25 Cumulative GPA &amp; 30 TTU Hours</li>
+<li><strong>Awards of $1000-$2500:</strong> 3.0 Cumulative GPA &amp; 30 TTU Hours</li>
+</ul></p>
+                     <div class="table-wrapper">
+                        <div class="table-wrapper">
+                           <table style="height: 5px; background-color: #e6e6e6; width: 720px;" border="0" data-darkreader-inline-bgcolor="">
+                              <tbody>
+                                 <tr>
+                                    <td data-th="">
+                                       <p><strong>Test Optional Scholarships</strong></p>
+                                       <p>Students will designate if they would like to be test optional for both admission
+                                          and scholarships on the application. Once an admission decision has been made, the
+                                          test-optional designation cannot be changed.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                     <h2 class="divider"><a id="E_Transfer"></a>Transfer Scholarships</h2>
+                     <p>Transfer Scholarships are offered to students who are admitted as transfer students
+                        based on official transcripts submitted to the Office of Undergraduate Admissions
+                        and pay toward fall and spring terms. Complete requirements early - final awards are
+                        based on transcripts received by July 31st for fall or January 15th for spring entry
+                        terms.</p>
+                     <p>Non-residents awarded a Texas Tech competitive scholarship of $1,000 or greater (including
+                        Proven Achievers) will qualify to pay in-state tuition.</p>
+                     <h3>2025-2026 Transfer Merit Scholarships</h3>
+                     <ul class="default-list">
+                        <li style="list-style-type: none;">
+                           <ul class="default-list">
+                              <li style="list-style-type: none;">
+                                 <ul class="default-list">
+                                    <li><a href="/scholarships/transferStudentsScholarships.php">More Information about Scholarships for Incoming Transfer Students</a></li>
+                                    <li><a href="/scholarships/">Texas Tech Scholarship Search</a></li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+                     <p>&nbsp;</p>
+                     <ul class="default-list">
+                        <li style="list-style-type: none;">
+                           <p>&nbsp;</p>
+                           <h2 class="divider"><a id="H_Guarantee"></a>Red Raider Guarantee</h2>
+                           <p>In an effort to increase access to higher education, Texas Tech has implemented a
+                              plan to guarantee tuition and mandatory fees to new entering freshmen and transfer
+                              students, who are Texas residents, have a family adjusted gross income that does not
+                              exceed $80,000, have demonstrated financial need, and who will be enrolled full time.</p>
+                           <p>The 2026-2027 FAFSA/TASFA Priority Date for Red Raider Guarantee - <strong>March 15, 2026</strong>.</p>
+                           <p><a href="http://www.depts.ttu.edu/financialaid/guarantee/">www.financialaid.ttu.edu/guarantee</a></p><br><br></li>
+                        <li style="list-style-type: none;">
+                           <p>&nbsp;</p>
+                           <h2 class="divider"><a id="I_Business"></a>Student Business Services</h2>
+                           <p>How much will it cost? When will I be billed? Where and when do I pay? Are there payment
+                              plans?</p>
+                        </li>
+                        <li style="list-style-type: none;">
+                           <p>All the answers to these question and more can be found by contacting or visiting
+                              the website for <a href="/studentbusinessservices/">Student Business Services</a>. Their staff members are ready to answer your questions by calling 806.742.3272 or
+                              by email at <a href="mailto:sbs@ttu.edu">sbs@ttu.edu</a>.</p>
+                        </li>
+                     </ul>
+                  
+               </div>
+            </div>
+         </section>
+      </section>
+      <!-- End Main Content = = = = = = = = = = = = = = = = = = = = = --><!-- Contact Info = = = = = = = = = = = = = = = = = = = = = = = = = https://www.depts.ttu.edu/admissions/includes/contacts.php-->
+      <section class="l-contact">
+         <div class="c-contactinfo__container">
+            <div class="c-contactinfo__title">
+               <p> Undergraduate Admissions </p>
+            </div>
+            <ul>
+   <li>
+      <h3>Address</h3>
+      
+      <address>Texas Tech University, 2500 Broadway, Lubbock, TX 79409</address>
+   </li>
+   <li>
+      <h3>Phone</h3>
+      <a href="tel:8067421480">(806) 742-1480</a></li>
+   <li>
+      <h3>Email</h3>
+      <a href="mailto:admissions@ttu.edu">admissions@ttu.edu</a></li>
+</ul></div>
+         </section>
+      
+      <!-- Footer = = = = = = = = = = = = = = = = = = = = = = = = = -->
+      <footer class="l-footer-university" data-silktide="ignore"><!-- Address / Slogan --><!-- = = = = = = = = == = = = = = -->
+         <div class="c-footer-university__slogan"><h2>Texas Tech University</h2>
+<ul class="c-footer__address">
+	<li> 2500 Broadway Lubbock, Texas 79409</li>
+	<li><a href="tel:+18067422011">806-742-2011</a></li>
+</ul>
+            
+            <div class="l-socialbar"><h4>Follow Texas Tech University</h4>
+<ul>
+	<li><a href="https://www.facebook.com/TexasTechUniversity/"><svg version="1.1" role="img" aria-labelledby="title_facebook desc_facebook" x="0px" y="0px" viewBox="0 0 485 485" style="width:100%;height:30px;"><title id="title_facebook">Like Texas Tech University on Facebook</title><desc id="desc_facebook">Like Texas Tech University on Facebook</desc><path class="inner-shape" d="M200.8,400H266V242.4h43.8c0,0,4.1-25.4,6.1-53.2h-49.6v-36.3c0-5.4,7.1-12.7,14.2-12.7H316V85h-48.4       c-68.5,0-66.9,53.1-66.9,61v43.4H169v53h31.8L200.8,400L200.8,400z" /></svg></a></li>
+	<li><a href="http://www.x.com/texastech/"><svg version="1.1" role="img" aria-labelledby="title_twitter desc_twitter" x="0px" y="0px" viewBox="0 0 485 485" style="width:100%;height:30px;"><title id="title_twitter">Follow Texas Tech University on X (twitter)</title><desc id="desc_twitter">Follow Texas Tech University on X (twitter)</desc><path class="inner-shape" d="M271.8,218.4L386.6,85h-27.2l-99.6,115.8L180.2,85H88.4l120.3,175.1L88.4,400h27.2l105.2-122.3l84,122.3h91.8L271.8,218.4       L271.8,218.4z M234.6,261.7l-12.2-17.4l-97-138.8h41.8l78.3,112l12.2,17.4l101.8,145.6h-41.8L234.6,261.7L234.6,261.7L234.6,261.7z" /></svg></a></li>
+	<li><a href="http://www.youtube.com/user/texastech/"><svg version="1.1" role="img" aria-labelledby="title_youtube desc_youtube" x="0px" y="0px" viewBox="0 0 485 485" style="width:100%;height:30px;"><title id="title_youtube">Subscribe to Texas Tech University on YouTube</title><desc id="desc_youtube">Subscribe to Texas Tech University on YouTube</desc><path class="inner-shape" d="M124.5,347.9c39.1,4.4,78.6,4.4,117.9,4.4c39.4,0,78.9,0,118-4.4c16.5-1.8,30.2-14.2,34.1-31c5.5-23.8,5.5-49.9,5.5-74.5       s0-50.6-5.4-74.4c-3.9-16.8-17.6-29.1-34.1-31c-39.1-4.4-78.6-4.4-117.9-4.4c-39.4,0-78.9,0-118,4.4c-16.5,1.8-30.2,14.2-34,31       c-5.5,23.8-5.6,49.9-5.6,74.5s0,50.6,5.5,74.5C94.3,333.7,108,346.1,124.5,347.9z M201.9,187.2c33.4,17.4,66.5,34.7,100.1,52.2       c-33.5,17.4-66.7,34.6-100.1,51.9L201.9,187.2L201.9,187.2z" /></svg></a></li>
+	<li><a href="https://www.instagram.com/texastech/"><svg version="1.1" role="img" aria-labelledby="title_instagram desc_instagram" x="0px" y="0px" viewBox="0 0 485 485" style="width:100%;height:30px;"><title id="title_instagram">Follow Texas Tech University on Instagram</title><desc id="desc_instagram">Follow Texas Tech University on Instagram</desc><g class="inner-shape"><path d="M320.5,85H164.5C120.7,85,85,120.7,85,164.5v156.1c0,43.8,35.6,79.5,79.5,79.5h156.1c43.8,0,79.4-35.6,79.4-79.5V164.5       C400,120.7,364.3,85,320.5,85z M365.7,320.6c0,24.9-20.3,45.2-45.2,45.2H164.5c-24.9,0-45.2-20.3-45.2-45.2V164.5       c0-24.9,20.3-45.2,45.2-45.2h156.1c24.9,0,45.2,20.3,45.2,45.2V320.6z" /><path d="M326.2,178.2c-10.6,0-19.2-8.6-19.2-19.2c0-10.6,8.6-19.2,19.2-19.2c10.6,0,19.2,8.6,19.2,19.2       C345.4,169.6,336.8,178.2,326.2,178.2L326.2,178.2z" /><path d="M242.5,161.4c-44.7,0-81.1,36.4-81.1,81.1c0,44.7,36.4,81.1,81.1,81.1c44.7,0,81.1-36.4,81.1-81.1       C323.6,197.8,287.2,161.4,242.5,161.4z M242.5,289.4c-25.8,0-46.8-21-46.8-46.8c0-25.8,21-46.8,46.8-46.8       c25.8,0,46.8,21,46.8,46.8C289.3,268.4,268.3,289.4,242.5,289.4z" /></g></svg></a></li>
+	<li><a href="http://www.linkedin.com/companies/texas-tech-university"><svg version="1.1" role="img" aria-labelledby="title_linkedin desc_linkedin" x="0px" y="0px" viewBox="0 0 485 485" style="width:100%;height:30px;"><title id="title_linkedin">Connect with Texas Tech University on LinkedIn</title><desc id="desc_linkedin">Connect with Texas Tech University on LinkedIn</desc><g class="inner-shape"><path d="M89,189.9c0,0,1.5,0,3.9,0h63.6V393H89V189.9z" /><path d="M122.3,162.2h0.4c23.6,0,38.2-15.6,38.2-35.1c-0.4-19.9-14.6-35.1-37.8-35.1C100.1,92,85,107.2,85,127.1       C85,146.6,99.7,162.2,122.3,162.2z" /><path d="M261.4,393V279.6c0-6.1,0.5-12.1,2.2-16.5c4.9-12.1,16-24.7,34.6-24.7c24.4,0,34.2,18.6,34.2,45.9V393H400V276.5       c0-62.4-33.3-91.4-77.7-91.4c-35.9,0-51.9,19.7-60.9,33.5v0.7H261c0.1-0.2,0.3-0.4,0.4-0.7v-28.8h-67.5c0.9,19.1,0,203.1,0,203.1       L261.4,393L261.4,393z" /></g></svg></a></li>
+</ul>
+               </div>
+         </div>
+         
+<!-- Links --> 
+
+<!--= = = = = = = = = = = = = = -->
+<nav class="c-footer-university__links"  data-silktide="ignore" >
+	<ul>
+		<li><a href="https://www.ttu.edu/contact/index.php">Contact Us</a></li>
+		<li><a href="https://www.ttu.edu/map/">Campus Map</a></li>
+		<li><a href="https://www.texastech.edu/careers/">Jobs @ TTU</a></li>
+		<li><a href="https://www.ttu.edu/techalert/">TechAlert</a></li>
+		<li><a href="https://www.ttu.edu/policy/">General Policy Information</a></li>
+		<li><a href="https://www.ttu.edu/courseinfo/">Public Access to Course Info</a></li>
+		<li><a href="https://www.depts.ttu.edu/utilities/EnergyManagement/Energy-Management.php">Energy Management</a></li>
+		<li><a href="https://www.ttu.edu/wellbeing/">Mental Health Resources</a></li>
+		<li><a href="https://www.depts.ttu.edu/titleix/">Title IX</a></li>
+		<li><a href="https://secure.ethicspoint.com/domain/media/en/gui/12414/index.html">Fraud and Misconduct Hotline</a></li>
+		<li><a href="https://apps.highered.texas.gov/index.cfm?page=44D8EA89B7EF3E9BBAB50F71E96AAA13">Online Institutional Resumes</a></li>
+		<li><a href="https://comptroller.texas.gov/transparency/">Texas Transparency</a></li>
+		<li><a href="https://www.ttu.edu/accessibility/digital-accessibility/">Digital Accessibility</a></li>
+	</ul>
+	<ul>
+		<li><a href="https://www.texastech.edu/">TTU System</a></li>
+		<li><a href="https://www.ttuhsc.edu/">TTU Health Sciences Center</a></li>
+		<li><a href="https://elpaso.ttuhsc.edu/">TTUHSC El Paso</a></li>
+		<li><a href="https://www.angelo.edu/">Angelo State University</a></li>
+		<li><a href="https://www.msutexas.edu/">Midwestern State University</a></li>
+		<li><a href="https://www.tsl.texas.gov/trail/" target="_blank" aria-label="Statewide Search (opens in new window)">Statewide Search</a></li>
+		<li><a href="https://texas.gov/" target="_blank" aria-label="State of Texas (opens in new window)">State of Texas</a></li>
+		<li><a href="https://gov.texas.gov/organization/hsgd" target="_blank" aria-label="Texas Homeland Security (opens in new window)">Texas Homeland Security</a></li>
+		<li><a href="https://veterans.portal.texas.gov" target="_blank" aria-label="Texas Veterans Portal (opens in new window)">Texas Veterans Portal</a></li>
+		<li><a href="https://txcrews.org/" target="_blank" aria-label="Texas CREWS (opens in new window)">Texas CREWS</a></li>
+		<li><a href="https://sao.fraud.texas.gov/" target="_blank" aria-label="SAO Fraud Reporting (opens in new window)">SAO Fraud Reporting</a></li>
+		<li><a href="https://www.texastech.edu/ogc/open-records.php" target="_blank" aria-label="Open Records Requests (opens in new window)">Open Records Requests</a></li>
+	</ul>
+</nav>
+         </footer>
+      <div class="l-footer-copyright"><a href="https://www.ttu.edu/">© 2026            				&nbsp;Texas Tech University</a>
+         <a href="https://a.cms.omniupdate.com/11/?skin=ttu&amp;account=main&amp;site=admissions&amp;action=de&amp;path=/value/index.pcf" target="_blank">Jun 25, 2026</a>&nbsp;11:40 AM</div>
+      </main>
+   <!-- Menu Overlay = = = = = = = = = = = = = = = = = = = = = -->
+   <div class="ttu-overlay"></div>
+   
+   
+   
+   <nav class="ttu-nav">
+      <ul id="cd-primary-nav" class="ttu-primary-nav is-fixed">
+         
+         <li class="has-children ">
+            <div class="c-page-header__mobile">
+               <label class="c-page-header__title moves-out"> Undergraduate Admissions </label>
+               </div>
+            <a href="#">Admission</a>
+            
+            <ul class="ttu-secondary-nav is-hidden">
+               <li class="go-back">
+                  <div class="c-page-header__mobile">
+                     <label class="c-page-header__title moves-out"> Undergraduate Admissions </label>
+                     </div><a href="#">Back</a></li>
+               
+               <li class="has-children "><a href="#" class="c-nav-content-title__mobile">Admissions</a>
+                  
+                  <ul class="is-hidden navcontent">
+                     <li class="go-back">
+                        <div class="c-page-header__mobile">
+                           <label class="c-page-header__title moves-out"> Undergraduate Admissions </label>
+                           </div><a href="#">Back</a></li>
+                     
+                     <li><a class="ttu-nav-item tt-button bg-white bdr-red" href="/admissions/request-info/">Request Info</a></li>
+                  </ul>
+               </li>
+               <li class="has-children "><a href="#" class="c-sitemenu-nolink">Become a Red Raider</a>
+                  
+                  <ul class="is-hidden ">
+                     <li class="go-back">
+                        <div class="c-page-header__mobile">
+                           <label class="c-page-header__title moves-out"> Undergraduate Admissions </label>
+                           </div><a href="#">Back</a></li>
+                     
+                     <li><a href="https://www.ttu.edu/admissions/admitted-students/">I'm Admitted</a></li>
+                     <li><a href="/admissions/roadmap/">I'm Planning for College</a></li>
+                     <li><a href="/admissions/apply/status/first_freshmen/">I'm a High School Applicant</a></li>
+                     <li><a href="/admissions/apply/status/transfer/">I'm a Transfer Student</a></li>
+                     <li><a href="/admissions/apply/status/returning_other/former/">I'm a Former Tech Student</a></li>
+                     <li><a href="/admissions/international/apply/">I'm an International Student</a></li>
+                     <li><a href="/admissions/Military/">I'm Military or Dependent Family</a></li>
+                  </ul>
+               </li>
+               <li class="has-children "><a href="#" class="c-sitemenu-nolink">Resources For Applicants</a>
+                  
+                  <ul class="is-hidden ">
+                     <li class="go-back">
+                        <div class="c-page-header__mobile">
+                           <label class="c-page-header__title moves-out"> Undergraduate Admissions </label>
+                           </div><a href="#">Back</a></li>
+                     
+                     <li><a href="https://texastech.my.site.com/portal/TX_SiteLogin?startURL=%2Fportal%2FTargetX_Base__Portal">Check my Application Status</a></li>
+                     <li><a href="/admissions/staff/">Contact my Admissions Counselor</a></li>
+                     <li><a href="/admissions/apply/ImportantDates/">Important Dates</a></li>
+                     <li><a href="/admissions/apply/status/otheradmission.php">Other Admission Types</a></li>
+                     <li><a href="/admissions/residency/">Residency Determination</a></li>
+                  </ul>
+               </li>
+               <li class="has-children "><a href="#" class="c-sitemenu-nolink">Information For</a>
+                  
+                  <ul class="is-hidden ">
+                     <li class="go-back">
+                        <div class="c-page-header__mobile">
+                           <label class="c-page-header__title moves-out"> Undergraduate Admissions </label>
+                           </div><a href="#">Back</a></li>
+                     
+                     <li><a href="/admissions/parent/">Parents &amp; Family</a></li>
+                     <li><a href="https://ttu.campusesp.com/signin">Red Raider Family Network</a></li>
+                     <li><a href="/admissions/counselors/">Counselors &amp; Advisors</a></li>
+                     <li><a href="/admissions/volunteers/">Volunteers</a></li>
+                     <li><a href="/admissions/fosteringfutures/">Fostered Youth</a></li>
+                     <li><a href="/admissions/espanol/">En Español</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </li>
+         <li><a href="https://www.ttu.edu/programs/">Majors</a></li>
+         <li class="has-children "><a href="#">Visit &amp; Events</a>
+            
+            <ul class="ttu-secondary-nav is-hidden">
+               <li class="go-back">
+                  <div class="c-page-header__mobile">
+                     <label class="c-page-header__title moves-out"> Undergraduate Admissions </label>
+                     </div><a href="#">Back</a></li>
+               
+               <li class="has-children "><a href="#" class="c-nav-content-title__mobile">Visit &amp; Events</a>
+                  
+                  <ul class="is-hidden navcontent">
+                     <li class="go-back">
+                        <div class="c-page-header__mobile">
+                           <label class="c-page-header__title moves-out"> Undergraduate Admissions </label>
+                           </div><a href="#">Back</a></li>
+                     
+                     <li><a class="ttu-nav-item tt-button bg-white bdr-red" href="https://www.ttu.edu/admissions/visit-events/">Visit &amp; Events</a></li>
+                     <li><a class="ttu-nav-item tt-button bg-white bdr-red" href="/admissions/request-info/">Request Info</a></li>
+                  </ul>
+               </li>
+               <li class="has-children "><a href="#" class="c-sitemenu-nolink">Visiting Texas Tech</a>
+                  
+                  <ul class="is-hidden ">
+                     <li class="go-back">
+                        <div class="c-page-header__mobile">
+                           <label class="c-page-header__title moves-out"> Undergraduate Admissions </label>
+                           </div><a href="#">Back</a></li>
+                     
+                     <li><a href="https://www.ttu.edu/visit/">Schedule an On‑Campus Tour</a></li>
+                     <li><a href="https://www.youvisit.com/tour/ttu">Take a Virtual Tour</a></li>
+                     <li><a href="/admissions/visit-events/large-group/">Large Group Tours</a></li>
+                     <li><a href="/admissions/visit-events/traveling-to-campus/index.php">On‑Campus Agendas, Directions &amp; Parking</a></li>
+                     <li><a href="/admissions/staff/visitors-center/">Contact Visitors Center</a></li>
+                     <li><a href="/admissions/Lubbock/index.php">Explore Lubbock</a></li>
+                  </ul>
+               </li>
+               <li class="has-children "><a href="#" class="c-sitemenu-nolink">Attend an Event</a>
+                  
+                  <ul class="is-hidden ">
+                     <li class="go-back">
+                        <div class="c-page-header__mobile">
+                           <label class="c-page-header__title moves-out"> Undergraduate Admissions </label>
+                           </div><a href="#">Back</a></li>
+                     
+                     <li><a href="https://texastech.my.salesforce-sites.com/events#/calendar">Upcoming Events</a></li>
+                     <li><a href="https://texastech.my.salesforce-sites.com/events/#/search?type=application%20workshop,virtual%20event%20domestic,virtual%20event%20international">Application Workshops (Virtual&nbsp;&amp;&nbsp;In‑Person)</a></li>
+                     <li><a href="https://texastech.my.salesforce-sites.com/events/#/search?type=Virtual%20Event%20TTU%20Online">TTU Online Virtual Info Sessions</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </li>
+         <li class="has-children "><a href="#">Campus Life</a>
+            
+            <ul class="ttu-secondary-nav is-hidden">
+               <li class="go-back">
+                  <div class="c-page-header__mobile">
+                     <label class="c-page-header__title moves-out"> Undergraduate Admissions </label>
+                     </div><a href="#">Back</a></li>
+               
+               <li class="has-children "><a href="#" class="c-nav-content-title__mobile">Schedule a Tour</a>
+                  
+                  <ul class="is-hidden navcontent">
+                     <li class="go-back">
+                        <div class="c-page-header__mobile">
+                           <label class="c-page-header__title moves-out"> Undergraduate Admissions </label>
+                           </div><a href="#">Back</a></li>
+                     
+                     <li><a class="ttu-nav-item tt-button bg-white bdr-red" href="https://www.ttu.edu/visit/">Schedule an On‑Campus Tour</a></li>
+                     <li><a class="ttu-nav-item tt-button bg-white bdr-red" href="/admissions/request-info/">Request Info</a></li>
+                  </ul>
+               </li>
+               <li class="has-children "><a href="#" class="c-sitemenu-nolink">On-Campus</a>
+                  
+                  <ul class="is-hidden ">
+                     <li class="go-back">
+                        <div class="c-page-header__mobile">
+                           <label class="c-page-header__title moves-out"> Undergraduate Admissions </label>
+                           </div><a href="#">Back</a></li>
+                     
+                     <li><a href="/admissions/experience/index.php">Experience Campus</a></li>
+                     <li><a href="https://www.depts.ttu.edu/hospitality/">Dining</a></li>
+                     <li><a href="https://www.depts.ttu.edu/housing/">Housing</a></li>
+                     <li><a href="/admissions/safety/index.php">Safety</a></li>
+                  </ul>
+               </li>
+               <li class="has-children "><a href="#" class="c-sitemenu-nolink">Connect</a>
+                  
+                  <ul class="is-hidden ">
+                     <li class="go-back">
+                        <div class="c-page-header__mobile">
+                           <label class="c-page-header__title moves-out"> Undergraduate Admissions </label>
+                           </div><a href="#">Back</a></li>
+                     
+                     <li><a href="https://www.ttu.edu/traditions/" target="_blank">Spirit &amp; Traditions</a></li>
+                     <li><a href="https://www.ttu.edu/campus-life/student-life/student-organizations.php" target="_blank">Student Organizations</a></li>
+                     <li><a href="https://www.depts.ttu.edu/recreation/" target="_blank">Recreation</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </li>
+         <li class="has-children "><a href="#">Cost &amp; Aid</a>
+            
+            <ul class="ttu-secondary-nav is-hidden">
+               <li class="go-back">
+                  <div class="c-page-header__mobile">
+                     <label class="c-page-header__title moves-out"> Undergraduate Admissions </label>
+                     </div><a href="#">Back</a></li>
+               
+               <li class="has-children "><a href="#" class="c-nav-content-title__mobile">Cost &amp; Aid</a>
+                  
+                  <ul class="is-hidden navcontent">
+                     <li class="go-back">
+                        <div class="c-page-header__mobile">
+                           <label class="c-page-header__title moves-out"> Undergraduate Admissions </label>
+                           </div><a href="#">Back</a></li>
+                     
+                     <li><a class="ttu-nav-item tt-button bg-white bdr-red" href="https://www.ttu.edu/admissions/cost-aid/">Cost &amp; Aid</a></li>
+                     <li><a class="ttu-nav-item tt-button bg-white bdr-red" href="/admissions/request-info/">Request Info</a></li>
+                  </ul>
+               </li>
+               <li class="has-children "><a href="https://www.depts.ttu.edu/financialaid/">Financial Aid</a>
+                  
+                  <ul class="is-hidden ">
+                     <li class="go-back">
+                        <div class="c-page-header__mobile">
+                           <label class="c-page-header__title moves-out"> Undergraduate Admissions <br>
+                              <span class="title--location">Financial Aid</span>
+                              </label>
+                           </div><a href="#">Back</a></li>
+                     
+                     <li><a href="/financialaid/costToAttend.php">Cost of Attendance</a></li>
+                     <li><a href="https://www.depts.ttu.edu/financialaid/netCostCalcHome.php">Net Cost Calculator</a></li>
+                     <li><a href="/financialaid/financialAidForms.php">Financial Aid Forms</a></li>
+                  </ul>
+               </li>
+               <li class="has-children "><a href="https://www.depts.ttu.edu/scholarships/">Scholarships</a>
+                  
+                  <ul class="is-hidden ">
+                     <li class="go-back">
+                        <div class="c-page-header__mobile">
+                           <label class="c-page-header__title moves-out"> Undergraduate Admissions <br>
+                              <span class="title--location">Scholarships</span>
+                              </label>
+                           </div><a href="#">Back</a></li>
+                     
+                     <li><a href="https://www.depts.ttu.edu/scholarships/incFreshman.php">For Incoming Freshmen</a></li>
+                     <li><a href="https://www.depts.ttu.edu/scholarships/transferStudentsScholarships.php">For Incoming Transfers</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </li>
+         <li>
+            <div class="l-ttunav is-hidden"><label class="c-page-header__title">Additional Resources</label>
+               <a href="http://www.ttu.edu/" title="TTU Home">TTU Home</a>
+               <ul>
+	<li><a href="http://directory.texastech.edu/" tabindex="2" aria-label="TTU System Online Directory">Directory</a></li>
+	<li><a href="http://raiderlink.ttu.edu/" tabindex="3" aria-label="Raiderlink">Raiderlink</a></li>
+	<li><a href="http://www.ttu.edu/site/" tabindex="4" aria-label="Site Index">A-Z Index</a></li>
+</ul></div>
+         </li>
+      </ul>
+      </nav>
+   
+   <!-- TTU Search -->
+<!--
+<div id="ttu-search" class="ttu-search">
+	<form action="https://www.ttu.edu/search/" method="get">
+		<input type="search" placeholder="Search..." name="query" aria-label="Search TTU Site" />
+	</form>
+</div>
+ -->
+<!-- TTU Google Search -->
+<div id="ttu-search" class="ttu-search">
+<script async src="https://cse.google.com/cse.js?cx=005616944757946716054:pp7cfxslkbm">
+</script>
+<div class="gcse-searchbox-only"></div>
+</div>
+<script src="/_ttu-template/2017/js/classie.js"></script> 
+<script src="/_ttu-template/2017/js/main.js"></script> 
+<script src="/_ttu-template/2017/js/stickykit.js"></script>
+<!-- <script src="/_ttu-template/2017/js/bootstrap.min.js"></script>  -->
+<script>
+    $("#nav").stick_in_parent({
+        bottoming: false
+    });
+    </script> 
+   
+   </body>
+</html>

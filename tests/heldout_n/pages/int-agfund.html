@@ -1,0 +1,695 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
+    <title>Home page - AGFUND</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/Agfund-Logo-0122_3_82x62.png" />
+
+    <link rel="stylesheet" href="/css/site.css" />
+    <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script nonce="Xhx/CG2YrBnzw9RJleorXg==" src="/lib/jquery/dist/jquery.min.js"></script>
+    <script nonce="Xhx/CG2YrBnzw9RJleorXg==" src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script nonce="Xhx/CG2YrBnzw9RJleorXg==" src="/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script type="text/javascript">!function(T,l,y){var S=T.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][b]()]=i[1])}if(!e[C]){var r=e.endpointsuffix,o=r?e.location:null;e[C]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[D]||d[D]||"",u=s[C],p=u?u+"/v2/track":d.endpointUrl,(l=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=p,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),l.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/\"/g,"")+'"',o.properties={endpoint:a},i}(0,0,t,p)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:N,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(N,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(l,p))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(k);n.src=h;var e=y[w];return!e&&""!==e||"undefined"==n[w]||(n[w]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(k)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[I]&&!0!==s[I]){var c="onerror";t(["_"+c]);var u=T[c];T[c]=function(e,t,n,a,i){var r=u&&u(e,t,n,a,i);return!0!==r&&m["_"+c]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);function a(){y.onInit&&y.onInit(n)}(T[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{
+src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js", // The SDK URL Source
+crossOrigin: "anonymous", 
+cfg: { // Application Insights Configuration
+    connectionString: 'InstrumentationKey=3faeda31-f5be-4480-94bd-62945a0df978;IngestionEndpoint=https://centralus-2.in.applicationinsights.azure.com/;LiveEndpoint=https://centralus.livediagnostics.monitor.azure.com/;ApplicationId=55f24e60-ab87-4823-b314-00f1f2818c24'
+}});</script></head>
+
+
+<body class="agf-home">
+    <!--Beta / preview notice-->
+    <div class="agf-beta-bar">You’re viewing a <strong>BETA</strong> preview of the new AGFUND website — content and features are still being finalized.</div>
+
+    <header>
+        <!--Navbar-->
+        <nav class="agf-navbar agf-navbar--dark navbar navbar-expand-xl navbar-dark">
+            <div class="container">
+                <!--Logo-->
+                <a class="navbar-brand" href="/Index">
+                    <img src="/images/agfund-logo-white.png" class="navbar-img align-text-bottom" alt="AGFUND program" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navtoggle" aria-controls="navtoggle"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse agf-navcollapse" id="navtoggle">
+
+                    <!--main nav-->
+                    <ul class="navbar-nav agf-nav-main me-auto">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle anavbar" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                About Us
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/en/about/brief">AGFUND in brief</a>
+                                <a class="dropdown-item" href="/en/about/strategy">Strategy</a>
+                                <a class="dropdown-item" href="/en/about/organization">Organization structure</a>
+                                <a class="dropdown-item" href="/en/about/partners">Partners</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/en/contact">Contact Us</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle anavbar" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Focus Areas
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/en/focusAreas/financialInclusion/AMU">Financial Inclusion</a>
+                                <a class="dropdown-item " href="/en/focusAreas/financialInclusion/AMU">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AGFUND Microfinance Unit (AMU)</a>
+                                <a class="dropdown-item " href="/en/focusAreas/financialInclusion/overview">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Financial Inclusion Banks</a>
+                                <a class="dropdown-item " href="/en/focusAreas/financialInclusion/AMUbanks">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- AGFUND Banks</a>
+                                <a class="dropdown-item " href="/en/focusAreas/financialInclusion/success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Success Stories</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/en/focusAreas/earlyChild">Early Childhood Development</a>
+                                <a class="dropdown-item" href="/en/focusAreas/womenEmp">Women’s Empowerment</a>
+                                <a class="dropdown-item" href="/en/focusAreas/civilSociety">Civil Society Development</a>
+                                <a class="dropdown-item" href="/en/focusAreas/openEduc">Open Education for Youth</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle anavbar" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Exhibitions
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="https://agfundmedia.azurewebsites.net/unicef/">AGFUND & UNICEF</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle anavbar" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Projects Funding
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item fw-bold" style="color:var(--agf-petrol);" href="/en/Funding">Apply for Funding</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/en/projectFunding">About projects funding</a>
+                                <a class="dropdown-item" href="/en/projectFunding/aroundWorld">Funded projects Around the World</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle anavbar" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                The Prize
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/en/thePrize">About the Prize</a>
+                                <a class="dropdown-item" href="/en/thePrize/committee">The Prize Committee</a>
+                                <a class="dropdown-item" href="https://agfundmedia.azurewebsites.net/prizemap/site/">The Prize Laureates</a>
+                                <a class="dropdown-item" href="/en/thePrize/procedures">Procedures and Mechanisms</a>
+                                <a class="dropdown-item" href="/en/thePrize/nomination">The Nomination</a>
+                                <a class="dropdown-item" href="/en/thePrize/evaluation">The Evaluation</a>
+                                <a class="dropdown-item" href="/en/thePrize/faqs">FAQS</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle anavbar" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Media Center
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/en/mediaCenter/news">News</a>
+                                <a class="dropdown-item" href="/en/mediaCenter/events">Events</a>
+                                <a class="dropdown-item" href="/en/mediaCenter/gallery">Gallery</a>
+                                <a class="dropdown-item" href="/en/mediaCenter/publication">Publications</a>
+                                <a class="dropdown-item" href="/en/mediaCenter/material">Media Material</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!--utility + CTA-->
+                    <ul class="navbar-nav agf-nav-util align-items-xl-center">
+                        <li class="nav-item">
+                            <a class="nav-link anavbar" href="/en/jobs">Jobs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link anavbar agf-langbtn" href="/ar">AR/EN</a>
+                        </li>
+                        
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle anavbar" id="loginDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Login
+        </a>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="loginDropdown">
+            <a class="dropdown-item" href="/en/Funding/login">Project Funding</a>
+            <a class="dropdown-item" href="/thePrize/login">Nominator login</a>
+            <a class="dropdown-item" href="/thePrize/evaluator/login">Evaluator login</a>
+        </div>
+    </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--Carousel / hero (rotating imagery + constant overlay)-->
+    <div class="agf-carousel">
+        <div id="carouselslides" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false">
+
+            <!--rotating background slides-->
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000"><div class="agf-hero__bg" style="background-image: url('/images/hero/hero-mission.jpg');"></div></div>
+                <div class="carousel-item" data-bs-interval="5000"><div class="agf-hero__bg" style="background-image: url('/images/hero/hero-belief.jpg');"></div></div>
+                <div class="carousel-item" data-bs-interval="5000"><div class="agf-hero__bg" style="background-image: url('/images/hero/hero-finance.jpg');"></div></div>
+                <div class="carousel-item" data-bs-interval="5000"><div class="agf-hero__bg" style="background-image: url('/images/hero/hero-childhood.jpg');"></div></div>
+                <div class="carousel-item" data-bs-interval="5000"><div class="agf-hero__bg" style="background-image: url('/images/cta-montage.jpg');"></div></div>
+            </div>
+
+            <!--constant scrim + overlay content-->
+            <div class="agf-hero__scrim"></div>
+            <div class="agf-hero__overlay">
+                <div class="container">
+                    <span class="agf-hero__eyebrow">Arab Gulf Programme for Development</span>
+                    <h1 class="agf-hero__title">Investing in people to create sustainable development</h1>
+                    <p class="agf-hero__sub">Since 1980, AGFUND has worked to alleviate poverty and empower vulnerable groups across the Arab region and beyond.</p>
+                    <div class="agf-hero__actions">
+                        <a class="agf-btn agf-btn--primary agf-btn--lg" href="/en/Funding">Apply for Funding <span class="agf-arrow">→</span></a>
+                        <a class="agf-hero__link" href="/en/about/brief">Learn about AGFUND</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--indicators-->
+            <div class="carousel-indicators">
+                <button data-bs-target="#carouselslides" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button data-bs-target="#carouselslides" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button data-bs-target="#carouselslides" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button data-bs-target="#carouselslides" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button data-bs-target="#carouselslides" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
+
+            <!--controls-->
+            <button class="carousel-control-prev" data-bs-target="#carouselslides" type="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" data-bs-target="#carouselslides" type="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!--prize announcement (dynamic — preserved)-->
+        <div class="container d-block pt-3 agf-prize">
+            <div class="row pb-5">
+                <div class="col-lg-8 col-md-12 col-sm-12 mt-4">
+                    <div class="row">
+                        <!--prize logo-->
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-4 text-end align-self-center">
+                            <img src="/images/icon180.png" width="95" alt="prize logo" />
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-9 col-8 align-self-center">
+                            PRINCE TALAL INTERNATIONAL PRIZE FOR HUMAN DEVELOPMENT
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <!--SDG logo-->
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-4 text-end align-self-center">
+                            <img src="/images/Prize/3.png" width="95" alt="SDG logo" />
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-9 col-8 align-self-center">
+                            <div class="text " style="font-size:12px;">Subject for 2026 Prize</div>
+                            <div class="text-monospace " style="font-size:28px;">Good Health and Well-Being</div>
+                            <div class="text-danger " style="font-size:12px;">Deadline for Nomination: <b>15 Feb 2027</b></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-sm-12 align-self-center mt-5">
+                    <div class="row text-center ">
+                        <!--Counter-->
+                        <div class="text agf-prize__timer" id="timer"></div>
+                        <input hidden id="datetime" value='February 15, 2027 20:59:32' />
+                        <div class="text " style="font-size:12px;">
+                            Days &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hours
+                            &nbsp;&nbsp;&nbsp;&nbsp;  Minutes &nbsp;&nbsp;&nbsp;&nbsp; Seconds
+                        </div>
+                    </div>
+
+                    <div class="row mt-4 text-center ">
+                        <!--Links-->
+                        <div>
+                            <a class="agf-btn agf-btn--primary" href="/thePrize/login">Nominate NOW</a>
+                            <a class="ms-2" href="/en/thePrize">More Details</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    <!--About AGFUND (content sourced from AGFUND interactive brochure)-->
+    <div class="agf-about">
+        <div class="container">
+            <span class="agf-about__eyebrow">Investing in people</span>
+            <h2 class="agf-about__title">To create sustainable development</h2>
+            <div class="row align-items-start">
+                <div class="col-lg-8">
+                    <p class="agf-about__lead">
+                        The Arab Gulf Programme for Development (AGFUND) was established in 1980 upon the initiative of
+                        His Royal Highness Prince Talal bin Abdulaziz Al Saud, may Allah have mercy on him, with the
+                        support of the leaders of the Gulf Cooperation Council (GCC) States. Through its strategy, AGFUND
+                        addresses the root causes of human development challenges, targeting all segments of society
+                        without discrimination.
+                    </p>
+                    <a class="agf-btn agf-btn--primary" href="/en/about/brief">About AGFUND <span class="agf-arrow">→</span></a>
+                </div>
+                <div class="col-lg-4">
+                    <ul class="agf-values">
+                        <li class="agf-value"><span class="agf-value__dot"></span>People First</li>
+                        <li class="agf-value"><span class="agf-value__dot"></span>Partnership &amp; Integration</li>
+                        <li class="agf-value"><span class="agf-value__dot"></span>Sustainability &amp; Impact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Focus Areas — feature bands-->
+    <div class="agf-section" style="padding-bottom: 24px;">
+        <div class="container">
+            <div class="agf-home-head agf-home-head--center">
+                <span class="agf-home-head__eyebrow">What we do</span>
+                <h2 class="agf-home-head__title">Focus Areas</h2>
+                <p class="agf-home-head__lead">
+                    AGFUND believes in the sustainability of human development and poverty alleviation, working to
+                    enable vulnerable groups — women, children, people with special needs, displaced people and refugees —
+                    to exercise their rights and lead a dignified life. Our efforts concentrate in five areas.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!--Early Childhood Development-->
+    <section class="agf-fband">
+        <div class="container">
+            <section class="agf-feature">
+                <div class="agf-feature__row">
+                    <div class="agf-feature__media">
+                        <img class="agf-feature__img" src="/images/focus/focus-childhood.png" alt="Early Childhood Development" />
+                    </div>
+                    <div class="agf-feature__body">
+                        <h3 class="agf-feature__title">Early Childhood Development</h3>
+                        <p class="agf-feature__intro">
+                            The <strong>Arab Council for Childhood and Development</strong> was founded in <em>1987</em> in a
+                            strategic partnership with UNESCO, advancing childhood and development issues across the Arab world.
+                        </p>
+                        <a class="agf-feature__link" href="/en/focusAreas/earlyChild">Learn more <span class="agf-arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="agf-statstrip">
+                    <div class="agf-stat"><div class="agf-stat__cap">Programmes and projects across the Arab region</div><div class="agf-stat__num">+130</div></div>
+                    <div class="agf-stat"><div class="agf-stat__cap">International, regional and national partnerships</div><div class="agf-stat__num">+150</div></div>
+                    <div class="agf-stat"><div class="agf-stat__cap">Studies, research publications and training manuals</div><div class="agf-stat__num">+200</div></div>
+                    <div class="agf-stat"><div class="agf-stat__cap">Events and conferences supporting childhood</div><div class="agf-stat__num">+400</div></div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!--Women's Empowerment-->
+    <section class="agf-fband agf-fband--tint">
+        <div class="container">
+            <section class="agf-feature agf-feature--rev">
+                <div class="agf-feature__row">
+                    <div class="agf-feature__media">
+                        <img class="agf-feature__img" src="/images/focus/focus-women.png" alt="Women’s Empowerment" />
+                    </div>
+                    <div class="agf-feature__body">
+                        <h3 class="agf-feature__title">Women’s Empowerment</h3>
+                        <p class="agf-feature__intro">
+                            The <strong>Center of Arab Women for Training and Research (CAWTAR)</strong> was established in
+                            <em>1993</em> as a non-profit regional institution dedicated to promoting Arab women’s empowerment,
+                            capacity building, and scientific research.
+                        </p>
+                        <a class="agf-feature__link" href="/en/focusAreas/womenEmp">Learn more <span class="agf-arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="agf-statstrip">
+                    <div class="agf-stat"><div class="agf-stat__cap">Women benefiting from training programmes</div><div class="agf-stat__num">+60K</div></div>
+                    <div class="agf-stat"><div class="agf-stat__cap">Projects implemented</div><div class="agf-stat__num">140</div></div>
+                    <div class="agf-stat"><div class="agf-stat__cap">Training manuals and e-learning modules</div><div class="agf-stat__num">80</div></div>
+                    <div class="agf-stat"><div class="agf-stat__cap">Training activities incl. seminars &amp; workshops</div><div class="agf-stat__num">1.23K</div></div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!--Civil Society Development (points mode)-->
+    <section class="agf-fband">
+        <div class="container">
+            <section class="agf-feature">
+                <div class="agf-feature__row">
+                    <div class="agf-feature__media">
+                        <img class="agf-feature__img" src="/images/focus/focus-civil.png" alt="Civil Society Development" />
+                    </div>
+                    <div class="agf-feature__body">
+                        <h3 class="agf-feature__title">Civil Society Development</h3>
+                        <p class="agf-feature__intro">
+                            The initiative was launched in <em>1989</em>, followed by the formal establishment of the
+                            <strong>Arab NGO Network for Development (ANND)</strong> in Beirut in <em>2002</em> during a
+                            conference chaired by HRH Prince Talal bin Abdulaziz Al Saud, under the patronage of President
+                            Rafik Hariri — may Allah have mercy on them both.
+                        </p>
+                        <a class="agf-feature__link" href="/en/focusAreas/civilSociety">Learn more <span class="agf-arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="agf-statstrip agf-statstrip--points">
+                    <div class="agf-stat"><span class="agf-stat__dash"></span><p class="agf-stat__point">Launch of the Arab Forum for Land and Climate and the Arab Climate Adaptation Lab.</p></div>
+                    <div class="agf-stat"><span class="agf-stat__dash"></span><p class="agf-stat__point">Establishment of the largest Arab library featuring 56 specialized publications on civil society and development.</p></div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!--Open Education-->
+    <section class="agf-fband agf-fband--tint">
+        <div class="container">
+            <section class="agf-feature agf-feature--rev">
+                <div class="agf-feature__row">
+                    <div class="agf-feature__media">
+                        <img class="agf-feature__img" src="/images/focus/focus-education.png" alt="Open Education — Arab Open University" />
+                    </div>
+                    <div class="agf-feature__body">
+                        <h3 class="agf-feature__title">Open Education</h3>
+                        <p class="agf-feature__intro">
+                            The <strong>Arab Open University</strong> was established in <em>2002</em> as a non-profit
+                            educational institution at the initiative of Prince Talal bin Abdulaziz Al Saud — may Allah have
+                            mercy on him — in partnership with The Open University in the United Kingdom, to provide flexible,
+                            high-quality higher education for all across the Arab world.
+                        </p>
+                        <a class="agf-feature__link" href="/en/focusAreas/openEduc">Learn more <span class="agf-arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="agf-statstrip">
+                    <div class="agf-stat"><div class="agf-stat__cap">Students since establishment</div><div class="agf-stat__num">405K</div></div>
+                    <div class="agf-stat"><div class="agf-stat__cap">Graduates since establishment</div><div class="agf-stat__num">88K</div></div>
+                    <div class="agf-stat"><div class="agf-stat__cap">Number of branches</div><div class="agf-stat__num">20</div></div>
+                    <div class="agf-stat"><div class="agf-stat__cap">Employees across 9 countries</div><div class="agf-stat__num">1124</div></div>
+                    <div class="agf-stat"><div class="agf-stat__cap">Female students</div><div class="agf-stat__num">%59</div></div>
+                    <div class="agf-stat"><div class="agf-stat__cap">Nationalities</div><div class="agf-stat__num">152</div></div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!--Financial Inclusion + Success Stories (one section, one background)-->
+    <section class="agf-fband">
+        <div class="container">
+            <section class="agf-feature">
+                <div class="agf-feature__row">
+                    <div class="agf-feature__media">
+                        <img class="agf-feature__img" src="/images/focus/focus-financial.png" alt="Financial Inclusion — value exceeded 1.4 billion dollars" />
+                    </div>
+                    <div class="agf-feature__body">
+                        <h3 class="agf-feature__title">Financial Inclusion</h3>
+                        <p class="agf-feature__intro">
+                            In <em>2006</em>, AGFUND’s efforts led to the establishment of the first bank for the poor in the
+                            Arab world in Jordan under the name <strong>National Microfinance Bank</strong>. This was followed
+                            by the establishment of AGFUND Financial Inclusion Banks across several countries.
+                        </p>
+                        <a class="agf-feature__link" href="/en/focusAreas/financialInclusion/AMU">Learn more <span class="agf-arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="agf-statstrip">
+                    <div class="agf-stat"><div class="agf-stat__cap">Beneficiaries</div><div class="agf-stat__num">+7M</div></div>
+                    <div class="agf-stat"><div class="agf-stat__cap">Employees</div><div class="agf-stat__num">+1400</div></div>
+                    <div class="agf-stat"><div class="agf-stat__cap">Loans</div><div class="agf-stat__num">+1.5M</div></div>
+                    <div class="agf-stat"><div class="agf-stat__cap">Women Borrowers</div><div class="agf-stat__num">%60</div></div>
+                    <div class="agf-stat"><div class="agf-stat__cap">Branches across 9 countries</div><div class="agf-stat__num">112</div></div>
+                </div>
+            </section>
+
+            <!--Success Stories (Financial Inclusion) — dynamic loop preserved-->
+            <div class="agf-seehead" style="margin-top: 56px;">
+                <h2 class="agf-home-head__title" style="margin:0;">Success Stories</h2>
+                <a class="agf-seehead__link" href="/en/focusAreas/financialInclusion/success">More stories →</a>
+            </div>
+
+                        <article class="agf-story">
+                            <div class="agf-story__media" style="background-image: url('/images/articleImgs/3243.png');"></div>
+                            <div>
+                                <h5 class="agf-story__title">Jamal Al-Jamal a farmer</h5>
+                                <p class="agf-story__text">&nbsp;
+
+
+
+
+
+
+
+
+From the fertile farms and greenhouses of Yemen, Jamal Al-Jamal, a farmer and one of the beneficiaries of Al-Amal Microfinance Bank, one of AGFUND&rsquo;s f </p>
+                                <a class="agf-feature__link" href="/en/focusAreas/financialInclusion/successView/40">Read more <span class="agf-arrow">→</span></a>
+                            </div>
+                        </article>
+                        <article class="agf-story">
+                            <div class="agf-story__media" style="background-image: url('/images/articleImgs/3333.png');"></div>
+                            <div>
+                                <h5 class="agf-story__title">Nazmeiyeh Al Sha&#x2019;ar</h5>
+                                <p class="agf-story__text">
+
+Nazmeiyeh Al Sha&rsquo;ar, a beneficiary of the National Microfinance Bank in Jordan, one of AGFUND&rsquo;s financial inclusion banks, succeeds in increasing her agricultural p </p>
+                                <a class="agf-feature__link" href="/en/focusAreas/financialInclusion/successView/39">Read more <span class="agf-arrow">→</span></a>
+                            </div>
+                        </article>
+        </div>
+    </section>
+
+    <!--Funding portal CTA (full-bleed)-->
+    <section class="agf-cta-band">
+        <div class="container">
+            <div class="agf-cta-band__grid">
+                <div class="agf-cta-band__text">
+                    <p class="agf-cta__eyebrow">Project Funding Portal</p>
+                    <h3 class="agf-cta__title">Have a project that creates real impact?</h3>
+                    <p class="agf-cta__lead">
+                        Apply for AGFUND funding and join 1,700+ development projects funded across the world.
+                        Submit your organization profile and project details through our online portal.
+                    </p>
+                    <a class="agf-cta__link" href="/en/projectFunding">About project funding</a>
+                </div>
+                <div class="agf-cta-band__action">
+                    <a class="agf-btn agf-btn--primary agf-btn--lg" href="/en/Funding">Start your application <span class="agf-arrow">→</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Projects Funding: our reach + numbers-->
+    <div class="agf-section">
+        <div class="container">
+            <div class="agf-home-head">
+                <span class="agf-home-head__eyebrow">Our reach</span>
+                <h2 class="agf-home-head__title">Projects Funding</h2>
+                <p class="agf-home-head__lead">
+                    AGFUND supports sustainable human development by identifying successful experiences, networking and
+                    coordinating between partners, and providing grants to development projects implemented by partners for
+                    the benefit of target groups.
+                </p>
+            </div>
+
+            <div class="agf-numbers">
+                <div class="agf-numtile"><div class="agf-numtile__num">1,713</div><div class="agf-numtile__cap">Total number</div></div>
+                <div class="agf-numtile"><div class="agf-numtile__num">689</div><div class="agf-numtile__cap">Africa</div></div>
+                <div class="agf-numtile"><div class="agf-numtile__num">980</div><div class="agf-numtile__cap">Asia</div></div>
+                <div class="agf-numtile"><div class="agf-numtile__num">22</div><div class="agf-numtile__cap">Europe</div></div>
+                <div class="agf-numtile"><div class="agf-numtile__num">16</div><div class="agf-numtile__cap">South America</div></div>
+                <div class="agf-numtile"><div class="agf-numtile__num">5</div><div class="agf-numtile__cap">North America</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!--News & Events-->
+    <div class="agf-section agf-section--tint">
+        <div class="container">
+
+            <!--Latest News-->
+            <div class="agf-seehead">
+                <h2 class="agf-home-head__title" style="margin:0;">News</h2>
+                <a class="agf-seehead__link" href="/en/mediaCenter/news">More news →</a>
+            </div>
+
+            <div class="agf-mgrid">
+                            <article class="agf-mcard">
+                                <a class="agf-mcard__link" href="/en/mediaCenter/news/view/359">
+                                    <div class="agf-mcard__media" style="background-image: url('/images/articleImgs/2-compressed.png');"></div>
+                                    <div class="agf-mcard__body">
+                                        <div class="agf-mcard__meta">
+                                            <span>18 Oct 2026</span>
+                                            <span class="agf-mcard__tag">#Other</span>
+                                        </div>
+                                        <h6 class="agf-mcard__title">Prince Abdulaziz bin Talal Named to Forbes Middle East&#x2019;s List of Sustainability Leaders for 2026</h6>
+                                    </div>
+                                </a>
+                            </article>
+                            <article class="agf-mcard">
+                                <a class="agf-mcard__link" href="/en/mediaCenter/news/view/358">
+                                    <div class="agf-mcard__media" style="background-image: url('/images/articleImgs/prize photo 2.jpg');"></div>
+                                    <div class="agf-mcard__body">
+                                        <div class="agf-mcard__meta">
+                                            <span>17 Oct 2026</span>
+                                            <span class="agf-mcard__tag">#AGFUNDs_sister_organizations</span>
+                                        </div>
+                                        <h6 class="agf-mcard__title">AGFUND wins WSBI international award for excellence in inclusive banking and social impact, Prince Abdulaziz bin Talal credits the founders of AGFUND&#x2019;s microfinance banks for laying the foundations of its development impact</h6>
+                                    </div>
+                                </a>
+                            </article>
+                            <article class="agf-mcard">
+                                <a class="agf-mcard__link" href="/en/mediaCenter/news/view/357">
+                                    <div class="agf-mcard__media" style="background-image: url('/images/articleImgs/Agfund12347788.png');"></div>
+                                    <div class="agf-mcard__body">
+                                        <div class="agf-mcard__meta">
+                                            <span>28 Sep 2026</span>
+                                            <span class="agf-mcard__tag">#Other</span>
+                                        </div>
+                                        <h6 class="agf-mcard__title">AGFUND Concludes Participation in Concordia Summit by Strengthening International Partnerships and Expanding Development Dialogue</h6>
+                                    </div>
+                                </a>
+                            </article>
+            </div>
+
+            <!--Latest Events-->
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="agf-foot">
+        <div class="container">
+            <div class="row pb-3">
+                <!--social media PTIPrize-->
+                <div class="col-md-6 pt-3 agf-foot__social">
+                    <h5 class="agf-foot__h">Follow Us — PTIPrize</h5>
+                    <button type="button" class="btn btn-social-icon btn-twitter btn-rounded" onclick="window.open('https://twitter.com/PTIPrize')"><i class="fa-brands fa-x-twitter"></i></button>
+                    <button type="button" class="btn btn-social-icon btn-linkedin btn-rounded" onclick="window.open('https://www.linkedin.com/showcase/ptiprize')"><i class="fa-brands fa-linkedin"></i></button>
+                    <button type="button" class="btn btn-social-icon btn-instagram btn-rounded" onclick="window.open('https://www.instagram.com/ptiprize/')"><i class="fa-brands fa-instagram"></i></button>
+                </div>
+
+                <!--social media AGFUND-->
+                <div class="col-md-6 pt-3 agf-foot__social text-md-end">
+                    <h5 class="agf-foot__h">Follow Us — AGFUND</h5>
+                    <button type="button" class="btn btn-social-icon btn-twitter btn-rounded" onclick="window.open('https://twitter.com/AGFUNDProgram')"><i class="fa-brands fa-x-twitter"></i></button>
+                    <button type="button" class="btn btn-social-icon btn-facebook btn-rounded" onclick="window.open('https://www.facebook.com/AGFUNDProgram')"><i class="fa-brands fa-facebook"></i></button>
+                    <button type="button" class="btn btn-social-icon btn-youtube btn-rounded" onclick="window.open('https://www.youtube.com/user/AGFUNDProgram')"><i class="fa-brands fa-youtube"></i></button>
+                    <button type="button" class="btn btn-social-icon btn-linkedin btn-rounded" onclick="window.open('https://www.linkedin.com/company/agfundprogram')"><i class="fa-brands fa-linkedin"></i></button>
+                    <button type="button" class="btn btn-social-icon btn-instagram btn-rounded" onclick="window.open('https://www.instagram.com/agfundprogram/')"><i class="fa-brands fa-instagram"></i></button>
+                </div>
+            </div>
+
+            <div class="row pt-2">
+                <!--quick links-->
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <h6 class="agf-foot__h">Quick links</h6>
+                    <ul class="agf-foot__list">
+                        <li><a href="/en/about/brief">About Us</a></li>
+                        <li><a href="/en/focusAreas/financialInclusion/AMU">Focus Areas</a></li>
+                        <li><a href="/en/projectFunding">Projects Funding</a></li>
+                        <li><a href="/en/thePrize">The Prize</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <h6 class="agf-foot__h">&nbsp;</h6>
+                    <ul class="agf-foot__list">
+                        <li><a href="/en/Funding">Apply for Funding</a></li>
+                        <li><a href="/en/mediaCenter/news">Media Center</a></li>
+                        <li><a href="/en/contact">Contact Us</a></li>
+                        <li><a href="/en/jobs">Jobs</a></li>
+                    </ul>
+                </div>
+
+                <!--find us-->
+                <div class="col-lg-5 col-md-6 mb-3">
+                    <h6 class="agf-foot__h">Find Us</h6>
+                    <p style="line-height:1.8; margin:0;">
+                        Arab Gulf Programme for Development<br />
+                        8360 Prince Satam ibn Abdul Aziz – Ar rafiah<br />
+                        Riyadh 12751-4694<br />
+                        Kingdom of Saudi Arabia<br />
+                        <a href="https://goo.gl/maps/E2medasTYjf5Luqx8" target="_blank" rel="noopener noreferrer">Map</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="agf-foot__bar">
+            2026 &copy; AGFUND - <a href="/Privacy">Privacy</a> - <a href="/Credit">Credits</a> - v.26.271.08.50
+        </div>
+    </footer>
+
+    <script nonce="Xhx/CG2YrBnzw9RJleorXg==">
+        // Set the date we're counting down to
+        var countDownDate = new Date(document.getElementById("datetime").value).getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+        // Get today's date and time
+        var x = new Date();
+        var now = x.getTime() + (x.getTimezoneOffset() * 60 * 1000);
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("timer").innerHTML = days + "&nbsp;&nbsp;:&nbsp;&nbsp;" + hours + "&nbsp;&nbsp;:&nbsp;&nbsp;"
+        + minutes + "&nbsp;&nbsp;:&nbsp;&nbsp;" + seconds + "";
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "Nomination is closed";
+        }
+        }, 1000);
+    </script>
+
+    <!-- Twitter conversion tracking base code -->
+    <script nonce="Xhx/CG2YrBnzw9RJleorXg==">
+        !function (e, t, n, s, u, a) {
+        e.twq || (s = e.twq = function () {
+        s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+        }, s.version = '1.1', s.queue = [], u = t.createElement(n), u.async = !0, u.src = 'https://static.ads-twitter.com/uwt.js',
+        a = t.getElementsByTagName(n)[0], a.parentNode.insertBefore(u, a))
+        }(window, document, 'script');
+        twq('config', 'of0jl');
+    </script>
+    <!-- End Twitter conversion tracking base code -->
+
+    <script nonce="Xhx/CG2YrBnzw9RJleorXg==">
+        (function () {
+        var nav = document.querySelector('.agf-navbar');
+        if (!nav) return;
+        var onScroll = function () {
+        if (window.scrollY > 40) { nav.classList.add('agf-navbar--scrolled'); }
+        else { nav.classList.remove('agf-navbar--scrolled'); }
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+        })();
+    </script>
+</body>
+</html>

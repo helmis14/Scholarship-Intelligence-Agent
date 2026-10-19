@@ -1,0 +1,246 @@
+{
+ "set": "heldout_b",
+ "providers": {
+  "rules": {
+   "status": "run",
+   "runtime_s": 0.3,
+   "exact_match": {
+    "deadline_exact": [
+     3,
+     5
+    ],
+    "deadline_status": [
+     3,
+     3
+    ],
+    "nationality": [
+     3,
+     8
+    ],
+    "funding_amount": [
+     2,
+     3
+    ],
+    "funding_period": [
+     2,
+     2
+    ],
+    "stipend_present": [
+     4,
+     4
+    ],
+    "travel": [
+     2,
+     2
+    ],
+    "tuition": [
+     1,
+     3
+    ],
+    "age": [
+     3,
+     6
+    ],
+    "language": [
+     1,
+     1
+    ],
+    "duration": [
+     0,
+     2
+    ],
+    "page_kind": [
+     9,
+     13
+    ]
+   },
+   "precision_recall_f1": {
+    "deadlines": [
+     0.75,
+     0.6,
+     0.667
+    ],
+    "levels": [
+     0.4,
+     0.75,
+     0.522
+    ],
+    "nationality_countries": [
+     0.949,
+     0.287,
+     0.44
+    ],
+    "openings": [
+     1.0,
+     0.667,
+     0.8
+    ]
+   },
+   "unsupported": [
+    5,
+    15,
+    0.333
+   ],
+   "missing": [
+    6,
+    21,
+    0.286
+   ],
+   "evidence_verbatim": [
+    71,
+    71
+   ]
+  },
+  "anthropic": {
+   "runtime_s": 57.7,
+   "model": "anthropic:claude-opus-5-5",
+   "requests": {
+    "answered": 8
+   },
+   "usage": {
+    "paid": {
+     "requests": 8,
+     "input_tokens": 31189,
+     "output_tokens": 5216,
+     "estimated_cost_usd": 0.229076
+    },
+    "dry_run": {
+     "requests": 0,
+     "estimated_input_tokens": 0,
+     "estimated_cost_usd": 0.0,
+     "worst_case_cost_usd": 0.0,
+     "note": "dry-run input tokens estimated at ~3.5 characters per token and 800 output tokens per request (worst case: the full output cap); actual counts differ"
+    },
+    "limits": {
+     "requests": 10,
+     "input_tokens": 40000,
+     "output_tokens": 40000,
+     "cost_usd": 1.0
+    },
+    "provider": "anthropic",
+    "model": "claude-opus-5-5",
+    "paid_calls_enabled": true,
+    "cache_hits": 0,
+    "latency_ms": {
+     "requests": 8,
+     "total": 53716.6,
+     "mean": 6714.6,
+     "max": 8225.8
+    }
+   },
+   "status": "run",
+   "ai": {
+    "pages": 8,
+    "proposed": 66,
+    "accepted": 22,
+    "rejected_by_reason": {
+     "country not named in quote": 2,
+     "quote does not say this organisation funds or runs the scholarship": 4,
+     "quote does not state this funding duration": 1,
+     "quote does not mention tuition": 1,
+     "date not stated in quote": 2,
+     "cycle not stated in quote": 1
+    },
+    "disagreements_with_rules": 2,
+    "errors": {},
+    "evidence_verbatim": 22,
+    "evidence_total": 22
+   },
+   "exact_match": {
+    "deadline_exact": [
+     3,
+     5
+    ],
+    "deadline_status": [
+     3,
+     3
+    ],
+    "nationality": [
+     4,
+     8
+    ],
+    "funding_amount": [
+     3,
+     3
+    ],
+    "funding_period": [
+     3,
+     3
+    ],
+    "stipend_present": [
+     4,
+     4
+    ],
+    "travel": [
+     2,
+     2
+    ],
+    "tuition": [
+     1,
+     3
+    ],
+    "age": [
+     5,
+     6
+    ],
+    "language": [
+     1,
+     1
+    ],
+    "duration": [
+     1,
+     2
+    ],
+    "page_kind": [
+     9,
+     13
+    ]
+   },
+   "precision_recall_f1": {
+    "deadlines": [
+     0.75,
+     0.6,
+     0.667
+    ],
+    "levels": [
+     0.4,
+     0.75,
+     0.522
+    ],
+    "nationality_countries": [
+     0.949,
+     0.287,
+     0.44
+    ],
+    "openings": [
+     1.0,
+     0.667,
+     0.8
+    ]
+   },
+   "unsupported": [
+    5,
+    19,
+    0.263
+   ],
+   "missing": [
+    3,
+    21,
+    0.143
+   ],
+   "evidence_verbatim": [
+    93,
+    93
+   ]
+  }
+ },
+ "not_labelled_in_this_set": [
+  "scholarship name and provider",
+  "field of study",
+  "academic (GPA) requirements",
+  "academic cycle",
+  "residency restrictions",
+  "conflict handling"
+ ],
+ "note": "every mode is scored by heldout.evaluate on the same pages and labels; cloud modes are scored only when they actually ran"
+}

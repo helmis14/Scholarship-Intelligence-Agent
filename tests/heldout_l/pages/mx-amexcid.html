@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Standard Meta -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+        <!-- Site Properities -->
+        <title>Login - SIGCA</title>
+        <link rel="stylesheet" type="text/css" href="/assets/css/semantic.css">
+        <link rel="stylesheet" href="/assets/js/pickadate/lib/themes/classic.css"/>
+        <link rel="stylesheet" href="/assets/js/pickadate/lib/themes/classic.date.css"/>
+
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/semantic.js"></script>
+        <script src="/assets/js/pickadate/lib/picker.js"></script>
+        <script src="/assets/js/pickadate/lib/picker.date.js"></script>
+        <style>
+            .valid {color: #0ea432}
+            .invalid {color: #f72d30}
+        </style>
+
+        <style type="text/css">
+            body {     background-image: url('/assets/img/back.png');}
+            body > .grid { height: 100%; }
+
+            .column { max-width: 450px; }
+            .logoBeca{
+                background: gray;
+            }
+        </style>
+    <script>var __uzdbm_1 = "4e504217-a459-4d01-9864-5f917ee24442";var __uzdbm_2 = "N2Q5NjY3NjktZHB6dS00NDhmLTgzYWItYTQ0NmQ4YzRmOGI3JDExOC45OS44MC4xMDU=";var __uzdbm_3 = "7f90004e504217-a459-4d01-9864-5f917ee244421-17923274224270-002d1dcbf1bb5ed7eae10";var __uzdbm_4 = "false";var __uzdbm_5 = "uzmx";var __uzdbm_6 = "7fc000005517cf-d079-4990-b811-eaec941e1b931-17923274224270-009148a89104f4757bf10";var __uzdbm_7 = "sre.gob.mx";</script> <script>   (function (w, d, e, u, c, g, a, b) {     w["SSJSConnectorObj"] = w["SSJSConnectorObj"] || {       ss_cid: c,       domain_info: "auto",     };     w[g] = function (i, j) {       w["SSJSConnectorObj"][i] = j;     };     a = d.createElement(e);     a.async = true;     if (       navigator.userAgent.indexOf('MSIE') !== -1 ||       navigator.appVersion.indexOf('Trident/') > -1     ) {       u = u.replace("/advanced/", "/advanced/ie/");     }     a.src = u;     b = d.getElementsByTagName(e)[0];     b.parentNode.insertBefore(a, b);   })(     window, document, "script", "/18f5227b-e27b-445a-a53f-f845fbe69b40/stormcaster.js", "dpzw", "ssConf"   );   ssConf("c1", "https://sigca.sre.gob.mx");   ssConf("c3", "c99a4269-161c-4242-a3f0-28d44fa6ce24");   ssConf("au", "sigca.sre.gob.mx");   ssConf("cu", "validate.perfdrive.com, ssc"); </script> </head>
+    <body>
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <h2 class="ui header" style="padding-top: 10px;">
+                  <div class="content">
+                      <b style="color: grey">SIGCA</b>
+                    <div class="sub header" style="color: grey">Sistema de Gestión de Cooperación Académica</div>
+                  </div>
+                </h2>
+                <div style="background: #136A93;width: 100%;">
+                    <img src="/assets/img/coop.png" style="width:35%;margin: 0.5em;">
+                </div>
+                                <form method="POST" action="https://sigca.sre.gob.mx/login" accept-charset="UTF-8" class="ui large form" id="auth-form"><input name="_token" type="hidden" value="oflj5dbsD9KDLwq6O70KeeXP0800uyvEZlLYthKt">
+                    <div class="ui stacked segment" style="margin: 0;">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="user" style="color: grey" placeholder="Usuario">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input type="password" name="passwords" style="color: grey" placeholder="Contraseña">
+                            </div>
+                        </div>
+                        <div class="ui fluid large youtube submit button blue">Iniciar / Initiate</div>
+                    </div>
+                    <div class="ui error message"></div>
+                </form>
+                <div class="ui message" style="color: grey">
+                    <a href="/registrarse/" class="positive ui button register fluid">Crear una nueva cuenta / Create a new account</a>
+                </div>
+                <div class="ui message" style="color: grey">
+                    ¿Olvidaste tu contraseña?/Forgot your password?&nbsp;<br/><a href="/recuperarContrasena/" id="recover_password">Recupérala Aquí / Reset it here</a>
+                </div>
+                <p>
+                    <div class="ui">
+                            <img src="/assets/img/logoAmexcidSRE.png" class="ui image">
+                    </div>
+                </p>
+                <div>
+                    <a target="_blank" href="https://transparencia.sre.gob.mx/index.php/transparencia-categorias/category/73-xxxix-actas-y-resoluciones-del-comite-de-transparencia?download=33357:aviso-de-privacidad-integral-para-el-otorgamiento-de-becas-de-excelencia-del-gobierno-de-mxico-para-extranjeros&start=860" style="font-size: xx-small; text-decoration: underline;">
+                        <p class="ui header" style="color: #136A93" onmouseover="this.style.color = '#3AB67A'; " onmouseout="this.style.color = '#136A93'">
+                            Aviso de Privacidad Integral para el otorgamiento de Becas de Excelencia del Gobierno de México para Extranjeros
+                        </p>
+                    </a>
+                </div>
+                <br/>
+                <div>
+                    <a target="_blank" href="https://www.gob.mx/cms/uploads/attachment/file/388095/Comprehensive_Privacy_Notice_for_the_granting_of__the_Mexican_Government_Scholarships_Program_for_International_Students.pdf" style="font-size: xx-small; text-decoration: underline;">
+                        <p class="ui header" style="color: #136A93" onmouseover="this.style.color = '#3AB67A'; " onmouseout="this.style.color = '#136A93'">
+                            Comprehensive Privacy Notice for the granting of the Mexican Government Scholarships Program for International Students
+                        </p>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        <div style="padding-left:25px;">
+            <small>&nbsp; v1.2.2</small>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('#auth-form').form({
+                    fields: {
+                        user: {
+                            identifier  : 'user',
+                            rules: [{
+                                type   : 'empty',
+                                prompt : 'Por favor ingrese su correo electrónico'
+                            }]
+                        },
+                        password: {
+                            identifier  : 'password',
+                            rules: [{
+                                type   : 'empty',
+                                prompt : 'Por favor ingrese su contraseña'
+                            }]
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

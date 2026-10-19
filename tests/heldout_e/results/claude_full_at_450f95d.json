@@ -1,0 +1,241 @@
+{
+  "set": "held-out real pages",
+  "pages": 17,
+  "evaluated": 17,
+  "missing_snapshots": [],
+  "labels_sha": "0b0b20787cfc",
+  "mode": "deterministic + anthropic:claude-opus-5-5",
+  "fields": {
+    "deadlines": {
+      "tp": 4,
+      "fp": 4,
+      "fn": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.667
+    },
+    "levels": {
+      "tp": 16,
+      "fp": 7,
+      "fn": 2,
+      "precision": 0.696,
+      "recall": 0.889,
+      "f1": 0.78
+    },
+    "nationality_countries": {
+      "tp": 30,
+      "fp": 0,
+      "fn": 55,
+      "precision": 1.0,
+      "recall": 0.353,
+      "f1": 0.522
+    },
+    "openings": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "rates": {
+    "age": {
+      "correct": 1,
+      "total": 1,
+      "accuracy": 1.0
+    },
+    "cycle": {
+      "correct": 3,
+      "total": 3,
+      "accuracy": 1.0
+    },
+    "deadline_exact": {
+      "correct": 4,
+      "total": 4,
+      "accuracy": 1.0
+    },
+    "deadline_status": {
+      "correct": 4,
+      "total": 4,
+      "accuracy": 1.0
+    },
+    "duration": {
+      "correct": 2,
+      "total": 3,
+      "accuracy": 0.667
+    },
+    "funder_identity": {
+      "correct": 3,
+      "total": 12,
+      "accuracy": 0.25
+    },
+    "funding_amount": {
+      "correct": 3,
+      "total": 3,
+      "accuracy": 1.0
+    },
+    "funding_components": {
+      "correct": 19,
+      "total": 29,
+      "accuracy": 0.655
+    },
+    "funding_period": {
+      "correct": 1,
+      "total": 1,
+      "accuracy": 1.0
+    },
+    "nationality": {
+      "correct": 3,
+      "total": 8,
+      "accuracy": 0.375
+    },
+    "page_kind": {
+      "correct": 12,
+      "total": 17,
+      "accuracy": 0.706
+    },
+    "per_level_amount_not_collapsed": {
+      "correct": 1,
+      "total": 2,
+      "accuracy": 0.5
+    },
+    "stipend_present": {
+      "correct": 1,
+      "total": 1,
+      "accuracy": 1.0
+    },
+    "tuition": {
+      "correct": 1,
+      "total": 2,
+      "accuracy": 0.5
+    }
+  },
+  "attribution": {
+    "correct": 143,
+    "total": 148,
+    "accuracy": 0.966
+  },
+  "unsupported_rate": 0.293,
+  "unsupported_values": 12,
+  "scored_values": 41,
+  "missing_rate": 0.34,
+  "missing_values": 18,
+  "labelled_values": 53,
+  "ai": {
+    "pages": 12,
+    "proposed": 114,
+    "accepted": 29,
+    "rejected_by_reason": {
+      "number not stated in quote": 1,
+      "provider name not in quote": 1,
+      "country not named in quote": 4,
+      "quote does not say this organisation funds or runs the scholarship": 7,
+      "field of study not in quote": 1,
+      "phd not stated in the quotation": 3,
+      "quote has no deadline wording (a start, event or other date)": 1,
+      "quote is listed under a heading of costs that are not covered": 1,
+      "quote does not state this funding duration": 1,
+      "quote does not mention tuition": 1,
+      "master not stated in the quotation; phd not stated in the quotation": 1,
+      "quote does not mention this benefit": 2
+    },
+    "needs_review_by_reason": {
+      "a list item; the heading above it does not say the scholarship covers it": 2,
+      "the quotation names the organisation next to a funding statement whose subject is something else": 1,
+      "a bare duration; the quote does not say it is the funded period": 1
+    },
+    "disagreements_with_rules": 2,
+    "errors": {},
+    "evidence_verbatim": 29,
+    "evidence_total": 29
+  },
+  "misses": {
+    "co-icetex-oea": [
+      "deadline spurious 2026-03-20"
+    ],
+    "it-iyt-esteri": [
+      "page_kind: predicted not_relevant, label opportunity",
+      "nationality: predicted include ['AR'], label ('include', ['AR', 'AM', 'AZ', 'BD', 'BR', 'CL'])"
+    ],
+    "it-iyt-unipi": [
+      "component tuition: predicted not covered, label covered",
+      "tuition: predicted None, label covered"
+    ],
+    "ae-ku-postgrad": [
+      "nationality: predicted include ['CN'], label not_stated",
+      "component living_allowance: predicted not covered, label covered"
+    ],
+    "ae-ku-grts": [
+      "stipend amounts differ by level but one amount was stored"
+    ],
+    "id-satubeasiswa-bpi": [
+      "deadline spurious 2026-08-31",
+      "deadline spurious 2026-10-31",
+      "deadline spurious 2026-05-01",
+      "component tuition: predicted not covered, label full",
+      "component living_allowance: predicted not covered, label covered"
+    ],
+    "fi-edufi": [
+      "nationality: predicted any [], label ('exclude', ['FI'])",
+      "component travel: predicted covered, label not_covered",
+      "component insurance: predicted covered, label not_covered"
+    ],
+    "th-tica-tipp": [
+      "nationality: predicted include ['AF', 'BD', 'DJ', 'ER', 'FJ', 'FM'], label ('include', ['KH', 'LA', 'MM', 'VN', 'AF', 'BD'])"
+    ],
+    "qa-hbku": [
+      "duration: predicted '', label 45 months"
+    ],
+    "is-arnastofnun": [
+      "nationality: predicted include ['AT'], label ('include', ['AT', 'BG', 'CA', 'CN', 'HR', 'CZ'])",
+      "component tuition: predicted not covered, label covered"
+    ],
+    "dk-studyindenmark": [
+      "page_kind: predicted opportunity, label guidance"
+    ],
+    "br-gcub-paec": [
+      "page_kind: predicted news, label opportunity",
+      "component tuition: predicted not covered, label covered",
+      "component living_allowance: predicted not covered, label covered",
+      "component accommodation: predicted not covered, label covered"
+    ],
+    "hk-edb-scholarship": [
+      "page_kind: predicted opportunity, label guidance"
+    ],
+    "hk-studyinhk": [
+      "page_kind: predicted opportunity, label guidance"
+    ]
+  },
+  "ai_usage": {
+    "paid": {
+      "requests": 12,
+      "input_tokens": 48439,
+      "output_tokens": 7988,
+      "estimated_cost_usd": 0.353516
+    },
+    "dry_run": {
+      "requests": 0,
+      "estimated_input_tokens": 0,
+      "estimated_cost_usd": 0.0,
+      "worst_case_cost_usd": 0.0,
+      "note": "dry-run input tokens estimated at ~3.5 characters per token and 800 output tokens per request (worst case: the full output cap); actual counts differ"
+    },
+    "limits": {
+      "requests": 13,
+      "input_tokens": 60000,
+      "output_tokens": 20000,
+      "cost_usd": 0.7
+    },
+    "provider": "anthropic",
+    "model": "claude-opus-5-5",
+    "paid_calls_enabled": true,
+    "cache_hits": 0,
+    "latency_ms": {
+      "requests": 12,
+      "total": 74651.0,
+      "mean": 6220.9,
+      "max": 9688.8
+    }
+  }
+}

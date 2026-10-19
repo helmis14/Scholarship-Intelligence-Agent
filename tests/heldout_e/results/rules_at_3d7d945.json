@@ -1,0 +1,186 @@
+{
+  "set": "held-out real pages",
+  "pages": 17,
+  "evaluated": 17,
+  "missing_snapshots": [],
+  "labels_sha": "0b0b20787cfc",
+  "mode": "deterministic",
+  "fields": {
+    "deadlines": {
+      "tp": 3,
+      "fp": 4,
+      "fn": 1,
+      "precision": 0.429,
+      "recall": 0.75,
+      "f1": 0.545
+    },
+    "levels": {
+      "tp": 16,
+      "fp": 7,
+      "fn": 2,
+      "precision": 0.696,
+      "recall": 0.889,
+      "f1": 0.78
+    },
+    "nationality_countries": {
+      "tp": 30,
+      "fp": 0,
+      "fn": 55,
+      "precision": 1.0,
+      "recall": 0.353,
+      "f1": 0.522
+    },
+    "openings": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  },
+  "rates": {
+    "age": {
+      "correct": 1,
+      "total": 1,
+      "accuracy": 1.0
+    },
+    "cycle": {
+      "correct": 0,
+      "total": 3,
+      "accuracy": 0.0
+    },
+    "deadline_exact": {
+      "correct": 3,
+      "total": 4,
+      "accuracy": 0.75
+    },
+    "deadline_status": {
+      "correct": 3,
+      "total": 3,
+      "accuracy": 1.0
+    },
+    "duration": {
+      "correct": 1,
+      "total": 3,
+      "accuracy": 0.333
+    },
+    "funder_identity": {
+      "correct": 0,
+      "total": 12,
+      "accuracy": 0.0
+    },
+    "funding_amount": {
+      "correct": 0,
+      "total": 3,
+      "accuracy": 0.0
+    },
+    "funding_components": {
+      "correct": 18,
+      "total": 29,
+      "accuracy": 0.621
+    },
+    "nationality": {
+      "correct": 3,
+      "total": 8,
+      "accuracy": 0.375
+    },
+    "page_kind": {
+      "correct": 12,
+      "total": 17,
+      "accuracy": 0.706
+    },
+    "per_level_amount_not_collapsed": {
+      "correct": 1,
+      "total": 2,
+      "accuracy": 0.5
+    },
+    "stipend_present": {
+      "correct": 1,
+      "total": 1,
+      "accuracy": 1.0
+    },
+    "tuition": {
+      "correct": 1,
+      "total": 2,
+      "accuracy": 0.5
+    }
+  },
+  "attribution": {
+    "correct": 114,
+    "total": 119,
+    "accuracy": 0.958
+  },
+  "unsupported_rate": 0.355,
+  "unsupported_values": 11,
+  "scored_values": 31,
+  "missing_rate": 0.547,
+  "missing_values": 29,
+  "labelled_values": 53,
+  "ai": null,
+  "misses": {
+    "co-icetex-oea": [
+      "deadline spurious 2026-03-20",
+      "award amount: predicted [], label {'amount': [10000], 'currency': 'USD'}",
+      "duration: predicted '', label 24 months"
+    ],
+    "it-iyt-esteri": [
+      "page_kind: predicted not_relevant, label opportunity",
+      "nationality: predicted include ['AR'], label ('include', ['AR', 'AM', 'AZ', 'BD', 'BR', 'CL'])"
+    ],
+    "it-iyt-unipi": [
+      "component tuition: predicted not covered, label covered",
+      "award amount: predicted [], label {'amount': [10800], 'currency': 'EUR'}",
+      "tuition: predicted None, label covered"
+    ],
+    "ae-ku-postgrad": [
+      "nationality: predicted include ['CN'], label not_stated",
+      "component living_allowance: predicted not covered, label covered"
+    ],
+    "ae-ku-grts": [
+      "stipend amounts differ by level but one amount was stored"
+    ],
+    "no-lanekassen-abroad": [
+      "component living_allowance: predicted not covered, label covered"
+    ],
+    "id-satubeasiswa-bpi": [
+      "deadline spurious 2026-10-31",
+      "deadline spurious 2026-08-31",
+      "deadline spurious 2026-05-01",
+      "component tuition: predicted not covered, label full",
+      "component living_allowance: predicted not covered, label covered"
+    ],
+    "fi-edufi": [
+      "deadline missed 2025-10-17",
+      "nationality: predicted unknown [], label ('exclude', ['FI'])",
+      "component travel: predicted covered, label not_covered",
+      "component insurance: predicted covered, label not_covered",
+      "stipend: predicted None None, label {'amount': [1900], 'currency': 'EUR', 'period': 'month'}"
+    ],
+    "th-tica-tipp": [
+      "nationality: predicted include ['AF', 'BD', 'DJ', 'ER', 'FJ', 'FM'], label ('include', ['KH', 'LA', 'MM', 'VN', 'AF', 'BD'])"
+    ],
+    "qa-hbku": [
+      "duration: predicted '', label 45 months"
+    ],
+    "is-arnastofnun": [
+      "nationality: predicted include ['AT'], label ('include', ['AT', 'BG', 'CA', 'CN', 'HR', 'CZ'])",
+      "component tuition: predicted not covered, label covered"
+    ],
+    "dk-studyindenmark": [
+      "page_kind: predicted opportunity, label guidance"
+    ],
+    "br-gcub-paec": [
+      "page_kind: predicted news, label opportunity",
+      "component tuition: predicted not covered, label covered",
+      "component living_allowance: predicted not covered, label covered",
+      "component accommodation: predicted not covered, label covered"
+    ],
+    "hk-edb-scholarship": [
+      "page_kind: predicted opportunity, label guidance"
+    ],
+    "hk-studyinhk": [
+      "page_kind: predicted opportunity, label guidance"
+    ]
+  }
+}

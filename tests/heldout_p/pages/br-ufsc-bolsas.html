@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="SeTIC-UFSC" />
+    <meta name="generator" content="WordPress 4.7.38" />
+    <meta name="description" content="" />
+    <meta name="copyright" content="Universidade Federal de Santa Catarina" />
+    <meta name="Keywords" content="universidade, federal, santa, catarina, a universidade, faculdade, estudantes, faculdade, ensino superior, licenciatura, mestrado, doutorado, pós-graduações, bolsas, candidatura ao ensino superior" />
+
+    <title>Oportunidades Internacionais</title>        
+
+    <link rel="stylesheet" type="text/css" href="https://oportunidadesinternacionais.ufsc.br/wp-content/themes/brasilGovInterno/css/reset.css?ver=1789672378" />
+    <link rel="stylesheet" type="text/css" href="https://oportunidadesinternacionais.ufsc.br/wp-content/themes/brasilGovInterno/css/style.css?ver=1789672378" />
+    <link rel="alternate stylesheet" type="text/css" href="https://oportunidadesinternacionais.ufsc.br/wp-content/themes/brasilGovInterno/css/high.css?ver=1789672378" title="high" disabled="disabled" />
+            <link rel="shortcut icon" type="image/x-icon" href="https://oportunidadesinternacionais.ufsc.br/wp-content/themes/brasilGovInterno/img/favicon.ico?ver=1789672378"/>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
+    <script src="https://oportunidadesinternacionais.ufsc.br/wp-content/themes/brasilGovInterno/js/modernizr-2.7.min.js?ver=1789672378"></script>
+    <script src="https://oportunidadesinternacionais.ufsc.br/wp-content/themes/brasilGovInterno/js/font-resizer.js?ver=1789672378"></script>           
+
+
+    <link rel='dns-prefetch' href='//oportunidadesinternacionais.ufsc.br' />
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"wpemoji":"https:\/\/oportunidadesinternacionais.ufsc.br\/wp-includes\/js\/wp-emoji.js?ver=4.7.38","twemoji":"https:\/\/oportunidadesinternacionais.ufsc.br\/wp-includes\/js\/twemoji.js?ver=4.7.38"}};
+			( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	/*
+	 * Create a canvas element for testing native browser support
+	 * of emoji.
+	 */
+	var canvas = document.createElement( 'canvas' );
+	var context = canvas.getContext && canvas.getContext( '2d' );
+
+	/**
+	 * Detect if the browser supports rendering emoji or flag emoji. Flag emoji are a single glyph
+	 * made of two characters, so some browsers (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param type {String} Whether to test for support of "flag" or "emoji4" emoji.
+	 * @return {Boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var stringFromCharCode = String.fromCharCode,
+			flag, flag2, technologist, technologist2;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * This works because the image will be one of three things:
+				 * - Two empty squares, if the browser doesn't render emoji
+				 * - Two squares with 'U' and 'N' in them, if the browser doesn't render flag emoji
+				 * - The United Nations flag
+				 *
+				 * The first two will encode to small images (1-2KB data URLs), the third will encode
+				 * to a larger image (4-5KB data URL).
+				 */
+				context.fillText( stringFromCharCode( 55356, 56826, 55356, 56819 ), 0, 0 );
+				if ( canvas.toDataURL().length < 3000 ) {
+					return false;
+				}
+
+				context.clearRect( 0, 0, canvas.width, canvas.height );
+
+				/*
+				 * Test for rainbow flag compatibility. As the rainbow flag was added out of sequence with
+				 * the usual Unicode release cycle, some browsers support it, and some don't, even if their
+				 * Unicode support is up to date.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (white flag emoji + rainbow emoji).
+				 */
+				context.fillText( stringFromCharCode( 55356, 57331, 65039, 8205, 55356, 57096 ), 0, 0 );
+				flag = canvas.toDataURL();
+
+				context.clearRect( 0, 0, canvas.width, canvas.height );
+
+				context.fillText( stringFromCharCode( 55356, 57331, 55356, 57096 ), 0, 0 );
+				flag2 = canvas.toDataURL();
+
+				return flag !== flag2;
+			case 'emoji4':
+				/*
+				 * Emoji 4 has the best technologists. So does WordPress!
+				 *
+				 * To test for support, try to render a new emoji (woman technologist: medium skin tone),
+				 * then compare it to how it would look if the browser doesn't render it correctly
+				 * (woman technologist: medium skin tone + personal computer).
+				 */
+				context.fillText( stringFromCharCode( 55357, 56425, 55356, 57341, 8205, 55357, 56507), 0, 0 );
+				technologist = canvas.toDataURL();
+
+				context.clearRect( 0, 0, canvas.width, canvas.height );
+
+				context.fillText( stringFromCharCode( 55357, 56425, 55356, 57341, 55357, 56507), 0, 0 );
+				technologist2 = canvas.toDataURL();
+
+				return technologist !== technologist2;
+		}
+
+		return false;
+	}
+
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.defer = script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'flag', 'emoji4' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	for( ii = 0; ii < tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything && settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && ! settings.supports.flag;
+
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='dashicons-css'  href='https://oportunidadesinternacionais.ufsc.br/wp-includes/css/dashicons.css?ver=4.7.38' type='text/css' media='all' />
+<link rel='stylesheet' id='thickbox-css'  href='https://oportunidadesinternacionais.ufsc.br/wp-includes/js/thickbox/thickbox.css?ver=4.7.38' type='text/css' media='all' />
+<link rel='stylesheet' id='patrocinio-css'  href='https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/patrocinio/patrocinio.css?ver=4.7.38' type='text/css' media='all' />
+<link rel='stylesheet' id='collapseomatic-css-css'  href='https://oportunidadesinternacionais.ufsc.br/wp-content/mu-plugins/jquery-collapse-o-matic/style.css?ver=1.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.9.2' type='text/css' media='all' />
+<link rel='stylesheet' id='sharity-style-css'  href='https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/email-sharity/style/sharity-style.css?ver=4.7.38' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap_funBox_style-css'  href='https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/wp-visual-slidebox-builder/bootstrap.min.css?ver=4.7.38' type='text/css' media='all' />
+<link rel='stylesheet' id='custom_funBox_style-css'  href='https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/wp-visual-slidebox-builder/custom-fun-box.css?ver=4.7.38' type='text/css' media='all' />
+<link rel='stylesheet' id='animated_css-css'  href='https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/wp-visual-slidebox-builder/animate-custom.css?ver=4.7.38' type='text/css' media='all' />
+<link rel='stylesheet' id='auto-thickbox-css'  href='https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/auto-thickbox/css/styles-pre39.css?ver=20140420' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/tablepress/css/default.css?ver=1.8' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-custom-css'  href='https://oportunidadesinternacionais.ufsc.br/files/tablepress-custom.css?ver=3' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery-ui-smoothness-css'  href='https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/contact-form-7/includes/js/jquery-ui/themes/smoothness/jquery-ui.min.css?ver=1.11.4' type='text/css' media='screen' />
+<link rel='stylesheet' id='slideshow-css3-css'  href='https://oportunidadesinternacionais.ufsc.br/wp-content/themes/brasilGovInterno/js/pikachoose/styles/css3.css?ver=0.5' type='text/css' media='screen' />
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-includes/js/jquery/jquery-migrate.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-content/mu-plugins/jquery-collapse-o-matic/collapse.min.js?ver=1.3.5'></script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-content/themes/brasilGovInterno/js/functions.js?ver=4.7.38'></script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-content/themes/brasilGovInterno/js/ufsc.js?ver=4.7.38'></script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-content/themes/brasilGovInterno/js/pikachoose/lib/jquery.pikachoose.js?ver=4.7.38'></script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-content/themes/brasilGovInterno/js/pikachoose/lib/jquery.jcarousel.min.js?ver=4.7.38'></script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/email-sharity/js/sharity.js?ver=4.7.38'></script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/email-sharity/fancybox/source/jquery.fancybox.pack.js?v=2.1.4&#038;ver=4.7.38'></script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/wp-visual-slidebox-builder/js/fun_box.js?ver=4.7.38'></script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/wp-visual-slidebox-builder/js/bootstrap.min.js?ver=4.7.38'></script>
+<link rel='https://api.w.org/' href='https://oportunidadesinternacionais.ufsc.br/wp-json/' />
+<link rel='shortlink' href='https://oportunidadesinternacionais.ufsc.br/?p=4552' />
+<link rel="alternate" type="application/json+oembed" href="https://oportunidadesinternacionais.ufsc.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Foportunidadesinternacionais.ufsc.br%2Flista-de-instituicoes-que-oferecem-bolsa-de-estudos%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://oportunidadesinternacionais.ufsc.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Foportunidadesinternacionais.ufsc.br%2Flista-de-instituicoes-que-oferecem-bolsa-de-estudos%2F&#038;format=xml" />
+ 
+    <link href="/wp-content/mu-plugins/videojs/video-js.min.css" rel="stylesheet" />
+    <script src="/wp-content/mu-plugins/videojs/video.min.js" type="text/javascript"></script>
+   <script type="text/javascript">
+    _V_.options.flash.swf = "/wp-content/mu-plugins/videojs/video-js.swf";
+  </script>
+
+    
+<script type='text/javascript'>
+/* <![CDATA[ */
+var thickboxL10n = {"next":"Próximo &gt;","prev":"&lt; Anterior","image":"Imagem","of":"de","close":"Fechar","loadingAnimation":"https:\/\/oportunidadesinternacionais.ufsc.br\/wp-content\/plugins\/auto-thickbox\/images\/loadingAnimation.gif"};
+try{convertEntities(thickboxL10n);}catch(e){};;
+/* ]]> */
+</script>
+</head>
+<div id="barra-brasil">
+    <div id="barra-brasil">
+        <div id="wrapper-barra-brasil">
+            <script src="//barra.brasil.gov.br/barra.js" type="text/javascript"></script>
+        </div>
+    </div>
+</div>
+
+<div id="wrapper">
+    <header id="header">
+            <div id="header_grid" class="grid">
+            <div>
+                <ul id="shortcuts" class="hide_mobile">
+                    <li><a accesskey="1" href="#conteudo">Ir para o conteúdo <span>1</span></a></li>
+                    <li><a accesskey="2" href="#menu">Ir para o menu <span>2</span></a></li>
+                    <li><a accesskey="3" href="#busca">Ir para a busca <span>3</span></a></li>
+                    <li><a accesskey="4" href="#rodape">Ir para o rodapé <span>4</span></a></li>
+                </ul>
+                <ul id="topbar">
+                    <li><a accesskey="7" href="http://ufsc.br/acessibilidade/">Acessibilidade</a></li>
+                    <li><a accesskey="8" href="#" id="contrast">Alto Contraste</a></li>
+                    <li><a accesskey="9" href="/mapa-do-site">Mapa do Site</a></li>
+                </ul>
+                <div id="logo">
+                    <a href="https://oportunidadesinternacionais.ufsc.br" accesskey="0" id="portal-logo">
+                        <img id="brasaoUfsc_Header" src="https://oportunidadesinternacionais.ufsc.br/wp-content/themes/brasilGovInterno/img/brasao_site_ufsc.svg?ver=1789672378" alt="Brasão da UFSC: A parte central do brasão é composta por uma flâmula. Ela é azul na porção superior e amarela na inferior. Sobre o azul, à esquerda, cinco estrelas brancas formam o cruzeiro do sul; à direita, uma faixa branca tem o texto escrito em vermelho: ars et scientia. Centralizada na parte amarela, há uma roda dentada vermelha quebrada na seção inferior. Duas folhas verdes de palma estão encaixadas no eixo da roda. Uma folha pende para o lado direito e a outra para o lado esquerdo. Atrás da flâmula há uma tocha amarela, da qual enxergamos os extremos: acima, com o fogo desenhado em vermelho, e abaixo, a parte inferior do bastão. Do lado esquerdo da flâmula, há um ramo verde de carvalho e do lado direito um ramo verde de louro. A parte inferior do brasão é composta por uma faixa estreita vermelha, escrito em branco: Universidade Federal de Santa Catarina. Abaixo da faixa, escrito em fonte maiúscula azul: UFSC."/>
+                        <h1>Oportunidades Internacionais</h1>
+                    </a>
+                </div>
+                <form action="/" method="get" name="busca">
+                    <input type="text" placeholder="Buscar no portal" id="s" name="s"/>
+                    <input type="submit" id="submit" value="" />
+                </form>
+                <ul id="social" class="hide_mobile">
+                    <li><a href="https://pt-br.facebook.com/UniversidadeUFSC" title="Curta no Facebook" class="icon-facebook"></a></li>
+                    <li><a href="https://twitter.com/ufsc" title="Siga no Twitter" class="icon-twitter"></a></li>
+                    <li><a href="https://www.youtube.com/user/tvufsc" title="Vídeos no Youtube" class="icon-youtube"></a></li>
+                    <li><a href="https://www.instagram.com/universidadeufsc" title="Veja no Instagram" class="icon-camera"></a></li>
+                    <li><a href="/feed" title="Assine as atualizações via RSS" class="icon-feed"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div id="menu-nav">
+            <ul>
+                <li id="menu-link-nav-acessoRestrito">
+                    <a href="http://oportunidadesinternacionais.paginas.ufsc.br//wp-admin">
+                        Área Restrita                    </a>
+                    <a href="/?administradores" class="thickbox" title="Lista de Administradores deste Site">
+                        Administradores do Site                    </a>
+                </li>
+            </ul>
+            <a href="#dropmenu" class="menu-link"><span aria-hidden="true" class="icon-menu"></span> Menu</a>
+                    </div>
+    </header>
+    <section id="home" class="grid section group clearfix ">
+
+
+
+
+
+
+
+
+
+
+                
+<section id="home" class="section group clearfix">  
+
+    <div id="sidebar_left" name="menu">
+    <div id="menu_secundario_logo" class="hide_mobile">
+                <a id="atalho-navegacao" href="https://oportunidadesinternacionais.ufsc.br">
+            <img src="https://oportunidadesinternacionais.ufsc.br/wp-content/themes/brasilGovInterno/img/brasao_default.png" alt="Menu de Navegação"/>
+        </a>
+    </div>
+
+    <ul role='navigation'>
+        <li>
+            <dl id='margin_space'>
+                <div class="pagenav"><ul id="menu-menu" class="pagenav"><li id="menu-item-4568" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4568"><a href="http://oportunidadesinternacionais.paginas.ufsc.br/">Home</a></li>
+<li id="menu-item-4571" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-4552 current_page_item menu-item-4571"><a href="https://oportunidadesinternacionais.ufsc.br/lista-de-instituicoes-que-oferecem-bolsa-de-estudos/">Lista de instituições que oferecem bolsa de estudos</a></li>
+<li id="menu-item-6545" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6545"><a href="https://oportunidadesinternacionais.ufsc.br/lista-de-instituicoes-conveniadas-com-mobilidade-para-servidores-tecnico-administrativos/">Instituições que oferecem mobilidade para TAEs</a></li>
+</ul></div>            </dl>
+        </li>
+    </ul>
+    <ul id="categories-3" class="widget widget_categories"><li><h2>Categorias</h2>		<ul>
+	<li class="cat-item cat-item-219405"><a href="https://oportunidadesinternacionais.ufsc.br/category/bolsas-de-estudos/" >Bolsas de estudos</a>
+</li>
+	<li class="cat-item cat-item-1528547"><a href="https://oportunidadesinternacionais.ufsc.br/category/bolsas-de-pesquisa/" >Bolsas de Pesquisa</a>
+</li>
+	<li class="cat-item cat-item-711530"><a href="https://oportunidadesinternacionais.ufsc.br/category/chamadas/" >Chamadas</a>
+</li>
+	<li class="cat-item cat-item-324515"><a href="https://oportunidadesinternacionais.ufsc.br/category/chamadas-para-publicacoes/" >Chamadas para publicações</a>
+</li>
+	<li class="cat-item cat-item-324072"><a href="https://oportunidadesinternacionais.ufsc.br/category/concursos-academicos/" >Concursos acadêmicos</a>
+</li>
+	<li class="cat-item cat-item-1530617"><a href="https://oportunidadesinternacionais.ufsc.br/category/concursos-internacionais/" >Concursos internacionais</a>
+</li>
+	<li class="cat-item cat-item-323376"><a href="https://oportunidadesinternacionais.ufsc.br/category/cursos-internacionais/" >Cursos internacionais</a>
+</li>
+	<li class="cat-item cat-item-171966"><a href="https://oportunidadesinternacionais.ufsc.br/category/eventos-internacionais/" >Eventos internacionais</a>
+</li>
+	<li class="cat-item cat-item-324514"><a href="https://oportunidadesinternacionais.ufsc.br/category/noticias-academicas/" >Notícias acadêmicas</a>
+</li>
+	<li class="cat-item cat-item-324516"><a href="https://oportunidadesinternacionais.ufsc.br/category/oportunidades-de-emprego/" >Oportunidades de emprego</a>
+</li>
+	<li class="cat-item cat-item-1778173"><a href="https://oportunidadesinternacionais.ufsc.br/category/oportunidades-de-pesquisa/" >Oportunidades de Pesquisa</a>
+</li>
+	<li class="cat-item cat-item-1528520"><a href="https://oportunidadesinternacionais.ufsc.br/category/oportunidades-gerais/" >Oportunidades gerais</a>
+</li>
+	<li class="cat-item cat-item-190704"><a href="https://oportunidadesinternacionais.ufsc.br/category/oportunidades-internacionais/" >Oportunidades internacionais</a>
+</li>
+	<li class="cat-item cat-item-324283"><a href="https://oportunidadesinternacionais.ufsc.br/category/outras-oportunidades/" >Outras oportunidades</a>
+</li>
+	<li class="cat-item cat-item-71139"><a href="https://oportunidadesinternacionais.ufsc.br/category/podcast/" >Podcast</a>
+</li>
+	<li class="cat-item cat-item-40"><a href="https://oportunidadesinternacionais.ufsc.br/category/sem-categoria/" >Sem categoria</a>
+</li>
+		</ul>
+</li></ul></div>
+<script>
+    "use strict";
+    var menus = document.querySelectorAll(".widget_nav_menu > li");
+    for(var i = 0; i < menus.length; i++) {
+        if(menus[i].children.length == 1) {
+            menus[i].remove();
+        }
+    }
+</script>
+	<div class="col" name="conteudo">
+	    <section id="content">
+
+    
+        <ul id="breadcrumbs" class="hide_mobile"><li><a href="https://oportunidadesinternacionais.ufsc.br" title="Ir para a página inicial" class="home"><span aria-hidden="true" class="icon-home"></span></a></li><li><a href="https://oportunidadesinternacionais.ufsc.br/lista-de-instituicoes-que-oferecem-bolsa-de-estudos/" class="current">Lista de instituições que oferecem bolsa de estudos</a></li></ul>
+        
+            <article class="post" id="post-4552">
+                <h2><a href="https://oportunidadesinternacionais.ufsc.br/lista-de-instituicoes-que-oferecem-bolsa-de-estudos/">Lista de instituições que oferecem bolsa de estudos</a></h2>
+
+                <div class="meta_header clearfix">
+                                                        </div>
+
+                <div class="content clearfix">
+
+                    <p>Tendo em vista a importância da experiência internacional na formação das competências dos estudantes da UFSC, e ao mesmo tempo, sabendo da oferta limitada de bolsas de estudo para tal experiência, a SINTER criou esta página com o contato de diversas instituições que oferecem bolsas de estudo no exterior.</p>
+<p>Ressaltamos que todas estas oportunidades são gerenciadas apenas pelas instituições em questão, e que, portanto, qualquer solicitação de informações adicionais deve ser encaminhada diretamente a essas instituições.</p>
+<p>É de completa responsabilidade dos estudantes, TAEs e docentes verificar todas as condições de participação, bem como se essa participação é condizente com os procedimentos legais e administrativos da UFSC.</p>
+<p style="text-align: justify">Confira abaixo as instituições:</p>
+<p style="text-align: justify">Alemanha</p>
+<ul>
+<li><a href="https://www.daad.org.br/pt/">Deutscher Akademischer Austauschdienst (DAAD)</a></li>
+<li><a href="https://www.humboldt-foundation.de/">Alexander von Humboldt Foundation</a></li>
+</ul>
+<p>Argentina</p>
+<ul>
+<li><strong><a href="https://campusglobal.educacion.gob.ar/">Campus Global</a></strong></li>
+</ul>
+<p>Austrália</p>
+<ul>
+<li><a href="https://www.atn.edu.au/">Australian Technology Network of Universities &#8211; ATN</a></li>
+<li><a href="https://www.studyaustralia.gov.au/">Governo da Austrália (site Study Australia)</a></li>
+<li><a href="https://www.dese.gov.au/">Department of Education, Skills and Employment</a></li>
+</ul>
+<p>Bélgica</p>
+<ul>
+<li><a href="https://www.auf.org/ameriques/">Agência Universitária da Franconfonia (AUF Amériques)</a></li>
+<li><a href="https://www.frs-fnrs.be/en/">Fonds de la Recherche Scientifique (fundo para pesquisa científica) &#8211; FRS-FNRS</a></li>
+<li><a href="https://uclouvain.be/en/index.html">FSR Post-Doc (UCLOUVAIN)</a></li>
+<li><a href="https://www.wbi.be/">Post-Doc Wallonie &#8211; Bruxelles International (WBI) </a></li>
+</ul>
+<p>Brasil</p>
+<ul>
+<li><a href="https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/bolsas">Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES)</a></li>
+<li><a href="https://www.gov.br/cnpq/pt-br">Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq)</a></li>
+<li><a href="https://www.gov.br/abc/pt-br">Agência Brasileira de Cooperação (ABC)</a> <span style="font-weight: 400"> </span></li>
+<li><a href="https://confap.org.br/pt">O Conselho Nacional das Fundações Estaduais de Amparo à Pesquisa (CONFAP)</a></li>
+<li><a href="https://embrapii.org.br/chamadas-publicas/">Associação Brasileira de Pesquisa e Inovação Industrial (EMBRAPII)</a></li>
+<li><a href="http://www.finep.gov.br/">Financiadora de Estudos e Projetos (FINEP)</a></li>
+<li><a href="http://www.dce.mre.gov.br/">Ministério das Relações Exteriores, a Divisão de Temas Educacionais (DCE)</a></li>
+</ul>
+<p>Canadá</p>
+<ul>
+<li><a href="https://www.educanada.ca/scholarships-bourses/non_can/index.aspx?lang=eng">Governo do Canadá</a></li>
+<li><a href="https://frq.gouv.qc.ca/">Governo do Québec</a></li>
+<li><a href="https://www.mitacs.ca/en/programs/globalink">Mitacs</a></li>
+<li><a href="https://www.trudeaufoundation.ca/">Pierre Elliott Trudeau Foundation</a></li>
+</ul>
+<p>Chile</p>
+<ul>
+<li><a href="https://www.conicyt.cl/">Comisión Nacional de Investigación Científica y Tecnológica (CONICYT) </a></li>
+</ul>
+<p>China</p>
+<ul>
+<li><a href="http://lxs.ecnu.edu.cn/EN/msg.php?id=35">Governo de Xangai</a></li>
+<li><a href="http://www.anso.org.cn/programmes/talent/scholarship/">Alliance of International Science Organization (ANSO)</a></li>
+</ul>
+<p>Espanha</p>
+<ul>
+<li><a href="https://www.aecid.es/EN">Agência Espanhola de Cooperação Internacional</a></li>
+<li><a href="https://www.fundacioncarolina.es/">Fundación Carolina (FC)</a></li>
+</ul>
+<p>Estados Unidos</p>
+<ul>
+<li><a href="https://fulbright.org.br/">Fulbright</a></li>
+<li><a href="https://www.aauw.org/resources/programs/fellowships-grants/">American Association of University Women</a></li>
+<li><a href="https://www.irex.org/program/community-engagement-exchange-program-application-information">IREX</a></li>
+<li><a href="https://www.fordfoundation.org/our-work-around-the-world/brazil/">Ford Foundation</a></li>
+</ul>
+<p>França</p>
+<ul>
+<li><a href="https://www.bresil.campusfrance.org/">Campus France</a></li>
+</ul>
+<p>Holanda</p>
+<ul>
+<li><a href="https://www.tudelft.nl/onderwijs/praktische-zaken/scholarships/holland-scholarship">Governo Holandês</a></li>
+</ul>
+<p>Hungria</p>
+<ul>
+<li><a href="https://stipendiumhungaricum.hu/">Governo húngaro</a></li>
+</ul>
+<p>Itália</p>
+<ul>
+<li><a href="https://studyinitaly.esteri.it/en/call-for-procedure">Ministry of Foreign Affairs and International Cooperation (MAECI)</a></li>
+</ul>
+<p>Japão</p>
+<ul>
+<li><a href="http://sp.br.emb-japan.go.jp/itpr_pt/bolsa1.html">Consulado Geral do Japão</a></li>
+<li><a href="https://www.jica.go.jp/brazil/portuguese/office/index.html">Japanese International Cooperation Agency (JICA)</a></li>
+</ul>
+<p>Marrocos</p>
+<ul>
+<li><a href="https://www.amci.ma/presentation">Agence Marocaine de Coopération Internationale (AMCI)</a></li>
+</ul>
+<p>México</p>
+<ul>
+<li><a href="https://www.gob.mx/amexcid">Agencia Mexicana de Cooperación Internacional para el Desarrollo (AMEXCID)</a></li>
+</ul>
+<p>Portugal</p>
+<ul>
+<li><a href="https://www.instituto-camoes.pt/">Instituto Camões</a></li>
+</ul>
+<p>Reino Unido</p>
+<ul>
+<li><a href="https://www.britishcouncil.org.br/">British Council</a></li>
+<li><a href="https://www.newtonfund.com.br/">Newton Fund</a></li>
+</ul>
+<p>Rússia</p>
+<ul>
+<li><a href="https://studyinrussia.ru/en/actual/scholarships/"> Ministério da Ciência e Educação da Rússia</a></li>
+<li><a href="https://od.globaluni.ru/en/">Open Doors: Russian Scholarship Project</a></li>
+</ul>
+<p>Suíça</p>
+<ul>
+<li><a href="https://www.eda.admin.ch/countries/brazil/pt/home/prestacao/bolsas.html">Consulado Geral da Suíça</a></li>
+</ul>
+<p>Diversos países</p>
+<ul>
+<li><a href="https://erasmus-plus.ec.europa.eu/">Erasmus</a></li>
+<li><a href="http://www.unesco.org/new/en/fellowships/programmes/how-to-apply/">UNESCO</a></li>
+<li><a href="https://www.becas-santander.com/pt_br/index.html">Santander</a></li>
+<li><a href="https://wwf.panda.org/act/wwf_scholarships_conservation_grants/prince_bernhard_scholarships/">World Wide Fund for Nature</a></li>
+<li><a href="http://jobs.euraxess.org/">Euraxess</a></li>
+</ul>
+<p>&nbsp;</p>
+<p><b>Iniciativas na Área de Educação Brasil-Estados Unidos</b></p>
+<p><span style="font-weight: 400">Educação Básica</span></p>
+<p><span style="font-weight: 400">Para Administradores/Líderes:</span></p>
+<ul>
+<li style="font-weight: 400"><strong><a href="https://eca.state.gov/ivlp">Missão aos Estados Unidos para Secretários Estaduais de Educação</a> </strong></li>
+</ul>
+<p><span style="font-weight: 400">Para Professores:</span></p>
+<ul>
+<li style="font-weight: 400"><strong><a href="https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/educacao-basica/programas-de-cooperacao-internacional-de-formacao-de-professores-da-educacao-basica/programa-de-desenvolvimento-profissional-para-professores-de-lingua-inglesa-nos-estados-unidos-pdpi">Programa de Desenvolvimento para Professores de Inglês (PDPI)</a> </strong></li>
+</ul>
+<p><span style="font-weight: 400">Para desenvolvimento de currículo, formação continuada de professores:</span></p>
+<ul>
+<li style="font-weight: 400"><strong><a href="https://www.mooc.org/">MOOCs &#8211; Massive Open Online Courses</a> </strong></li>
+<li style="font-weight: 400"><strong><a href="https://www.educapes.capes.gov.br/">Portal EduCapes</a> </strong></li>
+</ul>
+<p><span style="font-weight: 400">Para Alunos:</span></p>
+<ul>
+<li style="font-weight: 400"><strong><a href="https://exchanges.state.gov/non-us/program/english-access-microscholarship-program">English Access Microscholarship Program</a> </strong></li>
+<li style="font-weight: 400"><strong><a href="https://br.usembassy.gov/pt/education-culture-pt/programa-jovens-embaixadores/">Programa Jovens Embaixadores</a> </strong></li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="font-weight: 400">Educação Superior</span></p>
+<ul>
+<li style="font-weight: 400"><strong><a href="https://fulbright.org.br/">Programa Fulbright </a> </strong></li>
+<li style="font-weight: 400"><strong><a href="https://www.100kstrongamericas.org/">100,000 Strong in the Americas</a> </strong></li>
+<li style="font-weight: 400"><strong><a href="https://exchanges.state.gov/non-us/program/study-us-institutes">SUSI &#8211; Study of US Intitutes</a></strong></li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="font-weight: 400">Programas brasileiros apoiados pelo governo dos Estados Unidos</span></p>
+<ul>
+<li style="font-weight: 400"><strong><a href="https://isf.mec.gov.br/">IsF &#8211; Idiomas sem Fronteiras</a> </strong></li>
+<li style="font-weight: 400"><strong><a href="https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/bolsas/bolsas-e-auxilios-internacionais/informacoes-internacionais/programas-encerrados-internacionais/programa-setec-capes-nova">CAPES-SETEC-NOVA </a></strong></li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="font-weight: 400">Outros programas/agências</span></p>
+<ul>
+<li style="font-weight: 400"><strong><a href="https://educationusa.org.br/">EducationUSA</a> </strong></li>
+<li style="font-weight: 400"><strong><a href="https://www.maisunidos.org/">Mais Unidos</a> </strong></li>
+</ul>                                    </div>
+                                        
+            </article>
+
+                    
+    
+        
+    
+        </article>
+
+</section>
+	</div>
+
+	<div id="sidebar_right">
+<div id="text-2" class="widget widget_text"><h2>Visitor Map</h2>			<div class="textwidget"><a href='https://clustrmaps.com/site/1bdfu' title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=d1c3c3&amp;w=a&amp;t=tt&amp;d=a1j4LIqRwG-ir8lqlyAgq_7GCyysMdgx4PcVD_SvGiw&amp;co=fafcfd&amp;ct=1c2dd4' /></a></div>
+		</div><div id="text-3" class="widget widget_text"><h2>Mailing da SINTER</h2>			<div class="textwidget"><a href="https://oportunidadesinternacionais.ufsc.br/2022/07/22/receba-em-primeira-mao-as-oportunidades-internacionais-da-sinter//" target="_blank" rel="noopener noreferrer"><img class="centered image" src="http://oportunidadesinternacionais.paginas.ufsc.br/files/2022/07/pec-g.png"></a>
+</div>
+		</div>    <ul id='pu-contatos' class="last">
+        <li><h2>Contatos</h2>
+            <p>
+                Secretaria de Relações Internacionais |  Office of International Relations<br />
+<br />
+<br />
+Caroline Finati <br />
+divulgacao.sinter@contato.ufsc.br<br />
+<br />
+Endereço / Address:<br />
+Reitoria 2, 1º andar<br />
+Avenida Desembargador Vitor Lima, 222 - Trindade - CEP 88040-400 – Florianópolis - SC<br />
+            </p>
+        </li>
+    </ul>
+
+</div>
+
+
+</section>
+
+<footer id="footer" class="clearfix" name="footer">
+    <section id="rodape">
+        <script defer="defer" src="//barra.brasil.gov.br/barra.js" type="text/javascript"></script>
+        <div id="footer_links" class="grid clearfix" name="footer_links">
+                    <div id="sponsors">
+                    <dl>
+                <dt>
+                    <a href="http://setic.ufsc.br" target="_blank"><img src="https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/patrocinio/setic_ufsc.png"  alt="SeTIC" /></a>
+                </dt>
+                <dd></dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="http://paginas.ufsc.br" target="_blank"><img src="https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/patrocinio/pag_ufsc.png" alt="Páginas UFSC" /></a>
+                </dt>
+                <dd></dd>
+            </dl>
+                </div>
+                </div>
+        <div id="footer-brasil"></div>
+    </section>
+</footer>
+
+<div class="extra-footer">
+    <ul>
+        <li> Desenvolvido com o CMS de código aberto <a href="https://br.wordpress.org/.org">Wordpress</a></li>
+        <li class="last-update">Última atualização do site foi em 08 de outubro 2026 - 9:59:55</li>
+    </ul>
+</div>
+
+<!-- Google tag (gtag.js) -->
+<script async src='https://www.googletagmanager.com/gtag/js?id=G-2LJ98VTMN0'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2LJ98VTMN0');
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src='https://www.googletagmanager.com/gtag/js?id=G-QK2E1KW919'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QK2E1KW919');
+</script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/auto-thickbox/js/auto-thickbox.min.js?ver=20150514'></script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/oportunidadesinternacionais.ufsc.br\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Verifique se voc\u00ea n\u00e3o \u00e9 um rob\u00f4."}},"jqueryUi":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.9.2'></script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Fechar","currentText":"Hoje","monthNames":["janeiro","fevereiro","mar\u00e7o","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"],"monthNamesShort":["jan","fev","mar","abr","maio","jun","jul","ago","set","out","nov","dez"],"nextText":"Pr\u00f3ximo","prevText":"Anterior","dayNames":["domingo","segunda-feira","ter\u00e7a-feira","quarta-feira","quinta-feira","sexta-feira","s\u00e1bado"],"dayNamesShort":["dom","seg","ter","qua","qui","sex","s\u00e1b"],"dayNamesMin":["D","S","T","Q","Q","S","S"],"dateFormat":"d \\dd\\e MM \\dd\\e yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-includes/js/jquery/ui/button.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-includes/js/jquery/ui/spinner.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://oportunidadesinternacionais.ufsc.br/wp-includes/js/wp-embed.js?ver=4.7.38'></script>

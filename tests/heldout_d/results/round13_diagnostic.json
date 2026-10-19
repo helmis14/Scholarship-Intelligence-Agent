@@ -1,0 +1,1585 @@
+{
+ "status": "DIAGNOSTIC, not independent: round 13 validator changes were made after set D's results were seen",
+ "code": "round 13 working tree on top of 5ac8f19/5338811",
+ "paid_calls": 0,
+ "note": "Claude answers replayed from the local cache (no API call). Independent D results stay in claude_opus_at_e1b09de.json and rules_and_validator_at_e1b09de.json.",
+ "d_rules_and_claims": {
+  "rates": {
+   "age": {
+    "correct": 1,
+    "total": 4,
+    "accuracy": 0.25
+   },
+   "age_by_level": {
+    "correct": 0,
+    "total": 1,
+    "accuracy": 0.0
+   },
+   "cycle": {
+    "correct": 6,
+    "total": 11,
+    "accuracy": 0.545
+   },
+   "deadline_exact": {
+    "correct": 9,
+    "total": 12,
+    "accuracy": 0.75
+   },
+   "deadline_status": {
+    "correct": 8,
+    "total": 9,
+    "accuracy": 0.889
+   },
+   "duration": {
+    "correct": 1,
+    "total": 5,
+    "accuracy": 0.2
+   },
+   "funder_identity": {
+    "correct": 0,
+    "total": 11,
+    "accuracy": 0.0
+   },
+   "funding_amount": {
+    "correct": 1,
+    "total": 5,
+    "accuracy": 0.2
+   },
+   "funding_components": {
+    "correct": 13,
+    "total": 21,
+    "accuracy": 0.619
+   },
+   "funding_period": {
+    "correct": 1,
+    "total": 1,
+    "accuracy": 1.0
+   },
+   "language": {
+    "correct": 2,
+    "total": 2,
+    "accuracy": 1.0
+   },
+   "nationality": {
+    "correct": 2,
+    "total": 8,
+    "accuracy": 0.25
+   },
+   "page_kind": {
+    "correct": 22,
+    "total": 28,
+    "accuracy": 0.786
+   },
+   "per_level_amount_not_collapsed": {
+    "correct": 0,
+    "total": 2,
+    "accuracy": 0.0
+   },
+   "stipend_present": {
+    "correct": 4,
+    "total": 4,
+    "accuracy": 1.0
+   },
+   "tuition": {
+    "correct": 0,
+    "total": 3,
+    "accuracy": 0.0
+   }
+  },
+  "fields": {
+   "deadlines": {
+    "tp": 9,
+    "fp": 2,
+    "fn": 3,
+    "precision": 0.818,
+    "recall": 0.75,
+    "f1": 0.783
+   },
+   "levels": {
+    "tp": 19,
+    "fp": 9,
+    "fn": 5,
+    "precision": 0.679,
+    "recall": 0.792,
+    "f1": 0.731
+   },
+   "nationality_countries": {
+    "tp": 4,
+    "fp": 2,
+    "fn": 110,
+    "precision": 0.667,
+    "recall": 0.035,
+    "f1": 0.067
+   },
+   "openings": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 1,
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1": 0.889
+   }
+  },
+  "unsupported_values": 13,
+  "scored_values": 47,
+  "missing_values": 31,
+  "labelled_values": 74,
+  "attribution": {
+   "correct": 218,
+   "total": 221,
+   "accuracy": 0.986
+  },
+  "ai": null,
+  "validator": {
+   "set": "heldout_d",
+   "split": "all",
+   "positives": 59,
+   "false_rejections": 0,
+   "false_rejection_rate": 0.0,
+   "positives_sent_to_review": 1,
+   "negatives": 46,
+   "false_acceptances": 5,
+   "false_acceptance_rate": 0.109,
+   "negatives_sent_to_review": 16,
+   "review_rate": 0.162,
+   "by_area": {
+    "age": {
+     "positives": 4,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 5,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 1,
+     "review_rate": 0.111
+    },
+    "conflicts": {
+     "positives": 1,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 0,
+     "false_acceptances": 0,
+     "false_acceptance_rate": null,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "cycle": {
+     "positives": 1,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 3,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 3,
+     "review_rate": 0.75
+    },
+    "deadline": {
+     "positives": 16,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 6,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "funding amount": {
+     "positives": 3,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 4,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 4,
+     "review_rate": 0.571
+    },
+    "funding components": {
+     "positives": 13,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 1,
+     "negatives": 4,
+     "false_acceptances": 1,
+     "false_acceptance_rate": 0.25,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.059
+    },
+    "funding duration": {
+     "positives": 1,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 3,
+     "false_acceptances": 1,
+     "false_acceptance_rate": 0.333,
+     "negatives_sent_to_review": 1,
+     "review_rate": 0.25
+    },
+    "funding source": {
+     "positives": 4,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 9,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 4,
+     "review_rate": 0.308
+    },
+    "ielts_min": {
+     "positives": 2,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 2,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 1,
+     "review_rate": 0.25
+    },
+    "min_gpa": {
+     "positives": 2,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 0,
+     "false_acceptances": 0,
+     "false_acceptance_rate": null,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "nationality": {
+     "positives": 4,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 2,
+     "false_acceptances": 1,
+     "false_acceptance_rate": 0.5,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "residency": {
+     "positives": 1,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 2,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 2,
+     "review_rate": 0.667
+    },
+    "study_levels": {
+     "positives": 6,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 6,
+     "false_acceptances": 2,
+     "false_acceptance_rate": 0.333,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "toefl_min": {
+     "positives": 1,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 0,
+     "false_acceptances": 0,
+     "false_acceptance_rate": null,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    }
+   },
+   "wrong_verdicts": [
+    {
+     "page": "ch-sges-main",
+     "field": "academic_cycle",
+     "value": "2028/2029",
+     "expected": "reject",
+     "got": "needs_review: the quote describes a future cycle, not the one currently advertised",
+     "why_expected": "a future cycle, not this call"
+    },
+    {
+     "page": "au-awards-id-id",
+     "field": "ielts_min",
+     "value": 6.5,
+     "expected": "reject",
+     "got": "needs_review: a bare number or table cell; the quote does not say what it applies to",
+     "why_expected": "one cell of a table: applies only to PhD non-target applicants"
+    },
+    {
+     "page": "za-mandela-rhodes",
+     "field": "study_levels",
+     "value": [
+      "phd"
+     ],
+     "expected": "reject",
+     "got": "accepted",
+     "why_expected": "no PhD"
+    },
+    {
+     "page": "sa-kaust-funding",
+     "field": "stipend_amount",
+     "value": 30000,
+     "expected": "reject",
+     "got": "needs_review: the amount is stated for one study level; amounts may differ by level",
+     "why_expected": "amounts differ by level"
+    },
+    {
+     "page": "sa-kaust-funding",
+     "field": "tuition_coverage",
+     "value": "full",
+     "expected": "accept",
+     "got": "needs_review: the quote says full tuition but also gives a cap ('up to'); check whether the cap binds",
+     "why_expected": "stated"
+    },
+    {
+     "page": "tw-icdf-list",
+     "field": "provider_name",
+     "value": "TaiwanICDF",
+     "expected": "reject",
+     "got": "needs_review: the quotation names the organisation next to a funding statement whose subject is something else",
+     "why_expected": "the programme (not the TaiwanICDF) is the subject of 'offers'; conservative reject"
+    },
+    {
+     "page": "bn-ubd-scholarship",
+     "field": "eligible_nationalities",
+     "value": [
+      "Brunei"
+     ],
+     "expected": "reject",
+     "got": "accepted",
+     "why_expected": "applies only to the local-student scheme, not the international one"
+    },
+    {
+     "page": "my-mis",
+     "field": "academic_cycle",
+     "value": "2026/2027",
+     "expected": "reject",
+     "got": "needs_review: the quote says this cycle is closed: it may be the latest cycle, but it is not open",
+     "why_expected": "closed cycle"
+    },
+    {
+     "page": "my-mis",
+     "field": "provider_name",
+     "value": "Malaysian Government",
+     "expected": "reject",
+     "got": "needs_review: the quotation links the organisation to the scheme (established, initiative, through) without saying it funds it",
+     "why_expected": "'an initiative by' is not stated as funding; conservative reject"
+    },
+    {
+     "page": "de-kas-pdf",
+     "field": "stipend_amount",
+     "value": 920,
+     "expected": "reject",
+     "got": "needs_review: a bare number or table cell; the quote does not say what it applies to",
+     "why_expected": "a bare amount; the page does not say which level it is for in this quote"
+    },
+    {
+     "page": "ca-vanier",
+     "field": "funding_duration_months",
+     "value": 36,
+     "expected": "reject",
+     "got": "accepted",
+     "why_expected": "a bare duration heading (no funding wording in the quote); conservative"
+    },
+    {
+     "page": "ca-mcgill-mcf-elig",
+     "field": "residency_required",
+     "value": [
+      "Kenya"
+     ],
+     "expected": "reject",
+     "got": "needs_review: the quote points to a country list outside the quote; check that list",
+     "why_expected": "no single country named"
+    },
+    {
+     "page": "cz-studyin-340",
+     "field": "stipend_amount",
+     "value": 24960,
+     "expected": "reject",
+     "got": "needs_review: the amount is stated for one study level; amounts may differ by level",
+     "why_expected": "per-level amount; the record is not doctoral-specific"
+    },
+    {
+     "page": "cz-studyin-340",
+     "field": "study_levels",
+     "value": [
+      "bachelor"
+     ],
+     "expected": "reject",
+     "got": "accepted",
+     "why_expected": "contradicts 'follow-up master's'; conflicting"
+    },
+    {
+     "page": "jp-mext-guidelines-pdf",
+     "field": "stipend_amount",
+     "value": 145000,
+     "expected": "reject",
+     "got": "needs_review: the amount is stated for one study level; amounts may differ by level",
+     "why_expected": "doctoral-only amount; amounts differ by level"
+    },
+    {
+     "page": "hk-hkpfs",
+     "field": "provider_name",
+     "value": "Research Grants Council",
+     "expected": "reject",
+     "got": "needs_review: the quotation links the organisation to the scheme (established, initiative, through) without saying it funds it",
+     "why_expected": "'established by' is not a funding statement; conservative"
+    },
+    {
+     "page": "hk-hku-hkpfs",
+     "field": "tuition_coverage",
+     "value": "full",
+     "expected": "reject",
+     "got": "accepted",
+     "why_expected": "no tuition word in the quote (composition fees); conservative"
+    },
+    {
+     "page": "be-ares-formations",
+     "field": "academic_cycle",
+     "value": "2027/2028",
+     "expected": "reject",
+     "got": "needs_review: the quote says this cycle is closed: it may be the latest cycle, but it is not open",
+     "why_expected": "closed"
+    },
+    {
+     "page": "be-ares-formations",
+     "field": "residency_required",
+     "value": [
+      "Kenya"
+     ],
+     "expected": "reject",
+     "got": "needs_review: the quote points to a country list outside the quote; check that list",
+     "why_expected": "no country named in the quote"
+    },
+    {
+     "page": "be-ares-belgique",
+     "field": "funding_duration_months",
+     "value": 12,
+     "expected": "reject",
+     "got": "needs_review: the duration is attached to the study programme; check that it is also the funded period",
+     "why_expected": "'d’un an' is not read as a number; programme length"
+    },
+    {
+     "page": "id-bu-pedoman-pdf",
+     "field": "max_age",
+     "value": 46,
+     "expected": "reject",
+     "got": "needs_review: 'under N' means at most N-1; check whether N itself is allowed",
+     "why_expected": "differs by applicant category (new vs ongoing) and by level"
+    },
+    {
+     "page": "mx-amexcid",
+     "field": "provider_name",
+     "value": "Agencia Mexicana de Cooperación Internacional para el Desarrollo (AMEXCID)",
+     "expected": "reject",
+     "got": "needs_review: the quotation links the organisation to the scheme (established, initiative, through) without saying it funds it",
+     "why_expected": "'convoca' (calls for applications) is not read as a funding verb; conservative"
+    }
+   ]
+  }
+ },
+ "d_claude_replay": {
+  "rates": {
+   "age": {
+    "correct": 3,
+    "total": 4,
+    "accuracy": 0.75
+   },
+   "age_by_level": {
+    "correct": 0,
+    "total": 1,
+    "accuracy": 0.0
+   },
+   "cycle": {
+    "correct": 9,
+    "total": 11,
+    "accuracy": 0.818
+   },
+   "deadline_exact": {
+    "correct": 12,
+    "total": 12,
+    "accuracy": 1.0
+   },
+   "deadline_status": {
+    "correct": 11,
+    "total": 12,
+    "accuracy": 0.917
+   },
+   "duration": {
+    "correct": 3,
+    "total": 5,
+    "accuracy": 0.6
+   },
+   "funder_identity": {
+    "correct": 4,
+    "total": 11,
+    "accuracy": 0.364
+   },
+   "funding_amount": {
+    "correct": 5,
+    "total": 5,
+    "accuracy": 1.0
+   },
+   "funding_components": {
+    "correct": 17,
+    "total": 21,
+    "accuracy": 0.81
+   },
+   "funding_period": {
+    "correct": 4,
+    "total": 4,
+    "accuracy": 1.0
+   },
+   "language": {
+    "correct": 2,
+    "total": 2,
+    "accuracy": 1.0
+   },
+   "nationality": {
+    "correct": 3,
+    "total": 8,
+    "accuracy": 0.375
+   },
+   "page_kind": {
+    "correct": 22,
+    "total": 28,
+    "accuracy": 0.786
+   },
+   "per_level_amount_not_collapsed": {
+    "correct": 0,
+    "total": 2,
+    "accuracy": 0.0
+   },
+   "stipend_present": {
+    "correct": 4,
+    "total": 4,
+    "accuracy": 1.0
+   },
+   "tuition": {
+    "correct": 0,
+    "total": 3,
+    "accuracy": 0.0
+   }
+  },
+  "fields": {
+   "deadlines": {
+    "tp": 12,
+    "fp": 2,
+    "fn": 0,
+    "precision": 0.857,
+    "recall": 1.0,
+    "f1": 0.923
+   },
+   "levels": {
+    "tp": 19,
+    "fp": 9,
+    "fn": 5,
+    "precision": 0.679,
+    "recall": 0.792,
+    "f1": 0.731
+   },
+   "nationality_countries": {
+    "tp": 4,
+    "fp": 2,
+    "fn": 110,
+    "precision": 0.667,
+    "recall": 0.035,
+    "f1": 0.067
+   },
+   "openings": {
+    "tp": 5,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   }
+  },
+  "unsupported_values": 14,
+  "scored_values": 68,
+  "missing_values": 12,
+  "labelled_values": 74,
+  "attribution": {
+   "correct": 275,
+   "total": 278,
+   "accuracy": 0.989
+  },
+  "ai": {
+   "pages": 24,
+   "proposed": 193,
+   "accepted": 57,
+   "rejected_by_reason": {
+    "quote does not say this organisation funds or runs the scholarship": 11,
+    "postdoc not stated in the quotation": 2,
+    "master not stated in the quotation": 1,
+    "quote does not mention tuition": 1,
+    "master not stated in the quotation; phd not stated in the quotation; short_course not stated in the quotation": 1,
+    "quote describes the study programme's length, not a funding period": 1,
+    "phd not stated in the quotation": 2,
+    "master<=29 not stated in quote": 1,
+    "quote has no deadline wording (a start, event or other date)": 1,
+    "master appears only as a prerequisite or an exclusion": 1,
+    "field of study not in quote": 2,
+    "country not named in quote": 1,
+    "quote does not mention this benefit": 1,
+    "master not stated in the quotation; short_course not stated in the quotation": 1,
+    "provider name not in quote": 1,
+    "phd<=45 not stated in quote": 1
+   },
+   "needs_review_by_reason": {
+    "the year is taken from a date, not stated as the cycle": 1,
+    "the quotation names the organisation next to a funding statement whose subject is something else": 2,
+    "the quote describes a future cycle, not the one currently advertised": 1,
+    "the quote says full tuition but also gives a cap ('up to'); check whether the cap binds": 1,
+    "the quotation links the organisation to the scheme (established, initiative, through) without saying it funds it": 4,
+    "the quote says this cycle is closed: it may be the latest cycle, but it is not open": 2,
+    "the quote points to a country list outside the quote; check that list": 2,
+    "the amount is stated for one study level; amounts may differ by level": 1,
+    "tuition is covered only for some programmes or applicants": 1,
+    "the duration is attached to the study programme; check that it is also the funded period": 1,
+    "the quote states residence or work, not citizenship": 1
+   },
+   "disagreements_with_rules": 8,
+   "errors": {},
+   "evidence_verbatim": 57,
+   "evidence_total": 57
+  },
+  "validator": {
+   "set": "heldout_d",
+   "split": "all",
+   "positives": 59,
+   "false_rejections": 0,
+   "false_rejection_rate": 0.0,
+   "positives_sent_to_review": 1,
+   "negatives": 46,
+   "false_acceptances": 5,
+   "false_acceptance_rate": 0.109,
+   "negatives_sent_to_review": 16,
+   "review_rate": 0.162,
+   "by_area": {
+    "age": {
+     "positives": 4,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 5,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 1,
+     "review_rate": 0.111
+    },
+    "conflicts": {
+     "positives": 1,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 0,
+     "false_acceptances": 0,
+     "false_acceptance_rate": null,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "cycle": {
+     "positives": 1,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 3,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 3,
+     "review_rate": 0.75
+    },
+    "deadline": {
+     "positives": 16,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 6,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "funding amount": {
+     "positives": 3,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 4,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 4,
+     "review_rate": 0.571
+    },
+    "funding components": {
+     "positives": 13,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 1,
+     "negatives": 4,
+     "false_acceptances": 1,
+     "false_acceptance_rate": 0.25,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.059
+    },
+    "funding duration": {
+     "positives": 1,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 3,
+     "false_acceptances": 1,
+     "false_acceptance_rate": 0.333,
+     "negatives_sent_to_review": 1,
+     "review_rate": 0.25
+    },
+    "funding source": {
+     "positives": 4,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 9,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 4,
+     "review_rate": 0.308
+    },
+    "ielts_min": {
+     "positives": 2,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 2,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 1,
+     "review_rate": 0.25
+    },
+    "min_gpa": {
+     "positives": 2,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 0,
+     "false_acceptances": 0,
+     "false_acceptance_rate": null,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "nationality": {
+     "positives": 4,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 2,
+     "false_acceptances": 1,
+     "false_acceptance_rate": 0.5,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "residency": {
+     "positives": 1,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 2,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 2,
+     "review_rate": 0.667
+    },
+    "study_levels": {
+     "positives": 6,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 6,
+     "false_acceptances": 2,
+     "false_acceptance_rate": 0.333,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "toefl_min": {
+     "positives": 1,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 0,
+     "false_acceptances": 0,
+     "false_acceptance_rate": null,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    }
+   },
+   "wrong_verdicts": [
+    {
+     "page": "ch-sges-main",
+     "field": "academic_cycle",
+     "value": "2028/2029",
+     "expected": "reject",
+     "got": "needs_review: the quote describes a future cycle, not the one currently advertised",
+     "why_expected": "a future cycle, not this call"
+    },
+    {
+     "page": "au-awards-id-id",
+     "field": "ielts_min",
+     "value": 6.5,
+     "expected": "reject",
+     "got": "needs_review: a bare number or table cell; the quote does not say what it applies to",
+     "why_expected": "one cell of a table: applies only to PhD non-target applicants"
+    },
+    {
+     "page": "za-mandela-rhodes",
+     "field": "study_levels",
+     "value": [
+      "phd"
+     ],
+     "expected": "reject",
+     "got": "accepted",
+     "why_expected": "no PhD"
+    },
+    {
+     "page": "sa-kaust-funding",
+     "field": "stipend_amount",
+     "value": 30000,
+     "expected": "reject",
+     "got": "needs_review: the amount is stated for one study level; amounts may differ by level",
+     "why_expected": "amounts differ by level"
+    },
+    {
+     "page": "sa-kaust-funding",
+     "field": "tuition_coverage",
+     "value": "full",
+     "expected": "accept",
+     "got": "needs_review: the quote says full tuition but also gives a cap ('up to'); check whether the cap binds",
+     "why_expected": "stated"
+    },
+    {
+     "page": "tw-icdf-list",
+     "field": "provider_name",
+     "value": "TaiwanICDF",
+     "expected": "reject",
+     "got": "needs_review: the quotation names the organisation next to a funding statement whose subject is something else",
+     "why_expected": "the programme (not the TaiwanICDF) is the subject of 'offers'; conservative reject"
+    },
+    {
+     "page": "bn-ubd-scholarship",
+     "field": "eligible_nationalities",
+     "value": [
+      "Brunei"
+     ],
+     "expected": "reject",
+     "got": "accepted",
+     "why_expected": "applies only to the local-student scheme, not the international one"
+    },
+    {
+     "page": "my-mis",
+     "field": "academic_cycle",
+     "value": "2026/2027",
+     "expected": "reject",
+     "got": "needs_review: the quote says this cycle is closed: it may be the latest cycle, but it is not open",
+     "why_expected": "closed cycle"
+    },
+    {
+     "page": "my-mis",
+     "field": "provider_name",
+     "value": "Malaysian Government",
+     "expected": "reject",
+     "got": "needs_review: the quotation links the organisation to the scheme (established, initiative, through) without saying it funds it",
+     "why_expected": "'an initiative by' is not stated as funding; conservative reject"
+    },
+    {
+     "page": "de-kas-pdf",
+     "field": "stipend_amount",
+     "value": 920,
+     "expected": "reject",
+     "got": "needs_review: a bare number or table cell; the quote does not say what it applies to",
+     "why_expected": "a bare amount; the page does not say which level it is for in this quote"
+    },
+    {
+     "page": "ca-vanier",
+     "field": "funding_duration_months",
+     "value": 36,
+     "expected": "reject",
+     "got": "accepted",
+     "why_expected": "a bare duration heading (no funding wording in the quote); conservative"
+    },
+    {
+     "page": "ca-mcgill-mcf-elig",
+     "field": "residency_required",
+     "value": [
+      "Kenya"
+     ],
+     "expected": "reject",
+     "got": "needs_review: the quote points to a country list outside the quote; check that list",
+     "why_expected": "no single country named"
+    },
+    {
+     "page": "cz-studyin-340",
+     "field": "stipend_amount",
+     "value": 24960,
+     "expected": "reject",
+     "got": "needs_review: the amount is stated for one study level; amounts may differ by level",
+     "why_expected": "per-level amount; the record is not doctoral-specific"
+    },
+    {
+     "page": "cz-studyin-340",
+     "field": "study_levels",
+     "value": [
+      "bachelor"
+     ],
+     "expected": "reject",
+     "got": "accepted",
+     "why_expected": "contradicts 'follow-up master's'; conflicting"
+    },
+    {
+     "page": "jp-mext-guidelines-pdf",
+     "field": "stipend_amount",
+     "value": 145000,
+     "expected": "reject",
+     "got": "needs_review: the amount is stated for one study level; amounts may differ by level",
+     "why_expected": "doctoral-only amount; amounts differ by level"
+    },
+    {
+     "page": "hk-hkpfs",
+     "field": "provider_name",
+     "value": "Research Grants Council",
+     "expected": "reject",
+     "got": "needs_review: the quotation links the organisation to the scheme (established, initiative, through) without saying it funds it",
+     "why_expected": "'established by' is not a funding statement; conservative"
+    },
+    {
+     "page": "hk-hku-hkpfs",
+     "field": "tuition_coverage",
+     "value": "full",
+     "expected": "reject",
+     "got": "accepted",
+     "why_expected": "no tuition word in the quote (composition fees); conservative"
+    },
+    {
+     "page": "be-ares-formations",
+     "field": "academic_cycle",
+     "value": "2027/2028",
+     "expected": "reject",
+     "got": "needs_review: the quote says this cycle is closed: it may be the latest cycle, but it is not open",
+     "why_expected": "closed"
+    },
+    {
+     "page": "be-ares-formations",
+     "field": "residency_required",
+     "value": [
+      "Kenya"
+     ],
+     "expected": "reject",
+     "got": "needs_review: the quote points to a country list outside the quote; check that list",
+     "why_expected": "no country named in the quote"
+    },
+    {
+     "page": "be-ares-belgique",
+     "field": "funding_duration_months",
+     "value": 12,
+     "expected": "reject",
+     "got": "needs_review: the duration is attached to the study programme; check that it is also the funded period",
+     "why_expected": "'d’un an' is not read as a number; programme length"
+    },
+    {
+     "page": "id-bu-pedoman-pdf",
+     "field": "max_age",
+     "value": 46,
+     "expected": "reject",
+     "got": "needs_review: 'under N' means at most N-1; check whether N itself is allowed",
+     "why_expected": "differs by applicant category (new vs ongoing) and by level"
+    },
+    {
+     "page": "mx-amexcid",
+     "field": "provider_name",
+     "value": "Agencia Mexicana de Cooperación Internacional para el Desarrollo (AMEXCID)",
+     "expected": "reject",
+     "got": "needs_review: the quotation links the organisation to the scheme (established, initiative, through) without saying it funds it",
+     "why_expected": "'convoca' (calls for applications) is not read as a funding verb; conservative"
+    }
+   ]
+  }
+ },
+ "c_test_claude_replay": {
+  "rates": {
+   "age": {
+    "correct": 1,
+    "total": 1,
+    "accuracy": 1.0
+   },
+   "age_by_level": {
+    "correct": 6,
+    "total": 6,
+    "accuracy": 1.0
+   },
+   "cycle": {
+    "correct": 1,
+    "total": 4,
+    "accuracy": 0.25
+   },
+   "deadline_exact": {
+    "correct": 7,
+    "total": 7,
+    "accuracy": 1.0
+   },
+   "deadline_status": {
+    "correct": 7,
+    "total": 7,
+    "accuracy": 1.0
+   },
+   "duration": {
+    "correct": 2,
+    "total": 2,
+    "accuracy": 1.0
+   },
+   "funder_identity": {
+    "correct": 5,
+    "total": 5,
+    "accuracy": 1.0
+   },
+   "funding_amount": {
+    "correct": 2,
+    "total": 2,
+    "accuracy": 1.0
+   },
+   "funding_components": {
+    "correct": 11,
+    "total": 12,
+    "accuracy": 0.917
+   },
+   "funding_period": {
+    "correct": 1,
+    "total": 1,
+    "accuracy": 1.0
+   },
+   "nationality": {
+    "correct": 5,
+    "total": 5,
+    "accuracy": 1.0
+   },
+   "page_kind": {
+    "correct": 10,
+    "total": 10,
+    "accuracy": 1.0
+   },
+   "per_level_amount_not_collapsed": {
+    "correct": 1,
+    "total": 1,
+    "accuracy": 1.0
+   },
+   "stipend_present": {
+    "correct": 1,
+    "total": 1,
+    "accuracy": 1.0
+   },
+   "travel": {
+    "correct": 2,
+    "total": 2,
+    "accuracy": 1.0
+   },
+   "tuition": {
+    "correct": 2,
+    "total": 2,
+    "accuracy": 1.0
+   }
+  },
+  "fields": {
+   "deadlines": {
+    "tp": 7,
+    "fp": 1,
+    "fn": 0,
+    "precision": 0.875,
+    "recall": 1.0,
+    "f1": 0.933
+   },
+   "nationality_countries": {
+    "tp": 5,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   },
+   "openings": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   }
+  },
+  "unsupported_values": 5,
+  "scored_values": 34,
+  "missing_values": 0,
+  "labelled_values": 33,
+  "attribution": {
+   "correct": 116,
+   "total": 116,
+   "accuracy": 1.0
+  },
+  "ai": {
+   "pages": 10,
+   "proposed": 93,
+   "accepted": 24,
+   "rejected_by_reason": {
+    "quote describes the study programme's length, not a funding period": 2,
+    "not a single academic year": 1,
+    "field of study not in quote": 1,
+    "names a website, not the funder": 1,
+    "quote does not mention tuition": 1,
+    "quote does not say this organisation funds or runs the scholarship": 3,
+    "postdoc not stated in the quotation; short_course not stated in the quotation": 1,
+    "the quote is about the applicant's own funds, not a funder": 1
+   },
+   "needs_review_by_reason": {
+    "a bare duration; the quote does not say it is the funded period": 1
+   },
+   "disagreements_with_rules": 1,
+   "errors": {},
+   "evidence_verbatim": 24,
+   "evidence_total": 24
+  },
+  "validator": {
+   "set": "heldout_c",
+   "split": "test",
+   "positives": 38,
+   "false_rejections": 0,
+   "false_rejection_rate": 0.0,
+   "positives_sent_to_review": 1,
+   "negatives": 19,
+   "false_acceptances": 0,
+   "false_acceptance_rate": 0.0,
+   "negatives_sent_to_review": 1,
+   "review_rate": 0.035,
+   "by_area": {
+    "age": {
+     "positives": 7,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 6,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "cycle": {
+     "positives": 3,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 0,
+     "false_acceptances": 0,
+     "false_acceptance_rate": null,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "deadline": {
+     "positives": 11,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 1,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "funding amount": {
+     "positives": 1,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 1,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 1,
+     "review_rate": 0.5
+    },
+    "funding components": {
+     "positives": 7,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 6,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "funding duration": {
+     "positives": 3,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 1,
+     "negatives": 3,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.167
+    },
+    "funding source": {
+     "positives": 5,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 2,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "nationality": {
+     "positives": 1,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 0,
+     "false_acceptances": 0,
+     "false_acceptance_rate": null,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    }
+   },
+   "wrong_verdicts": [
+    {
+     "page": "id-its-ernst-mach",
+     "field": "funding_duration_months",
+     "value": 36,
+     "expected": "accept",
+     "got": "needs_review: a bare duration; the quote does not say it is the funded period",
+     "why_expected": "Full PhD Grant duration"
+    },
+    {
+     "page": "tr-burslari-why",
+     "field": "stipend_amount",
+     "value": 13000,
+     "expected": "reject",
+     "got": "needs_review: the amount is stated for one study level; amounts may differ by level",
+     "why_expected": "amounts differ by level"
+    }
+   ]
+  }
+ },
+ "c_dev_rules_and_claims": {
+  "rates": {
+   "age": {
+    "correct": 1,
+    "total": 2,
+    "accuracy": 0.5
+   },
+   "age_by_level": {
+    "correct": 5,
+    "total": 5,
+    "accuracy": 1.0
+   },
+   "cycle": {
+    "correct": 1,
+    "total": 2,
+    "accuracy": 0.5
+   },
+   "deadline_exact": {
+    "correct": 2,
+    "total": 4,
+    "accuracy": 0.5
+   },
+   "deadline_status": {
+    "correct": 2,
+    "total": 2,
+    "accuracy": 1.0
+   },
+   "duration": {
+    "correct": 1,
+    "total": 3,
+    "accuracy": 0.333
+   },
+   "funder_identity": {
+    "correct": 0,
+    "total": 5,
+    "accuracy": 0.0
+   },
+   "funding_amount": {
+    "correct": 1,
+    "total": 1,
+    "accuracy": 1.0
+   },
+   "funding_components": {
+    "correct": 18,
+    "total": 18,
+    "accuracy": 1.0
+   },
+   "funding_period": {
+    "correct": 1,
+    "total": 1,
+    "accuracy": 1.0
+   },
+   "nationality": {
+    "correct": 6,
+    "total": 8,
+    "accuracy": 0.75
+   },
+   "page_kind": {
+    "correct": 9,
+    "total": 10,
+    "accuracy": 0.9
+   },
+   "stipend_present": {
+    "correct": 1,
+    "total": 1,
+    "accuracy": 1.0
+   },
+   "travel": {
+    "correct": 2,
+    "total": 2,
+    "accuracy": 1.0
+   },
+   "tuition": {
+    "correct": 2,
+    "total": 2,
+    "accuracy": 1.0
+   }
+  },
+  "fields": {
+   "deadlines": {
+    "tp": 2,
+    "fp": 3,
+    "fn": 2,
+    "precision": 0.4,
+    "recall": 0.5,
+    "f1": 0.444
+   },
+   "nationality_countries": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   },
+   "openings": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 2,
+    "precision": null,
+    "recall": 0.0,
+    "f1": 0.0
+   }
+  },
+  "unsupported_values": 6,
+  "scored_values": 31,
+  "missing_values": 8,
+  "labelled_values": 34,
+  "attribution": {
+   "correct": 84,
+   "total": 85,
+   "accuracy": 0.988
+  },
+  "ai": null,
+  "validator": {
+   "set": "heldout_c",
+   "split": "dev",
+   "positives": 41,
+   "false_rejections": 0,
+   "false_rejection_rate": 0.0,
+   "positives_sent_to_review": 0,
+   "negatives": 37,
+   "false_acceptances": 1,
+   "false_acceptance_rate": 0.027,
+   "negatives_sent_to_review": 2,
+   "review_rate": 0.026,
+   "by_area": {
+    "age": {
+     "positives": 7,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 6,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "conflicts": {
+     "positives": 1,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 0,
+     "false_acceptances": 0,
+     "false_acceptance_rate": null,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "cycle": {
+     "positives": 2,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 1,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 1,
+     "review_rate": 0.333
+    },
+    "deadline": {
+     "positives": 4,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 5,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "funding amount": {
+     "positives": 1,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 0,
+     "false_acceptances": 0,
+     "false_acceptance_rate": null,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "funding components": {
+     "positives": 8,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 6,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "funding duration": {
+     "positives": 4,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 3,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "funding source": {
+     "positives": 6,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 7,
+     "false_acceptances": 1,
+     "false_acceptance_rate": 0.143,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "nationality": {
+     "positives": 2,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 1,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 1,
+     "review_rate": 0.333
+    },
+    "residency": {
+     "positives": 0,
+     "false_rejections": 0,
+     "false_rejection_rate": null,
+     "positives_sent_to_review": 0,
+     "negatives": 2,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    },
+    "study_levels": {
+     "positives": 6,
+     "false_rejections": 0,
+     "false_rejection_rate": 0.0,
+     "positives_sent_to_review": 0,
+     "negatives": 6,
+     "false_acceptances": 0,
+     "false_acceptance_rate": 0.0,
+     "negatives_sent_to_review": 0,
+     "review_rate": 0.0
+    }
+   },
+   "wrong_verdicts": [
+    {
+     "page": "be-vliruos-countries",
+     "field": "eligible_nationalities",
+     "value": [
+      "Benin",
+      "Kenya",
+      "Vietnam"
+     ],
+     "expected": "reject",
+     "got": "needs_review: the quote points to a country list outside the quote; check that list",
+     "why_expected": "true value, but the quote names no country (the list is below it); conservative rejection expected"
+    },
+    {
+     "page": "be-vliruos-study",
+     "field": "academic_cycle",
+     "value": "2026/2027",
+     "expected": "reject",
+     "got": "needs_review: the quote says this cycle is closed: it may be the latest cycle, but it is not open",
+     "why_expected": "a closed, previous cycle is not the current call"
+    },
+    {
+     "page": "id-aminef-fulbright",
+     "field": "provider_name",
+     "value": "Indonesian Ministry of Research, Technology, and Higher Education",
+     "expected": "reject",
+     "got": "accepted",
+     "why_expected": "funder of a separate, paused DIKTI programme, not of these scholarships"
+    }
+   ]
+  }
+ },
+ "d_claude_answers_vs_post_hoc_audit": [
+  "('right', 'accepted') 144",
+  "('right', 'needs_review') 8",
+  "('right', 'rejected') 2",
+  "('unclear', 'accepted') 2",
+  "('unclear', 'needs_review') 4",
+  "('wrong', 'accepted') 1",
+  "('wrong', 'needs_review') 5",
+  "('wrong', 'rejected') 27",
+  " 16 ch-sges-glance       unclear questionable_accep -> needs_review academic_cycle=\"2027\" | the year is taken from a date, not stated as the cycle",
+  " 63 za-mandela-rhodes    right   correct_acceptance -> needs_review academic_cycle=\"2028\" | the quote describes a future cycle, not the one currently advertised",
+  " 67 sa-kaust-funding     right   wrong_rejection    -> needs_review tuition_coverage=\"full\" | the quote says full tuition but also gives a cap ('up to'); check whether the cap binds",
+  " 74 tw-icdf-list         right   wrong_rejection    -> needs_review provider_name=\"TaiwanICDF\" | the quotation names the organisation next to a funding statement whose subject is somethin",
+  " 97 bn-ubd-scholarship   right   wrong_rejection    -> rejected     age_limits_by_level=[\"bachelor<=25\", \"master<=29\", \"phd<=29\" | master<=29 not stated in quote",
+  " 98 my-mis               right   wrong_rejection    -> needs_review provider_name=\"Malaysian Government\" | the quotation links the organisation to the scheme (established, initiative, through) with",
+  " 99 my-mis               unclear disputed_rejection -> needs_review academic_cycle=\"2026/2027\" | the quote says this cycle is closed: it may be the latest cycle, but it is not open",
+  "126 cz-studyin-340       right   correct_acceptance -> needs_review stipend_amount=16000 | the amount is stated for one study level; amounts may differ by level",
+  "130 cz-studyin-340       unclear disputed_rejection -> accepted     covers_health_insurance=true | ",
+  "140 jp-mext-guidelines-p unclear disputed_rejection -> accepted     academic_cycle=\"2027\" | ",
+  "142 hk-hkpfs             right   wrong_rejection    -> needs_review provider_name=\"Research Grants Council (RGC) of Hong K | the quotation links the organisation to the scheme (established, initiative, through) with",
+  "152 hk-hku-hkpfs         right   wrong_rejection    -> needs_review provider_name=\"Hong Kong Research Grants Council (RGC) | the quotation links the organisation to the scheme (established, initiative, through) with",
+  "165 hk-hku-hkpfs         wrong   correct_rejection  -> accepted     deadline_admission=\"2026-12-01\" | ",
+  "175 be-ares-formations   unclear questionable_accep -> needs_review tuition_coverage=\"full\" | tuition is covered only for some programmes or applicants",
+  "183 be-ares-belgique     unclear questionable_accep -> needs_review nationality_mode=\"include\" | the quote states residence or work, not citizenship",
+  "189 id-bu-pedoman-pdf    right   wrong_rejection    -> rejected     age_limits_by_level=[\"master<=31\", \"phd<=45\"] | phd<=45 not stated in quote",
+  "191 mx-amexcid           right   wrong_rejection    -> needs_review provider_name=\"Agencia Mexicana de Cooperación Interna | the quotation links the organisation to the scheme (established, initiative, through) with"
+ ]
+}

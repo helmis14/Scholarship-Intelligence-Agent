@@ -1,0 +1,2602 @@
+{
+ "set": "D",
+ "code": "e1b09de",
+ "labels_sha256": "165e6c01c016c173a9fcb00fcdead63cf10caef58f2c483e9bbf0a8f8cf62420",
+ "model": "claude-opus-5-5",
+ "run_date": "2026-10-17",
+ "runs": [
+  {
+   "note": "run 1: stopped by the per-run input-token limit (100,000) after 22 pages",
+   "requests": {
+    "answered": 22,
+    "BudgetExceeded": 2
+   },
+   "usage": {
+    "paid": {
+     "requests": 22,
+     "input_tokens": 97652,
+     "output_tokens": 11730,
+     "estimated_cost_usd": 0.625208
+    },
+    "dry_run": {
+     "requests": 0,
+     "estimated_input_tokens": 0,
+     "estimated_cost_usd": 0.0,
+     "worst_case_cost_usd": 0.0,
+     "note": "dry-run input tokens estimated at ~3.5 characters per token and 800 output tokens per request (worst case: the full output cap); actual counts differ"
+    },
+    "limits": {
+     "requests": 26,
+     "input_tokens": 100000,
+     "output_tokens": 100000,
+     "cost_usd": 1.0
+    },
+    "provider": "anthropic",
+    "model": "claude-opus-5-5",
+    "paid_calls_enabled": true,
+    "cache_hits": 0,
+    "latency_ms": {
+     "requests": 22,
+     "total": 116051.2,
+     "mean": 5275.1,
+     "max": 7451.5
+    }
+   }
+  },
+  {
+   "note": "run 2: the 2 remaining pages; 22 cache hits; cost cap 0.37 so the two runs stay under $1",
+   "requests": {
+    "answered": 24
+   },
+   "usage": {
+    "paid": {
+     "requests": 2,
+     "input_tokens": 12235,
+     "output_tokens": 707,
+     "estimated_cost_usd": 0.06308
+    },
+    "dry_run": {
+     "requests": 0,
+     "estimated_input_tokens": 0,
+     "estimated_cost_usd": 0.0,
+     "worst_case_cost_usd": 0.0,
+     "note": "dry-run input tokens estimated at ~3.5 characters per token and 800 output tokens per request (worst case: the full output cap); actual counts differ"
+    },
+    "limits": {
+     "requests": 26,
+     "input_tokens": 100000,
+     "output_tokens": 100000,
+     "cost_usd": 0.37
+    },
+    "provider": "anthropic",
+    "model": "claude-opus-5-5",
+    "paid_calls_enabled": true,
+    "cache_hits": 22,
+    "latency_ms": {
+     "requests": 2,
+     "total": 7909.9,
+     "mean": 3954.9,
+     "max": 4927.9
+    }
+   }
+  }
+ ],
+ "compare": {
+  "set": "heldout_d",
+  "providers": {
+   "rules": {
+    "status": "run",
+    "runtime_s": 2.1,
+    "exact_match": {
+     "deadline_exact": [
+      9,
+      12
+     ],
+     "deadline_status": [
+      8,
+      9
+     ],
+     "nationality": [
+      2,
+      8
+     ],
+     "funding_amount": [
+      1,
+      5
+     ],
+     "funding_period": [
+      1,
+      1
+     ],
+     "stipend_present": [
+      4,
+      4
+     ],
+     "tuition": [
+      0,
+      3
+     ],
+     "age": [
+      1,
+      4
+     ],
+     "language": [
+      2,
+      2
+     ],
+     "duration": [
+      1,
+      5
+     ],
+     "page_kind": [
+      22,
+      28
+     ]
+    },
+    "precision_recall_f1": {
+     "deadlines": [
+      0.818,
+      0.75,
+      0.783
+     ],
+     "levels": [
+      0.679,
+      0.792,
+      0.731
+     ],
+     "nationality_countries": [
+      0.667,
+      0.035,
+      0.067
+     ],
+     "openings": [
+      1.0,
+      0.8,
+      0.889
+     ]
+    },
+    "unsupported": [
+     13,
+     47,
+     0.277
+    ],
+    "missing": [
+     31,
+     74,
+     0.419
+    ],
+    "evidence_verbatim": [
+     217,
+     220
+    ]
+   },
+   "anthropic": {
+    "runtime_s": 11.5,
+    "model": "anthropic:claude-opus-5-5",
+    "requests": {
+     "answered": 24
+    },
+    "usage": {
+     "paid": {
+      "requests": 2,
+      "input_tokens": 12235,
+      "output_tokens": 707,
+      "estimated_cost_usd": 0.06308
+     },
+     "dry_run": {
+      "requests": 0,
+      "estimated_input_tokens": 0,
+      "estimated_cost_usd": 0.0,
+      "worst_case_cost_usd": 0.0,
+      "note": "dry-run input tokens estimated at ~3.5 characters per token and 800 output tokens per request (worst case: the full output cap); actual counts differ"
+     },
+     "limits": {
+      "requests": 26,
+      "input_tokens": 100000,
+      "output_tokens": 100000,
+      "cost_usd": 0.37
+     },
+     "provider": "anthropic",
+     "model": "claude-opus-5-5",
+     "paid_calls_enabled": true,
+     "cache_hits": 22,
+     "latency_ms": {
+      "requests": 2,
+      "total": 7909.9,
+      "mean": 3954.9,
+      "max": 4927.9
+     }
+    },
+    "status": "run",
+    "ai": {
+     "pages": 24,
+     "proposed": 193,
+     "accepted": 43,
+     "rejected_by_reason": {
+      "quote does not say this organisation funds or runs the scholarship": 17,
+      "postdoc not stated in the quotation": 2,
+      "master not stated in the quotation": 2,
+      "quote has no deadline wording (a start, event or other date)": 7,
+      "cycle not stated in quote": 2,
+      "quote does not state a lower age limit": 1,
+      "quote does not state an upper age limit": 1,
+      "quote does not mention this benefit": 7,
+      "quote describes a contribution, not full tuition": 2,
+      "quote does not mention tuition": 2,
+      "master not stated in the quotation; phd not stated in the quotation; short_course not stated in the quotation": 1,
+      "phd not stated in the quotation": 2,
+      "bachelor<=25 not stated in quote": 1,
+      "quote describes a closed, previous cycle": 2,
+      "quote does not state this funding duration": 2,
+      "country not named in quote": 3,
+      "field of study not in quote": 2,
+      "date not stated in quote": 1,
+      "bachelor not stated in the quotation; master not stated in the quotation; short_course not stated in the quotation": 1,
+      "number not stated in quote": 3,
+      "bachelor not stated in the quotation; short_course not stated in the quotation": 1,
+      "provider name not in quote": 1,
+      "master<=31 not stated in quote": 1
+     },
+     "disagreements_with_rules": 6,
+     "errors": {},
+     "evidence_verbatim": 43,
+     "evidence_total": 43
+    },
+    "exact_match": {
+     "deadline_exact": [
+      10,
+      12
+     ],
+     "deadline_status": [
+      9,
+      10
+     ],
+     "nationality": [
+      3,
+      8
+     ],
+     "funding_amount": [
+      5,
+      5
+     ],
+     "funding_period": [
+      4,
+      4
+     ],
+     "stipend_present": [
+      4,
+      4
+     ],
+     "tuition": [
+      0,
+      3
+     ],
+     "age": [
+      2,
+      4
+     ],
+     "language": [
+      2,
+      2
+     ],
+     "duration": [
+      2,
+      5
+     ],
+     "page_kind": [
+      22,
+      28
+     ]
+    },
+    "precision_recall_f1": {
+     "deadlines": [
+      0.833,
+      0.833,
+      0.833
+     ],
+     "levels": [
+      0.679,
+      0.792,
+      0.731
+     ],
+     "nationality_countries": [
+      0.667,
+      0.035,
+      0.067
+     ],
+     "openings": [
+      1.0,
+      0.8,
+      0.889
+     ]
+    },
+    "unsupported": [
+     14,
+     62,
+     0.226
+    ],
+    "missing": [
+     18,
+     74,
+     0.243
+    ],
+    "evidence_verbatim": [
+     260,
+     263
+    ]
+   }
+  },
+  "not_labelled_in_this_set": [
+   "scholarship name and provider",
+   "field of study",
+   "academic (GPA) requirements",
+   "academic cycle",
+   "residency restrictions",
+   "conflict handling"
+  ],
+  "note": "every mode is scored by heldout.evaluate on the same pages and labels; cloud modes are scored only when they actually ran"
+ },
+ "heldout_ai": {
+  "set": "held-out real pages",
+  "pages": 28,
+  "evaluated": 28,
+  "missing_snapshots": [],
+  "labels_sha": "165e6c01c016",
+  "mode": "deterministic + anthropic:claude-opus-5-5",
+  "fields": {
+   "deadlines": {
+    "tp": 10,
+    "fp": 2,
+    "fn": 2,
+    "precision": 0.833,
+    "recall": 0.833,
+    "f1": 0.833
+   },
+   "levels": {
+    "tp": 19,
+    "fp": 9,
+    "fn": 5,
+    "precision": 0.679,
+    "recall": 0.792,
+    "f1": 0.731
+   },
+   "nationality_countries": {
+    "tp": 4,
+    "fp": 2,
+    "fn": 110,
+    "precision": 0.667,
+    "recall": 0.035,
+    "f1": 0.067
+   },
+   "openings": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 1,
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1": 0.889
+   }
+  },
+  "rates": {
+   "age": {
+    "correct": 2,
+    "total": 4,
+    "accuracy": 0.5
+   },
+   "age_by_level": {
+    "correct": 0,
+    "total": 1,
+    "accuracy": 0.0
+   },
+   "cycle": {
+    "correct": 9,
+    "total": 11,
+    "accuracy": 0.818
+   },
+   "deadline_exact": {
+    "correct": 10,
+    "total": 12,
+    "accuracy": 0.833
+   },
+   "deadline_status": {
+    "correct": 9,
+    "total": 10,
+    "accuracy": 0.9
+   },
+   "duration": {
+    "correct": 2,
+    "total": 5,
+    "accuracy": 0.4
+   },
+   "funder_identity": {
+    "correct": 4,
+    "total": 11,
+    "accuracy": 0.364
+   },
+   "funding_amount": {
+    "correct": 5,
+    "total": 5,
+    "accuracy": 1.0
+   },
+   "funding_components": {
+    "correct": 14,
+    "total": 21,
+    "accuracy": 0.667
+   },
+   "funding_period": {
+    "correct": 4,
+    "total": 4,
+    "accuracy": 1.0
+   },
+   "language": {
+    "correct": 2,
+    "total": 2,
+    "accuracy": 1.0
+   },
+   "nationality": {
+    "correct": 3,
+    "total": 8,
+    "accuracy": 0.375
+   },
+   "page_kind": {
+    "correct": 22,
+    "total": 28,
+    "accuracy": 0.786
+   },
+   "per_level_amount_not_collapsed": {
+    "correct": 0,
+    "total": 2,
+    "accuracy": 0.0
+   },
+   "stipend_present": {
+    "correct": 4,
+    "total": 4,
+    "accuracy": 1.0
+   },
+   "tuition": {
+    "correct": 0,
+    "total": 3,
+    "accuracy": 0.0
+   }
+  },
+  "attribution": {
+   "correct": 260,
+   "total": 263,
+   "accuracy": 0.989
+  },
+  "unsupported_rate": 0.226,
+  "unsupported_values": 14,
+  "scored_values": 62,
+  "missing_rate": 0.243,
+  "missing_values": 18,
+  "labelled_values": 74,
+  "ai": {
+   "pages": 24,
+   "proposed": 193,
+   "accepted": 43,
+   "rejected_by_reason": {
+    "quote does not say this organisation funds or runs the scholarship": 17,
+    "postdoc not stated in the quotation": 2,
+    "master not stated in the quotation": 2,
+    "quote has no deadline wording (a start, event or other date)": 7,
+    "cycle not stated in quote": 2,
+    "quote does not state a lower age limit": 1,
+    "quote does not state an upper age limit": 1,
+    "quote does not mention this benefit": 7,
+    "quote describes a contribution, not full tuition": 2,
+    "quote does not mention tuition": 2,
+    "master not stated in the quotation; phd not stated in the quotation; short_course not stated in the quotation": 1,
+    "phd not stated in the quotation": 2,
+    "bachelor<=25 not stated in quote": 1,
+    "quote describes a closed, previous cycle": 2,
+    "quote does not state this funding duration": 2,
+    "country not named in quote": 3,
+    "field of study not in quote": 2,
+    "date not stated in quote": 1,
+    "bachelor not stated in the quotation; master not stated in the quotation; short_course not stated in the quotation": 1,
+    "number not stated in quote": 3,
+    "bachelor not stated in the quotation; short_course not stated in the quotation": 1,
+    "provider name not in quote": 1,
+    "master<=31 not stated in quote": 1
+   },
+   "disagreements_with_rules": 6,
+   "errors": {},
+   "evidence_verbatim": 43,
+   "evidence_total": 43
+  },
+  "misses": {
+   "ch-sges-glance": [
+    "tuition: predicted None, label not_covered",
+    "duration: predicted '12 months', label 36 months"
+   ],
+   "za-dhet-switzerland": [
+    "nationality: predicted include ['CH', 'ZA'], label ('include', ['ZA'])",
+    "duration: predicted '12 months', label 36 months"
+   ],
+   "au-awards-id-en": [
+    "nationality: predicted include ['AU'], label not_stated"
+   ],
+   "uk-gates-timeline": [
+    "cycle: predicted '2027', label '2027/2028'"
+   ],
+   "za-mandela-rhodes": [
+    "nationality: predicted include ['ZA'], label ('include', ['AO', 'BF', 'BI', 'BJ', 'BW', 'CD'])",
+    "min_age: predicted None, label 19",
+    "max_age: predicted 30, label 29",
+    "component insurance: predicted not covered, label covered",
+    "component travel: predicted not covered, label covered"
+   ],
+   "sa-kaust-funding": [
+    "stipend amounts differ by level but one amount was stored",
+    "component insurance: predicted not covered, label covered",
+    "component travel: predicted not covered, label covered",
+    "tuition: predicted None, label full"
+   ],
+   "tw-icdf-list": [
+    "page_kind: predicted not_relevant, label opportunity"
+   ],
+   "tw-roc-israel": [
+    "deadline missed 2026-04-30"
+   ],
+   "my-mis": [
+    "page_kind: predicted not_relevant, label opportunity",
+    "deadline spurious 2026-12-31"
+   ],
+   "de-studienstiftung-faq": [
+    "page_kind: predicted opportunity, label guidance"
+   ],
+   "de-kas-pdf": [
+    "duration: predicted '', label 36 months"
+   ],
+   "ca-vanier": [
+    "page_kind: predicted guidance, label opportunity",
+    "deadline spurious 2024-10-30"
+   ],
+   "ca-mcgill-mcf-elig": [
+    "nationality: predicted unknown [], label ('include', ['AO', 'BF', 'BI', 'BJ', 'BW', 'CD'])"
+   ],
+   "cz-studyin-340": [
+    "nationality: predicted include ['BA', 'CZ'], label ('include', ['BA', 'GE', 'UA', 'BY'])",
+    "cycle: predicted '2027', label '2027/2028'",
+    "component accommodation: predicted covered, label own_cost"
+   ],
+   "jp-mext-guidelines-pdf": [
+    "funder: predicted 'The Ministry of Education, Culture, Sports, Science and Technology (MEXT ) of Japan', label 'Ministry of Education, Culture, Sports, Science and Technology (MEXT)'",
+    "stipend amounts differ by level but one amount was stored",
+    "tuition: predicted None, label full"
+   ],
+   "hk-hku-hkpfs": [
+    "deadline missed 2026-12-01",
+    "component tuition: predicted not covered, label covered",
+    "component accommodation: predicted not covered, label covered"
+   ],
+   "be-ares-belgique": [
+    "page_kind: predicted not_relevant, label opportunity"
+   ],
+   "int-mastercard-fdn": [
+    "page_kind: predicted opportunity, label guidance"
+   ]
+  },
+  "ai_usage": {
+   "paid": {
+    "requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "estimated_cost_usd": 0.0
+   },
+   "dry_run": {
+    "requests": 0,
+    "estimated_input_tokens": 0,
+    "estimated_cost_usd": 0.0,
+    "worst_case_cost_usd": 0.0,
+    "note": "dry-run input tokens estimated at ~3.5 characters per token and 800 output tokens per request (worst case: the full output cap); actual counts differ"
+   },
+   "limits": {
+    "requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0
+   },
+   "provider": "anthropic",
+   "model": "claude-opus-5-5",
+   "paid_calls_enabled": false,
+   "cache_hits": 24,
+   "latency_ms": {
+    "requests": 0,
+    "total": 0,
+    "mean": null,
+    "max": null
+   }
+  }
+ },
+ "audit_note": "audit verdicts were assigned by hand after the run; they are a post-hoc audit, not frozen labels",
+ "proposals_audit": [
+  {
+   "i": 0,
+   "page": "ch-sges-main",
+   "field": "academic_cycle",
+   "value": "2027/2028",
+   "quote": "Swiss Government Excellence Scholarships 2027 – 2028",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 1,
+   "page": "ch-sges-main",
+   "field": "opening_date",
+   "value": "2026-08-20",
+   "quote": "Applications are open starting August 20, 2026.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 2,
+   "page": "ch-sges-main",
+   "field": "max_age",
+   "value": 35,
+   "quote": "(max. age: 35 / funding: CHF 2450.--/month)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 3,
+   "page": "ch-sges-main",
+   "field": "stipend_amount",
+   "value": 2450,
+   "quote": "(max. age: 35 / funding: CHF 2450.--/month)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 4,
+   "page": "ch-sges-main",
+   "field": "stipend_currency",
+   "value": "CHF",
+   "quote": "(max. age: 35 / funding: CHF 2450.--/month)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 5,
+   "page": "ch-sges-main",
+   "field": "stipend_period",
+   "value": "month",
+   "quote": "(max. age: 35 / funding: CHF 2450.--/month)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 6,
+   "page": "ch-sges-main",
+   "field": "provider_name",
+   "value": "Federal Commission for Scholarships for Foreign Students (FCS aka ESKAS)",
+   "quote": "Recipients are selected by the awarding body, the Federal Commission for Scholarships for Foreign Students (FCS aka ESKAS).",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 7,
+   "page": "ch-sges-main",
+   "field": "study_levels",
+   "value": [
+    "postdoc",
+    "master"
+   ],
+   "quote": "Art scholarships are open to students wishing to pursue an initial Master’s degree in an artistic field in Switzerland.",
+   "validator": "postdoc not stated in the quotation",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 8,
+   "page": "ch-sges-main",
+   "field": "fields_of_study",
+   "value": [
+    "any discipline",
+    "artistic field"
+   ],
+   "quote": "These scholarships are available to postgraduate researchers in any discipline",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 9,
+   "page": "ch-sges-glance",
+   "field": "provider_name",
+   "value": "Swiss Government Excellence Scholarships",
+   "quote": "Swiss Government Excellence Scholarships at a Glance",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 10,
+   "page": "ch-sges-glance",
+   "field": "study_levels",
+   "value": [
+    "phd",
+    "master"
+   ],
+   "quote": "This scholarship is intended to support selected applicants in pursuing a PhD at a Swiss university or recognised research institute.",
+   "validator": "master not stated in the quotation",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 11,
+   "page": "ch-sges-glance",
+   "field": "stipend_amount",
+   "value": 2450,
+   "quote": "CHF 2,450 per month to cover basic living expenses for one person",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 12,
+   "page": "ch-sges-glance",
+   "field": "stipend_currency",
+   "value": "CHF",
+   "quote": "CHF 2,450 per month to cover basic living expenses for one person",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 13,
+   "page": "ch-sges-glance",
+   "field": "stipend_period",
+   "value": "month",
+   "quote": "CHF 2,450 per month to cover basic living expenses for one person",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 14,
+   "page": "ch-sges-glance",
+   "field": "covers_living_allowance",
+   "value": true,
+   "quote": "CHF 2,450 per month to cover basic living expenses for one person",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 15,
+   "page": "ch-sges-glance",
+   "field": "funding_duration_months",
+   "value": 36,
+   "quote": "12 months, renewable twice for up to 36 months (subject to academic progress during the first 12 months).",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 16,
+   "page": "ch-sges-glance",
+   "field": "academic_cycle",
+   "value": "2027",
+   "quote": "Start date: 1 September 2027.",
+   "validator": "accepted",
+   "audit": "questionable_acceptance"
+  },
+  {
+   "i": 17,
+   "page": "ch-sges-glance",
+   "field": "fields_of_study",
+   "value": [
+    "all academic fields"
+   ],
+   "quote": "Highly qualified early-career researchers from all academic fields who are pursuing a PhD in a country other than Switzerland, including young medical doctors.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 18,
+   "page": "ch-sges-glance",
+   "field": "required_documents",
+   "value": [
+    "Complete CV",
+    "Letter of motivation",
+    "Research proposal",
+    "Letter of support from an academic supervisor",
+    "Short CV of academic supervisor",
+    "Confirmation of admission to graduate school",
+    "Recommendation letters",
+    "Copies of certificates and transcripts",
+    "Copy of passport",
+    "Copy of residence permit or registration confirmation"
+   ],
+   "quote": "Key elements of the scholarship application",
+   "validator": "accepted",
+   "audit": "weak_quote_acceptance"
+  },
+  {
+   "i": 19,
+   "page": "za-dhet-switzerland",
+   "field": "deadline_scholarship",
+   "value": "2026-11-30",
+   "quote": "30 November 2026 at 11:59 PM (Swiss local time)",
+   "validator": "quote has no deadline wording (a start, event or other date)",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 20,
+   "page": "za-dhet-switzerland",
+   "field": "academic_cycle",
+   "value": "2027/2028",
+   "quote": "The Swiss Government Excellence Scholarships invite applications from talented South African researchers for the 2027–2028 academic year.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 21,
+   "page": "za-dhet-switzerland",
+   "field": "provider_name",
+   "value": "Swiss Confederation",
+   "quote": "The scholarships are offered by the Swiss Confederation to promote international exchange and research cooperation between Switzerland and countries around the world.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 22,
+   "page": "za-dhet-switzerland",
+   "field": "nationality_mode",
+   "value": "include",
+   "quote": "Be South African citizens;",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 23,
+   "page": "za-dhet-switzerland",
+   "field": "eligible_nationalities",
+   "value": [
+    "South Africa"
+   ],
+   "quote": "Be South African citizens;",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 24,
+   "page": "za-dhet-switzerland",
+   "field": "study_levels",
+   "value": [
+    "phd",
+    "postdoc"
+   ],
+   "quote": "Research Fellowship and\nPhD Scholarship",
+   "validator": "postdoc not stated in the quotation",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 25,
+   "page": "za-dhet-switzerland",
+   "field": "funding_duration_months",
+   "value": 36,
+   "quote": "May be renewed twice for a maximum period of 36 months, subject to academic progress; and",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 26,
+   "page": "za-dhet-switzerland",
+   "field": "fields_of_study",
+   "value": [
+    "all academic fields"
+   ],
+   "quote": "The scholarships are intended for highly qualified early-career researchers from all academic fields.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 27,
+   "page": "za-dhet-switzerland",
+   "field": "stipend_amount",
+   "value": 2450,
+   "quote": "CHF 2,450 per month towards basic living expenses;",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 28,
+   "page": "za-dhet-switzerland",
+   "field": "stipend_currency",
+   "value": "CHF",
+   "quote": "CHF 2,450 per month towards basic living expenses;",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 29,
+   "page": "za-dhet-switzerland",
+   "field": "stipend_period",
+   "value": "month",
+   "quote": "CHF 2,450 per month towards basic living expenses;",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 30,
+   "page": "za-dhet-switzerland",
+   "field": "covers_living_allowance",
+   "value": true,
+   "quote": "CHF 2,450 per month towards basic living expenses;",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 31,
+   "page": "za-dhet-switzerland",
+   "field": "covers_health_insurance",
+   "value": true,
+   "quote": "Health insurance coverage for scholarship holders from non-EU/EFTA countries;",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 32,
+   "page": "za-dhet-switzerland",
+   "field": "covers_travel",
+   "value": true,
+   "quote": "A return flight allowance for scholarship holders from non-EU/EFTA countries.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 33,
+   "page": "za-dhet-switzerland",
+   "field": "tuition_coverage",
+   "value": "none",
+   "quote": "The scholarship does not cover tuition or semester fees.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 34,
+   "page": "za-dhet-switzerland",
+   "field": "required_documents",
+   "value": [
+    "curriculum vitae (CV)",
+    "letter of motivation",
+    "research proposal",
+    "letter of support from Swiss academic supervisor with supervisor's short CV",
+    "short CV of home university supervisor (Research Fellowships)",
+    "certificates and transcripts",
+    "passport copy",
+    "email addresses of two professors for recommendation letters"
+   ],
+   "quote": "Applicants should prepare the following documentation",
+   "validator": "accepted",
+   "audit": "weak_quote_acceptance"
+  },
+  {
+   "i": 35,
+   "page": "au-awards-id-en",
+   "field": "min_gpa",
+   "value": 3.0,
+   "quote": "Have a minimum GPA of 3.0 (on a 4.0 scale) from their relevant undergraduate qualification.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 36,
+   "page": "au-awards-id-en",
+   "field": "gpa_scale",
+   "value": 4.0,
+   "quote": "Have a minimum GPA of 3.0 (on a 4.0 scale) from their relevant undergraduate qualification.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 37,
+   "page": "au-awards-id-en",
+   "field": "ielts_min",
+   "value": 6.5,
+   "quote": "Meet the minimum English language requirement of IELTS 6.5 (with no band less than 6.0)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 38,
+   "page": "au-awards-id-en",
+   "field": "toefl_min",
+   "value": 84,
+   "quote": "equivalent to TOEFL iBT 84 (with a minimum of 21 in all sub-tests)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 39,
+   "page": "au-awards-id-en",
+   "field": "max_age",
+   "value": 42,
+   "quote": "Must not exceed the age of 42 years by the 31st of December in the year of application.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 40,
+   "page": "au-awards-id-en",
+   "field": "provider_name",
+   "value": "LPDP-Australia Awards Scholarships",
+   "quote": "The LPDP-Australia Awards Scholarships applicants must meet all eligibility requirements detailed below",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 41,
+   "page": "au-awards-id-id",
+   "field": "provider_name",
+   "value": "Australia Awards - Indonesia",
+   "quote": "Australia Awards - Indonesia",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 42,
+   "page": "au-awards-id-id",
+   "field": "academic_cycle",
+   "value": "2027",
+   "quote": "Australia Awards Scholarships Application – Indonesia (2027 Intake)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 43,
+   "page": "au-awards-id-id",
+   "field": "nationality_mode",
+   "value": "include",
+   "quote": "merupakan warga negara Indonesia dan tinggal di Indonesia serta mengajukan permohonan beasiswa dari Indonesia.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 44,
+   "page": "au-awards-id-id",
+   "field": "eligible_nationalities",
+   "value": [
+    "Indonesia"
+   ],
+   "quote": "merupakan warga negara Indonesia dan tinggal di Indonesia serta mengajukan permohonan beasiswa dari Indonesia.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 45,
+   "page": "au-awards-id-id",
+   "field": "residency_required",
+   "value": [
+    "Indonesia"
+   ],
+   "quote": "merupakan warga negara Indonesia dan tinggal di Indonesia serta mengajukan permohonan beasiswa dari Indonesia.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 46,
+   "page": "au-awards-id-id",
+   "field": "study_levels",
+   "value": [
+    "master",
+    "phd"
+   ],
+   "quote": "Persyaratan Umum untuk Beasiswa PhD dan Master",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 47,
+   "page": "au-awards-id-id",
+   "field": "gpa_scale",
+   "value": 4.0,
+   "quote": "memiliki Indeks Prestasi Kumulatif (IPK, dengan skala 4.0) seperti yang ditunjukkan pada tabel berikut",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 48,
+   "page": "uk-gates-timeline",
+   "field": "academic_cycle",
+   "value": "2027/2028",
+   "quote": "Applications for entry in the academic year 2027/8 are now open.",
+   "validator": "cycle not stated in quote",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 49,
+   "page": "uk-gates-timeline",
+   "field": "opening_date",
+   "value": "2026-09-11",
+   "quote": "Applications open\n11th September 2026",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 50,
+   "page": "uk-gates-timeline",
+   "field": "provider_name",
+   "value": "Gates Cambridge",
+   "quote": "Gates Cambridge manages two selection rounds each year; full details are below.",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 51,
+   "page": "uk-gates-timeline",
+   "field": "deadline_scholarship",
+   "value": "2026-10-14",
+   "quote": "Wednesday 14th October 2026 (Full application must be submitted by 11:59pm UK time on the date given)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 52,
+   "page": "za-mandela-rhodes",
+   "field": "provider_name",
+   "value": "The Mandela Rhodes Foundation",
+   "quote": "The Mandela Rhodes Foundation does not pay for your application fees for university",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 53,
+   "page": "za-mandela-rhodes",
+   "field": "nationality_mode",
+   "value": "include",
+   "quote": "I am a citizen of an African country",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 54,
+   "page": "za-mandela-rhodes",
+   "field": "study_levels",
+   "value": [
+    "master"
+   ],
+   "quote": "The Mandela Rhodes Scholarship is for postgraduate study (Honours and Masters degrees) in any field.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 55,
+   "page": "za-mandela-rhodes",
+   "field": "min_age",
+   "value": 19,
+   "quote": "I am between the ages of 19 and 29 in the year of applying",
+   "validator": "quote does not state a lower age limit",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 56,
+   "page": "za-mandela-rhodes",
+   "field": "max_age",
+   "value": 29,
+   "quote": "I am between the ages of 19 and 29 in the year of applying",
+   "validator": "quote does not state an upper age limit",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 57,
+   "page": "za-mandela-rhodes",
+   "field": "funding_duration_months",
+   "value": 24,
+   "quote": "We will fund your degree to a strict maximum of two years, with no exceptions allowed.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 58,
+   "page": "za-mandela-rhodes",
+   "field": "tuition_coverage",
+   "value": "full",
+   "quote": "Tuition and registration fees as set by your university or institution",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 59,
+   "page": "za-mandela-rhodes",
+   "field": "covers_living_allowance",
+   "value": true,
+   "quote": "A personal allowance as set by the MRF",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 60,
+   "page": "za-mandela-rhodes",
+   "field": "covers_accommodation",
+   "value": true,
+   "quote": "Accommodation and meal allowances as set by the MRF",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 61,
+   "page": "za-mandela-rhodes",
+   "field": "covers_health_insurance",
+   "value": true,
+   "quote": "A medical aid allowance as set by the MRF",
+   "validator": "quote does not mention this benefit",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 62,
+   "page": "za-mandela-rhodes",
+   "field": "covers_travel",
+   "value": true,
+   "quote": "Economy-class flights for international scholars from their home countries to their institutions at the start and end of their studies",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 63,
+   "page": "za-mandela-rhodes",
+   "field": "academic_cycle",
+   "value": "2028",
+   "quote": "See if you qualify for our next cohort, the Class of 2028",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 64,
+   "page": "za-mandela-rhodes",
+   "field": "fields_of_study",
+   "value": [
+    "any field"
+   ],
+   "quote": "The Mandela Rhodes Scholarship is for postgraduate study (Honours and Masters degrees) in any field.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 65,
+   "page": "za-mandela-rhodes",
+   "field": "required_documents",
+   "value": [
+    "copy of passport",
+    "three recommendation letters",
+    "essays"
+   ],
+   "quote": "Your application form states that I have to submit a copy of my passport.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 66,
+   "page": "sa-kaust-funding",
+   "field": "provider_name",
+   "value": "KAUST",
+   "quote": "The KAUST Fellowship is designed to ensure that you can focus entirely on your studies and research with the peace of mind that comes from financial support.",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 67,
+   "page": "sa-kaust-funding",
+   "field": "tuition_coverage",
+   "value": "full",
+   "quote": "Full tuition and bench fee coverage (worth up to USD $35,000 per year)",
+   "validator": "quote describes a contribution, not full tuition",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 68,
+   "page": "sa-kaust-funding",
+   "field": "study_levels",
+   "value": [
+    "master",
+    "phd"
+   ],
+   "quote": "A monthly stipend (worth USD $20,000 per year for M.S. students, and USD $25,000 to $30,000 for Ph.D. students depending on qualifications and academic progress)",
+   "validator": "master not stated in the quotation",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 69,
+   "page": "sa-kaust-funding",
+   "field": "stipend_currency",
+   "value": "USD",
+   "quote": "A monthly stipend (worth USD $20,000 per year for M.S. students, and USD $25,000 to $30,000 for Ph.D. students depending on qualifications and academic progress)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 70,
+   "page": "sa-kaust-funding",
+   "field": "covers_accommodation",
+   "value": true,
+   "quote": "Base accommodation is included (shared accommodation for single students, and 2-bed accommodation for married students).",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 71,
+   "page": "sa-kaust-funding",
+   "field": "covers_health_insurance",
+   "value": true,
+   "quote": "Health insurance for students and eligible dependents living on campus",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 72,
+   "page": "sa-kaust-funding",
+   "field": "covers_travel",
+   "value": true,
+   "quote": "Relocation support (visa, relocation and travel costs)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 73,
+   "page": "sa-kaust-funding",
+   "field": "covers_living_allowance",
+   "value": true,
+   "quote": "A monthly stipend (worth USD $20,000 per year for M.S. students, and USD $25,000 to $30,000 for Ph.D. students depending on qualifications and academic progress)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 74,
+   "page": "tw-icdf-list",
+   "field": "provider_name",
+   "value": "TaiwanICDF",
+   "quote": "The International Higher Education Scholarship Program, central to the TaiwanICDF, offers full scholarships to outstanding students from partner countries to pursue higher education in Taiwan through collaborations with local universities.",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 75,
+   "page": "tw-icdf-list",
+   "field": "tuition_coverage",
+   "value": "full",
+   "quote": "offers full scholarships to outstanding students from partner countries",
+   "validator": "quote does not mention tuition",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 76,
+   "page": "tw-icdf-list",
+   "field": "opening_date",
+   "value": "2026-12-01",
+   "quote": "from December 1, 2026 to March 15, 2027!",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 77,
+   "page": "tw-icdf-list",
+   "field": "deadline_scholarship",
+   "value": "2027-03-15",
+   "quote": "from December 1, 2026 to March 15, 2027!",
+   "validator": "quote has no deadline wording (a start, event or other date)",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 78,
+   "page": "tw-icdf-list",
+   "field": "academic_cycle",
+   "value": "2027",
+   "quote": "The 2027 TaiwanICDF Scholarship applications open",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 79,
+   "page": "tw-roc-israel",
+   "field": "deadline_scholarship",
+   "value": "2026-04-30",
+   "quote": "Application Submission: By April 30, 2026.",
+   "validator": "quote has no deadline wording (a start, event or other date)",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 80,
+   "page": "tw-roc-israel",
+   "field": "academic_cycle",
+   "value": "2026/2027",
+   "quote": "Apply for Taiwan Scholarship & Huayu Enrichment Scholarship 2026/2027 Academic Year",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 81,
+   "page": "tw-roc-israel",
+   "field": "provider_name",
+   "value": "Ministry of Education (MOE) of the Republic of China (Taiwan)",
+   "quote": "the Ministry of Education (MOE) of the Republic of China (Taiwan) offers two kinds of scholarships for the next academic year",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 82,
+   "page": "tw-roc-israel",
+   "field": "study_levels",
+   "value": [
+    "bachelor",
+    "master",
+    "phd",
+    "short_course"
+   ],
+   "quote": "Undergraduate programs: 4 years",
+   "validator": "master not stated in the quotation; phd not stated in the quotation; short_course not stated in the quotation",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 83,
+   "page": "tw-roc-israel",
+   "field": "funding_duration_months",
+   "value": 48,
+   "quote": "Ph.D. Programs: 4 years",
+   "validator": "accepted",
+   "audit": "wrong_acceptance"
+  },
+  {
+   "i": 84,
+   "page": "tw-roc-israel",
+   "field": "tuition_coverage",
+   "value": "partial",
+   "quote": "The MOE awards each recipient tuition of up to 40,000 NTD per semester (approx. 1,235 US$).",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 85,
+   "page": "tw-roc-israel",
+   "field": "stipend_amount",
+   "value": 20000,
+   "quote": "The MOE offers each recipient undertaking graduate studies a monthly stipend of 20,000 NTD (approx. 620 US$).",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 86,
+   "page": "tw-roc-israel",
+   "field": "stipend_currency",
+   "value": "TWD",
+   "quote": "a monthly stipend of 20,000 NTD",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 87,
+   "page": "tw-roc-israel",
+   "field": "stipend_period",
+   "value": "month",
+   "quote": "a monthly stipend of 20,000 NTD",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 88,
+   "page": "tw-roc-israel",
+   "field": "required_documents",
+   "value": [
+    "One completed application form",
+    "A photocopy of your most recent academic transcript",
+    "A photocopy of your passport",
+    "A signed \"Terms of Agreement\" form",
+    "A copy of your application to the Mandarin Language Center/university"
+   ],
+   "quote": "Please submit the application online and send to TECO the following documents",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 89,
+   "page": "tw-roc-israel",
+   "field": "page_conflicts",
+   "value": "Page says MOE awards tuition up to 40,000 NTD per semester, but also states 'The scholarship recipient is responsible for tuition and all living expenses.'",
+   "quote": "The scholarship recipient is responsible for tuition and all living expenses.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 90,
+   "page": "bn-ubd-scholarship",
+   "field": "provider_name",
+   "value": "Universiti Brunei Darussalam",
+   "quote": "The UBD Bursary is another funding scheme offered by Universiti Brunei Darussalam",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 91,
+   "page": "bn-ubd-scholarship",
+   "field": "study_levels",
+   "value": [
+    "bachelor",
+    "master",
+    "phd"
+   ],
+   "quote": "to provide financial aid in the perusal of knowledge from undergraduate to graduate studies.",
+   "validator": "phd not stated in the quotation",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 92,
+   "page": "bn-ubd-scholarship",
+   "field": "tuition_coverage",
+   "value": "full",
+   "quote": "Apart from tuitions borne by the government",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 93,
+   "page": "bn-ubd-scholarship",
+   "field": "covers_accommodation",
+   "value": true,
+   "quote": "the scholarship will also include the bursaries for accommodation, books, food, personal spending",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 94,
+   "page": "bn-ubd-scholarship",
+   "field": "covers_living_allowance",
+   "value": true,
+   "quote": "the scholarship will also include the bursaries for accommodation, books, food, personal spending",
+   "validator": "quote does not mention this benefit",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 95,
+   "page": "bn-ubd-scholarship",
+   "field": "covers_travel",
+   "value": true,
+   "quote": "travel expenses will be arranged by the Brunei Darussalam Foreign Mission at the scholar’s country of origin",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 96,
+   "page": "bn-ubd-scholarship",
+   "field": "ielts_min",
+   "value": 6.5,
+   "quote": "IELTS Academic: Overall Band Score of 6.5 or above (obtained within the last two years)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 97,
+   "page": "bn-ubd-scholarship",
+   "field": "age_limits_by_level",
+   "value": [
+    "bachelor<=25",
+    "master<=29",
+    "phd<=29"
+   ],
+   "quote": "Under 26 years of age for admission to an Undergraduate Degree programme",
+   "validator": "bachelor<=25 not stated in quote",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 98,
+   "page": "my-mis",
+   "field": "provider_name",
+   "value": "Malaysian Government",
+   "quote": "Malaysia International Scholarship (MIS) is an initiative by the Malaysian Government to attract top talents from around the world to pursue postgraduate studies in Malaysia.",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 99,
+   "page": "my-mis",
+   "field": "academic_cycle",
+   "value": "2026/2027",
+   "quote": "The application for the 2026/2027 academic year is now closed.",
+   "validator": "quote describes a closed, previous cycle",
+   "audit": "disputed_rejection"
+  },
+  {
+   "i": 100,
+   "page": "my-mis",
+   "field": "nationality_mode",
+   "value": "any",
+   "quote": "Interested international graduates with outstanding academic and co-curricular backgrounds are welcome to apply for this scholarship",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 101,
+   "page": "de-kas-pdf",
+   "field": "provider_name",
+   "value": "Konrad - Adenauer - Stiftung e.V.",
+   "quote": "Konrad - Adenauer - Stiftung e.V.",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 102,
+   "page": "de-kas-pdf",
+   "field": "funding_duration_months",
+   "value": 36,
+   "quote": "In der Regel wird bei Studierenden das Stipendium bis zu zwei Jahren und bei\nPromovierenden bis zu drei Jahren gewährt.",
+   "validator": "quote does not state this funding duration",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 103,
+   "page": "de-kas-pdf",
+   "field": "study_levels",
+   "value": [
+    "master",
+    "phd"
+   ],
+   "quote": "Von Beziehern eines Stipendiums zur Erlangung eines Masters oder zum A b-solvieren eines Aufbaustudiums:",
+   "validator": "phd not stated in the quotation",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 104,
+   "page": "ca-vanier",
+   "field": "provider_name",
+   "value": "Government of Canada",
+   "quote": "The Government of Canada launched the Vanier Canada Graduate Scholarships (Vanier CGS) program in 2008",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 105,
+   "page": "ca-vanier",
+   "field": "study_levels",
+   "value": [
+    "phd"
+   ],
+   "quote": "to strengthen Canada's ability to attract and retain world-class doctoral students",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 106,
+   "page": "ca-vanier",
+   "field": "stipend_amount",
+   "value": 50000,
+   "quote": "$50,000 per year",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 107,
+   "page": "ca-vanier",
+   "field": "stipend_period",
+   "value": "year",
+   "quote": "$50,000 per year",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 108,
+   "page": "ca-vanier",
+   "field": "funding_duration_months",
+   "value": 36,
+   "quote": "3 years (non-renewable)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 109,
+   "page": "ca-vanier",
+   "field": "deadline_scholarship",
+   "value": "2024-10-30",
+   "quote": "October 30, 2024 (20:00 EDT)",
+   "validator": "quote has no deadline wording (a start, event or other date)",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 110,
+   "page": "ca-vanier",
+   "field": "fields_of_study",
+   "value": [
+    "social sciences and humanities",
+    "natural sciences and/or engineering",
+    "health"
+   ],
+   "quote": "graduate studies in the social sciences and humanities, natural sciences and/or engineering and health.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 111,
+   "page": "ca-mcgill-mcf-elig",
+   "field": "provider_name",
+   "value": "Mastercard Foundation Scholars Program at McGill University",
+   "quote": "Thank you for your interest in the Mastercard Foundation Scholars Program at McGill University.",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 112,
+   "page": "ca-mcgill-mcf-elig",
+   "field": "academic_cycle",
+   "value": "Fall 2027",
+   "quote": "The application period for the Fall 2027 cohort is now closed.",
+   "validator": "quote describes a closed, previous cycle",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 113,
+   "page": "ca-mcgill-mcf-elig",
+   "field": "study_levels",
+   "value": [
+    "master"
+   ],
+   "quote": "Have NEVER registered for, nor completed a master’s degree.",
+   "validator": "accepted",
+   "audit": "wrong_acceptance"
+  },
+  {
+   "i": 114,
+   "page": "ca-mcgill-mcf-elig",
+   "field": "max_age",
+   "value": 35,
+   "quote": "Be 35 years or younger at the time of application.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 115,
+   "page": "ca-mcgill-mcf-elig",
+   "field": "nationality_mode",
+   "value": "include",
+   "quote": "The Mastercard Foundation Scholars Program at McGill University is open to citizens and residents of all countries on the African continent.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 116,
+   "page": "ca-mcgill-mcf-elig",
+   "field": "eligible_nationalities",
+   "value": [
+    "Algeria",
+    "Angola",
+    "Benin",
+    "Botswana",
+    "Burkina Faso",
+    "Burundi",
+    "Cabo Verde",
+    "Cameroon",
+    "Central African Republic",
+    "Chad",
+    "Comoros",
+    "Congo (Democratic Republic)",
+    "Congo (Republic)",
+    "Côte d'Ivoire",
+    "Djibouti",
+    "Egypt",
+    "Equatorial Guinea",
+    "Eritrea",
+    "Eswatini",
+    "Ethiopia",
+    "Gabon",
+    "Gambia",
+    "Ghana",
+    "Guinea",
+    "Guinea-Bissau",
+    "Kenya",
+    "Lesotho",
+    "Liberia",
+    "Libya",
+    "Madagascar",
+    "Malawi",
+    "Mali",
+    "Mauritania",
+    "Mauritius",
+    "Morocco",
+    "Mozambique",
+    "Namibia",
+    "Niger",
+    "Nigeria",
+    "Rwanda",
+    "São Tomé and Príncipe",
+    "Senegal",
+    "Seychelles",
+    "Sierra Leone",
+    "Somalia",
+    "South Africa",
+    "South Sudan",
+    "Sudan",
+    "Tanzania",
+    "Togo",
+    "Tunisia",
+    "Uganda",
+    "Zambia",
+    "Zimbabwe"
+   ],
+   "quote": "Be a citizen of and live in an African country (view eligible countries).",
+   "validator": "country not named in quote",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 117,
+   "page": "ca-mcgill-mcf-elig",
+   "field": "fields_of_study",
+   "value": [
+    "Animal Science: Sustainable Agriculture",
+    "Bioresource Engineering - Environmental Engineering",
+    "Bioresource Engineering - Integrated Food & Bioprocessing",
+    "Bioresource Engineering - Integrated Water Resource Management",
+    "Biostatistics",
+    "Biotechnology",
+    "Food Science and Agricultural Chemistry - Food Science",
+    "Food Science and Agricultural Chemistry - Food Safety",
+    "Human Nutrition: Project",
+    "Public Health",
+    "Public Policy",
+    "Animal Science",
+    "Bioresource Engineering"
+   ],
+   "quote": "Eligible Programs",
+   "validator": "field of study not in quote",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 118,
+   "page": "cz-studyin-340",
+   "field": "deadline_scholarship",
+   "value": "2026-09-30",
+   "quote": "All applicants are required to complete the online application form by 30 September 2026 at the latest.",
+   "validator": "quote has no deadline wording (a start, event or other date)",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 119,
+   "page": "cz-studyin-340",
+   "field": "opening_date",
+   "value": "2026-08-01",
+   "quote": "1. 8. 2026",
+   "validator": "date not stated in quote",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 120,
+   "page": "cz-studyin-340",
+   "field": "academic_cycle",
+   "value": "2027/2028",
+   "quote": "For the academic year 2027/2028, Czech Government scholarships for studies in the Czech language are offered exclusively to citizens of the following countries",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 121,
+   "page": "cz-studyin-340",
+   "field": "nationality_mode",
+   "value": "include",
+   "quote": "For the academic year 2027/2028, Czech Government scholarships for studies in the Czech language are offered exclusively to citizens of the following countries",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 122,
+   "page": "cz-studyin-340",
+   "field": "eligible_nationalities",
+   "value": [
+    "Bosnia and Herzegovina",
+    "Georgia",
+    "Ukraine",
+    "Belarus"
+   ],
+   "quote": "Belarus (democratic opposition).",
+   "validator": "country not named in quote",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 123,
+   "page": "cz-studyin-340",
+   "field": "study_levels",
+   "value": [
+    "master"
+   ],
+   "quote": "Scholarships for studies in Czech are available to support studies in follow-up master's degree programmes.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 124,
+   "page": "cz-studyin-340",
+   "field": "provider_name",
+   "value": "Government of the Czech Republic",
+   "quote": "Tuition fees are paid on behalf of the scholarship holders by the Government of the Czech Republic.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 125,
+   "page": "cz-studyin-340",
+   "field": "tuition_coverage",
+   "value": "full",
+   "quote": "Tuition fees are paid on behalf of the scholarship holders by the Government of the Czech Republic.",
+   "validator": "quote describes a contribution, not full tuition",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 126,
+   "page": "cz-studyin-340",
+   "field": "stipend_amount",
+   "value": 16000,
+   "quote": "16 000 CZK for students in a follow-up master’s degree programmes,",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 127,
+   "page": "cz-studyin-340",
+   "field": "stipend_currency",
+   "value": "CZK",
+   "quote": "16 000 CZK for students in a follow-up master’s degree programmes,",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 128,
+   "page": "cz-studyin-340",
+   "field": "stipend_period",
+   "value": "month",
+   "quote": "Payment period: monthly",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 129,
+   "page": "cz-studyin-340",
+   "field": "covers_living_allowance",
+   "value": true,
+   "quote": "The scholarship is intended to cover the essential costs of",
+   "validator": "quote does not mention this benefit",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 130,
+   "page": "cz-studyin-340",
+   "field": "covers_health_insurance",
+   "value": true,
+   "quote": "Health care for government scholarship holders is provided by the Ministry of Health of the Czech Republic to the same extent as for Czech insured persons",
+   "validator": "quote does not mention this benefit",
+   "audit": "disputed_rejection"
+  },
+  {
+   "i": 131,
+   "page": "cz-studyin-340",
+   "field": "required_documents",
+   "value": [
+    "passport enabling international travel",
+    "motivation letter",
+    "academic CV",
+    "Application form for a scholarship from the Government of the Czech Republic",
+    "Birth certificate",
+    "Medical certificate of the applicant's health condition",
+    "Officially certified copy of a foreign diploma",
+    "English language test",
+    "General academic aptitude test"
+   ],
+   "quote": "01 Motivation letter",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 132,
+   "page": "cz-studyin-340",
+   "field": "page_conflicts",
+   "value": "Call is for follow-up master's programmes, but the detail section lists 'Education level: higher (Bachelor study programme)' and a doctoral stipend rate.",
+   "quote": "Education level: higher (Bachelor study programme)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 133,
+   "page": "jp-utokyo-k-mext",
+   "field": "provider_name",
+   "value": "Graduate School of Frontier Sciences (GSFS)",
+   "quote": "The Graduate School of Frontier Sciences (GSFS) has previously accepted applications for the MEXT Scholarship (University Recommendation – General Category)",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 134,
+   "page": "jp-utokyo-k-mext",
+   "field": "academic_cycle",
+   "value": "2027",
+   "quote": "Information on the MEXT Scholarship (University Recommendation – General Category) for Applicants Seeking Admission in AY 2027",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 135,
+   "page": "jp-utokyo-k-mext",
+   "field": "deadline_scholarship",
+   "value": "2027-01-22",
+   "quote": "The deadline for submitting the complete set of scholarship application documents is expected to be January 22, 2027.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 136,
+   "page": "jp-utokyo-k-mext",
+   "field": "study_levels",
+   "value": [
+    "master",
+    "phd"
+   ],
+   "quote": "If you pass the exam, you can matriculate to a master or doctoral course in the Spring Semester (April).",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 137,
+   "page": "jp-utokyo-k-mext",
+   "field": "required_documents",
+   "value": [
+    "Application form",
+    "Study plan",
+    "Recommendation letter",
+    "Copy of passport",
+    "Academic transcript",
+    "Certificate of Graduation or Expected Graduation",
+    "Abstract of thesis",
+    "Certificate of language proficiency"
+   ],
+   "quote": "a) Application form and Study plan",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 138,
+   "page": "jp-utokyo-k-mext",
+   "field": "page_conflicts",
+   "value": "Page gives an expected AY2027 scholarship document deadline of January 22, 2027, but also retains previous-year info with a December 17, 2025 deadline; also states research students are ineligible for AY2027 while previous-year info says accepted scholars enroll as research students.",
+   "quote": "All application materials, including your photo data, must be uploaded to the Upload URL shown below no later than 5:00 PM Tokyo time on December 17, 2025 (Wednesday).",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 139,
+   "page": "jp-mext-guidelines-pdf",
+   "field": "provider_name",
+   "value": "The Ministry of Education, Culture, Sports, Science and Technology (MEXT ) of Japan",
+   "quote": "The Ministry of Education, Culture, Sports, Science and Technology (MEXT ) of Japan offers scholarships to international students",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 140,
+   "page": "jp-mext-guidelines-pdf",
+   "field": "academic_cycle",
+   "value": "2027",
+   "quote": "JAPANESE GOVERNMENT (MEXT) SCHOLARSHIP FOR 202 7",
+   "validator": "cycle not stated in quote",
+   "audit": "disputed_rejection"
+  },
+  {
+   "i": 141,
+   "page": "jp-mext-guidelines-pdf",
+   "field": "study_levels",
+   "value": [
+    "master",
+    "phd"
+   ],
+   "quote": "Those who are enrolled in a master’s course, a doctoral course, or a professional graduate course at a graduate school",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 142,
+   "page": "hk-hkpfs",
+   "field": "provider_name",
+   "value": "Research Grants Council (RGC) of Hong Kong",
+   "quote": "Established by the Research Grants Council (RGC) of Hong Kong in 2009",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 143,
+   "page": "hk-hkpfs",
+   "field": "nationality_mode",
+   "value": "any",
+   "quote": "irrespective of their country of origin",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 144,
+   "page": "hk-hkpfs",
+   "field": "study_levels",
+   "value": [
+    "phd"
+   ],
+   "quote": "Candidates who are seeking admission as new full time PhD students in the following eight universities",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 145,
+   "page": "hk-hkpfs",
+   "field": "stipend_amount",
+   "value": 344400,
+   "quote": "the Fellowship provides an annual stipend of HK$344,400 (approximately US$44,150)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 146,
+   "page": "hk-hkpfs",
+   "field": "stipend_currency",
+   "value": "HKD",
+   "quote": "the Fellowship provides an annual stipend of HK$344,400 (approximately US$44,150)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 147,
+   "page": "hk-hkpfs",
+   "field": "stipend_period",
+   "value": "year",
+   "quote": "the Fellowship provides an annual stipend of HK$344,400 (approximately US$44,150)",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 148,
+   "page": "hk-hkpfs",
+   "field": "funding_duration_months",
+   "value": 36,
+   "quote": "per year for each awardee for a period up to three years",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 149,
+   "page": "hk-hkpfs",
+   "field": "covers_travel",
+   "value": true,
+   "quote": "a conference and research-related travel allowance of HK$14,400 (approximately US$1,840) per year",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 150,
+   "page": "hk-hkpfs",
+   "field": "academic_cycle",
+   "value": "2027/28",
+   "quote": "400 PhD Fellowships will be awarded in the 2027/28 academic year*.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 151,
+   "page": "hk-hkpfs",
+   "field": "page_conflicts",
+   "value": "Award amounts are stated for the 2026/27 academic year while fellowships are said to be awarded in the 2027/28 academic year.",
+   "quote": "In the 2026/27 academic year, the Fellowship provides an annual stipend of HK$344,400",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 152,
+   "page": "hk-hku-hkpfs",
+   "field": "provider_name",
+   "value": "Hong Kong Research Grants Council (RGC)",
+   "quote": "The Hong Kong PhD Fellowship Scheme (HKPFS), established by the Hong Kong Research Grants Council (RGC) in 2009",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 153,
+   "page": "hk-hku-hkpfs",
+   "field": "nationality_mode",
+   "value": "any",
+   "quote": "irrespective of their country of origin and ethnic background, are eligible to apply",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 154,
+   "page": "hk-hku-hkpfs",
+   "field": "study_levels",
+   "value": [
+    "phd"
+   ],
+   "quote": "New applicants to full-time PhD programmes in government-funded institutions in Hong Kong",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 155,
+   "page": "hk-hku-hkpfs",
+   "field": "academic_cycle",
+   "value": "2027/28",
+   "quote": "Fellowship Awards for 2027/28 Admission",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 156,
+   "page": "hk-hku-hkpfs",
+   "field": "stipend_amount",
+   "value": 28700,
+   "quote": "Each HKPFS awardee will receive a Postgraduate Scholarship of HK$28,700 per month",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 157,
+   "page": "hk-hku-hkpfs",
+   "field": "stipend_currency",
+   "value": "HKD",
+   "quote": "Each HKPFS awardee will receive a Postgraduate Scholarship of HK$28,700 per month",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 158,
+   "page": "hk-hku-hkpfs",
+   "field": "stipend_period",
+   "value": "month",
+   "quote": "Each HKPFS awardee will receive a Postgraduate Scholarship of HK$28,700 per month",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 159,
+   "page": "hk-hku-hkpfs",
+   "field": "funding_duration_months",
+   "value": 48,
+   "quote": "For HKPFS awardees who are admitted to a 4-year PhD programme, HKU will provide the same support in the fourth year of study.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 160,
+   "page": "hk-hku-hkpfs",
+   "field": "covers_travel",
+   "value": true,
+   "quote": "conference and research-related travel allowance of HK$14,400 per year",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 161,
+   "page": "hk-hku-hkpfs",
+   "field": "tuition_coverage",
+   "value": "full",
+   "quote": "Waiver of composition fees for the whole normative study period (i.e. HK$49,500 per year)",
+   "validator": "quote does not mention tuition",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 162,
+   "page": "hk-hku-hkpfs",
+   "field": "covers_accommodation",
+   "value": true,
+   "quote": "A guaranteed hall place in Year 1, with possibility of renewal",
+   "validator": "quote does not mention this benefit",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 163,
+   "page": "hk-hku-hkpfs",
+   "field": "covers_living_allowance",
+   "value": true,
+   "quote": "Cash Award to support research and living expenses",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 164,
+   "page": "hk-hku-hkpfs",
+   "field": "deadline_scholarship",
+   "value": "2026-12-01",
+   "quote": "Submit an initial on-line application through the RGC’s HKPFS Electronic System on or before December 1, 2026 at 12:00 noon",
+   "validator": "quote has no deadline wording (a start, event or other date)",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 165,
+   "page": "hk-hku-hkpfs",
+   "field": "deadline_admission",
+   "value": "2026-12-01",
+   "quote": "quote the HKPFS Reference Number obtained from the RGC’s HKPFS Electronic System on or before December 1, 2026.",
+   "validator": "quote has no deadline wording (a start, event or other date)",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 166,
+   "page": "be-ares-formations",
+   "field": "deadline_scholarship",
+   "value": "2026-09-18",
+   "quote": "Date limite : Vendredi 18 septembre 2026",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 167,
+   "page": "be-ares-formations",
+   "field": "academic_cycle",
+   "value": "2027/2028",
+   "quote": "Bourses de formations internationales 2027-2028",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 168,
+   "page": "be-ares-formations",
+   "field": "provider_name",
+   "value": "ARES",
+   "quote": "Bourses de formations internationales 2027-2028 | ARES",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 169,
+   "page": "be-ares-formations",
+   "field": "study_levels",
+   "value": [
+    "bachelor",
+    "master",
+    "short_course"
+   ],
+   "quote": "Un bachelier de spécialisation",
+   "validator": "bachelor not stated in the quotation; master not stated in the quotation; short_course not stated in the quotation",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 170,
+   "page": "be-ares-formations",
+   "field": "residency_required",
+   "value": [
+    "Afrique du Sud",
+    "Bénin",
+    "Burkina Faso",
+    "Burundi",
+    "Cameroun",
+    "Côte d'Ivoire",
+    "Ethiopie",
+    "Guinée",
+    "Kenya",
+    "Madagascar",
+    "Mali",
+    "Maroc",
+    "Mozambique",
+    "Niger",
+    "Ouganda",
+    "RD Congo",
+    "Rwanda",
+    "Sénégal",
+    "Tanzanie",
+    "Tunisie",
+    "Zimbabwe",
+    "Bolivie",
+    "Cuba",
+    "Équateur",
+    "Haïti",
+    "Pérou",
+    "Cambodge",
+    "Indonésie",
+    "Népal",
+    "Philippines",
+    "Vietnam",
+    "Palestine"
+   ],
+   "quote": "Être résidente permanente et travailler dans l’un des 32 pays éligibles (voir liste ci-dessous).",
+   "validator": "country not named in quote",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 171,
+   "page": "be-ares-formations",
+   "field": "min_work_years",
+   "value": 2,
+   "quote": "Témoigner d'une occupation professionnelle pertinente, dans l’un des 32 pays éligibles, d’au moins deux ans après le dernier diplôme d’études supérieures et avant la date de clôture de l’appel.",
+   "validator": "number not stated in quote",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 172,
+   "page": "be-ares-formations",
+   "field": "funding_duration_months",
+   "value": 12,
+   "quote": "Bachelier et masters de spécialisation : 12 mois maximum.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 173,
+   "page": "be-ares-formations",
+   "field": "covers_travel",
+   "value": true,
+   "quote": "Frais de déplacement international.",
+   "validator": "quote does not mention this benefit",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 174,
+   "page": "be-ares-formations",
+   "field": "covers_living_allowance",
+   "value": true,
+   "quote": "Allocation de subsistance.",
+   "validator": "quote does not mention this benefit",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 175,
+   "page": "be-ares-formations",
+   "field": "tuition_coverage",
+   "value": "full",
+   "quote": "Frais d'inscription (uniquement pour les bacheliers et les masters de spécialisation).",
+   "validator": "accepted",
+   "audit": "questionable_acceptance"
+  },
+  {
+   "i": 176,
+   "page": "be-ares-formations",
+   "field": "fields_of_study",
+   "value": [
+    "Digital Integrated Supply Chain",
+    "droits humains",
+    "gestion intégrée des risques sanitaires",
+    "International and Development Economics",
+    "Microfinance",
+    "sciences de la santé publique - analyse et évaluation des politiques programmes et systèmes de santé internationale",
+    "management de la sécurité de la chaîne alimentaire",
+    "conservation préventive et gestion des collections",
+    "gestion des risques et des catastrophes à l'ère anthropocene",
+    "opérations de cybersécurité et gouvernance des risques"
+   ],
+   "quote": "Huit masters de spécialisation",
+   "validator": "field of study not in quote",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 177,
+   "page": "be-ares-belgique",
+   "field": "provider_name",
+   "value": "ARES",
+   "quote": "Bourses en Belgique / Appel 2027-2028 | ARES",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 178,
+   "page": "be-ares-belgique",
+   "field": "academic_cycle",
+   "value": "2027/2028",
+   "quote": "Pour l’année académique 2027-2028, 100 bourses attendent les candidates et candidats.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 179,
+   "page": "be-ares-belgique",
+   "field": "deadline_scholarship",
+   "value": "2026-09-18",
+   "quote": "Les candidatures se clôturent le 18 septembre 2026 à 12h (heure belge, UTC+1).",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 180,
+   "page": "be-ares-belgique",
+   "field": "study_levels",
+   "value": [
+    "bachelor",
+    "master",
+    "short_course"
+   ],
+   "quote": "Nos bourses de bachelier, de master et de formation continue en Belgique",
+   "validator": "bachelor not stated in the quotation; short_course not stated in the quotation",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 181,
+   "page": "be-ares-belgique",
+   "field": "min_work_years",
+   "value": 2,
+   "quote": "faire preuve d’une expérience professionnelle d’au moins deux ans.",
+   "validator": "number not stated in quote",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 182,
+   "page": "be-ares-belgique",
+   "field": "funding_duration_months",
+   "value": 12,
+   "quote": "suivre un bachelier de spécialisation ou un master de spécialisation d’un an, ou une formation continue de 6 mois",
+   "validator": "quote does not state this funding duration",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 183,
+   "page": "be-ares-belgique",
+   "field": "nationality_mode",
+   "value": "include",
+   "quote": "Vous êtes résident·e permanent·e et travaillez dans l’un des 32 pays partenaire de l'ARES ?",
+   "validator": "accepted",
+   "audit": "questionable_acceptance"
+  },
+  {
+   "i": 184,
+   "page": "id-bu-pedoman-pdf",
+   "field": "provider_name",
+   "value": "Pusat Layanan Pembiayaan Pendidikan, Kementerian Pendidikan Dasar dan Menengah",
+   "quote": "Pusat Layanan Pembiayaan Pendidikan",
+   "validator": "provider name not in quote",
+   "audit": "correct_rejection"
+  },
+  {
+   "i": 185,
+   "page": "id-bu-pedoman-pdf",
+   "field": "study_levels",
+   "value": [
+    "bachelor",
+    "master",
+    "phd"
+   ],
+   "quote": "melanjutkan pendidikan di perguruan tinggi dalam negeri pada jenjang diploma\nIV/ sarjana, magister, dan doktor",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 186,
+   "page": "id-bu-pedoman-pdf",
+   "field": "academic_cycle",
+   "value": "2026/2027",
+   "quote": "berstatus aktif pada tahun ajaran 2026/2027.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 187,
+   "page": "id-bu-pedoman-pdf",
+   "field": "min_gpa",
+   "value": 2.75,
+   "quote": "memiliki nilai indeks prestasi kumulatif (IPK) paling rendah 2,75 pada skala 4",
+   "validator": "number not stated in quote",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 188,
+   "page": "id-bu-pedoman-pdf",
+   "field": "gpa_scale",
+   "value": 4,
+   "quote": "memiliki nilai indeks prestasi kumulatif (IPK) paling rendah 2,75 pada skala 4",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 189,
+   "page": "id-bu-pedoman-pdf",
+   "field": "age_limits_by_level",
+   "value": [
+    "master<=31",
+    "phd<=45"
+   ],
+   "quote": "belum memasuki usia 32 tahun pada tanggal 31 Desember tahun pendaftaran bagi mahasiswa baru",
+   "validator": "master<=31 not stated in quote",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 190,
+   "page": "id-bu-pedoman-pdf",
+   "field": "essay_word_limit",
+   "value": 2000,
+   "quote": "esai ditulis pada kolom esai paling sedikit\n1.500 kata dan paling banyak 2.000 kata.",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  },
+  {
+   "i": 191,
+   "page": "mx-amexcid",
+   "field": "provider_name",
+   "value": "Agencia Mexicana de Cooperación Internacional para el Desarrollo (AMEXCID)",
+   "quote": "La Secretaría de Relaciones Exteriores (SRE), a través de la Agencia Mexicana de Cooperación Internacional para el Desarrollo (AMEXCID), convoca a extranjeros (as) interesados (as) en realizar estudios en México",
+   "validator": "quote does not say this organisation funds or runs the scholarship",
+   "audit": "wrong_rejection"
+  },
+  {
+   "i": 192,
+   "page": "mx-amexcid",
+   "field": "academic_cycle",
+   "value": "2026",
+   "quote": "Becas de Excelencia del Gobierno de México para Extranjeros 2026",
+   "validator": "accepted",
+   "audit": "correct_acceptance"
+  }
+ ]
+}
