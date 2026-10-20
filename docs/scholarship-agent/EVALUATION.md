@@ -447,3 +447,23 @@ of the U.S." is read as including the US (five Fulbright pages), and "internatio
 "any". **Funding**: cash awards without a stated use are still read as stipends (five cases), and "fees" or
 "assistantship" words on Fulbright benefit lists pull the class the wrong way. Q is now development data; the next
 fresh set is R.
+
+
+### Round 34 (pool K to Q, 1,112 decisions)
+
+Set Q became development data and its errors drove the round, so its new scores are diagnostic, not a test. Kept, each on
+the pool: "Open: ... / Close: ..." lines (the close is the deadline, not a second opening); "opening call" and "closing
+call"; "deadline for sending feedback" is not an application deadline; "Application: <date> to <date>" is a window;
+Spanish "desde el X hasta el Y" windows; "as of <date>" and degree or enrolment dates are conditions; "persons holding
+dual Japan-U.S. citizenship are NOT eligible" names no second country; the country where the study takes place ("to study
+... in the United States", "en los Estados Unidos") and "U.S. law" are not nationalities; "Canadian, permanent resident, and
+international graduate students" is open to all. Rejected: a Spanish question guard (no effect), a guard for the menu
+entry "Grants for United States Citizens" (no net gain), and a Spanish "desde" condition (no effect). Pool 579 -> 610
+(815 correct, 93 wrong); set Q 129 / 36 / 17 -> 137 / 26 / 18 (deadline 38 / 10 -> 42 / 6, eligibility 31 / 8 -> 34 / 3).
+Remaining deadline errors on Q are old-news dates, dates without a year, and a start-of-period date; the next fresh set is R.
+
+**Claude on set Q** (targeted, Opus 5.5, effort low, cap $0.70): 50 of 54 pages enriched for $0.65 (4 skipped by the cap), 184 values
+proposed, 54 accepted after quote checks. On the round-34 rules: 141 / 27 / 20 against 137 / 26 / 18 for the rules alone
+(+4 correct, +1 wrong claim). The model fills dates and cycle states the rules abstain on (CHED, Fulbright Malaysia: closed
+with the right deadline) and one stipend; it also asserted a deadline and a closed state for a page whose label is
+"not stated" (Dutch-Bangla Bank). Total spent on Claude evaluations so far: $2.11.

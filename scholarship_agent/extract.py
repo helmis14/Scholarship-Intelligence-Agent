@@ -349,9 +349,9 @@ DEADLINE_WORDS = re.compile(
     r"last date|until|no later than|bewerbungsschluss|bewerbungsfrist|frist|einsendeschluss|date limite|"
     r"date de clôture|clôture des candidatures|fecha l[ií]mite|plazo|cierre de (?:la )?convocatoria|prazo|"
     r"data limite|inscrições até|scadenza|(?-i:termine)|batas (?:akhir|waktu)|pendaftaran (?:ditutup|dibuka)|tenggat|"
-    r"applications? close|\bclose (?:on|at|by)\b|cierre|cerrará|finaliza(?:rá)?|hasta el|clôture|"
+    r"applications? close|\bclose (?:on|at|by)\b|closing call|call closes|cierre|cerrará|finaliza(?:rá)?|hasta el|clôture|"
     r"締切|마감|截止" + "|" + words_rx(deadline_words()), re.I)
-OPENING_WORDS = re.compile(r"\bopens?\b|application (?:period|window)|bewerbungszeitraum|bewerbungsphase|periode pendaftaran|dibuka|from\s+\d|"
+OPENING_WORDS = re.compile(r"abierto desde|^\W*applications?\s*:|\bopens?\b|opening call|application (?:period|window)|bewerbungszeitraum|bewerbungsphase|periode pendaftaran|dibuka|from\s+\d|"
                            r"ouverture des candidatures|apertura|abertura das inscrições|bewerbungsbeginn|se abrirá|"
                            r"abrirá|\babre\b", re.I)
 EVENT_WORDS = re.compile(r"\b(?:results?|publication|announce\w*|notification|interviews?|selection (?:date|takes)|"
@@ -449,9 +449,9 @@ def _deadline_units(text: str) -> list[tuple[str, str]]:
     return units
 
 
-RANGE_RX = re.compile(rf"(?:from|between|del|du|vom|dari|de)?\s*(\d{{1,2}}(?:st|nd|rd|th|er)?\.?\s+(?:de\s+)?(?:{_MON})"
+RANGE_RX = re.compile(rf"(?:from|between|del|du|vom|dari|de|desde(?: el)?)?\s*(\d{{1,2}}(?:st|nd|rd|th|er)?\.?\s+(?:de\s+)?(?:{_MON})"
                       rf"(?:\.?,?\s+(?:de\s+)?\d{{4}})?|(?:{_MON})\.?\s+\d{{1,2}}(?:st|nd|rd|th)?(?:,?\s+\d{{4}})?)\s*"
-                      rf"(?:-|–|to|until|till|al|au|bis(?:\s+zum)?|sampai|hingga|s\.?d\.?|a)\s*"
+                      rf"(?:-|–|to|until|till|al|au|bis(?:\s+zum)?|sampai|hingga|s\.?d\.?|a|hasta(?: el)?)\s*"
                       rf"(\d{{1,2}}(?:st|nd|rd|th|er)?\.?\s+(?:de\s+)?(?:{_MON})\.?,?\s+(?:de\s+)?\d{{4}}|"
                       rf"(?:{_MON})\.?\s+\d{{1,2}}(?:st|nd|rd|th)?,?\s+\d{{4}}|\d{{1,2}}(?:st|nd|rd|th|er)?\.?\s+(?:de\s+)?(?:{_MON})|"
                       rf"(?:{_MON})\.?\s+\d{{1,2}}(?:st|nd|rd|th)?)", re.I)
@@ -520,6 +520,12 @@ def _date_role(s: str, raw: str, prev: list[str], raws: list[str]) -> Optional[D
     # round 31: "1 February 2027: deadline to submit supporting documentation and pay the application fee"
     if re.match(r"\W{0,3}(?:deadline )?(?:to submit|for submitting|for the submission of) (?:supporting |the |your )?document", after, re.I):
         return DeadlineKind.DOCUMENT
+    if re.match(r"\W{0,3}(?:deadline )?for (?:sending|submitting|giving|providing) (?:the )?feedback\b", after, re.I):
+        return DeadlineKind.OTHER   # round 34: "17 November 2027: deadline for sending feedback"
+    if re.match(r"\W{0,3}opening call\b", after, re.I):
+        return DeadlineKind.OPENING
+    if re.match(r"\W{0,3}closing call\b", after, re.I):
+        return DeadlineKind.SCHOLARSHIP
     if re.match(r"\W{0,3}(?:applicants?|candidates?|you|students?)?\s*(?:are|will be)?\s*(?:informed|notified)\b", after, re.I) \
             or re.search(r"\b(?:informed|notified|communication of (?:the )?decisions?|decisions? (?:will be )?"
                          r"(?:communicated|announced)|results? (?:will be )?(?:announced|published|communicated))\b"
@@ -528,6 +534,8 @@ def _date_role(s: str, raw: str, prev: list[str], raws: list[str]) -> Optional[D
     if re.search(r"\b(?:aufenthalt\w*|stay|tenure|arrival|start of (?:the )?(?:programme|program|studies|fellowship|award))\b"
                  r"[^.;]{0,50}$", before[-70:], re.I):
         return DeadlineKind.EVENT
+    if re.search(r"\bas of\s*$|\bt[ií]tulo\b[^.;]{0,25}$|\b(?:inscrit\w*|enrolled|registered|matricul\w+)\b[^.;]{0,70}\b(?:avant le|before|prior to|by|hasta)\s*$", before[-100:], re.I):
+        return DeadlineKind.OTHER   # round 34: "residing in Japan as of July 1", "obtendrán su título hasta el 1 de agosto"
     if re.search(r"\b(?:paid|pay) (?:the |your )?(?:application |tuition )?fees?\b[^.;]{0,20}$|"
                  r"\boffer\b[^.;]{0,40}\bby\s*$|\baccept\b[^.;]{0,60}\bby\s*$|"
                  r"\b(?:visa|residence permit)\b[^.;]{0,60}$", before[-80:], re.I):
@@ -541,6 +549,8 @@ def _date_role(s: str, raw: str, prev: list[str], raws: list[str]) -> Optional[D
             and not re.search(r"\bappl", before[-30:] + after[:40], re.I) \
             and not re.search(r"\bapplications? and (?:the )?submission\b", before[-90:], re.I):
         return DeadlineKind.DOCUMENT   # but "Deadline for application and submission of documentation" is the deadline
+    if re.search(r"\b(?:close|closes|closing(?: date)?|last (?:application )?date|final (?:application )?deadline)\s*:?\s*$", before[-30:], re.I):
+        return DeadlineKind.SCHOLARSHIP   # round 34: "Open: 1 December 2026 / Close: 12 February 2027"
     if re.match(r"\s*[:–-]?\s*(?:the )?(?:applications?|call|portal|registration)?\s*(?:opens?|starts?|begins?)\b", after, re.I) \
             or (re.search(r"\b(?:will )?(?:open(?:s|ing)?|begin(?:s|ning)?|start(?:s|ing)?)\s*(?:on|from)?\s*$", before, re.I)
                 and not re.search(r"\buntil\b|\bclos|deadline|\bby\s*$|\bthrough\s*$", before[-40:], re.I)):
@@ -1377,7 +1387,7 @@ def _scope(s: str) -> str:
 
 
 FOREIGN_ALSO_RX = re.compile(r"\bforeign nationals?\b[^.;]{0,200}\b(?:is|are) (?:also )?eligible\b", re.I)
-INTL_GROUP_RX = re.compile(r"\b(?:and|or) (?:an? )?international (?:students?|applicants?)\b", re.I)
+INTL_GROUP_RX = re.compile(r"\b(?:and|or) (?:an? )?international (?:\w+ )?(?:students?|applicants?)\b", re.I)
 US_TERRITORIES = {"AS", "GU", "PR", "VI", "MP", "UM"}
 
 
@@ -1388,6 +1398,12 @@ def extract_nationality(text: str) -> tuple[NationalityRule, list[str]]:
     if re.search(r"warga negara indonesia|\bWNI\b", text, re.I):
         text = re.sub(r"warga negara indonesia|\bWNI\b", "citizens of Indonesia", text, flags=re.I)
     text = text.replace("@", "o")  # "profesionales colombian@" -> colombiano
+    text = re.sub(r"\bU\.?S\.?\s+(?=(?:law|laws|government|embassy|consulate|visa|Department|institutions?|universit\w+|dollars?|J-1|immigration)\b)", "", text)   # round 34
+    text = re.sub(r"(?<!ciudadan[oa]s )(?<!residentes )(?<!nacionales )\b(?:en|a) los Estados Unidos\b(?! de Am)", "en el pa\u00eds anfitri\u00f3n", text)
+    text = re.sub(r"\b(universidades|instituciones|programas|empresas|colegios) estadounidenses\b", r"\1", text)   # round 34
+    # round 34: "to study ... in the United States", "Awards to the U.S.", "Japan-United States Educational Commission"
+    text = re.sub(r"\b(?:in|to|at|within|towards?)\s+the\s+(?:U\.S\.?|United States)(?!\s*(?:citizen|national|permanent|resident|passport))", "in the host country", text)
+    text = re.sub(r"\b[\w-]*(?:United States|American)\s+(?:Educational\s+)?(?:Commission|Foundation|Council|Institute)\b", "the Commission", text)
     # "US Citizens", "non-US citizens": the letters US only before a citizenship word (never the pronoun "us")
     text = re.sub(r"\bU\.?S\.?(?=[\s-]+(?:[Cc]itizens?|[Nn]ationals?|[Pp]assport|[Pp]ermanent))", "United States", text)
     text = re.sub(r"\bAmerican Indians?\b", "Native American", text)   # round 30: not India
@@ -1404,6 +1420,10 @@ def extract_nationality(text: str) -> tuple[NationalityRule, list[str]]:
                 r"\b(?:applicants?|you|students?|candidates?) and (?:their|your) parents\b", s, re.I)):
             continue  # "applicants who are not Canadian citizens may only hold it in Canada": where, not who;
             # "your birth parents must have been born ... as non-US citizens": the parents' status, not the applicant's
+        if re.search(r"\b(?:dual|double|doble)\b[^.;]{0,40}(?:citizen|nationalit|nacionalidad|ciudadan)|"
+                     r"\bdual[- ][\w.]+[-–/][\w.]+ (?:citizen|national)", s, re.I) \
+                and re.search(r"not eligible|ineligible|no son elegibles|no se acepta|not accepted|not (?:be )?considered|no pueden|cannot", s, re.I):
+            continue  # round 34: "persons holding dual Japan-U.S. citizenship are NOT eligible": the rule names who is excluded, not a second country
         if re.search(r"\bdoes not (?:refer to|include|mean|apply to)\b", s, re.I):
             continue  # round 30: "It does not refer to a citizen of another country ...": a definition, not a ban
         if re.search(r"\b(?:is|are|be) (?:considered|classified|defined|recognized|recognised|treated) (?:as |to be )?(?:an? )?international|"
