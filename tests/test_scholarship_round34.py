@@ -105,5 +105,14 @@ class TestRound36(unittest.TestCase):
         self.assertNotEqual(fclass("Recipients receive financial support to aid their education."), "stipend_only")
 
 
+class TestOldDates(unittest.TestCase):
+    def test_an_old_date_that_is_not_called_a_deadline_is_not_the_deadline(self):
+        t = "Webinar for applicants held on September 26, 2024. The programme supports graduate students."
+        self.assertEqual(applicant(t), [])
+
+    def test_an_old_date_stated_as_the_deadline_stays(self):
+        self.assertEqual(applicant("Application deadline: October 16, 2023."), ["2023-10-16"])
+
+
 if __name__ == "__main__":
     unittest.main()

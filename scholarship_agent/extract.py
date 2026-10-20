@@ -543,6 +543,8 @@ def _date_role(s: str, raw: str, prev: list[str], raws: list[str]) -> Optional[D
     if re.search(r"\b(?:fee )?payment\b|\bpay (?:the |your )?(?:tuition|fees?)\b", near, re.I) \
             and not re.search(r"\bappl", near, re.I):
         return DeadlineKind.OTHER   # "The deadline for tuition fee payment ... is 31 August": paying, not applying
+    if re.search(r"\b(?:campus|internal|university|departmental|faculty) deadline\b", near, re.I):
+        return DeadlineKind.NOMINATION   # round 39: "the campus deadline of Sept. 11" is the university's own step
     if re.search(r"nominat|selection deadline by|\bby (?:the )?(?:[\w']+ ){0,3}coordinators?\b|\bendorsement\b", near, re.I):
         return DeadlineKind.NOMINATION
     if re.search(r"\bproof\b|\bsubmit (?:your )?(?:final )?(?:transcripts?|certificates?|degree)", before[-90:], re.I) \

@@ -548,3 +548,13 @@ language, and fetched the first hosts it found: 959 pages, but the large majorit
 Funded ... 2027", "Top 10 scholarships in ..."), which the agent must not treat as a source. The run was not labelled; its pages are kept local
 (`tests/heldout_t/urls_search_run1.json`, not committed). A second run keeps only hosts that look like a government, an education body, a foundation or a
 university (`OFFICIAL` in `tests/heldout_t/collect.py`).
+
+### Round 39: old dates
+
+Applicant dates more than two years old are references, not the deadline, unless their own sentence calls them the deadline ("application deadline",
+"closing date", "apply by", "due", "applications closed"). Pool +11 (wrong claims -4: Pickering 2024, SSRC 2019, FAPESP 2019 and St. Thomas 2024 stop
+being read as deadlines); the plainer version (any date older than two years) gained more (+18.5) but removed four correct "closed, last deadline
+2013/2023/2020/2023" answers and was rejected. Also tried with no effect: a "campus/internal deadline" nomination step and "as of <date>" up to 35
+characters before the date. After this round the pool reads 70.8% correct / 7.6% wrong / 10.9% review with the gate off, 69.7% / 5.9% / 13.7% in standard mode and
+65.7% / 4.3% / 19.2% in strict mode. Many of the remaining wrong claims are label-policy differences rather than reading errors (for example "All nationalities
+are welcome" read as "any" where the label says not stated), which is why the second labeller matters.
