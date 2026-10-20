@@ -514,3 +514,22 @@ line from another scheme on the same page, "Swedish and American students" read 
 from older dates, "room & board" not counted as living costs, and a mission sentence ("financial support to our international students") read as a
 stipend and tuition. Two rules tried on these (dual-citizenship "may not apply", "room & board") changed nothing; one (mission sentence with "our ...
 students") lost a correct answer and was rejected. S joins the development pool (K to S, 1,016 decisions: 719).
+
+### Round 37: the risk gate (`audit._risk_gate`, `SCHOLAR_RISK_GATE=off|standard|strict`, default standard)
+
+The precision of each kind of claim was measured on the 1,336 decisions of sets K to S: assistantship and fee-waiver funding classes 0 right
+of 6; "not_announced" cycles 1 of 7; applicant deadlines with two or more dates 52%; tuition-only 58%; stipend-only 76%; "open to any
+nationality" 67%; "upcoming" cycles 77%; single dates 83%; "partially funded" and "fully funded" 87-88%. Claims of the low-precision kinds are now sent
+to review ("needs_review", reason recorded, value kept as unverified) instead of reported as known. Dates of earlier cycles that the record already
+marks as past do not count toward "several dates". The gate is a reporting policy, not a rule change: it never alters what was extracted.
+
+| Mode | Correct | Wrong claims | Sent to review | Not answered |
+|---|---|---|---|---|
+| off | 70.7% | 7.6% | 10.9% | 10.7% |
+| standard (default) | 69.6% | 6.0% | 13.7% | 10.7% |
+| strict | 65.6% | 4.4% | 19.2% | 10.7% |
+
+(percent of all 1,336 decisions). The costs are 16 correct answers held back for 24 wrong claims removed in standard mode, and 69 for 45 in strict mode.
+These figures are in-sample, because the thresholds came from the same data, so they will be somewhat optimistic on new pages; a fresh set is the check. The
+pool utility rose from 719 to 740.5 in standard mode. Wrong claims per set fell, for example, P 7% -> 3%, S 8% -> 6% (standard), P 7% -> 2%, S 8% -> 5% (strict).
+For a public site, strict is the setting that reaches the "under 5% of decisions" target on the pool, at the price of 19% of decisions going to review.

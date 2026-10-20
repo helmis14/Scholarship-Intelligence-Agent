@@ -100,6 +100,7 @@ def field_status(o: Opportunity, today: Optional[date] = None) -> dict[str, dict
     _programme_specific(o, out)
     _require_evidence(o, out)
     _decision_evidence_gate(o, out)
+    _risk_gate(o, out)
     # what the page is, and whether the record stands for one named programme (identity.py); domain trust alone
     # (official_source) never makes a record a verified programme
     from .identity import record_identity
@@ -261,6 +262,39 @@ def _decision_evidence_gate(o: Opportunity, out: dict) -> None:
         if d["state"] in ("needs_review", "no_evidence") and out[field]["state"] not in ("needs_review", "unsupported",
                                                                                           "not_stated"):
             out[field] = _s("needs_review", f"{out[field]['state']}, but " + "; ".join(d["problems"])[:180])
+
+
+# Round 37: claim kinds whose measured precision on 1,336 decisions (sets K to S) was too low to report as known. Each is
+# sent to review with its reason; the value stays visible as "unverified". SCHOLAR_RISK_GATE=off|standard|strict
+# (default standard). standard: assistantship and fee waiver readings (0 right of 6), "announcement pending" cycles
+# (1 right of 7) and applicant deadlines with two or more dates (52% right). strict adds tuition-only (58%) and
+# stipend-only (76%) readings, "open to any nationality" (67%) and "upcoming" cycles (77%).
+RISK_FUNDING = {"standard": {"assistantship", "fee_waiver"}, "strict": {"assistantship", "fee_waiver", "tuition_funded", "stipend_only"}}
+RISK_CYCLE = {"standard": {"not_announced"}, "strict": {"not_announced", "upcoming"}}
+
+
+def _risk_gate(o: Opportunity, out: dict) -> None:
+    import os
+    mode = os.environ.get("SCHOLAR_RISK_GATE", "standard").strip().lower()
+    if mode not in ("standard", "strict"):
+        return
+
+    def hold(field: str, why: str) -> None:
+        if out[field]["state"] not in ("needs_review", "unsupported", "not_stated"):
+            out[field] = _s("needs_review", f"{out[field]['state']}, but {why}")
+
+    if out["funding_type"]["state"] in RISK_FUNDING[mode]:
+        hold("funding_type", "this reading of the funding class is often wrong on university and funder pages; check the quotation")
+    if out["cycle"]["state"] in RISK_CYCLE[mode]:
+        hold("cycle", "this cycle state is often wrong when the page does not say it outright; check the quotation")
+    if mode == "strict" and o.nationality.mode == "any":
+        hold("eligible_countries", "'open to any nationality' is often a reading of a sentence about another group")
+    dated = [d for d in o.deadlines if d.date and d.kind in APPLICANT_KINDS]
+    # dates of earlier cycles that the record already knows are past do not make the current deadline ambiguous
+    live = [d for d in dated if d.certainty != DeadlineCertainty.HISTORICAL]
+    dates = {d.date for d in (live or dated)}
+    if len(dates) >= 2:
+        hold("deadline", "the page gives several dates (opening, closing, interview, earlier cycles); pick the applicant deadline from the page")
 
 
 def _require_evidence(o: Opportunity, out: dict) -> None:

@@ -64,6 +64,8 @@ Every rule change is measured against frozen test sets. Each set holds official 
 - **Weakest areas:** the funding class when the award is a cash amount or a tuition discount tier (university pages, set P), and the applicant deadline on funder pages that list a whole timeline (set Q: 10 wrong deadlines out of 54). Wrong claims are 13-17% of decisions; the target for a public site is under 5%.
 - **Claude-assisted extraction** (`tests/decisions_ai.py`) adds a few correct answers on top of the rules without adding wrong claims (+5 correct on 276 decisions, $0.80); every model answer is quote-checked before it counts. On set P it added dates and cycle states, not funding classes ($0.66).
 
+- **Risk gate:** claim kinds whose measured precision is low (assistantship and fee-waiver funding, "announcement pending" cycles, deadlines with several dates; in `SCHOLAR_RISK_GATE=strict` also tuition-only and stipend-only funding, "any nationality" and "upcoming") are shown as unverified and sent to review. On the development pool this brings wrong claims from 7.6% to 6.0% (standard) or 4.4% (strict) of decisions, at the cost of more answers going to review; confirm on a fresh set before relying on it.
+
 See [docs/scholarship-agent/EVALUATION.md](docs/scholarship-agent/EVALUATION.md) for the method and the full history.
 
 ## Prerequisites
