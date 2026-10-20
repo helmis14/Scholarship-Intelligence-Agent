@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8 no-js" lang="en-US"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 no-js" lang="en-US"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8" />
+        <script>document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'js');</script>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"50c08683e1",applicationID:"261436544",browserID:"261461179"};;/*! For license information please see nr-loader-rum-1.324.0.min.js.LICENSE.txt */
+(()=>{var e={8122(e,t,r){"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),a=0===Object.keys(r).length?e:r;for(let s in a)if(void 0!==e[s])try{if(null===e[s]){r[s]=null;continue}Array.isArray(e[s])&&Array.isArray(t[s])?r[s]=Array.from(new Set([...e[s],...t[s]])):e[s]instanceof Map||e[s]instanceof Set||e[s]instanceof Date||e[s]instanceof RegExp?r[s]=e[s]:"object"==typeof e[s]&&null!==t[s]&&"object"==typeof t[s]?r[s]=i(e[s],t[s]):r[s]=e[s]}catch(e){r[s]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},2555(e,t,r){"use strict";r.d(t,{f:()=>s});var n=r(384),i=r(8122);const a={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function s(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}r.d(t,["D",0,e=>(0,i.a)(e,a)])},7699(e,t,r){"use strict";var n=r(860);const i=1e6,a={[n.K7.logging]:!0,[n.K7.genericEvents]:!0,[n.K7.jserrors]:!0,[n.K7.ajax]:!0};r.d(t,["It",0,i,"KC",0,a,"qh",0,"SESSION_ERROR","zd",0,5e5])},9324(e,t,r){"use strict";r.d(t,["xv",0,"1.324.0"])},981(e,t,r){"use strict";r.d(t,["R",0,{AJAX:"AjaxRequest",PA:"PageAction",UA:"UserAction",BP:"BrowserPerformance",WS:"WebSocket",SPV:"SecurityPolicyViolation",JSE:"JavaScriptError",LOG:"Log",PVE:"PageView",PVT:"PageViewTiming",SR:"SessionReplay",ST:"SessionTrace",BI:"BrowserInteraction"}])},6154(e,t,r){"use strict";var n=r(1863);const i="undefined"!=typeof window&&!!window.document,a="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),s=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),o=Boolean("hidden"===s?.document?.visibilityState),c=""+s?.location,u=/iPad|iPhone|iPod/.test(s.navigator?.userAgent),d=u&&"undefined"==typeof SharedWorker,l=((()=>{const e=s.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Date.now()-(0,n.t)());r.d(t,["OF",0,u,"RI",0,i,"WN",0,l,"bv",0,a,"gm",0,s,"m",0,c,"mw",0,o,"sb",0,d,"zk",0,()=>{const e=s?.performance?.getEntriesByType?.("navigation")?.[0];if(e&&e.responseStart>0&&e.responseStart<s.performance.now())return e}])},3241(e,t,r){"use strict";r.d(t,{W:()=>i});var n=r(6154);function i(e={}){try{n.gm.dispatchEvent(new CustomEvent("newrelic",{detail:e}))}catch(e){}}},1687(e,t,r){"use strict";r.d(t,{Ak:()=>o,Ze:()=>u,x3:()=>c});var n=r(3241),i=r(3606),a=r(860),s=r(2646);function o(e,t){if(!e)return;const r={staged:!1,priority:a.P3[t]||0};e.runtime.drainRegistry.get(t)||e.runtime.drainRegistry.set(t,r)}function c(e,t){if(!e)return;const r=e.runtime.drainRegistry;r&&(r.get(t)&&r.delete(t),l(e,t,!1),r.size&&d(e))}function u(e,t="feature",r=!1){if(e){if(!e.runtime.drainRegistry.get(t)||r)return l(e,t);e.runtime.drainRegistry.get(t).staged=!0,d(e)}}function d(e){if(!e)return;const t=Array.from(e.runtime.drainRegistry);t.every(([e,t])=>t.staged)&&(t.sort((e,t)=>e[1].priority-t[1].priority),t.forEach(([t])=>{e.runtime.drainRegistry.delete(t),l(e,t)}))}function l(e,t,r=!0){if(!e)return;const a=e.ee,o=i.i.handlers;if(a&&!a.aborted&&a.backlog&&o){if((0,n.W)({type:"lifecycle",name:"drain",feature:t}),r){const e=a.backlog[t],r=o[t];if(r){for(let t=0;e&&t<e.length;++t)f(e[t],r);Object.entries(r).forEach(([e,t])=>{Object.values(t||{}).forEach(t=>{t[0]?.on&&t[0].context()instanceof s.y&&!t[0].listeners(e).includes(t[1])&&t[0].on(e,t[1])})})}}a.isolatedBacklog||delete o[t],a.backlog[t]=null,a.emit("drain-"+t,[])}}function f(e,t){var r=e[1];Object.values(t[r]||{}).forEach(t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],a=e[2];n.apply(i,a)}})}},7836(e,t,r){"use strict";var n=r(384),i=r(8990),a=r(2646),s=r(5607);const o="nr@context:".concat(s.W),c=function e(t,r){var n={},s={},d={},l=!1;try{l=16===r.length&&u.initializedAgents?.[r]?.runtime.isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,a){!1!==a&&(a=!0);if(c.aborted&&!i)return;t&&a&&t.emit(e,r,n);var o=g(n);m(e).forEach(e=>{e.apply(o,r)});var u=v()[s[e]];u&&u.push([f,e,r,o]);return o},get:h,listeners:m,context:g,buffer:function(e,t){const r=v();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach(([e,n])=>{s[n]=t,t in r||(r[t]=[])})},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach(e=>{delete f.backlog[e]})},isBuffering:function(e){return!!v()[s[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function g(e){return e&&e instanceof a.y?e:e?(0,i.I)(e,o,()=>new a.y(o)):new a.y(o)}function p(e,t){n[e]=m(e).concat(t)}function m(e){return n[e]||[]}function h(t){return d[t]=d[t]||e(f,t)}function v(){return f.backlog}}(void 0,"globalEE"),u=(0,n.Zm)();u.ee||(u.ee=c),r.d(t,["P",0,o,"ee",0,c])},2646(e,t,r){"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},9908(e,t,r){"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(7836).ee.get("handle");function i(e,t,r,i,a){a?(a.buffer([e],i),a.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}},3606(e,t,r){"use strict";r.d(t,{i:()=>a});var n=r(9908);a.on=s;var i=a.handlers={};function a(e,t,r,a){s(a||n.d,i,e,t,r)}function s(e,t,r,i,a){a||(a="feature"),e||(e=n.d);var s=t[a]=t[a]||{};(s[r]=s[r]||[]).push([e,i])}},3878(e,t,r){"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function a(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>a,jT:()=>n,sp:()=>i})},5607(e,t,r){"use strict";const n=(0,r(9566).bz)();r.d(t,["W",0,n])},9566(e,t,r){"use strict";r.d(t,{LA:()=>s,bz:()=>a});var n=r(6154);function i(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".split("").map(e=>"x"===e?i(t,r++).toString(16):"y"===e?(3&i()|8).toString(16):e).join("")}function s(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,a=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const s=[];for(var o=0;o<e;o++)s.push(i(r,a++).toString(16));return s.join("")}},2614(e,t,r){"use strict";r.d(t,["BB",0,18e5,"Wt",0,"NRBA_SESSION::","iL",0,{SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},"tS",0,{STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},"wk",0,144e5])},1863(e,t,r){"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},944(e,t,r){"use strict";r.d(t,{R:()=>i});var n=r(3241);function i(e,t){"function"==typeof console.debug&&(console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t),(0,n.W)({drained:null,type:"data",name:"warn",feature:"warn",data:{code:e,secondary:t}}))}},8990(e,t,r){"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},6389(e,t,r){"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout(()=>{i=clearTimeout(i)},t)),n||(clearTimeout(i),i=setTimeout(()=>{e.apply(this,r)},t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},1910(e,t,r){"use strict";r.d(t,{i:()=>a});var n=r(944);const i=new Map;function a(...e){return e.every(e=>{if(i.has(e))return i.get(e);const t="function"==typeof e?e.toString():"",r=t.includes("[native code]"),a=t.includes("nrWrapper");return r||a||(0,n.R)(64,e?.name||t),i.set(e,r),r})}},5289(e,t,r){"use strict";r.d(t,{GG:()=>s,Qr:()=>c,sB:()=>o});var n=r(3878),i=r(6389);function a(){return"undefined"==typeof document||"complete"===document.readyState}function s(e,t){if(a())return e();const r=(0,i.J)(e),s=setInterval(()=>{a()&&(clearInterval(s),r())},500);(0,n.sp)("load",r,t)}function o(e){if(a())return e();(0,n.DD)("DOMContentLoaded",e)}function c(e){if(a())return e();(0,n.sp)("popstate",e)}},384(e,t,r){"use strict";r.d(t,{Zm:()=>c,bQ:()=>d,dV:()=>u,pV:()=>l});var n=r(6154),i=r(1863),a=r(944),s=r(1910);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function u(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,s.i)(...Object.values(e.o))),e}function d(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,a.R)(69)}function l(){return function(){let e=c();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),u(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}r.d(t,["NT",0,o])},2843(e,t,r){"use strict";r.d(t,{G:()=>a,u:()=>i});var n=r(3878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)},r,i)}function a(e,t,r){(0,n.sp)("pagehide",e,t,r)}},9300(e,t,r){"use strict";r(860).K7.ajax;r.d(t,["mo",0,{NONE:"none",FAILURES:"failures",ALL:"all"}])},3969(e,t,r){"use strict";const n=r(860).K7.metrics;r.d(t,["TZ",0,n,"XG",0,"storeEventMetrics","xV",0,"storeSupportabilityMetrics"])},6630(e,t,r){"use strict";const n=r(860).K7.pageViewEvent;r.d(t,["T",0,n])},782(e,t,r){"use strict";const n=r(860).K7.pageViewTiming;r.d(t,["T",0,n])},4234(e,t,r){"use strict";r.d(t,{W:()=>i});var n=r(1687);class i{constructor(e,t){this.agentRef=e,this.ee=e?.ee,this.featureName=t,this.blocked=!1}deregisterDrain(){(0,n.x3)(this.agentRef,this.featureName)}}},7767(e,t,r){"use strict";var n=r(6154);r.d(t,["V",0,e=>n.RI&&!0===e?.privacy.cookies_enabled])},8362(e,t,r){"use strict";r.d(t,{d:()=>a});var n=r(9566),i=r(1741);class a extends i.W{agentIdentifier=(0,n.LA)(16)}},1741(e,t,r){"use strict";r.d(t,{W:()=>a});var n=r(944),i=r(4261);class a{#e(e,...t){if(this[e]!==a.prototype[e])return this[e](...t);(0,n.R)(35,e)}addPageAction(e,t){return this.#e(i.hG,e,t)}register(e){return this.#e(i.eY,e)}recordCustomEvent(e,t){return this.#e(i.fF,e,t)}setPageViewName(e,t){return this.#e(i.Fw,e,t)}setCustomAttribute(e,t,r){return this.#e(i.cD,e,t,r)}noticeError(e,t){return this.#e(i.o5,e,t)}setUserId(e,t=!1){return this.#e(i.Dl,e,t)}setApplicationVersion(e){return this.#e(i.nb,e)}setErrorHandler(e){return this.#e(i.bt,e)}addRelease(e,t){return this.#e(i.k6,e,t)}log(e,t){return this.#e("log",e,t)}start(){return this.#e("start")}finished(e){return this.#e(i.BL,e)}recordReplay(){return this.#e(i.CH)}pauseReplay(){return this.#e(i.Tb)}addToTrace(e){return this.#e(i.U2,e)}setCurrentRouteName(e){return this.#e(i.PA,e)}interaction(e){return this.#e(i.dT,e)}wrapLogger(e,t,r){return this.#e(i.Wb,e,t,r)}measure(e,t){return this.#e(i.V1,e,t)}consent(e){return this.#e(i.Pv,e)}}},4261(e,t,r){"use strict";r.d(t,["BL",0,"finished","CH",0,"recordReplay","Dl",0,"setUserId","Fw",0,"setPageViewName","PA",0,"setCurrentRouteName","Pv",0,"consent","Tb",0,"pauseReplay","U2",0,"addToTrace","V1",0,"measure","Wb",0,"wrapLogger","bt",0,"setErrorHandler","cD",0,"setCustomAttribute","dT",0,"interaction","eY",0,"register","fF",0,"recordCustomEvent","hG",0,"addPageAction","k6",0,"addRelease","nb",0,"setApplicationVersion","o5",0,"noticeError"])},1738(e,t,r){"use strict";r.d(t,{U:()=>l,Y:()=>d});var n=r(3241),i=r(9908),a=r(1863),s=r(944),o=r(3969),c=r(8362),u=r(860);function d(e,t,r,a){const d=a||r;!d||d[e]&&d[e]!==c.d.prototype[e]||(d[e]=function(){(0,i.p)(o.xV,["API/"+e+"/called"],void 0,u.K7.metrics,r.ee),(0,n.W)({drained:!!r.runtime?.activatedFeatures,type:"data",name:"api",feature:"api-"+e,data:{}});try{return t.apply(this,arguments)}catch(e){(0,s.R)(23,e)}})}function l(e,t,r,n,s){const o=e.info;null===r?delete o.jsAttributes[t]:o.jsAttributes[t]=r,(s||null===r)&&(0,i.p)("api-"+n,[(0,a.t)(),t,r],void 0,"session",e.ee)}},8374(e,t,r){r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},860(e,t,r){"use strict";const n="events",i="jserrors",a="browser/blobs",s="browser/logs",o={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations"},c={[o.pageViewEvent]:1,[o.pageViewTiming]:2,[o.metrics]:3,[o.jserrors]:4,[o.softNav]:5,[o.ajax]:6,[o.sessionTrace]:7,[o.sessionReplay]:8,[o.logging]:9,[o.genericEvents]:10},u={[o.pageViewEvent]:"rum",[o.pageViewTiming]:n,[o.ajax]:n,[o.softNav]:n,[o.metrics]:i,[o.jserrors]:i,[o.sessionTrace]:a,[o.sessionReplay]:a,[o.logging]:s,[o.genericEvents]:"ins"};r.d(t,["$J",0,u,"K7",0,o,"P3",0,c,"XX",0,i,"Yy",0,s,"df",0,a,"hg",0,"connect"])}};const t={};function r(n){const i=t[n];if(void 0!==i)return i.exports;const a=t[n]={exports:{}};return e[n](a,a.exports,r),a.exports}r.m=e,r.d=(e,t)=>{if(Array.isArray(t))for(var n=0;n<t.length;){var i=t[n++],a=t[n++];r.o(e,i)?0===a&&n++:0===a?Object.defineProperty(e,i,{enumerable:!0,value:t[n++]}):Object.defineProperty(e,i,{enumerable:!0,get:a})}else for(var i in t)r.o(t,i)&&!r.o(e,i)&&Object.defineProperty(e,i,{enumerable:!0,get:t[i]})},r.f={},r.e=e=>Promise.all(Object.keys(r.f).reduce((t,n)=>(r.f[n](e,t),t),[])),r.u=e=>"nr-rum-1.324.0.min.js",r.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),(()=>{const e={},t="NRBA-1.324.0.PROD:";r.l=(n,i,a,s)=>{if(e[n])return void e[n].push(i);let o,c;if(void 0!==a){const e=document.getElementsByTagName("script");for(var u=0;u<e.length;u++){const r=e[u];if(r.getAttribute("src")==n||r.getAttribute("data-webpack")==t+a){o=r;break}}}if(!o){c=!0;var d={296:"sha512-Pjy0Jxmo6oAG6oGKLKrf8x8xyaSM1NuL7vLGv9xRLEw0hrpERDruLI5RxlCHNy0NpMyEPWhlC34zujXIR3qJPQ=="};o=document.createElement("script"),o.charset="utf-8",r.nc&&o.setAttribute("nonce",r.nc),o.setAttribute("data-webpack",t+a),o.src=n,0!==o.src.indexOf(window.location.origin+"/")&&(o.crossOrigin="anonymous"),d[s]&&(o.integrity=d[s])}e[n]=[i];const l=(t,r)=>{o.onerror=o.onload=null,clearTimeout(f);const i=e[n];if(delete e[n],o.parentNode?.removeChild(o),i?.forEach(e=>e(r)),t)return t(r)},f=setTimeout(l.bind(null,void 0,{type:"timeout",target:o}),12e4);o.onerror=l.bind(null,o.onerror),o.onload=l.bind(null,o.onload),c&&document.head.appendChild(o)}})(),r.r=e=>{Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.p="https://js-agent.newrelic.com/",(()=>{const e={374:0,840:0};r.f.j=(t,n)=>{let i=r.o(e,t)?e[t]:void 0;if(0!==i)if(i)n.push(i[2]);else{const a=new Promise((r,n)=>i=e[t]=[r,n]);n.push(i[2]=a);const s=r.p+r.u(t),o=new Error,c=n=>{if(r.o(e,t)&&(i=e[t],0!==i&&(e[t]=void 0),i)){const e=n&&("load"===n.type?"missing":n.type),r=n&&n.target&&n.target.src;o.message="Loading chunk "+t+" failed: ("+e+": "+r+")",o.name="ChunkLoadError",o.type=e,o.request=r,i[1](o)}};r.l(s,c,"chunk-"+t,t)}};const t=(t,n)=>{let[i,a,s]=n;var o,c,u=0;if(i.some(t=>0!==e[t])){for(o in a)r.o(a,o)&&(r.m[o]=a[o]);if(s)s(r)}for(t&&t(n);u<i.length;u++)c=i[u],r.o(e,c)&&e[c]&&e[c][0](),e[c]=0},n=self["webpackChunk:NRBA-1.324.0.PROD"]=self["webpackChunk:NRBA-1.324.0.PROD"]||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})(),(()=>{"use strict";r(8374);var e=r(8362),t=r(860);const n=Object.values(t.K7);var i=r(384),a=r(1741);var s=r(2555),o=r(981);t.K7.genericEvents,o.R.PA,o.R.UA,o.R.BP;const c={RESOURCES:"experimental.resources",REGISTER:"register"};var u=r(9300);const d=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var l=r(2614),f=r(944),g=r(8122);const p="[data-nr-mask]",m=e=>(0,g.a)(e,(()=>{const e={feature_flags:[],experimental:{register:!1,resources:!1,iframe_bridge:!1,iframe_domains:[]},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0,capture_payloads:u.mo.NONE},api:{register:{get enabled(){return e.feature_flags.includes(c.REGISTER)||e.experimental.register},set enabled(t){e.experimental.register=t},duplicate_data_to_container:!1,get allow_iframe_bridge(){return e.feature_flags.includes(c.IFRAME_BRIDGE)||e.experimental.iframe_bridge},set allow_iframe_bridge(t){e.experimental.iframe_bridge=t},get iframe_domains(){return e.experimental.iframe_domains},set iframe_domains(t){Array.isArray(t)?e.experimental.iframe_domains=t:(0,f.R)(1,t)}}},browser_consent_mode:{enabled:!1},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{capture_marks:!1,capture_measures:!1,capture_detail:!0,resources:{get enabled(){return e.feature_flags.includes(c.RESOURCES)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:l.wk,inactiveMs:l.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){d(t)?e.mask_selector="".concat(t,",").concat(p):""===t||null===t?e.mask_selector=p:(0,f.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){d(t)?e.block_selector+=",".concat(t):""!==t&&(0,f.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,f.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0,elementAttributes:["id","className","tagName","type"]},web_sockets:{enabled:!1}}})());var h=r(6154),v=r(9324);let b=0;const y={buildEnv:"PROD",distMethod:"CDN",version:v.xv,originTime:h.WN},_={consented:!1},w={activatedFeatures:void 0,appMetadata:{},configured:!1,get consented(){return this.session?.state?.consent||_.consented},set consented(e){_.consented=e},customTransaction:void 0,denyList:[],disabled:!1,drainRegistry:new Map,connector:void 0,harvester:void 0,v2Target:void 0,isolatedBacklog:!1,isRecording:!1,loaderType:void 0,maxBytes:3e4,obfuscator:void 0,onerror:void 0,ptid:void 0,releaseIds:{},session:void 0,timeKeeper:void 0,registeredEntities:[],jsAttributesMetadata:{bytes:0},get harvestCount(){return++b},listeningForIframeMessages:!1},R="BA";var A=r(7836),x=r(3241);const E={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0};var S=r(9908);const k="newrelic-iframe-";function T(e,t={},n,o){let{init:c,info:u,loader_config:d,runtime:l={},exposed:f=!0}=t;if(!u){const e=(0,i.pV)();c=e.init,u=e.info,d=e.loader_config}var p;e.init=m(c||{}),e.loader_config=(p=d||{},(0,g.a)(p,E)),u.jsAttributes??={},h.bv&&(u.jsAttributes.isWorker=!0),e.info=(0,s.D)(u);const v=e.init;e.runtime??=(e=>{const t=(0,g.a)(e,w),r=Object.keys(y).reduce((e,t)=>(e[t]={value:y[t],writable:!1,configurable:!0,enumerable:!0},e),{});return Object.defineProperties(t,r)})(l),e.runtime.v2Target??={type:R,instance:e.agentIdentifier,get id(){return e.runtime.appMetadata?.agents?.[0]?.entityGuid},get attributes(){return{"entity.guid":this.id,appId:e.info.applicationID}}},v.proxy.assets&&(e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e})(v.proxy.assets),e.runtime.configured||(Object.defineProperty(e,"beacons",{get:()=>[e.info.beacon,e.info.errorBeacon,e.init.proxy.assets,e.init.proxy.beacon].filter(Boolean)}),Object.defineProperty(e.runtime,"denyList",{get:()=>[...e.init.ajax.deny_list||[],...e.init.ajax.block_internal?e.beacons:[]]}),e.runtime.ptid=e.agentIdentifier,function(e){const t=(0,i.pV)();Object.getOwnPropertyNames(a.W.prototype).forEach(r=>{const n=a.W.prototype[r];if("function"!=typeof n||"constructor"===n)return;let i=t[r];e[r]&&!1!==e.exposed&&"micro-agent"!==e.runtime?.loaderType&&(t[r]=(...t)=>{const n=e[r](...t);return i?i(...t):n})})}(e),e.runtime.loaderType=n,e.ee=A.ee.get(e.agentIdentifier),e.exposed=f,(0,x.W)({drained:!!e.runtime.activatedFeatures,type:"lifecycle",name:"initialize",feature:void 0,data:e.config}),e.init.api.register.allow_iframe_bridge&&h.gm.addEventListener("message",t=>{"string"==typeof t.data?.type&&t.data.type.startsWith(k)&&(0,S.p)("iframe-message",[t],void 0,"IFRAME",e.ee)}),e.runtime.configured=!0)}var j=r(1863),P=r(4261),N=r(1738);var O=r(1687),M=r(4234),I=r(5289),D=r(7767);function V(e){return!!(0,i.dV)().o.MO&&(0,D.V)(e)&&!0===e?.session_trace.enabled}var W=r(6389),B=r(7699);const C=new WeakSet,K=new WeakMap;class U extends M.W{constructor(e,t){super(e,t),this.abortHandler=void 0,this.featAggregate=void 0,this.loadedSuccessfully=void 0,this.onAggregateImported=new Promise(e=>{this.loadedSuccessfully=e}),this.deferred=Promise.resolve(),!1===e.init[this.featureName].autoStart?this.deferred=new Promise((t,r)=>{this.ee.on("manual-start-all",(0,W.J)(()=>{(0,O.Ak)(e,this.featureName),t()}))}):(0,O.Ak)(e,t)}importAggregator(e,t,n={}){if(this.featAggregate)return;const i=async()=>{if(await this.deferred,this.#t(e),!(0,s.f)(e.info))return(0,f.R)(43),e.ee.abort(),void this.loadedSuccessfully(!1);try{await async function(e,t,n){if(K.has(e))return K.get(e);const i=(async()=>{if((0,D.V)(e.init))try{const{setupAgentSession:t}=await r.e(296).then(r.bind(r,1768));t(e)}catch(e){(0,f.R)(20,e),t.emit("internal-error",[e]),(0,S.p)(B.qh,[e],void 0,n,t)}if(e.init.api.register.allow_iframe_bridge)try{const{setupIframeMFEMessageListener:t}=await Promise.resolve().then(function(){const e=new Error("Cannot find module '../../loaders/configure/iframe-message-handler'");throw e.code="MODULE_NOT_FOUND",e});t(e)}catch(e){(0,f.R)(23,e)}const[{Connector:i},{Harvester:a}]=await Promise.all([r.e(296).then(r.bind(r,6589)),r.e(296).then(r.bind(r,5237))]);e.runtime.connector=new i(e),e.runtime.harvester=new a(e);const s=Object.values(e.features).filter(t=>e.runtime.drainRegistry.has(t.featureName));Promise.all(s.map(e=>e.onAggregateImported)).then(()=>e.runtime.harvester.startTimer())})();K.set(e,i),await i}(e,this.ee,this.featureName)}catch(e){return(0,f.R)(79,e),this.ee.abort(),void this.loadedSuccessfully(!1)}try{if(!this.#r(this.featureName,e.runtime.session,e.init))return this.abortHandler?.(),(0,O.Ze)(this.agentRef,this.featureName),void this.loadedSuccessfully(!1);const{Aggregate:r}=await t();this.featAggregate=new r(e,n),e.runtime.harvester.initializedAggregates.push(this.featAggregate),this.loadedSuccessfully(!0)}catch(e){(0,f.R)(34,e),this.abortHandler?.(),(0,O.Ze)(this.agentRef,this.featureName,!0),this.loadedSuccessfully(!1)}};h.RI?(0,I.GG)(()=>i(),!0):i()}#r(e,r,n){if(this.blocked)return!1;switch(e){case t.K7.sessionReplay:return V(n)&&!!r;case t.K7.sessionTrace:return!!r;default:return!0}}#t(e){if(!C.has(e)&&(C.add(e),!(0,s.f)(e.info))){const t=(0,i.pV)();let r={...t.info?.jsAttributes};try{r={...r,...e.info?.jsAttributes}}catch(e){}T(e,{...t,info:{...t.info,jsAttributes:r},runtime:e.runtime},e.runtime.loaderType)}}}var L=r(6630);class F extends U{static featureName=L.T;constructor(e){var t;super(e,L.T),this.setupInspectionEvents(),t=e,(0,N.Y)(P.Fw,function(e,r){"string"==typeof e&&("/"!==e.charAt(0)&&(e="/"+e),t.runtime.customTransaction=(r||"http://custom.transaction")+e,(0,S.p)("api-"+P.Fw,[(0,j.t)()],void 0,void 0,t.ee))},t),this.importAggregator(e,()=>e.init.feature_flags.includes("rum_v2")?r.e(296).then(r.bind(r,908)):r.e(296).then(r.bind(r,7927)))}setupInspectionEvents(){const e=(e,t)=>{e&&(0,x.W)({timeStamp:e.timeStamp,loaded:"complete"===e.target.readyState,type:"window",name:t,data:e.target.location+""})};(0,I.sB)(t=>{e(t,"DOMContentLoaded")}),(0,I.GG)(t=>{e(t,"load")}),(0,I.Qr)(t=>{e(t,"navigate")}),this.ee.on(l.tS.UPDATE,(e,t)=>{(0,x.W)({type:"lifecycle",name:"session",data:t})})}}class G extends e.d{constructor(e){var t;(super(),h.gm)?(this.features={},(0,i.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(F),T(this,e,e.loaderType||"agent"),t=this,(0,N.Y)(P.cD,function(e,r,n=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof r)||null===r)return(0,N.U)(t,e,r,P.cD,n);(0,f.R)(40,typeof r)}else(0,f.R)(39,typeof e)},t),function(e){(0,N.Y)(P.Dl,function(t,r=!1){if("string"!=typeof t&&null!==t)return void(0,f.R)(41,typeof t);const n=e.info.jsAttributes["enduser.id"];r&&null!=n&&n!==t?(0,S.p)("api-setUserIdAndResetSession",[t],void 0,"session",e.ee):(0,N.U)(e,"enduser.id",t,P.Dl,!0)},e)}(this),function(e){(0,N.Y)(P.nb,function(t){if("string"==typeof t||null===t)return(0,N.U)(e,"application.version",t,P.nb,!1);(0,f.R)(42,typeof t)},e)}(this),function(e){(0,N.Y)("start",function(){e.ee.emit("manual-start-all")},e)}(this),function(e){(0,N.Y)(P.Pv,function(t=!0){if("boolean"==typeof t){if((0,S.p)("api-"+P.Pv,[t],void 0,"session",e.ee),e.runtime.consented=t,t){const t=e.features.page_view_event;t.onAggregateImported.then(e=>{const r=t.featAggregate;e&&!r.sentRum&&r.sendRum?.()})}}else(0,f.R)(65,typeof t)},e)}(this),this.run()):(0,f.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}get api(){return this}run(){try{const e=function(e){const t={};return n.forEach(r=>{t[r]=!!e[r]?.enabled}),t}(this.init),r=[...this.desiredFeatures],i=this.init.feature_flags.includes("rum_v2");r.sort((e,r)=>t.P3[e.featureName]-t.P3[r.featureName]),r.forEach(r=>{if(!e[r.featureName]&&(i||r.featureName!==t.K7.pageViewEvent))return;const n=function(e){switch(e){case t.K7.ajax:return[t.K7.jserrors];case t.K7.sessionTrace:return[t.K7.ajax,t.K7.pageViewEvent];case t.K7.sessionReplay:return[t.K7.sessionTrace];case t.K7.pageViewTiming:return[t.K7.pageViewEvent];default:return[]}}(r.featureName).filter(e=>!(e in this.features));n.length>0&&(0,f.R)(36,{targetFeature:r.featureName,missingDependencies:n}),this.features[r.featureName]=new r(this)})}catch(e){(0,f.R)(22,e);for(const e in this.features)this.features[e].abortHandler?.();const t=(0,i.Zm)();delete t.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return t.ee.get(this.agentIdentifier).abort(),!1}}}var H=r(2843),z=r(782);class Y extends U{static featureName=z.T;constructor(e){super(e,z.T),h.RI&&((0,H.u)(()=>(0,S.p)("docHidden",[(0,j.t)()],void 0,z.T,this.ee),!0),(0,H.G)(()=>(0,S.p)("winPagehide",[(0,j.t)()],void 0,z.T,this.ee)),this.importAggregator(e,()=>r.e(296).then(r.bind(r,9981))))}}var Z=r(3969);class q extends U{static featureName=Z.TZ;constructor(e){super(e,Z.TZ),this.importAggregator(e,()=>r.e(296).then(r.bind(r,9623)))}}new G({features:[F,Y,q],loaderType:"lite"})})()})();</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+    <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/mercer/assets/fonts/390D70_0_0.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/mercer/assets/fonts/390D70_1_0.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/mercer/assets/fonts/390D70_2_0.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/mercer/assets/fonts/390D70_3_0.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/mercer/assets/fonts/crimson-text-v8-latin-regular.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff" href="/wp-content/themes/mercer/assets/fonts/ikes4.woff" crossorigin>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f76800">
+    <meta name="msapplication-TileColor" content="#3f3f41">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NMLQ2X');</script>
+    <!-- End Google Tag Manager -->
+
+    <title>Awards and Recognitions | Mercer University</title>
+
+<!-- The SEO Framework by Sybre Waaijer -->
+<link rel="canonical" href="https://www.mercer.edu/about-mercer/awards-recognitions/" />
+<meta name="description" content="Our Bears put their best foot forward every day, and it shows in the headlines and achievements that come rolling in year after year." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Mercer University" />
+<meta property="og:title" content="Awards and Recognitions | Mercer University" />
+<meta property="og:description" content="Our Bears put their best foot forward every day, and it shows in the headlines and achievements that come rolling in year after year. Mercer students and faculty go beyond striving to reach their…" />
+<meta property="og:url" content="https://www.mercer.edu/about-mercer/awards-recognitions/" />
+<meta property="og:image" content="https://www.mercer.edu/wp-content/uploads/2026/01/26-hero-bg.jpg" />
+<meta property="og:image:width" content="1280" />
+<meta property="og:image:height" content="720" />
+<meta property="og:image:alt" content="Macon campus aerial" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Awards and Recognitions | Mercer University" />
+<meta name="twitter:description" content="Our Bears put their best foot forward every day, and it shows in the headlines and achievements that come rolling in year after year. Mercer students and faculty go beyond striving to reach their…" />
+<meta name="twitter:image" content="https://www.mercer.edu/wp-content/uploads/2026/01/26-hero-bg.jpg" />
+<meta name="twitter:image:alt" content="Macon campus aerial" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.mercer.edu/#/schema/WebSite","url":"https://www.mercer.edu/","name":"Mercer University","inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.mercer.edu/search/{search_term_string}/"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://www.mercer.edu/about-mercer/awards-recognitions/","url":"https://www.mercer.edu/about-mercer/awards-recognitions/","name":"Awards and Recognitions | Mercer University","description":"Our Bears put their best foot forward every day, and it shows in the headlines and achievements that come rolling in year after year.","inLanguage":"en-US","isPartOf":{"@id":"https://www.mercer.edu/#/schema/WebSite"},"breadcrumb":{"@type":"BreadcrumbList","@id":"https://www.mercer.edu/#/schema/BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":"https://www.mercer.edu/","name":"Mercer University"},{"@type":"ListItem","position":2,"item":"https://www.mercer.edu/about-mercer/","name":"About | Mercer University History, Facts and Figures"},{"@type":"ListItem","position":3,"name":"Awards and Recognitions"}]},"potentialAction":{"@type":"ReadAction","target":"https://www.mercer.edu/about-mercer/awards-recognitions/"}}]}</script>
+<!-- / The SEO Framework by Sybre Waaijer | 12.10ms meta | 0.32ms boot -->
+
+<link rel="alternate" type="application/rss+xml" title="Mercer University &raquo; Feed" href="https://www.mercer.edu/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Mercer University &raquo; Comments Feed" href="https://www.mercer.edu/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.mercer.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.mercer.edu%2Fabout-mercer%2Fawards-recognitions%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.mercer.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.mercer.edu%2Fabout-mercer%2Fawards-recognitions%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel='stylesheet' id='sbi-tokens-local-css' href='https://www.mercer.edu/wp-content/plugins/instagram-feed/assets/tokens/sb-tokens-local.css?ver=6.14.0' media='all' />
+<link rel='stylesheet' id='sbi_styles-css' href='https://www.mercer.edu/wp-content/plugins/instagram-feed/css/sbi-styles.min.css?ver=6.14.0' media='all' />
+<style id="wp-block-accordion-inline-css">
+.wp-block-accordion{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/accordion/style.min.css */
+</style>
+<style id="wp-block-accordion-item-inline-css">
+.wp-block-accordion-item.is-open>.wp-block-accordion-heading .wp-block-accordion-heading__toggle-icon{transform:rotate(45deg)}@media (prefers-reduced-motion:no-preference){.wp-block-accordion-item{transition:grid-template-rows .3s ease-out}.wp-block-accordion-item>.wp-block-accordion-heading .wp-block-accordion-heading__toggle-icon{transition:transform .2s ease-in-out}}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/accordion-item/style.min.css */
+</style>
+<style id="wp-block-archives-inline-css">
+.wp-block-archives{box-sizing:border-box}.wp-block-archives-dropdown label{display:block}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/archives/style.min.css */
+</style>
+<style id="wp-block-avatar-inline-css">
+.wp-block-avatar{line-height:0}.wp-block-avatar,.wp-block-avatar img{box-sizing:border-box}.wp-block-avatar.aligncenter{text-align:center}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/avatar/style.min.css */
+</style>
+<style id="wp-block-breadcrumbs-inline-css">
+.wp-block-breadcrumbs{box-sizing:border-box}.wp-block-breadcrumbs ol{flex-wrap:wrap;list-style:none}.wp-block-breadcrumbs li,.wp-block-breadcrumbs ol{align-items:center;display:flex;margin:0;padding:0}.wp-block-breadcrumbs li:not(:last-child):after{content:var(--separator,"/")/"";margin:0 .5em;opacity:.7}.wp-block-breadcrumbs span{color:inherit}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/breadcrumbs/style.min.css */
+</style>
+<link rel='stylesheet' id='wp-block-button-css' href='https://www.mercer.edu/wp-includes/blocks/button/style.min.css?ver=7.1.3' media='all' />
+<style id="wp-block-calendar-inline-css">
+.wp-block-calendar{text-align:center}.wp-block-calendar td,.wp-block-calendar th{border:1px solid;padding:.25em}.wp-block-calendar th{font-weight:400}.wp-block-calendar caption{background-color:inherit}.wp-block-calendar table{border-collapse:collapse;width:100%}.wp-block-calendar table.has-background th{background-color:inherit}.wp-block-calendar table.has-text-color th{color:inherit}.wp-block-calendar :where(table:not(.has-text-color)){color:#40464d}.wp-block-calendar :where(table:not(.has-text-color)) td,.wp-block-calendar :where(table:not(.has-text-color)) th{border-color:#ddd}:where(.wp-block-calendar table:not(.has-background) th){background:#ddd}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/calendar/style.min.css */
+</style>
+<style id="wp-block-categories-inline-css">
+.wp-block-categories{box-sizing:border-box}.wp-block-categories.alignleft{margin-right:2em}.wp-block-categories.alignright{margin-left:2em}.wp-block-categories.wp-block-categories-dropdown.aligncenter{text-align:center}.wp-block-categories .wp-block-categories__label:not(.screen-reader-text){display:block;width:100%}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/categories/style.min.css */
+</style>
+<style id="wp-block-comment-author-name-inline-css">
+.wp-block-comment-author-name{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/comment-author-name/style.min.css */
+</style>
+<style id="wp-block-comment-content-inline-css">
+.comment-awaiting-moderation{display:block;font-size:.875em;line-height:1.5}.wp-block-comment-content{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/comment-content/style.min.css */
+</style>
+<style id="wp-block-comment-date-inline-css">
+.wp-block-comment-date{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/comment-date/style.min.css */
+</style>
+<style id="wp-block-comment-edit-link-inline-css">
+.wp-block-comment-edit-link{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/comment-edit-link/style.min.css */
+</style>
+<style id="wp-block-comment-reply-link-inline-css">
+.wp-block-comment-reply-link{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/comment-reply-link/style.min.css */
+</style>
+<style id="wp-block-comment-template-inline-css">
+.wp-block-comment-template{box-sizing:border-box;list-style:none;margin-bottom:0;max-width:100%;padding:0}.wp-block-comment-template li{clear:both}.wp-block-comment-template ol{list-style:none;margin-bottom:0;max-width:100%;padding-left:2rem}.wp-block-comment-template.alignleft{float:left}.wp-block-comment-template.aligncenter{margin-left:auto;margin-right:auto;width:-moz-fit-content;width:fit-content}.wp-block-comment-template.alignright{float:right}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/comment-template/style.min.css */
+</style>
+<style id="wp-block-comments-inline-css">
+.wp-block-post-comments{box-sizing:border-box}.wp-block-post-comments .alignleft{float:left}.wp-block-post-comments .alignright{float:right}.wp-block-post-comments .navigation:after{clear:both;content:"";display:table}.wp-block-post-comments .commentlist{clear:both;list-style:none;margin:0;padding:0}.wp-block-post-comments .commentlist .comment{min-height:2.25em;padding-left:3.25em}.wp-block-post-comments .commentlist .comment p{font-size:1em;line-height:1.8;margin:1em 0}.wp-block-post-comments .commentlist .children{list-style:none;margin:0;padding:0}.wp-block-post-comments .comment-author{line-height:1.5}.wp-block-post-comments .comment-author .avatar{border-radius:1.5em;display:block;float:left;height:2.5em;margin-right:.75em;margin-top:.5em;width:2.5em}.wp-block-post-comments .comment-author cite{font-style:normal}.wp-block-post-comments .comment-meta{font-size:.875em;line-height:1.5}.wp-block-post-comments .comment-meta b{font-weight:400}.wp-block-post-comments .comment-meta .comment-awaiting-moderation{display:block;margin-bottom:1em;margin-top:1em}.wp-block-post-comments .comment-body .commentmetadata{font-size:.875em}.wp-block-post-comments .comment-form-author label,.wp-block-post-comments .comment-form-comment label,.wp-block-post-comments .comment-form-email label,.wp-block-post-comments .comment-form-url label{display:block;margin-bottom:.25em}.wp-block-post-comments .comment-form input:not([type=submit]):not([type=checkbox]),.wp-block-post-comments .comment-form textarea{box-sizing:border-box;display:block;width:100%}.wp-block-post-comments .comment-form-cookies-consent{display:flex;gap:.25em}.wp-block-post-comments .comment-form-cookies-consent #wp-comment-cookies-consent{margin-top:.35em}.wp-block-post-comments .comment-reply-title{margin-bottom:0}.wp-block-post-comments .comment-reply-title :where(small){font-size:var(--wp--preset--font-size--medium,smaller);margin-left:.5em}.wp-block-post-comments .reply{font-size:.875em;margin-bottom:1.4em}.wp-block-post-comments input:not([type=submit]),.wp-block-post-comments textarea{border:1px solid #949494;font-family:inherit;font-size:1em}.wp-block-post-comments input:not([type=submit]):not([type=checkbox]),.wp-block-post-comments textarea{padding:calc(.667em + 2px)}:where(.wp-block-post-comments input[type=submit]){border:none}.wp-block-comments{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/comments/style.min.css */
+</style>
+<style id="wp-block-comments-pagination-inline-css">
+.wp-block-comments-pagination>.wp-block-comments-pagination-next,.wp-block-comments-pagination>.wp-block-comments-pagination-numbers,.wp-block-comments-pagination>.wp-block-comments-pagination-previous{font-size:inherit}.wp-block-comments-pagination .wp-block-comments-pagination-previous-arrow{display:inline-block;margin-right:1ch}.wp-block-comments-pagination .wp-block-comments-pagination-previous-arrow:not(.is-arrow-chevron){transform:scaleX(1)}.wp-block-comments-pagination .wp-block-comments-pagination-next-arrow{display:inline-block;margin-left:1ch}.wp-block-comments-pagination .wp-block-comments-pagination-next-arrow:not(.is-arrow-chevron){transform:scaleX(1)}.wp-block-comments-pagination.aligncenter{justify-content:center}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/comments-pagination/style.min.css */
+</style>
+<link rel='stylesheet' id='wp-block-cover-css' href='https://www.mercer.edu/wp-includes/blocks/cover/style.min.css?ver=7.1.3' media='all' />
+<style id="wp-block-details-inline-css">
+.wp-block-details{box-sizing:border-box}.wp-block-details summary{cursor:pointer}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/details/style.min.css */
+</style>
+<style id="wp-block-file-inline-css">
+.wp-block-file{box-sizing:border-box}.wp-block-file:not(.wp-element-button){font-size:.8em}.wp-block-file.aligncenter{text-align:center}.wp-block-file.alignright{text-align:right}.wp-block-file *+.wp-block-file__button{margin-left:.75em}:where(.wp-block-file){margin-bottom:1.5em}.wp-block-file__embed{margin-bottom:1em}:where(.wp-block-file__button){border-radius:2em;display:inline-block;padding:.5em 1em}:where(.wp-block-file__button):where(a):active,:where(.wp-block-file__button):where(a):focus,:where(.wp-block-file__button):where(a):hover,:where(.wp-block-file__button):where(a):visited{box-shadow:none;color:#fff;opacity:.85;text-decoration:none}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/file/style.min.css */
+</style>
+<style id="wp-block-footnotes-inline-css">
+.editor-styles-wrapper,.entry-content{counter-reset:footnotes}a[data-fn].fn{counter-increment:footnotes;display:inline-flex;font-size:smaller;text-decoration:none;text-indent:-9999999px;vertical-align:super}a[data-fn].fn:after{content:"[" counter(footnotes) "]";float:left;text-indent:0}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/footnotes/style.min.css */
+</style>
+<link rel='stylesheet' id='wp-block-gallery-css' href='https://www.mercer.edu/wp-includes/blocks/gallery/style.min.css?ver=7.1.3' media='all' />
+<style id="wp-block-heading-inline-css">
+h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/heading/style.min.css */
+</style>
+<style id="wp-block-icon-inline-css">
+.wp-block-icon{line-height:0}.wp-block-icon.aligncenter{display:flex;justify-content:center}.wp-block-icon svg{fill:currentColor;box-sizing:border-box}.wp-block-icon svg.is-flip-horizontal{transform:scaleX(-1)}.wp-block-icon svg.is-flip-vertical{transform:scaleY(-1)}.wp-block-icon svg.is-flip-horizontal.is-flip-vertical{transform:scaleX(-1) scaleY(-1)}:where(.wp-block-icon) svg{height:100%;width:100%}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/icon/style.min.css */
+</style>
+<link rel='stylesheet' id='wp-block-image-css' href='https://www.mercer.edu/wp-includes/blocks/image/style.min.css?ver=7.1.3' media='all' />
+<style id="wp-block-latest-comments-inline-css">
+:where(.wp-block-latest-comments){padding-left:0}ol.wp-block-latest-comments{box-sizing:border-box;margin-left:0}:where(.wp-block-latest-comments:not([style*=line-height] .wp-block-latest-comments__comment)){line-height:1.1}:where(.wp-block-latest-comments:not([style*=line-height] .wp-block-latest-comments__comment-excerpt p)){line-height:1.8}.has-dates :where(.wp-block-latest-comments:not([style*=line-height])),.has-excerpts :where(.wp-block-latest-comments:not([style*=line-height])){line-height:1.5}.wp-block-latest-comments__comment{list-style:none;margin-bottom:1em}.has-avatars .wp-block-latest-comments__comment{list-style:none;min-height:2.25em}.has-avatars .wp-block-latest-comments__comment .wp-block-latest-comments__comment-excerpt,.has-avatars .wp-block-latest-comments__comment .wp-block-latest-comments__comment-meta{margin-left:3.25em}.wp-block-latest-comments__comment-excerpt p{font-size:.875em;margin:.36em 0 1.4em}.wp-block-latest-comments__comment-date{display:block;font-size:.75em}.wp-block-latest-comments .avatar,.wp-block-latest-comments__comment-avatar{border-radius:1.5em;display:block;float:left;height:2.5em;margin-right:.75em;width:2.5em}.wp-block-latest-comments[class*=-font-size] a,.wp-block-latest-comments[style*=font-size] a{font-size:inherit}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/latest-comments/style.min.css */
+</style>
+<style id="wp-block-latest-posts-inline-css">
+.wp-block-latest-posts{box-sizing:border-box}.wp-block-latest-posts.alignleft{margin-right:2em}.wp-block-latest-posts.alignright{margin-left:2em}.wp-block-latest-posts.wp-block-latest-posts__list{list-style:none}.wp-block-latest-posts.wp-block-latest-posts__list li{clear:both;overflow-wrap:break-word}.wp-block-latest-posts.is-grid:not(.is-layout-grid){display:flex;flex-wrap:wrap}.wp-block-latest-posts.is-grid:not(.is-layout-grid) li{margin:0 1.25em 1.25em 0;width:100%}@media (min-width:600px){.wp-block-latest-posts.columns-2:not(.is-layout-grid) li{width:calc(50% - .625em)}.wp-block-latest-posts.columns-2:not(.is-layout-grid) li:nth-child(2n){margin-right:0}.wp-block-latest-posts.columns-3:not(.is-layout-grid) li{width:calc(33.33333% - .83333em)}.wp-block-latest-posts.columns-3:not(.is-layout-grid) li:nth-child(3n){margin-right:0}.wp-block-latest-posts.columns-4:not(.is-layout-grid) li{width:calc(25% - .9375em)}.wp-block-latest-posts.columns-4:not(.is-layout-grid) li:nth-child(4n){margin-right:0}.wp-block-latest-posts.columns-5:not(.is-layout-grid) li{width:calc(20% - 1em)}.wp-block-latest-posts.columns-5:not(.is-layout-grid) li:nth-child(5n){margin-right:0}.wp-block-latest-posts.columns-6:not(.is-layout-grid) li{width:calc(16.66667% - 1.04167em)}.wp-block-latest-posts.columns-6:not(.is-layout-grid) li:nth-child(6n){margin-right:0}}@media (max-width:600px){.wp-block-latest-posts-is-layout-grid[class*=columns-]:not(.has-native-responsive-grid){grid-template-columns:1fr}}:root :where(.wp-block-latest-posts.is-grid){padding:0}:root :where(.wp-block-latest-posts.wp-block-latest-posts__list){padding-left:0}.wp-block-latest-posts__post-author,.wp-block-latest-posts__post-date{display:block;font-size:.8125em}.wp-block-latest-posts__post-excerpt,.wp-block-latest-posts__post-full-content{margin-bottom:1em;margin-top:.5em}.wp-block-latest-posts__featured-image a{display:inline-block}.wp-block-latest-posts__featured-image img{height:auto;max-width:100%;width:auto}.wp-block-latest-posts__featured-image.alignleft{float:left;margin-right:1em}.wp-block-latest-posts__featured-image.alignright{float:right;margin-left:1em}.wp-block-latest-posts__featured-image.aligncenter{margin-bottom:1em;text-align:center}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/latest-posts/style.min.css */
+</style>
+<style id="wp-block-list-inline-css">
+ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/list/style.min.css */
+</style>
+<style id="wp-block-loginout-inline-css">
+.wp-block-loginout{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/loginout/style.min.css */
+</style>
+<style id="wp-block-media-text-inline-css">
+.wp-block-media-text{box-sizing:border-box;direction:ltr;display:grid;grid-template-columns:50% 1fr;grid-template-rows:auto}.wp-block-media-text.has-media-on-the-right{grid-template-columns:1fr 50%}.wp-block-media-text.is-vertically-aligned-top>.wp-block-media-text__content,.wp-block-media-text.is-vertically-aligned-top>.wp-block-media-text__media{align-self:start}.wp-block-media-text.is-vertically-aligned-center>.wp-block-media-text__content,.wp-block-media-text.is-vertically-aligned-center>.wp-block-media-text__media,.wp-block-media-text>.wp-block-media-text__content,.wp-block-media-text>.wp-block-media-text__media{align-self:center}.wp-block-media-text.is-vertically-aligned-bottom>.wp-block-media-text__content,.wp-block-media-text.is-vertically-aligned-bottom>.wp-block-media-text__media{align-self:end}.wp-block-media-text>.wp-block-media-text__media{grid-column:1;grid-row:1;margin:0}.wp-block-media-text>.wp-block-media-text__content{direction:ltr;grid-column:2;grid-row:1;padding:0 8%;word-break:break-word}.wp-block-media-text.has-media-on-the-right>.wp-block-media-text__media{grid-column:2;grid-row:1}.wp-block-media-text.has-media-on-the-right>.wp-block-media-text__content{grid-column:1;grid-row:1}.wp-block-media-text__media a{display:block}.wp-block-media-text__media img,.wp-block-media-text__media video{height:auto;max-width:unset;vertical-align:middle;width:100%}.wp-block-media-text.is-image-fill>.wp-block-media-text__media{background-size:cover;height:100%;min-height:250px}.wp-block-media-text.is-image-fill>.wp-block-media-text__media>a{display:block;height:100%}.wp-block-media-text.is-image-fill>.wp-block-media-text__media img{clip:rect(0,0,0,0);border:0;height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.wp-block-media-text.is-image-fill-element>.wp-block-media-text__media{height:100%;min-height:250px;position:relative}.wp-block-media-text.is-image-fill-element>.wp-block-media-text__media>a{display:block;height:100%}.wp-block-media-text.is-image-fill-element>.wp-block-media-text__media img{height:100%;-o-object-fit:cover;object-fit:cover;position:absolute;width:100%}@media (max-width:600px){.wp-block-media-text.is-stacked-on-mobile{grid-template-columns:100%!important}.wp-block-media-text.is-stacked-on-mobile>.wp-block-media-text__media{grid-column:1;grid-row:1}.wp-block-media-text.is-stacked-on-mobile>.wp-block-media-text__content{grid-column:1;grid-row:2}}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/media-text/style.min.css */
+</style>
+<link rel='stylesheet' id='wp-block-navigation-css' href='https://www.mercer.edu/wp-includes/blocks/navigation/style.min.css?ver=7.1.3' media='all' />
+<style id="wp-block-navigation-link-inline-css">
+.wp-block-navigation .wp-block-navigation-item__label{overflow-wrap:break-word}.wp-block-navigation .wp-block-navigation-item__description{display:none}.link-ui-tools{outline:1px solid #f0f0f0;padding:8px}.link-ui-block-inserter{padding-top:8px}.link-ui-block-inserter__back{margin-left:8px;text-transform:uppercase}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/navigation-link/style.min.css */
+</style>
+<style id="wp-block-navigation-overlay-close-inline-css">
+.wp-block-navigation-overlay-close{align-items:center;background:transparent;border:none;cursor:pointer;display:inline-flex;gap:.5em;justify-content:center;padding:0;text-decoration:none}.wp-block-navigation-overlay-close:focus{outline-offset:2px}.wp-block-navigation-overlay-close svg{fill:currentColor;display:block;flex-shrink:0;height:24px;width:24px}.wp-block-navigation-overlay-close .wp-block-navigation-overlay-close__text{align-items:center;display:inline-flex}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/navigation-overlay-close/style.min.css */
+</style>
+<style id="wp-block-page-list-inline-css">
+.wp-block-navigation .wp-block-page-list{align-items:var(--navigation-layout-align,initial);background-color:inherit;display:flex;flex-direction:var(--navigation-layout-direction,initial);flex-wrap:var(--navigation-layout-wrap,wrap);justify-content:var(--navigation-layout-justify,initial)}.wp-block-navigation .wp-block-navigation-item{background-color:inherit}.wp-block-page-list{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/page-list/style.min.css */
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/paragraph/style.min.css */
+</style>
+<link rel='stylesheet' id='wp-block-playlist-css' href='https://www.mercer.edu/wp-includes/blocks/playlist/style.min.css?ver=7.1.3' media='all' />
+<style id="wp-block-playlist-track-inline-css">
+.wp-block-playlist-track:has([aria-current=true]){background-color:color-mix(in srgb,currentColor 10%,transparent)}.wp-block-playlist-track:hover{background-color:color-mix(in srgb,currentColor 15%,transparent)}.wp-block-playlist__tracklist-show-numbers .wp-block-playlist-track{counter-increment:playlist-track}.wp-block-playlist-track .wp-block-playlist-track__button{align-items:center;background-color:transparent;border:0;color:inherit;cursor:pointer;display:flex;font-family:inherit;font-size:inherit;outline-offset:2px;padding:var(--wp--preset--spacing--20,.5em);text-align:left;width:100%}.wp-block-playlist__tracklist-show-numbers .wp-block-playlist-track .wp-block-playlist-track__button:before{content:counter(playlist-track);font-size:.85em;margin-right:var(--wp--preset--spacing--20,.5em);opacity:.7;width:2ch}.wp-block-playlist-track .wp-block-playlist-track__button .wp-block-playlist-track__image{border:1px solid rgba(0,0,0,.08);box-sizing:border-box;flex:0 0 50px;height:50px;margin-right:var(--wp--preset--spacing--20,.5em);-o-object-fit:cover;object-fit:cover;width:50px}.wp-block-playlist-track .wp-block-playlist-track__button .wp-block-playlist-track__content{flex:1 1 0;min-width:0}.wp-block-playlist-track .wp-block-playlist-track__button .wp-block-playlist-track__title{display:block}.wp-block-playlist-track .wp-block-playlist-track__button .wp-block-playlist-track__artist{display:block;font-size:.85em;margin-top:.125em;opacity:.7}.wp-block-playlist-track .wp-block-playlist-track__button .wp-block-playlist-track__length{font-size:.85em;margin-left:auto;opacity:.7}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/playlist-track/style.min.css */
+</style>
+<style id="wp-block-post-author-inline-css">
+.wp-block-post-author{box-sizing:border-box;display:flex;flex-wrap:wrap}.wp-block-post-author__byline{font-size:.5em;margin-bottom:0;margin-top:0;width:100%}.wp-block-post-author__avatar{margin-right:1em}.wp-block-post-author__bio{font-size:.7em;margin-bottom:.7em}.wp-block-post-author__content{flex-basis:0;flex-grow:1}.wp-block-post-author__name{margin:0}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/post-author/style.min.css */
+</style>
+<style id="wp-block-post-author-biography-inline-css">
+.wp-block-post-author-biography{box-sizing:border-box;white-space:pre-wrap}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/post-author-biography/style.min.css */
+</style>
+<style id="wp-block-post-author-name-inline-css">
+.wp-block-post-author-name{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/post-author-name/style.min.css */
+</style>
+<style id="wp-block-post-comments-count-inline-css">
+.wp-block-post-comments-count{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/post-comments-count/style.min.css */
+</style>
+<style id="wp-block-post-comments-form-inline-css">
+:where(.wp-block-post-comments-form input:not([type=submit])),:where(.wp-block-post-comments-form textarea){border:1px solid #949494;font-family:inherit;font-size:1em}:where(.wp-block-post-comments-form input:where(:not([type=submit]):not([type=checkbox]))),:where(.wp-block-post-comments-form textarea){padding:calc(.667em + 2px)}.wp-block-post-comments-form{box-sizing:border-box}.wp-block-post-comments-form[style*=font-weight] :where(.comment-reply-title){font-weight:inherit}.wp-block-post-comments-form[style*=font-family] :where(.comment-reply-title){font-family:inherit}.wp-block-post-comments-form[class*=-font-size] :where(.comment-reply-title),.wp-block-post-comments-form[style*=font-size] :where(.comment-reply-title){font-size:inherit}.wp-block-post-comments-form[style*=line-height] :where(.comment-reply-title){line-height:inherit}.wp-block-post-comments-form[style*=font-style] :where(.comment-reply-title){font-style:inherit}.wp-block-post-comments-form[style*=letter-spacing] :where(.comment-reply-title){letter-spacing:inherit}.wp-block-post-comments-form :where(input[type=submit]){box-shadow:none;cursor:pointer;display:inline-block;overflow-wrap:break-word;text-align:center}.wp-block-post-comments-form .comment-form input:not([type=submit]):not([type=checkbox]):not([type=hidden]),.wp-block-post-comments-form .comment-form textarea{box-sizing:border-box;display:block;width:100%}.wp-block-post-comments-form .comment-form-author label,.wp-block-post-comments-form .comment-form-email label,.wp-block-post-comments-form .comment-form-url label{display:block;margin-bottom:.25em}.wp-block-post-comments-form .comment-form-cookies-consent{display:flex;gap:.25em}.wp-block-post-comments-form .comment-form-cookies-consent #wp-comment-cookies-consent{margin-top:.35em}.wp-block-post-comments-form .comment-reply-title{margin-bottom:0}.wp-block-post-comments-form .comment-reply-title :where(small){font-size:var(--wp--preset--font-size--medium,smaller);margin-left:.5em}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/post-comments-form/style.min.css */
+</style>
+<style id="wp-block-buttons-inline-css">
+.wp-block-buttons{box-sizing:border-box}.wp-block-buttons.is-vertical{flex-direction:column}.wp-block-buttons.is-vertical>.wp-block-button:last-child{margin-bottom:0}.wp-block-buttons>.wp-block-button{display:inline-block;margin:0}.wp-block-buttons.is-content-justification-left{justify-content:flex-start}.wp-block-buttons.is-content-justification-left.is-vertical{align-items:flex-start}.wp-block-buttons.is-content-justification-center{justify-content:center}.wp-block-buttons.is-content-justification-center.is-vertical{align-items:center}.wp-block-buttons.is-content-justification-right{justify-content:flex-end}.wp-block-buttons.is-content-justification-right.is-vertical{align-items:flex-end}.wp-block-buttons.is-content-justification-space-between{justify-content:space-between}.wp-block-buttons.aligncenter{text-align:center}.wp-block-buttons:not(.is-content-justification-space-between,.is-content-justification-right,.is-content-justification-left,.is-content-justification-center) .wp-block-button.aligncenter{margin-left:auto;margin-right:auto;width:100%}.wp-block-buttons[style*=text-decoration] .wp-block-button,.wp-block-buttons[style*=text-decoration] .wp-block-button__link{text-decoration:inherit}.wp-block-buttons.has-custom-font-size .wp-block-button__link{font-size:inherit}.wp-block-buttons .wp-block-button__link{width:100%}.wp-block-button.aligncenter{text-align:center}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/buttons/style.min.css */
+</style>
+<style id="wp-block-post-comments-link-inline-css">
+.wp-block-post-comments-link{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/post-comments-link/style.min.css */
+</style>
+<style id="wp-block-post-content-inline-css">
+.wp-block-post-content{display:flow-root}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/post-content/style.min.css */
+</style>
+<style id="wp-block-post-date-inline-css">
+.wp-block-post-date{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/post-date/style.min.css */
+</style>
+<style id="wp-block-post-excerpt-inline-css">
+:where(.wp-block-post-excerpt){box-sizing:border-box;margin-bottom:var(--wp--style--block-gap);margin-top:var(--wp--style--block-gap)}.wp-block-post-excerpt__excerpt{margin-bottom:0;margin-top:0}.wp-block-post-excerpt__more-text{margin-bottom:0;margin-top:var(--wp--style--block-gap)}.wp-block-post-excerpt__more-link{display:inline-block}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/post-excerpt/style.min.css */
+</style>
+<style id="wp-block-post-featured-image-inline-css">
+.wp-block-post-featured-image{margin-left:0;margin-right:0}.wp-block-post-featured-image a{display:block;height:100%}.wp-block-post-featured-image :where(img){box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom;width:100%}.wp-block-post-featured-image.alignfull img,.wp-block-post-featured-image.alignwide img{width:100%}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim{background-color:#000;inset:0;position:absolute}.wp-block-post-featured-image{position:relative}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-gradient{background-color:transparent}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-0{opacity:0}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-10{opacity:.1}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-20{opacity:.2}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-30{opacity:.3}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-40{opacity:.4}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-50{opacity:.5}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-60{opacity:.6}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-70{opacity:.7}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-80{opacity:.8}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-90{opacity:.9}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-100{opacity:1}.wp-block-post-featured-image:where(.alignleft,.alignright){width:100%}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/post-featured-image/style.min.css */
+</style>
+<style id="wp-block-post-navigation-link-inline-css">
+.wp-block-post-navigation-link .wp-block-post-navigation-link__arrow-previous{display:inline-block;margin-right:1ch}.wp-block-post-navigation-link .wp-block-post-navigation-link__arrow-previous:not(.is-arrow-chevron){transform:scaleX(1)}.wp-block-post-navigation-link .wp-block-post-navigation-link__arrow-next{display:inline-block;margin-left:1ch}.wp-block-post-navigation-link .wp-block-post-navigation-link__arrow-next:not(.is-arrow-chevron){transform:scaleX(1)}.wp-block-post-navigation-link.has-text-align-left[style*="writing-mode: vertical-lr"],.wp-block-post-navigation-link.has-text-align-right[style*="writing-mode: vertical-rl"]{rotate:180deg}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/post-navigation-link/style.min.css */
+</style>
+<style id="wp-block-post-template-inline-css">
+.wp-block-post-template{box-sizing:border-box;list-style:none;margin-bottom:0;margin-top:0;max-width:100%;padding:0}.wp-block-post-template.is-flex-container{display:flex;flex-direction:row;flex-wrap:wrap;gap:1.25em}.wp-block-post-template.is-flex-container>li{margin:0;width:100%}@media (min-width:600px){.wp-block-post-template.is-flex-container.is-flex-container.columns-2>li{width:calc(50% - .625em)}.wp-block-post-template.is-flex-container.is-flex-container.columns-3>li{width:calc(33.33333% - .83333em)}.wp-block-post-template.is-flex-container.is-flex-container.columns-4>li{width:calc(25% - .9375em)}.wp-block-post-template.is-flex-container.is-flex-container.columns-5>li{width:calc(20% - 1em)}.wp-block-post-template.is-flex-container.is-flex-container.columns-6>li{width:calc(16.66667% - 1.04167em)}}@media (max-width:600px){.wp-block-post-template-is-layout-grid[class*=columns-]:not(.has-native-responsive-grid){grid-template-columns:1fr}}.wp-block-post-template-is-layout-constrained>li>.alignright,.wp-block-post-template-is-layout-flow>li>.alignright{float:right;margin-inline-end:0;margin-inline-start:2em}.wp-block-post-template-is-layout-constrained>li>.alignleft,.wp-block-post-template-is-layout-flow>li>.alignleft{float:left;margin-inline-end:2em;margin-inline-start:0}.wp-block-post-template-is-layout-constrained>li>.aligncenter,.wp-block-post-template-is-layout-flow>li>.aligncenter{margin-inline-end:auto;margin-inline-start:auto}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/post-template/style.min.css */
+</style>
+<style id="wp-block-post-terms-inline-css">
+.wp-block-post-terms{box-sizing:border-box}.wp-block-post-terms .wp-block-post-terms__separator{white-space:pre-wrap}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/post-terms/style.min.css */
+</style>
+<style id="wp-block-post-time-to-read-inline-css">
+.wp-block-post-time-to-read{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/post-time-to-read/style.min.css */
+</style>
+<style id="wp-block-post-title-inline-css">
+.wp-block-post-title{box-sizing:border-box;word-break:break-word}.wp-block-post-title :where(a){display:inline-block;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-decoration:inherit}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/post-title/style.min.css */
+</style>
+<style id="wp-block-query-pagination-inline-css">
+.wp-block-query-pagination.is-content-justification-space-between>.wp-block-query-pagination-next:last-of-type{margin-inline-start:auto}.wp-block-query-pagination.is-content-justification-space-between>.wp-block-query-pagination-previous:first-child{margin-inline-end:auto}.wp-block-query-pagination .wp-block-query-pagination-previous-arrow{display:inline-block;margin-right:1ch}.wp-block-query-pagination .wp-block-query-pagination-previous-arrow:not(.is-arrow-chevron){transform:scaleX(1)}.wp-block-query-pagination .wp-block-query-pagination-next-arrow{display:inline-block;margin-left:1ch}.wp-block-query-pagination .wp-block-query-pagination-next-arrow:not(.is-arrow-chevron){transform:scaleX(1)}.wp-block-query-pagination.aligncenter{justify-content:center}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/query-pagination/style.min.css */
+</style>
+<style id="wp-block-query-title-inline-css">
+.wp-block-query-title{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/query-title/style.min.css */
+</style>
+<style id="wp-block-query-total-inline-css">
+.wp-block-query-total{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/query-total/style.min.css */
+</style>
+<style id="wp-block-read-more-inline-css">
+.wp-block-read-more{display:block;width:-moz-fit-content;width:fit-content}.wp-block-read-more:where(:not([style*=text-decoration])){text-decoration:none}.wp-block-read-more:where(:not([style*=text-decoration])):active,.wp-block-read-more:where(:not([style*=text-decoration])):focus{text-decoration:none}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/read-more/style.min.css */
+</style>
+<style id="wp-block-rss-inline-css">
+ul.wp-block-rss.alignleft{margin-right:2em}ul.wp-block-rss.alignright{margin-left:2em}ul.wp-block-rss.is-grid{display:flex;flex-wrap:wrap;padding:0}ul.wp-block-rss.is-grid li{margin:0 1em 1em 0;width:100%}@media (min-width:600px){ul.wp-block-rss.columns-2 li{width:calc(50% - 1em)}ul.wp-block-rss.columns-3 li{width:calc(33.33333% - 1em)}ul.wp-block-rss.columns-4 li{width:calc(25% - 1em)}ul.wp-block-rss.columns-5 li{width:calc(20% - 1em)}ul.wp-block-rss.columns-6 li{width:calc(16.66667% - 1em)}}.wp-block-rss__item-author,.wp-block-rss__item-publish-date{display:block;font-size:.8125em}.wp-block-rss{box-sizing:border-box;list-style:none;padding:0}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/rss/style.min.css */
+</style>
+<link rel='stylesheet' id='wp-block-search-css' href='https://www.mercer.edu/wp-includes/blocks/search/style.min.css?ver=7.1.3' media='all' />
+<style id="wp-block-site-logo-inline-css">
+.wp-block-site-logo{box-sizing:border-box;line-height:0}.wp-block-site-logo a{display:inline-block;line-height:0}.wp-block-site-logo.is-default-size img{height:auto;width:120px}.wp-block-site-logo img{height:auto;max-width:100%}.wp-block-site-logo a,.wp-block-site-logo img{border-radius:inherit}.wp-block-site-logo.aligncenter{margin-left:auto;margin-right:auto;text-align:center}:root :where(.wp-block-site-logo.is-style-rounded){border-radius:9999px}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/site-logo/style.min.css */
+</style>
+<style id="wp-block-site-tagline-inline-css">
+.wp-block-site-tagline{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/site-tagline/style.min.css */
+</style>
+<style id="wp-block-site-title-inline-css">
+.wp-block-site-title{box-sizing:border-box}.wp-block-site-title :where(a){color:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-decoration:inherit}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/site-title/style.min.css */
+</style>
+<style id="wp-block-tab-list-inline-css">
+:where(.wp-block-tab-list button){-moz-appearance:none;appearance:none;-webkit-appearance:none;background:none;border:none;box-sizing:border-box;color:inherit;cursor:pointer;display:block;flex-basis:inherit!important;flex-grow:inherit!important;font-family:inherit;font-size:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:var(--wp--preset--spacing--20,.5em) var(--wp--preset--spacing--30,1em);position:relative;text-align:inherit;text-decoration:none;text-transform:inherit;width:-moz-max-content;width:max-content}:where(.wp-block-tab-list button)[aria-selected=true]:before{border-bottom:2px solid;bottom:0;content:"";left:0;pointer-events:none;position:absolute;width:100%}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/tab-list/style.min.css */
+</style>
+<style id="wp-block-tab-panel-inline-css">
+.wp-block-tab-panel:empty,.wp-block-tab-panel[hidden]{display:none!important}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/tab-panel/style.min.css */
+</style>
+<style id="wp-block-tabs-inline-css">
+.wp-block-tabs{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/tabs/style.min.css */
+</style>
+<style id="wp-block-tag-cloud-inline-css">
+.wp-block-tag-cloud{box-sizing:border-box}.wp-block-tag-cloud.aligncenter{justify-content:center;text-align:center}.wp-block-tag-cloud a{display:inline-block;margin-right:5px}.wp-block-tag-cloud span{display:inline-block;margin-left:5px;text-decoration:none}:root :where(.wp-block-tag-cloud.is-style-outline){display:flex;flex-wrap:wrap;gap:1ch}:root :where(.wp-block-tag-cloud.is-style-outline a){border:1px solid;font-size:unset!important;margin-right:0;padding:1ch 2ch;text-decoration:none!important}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/tag-cloud/style.min.css */
+</style>
+<style id="wp-block-term-count-inline-css">
+.wp-block-term-count{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/term-count/style.min.css */
+</style>
+<style id="wp-block-term-description-inline-css">
+:where(.wp-block-term-description){box-sizing:border-box;margin-bottom:var(--wp--style--block-gap);margin-top:var(--wp--style--block-gap)}.wp-block-term-description p{margin-bottom:0;margin-top:0}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/term-description/style.min.css */
+</style>
+<style id="wp-block-term-name-inline-css">
+.wp-block-term-name{box-sizing:border-box}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/term-name/style.min.css */
+</style>
+<style id="wp-block-term-template-inline-css">
+.wp-block-term-template{box-sizing:border-box;list-style:none;margin-bottom:0;margin-top:0;max-width:100%;padding:0}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/term-template/style.min.css */
+</style>
+<style id="wp-block-video-inline-css">
+.wp-block-video{box-sizing:border-box}.wp-block-video video{height:auto;vertical-align:middle;width:100%}@supports (position:sticky){.wp-block-video [poster]{-o-object-fit:cover;object-fit:cover}}.wp-block-video.aligncenter{text-align:center}.wp-block-video :where(figcaption){margin-bottom:1em;margin-top:.5em}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/video/style.min.css */
+</style>
+<style id="wp-block-accordion-heading-inline-css">
+.wp-block-accordion-heading__toggle{align-items:center;background:none;border:none;color:inherit;cursor:pointer;display:flex;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;overflow:hidden;padding:var(--wp--preset--spacing--20,1em) 0;text-align:inherit;text-decoration:inherit;text-transform:inherit;width:100%;word-spacing:inherit}.wp-block-accordion-heading__toggle:not(:focus-visible){outline:none}.wp-block-accordion-heading__toggle:hover .wp-block-accordion-heading__toggle-title{text-decoration:underline}.wp-block-accordion-heading__toggle-title{flex:1}.wp-block-accordion-heading__toggle-icon{align-items:center;display:flex;height:1.2em;justify-content:center;width:1.2em}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/accordion-heading/style.min.css */
+</style>
+<style id="wp-block-accordion-panel-inline-css">
+.wp-block-accordion-panel[hidden]{border:none!important;box-shadow:none!important;margin-block-start:0;padding:0!important}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/accordion-panel/style.min.css */
+</style>
+<style id="wp-block-audio-inline-css">
+.wp-block-audio{box-sizing:border-box}.wp-block-audio :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-audio audio{min-width:300px;width:100%}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/audio/style.min.css */
+</style>
+<style id="wp-block-code-inline-css">
+.wp-block-code{box-sizing:border-box}.wp-block-code code{direction:ltr;display:block;font-family:inherit;overflow-wrap:break-word;text-align:initial;white-space:break-spaces}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/code/style.min.css */
+</style>
+<style id="wp-block-columns-inline-css">
+.wp-block-columns{box-sizing:border-box;display:flex;flex-wrap:wrap!important}@media (min-width:782px){.wp-block-columns{flex-wrap:nowrap!important}}.wp-block-columns{align-items:normal!important}.wp-block-columns.are-vertically-aligned-top{align-items:flex-start}.wp-block-columns.are-vertically-aligned-center{align-items:center}.wp-block-columns.are-vertically-aligned-bottom{align-items:flex-end}@media (max-width:781px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:100%!important}}@media (min-width:782px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column[style*=flex-basis]{flex-grow:0}}.wp-block-columns.is-not-stacked-on-mobile{flex-wrap:nowrap!important}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column[style*=flex-basis]{flex-grow:0}:where(.wp-block-columns){margin-bottom:1.75em}:where(.wp-block-columns.has-background){padding:1.25em 2.375em}.wp-block-column{flex-grow:1;min-width:0;overflow-wrap:break-word;word-break:break-word}.wp-block-column.is-vertically-aligned-top{align-self:flex-start}.wp-block-column.is-vertically-aligned-center{align-self:center}.wp-block-column.is-vertically-aligned-bottom{align-self:flex-end}.wp-block-column.is-vertically-aligned-stretch{align-self:stretch}.wp-block-column.is-vertically-aligned-bottom,.wp-block-column.is-vertically-aligned-center,.wp-block-column.is-vertically-aligned-top{width:100%}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/columns/style.min.css */
+</style>
+<style id="wp-block-embed-inline-css">
+.wp-block-embed.alignleft,.wp-block-embed.alignright,.wp-block[data-align=left]>[data-type="core/embed"],.wp-block[data-align=right]>[data-type="core/embed"]{max-width:360px;width:100%}.wp-block-embed.alignleft .wp-block-embed__wrapper,.wp-block-embed.alignright .wp-block-embed__wrapper,.wp-block[data-align=left]>[data-type="core/embed"] .wp-block-embed__wrapper,.wp-block[data-align=right]>[data-type="core/embed"] .wp-block-embed__wrapper{min-width:280px}.wp-block-cover .wp-block-embed{min-height:240px;min-width:320px}.wp-block-group.is-layout-flex .wp-block-embed{flex:1 1 0%;min-width:0}.wp-block-embed{overflow-wrap:break-word}.wp-block-embed :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-embed iframe{max-width:100%}.wp-block-embed__wrapper{position:relative}.wp-embed-responsive .wp-has-aspect-ratio .wp-block-embed__wrapper:before{content:"";display:block;padding-top:50%}.wp-embed-responsive .wp-has-aspect-ratio iframe{bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.wp-embed-responsive .wp-embed-aspect-21-9 .wp-block-embed__wrapper:before{padding-top:42.85%}.wp-embed-responsive .wp-embed-aspect-18-9 .wp-block-embed__wrapper:before{padding-top:50%}.wp-embed-responsive .wp-embed-aspect-16-9 .wp-block-embed__wrapper:before{padding-top:56.25%}.wp-embed-responsive .wp-embed-aspect-4-3 .wp-block-embed__wrapper:before{padding-top:75%}.wp-embed-responsive .wp-embed-aspect-1-1 .wp-block-embed__wrapper:before{padding-top:100%}.wp-embed-responsive .wp-embed-aspect-9-16 .wp-block-embed__wrapper:before{padding-top:177.77%}.wp-embed-responsive .wp-embed-aspect-1-2 .wp-block-embed__wrapper:before{padding-top:200%}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/embed/style.min.css */
+</style>
+<style id="wp-block-group-inline-css">
+.wp-block-group{box-sizing:border-box}:where(.wp-block-group.wp-block-group-is-layout-constrained){position:relative}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/group/style.min.css */
+</style>
+<style id="wp-block-math-inline-css">
+.wp-block-math{overflow-x:auto;overflow-y:hidden}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/math/style.min.css */
+</style>
+<style id="wp-block-preformatted-inline-css">
+.wp-block-preformatted{box-sizing:border-box;white-space:pre-wrap}:where(.wp-block-preformatted.has-background){padding:1.25em 2.375em}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/preformatted/style.min.css */
+</style>
+<style id="wp-block-pullquote-inline-css">
+.wp-block-pullquote{box-sizing:border-box;margin:0 0 1em;overflow-wrap:break-word;padding:4em 0;text-align:center}.wp-block-pullquote blockquote,.wp-block-pullquote p{color:inherit}.wp-block-pullquote blockquote{margin:0}.wp-block-pullquote p{margin-top:0}.wp-block-pullquote p:last-child{margin-bottom:0}.wp-block-pullquote.alignleft,.wp-block-pullquote.alignright{max-width:420px}.wp-block-pullquote cite,.wp-block-pullquote footer{position:relative}.wp-block-pullquote .has-text-color a{color:inherit}.wp-block-pullquote.has-text-align-left blockquote{text-align:left}.wp-block-pullquote.has-text-align-right blockquote{text-align:right}.wp-block-pullquote.has-text-align-center blockquote{text-align:center}.wp-block-pullquote.is-style-solid-color{border:none}.wp-block-pullquote.is-style-solid-color blockquote{margin-left:auto;margin-right:auto;max-width:60%}.wp-block-pullquote.is-style-solid-color blockquote p{font-size:2em;margin-bottom:0;margin-top:0}.wp-block-pullquote.is-style-solid-color blockquote cite{font-style:normal;text-transform:none}.wp-block-pullquote :where(cite){color:inherit;display:block}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/pullquote/style.min.css */
+</style>
+<style id="wp-block-quote-inline-css">
+.wp-block-quote{box-sizing:border-box;overflow-wrap:break-word}.wp-block-quote.is-large:where(:not(.is-style-plain)),.wp-block-quote.is-style-large:where(:not(.is-style-plain)){margin-bottom:1em;padding:0 1em}.wp-block-quote.is-large:where(:not(.is-style-plain)) p,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) p{font-size:1.5em;font-style:italic;line-height:1.6}.wp-block-quote.is-large:where(:not(.is-style-plain)) cite,.wp-block-quote.is-large:where(:not(.is-style-plain)) footer,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) cite,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) footer{font-size:1.125em;text-align:right}.wp-block-quote>cite{display:block}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/quote/style.min.css */
+</style>
+<style id="wp-block-separator-inline-css">
+@charset "UTF-8";.wp-block-separator{border:none;border-top:2px solid}:root :where(.wp-block-separator.is-style-dots){height:auto;line-height:1;text-align:center}:root :where(.wp-block-separator.is-style-dots):before{color:currentColor;content:"···";font-family:serif;font-size:1.5em;letter-spacing:2em;padding-left:2em}.wp-block-separator.is-style-dots{background:none!important;border:none!important}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/separator/style.min.css */
+</style>
+<link rel='stylesheet' id='wp-block-social-links-css' href='https://www.mercer.edu/wp-includes/blocks/social-links/style.min.css?ver=7.1.3' media='all' />
+<style id="wp-block-spacer-inline-css">
+.wp-block-spacer{clear:both}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/spacer/style.min.css */
+</style>
+<link rel='stylesheet' id='wp-block-table-css' href='https://www.mercer.edu/wp-includes/blocks/table/style.min.css?ver=7.1.3' media='all' />
+<style id="wp-block-text-columns-inline-css">
+.wp-block-text-columns,.wp-block-text-columns.aligncenter{display:flex}.wp-block-text-columns .wp-block-column{margin:0 1em;padding:0}.wp-block-text-columns .wp-block-column:first-child{margin-left:0}.wp-block-text-columns .wp-block-column:last-child{margin-right:0}.wp-block-text-columns.columns-2 .wp-block-column{width:50%}.wp-block-text-columns.columns-3 .wp-block-column{width:33.3333333333%}.wp-block-text-columns.columns-4 .wp-block-column{width:25%}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/text-columns/style.min.css */
+</style>
+<style id="wp-block-verse-inline-css">
+pre.wp-block-verse{box-sizing:border-box;min-width:1em;overflow:auto;white-space:pre-wrap;word-break:break-word}:where(pre.wp-block-verse){font-family:inherit}
+/*# sourceURL=https://www.mercer.edu/wp-includes/blocks/verse/style.min.css */
+</style>
+<link rel='stylesheet' id='signature-generator-css-css' href='https://www.mercer.edu/wp-content/plugins/mercer-signature-generator/signature-generator.css?ver=1.01' media='all' />
+<link rel='stylesheet' id='mercer-style-css' href='https://www.mercer.edu/wp-content/themes/mercer/style.css?ver=6ac494e3d5a9' media='all' />
+<link rel='stylesheet' id='style-css' href='https://www.mercer.edu/wp-content/themes/www-mercer-child/style.css?ver=0d7f8e6fa526' media='all' />
+<script id="jquery-core-js" src="https://www.mercer.edu/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://www.mercer.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script id="sbi_scripts-js-extra">
+var sb_instagram_js_options = {"font_method":"svg","resized_url":"https://www.mercer.edu/wp-content/uploads/sb-instagram-feed-images/","placeholder":"https://www.mercer.edu/wp-content/plugins/instagram-feed/img/placeholder.png","ajax_url":"https://www.mercer.edu/wp-admin/admin-ajax.php"};
+//# sourceURL=sbi_scripts-js-extra
+</script>
+<script id="sbi_scripts-js" src="https://www.mercer.edu/wp-content/plugins/instagram-feed/js/sbi-scripts.min.js?ver=6.14.0"></script>
+<script id="yall-js" src="https://www.mercer.edu/wp-content/themes/mercer/assets/js/yall.min.js?ver=81595d88e654"></script>
+<script id="yall-js-after">
+/*
+ * Google Programmable Search: breadcrumbs in the theme's style.
+ *
+ * Google renders a result's breadcrumb as one span per segment, the separator
+ * written into the text (`<span> › majors-and-minors</span>`), which CSS
+ * cannot remove. This strips it so `vendors/_google-search.scss` can draw the
+ * theme's own `//`, as on interior pages' `ul.breadcrumbs`.
+ *
+ * It also makes a promotion's URL a link. Google prints it as plain text in
+ * link blue, which looks clickable and was not; the new link goes where the
+ * promotion's title goes.
+ *
+ * Google reads `window.__gcse` once, when cse.js loads, so this runs in the
+ * head, ahead of the embed's own script. It keeps any configuration and any
+ * `rendered` callback a page has already set.
+ */
+(function () {
+    var gcse = (window.__gcse = window.__gcse || {});
+    var callbacks = (gcse.searchCallbacks = gcse.searchCallbacks || {});
+    var web = (callbacks.web = callbacks.web || {});
+    var previous = web.rendered;
+
+    web.rendered = function (gname, query, promoElts, resultElts) {
+        (promoElts || []).forEach(function (promo) {
+            var title = promo.querySelector('a.gs-title');
+            if (!title) {
+                return;
+            }
+            promo.querySelectorAll('.gs-visibleUrl').forEach(function (url) {
+                if (url.querySelector('a') || !url.textContent.trim()) {
+                    return;
+                }
+                var link = document.createElement('a');
+                // A class keeps it out of `main a:not([class])`, the theme's
+                // orange-bordered inline link, which here would put orange
+                // under blue text
+                link.className = 'gs-promotion-url';
+                link.href = title.href;
+                link.target = title.target || '_self';
+                link.textContent = url.textContent;
+                url.textContent = '';
+                url.appendChild(link);
+            });
+        });
+
+        (resultElts || []).forEach(function (result) {
+            result
+                .querySelectorAll('.gs-visibleUrl-breadcrumb > span')
+                .forEach(function (span) {
+                    span.textContent = span.textContent.replace(/^\s*›\s*/, '');
+                    // A segment that was only the separator would leave a
+                    // trailing `//` after the last real one
+                    if (!span.textContent.trim()) {
+                        span.remove();
+                    }
+                });
+        });
+
+        if (typeof previous === 'function') {
+            return previous.apply(this, arguments);
+        }
+    };
+})();
+
+//# sourceURL=yall-js-after
+</script>
+<script id="header-js-js" src="https://www.mercer.edu/wp-content/themes/mercer/assets/js/hdr.min.js?ver=1cf2a94c0862"></script>
+<link rel="https://api.w.org/" href="https://www.mercer.edu/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.mercer.edu/wp-json/wp/v2/pages/207" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.mercer.edu/xmlrpc.php?rsd" />
+<!-- Instagram Feed CSS -->
+<style type="text/css">
+#sb_instagram a:focus-visible  {
+    outline: 3px solid #00adf2 !important;
+}
+</style>
+</head>
+<body class="wp-singular page-template-default page page-id-207 page-child parent-pageid-154 wp-theme-mercer wp-child-theme-www-mercer-child not-home page-awards-recognitions secondary-menu-active site-url-www-mercer-edu">
+        <script>document.addEventListener("DOMContentLoaded",function(){yall({idleLoadTimeout:0,threshold:250});});</script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMLQ2X"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <a class="skip-content" href="#primary-wrap" title="Skip to main content of page" tabindex="0">Skip to Content</a>
+            <a class="skip-content" href="#tier3-nav-button" title="Skip to main content of page" tabindex="0">Skip to Awards and Recognitions Menu</a>
+        <a class="skip-content" href="#primary-nav-button" title="Skip to primary menu" tabindex="0">Skip to Mercer Menu</a>
+
+    <div id="main">
+        <header id="header" role="banner">
+            <div class="header-first">
+                <div class="site-title">
+                    <a href="https://www.mercer.edu/">
+                        <svg class="header-logo" aria-labelledby="header-title" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 49.533">
+                            <title id="header-title">Mercer University</title>
+                            <desc>Mercer University logo displaying the words "Mercer University" in large white font on a dark background, all underlined in orange</desc>
+                            <defs><style>.a {fill: #f76800;} .b {fill: #fff;}</style></defs>
+                            <g>
+                                <path class="a" d="M0,49.53H260v-2H0Z" transform="translate(0 0)"/>
+                                <g>
+                                    <path class="b" d="M97.15,31.39c3.17-.06,5.74-.12,8.49-.12,2.39.06,6.4.12,11.47.12.06-.18.42.3.61-.6.11-1.91.53-3.64.71-5.85.06-.41-.84-1.19-.84,0-1,4.78-3.94,5.25-9.44,5.31-4.19-.06-4.6-.41-4.6-3.7V17.49h4.18c3.41,0,4.55,0,4.73,2.15a.57.57,0,0,0,.6.53.55.55,0,0,0,.53-.53c-.06-1.49,0-2.09,0-3.16,0-.84-.06-1.37,0-2.87-.18-1.07-1.13-.6-1.13-.12.12,2.27-1.62,2.81-5.62,2.87-.78-.06-2.39-.06-3.29-.12V5h3.16c6.1,0,8.61.47,8.61,4.41.06.66,1,.42,1,0,.06-2.09-.12-2.74-.12-4.41a11.53,11.53,0,0,0,0-1.44c-4.79.18-9.15.18-11.48.12s-4.43,0-7.18-.12a.66.66,0,0,0,0,1.31c1.92-.06,2.69.78,2.75,3V26.21c-.06,3-.23,4.23-2.87,4.3-.9-.06-.77.95-.3.89Z" transform="translate(0 0)"/>
+                                    <path class="b" d="M133.56,4.37a12.24,12.24,0,0,0-4.67-.9c-1.85.06-3.94.36-6.33.3a31.54,31.54,0,0,1-3.89-.12c-.36.12-.66,1.2.12,1.31,2,0,2.75.42,2.75,2.75V27c0,2.92-.12,3.16-2.45,3.46-1,.12-1,1,0,1,2,0,2.87-.06,4.18,0,1.14-.06,2.45-.06,4.43,0,.66,0,1.13-.89,0-1-2.69-.12-2.81-1.26-2.87-4.3V18.45a24.35,24.35,0,0,1,4.18.3c.54.24,1,1.37,1.73,2.74l3.59,5.85c2,3.34,4.31,4.53,7.77,4.59.72-.06.42-.06,1.32-.12.71,0,.47-.95,0-.83-3-.06-4.55-2-6.34-5.43L132.36,18a7.24,7.24,0,0,0,5.44-6.86,7,7,0,0,0-4.24-6.74l-1.08,1.9a6.14,6.14,0,0,1,2.09,5.25c.06,3.76-2.15,5.73-6.33,5.73a22.37,22.37,0,0,1-3.47-.3V5c1.13-.06,2.57-.11,3.17-.11a6.79,6.79,0,0,1,4.48,1.36Z" transform="translate(0 0)"/>
+                                    <path class="b" d="M73.4,42.2a.6.6,0,0,1-.52-.3L55.78,7.41,55.66,35c.06,3.61,1.54,5.55,4.3,5.61h0a.81.81,0,0,1,.69.78.46.46,0,0,1-.16.38A1,1,0,0,1,60,42c-3.23-.12-4.81-.12-5.86-.12H48.25a.5.5,0,0,1-.38-.15.51.51,0,0,1-.11-.43.6.6,0,0,1,.52-.57h.08c3,0,3.74-1.25,4.3-3.88.39-1.76.47-6.45.58-12.39,0-.42,0-.84,0-1.26v-.25c0-2.05,0-4.43,0-6.52v-.85c0-4.3,0-8,0-8.08,0-2.07-.19-3.65-.9-4.63s-1.89-1.37-4-1.4c-.57,0-.77-.4-.76-.7A.76.76,0,0,1,48.36,0l1.37,0C51,.1,52,.13,53.27.13a4,4,0,0,0,.49,0c.45,0,1.13,0,2.25-.1h.12l.28,0L57,0h.14a.62.62,0,0,1,.58.43l17,35L89.44.61l0-.08h0A.74.74,0,0,1,90.15,0c1,0,1.84,0,2.66.07s1.39.05,2.06.05c.49,0,1,0,1.48,0,1.21,0,2.53,0,4.14-.15.4,0,.59.24.59.47a.4.4,0,0,1-.36.42h0a.46.46,0,0,1-.21-.05c-4.4.79-5.08,2.18-5.14,6.56a3.57,3.57,0,0,1,0,1.13L96,32.89c0,5.31,1.31,7.58,4.39,7.58h.21c.68,0,.91.36.9.67a.85.85,0,0,1-.9.76c-2.56-.1-4.67-.14-6.25-.14-.63,0-1.18,0-1.64,0s-.87,0-1.3,0c-.9,0-1.78,0-3.39.09l-.66,0h0l-.65,0a.6.6,0,0,1-.65-.55v0a.53.53,0,0,1,.16-.38.74.74,0,0,1,.49-.18c1.62,0,2.62-.37,3.26-1.12s.93-1.91.93-3.77L90.39,3.36,74.49,41.6l-.06.1c-.09.17-.26.5-.54.5H73.4Zm67.21-.06h-.3l-2.51-6.45c-.35-.65-.59-1-1.32-1v-.42l.71.05a7,7,0,0,1,.73.07q.72,0,1.44-.12v.42h-.2c-.37,0-.58.14-.64.42a.79.79,0,0,0,.12.3l2.15,5.31,2.15-5.13a2,2,0,0,0,0-.6.17.17,0,0,0,0-.18c-.06-.09-.22-.12-.58-.12v-.42l.57.06.57.06a7.35,7.35,0,0,0,1.14-.12v.42c-.73,0-.91.39-1.14,1l-2.87,6.44Zm31.39,0h0c-.64-.07-1.33-.2-1.85-.3V39.93h.3a1.87,1.87,0,0,0,1.85,1.73h.1a1.5,1.5,0,0,0,1.46-1.54h0c0-1-.69-1.27-1.73-1.73-1.23-.56-2.1-1-2-2.15a1.86,1.86,0,0,1,.5-1.38,2.51,2.51,0,0,1,1.77-.77,11.16,11.16,0,0,1,1.14.16h.07a6.2,6.2,0,0,0,.82.12,3.63,3.63,0,0,0,0,1.14,1.42,1.42,0,0,0,0,.71H174c0-1.1-.57-1.67-1.73-1.73a1.52,1.52,0,0,0-1.05.52,1.12,1.12,0,0,0-.27.8,1.15,1.15,0,0,0,.6,1.13,9.48,9.48,0,0,0,1.1.56h.05l0,0h.07a6.43,6.43,0,0,1,.79.39,1.83,1.83,0,0,1,1,1.73,2.21,2.21,0,0,1-.54,1.67,2.82,2.82,0,0,1-2,.79Zm-64.27-.06c-1.81-.07-2.93-1.29-3-3.29V35.51a.86.86,0,0,0-.12-.68.69.69,0,0,0-.52-.16h-.2s0,0,0,0h0a.14.14,0,0,0-.08,0v-.42l.62.05h.09c.26,0,.49,0,.72.06a10,10,0,0,0,1.06-.09h0l.23,0v.41c-.8,0-.84.34-.84,1.32v3.28c0,1.42.76,2.27,2,2.27H108a2.23,2.23,0,0,0,1.63-.63,3,3,0,0,0,.7-2.23V37.24c0-1.41,0-2.1-.24-2.4a.67.67,0,0,0-.49-.17h-.11v-.41l.48.05h0a4,4,0,0,1,.5.06,7.35,7.35,0,0,0,1.14-.12v.42c-.66,0-.72.3-.72,1.14v2c0,.08,0,.16,0,.25v0a5.15,5.15,0,0,1-.59,2.69A3.22,3.22,0,0,1,107.73,42.08Zm16.2-.13h-.42l-5.14-6.44a16.62,16.62,0,0,1-.18,1.73c0,1.4.08,2.48.1,2.93v.14c0,.34,0,.54,0,.63.12.47.29.6.84.6v.3l-.57,0-.57,0-.57,0-.57,0v-.3c.59-.06.78-.29.84-1v0c0-.47.07-2.22.12-5.11,0-.54-.17-.72-.79-.72h-.35v-.42l.47.05h0a4.51,4.51,0,0,1,.53.07,4.51,4.51,0,0,1,.72-.12l5,6.14V39a28.6,28.6,0,0,0-.12-3.7c-.06-.5-.32-.6-.71-.6v-.42a5.3,5.3,0,0,0,.56.07c.17,0,.36,0,.57,0a8.08,8.08,0,0,0,.86-.08h.06l.22,0v.42h0a.67.67,0,0,0-.83.83c0,.44-.12,2.39-.12,6.45Zm42.51,0h-.72c-.85,0-1.29-.3-1.85-1.31l-1-1.55h0c-.18-.35-.3-.59-.42-.59a1,1,0,0,0-.39-.07l-.44,0v2c0,.84.06,1.13.71,1.13h.12v.3l-.65,0a6.12,6.12,0,0,1-.66,0q-.33,0-.72,0t-.72,0v-.3h0a.82.82,0,0,0,.67-.19c.15-.15.19-.43.16-.94V35.51a.91.91,0,0,0-.12-.7.58.58,0,0,0-.43-.15h-.17a0,0,0,0,0,0,0h0a.13.13,0,0,0-.09,0v-.42a11,11,0,0,1,1.14.12,8.22,8.22,0,0,0,1-.06h.05c.23,0,.46,0,.69-.05h.16a2.9,2.9,0,0,1,1.16.24l-.15.2.15-.2A1.73,1.73,0,0,1,165,36.23a1.61,1.61,0,0,1-1.35,1.84h-.2l1.14,2.15c.46.86.76,1.43,1.85,1.43V42Zm-4.9-7.27V38l.36,0,.35,0h.17a1.64,1.64,0,0,0,1.23-.43A1.49,1.49,0,0,0,164,36.4a1.69,1.69,0,0,0-.54-1.37,1.84,1.84,0,0,0-1.11-.36h-.8Zm19.79,7.18-.66,0-.72,0-.72,0v-.3h.12a.75.75,0,0,0,.56-.17c.15-.16.2-.45.16-1V35.51a.91.91,0,0,0-.12-.7.54.54,0,0,0-.43-.14h-.17a0,0,0,0,0,0,0h0l-.09,0v-.41l.72.05h.11l.61.06c.34,0,.67,0,1-.08h.12l.19,0v.42c-.8,0-.83.34-.83,1.31V40.4c0,.84.06,1.13.71,1.13H182v.3a6.18,6.18,0,0,1-.65,0Zm-49.74,0-.72,0-.66,0-.66,0v-.3h0c.65,0,.83-.25.83-1.14V35.51c0-.61-.16-.84-.57-.84h-.15a.1.1,0,0,0-.08,0,0,0,0,0,0,0,0h0v-.41l.63.05h0c.22,0,.43,0,.64.06a8.4,8.4,0,0,0,1-.07h.07l.36,0v.42h0a.89.89,0,0,0-.68.18c-.17.18-.18.51-.14,1.13V40.4c0,.51,0,.8.12,1a.79.79,0,0,0,.59.16h.12v.3q-.33,0-.72,0Zm69.4,0-.65,0-.66,0-.66,0h.18v-.3c.6,0,.78-.25.84-1.14V39.09l-2.15-3.87a1.17,1.17,0,0,0-1-.72v-.3c.22,0,.44,0,.65,0l.67.07c.44,0,.88-.06,1.31-.12v.3c-.4.07-.6.2-.6.42s0,.24.12.3l1.73,3.16,1.56-3.16a1.34,1.34,0,0,1,.07-.18h0a.19.19,0,0,0,0-.1c0-.24-.17-.3-.71-.42v-.3c.14,0,.31,0,.52,0h.05a3.43,3.43,0,0,1,.56.07l1-.12v.3a1.13,1.13,0,0,0-1,.71l-2,3.58V40.4c0,.84.07,1.13.84,1.13v.3q-.33,0-.66,0Zm-10.87,0-.72,0-.72,0-.72,0v-.3h0a1.11,1.11,0,0,0,.79-.2,1.3,1.3,0,0,0,.22-.93V34.68h-.72c-1.38,0-1.8.34-1.85,1.55h-.3v-2h6.57v2h-.3c-.06-1.36-.5-1.49-1.85-1.55h-.72v5.77c.06.79.08,1.08,1,1.08v.3q-.3,0-.72,0Zm-35.34,0h-5.32v-.3h0a.9.9,0,0,0,.67-.19c.14-.16.19-.43.16-1V35.51a.91.91,0,0,0-.13-.7.52.52,0,0,0-.43-.14h-.16s0,0,0,0h0l-.07,0h0v-.42c.3,0,.65,0,1.06.06s.74,0,1.09.06h.24c.88,0,1.77,0,2.63-.12a.27.27,0,0,1,0,.3,13.65,13.65,0,0,1,.12,1.55h-.3c-.06-1.13-.62-1.32-1.85-1.32h-1.2v2.87H152c.63,0,1.12,0,1.32-.24a.6.6,0,0,0,.12-.48s0,0,0,0,0-.06,0-.1h.3a2.91,2.91,0,0,1,0,1,2.86,2.86,0,0,1,0,1h-.3a.73.73,0,0,0-.16-.53,1.06,1.06,0,0,0-.77-.2h-.39a.4.4,0,0,0-.21,0,6,6,0,0,0-.62,0V40.4c0,.45,0,.7.11.84s.49.17,1,.17c1.61,0,2.15-.11,2.45-1.43h.24v.12h0v0c-.1.53-.21,1.19-.27,1.69ZM152.64,31.4h-.32a15.06,15.06,0,0,1-10.09-3.67,12.54,12.54,0,0,1-3.1-4.25A13.48,13.48,0,0,1,138,17.92a15.13,15.13,0,0,1,4.07-10.6,13.85,13.85,0,0,1,4.63-3.15A15.77,15.77,0,0,1,152.63,3a44,44,0,0,1,10.76,1.55,13.84,13.84,0,0,1-.06,1.82c0,.46-.06.94-.06,1.34V9h0a.45.45,0,0,1-.35.31c-.13,0-.25-.1-.37-.3-2.76-3.57-5.17-4.72-9.92-4.72h-.12a10.92,10.92,0,0,0-7.8,3.21,12.56,12.56,0,0,0-3.44,9.08c-.06,7.57,5.16,13.54,11.9,13.6,4.24-.06,8.06-2.36,11.36-6.86V26.5A14.26,14.26,0,0,1,159.34,30,17.93,17.93,0,0,1,152.64,31.4Z" transform="translate(0 0)"/>
+                                    <path class="b" d="M164.59,31.39c3.17-.06,5.68-.12,8.49-.12,2.33.06,6.33.12,11.47.12.06-.18.42.3.6-.6.06-1.91.48-3.64.6-5.85.18-.41-.71-1.19-.71,0-1,4.78-4,5.25-9.63,5.31-4.06-.06-4.48-.41-4.42-3.7V17.49h4.18c3.41,0,4.49,0,4.73,2.15a.57.57,0,0,0,1.13,0,27.76,27.76,0,0,1,0-3.16,22.9,22.9,0,0,1,0-2.87c-.18-1.07-1.13-.6-1.13-.12.11,2.27-1.68,2.81-5.62,2.87-.78-.06-2.4-.06-3.29-.12V5h3.16c6,0,8.55.47,8.61,4.41.06.66,1,.42,1,0,0-2.09-.12-2.74-.12-4.41V3.59c-4.85.18-9.21.18-11.48.12s-4.48,0-7.3-.12c-.53-.06-.83,1.2,0,1.32,2-.06,2.75.77,2.75,3V26.21c.06,3-.12,4.23-2.75,4.3-.95-.06-.77.95-.3.89Z" transform="translate(0 0)"/>
+                                    <path class="b" d="M200.22,4.07a13.23,13.23,0,0,0-3.95-.6c-1.91.06-4,.36-6.46.3a28.6,28.6,0,0,1-3.7-.12c-.42.12-.72,1.19.12,1.31,2,0,2.69.42,2.75,2.75V27c0,2.92-.12,3.16-2.57,3.46-.9.12-.9,1,.12,1,2,0,2.87-.06,4,0s2.51-.06,4.6,0c.66,0,1.08-.89,0-1-2.75-.12-2.87-1.26-2.87-4.3V18.45a24.54,24.54,0,0,1,4.19.3c.47.24.9,1.37,1.73,2.74l3.59,5.85c2,3.34,4.24,4.54,7.77,4.6.72-.06.42-.06,1.31-.12.66,0,.48-1,0-.84-3-.06-4.54-2-6.45-5.43L199.79,18a7.31,7.31,0,0,0,5.44-6.86c-.12-3.52-1.79-6-5-7l-.83,1.85C201.11,7,202,8.9,202,11.53c0,3.76-2.22,5.73-6.34,5.73a25.26,25.26,0,0,1-3.47-.3V5c1.08-.06,2.57-.11,3.17-.11a7.45,7.45,0,0,1,4,1Z" transform="translate(0 0)"/>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="screen-reader-text">Mercer University</span>
+                    </a>
+                </div>
+
+                <div class="header-right-wrap">
+                    <nav id="header-menu-wrap">
+                        <span class="screen-reader-text">
+                            Secondary Menu
+                        </span>
+                        <ul id="menu-header-menu" class="header-menu"><li id="menu-item-5925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5925"><a href="https://www.mercer.edu/academics/program-finder/">Programs</a></li>
+<li id="menu-item-5923" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5923"><a href="https://www.mercer.edu/admissions/">Admissions</a></li>
+<li id="menu-item-5924" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5924"><a href="https://www.mercer.edu/give/">Give</a></li>
+</ul>                    </nav>
+
+                    <button type="button" id="search-open-button" aria-haspopup="true" aria-expanded="false">
+                        <span class="screen-reader-text">
+                            Site Search
+                        </span>
+                        <span class="ikes-search-alt"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="header-info">
+                                <nav id="primary-nav" role="navigation">
+                    <button type="button" href="#primary-menu" id="primary-nav-button" class="primary-menu-toggle" aria-haspopup="true" aria-expanded="false">
+                        <span class="screen-reader-text">
+                            Primary Menu
+                        </span>
+                        <span class="nav-button-icon"><span class="nav-button-center"></span></span>
+                    </button>
+                    <div id="primary-menu-wrap">
+                        <div class="inner-container">
+                            <div class="menu-proper">
+                                <ul id="primary-menu" class="primary-menu"><li id="menu-item-332" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-332"><a href="https://www.mercer.edu/academics/">Academics</a>
+<ul class="sub-menu">
+	<li id="menu-item-340" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-340"><a href="https://www.mercer.edu/academics/program-finder/">Program Finder</a></li>
+	<li id="menu-item-341" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-341"><a href="https://www.mercer.edu/academics/residential-undergraduate-program/">Residential Undergraduate Program</a></li>
+	<li id="menu-item-6576" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6576"><a href="https://www.mercer.edu/academics/bachelors-degrees-for-working-adults/">Degrees for Working Adults</a></li>
+	<li id="menu-item-347" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347"><a href="https://www.mercer.edu/academics/graduate-professional-study/">Graduate and Professional Study</a></li>
+	<li id="menu-item-351" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-351"><a href="https://www.mercer.edu/academics/online-distance-learning/">Online Programs and Distance Learning</a></li>
+	<li id="menu-item-339" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-339"><a href="https://www.mercer.edu/academics/schools-colleges/">Schools and Colleges</a></li>
+	<li id="menu-item-1291" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1291"><a href="https://www.mercerabroad.com/">Study Abroad</a></li>
+	<li id="menu-item-355" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-355"><a href="https://www.mercer.edu/academics/centers-and-institutes/">Academic Centers and Institutes</a></li>
+	<li id="menu-item-4943" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4943"><a href="https://www.mupress.org/">Mercer University Press</a></li>
+	<li id="menu-item-1292" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1292"><a href="http://registrar.mercer.edu/">Office of the Registrar</a></li>
+	<li id="menu-item-353" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-353"><a href="https://www.mercer.edu/academics/libraries/">Libraries</a></li>
+	<li id="menu-item-1294" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1294"><a href="http://provost.mercer.edu/">Office of the Provost</a></li>
+</ul>
+</li>
+<li id="menu-item-333" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-333"><a href="https://www.mercer.edu/admissions/">Admissions</a>
+<ul class="sub-menu">
+	<li id="menu-item-428" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-428"><a href="https://undergrad.mercer.edu">Residential Undergraduate Admissions</a></li>
+	<li id="menu-item-429" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-429"><a href="https://mercerforyou.com/">Working Adults Undergraduate Admissions</a></li>
+	<li id="menu-item-364" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-364"><a href="https://www.mercer.edu/admissions/graduate-professional/">Graduate and Professional Admissions</a></li>
+	<li id="menu-item-367" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-367"><a href="https://www.mercer.edu/admissions/online-programs-admission/">Online Programs Admissions</a></li>
+	<li id="menu-item-366" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-366"><a href="https://www.mercer.edu/admissions/certificate-non-degree-programs/">Certificate and Non-Degree Programs</a></li>
+	<li id="menu-item-368" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-368"><a href="https://www.mercer.edu/admissions/military/">Military Alliance</a></li>
+	<li id="menu-item-430" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-430"><a href="http://financialaid.mercer.edu/">Financial Planning</a></li>
+	<li id="menu-item-8587" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8587"><a href="https://www.mercer.edu/mercer-next/">Mercer Next</a></li>
+</ul>
+</li>
+<li id="menu-item-337" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-337"><a href="https://www.mercer.edu/life-at-mercer/">Life at Mercer</a>
+<ul class="sub-menu">
+	<li id="menu-item-372" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-372"><a href="https://www.mercer.edu/life-at-mercer/activities-organizations/">Activities and Organizations</a></li>
+	<li id="menu-item-374" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-374"><a href="https://www.mercer.edu/life-at-mercer/health-safety/">Health and Safety</a></li>
+	<li id="menu-item-375" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-375"><a href="https://www.mercer.edu/life-at-mercer/sports-and-recreation/">Sports and Recreation</a></li>
+	<li id="menu-item-377" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-377"><a href="https://www.mercer.edu/life-at-mercer/life-in-macon/">Life in Macon</a></li>
+	<li id="menu-item-379" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-379"><a href="https://www.mercer.edu/life-at-mercer/life-in-atlanta/">Life in Atlanta</a></li>
+	<li id="menu-item-376" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-376"><a href="https://www.mercer.edu/life-at-mercer/life-in-savannah/">Life in Savannah</a></li>
+	<li id="menu-item-378" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-378"><a href="https://www.mercer.edu/life-at-mercer/life-in-columbus/">Life in Columbus</a></li>
+	<li id="menu-item-380" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-380"><a href="https://www.mercer.edu/life-at-mercer/housing-dining/">Housing and Dining</a></li>
+</ul>
+</li>
+<li id="menu-item-331" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-331"><a href="https://www.mercer.edu/about-mercer/">About Mercer</a>
+<ul class="sub-menu">
+	<li id="menu-item-381" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-381"><a href="https://www.mercer.edu/about-mercer/mission-and-vision/">Mission and Vision</a></li>
+	<li id="menu-item-382" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-382"><a href="https://www.mercer.edu/about-mercer/traditions/">Traditions</a></li>
+	<li id="menu-item-383" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-383"><a href="https://www.mercer.edu/about-mercer/history/">History</a></li>
+	<li id="menu-item-16139" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16139"><a href="https://www.mercer.edu/about-mercer/profile/">Profile</a></li>
+	<li id="menu-item-386" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-386"><a href="https://www.mercer.edu/about-mercer/office-of-the-president/">Office of the President</a></li>
+	<li id="menu-item-387" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-387"><a href="https://www.mercer.edu/about-mercer/office-of-the-chancellor/">Office of the Chancellor</a></li>
+	<li id="menu-item-390" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-390"><a href="https://www.mercer.edu/about-mercer/deans/">Deans</a></li>
+	<li id="menu-item-391" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-207 current_page_item menu-item-391"><a href="https://www.mercer.edu/about-mercer/awards-recognitions/" aria-current="page">Awards and Recognitions</a></li>
+	<li id="menu-item-392" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-392"><a href="https://www.mercer.edu/about-mercer/locations/">Locations</a></li>
+	<li id="menu-item-393" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-393"><a href="https://www.mercer.edu/about-mercer/notable-alumni/">Notable Alumni</a></li>
+	<li id="menu-item-394" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-394"><a href="https://www.mercer.edu/about-mercer/organizational-leadership/">Organizational Leadership</a></li>
+</ul>
+</li>
+<li id="menu-item-334" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-334"><a href="https://www.mercer.edu/discovery-and-innovation/">Discovery and Innovation</a>
+<ul class="sub-menu">
+	<li id="menu-item-6633" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6633"><a href="https://www.mercer.edu/discovery-and-innovation/research-that-reaches-out/">Research that Reaches Out</a></li>
+	<li id="menu-item-396" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-396"><a href="https://www.mercer.edu/discovery-and-innovation/undergraduate-research/">Undergraduate Research</a></li>
+	<li id="menu-item-397" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-397"><a href="https://www.mercer.edu/discovery-and-innovation/graduate-and-professional-research/">Graduate and Professional Research</a></li>
+	<li id="menu-item-399" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-399"><a href="https://www.mercer.edu/discovery-and-innovation/goldwater-scholars/">Goldwater Scholars</a></li>
+	<li id="menu-item-404" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-404"><a href="https://www.mercer.edu/discovery-and-innovation/bear-day/">BEAR Day</a></li>
+	<li id="menu-item-405" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-405"><a href="https://www.mercer.edu/discovery-and-innovation/atlanta-research-conference/">Atlanta Research Conference</a></li>
+	<li id="menu-item-5471" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5471"><a href="http://mic.mercer.edu/">Mercer Innovation Center</a></li>
+	<li id="menu-item-5472" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5472"><a href="https://arts.mercer.edu/">The Arts at Mercer</a></li>
+</ul>
+</li>
+<li id="menu-item-336" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-336"><a href="https://www.mercer.edu/global-impact/">Global Impact</a>
+<ul class="sub-menu">
+	<li id="menu-item-414" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-414"><a href="https://www.mercer.edu/global-impact/mercer-on-mission/">Mercer On Mission</a></li>
+	<li id="menu-item-415" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-415"><a href="https://www.mercer.edu/global-impact/strengthening-communities/">Strengthening Communities</a></li>
+	<li id="menu-item-5221" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5221"><a href="https://www.mercerabroad.com/">Study Abroad</a></li>
+	<li id="menu-item-420" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-420"><a href="https://www.mercer.edu/global-impact/international-students/">International Students</a></li>
+	<li id="menu-item-1339" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1339"><a href="https://www.mercer.edu/global-impact/eli/">English Language Institute</a></li>
+	<li id="menu-item-419" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-419"><a href="https://www.mercer.edu/global-impact/peace-corps/">Peace Corps</a></li>
+</ul>
+</li>
+<li id="menu-item-5476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5476"><a href="https://www.mercer.edu/athletics/">Athletics</a></li>
+</ul>                            </div>
+                            <div class="menu-extras">
+                                <div class="header-menu-bring-in">
+                                    <h4>Info For</h4>
+                                    <ul id="header-menu-bring-in" class="header-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5925"><a href="https://www.mercer.edu/academics/program-finder/">Programs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5923"><a href="https://www.mercer.edu/admissions/">Admissions</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5924"><a href="https://www.mercer.edu/give/">Give</a></li>
+</ul>                                </div>
+                                <div class="menu-quick-links">
+                                    <h4>Quick Links</h4>
+                                    <ul id="menu-header-quick-links" class="quick-links"><li id="menu-item-615" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-615"><a href="https://den.mercer.edu/news/">News</a></li>
+<li id="menu-item-614" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-614"><a href="https://events.mercer.edu/">Events</a></li>
+<li id="menu-item-9137" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9137"><a href="https://den.mercer.edu">The Den</a></li>
+<li id="menu-item-5211" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5211"><a href="http://alumni.mercer.edu/">Alumni</a></li>
+<li id="menu-item-7562" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7562"><a href="https://outlook.office.com/">Email</a></li>
+<li id="menu-item-16996" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16996"><a href="https://catalogs.mercer.edu/">Catalogs</a></li>
+<li id="menu-item-7524" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7524"><a href="https://merceru.instructure.com/">Canvas</a></li>
+<li id="menu-item-616" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-616"><a href="https://my.mercer.edu">MyMercer</a></li>
+<li id="menu-item-617" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-617"><a href="http://alert.mercer.edu/">Mercer Alerts</a></li>
+</ul>                                </div>
+                                <div class="menu-connect-with-us">
+                                    <h4>Connect With Us</h4>
+                                    <ul>
+<li><a href="https://www.google.com/maps/place/1501+Mercer+University+Dr,+Macon,+GA+31207" target="_blank" rel="noopener">1501 Mercer University Drive, Macon, GA 31207</a></li>
+<li><a href="https://www.google.com/maps/place/3001+Mercer+University+Dr,+Atlanta,+GA+30341" target="_blank" rel="noopener">3001 Mercer University Drive, Atlanta, GA 30341</a></li>
+<li><a href="https://www.google.com/maps/place/1250+E+66th+St,+Savannah,+GA+31404" target="_blank" rel="noopener">1250 East 66th Street, Savannah, GA 31404</a></li>
+<li><a href="https://www.google.com/maps/place/1633+1st+Ave,+Columbus,+GA+31901" target="_blank" rel="noopener">1633 First Avenue, Columbus, GA 31901</a></li>
+<li><a href="tel:18006372378">1-800-MERCER-U</a></li>
+</ul>
+
+                                    <div class="menu-social-links">
+                                        
+<div class="social-links">
+    <a target="_blank" href="https://www.facebook.com/MercerUniversity/" class="facebook-link" title="Like us on Facebook!">
+    <p class="sr-only">Open Facebook page in new window</p>
+    <span class="ikes-facebook" aria-hidden="true"></span>
+  </a>
+      <a target="_blank" href="https://www.instagram.com/merceryou" class="instagram-link" title="Follow us on Instagram!">
+    <p class="sr-only">Open Instagram page in new window</p>
+    <span class="ikes-instagram" aria-hidden="true"></span>
+  </a>
+      <a target="_blank" href="https://www.linkedin.com/school/merceruniversity/" class="linkedin-link" title="Follow us on LinkedIn!">
+    <p class="sr-only">Open LinkedIn page in new window</p>
+    <span class="ikes-linkedin" aria-hidden="true"></span>
+  </a>
+      <a target="_blank" href="http://www.youtube.com/user/MercerUniversity/" class="youtube-link" title="Follow our Youtube channel!">
+    <p class="sr-only">Open YouTube page in new window</p>
+    <span class="ikes-youtube" aria-hidden="true"></span>
+  </a>
+  </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                                <div id="search-box" hidden aria-hidden="true">
+                    <div class="outer-container">
+                        <div class="container">
+                            <div class="search-tabs-wrapper tabs-wrapper">
+    <div class="tab-content-wrapper">
+        <div id="search-website" class="tab-content tab-current" role="tabpanel" aria-labelledby="tab_1">
+            <form autocomplete="off" role="search" method="get" class="search-form" action="https://search.mercer.edu/">
+                <div class="search-form-row">
+                    <label for="merc-web-search" class="screen-reader-text">Search the website</label>
+                    <input id="merc-web-search" type="search" class="search-field" placeholder="Search" value="" name="q">
+                    <button id="merc-web-btn" type="submit" class="search-button" value="Search">&rarr;</button>
+                </div>
+            </form>
+        </div>
+        <div id="search-directory" class="tab-content" role="tabpanel" aria-labelledby="tab_2">
+            <form autocomplete="off" role="search" method="post" class="search-form" action="https://directory.mercer.edu/">
+                <div class="search-form-row">
+                    <label for="merc-dir-search" class="screen-reader-text">Search directory</label>
+                    <input id="merc-dir-search" type="search" class="search-field" placeholder="Search" value="" name="txtSearch">
+                    <button id="merc-dir-btn" type="submit" class="search-button" value="Search">&rarr;</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="tab-menu-wrapper tabs">
+        <input type="checkbox" id="tab_1" class="tab-link tab-current" data-tab="search-website" role="tab" aria-selected="true" aria-controls="search-website" name="search-tab-group">
+        <label class="tab-link-label" for="tab_1"><span class='screen-reader-text'>Search the</span> Website</label>
+
+        <input type="checkbox" id="tab_2" class="tab-link" data-tab="search-directory" role="tab" aria-selected="false" aria-controls="search-directory" name="search-tab-group">
+        <label class="tab-link-label" for="tab_2"><span class='screen-reader-text'>Search the</span> Directory</label>
+    </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                            <nav id="tier3-nav">
+                    <div class="tier3-menu-toggle-wrap">
+                        <a class="tier3-menu-home-link" href="https://www.mercer.edu/about-mercer/awards-recognitions/">
+                            <span class="tier3-menu-home-link-text">
+                                <span class="sr-only">Go back to </span>
+                                Awards and Recognitions                            </span>
+                        </a>
+                        <button type="button" href="#tier3-menu" id="tier3-nav-button" class="tier3-menu-toggle" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Awards and Recognitions Menu Toggle</span>
+                            <span class="button-icon site-nav-chevron"></span>
+                        </button>
+                    </div>
+
+                    <div id="tier3-menu-wrap">
+                                            </div>
+                </nav>
+                <script>
+                    jQuery(document).ready(function() {
+                        MRNav.init({
+                            'mobile-start': 99999,
+                            'hover-disable': true,
+                            'nav-id': 'tier3-nav',
+                            'nav-button-id': 'tier3-nav-button',
+                            'menu-wrap-id': 'tier3-menu-wrap',
+                            'menu-id': 'tier3-menu',
+                            'overlay-id': 'mr-navigation-overlay',
+                        });
+                    });
+                </script>
+                        </header><main id="primary-wrap" class="primary_content_wrap" role="main">
+                                    <article id="post-207" class="page main-article post-207 type-page status-publish hentry site-url-www-mercer-edu">
+                <section class="hero hero-interior-page has-diamond slim-hero">
+    <div class="module-wrap">
+        <div class="outer-container">
+            <div class="container">
+                <div class="content-wrap">
+                    <h1 class="title">Awards and Recognitions</h1>
+                    
+                                    </div>
+            </div>
+        </div>
+
+        <div class="hero-bkgr-container" aria-hidden="true">
+            <div class="hero-bkgr-pattern dark-pattern"></div>
+        </div>
+    </div>
+</section>    <section  class="module content standard-content rmv-bot">
+        <div class="outer-container">
+            <div class="container">
+                                    <figure id="attachment_8447" aria-describedby="caption-attachment-8447" style="width: 485px" class="wp-caption alignright"><img fetchpriority="high" decoding="async" class=" wp-image-8447" src="https://www.mercer.edu/wp-content/uploads/2019/12/Gilman-Scholars-December-20199-300x200.png" alt="2020 Gilman Scholars" width="485" height="323" srcset="https://www.mercer.edu/wp-content/uploads/2019/12/Gilman-Scholars-December-20199-300x200.png 300w, https://www.mercer.edu/wp-content/uploads/2019/12/Gilman-Scholars-December-20199-1024x683.png 1024w, https://www.mercer.edu/wp-content/uploads/2019/12/Gilman-Scholars-December-20199-768x512.png 768w, https://www.mercer.edu/wp-content/uploads/2019/12/Gilman-Scholars-December-20199-1536x1024.png 1536w, https://www.mercer.edu/wp-content/uploads/2019/12/Gilman-Scholars-December-20199-260x173.png 260w, https://www.mercer.edu/wp-content/uploads/2019/12/Gilman-Scholars-December-20199.png 2048w" sizes="(max-width: 485px) 100vw, 485px" /><figcaption id="caption-attachment-8447" class="wp-caption-text">2020 Gilman Scholars</figcaption></figure>
+<h3>Our Bears put their best foot forward every day, and it shows in the headlines and achievements that come rolling in year after year.</h3>
+<p>Mercer students and faculty go beyond striving to reach their personal best and aim to be the very best in academia.</p>
+<p>Every year, Bears are awarded prestigious and highly selective scholarships, fellowships and opportunities. Their talents and accomplishments set them apart among pools of candidates from across the nation and world.</p>
+<p><a href="https://www.mercer.edu/discovery-and-innovation/goldwater-scholars/">Mercer has had 12 Goldwater Scholars</a> since the 2012-2013 academic year; 19 Fulbright U.S. Student Award recipients since 2010; and was recently recognized as a Gilman Greatest Growth Institution for the University&#8217;s role in broadening the student population that studies abroad. An unprecedented 16 Mercer students were selected for the U.S. Department of State’s Benjamin A. Gilman International Scholarship to study or intern abroad during the spring, summer or fall of 2020.</p>
+<p>For 2019-20, Mercer was once again ranked in the top tier of national universities and was named the No. 40 best value institution among national universities by <em>U.S. News &amp; World Report</em>. Mercer was also recently classified as a doctoral university with high research activity by the Carnegie Classification of Institutions of Higher Education.</p>
+<p>The list below shows some of the most recent accomplishments by Mercer, its students and faculty.</p>
+                            </div>
+        </div>
+    </section>
+    <section  class="module module-news module-articles light module-news-grid none">
+  <div class="outer-container">
+    <div class="container">
+            <div class="button-wrap">
+              <a href="https://news.mercer.edu/category/awards-scholarships/" class="button" >View All<span class="sr-only">about </span></a>
+      </div>
+            <div id="news-module-1756" class="article-container">
+                <article class="article-wrap article-wrap-grid">
+        <a href="https://den.mercer.edu/two-students-selected-for-martin-luther-king-jr-center-internships/">
+          <div class="image-date-wrap">
+              <time>10.13.2026</time>
+                            <img class="lazy" src="https://www.mercer.edu/wp-content/themes/mercer/assets/images/image-news-placeholder.png" data-src="https://den.mercer.edu/wp-content/uploads/2020/11/macon-campus-new-741x486.jpg" alt="A large tree stands near a brick building with a tall spire under a sunny sky, surrounded by green foliage." width="620" height="420">
+              <noscript>
+                <img src="https://den.mercer.edu/wp-content/uploads/2020/11/macon-campus-new-741x486.jpg" alt="A large tree stands near a brick building with a tall spire under a sunny sky, surrounded by green foliage." width="620" height="420">
+              </noscript>
+              
+          </div>
+          <div class="text-wrap">
+            <h3 class="kicker blue smaller">Mercer News</h3>
+              <h2 class="h4">Two students selected for Martin Luther King Jr. Center internships</h2>
+          </div></a>
+        </article>
+                <article class="article-wrap article-wrap-grid">
+        <a href="https://den.mercer.edu/nine-students-awarded-un-millennium-fellowships/">
+          <div class="image-date-wrap">
+              <time>10.09.2026</time>
+                            <img class="lazy" src="https://www.mercer.edu/wp-content/themes/mercer/assets/images/image-news-placeholder.png" data-src="https://den.mercer.edu/wp-content/uploads/2023/11/i-HqwzD8p-X5-741x486.jpg" alt="life-size statue of man (Jesse Mercer) sitting on a park bench" width="620" height="420">
+              <noscript>
+                <img src="https://den.mercer.edu/wp-content/uploads/2023/11/i-HqwzD8p-X5-741x486.jpg" alt="life-size statue of man (Jesse Mercer) sitting on a park bench" width="620" height="420">
+              </noscript>
+              
+          </div>
+          <div class="text-wrap">
+            <h3 class="kicker blue smaller">Mercer News</h3>
+              <h2 class="h4">Nine students awarded UN Millennium Fellowships</h2>
+          </div></a>
+        </article>
+                <article class="article-wrap article-wrap-grid">
+        <a href="https://den.mercer.edu/ed-grimsley-m-d-named-2026-sandra-dunagan-deal-rural-service-fellow/">
+          <div class="image-date-wrap">
+              <time>10.08.2026</time>
+                            <img class="lazy" src="https://www.mercer.edu/wp-content/themes/mercer/assets/images/image-news-placeholder.png" data-src="https://den.mercer.edu/wp-content/uploads/2026/10/Grimsley-Award-741x486.jpg" alt="Mercer School of Medicine Dean Jean Sumner, M.D.; former Gov. Nathan Deal; Ed Grimsley, M.D.; and Mercer Vice President of External Relations Ember Bentley standing in front of a Mercer University School of Medicine backdrop." width="620" height="420">
+              <noscript>
+                <img src="https://den.mercer.edu/wp-content/uploads/2026/10/Grimsley-Award-741x486.jpg" alt="Mercer School of Medicine Dean Jean Sumner, M.D.; former Gov. Nathan Deal; Ed Grimsley, M.D.; and Mercer Vice President of External Relations Ember Bentley standing in front of a Mercer University School of Medicine backdrop." width="620" height="420">
+              </noscript>
+              
+          </div>
+          <div class="text-wrap">
+            <h3 class="kicker blue smaller">Mercer News</h3>
+              <h2 class="h4">Ed Grimsley, M.D., named 2026 Sandra Dunagan Deal Rural Service Fellow</h2>
+          </div></a>
+        </article>
+                <article class="article-wrap article-wrap-grid">
+        <a href="https://den.mercer.edu/engineering-student-awarded-highly-competitive-stem-scholarship/">
+          <div class="image-date-wrap">
+              <time>10.06.2026</time>
+                            <img class="lazy" src="https://www.mercer.edu/wp-content/themes/mercer/assets/images/image-news-placeholder.png" data-src="https://den.mercer.edu/wp-content/uploads/2024/05/240220EngineeringBauerEPA_0071-741x486.jpg" alt="brass School of Engineering plaque on building exterior" width="620" height="420">
+              <noscript>
+                <img src="https://den.mercer.edu/wp-content/uploads/2024/05/240220EngineeringBauerEPA_0071-741x486.jpg" alt="brass School of Engineering plaque on building exterior" width="620" height="420">
+              </noscript>
+              
+          </div>
+          <div class="text-wrap">
+            <h3 class="kicker blue smaller">Mercer News</h3>
+              <h2 class="h4">Engineering student awarded highly competitive STEM Scholarship</h2>
+          </div></a>
+        </article>
+                <article class="article-wrap article-wrap-grid">
+        <a href="https://den.mercer.edu/mercer-named-a-best-value-college-for-2027-by-the-princeton-review/">
+          <div class="image-date-wrap">
+              <time>9.30.2026</time>
+                            <img class="lazy" src="https://www.mercer.edu/wp-content/themes/mercer/assets/images/image-news-placeholder.png" data-src="https://den.mercer.edu/wp-content/uploads/2026/09/DJI_0521-741x486.jpeg" alt="Four people stand in a tower holding a bright orange Mercer University Bears banner overlooking a college campus." width="620" height="420">
+              <noscript>
+                <img src="https://den.mercer.edu/wp-content/uploads/2026/09/DJI_0521-741x486.jpeg" alt="Four people stand in a tower holding a bright orange Mercer University Bears banner overlooking a college campus." width="620" height="420">
+              </noscript>
+              
+          </div>
+          <div class="text-wrap">
+            <h3 class="kicker blue smaller">Life at Mercer</h3>
+              <h2 class="h4">Mercer named a Best Value College for 2027 by The Princeton Review</h2>
+          </div></a>
+        </article>
+                <article class="article-wrap article-wrap-grid">
+        <a href="https://den.mercer.edu/mercer-rises-in-nations-top-university-rankings-by-u-s-news-world-report/">
+          <div class="image-date-wrap">
+              <time>9.23.2026</time>
+                            <img class="lazy" src="https://www.mercer.edu/wp-content/themes/mercer/assets/images/image-news-placeholder.png" data-src="https://den.mercer.edu/wp-content/uploads/2026/09/161118fall-campus_alm_014-741x486.jpg" alt="Tree-lined campus walkway with lampposts, banners, and distant view of historic building with towers on a sunny day." width="620" height="420">
+              <noscript>
+                <img src="https://den.mercer.edu/wp-content/uploads/2026/09/161118fall-campus_alm_014-741x486.jpg" alt="Tree-lined campus walkway with lampposts, banners, and distant view of historic building with towers on a sunny day." width="620" height="420">
+              </noscript>
+              
+          </div>
+          <div class="text-wrap">
+            <h3 class="kicker blue smaller">Mercer News</h3>
+              <h2 class="h4">Mercer rises in nation’s top university rankings by U.S. News &amp; World Report</h2>
+          </div></a>
+        </article>
+                <article class="article-wrap article-wrap-grid">
+        <a href="https://den.mercer.edu/mercer-recognized-among-best-in-the-country-for-building-and-fostering-nonpartisan-civic-engagement/">
+          <div class="image-date-wrap">
+              <time>9.17.2026</time>
+                            <img class="lazy" src="https://www.mercer.edu/wp-content/themes/mercer/assets/images/image-news-placeholder.png" data-src="https://den.mercer.edu/wp-content/uploads/2026/09/2025_Bearstock_jgratigny_0022-1-741x486.jpg" alt="Three smiling young adults stand outdoors wearing event lanyards and Mercer-themed shirts, with trees in the background." width="620" height="420">
+              <noscript>
+                <img src="https://den.mercer.edu/wp-content/uploads/2026/09/2025_Bearstock_jgratigny_0022-1-741x486.jpg" alt="Three smiling young adults stand outdoors wearing event lanyards and Mercer-themed shirts, with trees in the background." width="620" height="420">
+              </noscript>
+              
+          </div>
+          <div class="text-wrap">
+            <h3 class="kicker blue smaller">Mercer News</h3>
+              <h2 class="h4">Mercer recognized among best in the country for building and fostering nonpartisan civic engagement</h2>
+          </div></a>
+        </article>
+                <article class="article-wrap article-wrap-grid">
+        <a href="https://den.mercer.edu/shafa-gilani-selected-as-2026-27-newman-civic-fellow/">
+          <div class="image-date-wrap">
+              <time>9.14.2026</time>
+                            <img class="lazy" src="https://www.mercer.edu/wp-content/themes/mercer/assets/images/image-news-placeholder.png" data-src="https://den.mercer.edu/wp-content/uploads/2026/09/horizontal-blurred-background-13-741x486.png" alt="A woman in business attire stands in front of the U.S. Capitol building, smiling at the camera." width="620" height="420">
+              <noscript>
+                <img src="https://den.mercer.edu/wp-content/uploads/2026/09/horizontal-blurred-background-13-741x486.png" alt="A woman in business attire stands in front of the U.S. Capitol building, smiling at the camera." width="620" height="420">
+              </noscript>
+              
+          </div>
+          <div class="text-wrap">
+            <h3 class="kicker blue smaller">Mercer News</h3>
+              <h2 class="h4">Shafa Gilani selected as 2026–27 Newman Civic Fellow</h2>
+          </div></a>
+        </article>
+                <article class="article-wrap article-wrap-grid">
+        <a href="https://den.mercer.edu/senior-awarded-transportation-engineering-scholarship/">
+          <div class="image-date-wrap">
+              <time>9.11.2026</time>
+                            <img class="lazy" src="https://www.mercer.edu/wp-content/themes/mercer/assets/images/image-news-placeholder.png" data-src="https://den.mercer.edu/wp-content/uploads/2026/09/Georgia-ITE-741x486.jpg" alt="Two people stand in front of a research poster about nighttime versus daytime crashes in work zones at a presentation event." width="620" height="420">
+              <noscript>
+                <img src="https://den.mercer.edu/wp-content/uploads/2026/09/Georgia-ITE-741x486.jpg" alt="Two people stand in front of a research poster about nighttime versus daytime crashes in work zones at a presentation event." width="620" height="420">
+              </noscript>
+              
+          </div>
+          <div class="text-wrap">
+            <h3 class="kicker blue smaller">Mercer News</h3>
+              <h2 class="h4">Senior awarded transportation engineering scholarship</h2>
+          </div></a>
+        </article>
+              </div>
+      <script>
+      (function($) {
+        
+        function articleCarousel() {
+          if (window.innerWidth <= 768 && $('#news-module-1756').length > 0) {
+            if (!$('#news-module-1756').hasClass('slick-initialized')) {
+              $('#news-module-1756').slick({
+                arrows: false,
+                autoplay: true,
+                dots: false,
+                rows: 0,
+                slide: '.article-wrap',
+                slidesToScroll: 2,
+                slidesToShow: 2,
+                responsive: [{
+                  breakpoint: 541,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                  }
+                }]
+              });
+            }
+          } else {
+            if ($('#news-module-1756').hasClass('slick-initialized')) {
+              $('#news-module-1756').slick('unslick');
+            }
+          }
+        }
+
+        $(document).ready(articleCarousel);
+        $(window).resize(articleCarousel);
+              })(jQuery);
+      </script>
+    </div>
+  </div>
+</section>
+            </article>
+            </main>
+</div>
+<footer id="footer" role="contentinfo">
+        <div class="footer-inner">
+        <div class="footer-logo">
+            <svg class="header-logo" aria-labelledby="footer-title" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 49.533">
+                <title id="footer-title">Mercer University</title>
+                <desc>Mercer University logo displaying the words Mercer University in large white font on a dark background, all underlined in orange</desc>
+                <defs><style>.a {fill: #f76800;} .b {fill: #fff;}</style></defs>
+                <g>
+                    <path class="a" d="M0,49.53H260v-2H0Z" transform="translate(0 0)"/>
+                    <g>
+                        <path class="b" d="M97.15,31.39c3.17-.06,5.74-.12,8.49-.12,2.39.06,6.4.12,11.47.12.06-.18.42.3.61-.6.11-1.91.53-3.64.71-5.85.06-.41-.84-1.19-.84,0-1,4.78-3.94,5.25-9.44,5.31-4.19-.06-4.6-.41-4.6-3.7V17.49h4.18c3.41,0,4.55,0,4.73,2.15a.57.57,0,0,0,.6.53.55.55,0,0,0,.53-.53c-.06-1.49,0-2.09,0-3.16,0-.84-.06-1.37,0-2.87-.18-1.07-1.13-.6-1.13-.12.12,2.27-1.62,2.81-5.62,2.87-.78-.06-2.39-.06-3.29-.12V5h3.16c6.1,0,8.61.47,8.61,4.41.06.66,1,.42,1,0,.06-2.09-.12-2.74-.12-4.41a11.53,11.53,0,0,0,0-1.44c-4.79.18-9.15.18-11.48.12s-4.43,0-7.18-.12a.66.66,0,0,0,0,1.31c1.92-.06,2.69.78,2.75,3V26.21c-.06,3-.23,4.23-2.87,4.3-.9-.06-.77.95-.3.89Z" transform="translate(0 0)"/>
+                        <path class="b" d="M133.56,4.37a12.24,12.24,0,0,0-4.67-.9c-1.85.06-3.94.36-6.33.3a31.54,31.54,0,0,1-3.89-.12c-.36.12-.66,1.2.12,1.31,2,0,2.75.42,2.75,2.75V27c0,2.92-.12,3.16-2.45,3.46-1,.12-1,1,0,1,2,0,2.87-.06,4.18,0,1.14-.06,2.45-.06,4.43,0,.66,0,1.13-.89,0-1-2.69-.12-2.81-1.26-2.87-4.3V18.45a24.35,24.35,0,0,1,4.18.3c.54.24,1,1.37,1.73,2.74l3.59,5.85c2,3.34,4.31,4.53,7.77,4.59.72-.06.42-.06,1.32-.12.71,0,.47-.95,0-.83-3-.06-4.55-2-6.34-5.43L132.36,18a7.24,7.24,0,0,0,5.44-6.86,7,7,0,0,0-4.24-6.74l-1.08,1.9a6.14,6.14,0,0,1,2.09,5.25c.06,3.76-2.15,5.73-6.33,5.73a22.37,22.37,0,0,1-3.47-.3V5c1.13-.06,2.57-.11,3.17-.11a6.79,6.79,0,0,1,4.48,1.36Z" transform="translate(0 0)"/>
+                        <path class="b" d="M73.4,42.2a.6.6,0,0,1-.52-.3L55.78,7.41,55.66,35c.06,3.61,1.54,5.55,4.3,5.61h0a.81.81,0,0,1,.69.78.46.46,0,0,1-.16.38A1,1,0,0,1,60,42c-3.23-.12-4.81-.12-5.86-.12H48.25a.5.5,0,0,1-.38-.15.51.51,0,0,1-.11-.43.6.6,0,0,1,.52-.57h.08c3,0,3.74-1.25,4.3-3.88.39-1.76.47-6.45.58-12.39,0-.42,0-.84,0-1.26v-.25c0-2.05,0-4.43,0-6.52v-.85c0-4.3,0-8,0-8.08,0-2.07-.19-3.65-.9-4.63s-1.89-1.37-4-1.4c-.57,0-.77-.4-.76-.7A.76.76,0,0,1,48.36,0l1.37,0C51,.1,52,.13,53.27.13a4,4,0,0,0,.49,0c.45,0,1.13,0,2.25-.1h.12l.28,0L57,0h.14a.62.62,0,0,1,.58.43l17,35L89.44.61l0-.08h0A.74.74,0,0,1,90.15,0c1,0,1.84,0,2.66.07s1.39.05,2.06.05c.49,0,1,0,1.48,0,1.21,0,2.53,0,4.14-.15.4,0,.59.24.59.47a.4.4,0,0,1-.36.42h0a.46.46,0,0,1-.21-.05c-4.4.79-5.08,2.18-5.14,6.56a3.57,3.57,0,0,1,0,1.13L96,32.89c0,5.31,1.31,7.58,4.39,7.58h.21c.68,0,.91.36.9.67a.85.85,0,0,1-.9.76c-2.56-.1-4.67-.14-6.25-.14-.63,0-1.18,0-1.64,0s-.87,0-1.3,0c-.9,0-1.78,0-3.39.09l-.66,0h0l-.65,0a.6.6,0,0,1-.65-.55v0a.53.53,0,0,1,.16-.38.74.74,0,0,1,.49-.18c1.62,0,2.62-.37,3.26-1.12s.93-1.91.93-3.77L90.39,3.36,74.49,41.6l-.06.1c-.09.17-.26.5-.54.5H73.4Zm67.21-.06h-.3l-2.51-6.45c-.35-.65-.59-1-1.32-1v-.42l.71.05a7,7,0,0,1,.73.07q.72,0,1.44-.12v.42h-.2c-.37,0-.58.14-.64.42a.79.79,0,0,0,.12.3l2.15,5.31,2.15-5.13a2,2,0,0,0,0-.6.17.17,0,0,0,0-.18c-.06-.09-.22-.12-.58-.12v-.42l.57.06.57.06a7.35,7.35,0,0,0,1.14-.12v.42c-.73,0-.91.39-1.14,1l-2.87,6.44Zm31.39,0h0c-.64-.07-1.33-.2-1.85-.3V39.93h.3a1.87,1.87,0,0,0,1.85,1.73h.1a1.5,1.5,0,0,0,1.46-1.54h0c0-1-.69-1.27-1.73-1.73-1.23-.56-2.1-1-2-2.15a1.86,1.86,0,0,1,.5-1.38,2.51,2.51,0,0,1,1.77-.77,11.16,11.16,0,0,1,1.14.16h.07a6.2,6.2,0,0,0,.82.12,3.63,3.63,0,0,0,0,1.14,1.42,1.42,0,0,0,0,.71H174c0-1.1-.57-1.67-1.73-1.73a1.52,1.52,0,0,0-1.05.52,1.12,1.12,0,0,0-.27.8,1.15,1.15,0,0,0,.6,1.13,9.48,9.48,0,0,0,1.1.56h.05l0,0h.07a6.43,6.43,0,0,1,.79.39,1.83,1.83,0,0,1,1,1.73,2.21,2.21,0,0,1-.54,1.67,2.82,2.82,0,0,1-2,.79Zm-64.27-.06c-1.81-.07-2.93-1.29-3-3.29V35.51a.86.86,0,0,0-.12-.68.69.69,0,0,0-.52-.16h-.2s0,0,0,0h0a.14.14,0,0,0-.08,0v-.42l.62.05h.09c.26,0,.49,0,.72.06a10,10,0,0,0,1.06-.09h0l.23,0v.41c-.8,0-.84.34-.84,1.32v3.28c0,1.42.76,2.27,2,2.27H108a2.23,2.23,0,0,0,1.63-.63,3,3,0,0,0,.7-2.23V37.24c0-1.41,0-2.1-.24-2.4a.67.67,0,0,0-.49-.17h-.11v-.41l.48.05h0a4,4,0,0,1,.5.06,7.35,7.35,0,0,0,1.14-.12v.42c-.66,0-.72.3-.72,1.14v2c0,.08,0,.16,0,.25v0a5.15,5.15,0,0,1-.59,2.69A3.22,3.22,0,0,1,107.73,42.08Zm16.2-.13h-.42l-5.14-6.44a16.62,16.62,0,0,1-.18,1.73c0,1.4.08,2.48.1,2.93v.14c0,.34,0,.54,0,.63.12.47.29.6.84.6v.3l-.57,0-.57,0-.57,0-.57,0v-.3c.59-.06.78-.29.84-1v0c0-.47.07-2.22.12-5.11,0-.54-.17-.72-.79-.72h-.35v-.42l.47.05h0a4.51,4.51,0,0,1,.53.07,4.51,4.51,0,0,1,.72-.12l5,6.14V39a28.6,28.6,0,0,0-.12-3.7c-.06-.5-.32-.6-.71-.6v-.42a5.3,5.3,0,0,0,.56.07c.17,0,.36,0,.57,0a8.08,8.08,0,0,0,.86-.08h.06l.22,0v.42h0a.67.67,0,0,0-.83.83c0,.44-.12,2.39-.12,6.45Zm42.51,0h-.72c-.85,0-1.29-.3-1.85-1.31l-1-1.55h0c-.18-.35-.3-.59-.42-.59a1,1,0,0,0-.39-.07l-.44,0v2c0,.84.06,1.13.71,1.13h.12v.3l-.65,0a6.12,6.12,0,0,1-.66,0q-.33,0-.72,0t-.72,0v-.3h0a.82.82,0,0,0,.67-.19c.15-.15.19-.43.16-.94V35.51a.91.91,0,0,0-.12-.7.58.58,0,0,0-.43-.15h-.17a0,0,0,0,0,0,0h0a.13.13,0,0,0-.09,0v-.42a11,11,0,0,1,1.14.12,8.22,8.22,0,0,0,1-.06h.05c.23,0,.46,0,.69-.05h.16a2.9,2.9,0,0,1,1.16.24l-.15.2.15-.2A1.73,1.73,0,0,1,165,36.23a1.61,1.61,0,0,1-1.35,1.84h-.2l1.14,2.15c.46.86.76,1.43,1.85,1.43V42Zm-4.9-7.27V38l.36,0,.35,0h.17a1.64,1.64,0,0,0,1.23-.43A1.49,1.49,0,0,0,164,36.4a1.69,1.69,0,0,0-.54-1.37,1.84,1.84,0,0,0-1.11-.36h-.8Zm19.79,7.18-.66,0-.72,0-.72,0v-.3h.12a.75.75,0,0,0,.56-.17c.15-.16.2-.45.16-1V35.51a.91.91,0,0,0-.12-.7.54.54,0,0,0-.43-.14h-.17a0,0,0,0,0,0,0h0l-.09,0v-.41l.72.05h.11l.61.06c.34,0,.67,0,1-.08h.12l.19,0v.42c-.8,0-.83.34-.83,1.31V40.4c0,.84.06,1.13.71,1.13H182v.3a6.18,6.18,0,0,1-.65,0Zm-49.74,0-.72,0-.66,0-.66,0v-.3h0c.65,0,.83-.25.83-1.14V35.51c0-.61-.16-.84-.57-.84h-.15a.1.1,0,0,0-.08,0,0,0,0,0,0,0,0h0v-.41l.63.05h0c.22,0,.43,0,.64.06a8.4,8.4,0,0,0,1-.07h.07l.36,0v.42h0a.89.89,0,0,0-.68.18c-.17.18-.18.51-.14,1.13V40.4c0,.51,0,.8.12,1a.79.79,0,0,0,.59.16h.12v.3q-.33,0-.72,0Zm69.4,0-.65,0-.66,0-.66,0h.18v-.3c.6,0,.78-.25.84-1.14V39.09l-2.15-3.87a1.17,1.17,0,0,0-1-.72v-.3c.22,0,.44,0,.65,0l.67.07c.44,0,.88-.06,1.31-.12v.3c-.4.07-.6.2-.6.42s0,.24.12.3l1.73,3.16,1.56-3.16a1.34,1.34,0,0,1,.07-.18h0a.19.19,0,0,0,0-.1c0-.24-.17-.3-.71-.42v-.3c.14,0,.31,0,.52,0h.05a3.43,3.43,0,0,1,.56.07l1-.12v.3a1.13,1.13,0,0,0-1,.71l-2,3.58V40.4c0,.84.07,1.13.84,1.13v.3q-.33,0-.66,0Zm-10.87,0-.72,0-.72,0-.72,0v-.3h0a1.11,1.11,0,0,0,.79-.2,1.3,1.3,0,0,0,.22-.93V34.68h-.72c-1.38,0-1.8.34-1.85,1.55h-.3v-2h6.57v2h-.3c-.06-1.36-.5-1.49-1.85-1.55h-.72v5.77c.06.79.08,1.08,1,1.08v.3q-.3,0-.72,0Zm-35.34,0h-5.32v-.3h0a.9.9,0,0,0,.67-.19c.14-.16.19-.43.16-1V35.51a.91.91,0,0,0-.13-.7.52.52,0,0,0-.43-.14h-.16s0,0,0,0h0l-.07,0h0v-.42c.3,0,.65,0,1.06.06s.74,0,1.09.06h.24c.88,0,1.77,0,2.63-.12a.27.27,0,0,1,0,.3,13.65,13.65,0,0,1,.12,1.55h-.3c-.06-1.13-.62-1.32-1.85-1.32h-1.2v2.87H152c.63,0,1.12,0,1.32-.24a.6.6,0,0,0,.12-.48s0,0,0,0,0-.06,0-.1h.3a2.91,2.91,0,0,1,0,1,2.86,2.86,0,0,1,0,1h-.3a.73.73,0,0,0-.16-.53,1.06,1.06,0,0,0-.77-.2h-.39a.4.4,0,0,0-.21,0,6,6,0,0,0-.62,0V40.4c0,.45,0,.7.11.84s.49.17,1,.17c1.61,0,2.15-.11,2.45-1.43h.24v.12h0v0c-.1.53-.21,1.19-.27,1.69ZM152.64,31.4h-.32a15.06,15.06,0,0,1-10.09-3.67,12.54,12.54,0,0,1-3.1-4.25A13.48,13.48,0,0,1,138,17.92a15.13,15.13,0,0,1,4.07-10.6,13.85,13.85,0,0,1,4.63-3.15A15.77,15.77,0,0,1,152.63,3a44,44,0,0,1,10.76,1.55,13.84,13.84,0,0,1-.06,1.82c0,.46-.06.94-.06,1.34V9h0a.45.45,0,0,1-.35.31c-.13,0-.25-.1-.37-.3-2.76-3.57-5.17-4.72-9.92-4.72h-.12a10.92,10.92,0,0,0-7.8,3.21,12.56,12.56,0,0,0-3.44,9.08c-.06,7.57,5.16,13.54,11.9,13.6,4.24-.06,8.06-2.36,11.36-6.86V26.5A14.26,14.26,0,0,1,159.34,30,17.93,17.93,0,0,1,152.64,31.4Z" transform="translate(0 0)"/>
+                        <path class="b" d="M164.59,31.39c3.17-.06,5.68-.12,8.49-.12,2.33.06,6.33.12,11.47.12.06-.18.42.3.6-.6.06-1.91.48-3.64.6-5.85.18-.41-.71-1.19-.71,0-1,4.78-4,5.25-9.63,5.31-4.06-.06-4.48-.41-4.42-3.7V17.49h4.18c3.41,0,4.49,0,4.73,2.15a.57.57,0,0,0,1.13,0,27.76,27.76,0,0,1,0-3.16,22.9,22.9,0,0,1,0-2.87c-.18-1.07-1.13-.6-1.13-.12.11,2.27-1.68,2.81-5.62,2.87-.78-.06-2.4-.06-3.29-.12V5h3.16c6,0,8.55.47,8.61,4.41.06.66,1,.42,1,0,0-2.09-.12-2.74-.12-4.41V3.59c-4.85.18-9.21.18-11.48.12s-4.48,0-7.3-.12c-.53-.06-.83,1.2,0,1.32,2-.06,2.75.77,2.75,3V26.21c.06,3-.12,4.23-2.75,4.3-.95-.06-.77.95-.3.89Z" transform="translate(0 0)"/>
+                        <path class="b" d="M200.22,4.07a13.23,13.23,0,0,0-3.95-.6c-1.91.06-4,.36-6.46.3a28.6,28.6,0,0,1-3.7-.12c-.42.12-.72,1.19.12,1.31,2,0,2.69.42,2.75,2.75V27c0,2.92-.12,3.16-2.57,3.46-.9.12-.9,1,.12,1,2,0,2.87-.06,4,0s2.51-.06,4.6,0c.66,0,1.08-.89,0-1-2.75-.12-2.87-1.26-2.87-4.3V18.45a24.54,24.54,0,0,1,4.19.3c.47.24.9,1.37,1.73,2.74l3.59,5.85c2,3.34,4.24,4.54,7.77,4.6.72-.06.42-.06,1.31-.12.66,0,.48-1,0-.84-3-.06-4.54-2-6.45-5.43L199.79,18a7.31,7.31,0,0,0,5.44-6.86c-.12-3.52-1.79-6-5-7l-.83,1.85C201.11,7,202,8.9,202,11.53c0,3.76-2.22,5.73-6.34,5.73a25.26,25.26,0,0,1-3.47-.3V5c1.08-.06,2.57-.11,3.17-.11a7.45,7.45,0,0,1,4,1Z" transform="translate(0 0)"/>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <div class="footer-row">
+            <div class="footer-contact-us">
+                <h2>Contact Us</h2>
+                <ul>
+<li><a href="https://www.google.com/maps/place/1501+Mercer+University+Dr,+Macon,+GA+31207" target="_blank" rel="noopener">1501 Mercer University Drive • Macon, GA 31207</a></li>
+<li><a href="https://www.google.com/maps/place/3001+Mercer+University+Dr,+Atlanta,+GA+30341" target="_blank" rel="noopener">3001 Mercer University Drive • Atlanta, GA 30341</a></li>
+<li><a href="https://www.google.com/maps/place/1250+E+66th+St,+Savannah,+GA+31404" target="_blank" rel="noopener">1250 East 66th Street • Savannah, GA 31404</a></li>
+<li><a href="https://www.google.com/maps/place/1633+1st+Ave,+Columbus,+GA+31901" target="_blank" rel="noopener">1633 First Avenue • Columbus, GA 31901</a></li>
+<li><a href="tel:18006372378#">1-800-MERCER-U</a></li>
+</ul>
+            </div>
+
+            <div class="footer-quick-links">
+                <h2>Quick Links</h2>
+                <ul id="menu-footer-quick-links" class="quick-links"><li id="menu-item-1195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1195"><a href="http://alert.mercer.edu/">Mercer Alerts</a></li>
+<li id="menu-item-1196" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1196"><a href="http://hr.mercer.edu">Employment</a></li>
+<li id="menu-item-1193" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1193"><a href="https://www.mercer.edu/academics/libraries/">Libraries</a></li>
+<li id="menu-item-7523" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7523"><a href="https://merceru.instructure.com/">Canvas</a></li>
+<li id="menu-item-1198" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1198"><a href="https://my.mercer.edu">MyMercer</a></li>
+<li id="menu-item-1194" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1194"><a href="https://www.mercer.edu/marketing-communications/">Marketing Communications</a></li>
+<li id="menu-item-1199" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1199"><a href="http://it.mercer.edu/">Information Technology</a></li>
+<li id="menu-item-7499" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7499"><a href="https://www.mercer.edu/contacts/">Contacts</a></li>
+</ul>            </div>
+
+            <div class="footer-social-links">
+                <h2>Connect With Us</h2>
+                
+<div class="social-links">
+    <a target="_blank" href="https://www.facebook.com/MercerUniversity/" class="facebook-link" title="Like us on Facebook!">
+    <p class="sr-only">Open Facebook page in new window</p>
+    <span class="ikes-facebook" aria-hidden="true"></span>
+  </a>
+      <a target="_blank" href="https://www.instagram.com/merceryou" class="instagram-link" title="Follow us on Instagram!">
+    <p class="sr-only">Open Instagram page in new window</p>
+    <span class="ikes-instagram" aria-hidden="true"></span>
+  </a>
+      <a target="_blank" href="https://www.linkedin.com/school/merceruniversity/" class="linkedin-link" title="Follow us on LinkedIn!">
+    <p class="sr-only">Open LinkedIn page in new window</p>
+    <span class="ikes-linkedin" aria-hidden="true"></span>
+  </a>
+      <a target="_blank" href="http://www.youtube.com/user/MercerUniversity/" class="youtube-link" title="Follow our Youtube channel!">
+    <p class="sr-only">Open YouTube page in new window</p>
+    <span class="ikes-youtube" aria-hidden="true"></span>
+  </a>
+  </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <p class="left-copyright">&copy; 2026 Mercer University. All rights reserved.</p>
+        <div class="right-copyright">
+                            <ul class="footer-more-links">
+                                            <li>
+                            <a href="https://disclosure.mercer.edu/">Consumer Information</a>
+                        </li>
+                                                <li>
+                            <a href="https://accessibility.mercer.edu/">Accessibility</a>
+                        </li>
+                                                <li>
+                            <a href="https://secure.ethicspoint.com/domain/media/en/gui/62627/index.html">Fraud and Abuse Hotline</a>
+                        </li>
+                                                <li>
+                            <a href="https://mercer.edu/privacy-policy">Privacy Policy</a>
+                        </li>
+                                        </ul>
+                    </div>
+    </div>
+    </footer>
+
+<span id="mr-navigation-overlay" title="Close navigation menu"></span>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/www-mercer-child/*","/wp-content/themes/mercer/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- Instagram Feed JS -->
+<script type="text/javascript">
+var sbiajaxurl = "https://www.mercer.edu/wp-admin/admin-ajax.php";
+</script>
+<script id="signature-generator-js-js" src="https://www.mercer.edu/wp-content/plugins/mercer-signature-generator/signature-generator.js?ver=1.16"></script>
+<script id="footer-js-js" src="https://www.mercer.edu/wp-content/themes/mercer/assets/js/ftr.min.js?ver=850925d96b56"></script>
+<!-- 8,1.905,1792467611 --><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"50c08683e1","applicationID":"261436544","transactionName":"NAZUZRFRCxUHWkVRDg1Md1IXWQoISUlQXwQ=","queueTime":0,"applicationTime":1920,"atts":"GEFXE1lLGBs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

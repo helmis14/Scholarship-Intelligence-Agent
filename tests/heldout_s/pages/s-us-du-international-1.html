@@ -1,0 +1,1683 @@
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+<head>
+        <script data-cfasync="false" src="https://app.termly.io/resource-blocker/7ba1b5fc-00c7-40fb-b9cb-ebbd46725653?autoBlock=on" async></script>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-ab08c239bec33d61f91",applicationID:"497891743",browserID:"498071225"};;/*! For license information please see nr-loader-rum-1.324.0.min.js.LICENSE.txt */
+(()=>{var e={8122(e,t,r){"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),a=0===Object.keys(r).length?e:r;for(let s in a)if(void 0!==e[s])try{if(null===e[s]){r[s]=null;continue}Array.isArray(e[s])&&Array.isArray(t[s])?r[s]=Array.from(new Set([...e[s],...t[s]])):e[s]instanceof Map||e[s]instanceof Set||e[s]instanceof Date||e[s]instanceof RegExp?r[s]=e[s]:"object"==typeof e[s]&&null!==t[s]&&"object"==typeof t[s]?r[s]=i(e[s],t[s]):r[s]=e[s]}catch(e){r[s]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},2555(e,t,r){"use strict";r.d(t,{f:()=>s});var n=r(384),i=r(8122);const a={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function s(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}r.d(t,["D",0,e=>(0,i.a)(e,a)])},7699(e,t,r){"use strict";var n=r(860);const i=1e6,a={[n.K7.logging]:!0,[n.K7.genericEvents]:!0,[n.K7.jserrors]:!0,[n.K7.ajax]:!0};r.d(t,["It",0,i,"KC",0,a,"qh",0,"SESSION_ERROR","zd",0,5e5])},9324(e,t,r){"use strict";r.d(t,["xv",0,"1.324.0"])},981(e,t,r){"use strict";r.d(t,["R",0,{AJAX:"AjaxRequest",PA:"PageAction",UA:"UserAction",BP:"BrowserPerformance",WS:"WebSocket",SPV:"SecurityPolicyViolation",JSE:"JavaScriptError",LOG:"Log",PVE:"PageView",PVT:"PageViewTiming",SR:"SessionReplay",ST:"SessionTrace",BI:"BrowserInteraction"}])},6154(e,t,r){"use strict";var n=r(1863);const i="undefined"!=typeof window&&!!window.document,a="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),s=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),o=Boolean("hidden"===s?.document?.visibilityState),c=""+s?.location,u=/iPad|iPhone|iPod/.test(s.navigator?.userAgent),d=u&&"undefined"==typeof SharedWorker,l=((()=>{const e=s.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Date.now()-(0,n.t)());r.d(t,["OF",0,u,"RI",0,i,"WN",0,l,"bv",0,a,"gm",0,s,"m",0,c,"mw",0,o,"sb",0,d,"zk",0,()=>{const e=s?.performance?.getEntriesByType?.("navigation")?.[0];if(e&&e.responseStart>0&&e.responseStart<s.performance.now())return e}])},3241(e,t,r){"use strict";r.d(t,{W:()=>i});var n=r(6154);function i(e={}){try{n.gm.dispatchEvent(new CustomEvent("newrelic",{detail:e}))}catch(e){}}},1687(e,t,r){"use strict";r.d(t,{Ak:()=>o,Ze:()=>u,x3:()=>c});var n=r(3241),i=r(3606),a=r(860),s=r(2646);function o(e,t){if(!e)return;const r={staged:!1,priority:a.P3[t]||0};e.runtime.drainRegistry.get(t)||e.runtime.drainRegistry.set(t,r)}function c(e,t){if(!e)return;const r=e.runtime.drainRegistry;r&&(r.get(t)&&r.delete(t),l(e,t,!1),r.size&&d(e))}function u(e,t="feature",r=!1){if(e){if(!e.runtime.drainRegistry.get(t)||r)return l(e,t);e.runtime.drainRegistry.get(t).staged=!0,d(e)}}function d(e){if(!e)return;const t=Array.from(e.runtime.drainRegistry);t.every(([e,t])=>t.staged)&&(t.sort((e,t)=>e[1].priority-t[1].priority),t.forEach(([t])=>{e.runtime.drainRegistry.delete(t),l(e,t)}))}function l(e,t,r=!0){if(!e)return;const a=e.ee,o=i.i.handlers;if(a&&!a.aborted&&a.backlog&&o){if((0,n.W)({type:"lifecycle",name:"drain",feature:t}),r){const e=a.backlog[t],r=o[t];if(r){for(let t=0;e&&t<e.length;++t)f(e[t],r);Object.entries(r).forEach(([e,t])=>{Object.values(t||{}).forEach(t=>{t[0]?.on&&t[0].context()instanceof s.y&&!t[0].listeners(e).includes(t[1])&&t[0].on(e,t[1])})})}}a.isolatedBacklog||delete o[t],a.backlog[t]=null,a.emit("drain-"+t,[])}}function f(e,t){var r=e[1];Object.values(t[r]||{}).forEach(t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],a=e[2];n.apply(i,a)}})}},7836(e,t,r){"use strict";var n=r(384),i=r(8990),a=r(2646),s=r(5607);const o="nr@context:".concat(s.W),c=function e(t,r){var n={},s={},d={},l=!1;try{l=16===r.length&&u.initializedAgents?.[r]?.runtime.isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,a){!1!==a&&(a=!0);if(c.aborted&&!i)return;t&&a&&t.emit(e,r,n);var o=g(n);m(e).forEach(e=>{e.apply(o,r)});var u=v()[s[e]];u&&u.push([f,e,r,o]);return o},get:h,listeners:m,context:g,buffer:function(e,t){const r=v();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach(([e,n])=>{s[n]=t,t in r||(r[t]=[])})},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach(e=>{delete f.backlog[e]})},isBuffering:function(e){return!!v()[s[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function g(e){return e&&e instanceof a.y?e:e?(0,i.I)(e,o,()=>new a.y(o)):new a.y(o)}function p(e,t){n[e]=m(e).concat(t)}function m(e){return n[e]||[]}function h(t){return d[t]=d[t]||e(f,t)}function v(){return f.backlog}}(void 0,"globalEE"),u=(0,n.Zm)();u.ee||(u.ee=c),r.d(t,["P",0,o,"ee",0,c])},2646(e,t,r){"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},9908(e,t,r){"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(7836).ee.get("handle");function i(e,t,r,i,a){a?(a.buffer([e],i),a.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}},3606(e,t,r){"use strict";r.d(t,{i:()=>a});var n=r(9908);a.on=s;var i=a.handlers={};function a(e,t,r,a){s(a||n.d,i,e,t,r)}function s(e,t,r,i,a){a||(a="feature"),e||(e=n.d);var s=t[a]=t[a]||{};(s[r]=s[r]||[]).push([e,i])}},3878(e,t,r){"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function a(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>a,jT:()=>n,sp:()=>i})},5607(e,t,r){"use strict";const n=(0,r(9566).bz)();r.d(t,["W",0,n])},9566(e,t,r){"use strict";r.d(t,{LA:()=>s,bz:()=>a});var n=r(6154);function i(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".split("").map(e=>"x"===e?i(t,r++).toString(16):"y"===e?(3&i()|8).toString(16):e).join("")}function s(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,a=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const s=[];for(var o=0;o<e;o++)s.push(i(r,a++).toString(16));return s.join("")}},2614(e,t,r){"use strict";r.d(t,["BB",0,18e5,"Wt",0,"NRBA_SESSION::","iL",0,{SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},"tS",0,{STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},"wk",0,144e5])},1863(e,t,r){"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},944(e,t,r){"use strict";r.d(t,{R:()=>i});var n=r(3241);function i(e,t){"function"==typeof console.debug&&(console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t),(0,n.W)({drained:null,type:"data",name:"warn",feature:"warn",data:{code:e,secondary:t}}))}},8990(e,t,r){"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},6389(e,t,r){"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout(()=>{i=clearTimeout(i)},t)),n||(clearTimeout(i),i=setTimeout(()=>{e.apply(this,r)},t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},1910(e,t,r){"use strict";r.d(t,{i:()=>a});var n=r(944);const i=new Map;function a(...e){return e.every(e=>{if(i.has(e))return i.get(e);const t="function"==typeof e?e.toString():"",r=t.includes("[native code]"),a=t.includes("nrWrapper");return r||a||(0,n.R)(64,e?.name||t),i.set(e,r),r})}},5289(e,t,r){"use strict";r.d(t,{GG:()=>s,Qr:()=>c,sB:()=>o});var n=r(3878),i=r(6389);function a(){return"undefined"==typeof document||"complete"===document.readyState}function s(e,t){if(a())return e();const r=(0,i.J)(e),s=setInterval(()=>{a()&&(clearInterval(s),r())},500);(0,n.sp)("load",r,t)}function o(e){if(a())return e();(0,n.DD)("DOMContentLoaded",e)}function c(e){if(a())return e();(0,n.sp)("popstate",e)}},384(e,t,r){"use strict";r.d(t,{Zm:()=>c,bQ:()=>d,dV:()=>u,pV:()=>l});var n=r(6154),i=r(1863),a=r(944),s=r(1910);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function u(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,s.i)(...Object.values(e.o))),e}function d(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,a.R)(69)}function l(){return function(){let e=c();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),u(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}r.d(t,["NT",0,o])},2843(e,t,r){"use strict";r.d(t,{G:()=>a,u:()=>i});var n=r(3878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)},r,i)}function a(e,t,r){(0,n.sp)("pagehide",e,t,r)}},9300(e,t,r){"use strict";r(860).K7.ajax;r.d(t,["mo",0,{NONE:"none",FAILURES:"failures",ALL:"all"}])},3969(e,t,r){"use strict";const n=r(860).K7.metrics;r.d(t,["TZ",0,n,"XG",0,"storeEventMetrics","xV",0,"storeSupportabilityMetrics"])},6630(e,t,r){"use strict";const n=r(860).K7.pageViewEvent;r.d(t,["T",0,n])},782(e,t,r){"use strict";const n=r(860).K7.pageViewTiming;r.d(t,["T",0,n])},4234(e,t,r){"use strict";r.d(t,{W:()=>i});var n=r(1687);class i{constructor(e,t){this.agentRef=e,this.ee=e?.ee,this.featureName=t,this.blocked=!1}deregisterDrain(){(0,n.x3)(this.agentRef,this.featureName)}}},7767(e,t,r){"use strict";var n=r(6154);r.d(t,["V",0,e=>n.RI&&!0===e?.privacy.cookies_enabled])},8362(e,t,r){"use strict";r.d(t,{d:()=>a});var n=r(9566),i=r(1741);class a extends i.W{agentIdentifier=(0,n.LA)(16)}},1741(e,t,r){"use strict";r.d(t,{W:()=>a});var n=r(944),i=r(4261);class a{#e(e,...t){if(this[e]!==a.prototype[e])return this[e](...t);(0,n.R)(35,e)}addPageAction(e,t){return this.#e(i.hG,e,t)}register(e){return this.#e(i.eY,e)}recordCustomEvent(e,t){return this.#e(i.fF,e,t)}setPageViewName(e,t){return this.#e(i.Fw,e,t)}setCustomAttribute(e,t,r){return this.#e(i.cD,e,t,r)}noticeError(e,t){return this.#e(i.o5,e,t)}setUserId(e,t=!1){return this.#e(i.Dl,e,t)}setApplicationVersion(e){return this.#e(i.nb,e)}setErrorHandler(e){return this.#e(i.bt,e)}addRelease(e,t){return this.#e(i.k6,e,t)}log(e,t){return this.#e("log",e,t)}start(){return this.#e("start")}finished(e){return this.#e(i.BL,e)}recordReplay(){return this.#e(i.CH)}pauseReplay(){return this.#e(i.Tb)}addToTrace(e){return this.#e(i.U2,e)}setCurrentRouteName(e){return this.#e(i.PA,e)}interaction(e){return this.#e(i.dT,e)}wrapLogger(e,t,r){return this.#e(i.Wb,e,t,r)}measure(e,t){return this.#e(i.V1,e,t)}consent(e){return this.#e(i.Pv,e)}}},4261(e,t,r){"use strict";r.d(t,["BL",0,"finished","CH",0,"recordReplay","Dl",0,"setUserId","Fw",0,"setPageViewName","PA",0,"setCurrentRouteName","Pv",0,"consent","Tb",0,"pauseReplay","U2",0,"addToTrace","V1",0,"measure","Wb",0,"wrapLogger","bt",0,"setErrorHandler","cD",0,"setCustomAttribute","dT",0,"interaction","eY",0,"register","fF",0,"recordCustomEvent","hG",0,"addPageAction","k6",0,"addRelease","nb",0,"setApplicationVersion","o5",0,"noticeError"])},1738(e,t,r){"use strict";r.d(t,{U:()=>l,Y:()=>d});var n=r(3241),i=r(9908),a=r(1863),s=r(944),o=r(3969),c=r(8362),u=r(860);function d(e,t,r,a){const d=a||r;!d||d[e]&&d[e]!==c.d.prototype[e]||(d[e]=function(){(0,i.p)(o.xV,["API/"+e+"/called"],void 0,u.K7.metrics,r.ee),(0,n.W)({drained:!!r.runtime?.activatedFeatures,type:"data",name:"api",feature:"api-"+e,data:{}});try{return t.apply(this,arguments)}catch(e){(0,s.R)(23,e)}})}function l(e,t,r,n,s){const o=e.info;null===r?delete o.jsAttributes[t]:o.jsAttributes[t]=r,(s||null===r)&&(0,i.p)("api-"+n,[(0,a.t)(),t,r],void 0,"session",e.ee)}},8374(e,t,r){r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},860(e,t,r){"use strict";const n="events",i="jserrors",a="browser/blobs",s="browser/logs",o={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations"},c={[o.pageViewEvent]:1,[o.pageViewTiming]:2,[o.metrics]:3,[o.jserrors]:4,[o.softNav]:5,[o.ajax]:6,[o.sessionTrace]:7,[o.sessionReplay]:8,[o.logging]:9,[o.genericEvents]:10},u={[o.pageViewEvent]:"rum",[o.pageViewTiming]:n,[o.ajax]:n,[o.softNav]:n,[o.metrics]:i,[o.jserrors]:i,[o.sessionTrace]:a,[o.sessionReplay]:a,[o.logging]:s,[o.genericEvents]:"ins"};r.d(t,["$J",0,u,"K7",0,o,"P3",0,c,"XX",0,i,"Yy",0,s,"df",0,a,"hg",0,"connect"])}};const t={};function r(n){const i=t[n];if(void 0!==i)return i.exports;const a=t[n]={exports:{}};return e[n](a,a.exports,r),a.exports}r.m=e,r.d=(e,t)=>{if(Array.isArray(t))for(var n=0;n<t.length;){var i=t[n++],a=t[n++];r.o(e,i)?0===a&&n++:0===a?Object.defineProperty(e,i,{enumerable:!0,value:t[n++]}):Object.defineProperty(e,i,{enumerable:!0,get:a})}else for(var i in t)r.o(t,i)&&!r.o(e,i)&&Object.defineProperty(e,i,{enumerable:!0,get:t[i]})},r.f={},r.e=e=>Promise.all(Object.keys(r.f).reduce((t,n)=>(r.f[n](e,t),t),[])),r.u=e=>"nr-rum-1.324.0.min.js",r.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),(()=>{const e={},t="NRBA-1.324.0.PROD:";r.l=(n,i,a,s)=>{if(e[n])return void e[n].push(i);let o,c;if(void 0!==a){const e=document.getElementsByTagName("script");for(var u=0;u<e.length;u++){const r=e[u];if(r.getAttribute("src")==n||r.getAttribute("data-webpack")==t+a){o=r;break}}}if(!o){c=!0;var d={296:"sha512-Pjy0Jxmo6oAG6oGKLKrf8x8xyaSM1NuL7vLGv9xRLEw0hrpERDruLI5RxlCHNy0NpMyEPWhlC34zujXIR3qJPQ=="};o=document.createElement("script"),o.charset="utf-8",r.nc&&o.setAttribute("nonce",r.nc),o.setAttribute("data-webpack",t+a),o.src=n,0!==o.src.indexOf(window.location.origin+"/")&&(o.crossOrigin="anonymous"),d[s]&&(o.integrity=d[s])}e[n]=[i];const l=(t,r)=>{o.onerror=o.onload=null,clearTimeout(f);const i=e[n];if(delete e[n],o.parentNode?.removeChild(o),i?.forEach(e=>e(r)),t)return t(r)},f=setTimeout(l.bind(null,void 0,{type:"timeout",target:o}),12e4);o.onerror=l.bind(null,o.onerror),o.onload=l.bind(null,o.onload),c&&document.head.appendChild(o)}})(),r.r=e=>{Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.p="https://js-agent.newrelic.com/",(()=>{const e={374:0,840:0};r.f.j=(t,n)=>{let i=r.o(e,t)?e[t]:void 0;if(0!==i)if(i)n.push(i[2]);else{const a=new Promise((r,n)=>i=e[t]=[r,n]);n.push(i[2]=a);const s=r.p+r.u(t),o=new Error,c=n=>{if(r.o(e,t)&&(i=e[t],0!==i&&(e[t]=void 0),i)){const e=n&&("load"===n.type?"missing":n.type),r=n&&n.target&&n.target.src;o.message="Loading chunk "+t+" failed: ("+e+": "+r+")",o.name="ChunkLoadError",o.type=e,o.request=r,i[1](o)}};r.l(s,c,"chunk-"+t,t)}};const t=(t,n)=>{let[i,a,s]=n;var o,c,u=0;if(i.some(t=>0!==e[t])){for(o in a)r.o(a,o)&&(r.m[o]=a[o]);if(s)s(r)}for(t&&t(n);u<i.length;u++)c=i[u],r.o(e,c)&&e[c]&&e[c][0](),e[c]=0},n=self["webpackChunk:NRBA-1.324.0.PROD"]=self["webpackChunk:NRBA-1.324.0.PROD"]||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})(),(()=>{"use strict";r(8374);var e=r(8362),t=r(860);const n=Object.values(t.K7);var i=r(384),a=r(1741);var s=r(2555),o=r(981);t.K7.genericEvents,o.R.PA,o.R.UA,o.R.BP;const c={RESOURCES:"experimental.resources",REGISTER:"register"};var u=r(9300);const d=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var l=r(2614),f=r(944),g=r(8122);const p="[data-nr-mask]",m=e=>(0,g.a)(e,(()=>{const e={feature_flags:[],experimental:{register:!1,resources:!1,iframe_bridge:!1,iframe_domains:[]},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0,capture_payloads:u.mo.NONE},api:{register:{get enabled(){return e.feature_flags.includes(c.REGISTER)||e.experimental.register},set enabled(t){e.experimental.register=t},duplicate_data_to_container:!1,get allow_iframe_bridge(){return e.feature_flags.includes(c.IFRAME_BRIDGE)||e.experimental.iframe_bridge},set allow_iframe_bridge(t){e.experimental.iframe_bridge=t},get iframe_domains(){return e.experimental.iframe_domains},set iframe_domains(t){Array.isArray(t)?e.experimental.iframe_domains=t:(0,f.R)(1,t)}}},browser_consent_mode:{enabled:!1},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{capture_marks:!1,capture_measures:!1,capture_detail:!0,resources:{get enabled(){return e.feature_flags.includes(c.RESOURCES)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:l.wk,inactiveMs:l.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){d(t)?e.mask_selector="".concat(t,",").concat(p):""===t||null===t?e.mask_selector=p:(0,f.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){d(t)?e.block_selector+=",".concat(t):""!==t&&(0,f.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,f.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0,elementAttributes:["id","className","tagName","type"]},web_sockets:{enabled:!1}}})());var h=r(6154),v=r(9324);let b=0;const y={buildEnv:"PROD",distMethod:"CDN",version:v.xv,originTime:h.WN},_={consented:!1},w={activatedFeatures:void 0,appMetadata:{},configured:!1,get consented(){return this.session?.state?.consent||_.consented},set consented(e){_.consented=e},customTransaction:void 0,denyList:[],disabled:!1,drainRegistry:new Map,connector:void 0,harvester:void 0,v2Target:void 0,isolatedBacklog:!1,isRecording:!1,loaderType:void 0,maxBytes:3e4,obfuscator:void 0,onerror:void 0,ptid:void 0,releaseIds:{},session:void 0,timeKeeper:void 0,registeredEntities:[],jsAttributesMetadata:{bytes:0},get harvestCount(){return++b},listeningForIframeMessages:!1},R="BA";var A=r(7836),x=r(3241);const E={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0};var S=r(9908);const k="newrelic-iframe-";function T(e,t={},n,o){let{init:c,info:u,loader_config:d,runtime:l={},exposed:f=!0}=t;if(!u){const e=(0,i.pV)();c=e.init,u=e.info,d=e.loader_config}var p;e.init=m(c||{}),e.loader_config=(p=d||{},(0,g.a)(p,E)),u.jsAttributes??={},h.bv&&(u.jsAttributes.isWorker=!0),e.info=(0,s.D)(u);const v=e.init;e.runtime??=(e=>{const t=(0,g.a)(e,w),r=Object.keys(y).reduce((e,t)=>(e[t]={value:y[t],writable:!1,configurable:!0,enumerable:!0},e),{});return Object.defineProperties(t,r)})(l),e.runtime.v2Target??={type:R,instance:e.agentIdentifier,get id(){return e.runtime.appMetadata?.agents?.[0]?.entityGuid},get attributes(){return{"entity.guid":this.id,appId:e.info.applicationID}}},v.proxy.assets&&(e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e})(v.proxy.assets),e.runtime.configured||(Object.defineProperty(e,"beacons",{get:()=>[e.info.beacon,e.info.errorBeacon,e.init.proxy.assets,e.init.proxy.beacon].filter(Boolean)}),Object.defineProperty(e.runtime,"denyList",{get:()=>[...e.init.ajax.deny_list||[],...e.init.ajax.block_internal?e.beacons:[]]}),e.runtime.ptid=e.agentIdentifier,function(e){const t=(0,i.pV)();Object.getOwnPropertyNames(a.W.prototype).forEach(r=>{const n=a.W.prototype[r];if("function"!=typeof n||"constructor"===n)return;let i=t[r];e[r]&&!1!==e.exposed&&"micro-agent"!==e.runtime?.loaderType&&(t[r]=(...t)=>{const n=e[r](...t);return i?i(...t):n})})}(e),e.runtime.loaderType=n,e.ee=A.ee.get(e.agentIdentifier),e.exposed=f,(0,x.W)({drained:!!e.runtime.activatedFeatures,type:"lifecycle",name:"initialize",feature:void 0,data:e.config}),e.init.api.register.allow_iframe_bridge&&h.gm.addEventListener("message",t=>{"string"==typeof t.data?.type&&t.data.type.startsWith(k)&&(0,S.p)("iframe-message",[t],void 0,"IFRAME",e.ee)}),e.runtime.configured=!0)}var j=r(1863),P=r(4261),N=r(1738);var O=r(1687),M=r(4234),I=r(5289),D=r(7767);function V(e){return!!(0,i.dV)().o.MO&&(0,D.V)(e)&&!0===e?.session_trace.enabled}var W=r(6389),B=r(7699);const C=new WeakSet,K=new WeakMap;class U extends M.W{constructor(e,t){super(e,t),this.abortHandler=void 0,this.featAggregate=void 0,this.loadedSuccessfully=void 0,this.onAggregateImported=new Promise(e=>{this.loadedSuccessfully=e}),this.deferred=Promise.resolve(),!1===e.init[this.featureName].autoStart?this.deferred=new Promise((t,r)=>{this.ee.on("manual-start-all",(0,W.J)(()=>{(0,O.Ak)(e,this.featureName),t()}))}):(0,O.Ak)(e,t)}importAggregator(e,t,n={}){if(this.featAggregate)return;const i=async()=>{if(await this.deferred,this.#t(e),!(0,s.f)(e.info))return(0,f.R)(43),e.ee.abort(),void this.loadedSuccessfully(!1);try{await async function(e,t,n){if(K.has(e))return K.get(e);const i=(async()=>{if((0,D.V)(e.init))try{const{setupAgentSession:t}=await r.e(296).then(r.bind(r,1768));t(e)}catch(e){(0,f.R)(20,e),t.emit("internal-error",[e]),(0,S.p)(B.qh,[e],void 0,n,t)}if(e.init.api.register.allow_iframe_bridge)try{const{setupIframeMFEMessageListener:t}=await Promise.resolve().then(function(){const e=new Error("Cannot find module '../../loaders/configure/iframe-message-handler'");throw e.code="MODULE_NOT_FOUND",e});t(e)}catch(e){(0,f.R)(23,e)}const[{Connector:i},{Harvester:a}]=await Promise.all([r.e(296).then(r.bind(r,6589)),r.e(296).then(r.bind(r,5237))]);e.runtime.connector=new i(e),e.runtime.harvester=new a(e);const s=Object.values(e.features).filter(t=>e.runtime.drainRegistry.has(t.featureName));Promise.all(s.map(e=>e.onAggregateImported)).then(()=>e.runtime.harvester.startTimer())})();K.set(e,i),await i}(e,this.ee,this.featureName)}catch(e){return(0,f.R)(79,e),this.ee.abort(),void this.loadedSuccessfully(!1)}try{if(!this.#r(this.featureName,e.runtime.session,e.init))return this.abortHandler?.(),(0,O.Ze)(this.agentRef,this.featureName),void this.loadedSuccessfully(!1);const{Aggregate:r}=await t();this.featAggregate=new r(e,n),e.runtime.harvester.initializedAggregates.push(this.featAggregate),this.loadedSuccessfully(!0)}catch(e){(0,f.R)(34,e),this.abortHandler?.(),(0,O.Ze)(this.agentRef,this.featureName,!0),this.loadedSuccessfully(!1)}};h.RI?(0,I.GG)(()=>i(),!0):i()}#r(e,r,n){if(this.blocked)return!1;switch(e){case t.K7.sessionReplay:return V(n)&&!!r;case t.K7.sessionTrace:return!!r;default:return!0}}#t(e){if(!C.has(e)&&(C.add(e),!(0,s.f)(e.info))){const t=(0,i.pV)();let r={...t.info?.jsAttributes};try{r={...r,...e.info?.jsAttributes}}catch(e){}T(e,{...t,info:{...t.info,jsAttributes:r},runtime:e.runtime},e.runtime.loaderType)}}}var L=r(6630);class F extends U{static featureName=L.T;constructor(e){var t;super(e,L.T),this.setupInspectionEvents(),t=e,(0,N.Y)(P.Fw,function(e,r){"string"==typeof e&&("/"!==e.charAt(0)&&(e="/"+e),t.runtime.customTransaction=(r||"http://custom.transaction")+e,(0,S.p)("api-"+P.Fw,[(0,j.t)()],void 0,void 0,t.ee))},t),this.importAggregator(e,()=>e.init.feature_flags.includes("rum_v2")?r.e(296).then(r.bind(r,908)):r.e(296).then(r.bind(r,7927)))}setupInspectionEvents(){const e=(e,t)=>{e&&(0,x.W)({timeStamp:e.timeStamp,loaded:"complete"===e.target.readyState,type:"window",name:t,data:e.target.location+""})};(0,I.sB)(t=>{e(t,"DOMContentLoaded")}),(0,I.GG)(t=>{e(t,"load")}),(0,I.Qr)(t=>{e(t,"navigate")}),this.ee.on(l.tS.UPDATE,(e,t)=>{(0,x.W)({type:"lifecycle",name:"session",data:t})})}}class G extends e.d{constructor(e){var t;(super(),h.gm)?(this.features={},(0,i.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(F),T(this,e,e.loaderType||"agent"),t=this,(0,N.Y)(P.cD,function(e,r,n=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof r)||null===r)return(0,N.U)(t,e,r,P.cD,n);(0,f.R)(40,typeof r)}else(0,f.R)(39,typeof e)},t),function(e){(0,N.Y)(P.Dl,function(t,r=!1){if("string"!=typeof t&&null!==t)return void(0,f.R)(41,typeof t);const n=e.info.jsAttributes["enduser.id"];r&&null!=n&&n!==t?(0,S.p)("api-setUserIdAndResetSession",[t],void 0,"session",e.ee):(0,N.U)(e,"enduser.id",t,P.Dl,!0)},e)}(this),function(e){(0,N.Y)(P.nb,function(t){if("string"==typeof t||null===t)return(0,N.U)(e,"application.version",t,P.nb,!1);(0,f.R)(42,typeof t)},e)}(this),function(e){(0,N.Y)("start",function(){e.ee.emit("manual-start-all")},e)}(this),function(e){(0,N.Y)(P.Pv,function(t=!0){if("boolean"==typeof t){if((0,S.p)("api-"+P.Pv,[t],void 0,"session",e.ee),e.runtime.consented=t,t){const t=e.features.page_view_event;t.onAggregateImported.then(e=>{const r=t.featAggregate;e&&!r.sentRum&&r.sendRum?.()})}}else(0,f.R)(65,typeof t)},e)}(this),this.run()):(0,f.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}get api(){return this}run(){try{const e=function(e){const t={};return n.forEach(r=>{t[r]=!!e[r]?.enabled}),t}(this.init),r=[...this.desiredFeatures],i=this.init.feature_flags.includes("rum_v2");r.sort((e,r)=>t.P3[e.featureName]-t.P3[r.featureName]),r.forEach(r=>{if(!e[r.featureName]&&(i||r.featureName!==t.K7.pageViewEvent))return;const n=function(e){switch(e){case t.K7.ajax:return[t.K7.jserrors];case t.K7.sessionTrace:return[t.K7.ajax,t.K7.pageViewEvent];case t.K7.sessionReplay:return[t.K7.sessionTrace];case t.K7.pageViewTiming:return[t.K7.pageViewEvent];default:return[]}}(r.featureName).filter(e=>!(e in this.features));n.length>0&&(0,f.R)(36,{targetFeature:r.featureName,missingDependencies:n}),this.features[r.featureName]=new r(this)})}catch(e){(0,f.R)(22,e);for(const e in this.features)this.features[e].abortHandler?.();const t=(0,i.Zm)();delete t.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return t.ee.get(this.agentIdentifier).abort(),!1}}}var H=r(2843),z=r(782);class Y extends U{static featureName=z.T;constructor(e){super(e,z.T),h.RI&&((0,H.u)(()=>(0,S.p)("docHidden",[(0,j.t)()],void 0,z.T,this.ee),!0),(0,H.G)(()=>(0,S.p)("winPagehide",[(0,j.t)()],void 0,z.T,this.ee)),this.importAggregator(e,()=>r.e(296).then(r.bind(r,9981))))}}var Z=r(3969);class q extends U{static featureName=Z.TZ;constructor(e){super(e,Z.TZ),this.importAggregator(e,()=>r.e(296).then(r.bind(r,9623)))}}new G({features:[F,Y,q],loaderType:"lite"})})()})();</script>
+<meta name="description" content="The University of Denver offers multiple scholarships and grants to help you pay for your college education. Find out if you&#039;re eligible." />
+<link rel="canonical" href="https://www.du.edu/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/types-aid/grants-scholarships" />
+<meta name="google" content="FwD01lYHLpYgK46ITYHR7MQOgA9eqcjp-tZt9tHT0dM" />
+<meta property="og:site_name" content="University of Denver" />
+<meta property="og:url" content="https://www.du.edu" />
+<meta property="og:image:secure_url" content="https://www.du.edu/themes/custom/pl_drupal/images/icons/og-share-400x400.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="University of Denver" />
+<meta name="twitter:site" content="@uofdenver" />
+<meta name="msvalidate.01" content="C8AF7DD76B8B0DFDD23C5657C95E4E90" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/sites/default/files/du-main-logo.svg" type="image/svg+xml" />
+<script src="/sites/default/files/google_tag/core_du_domain/google_tag.script.js?tn669g" defer></script>
+
+        <title>Grants &amp; Scholarships | Undergraduate | University of Denver</title>
+        <link rel="stylesheet" media="all" href="/sites/default/files/css/css_sl7QUD1H8m-3-HmAxYnsPVDgLlc-msHkQ9qf52aVYeE.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_qY9eAhzcCUdbqhvSNuVzoM9lSINfqfXHeFDzTADHyV8.css" />
+
+        
+        <link rel="stylesheet" href="https://use.typekit.net/tir4vjc.css">
+</head>
+
+
+<body  class="path-node"  class="path-node">
+
+<p class="show-on-focus">
+    <a href="#main-content">Skip to Content</a></p>
+
+<div class="off-canvas-wrap">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC9LRS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+        
+            
+    
+
+<div aria-label="audience-menu" class="off-canvas position-right" id="audience-menu" data-position="right" data-auto-focus="false" data-transition="push" data-off-canvas="data-off-canvas">
+    <div class="row">
+                                    <div class="columns small-12 medium-6">
+                    <a href="/info/students" class="bg-img-btn"
+           target="_self"                 >
+    <img src="/sites/default/files/info-for-current-students-button.jpg" alt="Current Students"/>
+    <div class="content">
+        <p>Current Students</p>
+    </div>
+</a>                </div>
+                            <div class="columns small-12 medium-6">
+                    <a href="/info/alumni" class="bg-img-btn"
+           target="_self"                 >
+    <img src="/sites/default/files/info-for-alumni-button.jpg" alt="Alumni"/>
+    <div class="content">
+        <p>Alumni</p>
+    </div>
+</a>                </div>
+                            <div class="columns small-12 medium-6">
+                    <a href="/info/families" class="bg-img-btn"
+           target="_self"                 >
+    <img src="/sites/default/files/info-for-families-button.jpg" alt="Families"/>
+    <div class="content">
+        <p>Families</p>
+    </div>
+</a>                </div>
+                            <div class="columns small-12 medium-6">
+                    <a href="/info/neighbors" class="bg-img-btn"
+           target="_self"                 >
+    <img src="/sites/default/files/info-for-neighboors-button.jpg" alt="Neighbors"/>
+    <div class="content">
+        <p>Neighbors</p>
+    </div>
+</a>                </div>
+                            <div class="columns small-12 medium-6">
+                    <a href="/info/faculty" class="bg-img-btn"
+           target="_self"                 >
+    <img src="/sites/default/files/info-for-faculty-button.jpg" alt="Faculty"/>
+    <div class="content">
+        <p>Faculty</p>
+    </div>
+</a>                </div>
+                            <div class="columns small-12 medium-6">
+                    <a href="/info/staff" class="bg-img-btn"
+           target="_self"                 >
+    <img src="/sites/default/files/info-for-staff-button.jpg" alt="Staff"/>
+    <div class="content">
+        <p>Staff</p>
+    </div>
+</a>                </div>
+                            <div class="columns small-12 medium-6">
+                    <a href="/info/businesses-and-community-partners" class="bg-img-btn"
+           target="_self"                 >
+    <img src="/sites/default/files/Businesses-ResourcesFor.jpg" alt="Individuals talking in a hallway"/>
+    <div class="content">
+        <p>Businesses</p>
+    </div>
+</a>                </div>
+                            <div class="columns small-12 medium-6">
+                    <a href="/du-events" class="bg-img-btn"
+                           >
+    <img src="/sites/default/files/du-event-portal-audience-nav.jpg" alt="table settings for banquet"/>
+    <div class="content">
+        <p>Event Portal</p>
+    </div>
+</a>                </div>
+                        </div>
+    <div class="row">
+                            <div class="columns small-12 medium-6">
+                <a role="button" href="https://newmancenter.evenue.net/list/NC"
+   class="btn
+   btn--dark-red    display-block"
+                   title=""
+        target="_blank"                        target="">
+
+         Newman Center
+        </a>
+
+            </div>
+                    <div class="columns small-12 medium-6">
+                <a role="button" href="https://ritchiecenter.du.edu"
+   class="btn
+   btn--dark-red    display-block"
+                   title=""
+        target="_blank"                        target="">
+
+         Ritchie Center
+        </a>
+
+            </div>
+                    <div class="columns small-12 medium-6">
+                <a role="button" href="/kennedy-mountain-campus"
+   class="btn
+   btn--dark-red    display-block"
+                   title=""
+        target="_blank"                        target="">
+
+         Kennedy Mountain Campus
+        </a>
+
+            </div>
+                    <div class="columns small-12 medium-6">
+                <a role="button" href="https://du.bncollege.com/"
+   class="btn
+   btn--dark-red    display-block"
+                   title=""
+        target="_blank"                        target="">
+
+         DU Bookstore
+        </a>
+
+            </div>
+                    <div class="columns small-12 medium-6">
+                <a role="button" href="https://syndeoinstitute.org"
+   class="btn
+   btn--dark-red    display-block"
+                   title=""
+        target="_blank"                        target="">
+
+         Cable Center
+        </a>
+
+            </div>
+                    <div class="columns small-12 medium-6">
+                <a role="button" href="https://liberalarts.du.edu/anthropology-museum"
+   class="btn
+   btn--dark-red    display-block"
+                   title=""
+        target="_blank"                        target="">
+
+         Museum of Anthropology
+        </a>
+
+            </div>
+                    <div class="columns small-12 medium-6">
+                <a role="button" href="http://vicki-myhren-gallery.du.edu/about-us/"
+   class="btn
+   btn--dark-red    display-block"
+                   title=""
+        target="_blank"                        target="">
+
+         Vicki Myhren Gallery
+        </a>
+
+            </div>
+                    <div class="columns small-12 medium-6">
+                <a role="button" href="https://knoebelevents.com/event-spaces/"
+   class="btn
+   btn--dark-red    display-block"
+                   title=""
+        target="_blank"                        target="">
+
+         Evans Chapel Weddings
+        </a>
+
+            </div>
+                </div>
+</div>
+
+
+        <div class="off-canvas-content " id="off-canvas-content" data-off-canvas-content>
+    <div class="content-top">
+                            
+
+
+            </div>
+                <header class="header   hero-image" role="banner">
+                        <div id="utility-menu" class="utility-menu " aria-label="utility-menu">
+
+    
+    <nav aria-labelledby="block-utilitymenu-menu" id="block-utilitymenu" data-block-plugin-id="system_menu_block:utility-menu">
+            
+  <p class="visually-hidden" id="block-utilitymenu-menu">Wastewater Surveillance Utility Menu</p>
+  
+
+        
+
+    
+
+          <ul class="menu align-right">
+        <div class="menu-toggle-utility">
+      <span class="menu-toggle-utility__title">Explore</span>
+          <li>
+        <a href="https://directory.du.edu" target="_blank" title="DU Directory">Directory</a>
+              </li>
+          <li>
+        <a href="/admission-aid/graduate-admission/request-information" target="_self" title="Request Information about the University of Denver" data-toggle="modal_footer_cta_request_info" data-drupal-link-system-path="node/61">Request Info</a>
+              </li>
+          <li>
+        <a href="https://give.du.edu" target="_self" title="Give to the University of Denver">Give</a>
+              </li>
+          <li>
+        <a href="/visit/du" target="_self" title="Find your program representative and schedule a visit" data-toggle="modal_footer_cta_visit" data-drupal-link-system-path="node/2141">Visit</a>
+              </li>
+          <li>
+        <a href="/admission-aid/undergraduate/how-to-apply" target="_self" title="Apply to the University of Denver" data-toggle="modal_footer_cta_apply_general" data-drupal-link-system-path="node/66295">Apply</a>
+              </li>
+          <li>
+        <a href="/du-report-it" data-drupal-link-system-path="node/61226">Report an Incident</a>
+              </li>
+        </div>
+          <li class="audience-menu"><a href="#audience-menu" data-toggle="audience-menu">Resources For</a></li>
+    
+    </ul>
+  
+
+
+  </nav>
+
+</div>
+                    <div data-sticky-container>
+        <div id="top-bar-sticky-wrap" class="sticky" data-sticky data-sticky-on="small" data-margin-top="0" data-top-anchor="utility-menu:bottom">
+                            <div class="core-elevate-wrapper">
+                    <div class="unit-elevate-cart-popup" id="utility-elevate-cart-popup" aria-expanded="false">
+    <div class="unit-elevate-cart-wrapper">
+    <div role="button" class="back-to-main" aria-controls="#elevate-cart-popup">
+    <div class="back-to-main-wrapper">
+        <span class="icon-du-down-dir " aria-hidden="true"></span>Back
+    </div>
+</div>
+        <div id="elevate-cart-title">Cart</div>
+        <div id="elevate-cart-courses">The cart is empty.</div>
+        <div id="elevate-cart-total">Total<span>$0.00</span></div>
+        <a href="" class="btn" id="elevate-cart-checkout">Checkout</a>
+        <p id="elevate-more-courses">Interested in more? <a href="" id="elevate-checkout-search-courses">Search Courses</a></p>
+    </div>
+    <div role="button" class="close-panel" aria-controls="#elevate-cart-popup">
+    <span class="icon-du-cust-close " aria-hidden="true"></span>    <div class="show-for-sr">Close Search</div>
+</div></div>
+                </div>
+                        <div class="top-bar">
+                <nav id="main-menu-wrap">
+                    <div class="row expanded">
+                        <div class="columns shrink">
+                            <a href="/" class="logo ">
+                                                                                                  <span><img src="https://www.du.edu/themes/custom/pl_drupal/images/svg/university-of-denver-du-logo-main.svg" alt="Logo"/ width="224"/>
+                                    <div class="site-identity">
+                                        <span class="site-prefix"></span>
+                                        <span class="site-name"></span>
+                                    </div>
+                                                            </a>
+                        </div>
+                        <div class="columns">
+                            <div id="main-menu">
+                                                    
+    <nav aria-labelledby="block-pl-drupal-main-menu-menu" id="block-pl-drupal-main-menu" data-block-plugin-id="system_menu_block:main">
+            
+  <p class="visually-hidden" id="block-pl-drupal-main-menu-menu">Main navigation</p>
+  
+
+        
+<ul class="menu menu-level-0">
+          <li class="menu-item menu-item--expanded menu-item--active-trail">
+      <a href="/admission-aid" target="_self" title="Admission and Aid" data-drupal-link-system-path="node/51">Admission &amp; Aid</a>
+
+                    
+
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown--full menu-dropdown-0 menu-type-default">
+                          <div class="row">
+            <div class="menu-dropdown__content medium-8 columns">
+              <div class="menu-dropdown__content__image">
+                
+            <div>  <img src="/sites/default/files/DU-SpringCampus.jpg" width="791" height="391" alt="DU Logo on Campus Bridge" loading="lazy" />
+
+</div>
+      
+              </div>
+              <div class="menu-dropdown__content__card menu-dropdown__content__card--absolute">
+                <h2>
+            <div>Visit Our Campus</div>
+      </h2>
+                
+            <div><p>Discovering our campus is a breeze, whether you’re a high-schooler thinking about attending DU, an admitted student learning your way around, or a teacher or counselor setting up a group visit.</p></div>
+      
+                                  <a href="https://www.du.edu/admission-aid/undergraduate/visit" class="btn">Visit Us</a>
+                              </div>
+            </div>
+            <div class="menu-dropdown__sub-links menu-dropdown__sub-links--small medium-4 columns">
+              
+<ul class="menu menu-level-1">
+  
+  <li class="menu-item">
+    <a href="/admission-aid" target="_self" title="Admission and Aid Overview" data-drupal-link-system-path="node/51">Admission &amp; Aid Overview</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item menu-item--collapsed">
+    <a href="/admission-aid/undergraduate" data-drupal-link-system-path="node/66778">Undergraduate Admission</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item menu-item--collapsed">
+    <a href="/admission-aid/graduate" target="_self" title="Graduate Admission" data-drupal-link-system-path="node/96">Graduate Admission</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item menu-item--collapsed menu-item--active-trail">
+    <a href="/admission-aid/financial-aid" target="_self" title="Financial Aid and Scholarships" data-drupal-link-system-path="node/5896">Financial Aid &amp; Scholarships</a>
+
+              
+
+
+      </li>
+</ul>
+
+            </div>
+          </div>
+        
+      </div>
+    
+          </li>
+          <li class="menu-item menu-item--expanded">
+      <a href="/academics" target="_self" title="Academics" data-drupal-link-system-path="node/69164">Academics</a>
+
+                    
+
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown--full menu-dropdown-0 menu-type-default">
+                          <div class="row">
+            <div class="menu-dropdown__content medium-8 columns">
+              <div class="menu-dropdown__content__image">
+                
+            <div>  <img src="/sites/default/files/nav-img/academics-flyout-outside-the-classroom.png" width="388" height="218" alt="Academics" loading="lazy" />
+
+</div>
+      
+              </div>
+              <div class="menu-dropdown__content__card menu-dropdown__content__card--absolute">
+                <h2>
+            <div>The World is Your Classroom</div>
+      </h2>
+                
+            <div><p>With opportunities to participate in research and internships as well as robust service learning and study abroad traditions, a DU education takes you beyond the lecture hall walls.</p></div>
+      
+                                  <a href="https://www.du.edu/academics/outside-classroom" class="btn">Explore</a>
+                              </div>
+            </div>
+            <div class="menu-dropdown__sub-links menu-dropdown__sub-links--small medium-4 columns">
+              
+<ul class="menu menu-level-1">
+  
+  <li class="menu-item">
+    <a href="/academics" target="_self" title="Academics Overview" data-drupal-link-system-path="node/69164">Academics Overview</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item menu-item--collapsed">
+    <a href="/academics/undergraduate-academics" data-drupal-link-system-path="node/69167">Undergraduate Academics</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item menu-item--collapsed">
+    <a href="/academics/undergraduate-programs" target="_self" title="Undergraduate Programs" data-drupal-link-system-path="node/111">Undergraduate Programs</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item menu-item--collapsed">
+    <a href="/academics/graduate-academics" data-drupal-link-system-path="node/71306">Graduate Academics</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item menu-item--collapsed">
+    <a href="/academics/graduate-programs" target="_self" title="Graduate Programs" data-drupal-link-system-path="node/146">Graduate Programs</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item">
+    <a href="/4D-experience" target="_blank" data-drupal-link-system-path="node/68640">The 4D Experience</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item">
+    <a href="/academics/libraries" target="_self" title="Libraries" data-drupal-link-system-path="node/156">Libraries</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item">
+    <a href="/academics/schools-colleges" target="_self" title="Schools and Colleges" data-drupal-link-system-path="node/161">Schools &amp; Colleges</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item menu-item--collapsed">
+    <a href="/about/our-leadership/office-provost/accreditation" data-drupal-link-system-path="node/26551">Accreditation</a>
+
+              
+
+
+      </li>
+</ul>
+
+            </div>
+          </div>
+        
+      </div>
+    
+          </li>
+          <li class="menu-item menu-item--collapsed">
+      <a href="/research/overview" data-drupal-link-system-path="node/68812">Research</a>
+
+                    
+
+
+          </li>
+          <li class="menu-item menu-item--expanded">
+      <a href="/campus-life/overview" target="_self" title="Campus Life Overview" data-drupal-link-system-path="node/126">Campus Life</a>
+
+                    
+
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown--full menu-dropdown-0 menu-type-default">
+                          <div class="row">
+            <div class="menu-dropdown__content medium-8 columns">
+              <div class="menu-dropdown__content__image">
+                
+            <div>  <img src="/sites/default/files/nav-img/campus-life-flyout-make-yourself-at-home.png" width="791" height="391" alt="Make Yourself At Home" loading="lazy" />
+
+</div>
+      
+              </div>
+              <div class="menu-dropdown__content__card menu-dropdown__content__card--absolute">
+                <h2>
+            <div>Make Yourself at Home</div>
+      </h2>
+                
+            <div><p>With well-appointed, sustainable residence halls and meals made from scratch to accommodate all dietary needs, DU is a place you can feel at home.</p></div>
+      
+                                  <a href="https://www.du.edu/campus-life/living/housing-dining" class="btn">Explore</a>
+                              </div>
+            </div>
+            <div class="menu-dropdown__sub-links menu-dropdown__sub-links--small medium-4 columns">
+              
+<ul class="menu menu-level-1">
+  
+  <li class="menu-item">
+    <a href="/campus-life/overview" target="_self" title="Campus Life Overview" data-drupal-link-system-path="node/126">Campus Life Overview</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item menu-item--collapsed">
+    <a href="/campus-life/living" target="_self" title="Living at DU" data-drupal-link-system-path="node/1016">Living at DU</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item menu-item--collapsed">
+    <a href="/campus-life/arts-activities" target="_self" title="Arts and Activities" data-drupal-link-system-path="node/1301">Arts &amp; Activities</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item">
+    <a href="/campus-life/academic-support" target="_self" title="Academic Support" data-drupal-link-system-path="node/1306">Academic Support</a>
+
+              
+
+
+      </li>
+</ul>
+
+            </div>
+          </div>
+        
+      </div>
+    
+          </li>
+          <li class="menu-item menu-item--collapsed">
+      <a href="/athletics/overview" target="_self" title="Athletics page" data-drupal-link-system-path="node/131">Athletics</a>
+
+                    
+
+
+          </li>
+          <li class="menu-item">
+      <a href="https://www.du.edu/news" title="News">News</a>
+
+                    
+
+
+          </li>
+          <li class="menu-item">
+      <a href="https://calendar.du.edu/" target="_blank">Events</a>
+
+                    
+
+
+          </li>
+          <li class="menu-item menu-item--expanded">
+      <a href="/about/overview" target="_self" title="About" data-drupal-link-system-path="node/141">About</a>
+
+                    
+
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown--full menu-dropdown-0 menu-type-default">
+                          <div class="row">
+            <div class="menu-dropdown__content medium-8 columns">
+              <div class="menu-dropdown__content__image">
+                
+            <div>  <img src="/sites/default/files/du-orientation-discoverdenver-pearlstreet.jpg" width="791" height="391" alt="Group of students on Pearl Street" loading="lazy" />
+
+</div>
+      
+              </div>
+              <div class="menu-dropdown__content__card menu-dropdown__content__card--absolute">
+                <h2>
+            <div>The DU 4D Experience</div>
+      </h2>
+                
+            <div><p>Explore how our 4D Experience empowers students to shape meaningful, connected, and purpose-driven learning journeys.</p></div>
+      
+                                  <a href="/4D-experience" class="btn">Explore 4D</a>
+                              </div>
+            </div>
+            <div class="menu-dropdown__sub-links menu-dropdown__sub-links--small medium-4 columns">
+              
+<ul class="menu menu-level-1">
+  
+  <li class="menu-item menu-item--collapsed">
+    <a href="/about/du-forward" data-drupal-link-system-path="node/69652">DU Forward</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item menu-item--collapsed">
+    <a href="/about/mission-vision-values" data-drupal-link-system-path="node/55465">Mission, Vision &amp; Values</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item">
+    <a href="/about/rankings" data-drupal-link-system-path="node/69527">Rankings and Recognition</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item">
+    <a href="https://www.du.edu/about/first-destinations">First Destinations</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item">
+    <a href="/about/history-traditions" target="_self" title="History and Traditions" data-drupal-link-system-path="node/1106">History &amp; Traditions</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item menu-item--collapsed">
+    <a href="/about/leadership" target="_self" title="Our Leadership" data-drupal-link-system-path="node/1116">Our Leadership</a>
+
+              
+
+
+      </li>
+  
+  <li class="menu-item">
+    <a href="https://www.du.edu/policy">University Policies</a>
+
+              
+
+
+      </li>
+</ul>
+
+            </div>
+          </div>
+        
+      </div>
+    
+          </li>
+  </ul>
+
+  </nav>
+
+
+
+                
+                                                    <nav class="utility-menu show-for-small-only " aria-label="utility-menu-mobile">
+    
+</nav>
+                                            </div>
+                        </div>
+
+                        <div class="columns shrink">
+                            <ul id="search-toggler" class="dropdown menu" data-dropdown-menu data-options="clickOpen: true; closeOnClickInside: false; closeOnClick: true; disableHover: true;">
+                                <li class="search mega-menu">
+                                    <a href="#">Search</a>
+                                    <ul id="search" class="menu">
+                                        <li>
+                                            <div class="row">
+                                                <div class="columns">
+                                                    <div class="search-box">
+                                                        <label class="show-for-sr" for="site-search-input" aria-label="search-label">Search Input</label>
+                                                        <input name="search" id="site-search-input" placeholder="Search" type="text" required="required" tabindex="1">
+                                                        <button class="search-submit" type="button" title="Submit Search">
+                                                            <span class="icon-du-cust-search" aria-hidden="true"></span>
+                                                            <span class="show-for-sr">Submit Search</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                                                                            </ul>
+                                                            <div id="unit-main-menu-toggler" class="align-right" data-responsive-toggle="main-menu" data-hide-for="large">
+                                    <button class="icon-du-cust-menu" type="button" data-toggle="main-menu">
+                                        <span class="show-for-sr">Toggle Menu</span></button>
+                                </div>
+                                                    </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+              <div class="hero-media ">
+              
+                                  <picture>
+                  <source srcset="/sites/default/files/styles/hero_image_1356_x_538/public/fall_hero_pond_0.jpg?itok=GKlcdhiy 1x" media="(min-width: 1200px)" type="image/jpeg"/>
+              <source srcset="/sites/default/files/styles/hero_image_1200_x_476/public/fall_hero_pond_0.jpg?itok=yqy20WuA 1x" media="(min-width: 1024px)" type="image/jpeg"/>
+              <source srcset="/sites/default/files/styles/hero_image_1125_x_445/public/fall_hero_pond_0.jpg?itok=IpnIUJlA 1x" media="(min-width: 768px)" type="image/jpeg"/>
+              <source srcset="/sites/default/files/styles/hero_image_1024_x_406/public/fall_hero_pond_0.jpg?itok=iy_hAAe8 1x" media="(min-width:450px)" type="image/jpeg"/>
+              <source srcset="/sites/default/files/styles/hero_image_768_x_304/public/fall_hero_pond_0.jpg?itok=M1RX1RIx 1x" type="image/jpeg"/>
+                  <img src="/sites/default/files/styles/hero_image_1200_x_476/public/fall_hero_pond_0.jpg?itok=yqy20WuA" alt="fall picture of campus" />
+
+  </picture>
+
+                                  </div>
+      <div class="hero-media__caption " id="hero-media__caption" data-toggler=".caption-expanded">
+      <div class="row">
+                <div class="columns small-12">
+                            </div>
+      </div>
+    </div>
+  
+
+
+    
+
+</header>
+                        
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+
+      
+<article id="main-content" role="main" >
+    <div class="row">
+        <div class="columns large-offset-4 large-8 pull-up page-title-band">
+                              <h1>
+      
+<span>Grants &amp; Scholarships</span>
+
+      </h1>
+                  </div>
+    </div>
+    <div class="row">
+        <div class="columns small-12 large-3 pull-up">
+                    <div class="sub-menu-wrap">
+                
+
+
+                                                          
+                        <p>
+                <a href="/admission-aid/financial-aid-scholarships/undergraduate-financial-aid" class="sub-menu__back-link" target="_self">
+                    <span class="icon-du-left-arrow" aria-hidden="true"></span> Undergraduate Financial Aid
+                </a>
+            </p>
+            
+
+
+ 
+                    <p id="sub-menu-toggler" data-responsive-toggle="sub-menu" data-hide-for="large">
+            <a href="#" data-toggle>
+                Explore this Section
+            </a>
+        </p>
+
+        <nav id="sub-menu" aria-label="sub-navigation">
+                                              
+
+
+                                  <ul data-region="subnav">
+                            <li  >
+                <a href="/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/types-aid" target="_self" title="Undergraduate Types of Aid" data-drupal-link-system-path="node/8406">Types of Aid</a>
+
+                                                                        <li  class="active" >
+                <a href="/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/types-aid/grants-scholarships" target="_self" title="Undergraduate Grants &amp; Scholarships" data-drupal-link-system-path="node/8411" class="is-active">Grants &amp; Scholarships</a>
+
+                            </li>
+                    <li  >
+                <a href="/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/types-aid/work-study" target="_self" title="Undergraduate Work-Study" data-drupal-link-system-path="node/8416">Work-Study</a>
+
+                            </li>
+                    <li  >
+                <a href="/financialaid/ug/loans" target="_self" title="Undergraduate Student Loans" data-drupal-link-system-path="node/8426">Loans</a>
+
+                            </li>
+                    <li  >
+                <a href="/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/types-aid/summer-aid" target="_self" title="Undergraduate Summer Financial Aid" data-drupal-link-system-path="node/8421">Summer Aid</a>
+
+                            </li>
+                    <li  >
+                <a href="/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/types-aid/undocumented-students" data-drupal-link-system-path="node/46341">Undocumented Students</a>
+
+                            </li>
+                    
+                            </li>
+                            </ul>
+            
+
+
+ 
+              </nav>
+          </div>
+          </div>
+        <div class="columns small-12 large-8 large-offset-1 intro">
+                      <p>Grants and scholarships are funds you receive that are applied directly to the cost of your education. They come in two types: need-based and merit-based. Eligibility for need-based scholarships is determined by your financial aid application and takes into account you and your family's financial situation. Merit-based scholarships are awarded based on academic success or other accomplishments.</p><p>Below, you'll find information on the range of different grant and scholarship opportunities available to you.</p>
+
+ 
+          </div>
+    </div>
+              <div class="copy-module">
+    <div class="row expanded">
+        <div class="columns">
+            <div class="row">
+                
+                <div class="columns small-12
+                                         medium-12 large-12 large-offset-12                    ">
+                    <div class="content ">
+                                                    <h3 class="btm-divider">Institutional Grants and Scholarships</h3>
+                                                                                                    <p>We're committed to ensuring high-potential students have access to a DU education. We honor that commitment through extensive opportunities for merit- and need-based aid.</p>
+<ul class="accordion" data-accordion="true" data-multi-expand="true" data-allow-all-closed="true">
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Merit Scholarships (First-Year-Students)</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p>All students who apply for admission to DU are considered for merit scholarships. Eligibility is determined by Undergraduate Admission based on the academic information submitted with the admission application. Merit scholarships range from $15,000 to $40,000 per year. These amounts are fixed—if awarded, you will receive the same amount for all four years at DU. To remain eligible, you must be enrolled full-time (at least 12 credits per quarter) and maintain <a href="/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/policies-maintaining-aid/sap">Satisfactory Academic Progress</a>.  </p><p>Students awarded a merit scholarship and will live on campus, are also eligible to receive a $3,000 Residence Hall Grant.  Learn more about the Residence Hall Grant in the next section.</p><p><a href="https://www.du.edu/admission-aid/undergraduate/first-year-applicants/application-checklist"><strong>Early Decision</strong></a><strong> </strong>applicants will receive a $5,000 scholarship in addition to their merit scholarship. (This excludes students receiving athletic aid and music majors.)</p><p><strong>Important note for music majors:</strong> Lamont School of Music applicants will be holistically considered for a comprehensive scholarship (ranging from $1,000 to full tuition). Talent, academic merit, and financial need will be considered. Recipients of a music scholarship are not eligible for admission merit scholarships or institutional need-based grants. Notification of a music scholarship award will be sent within two weeks of your admission decision.</p>
+            </div>
+        </li>
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Merit Scholarships (Transfer Students)</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p>Transfer student applicants are considered for merit scholarships ranging from $12,000 to $25,000, in addition to institutional financial aid, provided that both the FAFSA and CSS Profile have been received. If you are awarded a merit scholarship, your final transcripts will be used to estimate your time to degree completion and determine the number of quarters for which you are eligible to receive the scholarship  <a href="https://www.du.edu/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/policies">Learn more &gt;&gt;</a></p><p><strong>Important note for music majors:</strong> Lamont School of Music applicants will be holistically considered for a comprehensive scholarship (ranging from $1,000 to full tuition). Talent, academic merit, and financial need will be considered. Recipients of a music scholarship are not eligible for admission merit scholarships or institutional need-based grants. Notification of a music scholarship award will be sent within two weeks of your admission decision.</p>
+            </div>
+        </li>
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Residence Hall Grant</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p>Students awarded a merit scholarship are also automatically awarded the Residence Hall Grant, a $3,000 grant for full-time students who live on campus. This grant pays directly toward tuition costs, not housing or meal plans. Transfer students and students living off campus are ineligible for this award. This means students who meet the <a href="https://www.du.edu/housing/resources/live-on.html">two-year, live-on requirement</a> and then live off campus in their 3rd and 4th year, for example, will not receive this funding.</p><p><strong>Eligible on-campus housing for the 2026-27 academic year includes:</strong></p><ul><li><a href="https://www.du.edu/housing/buildings/halls.html">Centennial Halls</a></li><li><a href="https://www.du.edu/housing/buildings/towers.html">Centennial Towers</a></li><li><a href="https://www.du.edu/housing/buildings/dimondfrv.html">Dimond Family Residential Village</a></li><li><a href="https://studentaffairs.du.edu/housing/content/hilltop-apartments">Hilltop Apartments</a></li><li><a href="https://www.du.edu/housing/buildings/jmac.html">Johnson-McFarlane Hall</a></li><li><a href="https://www.du.edu/housing/buildings/apartments/lynnmarie.html">Lynn Marie apartments</a></li><li>Mesa apartments</li><li><a href="https://www.du.edu/housing/buildings/nagel.html">Nagel Hall</a></li><li><a href="https://www.du.edu/housing/buildings/nelson.html">Nelson Hall</a></li><li><a href="https://www.du.edu/housing/buildings/apartments/ridgeline.html">Ridgeline apartments</a></li><li><a href="https://www.du.edu/housing/buildings/apartments/summit.html">Summit apartments</a></li><li><a href="https://www.du.edu/housing/buildings/tlc.html">Transfer Learning Community House</a> </li><li><a href="https://www.du.edu/housing/buildings/apartments/university-place.html">University Place apartments</a></li></ul>
+            </div>
+        </li>
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Need-Based Institutional Grants</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p>The two most common need-based grants available from DU are the <strong>DU Educational Grant</strong> and the <strong>Elevate Grant</strong>. Because these are need-based, eligibility is determined by the information provided on your Free Application for Federal Student Aid (<a href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank">FAFSA</a>) and the <a href="https://cssprofile.collegeboard.org/?excmpid=vt-00231" target="_blank">CSS Profile</a>. You must re-apply for aid every year to be considered, and the amount may change based on changes to your or your family's financial situation. You must also be enrolled full time and maintain <a href="https://www.du.edu/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/policies-maintaining-aid/sap">Satisfactory Academic Progress</a> to retain either grant. </p><p>The DU Educational Grant can only pay directly toward tuition costs (not housing or meal plans). The Elevate Grant can pay toward charges other than tuition.</p>
+            </div>
+        </li>
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Talent Scholarships</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p>Talent scholarships are awarded based on achievements in athletics, music, theater, speech and art. Recipient and award amounts are determined on an individual basis by athletic and academic departments. For more information, contact your academic department or varsity coach directly.</p><p class="x_MsoNormal">Students who receive athletic aid are not eligible to receive institutional need-based grants, such as the DU Educational Grant and the Elevate Grant. This means you will need to evaluate your offer and choose either athletic funding or funding with institutional need-based grants. You cannot receive both.</p><p class="x_MsoNormal">For questions regarding the coordination of funding, please reach out to<a href="mailto:james.m.kramer@du.edu"> Jim Kramer</a> or your athletic coach.</p>
+            </div>
+        </li>
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Gift & Endowed Scholarships</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p class="x_xmsonormal">Over 500 gift and endowed scholarships are awarded every year to current DU students by academic departments on campus. The majority of these scholarships are available to students entering their second, third or fourth year at the University after they’ve taken classes in their chosen major. </p><p class="x_xmsonormal">There are a variety of gift and endowed scholarships based on academic merit, financial need, and/or a combination of both. To be evaluated for need based scholarships, you should submit the CSS Profile, FAFSA, and/or all other requested financial aid documents by the priority deadline  along with the submission of the Departmental Scholarship Application.</p><p class="x_xmsonormal">There are also select departmental scholarships available for incoming first-year students. In this instance, students will be invited by the specific department to apply if they are eligible, and they will be notified if they are awarded a scholarship. </p><p class="x_xmsonormal"> </p><p class="x_xmsonormal">The Departmental Scholarship Application is closed and will reopen in February.</p>
+            </div>
+        </li>
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">RELATE Scholarship Program</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p><span>The RELATE scholarship program </span><strong>covers full unmet financial need for four years</strong><span>. In addition to financial support, RELATE scholars receive comprehensive academic, professional, and personal support designed to help them thrive throughout their college experience.  Program benefits that support scholarship recipients include dedicated faculty mentorship, peer mentoring, cohort-based courses and activities, workshops, and professional development and networking opportunities.</span></p><p><span>To remain eligible for this scholarship throughout their four-year undergraduate degree program, students must:</span></p><ul><li><span><strong>Declare and complete a qualifying Computer Science Department major </strong>(BA or BS in Computer Science, Applied Computing, or Game Development).</span></li><li><span>Participate in co-curricular activities designed to support academic and professional success, including pre-orientation Summer Bridge, peer mentoring, weekly academic success workshops, and selected cohort-based courses.</span></li><li><span>Be available for interviews each quarter to provide feedback on the program.</span></li><li><span>Maintain a 3.0 GPA.</span></li><li><span>Meet the low-income student criteria as defined by the State of Colorado financial aid policy.</span> </li></ul><p><br /><span>The RELATE Program is currently recruiting a new cohort for the Fall 2027 academic quarter.</span></p><p><span>For additional information, please contact </span><a href="mailto:rachel.horenstein@du.edu"><span><strong>Rachel Horenstein</strong></span></a><span> at  </span><a href="(rachel.horenstein@du.edu" title="mailto:rachel.horenstein@du.edu"><span>rachel.horenstein@du.edu</span></a><span> and/or </span><a href="mailto:anthea.johnson@du.edu"><span><strong>Anthea Johnson Rooen</strong></span></a><span> at </span><a href="mailto:anthea.johnson@du.edu" title="mailto:anthea.johnson@du.edu"><span>anthea.johnson@du.edu</span></a><span>.</span></p>
+            </div>
+        </li>
+    </ul>
+
+
+ <div class="named-anchor" name="native-american-community-scholarship" id="native-american-community-scholarship"></div>
+<ul class="accordion" data-accordion="true" data-multi-expand="true" data-allow-all-closed="true">
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Native American and Indigenous Scholarships (First-Year Students)</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p class="MsoNormal"><span>DU celebrates and supports our Native American and Indigenous communities through scholarships, research, programming, mentoring, and cultural events. Scholarships in particular recognize and honor the historical ties of Native communities to DU, their many contributions to the city of Denver and state of Colorado, and the land which we reside. </span></p><p class="MsoNormal"><span>We have a few unique scholarship opportunities for first-year, full-time, degree-seeking students:</span></p><ul type="disc"><li><span><strong>Cheyenne and Arapaho Tuition Scholarship</strong>: Given DU’s historical ties and ongoing partnerships with Cheyenne and Arapaho tribes, we provide</span><em><span><strong> </strong>standard cost of tuition<strong> </strong></span></em><span>to admitted students from the following tribes: Cheyenne &amp; Arapaho of Oklahoma; Northern Cheyenne of Montana; Northern Arapaho of Wyoming. The scholarship will be automatically awarded to Cheyenne and Arapaho students who provide an official enrollment number on their Common Application. Students who don’t provide the number on their admission application can provide other forms of documentation to demonstrate tribal affiliation. </span><em><span>No</span></em><span> </span><em><span>additional scholarship or financial aid applications are required.</span></em>        <br /> </li><li><strong>Sand Creek Descendant Scholarship</strong>: Descendants of Sand Creek Massacre victims will receive<em> standard cost of tuition, fees, food, housing, and books</em>. Documents are required to demonstrate ancestral lineage (e.g., one or more of the following: tribal enrollment records, birth certificates, census data, marriage certificates, death certificates, etc.).  <span>  </span>       <br /> </li><li><span><strong>Community Scholarship: </strong>This is a competitive scholarship that requires an application and focuses on commitment and involvement in Native American and Indigenous communities. This scholarship covers the standard cost of </span><em><span>tuition, fees, food and housing, and books</span></em><span>. </span><em><span>Financial need is not required but is considered</span></em><span>; therefore, you should submit the FAFSA, CSS Profile, and/or all other requested financial aid documents.</span>    <br /> </li><li><span><strong>Empowerment Scholarship: </strong>This</span><em><span> standard cost of tuition</span></em><span> scholarship is also competitive, focuses on involvement and contributions to Native American and Indigenous communities, and requires an application.<strong> Demonstrated financial need is a requirement</strong>,<strong> </strong>and<strong> </strong>therefore, the FAFSA, CSS Profile, and all other requested financial aid documents must be on file to be considered.</span> <strong> </strong>    <br /> <ul><li><span>While service to and involvement in the Native American and Indigenous communities are the guiding principles for both the </span><strong>Community </strong><span>and </span><strong>Empowerment</strong><span> Scholarships, a holistic review of your admission application assists our committee in making selections. These are competitive and there will be a limited number of selections each year.</span><br /> </li><li><span>As a recipient of the Community or Empowerment Scholarship, you are expected to attend a quarterly check in with the Director of Community Connections, Division of Community Support and Engagement. Involvement with the Native Student Alliance is not required, however highly encouraged. You must be enrolled full-time (at least 12 credits per quarter) and maintain </span><a href="https://www.du.edu/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/policies-maintaining-aid/sap" title="https://www.du.edu/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/policies-maintaining-aid/sap">Satisfactory Academic Progress</a><span> to remain eligible. The scholarship is renewable for 12 quarters from the point of your initial enrollment or until you earn your bachelor's degree, whichever comes first.</span></li></ul></li></ul><p class="text-align-center"> </p><p><strong>The application window has closed and will reopen in 2027.</strong></p><p class="text-align-center"> </p><p><span>For additional information or any questions, please contact </span><a href="mailto:Megan.WhiteFace@du.edu"><span><strong>Megan White Face</strong></span></a><span>, Associate Director of Native and Indigenous Student Recruitment at </span><a class="x_x_showMail x_x_OWAAutoLink" href="mailto:Megan.WhiteFace@du.edu"><span>Megan.WhiteFace@du.edu</span></a><span>. </span>                     <br />     </p>
+            </div>
+        </li>
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Phi Theta Kappa Scholarships (Transfer Students)</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p>The Phi Theta Kappa Scholarship is a $2,500 award available to transfer students who were members of Phi Theta Kappa prior to attending DU. Proof of prior membership must be submitted to <a href="https://www.du.edu/admission-aid/undergraduate">Undergraduate Admission</a> through either a transcript notation or a separate confirmation from the Phi Theta Kappa chapter. The award may be combined with merit scholarships and is automatically renewable for students who maintain good academic standing.</p>
+            </div>
+        </li>
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Native American and Indigenous Scholarships (Transfer Students)</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p><span>DU celebrates and supports our Native American and Indigenous communities through scholarships, research, programming, mentoring, and cultural events. Scholarships in particular recognize and honor the historical ties of Native communities to DU, their many contributions to the city of Denver and state of Colorado, and the land which we reside.</span></p><p><span>We have a few unique scholarship opportunities for first-year, full-time, degree-seeking, transfer students:</span></p><ul type="disc"><li><span><strong>Cheyenne and Arapaho Tuition Scholarship</strong>: Given DU’s historical ties and ongoing partnerships with Cheyenne and Arapaho tribes, we provide</span><em><span> standard cost of tuition</span></em><span> scholarships to admitted students from the following tribes: Cheyenne &amp; Arapaho of Oklahoma; Northern Cheyenne of Montana; Northern Arapaho of Wyoming. The scholarship will be automatically awarded to Cheyenne and Arapaho students who provide an official enrollment number on their Common Application. Students who don’t provide the number on their admission application can provide other forms of documentation to demonstrate tribal affiliation. </span><em><span>No</span></em><span> </span><em><span>additional scholarship or financial aid applications are required.</span></em>  <br /> </li><li><span><strong>Sand Creek Descendant Scholarship</strong>: Descendants of Sand Creek Massacre victims will receive</span><em><span><strong> </strong>standard cost of tuition, fees, food, housing, and books. </span></em><span> Documents are required to demonstrate ancestral lineage (e.g., one or more of the following: tribal enrollment records, birth certificates, census data, marriage certificates, death certificates, etc.).    </span>  <br /> </li><li><span><strong>Empowerment Scholarship: </strong>This standard cost of tuition scholarship is competitive, focuses on involvement and contributions to Native American and Indigenous communities, and requires an application. </span><strong>Demonstrated financial need is a requirement, </strong><span>and</span><strong> </strong><span>therefore, the FAFSA, CSS Profile, and all other requested financial aid documents must be on file to be considered.</span>  <br /> <ul><li><span>While service to and involvement in the Native American and Indigenous communities are the guiding principles for the </span><strong>Empowerment</strong><span> <strong>Scholarship</strong>, a holistic review of your admission application assists our committee in making selections. These are competitive and there will be a limited number of selections each year.</span><br /> </li><li><span>As a recipient of the Empowerment Scholarship, you are expected to attend a quarterly check in with Director of Community Connections, Division of Community Support and Engagement. Involvement with the Native Student Alliance is not required, however highly encouraged. You must be enrolled full-time (at least 12 credits per quarter) and maintain </span><a href="https://www.du.edu/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/policies-maintaining-aid/sap" title="https://www.du.edu/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/policies-maintaining-aid/sap"><span>Satisfactory Academic Progress</span></a><span> to remain eligible. The scholarship will be in effect from the point of initial enrollment through the estimated timeframe to complete your undergraduate degree, which is based on the number of granted transfer credits you have when final transcript(s) are received.</span></li></ul></li></ul><p> </p><p><strong>The application window has closed and will reopen in 2027.</strong></p><p><span>For additional information or any questions, please contact </span><a href="mailto:Megan.WhiteFace@du.edu"><span><strong>Megan White Face</strong></span></a><span>, Associate Director of Native and Indigenous Student Recruitment at </span><a class="x_x_showMail x_x_OWAAutoLink" href="mailto:Megan.WhiteFace@du.edu"><span>Megan.WhiteFace@du.edu</span></a><span>. </span></p>
+            </div>
+        </li>
+    </ul>
+
+
+
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+       <div class="named-anchor" name="tuition_exchange" id="tuition_exchange"></div>
+
+      <div class="copy-module copy-module--image">
+    <div class="row expanded">
+        <div class="columns">
+            <div class="row">
+                                    <div class="columns small-12 large-6">
+                                                      <picture>
+                  <source srcset="https://embed.widencdn.net/img/du/vevrqjbd9d/584x373px/DU-WeRead-2025-27.jpg?crop=yes&amp;position=c 1x" media="(min-width: 1024px)" type="image/jpeg"/>
+              <source srcset="https://embed.widencdn.net/img/du/vevrqjbd9d/884x564px/DU-WeRead-2025-27.jpg?crop=yes&amp;position=c 1x" media="(min-width: 768px)" type="image/jpeg"/>
+              <source srcset="https://embed.widencdn.net/img/du/vevrqjbd9d/450x287px/DU-WeRead-2025-27.jpg?crop=yes&amp;position=c 1x" media="(min-width:450px)" type="image/jpeg"/>
+              <source srcset="https://embed.widencdn.net/img/du/vevrqjbd9d/450x287px/DU-WeRead-2025-27.jpg?crop=yes&amp;position=c 1x" type="image/jpeg"/>
+                  <img src="https://embed.widencdn.net/img/du/vevrqjbd9d/884x564px/DU-WeRead-2025-27.jpg?crop=yes&amp;position=c" alt="Anderson Commons" />
+
+  </picture>
+
+                                            </div>
+                
+                <div class="columns small-12
+                                                                                     large-6                                            ">
+                    <div class="content ">
+                                                    <h3 class="btm-divider">Tuition Exchange (TE) Scholarship</h3>
+                                                                                                    <p class="MsoNormal">The University of Denver participates in <a href="https://tuitionexchange.org/" target="_blank">Tuition Exchange</a> (TE), a national scholarship program for non-profit institutions of higher education. This program allows the dependent children of full-time employees of an educational institution to apply for scholarships not available to the public.</p><p class="MsoNormal">Beginning with the 2026-27 academic year, a limited number of <a href="https://tuitionexchange.org/how-te-works/" target="_blank">Tuition Exchange scholarships</a> will be offered to eligible undergraduate students for continuous, full- time enrollment at DU. As a new participating member of the program, we are actively working with our Human Resources department to develop content to address questions related to the TE program and will update this page as information becomes available.  </p>
+<ul class="accordion" data-accordion="true" data-multi-expand="true" data-allow-all-closed="true">
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">TE Student Types</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p class="MsoNormal"><strong>Exports</strong></p><p class="MsoNormal">Exports are considered those <span>who are eligible for the Tuition Exchange because their parent is employed by DU. D</span>ependents of regular, full-time University of Denver employees who are under age 25 and interested in the TE program at an export school are encouraged to <a href="https://tuitionexchange.org/how-to-apply/" target="_blank">apply</a>. Any questions about export eligibility can be directed to the Export TE Liaison Officer (TELO) <a href="mailto:KrisEckertrom@du.edu"><span class="token tag punctuation">Kris Eckerstrom</span></a>.</p><p class="MsoNormal"><strong>Imports</strong></p><p class="MsoNormal"><span>Imports are considered those who are eligible for the Tuition Exchange because their parent is employed by a Tuition Exchange school (other than DU). </span> The information below applies to student applicants who have identified DU as an <em>Import</em> school of interest to attend and receive the TE scholarship. Import eligibility questions can be directed to the Import TE Liaison Officer <a href="mailto:Kelly.Graves@du.edu" target="_blank">Kelly Graves</a>.</p>
+            </div>
+        </li>
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Scholarship Impact on Other Aid</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p><span>If at any time your aid offer includes a merit scholarship and residence hall grant and you offered admission through the TE program your merit scholarship and residence hall grant will be cancelled in full and replaced with the TE scholarship. </span><br /><br /><span>Students selected for a TE scholarship may also receive federal, state, and need-based institutional aid as determined by CSS Profile and FAFSA submissions. Similarly, you remain eligible for </span><a href="https://www.du.edu/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/types-aid/grants-scholarships" title="https://www.du.edu/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/types-aid/grants-scholarships">Gift &amp; Endowed Scholarship</a><span> opportunities provided that aid designated as tuition only does not exceed the annual tuition amount and the combined total of all aid does not exceed your </span><a href="https://www.du.edu/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/price-and-affordability/cost-attendance" title="https://www.du.edu/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/price-and-affordability/cost-attendance">cost of attendance</a><span>.   </span></p>
+            </div>
+        </li>
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Scholarship Renewal Guidelines</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p><span>Scholarship amounts will increase annually to be commensurate with the stated amount from the Tuition Exchange Program. Scholarships may be renewed for up to 12 quarters or until you earn your Bachelor's degree, whichever comes first. </span></p><p><span><strong>Renewal eligibility require that</strong>:</span><br /><span>Your parent be employed by a Tuition Exchange University;</span><br /><span>You maintain a 2.0 GPA and meet </span><a href="https://www.du.edu/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/policies-maintaining-aid/sap" title="https://www.du.edu/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/policies-maintaining-aid/sap">Satisfactory Academic Progress</a><span>;</span><br /><span>Be enrolled full time—a minimum of 12 credit hours. </span></p>
+            </div>
+        </li>
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Appeal Process</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p><span>If your parent retires or ceases employment at a Tuition Exchange University, or the college closes or ceases participation in the program, the University of Denver will provide substitute funding that matches the your TE scholarship dollar amount. You and/or your parent must contact the </span><a href="https://www.du.edu/admission-aid/financial-aid" title="https://www.du.edu/admission-aid/financial-aid">Financial Aid Office</a><span> should this occur.</span></p>
+            </div>
+        </li>
+    </ul>
+
+
+
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+       <div class="named-anchor" name="federal" id="federal"></div>
+
+      <div class="copy-module copy-module--image">
+    <div class="row expanded">
+        <div class="columns">
+            <div class="row">
+                                    <div class="columns small-12 large-6">
+                                                      <picture>
+                  <source srcset="/sites/default/files/styles/copy_image_584_x_373/public/OutdoorSpringStock_2018_035.png?itok=nP5OC5WT 1x" media="(min-width: 1024px)" type="image/png"/>
+              <source srcset="/sites/default/files/styles/copy_image_884_x_564/public/OutdoorSpringStock_2018_035.png?itok=Gt8C7TiT 1x" media="(min-width: 768px)" type="image/png"/>
+              <source srcset="/sites/default/files/styles/copy_image_450_x_287/public/OutdoorSpringStock_2018_035.png?itok=0ZD4zxu5 1x" media="(min-width:450px)" type="image/png"/>
+              <source srcset="/sites/default/files/styles/copy_image_450_x_287/public/OutdoorSpringStock_2018_035.png?itok=0ZD4zxu5 1x" type="image/png"/>
+                  <img src="/sites/default/files/styles/copy_image_884_x_564/public/OutdoorSpringStock_2018_035.png?itok=Gt8C7TiT" alt="student studying on bench" />
+
+  </picture>
+
+                                            </div>
+                
+                <div class="columns small-12
+                                                                                     large-6                                            ">
+                    <div class="content ">
+                                                    <h3 class="btm-divider">Federal Grants</h3>
+                                                                                                    <p>Federal grants are awarded based on need, which is determined by the Free Application for Federal Student Aid (<a href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank">FAFSA</a>). To be eligible, you must be an undergraduate student enrolled in a degree or certificate program. You must file the FAFSA to be eligible for these awards</p>
+<ul class="accordion" data-accordion="true" data-multi-expand="true" data-allow-all-closed="true">
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Federal Pell Grant</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p>Eligibility for the Federal Pell Grant is based on <a href="/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/policies-maintaining-aid/expected-family-contribution">Student Aid Index</a> (SAI). The maximum amount a student can receive for the 2025-2026 academic year is $7,395.</p><p>The amount you receive can vary based on SAI, whether or not you are attending a full academic year, and whether you're attending full or part time. The <a href="https://studentaid.gov/understand-aid/types/grants/pell/calculate-eligibility" target="_blank">maximum amount of funding</a> you can receive over your lifetime is the equivalent of receiving the Pell Grant for six years.</p><p><a href="https://studentaid.gov/understand-aid/types/grants/pell" target="_blank">Learn More</a></p>
+            </div>
+        </li>
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Federal Supplemental Educational Opportunity Grant (SEOG)</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p>The SEOG is awarded to students with exceptional financial need. As such, we prioritize awarding SEOG to students with an <a href="/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/policies-maintaining-aid/expected-family-contribution">Student Aid Index</a> equal to $0. The award amount is typically $4,000.</p><p><a href="https://studentaid.gov/understand-aid/types/grants/fseog" target="_blank">Learn More</a></p>
+            </div>
+        </li>
+    </ul>
+
+
+
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+       <div class="named-anchor" name="state" id="state"></div>
+
+      <div class="copy-module copy-module--image">
+    <div class="row expanded">
+        <div class="columns">
+            <div class="row">
+                                    <div class="columns small-12 large-6">
+                                                      <picture>
+                  <source srcset="/sites/default/files/styles/copy_image_584_x_373/public/students_walking.jpg?itok=2c4NitVH 1x" media="(min-width: 1024px)" type="image/jpeg"/>
+              <source srcset="/sites/default/files/styles/copy_image_884_x_564/public/students_walking.jpg?itok=tB55Mygb 1x" media="(min-width: 768px)" type="image/jpeg"/>
+              <source srcset="/sites/default/files/styles/copy_image_450_x_287/public/students_walking.jpg?itok=Sn4_QeL2 1x" media="(min-width:450px)" type="image/jpeg"/>
+              <source srcset="/sites/default/files/styles/copy_image_450_x_287/public/students_walking.jpg?itok=Sn4_QeL2 1x" type="image/jpeg"/>
+                  <img src="/sites/default/files/styles/copy_image_884_x_564/public/students_walking.jpg?itok=tB55Mygb" alt="students walking on campus" />
+
+  </picture>
+
+                                            </div>
+                
+                <div class="columns small-12
+                                                                                     large-6                                            ">
+                    <div class="content ">
+                                                    <h3 class="btm-divider">Colorado State Aid</h3>
+                                                                                                    <p>The Colorado General Assembly offers funding opportunities for students who demonstrate financial need, as determined by the <a href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank">FAFSA</a>. To receive funding, the <a href="https://www.du.edu/file/83956" target="_blank">Colorado Residency Form</a> must also be submitted to the Office of the Registrar.</p>
+
+<p>Undocumented students who meet eligibility requirements may also apply for financial aid from the State of Colorado. <a href="/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/types-aid/undocumented-students">Learn more &gt;&gt;</a></p>
+<ul class="accordion" data-accordion="true" data-multi-expand="true" data-allow-all-closed="true">
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Colorado Student Grant</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p>Colorado Student Grant eligibility is determined by  information provided on the <a href="https://studentaid.gov/h/apply-for-aid/fafsa">FAFSA</a>. To be eligible you must also be enrolled at least half time (six credits or more). Award amounts vary up to $7,500 annually.  </p><p><span>Due to funding cuts in the Colorado state budget, DU will be unable to award Colorado State Grant funds beyond the 2025-26 academic year.</span></p>
+            </div>
+        </li>
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">College Opportunity Fund (COF)</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p>The College Opportunity Fund (COF) offers $38.67/credit hour for Pell Grant-eligible students who graduated from a Colorado high school.</p><p>To receive funding, you must:</p><ul><li>Complete the COF application online at <a href="https://cof.college-assist.org/" target="_blank">https://cof.college-assist.org</a>.</li><li>Submit the <a href="https://www.du.edu/file/83956" target="_blank">Colorado Residency Form</a> to the Registrar's Office.</li><li>If a transfer student, submit a high school transcript (or equivalent) to the Registrar's Office.</li><li><a href="https://apps25.du.edu:8445/ssomanager/saml/login?relayState=/c/auth/SSB?pkg=bzskscof.p_disp_cof_auth_page" target="_blank">Authorize the COF stipend in My4D</a>. You must authorize the COF stipend every quarter unless lifetime authorization is selected.</li></ul><p><br />You're eligible to receive COF for a total of 217.5 credit hours, including any credit hours used while taking college courses during high school. If you have used all 217.5 hours and you need additional hours to complete your undergraduate degree, you can request an extension by submitting a waiver request to the Colorado Commission on Higher Education. Contact the Office of Student Billing at <a href="mailto:studentbilling@du.edu">studentbilling@du.edu</a> for more information about that process.</p>
+            </div>
+        </li>
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Additional Information about Colorado State Aid</a>
+            <div class="accordion-content" data-tab-content="true">
+                <p><strong>Eligibility:</strong> In order to remain eligible for all Colorado state funding, students need to maintain <a href="/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/policies-maintaining-aid/sap">Satisfactory Academic Progress</a>.</p><p><strong>Appeal Procedures:</strong> Students who were not awarded the aid listed above, and believe they are eligible, may appeal for a re-evaluation of their financial aid award package. Please see information about <a href="https://www.du.edu/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/application-process/appeals">Special Circumstances</a> to verify whether your financial situation constitutes a reason to appeal.</p><p><strong>Penalties for Fraud:</strong> If you receive federal aid based on incorrect information, you will have to pay it back; you may also have to pay fines and fees. If you purposely give false or misleading information on your application, you may be fined $20,000, sent to prison or both.</p>
+            </div>
+        </li>
+    </ul>
+
+
+
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+       <div class="named-anchor" name="private" id="private"></div>
+
+      <div class="copy-module">
+    <div class="row expanded">
+        <div class="columns">
+            <div class="row">
+                
+                <div class="columns small-12
+                     medium-12 large-8 large-offset-4                                        ">
+                    <div class="content ">
+                                                    <h3 class="btm-divider">Private Scholarships</h3>
+                                                                                                    <p>Various entities not affiliated with DU offer an array of scholarship opportunities. Many of these opportunities are not broadly advertised, so be sure to speak with any such organizations near you, particularly those you're already affiliated with, to see if they offer scholarship funding.</p><p>Since these entities are not affiliated with DU, you are encouraged to evaluate each scholarship opportunity. While DU works hard to review outside scholarships before sharing them with students, most of the websites listed below function as search engines. Among other things, beware of applications that <em>only</em> ask for your personal information (such as an email address), require examples of previous coursework, or simply enter you in a type of prize drawing. These scholarships may be ways to mine for data or utilize your work in ways that could violate <a href="http://bulletin.du.edu/" target="_blank">academic integrity policies</a>.</p><p>If you have any questions about a scholarship opportunity, please don't hesitate to contact us at <a href="mailto:finaid@du.edu">finaid@du.edu</a>.</p>
+<ul class="accordion" data-accordion="true" data-multi-expand="true" data-allow-all-closed="true">
+            <li class="accordion-item" data-accordion-item="true">
+            <a href="#" class="accordion-title">Private Scholarship Search Websites</a>
+            <div class="accordion-content" data-tab-content="true">
+                <ul><li><a href="https://opportunity.collegeboard.org/" target="_blank">CollegeBoard</a></li><li><a href="http://www.fastweb.com/" target="_blank">Fastweb</a></li><li><a href="http://www.free-4u.com/" target="_blank">Free-4U.com</a></li><li><a href="https://www.goabroad.com/scholarships-abroad" target="_blank">GoAbroad.com</a></li><li><a href="http://www.internationalscholarships.com/" target="_blank">InternationalScholarships.com</a></li><li><a href="https://scholarshipamerica.org/students/browse-scholarships/" target="_blank">ScholarshipAmerica.org</a></li><li><a href="http://www.scholarships.com/" target="_blank">Scholarships.com</a></li><li><a href="http://www.studentscholarships.org/" target="_blank">StudentScholarships.org</a></li><li><a href="http://supercollege.com/" target="_blank">SuperCollege.com</a></li><li><a href="https://www.unigo.com/scholarships#/fromscholarshipexperts" target="_blank">Unigo.com</a></li></ul>
+            </div>
+        </li>
+    </ul>
+
+
+<p class="MsoNormal"><span>If you have a scholarship payment, please forward to the address below. If the external organization requires a billing statement or other verification from the University, please send a copy of the organization’s request to the address below:</span></p><p class="MsoNormal">Financial Aid<br />University of Denver<br />2197 S. University Blvd.<br />Denver, CO 80208-9403</p><p>Once processed, your scholarship will be added to your financial aid award and will disburse to your account in the same way as the rest of your aid.</p><p> </p>
+  <div class="paragraph paragraph--type--embed-code paragraph--view-mode--default">
+          
+            <div> <div class="cta-inline-module">
+	<div class="inline-content">
+		<p>      <h4 class="cta-inline">
+      Video Playlist: Applying for Private Scholarships
+      </h4>
+  </p>
+			<a href="https://du.financialaidtv.com/play/722-scholarships/309-finding-and-researching-scholarships"><img src="https://id.ocelotbot.com/sites/default/files/styles/thumb_lg/public/fatv_111_rev4.jpg?itok=hwmM3RDT" alt="Thumbnail of Finding and Researching Scholarships" width="320" height="180"></a>
+
+	</div>
+</div></div>
+      
+      </div>
+<p> </p><p><strong>How Private Scholarships May Affect Your Aid:</strong><br />Your financial aid eligibility is limited by your <a href="/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/price-and-affordability/cost-attendance">cost of attendance</a> and/or your <a href="/admission-aid/financial-aid-scholarships/undergraduate-financial-aid/policies-maintaining-aid/expected-family-contribution">financial need</a>. If you receive additional aid, such as a grant, scholarship or tuition benefit from outside of DU, we will first apply these funds to any unmet financial need, if applicable. However, if you have not applied for need-based aid, then these awards are applied to your account and are limited by your cost of attendance. If the private scholarship(s) causes you to go over your demonstrated financial need and/or cost of attendance, we may have to adjust your aid offer. We will reduce student loans first, then work-study, before reducing any DU scholarships or grants. In some cases, however, additional outside awards that must pay toward tuition charges may result in the reduction of a DU scholarship or grant.</p>
+
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                              <div class="row">
+    <div class="columns small-12">
+        <h3 class="btm-divider">Contact</h3>
+    </div>
+</div>
+
+<div class="contact-single-module contact-single-module--teal buffer-on-inner-row" data-equalizer="contact-single-module__content" data-equalize-on="medium">
+    <div class="row medium-unstack">
+        <div class="contact-single-module_overlay contact-single-module_overlay--teal columns large-4 show-for-large" style="background-image: url('/themes/custom/pl_drupal/images/contact-single-module-bg-img-bw.jpg')">
+            <div class="contact-single-module__content" data-equalizer-watch="contact-single-module__content">&nbsp;</div>
+        </div>
+        <div class="columns small-12 medium-6 large-4">
+            <div class="contact-single-module__content" data-equalizer-watch="contact-single-module__content">
+                <h3 class="btm-divider">Financial Aid</h3>
+
+                            </div>
+        </div>
+        <div class="columns small-12 medium-6 large-4">
+            <div class="contact-single-module__content" data-equalizer-watch="contact-single-module__content">
+                <ul class="contact-list">
+                                            <li>
+                            <div class="contact-list__media"><span class="icon-du-mail-alt" aria-hidden="true"></span>
+                            </div>
+                            <a href="mailto:finaid@du.edu" title="Contact Email">finaid@du.edu</a></li>
+                                                                <li class="show-for-small-only">
+                            <div class="contact-list__media"><span class="icon-du-phone" aria-hidden="true"></span>
+                            </div>
+                            <a href="tel:303-871-4020">303-871-4020</a></li>
+                        <li class="hide-for-small-only non-link">
+                            <div class="contact-list__media"><span class="icon-du-phone" aria-hidden="true"></span>
+                            </div><a href="tel:303-871-4020">303-871-4020</a></li>
+                                                                <li class="show-for-small-only">
+                            <div class="contact-list__media"><span class="icon-du-fax" aria-hidden="true"></span></div>
+                            <a href="fax:303-871-2341">303-871-2341</a></li>
+                        <li class="hide-for-small-only non-link">
+                            <div class="contact-list__media"><span class="icon-du-fax" aria-hidden="true"></span>
+                            </div> 303-871-2341</li>
+                                                                <li>
+                            <div class="contact-list__media">
+                                <span class="icon-du-link-ext-alt" aria-hidden="true"></span></div>
+                            <a href="/admission-aid/financial-aid-scholarships/meet-our-team"
+                                title="Link&#x20;to&#x20;information&#x20;on&#x20;private&#x20;education&#x20;loans"                                target="_blank"                                >
+                            Meet Our Staff</a>
+                        </li>
+                                                                <li>
+                            <div class="contact-list__media"><span class="icon-du-location" aria-hidden="true"></span>
+                            </div>
+                                                            <a href="https://www.google.com/maps/place/2197+S.+University+Blvd.+Denver+Colorado+80210"  title="University Hall Room 255" target="_blank">
+                                                                            University Hall Room 255 <br />
+                                    
+                                                                            2197 S. University Blvd. <br />
+                                                                        Denver, Colorado 80210
+                                </a>
+                                                    </li>
+                    
+                                            <li>
+                            <div class="contact-list__media"><span class="icon-du-clock" aria-hidden="true"></span></div>
+                                                                    M, T, W, F:  8am-4:00pm<br/>
+                                                                    Th:  12:00pm-4:00pm<br/>
+                                                                    FAFSA Code: 001371<br/>
+                                                                    CSS Profile Code: 4842<br/>
+                                
+                        </li>
+                                    </ul>
+                            </div>
+        </div>
+    </div>
+</div>
+
+            
+
+
+      <div class="reusable-content">
+  <div class="row expanded">
+    <div class="columns">
+        <div class="row">
+                      <div class="columns small-12">
+                
+            <div><script type="text/javascript" src="https://ai.ocelotbot.com/embed/standard/237a4b1a-f0a0-46a8-9b8c-749676086367?ha=right&amp;hv=16px&amp;va=bottom&amp;vv=16px&amp;ts=0&amp;bs=simple&amp;av=0"></script></div>
+      
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+ 
+  </article>
+
+ 
+
+
+                        <footer>
+                        
+    
+
+
+      
+      <div>
+              <div>
+
+
+
+<div class="follow-us">
+    <div class="row align-middle">
+        <div class="columns small-12 large-3">
+            <h2>
+                Follow Us:
+            </h2>
+        </div>
+        <div class="columns small-12 large-6">
+            <ul class="menu social-media align-spaced">
+                                    <li>
+
+<a href="http://www.facebook.com/uofdenver" title="follow&#x20;us&#x20;on&#x20;Facebook"        target="_blank"        >
+    <span class="icon-du-facebook" aria-hidden="true"></span>
+    <span class="show-for-sr">"</span>
+</a>
+</li>
+                    <li>
+
+<a href="http://www.twitter.com/uofdenver"         target="_blank"        >
+    <span class="icon-du-twitter" aria-hidden="true"></span>
+    <span class="show-for-sr">"</span>
+</a>
+</li>
+                    <li>
+
+<a href="http://www.instagram.com/uofdenver/" title="follow&#x20;us&#x20;on&#x20;instagram"        target="_blank"        >
+    <span class="icon-du-instagram" aria-hidden="true"></span>
+    <span class="show-for-sr">"</span>
+</a>
+</li>
+                    <li>
+
+<a href="https://www.linkedin.com/school/university-of-denver/" title="follow&#x20;us&#x20;on&#x20;linkedin"        target="_blank"        >
+    <span class="icon-du-linkedin" aria-hidden="true"></span>
+    <span class="show-for-sr">"</span>
+</a>
+</li>
+                    <li>
+
+<a href="http://www.youtube.com/uofdenver" title="follow&#x20;us&#x20;on&#x20;youtube"        target="_blank"        >
+    <span class="icon-du-youtube" aria-hidden="true"></span>
+    <span class="show-for-sr">"</span>
+</a>
+</li>
+                        </ul>
+        </div>
+        <div class="columns small-12 large-3">
+            <a href="/university-relations/guides/social-media/directory" class="follow-us__view-all">
+                <strong>See Posts
+                    <span class="icon-du-right-arrow" aria-hidden="true"></span>
+                </strong>
+            </a>
+        </div>
+    </div>
+</div></div>
+          </div>
+  
+ <nav aria-labelledby="block-footermenu-menu" id="block-footermenu" data-block-plugin-id="system_menu_block:footer-menu">
+            
+  <p class="visually-hidden" id="block-footermenu-menu">Footer Menu</p>
+  
+
+        
+                <nav class="bg-dark-gray" aria-label="footer-links">
+            <ul class="menu align-center">
+                                    <li>
+                        <a href="https://map.concept3d.com/?id=64" target="_blank" title="Interactive Map and Printable Map PDFs">Maps</a>
+                                            </li>
+                                    <li>
+                        <a href="https://jobs.du.edu/en-us/listing/" target="_blank" title="Jobs at the University of Denver">Jobs</a>
+                                            </li>
+                                    <li>
+                        <a href="/site-utilities/contact" target="_self" title="Contacting the Unviersity of Denver" data-drupal-link-system-path="node/2831">Contact</a>
+                                            </li>
+                                    <li>
+                        <a href="/site-utilities/privacy-policy" target="_self" title="University of Denver Privacy Policy" data-drupal-link-system-path="node/63922">Privacy Policy</a>
+                                            </li>
+                                    <li>
+                        <a href="/feedback" target="_self" title="University of Denver Feedback Form" data-drupal-link-system-path="node/1331">Feedback</a>
+                                            </li>
+                                    <li>
+                        <a href="" class="termly-display-preferences">Consent Preferences</a>
+                                            </li>
+                                    <li>
+                        <a href="/" data-toggle="modal_footer_disclosures" data-drupal-link-system-path="node/6">Disclosures</a>
+                                            </li>
+                            </ul>
+        </nav>
+    
+
+
+  </nav>
+
+
+
+      <p class="copyright">Copyright ©2026 University of Denver. | All rights reserved. | The University of Denver is an equal opportunity institution</p>
+ 
+
+
+      
+            <div><div class="full reveal" data-animation-in="fade-in" data-animation-out="fade-out" data-reveal="data-reveal" id="modal_footer_cta_apply_general"><div class="row align-center modal_wrapper"><div class="columns align-self-middle modal_cta_utility"><div class="row align-center"><div class="columns small-12"><h2 class="btm-divider text-center">Start Your <strong>Application</strong></h2></div></div><div class="row"><div class="columns small-12 medium-4"><h5>Undergraduate Applicants</h5></div><div class="columns small-12 medium-8"><p>We accept the Common App, a universal application that can be sent to many schools.</p></div></div><div class="row align-center"><div class="columns small-12 medium-4"> </div><div class="columns small-12 medium-3 text-center"><h6>Common App</h6><p><a class="btn" href="https://apply.commonapp.org/login?m=78" target="_blank" title="Start a Common App for First Years">First-Year Students</a> <a class="btn" href="https://apply.transfer.commonapp.org/applicant-ux/#/login" target="_blank" title="Start a Common App for Transfer Students">Transfer Students</a></p></div><div class="columns small-12 medium-3 text-center"><h6>Bachelor Completions</h6><p><a class="btn" href="https://gradadmissions.du.edu/apply/" target="_blank" title="Start an Application">All Students</a></p></div><div class="columns small-12 medium-2"> </div></div><div class="row"><div class="columns small-12 medium-4"><h5> </h5></div><div class="columns small-12 medium-8"><p> </p></div></div><div class="row"><div class="columns small-12 medium-4"><h5>Graduate Applicants</h5></div><div class="columns small-12 medium-8"><p>Go to the graduate admission application to submit your information. For information on admission requirements, visit the graduate academic programs page and locate your program of interest.</p></div></div><div class="row align-center"><div class="columns small-12 medium-4"> </div><div class="columns small-12 medium-3 text-center"><h6>Apply Now</h6><p><a class="btn" href="https://gradadmissions.du.edu/apply/" target="_blank" title="Start a Graduate Application">Graduate Application</a></p></div><div class="columns small-12 medium-3 text-center"><h6>Explore Programs</h6><p><a class="btn" href="/academics/graduate-programs" title="Explore Graduate Programs">Graduate Academic Programs</a></p></div><div class="columns small-12 medium-2"> </div></div></div></div><p><button class="close-button" data-close=""><span aria-hidden="true">×</span></button></p></div></div>
+      
+ 
+
+
+      
+            <div><div class="full reveal" data-animation-in="fade-in" data-animation-out="fade-out" data-reveal="data-reveal" id="modal_footer_cta_apply_grad">
+<div class="row align-center modal_wrapper">
+<div class="columns align-self-middle modal_cta_utility">
+<div class="row align-center">
+<div class="columns small-12">
+<h2 class="btm-divider text-center">Start Your <strong>Application</strong></h2>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 medium-4">
+<h5>Graduate Applicants</h5>
+</div>
+<div class="columns small-12 medium-8">
+<p>Go to the graduate admission application to submit your information. For information on admission requirements, visit the graduate academic programs page and locate your program of interest.</p>
+</div>
+
+</div>
+<div class="row align-center">
+<div class="columns small-12 medium-4"> </div>
+<div class="columns small-12 medium-3 text-center">
+<h6>Apply Now</h6>
+<p><a class="btn" href="https://gradadmissions.du.edu/apply/" target="_blank" title="Start a Graduate Application">Graduate Application</a></p>
+</div>
+<div class="columns small-12 medium-3 text-center">
+<h6>Explore Programs</h6>
+<p><a class="btn" href="/academics/graduate-programs" title="Start a Graduate Application">Graduate Academic Programs</a></p>
+</div>
+<div class="columns small-12 medium-2"> </div>
+</div>
+</div>
+</div>
+<button class="close-button" data-close=""><span aria-hidden="true">×</span></button>
+</div></div>
+      
+ 
+
+
+      
+            <div><div class="full reveal" data-animation-in="fade-in" data-animation-out="fade-out" data-reveal="data-reveal" id="modal_footer_cta_request_info">
+<div class="row align-center modal_wrapper">
+<div class="columns align-self-middle modal_cta_utility">
+<div class="row align-center">
+<div class="columns small-12">
+<h2 class="btm-divider text-center">Take The <strong>First Step</strong></h2>
+</div>
+</div>
+
+<div class="row align-center">
+<div class="columns small-12 medium-4 text-center">
+<h4>Undergraduates</h4>
+
+<p>Contact Undergraduate Admission</p>
+
+<p><a class="btn" href="https://admission.du.edu/register/requestinformation" target="_blank" title="Request Info from Undergraduate Admission">Request Info</a></p>
+</div>
+
+<div class="columns small-12 medium-4 medium-offset-1 text-center">
+<h4>Graduates</h4>
+
+<p>Request Graduate Program Information</p>
+
+<p><a class="btn" href="/admission-aid/graduate-admission/request-information" title="Request Info from Graduate Admission">Request Info</a></p>
+</div>
+</div>
+</div>
+</div>
+<button class="close-button" data-close=""><span aria-hidden="true">×</span></button></div></div>
+      
+ 
+
+
+      
+            <div><div class="full reveal" data-animation-in="fade-in" data-animation-out="fade-out" data-reveal="data-reveal" id="modal_footer_cta_apply_undergrad">
+<div class="row align-center modal_wrapper">
+<div class="columns align-self-middle modal_cta_utility">
+<div class="row align-center">
+<div class="columns small-12">
+<h2 class="btm-divider text-center">Start Your <strong>Application:</strong></h2>
+</div>
+</div>
+
+<div class="row">
+<div class="columns small-12 medium-4">
+<h5>Undergraduate Applicants</h5>
+</div>
+
+<div class="columns small-12 medium-8">
+<p>We accept the Common App, a universal application that can be sent to many schools.</p>
+</div>
+
+</div>
+
+<div class="row align-center">
+<div class="columns small-12 medium-3 text-center">
+<h6>Common App</h6>
+
+<p><a class="btn" href="https://apply.commonapp.org/login?m=78#_ga=2.113481415.1531125134.1525784382-2023974254.1479322633" target="_blank" title="Start a Common App for First Years">First-Year Students</a> <a class="btn" href="https://apply.commonapp.org/login?m=78#_ga=2.149485558.1531125134.1525784382-2023974254.1479322633" target="_blank" title="Start a Common App for Transfer Students">Transfer Students</a></p>
+</div>
+
+<div class="columns small-12 medium-3 medium-offset-1 text-center">
+<h6>Bachelor Completions</h6>
+
+<p><a class="btn" href="https://gradadmissions.du.edu/apply/" target="_blank" title="Start an Application">All Students</a></p>
+</div>
+
+<div class="columns small-12 medium-3 medium-offset-1 text-center">
+<h6> </h6>
+
+<p> </p>
+</div>
+</div>
+</div>
+</div>
+
+<p><button class="close-button" data-close=""><span aria-hidden="true">×</span></button></p>
+</div></div>
+      
+ 
+
+
+      
+            <div><div class="full reveal" data-animation-in="fade-in" data-animation-out="fade-out" data-reveal="data-reveal" id="modal_footer_cta_visit"><div class="row align-center modal_wrapper"><div class="columns align-self-middle modal_cta_utility"><div class="row align-center"><div class="columns small-12"><h2 class="btm-divider text-center">See Our <strong>Campus</strong></h2></div></div><div class="row align-center"><div class="columns small-12 medium-4 text-center"><h4>Undergraduates</h4><p>View our visit options and schedule your trip to the DU campus.</p><p><a class="btn" href="https://www.du.edu/admission-aid/undergraduate/visit" title="Schedule your undergraduate visit">Schedule a Visit</a></p></div><div class="columns small-12 medium-4 medium-offset-1 text-center"><h4>Graduates</h4><p>Find your graduate program representative and schedule a visit.</p><p><a class="btn" href="https://www.du.edu/admission-aid/graduate/visit" title="Schedule your graduate visit">Schedule a Visit</a></p></div></div></div></div><p><button class="close-button" data-close=""><span aria-hidden="true">×</span></button></p></div></div>
+      
+ 
+
+
+      
+            <div><div class="full reveal" data-animation-in="fade-in" data-animation-out="fade-out" data-reveal="data-reveal" id="modal_footer_disclosures"><div class="row align-center modal_wrapper"><div class="columns align-self-middle modal_cta_utility"><div class="row align-center"><div class="columns medium-12"><h2 class="btm-divider text-center">Disclosures</h2></div></div><div class="row align-center"><div class="columns small-12 medium-4 text-center">The University of Denver admits students of any race, color, national and ethnic origin to all the rights, privileges, programs, and activities generally accorded or made available to students at the school. It does not discriminate on the basis of race, color, national and ethnic origin in administration of its educational policies, admissions policies, scholarship and loan programs, and athletic and other school-administered programs.<br /><br />If interested in more information, please explore DU’s <a href="https://www.du.edu/ir/about/consumer-disclosures" target="_blank" title="Consumer Disclosures webpage">Consumer Disclosures</a>, the <a href="https://www.du.edu/equalopportunity/policies_procedures/index.html" target="_blank" title="Equal Opportunity policies webpage">Office of Equal Opportunity &amp; Office of Title IX</a> and <a href="https://www.du.edu/public-health/communications/heerf-disclosure" target="_blank">HEERF Disclosures</a>.</div></div></div></div><p><button class="close-button" data-close=""><span aria-hidden="true">×</span></button></p></div></div>
+      
+ 
+
+
+      
+            <div><div class="full reveal" data-animation-in="fade-in" data-animation-out="fade-out" data-reveal="data-reveal" id="covid">
+<div class="row align-center modal_wrapper">
+<div class="columns align-self-middle modal_cta_utility">
+<div class="row align-center">
+<div class="columns small-12">
+<h2 class="btm-divider text-center">Important Links for Navigating COVID</h2>
+</div>
+</div>
+
+<div class="row align-center">
+<div class="columns small-12 medium-4 text-center">
+<h4>Government Bodies</h4>
+
+<p><a class="btn" href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" target="_blank">Centers for Disease Control &amp; Prevention</a></p>
+
+<p><a class="btn" href="https://covid19.colorado.gov/" target="_blank">Colorado Department of Health &amp; Environment</a></p>
+</div>
+
+<div class="columns small-12 medium-4 medium-offset-1 text-center">
+<h4>Healthcare Services</h4>
+
+<p><a class="btn" href="https://healthy.kaiserpermanente.org/" target="_blank">Kaiser Permanente</a></p>
+
+<p><a class="btn" href="https://www.du.edu/health-and-counseling-center/" target="_blank">DU's Health &amp; Counseling Center</a></p>
+</div>
+</div>
+</div>
+</div>
+<button class="close-button" data-close=""><span aria-hidden="true">×</span></button></div></div>
+      
+ 
+
+
+      
+            <div><style>
+.copy-module iframe {
+  min-height: 100% !important;
+}
+
+.records-view  {
+  overflow: hidden;
+}
+
+.records-view table thead th a {
+    color: #fefefe;
+}
+
+.records-view table thead tr, .records-view table tfoot tr {
+    background: #757575 !important;
+}
+
+.records-view table thead th.is-active {
+    background: #18171e;
+}
+
+.admission-steps .tabs-content .is-active .columns  .align-years div:nth-child(n+3) {
+ display: none;
+}
+
+.admission-steps .tabs-content .is-active .columns  .align-years  {
+ display: flex;
+}
+
+@media screen and (min-width: 320px) {
+   #kaltura-responsive-video-inline {
+     margin-top: 460px !important;
+   }
+ }
+
+  @media (min-width: 590px) and (max-width: 767px) {
+    #kaltura-responsive-video-inline {
+      margin-top: 83.15% !important;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1099px) {
+    #kaltura-responsive-video-inline {
+      margin-top: 93.15% !important;
+    }
+  }
+
+  @media screen and (min-width: 1100px) {
+    #kaltura-responsive-video-inline {
+      margin-top: 61.15% !important;
+    }
+  }
+
+.find-an-expert-page #inner-information .expert-field-wrapper .field_social_links-field .follow-us {
+    flex-direction: column !important;
+}
+.news-carousel__wrapper .news-item__group__image img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover; 
+    position: inherit !important;
+    top: 25%;
+    left: inherit;
+    transform: translate(0, 0);
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.find-an-expert-page #inner-information .expert-field-wrapper .field_social_links-field .follow-us .row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.find-an-expert-page #inner-information .expert-field-wrapper .field_social_links-field .follow-us .row .large-6 {
+   width: 90% !important;
+   max-width: 90% !important;
+}
+
+.kennedy-mountain-campus .utility-menu .menu .audience-menu a:hover {
+  background-color: white;
+  text-decoration: underline;
+}
+
+.kennedy-mountain-campus .utility-menu #homeAnchor {
+  display: none;
+}
+
+.kennedy-mountain-campus .contact-single-module_overlay--teal {
+  background-image: none !important;
+}
+
+.kennedy-mountain-campus footer div:first-child div .row .small-12 .btm-divider {
+  display: none;
+}
+
+.kennedy-mountain-campus footer div:first-child div .row .small-12 .contact-single-module__content .btm-divider {
+  display: initial;
+}
+
+.handbook-content-page div p {
+  text-align: left !important;
+}
+
+.unit-elevate-cart-popup .elevate-cart-item .icon-du-cancel:before, .core-elevate-cart-popup .elevate-cart-item .icon-du-cancel:before {
+    margin-bottom: -4px;
+    font-size: 1.5rem;
+}
+
+header .utility-menu .menu .menu-toggle-utility__title {
+    margin-bottom: 59px;
+    width: 50% !important;
+    z-index: 5;
+}
+
+header .utility-menu .menu .menu-toggle-utility li {
+    border: none !important;
+}
+
+.handbook-content-page div p {
+  text-align: left !important;
+}
+
+@media print, screen and (max-width: 47.99875em) {
+header .utility-menu .menu .menu-toggle-utility {
+    width: 50% !important;
+ }
+}
+
+.handbook table thead .views-field-field-policy-document {
+    text-align: center;
+}
+
+
+@media screen and (max-width: 600px) {
+   .du-alert  .du-alert-custom-block .du-alert__action-button {
+      top: 18% !important;
+   }
+ }
+
+@media print, screen and (max-width: 47.99875em) {
+header .utility-menu .menu .menu-toggle-utility {
+    width: 50% !important;
+ }
+}
+</style></div>
+      
+ 
+
+
+      
+            <div><style>
+.du-home header.core-inline-site #hero-media__caption {
+  padding-top: 0;
+}
+</style></div>
+      
+ 
+
+
+                </footer>            <span id="du-loader" aria-hidden="true">
+        <span class="icon-du-spin3 animate-spin"></span>
+    </span>
+</div>
+
+  </div>
+
+    
+</div>
+
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/8411","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"du_elevate_display":{"du_elevate_displayJS_checkout":{"courses_list":"\/node\/61344","api_url":"https:\/\/us-elevate.elluciancloud.com\/app\/udcs\/"}},"ajax":[],"user":{"uid":0,"permissionsHash":"8525975066ddf2814d419420490ca0f63e97b477269b7542c681bd806e0d1a8b"}}</script>
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=3.6.3"></script>
+<script src="/core/misc/polyfills/element.matches.js?v=9.5.11"></script>
+<script src="/core/misc/polyfills/object.assign.js?v=9.5.11"></script>
+<script src="/core/assets/vendor/once/once.min.js?v=1.0.1"></script>
+<script src="/core/assets/vendor/jquery-once/jquery.once.min.js?v=2.2.3"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=9.5.11"></script>
+<script src="/core/misc/drupal.js?v=9.5.11"></script>
+<script src="/core/misc/drupal.init.js?v=9.5.11"></script>
+<script src="/core/assets/vendor/picturefill/picturefill.min.js?v=3.0.3"></script>
+<script src="/core/assets/vendor/js-cookie/js.cookie.min.js?v=3.0.1"></script>
+<script src="/core/misc/jquery.cookie.shim.js?v=9.5.11"></script>
+<script src="/core/misc/jquery.once.bc.js?v=9.5.11"></script>
+<script src="/libraries/foundation-sites/dist/js/foundation.min.js?v=1.1.0"></script>
+<script src="/themes/custom/pl_drupal/js/app.js?v=1.1.0"></script>
+<script src="/libraries/slick-carousel/slick/slick.min.js?v=1.1.0"></script>
+<script src="/libraries/motion-ui/dist/motion-ui.min.js?v=1.1.0"></script>
+<script src="/themes/custom/pl_drupal/js/menu_dropdown_adjust.js?v=1.1.0"></script>
+<script src="/themes/custom/pl_drupal/js/experiential_slideshow.js?v=1.1.0"></script>
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.10/clipboard.min.js?v=1.1.0"></script>
+<script src="https://admission.du.edu/ping" async></script>
+<script src="https://gradadmissions.du.edu/ping" async></script>
+<script src="/themes/custom/pl_drupal/js/attach_utm_cookies.js?v=1.x"></script>
+<script src="/modules/custom/du_elevate/modules/du_elevate_display/js/du_elevate_display_checkout.js?v=1.x"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-ab08c239bec33d61f91","applicationID":"497891743","transactionName":"NVZaZ0ZYXEtRUBdeXgwceVBAUF1WH3cRQkEDX2RdW11XZHNcDUNDDV9UVkZlfFdUVjVeVBVwV11AS11UXFYRGg8UWl1E","queueTime":0,"applicationTime":2670,"atts":"GRFZEQ5CT0U=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

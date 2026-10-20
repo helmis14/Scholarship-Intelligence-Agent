@@ -1,0 +1,1186 @@
+
+
+<!DOCTYPE html>
+
+<html>
+<head><title>
+	Internships and Fellowships
+</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="AUGP5mjSU3CHEFOYKrZ9TSDUm7y9WsE7-0GxBwWvLaE" /><meta name="google-site-verification" content="3ZgHpfybJO_GSfTJdSn-wMf7PC_0zEobrO5z5rHXr9I" /><link rel="shortcut icon" href="/assets/images/icons/favicon.png?v=0125" /><link rel="apple-touch-icon-precomposed" href="/assets/images/icons/favicon.png?v=0225" /><link href="https://fonts.googleapis.com/css?family=Roboto:500,300,700,400" rel="stylesheet" type="text/css" /><link href="/assets/css/zNormalize.css" type="text/css" rel="stylesheet" /><link href="/assets/css/10-UltraWaveResponsive.css?v=0125" type="text/css" rel="stylesheet" /><link href="/assets/css/zzAMSTA.css?v=1025" type="text/css" rel="stylesheet" />
+    <style>
+        .sfPageEditor .uib-tab.nav-item.ng-isolate-scope a {
+            pointer-events: auto;
+        }
+    </style>
+
+
+    <script src="https://use.typekit.net/ifr0ewc.js"></script>
+    <script>try { Typekit.load({ async: true }); } catch (e) { }</script>
+    <script src="/assets/js/modernizr.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        // add a class to the <html> tag of browsers that do not support Media Queries
+        var mqSupported = Modernizr.mq('only all');
+        if (!mqSupported) {
+            document.documentElement.className += ' no-mqs';
+        }
+    </script>
+
+    <script src="/assets/js/Jquery.min.js" type="text/javascript"></script>
+    <script src="/assets/js/jquery.accordion.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.observehashchange.js"></script>
+    <script type="text/javascript" src="/assets/js/responsiveslides.min.js"></script>
+    <script type="text/javascript" src="/assets/js/asasearch.js"></script>
+    <script type="text/javascript" src="/assets/js/nav.js"></script>
+
+    <script type="text/javascript" src="/assets/js/foldable.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        // adapted from bs.collapse - if the search bar is open when opening the menu, close it (and vise versa)
+        jQuery('.navbar-collapse').on('show.bs.collapse', function () {
+            var actives = jQuery('.header-container').find('> .in')
+
+            if (actives && actives.length) {
+                var hasData = actives.data('bs.collapse')
+                if (hasData && hasData.transitioning) return
+                actives.collapse('hide')
+                hasData || actives.data('bs.collapse', null)
+            }
+        })
+
+    //]]>
+    </script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('#nested').foldable({
+                accordion: false,
+                theme: 'green',
+                activeClass: 'active'
+            });
+
+            jQuery(".active").trigger("click");
+
+            jQuery(".rslides").responsiveSlides({
+                auto: false,
+                pager: true,
+                nav: true,
+                speed: 500,
+                maxwidth: 800,
+                namespace: "centered-btns"
+            });
+
+            jQuery('ul.tabs li').click(function () {
+                var tab_id = jQuery(this).attr('data-tab');
+
+                jQuery('ul.tabs li').removeClass('current');
+                jQuery('.tab-content').removeClass('current');
+
+                jQuery(this).addClass('current');
+                jQuery("#" + tab_id).addClass('current');
+            });
+
+        });
+    </script>
+
+    <script type="text/javascript">
+
+        jQuery(document).ready(function () {
+
+            //syntax highlighter
+            hljs.tabReplace = '    ';
+            hljs.initHighlightingOnLoad();
+
+            jQuery.fn.slideFadeToggle = function (speed, easing, callback) {
+                return this.animate({ opacity: 'toggle', height: 'toggle' }, speed, easing, callback);
+            };
+
+            //accordion
+            jQuery('.accordion').accordion({
+                speed: 'fast'
+                , defaultOpen: window.location.hash != '' ? window.location.hash.substring(1) : ''
+            });
+            //Login
+            jQuery.post("/ajax/account/welcome", function (data, textStatus) {
+                jQuery("#loggedInPanel").html(data);
+            });
+        });
+
+        jQuery(window).hashchange(function () {
+            jQuery('.accordion').accordion({
+                speed: 'fast'
+                , defaultOpen: window.location.hash != '' ? window.location.hash.substring(1) : ''
+            });
+        });
+    </script>
+    <script type='text/javascript'>
+        function mobileSearch() {
+            if (!jQuery('.mobile-search #gsc-i-id1').length && jQuery(window).width() < 1028) {
+                jQuery('#navbar-collapse').prepend(jQuery('<div class="mobile-search"><form action="/search/"><span class="rmItem memClm"><input resultsUrl="/search" queryParameterName="search" gname="ASAsearch" autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" dir="ltr" spellcheck="false" placeholder="Search" style="width: calc(100% - 28px); padding: 10px; line-height:22px; border: none; margin: 0px; height: auto; outline: none; text-indent: 15px;"></span></form></div>'));
+            } else if (jQuery('.mobile-search #gsc-i-id1').length && jQuery(window).width() > 1028) {
+                jQuery('#navbar-collapse .mobile-search').remove();
+                if (jQuery(".navSrch a").text().toLowerCase() == "close") {
+                    jQuery(".navSrch a").toggleClass("cSrch");
+                    jQuery(".navSrch a").html("SEARCH");
+                }
+            } else if (jQuery(window).width() < 1028) {
+                jQuery('.header-search').css('display', 'none');
+            }
+        }
+
+        jQuery(function () {
+            mobileSearch();
+            jQuery(".navSrch a").click(function () {
+                jQuery(".header-search").slideToggle();
+                jQuery(".header-search").css({ "left": "17rem", "width": "71.8%" });
+
+                jQuery(this).toggleClass("cSrch");
+                jQuery(this).html(jQuery(this).text().toLowerCase() == "search" ? "CLOSE" : "SEARCH");
+                jQuery('.gsc-input').attr('placeholder', 'Search');
+                jQuery('#gsc-i-id1').val('');
+                jQuery('#gsc-i-id1').focus();
+            });
+            jQuery(".stattrak .nav-text").html(jQuery(".stattrak .nav-text").html().replace(/tr@k/gi, '<i>$&</i>'));
+            jQuery('.affixWrapper').height(jQuery('.header-bottom-container').height());
+            jQuery('.colBreakrsmSelected').addClass('colBreak rsmSelected');
+            jQuery('.col1rsmSelected').addClass('col1 rsmSelected');
+            jQuery('.col2rsmSelected').addClass('col2 rsmSelected');
+            jQuery('.col3rsmSelected').addClass('col3 rsmSelected');
+            jQuery('.col4rsmSelected').addClass('col4 rsmSelected');
+            jQuery('.col5rsmSelected').addClass('col5 rsmSelected');
+            jQuery(".abtClm .col1").wrapAll("<div class='col-sm-3' />");
+            jQuery(".abtClm .col2").wrapAll("<div class='col-sm-3' />");
+            jQuery(".abtClm .col3").wrapAll("<div class='col-sm-4' />");
+            jQuery(".abtClm .col4").wrapAll("<div class='col-sm-2' />");
+            jQuery(".eduClm .col1").wrapAll("<div class='col-sm-3' />");
+            jQuery(".eduClm .col2").wrapAll("<div class='col-sm-3' />");
+            jQuery(".eduClm .col3").wrapAll("<div class='col-sm-3' />");
+            jQuery(".eduClm .col4").wrapAll("<div class='col-sm-3' />");
+            jQuery(".memClm .col1").wrapAll("<div class='col-sm-4' />");
+            jQuery(".memClm .col2").wrapAll("<div class='col-sm-4' />");
+            jQuery(".memClm .col3").wrapAll("<div class='col-sm-4' />");
+            jQuery(".pubClm .col1").wrapAll("<div class='col-sm-4' />");
+            jQuery(".pubClm .col2").wrapAll("<div class='col-sm-4' />");
+            jQuery(".pubClm .col3").wrapAll("<div class='col-sm-4' />");
+            jQuery(".mtgClm .col1").wrapAll("<div class='col-sm-4' />");
+            jQuery(".mtgClm .col2").wrapAll("<div class='col-sm-4' />");
+            jQuery(".mtgClm .col3").wrapAll("<div class='col-sm-4' />");
+            jQuery(".advClm .col1").wrapAll("<div class='col-sm-4' />");
+            jQuery(".advClm .col2").wrapAll("<div class='col-sm-4' />");
+            jQuery(".advClm .col3").wrapAll("<div class='col-sm-4' />");
+            jQuery(".carClm .col1").wrapAll("<div class='col-sm-4' />");
+            jQuery(".carClm .col2").wrapAll("<div class='col-sm-4' />");
+            jQuery(".carClm .col3").wrapAll("<div class='col-sm-4' />");
+            jQuery(".admClm .col1").wrapAll("<div class='col-sm-4' />");
+            jQuery(".admClm .col2").wrapAll("<div class='col-sm-4' />");
+            jQuery(".admClm .col3").wrapAll("<div class='col-sm-4' />");
+
+            jQuery(".abtClm .rsmList,.eduClm .rsmList,.memClm .rsmList,.pubClm .rsmList,.mtgClm .rsmList,.advClm .rsmList,.carClm .rsmList,.admClm .rsmList").addClass("row");
+
+            jQuery(window).resize(function () {
+                var ww = jQuery(window).width();
+                jQuery('#mainSlider ul li').each(function () {
+                    jQuery(this).width(ww);
+                });
+                mobileSearch();
+            });
+        });
+    </script>
+
+    
+
+<meta property="og:description" content="The American Statistical Association is the world’s largest community of statisticians, the “Big Tent for Statistics." /><meta property="og:image" content="https://www.amstat.org/assets/images/fb-og.jpg" /><meta name="twitter:card" content="summary_large_image" /><meta property="twitter:domain" content="amstat.org" /><meta property="twitter:url" content="https://www.amstat.org" /><meta name="twitter:title" content="American Statistical Association" /><meta name="twitter:description" content="The American Statistical Association is the world’s largest community of statisticians, the “Big Tent for Statistics." /><meta name="twitter:image" content="https://www.amstat.org/assets/images/twitter-og.jpg" /><meta property="og:title" content="Internships and Fellowships" /><meta property="og:description" content="Internships and Fellowships for Students." /><meta property="og:url" content="https://www.amstat.org/education/statistics-students/internships-and-fellowships" /><meta property="og:type" content="website" /><meta property="og:site_name" content="Default" /><script type="text/javascript">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K5KJPT7Z');
+</script><script type="text/javascript">
+//-------------------------------------------------------
+var z_account = "29067E97-3729-4179-BECC-E9A37F3BE69E";
+var z_collector = "AMSTAT-MS.informz.net";
+var z_cookieDomain = ".amstat.org";
+//-------------------------------------------------------
+(function (e, o, n, r, t, a, s) { e[t] || (e.GlobalSnowplowNamespace = e.GlobalSnowplowNamespace || [], e.GlobalSnowplowNamespace.push(t), e[t] = function () { (e[t].q = e[t].q || []).push(arguments) }, e[t].q = e[t].q || [], a = o.createElement(n), s = o.getElementsByTagName(n)[0], a.async = 1, a.src = r, s.parentNode.insertBefore(a, s)) }(window, document, "script", "https://cdn.informz.net/web_trk/sp.js", "informz_trk")), informz_trk("newTracker", "infz", z_collector + "/web_trk/collector/", { appId: z_account, cookieDomain: z_cookieDomain }), informz_trk("setUserIdFromLocation", "_zs"), informz_trk("enableActivityTracking", 30, 15); informz_trk("trackPageView", null);
+
+</script><link rel="canonical" href="https://www.amstat.org/education/statistics-students/internships-and-fellowships" /><script type="application/json" id="sf-insight-metadata">
+	{"contentMetadata":"{\"Id\":\"0ec29797-c35d-48eb-8a78-d04e34fe7e90\",\"ContentType\":\"Page\",\"Title\":\"Internships and Fellowships\",\"CanonicalTitle\":\"Internships and Fellowships\",\"CanonicalUrl\":\"https://www.amstat.org/education/statistics-students/internships-and-fellowships\",\"DefaultLanguage\":\"en\",\"CreatedOn\":\"2021-09-27T03:14:55.42Z\",\"ModifiedOn\":\"2026-01-21T18:12:37.773Z\",\"SiteName\":\"Default\",\"PageId\":\"0ec29797-c35d-48eb-8a78-d04e34fe7e90\"}","videosMetadata":"[]"}
+</script><script type="application/json" id="sf-insight-settings">
+	{"apiServerUrl":"https://api.insight.sitefinity.com","apiKey":"93390852-0907-a80f-c10f-ac4c093aed5c","applicationName":"Website","trackingCookieDomain":"","keepDecTrackingCookieOnTrackingConsentRejection":false,"slidingExpirationForTrackingCookie":false,"maxAgeForTrackingCookieInDays":365,"trackYouTubeVideos":true,"crossDomainTrackingEntries":["www.amstat.org"],"strategy":"Persist|False","docsHrefTestExpressions":[".*\\/docs\\/.+\\.{1}.+((\\?|\\\u0026)sfvrsn=.+){1}$",".+((\\?|\\\u0026)sf_dm_key=.+){1}$"]}
+</script><script type="text/javascript" src="/WebResource.axd?d=HtQyXelCu6mzSPcVcvK_BksgDssVP6iWgTlww-U7iIWJEnW-Vkf92GBtv9WcJ5Vh4ZVgYYe1n4E-zV2L-uJ2tKf8kRYcTg-Vy54cKBEJwiJleO0Zo2alehJlr2k-2xGYuwqVQW6A8Xu4Sq5VRpWCClFWHn4Ip5PJfRkO_kprbufIzIPfT1Ldi0sX_R0C6OI-ErmtPFBa7boYo7bTCcH5j-6AVbdbmUSE3x5-a9KLlSs1&amp;t=639227517740000000">
+
+</script><script src="https://cdn.insight.sitefinity.com/sdk/sitefinity-insight-client.min.3.1.13.js" crossorigin="" async="async">
+
+</script><style type="text/css" media="all">.gsib_a {
+padding:4px 10px 4px 56px !important;
+} 
+
+input.gsc-input {font-size:14px !important;}</style><meta name="description" content="Internships and Fellowships for Students." /><meta name="keywords" content="internships, internship, undergraduate,fellowships, fellowship, graduate,students" /></head>
+<body>
+    <form method="post" action="./internships-and-fellowships" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="ctl19_TSM" id="ctl19_TSM" value="" />
+<input type="hidden" name="ctl20_TSSM" id="ctl20_TSSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="axDQqy8uYf4oxqmUViP5LnKho3fpiVqH2oK703LoLrUxj+92JTZ6lbc5tZAc1CI01kFU+S5cie/WRsjKkH4MH0sPaeHXEQyzQhUfSMQV7LM=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZK5D45_CxvU9GqnuPd4WkFCSuS26RK9DhB6xH85n-UB8RSQ5i_bZlSYn730iaij6ow2&amp;t=639190743605538696" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var __cultureInfo = {"name":"en","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":".","IsReadOnly":true,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":",","CurrencySymbol":"$","NaNSymbol":"NaN","CurrencyNegativePattern":0,"NumberNegativePattern":1,"PercentPositivePattern":1,"PercentNegativePattern":1,"NegativeInfinitySymbol":"-∞","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":".","NumberGroupSeparator":",","CurrencyPositivePattern":0,"PositiveInfinitySymbol":"∞","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":".","PercentGroupSeparator":",","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"AM","Calendar":{"MinSupportedDateTime":"\/Date(-62135596800000)\/","MaxSupportedDateTime":"\/Date(253402300799999)\/","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2049,"IsReadOnly":true},"DateSeparator":"/","FirstDayOfWeek":0,"CalendarWeekRule":0,"FullDateTimePattern":"dddd, MMMM d, yyyy h:mm:ss tt","LongDatePattern":"dddd, MMMM d, yyyy","LongTimePattern":"h:mm:ss tt","MonthDayPattern":"MMMM d","PMDesignator":"PM","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"M/d/yyyy","ShortTimePattern":"h:mm tt","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"MMMM yyyy","AbbreviatedDayNames":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"ShortestDayNames":["Su","Mo","Tu","We","Th","Fr","Sa"],"DayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"AbbreviatedMonthNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthNames":["January","February","March","April","May","June","July","August","September","October","November","December",""],"IsReadOnly":true,"NativeCalendarName":"Gregorian Calendar","AbbreviatedMonthGenitiveNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthGenitiveNames":["January","February","March","April","May","June","July","August","September","October","November","December",""]},"eras":[1,"A.D.",null,0]};//]]>
+</script>
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl19_TSM&amp;compress=0&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen%3a44715eca-1ae9-42ec-b817-38b6cdd5d2ea%3aea597d4b%3ab25378d2" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="F4F78450" />
+</div><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl19', 'form1', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+<input type="hidden" name="ctl00$ctl19" id="ctl19" />
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.setServerId("ctl19", "ctl00$ctl19");
+Sys.Application._enableHistoryInScriptManager();
+//]]>
+</script>
+<iframe id="__historyFrame" src="/ScriptResource.axd?d=CiR1yUR5xIrEc08LDfaRy36TU4SpvE1ELTSAxBpy8avf3fl-BdBHFiZH2lj_z6lEb-qNBgKBxoCa7hLE9xlUaHRaGIJXdTarOnCm2Kw837s1" style="display:none;">
+
+</iframe>
+        <div id="topAux">
+            <div class='container'>
+                
+<div class='sfContentBlock'><ul class="NavigationUnorderedList">
+    <li id="ctl01_Auxiliary_Auxiliary_rptWrapper_Auxiliary_rptWrapper_rpt_ctl01_NavigationListItem" class="NavigationListItem auxHighlight hide-md"><a id="ctl01_Auxiliary_Auxiliary_rptWrapper_Auxiliary_rptWrapper_rpt_ctl01_NavigationLink" class="NavigationLink" href="/"><span class="nav-text">ASA</span></a></li>
+    <li id="ctl01_Auxiliary_Auxiliary_rptWrapper_Auxiliary_rptWrapper_rpt_ctl02_NavigationListItem" class="NavigationListItem emNav hide-md"><a id="ctl01_Auxiliary_Auxiliary_rptWrapper_Auxiliary_rptWrapper_rpt_ctl02_NavigationLink" class="NavigationLink" href="https://magazine.amstat.org" target="_blank"><span class="nav-text">Amstat News</span></a></li>
+    <li id="ctl01_Auxiliary_Auxiliary_rptWrapper_Auxiliary_rptWrapper_rpt_ctl03_NavigationListItem" class="NavigationListItem hide-md"><a id="ctl01_Auxiliary_Auxiliary_rptWrapper_Auxiliary_rptWrapper_rpt_ctl03_NavigationLink" class="NavigationLink" href="https://community.amstat.org/" target="_blank"><span class="nav-text">Community</span></a></li>
+    <li id="ctl01_Auxiliary_Auxiliary_rptWrapper_Auxiliary_rptWrapper_rpt_ctl05_NavigationListItem" class="NavigationListItem stattrak hide-md"><a id="ctl01_Auxiliary_Auxiliary_rptWrapper_Auxiliary_rptWrapper_rpt_ctl05_NavigationLink" class="NavigationLink" href="https://stattrak.amstat.org/" target="_blank"><span class="nav-text">STATtr@k</span></a></li>
+    <li id="ctl01_Auxiliary_Auxiliary_rptWrapper_Auxiliary_rptWrapper_rpt_ctl08_NavigationListItem" class="NavigationListItem hide-md"><a id="ctl01_Auxiliary_Auxiliary_rptWrapper_Auxiliary_rptWrapper_rpt_ctl08_NavigationLink" class="NavigationLink" href="https://magazine.amstat.org/podcast-2/" target="_blank"><span class="nav-text"><em>Practical Significance</em></span></a></li>
+    <li id="ctl01_Auxiliary_Auxiliary_rptWrapper_Auxiliary_rptWrapper_rpt_ctl09_NavigationListItem" class="NavigationListItem hide-md"><a id="ctl01_Auxiliary_Auxiliary_rptWrapper_Auxiliary_rptWrapper_rpt_ctl09_NavigationLink" class="NavigationLink" href="https://community.amstat.org/asaleaderhub" target="_blank"><span class="nav-text">Leader HUB</span></a></li>
+    <li id="ctl01_Auxiliary_Auxiliary_rptWrapper_Auxiliary_rptWrapper_rpt_ctl10_NavigationListItem" class="NavigationListItem hide-md"><a id="ctl01_Auxiliary_Auxiliary_rptWrapper_Auxiliary_rptWrapper_rpt_ctl10_NavigationLink" class="NavigationLink" href="https://careerconnect.amstat.org/" target="_blank"><span class="nav-text">Career Connect</span></a></li>
+</ul>
+
+</div>
+
+            </div>
+        </div>
+        <div id="ctl01_masterWrapper" class="wrapper ">
+
+            <header id="hd" class="header ClearFix navbar" data-height-offset="true">
+                <div class="header-top-container">
+                    <div class="header-container">
+                        <div id="masterLogoArea" class="header-logo-container">
+                            <!-- Logo -->
+                            
+<div class='sfContentBlock'><a href="/">
+<img src="/images/default-source/amstat-images/asa-header-logo.png" width="365" alt="ASA logo" title="American Statistical Association - Promoting the Practice and Profession of Statistics"></a>
+
+</div>
+                        </div>
+                        <!-- Auxiliary area -->
+                        <div class="navbar-header nav-auxiliary" id="auxiliary-container">
+                            
+<div class='sfContentBlock'><ul class="NavigationUnorderedList">
+    <li id="ctl01_AMSTAHdr_AMSTAHdr_rptWrapper_AMSTAHdr_rptWrapper_rpt_ctl01_NavigationListItem" class="NavigationListItem auxHighlight"><a id="ctl01_AMSTAHdr_AMSTAHdr_rptWrapper_AMSTAHdr_rptWrapper_rpt_ctl01_NavigationLink" class="NavigationLink" href="https://realworlddatascience.net/"><span class="nav-text">Real World Data Science</span></a></li>
+    <li id="ctl01_AMSTAHdr_AMSTAHdr_rptWrapper_AMSTAHdr_rptWrapper_rpt_ctl02_NavigationListItem" class="NavigationListItem "><a id="ctl01_AMSTAHdr_AMSTAHdr_rptWrapper_AMSTAHdr_rptWrapper_rpt_ctl02_NavigationLink" class="NavigationLink" href="https://ww2.amstat.org/giving/"><span class="nav-text">Donate</span></a></li>
+    <li id="ctl01_AMSTAHdr_AMSTAHdr_rptWrapper_AMSTAHdr_rptWrapper_rpt_ctl03_NavigationListItem" class="NavigationListItem "><a id="ctl01_AMSTAHdr_AMSTAHdr_rptWrapper_AMSTAHdr_rptWrapper_rpt_ctl03_NavigationLink" class="NavigationLink" href="/ASA/Membership/Membership-Categories-and-Fees.aspx?hkey=0301def8-92e1-4bf2-9aff-02959b3e61f5"><span class="nav-text">Join</span></a></li>
+</ul>
+
+</div>
+                            <div class="auth-link-container-sm" data-set="auth-link">
+                                
+                                <div id="loggedInPanel" class="nav-aux-account">
+                                    <a href="https://ww2.amstat.org/SSO/index.cfm" class="auth-link userLoginStatusJS">Login
+                                    </a>
+                                    <!--<a href="/account" class="auth-link userLoginStatusJS">Login
+                                    </a>-->
+                                    
+                                </div>
+                            </div>
+
+                            <div id="masterSocialNetworking" class="header-social">
+                                
+<div class='sfContentBlock'><ul id="social-links-container">
+    <li>
+    <a href="http://facebook.com/AmstatNews" target="new"><span class="social-link facebook"></span></a>
+    </li>
+    <li>
+    <a href="https://www.linkedin.com/company/american-statistical-association---asa/" target="new"><span class="social-link linkedin"></span></a>
+    </li>
+    <li>
+    <a href="https://www.instagram.com/amstatnews/" target="new"><span class="social-link instagram"></span></a>
+    </li>
+    <li>
+    <a href="https://bsky.app/profile/amstatnews.bsky.social" target="new"><span class="social-link bluesky"></span></a>
+    </li>
+    <li>
+    <a href="https://community.amstat.org/home" target="new"><span class="social-link asa-community"></span></a>
+    </li>
+</ul>
+
+</div>
+                            </div>
+                            <div class="ste-section">
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- /.header-container -->
+                </div>
+                <!-- /.header-top-container -->
+                <div class="affixWrapper">
+                    <div class="header-bottom-container affix-top" data-offset-top="160" data-spy="affix">
+                        <div class="header-container">
+                            <div class="collapse navbar-collapse" id="search-collapse">
+                                <div class="search-container" data-set="searchbar">
+                                </div>
+                            </div>
+                            <div class="collapse navbar-collapse nav-primary" id="navbar-collapse">
+                                <div class="auth-link-container" data-set="auth-link">
+                                </div>
+                                <div class="header-search">
+                                    <script>
+                                        (function () {
+                                            var cx = '016255361482441098002:tbc54edee7y';
+                                            var gcse = document.createElement('script');
+                                            gcse.type = 'text/javascript';
+                                            gcse.async = true;
+                                            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                                                '//cse.google.com/cse.js?cx=' + cx;
+                                            var s = document.getElementsByTagName('script')[0];
+                                            s.parentNode.insertBefore(gcse, s);
+                                        })();
+                                    </script>
+                                    <div id="___gcse_0">
+                                        <div class="gsc-control-searchbox-only gsc-control-searchbox-only-en" dir="ltr">
+                                            <div class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8">
+                                                <table cellspacing="0" cellpadding="0" class="gsc-search-box">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="gsc-input">
+                                                                <div class="gsc-input-box" id="gsc-iw-id1">
+                                                                    <table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td id="gs_tti50" class="gsib_a">
+                                                                                    <input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" dir="ltr" spellcheck="false" style="width: 100%; padding: 0px; border: none; margin: 0px; height: auto; background: url(&quot;https://www.google.com/cse/static/images/1x/en/branding.png&quot;) left center no-repeat rgb(255, 255, 255); outline: none;"></td>
+                                                                                <td class="gsib_b">
+                                                                                    <div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" title="Clear search box" role="button" style="display: none;"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                            <td class="gsc-search-button">
+                                                                <button class="gsc-search-button gsc-search-button-v2">
+                                                                    <svg width="13" height="13" viewBox="0 0 13 13">
+                                                                        <title>search</title>
+                                                                        <path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td>
+                                                            <td class="gsc-clear-button">
+                                                                <div class="gsc-clear-button" title="clear results">&nbsp;</div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hide">
+                                        <div id="SimpleSearchBlock" role="navigation">
+                                            <label for="ctl01_SearchField_SearchTerms" id="ctl01_SearchField_Prompt" class="screen-reader-text" translate="yes">Search</label><input name="ctl01$SearchField$SearchTerms" type="text" value="Search" id="ctl01_SearchField_SearchTerms" class="search-field Watermarked" onfocus="SimpleSearchField_OnFocus('ctl01_SearchField_SearchTerms', ctl01_SearchField_SearchTermsProperties);" onblur="SimpleSearchField_OnBlur('ctl01_SearchField_SearchTerms', ctl01_SearchField_SearchTermsProperties);" onkeypress="return clickButton(event,'ctl01_SearchField_GoSearch');" translate="yes"><input type="button" name="ctl01$SearchField$GoSearch" value="Go" onclick="SimpleSearchField_ExecuteSearch('ctl01_SearchField_SearchTerms', ctl01_SearchField_SearchTermsProperties); return cancelEvent();__doPostBack('ctl01$SearchField$GoSearch','')" id="ctl01_SearchField_GoSearch" class="header-search-submit TextButton">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div tabindex="0" id="ctl01_Primary_NavMenu" class="RadMenu RadMenu_Custom MegaDropDownMenuOuter rmResponsive" translate="Yes" style="z-index: 1000;">
+                                    
+
+
+    <ul class="rmRootGroup rmToggleHandles rmHorizontal">
+            <li class="rmItem">
+                <a class="rmLink rmRootLink rmExpand rmExpandDown" href="/about-asa">
+                    <span class="rmText">About</span>
+                    <span class="rmToggle">
+                        <span class="rmIcon">Toggle</span>
+                    </span>
+                </a>
+                <div class="rmSlide">
+                    <ul class="rmVertical rmGroup rmLevel1">
+                        <li class="rmItem rmFirst rmLast rmTemplate">
+                            <div class="rmContent">
+                                <div class="RadSiteMap RadSiteMap_Custom MegaDropDownMenu">
+                                    <ul class="rsmList rsmLevel rsmTwoLevels row">
+                                                                                        <div class="rsmSubNav col-sm-3">
+
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/about-asa/history-of-the-asa" target="_self">History</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/about-asa/asa-staff" target="_self">Staff Directory</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/communications-from-the-executive-director" target="_self">Communications from the Executive Director</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="https://community.amstat.org/asaleaderhub/home" target="_self">ASA Leader Hub</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/meetings/code-of-conduct" target="_self">Code of Conduct</a>
+                                                            </li>
+                                                </div>
+                                                <div class="rsmSubNav col-sm-3">
+
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/about-asa/asa-committees" target="_self">Committees</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/about-asa/contact" target="_self">Contact</a>
+                                                            </li>
+                                                </div>
+                                                <div class="rsmSubNav col-sm-3">
+
+                                                        <li class="rsmItem col1">
+                                                            <a class="rsmLink" href="/about-asa/governance" target="">Governance</a>
+                                                            <ul class="rsmList rsmLevel1 row">
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="https://ww2.amstat.org/committees/commdetails.cfm?txtComm=BBNBOD06" target="_self" style="">Board of Directors</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/about-asa/governance/bylaws-of-the-american-statistical-association" target="_self" style="">Bylaws</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/about-asa/governance/constitution-of-the-american-statistical-association" target="_self" style="">Constitution</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/about-asa/governance/strategic-plan" target="_self" style="">Strategic Plan</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="https://ww2.amstat.org/committees/commdetails.cfm?txtComm=COSGB" target="_self" style="">Council of Sections Governing Board</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="https://ww2.amstat.org/committees/commdetails.cfm?txtComm=COCGB" target="_self" style="">Council of Chapters Governing Board</a>
+                                                                    </li>
+                                                            </ul>
+                                                        </li>
+                                                </div>
+                                                <div class="rsmSubNav col-sm-3">
+
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="https://ww2.amstat.org/sections/cos.cfm" target="_self">Council of Sections</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="https://ww2.amstat.org/chapters/coc.cfm" target="_self">Council of Chapters</a>
+                                                            </li>
+                                                </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="rmItem">
+                <a class="rmLink rmRootLink rmExpand rmExpandDown" href="/membership">
+                    <span class="rmText">Membership</span>
+                    <span class="rmToggle">
+                        <span class="rmIcon">Toggle</span>
+                    </span>
+                </a>
+                <div class="rmSlide">
+                    <ul class="rmVertical rmGroup rmLevel1">
+                        <li class="rmItem rmFirst rmLast rmTemplate">
+                            <div class="rmContent">
+                                <div class="RadSiteMap RadSiteMap_Custom MegaDropDownMenu">
+                                    <ul class="rsmList rsmLevel rsmTwoLevels row">
+                                                                                        <div class="rsmSubNav col-sm-4">
+
+                                                        <li class="rsmItem col1">
+                                                            <a class="rsmLink" href="/membership/become-a-member" target="">Become a Member</a>
+                                                            <ul class="rsmList rsmLevel1 row">
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/membership" target="_self" style="">Individual Member Benefits</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/membership/become-a-member/membership-options" target="_self" style="">Membership Options</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/membership/become-a-member/asa-membership-for-organizations" target="_self" style="">Membership for Organizations</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="https://amstat.users.membersuite.com/membership/registration" target="_self" style="">Join ASA</a>
+                                                                    </li>
+                                                            </ul>
+                                                        </li>
+                                                </div>
+                                                <div class="rsmSubNav col-sm-4">
+
+                                                        <li class="rsmItem col1">
+                                                            <a class="rsmLink" href="/membership/asa-communities" target="">Communities</a>
+                                                            <ul class="rsmList rsmLevel1 row">
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/membership/asa-communities/chapters-" target="_self" style="">Chapters</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/membership/asa-communities/student-chapters" target="_self" style="">Student Chapters</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/membership/asa-communities/sections-amp-interest-groups" target="_self" style="">Sections &amp; Interest Groups</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="https://community.amstat.org/" target="_self" style="">ASA Community</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/membership/asa-communities/outreach-groups" target="_self" style="">Outreach Groups</a>
+                                                                    </li>
+                                                            </ul>
+                                                        </li>
+                                                </div>
+                                                <div class="rsmSubNav col-sm-4">
+
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/membership/asa-communities/membership-campaigns" target="_self">Membership Campaigns</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/contactmanagement/membership-directory" target="_self">Membership Directory</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="https://amstat.users.membersuite.com/auth/portal-login" target="_self">Members Only</a>
+                                                            </li>
+                                                </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="rmItem">
+                <a class="rmLink rmRootLink rmExpand rmExpandDown" href="/education">
+                    <span class="rmText">Education</span>
+                    <span class="rmToggle">
+                        <span class="rmIcon">Toggle</span>
+                    </span>
+                </a>
+                <div class="rmSlide">
+                    <ul class="rmVertical rmGroup rmLevel1">
+                        <li class="rmItem rmFirst rmLast rmTemplate">
+                            <div class="rmContent">
+                                <div class="RadSiteMap RadSiteMap_Custom MegaDropDownMenu">
+                                    <ul class="rsmList rsmLevel rsmTwoLevels row">
+                                                                                        <div class="rsmSubNav col-sm-3">
+
+                                                        <li class="rsmItem col1">
+                                                            <a class="rsmLink" href="/education/k-12-educators" target="">K–12 Educators</a>
+                                                            <ul class="rsmList rsmLevel1 row">
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/k-12-educators#classroom" target="_self" style="">Classroom Resources</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/k-12-educators#pubs" target="_self" style="">Publications</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/k-12-educators#reports" target="_self" style="">Guidelines and Reports</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/k-12-educators#pd" target="_self" style="">Professional Development</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/k-12-educators#comps" target="_self" style="">Student Competitions</a>
+                                                                    </li>
+                                                            </ul>
+                                                        </li>
+                                                </div>
+                                                <div class="rsmSubNav col-sm-3">
+
+                                                        <li class="rsmItem col1">
+                                                            <a class="rsmLink" href="/education/undergraduate-educators" target="">Undergraduate Educators</a>
+                                                            <ul class="rsmList rsmLevel1 row">
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/undergraduate-educators#communities" target="_self" style="">Communities and Resources</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/undergraduate-educators#publications" target="_self" style="">Publications</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/undergraduate-educators#reports" target="_self" style="">Guidelines and Reports</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/undergraduate-educators#comps" target="_self" style="">Student Competitions</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/graduate-educators" target="_self" style="margin-left:-29px;">Graduate Educators</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/graduate-educators#reports" target="_self" style="">Guidelines and Reports</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/graduate-educators#caucus" target="_self" style="">Caucus of Academic Reps</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/graduate-educators#resources" target="_self" style="">Student Resources</a>
+                                                                    </li>
+                                                            </ul>
+                                                        </li>
+                                                </div>
+                                                <div class="rsmSubNav col-sm-3">
+
+                                                        <li class="rsmItem col1">
+                                                            <a class="rsmLink" href="/education/statistics-students" target="">Statistics Students</a>
+                                                            <ul class="rsmList rsmLevel1 row">
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/statistics-students#websites" target="_self" style="">Websites</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/statistics-students#resources" target="_self" style="">Career Resources</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/statistics-students#comps" target="_self" style="">Student Competitions</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/statistics-students#communities" target="_self" style="">Communities</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="https://sites.google.com/view/biostats-stats-programs" target="_blank" style="">Statistics and Biostatistics Programs</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/education/statistics-students/internships-and-fellowships" target="_self" style="">Internships and Fellowships</a>
+                                                                    </li>
+                                                            </ul>
+                                                        </li>
+                                                </div>
+                                                <div class="rsmSubNav col-sm-3">
+
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/education/k-12-student-outreach" target="_self">K-12 Student Outreach</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/education/asa-k-12-statistical-ambassador" target="_self">K–12 Education Outreach Director</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/education/educational-ambassador" target="_self">Educational Ambassador</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/education/statistics-and-biostatistics-degree-data" target="_self">Statistics and Biostatistics Degree Data</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/education/covid-19-pandemic-resources" target="_self">COVID-19 Pandemic Resources</a>
+                                                            </li>
+                                                </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="rmItem">
+                <a class="rmLink rmRootLink rmExpand rmExpandDown" href="/publications">
+                    <span class="rmText">Publications</span>
+                    <span class="rmToggle">
+                        <span class="rmIcon">Toggle</span>
+                    </span>
+                </a>
+                <div class="rmSlide">
+                    <ul class="rmVertical rmGroup rmLevel1">
+                        <li class="rmItem rmFirst rmLast rmTemplate">
+                            <div class="rmContent">
+                                <div class="RadSiteMap RadSiteMap_Custom MegaDropDownMenu">
+                                    <ul class="rsmList rsmLevel rsmTwoLevels row">
+                                                                                        <div class="rsmSubNav col-sm-4">
+
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/publications/journals" target="_self">Journals</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/publications/education-publications" target="_self">Education Publications</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/publications/jsm-proceedings" target="_self">JSM Proceedings</a>
+                                                            </li>
+                                                </div>
+                                                <div class="rsmSubNav col-sm-4">
+
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="https://magazine.amstat.org/" target="_blank">Amstat News</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="https://amstat.tandfonline.com/journals/ucha20" target="_blank">CHANCE</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="http://www.significancemagazine.com/" target="_blank">Significance</a>
+                                                            </li>
+                                                </div>
+                                                <div class="rsmSubNav col-sm-4">
+
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="https://stattrak.amstat.org" target="_blank">STATtr@k</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="https://ww2.amstat.org/newsletters/index.cfm" target="_blank">ASA Member News</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/publications/subscribe" target="_self">Subscribe</a>
+                                                            </li>
+                                                </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="rmItem">
+                <a class="rmLink rmRootLink rmExpand rmExpandDown" href="/meetings">
+                    <span class="rmText">Meetings</span>
+                    <span class="rmToggle">
+                        <span class="rmIcon">Toggle</span>
+                    </span>
+                </a>
+                <div class="rmSlide">
+                    <ul class="rmVertical rmGroup rmLevel1">
+                        <li class="rmItem rmFirst rmLast rmTemplate">
+                            <div class="rmContent">
+                                <div class="RadSiteMap RadSiteMap_Custom MegaDropDownMenu">
+                                    <ul class="rsmList rsmLevel rsmTwoLevels row">
+                                                                                        <div class="rsmSubNav col-sm-4">
+
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/meetings/joint-statistical-meetings" target="_self">Joint Statistical Meetings</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/meetings/asa-biopharmaceutical-section-regulatory-industry-statistics-workshop" target="_self">ASA Biopharmaceutical Section Regulatory-Industry Statistics Workshop</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/meetings/international-conference-on-establishment-statistics" target="_self">International Conference on Establishment Statistics</a>
+                                                            </li>
+                                                </div>
+                                                <div class="rsmSubNav col-sm-4">
+
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/meetings/international-conference-on-health-policy-statistics" target="_self">International Conference on Health Policy Statistics</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/meetings/symposium-on-data-science-amp-statistics" target="_self">Symposium on Data Science &amp; Statistics</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/meetings/women-in-statistics-and-data-science" target="_self">Women in Statistics and Data Science</a>
+                                                            </li>
+                                                </div>
+                                                <div class="rsmSubNav col-sm-4">
+
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/meetings/annual-symposium-on-risks-and-opportunities-of-ai-in-pharmaceutical-medicine" target="_self">Annual Symposium on Risks and Opportunities of AI in Pharmaceutical Medicine</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/meetings/other-meetings" target="_self">Other Meetings</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/meetings/code-of-conduct" target="_self">Code of Conduct</a>
+                                                            </li>
+                                                </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="rmItem">
+                <a class="rmLink rmRootLink rmExpand rmExpandDown" href="/policy-and-advocacy">
+                    <span class="rmText">Policy &amp; Advocacy</span>
+                    <span class="rmToggle">
+                        <span class="rmIcon">Toggle</span>
+                    </span>
+                </a>
+                <div class="rmSlide">
+                    <ul class="rmVertical rmGroup rmLevel1">
+                        <li class="rmItem rmFirst rmLast rmTemplate">
+                            <div class="rmContent">
+                                <div class="RadSiteMap RadSiteMap_Custom MegaDropDownMenu">
+                                    <ul class="rsmList rsmLevel rsmTwoLevels row">
+                                                                                        <div class="rsmSubNav col-sm-4">
+
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/policy-and-advocacy/asa-board-statements" target="_self">ASA Board Statements</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/policy-and-advocacy/letters-organized-signed-and-or-sent" target="_self">Letters Signed/Sent</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/policy-and-advocacy#resources" target="_self">Resources for Policymakers</a>
+                                                            </li>
+                                                </div>
+                                                <div class="rsmSubNav col-sm-4">
+
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/policy-and-advocacy#fedbudget" target="_self">Federal Budget Information</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/policy-and-advocacy/statistical-significance-series" target="_self">Statistical Significance Series</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/policy-and-advocacy/reimagining-the-national-center-for-education-statistics" target="_self">Re-Envisioning the National Center for Education Statistics</a>
+                                                            </li>
+                                                </div>
+                                                <div class="rsmSubNav col-sm-4">
+
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/policy-and-advocacy/assessing-the-health-of-the-principal-federal-statistical-agencies" target="_self">Health of Federal Statistics</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/the-nations-data-at-risk-year-two-ongoing-monitoring" target="_self">Federal Statistical Agency Monitoring</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/policy-and-advocacy/modernizing-the-federal-statistical-system" target="_self">Federal Statistical System Modernization</a>
+                                                            </li>
+                                                </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="rmItem">
+                <a class="rmLink rmRootLink rmExpand rmExpandDown" href="/your-career">
+                    <span class="rmText">Your Career</span>
+                    <span class="rmToggle">
+                        <span class="rmIcon">Toggle</span>
+                    </span>
+                </a>
+                <div class="rmSlide">
+                    <ul class="rmVertical rmGroup rmLevel1">
+                        <li class="rmItem rmFirst rmLast rmTemplate">
+                            <div class="rmContent">
+                                <div class="RadSiteMap RadSiteMap_Custom MegaDropDownMenu">
+                                    <ul class="rsmList rsmLevel rsmTwoLevels row">
+                                                                                        <div class="rsmSubNav col-sm-4">
+
+                                                        <li class="rsmItem col1">
+                                                            <a class="rsmLink" href="/your-career/career-resources" target="">Career Resources</a>
+                                                            <ul class="rsmList rsmLevel1 row">
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/your-career/asa-fellowships-and-grants" target="_self" style="">ASA Fellowships and Grants</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/your-career/salary-information" target="_self" style="">Salary Information</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/your-career/external-funding-sources" target="_self" style="">External Funding Sources</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/your-career/ethical-guidelines-for-statistical-practice" target="_self" style="">Ethical Guidelines for Statistical Practice</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="https://careerconnect.amstat.org/" target="_blank" style="">ASA Career Connect</a>
+                                                                    </li>
+                                                            </ul>
+                                                        </li>
+                                                </div>
+                                                <div class="rsmSubNav col-sm-4">
+
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/your-career/professional-development" target="_self">Professional Development</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/your-career/accreditation" target="_self">Accreditation</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="/your-career/pstat-usage-terms" target="_self">Authorized Use of PSTAT&#174; Mark</a>
+                                                            </li>
+                                                            <li class="rsmItem col3">
+                                                                <a class="rsmLink" href="https://american-statistical-association.github.io/DSPCert/overview/" target="_self">Data Science Certification</a>
+                                                            </li>
+                                                </div>
+                                                <div class="rsmSubNav col-sm-4">
+
+                                                        <li class="rsmItem col1">
+                                                            <a class="rsmLink" href="/your-career/awards-and-recognition" target="">Awards and Recognition</a>
+                                                            <ul class="rsmList rsmLevel1 row">
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/your-career/awards/asa-fellows" target="_self" style="">ASA Fellows</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/your-career/student-paper-competitions" target="_self" style="">Student Paper Competitions</a>
+                                                                    </li>
+                                                                    <li class="rsmItem">
+                                                                        <a class="rsmLink" href="/your-career/awards-and-scholarships" target="_self" style="">Awards and Scholarships</a>
+                                                                    </li>
+                                                            </ul>
+                                                        </li>
+                                                </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+    </ul>
+                                    <input id="ctl01_Primary_NavMenu_ClientState" name="ctl01_Primary_NavMenu_ClientState" type="hidden" autocomplete="off">
+                                </div>
+                                <li class="navSrch"><a class="rmLink rmRootLink" href="#">Search</a></li>
+                            </div>
+
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" data-parent=".navbar">
+                                <span class="lblMenu">Menu</span>
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- /.header -->
+            
+
+            <div class="container">
+                <div role="main" class="body-container">
+                    <div class="col-primary">
+                        <div>
+                            
+<div class='WebPartZone content'><h1>Internships and Fellowships</h1>
+<p>
+</p>
+<h2>Internships</h2>
+<p><a href="https://stattrak.amstat.org/2025/12/01/2026-internships/">2026 Internships</a></p>
+<p><a href="/asa/education/Internship-Opportunities-Listing-Form.aspx">Internship Opportunities Listing Form for Organizations</a></p>
+<h2>Fellowships</h2>
+<p>
+<a href="/ASA/Your-Career/ASA-Fellowships-and-Grants.aspx">ASA Fellowships and Grants</a>
+</p>
+<p>
+<a href="https://stattrak.amstat.org/recognition/">ASA Awards and Scholarships</a>
+</p>
+
+</div>
+<link href="/assets/css/featherlight.min.css" type="text/css" rel="stylesheet">
+<script src="/assets/js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+
+
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+  const itemsToItalicize = [
+    'Amstat News',
+    'CHANCE',
+    'Significance'
+  ];
+
+  const listItems = document.querySelectorAll('.rsmItem');
+  listItems.forEach(item => {
+    const link = item.querySelector('.rsmLink');
+    if (link) {
+      if (itemsToItalicize.includes(link.textContent.trim())) {
+        link.style.fontStyle = 'italic';
+      }
+      if (link.textContent.includes('STATtr@k')) {
+        link.innerHTML = link.textContent.replace(
+          'STATtr@k',
+          'STAT<em>tr@k</em>'
+        );
+      }
+    }
+  });
+});
+</script>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer id="ft" class="footer">
+                <div class="footer-content">
+                    <div class="container">
+                        <div class='row'>
+                            <div class='col-md-3 col-sm-6'>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            
+<div class='sfContentBlock'><div style="border-right: 2px solid rgba(97, 181, 229, 1); margin-right: 10px">
+<p>
+<a href="https://www.amstat.org/"><img alt="ASA" src="/images/default-source/amstat-images/logo-small-white.png" data-displaymode="Original" title="logo-small-white"></a>
+</p>
+<p style="font-size: 0.855em">
+<strong>American Statistical Association</strong><br>
+277 S. Washington St., #370<br>
+Alexandria, VA 22314-3646<br>
+<br>
+<strong>Phone:</strong> (703) 684-1221 <br>
+<strong>Toll-free:</strong> (888) 231-3473 <br>
+<strong>Fax:</strong> (703) 997-7299<br>
+<strong>Email:</strong> <a href="mailto:asainfo@amstat.org">asainfo@amstat.org</a><br>
+<br>
+</p>
+</div>
+
+</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ContentRecordPageButtonPanel">
+                                </div>
+                            </div>
+                            <div class='col-md-3 col-sm-6'>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            
+<div class='sfContentBlock'><p style="font-size: 0.85em">
+<a href="/about-asa/governance/constitution-of-the-american-statistical-association">Constitution</a><br>
+<a href="/about-asa/governance/bylaws-of-the-american-statistical-association">Bylaws</a><br>
+<a href="/about-asa/governance/strategic-plan">Strategic Plan</a>
+</p>
+<p style="font-size: 0.85em">
+<a href="https://ww2.amstat.org/committees/commdetails.cfm?txtComm=BBNBOD06">Board of Directors</a><br>
+<a href="/policy-and-advocacy/asa-board-statements">ASA Board Statements</a>
+</p>
+<p style="font-size: 0.85em">
+<a href="/about-asa/asa-committees">Committees</a><br>
+<a href="/membership/asa-communities/chapters-">Chapters</a><br>
+<a href="/membership/asa-communities/sections-amp-interest-groups">Sections &amp; Interest Groups</a>
+</p>
+<p style="font-size: 0.85em">
+<a href="/your-career/accreditation">Accreditation</a><br>
+<a href="/your-career/ethical-guidelines-for-statistical-practice">Ethical Guidelines for Statistical Practice</a><br>
+<a href="/meetings/code-of-conduct">Code of Conduct</a>
+</p>
+
+</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ContentRecordPageButtonPanel">
+                                </div>
+                            </div>
+                            <div class='col-md-3 col-sm-6 contactInfo'>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            
+<div class='sfContentBlock'><p style="font-size: 0.85em">
+<a href="/education">Education</a><br>
+<a href="/education/statistics-students">Students</a><br>
+<a href="https://sites.google.com/view/biostats-stats-programs">Statistics &amp; Biostatistics Programs</a>
+</p>
+<p style="font-size: 0.85em">
+<a href="/meetings">Meetings</a>
+</p>
+<p style="font-size: 0.85em">
+<a href="/your-career/professional-development">Professional Development</a><br>
+<a href="/your-career/awards-and-recognition">Awards &amp; Recognition</a><br>
+<a href="https://careerconnect.amstat.org/" target="_blank">ASA Career Connect</a>
+</p>
+<p style="font-size: 0.85em">
+<a href="https://amstat.users.membersuite.com/home">Member Portal</a><br>
+<a href="https://community.amstat.org">ASA Community (login required)</a><br>
+<a href="https://ww2.amstat.org/newsletters/NewsletterArchives.cfm">Member News</a>
+</p>
+
+</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ContentRecordPageButtonPanel">
+                                </div>
+                            </div>
+                            <div class='col-md-3 col-sm-6'>
+                                <div>
+                                    <div class="row">
+                                        <div class='col-sm-12'>
+                                            
+<div class='sfContentBlock'><p style="font-size: 0.85em">
+<a href="https://magazine.amstat.org/"><em>Amstat News</em></a><br>
+<a href="/publications/journals">Journals</a>
+</p>
+<p style="font-size: 0.85em"><a href="/advertise/index">Advertise with ASA</a><br>
+<a href="https://ww2.amstat.org/giving/">Donate</a></p>
+<p style="font-size: 0.85em">
+<a href="https://stattrak.amstat.org/telling-our-stories/">Telling Our Stories</a></p>
+<br>
+<p>
+<a href="https://ww2.amstat.org/giving/partners.cfm"><img src="/images/default-source/amstat-images/partnerprogram.png" alt="Partner Program"></a></p>
+
+</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.footer-content -->
+
+                <div class="footer-nav-copyright">
+                    <div class="container" role="navigation">
+                        <div class="footer-copyright">
+                            <div id="ste_container_FooterCopyright" class="ContentItemContainer">
+                                
+<div class='sfContentBlock'>© 2026 American Statistical Association. All rights reserved.&nbsp;<br>
+<a href="/asa-copyright-information">Copyright</a>&nbsp; |&nbsp; <a href="/disclaimer">Disclaimer</a>&nbsp; |&nbsp; <a href="/meetings/code-of-conduct">Code of Conduct</a>&nbsp; |&nbsp; <a href="/privacy-statement">Privacy Statement</a>&nbsp; |&nbsp; <a href="/sitemap">Sitemap</a>
+
+</div>
+                            </div>
+                            <div class="ContentRecordPageButtonPanel">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.footer-nav-copyright -->
+            </footer>
+            <!-- /.footer -->
+
+        </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+window.__TsmHiddenField = $get('ctl19_TSM');//]]>
+</script>
+</form><script type="application/json" id="PersonalizationTracker">
+	{"IsPagePersonalizationTarget":false,"IsUrlPersonalizationTarget":false,"PageId":"0ec29797-c35d-48eb-8a78-d04e34fe7e90"}
+</script><script type="text/javascript" src="/WebResource.axd?d=NjxTqR2bqTw1rewxxlkHPsz6I8jSpkI5bzuRb2enHkrHj6d8ow23NdrG7RYXDHjEZO4b3J42Q2WSn-G3QCVlXH0Jfo9XhgYmwsWUi51SkhJ_IzC3cjBIyG-yeh6MtrMx0ZCuHOBqm1oC5wYsIQexbDwfoUZU7E5FLD8eg8NpVbRZ62XXrh0kd0bSSW3WTrs0bzr-8lfPQ7y6FWXBSfMBQYGPPWnXWU7XqHIts3f3K641&amp;t=639227518560000000">
+
+</script>
+    <input name="ctl01$TemplateScripts$timeoutsoonmsg" type="hidden" id="timeoutsoonmsg" value="PGgyPllvdSBhcmUgYWJvdXQgdG8gYmUgc2lnbmVkIG91dDwvaDI+DQo8cD5Zb3Ugd2lsbCBiZSBzaWduZWQgb3V0IGluIDxzdHJvbmc+W1NlY29uZHNSZW1haW5pbmddPC9zdHJvbmc+IHNlY29uZHMgZHVlIHRvIGluYWN0aXZpdHkuIFlvdXIgY2hhbmdlcyB3aWxsIG5vdCBiZSBzYXZlZC4gVG8gY29udGludWUgd29ya2luZyBvbiB0aGUgd2Vic2l0ZSwgY2xpY2sgIlN0YXkgU2lnbmVkIEluIiBiZWxvdy48L3A+" /><input name="ctl01$TemplateScripts$stayLoggedInURL" type="hidden" id="stayLoggedInURL" /><input name="ctl01$TemplateScripts$logoutUrl" type="hidden" id="logoutUrl" value="aHR0cHM6Ly93d3cuYW1zdGF0Lm9yZy9Bc2lDb21tb24vQ29udHJvbHMvU2hhcmVkL0Zvcm1zQXV0aGVudGljYXRpb24vTG9naW4uYXNweD9TZXNzaW9uVGltZW91dD0xJlJldHVyblVybD0lMmYlM2Y=" />
+    <!-- Facebook API is loaded into here -->
+    <div id="fb-root"></div>
+
+</body>
+</html>

@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://www.upm.es/favicon.ico">
+  <link rel="stylesheet" href="/themes/comun/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/themes/comun/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/themes/comun/css/style.css?20240930">
+  <link rel="stylesheet" href="/themes/comun/css/print.css" media="print">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+        <script src="/themes/comun/js/jquery-1.11.1.min.js"></script>
+  <script src="/themes/comun/js/bootstrap.min.js"></script>
+  <script src="/themes/comun/js/upm.min.js"></script>
+        <title>Universidad Politécnica de Madrid</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-10874068-3"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-10874068-3');
+  </script>
+  </head>
+<body>
+<!--INICIO MENUS ACCESIBILIDAD-->
+<div id="skip"><a href="#contenido">Saltar a contenido</a></div>
+<div id="accesKeyMenu">
+  <ul>
+    <li><a class="topMenuActionClose_ac" href="http://www.upm.es/institucional/UPM/WebUPM/Accesibilidad" accesskey="0">Accesibilidad</a></li>
+    <li><a href="/" accesskey="1">Home</a></li>
+    <li><a href="#contenido" accesskey="2">Ppal</a></li>
+    <li><a href="#form_buscador_rapido" accesskey="3">Buscador</a></li>
+      </ul>
+</div><!--/.accesKeyMenu-->
+<!--/FIN MENUS ACCESIBILIDAD-->
+<style>
+    #headerUPM {
+        width: 100%;
+        overflow: hidden;
+        background-color: #26447a;
+    }
+    #headerUPM span {
+        font-size:1.1em;
+        text-transform: uppercase;
+        color:white;
+        padding-left: 0.5em;
+    }
+    #headerUPM .box {
+        display: flex;
+        align-items:center;
+        padding: 0.2em 0;
+    }
+    #iconMenuMobile {
+        float: right;
+    }
+    #iconMenuMobile > span {
+        font-size: 2em;
+        color: white;
+        float: right;
+    }
+    .canales > .row {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+    #logoEELISA, #logoCrueConUcrania{
+        float: right;
+        margin-top: 1em;
+        margin-left: 1em;
+        max-height: 30px;
+    }
+    #cresponCanalesCabeceraUPM {
+        height: 50px;
+        float: right;
+    }
+    .language {
+        display: inline-block;
+        padding-right: 1em;
+        color: white;
+        cursor: pointer;
+        float: right;
+        margin: 0;
+    }
+    .language > ul {
+        position: relative;
+        float: none;
+        min-width: auto;"
+    }
+    .listLanguages > a{
+        padding: 0.2em 0.8em;
+    }
+    .lang {
+        /*Para centrar el span a la derecha*/
+        display: table;
+        margin: 0 0 0 auto;
+    }
+    .code {
+        padding: 0.2em;
+        background-color: transparent;
+        color: white;
+        border-radius: 3px;
+        margin-right: 0.2em;
+        text-transform: uppercase;
+    }
+
+    @media (min-width: 768px) {
+        #navCanalesCabeceraUPM {
+            display: contents !important;
+        }
+        #tipoCabecera {
+            display: flex;
+        }
+        #tipoCabecera > div {
+            align-self: center;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #headerUPM img{
+            margin-left: auto;
+            margin-right: auto;
+            float: none;
+            display: block;
+        }
+        #headerUPM span{
+            display: none;
+        }
+        #logoEELISA, #logoCrueConUcrania {
+            display: none;
+        }
+    }
+
+</style>
+
+
+ <header id="headerUniversidad">
+    <div class="wrapper">
+        <div class="row" id="tipoCabecera">
+            <div class="col-xs-12 col-sm-7">
+                                                            <a href="/">
+                                                <div class="logo">
+                                <img class="img-responsive" src="/themes/comun/logos/institucional.png"
+                                     alt="Universidad Politécnica de Madrid">
+                            </div>
+                        </a>
+                                            <div class="cabecera">
+                                                                                                                                                                                <h1>
+                                    Universidad<br/>
+                                    Politécnica de Madrid
+                                </h1>
+                                                    </div><!--/.cabecera-->
+                        <div id="iconMenuMobile" class="col-xs-2 visible-xs">
+                            <span class="fa fa-bars"></span>
+                        </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-5 canales">
+                  <div class="row">
+    <nav id="navCanalesCabeceraUPM">
+      <ul>
+                                                <li><a href="https://www.upm.es/Estudiantes/Estudios_Titulaciones" >Estudios y Titulaciones</a></li>
+              
+                                                          <li><a href="https://www.upm.es/UPM/SalaPrensa" >Sala de Prensa</a></li>
+              
+                                                          <li><a href="https://www.upm.es/internacional" lang="en">English</a></li>
+              
+                                                          <li><a href="https://sede.upm.es" >Sede Electrónica</a></li>
+              
+                        </ul>
+    </nav>
+  </div>
+
+
+
+                <div class="row">
+                                    </div>
+
+                                    <div class="row">
+                                                    <img id="cresponCanalesCabeceraUPM" src="/themes/comun/img/crespon.png" alt="crespon">
+                                                <a href="https://www.upm.es/UPM/EELISA" alt="eelisa">
+                            <img class="img-responsive" id="logoEELISA"
+                                 src="/themes/comun/logos/eelisa2024.png" alt="EELISA European University">
+                        </a>
+                        <a href="https://www.upm.es/e-politecnica/?p=11803" alt="newsleter"><img class="img-responsive" id="logoCrueConUcrania" src="/themes/comun/logos/CrueConUcrania.png" alt="Universidades Españolas con Ucrania"></a>
+                        
+                    </div>
+                
+
+
+
+                                                                                                                                                                                                                                                                                                                                                
+
+                                                                                                                                                                                                                                                                                                                                            </div><!--/col-sm-5 .canales-->
+
+        </div><!--/row-->
+    </div><!--/.wrapper-->
+</header>
+
+
+<nav id="menuPrincipal">
+  <div class="wrapper">
+    <ul>
+      
+                                                                                                                                                                                          
+                        <li>
+      <a href="/UPM">UPM</a>
+      <span class ="separador"></span>      </li>
+                                    <li class="checked">
+      <a href="/Estudiantes">Estudiantes</a>
+      <span class ="separador"></span>      </li>
+                                    <li>
+      <a href="/FuturosEstudiantes">Futuros Estudiantes</a>
+      <span class ="separador"></span>      </li>
+                                    <li>
+      <a href="/Personal">Personal</a>
+      <span class ="separador"></span>      </li>
+                                    <li>
+      <a href="/Investigacion">Investigación</a>
+            </li>
+                      </ul>
+  </div><!--/.wrapper-->
+</nav><!--/#menuPrincipal-->
+
+
+
+<link rel="stylesheet" href="/themes/comun/css/style_segundoNivel.css">
+
+<nav id="menuMobile">
+		<ul>
+																	<li>
+					<a   class="desplegable"  href="/Estudiantes/Estudios_Titulaciones"  >
+						<span class="numeracion">
+						01.
+						</span>
+						Estudios y Titulaciones
+												<span class="glyphicon glyphicon-play flechaAbrir" aria-hidden="true"></span>
+											</a>
+																																																																																																<ul class="submenu">
+																																	<li ><a   href="/Estudiantes/Estudios_Titulaciones/EstudiosOficialesGrado"  >Estudios Oficiales de Grado</a></li>
+																																																		<li ><a   href="/Estudiantes/Estudios_Titulaciones/Estudios_Master"  >Estudios Oficiales de Máster</a></li>
+																																																		<li ><a   href="/Estudiantes/Estudios_Titulaciones/programasAcademicos"  >Programas Académicos con Recorridos Sucesivos (Grado + Máster Oficiales)</a></li>
+																																																		<li ><a   href="/Estudiantes/Estudios_Titulaciones/Estudios_Doctorado"  >Estudios de Doctorado</a></li>
+																																																		<li ><a   href="/Estudiantes/Estudios_Titulaciones/TitulosPropios"  >Títulos Propios</a></li>
+																																																		<li ><a   href="/Estudiantes/Estudios_Titulaciones/FormacionPermanente"  >Estudios de Formación Permanente</a></li>
+																														</ul>
+											 
+				</li>
+																								<li>
+					<a   class="desplegable"  href="/Estudiantes/OrdenacionAcademica"  >
+						<span class="numeracion">
+						02.
+						</span>
+						Ordenación Académica
+												<span class="glyphicon glyphicon-play flechaAbrir" aria-hidden="true"></span>
+											</a>
+																																																																																																																																																				<ul class="submenu">
+																																	<li ><a   href="/Estudiantes/OrdenacionAcademica/Matricula"  >Matrícula</a></li>
+																																																		<li ><a   href="/Estudiantes/OrdenacionAcademica/Reconocimiento"  >Reconocimiento de Créditos</a></li>
+																																																		<li ><a   href="/Estudiantes/OrdenacionAcademica/CalendarioAcademico"  >Calendario Académico</a></li>
+																																																																	<li ><a   href="/Estudiantes/OrdenacionAcademica/CarneUniversitario"  >Carné Universitario</a></li>
+																																																																	<li ><a   href="/Estudiantes/OrdenacionAcademica/ActividadesAcreditablesEstudiosGrado"  >Actividades Acreditables para Estudios de Grado</a></li>
+																																																		<li ><a   href="/Estudiantes/OrdenacionAcademica/Convenios"  >Convenios con otras instituciones y universidades</a></li>
+																																																		<li ><a   href="/Estudiantes/OrdenacionAcademica/DevolucionTasas"  >Devolución de Tasas</a></li>
+																																																														</ul>
+											 
+				</li>
+																								<li>
+					<a    href="/Estudiantes/Tramites"  >
+						<span class="numeracion">
+						03.
+						</span>
+						Trámites y solicitudes
+											</a>
+						 
+				</li>
+																								<li>
+					<a   class="desplegable"  href="/Estudiantes/e-EdU"  >
+						<span class="numeracion">
+						04.
+						</span>
+						e-EdU
+												<span class="glyphicon glyphicon-play flechaAbrir" aria-hidden="true"></span>
+											</a>
+																																																																																			<ul class="submenu">
+																																	<li ><a   href="/Estudiantes/e-EdU/PlataformaTele-educacion"  >Plataforma de Tele-educación</a></li>
+																																																		<li ><a   href="/Estudiantes/e-EdU/PuntoInicio"  >Punto de Inicio</a></li>
+																																																		<li ><a   href="/Estudiantes/e-EdU/Puesta a Punto para Estudiantes"  >Puesta a Punto para Estudiantes</a></li>
+																																																		<li ><a   href="/Estudiantes/e-EdU/OpenCourseWare"  >OpenCourseWare</a></li>
+																																																		<li ><a   href="/Estudiantes/e-EdU/Audiovisual"  >Audiovisual</a></li>
+																														</ul>
+											 
+				</li>
+																								<li>
+					<a   class="desplegable"  href="/Estudiantes/BecasAyudasPremios"  >
+						<span class="numeracion">
+						05.
+						</span>
+						Becas, Ayudas y Premios
+												<span class="glyphicon glyphicon-play flechaAbrir" aria-hidden="true"></span>
+											</a>
+																																																																																																																																							<ul class="submenu">
+																																	<li ><a   href="/Estudiantes/BecasAyudasPremios/AyudasAlumnosDobleTitulacion"  >Ayudas a alumnos de doble titulación</a></li>
+																																																		<li ><a   href="/Estudiantes/BecasAyudasPremios/Becas"  >Becas</a></li>
+																																																		<li ><a   href="/Estudiantes/BecasAyudasPremios/AyudasViajes"  >Ayudas de viajes</a></li>
+																																																		<li ><a   href="/Estudiantes/BecasAyudasPremios/Bolsa de viaje"  >Bolsa de viaje</a></li>
+																																																		<li ><a   href="/Estudiantes/BecasAyudasPremios/AyudasViajeCooperacion"  >Ayudas de viaje en Cooperación</a></li>
+																																																																	<li ><a   href="/Estudiantes/BecasAyudasPremios/AyudasConsejoSocial"  >Ayudas del Consejo Social</a></li>
+																																																		<li ><a   href="/Estudiantes/BecasAyudasPremios/Premios"  >Premios</a></li>
+																																																		<li ><a   href="/Estudiantes/BecasAyudasPremios/AyudasRusia"  >Ayudas para el viaje a Rusia dentro del proyecto "Maratón Estudiantil"</a></li>
+																														</ul>
+											 
+				</li>
+																								<li>
+					<a   class="desplegable"  href="/Estudiantes/Movilidad"  >
+						<span class="numeracion">
+						06.
+						</span>
+						Movilidad. Programas de Intercambio
+												<span class="glyphicon glyphicon-play flechaAbrir" aria-hidden="true"></span>
+											</a>
+																																																																																																<ul class="submenu">
+																																	<li ><a   href="/Estudiantes/Movilidad/DoblesTitulaciones"  >Dobles titulaciones</a></li>
+																																																		<li ><a   href="/Estudiantes/Movilidad/Programas_Nacionales"  >Programas Nacionales</a></li>
+																																																		<li ><a   href="/Estudiantes/Movilidad/Programas_Internacionales"  >Programas Internacionales</a></li>
+																																																		<li ><a href="https://www.lenguas.upm.es" >Centro de Lenguas UPM</a></li>
+																																																		<li ><a   href="/Estudiantes/Movilidad/Coordinadores"  >Coordinadores en los Centros</a></li>
+																																																		<li ><a   href="/Estudiantes/Movilidad/escuelaVeranoInt"  >Escuelas de Verano Internacionales</a></li>
+																														</ul>
+											 
+				</li>
+																								<li>
+					<a   class="desplegable"  href="/Estudiantes/Empleo"  >
+						<span class="numeracion">
+						07.
+						</span>
+						Empleo
+												<span class="glyphicon glyphicon-play flechaAbrir" aria-hidden="true"></span>
+											</a>
+																																																																																			<ul class="submenu">
+																																	<li ><a   href="/Estudiantes/Empleo/OportunidadesEmpleo"  >Oportunidades de Empleo</a></li>
+																																																		<li ><a   href="/Estudiantes/Empleo/OrientacionLaboral"  >Orientación Laboral – Agenda TalentUPM</a></li>
+																																																		<li ><a   href="/Estudiantes/Empleo/TalentUPM"  >Feria de Empleo UPM. Revista TalentUPM</a></li>
+																																																		<li ><a   href="/Estudiantes/Empleo/InformacionContratosTrabajo"  >Información sobre contratos de trabajo</a></li>
+																																																		<li ><a   href="/Estudiantes/Empleo/InformesTalentoUniversidadEmpresa"  >Informes Talento, Universidad y Empresa</a></li>
+																														</ul>
+											 
+				</li>
+																								<li>
+					<a   class="desplegable"  href="/Estudiantes/Practicas"  >
+						<span class="numeracion">
+						08.
+						</span>
+						Prácticas
+												<span class="glyphicon glyphicon-play flechaAbrir" aria-hidden="true"></span>
+											</a>
+																															<ul class="submenu">
+																																	<li ><a   href="/Estudiantes/Practicas/COIE"  >Prácticas Académicas Universitarias</a></li>
+																														</ul>
+											 
+				</li>
+																								<li>
+					<a   class="desplegable"  href="/Estudiantes/Atencion"  >
+						<span class="numeracion">
+						09.
+						</span>
+						Atención al Alumno
+												<span class="glyphicon glyphicon-play flechaAbrir" aria-hidden="true"></span>
+											</a>
+																																																																																																<ul class="submenu">
+																																	<li ><a   href="/Estudiantes/Atencion/AlojamientoEstudiantes"  >Alojamiento para estudiantes</a></li>
+																																																																																		<li ><a   href="/Estudiantes/Atencion/SeguroAsistencia"  >Seguro de asistencia</a></li>
+																																																		<li ><a   href="/Estudiantes/Atencion/GuiaExtranjeros"  >Guía para estudiantes extranjeros</a></li>
+																																																																	<li ><a   href="/Estudiantes/Atencion/ManualesPrevencionRiesgos"  >Manuales de prevención de riesgos</a></li>
+																														</ul>
+											 
+				</li>
+																																		<li>
+					<a  href="https://da.upm.es/" >
+						<span class="numeracion">
+						10.
+						</span>
+						Delegación de alumnos
+											</a>
+						 
+				</li>
+																								<li>
+					<a   class="desplegable"  href="/Estudiantes/Asociaciones"  >
+						<span class="numeracion">
+						11.
+						</span>
+						Asociaciones de Estudiantes
+												<span class="glyphicon glyphicon-play flechaAbrir" aria-hidden="true"></span>
+											</a>
+																																												<ul class="submenu">
+																																	<li ><a   href="/Estudiantes/Asociaciones/RelacionAsociaciones"  >Relación de  Asociaciones de Estudiantes</a></li>
+																																													</ul>
+											 
+				</li>
+																								<li>
+					<a   class="desplegable"  href="/Estudiantes/CompromisoSocial"  >
+						<span class="numeracion">
+						12.
+						</span>
+						Compromiso Social
+												<span class="glyphicon glyphicon-play flechaAbrir" aria-hidden="true"></span>
+											</a>
+																																																									<ul class="submenu">
+																																	<li ><a   href="/Estudiantes/CompromisoSocial/CooperacionDesarrollo"  >Cooperación para el Desarrollo</a></li>
+																																																		<li ><a href="https://www.upm.es/UPM/CompromisoSocial/UAD" >Unidad de Atención a la Discapacidad</a></li>
+																																																		<li ><a   href="/Estudiantes/CompromisoSocial/Voluntariado"  >Voluntariado</a></li>
+																														</ul>
+											 
+				</li>
+																								<li>
+					<a    href="/Estudiantes/CompeticionesEstudiantes"  >
+						<span class="numeracion">
+						13.
+						</span>
+						Competiciones de Estudiantes
+											</a>
+						 
+				</li>
+																													<li>
+					<a   class="desplegable"  href="/Estudiantes/NormativaLegislacion"  >
+						<span class="numeracion">
+						14.
+						</span>
+						Normativa y Legislación
+												<span class="glyphicon glyphicon-play flechaAbrir" aria-hidden="true"></span>
+											</a>
+																																												<ul class="submenu">
+																																																<li ><a   href="/Estudiantes/NormativaLegislacion/NormasEspecificas"  >Normas específicas</a></li>
+																														</ul>
+											 
+				</li>
+																													<li>
+					<a   class="desplegable"  href="/Estudiantes/Seguros"  >
+						<span class="numeracion">
+						15.
+						</span>
+						Seguros
+												<span class="glyphicon glyphicon-play flechaAbrir" aria-hidden="true"></span>
+											</a>
+																																																																																																<ul class="submenu">
+																																	<li ><a   href="/Estudiantes/Seguros/SeguroEscolar"  >Seguro escolar</a></li>
+																																																		<li ><a   href="/Estudiantes/Seguros/SeguroMayores28anios"  >Seguro Mayores de 28 años</a></li>
+																																																		<li ><a   href="/Estudiantes/Seguros/SeguroMovilidadNacionalPracticas"  >Seguro de Movilidad Nacional y Prácticas</a></li>
+																																																		<li ><a   href="/Estudiantes/Seguros/SeguroMovilidadInternacional"  >Seguro de Movilidad Internacional</a></li>
+																																																		<li ><a   href="/Estudiantes/Seguros/SeguroTitPropios"  >Seguro para alumnos de títulos propios</a></li>
+																																																		<li ><a   href="/Estudiantes/Seguros/SeguroResponsabilidadCivil"  >Seguro de Responsabilidad Civil</a></li>
+																														</ul>
+											 
+				</li>
+																																												</ul>
+
+																							<div id="tti">
+				<h3>También te puede interesar:</h3>
+				<ul>
+									<li>
+						<a href="/UPM/ServiciosTecnologicos">
+							<span class="numeracion"><i class="fa fa-tag"></i></span>
+							Servicios Tecnológicos
+						</a>
+					</li>
+									<li>
+						<a href="/UPM/Biblioteca">
+							<span class="numeracion"><i class="fa fa-tag"></i></span>
+							Biblioteca Universitaria
+						</a>
+					</li>
+									<li>
+						<a href="http://www.upm.es/UPM/Deportes">
+							<span class="numeracion"><i class="fa fa-tag"></i></span>
+							Actividades Deportivas
+						</a>
+					</li>
+									<li>
+						<a href="/UPM/PoliticasIgualdad">
+							<span class="numeracion"><i class="fa fa-tag"></i></span>
+							Políticas de Igualdad
+						</a>
+					</li>
+									<li>
+						<a href="/UPM/DefensorUniversitario">
+							<span class="numeracion"><i class="fa fa-tag"></i></span>
+							Defensor Universitario
+						</a>
+					</li>
+									<li>
+						<a href="http://www.upm.es/UPM/Actividades_Culturales">
+							<span class="numeracion"><i class="fa fa-tag"></i></span>
+							Actividades Culturales
+						</a>
+					</li>
+									<li>
+						<a href="/UPM/Accion_Social">
+							<span class="numeracion"><i class="fa fa-tag"></i></span>
+							Acción Social
+						</a>
+					</li>
+									<li>
+						<a href="https://www.upm.es/UPM/CompromisoSocial/UAD">
+							<span class="numeracion"><i class="fa fa-tag"></i></span>
+							Unidad de Accesibilidad y Atención a la Discapacidad
+						</a>
+					</li>
+								</ul>
+				</div>
+																						
+	<ul class="canales">
+					<li><a href="https://www.upm.es/Estudiantes/Estudios_Titulaciones">Estudios y Titulaciones</a></li>
+							<li><a href="https://www.upm.es/UPM/SalaPrensa">Sala de Prensa</a></li>
+							<li><a href="https://www.upm.es/internacional">English</a></li>
+							<li><a href="https://sede.upm.es">Sede Electrónica</a></li>
+			</ul>
+
+</nav><!--/#menuMobile-->
+<section id="caminoMigas">
+  <div class="wrapper">
+
+    <ul>
+            <li><span class="glyphicon glyphicon-play"></span></li>
+                                    <li>
+                <a href="/Estudiantes">Estudiantes</a>
+                      </li>
+                        <li>
+        /        <a href="/Estudiantes/BecasAyudasPremios">Becas, Ayudas y Premios</a>
+                      </li>
+                        <li>
+        /        <a href="/Estudiantes/BecasAyudasPremios/Becas">Becas</a>
+                      </li>
+                        <li>
+        /        Becas del Ministerio de Educación
+                      </li>
+                      </ul>
+
+  </div><!--wrapper-->
+</section><!--/#caminoMigas-->
+
+<div id="contenido">
+	<div class="wrapper">
+		<div id="menuLateral" class="col-sm-3">
+			<ul>
+            <li>
+
+    	<a   class="desplegable"  href="/Estudiantes/Estudios_Titulaciones"  >
+  
+  	<span class="numeracion">
+			01.
+		</span>
+  	Estudios y Titulaciones
+  	  		<span class="glyphicon glyphicon-play  flechaAbrir"></span>
+  	  	</a>
+  
+                              <ul class="submenu">
+                <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Estudios_Titulaciones/EstudiosOficialesGrado"  >Estudios Oficiales de Grado</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Estudios_Titulaciones/Estudios_Master"  >Estudios Oficiales de Máster</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Estudios_Titulaciones/programasAcademicos"  >Programas Académicos con Recorridos Sucesivos (Grado + Máster Oficiales)</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Estudios_Titulaciones/Estudios_Doctorado"  >Estudios de Doctorado</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Estudios_Titulaciones/TitulosPropios"  >Títulos Propios</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Estudios_Titulaciones/FormacionPermanente"  >Estudios de Formación Permanente</a></li>
+              </ul>
+      </li>
+              <li>
+
+    	<a   class="desplegable"  href="/Estudiantes/OrdenacionAcademica"  >
+  
+  	<span class="numeracion">
+			02.
+		</span>
+  	Ordenación Académica
+  	  		<span class="glyphicon glyphicon-play  flechaAbrir"></span>
+  	  	</a>
+  
+                                              <ul class="submenu">
+                <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/OrdenacionAcademica/Matricula"  >Matrícula</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/OrdenacionAcademica/Reconocimiento"  >Reconocimiento de Créditos</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/OrdenacionAcademica/CalendarioAcademico"  >Calendario Académico</a></li>
+                                <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/OrdenacionAcademica/CarneUniversitario"  >Carné Universitario</a></li>
+                                <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/OrdenacionAcademica/ActividadesAcreditablesEstudiosGrado"  >Actividades Acreditables para Estudios de Grado</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/OrdenacionAcademica/Convenios"  >Convenios con otras instituciones y universidades</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/OrdenacionAcademica/DevolucionTasas"  >Devolución de Tasas</a></li>
+                              </ul>
+      </li>
+              <li>
+
+    	<a    href="/Estudiantes/Tramites"  >
+  
+  	<span class="numeracion">
+			03.
+		</span>
+  	Trámites y solicitudes
+  	  	</a>
+  
+    </li>
+              <li>
+
+    	<a   class="desplegable"  href="/Estudiantes/e-EdU"  >
+  
+  	<span class="numeracion">
+			04.
+		</span>
+  	e-EdU
+  	  		<span class="glyphicon glyphicon-play  flechaAbrir"></span>
+  	  	</a>
+  
+                          <ul class="submenu">
+                <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/e-EdU/PlataformaTele-educacion"  >Plataforma de Tele-educación</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/e-EdU/PuntoInicio"  >Punto de Inicio</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/e-EdU/Puesta a Punto para Estudiantes"  >Puesta a Punto para Estudiantes</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/e-EdU/OpenCourseWare"  >OpenCourseWare</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/e-EdU/Audiovisual"  >Audiovisual</a></li>
+              </ul>
+      </li>
+              <li>
+
+    	<a   class="desplegable"  href="/Estudiantes/BecasAyudasPremios"  >
+  
+  	<span class="numeracion">
+			05.
+		</span>
+  	Becas, Ayudas y Premios
+  	  		<span class="glyphicon glyphicon-play  flechaAbrir"></span>
+  	  	</a>
+  
+                                          <ul class="submenu">
+                <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/BecasAyudasPremios/AyudasAlumnosDobleTitulacion"  >Ayudas a alumnos de doble titulación</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/BecasAyudasPremios/Becas"  >Becas</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/BecasAyudasPremios/AyudasViajes"  >Ayudas de viajes</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/BecasAyudasPremios/Bolsa de viaje"  >Bolsa de viaje</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/BecasAyudasPremios/AyudasViajeCooperacion"  >Ayudas de viaje en Cooperación</a></li>
+                                <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/BecasAyudasPremios/AyudasConsejoSocial"  >Ayudas del Consejo Social</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/BecasAyudasPremios/Premios"  >Premios</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/BecasAyudasPremios/AyudasRusia"  >Ayudas para el viaje a Rusia dentro del proyecto "Maratón Estudiantil"</a></li>
+              </ul>
+      </li>
+              <li>
+
+    	<a   class="desplegable"  href="/Estudiantes/Movilidad"  >
+  
+  	<span class="numeracion">
+			06.
+		</span>
+  	Movilidad. Programas de Intercambio
+  	  		<span class="glyphicon glyphicon-play  flechaAbrir"></span>
+  	  	</a>
+  
+                              <ul class="submenu">
+                <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Movilidad/DoblesTitulaciones"  >Dobles titulaciones</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Movilidad/Programas_Nacionales"  >Programas Nacionales</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Movilidad/Programas_Internacionales"  >Programas Internacionales</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a href="https://www.lenguas.upm.es" >Centro de Lenguas UPM</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Movilidad/Coordinadores"  >Coordinadores en los Centros</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Movilidad/escuelaVeranoInt"  >Escuelas de Verano Internacionales</a></li>
+              </ul>
+      </li>
+              <li>
+
+    	<a   class="desplegable"  href="/Estudiantes/Empleo"  >
+  
+  	<span class="numeracion">
+			07.
+		</span>
+  	Empleo
+  	  		<span class="glyphicon glyphicon-play  flechaAbrir"></span>
+  	  	</a>
+  
+                          <ul class="submenu">
+                <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Empleo/OportunidadesEmpleo"  >Oportunidades de Empleo</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Empleo/OrientacionLaboral"  >Orientación Laboral – Agenda TalentUPM</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Empleo/TalentUPM"  >Feria de Empleo UPM. Revista TalentUPM</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Empleo/InformacionContratosTrabajo"  >Información sobre contratos de trabajo</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Empleo/InformesTalentoUniversidadEmpresa"  >Informes Talento, Universidad y Empresa</a></li>
+              </ul>
+      </li>
+              <li>
+
+    	<a   class="desplegable"  href="/Estudiantes/Practicas"  >
+  
+  	<span class="numeracion">
+			08.
+		</span>
+  	Prácticas
+  	  		<span class="glyphicon glyphicon-play  flechaAbrir"></span>
+  	  	</a>
+  
+          <ul class="submenu">
+                <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Practicas/COIE"  >Prácticas Académicas Universitarias</a></li>
+              </ul>
+      </li>
+              <li>
+
+    	<a   class="desplegable"  href="/Estudiantes/Atencion"  >
+  
+  	<span class="numeracion">
+			09.
+		</span>
+  	Atención al Alumno
+  	  		<span class="glyphicon glyphicon-play  flechaAbrir"></span>
+  	  	</a>
+  
+                              <ul class="submenu">
+                <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Atencion/AlojamientoEstudiantes"  >Alojamiento para estudiantes</a></li>
+                                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Atencion/SeguroAsistencia"  >Seguro de asistencia</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Atencion/GuiaExtranjeros"  >Guía para estudiantes extranjeros</a></li>
+                                <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Atencion/ManualesPrevencionRiesgos"  >Manuales de prevención de riesgos</a></li>
+              </ul>
+      </li>
+                      <li>
+
+    	<a  href="https://da.upm.es/" >
+  
+  	<span class="numeracion">
+			10.
+		</span>
+  	Delegación de alumnos
+  	  	</a>
+  
+    </li>
+              <li>
+
+    	<a   class="desplegable"  href="/Estudiantes/Asociaciones"  >
+  
+  	<span class="numeracion">
+			11.
+		</span>
+  	Asociaciones de Estudiantes
+  	  		<span class="glyphicon glyphicon-play  flechaAbrir"></span>
+  	  	</a>
+  
+              <ul class="submenu">
+                <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Asociaciones/RelacionAsociaciones"  >Relación de  Asociaciones de Estudiantes</a></li>
+                      </ul>
+      </li>
+              <li>
+
+    	<a   class="desplegable"  href="/Estudiantes/CompromisoSocial"  >
+  
+  	<span class="numeracion">
+			12.
+		</span>
+  	Compromiso Social
+  	  		<span class="glyphicon glyphicon-play  flechaAbrir"></span>
+  	  	</a>
+  
+                  <ul class="submenu">
+                <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/CompromisoSocial/CooperacionDesarrollo"  >Cooperación para el Desarrollo</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a href="https://www.upm.es/UPM/CompromisoSocial/UAD" >Unidad de Atención a la Discapacidad</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/CompromisoSocial/Voluntariado"  >Voluntariado</a></li>
+              </ul>
+      </li>
+              <li>
+
+    	<a    href="/Estudiantes/CompeticionesEstudiantes"  >
+  
+  	<span class="numeracion">
+			13.
+		</span>
+  	Competiciones de Estudiantes
+  	  	</a>
+  
+    </li>
+                  <li>
+
+    	<a   class="desplegable"  href="/Estudiantes/NormativaLegislacion"  >
+  
+  	<span class="numeracion">
+			14.
+		</span>
+  	Normativa y Legislación
+  	  		<span class="glyphicon glyphicon-play  flechaAbrir"></span>
+  	  	</a>
+  
+              <ul class="submenu">
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/NormativaLegislacion/NormasEspecificas"  >Normas específicas</a></li>
+              </ul>
+      </li>
+                  <li>
+
+    	<a   class="desplegable"  href="/Estudiantes/Seguros"  >
+  
+  	<span class="numeracion">
+			15.
+		</span>
+  	Seguros
+  	  		<span class="glyphicon glyphicon-play  flechaAbrir"></span>
+  	  	</a>
+  
+                              <ul class="submenu">
+                <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Seguros/SeguroEscolar"  >Seguro escolar</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Seguros/SeguroMayores28anios"  >Seguro Mayores de 28 años</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Seguros/SeguroMovilidadNacionalPracticas"  >Seguro de Movilidad Nacional y Prácticas</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Seguros/SeguroMovilidadInternacional"  >Seguro de Movilidad Internacional</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Seguros/SeguroTitPropios"  >Seguro para alumnos de títulos propios</a></li>
+                        <li ><span class="glyphicon glyphicon-play"></span><a   href="/Estudiantes/Seguros/SeguroResponsabilidadCivil"  >Seguro de Responsabilidad Civil</a></li>
+              </ul>
+      </li>
+                                </ul>
+																									<div id="tti">
+				<h3>También te puede interesar:</h3>
+				<ul>
+									<li>
+						<a href="/UPM/ServiciosTecnologicos">
+							<span class="numeracion"><i class="fa fa-tag"></i></span>
+							Servicios Tecnológicos
+						</a>
+					</li>
+									<li>
+						<a href="/UPM/Biblioteca">
+							<span class="numeracion"><i class="fa fa-tag"></i></span>
+							Biblioteca Universitaria
+						</a>
+					</li>
+									<li>
+						<a href="http://www.upm.es/UPM/Deportes">
+							<span class="numeracion"><i class="fa fa-tag"></i></span>
+							Actividades Deportivas
+						</a>
+					</li>
+									<li>
+						<a href="/UPM/PoliticasIgualdad">
+							<span class="numeracion"><i class="fa fa-tag"></i></span>
+							Políticas de Igualdad
+						</a>
+					</li>
+									<li>
+						<a href="/UPM/DefensorUniversitario">
+							<span class="numeracion"><i class="fa fa-tag"></i></span>
+							Defensor Universitario
+						</a>
+					</li>
+									<li>
+						<a href="http://www.upm.es/UPM/Actividades_Culturales">
+							<span class="numeracion"><i class="fa fa-tag"></i></span>
+							Actividades Culturales
+						</a>
+					</li>
+									<li>
+						<a href="/UPM/Accion_Social">
+							<span class="numeracion"><i class="fa fa-tag"></i></span>
+							Acción Social
+						</a>
+					</li>
+									<li>
+						<a href="https://www.upm.es/UPM/CompromisoSocial/UAD">
+							<span class="numeracion"><i class="fa fa-tag"></i></span>
+							Unidad de Accesibilidad y Atención a la Discapacidad
+						</a>
+					</li>
+								</ul>
+				</div>
+																								</div>
+		<div id="central" class="col-sm-9">
+						<div class="content">
+				<style>
+    ul.sinmarca {
+        list-style-type: none;
+        margin: 0;
+        padding: 0 2em;
+    }
+
+    ul.sinmarca li {
+        margin: 1em 1em 1em 2em;
+        color: #1867B7;
+    }
+
+    ul.sinmarca li span.fa {
+        margin-right: 1em;
+    }
+
+    ul.sinmarca li a {
+        /*color: #1867B7;
+    text-decoration: dotted;
+    text-decoration-color: #acacac;
+    text-decoration-skip: ink;*/
+        border-bottom: 1px solid rgb(24, 103, 183);
+        border-bottom: 1px solid rgba(24, 103, 183, .3);
+        -webkit-background-clip: padding-box; /* for Safari */
+        background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    }
+
+    ul.sinmarca li a:hover {
+        text-decoration: none;
+        border-bottom: 1px solid rgb(24, 103, 183);
+    }
+
+    .rojo {
+        color: red;
+    }
+
+    img.center {
+        display: block;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .center {
+        text-align: center;
+    }
+    span.bold {
+        font-weight: 700;;
+    }
+    h4 {
+        font-size: 1em;
+    }
+
+    ul.sinmarca li a.faq-pregunta {
+        color: #1867B7;
+    }
+
+    ul.sinmarca li .cuerpo-faq,
+    ul.sinmarca li .cuerpo-faq.collapsing,
+    ul.sinmarca li .cuerpo-faq.collapse.in {
+        margin-top: 0.5em;
+        color: #000;
+    }
+
+    ul.sinmarca li .cuerpo-faq .cuerpo,
+    ul.sinmarca li .cuerpo-faq .cuerpo p,
+    ul.sinmarca li .cuerpo-faq .cuerpo strong,
+    ul.sinmarca li .cuerpo-faq .cuerpo li,
+    ul.sinmarca li .cuerpo-faq .cuerpo div,
+    ul.sinmarca li .cuerpo-faq .cuerpo span {
+        color: #000;
+    }
+</style>
+<div class="row">
+    <div class="col-md-12">
+
+                            <h2 class="destacadoTitulo02">Becas Colaboración del Ministerio de Educación, Formación Profesional  y Deportes 2026-2027</h2>
+                            <h3 class="destacadoTitulo03"></h3>
+                                        <h3 class="destacadoTitulo03"></h3>
+                                        <div class="cuerpo"><p>Resolución de la Secretaría de Estado de Educación por la que se convocan  Becas de Colaboración de estudiantes en Departamentos Universitarios  para el curso académico 2026-2027</p>
+<table width="858">
+<tbody>
+<tr>
+<td width="100%">
+<p><strong>Número de becas adjudicadas a la UPM</strong>:<strong> 88</strong></p>
+</td>
+</tr>
+<tr>
+<td width="100%">
+<p><strong>Dotación: 2.000</strong> <strong>€</strong>.</p>
+</td>
+</tr>
+<tr>
+<td width="100%">
+<p><strong>Destinatarios:</strong> Estudiantes universitarios que vayan a finalizar los estudios de Grado o que estén cursando primer curso de Másteres universitarios oficiales.</p>
+</td>
+</tr>
+<tr>
+<td width="100%">
+<p><strong>Solicitudes:</strong> Los alumnos que soliciten la beca de colaboración deberán cumplimentar el formulario accesible por vía telemática a través de la sede electrónica del Ministerio de Educación, Formación Profesional y Deporte en la dirección https://sede.educacion.gob.es en el  apartado correspondiente a "Trámites y Servicios"</p>
+</td>
+</tr>
+<tr>
+<td width="100%">
+<p>Una vez cumplimentada la solicitud, deberá ser firmada por el interesado con cualquiera de los sistemas de firma electrónica aceptados por la sede electrónica.<br />Se completará el proceso electrónico de presentación de la solicitud acompañando a través de la página web, mediante imagen legible (escaneada o fotografiada) y en fichero formato pdf, la plantilla facilitada por la aplicación informática (Anexo II)  con un esquema del proyecto de colaboración y la evaluación del mismo por el departamento. Una vez completado este proceso la solicitud quedará presentada a todos los efectos.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="width: 100%; height: 142px;" border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 21px;">
+<td style="height: 21px;" width="100%">
+<p><strong>Listados provisionales</strong>  (publicado 7/10/2026</p>
+<ul>
+<li><a id="SFS55353" href="/gsfs/SFS55353" data-idsfs="SFS55353">Propuestas concedidas.pdf</a></li>
+<li><a id="SFS55354" href="/gsfs/SFS55354" data-idsfs="SFS55354">Propuestas denegadas.pdf</a></li>
+</ul>
+<p><strong>Plazo de subsanación:</strong> del 8 al 22 de octubre, ambos inclusive.</p>
+<p> </p>
+<p><a id="SFS52915" href="/gsfs/SFS52915" data-idsfs="SFS52915">Convocatoria Becas Colaboración.pdf</a></p>
+<p><strong>Plazo de presentación de solicitudes: </strong>21 de julio de 2026, a las 8:00 horas, y finalizará el 22 de septiembre de 2026, a las 15:00 horas (hora peninsular).</p>
+</td>
+</tr>
+<tr style="height: 21px;">
+<td style="height: 21px;" width="100%"><a id="SFS52938" href="/gsfs/SFS52938" data-idsfs="SFS52938">Distribución Becas Consejo Social.pdf</a></td>
+</tr>
+<tr style="height: 21px;">
+<td style="height: 21px;" width="100%"> </td>
+</tr>
+<tr style="height: 21px;">
+<td style="height: 21px;" width="100%"> </td>
+</tr>
+<tr style="height: 21px;">
+<td style="height: 21px;" width="100%"> </td>
+</tr>
+<tr style="height: 15px;">
+<td style="height: 15px;" width="100%"> </td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px;" width="100%"> </td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"><em>Vicerrectorado de Estudiantes y Extensión Universitaria - Sección de Becas<br />Pº Juan XXIII, nº 11<br />Tfno(s): 91 0670005</em></p>
+<p style="text-align: center;"><em>correo-e: becas.mec@upm.es</em></p></div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+    
+													<style>
+	.sinpuntos {
+		list-style:none;
+	}
+</style>
+
+    
+ 								
+				<style>
+	ul.docs-rel li{
+		list-style: none;
+	}
+</style>
+
+				<style type="text/css">
+  #subcanales .col-md-12 ul{
+    list-style: none;
+  }
+</style>
+																			<style>#barra_utilidades li span.fa {padding: 4px 10px;}</style>
+<div class="row">
+		<div id="barra_utilidades" class="col-xs-12 pull-right col-sm-1">
+			<ul>
+								<li title="Imprimir" class="col-xs-12"><a href=""><span id="print-page" class="fa fa-print"></span></a></li>
+			</ul>
+		</div>
+	</div>
+	<script>
+	$(".fa-print").click(function () {
+		window.print();
+	});
+	</script>
+
+										
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+  <div class="row">
+    <div class="col-sm-12 icons">
+      <div class="wrapper">
+        <div class="col-sm-6">
+          	<div class="iconUpm">
+				<a href="https://www.upm.es/politecnica_virtual/"><img src="/themes/comun/img/icon_pv.png" alt="Politécnica Virtual"></a>
+				<a href="https://drive.upm.es/index.php/login"><img src="/themes/comun/img/icon_UPMdrive.png" alt="UPMdrive"></a>
+				<a href="https://www.upm.es/intranet"><img src="/themes/comun/img/logo_intranet.png" alt="Intranet"></a>
+			</div><!--/.iconUpm-->
+        </div><!--/.col-sm-6-->
+        <div class="col-sm-6">
+          <div class="iconSocial">
+	<a href="https://www.facebook.com/universidadpolitecnicademadrid" aria-label="Icono facebook"><span class="fa fa-facebook"></span></a>
+	<a href="https://twitter.com/#!/La_UPM/" aria-label="Icono flickr"><span class="fa fa-twitter"></span></a>
+	<a href="http://www.youtube.com/user/UPM" aria-label="Icono youtube"><span class="fa fa-youtube-play"></span></a>
+	<a href="http://www.upm.es/e-politecnica/" aria-label="Icono epolitecnica"><span class="fa fa-wordpress"></span></a>
+	<a href="http://www.flickr.com/photos/universidadpolitecnica/" aria-label="Icono twitter"><span class="fa fa-flickr"></span></a>
+	<a href="https://www.instagram.com/somosupm/" aria-label="Icono instagram"><span class="fa fa-instagram"></span></a>
+	<a href="https://es.linkedin.com/school/universidad-politecnica-de-madrid/" aria-label="Icono Linkedin"><span class="fa fa-linkedin"></span></a>
+</div><!--/.</div>-->
+        </div><!--/.col-sm-6-->
+      </div><!--/.wrapper-->  
+    </div><!--/.col-sm-12-->
+  </div><!--/.row-->
+  <div class="row">
+    <div class="col-sm-12 creditos">
+      <div class="wrapper">
+        <div class="row">
+            <div class="col-sm-9 menuFooter">
+    <div class="row">
+      <ul class="col-sm-4">
+                                              <li>
+                  <a href="https://www.upm.es/Portal_inv"> Portal del Investigador </a>
+                                </li>
+                                                                                      <li>
+                  <a href="https://sede.upm.es/licitaciones"> Perfil de Contratante </a>
+                                </li>
+                                                                                      <li>
+                  <a href="https://transparencia.upm.es/"> Portal de Transparencia </a>
+                                </li>
+                                                                                      <li>
+                  <a href="https://www.upm.es/contacto"> Contacto / Directorio </a>
+                                </li>
+                                      </ul>
+      <ul class="col-sm-4">
+                                                                <li>
+                  <a href="https://www.upm.es/UPM/Calidad/BQSF"> Quejas/Sugerencias/Felicitaciones </a>
+                                </li>
+                                                                                      <li>
+                  <a href="https://centinela.lefebvre.es/public/concept/2223678?access=YEPPkOsSEnepodBpiFgssliK9TpT16HQRDpXHm%2fOZcw%3d"> Sistema Interno de Información (SSI) </a>
+                                </li>
+                                                                                      <li>
+                  <a href="/UPM/WebUPM/Accesibilidad"> Accesibilidad </a>
+                                </li>
+                                                                                      <li>
+                  <a href="https://www.upm.es/AvisoLegal"> Aviso Legal </a>
+                                </li>
+                                                </ul>
+                    </div>
+  </div><!--/.col-sm-9-->
+
+          <style>
+div.patrocinadores { text-align:right }
+div.patrocinadores div { height: 35px; display: inline-block; text-align: center; margin: 0.2em; }
+</style>
+<div class="col-sm-3 patrocinadores ">
+  <div>
+  <a href="http://www.crue.org/">
+    <img src="/themes/comun/img/crue20.png" alt="Crue Universidades Españolas" title="Crue"/>
+  </a>
+</div>
+  <div>
+  <a href="http://www.universia.es">
+    <img src="/themes/comun/img/universia15.png" alt="Universia" title="Universia"/>
+  </a>
+</div>
+  <div>
+  <a href="https://www.upm.es/UPM/PRTR">
+    <img src="/themes/comun/img/prtr-02.png" alt="" title="prtr"/>
+  </a>
+</div>
+  <div>
+  <a href="https://web.upm.es/hrs4r/">
+    <img src="/themes/comun/img/hrs4r.png" alt="HR Excellence in Research" title="hsr4r"/>
+  </a>
+</div>
+  </div><!--/.col-sm-3-->
+
+<!--/.col-sm-6-->
+        </div><!--/.row-->
+        <div class="row">
+          <p>Universidad Politécnica de Madrid © 2026</p>
+        </div><!--/.row-->
+      </div><!--/.wrapper-->
+    </div><!--/.col-sm-12 creditos-->
+  </div><!--/.row-->  
+  
+</footer>
+</body>
+</html>
+

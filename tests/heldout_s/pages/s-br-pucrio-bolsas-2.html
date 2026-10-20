@@ -1,0 +1,665 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+
+<head>
+
+    <title>PUC-Rio - Ensino e Pesquisa - Pós Graduação</title>
+    
+    <!-- Javascript e elementos diversos para todo o site PUC -->
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+<!-- SIMBOLOS -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<!-- Ícone -->
+<link rel="shortcut icon" href="https://www.puc-rio.br/imagens/puc_brasao_icone_browser.png" type="image/x-icon" />
+
+
+<!-- CSS PUC -->
+<link href="https://www.puc-rio.br/styles/puc_interna.css" rel="stylesheet" type="text/css" />
+
+
+<!-- EFEITO : JQUERY -->
+<script src="https://www.puc-rio.br/js/jquery/jquery-3.1.1.min.js"></script>
+
+
+<!-- EFEITO : POP-UP LIGHTBOX PARA ELEMENTOS DIVERSOS -->
+<link href="https://www.puc-rio.br/js/puc_efeito_lity/dist/lity.css" rel="stylesheet">
+<script src="https://www.puc-rio.br/js/puc_efeito_lity/dist/lity.js"></script>
+
+
+<!-- EFEITO : APARECER E SUMIR -->
+<script src="https://www.puc-rio.br/js/puc_efeito_aparecer_sumir/puc_efeito_aparecer_sumir.js"></script>
+
+
+<!-- EFEITO : LUPA DA GALERIA DE IMAGENS -->
+<script src="https://www.puc-rio.br/js/puc_efeito_vermaior/puc_efeito_vermaior.js"></script>
+
+
+<!-- EFEITO : COPIA PARA MOBILE -->
+<script src="https://www.puc-rio.br/js/puc_efeito_copia_mobile/puc_copia_mobile.js"></script>
+
+
+<!-- EFEITO : SLIDESHOW RESPONSIVO -->
+<script src="https://www.puc-rio.br/js/puc_efeito_slideshow_responsivo/puc_efeito_slideshow_responsivo.js"></script>
+
+
+<!-- EFEITO : PLAYER VIMEO -->
+<script src="https://www.puc-rio.br/js/puc_efeito_vimeo/puc_efeito_vimeo.js"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+
+<!-- EFEITO : SLIDESHOW JSSOR -->
+<!-- #region Jssor Slider Begin -->
+<!-- Generator: Jssor Slider Maker -->
+<!-- Source: http://www.jssor.com -->
+<!-- This code works with jquery library. -->
+<script src="https://www.puc-rio.br/js/puc_efeito_slideshow/jssor.slider-21.1.6.mini.js"></script>
+
+
+
+<!-- EFEITO : BACKGROUND POSITION P/ CARDS -->
+<script>
+
+window.addEventListener("load", bkggrafismo);
+window.addEventListener("resize", bkggrafismo);
+
+function bkggrafismo() {
+
+	var card = document.getElementsByClassName('card');
+	var cardquant = card.length;
+
+	for (var i=0; i<=cardquant; i++) {
+
+	// card[i].style.backgroundPosition = "0 " + card[i].offsetHeight * 0.6666 + "px" ;
+	card[i].style.backgroundPosition = "0 " + card[i].offsetHeight * 0.5 + "px" ;
+
+	}
+
+}
+
+
+</script>
+
+
+
+
+<script>
+
+jQuery(document).ready(function ($) {
+
+	var jssor_1_SlideoTransitions = [
+	  [{b:-1,d:1,o:-1},{b:0,d:1000,o:1}],
+	  [{b:1900,d:2000,x:-379,e:{x:7}}],
+	  [{b:1900,d:2000,x:-379,e:{x:7}}],
+	  [{b:-1,d:1,o:-1,r:288,sX:9,sY:9},{b:1000,d:900,x:-1400,y:-660,o:1,r:-288,sX:-9,sY:-9,e:{r:6}},{b:1900,d:1600,x:-200,o:-1,e:{x:16}}]
+	];
+
+	var jssor_1_options = {
+	  $AutoPlay: true,
+	  $SlideDuration: 1000,
+	  $SlideEasing: $Jease$.$OutQuint,
+	  $CaptionSliderOptions: {
+		$Class: $JssorCaptionSlideo$,
+		$Transitions: jssor_1_SlideoTransitions
+	  },
+	  $ArrowNavigatorOptions: {
+		$Class: $JssorArrowNavigator$
+	  },
+	  $BulletNavigatorOptions: {
+		$Class: $JssorBulletNavigator$
+	  }
+	};
+
+	var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+	/*responsive code begin*/
+	/*you can remove responsive code if you don't want the slider scales while window resizing*/
+	function ScaleSlider() {
+		var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+		if (refSize) {
+			refSize = Math.min(refSize, 3000);
+			jssor_1_slider.$ScaleWidth(refSize);
+		}
+		else {
+			window.setTimeout(ScaleSlider, 30);
+		}
+	}
+	ScaleSlider();
+	$(window).bind("load", ScaleSlider);
+	$(window).bind("resize", ScaleSlider);
+	$(window).bind("orientationchange", ScaleSlider);
+	/*responsive code end*/
+});
+</script>
+
+
+
+
+
+
+
+<!-- ============================== PUC-Rio - GTAG GLOBAL ==============================-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-205JBFW571"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtagGlobalPUC(){dataLayer.push(arguments);}
+  gtagGlobalPUC('js', new Date());
+
+  gtagGlobalPUC('config', 'G-205JBFW571');
+</script>
+
+
+<script>
+var getArrayFromTag = function(tagname) {
+     //get the NodeList and transform it into an array
+     return Array.prototype.slice.call(document.getElementsByTagName(tagname));
+}
+
+setTimeout(function(){ 
+var links = getArrayFromTag("a");
+var buttons = getArrayFromTag("button");
+links = links.concat(buttons);
+
+for(var i=0, max=links.length; i<max; i++) {
+    var linkHref = links[i].href;
+    var linkText = links[i].innerText;
+    if (linkText === '' || linkText == null){
+       var linkImg = links[i].getElementsByTagName('img')[0];
+       if (linkImg == null)
+          continue;
+       var imgAlt = linkImg.getAttribute("alt");
+       if (imgAlt !== '' && imgAlt != null)
+           linkText = imgAlt;       
+       else{
+           var imgTitle = linkImg.getAttribute("title");
+           if (imgTitle !== '' && imgTitle != null)
+               linkText = imgTitle;
+           else
+               continue;
+       }
+    }
+    var currentPage = removeIndexFromUrl(window.location.href);
+    linkHref = removeIndexFromUrl(linkHref);
+
+    var gtagContent = "gtagGlobalPUC( \'event\', \'clique\', { \'event_category\':\'" + currentPage + "\', \'event_label\': \'" + linkText + "\', \'origin_url\':\'" + currentPage + "\', \'href\':\'" + linkHref + "\'});";
+    var defaultOnMouseDown = links[i].getAttribute("onmousedown");
+    if (defaultOnMouseDown != null)
+        var gtagContent = gtagContent + defaultOnMouseDown;
+    links[i].setAttribute("onmousedown", gtagContent);
+}
+}, 2000);
+
+function removeIndexFromUrl(url){
+    if (url == "undefined")
+        return url;
+
+    if (url.endsWith("/index.html"))
+    {
+        url = url.replace("/index.html","/");    
+    }
+    else if (url.endsWith("/#"))
+    {
+        url = url.replace("/#","/");    
+    }
+
+    return url;
+}
+</script>
+
+
+
+<!-- / SLIDESHOW -->
+
+
+<!-- PLUGIN DE ACESSIBILIDADE FREE -->
+<script src="/js/acessibilidade_acctoolbar.min.js"></script>
+<script>
+  window.onload = function() {
+    window.micAccessTool = new MicAccessTool({
+      link: 'http://your-awesome-website.com/your-accessibility-declaration.pdf',
+      contact: 'mailto:webrdc@puc-rio.br',
+      buttonPosition: 'right', // default is 'left'
+       forceLang: 'pt-br' // default is 'en' may be 'he-IL', 'ru-RU', or 'fr_FR'
+    });
+  }
+</script>
+
+
+
+
+        
+    <!-- CSS específico do Manual -->
+    <link href="css/ccpg.css" rel="stylesheet" type="text/css" />
+    
+    <!-- LINKS DAS EMENTAS -->
+	<!-- PARA TODOS OS LINKS: <a href="#" title="ver ementa">CÓD</a> -->
+	<script src="/js/puc_ementas_link.js"></script>
+	
+
+</head>
+
+
+
+
+
+<!-- ============================================================================== ABRE PÁGINA == -->
+
+
+<body id="ccpg" class="ccpg puc_layout_coluna-lateral-on_TAG-BODY">
+
+
+<!-- ===================================================================================== TOPO == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<header>
+
+
+<!-- Link acessibilidade, cabeçalho, brasão, título -->
+
+
+<!-- Link acessibilidade -->
+<a href="#link_pular_conteudo" id="puc_link_pular_para_conteudo">Pular para o conteúdo da página</a><span></span>
+
+<!-- Cabeçalho PUC (busca e índice de A a Z) -->
+<iframe src="/includes/puc_cabecalho.html" name="cabecalho" title="Cabeçalho PUC-Rio"></iframe>
+
+
+
+<div id="puc_topo_brasao_titulo_caminho">
+
+<!-- Brasão PUC -->
+<a href="https://www.puc-rio.br" target="_parent" title="Ir para a página inicial do site PUC-Rio" id="puc_cabecalho_brasao">
+<img src="/imagens/brasao_preto_vertical.svg" alt="Brasão da PUC-Rio" /></a>
+
+	<div id="puc_topo_titulo_caminho">
+
+	<h1>Coordenação Central de Pós-Graduação e Pesquisa</h1>
+
+
+<!-- fecha #puc_topo_titulo_caminho e #puc_topo_brasao_titulo_caminho no include do menu -->
+
+
+
+<!-- Caminho -->
+<nav><a href="/ensinopesq/ccpg/">Pós-Graduação e Pesquisa</a> > </nav>
+
+
+<!-- Menu -->
+</div><!-- fecha #puc_topo_titulo_caminho -->
+</div><!-- fecha #puc_topo_brasao_titulo_caminho -->
+
+
+<!-- Para laytout sem menu-->
+<div id="puc_menu_vazio"></div> 
+
+
+
+<!-- linha abaixo menu --><span></span>
+
+</div><!-- fecha #menu -->
+</div><!-- fecha #puc_menu_faixa -->
+
+
+
+</header>
+
+
+
+
+
+<!-- ===================================================================================== MEIO == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<section id="conteudo">
+
+
+<!-- ================================================================== MEIO > COLUNA PRINCIPAL == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<!-- destino do link de acessibilidade "pular para conteúdo" -->
+<article>
+
+<h2>Bolsas de Estudo, Mensalidades e Anuidades</h2>
+	
+<h5><a href="#valores">Mensalidades e Anuidades</a></h5>
+	
+<p><strong>Tipos de Bolsas:</strong><br>
+alunos dos Programas de Pós-Graduação da PUC-RIO podem candidatar-se a distintos tipos de bolsas de estudo:</p>
+	
+	<ul>
+		
+	    <li><a href="#capes">CAPES</a></li>
+		<li><a href="#cnpq">CNPq</a></li>
+		<li><a href="#faperj">FAPERJ</a></li>
+		<li><a href="#outras">Outras</a></li>
+	</ul>
+	<h5><a href="#bolsas">Bolsas de Estudo em 2026</a></h5>
+	<h5><a href="#renovacao">Renovação ou Nova Solicitação</a></h5>
+	
+	
+	<div class="caixa">
+		<p>O aluno interessado em candidatar-se a qualquer tipo de bolsa de estudo deve procurar a secretaria do Programa no qual está inscrito para ser informado sobre as condições de elegibilidade para as diversas modalidades de bolsas, os critérios de distribuição de bolsas e as exigências decorrentes do fato de ser beneficiário de uma bolsa de estudos.</p>
+
+<p>A atribuição de bolsas de estudos a alunos de um Programa de Pós-Graduação é competência de uma Comissão de Bolsas existente em cada Programa, presidida pelo Coordenador do Programa e composta por representantes docentes e discentes</p>
+	</div>
+	
+	<p>&nbsp;</p>
+    <!-- Botão voltar -->
+    <button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+	<p>&nbsp;</p>
+	
+	<h3 id="renovacao" class="border">Calendário</h3>
+	<h5>Bolsa de Isenção de Taxas Escolares</h5>
+	<table class="puc_tabela_padrao_TAG-TABLE" cellspacing="0" cellpadding="0">
+	  <tbody>
+	    <tr class="puc_tabela_linha_n1_TAG-TR">
+	      <td colspan="2" height="15"><strong>Renovação ou nova solicitação</strong></td>
+        </tr>
+	    <tr class="puc_tabela_linha_n3_TAG-TR">
+	      <td>Para 2026.2</td>
+	      <td bgcolor="#F5EFE0">Agosto de 2026</td>
+        </tr>
+	    <tr class="puc_tabela_linha_n3_TAG-TR">
+	      <td>Para 2027.1</td>
+	      <td bgcolor="#F5EFE0">Março de 2027</td>
+        </tr>
+      </tbody>
+    </table>
+	
+	
+	  <strong>1.</strong> As solicitações de bolsas da Vice-Reitoria Acadêmica deverão ser feitas pela Coordenação do Programa à CCPG.<br>
+    <strong>2.</strong> Para renovação ou solicitação nova, o aluno deverá dirigir-se à Coordenação de Pós-Graduação de seu Departamento ou Programa, no prazo por este estabelecido.</p></div>
+	
+	<p>&nbsp;</p>
+    <!-- Botão voltar -->
+    <button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+	<p>&nbsp;</p>
+	
+	<h3 id="especiais" class="border">Tipo de Bolsas</h3>
+	<h5 id="capes">Bolsas CAPES - Coordenação de Aperfeiçoamento de Pessoal de Nível Superior</h5>
+	<p><a href="http://www.capes.gov.br/" target="_blank">http://www.capes.gov.br/</a></p>
+	<p><strong>CAPES/PROEX</strong><br>
+    Bolsas do Programa de Excelência Acadêmica - PROEX, destinadas a pós-graduandos com bom desempenho acadêmico e disponibilidade integral para o Programa de Pós-Graduação.</p>
+	<p><strong>CAPES/PROSUC</strong><br>
+    Bolsas do Programa de Suporte à Pós-Graduação de Instituições Comunitárias de Educação Superior - PROSUC, destinadas a pós-graduandos com bom desempenho acadêmico e disponibilidade integral para o Programa de Pós-Graduação.</p>
+	<p><strong>CAPES/PEC-PG</strong><br>
+    Bolsas do Programa Estudante-convênio de Pós-Graduação da CAPES. Esta modalidade de bolsa se destina a estudantes estrangeiros e deve ser solicitada através da Embaixada Brasileira no país de origem.</p>
+	<p align="left"><strong>CAPES/PDSE</strong><br>
+    Bolsas do Programa Institucional de Doutorado Sanduíche no Exterior.</p>
+	<p><strong>CAPES/Sanduíche no Exterior</strong><br>
+    Bolsas temporárias concedidas pela CAPES a doutorandos matriculados nos programas da PUC-Rio para pesquisa ou estudos teóricos em Universidades do exterior.</p>
+	
+	
+	<p>&nbsp;</p>
+    <!-- Botão voltar -->
+    <button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+	<p>&nbsp;</p>
+	
+	<hr>
+	
+	<h5 id="cnpq">Bolsas CNPq - Conselho Nacional de Desenvolvimento Científico e Tecnológico</h5>
+	
+	<p><a href="http://www.cnpq.br/" target="_blank">http://www.cnpq.br/</a></p>
+	
+	<p><strong>CNPq/Mestrado e Doutorado</strong><br>
+    Bolsas do Programa de Formação de Recursos Humanos no país, destinadas a pós-graduandos com bom desempenho acadêmico e disponibilidade integral para o Programa de Pós-Graduação.</p>
+	<p><strong>CNPq/RHAE</strong><br>
+    Bolsas do CNPq vinculadas ao Programa de Recursos Humanos para Áreas Estratégicas.</p>
+	<p><strong>CNPq/Sanduíche no Exterior</strong><br>
+    Bolsas temporárias concedidas pelo CNPq a doutorandos matriculados nos programas da PUC-Rio para pesquisa ou estudos teóricos em Universidades do exterior.</p>
+	
+	
+	<p>&nbsp;</p>
+    <!-- Botão voltar -->
+    <button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+	<p>&nbsp;</p>
+	<hr>
+	<h5 id="faperj">Bolsas FAPERJ - Fundação Carlos Chagas Filho de Amparo à Pesquisa
+    do Estado do Rio de Janeiro</h5>
+	
+	<p><a href="https://www.faperj.br/" target="_blank">http://www.faperj.br/</a></p>
+	
+<p>Bolsas fornecidas pela Fundação de Amparo à Pesquisa do Estado do Rio de Janeiro, destinadas a pós-graduandos com bom desempenho acadêmico e disponibilidade integral para o Programa de Pós-Graduação.</p>
+<p><strong>FAPERJ_NOTA 10</strong><br>
+  Bolsas fornecidas pela Fundação de Amparo à Pesquisa do Estado do Rio de Janeiro que visa premiar os melhores alunos dos melhores programas de Pós-Graduação de nosso Estado.</p>
+	
+<p>&nbsp;</p>
+    <!-- Botão voltar -->
+    <button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+	<p>&nbsp;</p>
+	<hr>
+	<h5 id="outras">Outros Tipos de Bolsas</h5>
+	
+<p><strong>Bolsas de Empresas</strong><br>
+  Bolsas fornecidas por empresas e instituições a seus funcionários (Citibank, CSN, Banco da Bahia Investimentos S.A., DATAPREV, FURNAS, Petrobrás, RFFSA, Ministério da Marinha, IBM e outras).</p>
+<p><strong>PUC-Rio/VRC</strong><br>
+  Bolsas da Vice-Reitoria Comunitária, concedidas através da CCPG a docentes da PUC-Rio matriculados em algum Programa de Pós-Graduação da própria Universidade e que garantem a isenção parcial ou total das taxas escolares.</p>
+<p><strong>Bolsas PUC-Rio/VRAC</strong><br>
+  Diversas modalidades de bolsas da Vice-Reitoria para Assuntos Acadêmicos, concedidas através da CCPG a alunos dos Programas de Pós-Graduação da Universidade e que garantem a isenção parcial ou total das taxas escolares.<br>
+  <a href="#renovacao">Consulte o calendário para Renovação e Nova Solicitação.</a></p>
+<p><strong>PUC-Rio de Reciprocidade</strong><br>
+  Bolsas da Vice-Reitoria para Assuntos Acadêmicos, concedidas através da CCPG, a alunos regularmente matriculados em Programas de Pós-Graduação de Universidades Públicas ou de IES conveniadas e que cursam, como alunos extraordinários, disciplinas de Programas da PUC-Rio. Estas bolsas garantem a isenção total das taxas escolares.</p>
+	
+	
+<p>&nbsp;</p>
+    <!-- Botão voltar -->
+    <button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+	<p>&nbsp;</p>
+	
+	<h3 id="bolsas" class="border">Bolsas de Estudo em 2026<br>
+    <span style="font-size: 0.6em;">Os dados das tabelas abaixo, são referentes ao mês de  julho de 2026. </span>	</h3>
+	<p>Tendo como referência o primeiro Semestre de 2026, os números que expressam a situação dos alunos de pós-graduação matriculados na PUC-Rio em relação às bolsas oferecidas por distintas agências são os seguintes:</p>
+	<table style="margin-bottom: 0" class="puc_tabela_padrao_TAG-TABLE" cellspacing="0" cellpadding="0">
+	  <tbody>
+	    <tr align="middle" class="puc_tabela_linha_n1_TAG-TR">
+	      <td>Bolsistas 2026.1</td>
+	      <td>Mestrado</td>
+	      <td>Doutorado</td>
+        </tr>
+	    <tr align="middle" class="puc_tabela_linha_n3_TAG-TR">
+	      <td>Bolsistas CAPES/BOLSAS</td>
+	      <td><p align="center"><strong>240</strong><br>
+	        <strong>(ME/ACAD:219</strong></p>
+          <strong>+ ME/PROF:21)</strong></td>
+	      <td>301</td>
+        </tr>
+	    <tr align="middle" class="puc_tabela_linha_n3_TAG-TR">
+	      <td>Bolsistas CAPES/TAXAS</td>
+	      <td>266</td>
+	      <td>281</td>
+        </tr>
+	    <tr align="middle" class="puc_tabela_linha_n3_TAG-TR">
+	      <td>Bolsistas CNPq</td>
+	      <td>102</td>
+	      <td>91</td>
+        </tr>
+	    <tr align="middle" class="puc_tabela_linha_n3_TAG-TR">
+	      <td>Bolsistas PUC-RIO</td>
+	      <td><p align="center"><strong>443</strong><br>
+	        <strong>(ME/ACAD:398</strong></p>
+          <strong>+ ME/PROF:45)</strong></td>
+	      <td><p align="center"><strong>378</strong><br>
+	        <strong>(DO/ACAD:372</strong></p>
+          <strong>+ DO/PROF:6)</strong></td>
+        </tr>
+	    <tr align="middle" class="puc_tabela_linha_n3_TAG-TR">
+	      <td>Bolsistas FAPERJ</td>
+	      <td>36</td>
+	      <td>48</td>
+        </tr>
+	    <!--tr align="middle" class="puc_tabela_linha_n3_TAG-TR">
+	      <td>Bolsistas de Empresas (*)</td>
+	      <td>8</td>
+	      <td>2</td>
+        </tr-->
+	    <tr align="middle" class="puc_tabela_linha_n3_TAG-TR">
+	      <td><strong>Total de Bolsistas</strong></td>
+	      <td><strong>1.087</strong></td>
+	      <td><strong>1.099</strong></td>
+        </tr>
+      </tbody>
+    </table><br><br>
+	<!--p>(*) ALUNOS FATURADOS - VALORES PAGOS À PUC-Rio PELAS RESPECTIVAS EMPRESAS</p-->
+	<table class="puc_tabela_padrao_TAG-TABLE" cellspacing="0" cellpadding="0">
+	  <tbody>
+	    <tr class="puc_tabela_linha_n1_TAG-TR">
+	      <th width="48%">Tipo</th>
+	      <th width="48%">Total de Alunos<sup>1</sup></th>
+        </tr>
+	    <tr align="middle" class="puc_tabela_linha_n3_TAG-TR">
+	      <td width="48%"><strong>MESTRADO ACADÊMICO</strong></td>
+	      <td width="48%">1.045</td>
+        </tr>
+	    <tr align="middle" class="puc_tabela_linha_n3_TAG-TR">
+	      <td><strong>MESTRADO PROFISSIONAL</strong></td>
+	      <td>266</td>
+        </tr>
+	    <tr align="middle" class="puc_tabela_linha_n3_TAG-TR">
+	      <td><strong>DOUTORADO ACADÊMICO</strong></td>
+	      <td>1.122</td>
+        </tr>
+	    <tr align="middle" class="puc_tabela_linha_n3_TAG-TR">
+	      <td><strong>DOUTORADO PROFISSIONAL</strong></td>
+	      <td>6</td>
+        </tr>
+	    <tr align="middle" class="puc_tabela_linha_n3_TAG-TR">
+	      <td><strong>Total geral</strong></td>
+	      <td><strong>2.439</strong></td>
+        </tr>
+      </tbody>
+    </table>
+	<p><strong>1 -</strong> Pós-Graduação - Stricto Sensu.<br>
+    Além dos alunos regulares a PUC-Rio, em 2026.1, teve 103 alunos extraordinários, ou seja, alunos que cursaram disciplinas isoladas na PUC-Rio mas que não estavam regularmente matriculados em programa desta Universidade. Deste total, 96 tiveram bolsas de isenção da PUC-Rio.</p>
+	
+	<p>&nbsp;</p>
+    <!-- Botão voltar -->
+    <button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+	<p>&nbsp;</p>
+	
+	<h3 id="valores" class="border">Mensalidades e Anuidades</h3>
+	
+	
+<h5>Ano 2026</h5>
+	
+<p><strong>Edital de Anuidades 2026</strong> <a href="/ensinopesq/ccg/download/edital_anuidades_2026.pdf" target="_blank">(download do arquivo pdf)</a></p>
+
+<div style="overflow: auto">
+  <table style="width:100%; margin:0;" class="puc_tabela_padrao_TAG-TABLE" cellspacing="0" cellpadding="0">
+    <tr class="puc_tabela_linha_n1_TAG-TR">
+      <td rowspan="2">Mestrado e Doutorado</td>
+      <td colspan="2">Centro de Teologia e Ciências    Humanas - CTCH</td>
+      <td colspan="2">Centro de Ciências Sociais - CCS</td>
+      <td colspan="2">Centro Técnico Científico - CTC</td>
+    </tr>
+    <tr class="puc_tabela_linha_n3_TAG-TR">
+      <td>Anual</td>
+      <td>Mensal</td>
+      <td>Anual</td>
+      <td>Mensal</td>
+      <td>Anual</td>
+      <td>Mensal</td>
+    </tr>
+    <tr bgcolor="#eeeeee">
+      <td bgcolor="#eeeeee"><strong>Valor do crédito<br>
+        para disciplinas <span class="puc_texto_destaque puc_texto_menor">(1)</span></strong></td>
+      <td align="center">4.236,00</td>
+      <td align="center">353,00</td>
+      <td align="center">4.380,00</td>
+      <td align="center">365,00</td>
+      <td align="center">5.124,00</td>
+      <td align="center">427,00</td>
+    </tr>
+    <tr bgcolor="#eeeeee">
+      <td bgcolor="#eeeeee"><strong>Valor para<br>
+        Dissertação<br>
+        ou Tese <span class="puc_texto_destaque puc_texto_menor">(2)</span></strong></td>
+      <td align="center">34.284,00</td>
+      <td align="center">2.857,00</td>
+      <td align="center">34.932,00</td>
+      <td align="center">2.911,00</td>
+      <td align="center">43.128,00</td>
+      <td align="center">3.594,00</td>
+    </tr>
+  </table>
+</div>
+
+<p style="line-height:normal;"><span class="puc_texto_menor">(1) as matrículas são efetuadas a cada semestre letivo e, assim, são seis as mensalidades a serem pagas a cada semestre. O valor da mensalidade é calculado multiplicando-se o valor mensal do crédito pelo número de créditos cursados no semestre letivo.<br>
+(2) o valor mensal deverá ser pago nos semestres em que o aluno estiver matriculado em dissertação ou tese. São seis mensalidades em cada semestre letivo.</span></p>
+
+	
+
+
+	
+<!-- Botão voltar -->
+    <button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>	
+<p>&nbsp;</p>
+	
+
+</article>
+
+
+
+
+
+<!-- ==================================================================== MEIO > COLUNA LATERAL == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+<aside>
+		
+	<div>
+	<p class="puc_texto_coluna-lateral_titulo">Veja Também:</p>
+	<ul>
+		<li><a href="inscricoes.html">Mestrado e Doutorado</a></li>
+	    
+		<li><a href="tabavaliacoes.html">Avaliações da CAPES</a></li>
+		<li><a href="/sobrepuc/depto/dar/calendario/index.html#ccpg_periodo">Calendário Acadêmico</a></li>
+		<li><a href="downloads.html">Downloads</a></li>
+	</ul>
+</div>
+	
+	</aside>
+	
+<!-- =============================================================================== FECHA MEIO == -->
+
+
+</section>
+
+
+<!-- =================================================================================== RODAPÉ == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<footer>
+  
+  <!-- Rodapé PUC -->
+  
+<!--div style="background:#CCC; padding:10px;">
+<h4 align="center">(opção de rodapé para o site do depto./unid.)</h4>
+</div-->
+
+<iframe src="/includes/puc_rodape.html" name="rodape" 
+title="Rodapé PUC-Rio - endereço e copyright"></iframe>
+
+</footer>
+
+
+
+<!-- ============================================================================= FECHA PÁGINA == -->
+
+</body>
+</html>

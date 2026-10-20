@@ -56,6 +56,8 @@ Every rule change is measured against frozen test sets. Each set holds official 
 | Set Q (round 33, governments, foundations, companies) | 216 | 60% | 17% | 8% |
 | *Round-26 baseline on set Q* | 216 | 58% | 25% | 0% |
 | Set R (round 35, mixed funders; only 14 programmes, wide margin) | 56 | 66% | 11% | 18% |
+| Set S (round 36, programme pages reached from lists) | 120 | 69% | 14% | 11% |
+| *Round-26 baseline on set S* | 120 | 68% | 28% | 0% |
 
 - The remaining decisions are honest "not stated" answers where the label has a value.
 - Every decision the agent reports as known carries a clean quotation from the programme's own page (37/37 on set O, 45/45 on set P, 66/66 on set Q).

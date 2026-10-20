@@ -1,0 +1,93 @@
+{
+ "_comment": "Round 36: separate adjudication of six set-S labels questioned in the error analysis after the first scoring (the labels were written from a keyword view that missed dates lower on the page). labels.json and the frozen S results are NOT changed; decisions.py --adjudicate applies these overrides in memory and reports them as a separate result.",
+ "decided": "2026-10-20",
+ "cases": {
+  "s-jp-tmu-international-3": {
+   "verdict": "label wrong",
+   "fields": {
+    "deadlines": [
+     {
+      "kind": "scholarship",
+      "date": "2026-10-01",
+      "status": "historical"
+     }
+    ],
+    "cycle_status": "closed",
+    "funding_class": "partially_funded"
+   },
+   "quote": "From Monday, September 14th, 2026 to 5pm on Thursday, October 1st, 2026 [strict deadline] | Scholarship recipients will be eligible for tuition reduction under Tuition Reduction Program for AY2026.",
+   "why": "the label was written from a keyword view that missed the application period lower on the page"
+  },
+  "s-us-sjsu-international-1": {
+   "verdict": "label wrong",
+   "fields": {
+    "deadlines": [
+     {
+      "kind": "scholarship",
+      "date": "2026-04-24",
+      "status": "historical"
+     }
+    ],
+    "cycle_status": "closed"
+   },
+   "quote": "The application period for current students is from April 8, 2026-April 24, 2026.",
+   "why": "the label missed the application period"
+  },
+  "s-us-unt-international-2": {
+   "verdict": "label wrong",
+   "fields": {
+    "deadlines": [
+     {
+      "kind": "admission",
+      "date": "2026-03-01",
+      "status": "historical"
+     }
+    ],
+    "cycle_status": "closed"
+   },
+   "quote": "First-time freshmen admitted for Fall 2026 by March 1, 2026 will be automatically [considered]. ... Be admitted as a first-time freshman to UNT by March 1, 2026",
+   "why": "the label missed the admission date that decides consideration; the 2026 cycle has passed"
+  },
+  "s-us-case-international-3": {
+   "verdict": "label wrong",
+   "fields": {
+    "deadlines": [
+     {
+      "kind": "scholarship",
+      "date": "2026-11-02",
+      "status": "current"
+     }
+    ],
+    "cycle_status": "open"
+   },
+   "quote": "Complete and submit final application by the national deadline: Monday, November 2, 2026 at 5 pm Eastern Time.",
+   "why": "the label kept only the campus date; the page also states the foundation's deadline, which is the applicant deadline (the campus date of Sept. 11 is an internal step)"
+  },
+  "s-jp-tmu-international-4": {
+   "verdict": "label wrong",
+   "fields": {
+    "nationality": {
+     "mode": "exclude",
+     "countries": [
+      "JP"
+     ]
+    }
+   },
+   "quote": "Be a non-Japanese national residing outside of Japan at the time of application.",
+   "why": "the page states a nationality exclusion; the label read only the 'international students' wording"
+  },
+  "s-fi-fulbright-finland-4": {
+   "verdict": "label wrong",
+   "fields": {
+    "nationality": {
+     "mode": "include",
+     "countries": [
+      "US"
+     ]
+    }
+   },
+   "quote": "The Fulbright student award competition is open to U.S. students who hold minimum Bachelor's degree.",
+   "why": "the page states the rule lower down; the label read only the award description"
+  }
+ }
+}

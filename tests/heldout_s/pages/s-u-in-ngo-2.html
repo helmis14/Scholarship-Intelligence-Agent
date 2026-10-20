@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.5",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseout","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))},{isRocket:!0})}o(){window.addEventListener("pageshow",t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0},{isRocket:!0}),window.addEventListener("pagehide",()=>{this.onFirstUserAction=null},{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",function i(o){o.changedTouches[0]&&t.changedTouches[0]&&Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}),"INPUT"===o.target.tagName&&"text"===o.target.type||(o.target.dispatchEvent(new TouchEvent("touchend",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new MouseEvent("mouseover",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1,clientX:o.changedTouches[0].clientX,clientY:o.changedTouches[0].clientY})),event.preventDefault()))},{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,t.composedPath&&t.composedPath()[0].getRootNode()instanceof ShadowRoot&&(t.rocketTarget=t.composedPath()[0]),this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach(t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.addEventListener("visibilitychange",this.userEventHandler,{isRocket:!0})}U(){this.userEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.removeEventListener("visibilitychange",this.userEventHandler,{isRocket:!0}),this.savedUserEvents.forEach(t=>{(t.rocketTarget||t.target).dispatchEvent(new window[t.constructor.name](t.type,t))})}m(){const t="return false",e=Array.from(this.attributeEvents,t=>"data-rocket-"+t),i="["+this.attributeEvents.join("],[")+"]",o="[data-rocket-"+this.attributeEvents.join("],[data-rocket-")+"]",s=(e,i,o)=>{o&&o!==t&&(e.setAttribute("data-rocket-"+i,o),e["rocket"+i]=new Function("event",o),e.setAttribute(i,t))};new MutationObserver(t=>{for(const n of t)"attributes"===n.type&&(n.attributeName.startsWith("data-rocket-")||this.everythingLoaded?n.attributeName.startsWith("data-rocket-")&&this.everythingLoaded&&this.N(n.target,n.attributeName.substring(12)):s(n.target,n.attributeName,n.target.getAttribute(n.attributeName))),"childList"===n.type&&n.addedNodes.forEach(t=>{if(t.nodeType===Node.ELEMENT_NODE)if(this.everythingLoaded)for(const i of[t,...t.querySelectorAll(o)])for(const t of i.getAttributeNames())e.includes(t)&&this.N(i,t.substring(12));else for(const e of[t,...t.querySelectorAll(i)])for(const t of e.getAttributeNames())this.attributeEvents.includes(t)&&s(e,t,e.getAttribute(t))})}).observe(document,{subtree:!0,childList:!0,attributeFilter:[...this.attributeEvents,...e]})}I(){this.attributeEvents.forEach(t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach(e=>{this.N(e,t)})})}N(t,e){const i=t.getAttribute("data-rocket-"+e);i&&(t.setAttribute(e,i),t.removeAttribute("data-rocket-"+e))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):(t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o}),"mouseenter"!==e&&"mouseleave"!==e||t.originalAddEventListener.call(this,e,t.savedUserEvents.push,o))},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}J(t,e){this.savedEventListeners=this.savedEventListeners.filter(i=>{let o=i.type,s=i.target||window;return e!==o||t!==s||(this.B(o,s)&&(i.type="rocket-"+o),this.$(i),!1)})}H(){EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener,this.savedEventListeners.forEach(t=>this.$(t))}$(t){t.remove?this.originalRemoveEventListener.call(t.target,t.type,t.func,t.options):this.originalAddEventListener.call(t.target,t.type,t.func,t.options)}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map(t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e})),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,()=>{e[t].forEach(t=>t())},{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout(()=>i.bind(document)(o)):i.bind(document)(o)}return"function"==typeof i&&(t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s)),this},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise(t=>{this.userActionTriggered?t():this.onFirstUserAction=t})}async L(){return new Promise(t=>{document.addEventListener("DOMContentLoaded",()=>{this.realDomReadyFired=!0,t()},{isRocket:!0})})}async j(){return this.realWindowLoadedFired?Promise.resolve():new Promise(t=>{window.addEventListener("load",t,{isRocket:!0})})}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver(t=>{for(const e of t)e.addedNodes.forEach(t=>{"SCRIPT"!==t.tagName||!t.src||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise(e=>{const i=()=>{const i=this.pendingScripts.findIndex(e=>e.script===t);i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)})})})}),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async F(){await this.X(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.F()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this.Y(t,"preconnect")}async G(t){if(await this.K(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise(e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))}),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",()=>{i.setAttribute("data-rocket-status","failed-network"),e()},{isRocket:!0}),setTimeout(()=>{i.isConnected||e()},1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.G(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())},{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}});t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.G(e),this.C(t)):Promise.resolve()}O(){this.Y([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}Y(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach(t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}}),document.head.appendChild(o)}W(){this.trash.forEach(t=>t.remove())}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(document,"DOMContentLoaded"),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.K(),this.J(window,"DOMContentLoaded"),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(window,"load"),window.dispatchEvent(new Event("rocket-load")),await this.K(),window.rocketonload&&window.rocketonload(),await this.K(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this.K(),this.J(window,"pageshow");const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.K(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async K(){Date.now()-this.lastBreath>45&&(await this.X(),this.lastBreath=Date.now())}async X(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}B(t,e=window){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();
+</script>
+	
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- This site is optimized with the Yoast SEO plugin v28.5 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>UP Scholarship 2026-27: Revised Last Date, Status, Amount</title>
+<link data-rocket-prefetch href="https://www.googletagmanager.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://pagead2.googlesyndication.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://cdn.feedify.net" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://fonts.googleapis.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://d2w7l1p59qkl0r.cloudfront.net" rel="dns-prefetch">
+<link data-rocket-preload as="style" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C400i%2C700%2C700i%2C900%2C900i&#038;display=swap" rel="preload">
+<link href="https://fonts.googleapis.com/css?family=Lato%3A400%2C400i%2C700%2C700i%2C900%2C900i&#038;display=swap" media="print" onload="this.media=&#039;all&#039;" rel="stylesheet">
+<style id="wpr-usedcss">img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}.sc_fs_card__animate{padding:0}.sc_fs_card__animate .sc_fs_faq__content{padding:0 1em 1em}.sc_fs_card__animate .sc_fs_faq__content>:first-child{margin-top:0}.sc_fs_card__animate summary{display:block;cursor:pointer;position:relative;padding:1em 1em 1em 2em}.sc_fs_card__animate summary:before{content:"";position:absolute;top:1.5em;left:1em;transform:rotate(0);transform-origin:0.2rem 50%;transition:.25s transform ease;border:.4rem solid transparent;border-left-color:inherit}.sc_fs_card__animate[open]>summary:before{transform:rotate(90deg)}body.hidden-scroll{overflow:hidden}.sl-overlay{position:fixed;left:0;right:0;top:0;bottom:0;background:#fff;display:none;z-index:1035}.sl-wrapper{z-index:1040;width:100%;height:100%;left:0;top:0;position:fixed}.sl-wrapper *{box-sizing:border-box}.sl-wrapper button{border:0;background:0 0;font-size:28px;padding:0;cursor:pointer}.sl-wrapper button:hover{opacity:.7}.sl-wrapper .sl-close{display:none;position:fixed;right:30px;top:30px;z-index:10060;margin-top:-14px;margin-right:-14px;height:44px;width:44px;line-height:44px;font-family:Arial,Baskerville,monospace;color:#000;font-size:3rem}.sl-wrapper .sl-counter{display:none;position:fixed;top:30px;left:30px;z-index:10060;color:#000;font-size:1rem}.sl-wrapper .sl-download{display:none;position:fixed;bottom:5px;width:100%;text-align:center;z-index:10060;color:#fff;font-size:1rem}.sl-wrapper .sl-download a{color:#fff}.sl-wrapper .sl-navigation{width:100%;display:none}.sl-wrapper .sl-navigation button{position:fixed;top:50%;margin-top:-22px;height:44px;width:22px;line-height:44px;text-align:center;display:block;z-index:10060;font-family:Arial,Baskerville,monospace;color:#000}.sl-wrapper .sl-navigation button.sl-next{right:5px;font-size:2rem}.sl-wrapper .sl-navigation button.sl-prev{left:5px;font-size:2rem}@media (min-width:35.5em){.sl-wrapper .sl-navigation button{width:44px}.sl-wrapper .sl-navigation button.sl-next{right:10px;font-size:3rem}.sl-wrapper .sl-navigation button.sl-prev{left:10px;font-size:3rem}.sl-wrapper .sl-image img{border:0}}@media (min-width:50em){.sl-wrapper .sl-navigation button{width:44px}.sl-wrapper .sl-navigation button.sl-next{right:20px;font-size:3rem}.sl-wrapper .sl-navigation button.sl-prev{left:20px;font-size:3rem}.sl-wrapper .sl-image img{border:0}}.sl-wrapper.sl-dir-rtl .sl-navigation{direction:ltr}.sl-wrapper .sl-image{position:fixed;-ms-touch-action:none;touch-action:none;z-index:10000}.sl-wrapper .sl-image img{margin:0;padding:0;display:block;border:0;width:100%;height:auto}.sl-wrapper .sl-image iframe{background:#000;border:0}@media (min-width:35.5em){.sl-wrapper .sl-image iframe{border:0}}@media (min-width:50em){.sl-wrapper .sl-image iframe{border:0}}.sl-wrapper .sl-image .sl-caption{display:none;padding:10px;color:#fff;background:rgba(0,0,0,.8);font-size:1rem;position:absolute;bottom:0;left:0;right:0}.sl-spinner{display:none;border:5px solid #333;border-radius:40px;height:40px;left:50%;margin:-20px 0 0 -20px;opacity:0;position:fixed;top:50%;width:40px;z-index:1007;-webkit-animation:1s ease-out infinite pulsate;-moz-animation:1s ease-out infinite pulsate;-ms-animation:pulsate 1s ease-out infinite;-o-animation:1s ease-out infinite pulsate;animation:1s ease-out infinite pulsate}.sl-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}.sl-transition{transition:-moz-transform ease .2s;transition:-ms-transform ease .2s;transition:-o-transform ease .2s;transition:-webkit-transform ease .2s;transition:transform ease .2s}@-webkit-keyframes pulsate{0%{transform:scale(.1);opacity:0}50%{opacity:1}100%{transform:scale(1.2);opacity:0}}@keyframes pulsate{0%{transform:scale(.1);opacity:0}50%{opacity:1}100%{transform:scale(1.2);opacity:0}}@-moz-keyframes pulsate{0%{transform:scale(.1);opacity:0}50%{opacity:1}100%{transform:scale(1.2);opacity:0}}@-o-keyframes pulsate{0%{transform:scale(.1);opacity:0}50%{opacity:1}100%{transform:scale(1.2);opacity:0}}@-ms-keyframes pulsate{0%{transform:scale(.1);opacity:0}50%{opacity:1}100%{transform:scale(1.2);opacity:0}}:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.aligncenter{clear:both}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}:root{--wp--preset--aspect-ratio--square:1;--wp--preset--aspect-ratio--4-3:4/3;--wp--preset--aspect-ratio--3-4:3/4;--wp--preset--aspect-ratio--3-2:3/2;--wp--preset--aspect-ratio--2-3:2/3;--wp--preset--aspect-ratio--16-9:16/9;--wp--preset--aspect-ratio--9-16:9/16;--wp--preset--color--black:#000000;--wp--preset--color--cyan-bluish-gray:#abb8c3;--wp--preset--color--white:#ffffff;--wp--preset--color--pale-pink:#f78da7;--wp--preset--color--vivid-red:#cf2e2e;--wp--preset--color--luminous-vivid-orange:#ff6900;--wp--preset--color--luminous-vivid-amber:#fcb900;--wp--preset--color--light-green-cyan:#7bdcb5;--wp--preset--color--vivid-green-cyan:#00d084;--wp--preset--color--pale-cyan-blue:#8ed1fc;--wp--preset--color--vivid-cyan-blue:#0693e3;--wp--preset--color--vivid-purple:#9b51e0;--wp--preset--color--contrast:var(--contrast);--wp--preset--color--contrast-2:var(--contrast-2);--wp--preset--color--contrast-3:var(--contrast-3);--wp--preset--color--base:var(--base);--wp--preset--color--base-2:var(--base-2);--wp--preset--color--base-3:var(--base-3);--wp--preset--color--accent:var(--accent);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple:linear-gradient(135deg,rgb(6, 147, 227) 0%,rgb(155, 81, 224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan:linear-gradient(135deg,rgb(122, 220, 180) 0%,rgb(0, 208, 130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange:linear-gradient(135deg,rgb(252, 185, 0) 0%,rgb(255, 105, 0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red:linear-gradient(135deg,rgb(255, 105, 0) 0%,rgb(207, 46, 46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray:linear-gradient(135deg,rgb(238, 238, 238) 0%,rgb(169, 184, 195) 100%);--wp--preset--gradient--cool-to-warm-spectrum:linear-gradient(135deg,rgb(74, 234, 220) 0%,rgb(151, 120, 209) 20%,rgb(207, 42, 186) 40%,rgb(238, 44, 130) 60%,rgb(251, 105, 98) 80%,rgb(254, 248, 76) 100%);--wp--preset--gradient--blush-light-purple:linear-gradient(135deg,rgb(255, 206, 236) 0%,rgb(152, 150, 240) 100%);--wp--preset--gradient--blush-bordeaux:linear-gradient(135deg,rgb(254, 205, 165) 0%,rgb(254, 45, 45) 50%,rgb(107, 0, 62) 100%);--wp--preset--gradient--luminous-dusk:linear-gradient(135deg,rgb(255, 203, 112) 0%,rgb(199, 81, 192) 50%,rgb(65, 88, 208) 100%);--wp--preset--gradient--pale-ocean:linear-gradient(135deg,rgb(255, 245, 203) 0%,rgb(182, 227, 212) 50%,rgb(51, 167, 181) 100%);--wp--preset--gradient--electric-grass:linear-gradient(135deg,rgb(202, 248, 128) 0%,rgb(113, 206, 126) 100%);--wp--preset--gradient--midnight:linear-gradient(135deg,rgb(2, 3, 129) 0%,rgb(40, 116, 252) 100%);--wp--preset--font-size--small:13px;--wp--preset--font-size--medium:20px;--wp--preset--font-size--large:36px;--wp--preset--font-size--x-large:42px;--wp--preset--spacing--20:0.44rem;--wp--preset--spacing--30:0.67rem;--wp--preset--spacing--40:1rem;--wp--preset--spacing--50:1.5rem;--wp--preset--spacing--60:2.25rem;--wp--preset--spacing--70:3.38rem;--wp--preset--spacing--80:5.06rem;--wp--preset--shadow--natural:6px 6px 9px rgba(0, 0, 0, .2);--wp--preset--shadow--deep:12px 12px 50px rgba(0, 0, 0, .4);--wp--preset--shadow--sharp:6px 6px 0px rgba(0, 0, 0, .2);--wp--preset--shadow--outlined:6px 6px 0px -3px rgb(255, 255, 255),6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp:6px 6px 0px rgb(0, 0, 0)}:where(body){margin:0}:where(.is-layout-flex){gap:.5em}:where(.is-layout-grid){gap:.5em}body{padding-top:0;padding-right:0;padding-bottom:0;padding-left:0}:root :where(.wp-element-button,.wp-block-button__link){background-color:#32373c;border-width:0;color:#fff;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;padding-top:calc(.667em + 2px);padding-right:calc(1.333em + 2px);padding-bottom:calc(.667em + 2px);padding-left:calc(1.333em + 2px);text-decoration:none;text-transform:inherit}.footer-widgets-container{padding:40px}.inside-footer-widgets{display:flex}.inside-footer-widgets>div{flex:1 1 0}.site-footer .footer-widgets-container .inner-padding{padding:0 0 0 40px}.site-footer .footer-widgets-container .inside-footer-widgets{margin-left:-40px}.site-footer:not(.footer-bar-active) .copyright-bar{margin:0 auto}@media (max-width:768px){.inside-footer-widgets{flex-direction:column}.inside-footer-widgets>div:not(:last-child){margin-bottom:40px}.site-footer .footer-widgets .footer-widgets-container .inside-footer-widgets{margin:0}.site-footer .footer-widgets .footer-widgets-container .inner-padding{padding:0}}body,dl,dt,fieldset,h1,h2,h3,h4,html,iframe,legend,li,ol,p,textarea,ul{margin:0;padding:0;border:0}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}main{display:block}progress{vertical-align:baseline}html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;margin:0}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-moz-focus-inner{border-style:none;padding:0}body,button,input,select,textarea{font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-weight:400;text-transform:none;font-size:17px;line-height:1.5}p{margin-bottom:1.5em}h1,h2,h3,h4{font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit}table,td{border:1px solid rgba(0,0,0,.1)}table{border-collapse:separate;border-spacing:0;border-width:1px 0 0 1px;margin:0 0 1.5em;width:100%}td{padding:8px}td{border-width:0 1px 1px 0}fieldset{padding:0;border:0;min-width:inherit}fieldset legend{padding:0;margin-bottom:1.5em}h1{font-size:42px;margin-bottom:20px;line-height:1.2em;font-weight:400;text-transform:none}h2{font-size:35px;margin-bottom:20px;line-height:1.2em;font-weight:400;text-transform:none}h3{font-size:29px;margin-bottom:20px;line-height:1.2em;font-weight:400;text-transform:none}h4{font-size:24px}h4{margin-bottom:20px}ol,ul{margin:0 0 1.5em 3em}ul{list-style:disc}ol{list-style:decimal}li>ol,li>ul{margin-bottom:0;margin-left:1.5em}dt{font-weight:700}b,strong{font-weight:700}cite,em{font-style:italic}address{margin:0 0 1.5em}code,tt{font:15px Monaco,Consolas,"Andale Mono","DejaVu Sans Mono",monospace}ins{text-decoration:none}table{margin:0 0 1.5em;width:100%}img{height:auto;max-width:100%}button,input[type=button],input[type=reset],input[type=submit]{background:#55555e;color:#fff;border:1px solid transparent;cursor:pointer;-webkit-appearance:button;padding:10px 20px}input[type=email],input[type=number],input[type=password],input[type=search],input[type=tel],input[type=text],input[type=url],select,textarea{border:1px solid;border-radius:0;padding:10px 15px;max-width:100%}textarea{width:100%}a,button,input{transition:color .1s ease-in-out,background-color .1s ease-in-out}a{text-decoration:none}.button{padding:10px 20px;display:inline-block}.using-mouse :focus{outline:0}.using-mouse ::-moz-focus-inner{border:0}.aligncenter{clear:both;display:block;margin:0 auto}.size-full{max-width:100%;height:auto}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute!important;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;box-shadow:0 0 2px 2px rgba(0,0,0,.6);clip:auto!important;-webkit-clip-path:none;clip-path:none;color:#21759b;display:block;font-size:.875rem;font-weight:700;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}#primary[tabindex="-1"]:focus{outline:0}.main-navigation{z-index:100;padding:0;clear:both;display:block}.main-navigation a{display:block;text-decoration:none;font-weight:400;text-transform:none;font-size:15px}.main-navigation ul{list-style:none;margin:0;padding-left:0}.main-navigation .main-nav ul li a{padding-left:20px;padding-right:20px;line-height:60px}.inside-navigation{position:relative}.main-navigation .inside-navigation{display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between}.main-navigation .main-nav>ul{display:flex;flex-wrap:wrap;align-items:center}.main-navigation li{position:relative}.main-navigation .menu-bar-items{display:flex;align-items:center;font-size:15px}.main-navigation .menu-bar-items a{color:inherit}.main-navigation .menu-bar-item{position:relative}.main-navigation .menu-bar-item.search-item{z-index:20}.main-navigation .menu-bar-item>a{padding-left:20px;padding-right:20px;line-height:60px}.sidebar .main-navigation .main-nav{flex-basis:100%}.sidebar .main-navigation .main-nav>ul{flex-direction:column}.sidebar .main-navigation .menu-bar-items{margin:0 auto}.sidebar .main-navigation .menu-bar-items .search-item{order:10}.nav-align-center .inside-navigation{justify-content:center}.nav-align-center .main-nav>ul{justify-content:center}.main-navigation ul ul{display:block;box-shadow:1px 1px 0 rgba(0,0,0,.1);float:left;position:absolute;left:-99999px;opacity:0;z-index:99999;width:200px;text-align:left;top:auto;transition:opacity 80ms linear;transition-delay:0s;pointer-events:none;height:0;overflow:hidden}.main-navigation ul ul a{display:block}.main-navigation ul ul li{width:100%}.main-navigation .main-nav ul ul li a{line-height:normal;padding:10px 20px;font-size:14px}.main-navigation .main-nav ul li.menu-item-has-children>a{padding-right:0;position:relative}.main-navigation.sub-menu-left ul ul{box-shadow:-1px 1px 0 rgba(0,0,0,.1)}.main-navigation.sub-menu-left .sub-menu{right:0}.main-navigation:not(.toggled) ul li.sfHover>ul,.main-navigation:not(.toggled) ul li:hover>ul{left:auto;opacity:1;transition-delay:150ms;pointer-events:auto;height:auto;overflow:visible}.main-navigation:not(.toggled) ul ul li.sfHover>ul,.main-navigation:not(.toggled) ul ul li:hover>ul{left:100%;top:0}.main-navigation.sub-menu-left:not(.toggled) ul ul li.sfHover>ul,.main-navigation.sub-menu-left:not(.toggled) ul ul li:hover>ul{right:100%;left:auto}.menu-item-has-children .dropdown-menu-toggle{display:inline-block;height:100%;clear:both;padding-right:20px;padding-left:10px}.menu-item-has-children ul .dropdown-menu-toggle{padding-top:10px;padding-bottom:10px;margin-top:-10px}.sidebar .menu-item-has-children .dropdown-menu-toggle,nav ul ul .menu-item-has-children .dropdown-menu-toggle{float:right}.widget-area .main-navigation li{float:none;display:block;width:100%;padding:0;margin:0}.sidebar .main-navigation.sub-menu-right ul li.sfHover ul,.sidebar .main-navigation.sub-menu-right ul li:hover ul{top:0;left:100%}.site-main .post-navigation{margin:0 0 2em;overflow:hidden}.site-main .post-navigation{margin-bottom:0}.site-header{position:relative}.site-logo{display:inline-block;max-width:100%}.site-header .header-image{vertical-align:middle}.entry-header .gp-icon{display:none}.byline,.entry-header .cat-links,.single .byline{display:inline}footer.entry-meta .byline,footer.entry-meta .posted-on{display:block}.entry-content:not(:first-child){margin-top:2em}.entry-header,.site-content{word-wrap:break-word}.entry-meta{font-size:85%;margin-top:.5em;line-height:1.5}footer.entry-meta{margin-top:2em}.cat-links{display:block}.entry-content>p:last-child{margin-bottom:0}iframe,object{max-width:100%}.widget-area .widget{padding:40px}.widget select{max-width:100%}.footer-widgets .widget :last-child,.sidebar .widget :last-child{margin-bottom:0}.widget-title{margin-bottom:30px;font-size:20px;line-height:1.5;font-weight:400;text-transform:none}.widget ol,.widget ul{margin:0}.widget .search-field{width:100%}.widget .search-form{display:flex}.footer-widgets .widget{margin-bottom:30px}.footer-widgets .widget:last-child,.sidebar .widget:last-child{margin-bottom:0}.widget ul li{list-style-type:none;position:relative;margin-bottom:.5em}.widget ul li ul{margin-left:1em;margin-top:.5em}.site-content{display:flex}.grid-container{margin-left:auto;margin-right:auto;max-width:1200px}.sidebar .widget,.site-main>*{margin-bottom:20px}.separate-containers .inside-article{padding:40px}.separate-containers .site-main{margin:20px}.separate-containers.right-sidebar .site-main{margin-left:0}.separate-containers .inside-right-sidebar{margin-top:20px;margin-bottom:20px}.widget-area .main-navigation{margin-bottom:20px}.separate-containers .site-main>:last-child{margin-bottom:0}.sidebar .grid-container{max-width:100%;width:100%}.inside-site-info{display:flex;align-items:center;justify-content:center;padding:20px 40px}.site-info{text-align:center;font-size:15px}.featured-image{line-height:0}.separate-containers .featured-image{margin-top:20px}.separate-containers .inside-article>.featured-image{margin-top:0;margin-bottom:2em}.gp-icon{display:inline-flex;align-self:center}.gp-icon svg{height:1em;width:1em;top:.125em;position:relative;fill:currentColor}.close-search .icon-search svg:first-child,.icon-menu-bars svg:nth-child(2),.icon-search svg:nth-child(2),.toggled .icon-menu-bars svg:first-child{display:none}.close-search .icon-search svg:nth-child(2),.toggled .icon-menu-bars svg:nth-child(2){display:block}.entry-meta .gp-icon{margin-right:.6em;opacity:.7}nav.toggled .icon-arrow-left svg{transform:rotate(-90deg)}nav.toggled .icon-arrow-right svg{transform:rotate(90deg)}nav.toggled .sfHover>a>.dropdown-menu-toggle .gp-icon svg{transform:rotate(180deg)}nav.toggled .sfHover>a>.dropdown-menu-toggle .gp-icon.icon-arrow-left svg{transform:rotate(-270deg)}nav.toggled .sfHover>a>.dropdown-menu-toggle .gp-icon.icon-arrow-right svg{transform:rotate(270deg)}.container.grid-container{width:auto}.menu-toggle,.sidebar-nav-mobile{display:none}.menu-toggle{padding:0 20px;line-height:60px;margin:0;font-weight:400;text-transform:none;font-size:15px;cursor:pointer}button.menu-toggle{background-color:transparent;flex-grow:1;border:0;text-align:center}button.menu-toggle:active,button.menu-toggle:focus,button.menu-toggle:hover{background-color:transparent}.has-menu-bar-items button.menu-toggle{flex-grow:0}nav.toggled ul ul.sub-menu{width:100%}.toggled .menu-item-has-children .dropdown-menu-toggle{padding-left:20px}.main-navigation.toggled .main-nav{flex-basis:100%;order:3}.main-navigation.toggled .main-nav>ul{display:block}.main-navigation.toggled .main-nav li{width:100%;text-align:left}.main-navigation.toggled .main-nav ul ul{transition:0s;visibility:hidden;box-shadow:none;border-bottom:1px solid rgba(0,0,0,.05)}.main-navigation.toggled .main-nav ul ul li:last-child>ul{border-bottom:0}.main-navigation.toggled .main-nav ul ul.toggled-on{position:relative;top:0;left:auto!important;right:auto!important;width:100%;pointer-events:auto;height:auto;opacity:1;display:block;visibility:visible;float:none}.main-navigation.toggled .menu-item-has-children .dropdown-menu-toggle{float:right}.mobile-menu-control-wrapper{display:none;margin-left:auto;align-items:center}@media (max-width:768px){a,body,button,input,select,textarea{transition:all 0s ease-in-out}.site-content{flex-direction:column}.container .site-content .content-area{width:auto}.is-right-sidebar.sidebar{width:auto;order:initial}#main{margin-left:0;margin-right:0}body:not(.no-sidebar) #main{margin-bottom:0}.entry-meta{font-size:inherit}.entry-meta a{line-height:1.8em}}body{background-color:#f7f8f9;color:#222}a{color:#1e73be}a:active,a:focus,a:hover{color:#000}.site-header .header-image{width:175px}.generate-back-to-top{font-size:20px;border-radius:3px;position:fixed;bottom:30px;right:30px;line-height:40px;width:40px;text-align:center;z-index:10;transition:opacity .3s ease-in-out;opacity:.1;transform:translateY(1000px)}.generate-back-to-top__show{opacity:1;transform:translateY(0)}.navigation-search{position:absolute;left:-99999px;pointer-events:none;visibility:hidden;z-index:20;width:100%;top:0;transition:opacity .1s ease-in-out;opacity:0}.navigation-search.nav-search-active{left:0;right:0;pointer-events:auto;visibility:visible;opacity:1}.navigation-search input[type=search]{outline:0;border:0;vertical-align:bottom;line-height:1;opacity:.9;width:100%;z-index:20;border-radius:0;-webkit-appearance:none;height:60px}.navigation-search input::-ms-clear{display:none;width:0;height:0}.navigation-search input::-ms-reveal{display:none;width:0;height:0}.navigation-search input::-webkit-search-cancel-button,.navigation-search input::-webkit-search-decoration,.navigation-search input::-webkit-search-results-button,.navigation-search input::-webkit-search-results-decoration{display:none}.gen-sidebar-nav .navigation-search{top:auto;bottom:0}:root{--contrast:#222222;--contrast-2:#575760;--contrast-3:#b2b2be;--base:#f0f0f0;--base-2:#f7f8f9;--base-3:#ffffff;--accent:#1e73be}body,button,input,select,textarea{font-family:"Homemade Apple",handwriting;font-size:16px}body{line-height:1.5}p{margin-bottom:.5em}.main-navigation a,.menu-toggle{font-family:"Open Sans",sans-serif;text-transform:uppercase;font-size:14px}.main-navigation .menu-bar-items{font-size:14px}.main-navigation .main-nav ul ul li a{font-size:13px}.widget-title{font-family:"Open Sans",sans-serif;font-weight:700;text-transform:uppercase;font-size:15px;margin-bottom:10px}.footer-widgets .widget,.sidebar .widget{font-size:12px}.button,button:not(.menu-toggle),html input[type=button],input[type=reset],input[type=submit]{font-family:"Open Sans",sans-serif;font-weight:700;text-transform:uppercase;font-size:11px}h1{font-family:"Open Sans",sans-serif;font-size:24px;margin-bottom:10px}h2{font-weight:700;font-size:18px;margin-bottom:10px}h3{font-weight:700;font-size:16px;margin-bottom:10px}h4{font-weight:700;font-size:15px}.site-info{font-family:"Open Sans",sans-serif;font-weight:700;font-size:14px}.site-header{background-color:#4e4e91}.site-header a{color:#4e4e91}.site-header a:hover{color:#4e4e91}.mobile-menu-control-wrapper .menu-toggle,.mobile-menu-control-wrapper .menu-toggle:focus,.mobile-menu-control-wrapper .menu-toggle:hover{background-color:rgba(0,0,0,.02)}.main-navigation,.main-navigation ul ul{background-color:#4e4e91}.main-navigation .main-nav ul li a,.main-navigation .menu-bar-items,.main-navigation .menu-toggle{color:#fff}.main-navigation .main-nav ul li.sfHover:not([class*=current-menu-])>a,.main-navigation .main-nav ul li:not([class*=current-menu-]):focus>a,.main-navigation .main-nav ul li:not([class*=current-menu-]):hover>a,.main-navigation .menu-bar-item.sfHover>a,.main-navigation .menu-bar-item:hover>a{color:#fff;background-color:#4e4e91}button.menu-toggle:focus,button.menu-toggle:hover{color:#fff}.main-navigation .main-nav ul li[class*=current-menu-]>a{color:#fff;background-color:#4e4e91}.main-navigation .main-nav ul li.search-item.active>a,.main-navigation .menu-bar-items .search-item.active>a,.navigation-search input[type=search],.navigation-search input[type=search]:active,.navigation-search input[type=search]:focus{color:#fff;background-color:#4e4e91}.main-navigation ul ul{background-color:#eaeaea}.main-navigation .main-nav ul ul li a{color:#191919}.main-navigation .main-nav ul ul li.sfHover:not([class*=current-menu-])>a,.main-navigation .main-nav ul ul li:not([class*=current-menu-]):focus>a,.main-navigation .main-nav ul ul li:not([class*=current-menu-]):hover>a{color:#0b6bbf;background-color:#eaeaea}.main-navigation .main-nav ul ul li[class*=current-menu-]>a{color:#7a8896;background-color:#1e72bd}.separate-containers .inside-article{background-color:#fff}.entry-header h1{color:var(--base-3)}.entry-title a{color:var(--base-3)}.entry-title a:hover{color:var(--contrast-3)}.entry-meta{color:#595959}.entry-meta a:hover{color:var(--contrast-3)}h2{color:var(--base-3)}h3{color:var(--base-3)}h4{color:var(--base-3)}.sidebar .widget{background-color:#fff}.footer-widgets{color:#f9f9f9;background-color:#55555e}.footer-widgets a{color:#f7f8f9}.footer-widgets a:hover{color:var(--contrast)}.footer-widgets .widget-title{color:var(--base-3)}.site-info{color:#f7f8f9;background-color:#55555e}.site-info a{color:#f7f8f9}.site-info a:hover{color:#d3d3d3}input[type=email],input[type=number],input[type=password],input[type=search],input[type=tel],input[type=text],input[type=url],select,textarea{color:#666;background-color:#fafafa;border-color:#ccc}input[type=email]:focus,input[type=number]:focus,input[type=password]:focus,input[type=search]:focus,input[type=tel]:focus,input[type=text]:focus,input[type=url]:focus,select:focus,textarea:focus{color:#666;background-color:#fff;border-color:#bfbfbf}a.button,button,html input[type=button],input[type=reset],input[type=submit]{color:var(--contrast);background-color:rgba(106,106,149,.24)}a.button:focus,a.button:hover,button:focus,button:hover,html input[type=button]:focus,html input[type=button]:hover,input[type=reset]:focus,input[type=reset]:hover,input[type=submit]:focus,input[type=submit]:hover{color:var(--accent);background-color:#e4a605}a.generate-back-to-top{background-color:rgba(0,0,0,.4);color:#f7f8f9}a.generate-back-to-top:focus,a.generate-back-to-top:hover{background-color:#f7f8f9;color:#1e72bd}.nav-below-header .main-navigation .inside-navigation.grid-container{padding:0 25px}.separate-containers .inside-article{padding:15px 50px}.sidebar .widget,.site-main>*,.widget-area .main-navigation{margin-bottom:5px}.separate-containers .site-main{margin:5px}.separate-containers .featured-image{margin-top:5px}.separate-containers .inside-right-sidebar{margin-top:5px;margin-bottom:5px}.main-navigation .main-nav ul li a,.main-navigation .menu-bar-item>a,.menu-toggle{padding-left:15px;padding-right:15px;line-height:50px}.main-navigation .main-nav ul ul li a{padding:12px 15px}.navigation-search input[type=search]{height:50px}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:15px}.menu-item-has-children .dropdown-menu-toggle{padding-right:15px}.menu-item-has-children ul .dropdown-menu-toggle{padding-top:12px;padding-bottom:12px;margin-top:-12px}.rtl .main-navigation .main-nav ul li.menu-item-has-children>a{padding-right:15px}.widget-area .widget{padding:10px}.footer-widgets-container{padding:10px}.inside-site-info{padding:10px}.is-right-sidebar{width:30%}.site-content .content-area{width:70%}.main-navigation .main-nav ul li a,.main-navigation .menu-bar-item>a,.menu-toggle{transition:line-height .3s ease}.sticky-enabled .gen-sidebar-nav.is_stuck .main-navigation{margin-bottom:0}.sticky-enabled .gen-sidebar-nav.is_stuck{z-index:500}.sticky-enabled .main-navigation.is_stuck{box-shadow:0 2px 2px -2px rgba(0,0,0,.2)}.navigation-stick:not(.gen-sidebar-nav){left:0;right:0;width:100%!important}.main-navigation.has-sticky-branding:not(.grid-container) .inside-navigation:not(.grid-container) .navigation-branding{margin-left:10px}h1.entry-title{font-weight:700;font-size:20px}h2.entry-title{font-weight:700;font-size:18px}@media (max-width:1024px){.main-navigation .menu-bar-items,.main-navigation .menu-toggle,.main-navigation:not(.slideout-navigation) a{font-size:14px}.main-navigation:not(.slideout-navigation) .main-nav ul ul li a{font-size:13px}}.entry-content:not(:first-child),footer.entry-meta{margin-top:.5em}.post-image-aligned-center .featured-image{text-align:center}.post-image-below-header.post-image-aligned-center .inside-article .featured-image{margin-top:2em}@media (max-width:768px){h1{font-size:24px}h2{font-size:18px}h3{font-size:16px}h4{font-size:15px}.main-navigation .menu-bar-item.sfHover>a,.main-navigation .menu-bar-item:hover>a{background:0 0;color:#fff}.separate-containers .inside-article{padding:10px}.widget-area .widget{padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px}.footer-widgets-container{padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px}.inside-site-info{padding-right:30px;padding-left:30px}.main-navigation .menu-toggle,.sidebar-nav-mobile:not(#sticky-placeholder){display:block}.gen-sidebar-nav,.main-navigation ul,.main-navigation:not(.slideout-navigation):not(.toggled) .main-nav>ul{display:none}.nav-align-center .inside-navigation{justify-content:space-between}h1.entry-title{font-size:20px}h2.entry-title{font-size:18px}.main-navigation .menu-bar-items,.main-navigation .menu-toggle,.main-navigation:not(.slideout-navigation) a{font-size:14px}.main-navigation:not(.slideout-navigation) .main-nav ul ul li a{font-size:13px}body:not(.post-image-aligned-center) .featured-image,body:not(.post-image-aligned-center) .inside-article .featured-image{margin-right:0;margin-left:0;float:none;text-align:center}}.navigation-branding,.site-logo.mobile-header-logo{display:flex;align-items:center;order:0;margin-right:10px}.navigation-branding img,.site-logo.mobile-header-logo img{position:relative;padding:10px 0;display:block;transition:height .3s ease}.main-navigation.mobile-header-navigation{display:none;float:none;margin-bottom:0}.mobile-header-navigation.is_stuck{box-shadow:0 2px 2px -2px rgba(0,0,0,.2)}.main-navigation .menu-toggle{flex-grow:1;width:auto}.main-navigation.has-branding .menu-toggle,.main-navigation.has-sticky-branding.navigation-stick .menu-toggle{flex-grow:0;padding-right:20px;order:2}.main-navigation:not(.slideout-navigation) .mobile-bar-items+.menu-toggle{text-align:left}.main-navigation.has-sticky-branding:not(.has-branding):not(.navigation-stick) .navigation-branding{display:none}.main-navigation.has-branding:not([class*=nav-align-]):not(.mobile-header-navigation) .inside-navigation,.main-navigation.has-sticky-branding.navigation-stick:not([class*=nav-align-]):not(.mobile-header-navigation) .inside-navigation{justify-content:flex-start}.main-navigation.has-branding:not([class*=nav-align-]):not(.mobile-header-navigation) .menu-bar-items,.main-navigation.has-sticky-branding.navigation-stick:not([class*=nav-align-]):not(.mobile-header-navigation) .menu-bar-items{margin-left:auto}.mobile-header-navigation.has-menu-bar-items .mobile-header-logo{margin-right:auto}.rtl .navigation-branding,.rtl .site-logo.mobile-header-logo{margin-left:auto;margin-right:0}.rtl .nav-align-center .navigation-branding,.rtl .nav-align-center .site-logo.mobile-header-logo{margin-left:10px}.rtl .mobile-header-navigation.has-menu-bar-items .site-logo{margin-left:auto}.main-navigation.has-branding .inside-navigation.grid-container,.main-navigation.has-branding.grid-container .inside-navigation:not(.grid-container){padding:0 50px}.main-navigation.has-branding:not(.grid-container) .inside-navigation:not(.grid-container) .navigation-branding{margin-left:10px}.main-navigation .sticky-navigation-logo,.main-navigation.navigation-stick .site-logo:not(.mobile-header-logo){display:none}.main-navigation.navigation-stick .sticky-navigation-logo{display:block}.navigation-branding img,.site-logo.mobile-header-logo img{height:50px;width:auto}@media (max-width:768px){#site-navigation,#sticky-navigation,.site-header{display:none!important;opacity:0}#mobile-header{display:block!important;width:100%!important}#mobile-header .main-nav>ul{display:none}#mobile-header .menu-toggle,#mobile-header .mobile-bar-items,#mobile-header.toggled .main-nav>ul{display:block}#mobile-header .main-nav{-ms-flex:0 0 100%;flex:0 0 100%;-webkit-box-ordinal-group:5;-ms-flex-order:4;order:4}.main-navigation.has-branding.nav-align-center .menu-bar-items,.main-navigation.has-sticky-branding.navigation-stick.nav-align-center .menu-bar-items{margin-left:auto}.navigation-branding{margin-right:auto;margin-left:10px}.mobile-header-navigation .site-logo{margin-left:10px}.main-navigation.has-branding .inside-navigation.grid-container{padding:0}}@font-face{font-family:Lato;font-style:italic;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/lato/v25/S6u8w4BMUTPHjxsAUi-qJCY.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Lato;font-style:italic;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/lato/v25/S6u8w4BMUTPHjxsAXC-q.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Lato;font-style:italic;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/lato/v25/S6u_w4BMUTPHjxsI5wq_FQft1dw.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Lato;font-style:italic;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/lato/v25/S6u_w4BMUTPHjxsI5wq_Gwft.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Lato;font-style:italic;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/lato/v25/S6u_w4BMUTPHjxsI3wi_FQft1dw.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Lato;font-style:italic;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/lato/v25/S6u_w4BMUTPHjxsI3wi_Gwft.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Lato;font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Lato;font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Lato;font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwaPGR_p.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Lato;font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Lato;font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh50XSwaPGR_p.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Lato;font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh50XSwiPGQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}.entry-title{margin-bottom:0}h1,h2,h3,h4{background:rgba(0,0,0,.4);padding:5px;border-radius:10px;box-shadow:rgba(23,43,99,.3) 0 7px 28px}.sticky-icon{position:fixed;right:0;bottom:150px}.sticky-icon-whatsapp{position:fixed;right:0;bottom:100px}.progress-container{width:100%;height:4px;order:5}.progress-bar{height:4px;background:#f2ec1c;width:0%}.inside-right-sidebar{height:100%}.inside-right-sidebar>:last-child{position:sticky;top:80px}.table-responsive table{border-collapse:collapse;border-spacing:0;table-layout:auto;padding:0;width:100%;max-width:100%;margin:0 auto 20px}.table-responsive{overflow-x:auto;min-height:.01%;margin-bottom:20px}.table-responsive::-webkit-scrollbar{width:10px;height:10px}.table-responsive::-webkit-scrollbar-thumb{background:#ddd;border-radius:2px}.table-responsive::-webkit-scrollbar-track-piece{background:#fff}@media (max-width:992px){.table-responsive table{width:auto!important;margin:0 auto 15px!important}}@media screen and (max-width:767px){.table-responsive{width:100%;margin-bottom:15px;overflow-y:hidden;-ms-overflow-style:-ms-autohiding-scrollbar}.table-responsive::-webkit-scrollbar{width:5px;height:5px}}</style><link rel="preload" data-rocket-preload as="image" href="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/09/22130952/250x250.jpg" imagesrcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/09/22130952/250x250.jpg 500w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/09/22130952/250x250-300x300.jpg 300w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/09/22130952/250x250-150x150.jpg 150w" imagesizes="auto, (max-width: 500px) 100vw, 500px" fetchpriority="high">
+	<meta name="description" content="UP Scholarship 2026-27 revised dates: Class 9 &amp; 11 fresh till Oct 17, Dashmottar fresh till Oct 31. Check income limit, amount, OTR steps and payment dates." />
+	<link rel="canonical" href="https://www.buddy4study.com/article/up-scholarship" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="UP Scholarship 2026-27: Revised Last Date, Status, Amount" />
+	<meta property="og:description" content="UP Scholarship 2026-27 revised dates: Class 9 &amp; 11 fresh till Oct 17, Dashmottar fresh till Oct 31. Check income limit, amount, OTR steps and payment dates." />
+	<meta property="og:url" content="https://www.buddy4study.com/article/up-scholarship" />
+	<meta property="og:site_name" content="Scholarship Alerts 🔔" />
+	<meta property="article:publisher" content="https://www.facebook.com/buddy4study/" />
+	<meta property="article:published_time" content="2026-07-30T11:40:28+00:00" />
+	<meta property="article:modified_time" content="2026-10-17T06:50:23+00:00" />
+	<meta property="og:image" content="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/15151700/UP-Scholarship_Banner.jpg" />
+	<meta property="og:image:width" content="767" />
+	<meta property="og:image:height" content="350" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="Puneet Hooda" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@buddy4study" />
+	<meta name="twitter:site" content="@buddy4study" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Puneet Hooda" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="10 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/www.buddy4study.com\/article\/up-scholarship#article","isPartOf":{"@id":"https:\/\/www.buddy4study.com\/article\/up-scholarship"},"author":{"name":"Puneet Hooda","@id":"https:\/\/www.buddy4study.com\/article\/#\/schema\/person\/39c74df8e2348568d4f28a58011b511b"},"headline":"UP Scholarship 2026-27: Revised Last Date, Eligibility, Amount and Status","datePublished":"2026-07-30T11:40:28+00:00","dateModified":"2026-10-17T06:50:23+00:00","mainEntityOfPage":{"@id":"https:\/\/www.buddy4study.com\/article\/up-scholarship"},"wordCount":1701,"publisher":{"@id":"https:\/\/www.buddy4study.com\/article\/#organization"},"image":{"@id":"https:\/\/www.buddy4study.com\/article\/up-scholarship#primaryimage"},"thumbnailUrl":"https:\/\/d2w7l1p59qkl0r.cloudfront.net\/article\/wp-content\/uploads\/2026\/07\/15151700\/UP-Scholarship_Banner.jpg","articleSection":["UP Scholarship"],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https:\/\/www.buddy4study.com\/article\/up-scholarship","url":"https:\/\/www.buddy4study.com\/article\/up-scholarship","name":"UP Scholarship 2026-27: Revised Last Date, Status, Amount","isPartOf":{"@id":"https:\/\/www.buddy4study.com\/article\/#website"},"primaryImageOfPage":{"@id":"https:\/\/www.buddy4study.com\/article\/up-scholarship#primaryimage"},"image":{"@id":"https:\/\/www.buddy4study.com\/article\/up-scholarship#primaryimage"},"thumbnailUrl":"https:\/\/d2w7l1p59qkl0r.cloudfront.net\/article\/wp-content\/uploads\/2026\/07\/15151700\/UP-Scholarship_Banner.jpg","datePublished":"2026-07-30T11:40:28+00:00","dateModified":"2026-10-17T06:50:23+00:00","description":"UP Scholarship 2026-27 revised dates: Class 9 & 11 fresh till Oct 17, Dashmottar fresh till Oct 31. Check income limit, amount, OTR steps and payment dates.","breadcrumb":{"@id":"https:\/\/www.buddy4study.com\/article\/up-scholarship#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/www.buddy4study.com\/article\/up-scholarship"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/www.buddy4study.com\/article\/up-scholarship#primaryimage","url":"https:\/\/d2w7l1p59qkl0r.cloudfront.net\/article\/wp-content\/uploads\/2026\/07\/15151700\/UP-Scholarship_Banner.jpg","contentUrl":"https:\/\/d2w7l1p59qkl0r.cloudfront.net\/article\/wp-content\/uploads\/2026\/07\/15151700\/UP-Scholarship_Banner.jpg","width":767,"height":350,"caption":"UP Scholarship 2026-27 - Last Date, Apply Online, Eligibility, Status"},{"@type":"BreadcrumbList","@id":"https:\/\/www.buddy4study.com\/article\/up-scholarship#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"UP Scholarship","item":"https:\/\/www.buddy4study.com\/article\/category\/up-scholarship"},{"@type":"ListItem","position":2,"name":"UP Scholarship 2026-27: Revised Last Date, Eligibility, Amount and Status"}]},{"@type":"WebSite","@id":"https:\/\/www.buddy4study.com\/article\/#website","url":"https:\/\/www.buddy4study.com\/article\/","name":"Scholarship Alerts 🔔","description":"","publisher":{"@id":"https:\/\/www.buddy4study.com\/article\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.buddy4study.com\/article\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/www.buddy4study.com\/article\/#organization","name":"Buddy4study","url":"https:\/\/www.buddy4study.com\/article\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/www.buddy4study.com\/article\/#\/schema\/logo\/image\/","url":"https:\/\/d2w7l1p59qkl0r.cloudfront.net\/article\/wp-content\/uploads\/2025\/07\/11083332\/cropped-cropped-Buddy4Study-white-Logo-2.0.png","contentUrl":"https:\/\/d2w7l1p59qkl0r.cloudfront.net\/article\/wp-content\/uploads\/2025\/07\/11083332\/cropped-cropped-Buddy4Study-white-Logo-2.0.png","width":300,"height":78,"caption":"Buddy4study"},"image":{"@id":"https:\/\/www.buddy4study.com\/article\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/buddy4study\/","https:\/\/x.com\/buddy4study","https:\/\/www.instagram.com\/Buddy4StudyOfficial\/","https:\/\/www.linkedin.com\/company\/buddy4study-com","https:\/\/in.pinterest.com\/Buddy4StudyOfficial\/","https:\/\/www.youtube.com\/user\/buddy4study","https:\/\/t.me\/buddy4study"]},{"@type":"Person","@id":"https:\/\/www.buddy4study.com\/article\/#\/schema\/person\/39c74df8e2348568d4f28a58011b511b","name":"Puneet Hooda","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/secure.gravatar.com\/avatar\/4adda88dc4ed5f63a392773449f0d04559b17af8641715408b87fff3c8bec074?s=96&d=mm&r=g","url":"https:\/\/secure.gravatar.com\/avatar\/4adda88dc4ed5f63a392773449f0d04559b17af8641715408b87fff3c8bec074?s=96&d=mm&r=g","contentUrl":"https:\/\/secure.gravatar.com\/avatar\/4adda88dc4ed5f63a392773449f0d04559b17af8641715408b87fff3c8bec074?s=96&d=mm&r=g","caption":"Puneet Hooda"},"url":"https:\/\/www.buddy4study.com\/article\/author\/puneet-hooda"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<style id="wp-img-auto-sizes-contain-inline-css"></style>
+
+<style id="wp-block-library-inline-css"></style>
+<style id="classic-theme-styles-inline-css"></style>
+
+<style id="global-styles-inline-css"></style>
+
+
+
+<style id="generate-style-inline-css"></style>
+
+
+<style id="generate-navigation-branding-inline-css"></style>
+<style id="rocket-lazyload-inline-css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://www.buddy4study.com/article/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}.wp-embed-responsive .wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+/*# sourceURL=rocket-lazyload-inline-css */
+</style>
+<script type="text/rocketlazyloadscript" id="jquery-core-js" data-rocket-src="https://www.buddy4study.com/article/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="jquery-migrate-js" data-rocket-src="https://www.buddy4study.com/article/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" data-rocket-defer defer></script>
+    	<script type="text/rocketlazyloadscript" id="feedify_webscript">
+			var feedify = feedify || {};
+			window.feedify_options={fedify_url:"https://app.feedify.net/",pkey:"BMSWrT/VW1hry4KrRua4XigWpG7trsZ8VW1I7L8AVhoL966PngPn3QWV+PUiLr2UfeWjdRX3tR3zPHKmsvbzkxw=",sw:"/article/wp-content/plugins/push-notification-by-feedify/sdk_files",scope:"/article/wp-content/plugins/push-notification-by-feedify/sdk_files/push/"};
+			(function (window, document){
+				function addScript( script_url ){
+					var s = document.createElement('script');
+					s.type = 'text/javascript';
+					s.src = script_url;
+					document.getElementsByTagName('head')[0].appendChild(s);
+				}
+				addScript('https://cdn.feedify.net/getjs/feedbackembad-min-3.0.js');
+
+				
+			})(window, document);
+		</script>
+        <!-- Google tag (gtag.js) -->
+<script type="text/rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-3KT4Z611HG"></script>
+<script type="text/rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3KT4Z611HG');
+</script><link rel="icon" href="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2022/02/04140808/cropped-B4S-Icon-512x512-1-2-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2022/02/04140808/cropped-B4S-Icon-512x512-1-2-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2022/02/04140808/cropped-B4S-Icon-512x512-1-2-180x180.png" />
+<meta name="msapplication-TileImage" content="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2022/02/04140808/cropped-B4S-Icon-512x512-1-2-270x270.png" />
+<style id="wp-custom-css"></style>
+
+
+<style></style>
+
+    <noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><meta name="generator" content="WP Rocket 3.23.3.3" data-wpr-features="wpr_remove_unused_css wpr_delay_js wpr_defer_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_preconnect_external_domains wpr_oci wpr_minify_css wpr_cdn wpr_preload_links wpr_desktop" /></head>
+
+<body class="wp-singular post-template-default single single-post postid-489 single-format-standard wp-custom-logo wp-embed-responsive wp-theme-generatepress post-image-below-header post-image-aligned-center sticky-menu-fade sticky-enabled desktop-sticky-menu mobile-header mobile-header-logo right-sidebar nav-below-header separate-containers nav-search-enabled header-aligned-center dropdown-hover featured-image-active" itemtype="https://schema.org/Blog" itemscope>
+	<a class="screen-reader-text skip-link" href="#content" title="Skip to content">Skip to content</a>		<nav id="mobile-header" itemtype="https://schema.org/SiteNavigationElement" itemscope class="main-navigation mobile-header-navigation has-branding has-menu-bar-items">
+			<div class="inside-navigation grid-container grid-parent">
+				<form method="get" class="search-form navigation-search" action="https://www.buddy4study.com/article/">
+					<input type="search" class="search-field" value="" name="s" title="Search" />
+				</form><div class="site-logo mobile-header-logo">
+						<a href="https://www.buddy4study.com/?ref=article_header" title="Scholarship Alerts 🔔" rel="home">
+							<img src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2025/07/11083332/cropped-cropped-Buddy4Study-white-Logo-2.0.png" alt="Scholarship Alerts 🔔" class="is-logo-image" width="300" height="78" />
+						</a>
+					</div>					<button class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false">
+						<span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" /></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" /></svg></span><span class="screen-reader-text">Menu</span>					</button>
+					<div id="mobile-menu" class="main-nav"><ul id="menu-main" class=" menu sf-menu"><li id="menu-item-1294" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1294"><a href="https://www.buddy4study.com">Home</a></li>
+<li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-1300"><a href="https://www.buddy4study.com/scholarships">Scholarships<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow"><svg viewBox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z" /></svg></span></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-4250" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4250"><a href="https://www.buddy4study.com/scholarship-result">Scholarship Result</a></li>
+	<li id="menu-item-2478" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-2478"><a href="https://www.buddy4study.com/article/state-scholarships">State Scholarships<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow-right"><svg viewBox="0 0 192 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M178.425 256.001c0 2.266-1.133 4.815-2.832 6.515L43.599 394.509c-1.7 1.7-4.248 2.833-6.514 2.833s-4.816-1.133-6.515-2.833l-14.163-14.162c-1.699-1.7-2.832-3.966-2.832-6.515 0-2.266 1.133-4.815 2.832-6.515l111.317-111.316L16.407 144.685c-1.699-1.7-2.832-4.249-2.832-6.515s1.133-4.815 2.832-6.515l14.163-14.162c1.7-1.7 4.249-2.833 6.515-2.833s4.815 1.133 6.514 2.833l131.994 131.993c1.7 1.7 2.832 4.249 2.832 6.515z" fill-rule="nonzero" /></svg></span></span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-2532" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2532"><a href="https://www.buddy4study.com/article/top-scholarships-for-students-of-andhra-pradesh">Andhra Pradesh</a></li>
+		<li id="menu-item-2518" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2518"><a href="https://www.buddy4study.com/article/bihar-scholarship">Bihar</a></li>
+		<li id="menu-item-2535" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2535"><a href="https://www.buddy4study.com/article/delhi-scholarship">Delhi</a></li>
+		<li id="menu-item-2530" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2530"><a href="https://www.buddy4study.com/article/gujarat-scholarship">Gujarat</a></li>
+		<li id="menu-item-2543" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2543"><a href="https://www.buddy4study.com/article/jharkhand-scholarship">Jharkhand</a></li>
+		<li id="menu-item-2545" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2545"><a href="https://www.buddy4study.com/article/jammu-and-kashmir-scholarship">Jammu &#038; Kashmir</a></li>
+		<li id="menu-item-2528" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2528"><a href="https://www.buddy4study.com/article/top-scholarships-for-students-of-karnataka">Karnataka</a></li>
+		<li id="menu-item-2522" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2522"><a href="https://www.buddy4study.com/article/mp-scholarship">Madhya Pradesh</a></li>
+		<li id="menu-item-2513" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2513"><a href="https://www.buddy4study.com/article/maharashtra-scholarship">Maharashtra</a></li>
+		<li id="menu-item-2526" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2526"><a href="https://www.buddy4study.com/article/rajasthan-scholarship">Rajasthan</a></li>
+		<li id="menu-item-2524" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2524"><a href="https://www.buddy4study.com/article/tn-scholarship">Tamil Nadu</a></li>
+		<li id="menu-item-2540" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2540"><a href="https://www.buddy4study.com/article/telangana-scholarship">Telangana</a></li>
+		<li id="menu-item-2515" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-2515"><a href="https://www.buddy4study.com/article/up-scholarship" aria-current="page">Uttar Pradesh</a></li>
+		<li id="menu-item-2537" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2537"><a href="https://www.buddy4study.com/article/uttarakhand-scholarship">Uttarakhand</a></li>
+		<li id="menu-item-2520" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2520"><a href="https://www.buddy4study.com/article/west-bengal-scholarship">West Bengal</a></li>
+	</ul>
+</li>
+	<li id="menu-item-7634" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-7634"><a href="https://www.buddy4study.com/scholarships/all-india">Government<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow-right"><svg viewBox="0 0 192 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M178.425 256.001c0 2.266-1.133 4.815-2.832 6.515L43.599 394.509c-1.7 1.7-4.248 2.833-6.514 2.833s-4.816-1.133-6.515-2.833l-14.163-14.162c-1.699-1.7-2.832-3.966-2.832-6.515 0-2.266 1.133-4.815 2.832-6.515l111.317-111.316L16.407 144.685c-1.699-1.7-2.832-4.249-2.832-6.515s1.133-4.815 2.832-6.515l14.163-14.162c1.7-1.7 4.249-2.833 6.515-2.833s4.815 1.133 6.514 2.833l131.994 131.993c1.7 1.7 2.832 4.249 2.832 6.515z" fill-rule="nonzero" /></svg></span></span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-7630" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7630"><a href="https://www.buddy4study.com/article/nsp">NSP Scholarship</a></li>
+		<li id="menu-item-11956" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-11956"><a href="https://www.buddy4study.com/article/up-scholarship" aria-current="page">UP Scholarship</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1301" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1301"><a href="https://www.buddy4study.com/scholarships/class-1-to-8">Upto Class 8</a></li>
+	<li id="menu-item-1302" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1302"><a href="https://www.buddy4study.com/scholarships/class-9-to-10-pre-matric">Pre Matric</a></li>
+	<li id="menu-item-1303" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1303"><a href="https://www.buddy4study.com/scholarships/class-11-12-post-matric">Post Matric</a></li>
+	<li id="menu-item-1304" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1304"><a href="https://www.buddy4study.com/scholarships/graduation">Graduation</a></li>
+</ul>
+</li>
+<li id="menu-item-4255" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4255"><a href="https://www.buddy4study.com/psychometric-test">Psychometric Test</a></li>
+<li id="menu-item-4251" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4251"><a href="https://www.buddy4loan.com/article/" target="_blank" rel="nofollow">Education Loan<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow"><svg viewBox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z" /></svg></span></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-4254" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4254"><a href="https://www.buddy4study.com/education-loan-emi">Education Loan EMI Calculator</a></li>
+</ul>
+</li>
+<li id="menu-item-1305" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-1305"><a href="https://www.buddy4study.com/article/">Articles<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow"><svg viewBox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z" /></svg></span></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-1306" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1306"><a href="https://www.buddy4study.com/article/category/scholarships">Scholarships</a></li>
+	<li id="menu-item-12651" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12651"><a href="https://www.buddy4study.com/article/category/fellowships">Fellowships</a></li>
+	<li id="menu-item-12654" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12654"><a href="https://www.buddy4study.com/article/category/internship">Internship</a></li>
+	<li id="menu-item-16882" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16882"><a href="https://www.buddy4study.com/article/category/career">Career</a></li>
+	<li id="menu-item-12652" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12652"><a href="https://www.buddy4study.com/article/category/olympiad">Olympiad</a></li>
+	<li id="menu-item-1308" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1308"><a href="https://www.buddy4study.com/article/category/scholar-story">Scholar Story</a></li>
+	<li id="menu-item-1310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1310"><a href="https://www.buddy4study.com/article/category/study-abroad">Study Abroad</a></li>
+	<li id="menu-item-1309" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1309"><a href="https://www.buddy4study.com/article/category/education-loan">Education Loan</a></li>
+	<li id="menu-item-10781" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10781"><a href="https://www.buddy4study.com/article/category/career">Career</a></li>
+	<li id="menu-item-16883" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16883"><a href="https://www.buddy4study.com/article/category/admission">Admission</a></li>
+	<li id="menu-item-10782" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10782"><a href="https://www.buddy4study.com/article/category/certificate">Certificate</a></li>
+	<li id="menu-item-12656" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12656"><a href="https://www.buddy4study.com/article/category/digilocker">DigiLocker</a></li>
+	<li id="menu-item-4799" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4799"><a href="https://hindi.buddy4study.com/" target="_blank">हिंदी<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow-right"><svg viewBox="0 0 192 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M178.425 256.001c0 2.266-1.133 4.815-2.832 6.515L43.599 394.509c-1.7 1.7-4.248 2.833-6.514 2.833s-4.816-1.133-6.515-2.833l-14.163-14.162c-1.699-1.7-2.832-3.966-2.832-6.515 0-2.266 1.133-4.815 2.832-6.515l111.317-111.316L16.407 144.685c-1.699-1.7-2.832-4.249-2.832-6.515s1.133-4.815 2.832-6.515l14.163-14.162c1.7-1.7 4.249-2.833 6.515-2.833s4.815 1.133 6.514 2.833l131.994 131.993c1.7 1.7 2.832 4.249 2.832 6.515z" fill-rule="nonzero" /></svg></span></span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-4802" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4802"><a href="https://hindi.buddy4study.com/national-scholarship-portal" target="_blank">नैशनल स्कॉलरशिप पोर्टल</a></li>
+		<li id="menu-item-4803" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4803"><a href="https://hindi.buddy4study.com/scholarship-for-bihar-students" target="_blank">बिहार छात्रवृत्ति</a></li>
+		<li id="menu-item-4804" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4804"><a href="https://hindi.buddy4study.com/scholarship-for-madhya-pradesh-students" target="_blank">मध्य प्रदेश छात्रवृत्ति</a></li>
+		<li id="menu-item-4805" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4805"><a href="https://hindi.buddy4study.com/scholarship-for-up-students" target="_blank">यूपी स्कॉलरशिप</a></li>
+		<li id="menu-item-4806" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4806"><a href="https://hindi.buddy4study.com/scholarship-for-rajasthan-students" target="_blank">राजस्थान छात्रवृत्ति</a></li>
+		<li id="menu-item-12658" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12658"><a href="https://www.vhtc.org/" target="_blank">VHTC</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-2724" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2724"><a href="https://www.buddy4study.com/register">Register</a></li>
+</ul></div><div class="menu-bar-items"><span class="menu-bar-item search-item"><a aria-label="Open Search Bar" href="#"><span class="gp-icon icon-search"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path fill-rule="evenodd" clip-rule="evenodd" d="M208 48c-88.366 0-160 71.634-160 160s71.634 160 160 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9.366 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L337.238 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 208z" /></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" /></svg></span></a></span></div>			</div><!-- .inside-navigation -->
+		</nav><!-- #site-navigation -->
+				<nav class="has-branding has-sticky-branding main-navigation nav-align-center has-menu-bar-items sub-menu-right" id="site-navigation" aria-label="Primary"  itemtype="https://schema.org/SiteNavigationElement" itemscope>
+			<div class="inside-navigation">
+				<div class="navigation-branding"><div class="site-logo">
+						<a href="https://www.buddy4study.com/?ref=article_header" title="Scholarship Alerts 🔔" rel="home">
+							<img  class="header-image is-logo-image" alt="Scholarship Alerts 🔔" src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2025/07/11083332/cropped-cropped-Buddy4Study-white-Logo-2.0.png" title="Scholarship Alerts 🔔" width="300" height="78" />
+						</a>
+					</div><div class="sticky-navigation-logo">
+					<a href="https://www.buddy4study.com/?ref=article_header" title="Scholarship Alerts 🔔" rel="home">
+						<img src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2025/07/11083332/cropped-cropped-Buddy4Study-white-Logo-2.0.png" class="is-logo-image" alt="Scholarship Alerts 🔔" width="300" height="78" />
+					</a>
+				</div></div><form method="get" class="search-form navigation-search" action="https://www.buddy4study.com/article/">
+					<input type="search" class="search-field" value="" name="s" title="Search" />
+				</form><div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+</div>
+
+<script type="text/rocketlazyloadscript">
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" /></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" /></svg></span><span class="screen-reader-text">Menu</span>				</button>
+				<div id="primary-menu" class="main-nav"><ul id="menu-main-1" class=" menu sf-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1294"><a href="https://www.buddy4study.com">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-1300"><a href="https://www.buddy4study.com/scholarships">Scholarships<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow"><svg viewBox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z" /></svg></span></span></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4250"><a href="https://www.buddy4study.com/scholarship-result">Scholarship Result</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-2478"><a href="https://www.buddy4study.com/article/state-scholarships">State Scholarships<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow-right"><svg viewBox="0 0 192 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M178.425 256.001c0 2.266-1.133 4.815-2.832 6.515L43.599 394.509c-1.7 1.7-4.248 2.833-6.514 2.833s-4.816-1.133-6.515-2.833l-14.163-14.162c-1.699-1.7-2.832-3.966-2.832-6.515 0-2.266 1.133-4.815 2.832-6.515l111.317-111.316L16.407 144.685c-1.699-1.7-2.832-4.249-2.832-6.515s1.133-4.815 2.832-6.515l14.163-14.162c1.7-1.7 4.249-2.833 6.515-2.833s4.815 1.133 6.514 2.833l131.994 131.993c1.7 1.7 2.832 4.249 2.832 6.515z" fill-rule="nonzero" /></svg></span></span></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2532"><a href="https://www.buddy4study.com/article/top-scholarships-for-students-of-andhra-pradesh">Andhra Pradesh</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2518"><a href="https://www.buddy4study.com/article/bihar-scholarship">Bihar</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2535"><a href="https://www.buddy4study.com/article/delhi-scholarship">Delhi</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2530"><a href="https://www.buddy4study.com/article/gujarat-scholarship">Gujarat</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2543"><a href="https://www.buddy4study.com/article/jharkhand-scholarship">Jharkhand</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2545"><a href="https://www.buddy4study.com/article/jammu-and-kashmir-scholarship">Jammu &#038; Kashmir</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2528"><a href="https://www.buddy4study.com/article/top-scholarships-for-students-of-karnataka">Karnataka</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2522"><a href="https://www.buddy4study.com/article/mp-scholarship">Madhya Pradesh</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2513"><a href="https://www.buddy4study.com/article/maharashtra-scholarship">Maharashtra</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2526"><a href="https://www.buddy4study.com/article/rajasthan-scholarship">Rajasthan</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2524"><a href="https://www.buddy4study.com/article/tn-scholarship">Tamil Nadu</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2540"><a href="https://www.buddy4study.com/article/telangana-scholarship">Telangana</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-2515"><a href="https://www.buddy4study.com/article/up-scholarship" aria-current="page">Uttar Pradesh</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2537"><a href="https://www.buddy4study.com/article/uttarakhand-scholarship">Uttarakhand</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2520"><a href="https://www.buddy4study.com/article/west-bengal-scholarship">West Bengal</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-7634"><a href="https://www.buddy4study.com/scholarships/all-india">Government<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow-right"><svg viewBox="0 0 192 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M178.425 256.001c0 2.266-1.133 4.815-2.832 6.515L43.599 394.509c-1.7 1.7-4.248 2.833-6.514 2.833s-4.816-1.133-6.515-2.833l-14.163-14.162c-1.699-1.7-2.832-3.966-2.832-6.515 0-2.266 1.133-4.815 2.832-6.515l111.317-111.316L16.407 144.685c-1.699-1.7-2.832-4.249-2.832-6.515s1.133-4.815 2.832-6.515l14.163-14.162c1.7-1.7 4.249-2.833 6.515-2.833s4.815 1.133 6.514 2.833l131.994 131.993c1.7 1.7 2.832 4.249 2.832 6.515z" fill-rule="nonzero" /></svg></span></span></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7630"><a href="https://www.buddy4study.com/article/nsp">NSP Scholarship</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-11956"><a href="https://www.buddy4study.com/article/up-scholarship" aria-current="page">UP Scholarship</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1301"><a href="https://www.buddy4study.com/scholarships/class-1-to-8">Upto Class 8</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1302"><a href="https://www.buddy4study.com/scholarships/class-9-to-10-pre-matric">Pre Matric</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1303"><a href="https://www.buddy4study.com/scholarships/class-11-12-post-matric">Post Matric</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1304"><a href="https://www.buddy4study.com/scholarships/graduation">Graduation</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4255"><a href="https://www.buddy4study.com/psychometric-test">Psychometric Test</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4251"><a href="https://www.buddy4loan.com/article/" target="_blank" rel="nofollow">Education Loan<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow"><svg viewBox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z" /></svg></span></span></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4254"><a href="https://www.buddy4study.com/education-loan-emi">Education Loan EMI Calculator</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-1305"><a href="https://www.buddy4study.com/article/">Articles<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow"><svg viewBox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z" /></svg></span></span></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1306"><a href="https://www.buddy4study.com/article/category/scholarships">Scholarships</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12651"><a href="https://www.buddy4study.com/article/category/fellowships">Fellowships</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12654"><a href="https://www.buddy4study.com/article/category/internship">Internship</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16882"><a href="https://www.buddy4study.com/article/category/career">Career</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12652"><a href="https://www.buddy4study.com/article/category/olympiad">Olympiad</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1308"><a href="https://www.buddy4study.com/article/category/scholar-story">Scholar Story</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1310"><a href="https://www.buddy4study.com/article/category/study-abroad">Study Abroad</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1309"><a href="https://www.buddy4study.com/article/category/education-loan">Education Loan</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10781"><a href="https://www.buddy4study.com/article/category/career">Career</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16883"><a href="https://www.buddy4study.com/article/category/admission">Admission</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10782"><a href="https://www.buddy4study.com/article/category/certificate">Certificate</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12656"><a href="https://www.buddy4study.com/article/category/digilocker">DigiLocker</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4799"><a href="https://hindi.buddy4study.com/" target="_blank">हिंदी<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow-right"><svg viewBox="0 0 192 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M178.425 256.001c0 2.266-1.133 4.815-2.832 6.515L43.599 394.509c-1.7 1.7-4.248 2.833-6.514 2.833s-4.816-1.133-6.515-2.833l-14.163-14.162c-1.699-1.7-2.832-3.966-2.832-6.515 0-2.266 1.133-4.815 2.832-6.515l111.317-111.316L16.407 144.685c-1.699-1.7-2.832-4.249-2.832-6.515s1.133-4.815 2.832-6.515l14.163-14.162c1.7-1.7 4.249-2.833 6.515-2.833s4.815 1.133 6.514 2.833l131.994 131.993c1.7 1.7 2.832 4.249 2.832 6.515z" fill-rule="nonzero" /></svg></span></span></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4802"><a href="https://hindi.buddy4study.com/national-scholarship-portal" target="_blank">नैशनल स्कॉलरशिप पोर्टल</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4803"><a href="https://hindi.buddy4study.com/scholarship-for-bihar-students" target="_blank">बिहार छात्रवृत्ति</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4804"><a href="https://hindi.buddy4study.com/scholarship-for-madhya-pradesh-students" target="_blank">मध्य प्रदेश छात्रवृत्ति</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4805"><a href="https://hindi.buddy4study.com/scholarship-for-up-students" target="_blank">यूपी स्कॉलरशिप</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4806"><a href="https://hindi.buddy4study.com/scholarship-for-rajasthan-students" target="_blank">राजस्थान छात्रवृत्ति</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12658"><a href="https://www.vhtc.org/" target="_blank">VHTC</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2724"><a href="https://www.buddy4study.com/register">Register</a></li>
+</ul></div><div class="menu-bar-items"><span class="menu-bar-item search-item"><a aria-label="Open Search Bar" href="#"><span class="gp-icon icon-search"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path fill-rule="evenodd" clip-rule="evenodd" d="M208 48c-88.366 0-160 71.634-160 160s71.634 160 160 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9.366 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L337.238 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 208z" /></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" /></svg></span></a></span></div>			</div>
+		</nav>
+		
+	<div  class="site grid-container container hfeed" id="page">
+				<div  class="site-content" id="content">
+			
+	<div  class="content-area" id="primary">
+		<main class="site-main" id="main">
+			
+<article id="post-489" class="post-489 post type-post status-publish format-standard has-post-thumbnail hentry category-up-scholarship" itemtype="https://schema.org/CreativeWork" itemscope>
+	<div class="inside-article">
+		    <div class="grid-container yoast-breadcrumb">
+        <p id="breadcrumbs"><span><span><a href="https://www.buddy4study.com/article/category/up-scholarship">UP Scholarship</a></span> » <span class="breadcrumb_last" aria-current="page"><strong>UP Scholarship 2026-27: Revised Last Date, Eligibility, Amount and Status</strong></span></span></p>    </div>
+			<header class="entry-header" aria-label="Content">
+				<h1 class="entry-title" itemprop="headline">UP Scholarship 2026-27: Revised Last Date, Eligibility, Amount and Status</h1>		<div class="entry-meta">
+			<span class="posted-on"><time class="entry-date updated-date" datetime="2026-10-17T12:20:23+05:30" itemprop="dateModified">October 17, 2026</time></span> <span class="byline">by <span class="author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope><a class="url fn n" href="https://www.buddy4study.com/article/author/puneet-hooda" title="View all posts by Puneet Hooda" rel="author" itemprop="url"><span class="author-name" itemprop="name">Puneet Hooda</span></a></span></span> 		</div>
+					</header>
+			<div class="featured-image  page-header-image-single ">
+				<img width="767" height="350" src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/15151700/UP-Scholarship_Banner.jpg" class="attachment-full size-full" alt="UP Scholarship 2026-27 - Last Date, Apply Online, Eligibility, Status" itemprop="image" decoding="async" fetchpriority="high" srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/15151700/UP-Scholarship_Banner.jpg 767w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/15151700/UP-Scholarship_Banner-300x137.jpg 300w" sizes="(max-width: 767px) 100vw, 767px" />
+			</div>
+		<div class="entry-content" itemprop="text">
+			<div class="wprt-container"><span style="font-weight: 400;">The UP scholarship application dates 2026 has been revised and Class 9 and 11 fresh applicants can now apply until October 17, 2026. Dashmottar (degree, diploma, ITI, B.Ed and other post-Class 12 courses) fresh applications are open until October 31, 2026.</span></p>
+<p>    <div><p><a href="https://www.buddy4study.com/register?ref=Article_banner1"><span class=" lazy-load-image-background blur lazy-load-image-loaded" style="display: inline-block;"><img src="https://s3-ap-southeast-1.amazonaws.com/buddy4study/blog/uploads/2018/08/16131835/scholarship-registration-3.gif" width="700" height="100" alt="Scholarship Registration and Login" /></span></a></p></div>
+
+    <span style="font-weight: 400;">UP Scholarship is the Uttar Pradesh government&#8217;s scholarship and fee reimbursement scheme for students from Class 9 up to postgraduate, diploma and ITI courses. It is open to General, SC, ST, OBC and Minority students who are permanent residents of Uttar Pradesh and whose family income is within the limit for their category, usually ₹2 lakh or ₹2.5 lakh a year. Applications are made only on the official portal, scholarship.up.gov.in, and the money is paid by DBT to the student&#8217;s Aadhaar-linked bank account.</span></p><script type="text/rocketlazyloadscript" async data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9035382390163181"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9035382390163181"
+     data-ad-slot="3576878071"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script type="text/rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<h2><strong>Uttar Pradesh Scholarship Highlights</strong></h2>
+<table>
+<tbody>
+<tr>
+<td><b>Particular</b></td>
+<td><b>Details</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Scheme</span></td>
+<td><span style="font-weight: 400;">UP Scholarship and Fee Reimbursement Scheme</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Session</span></td>
+<td><span style="font-weight: 400;">2026-27</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Run by</span></td>
+<td><span style="font-weight: 400;">Social Welfare Department (General, SC, ST), Backward Classes Welfare Department (OBC), Minority Welfare Department (Minorities)</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Levels covered</span></td>
+<td>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Pre-Matric (Class 9–10)</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Post-Matric Intermediate (Class 11–12)</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Post-Matric Other Than Intermediate/Dashmottar (UG, PG, diploma, ITI, B.Ed, PhD etc.)</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Post-Matric Other State</span></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Income limit</span></td>
+<td><span style="font-weight: 400;">₹2 lakh to ₹2.5 lakh per year, depending on category and level</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Mandatory</span></td>
+<td><span style="font-weight: 400;">One Time Registration (OTR) with Aadhaar e-KYC; one OTR per student</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Payment</span></td>
+<td><span style="font-weight: 400;">DBT to the student&#8217;s Aadhaar-seeded bank account</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Official portal</span></td>
+<td><span style="font-weight: 400;">https://scholarship.up.gov.in</span></td>
+</tr>
+</tbody>
+</table>
+<h2><strong>UP Scholarship Eligibility Criteria 2026-27</strong></h2>
+<table>
+<tbody>
+<tr>
+<td><b>Criterion</b></td>
+<td><b>Requirement</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Citizenship and domicile</span></td>
+<td><span style="font-weight: 400;">Indian citizen and permanent resident of Uttar Pradesh</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Institution</span></td>
+<td><span style="font-weight: 400;">Studying in a recognised school, college, university or institution</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Category</span></td>
+<td><span style="font-weight: 400;">General, SC, ST, OBC or notified Minority community</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Family income</span></td>
+<td><span style="font-weight: 400;">Within the limit for your category and level (see next section)</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Previous class</span></td>
+<td><span style="font-weight: 400;">Must have passed the previous class (Class 8 for Class 9; Class 10 for Class 11)</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">One scholarship only</span></td>
+<td><span style="font-weight: 400;">Not availing any other scholarship for the same course</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Once per course level</span></td>
+<td><span style="font-weight: 400;">Scholarship is given only once for a course at the same level</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">OTR</span></td>
+<td><span style="font-weight: 400;">Valid One Time Registration on scholarship.up.gov.in</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Bank account</span></td>
+<td><span style="font-weight: 400;">Active account in the student&#8217;s own name, Aadhaar-seeded and enabled for DBT</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Age (General Pre-Matric)</span></td>
+<td><span style="font-weight: 400;">12 to 20 years as on July 1 (per myScheme listing)</span></td>
+</tr>
+</tbody>
+</table>
+<h2><strong>UP Scholarship 2026 Last Date Extended: Revised Deadlines by Category</strong></h2>
+<table>
+<tbody>
+<tr>
+<td><b>Category</b></td>
+<td><b>Who it covers</b></td>
+<td><b>Last Date</b></td>
+<td><b>Status</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Class 10 &amp; 12 – Renewal</span></td>
+<td><span style="font-weight: 400;">Students who got the scholarship in Class 9 or 11</span></td>
+<td><span style="font-weight: 400;">October 15, 2026</span></td>
+<td><span style="font-weight: 400;">Closed</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Class 9 &amp; 11 – Fresh</span></td>
+<td><span style="font-weight: 400;">First-time applicants in Class 9 or 11</span></td>
+<td><span style="font-weight: 400;">October 17, 2026</span></td>
+<td><span style="font-weight: 400;">Open </span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Dashmottar – Renewal</span></td>
+<td><span style="font-weight: 400;">Continuing UG/PG/diploma/ITI students</span></td>
+<td><span style="font-weight: 400;">October 15, 2026</span></td>
+<td><span style="font-weight: 400;">Closed</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Dashmottar – Fresh</span></td>
+<td><span style="font-weight: 400;">First-year (or first-time) post-Class 12 students</span></td>
+<td><span style="font-weight: 400;">October 31, 2026</span></td>
+<td><span style="font-weight: 400;">Open</span></td>
+</tr>
+</tbody>
+</table>
+<h2><strong>UP Government Scholarship for Class 9–12: Revised Timetable 2026-27 </strong></h2>
+<table>
+<tbody>
+<tr>
+<td><b>Step</b></td>
+<td><b>Renewal (Class 10 &amp; 12)</b></td>
+<td><b>Fresh (Class 9 &amp; 11)</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Online application</span></td>
+<td><span style="font-weight: 400;">Till October 15, 2026</span></td>
+<td><span style="font-weight: 400;">Till October 17, 2026</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Final printout</span></td>
+<td><span style="font-weight: 400;">–</span></td>
+<td><span style="font-weight: 400;">Till October 19, 2026</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Hard copy to school</span></td>
+<td><span style="font-weight: 400;">Along with online application</span></td>
+<td><span style="font-weight: 400;">Till October 22, 2026</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">School verification and forwarding (incl. biometric, marks, attendance)</span></td>
+<td><span style="font-weight: 400;">Till October 20, 2026</span></td>
+<td><span style="font-weight: 400;">Till October 26, 2026</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Verification of genuine students by DIOS</span></td>
+<td><span style="font-weight: 400;">Till October 23, 2026</span></td>
+<td><span style="font-weight: 400;">As per schedule</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Payment to bank account</span></td>
+<td><span style="font-weight: 400;">By November 4, 2026</span></td>
+<td><span style="font-weight: 400;">By November 20, 2026</span></td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Dashmottar Scholarship Latest Dates 2026-27 (Post-Matric Other Than Intermediate)</strong></h2>
+<table>
+<tbody>
+<tr>
+<td><b>Step</b></td>
+<td><b>Renewal</b></td>
+<td><b>Fresh</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Online application</span></td>
+<td><span style="font-weight: 400;">Sept 15 – Oct 15, 2026</span></td>
+<td><span style="font-weight: 400;">Sept 15 – Oct 31, 2026</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Final printout</span></td>
+<td><span style="font-weight: 400;">–</span></td>
+<td><span style="font-weight: 400;">Till November 2, 2026</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Hard copy to institution</span></td>
+<td><span style="font-weight: 400;">Till October 15, 2026</span></td>
+<td><span style="font-weight: 400;">Till November 4, 2026</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Institution verification and forwarding</span></td>
+<td><span style="font-weight: 400;">Till October 25, 2026</span></td>
+<td><span style="font-weight: 400;">Till November 10, 2026</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">University/affiliating body verification</span></td>
+<td><span style="font-weight: 400;">Till November 5, 2026</span></td>
+<td><span style="font-weight: 400;">Till November 25, 2026</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">NIC scrutiny</span></td>
+<td><span style="font-weight: 400;">Nov 6 – Nov 20, 2026</span></td>
+<td><span style="font-weight: 400;">Nov 26 – Dec 5, 2026</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">First payment window</span></td>
+<td><span style="font-weight: 400;">Dec 1 – Dec 10, 2026</span></td>
+<td><span style="font-weight: 400;">Dec 21 – Dec 31, 2026</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Second payment window (after correcting suspect data)</span></td>
+<td><span style="font-weight: 400;">Jan 16 – Jan 25, 2027</span></td>
+<td><span style="font-weight: 400;">Jan 27 – Jan 31, 2027</span></td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Which UP Scholarship Should You Apply For?</strong></h2>
+<table>
+<tbody>
+<tr>
+<td><b>You are studying in</b></td>
+<td><b>Scheme to select on the portal</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Class 9 or 10</span></td>
+<td><span style="font-weight: 400;">Pre-Matric</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Class 11 or 12</span></td>
+<td><span style="font-weight: 400;">Post-Matric Intermediate</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">UG, PG, diploma, polytechnic, ITI, B.Ed, D.El.Ed, PhD or other recognised course in UP</span></td>
+<td><span style="font-weight: 400;">Post-Matric Other Than Intermediate (Dashmottar)</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">A course outside UP, while being a permanent resident of UP</span></td>
+<td><span style="font-weight: 400;">Post-Matric Other State</span></td>
+</tr>
+</tbody>
+</table>
+<h2><strong>UP Scholarship Registrations 2026-27 &#8211; OTR Process</strong></h2>
+<p><span style="font-weight: 400;">One Time Registration (OTR) has been mandatory on the</span><a href="https://www.buddy4study.com/article/up-scholarship-portal" target="_blank" rel="noopener"> <span style="font-weight: 400;">UP Scholarship Portal</span></a><span style="font-weight: 400;"> since the 2025-26 session and continues for 2026-27. An active mobile number and Aadhaar number are required. Only one OTR is allowed per student; creating multiple OTRs may lead to debarment.</span></p>
+<p><span style="font-weight: 400;">Fresh applicants can follow these steps:</span></p>
+<p> <script type="text/rocketlazyloadscript" async data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9035382390163181"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9035382390163181"
+     data-ad-slot="1241655941"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script type="text/rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script><b>Step 1 &#8211;</b><span style="font-weight: 400;"> Visit scholarship.up.gov.in and select One Time Registration.</span></p>
+<p><a href="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121156/Visit-scholarship.up_.gov_.in-and-select-One.jpg" target="_blank" rel="nofollow"><img decoding="async" class="aligncenter wp-image-17722 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20624%20296'%3E%3C/svg%3E" alt="Visit scholarship.up.gov.in and select One" width="624" height="296" data-lazy-srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121156/Visit-scholarship.up_.gov_.in-and-select-One.jpg 624w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121156/Visit-scholarship.up_.gov_.in-and-select-One-300x142.jpg 300w" data-lazy-sizes="(max-width: 624px) 100vw, 624px" data-lazy-src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121156/Visit-scholarship.up_.gov_.in-and-select-One.jpg" /><noscript><img decoding="async" class="aligncenter wp-image-17722 size-full" src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121156/Visit-scholarship.up_.gov_.in-and-select-One.jpg" alt="Visit scholarship.up.gov.in and select One" width="624" height="296" srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121156/Visit-scholarship.up_.gov_.in-and-select-One.jpg 624w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121156/Visit-scholarship.up_.gov_.in-and-select-One-300x142.jpg 300w" sizes="(max-width: 624px) 100vw, 624px" /></noscript></a></p>
+<p><b>Step 2 &#8211;</b><span style="font-weight: 400;"> Authenticate the active mobile number and complete Aadhaar e-KYC.</span></p>
+<p>    <div><p><a href="https://www.buddy4study.com/page/buddy4study-career-test?ref=Article_banner" target="_blank" rel="noopener"><span class=" lazy-load-image-background blur lazy-load-image-loaded" style="display: inline-block;"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20700%20100'%3E%3C/svg%3E" width="700" height="100" alt="Career Assessment Test" data-lazy-src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/24102716/career-assessment-tools.jpeg" /><noscript><img src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/24102716/career-assessment-tools.jpeg" width="700" height="100" alt="Career Assessment Test" /></noscript></span></a></p>
+</div>
+    <a href="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121316/Authenticate-the-active-mobile-number.jpg" target="_blank" rel="nofollow"><img decoding="async" class="aligncenter size-full wp-image-17723" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20624%20295'%3E%3C/svg%3E" alt="Authenticate the active mobile number" width="624" height="295" data-lazy-srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121316/Authenticate-the-active-mobile-number.jpg 624w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121316/Authenticate-the-active-mobile-number-300x142.jpg 300w" data-lazy-sizes="(max-width: 624px) 100vw, 624px" data-lazy-src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121316/Authenticate-the-active-mobile-number.jpg" /><noscript><img decoding="async" class="aligncenter size-full wp-image-17723" src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121316/Authenticate-the-active-mobile-number.jpg" alt="Authenticate the active mobile number" width="624" height="295" srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121316/Authenticate-the-active-mobile-number.jpg 624w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121316/Authenticate-the-active-mobile-number-300x142.jpg 300w" sizes="(max-width: 624px) 100vw, 624px" /></noscript></a></p>
+<p><b>Step 3 &#8211;</b><span style="font-weight: 400;"> Generate the OTR and save the number received on the registered mobile.</span></p>
+<p><a href="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121502/Generate-the-OTR-and-save-the-number-received.jpg" target="_blank" rel="nofollow"><img decoding="async" class="aligncenter size-full wp-image-17724" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20624%20293'%3E%3C/svg%3E" alt="Generate the OTR and save the number received " width="624" height="293" data-lazy-srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121502/Generate-the-OTR-and-save-the-number-received.jpg 624w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121502/Generate-the-OTR-and-save-the-number-received-300x141.jpg 300w" data-lazy-sizes="(max-width: 624px) 100vw, 624px" data-lazy-src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121502/Generate-the-OTR-and-save-the-number-received.jpg" /><noscript><img decoding="async" class="aligncenter size-full wp-image-17724" src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121502/Generate-the-OTR-and-save-the-number-received.jpg" alt="Generate the OTR and save the number received " width="624" height="293" srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121502/Generate-the-OTR-and-save-the-number-received.jpg 624w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121502/Generate-the-OTR-and-save-the-number-received-300x141.jpg 300w" sizes="(max-width: 624px) 100vw, 624px" /></noscript></a></p>
+<p><b>Step 4 &#8211;</b><span style="font-weight: 400;"> Open Student Registration and select the correct scholarship, category and study level.</span></p>
+<p><b>Step 5 &#8211;</b><span style="font-weight: 400;"> Enter the OTR, complete</span><a href="https://www.buddy4study.com/article/up-scholarship-registration" target="_blank" rel="noopener"> <span style="font-weight: 400;">UP Scholarship registration</span></a><span style="font-weight: 400;"> and save the session-specific registration number.</span></p>
+<p>    <div>
+<p><a href="https://www.buddy4study.com/page/buddy4study-education-loan-programme?ref=Article_banner" target="_blank" rel="noopener"><span class=" lazy-load-image-background blur lazy-load-image-loaded" style="display: inline-block;"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20700%2095'%3E%3C/svg%3E" width="700" height="95" alt="Buddy4Study - Education Loan" data-lazy-src="https://d2w7l1p59qkl0r.cloudfront.net/upload/education-loans.jpg" /><noscript><img src="https://d2w7l1p59qkl0r.cloudfront.net/upload/education-loans.jpg" width="700" height="95" alt="Buddy4Study - Education Loan" /></noscript></span></a></p>
+</div>
+    <b>Step 6 &#8211;</b><span style="font-weight: 400;"> Log in under Fresh Login, fill in personal, academic, fee and bank details, and upload the prescribed documents.</span></p>
+<p><b>Step 7 &#8211;</b><span style="font-weight: 400;"> Review every entry before final submission. Download and print the locked application.</span></p>
+<p><b>Step 8 &#8211; </b><span style="font-weight: 400;">Submit the printed form and supporting documents to the school or institution within the specified timeline.</span></p>
+<p><a href="https://www.buddy4study.com/article/up-scholarship-renewal" target="_blank" rel="noopener"><span style="font-weight: 400;">UP Scholarship renewal</span></a><span style="font-weight: 400;"> applicants should use Renewal Login, update their present class or course, previous-year result, fee and bank details, complete authentication where required, and submit the form within the shorter renewal window.</span></p>
+<h2><strong>UP Scholarship Application Links 2026-27</strong></h2>
+<table>
+<tbody>
+<tr>
+<td><b>Category</b></td>
+<td><b>Link (Fresh)</b></td>
+<td><b>Link (Renewal)</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">UP Scholarship Pre-Matric</span></td>
+<td><a href="https://scholarship.up.gov.in/LoginStudentPreFresh.aspx" target="_blank" rel="noopener nofollow"><span style="font-weight: 400;">Click Here</span></a></td>
+<td><a href="https://scholarship.up.gov.in/LoginStudentPreRenew.aspx" target="_blank" rel="noopener nofollow"><span style="font-weight: 400;">Click Here</span></a></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">UP Scholarship Post-Matric </span></td>
+<td><a href="https://scholarship.up.gov.in/LoginStudentPostInter.aspx" target="_blank" rel="noopener nofollow"><span style="font-weight: 400;">Click Here</span></a></td>
+<td><a href="https://scholarship.up.gov.in/LoginStudentPostRenewInter.aspx" target="_blank" rel="noopener nofollow"><span style="font-weight: 400;">Click Here</span></a></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">UP Scholarship Post-Matric outside the state </span></td>
+<td><a href="https://scholarship.up.gov.in/LoginStudentPostOS.aspx" target="_blank" rel="noopener nofollow"><span style="font-weight: 400;">Click Here</span></a></td>
+<td><a href="https://scholarship.up.gov.in/LoginStudentPostRenewOS.aspx" target="_blank" rel="noopener nofollow"><span style="font-weight: 400;">Click Here</span></a></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">UP Scholarship Post-Matric, other than Intermediate </span></td>
+<td><a href="https://scholarship.up.gov.in/LoginStudentPost.aspx" target="_blank" rel="noopener nofollow"><span style="font-weight: 400;">Click Here</span></a></td>
+<td><a href="https://scholarship.up.gov.in/LoginStudentPostRenew.aspx" target="_blank" rel="noopener nofollow"><span style="font-weight: 400;">Click Here</span></a></td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Documents Required for UP Scholarship Application</strong></h2>
+<p><span style="font-weight: 400;">Applicants applying for UP scholarship are required to keep the following documents handy while filling the UP scholarship application form –</span></p>
+<p><span style="font-weight: 400;">1. Aadhaar card</span></p>
+<p><span style="font-weight: 400;">2. UP domicile or residence certificate</span></p>
+<p><span style="font-weight: 400;">3. Current income certificate</span></p>
+<p><span style="font-weight: 400;">4. Caste certificate, if applicable</span></p>
+<p><span style="font-weight: 400;">5. Previous qualifying examination marksheet</span></p>
+<p><span style="font-weight: 400;">6. Current admission proof, student ID or bonafide certificate</span></p>
+<p><span style="font-weight: 400;">7. Current-year fee receipt</span></p>
+<p><span style="font-weight: 400;">8. Bank passbook showing an account in the student’s name</span></p>
+<h2><strong>What After the UP Government Scholarship Application?</strong></h2>
+<p><span style="font-weight: 400;">Your application passes through several offices before any money is released. A delay at any stage delays payment.</span></p>
+<table>
+<tbody>
+<tr>
+<td><b>Stage</b></td>
+<td><b>Who acts</b></td>
+<td><b>What happens</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">1. Institution</span></td>
+<td><span style="font-weight: 400;">Your school/college</span></td>
+<td><span style="font-weight: 400;">Checks hard copy, records marks and attendance, does biometric authentication, forwards online</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">2. DIOS / University</span></td>
+<td><span style="font-weight: 400;">District Inspector of Schools (Class 9–12) or university/affiliating body (Dashmottar)</span></td>
+<td><span style="font-weight: 400;">Confirms genuine students and blocks ineligible students, courses or institutions</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">3. NIC scrutiny</span></td>
+<td><span style="font-weight: 400;">National Informatics Centre</span></td>
+<td><span style="font-weight: 400;">Automated data checks; mismatches are marked as suspect data</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">4. District committee</span></td>
+<td><span style="font-weight: 400;">District-level officers</span></td>
+<td><span style="font-weight: 400;">Lock verified data with digital signature</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">5. Demand creation</span></td>
+<td><span style="font-weight: 400;">Department</span></td>
+<td><span style="font-weight: 400;">Prepares the fund demand</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">6. Transfer</span></td>
+<td><span style="font-weight: 400;">Treasury via PFMS</span></td>
+<td><span style="font-weight: 400;">Amount credited to the student&#8217;s bank account by DBT</span></td>
+</tr>
+</tbody>
+</table>
+<h2><strong>UP Scholarship Income Limit 2026-27 by Category</strong></h2>
+<table>
+<tbody>
+<tr>
+<td><b>Scheme level</b></td>
+<td><b>Category</b></td>
+<td><b>Annual family income limit (all sources)</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Pre-Matric (Class 9–10)</span></td>
+<td><span style="font-weight: 400;">SC, ST and General</span></td>
+<td><span style="font-weight: 400;">₹2,50,000</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Pre-Matric (Class 9–10)</span></td>
+<td><span style="font-weight: 400;">OBC and Minority</span></td>
+<td><span style="font-weight: 400;">As notified by the respective department – check on the portal</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Post-Matric (Class 11 onwards)</span></td>
+<td><span style="font-weight: 400;">SC and ST</span></td>
+<td><span style="font-weight: 400;">₹2,50,000</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Post-Matric (Class 11 onwards)</span></td>
+<td><span style="font-weight: 400;">General, OBC and Minority</span></td>
+<td><span style="font-weight: 400;">₹2,00,000</span></td>
+</tr>
+</tbody>
+</table>
+<h2><strong>UP Scholarship Amount 2026-27: What You Can Get?</strong></h2>
+<p><span style="font-weight: 400;">UP Scholarship is not a fixed amount. It depends on your scheme, category, course group, whether you are a day scholar or hosteller, and your institution&#8217;s government-approved fee.</span></p>
+<h3><strong>Pre-Matric (Class 9–10) – indicative annual benefit</strong></h3>
+<table>
+<tbody>
+<tr>
+<td><b>Category</b></td>
+<td><b>Indicative benefit</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">General</span></td>
+<td><span style="font-weight: 400;">₹3,000 per year</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">SC</span></td>
+<td><span style="font-weight: 400;">₹3,500 per year (day scholar); ₹7,000 per year (hosteller)</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Children of parents engaged in sanitation/unclean occupations</span></td>
+<td><span style="font-weight: 400;">₹3,500 per year (day scholar); up to ₹8,000 per year (hosteller)</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">ST and Minority</span></td>
+<td><span style="font-weight: 400;">₹225 per month plus ₹750 annual ad hoc grant</span></td>
+</tr>
+</tbody>
+</table>
+<h2><strong>How to Check UP Scholarship Status 2026?</strong></h2>
+<p><span style="font-weight: 400;">Students who have applied for UP Scholarship for this academic year can check their scholarship status by following the steps given below:</span></p>
+<p><b>Step 1 &#8211;</b><span style="font-weight: 400;"> Visit the official UP Scholarship Portal.</span></p>
+<p><a href="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121730/Visit-the-official-UP-Scholarship-Portal.jpg" target="_blank" rel="nofollow"><img decoding="async" class="aligncenter size-full wp-image-17725" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20624%20296'%3E%3C/svg%3E" alt="Visit the official UP Scholarship Portal" width="624" height="296" data-lazy-srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121730/Visit-the-official-UP-Scholarship-Portal.jpg 624w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121730/Visit-the-official-UP-Scholarship-Portal-300x142.jpg 300w" data-lazy-sizes="(max-width: 624px) 100vw, 624px" data-lazy-src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121730/Visit-the-official-UP-Scholarship-Portal.jpg" /><noscript><img decoding="async" class="aligncenter size-full wp-image-17725" src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121730/Visit-the-official-UP-Scholarship-Portal.jpg" alt="Visit the official UP Scholarship Portal" width="624" height="296" srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121730/Visit-the-official-UP-Scholarship-Portal.jpg 624w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121730/Visit-the-official-UP-Scholarship-Portal-300x142.jpg 300w" sizes="(max-width: 624px) 100vw, 624px" /></noscript></a></p>
+<p><b>Step 2 &#8211;</b><span style="font-weight: 400;"> Open the Status section and select the relevant academic session.</span></p>
+<p><b>Step 3 &#8211;</b><span style="font-weight: 400;"> Enter the registration number, date of birth and captcha.</span></p>
+<p><b>Step 4 &#8211;</b><span style="font-weight: 400;"> Review whether the application is pending, forwarded, verified, approved, rejected or marked for correction.</span></p>
+<h3><strong>UP Scholarship Status Check: What Does It Mean?</strong></h3>
+<table>
+<tbody>
+<tr>
+<td><b>Status shown</b></td>
+<td><b>What it means</b></td>
+<td><b>What to do</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Pending at Institute Level</span></td>
+<td><span style="font-weight: 400;">Your college has not forwarded the form</span></td>
+<td><span style="font-weight: 400;">Contact your scholarship/nodal officer before the forwarding deadline</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Forwarded / Verified</span></td>
+<td><span style="font-weight: 400;">Institution check done; district-level process running</span></td>
+<td><span style="font-weight: 400;">Wait and keep checking</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Suspect data / Correction</span></td>
+<td><span style="font-weight: 400;">A mismatch was found</span></td>
+<td><span style="font-weight: 400;">Correct it during the correction window</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Approved</span></td>
+<td><span style="font-weight: 400;">Sanctioned; payment is next</span></td>
+<td><span style="font-weight: 400;">Track on PFMS</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Rejected</span></td>
+<td><span style="font-weight: 400;">Not eligible or incomplete</span></td>
+<td><span style="font-weight: 400;">Read the reason shown on the portal</span></td>
+</tr>
+</tbody>
+</table>
+<h2><strong>UP Scholarship 2026-27 &#8211; Important Stats &amp; Figures</strong></h2>
+<p><span style="font-weight: 400;">The scale of the programme makes accurate registration and institution-level verification particularly important. Here are the statistics for the academic session 2025-26.</span></p>
+<p><a href="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121914/UP-Scholarship-Important-Stats-Figures.jpg" target="_blank" rel="nofollow"><img decoding="async" class="aligncenter size-full wp-image-17726" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20624%20352'%3E%3C/svg%3E" alt="UP Scholarship 2026-27 - Important Stats &amp; Figures" width="624" height="352" data-lazy-srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121914/UP-Scholarship-Important-Stats-Figures.jpg 624w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121914/UP-Scholarship-Important-Stats-Figures-300x169.jpg 300w" data-lazy-sizes="(max-width: 624px) 100vw, 624px" data-lazy-src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121914/UP-Scholarship-Important-Stats-Figures.jpg" /><noscript><img decoding="async" class="aligncenter size-full wp-image-17726" src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121914/UP-Scholarship-Important-Stats-Figures.jpg" alt="UP Scholarship 2026-27 - Important Stats &amp; Figures" width="624" height="352" srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121914/UP-Scholarship-Important-Stats-Figures.jpg 624w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/07/17121914/UP-Scholarship-Important-Stats-Figures-300x169.jpg 300w" sizes="(max-width: 624px) 100vw, 624px" /></noscript></a></p>
+<p><span style="font-weight: 400;">Additionally, the Uttar Pradesh Budget for 2026-27 also proposed ₹977 crore for SC scholarships, ₹950 crore for General-category scholarships, ₹3,060.50 crore for OBC Pre-Matric and Post-Matric scholarships and ₹391 crore for minority Pre-Matric and Post-Matric scholarships.</span></p>
+<h2><strong>When Will UP Scholarship Money Come? Payment Dates 2026-27</strong></h2>
+<table>
+<tbody>
+<tr>
+<td><b>Category</b></td>
+<td><b>Expected payment</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Class 9–12 – Renewal</span></td>
+<td><span style="font-weight: 400;">By November 4, 2026</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Class 9–12 – Fresh</span></td>
+<td><span style="font-weight: 400;">By November 20, 2026</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Dashmottar – Renewal</span></td>
+<td><span style="font-weight: 400;">Dec 1–10, 2026; second round Jan 16–25, 2027</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Dashmottar – Fresh</span></td>
+<td><span style="font-weight: 400;">Dec 21–31, 2026; second round Jan 27–31, 2027</span></td>
+</tr>
+</tbody>
+</table>
+<h2><b>FAQs</b></h2>
+<h4>1. What is the UP Scholarship last date 2026-27?</h4>
+<p><span style="font-weight: 400;">Under the revised timetable, Class 9 and 11 fresh applications will close on October 17, 2026, and Class 10 and 12 renewals closed on October 15, 2026. For Dashmottar courses, renewal closed on October 15 and fresh applications will close on October 31, 2026.</span></p>
+<h4>2. Has the UP Scholarship last date been extended in 2026?</h4>
+<p><span style="font-weight: 400;">Yes. In October 2026 the state revised the Class 9–12 timetable, extending fresh applications for Class 9 and 11 to October 17 and renewals for Class 10 and 12 to October 15. Dashmottar dates were not changed.</span></p>
+<h4>3. How do I check my UP Scholarship status?</h4>
+<p><span style="font-weight: 400;">Visit scholarship.up.gov.in, open the &#8220;Status&#8221; section, and enter your registration number and date of birth. After hard-copy submission, your institute verifies and forwards the application, so status updates happen in stages. Check regularly for corrections or payment updates.</span></p>
+<h4>4. When will UP Scholarship money come?</h4>
+<p><span style="font-weight: 400;">Phase 1 payments for Class 10 and 12 renewals run September 29 to October 5, 2026. Fresh school applicants are expected to be paid between January 25 and January 31, 2027. Dashmottar fresh payments are scheduled for 27–31 January 2027.</span></p>
+<h4>5. How do I apply for UP Scholarship renewal?</h4>
+<p><span style="font-weight: 400;">Renewal is for students who already received the scholarship last year and passed or were promoted. Use your previous year&#8217;s registration number to log in to the Renewal section, update your details, submit the form, and hand the printout to your institute.</span></p>
+<h4>6. What is the eligibility and income limit for UP Scholarship?</h4>
+<p><span style="font-weight: 400;">Students must be Uttar Pradesh residents studying in recognized institutions. Family income limits are generally ₹2.5 lakh per year for SC/ST students and ₹2 lakh for General, OBC, and Minority students. Aadhaar-linked bank accounts and OTR registration are mandatory.</span></p>
+<h4>7. Can I get UP Scholarship if I study outside Uttar Pradesh?</h4>
+<p><span style="font-weight: 400;">Yes, if you are a permanent resident of UP. Apply under the Post-Matric Other State scheme.</span></p>
+<p></div><p>		</div>
+
+				<footer class="entry-meta" aria-label="Entry meta">
+			<span class="cat-links"><span class="gp-icon icon-categories"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 112c0-26.51 21.49-48 48-48h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26.51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112z" /></svg></span><span class="screen-reader-text">Categories </span><a href="https://www.buddy4study.com/article/category/up-scholarship" rel="category tag">UP Scholarship</a></span> 		<nav id="nav-below" class="post-navigation" aria-label="Posts">
+			<div class="nav-previous"><span class="gp-icon icon-arrow-left"><svg viewBox="0 0 192 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M178.425 138.212c0 2.265-1.133 4.813-2.832 6.512L64.276 256.001l111.317 111.277c1.7 1.7 2.832 4.247 2.832 6.513 0 2.265-1.133 4.813-2.832 6.512L161.43 394.46c-1.7 1.7-4.249 2.832-6.514 2.832-2.266 0-4.816-1.133-6.515-2.832L16.407 262.514c-1.699-1.7-2.832-4.248-2.832-6.513 0-2.265 1.133-4.813 2.832-6.512l131.994-131.947c1.7-1.699 4.249-2.831 6.515-2.831 2.265 0 4.815 1.132 6.514 2.831l14.163 14.157c1.7 1.7 2.832 3.965 2.832 6.513z" fill-rule="nonzero" /></svg></span><span class="prev"><a href="https://www.buddy4study.com/article/pfms-scholarship" rel="prev">PFMS Scholarship 2026-27 &#8211; Last Date to Apply, Benefits, Eligibility &#038; Application Process</a></span></div><div class="nav-next"><span class="gp-icon icon-arrow-right"><svg viewBox="0 0 192 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M178.425 256.001c0 2.266-1.133 4.815-2.832 6.515L43.599 394.509c-1.7 1.7-4.248 2.833-6.514 2.833s-4.816-1.133-6.515-2.833l-14.163-14.162c-1.699-1.7-2.832-3.966-2.832-6.515 0-2.266 1.133-4.815 2.832-6.515l111.317-111.316L16.407 144.685c-1.699-1.7-2.832-4.249-2.832-6.515s1.133-4.815 2.832-6.515l14.163-14.162c1.7-1.7 4.249-2.833 6.515-2.833s4.815 1.133 6.514 2.833l131.994 131.993c1.7 1.7 2.832 4.249 2.832 6.515z" fill-rule="nonzero" /></svg></span><span class="next"><a href="https://www.buddy4study.com/article/mahadbt-login" rel="next">MahaDBT Login 2026: Login Process, Application Status &#038; Resetting Password</a></span></div>		</nav>
+				</footer>
+			</div>
+</article>
+<h3 dir="ltr">Disclaimer</h3>
+
+<ol dir="ltr">
+	<li><em><strong>Source of Information:</strong> Buddy4Study app compiles details on scholarships/fellowships from government websites and private scholarship sources. Links to the official sources accompany each listing detail pages.</em></li>
+	<li><em><strong>Non-affiliation</strong>: The Buddy4Study app is not associated with any government entity in India or elsewhere. When featuring government scholarships, we rely on publicly accessible information from central and state government websites in India.</em></li>
+</ol>
+
+<h3><span>Scholarships For</span></h3>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/class-1-to-8" rel="noopener">
+<span class="button-text">Upto Class 8</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/class-1-to-10-pre-matric" rel="noopener">
+<span class="button-text">Class 1 to10 (Pre-Matric)</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/class-9-to-10-pre-matric" rel="noopener">
+<span class="button-text">Class 9 to 10 (Pre-Matric)</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/class-11-12-post-matric" rel="noopener">
+<span class="button-text">Post-Matric(Class 11-12)</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/class-11-12" rel="noopener">
+<span class="button-text">Class 11 & 12</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/class-12-passed" rel="noopener">
+<span class="button-text">Class 12 passed</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/polytechnic-diploma-iti" rel="noopener">
+<span class="button-text">Polytechnic/Diploma/ITI</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/iti" rel="noopener">
+<span class="button-text">ITI</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/polytechnic-diploma" rel="noopener">
+<span class="button-text">Diploma/Polytechnic</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/graduation" rel="noopener">
+<span class="button-text">Graduation</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/post-graduation-scholarship-in-india" rel="noopener">
+<span class="button-text">Post-Graduation</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/medical" rel="noopener">
+<span class="button-text">Medical</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/engineering" rel="noopener">
+<span class="button-text">Engineering</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/girls" rel="noopener">
+<span class="button-text">Girls</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/nsp"target="_blank">
+<span class="button-text">NSP Portal</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/income-based-scholarship-in-india" rel="noopener">
+<span class="button-text">Income Based</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/sc-st-obc" rel="noopener">
+<span class="button-text">SC/ST/OBC</span></a>
+
+<a class="button" href="https://www.buddy4study.com/scholarships/law" rel="noopener">
+<span class="button-text">Law</span></a>
+
+
+<h3><span>Scholarship by State</span></h3>
+
+<a class="button" href="https://www.buddy4study.com/article/national-scholarship-portal" rel="noopener">
+<span class="button-text">NSP Scholarships</span></a>
+
+<a class="button" href="https://www.buddy4study.com/article/top-scholarships-for-students-of-andhra-pradesh" rel="noopener">
+<span class="button-text">Andhra Pradesh</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/arunachal-pradesh-scholarship" rel="noopener">
+<span class="button-text">Arunachal Pradesh</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/assam-scholarship" rel="noopener">
+<span class="button-text">Assam</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/bihar-scholarship" rel="noopener">
+<span class="button-text">Bihar</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/chandigarh-scholarship" rel="noopener">
+<span class="button-text">Chandigarh</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/cg-scholarship" rel="noopener">
+<span class="button-text">Chhattisgarh</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/delhi-scholarship" rel="noopener">
+<span class="button-text">Delhi</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/goa-scholarship" rel="noopener">
+<span class="button-text">Goa</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/gujarat-scholarship" rel="noopener">
+<span class="button-text">Gujarat</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/haryana-scholarship" rel="noopener">
+<span class="button-text">Haryana</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/hp-scholarship" rel="noopener">
+<span class="button-text">Himachal Pradesh</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/jammu-and-kashmir-scholarship" rel="noopener">
+<span class="button-text">Jammu & Kashmir</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/jharkhand-scholarship" rel="noopener">
+<span class="button-text">Jharkhand</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/karnataka-scholarships" rel="noopener">
+<span class="button-text">Karnataka</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/dce-scholarship" rel="noopener">
+<span class="button-text">Kerala</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/mp-scholarship" rel="noopener">
+<span class="button-text">Madhya Pradesh</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/mahadbt" rel="noopener">
+<span class="button-text">Maharashtra</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/manipur-scholarship" rel="noopener">
+<span class="button-text">Manipur</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/meghalaya-scholarships" rel="noopener">
+<span class="button-text">Meghalaya</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/mizoram-scholarship" rel="noopener">
+<span class="button-text">Mizoram</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/nagaland-scholarship" rel="noopener">
+<span class="button-text">Nagaland</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/odisha-scholarship" rel="noopener">
+<span class="button-text">Odisha</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/punjab-scholarship" rel="noopener">
+<span class="button-text">Punjab</span></a>
+
+<a class="button" href="https://www.buddy4study.com/article/rajasthan-scholarship" rel="noopener">
+<span class="button-text">Rajasthan</span></a>
+
+<a class="button" href="https://www.buddy4study.com/article/sikkim-scholarship" rel="noopener">
+<span class="button-text">Sikkim</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/tn-scholarship" rel="noopener">
+<span class="button-text">Tamil Nadu</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/telangana-scholarship" rel="noopener">
+<span class="button-text">Telangana</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/tripura-scholarship" rel="noopener">
+<span class="button-text">Tripura</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/up-scholarship" rel="noopener">
+<span class="button-text">Uttar Pradesh</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/uttarakhand-scholarship" rel="noopener">
+<span class="button-text">Uttarakhand</span></a>
+
+
+<a class="button" href="https://www.buddy4study.com/article/west-bengal-scholarship" rel="noopener">
+<span class="button-text">West Bengal</span></a>		</main>
+	</div>
+
+	<div  class="widget-area sidebar is-right-sidebar" id="right-sidebar">
+	<div class="inside-right-sidebar">
+		<div class="sticky-icon">
+<a href="https://t.me/buddy4study" target="_blank" rel="nofollow noopener noreferrer" style="display: flex; align-items: center;">
+<p style="font-size: 10px; font-weight: 400; margin-bottom: 0px; background: rgba( 0,0,0,0.4 );  padding: 5px 15px;  border-radius: 30px; color: #ffffff;
+    margin-right: 5px;  border: 2px solid #3B368C;">Join Telegram</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" width="44px" height="44px"><path fill="#29B6F6" d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"></path><path fill="#fff" d="M33.95,15l-3.746,19.126c0,0-0.161,0.874-1.245,0.874c-0.576,0-0.873-0.274-0.873-0.274l-8.114-6.733 l-3.97-2.001l-5.095-1.355c0,0-0.907-0.262-0.907-1.012c0-0.625,0.933-0.923,0.933-0.923l21.316-8.468 c-0.001-0.001,0.651-0.235,1.126-0.234C33.667,14,34,14.125,34,14.5C34,14.75,33.95,15,33.95,15z"></path><path fill="#B0BEC5" d="M23,30.505l-3.426,3.374c0,0-0.149,0.115-0.348,0.12c-0.069,0.002-0.143-0.009-0.219-0.043 l0.964-5.965L23,30.505z"></path><path fill="#CFD8DC" d="M29.897,18.196c-0.169-0.22-0.481-0.26-0.701-0.093L16,26c0,0,2.106,5.892,2.427,6.912 c0.322,1.021,0.58,1.045,0.58,1.045l0.964-5.965l9.832-9.096C30.023,18.729,30.064,18.416,29.897,18.196z"></path></svg>
+</a>
+</div><div class="sticky-icon-whatsapp">
+<a href="https://whatsapp.com/channel/0029Va9wL99BVJlALLNo3w33" target="_blank" rel="nofollow noopener noreferrer" style="display: flex; align-items: center;">
+<p style="font-size: 10px; font-weight: 400; margin-bottom: 0px; background: rgba( 0,0,0,0.4 );  padding: 5px 15px;  border-radius: 30px; color: #ffffff;
+    margin-right: 5px;  border: 2px solid #3B368C;">Join WhatsApp</p>
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+<path fill="#fff" d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"></path><path fill="#fff" d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"></path><path fill="#cfd8dc" d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"></path><path fill="#40c351" d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"></path><path fill="#fff" fill-rule="evenodd" d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z" clip-rule="evenodd"></path>
+</svg>
+</a>
+</div><aside id="media_image-9" class="widget inner-padding widget_media_image"><a href="https://app.adstracking.io/click?pid=4056&#038;offer_id=23728" target="_blank"><img fetchpriority="high" width="500" height="500" src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/09/22130952/250x250.jpg" class="image wp-image-17570  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" decoding="async" srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/09/22130952/250x250.jpg 500w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/09/22130952/250x250-300x300.jpg 300w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/09/22130952/250x250-150x150.jpg 150w" sizes="(max-width: 500px) 100vw, 500px" /></a></aside><aside id="media_image-8" class="widget inner-padding widget_media_image"><a href="https://imp.i384100.net/c/7449621/3974396/14726?sharedid=Buddy4study_Evergreen" target="_blank"><img width="640" height="640" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20640'%3E%3C/svg%3E" class="image wp-image-17611  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" decoding="async" data-lazy-srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/09/28151305/Coursera-Buddy4study.jpeg 640w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/09/28151305/Coursera-Buddy4study-300x300.jpeg 300w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/09/28151305/Coursera-Buddy4study-150x150.jpeg 150w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/09/28151305/Coursera-Buddy4study.jpeg" /><noscript><img width="640" height="640" src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/09/28151305/Coursera-Buddy4study.jpeg" class="image wp-image-17611  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" decoding="async" srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/09/28151305/Coursera-Buddy4study.jpeg 640w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/09/28151305/Coursera-Buddy4study-300x300.jpeg 300w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/09/28151305/Coursera-Buddy4study-150x150.jpeg 150w" sizes="(max-width: 640px) 100vw, 640px" /></noscript></a></aside><aside id="media_image-5" class="widget inner-padding widget_media_image"><a href="https://www.buddy4study.com/page/buddy4study-career-test" target="_blank"><img width="400" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3C/svg%3E" class="image wp-image-16190  attachment-full size-full" alt="Buddy4Study Career Assessment Test" style="max-width: 100%; height: auto;" decoding="async" data-lazy-srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/24151255/B4S_Career-copy.jpeg 400w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/24151255/B4S_Career-copy-300x300.jpeg 300w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/24151255/B4S_Career-copy-150x150.jpeg 150w" data-lazy-sizes="(max-width: 400px) 100vw, 400px" data-lazy-src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/24151255/B4S_Career-copy.jpeg" /><noscript><img width="400" height="400" src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/24151255/B4S_Career-copy.jpeg" class="image wp-image-16190  attachment-full size-full" alt="Buddy4Study Career Assessment Test" style="max-width: 100%; height: auto;" decoding="async" srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/24151255/B4S_Career-copy.jpeg 400w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/24151255/B4S_Career-copy-300x300.jpeg 300w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/24151255/B4S_Career-copy-150x150.jpeg 150w" sizes="(max-width: 400px) 100vw, 400px" /></noscript></a></aside><aside id="media_image-7" class="widget inner-padding widget_media_image"><a href="http://www.b4s.in/a/amz_article_eng" target="_blank"><img width="640" height="640" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20640'%3E%3C/svg%3E" class="image wp-image-17200  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" decoding="async" data-lazy-srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/08/11092241/Student-Discounts.jpeg 640w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/08/11092241/Student-Discounts-300x300.jpeg 300w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/08/11092241/Student-Discounts-150x150.jpeg 150w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/08/11092241/Student-Discounts.jpeg" /><noscript><img width="640" height="640" src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/08/11092241/Student-Discounts.jpeg" class="image wp-image-17200  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" decoding="async" srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/08/11092241/Student-Discounts.jpeg 640w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/08/11092241/Student-Discounts-300x300.jpeg 300w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/08/11092241/Student-Discounts-150x150.jpeg 150w" sizes="(max-width: 640px) 100vw, 640px" /></noscript></a></aside><aside id="media_image-6" class="widget inner-padding widget_media_image"><a href="https://eduloan.buddy4study.com" target="_blank"><img width="640" height="640" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20640'%3E%3C/svg%3E" class="image wp-image-16012  attachment-full size-full" alt="Invest in your dreams with BUDDY4STUDY Loan" style="max-width: 100%; height: auto;" decoding="async" data-lazy-srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/06112704/Invest-in-your-dreams-with-BUDDY4STUDY-Loan.jpeg 640w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/06112704/Invest-in-your-dreams-with-BUDDY4STUDY-Loan-300x300.jpeg 300w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/06112704/Invest-in-your-dreams-with-BUDDY4STUDY-Loan-150x150.jpeg 150w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/06112704/Invest-in-your-dreams-with-BUDDY4STUDY-Loan.jpeg" /><noscript><img width="640" height="640" src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/06112704/Invest-in-your-dreams-with-BUDDY4STUDY-Loan.jpeg" class="image wp-image-16012  attachment-full size-full" alt="Invest in your dreams with BUDDY4STUDY Loan" style="max-width: 100%; height: auto;" decoding="async" srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/06112704/Invest-in-your-dreams-with-BUDDY4STUDY-Loan.jpeg 640w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/06112704/Invest-in-your-dreams-with-BUDDY4STUDY-Loan-300x300.jpeg 300w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2026/04/06112704/Invest-in-your-dreams-with-BUDDY4STUDY-Loan-150x150.jpeg 150w" sizes="(max-width: 640px) 100vw, 640px" /></noscript></a></aside>
+		<aside id="recent-posts-3" class="widget inner-padding widget_recent_entries">
+		<h2 class="widget-title">Recent Posts</h2>
+		<ul>
+											<li>
+					<a href="https://www.buddy4study.com/article/concentrix-scholarship">Concentrix Scholarship Program 2026-27 – Eligibility, Benefits, Application Process &#038; More</a>
+									</li>
+											<li>
+					<a href="https://www.buddy4study.com/article/tripura-board-class-12th-exam-dates-2027">Tripura Board Class 12th Exam Dates 2027: TBSE HS Routine Expected Soon, Exams Likely from Late February</a>
+									</li>
+											<li>
+					<a href="https://www.buddy4study.com/article/isc-class-12-exam-dates-2027">ISC Class 12 Exam Dates 2027: CISCE Time Table Expected in November, Exams Likely from Mid-February</a>
+									</li>
+											<li>
+					<a href="https://www.buddy4study.com/article/aicte-doctoral-fellowship">AICTE Doctoral Fellowship 2026-27: Eligibility, Benefits and Latest Guidelines</a>
+									</li>
+					</ul>
+
+		</aside><aside id="media_image-4" class="widget inner-padding widget_media_image"><a href="https://www.buddy4study.com/page/buddy4study-education-loan-programme?ref=article_widgets" target="_blank"><img width="330" height="320" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%20320'%3E%3C/svg%3E" class="image wp-image-9736  attachment-330x320 size-330x320" alt="Buddy4Study Education Loan Programme" style="max-width: 100%; height: auto;" decoding="async" data-lazy-srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2023/06/28194945/Blog-Side-Banner-B4S-Education-Loan.jpg 340w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2023/06/28194945/Blog-Side-Banner-B4S-Education-Loan-300x291.jpg 300w" data-lazy-sizes="(max-width: 330px) 100vw, 330px" data-lazy-src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2023/06/28194945/Blog-Side-Banner-B4S-Education-Loan.jpg" /><noscript><img width="330" height="320" src="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2023/06/28194945/Blog-Side-Banner-B4S-Education-Loan.jpg" class="image wp-image-9736  attachment-330x320 size-330x320" alt="Buddy4Study Education Loan Programme" style="max-width: 100%; height: auto;" decoding="async" srcset="https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2023/06/28194945/Blog-Side-Banner-B4S-Education-Loan.jpg 340w, https://d2w7l1p59qkl0r.cloudfront.net/article/wp-content/uploads/2023/06/28194945/Blog-Side-Banner-B4S-Education-Loan-300x291.jpg 300w" sizes="(max-width: 330px) 100vw, 330px" /></noscript></a></aside>	</div>
+</div>
+
+	</div>
+</div>
+
+
+<div class="no-wpr-lazyrender site-footer grid-container">
+				<div id="footer-widgets" class="site footer-widgets">
+				<div class="footer-widgets-container grid-container">
+					<div class="inside-footer-widgets">
+							<div class="footer-widget-1">
+		<aside id="custom_html-5" class="widget_text widget inner-padding widget_custom_html"><h2 class="widget-title">Scholarship Articles</h2><div class="textwidget custom-html-widget"><ul style="list-style: none; padding-left: 0; margin: 0;">
+    <li><a href="https://www.buddy4study.com/article/national-scholarship-portal" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">National Scholarship Portal</a></li>
+    <li><a href="https://www.buddy4study.com/article/telangana-epass" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Telangana ePASS</a></li>
+    <li><a href="https://www.buddy4study.com/article/svmcm" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">SVMCM</a></li>
+    <li><a href="https://www.buddy4study.com/article/nmms" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">NMMS</a></li>
+    <li><a href="https://www.buddy4study.com/article/jnanabhumi" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Jnanabhumi</a></li>
+    <li><a href="https://www.buddy4study.com/article/up-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">UP Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/kerala-e-grantz" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Kerala e-Grantz</a></li>
+    <li><a href="https://www.buddy4study.com/article/mahadbt" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">MahaDBT</a></li>
+    <li><a href="https://www.buddy4study.com/article/karnataka-scholarships" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Karnataka Scholarships</a></li>
+    <li><a href="https://www.buddy4study.com/article/bonafide-certificate" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Bonafide Certificate</a></li>
+    <li><a href="https://www.buddy4study.com/article/e-kalyan-jharkhand" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">E-Kalyan Jharkhand</a></li>
+    <li><a href="https://www.buddy4study.com/article/e-kalyan-scholarships" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">E-Kalyan Scholarships</a></li>
+    <li><a href="https://www.buddy4study.com/article/prize-money-scholarships" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Prize Money Scholarships</a></li>
+    <li><a href="https://www.buddy4study.com/article/aikyashree" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Aikyashree</a></li>
+    <li><a href="https://www.buddy4study.com/article/mp-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">MP Scholarship</a></li>
+  </ul></div></aside>	</div>
+		<div class="footer-widget-2">
+		<aside id="custom_html-6" class="widget_text widget inner-padding widget_custom_html"><h2 class="widget-title">Other Scholarship</h2><div class="textwidget custom-html-widget"><ul style="list-style: none; padding-left: 0; margin: 0;">
+    <li><a href="https://www.buddy4study.com/article/ssp-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">SSP Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/up-scholarship-status" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">UP Scholarship Status</a></li>
+    <li><a href="https://www.buddy4study.com/article/west-bengal-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">West Bengal Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/digital-gujarat-scholarship-forms" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Digital Gujarat Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/central-sector-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Central Sector Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/inspire-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">INSPIRE Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/pmss-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">PMSS</a></li>
+    <li><a href="https://www.buddy4study.com/article/scholarships-for-engineering-students" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Engineering Scholarships</a></li>
+    <li><a href="https://www.buddy4study.com/article/kv-admission" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">KV Admission</a></li>
+    <li><a href="https://www.buddy4study.com/article/kendriya-vidyalaya-fee" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Kendriya Vidyalaya Fee</a></li>
+    <li><a href="https://www.buddy4study.com/article/scholarships-for-undergraduates" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">UG Scholarships</a></li>
+    <li><a href="https://www.buddy4study.com/article/bihar-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Bihar Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/nabanna-scholarship-status" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Nabanna Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/ishan-uday" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Ishan Uday</a></li>
+    <li><a href="https://www.buddy4study.com/article/jagadish-bose-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Jagadish Bose Scholarship</a></li>
+  </ul></div></aside>	</div>
+		<div class="footer-widget-3">
+		<aside id="custom_html-7" class="widget_text widget inner-padding widget_custom_html"><h2 class="widget-title">Other Scholarship</h2><div class="textwidget custom-html-widget"><ul style="list-style: none; padding-left: 0; margin: 0;">
+    <li><a href="https://www.buddy4study.com/article/bharti-airtel-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Bharti Airtel Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/disability-certificate" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Disability Certificate</a></li>
+    <li><a href="https://www.buddy4study.com/article/gujarat-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Gujarat Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/ssp-post-matric-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">SSP Post Matric Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/oasis-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Oasis Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/kamgar-kalyan-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Kamgar Kalyan Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/pragati-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Pragati Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/digital-gujarat-scholarship-status" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Digital Gujarat Status</a></li>
+    <li><a href="https://www.buddy4study.com/article/shikshashree-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Shikshashree Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/ts-epass-scholarships" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">TS ePASS Scholarships</a></li>
+    <li><a href="https://www.buddy4study.com/article/e-samaj-kalyan" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">E-Samaj Kalyan</a></li>
+    <li><a href="https://www.buddy4study.com/article/nabanna-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Nabanna Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/maharashtra-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Maharashtra Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/mukhyamantri-kanya-utthan-yojana" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Kanya Utthan Yojana</a></li>
+    <li><a href="https://www.buddy4study.com/article/mmvy" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">MMVY</a></li>
+  </ul></div></aside>	</div>
+		<div class="footer-widget-4">
+		<aside id="custom_html-13" class="widget_text widget inner-padding widget_custom_html"><h2 class="widget-title">Other Scholarship</h2><div class="textwidget custom-html-widget"><ul style="list-style: none; padding-left: 0; margin: 0;">
+    <li><a href="https://www.buddy4study.com/article/mirae-asset-foundation-scholarship-program" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Mirae Asset Foundation Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/telangana-epass-scholarships" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Telangana ePASS Scholarships</a></li>
+    <li><a href="https://www.buddy4study.com/article/gyan-sadhana-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Gyan Sadhana Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/obc-scholarships" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">OBC Scholarships</a></li>
+    <li><a href="https://www.buddy4study.com/article/ap-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Andhra Pradesh Scholarships</a></li>
+    <li><a href="https://www.buddy4study.com/article/rajasthan-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Rajasthan Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/nmms-exam-date" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">NMMS Exam Date</a></li>
+    <li><a href="https://www.buddy4study.com/article/pfms-login" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">PFMS Login</a></li>
+    <li><a href="https://www.buddy4study.com/article/e-kalyan-jharkhand" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">E-Kalyan Jharkhand</a></li>
+    <li><a href="https://www.buddy4study.com/article/scholarship-form" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Scholarship Form</a></li>
+    <li><a href="https://www.buddy4study.com/article/nsp" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">NSP</a></li>
+    <li><a href="https://www.buddy4study.com/article/how-to-get-a-caste-certificate" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">How to Get a Caste Certificate</a></li>
+    <li><a href="https://www.buddy4study.com/article/pmsss" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">PMSSS</a></li>
+    <li><a href="https://www.buddy4study.com/article/pfms-scholarship" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">PFMS Scholarship</a></li>
+    <li><a href="https://www.buddy4study.com/article/scholarships-for-indian-girls-and-women" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;">Scholarships for Indian Girls & Women</a></li>
+  </ul></div></aside>	</div>
+						</div>
+				</div>
+			</div>
+					<footer class="site-info" aria-label="Site"  itemtype="https://schema.org/WPFooter" itemscope>
+			<div class="inside-site-info grid-container">
+								<div class="copyright-bar">
+					All rights reserved © Smiling Star Advisory Pvt. Ltd.				</div>
+			</div>
+		</footer>
+		</div>
+
+<a title="Scroll back to top" aria-label="Scroll back to top" rel="nofollow" href="#" class="generate-back-to-top" data-scroll-speed="400" data-start-scroll="300">
+					<span class="gp-icon icon-arrow-up"><svg viewBox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M305.863 314.916c0 2.266-1.133 4.815-2.832 6.514l-14.157 14.163c-1.699 1.7-3.964 2.832-6.513 2.832-2.265 0-4.813-1.133-6.512-2.832L164.572 224.276 53.295 335.593c-1.699 1.7-4.247 2.832-6.512 2.832-2.265 0-4.814-1.133-6.513-2.832L26.113 321.43c-1.699-1.7-2.831-4.248-2.831-6.514s1.132-4.816 2.831-6.515L158.06 176.408c1.699-1.7 4.247-2.833 6.512-2.833 2.265 0 4.814 1.133 6.513 2.833L303.03 308.4c1.7 1.7 2.832 4.249 2.832 6.515z" fill-rule="nonzero" /></svg></span>
+				</a><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/article/*"},{"not":{"href_matches":["/article/wp-*.php","/article/wp-admin/*","/article/wp-content/uploads/*","/article/wp-content/*","/article/wp-content/plugins/*","/article/wp-content/themes/generatepress/*","/article/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script type="text/rocketlazyloadscript">window.wpsc_print_css_uri = 'https://www.buddy4study.com/article/wp-content/plugins/structured-content/dist/print.css';</script><script type="text/rocketlazyloadscript" id="generate-a11y">!function(){"use strict";if("querySelector"in document&&"addEventListener"in window){var e=document.body;e.addEventListener("mousedown",function(){e.classList.add("using-mouse")}),e.addEventListener("keydown",function(){e.classList.remove("using-mouse")})}}();</script><script type="text/rocketlazyloadscript">
+document.addEventListener('play', function(e){
+  if(e.target.tagName === 'AUDIO' && typeof gtag === 'function'){
+    gtag('event', 'audio_play', {
+      event_category: 'Audio Summary',
+      event_label: document.title
+    });
+  }
+}, true);
+document.addEventListener('ended', function(e){
+  if(e.target.tagName === 'AUDIO' && typeof gtag === 'function'){
+    gtag('event', 'audio_complete', {
+      event_category: 'Audio Summary',
+      event_label: document.title
+    });
+  }
+}, true);
+</script><script type="text/rocketlazyloadscript" data-minify="1" id="structured-content-frontend-js" data-rocket-src="https://www.buddy4study.com/article/wp-content/cache/min/1/article/wp-content/plugins/structured-content/dist/app.build.js?ver=1790256318" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="generate-sticky-js" data-rocket-src="https://www.buddy4study.com/article/wp-content/plugins/gp-premium/menu-plus/functions/js/sticky.min.js?ver=2.1.2" data-rocket-defer defer></script>
+<script id="toc-front-js-extra">
+var tocplus = {"smooth_scroll":"1","visibility_show":"show","visibility_hide":"hide","toggle_style":"brackets","width":"20px"};
+//# sourceURL=toc-front-js-extra
+</script>
+<script type="text/rocketlazyloadscript" id="toc-front-js" data-rocket-src="https://www.buddy4study.com/article/wp-content/plugins/table-of-contents-plus/assets/front.min.js?ver=202609.1" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/article(/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$))|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://www.buddy4study.com/article","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script type="text/rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script id="generate-menu-js-extra">
+var generatepressMenu = {"toggleOpenedSubMenus":"1","openSubMenuLabel":"Open Sub-Menu","closeSubMenuLabel":"Close Sub-Menu"};
+//# sourceURL=generate-menu-js-extra
+</script>
+<script id="generate-menu-js" src="https://www.buddy4study.com/article/wp-content/themes/generatepress/assets/js/menu.min.js?ver=3.2.4" data-rocket-defer defer></script>
+<script id="generate-navigation-search-js-extra">
+var generatepressNavSearch = {"open":"Open Search Bar","close":"Close Search Bar"};
+//# sourceURL=generate-navigation-search-js-extra
+</script>
+<script type="text/rocketlazyloadscript" id="generate-navigation-search-js" data-rocket-src="https://www.buddy4study.com/article/wp-content/themes/generatepress/assets/js/navigation-search.min.js?ver=3.2.4" data-rocket-defer defer></script>
+<script id="generate-back-to-top-js-extra">
+var generatepressBackToTop = {"smooth":"1"};
+//# sourceURL=generate-back-to-top-js-extra
+</script>
+<script type="text/rocketlazyloadscript" id="generate-back-to-top-js" data-rocket-src="https://www.buddy4study.com/article/wp-content/themes/generatepress/assets/js/back-to-top.min.js?ver=3.2.4" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" data-minify="1" id="wprt-script-js" data-rocket-src="https://www.buddy4study.com/article/wp-content/cache/min/1/article/wp-content/plugins/wp-responsive-table/assets/frontend/js/wprt-script.js?ver=1790256318" data-rocket-defer defer></script>
+<script id="getkey_ajax-js-extra">
+var the_ajax_script = {"ajaxurl":"https://www.buddy4study.com/article/wp-admin/admin-ajax.php","nonce":"128def18b2"};
+//# sourceURL=getkey_ajax-js-extra
+</script>
+<script type="text/rocketlazyloadscript" data-minify="1" id="getkey_ajax-js" data-rocket-src="https://www.buddy4study.com/article/wp-content/cache/min/1/article/wp-content/plugins/push-notification-by-feedify/getkey_ajax.js?ver=1790256318" data-rocket-defer defer></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.buddy4study.com/article/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e,alt,l){var t='<img data-lazy-src="https://i.ytimg.com/vi_webp/ID/hqdefault.webp" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi_webp/ID/hqdefault.webp" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="Play Youtube video"></button>';if(l){t=t.replace('data-lazy-','');t=t.replace('loading="lazy"','');t=t.replace(/<noscript>.*?<\/noscript>/g,'');}t=t.replace('alt=""','alt="'+alt+'"');return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?"":"&"+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var exclusions=[];var e,t,p,u,l,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)(e=document.createElement("div")),(u='https://i.ytimg.com/vi_webp/ID/hqdefault.webp'),(u=u.replace('ID',a[t].dataset.id)),(l=exclusions.some(exclusion=>u.includes(exclusion))),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query",a[t].dataset.query),e.setAttribute("data-src",a[t].dataset.src),(e.innerHTML=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt,l)),a[t].appendChild(e),(p=e.querySelector(".play")),(p.onclick=lazyLoadYoutubeIframe)});</script>
+</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1792433996 -->

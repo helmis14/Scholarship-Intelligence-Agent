@@ -1,0 +1,569 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+
+<head>
+
+    <title>PUC-Rio - Graduação - Bolsas e Financiamentos</title>
+    
+    <!-- Javascript e elementos diversos para todo o site PUC -->
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+<!-- SIMBOLOS -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<!-- Ícone -->
+<link rel="shortcut icon" href="https://www.puc-rio.br/imagens/puc_brasao_icone_browser.png" type="image/x-icon" />
+
+
+<!-- CSS PUC -->
+<link href="https://www.puc-rio.br/styles/puc_interna.css" rel="stylesheet" type="text/css" />
+
+
+<!-- EFEITO : JQUERY -->
+<script src="https://www.puc-rio.br/js/jquery/jquery-3.1.1.min.js"></script>
+
+
+<!-- EFEITO : POP-UP LIGHTBOX PARA ELEMENTOS DIVERSOS -->
+<link href="https://www.puc-rio.br/js/puc_efeito_lity/dist/lity.css" rel="stylesheet">
+<script src="https://www.puc-rio.br/js/puc_efeito_lity/dist/lity.js"></script>
+
+
+<!-- EFEITO : APARECER E SUMIR -->
+<script src="https://www.puc-rio.br/js/puc_efeito_aparecer_sumir/puc_efeito_aparecer_sumir.js"></script>
+
+
+<!-- EFEITO : LUPA DA GALERIA DE IMAGENS -->
+<script src="https://www.puc-rio.br/js/puc_efeito_vermaior/puc_efeito_vermaior.js"></script>
+
+
+<!-- EFEITO : COPIA PARA MOBILE -->
+<script src="https://www.puc-rio.br/js/puc_efeito_copia_mobile/puc_copia_mobile.js"></script>
+
+
+<!-- EFEITO : SLIDESHOW RESPONSIVO -->
+<script src="https://www.puc-rio.br/js/puc_efeito_slideshow_responsivo/puc_efeito_slideshow_responsivo.js"></script>
+
+
+<!-- EFEITO : PLAYER VIMEO -->
+<script src="https://www.puc-rio.br/js/puc_efeito_vimeo/puc_efeito_vimeo.js"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+
+<!-- EFEITO : SLIDESHOW JSSOR -->
+<!-- #region Jssor Slider Begin -->
+<!-- Generator: Jssor Slider Maker -->
+<!-- Source: http://www.jssor.com -->
+<!-- This code works with jquery library. -->
+<script src="https://www.puc-rio.br/js/puc_efeito_slideshow/jssor.slider-21.1.6.mini.js"></script>
+
+
+
+<!-- EFEITO : BACKGROUND POSITION P/ CARDS -->
+<script>
+
+window.addEventListener("load", bkggrafismo);
+window.addEventListener("resize", bkggrafismo);
+
+function bkggrafismo() {
+
+	var card = document.getElementsByClassName('card');
+	var cardquant = card.length;
+
+	for (var i=0; i<=cardquant; i++) {
+
+	// card[i].style.backgroundPosition = "0 " + card[i].offsetHeight * 0.6666 + "px" ;
+	card[i].style.backgroundPosition = "0 " + card[i].offsetHeight * 0.5 + "px" ;
+
+	}
+
+}
+
+
+</script>
+
+
+
+
+<script>
+
+jQuery(document).ready(function ($) {
+
+	var jssor_1_SlideoTransitions = [
+	  [{b:-1,d:1,o:-1},{b:0,d:1000,o:1}],
+	  [{b:1900,d:2000,x:-379,e:{x:7}}],
+	  [{b:1900,d:2000,x:-379,e:{x:7}}],
+	  [{b:-1,d:1,o:-1,r:288,sX:9,sY:9},{b:1000,d:900,x:-1400,y:-660,o:1,r:-288,sX:-9,sY:-9,e:{r:6}},{b:1900,d:1600,x:-200,o:-1,e:{x:16}}]
+	];
+
+	var jssor_1_options = {
+	  $AutoPlay: true,
+	  $SlideDuration: 1000,
+	  $SlideEasing: $Jease$.$OutQuint,
+	  $CaptionSliderOptions: {
+		$Class: $JssorCaptionSlideo$,
+		$Transitions: jssor_1_SlideoTransitions
+	  },
+	  $ArrowNavigatorOptions: {
+		$Class: $JssorArrowNavigator$
+	  },
+	  $BulletNavigatorOptions: {
+		$Class: $JssorBulletNavigator$
+	  }
+	};
+
+	var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+	/*responsive code begin*/
+	/*you can remove responsive code if you don't want the slider scales while window resizing*/
+	function ScaleSlider() {
+		var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+		if (refSize) {
+			refSize = Math.min(refSize, 3000);
+			jssor_1_slider.$ScaleWidth(refSize);
+		}
+		else {
+			window.setTimeout(ScaleSlider, 30);
+		}
+	}
+	ScaleSlider();
+	$(window).bind("load", ScaleSlider);
+	$(window).bind("resize", ScaleSlider);
+	$(window).bind("orientationchange", ScaleSlider);
+	/*responsive code end*/
+});
+</script>
+
+
+
+
+
+
+
+<!-- ============================== PUC-Rio - GTAG GLOBAL ==============================-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-205JBFW571"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtagGlobalPUC(){dataLayer.push(arguments);}
+  gtagGlobalPUC('js', new Date());
+
+  gtagGlobalPUC('config', 'G-205JBFW571');
+</script>
+
+
+<script>
+var getArrayFromTag = function(tagname) {
+     //get the NodeList and transform it into an array
+     return Array.prototype.slice.call(document.getElementsByTagName(tagname));
+}
+
+setTimeout(function(){ 
+var links = getArrayFromTag("a");
+var buttons = getArrayFromTag("button");
+links = links.concat(buttons);
+
+for(var i=0, max=links.length; i<max; i++) {
+    var linkHref = links[i].href;
+    var linkText = links[i].innerText;
+    if (linkText === '' || linkText == null){
+       var linkImg = links[i].getElementsByTagName('img')[0];
+       if (linkImg == null)
+          continue;
+       var imgAlt = linkImg.getAttribute("alt");
+       if (imgAlt !== '' && imgAlt != null)
+           linkText = imgAlt;       
+       else{
+           var imgTitle = linkImg.getAttribute("title");
+           if (imgTitle !== '' && imgTitle != null)
+               linkText = imgTitle;
+           else
+               continue;
+       }
+    }
+    var currentPage = removeIndexFromUrl(window.location.href);
+    linkHref = removeIndexFromUrl(linkHref);
+
+    var gtagContent = "gtagGlobalPUC( \'event\', \'clique\', { \'event_category\':\'" + currentPage + "\', \'event_label\': \'" + linkText + "\', \'origin_url\':\'" + currentPage + "\', \'href\':\'" + linkHref + "\'});";
+    var defaultOnMouseDown = links[i].getAttribute("onmousedown");
+    if (defaultOnMouseDown != null)
+        var gtagContent = gtagContent + defaultOnMouseDown;
+    links[i].setAttribute("onmousedown", gtagContent);
+}
+}, 2000);
+
+function removeIndexFromUrl(url){
+    if (url == "undefined")
+        return url;
+
+    if (url.endsWith("/index.html"))
+    {
+        url = url.replace("/index.html","/");    
+    }
+    else if (url.endsWith("/#"))
+    {
+        url = url.replace("/#","/");    
+    }
+
+    return url;
+}
+</script>
+
+
+
+<!-- / SLIDESHOW -->
+
+
+<!-- PLUGIN DE ACESSIBILIDADE FREE -->
+<script src="/js/acessibilidade_acctoolbar.min.js"></script>
+<script>
+  window.onload = function() {
+    window.micAccessTool = new MicAccessTool({
+      link: 'http://your-awesome-website.com/your-accessibility-declaration.pdf',
+      contact: 'mailto:webrdc@puc-rio.br',
+      buttonPosition: 'right', // default is 'left'
+       forceLang: 'pt-br' // default is 'en' may be 'he-IL', 'ru-RU', or 'fr_FR'
+    });
+  }
+</script>
+
+
+
+
+        
+    <!-- CSS específico do Manual -->
+    <link href="css/estilos_ccg.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+
+
+
+
+<!-- ============================================================================== ABRE PÁGINA == -->
+
+
+<body id="ccg">
+
+
+<!-- ===================================================================================== TOPO == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<header>
+
+
+<!-- Link acessibilidade, cabeçalho, brasão, título -->
+
+
+<!-- Link acessibilidade -->
+<a href="#link_pular_conteudo" id="puc_link_pular_para_conteudo">Pular para o conteúdo da página</a><span></span>
+
+<!-- Cabeçalho PUC (busca e índice de A a Z) -->
+<iframe src="/includes/puc_cabecalho.html" name="cabecalho" title="Cabeçalho PUC-Rio"></iframe>
+
+
+
+<div id="puc_topo_brasao_titulo_caminho">
+
+<!-- Brasão PUC -->
+<a href="https://www.puc-rio.br" target="_parent" title="Ir para a página inicial do site PUC-Rio" id="puc_cabecalho_brasao">
+<img src="/imagens/brasao_preto_vertical.svg" alt="Brasão da PUC-Rio" /></a>
+
+	<div id="puc_topo_titulo_caminho">
+
+<h1><a href="/ensinopesq/ccg">Coordenação Central de Graduação</a></h1>
+
+
+<!-- fecha #puc_topo_titulo_caminho e #puc_topo_brasao_titulo_caminho no include do menu -->
+
+
+
+<!-- Caminho -->
+<nav><a href="/ensinopesq/ccg">Graduação</a> > </nav>
+
+
+<!-- Menu -->
+</div><!-- fecha #puc_topo_titulo_caminho -->
+</div><!-- fecha #puc_topo_brasao_titulo_caminho -->
+
+
+<!-- Para layout sem menu -->
+<div id="puc_menu_vazio"></div>
+
+
+
+</header>
+
+
+
+
+
+<!-- ===================================================================================== MEIO == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<section id="conteudo">
+
+
+<!-- ================================================================== MEIO > COLUNA PRINCIPAL == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<!-- destino do link de acessibilidade "pular para conteúdo" -->
+<a id="link_pular_conteudo"></a>
+
+
+<article>
+
+
+<h2>Política de Bolsas e Financiamentos da PUC-Rio</h2>
+
+
+
+<div class="puc_layout_area-inicial_nivelador">
+
+	<div class="puc_layout_area-inicial_esquerda">
+
+<p>Os alunos de Graduação  da Universidade podem ser selecionados para diversos tipos de bolsas de estudo,  auxílios ou financiamentos, de cunho Acadêmico ou Comunitário.</p>
+<p>Atualmente, são oferecidos diferentes tipos de bolsas de estudos para os <strong>alunos de graduação </strong>por meio das  Vice-reitorias para Assuntos Acadêmicos e Vice-reitoria para Assuntos  Comunitários.</p>
+
+
+<h3><br>
+Vice-reitoria para Assuntos Acadêmicos</h3>
+
+
+<h5 style="margin-bottom:0;">&rarr; Bolsas acadêmicas:</h5>
+			<ul>
+			<li><a href="#vest">Bolsa Desempenho Vestibular</a></li>
+			<li><a href="bolsa_premio.html">Bolsa Prêmio</a></li>
+			<li><a href="#prolicenciatura">Bolsas Pró Licenciatura</a></li>
+			<li>TEPP</li>
+			</ul>
+
+
+		<h5 style="margin-bottom:0;">&rarr; Bolsas acadêmicas em convênio com órgãos governamentais:</h5>
+			<ul>
+			<li><a href="#pec">Bolsa PEC-G</a></li>
+			<li><a href="#pet">Bolsa PET</a></li>
+			<li><a href="#pibic">Bolsa PIBIC</a></li>
+			<li><a href="#pibid">Bolsa PIBID</a></li>
+			<li><a href="#brp">Bolsa Residência Pedagógica</a></li>
+</ul>
+
+
+<h3><br>
+Vice-reitoria para Assuntos Comunitários</h3>
+
+
+		<h5 style="margin-bottom:0;">&rarr; <a href="/sobrepuc/admin/vrc/inclusao_social/cba/index.html">Bolsas Concedidas Segundo Critérios Socioeconômicos:</a></h5>
+			
+			<ul>
+<li><a href="prouni">PROUNI (Bolsa integral)</a></li>
+<li><a href="/sobrepuc/admin/vrc/inclusao_social/cba/index.html">Filantrópica</a></li>
+<li><a href="/sobrepuc/admin/vrc/inclusao_social/cba/index.html">PUC</a></li>
+</ul>
+<h5 style="margin-bottom:0;">&rarr; <a href="/sobrepuc/admin/vrc/inclusao_social/bolsas/index.html">Bolsas que promovem a Cultura e o Esporte</a></h5>
+<ul>
+<li><a href="/sobrepuc/admin/vrc/educacaofisica/#8">Esporte</a></li>
+<li><a href="/sobrepuc/admin/vrc/cacc/coral/index.html">Coral</a></li>
+</ul>
+<h5 style="margin-bottom:0;">&rarr; <a href="/sobrepuc/admin/vrc/inclusao_social/bolsas/index.html">Bolsas de incentivo a Formação Acadêmica</a></h5>
+<ul>
+<li>Seminaristas  e Religiosos </li>
+<li>Teologia </li>
+<li>Estágio</li>
+</ul>
+<h5 style="margin-bottom:0;">&rarr; <a href="/sobrepuc/admin/vrc/inclusao_social/bolsas/index.html">Bolsas previstas no Acordo Trabalhista</a></h5>
+<ul>
+<li>Acordo  Coletivo de auxiliares de administração escolar</li>
+<li>Acordo Coletivo de professores de universidades privadas do Município do Rio de Janeiro</li>
+</ul>
+<h5 style="margin-bottom:0;">&rarr; <a href="/sobrepuc/admin/vrc/inclusao_social/bolsas/index.html">Bolsas provenientes de Resoluções Específicas</a></h5>
+<ul>
+<li>Fraterna</li>
+</ul>
+
+
+
+</div><!-- /"puc_layout_area-inicial_esquerda" -->
+
+
+	<div class="puc_layout_area-inicial_direita ccg_quadro_lateral">
+	
+		<div class="ccg_imagem_lateral">
+		<div class="ccg_imagem_lateral_interno">
+		<img src="imagens/img_ens_ccg_foto_05.jpg">
+		</div></div>
+		
+<hr>
+
+<p><strong>Vice-reitoria para Assuntos Acadêmicos</strong><br>
+R. Marquês de São Vicente, 225<br>
+Ala Kennedy, 
+2º andar.<br>
+Gávea - 22451-900 Rio de Janeiro - RJ Brasil<br>
+Fale Conosco via <a href="https://sgu.rdc.puc-rio.br/SGUWeb/protocolo/WLoginProtocoloGenerico.aspx?idTipoEvento=4424" target="_blank">Protocolo Eletrônico</a></p>
+<p>&nbsp;</p>
+<p><strong>Vice-reitoria para Assuntos  Comunitários</strong><br>
+R. Marquês de São  Vicente, 225<br>
+Prédio Cardeal Leme -  Sobreloja<br>
+Gávea - 22451-900 Rio de  Janeiro - RJ Brasil<br>
+Fale Conosco via <a href="http://sgu.rdc.puc-rio.br/SGUWeb/protocolo/WLoginProtocoloGenerico.aspx?p=&idCC=17" target="_blank">Protocolo Eletrônico</a>
+</p>
+
+
+</div><!-- /"puc_layout_area-inicial_direita" -->
+
+
+</div><!-- /"puc_layout_area-inicial_nivelador" -->
+
+
+<!-- Botão voltar -->
+<button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+
+
+<hr>
+
+
+
+<h4><a name="vest" id="vest"></a>Bolsa Desempenho Vestibular</h4>
+  <p>Bolsas distribuídas aos melhores colocados nos processos de seleção (<a href="/vestibular">Vestibular</a> e ENEM) para ingresso na PUC. Para manter a bolsa os alunos devem cursar no mínimo 20 créditos e manter o Coeficiente de Rendimento (CR) acima da média dos alunos de seu curso, que tenham ingressado no mesmo período.</p>
+  <p><b>Veja mais informações   em:</b><br />
+    <a href="/vestibular">http://www.puc-rio.br/vestibular</a></p>
+    
+
+<!-- Botão voltar -->
+<button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+
+<hr>
+
+
+<h4><a name="prolicenciatura" id="prolicenciatura"></a>Bolsas Pró Licenciatura</h4>
+
+<p>As bolsas Pró Licenciatura são distribuídas, anualmente, para alunos que obtiverem as primeiras colocações no processo seletivo adotado a cada ano (via vestibular e/ou ENEM), para ingresso nos cursos de Licenciatura, e efetuarem a matrícula.</p>
+
+<p><strong> Veja mais informações em:</strong></p>
+<ul>
+<li><a href="/vestibular/202512/pdf/IE-04-2025-v2.pdf" target="_blank"><strong>Instrução Especial 04.2025</strong></a></li>
+<li><a href="/ensinopesq/ccg/licenciaturas/prolicenciatura.html"><strong>Licenciaturas PUC-Rio</strong></a></li>
+</ul>
+<!-- Botão voltar -->
+<button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+
+<hr>
+
+
+
+
+ 
+  <h4><a name="pec" id="pec"></a>Bolsa PEC-G</h4>
+  <p>Programa de Bolsas para alunos de países africanos, oriundas de convênio realizado com o MEC e restrito aos alunos indicados pelo Ministério de Educação. Informações adicionais podem ser obtidas na Vice-Reitoria Acadêmica.</p>
+
+
+<!-- Botão voltar -->
+<button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+
+<hr>
+
+
+
+<h4><a name="pet" id="pet"></a>Bolsa PET</h4>
+<p>Programa de Ensino Tutorial. Informações adicionais podem ser obtidas nos Departamentos <a href="http://www.cau.puc-rio.br">Arquitetura e Urbanismo</a>, <a href="http://www.jur.puc-rio.br">Direito</a>, <a href="http://www.econ.puc-rio.br">Economia</a>, <a href="http://www.civ.puc-rio.br">Engenharia Civil</a>, <a href="http://www.geo.puc-rio.br">Geografia</a>, <a href="http://www.his.puc-rio.br">História</a>, <a href="http://www.letras.puc-rio.br">Letras</a> e <a href="http://www.iri.puc-rio.br">Relações Internacionais</a>.</p>
+
+
+
+<!-- Botão voltar -->
+<button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+
+<hr>
+
+
+
+
+<h4><a name="pibic" id="pibic"></a>Bolsa  PIBIC<br>
+<span class="puc_texto_menor">(Bolsas e Financiamentos de Órgãos Governamentais)</span></h4>
+  <p><a href="/ensinopesq/ccpg/pibic/index.html"><strong>Programa de Iniciação Científica</strong></a>. Informações adicionais podem ser obtidas nos Departamentos.</p>
+
+<!-- Botão voltar -->
+<button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+
+<hr>
+
+
+
+
+<h4><a name="pibid" id="pibid"></a>Bolsa PIBID</h4>
+
+  <p>O Programa Institucional de Bolsas de Iniciação à Docência, subvencionado pela CAPES, é uma iniciativa para o aperfeiçoamento e a valorização da formação de professores para educação básica. <a href="licenciaturas/pibid">Ver mais informações na página do PIBID/PUC-Rio</a>.</p>
+
+
+<!-- Botão voltar -->
+<button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+
+<hr>
+
+
+
+<h4><a name="brp" id="brp"></a>Bolsa Residência Pedagógica</h4>
+
+<p>O Programa de Residência Pedagógica, subvencionado pela Capes, busca promover o aprimoramento da formação inicial e continuada de professores da Educação Básica, possibilitando a imersão do licenciando na escola a partir do 5º período do curso.</p>
+
+
+<!-- Botão voltar -->
+<button onclick="javascript:history.back()" class="puc_link_voltar_TAG-BUTTON" title="Voltar">VOLTAR</button>
+
+
+
+</article>
+
+
+
+
+
+<!-- ==================================================================== MEIO > COLUNA LATERAL == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<aside>
+
+</aside>
+
+
+
+
+
+<!-- =============================================================================== FECHA MEIO == -->
+
+
+</section>
+
+
+<!-- =================================================================================== RODAPÉ == -->
+<!-- ============================================================================================= -->
+<!-- ============================================================================================= -->
+
+
+<footer>
+
+<!-- Rodapé PUC -->
+
+<iframe src="https://www.puc-rio.br/includes/puc_rodape.html" name="rodape" 
+title="Rodapé PUC-Rio - endereço e copyright"></iframe>
+
+</footer>
+
+
+
+<!-- ============================================================================= FECHA PÁGINA == -->
+
+</body>
+</html>

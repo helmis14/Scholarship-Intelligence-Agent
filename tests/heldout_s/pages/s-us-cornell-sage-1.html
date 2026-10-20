@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	
+			
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"0b2b03b3e4",applicationID:"97227893",browserID:"98429495"};;/*! For license information please see nr-loader-rum-1.324.0.min.js.LICENSE.txt */
+(()=>{var e={8122(e,t,r){"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),a=0===Object.keys(r).length?e:r;for(let s in a)if(void 0!==e[s])try{if(null===e[s]){r[s]=null;continue}Array.isArray(e[s])&&Array.isArray(t[s])?r[s]=Array.from(new Set([...e[s],...t[s]])):e[s]instanceof Map||e[s]instanceof Set||e[s]instanceof Date||e[s]instanceof RegExp?r[s]=e[s]:"object"==typeof e[s]&&null!==t[s]&&"object"==typeof t[s]?r[s]=i(e[s],t[s]):r[s]=e[s]}catch(e){r[s]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},2555(e,t,r){"use strict";r.d(t,{f:()=>s});var n=r(384),i=r(8122);const a={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function s(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}r.d(t,["D",0,e=>(0,i.a)(e,a)])},7699(e,t,r){"use strict";var n=r(860);const i=1e6,a={[n.K7.logging]:!0,[n.K7.genericEvents]:!0,[n.K7.jserrors]:!0,[n.K7.ajax]:!0};r.d(t,["It",0,i,"KC",0,a,"qh",0,"SESSION_ERROR","zd",0,5e5])},9324(e,t,r){"use strict";r.d(t,["xv",0,"1.324.0"])},981(e,t,r){"use strict";r.d(t,["R",0,{AJAX:"AjaxRequest",PA:"PageAction",UA:"UserAction",BP:"BrowserPerformance",WS:"WebSocket",SPV:"SecurityPolicyViolation",JSE:"JavaScriptError",LOG:"Log",PVE:"PageView",PVT:"PageViewTiming",SR:"SessionReplay",ST:"SessionTrace",BI:"BrowserInteraction"}])},6154(e,t,r){"use strict";var n=r(1863);const i="undefined"!=typeof window&&!!window.document,a="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),s=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),o=Boolean("hidden"===s?.document?.visibilityState),c=""+s?.location,u=/iPad|iPhone|iPod/.test(s.navigator?.userAgent),d=u&&"undefined"==typeof SharedWorker,l=((()=>{const e=s.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Date.now()-(0,n.t)());r.d(t,["OF",0,u,"RI",0,i,"WN",0,l,"bv",0,a,"gm",0,s,"m",0,c,"mw",0,o,"sb",0,d,"zk",0,()=>{const e=s?.performance?.getEntriesByType?.("navigation")?.[0];if(e&&e.responseStart>0&&e.responseStart<s.performance.now())return e}])},3241(e,t,r){"use strict";r.d(t,{W:()=>i});var n=r(6154);function i(e={}){try{n.gm.dispatchEvent(new CustomEvent("newrelic",{detail:e}))}catch(e){}}},1687(e,t,r){"use strict";r.d(t,{Ak:()=>o,Ze:()=>u,x3:()=>c});var n=r(3241),i=r(3606),a=r(860),s=r(2646);function o(e,t){if(!e)return;const r={staged:!1,priority:a.P3[t]||0};e.runtime.drainRegistry.get(t)||e.runtime.drainRegistry.set(t,r)}function c(e,t){if(!e)return;const r=e.runtime.drainRegistry;r&&(r.get(t)&&r.delete(t),l(e,t,!1),r.size&&d(e))}function u(e,t="feature",r=!1){if(e){if(!e.runtime.drainRegistry.get(t)||r)return l(e,t);e.runtime.drainRegistry.get(t).staged=!0,d(e)}}function d(e){if(!e)return;const t=Array.from(e.runtime.drainRegistry);t.every(([e,t])=>t.staged)&&(t.sort((e,t)=>e[1].priority-t[1].priority),t.forEach(([t])=>{e.runtime.drainRegistry.delete(t),l(e,t)}))}function l(e,t,r=!0){if(!e)return;const a=e.ee,o=i.i.handlers;if(a&&!a.aborted&&a.backlog&&o){if((0,n.W)({type:"lifecycle",name:"drain",feature:t}),r){const e=a.backlog[t],r=o[t];if(r){for(let t=0;e&&t<e.length;++t)f(e[t],r);Object.entries(r).forEach(([e,t])=>{Object.values(t||{}).forEach(t=>{t[0]?.on&&t[0].context()instanceof s.y&&!t[0].listeners(e).includes(t[1])&&t[0].on(e,t[1])})})}}a.isolatedBacklog||delete o[t],a.backlog[t]=null,a.emit("drain-"+t,[])}}function f(e,t){var r=e[1];Object.values(t[r]||{}).forEach(t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],a=e[2];n.apply(i,a)}})}},7836(e,t,r){"use strict";var n=r(384),i=r(8990),a=r(2646),s=r(5607);const o="nr@context:".concat(s.W),c=function e(t,r){var n={},s={},d={},l=!1;try{l=16===r.length&&u.initializedAgents?.[r]?.runtime.isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,a){!1!==a&&(a=!0);if(c.aborted&&!i)return;t&&a&&t.emit(e,r,n);var o=g(n);m(e).forEach(e=>{e.apply(o,r)});var u=v()[s[e]];u&&u.push([f,e,r,o]);return o},get:h,listeners:m,context:g,buffer:function(e,t){const r=v();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach(([e,n])=>{s[n]=t,t in r||(r[t]=[])})},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach(e=>{delete f.backlog[e]})},isBuffering:function(e){return!!v()[s[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function g(e){return e&&e instanceof a.y?e:e?(0,i.I)(e,o,()=>new a.y(o)):new a.y(o)}function p(e,t){n[e]=m(e).concat(t)}function m(e){return n[e]||[]}function h(t){return d[t]=d[t]||e(f,t)}function v(){return f.backlog}}(void 0,"globalEE"),u=(0,n.Zm)();u.ee||(u.ee=c),r.d(t,["P",0,o,"ee",0,c])},2646(e,t,r){"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},9908(e,t,r){"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(7836).ee.get("handle");function i(e,t,r,i,a){a?(a.buffer([e],i),a.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}},3606(e,t,r){"use strict";r.d(t,{i:()=>a});var n=r(9908);a.on=s;var i=a.handlers={};function a(e,t,r,a){s(a||n.d,i,e,t,r)}function s(e,t,r,i,a){a||(a="feature"),e||(e=n.d);var s=t[a]=t[a]||{};(s[r]=s[r]||[]).push([e,i])}},3878(e,t,r){"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function a(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>a,jT:()=>n,sp:()=>i})},5607(e,t,r){"use strict";const n=(0,r(9566).bz)();r.d(t,["W",0,n])},9566(e,t,r){"use strict";r.d(t,{LA:()=>s,bz:()=>a});var n=r(6154);function i(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".split("").map(e=>"x"===e?i(t,r++).toString(16):"y"===e?(3&i()|8).toString(16):e).join("")}function s(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,a=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const s=[];for(var o=0;o<e;o++)s.push(i(r,a++).toString(16));return s.join("")}},2614(e,t,r){"use strict";r.d(t,["BB",0,18e5,"Wt",0,"NRBA_SESSION::","iL",0,{SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},"tS",0,{STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},"wk",0,144e5])},1863(e,t,r){"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},944(e,t,r){"use strict";r.d(t,{R:()=>i});var n=r(3241);function i(e,t){"function"==typeof console.debug&&(console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t),(0,n.W)({drained:null,type:"data",name:"warn",feature:"warn",data:{code:e,secondary:t}}))}},8990(e,t,r){"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},6389(e,t,r){"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout(()=>{i=clearTimeout(i)},t)),n||(clearTimeout(i),i=setTimeout(()=>{e.apply(this,r)},t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},1910(e,t,r){"use strict";r.d(t,{i:()=>a});var n=r(944);const i=new Map;function a(...e){return e.every(e=>{if(i.has(e))return i.get(e);const t="function"==typeof e?e.toString():"",r=t.includes("[native code]"),a=t.includes("nrWrapper");return r||a||(0,n.R)(64,e?.name||t),i.set(e,r),r})}},5289(e,t,r){"use strict";r.d(t,{GG:()=>s,Qr:()=>c,sB:()=>o});var n=r(3878),i=r(6389);function a(){return"undefined"==typeof document||"complete"===document.readyState}function s(e,t){if(a())return e();const r=(0,i.J)(e),s=setInterval(()=>{a()&&(clearInterval(s),r())},500);(0,n.sp)("load",r,t)}function o(e){if(a())return e();(0,n.DD)("DOMContentLoaded",e)}function c(e){if(a())return e();(0,n.sp)("popstate",e)}},384(e,t,r){"use strict";r.d(t,{Zm:()=>c,bQ:()=>d,dV:()=>u,pV:()=>l});var n=r(6154),i=r(1863),a=r(944),s=r(1910);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function u(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,s.i)(...Object.values(e.o))),e}function d(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,a.R)(69)}function l(){return function(){let e=c();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),u(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}r.d(t,["NT",0,o])},2843(e,t,r){"use strict";r.d(t,{G:()=>a,u:()=>i});var n=r(3878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)},r,i)}function a(e,t,r){(0,n.sp)("pagehide",e,t,r)}},9300(e,t,r){"use strict";r(860).K7.ajax;r.d(t,["mo",0,{NONE:"none",FAILURES:"failures",ALL:"all"}])},3969(e,t,r){"use strict";const n=r(860).K7.metrics;r.d(t,["TZ",0,n,"XG",0,"storeEventMetrics","xV",0,"storeSupportabilityMetrics"])},6630(e,t,r){"use strict";const n=r(860).K7.pageViewEvent;r.d(t,["T",0,n])},782(e,t,r){"use strict";const n=r(860).K7.pageViewTiming;r.d(t,["T",0,n])},4234(e,t,r){"use strict";r.d(t,{W:()=>i});var n=r(1687);class i{constructor(e,t){this.agentRef=e,this.ee=e?.ee,this.featureName=t,this.blocked=!1}deregisterDrain(){(0,n.x3)(this.agentRef,this.featureName)}}},7767(e,t,r){"use strict";var n=r(6154);r.d(t,["V",0,e=>n.RI&&!0===e?.privacy.cookies_enabled])},8362(e,t,r){"use strict";r.d(t,{d:()=>a});var n=r(9566),i=r(1741);class a extends i.W{agentIdentifier=(0,n.LA)(16)}},1741(e,t,r){"use strict";r.d(t,{W:()=>a});var n=r(944),i=r(4261);class a{#e(e,...t){if(this[e]!==a.prototype[e])return this[e](...t);(0,n.R)(35,e)}addPageAction(e,t){return this.#e(i.hG,e,t)}register(e){return this.#e(i.eY,e)}recordCustomEvent(e,t){return this.#e(i.fF,e,t)}setPageViewName(e,t){return this.#e(i.Fw,e,t)}setCustomAttribute(e,t,r){return this.#e(i.cD,e,t,r)}noticeError(e,t){return this.#e(i.o5,e,t)}setUserId(e,t=!1){return this.#e(i.Dl,e,t)}setApplicationVersion(e){return this.#e(i.nb,e)}setErrorHandler(e){return this.#e(i.bt,e)}addRelease(e,t){return this.#e(i.k6,e,t)}log(e,t){return this.#e("log",e,t)}start(){return this.#e("start")}finished(e){return this.#e(i.BL,e)}recordReplay(){return this.#e(i.CH)}pauseReplay(){return this.#e(i.Tb)}addToTrace(e){return this.#e(i.U2,e)}setCurrentRouteName(e){return this.#e(i.PA,e)}interaction(e){return this.#e(i.dT,e)}wrapLogger(e,t,r){return this.#e(i.Wb,e,t,r)}measure(e,t){return this.#e(i.V1,e,t)}consent(e){return this.#e(i.Pv,e)}}},4261(e,t,r){"use strict";r.d(t,["BL",0,"finished","CH",0,"recordReplay","Dl",0,"setUserId","Fw",0,"setPageViewName","PA",0,"setCurrentRouteName","Pv",0,"consent","Tb",0,"pauseReplay","U2",0,"addToTrace","V1",0,"measure","Wb",0,"wrapLogger","bt",0,"setErrorHandler","cD",0,"setCustomAttribute","dT",0,"interaction","eY",0,"register","fF",0,"recordCustomEvent","hG",0,"addPageAction","k6",0,"addRelease","nb",0,"setApplicationVersion","o5",0,"noticeError"])},1738(e,t,r){"use strict";r.d(t,{U:()=>l,Y:()=>d});var n=r(3241),i=r(9908),a=r(1863),s=r(944),o=r(3969),c=r(8362),u=r(860);function d(e,t,r,a){const d=a||r;!d||d[e]&&d[e]!==c.d.prototype[e]||(d[e]=function(){(0,i.p)(o.xV,["API/"+e+"/called"],void 0,u.K7.metrics,r.ee),(0,n.W)({drained:!!r.runtime?.activatedFeatures,type:"data",name:"api",feature:"api-"+e,data:{}});try{return t.apply(this,arguments)}catch(e){(0,s.R)(23,e)}})}function l(e,t,r,n,s){const o=e.info;null===r?delete o.jsAttributes[t]:o.jsAttributes[t]=r,(s||null===r)&&(0,i.p)("api-"+n,[(0,a.t)(),t,r],void 0,"session",e.ee)}},8374(e,t,r){r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},860(e,t,r){"use strict";const n="events",i="jserrors",a="browser/blobs",s="browser/logs",o={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations"},c={[o.pageViewEvent]:1,[o.pageViewTiming]:2,[o.metrics]:3,[o.jserrors]:4,[o.softNav]:5,[o.ajax]:6,[o.sessionTrace]:7,[o.sessionReplay]:8,[o.logging]:9,[o.genericEvents]:10},u={[o.pageViewEvent]:"rum",[o.pageViewTiming]:n,[o.ajax]:n,[o.softNav]:n,[o.metrics]:i,[o.jserrors]:i,[o.sessionTrace]:a,[o.sessionReplay]:a,[o.logging]:s,[o.genericEvents]:"ins"};r.d(t,["$J",0,u,"K7",0,o,"P3",0,c,"XX",0,i,"Yy",0,s,"df",0,a,"hg",0,"connect"])}};const t={};function r(n){const i=t[n];if(void 0!==i)return i.exports;const a=t[n]={exports:{}};return e[n](a,a.exports,r),a.exports}r.m=e,r.d=(e,t)=>{if(Array.isArray(t))for(var n=0;n<t.length;){var i=t[n++],a=t[n++];r.o(e,i)?0===a&&n++:0===a?Object.defineProperty(e,i,{enumerable:!0,value:t[n++]}):Object.defineProperty(e,i,{enumerable:!0,get:a})}else for(var i in t)r.o(t,i)&&!r.o(e,i)&&Object.defineProperty(e,i,{enumerable:!0,get:t[i]})},r.f={},r.e=e=>Promise.all(Object.keys(r.f).reduce((t,n)=>(r.f[n](e,t),t),[])),r.u=e=>"nr-rum-1.324.0.min.js",r.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),(()=>{const e={},t="NRBA-1.324.0.PROD:";r.l=(n,i,a,s)=>{if(e[n])return void e[n].push(i);let o,c;if(void 0!==a){const e=document.getElementsByTagName("script");for(var u=0;u<e.length;u++){const r=e[u];if(r.getAttribute("src")==n||r.getAttribute("data-webpack")==t+a){o=r;break}}}if(!o){c=!0;var d={296:"sha512-Pjy0Jxmo6oAG6oGKLKrf8x8xyaSM1NuL7vLGv9xRLEw0hrpERDruLI5RxlCHNy0NpMyEPWhlC34zujXIR3qJPQ=="};o=document.createElement("script"),o.charset="utf-8",r.nc&&o.setAttribute("nonce",r.nc),o.setAttribute("data-webpack",t+a),o.src=n,0!==o.src.indexOf(window.location.origin+"/")&&(o.crossOrigin="anonymous"),d[s]&&(o.integrity=d[s])}e[n]=[i];const l=(t,r)=>{o.onerror=o.onload=null,clearTimeout(f);const i=e[n];if(delete e[n],o.parentNode?.removeChild(o),i?.forEach(e=>e(r)),t)return t(r)},f=setTimeout(l.bind(null,void 0,{type:"timeout",target:o}),12e4);o.onerror=l.bind(null,o.onerror),o.onload=l.bind(null,o.onload),c&&document.head.appendChild(o)}})(),r.r=e=>{Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.p="https://js-agent.newrelic.com/",(()=>{const e={374:0,840:0};r.f.j=(t,n)=>{let i=r.o(e,t)?e[t]:void 0;if(0!==i)if(i)n.push(i[2]);else{const a=new Promise((r,n)=>i=e[t]=[r,n]);n.push(i[2]=a);const s=r.p+r.u(t),o=new Error,c=n=>{if(r.o(e,t)&&(i=e[t],0!==i&&(e[t]=void 0),i)){const e=n&&("load"===n.type?"missing":n.type),r=n&&n.target&&n.target.src;o.message="Loading chunk "+t+" failed: ("+e+": "+r+")",o.name="ChunkLoadError",o.type=e,o.request=r,i[1](o)}};r.l(s,c,"chunk-"+t,t)}};const t=(t,n)=>{let[i,a,s]=n;var o,c,u=0;if(i.some(t=>0!==e[t])){for(o in a)r.o(a,o)&&(r.m[o]=a[o]);if(s)s(r)}for(t&&t(n);u<i.length;u++)c=i[u],r.o(e,c)&&e[c]&&e[c][0](),e[c]=0},n=self["webpackChunk:NRBA-1.324.0.PROD"]=self["webpackChunk:NRBA-1.324.0.PROD"]||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})(),(()=>{"use strict";r(8374);var e=r(8362),t=r(860);const n=Object.values(t.K7);var i=r(384),a=r(1741);var s=r(2555),o=r(981);t.K7.genericEvents,o.R.PA,o.R.UA,o.R.BP;const c={RESOURCES:"experimental.resources",REGISTER:"register"};var u=r(9300);const d=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var l=r(2614),f=r(944),g=r(8122);const p="[data-nr-mask]",m=e=>(0,g.a)(e,(()=>{const e={feature_flags:[],experimental:{register:!1,resources:!1,iframe_bridge:!1,iframe_domains:[]},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0,capture_payloads:u.mo.NONE},api:{register:{get enabled(){return e.feature_flags.includes(c.REGISTER)||e.experimental.register},set enabled(t){e.experimental.register=t},duplicate_data_to_container:!1,get allow_iframe_bridge(){return e.feature_flags.includes(c.IFRAME_BRIDGE)||e.experimental.iframe_bridge},set allow_iframe_bridge(t){e.experimental.iframe_bridge=t},get iframe_domains(){return e.experimental.iframe_domains},set iframe_domains(t){Array.isArray(t)?e.experimental.iframe_domains=t:(0,f.R)(1,t)}}},browser_consent_mode:{enabled:!1},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{capture_marks:!1,capture_measures:!1,capture_detail:!0,resources:{get enabled(){return e.feature_flags.includes(c.RESOURCES)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:l.wk,inactiveMs:l.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){d(t)?e.mask_selector="".concat(t,",").concat(p):""===t||null===t?e.mask_selector=p:(0,f.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){d(t)?e.block_selector+=",".concat(t):""!==t&&(0,f.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,f.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0,elementAttributes:["id","className","tagName","type"]},web_sockets:{enabled:!1}}})());var h=r(6154),v=r(9324);let b=0;const y={buildEnv:"PROD",distMethod:"CDN",version:v.xv,originTime:h.WN},_={consented:!1},w={activatedFeatures:void 0,appMetadata:{},configured:!1,get consented(){return this.session?.state?.consent||_.consented},set consented(e){_.consented=e},customTransaction:void 0,denyList:[],disabled:!1,drainRegistry:new Map,connector:void 0,harvester:void 0,v2Target:void 0,isolatedBacklog:!1,isRecording:!1,loaderType:void 0,maxBytes:3e4,obfuscator:void 0,onerror:void 0,ptid:void 0,releaseIds:{},session:void 0,timeKeeper:void 0,registeredEntities:[],jsAttributesMetadata:{bytes:0},get harvestCount(){return++b},listeningForIframeMessages:!1},R="BA";var A=r(7836),x=r(3241);const E={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0};var S=r(9908);const k="newrelic-iframe-";function T(e,t={},n,o){let{init:c,info:u,loader_config:d,runtime:l={},exposed:f=!0}=t;if(!u){const e=(0,i.pV)();c=e.init,u=e.info,d=e.loader_config}var p;e.init=m(c||{}),e.loader_config=(p=d||{},(0,g.a)(p,E)),u.jsAttributes??={},h.bv&&(u.jsAttributes.isWorker=!0),e.info=(0,s.D)(u);const v=e.init;e.runtime??=(e=>{const t=(0,g.a)(e,w),r=Object.keys(y).reduce((e,t)=>(e[t]={value:y[t],writable:!1,configurable:!0,enumerable:!0},e),{});return Object.defineProperties(t,r)})(l),e.runtime.v2Target??={type:R,instance:e.agentIdentifier,get id(){return e.runtime.appMetadata?.agents?.[0]?.entityGuid},get attributes(){return{"entity.guid":this.id,appId:e.info.applicationID}}},v.proxy.assets&&(e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e})(v.proxy.assets),e.runtime.configured||(Object.defineProperty(e,"beacons",{get:()=>[e.info.beacon,e.info.errorBeacon,e.init.proxy.assets,e.init.proxy.beacon].filter(Boolean)}),Object.defineProperty(e.runtime,"denyList",{get:()=>[...e.init.ajax.deny_list||[],...e.init.ajax.block_internal?e.beacons:[]]}),e.runtime.ptid=e.agentIdentifier,function(e){const t=(0,i.pV)();Object.getOwnPropertyNames(a.W.prototype).forEach(r=>{const n=a.W.prototype[r];if("function"!=typeof n||"constructor"===n)return;let i=t[r];e[r]&&!1!==e.exposed&&"micro-agent"!==e.runtime?.loaderType&&(t[r]=(...t)=>{const n=e[r](...t);return i?i(...t):n})})}(e),e.runtime.loaderType=n,e.ee=A.ee.get(e.agentIdentifier),e.exposed=f,(0,x.W)({drained:!!e.runtime.activatedFeatures,type:"lifecycle",name:"initialize",feature:void 0,data:e.config}),e.init.api.register.allow_iframe_bridge&&h.gm.addEventListener("message",t=>{"string"==typeof t.data?.type&&t.data.type.startsWith(k)&&(0,S.p)("iframe-message",[t],void 0,"IFRAME",e.ee)}),e.runtime.configured=!0)}var j=r(1863),P=r(4261),N=r(1738);var O=r(1687),M=r(4234),I=r(5289),D=r(7767);function V(e){return!!(0,i.dV)().o.MO&&(0,D.V)(e)&&!0===e?.session_trace.enabled}var W=r(6389),B=r(7699);const C=new WeakSet,K=new WeakMap;class U extends M.W{constructor(e,t){super(e,t),this.abortHandler=void 0,this.featAggregate=void 0,this.loadedSuccessfully=void 0,this.onAggregateImported=new Promise(e=>{this.loadedSuccessfully=e}),this.deferred=Promise.resolve(),!1===e.init[this.featureName].autoStart?this.deferred=new Promise((t,r)=>{this.ee.on("manual-start-all",(0,W.J)(()=>{(0,O.Ak)(e,this.featureName),t()}))}):(0,O.Ak)(e,t)}importAggregator(e,t,n={}){if(this.featAggregate)return;const i=async()=>{if(await this.deferred,this.#t(e),!(0,s.f)(e.info))return(0,f.R)(43),e.ee.abort(),void this.loadedSuccessfully(!1);try{await async function(e,t,n){if(K.has(e))return K.get(e);const i=(async()=>{if((0,D.V)(e.init))try{const{setupAgentSession:t}=await r.e(296).then(r.bind(r,1768));t(e)}catch(e){(0,f.R)(20,e),t.emit("internal-error",[e]),(0,S.p)(B.qh,[e],void 0,n,t)}if(e.init.api.register.allow_iframe_bridge)try{const{setupIframeMFEMessageListener:t}=await Promise.resolve().then(function(){const e=new Error("Cannot find module '../../loaders/configure/iframe-message-handler'");throw e.code="MODULE_NOT_FOUND",e});t(e)}catch(e){(0,f.R)(23,e)}const[{Connector:i},{Harvester:a}]=await Promise.all([r.e(296).then(r.bind(r,6589)),r.e(296).then(r.bind(r,5237))]);e.runtime.connector=new i(e),e.runtime.harvester=new a(e);const s=Object.values(e.features).filter(t=>e.runtime.drainRegistry.has(t.featureName));Promise.all(s.map(e=>e.onAggregateImported)).then(()=>e.runtime.harvester.startTimer())})();K.set(e,i),await i}(e,this.ee,this.featureName)}catch(e){return(0,f.R)(79,e),this.ee.abort(),void this.loadedSuccessfully(!1)}try{if(!this.#r(this.featureName,e.runtime.session,e.init))return this.abortHandler?.(),(0,O.Ze)(this.agentRef,this.featureName),void this.loadedSuccessfully(!1);const{Aggregate:r}=await t();this.featAggregate=new r(e,n),e.runtime.harvester.initializedAggregates.push(this.featAggregate),this.loadedSuccessfully(!0)}catch(e){(0,f.R)(34,e),this.abortHandler?.(),(0,O.Ze)(this.agentRef,this.featureName,!0),this.loadedSuccessfully(!1)}};h.RI?(0,I.GG)(()=>i(),!0):i()}#r(e,r,n){if(this.blocked)return!1;switch(e){case t.K7.sessionReplay:return V(n)&&!!r;case t.K7.sessionTrace:return!!r;default:return!0}}#t(e){if(!C.has(e)&&(C.add(e),!(0,s.f)(e.info))){const t=(0,i.pV)();let r={...t.info?.jsAttributes};try{r={...r,...e.info?.jsAttributes}}catch(e){}T(e,{...t,info:{...t.info,jsAttributes:r},runtime:e.runtime},e.runtime.loaderType)}}}var L=r(6630);class F extends U{static featureName=L.T;constructor(e){var t;super(e,L.T),this.setupInspectionEvents(),t=e,(0,N.Y)(P.Fw,function(e,r){"string"==typeof e&&("/"!==e.charAt(0)&&(e="/"+e),t.runtime.customTransaction=(r||"http://custom.transaction")+e,(0,S.p)("api-"+P.Fw,[(0,j.t)()],void 0,void 0,t.ee))},t),this.importAggregator(e,()=>e.init.feature_flags.includes("rum_v2")?r.e(296).then(r.bind(r,908)):r.e(296).then(r.bind(r,7927)))}setupInspectionEvents(){const e=(e,t)=>{e&&(0,x.W)({timeStamp:e.timeStamp,loaded:"complete"===e.target.readyState,type:"window",name:t,data:e.target.location+""})};(0,I.sB)(t=>{e(t,"DOMContentLoaded")}),(0,I.GG)(t=>{e(t,"load")}),(0,I.Qr)(t=>{e(t,"navigate")}),this.ee.on(l.tS.UPDATE,(e,t)=>{(0,x.W)({type:"lifecycle",name:"session",data:t})})}}class G extends e.d{constructor(e){var t;(super(),h.gm)?(this.features={},(0,i.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(F),T(this,e,e.loaderType||"agent"),t=this,(0,N.Y)(P.cD,function(e,r,n=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof r)||null===r)return(0,N.U)(t,e,r,P.cD,n);(0,f.R)(40,typeof r)}else(0,f.R)(39,typeof e)},t),function(e){(0,N.Y)(P.Dl,function(t,r=!1){if("string"!=typeof t&&null!==t)return void(0,f.R)(41,typeof t);const n=e.info.jsAttributes["enduser.id"];r&&null!=n&&n!==t?(0,S.p)("api-setUserIdAndResetSession",[t],void 0,"session",e.ee):(0,N.U)(e,"enduser.id",t,P.Dl,!0)},e)}(this),function(e){(0,N.Y)(P.nb,function(t){if("string"==typeof t||null===t)return(0,N.U)(e,"application.version",t,P.nb,!1);(0,f.R)(42,typeof t)},e)}(this),function(e){(0,N.Y)("start",function(){e.ee.emit("manual-start-all")},e)}(this),function(e){(0,N.Y)(P.Pv,function(t=!0){if("boolean"==typeof t){if((0,S.p)("api-"+P.Pv,[t],void 0,"session",e.ee),e.runtime.consented=t,t){const t=e.features.page_view_event;t.onAggregateImported.then(e=>{const r=t.featAggregate;e&&!r.sentRum&&r.sendRum?.()})}}else(0,f.R)(65,typeof t)},e)}(this),this.run()):(0,f.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}get api(){return this}run(){try{const e=function(e){const t={};return n.forEach(r=>{t[r]=!!e[r]?.enabled}),t}(this.init),r=[...this.desiredFeatures],i=this.init.feature_flags.includes("rum_v2");r.sort((e,r)=>t.P3[e.featureName]-t.P3[r.featureName]),r.forEach(r=>{if(!e[r.featureName]&&(i||r.featureName!==t.K7.pageViewEvent))return;const n=function(e){switch(e){case t.K7.ajax:return[t.K7.jserrors];case t.K7.sessionTrace:return[t.K7.ajax,t.K7.pageViewEvent];case t.K7.sessionReplay:return[t.K7.sessionTrace];case t.K7.pageViewTiming:return[t.K7.pageViewEvent];default:return[]}}(r.featureName).filter(e=>!(e in this.features));n.length>0&&(0,f.R)(36,{targetFeature:r.featureName,missingDependencies:n}),this.features[r.featureName]=new r(this)})}catch(e){(0,f.R)(22,e);for(const e in this.features)this.features[e].abortHandler?.();const t=(0,i.Zm)();delete t.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return t.ee.get(this.agentIdentifier).abort(),!1}}}var H=r(2843),z=r(782);class Y extends U{static featureName=z.T;constructor(e){super(e,z.T),h.RI&&((0,H.u)(()=>(0,S.p)("docHidden",[(0,j.t)()],void 0,z.T,this.ee),!0),(0,H.G)(()=>(0,S.p)("winPagehide",[(0,j.t)()],void 0,z.T,this.ee)),this.importAggregator(e,()=>r.e(296).then(r.bind(r,9981))))}}var Z=r(3969);class q extends U{static featureName=Z.TZ;constructor(e){super(e,Z.TZ),this.importAggregator(e,()=>r.e(296).then(r.bind(r,9623)))}}new G({features:[F,Y,q],loaderType:"lite"})})()})();</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Financial Supplementation of External Fellowships - Graduate School : Graduate School</title>
+
+	<link href="https://gradschool.cornell.edu/wp-content/themes/cwd_cornell/images/cornell/favicon.ico" rel="shortcut icon">
+	<meta name="description" content="">
+
+	<!-- Cornell.edu Typography -->
+	<link rel="stylesheet" href="https://use.typekit.net/nwp2wku.css">
+	<!-- Source Sans 3 for extended character set	 -->
+	<link rel="stylesheet" href="https://use.typekit.net/hbd1hem.css">
+
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v25.6 (Yoast SEO v28.5) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->
+	<link rel="canonical" href="https://gradschool.cornell.edu/financial-support/fellowships/external-fellowships-and-grants/supplementation-of-external-fellowships/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Financial Supplementation of External Fellowships" />
+	<meta property="og:description" content="Cornell University Graduate School strongly encourages students to apply for external fellowships and grants. These may be offered by government agencies, private foundations, or corporations, and may provide one year&hellip;" />
+	<meta property="og:url" content="https://gradschool.cornell.edu/financial-support/fellowships/external-fellowships-and-grants/supplementation-of-external-fellowships/" />
+	<meta property="og:site_name" content="Graduate School" />
+	<meta property="article:modified_time" content="2025-11-05T21:26:43+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="2 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/gradschool.cornell.edu\/financial-support\/fellowships\/external-fellowships-and-grants\/supplementation-of-external-fellowships\/","url":"https:\/\/gradschool.cornell.edu\/financial-support\/fellowships\/external-fellowships-and-grants\/supplementation-of-external-fellowships\/","name":"Financial Supplementation of External Fellowships - Graduate School","isPartOf":{"@id":"https:\/\/gradschool.cornell.edu\/#website"},"datePublished":"2018-06-20T15:36:15+00:00","dateModified":"2025-11-05T21:26:43+00:00","breadcrumb":{"@id":"https:\/\/gradschool.cornell.edu\/financial-support\/fellowships\/external-fellowships-and-grants\/supplementation-of-external-fellowships\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/gradschool.cornell.edu\/financial-support\/fellowships\/external-fellowships-and-grants\/supplementation-of-external-fellowships\/"]}]},{"@type":"BreadcrumbList","@id":"https:\/\/gradschool.cornell.edu\/financial-support\/fellowships\/external-fellowships-and-grants\/supplementation-of-external-fellowships\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/gradschool.cornell.edu\/"},{"@type":"ListItem","position":2,"name":"Financial Support","item":"https:\/\/gradschool.cornell.edu\/financial-support\/"},{"@type":"ListItem","position":3,"name":"Fellowships","item":"https:\/\/gradschool.cornell.edu\/financial-support\/fellowships\/"},{"@type":"ListItem","position":4,"name":"External Fellowships and Grants","item":"https:\/\/gradschool.cornell.edu\/financial-support\/fellowships\/external-fellowships-and-grants\/"},{"@type":"ListItem","position":5,"name":"Financial Supplementation of External Fellowships"}]},{"@type":"WebSite","@id":"https:\/\/gradschool.cornell.edu\/#website","url":"https:\/\/gradschool.cornell.edu\/","name":"Graduate School","description":"","publisher":{"@id":"https:\/\/gradschool.cornell.edu\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/gradschool.cornell.edu\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/gradschool.cornell.edu\/#organization","name":"Cornell University Graduate School","url":"https:\/\/gradschool.cornell.edu\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/gradschool.cornell.edu\/#\/schema\/logo\/image\/","url":"https:\/\/gradschool.cornell.edu\/wp-content\/uploads\/2025\/02\/bold_cornell_seal_simple_b31b1b.svg","contentUrl":"https:\/\/gradschool.cornell.edu\/wp-content\/uploads\/2025\/02\/bold_cornell_seal_simple_b31b1b.svg","width":1,"height":1,"caption":"Cornell University Graduate School"},"image":{"@id":"https:\/\/gradschool.cornell.edu\/#\/schema\/logo\/image\/"}}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="alternate" type="text/calendar" title="Graduate School &raquo; iCal Feed" href="https://gradschool.cornell.edu/events/?ical=1" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://gradschool.cornell.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgradschool.cornell.edu%2Ffinancial-support%2Ffellowships%2Fexternal-fellowships-and-grants%2Fsupplementation-of-external-fellowships%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://gradschool.cornell.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgradschool.cornell.edu%2Ffinancial-support%2Ffellowships%2Fexternal-fellowships-and-grants%2Fsupplementation-of-external-fellowships%2F&#038;format=xml" />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v11.3.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=G-7KN8G2SLGC"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '11.3.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/gradschool.cornell.edu\/financial-support\/fellowships\/external-fellowships-and-grants\/supplementation-of-external-fellowships\/"};
+								if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-7KN8G2SLGC',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-7KN8G2SLGC', {"forceSSL":"true","link_attribution":"true"} );
+										window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+							<!-- / Google Analytics by MonsterInsights -->
+				<style id="content-control-block-styles">
+			@media (max-width: 640px) {
+	.cc-hide-on-mobile {
+		display: none !important;
+	}
+}
+@media (min-width: 641px) and (max-width: 920px) {
+	.cc-hide-on-tablet {
+		display: none !important;
+	}
+}
+@media (min-width: 921px) and (max-width: 1440px) {
+	.cc-hide-on-desktop {
+		display: none !important;
+	}
+}		</style>
+		<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel='stylesheet' id='tribe-events-pro-mini-calendar-block-styles-css' href='https://gradschool.cornell.edu/wp-content/plugins/events-calendar-pro/build/css/tribe-events-pro-mini-calendar-block.css?ver=983604568' media='all' />
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+
+<link rel='stylesheet' id='content-control-block-styles-css' href='https://gradschool.cornell.edu/wp-content/plugins/content-control/dist/style-block-editor.css?ver=1565322110' media='all' />
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:root { --wp--style--global--content-size: 808.39px;--wp--style--global--wide-size: 1400px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='simple-banner-style-css' href='https://gradschool.cornell.edu/wp-content/plugins/simple-banner/simple-banner.css?ver=365395669' media='all' />
+<link rel='stylesheet' id='cornell-font-fa-css' href='https://gradschool.cornell.edu/wp-content/themes/cwd_cornell/fonts/font-awesome.min.css?ver=1658771519' media='all' />
+<link rel='stylesheet' id='cornell-font-zmdi-css' href='https://gradschool.cornell.edu/wp-content/themes/cwd_cornell/fonts/material-design-iconic-font.min.css?ver=1898363546' media='all' />
+<link rel='stylesheet' id='cornell-font-cu-custom-css' href='https://gradschool.cornell.edu/wp-content/themes/cwd_cornell/fonts/cornell-custom.css?ver=734925397' media='all' />
+<link rel='stylesheet' id='cornell-base-css' href='https://gradschool.cornell.edu/wp-content/themes/cwd_cornell/css/base.css?ver=784003409' media='all' />
+<link rel='stylesheet' id='cornell-brand-css' href='https://gradschool.cornell.edu/wp-content/themes/cwd_cornell/css/cornell.css?ver=151780226' media='all' />
+<link rel='stylesheet' id='cornell-utilities-css' href='https://gradschool.cornell.edu/wp-content/themes/cwd_cornell/css/cwd_utilities.css?ver=557085420' media='all' />
+<link rel='stylesheet' id='slider-style-css' href='https://gradschool.cornell.edu/wp-content/plugins/cwd-slider/css/cwd_slider.css?ver=1090668351' media='all' />
+<link rel='stylesheet' id='cornell-gradschool-css' href='https://gradschool.cornell.edu/wp-content/themes/graduate_school/css/grad2024.css?ver=2009843648' media='all' />
+<link rel='stylesheet' id='aad-gradschool-css' href='https://gradschool.cornell.edu/wp-content/themes/graduate_school/css/askadean.css?ver=1679313085' media='all' />
+<link rel='stylesheet' id='professional-dev-css' href='https://gradschool.cornell.edu/wp-content/themes/graduate_school/css/professional_dev.css?ver=1298663786' media='all' />
+<link rel='stylesheet' id='calendar-gradschool-css' href='https://gradschool.cornell.edu/wp-content/themes/graduate_school/css/calendar.css?ver=1118827808' media='all' />
+<link rel='stylesheet' id='child-style-css' href='https://gradschool.cornell.edu/wp-content/themes/graduate_school/style.css?ver=1947790572' media='all' />
+<script id="jquery-core-js" src="https://gradschool.cornell.edu/wp-includes/js/jquery/jquery.min.js?ver=444272555"></script>
+<script id="jquery-migrate-js" src="https://gradschool.cornell.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=635930999"></script>
+<script async data-wp-strategy="async" id="monsterinsights-frontend-script-js" src="https://gradschool.cornell.edu/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=1156665322"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/gradschool.cornell.edu","hash_tracking":"false","v4_id":"G-7KN8G2SLGC"};/* ]]> */
+</script>
+<script id="simple-banner-script-js-before">
+const simpleBannerScriptParams = {"pro_version_enabled":"","debug_mode":"","id":2339,"version":"3.3.2","banner_params":[{"hide_simple_banner":"yes","simple_banner_prepend_element":"header","simple_banner_position":"","header_margin":"","header_padding":"","wp_body_open_enabled":"","wp_body_open":true,"simple_banner_z_index":"","disabled_on_current_page":false,"disabled_pages_array":[],"is_current_page_a_post":false,"disabled_on_posts":"","simple_banner_disabled_page_paths":"","simple_banner_font_size":"","simple_banner_color":"#FBF2E2","simple_banner_text_color":"#000000","simple_banner_link_color":"#1176ac","simple_banner_close_color":"","simple_banner_text":"The safety and well-being of our community is our highest priority. We know the recent news and allegations are deeply concerning, and we are committed to a safe environment for all. For more information, please see the <a href=\"https:\/\/statements.cornell.edu\/\" target=\"_blank\" rel=\"noopener noreferrer\">official Cornell University statements<\/a>.","simple_banner_custom_css":"","simple_banner_scrolling_custom_css":"","simple_banner_text_custom_css":"max-width: 1280px;\r\nmargin: 0 auto;\r\nfont-size: 1.25em;\r\npadding: 28px 20px 28px 54px;\r\ntext-align: left;\r\nbackground:url(\/wp-content\/uploads\/2026\/10\/mini_seal_74.svg) left no-repeat;\r\nbackground-size: 34px;","simple_banner_button_css":"","site_custom_css":"","keep_site_custom_css":"","site_custom_js":"","keep_site_custom_js":"","close_button_enabled":"on","close_button_expiration":"","close_button_cookie_set":false,"current_date":{"date":"2026-10-20 03:08:07.953713","timezone_type":3,"timezone":"UTC"},"start_date":{"date":"2026-10-20 03:08:07.953736","timezone_type":3,"timezone":"UTC"},"end_date":{"date":"2026-10-20 03:08:07.953754","timezone_type":3,"timezone":"UTC"},"simple_banner_start_after_date":"","simple_banner_remove_after_date":"","simple_banner_insert_inside_element":""}]}
+//# sourceURL=simple-banner-script-js-before
+</script>
+<script id="simple-banner-script-js" src="https://gradschool.cornell.edu/wp-content/plugins/simple-banner/simple-banner.js?ver=1876708272"></script>
+<script id="wpas-scripts-js" src="https://gradschool.cornell.edu/wp-content/themes/graduate_school/wp-advanced-search/js/scripts.js?ver=627945662"></script>
+<script id="cornell-script-grad-js" src="https://gradschool.cornell.edu/wp-content/themes/graduate_school/js/grad.js?ver=1324212380"></script>
+<script id="cornell-script-grad2024-js" src="https://gradschool.cornell.edu/wp-content/themes/graduate_school/js/grad2024.js?ver=1763830438"></script>
+<script id="fields-of-study-js" src="https://gradschool.cornell.edu/wp-content/themes/graduate_school/js/field-of-study.js?ver=635795925"></script>
+<script id="autotoc-js" src="https://gradschool.cornell.edu/wp-content/themes/graduate_school/js/cwd_experimental.js?ver=1707068606"></script>
+<script id="policies-js" src="https://gradschool.cornell.edu/wp-content/themes/graduate_school/js/policies.js?ver=735994342"></script>
+<script id="wa-tribe-search-js" src="https://gradschool.cornell.edu/wp-content/themes/graduate_school/js/wa-tribe-search.js?ver=1518373658"></script>
+<link rel="https://api.w.org/" href="https://gradschool.cornell.edu/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://gradschool.cornell.edu/wp-json/wp/v2/pages/2339" /><style type="text/css">
+#wpadminbar .quicklinks #wp-admin-bar-tikemp_impresonate_user ul li .ab-item{height:auto}#wpadminbar .quicklinks #wp-admin-bar-tikemp_impresonate_user #tikemp_username{height:22px;font-size:13px !important;padding:2px;width:145px;border-radius:2px !important;float:left;box-sizing:border-box !important;line-height: 10px;}#tikemp_search{width:auto;box-sizing:border-box}#tikemp_search_submit{height:22px;padding:2px;line-height:1.1;font-size:13px !important;border:0 !important;float:right;background-color:#fff !important;border-radius:2px !important;width:74px;box-sizing:border-box;color:#000 !important;}#tikemp_usearch_result{width:100%;max-height: 320px;overflow-y: auto;margin-top:10px;float:left;}#tikemp_usearch_form{width: 226px}#tikemp_recent_users{width:100%;float:left;}form#tikemp_usearch_form input[type="text"]{background-color:#fff !important;}#tikemp_settings_wrap{width: 100%;float:left;border-top:1px solid #ccc;}#wpadminbar .quicklinks .menupop ul li a, #wpadminbar .quicklinks .menupop.hover ul li a {color: #b4b9be;}
+</style>
+	<script>
+		var tikemp_ajax_url = "https://gradschool.cornell.edu/wp-admin/admin-ajax.php";
+	</script>
+	<!-- Start Fluid Video Embeds Style Tag -->
+<style type="text/css">
+/* Fluid Video Embeds */
+.fve-video-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    background-color: transparent;
+    padding-bottom: 56.25%;
+    margin: 0.5em 0;
+}
+.fve-video-wrapper iframe,
+.fve-video-wrapper object,
+.fve-video-wrapper embed {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.fve-video-wrapper a.hyperlink-image {
+    position: relative;
+    display: none;
+}
+.fve-video-wrapper a.hyperlink-image img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+.fve-video-wrapper a.hyperlink-image .fve-play-button {
+    position: absolute;
+    left: 35%;
+    top: 35%;
+    right: 35%;
+    bottom: 35%;
+    z-index: 3;
+    background-color: rgba(40, 40, 40, 0.75);
+    background-size: 100% 100%;
+    border-radius: 10px;
+}
+.fve-video-wrapper a.hyperlink-image:hover .fve-play-button {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+</style>
+<!-- End Fluid Video Embeds Style Tag -->
+<style id="simple-banner-hide" type="text/css">.simple-banner{display:none;}</style><style id="simple-banner-background-color" type="text/css">.simple-banner{background:#FBF2E2;}</style><style id="simple-banner-text-color" type="text/css">.simple-banner .simple-banner-text{color:#000000;}</style><style id="simple-banner-link-color" type="text/css">.simple-banner .simple-banner-text a{color:#1176ac;}</style><style id="simple-banner-z-index" type="text/css">.simple-banner{z-index: 99999;}</style><style id="simple-banner-text-custom-css" type="text/css">.simple-banner .simple-banner-text{max-width: 1280px;
+margin: 0 auto;
+font-size: 1.25em;
+padding: 28px 20px 28px 54px;
+text-align: left;
+background:url(/wp-content/uploads/2026/10/mini_seal_74.svg) left no-repeat;
+background-size: 34px;}</style><style id="simple-banner-site-custom-css-dummy" type="text/css"></style><script id="simple-banner-site-custom-js-dummy" type="text/javascript"></script><meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://gradschool.cornell.edu"><link rel="alternate" href="https://gradschool.cornell.edu/wp-json/tribe/events/v1/" /><style id="wp-custom-css">
+body.tribe-events-page-template table thead th, body.tribe-events-page-template table thead td{
+	background-color:#FFF !important;
+}
+
+/* START styles for external events icons + key */
+
+/* article.cat_ext h3::before {
+	font-family: FontAwesome;
+  content: '\f14c';
+} */
+
+article.cat_ext a.tribe-events-calendar-month__calendar-event-title-link::before, article.cat_ext .tribe-events-calendar-month__multiday-event-bar-title::before {
+	font-family: 'FontAwesome';
+  content: '\f14c';
+	font-weight: normal;
+  font-style: normal;
+}
+
+p.eventskey{
+	margin-top:10px;
+	font-size: 85%;
+	background-color: #efefef;
+	padding: 5px;
+	border-radius:2px;
+	border: 1px solid #b5b5b5;
+}
+/* END styles for external events icons + key */
+</style>
+
+</head>
+
+
+<body class="wp-singular page-template-default page page-id-2339 page-child parent-pageid-2311 wp-theme-cwd_cornell wp-child-theme-graduate_school cu-seal sidebar sidebar-left sidebar-tint sidebar-tint-edge secondary-page tribe-no-js page-supplementation-of-external-fellowships">
+	
+		
+	
+	<nav id="skipnav" aria-label="Bypass Navigation">
+		<a href="#main">Skip to main content</a>
+	</nav>
+
+	<div class="band" id="super-header">
+		<header id="cu-header" aria-label="Cornell University Heading">
+			<div id="cu-search" class="cu-search">
+				<div class="container-fluid">
+					<form id="cu-search-form" tabindex="-1" role="search" aria-label="Cornell Search" action="https://gradschool.cornell.edu/" method="GET">
+	<label for="cu-search-query" class="sr-only">Search:</label>
+	<input id="cu-search-query" name="s" value="" size="30" type="text">
+	<button name="btnG" id="cu-search-submit" type="submit" value="go"><span class="sr-only">Submit Search</span></button>
+	
+	<fieldset class="search-filters" role="radiogroup">
+		<legend class="sr-only">Search Filters</legend>
+		<input type="radio" id="cu-search-filter1" name="sitesearch" value="thissite" checked="checked">
+		<label for="cu-search-filter1"><span class="sr-only">Search </span>This Site</label> 
+		<input type="radio" id="cu-search-filter2" name="sitesearch" value="cornell">
+		<label for="cu-search-filter2"><span class="sr-only">Search </span>Cornell</label>
+	</fieldset>
+</form>				</div>
+			</div>
+			<div class="cu45-helper"></div>
+			<div class="container-fluid cu-brand">
+				<div class="buttons">
+					<button class="mobile-button" id="mobile-nav">Main Menu</button>
+					<button class="mobile-button" id="cu-search-button">Toggle Search Form</button>
+					<nav id="utility-navigation" aria-label="Supplementary Navigation">
+						<ul class="list-menu links"><li id="menu-item-122" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-122"><a href="https://gradschool.cornell.edu/about/">About</a></li>
+<li id="menu-item-468" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-468"><a href="/events">Events Calendar</a></li>
+<li id="menu-item-121" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-121"><a href="https://gradschool.cornell.edu/resources/">Resources</a></li>
+<li id="menu-item-10088" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10088"><a href="/policies">Policies</a></li>
+<li id="menu-item-749" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-749"><a href="https://gradschool.cornell.edu/forms/">Forms</a></li>
+<li id="menu-item-120" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-120"><a href="https://gradschool.cornell.edu/alumni/">Alumni</a></li>
+</ul>					</nav>
+				</div>
+				<div class="grad-logo"><a href="https://gradschool.cornell.edu"><img src="https://gradschool.cornell.edu/wp-content/themes/graduate_school/images/grad2024/gradschool_logo.svg" alt="Cornell University Graduate School" width="410" height="100"></a></div>
+				<div class="cu-unit">
+					<a class="link-button apply-now" href="/admissions/application-steps/apply-now/">Apply Now</a>
+				</div>
+			</div>
+		</header>
+
+		<header id="site-header" aria-label="Site Header">
+
+			<nav class="dropdown-menu dropdown-menu-on-demand" id="main-navigation" aria-label="Main Navigation">
+
+				<div class="container-fluid">
+					<a id="mobile-home" href="https://gradschool.cornell.edu"><span class="sr-only">Home</span></a>
+					<ul class="list-menu links"><li id="menu-item-48479" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48479"><a href="https://gradschool.cornell.edu/admissions/">Admissions</a>
+<ul class="sub-menu">
+	<li id="menu-item-48480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48480"><a href="https://gradschool.cornell.edu/admissions/application-steps/">Application Steps</a></li>
+	<li id="menu-item-48481" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48481"><a href="https://gradschool.cornell.edu/admissions/admitted-students/">Admitted Students</a></li>
+	<li id="menu-item-48630" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48630"><a href="https://gradschool.cornell.edu/admissions/contact-us/">Contact Graduate Admissions</a></li>
+</ul>
+</li>
+<li id="menu-item-48492" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48492"><a href="https://gradschool.cornell.edu/academic-progress/">Academic Progress</a>
+<ul class="sub-menu">
+	<li id="menu-item-48493" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48493"><a href="https://gradschool.cornell.edu/academic-progress/degrees-fields/">Degrees &#038; Requirements</a></li>
+	<li id="menu-item-48498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48498"><a href="https://gradschool.cornell.edu/academic-progress/enrollment-status-progress/">Enrollment, Status &#038; Progress</a></li>
+	<li id="menu-item-48499" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48499"><a href="https://gradschool.cornell.edu/academic-progress/opportunities-resources-support/">Opportunities, Resources &#038; Support</a></li>
+	<li id="menu-item-48501" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48501"><a href="https://gradschool.cornell.edu/academic-progress/guidelines-for-graduate-field-academic-handbooks/">Guidelines for Graduate Field Academic Handbooks</a></li>
+</ul>
+</li>
+<li id="menu-item-48502" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current_page_ancestor menu-item-has-children menu-item-48502"><a href="https://gradschool.cornell.edu/financial-support/">Financial Support</a>
+<ul class="sub-menu">
+	<li id="menu-item-48507" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48507"><a href="https://gradschool.cornell.edu/financial-support/graduate-funding-and-enrollment/">Graduate Funding and Enrollment</a></li>
+	<li id="menu-item-48503" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48503"><a href="https://gradschool.cornell.edu/financial-support/tuition-rates/">Tuition Rates</a></li>
+	<li id="menu-item-48504" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48504"><a href="https://gradschool.cornell.edu/financial-support/assistantships/">Assistantships</a></li>
+	<li id="menu-item-48505" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current_page_ancestor menu-item-48505"><a href="https://gradschool.cornell.edu/financial-support/fellowships/">Fellowships</a></li>
+	<li id="menu-item-48508" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48508"><a href="https://gradschool.cornell.edu/financial-support/emergency-fund-program/">Emergency Fund Program</a></li>
+	<li id="menu-item-48509" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48509"><a href="https://gradschool.cornell.edu/financial-support/stipend-rates/">Stipend Rates</a></li>
+	<li id="menu-item-48510" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48510"><a href="https://gradschool.cornell.edu/financial-support/tax-information/">Tax Information</a></li>
+	<li id="menu-item-48511" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48511"><a href="https://gradschool.cornell.edu/financial-support/travel-funding-opportunities/">Travel Funding Opportunities</a></li>
+</ul>
+</li>
+<li id="menu-item-48512" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48512"><a href="https://gradschool.cornell.edu/inclusion/">Inclusion &#038; Access</a>
+<ul class="sub-menu">
+	<li id="menu-item-48513" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48513"><a href="https://gradschool.cornell.edu/inclusion/about-oise/">Office of Inclusion and Student Engagement</a></li>
+	<li id="menu-item-48514" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48514"><a href="https://gradschool.cornell.edu/inclusion/recruitment/">Access &#038; Recruitment</a></li>
+	<li id="menu-item-48515" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48515"><a href="https://gradschool.cornell.edu/inclusion/signature-initiatives/">Signature Initiatives</a></li>
+	<li id="menu-item-48517" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48517"><a href="https://gradschool.cornell.edu/inclusion/bouchet-honor-society/">Bouchet Honor Society</a></li>
+	<li id="menu-item-48518" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48518"><a href="https://gradschool.cornell.edu/inclusion/graduate-excellence-and-impact-awards/">Graduate Excellence &#038; Impact Awards</a></li>
+	<li id="menu-item-48519" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48519"><a href="https://gradschool.cornell.edu/inclusion/funding-and-resources/">Funding and Resources</a></li>
+	<li id="menu-item-48520" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48520"><a href="https://gradschool.cornell.edu/inclusion/faculty-resources/">Faculty Resources</a></li>
+	<li id="menu-item-48521" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48521"><a href="https://gradschool.cornell.edu/inclusion/student-organizations/">Student Organizations</a></li>
+	<li id="menu-item-48522" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48522"><a href="https://gradschool.cornell.edu/inclusion/reporting-bias/">Reporting Bias, Assault, &#038; Harassment</a></li>
+</ul>
+</li>
+<li id="menu-item-48523" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48523"><a href="https://gradschool.cornell.edu/career-and-professional-development/">Professional Development</a>
+<ul class="sub-menu">
+	<li id="menu-item-48525" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48525"><a href="https://gradschool.cornell.edu/career-and-professional-development/office-of-career-and-professional-development-2/">Office of Career and Professional Development</a></li>
+	<li id="menu-item-48526" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48526"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/">Pathways to Success</a></li>
+	<li id="menu-item-48524" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48524"><a href="https://gradschool.cornell.edu/career-and-professional-development/three-minute-thesis/">Three Minute Thesis</a></li>
+</ul>
+</li>
+<li id="menu-item-48527" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48527"><a href="https://gradschool.cornell.edu/student-experience/">Student Experience</a>
+<ul class="sub-menu">
+	<li id="menu-item-48534" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48534"><a href="https://gradschool.cornell.edu/student-experience/big-red-barn/">Big Red Barn</a></li>
+	<li id="menu-item-48528" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48528"><a href="https://gradschool.cornell.edu/student-experience/office-of-graduate-student-life/">Office of Graduate Student Life</a></li>
+	<li id="menu-item-48529" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48529"><a href="https://gradschool.cornell.edu/student-experience/help-and-support/">Help and Support</a></li>
+	<li id="menu-item-48530" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48530"><a href="https://gradschool.cornell.edu/student-experience/student-communities/">Student Communities</a></li>
+	<li id="menu-item-48531" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48531"><a href="https://gradschool.cornell.edu/student-experience/student-life-programs/">Student Life Programs</a></li>
+	<li id="menu-item-48532" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48532"><a href="https://gradschool.cornell.edu/student-experience/student-governance/">Student Governance</a></li>
+	<li id="menu-item-48533" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48533"><a href="https://gradschool.cornell.edu/student-experience/student-perks-and-discounts/">Student Perks and Discounts</a></li>
+</ul>
+</li>
+</ul>				</div>
+			</nav>
+			
+									
+		</header>
+	</div>
+
+	<div id="main-content" class="band">
+		<main id="main" class="container-fluid aria-target" tabindex="-1" aria-label="Main Content">
+
+			<div class="row">
+				
+				<div id="sidebar-top" class="secondary">
+ 					<nav class="secondary-navigation mobile-expander" aria-label="Mobile Navigation"><ul class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48479"><a href="https://gradschool.cornell.edu/admissions/">Admissions</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48480"><a href="https://gradschool.cornell.edu/admissions/application-steps/">Application Steps</a>
+	<ul class="sub-menu">
+		<li id="menu-item-48938" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48938"><a href="https://gradschool.cornell.edu/admissions/application-steps/important-application-policies/">Important Application Policies</a>
+		<ul class="sub-menu">
+			<li id="menu-item-55229" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55229"><a href="https://gradschool.cornell.edu/admissions/application-steps/important-application-policies/use-of-generative-ai-in-graduate-admissions-applications/">Use of Generative AI in Graduate Admissions Applications</a></li>
+			<li id="menu-item-48939" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48939"><a href="https://gradschool.cornell.edu/admissions/application-steps/important-application-policies/non-degree-admissions-2/">Non-Degree Admissions</a></li>
+		</ul>
+</li>
+		<li id="menu-item-48940" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48940"><a href="https://gradschool.cornell.edu/admissions/application-steps/required-tests/">Take Required Tests</a>
+		<ul class="sub-menu">
+			<li id="menu-item-48941" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48941"><a href="https://gradschool.cornell.edu/admissions/application-steps/required-tests/english-language-proficiency-requirement-2/">English Language Proficiency Requirement</a></li>
+		</ul>
+</li>
+		<li id="menu-item-48942" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48942"><a href="https://gradschool.cornell.edu/admissions/application-steps/recommendations/">Request Recommendations</a></li>
+		<li id="menu-item-48943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48943"><a href="https://gradschool.cornell.edu/admissions/application-steps/statements-of-purpose/">Write an Academic Statement of Purpose</a></li>
+		<li id="menu-item-48944" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48944"><a href="https://gradschool.cornell.edu/admissions/application-steps/personal-statements/">Write a Personal Statement</a></li>
+		<li id="menu-item-48945" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48945"><a href="https://gradschool.cornell.edu/admissions/application-steps/transcripts/">Prepare Transcripts</a>
+		<ul class="sub-menu">
+			<li id="menu-item-48990" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48990"><a href="https://gradschool.cornell.edu/admissions/application-steps/transcripts/international-degree-equivalencies/">International Degree Equivalencies</a></li>
+		</ul>
+</li>
+		<li id="menu-item-48946" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48946"><a href="https://gradschool.cornell.edu/admissions/application-steps/pay-fees/">Pay Fees</a>
+		<ul class="sub-menu">
+			<li id="menu-item-48947" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48947"><a href="https://gradschool.cornell.edu/admissions/application-steps/pay-fees/international/">Admissions Costs for International Students</a></li>
+		</ul>
+</li>
+		<li id="menu-item-48953" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48953"><a href="https://gradschool.cornell.edu/admissions/application-steps/application-review/">Application Review</a></li>
+		<li id="menu-item-48948" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48948"><a href="https://gradschool.cornell.edu/admissions/application-steps/apply-now/">Apply Now</a></li>
+		<li id="menu-item-48949" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48949"><a href="https://gradschool.cornell.edu/admissions/application-steps/application-status/">Check Application Status</a></li>
+		<li id="menu-item-53027" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53027"><a href="https://gradschool.cornell.edu/admissions/admitted-students/admissions-and-admitted-student-faq-2/">Admissions and Admitted Student FAQ</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48481"><a href="https://gradschool.cornell.edu/admissions/admitted-students/">Admitted Students</a>
+	<ul class="sub-menu">
+		<li id="menu-item-48950" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48950"><a href="https://gradschool.cornell.edu/admissions/admitted-students/accepting-deferring-and-re-applying/">Accepting, Deferring, and Reapplying</a></li>
+		<li id="menu-item-48989" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48989"><a href="https://gradschool.cornell.edu/admissions/admitted-students/orientation/">New Student Orientation</a></li>
+		<li id="menu-item-48951" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48951"><a href="https://gradschool.cornell.edu/admissions/admitted-students/navigating-graduate-school/">Navigating Graduate School</a></li>
+		<li id="menu-item-48952" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48952"><a href="https://gradschool.cornell.edu/admissions/admitted-students/admissions-and-admitted-student-faq-2/">Admissions and Admitted Student FAQ</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48630"><a href="https://gradschool.cornell.edu/admissions/contact-us/">Contact Graduate Admissions</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48492"><a href="https://gradschool.cornell.edu/academic-progress/">Academic Progress</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48493"><a href="https://gradschool.cornell.edu/academic-progress/degrees-fields/">Degrees &#038; Requirements</a>
+	<ul class="sub-menu">
+		<li id="menu-item-48975" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48975"><a href="https://gradschool.cornell.edu/cugradfos/">Fields of Study</a></li>
+		<li id="menu-item-48954" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48954"><a href="https://gradschool.cornell.edu/academic-progress/degrees-fields/research-degree-requirements/">Research Degree Requirements</a>
+		<ul class="sub-menu">
+			<li id="menu-item-48991" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48991"><a href="https://gradschool.cornell.edu/academic-progress/degrees-fields/research-degree-requirements/academic-structure/">Academic Structure</a></li>
+			<li id="menu-item-48955" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48955"><a href="https://gradschool.cornell.edu/academic-progress/degrees-fields/research-degree-requirements/nominating-your-special-committee/">Nominating Your Chair and Special Committee</a></li>
+			<li id="menu-item-48956" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48956"><a href="https://gradschool.cornell.edu/academic-progress/degrees-fields/research-degree-requirements/changing-your-committee/">Changing Your Committee</a></li>
+			<li id="menu-item-48957" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48957"><a href="https://gradschool.cornell.edu/academic-progress/degrees-fields/research-degree-requirements/student-progress-review/">Student Progress Review</a></li>
+			<li id="menu-item-48958" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48958"><a href="https://gradschool.cornell.edu/academic-progress/degrees-fields/research-degree-requirements/responsible-conduct-of-research/">Responsible Conduct of Research</a></li>
+			<li id="menu-item-48959" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48959"><a href="https://gradschool.cornell.edu/academic-progress/degrees-fields/research-degree-requirements/open-researcher-and-contributor-id-orcid/">Open Researcher and Contributor ID (ORCID)</a></li>
+			<li id="menu-item-48960" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48960"><a href="https://gradschool.cornell.edu/academic-progress/degrees-fields/research-degree-requirements/taking-exams/">Taking Exams</a></li>
+			<li id="menu-item-48961" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48961"><a href="https://gradschool.cornell.edu/academic-progress/degrees-fields/research-degree-requirements/thesis-dissertation/">Thesis &#038; Dissertation</a>
+			<ul class="sub-menu">
+				<li id="menu-item-48992" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48992"><a href="https://gradschool.cornell.edu/academic-progress/degrees-fields/research-degree-requirements/defending-your-thesis-or-dissertation/">Defending Your Thesis or Dissertation</a></li>
+			</ul>
+</li>
+		</ul>
+</li>
+		<li id="menu-item-48962" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48962"><a href="https://gradschool.cornell.edu/academic-progress/degrees-fields/graduate-school-degrees/">Graduate School Degrees</a>
+		<ul class="sub-menu">
+			<li id="menu-item-48963" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48963"><a href="https://gradschool.cornell.edu/academic-progress/degrees-fields/graduate-school-degrees/graduate-degrees-administered-by-colleges-other-than-the-graduate-school/">Graduate Degrees Administered by Colleges Other Than the Graduate School</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48498"><a href="https://gradschool.cornell.edu/academic-progress/enrollment-status-progress/">Enrollment, Status &#038; Progress</a>
+	<ul class="sub-menu">
+		<li id="menu-item-48964" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48964"><a href="https://gradschool.cornell.edu/academic-progress/enrollment-status-progress/enrollment-in-your-program/">Enrollment in Your Program</a></li>
+		<li id="menu-item-48965" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48965"><a href="https://gradschool.cornell.edu/academic-progress/enrollment-status-progress/enrolling-in-courses/">Enrolling in Courses</a></li>
+		<li id="menu-item-48966" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48966"><a href="https://gradschool.cornell.edu/academic-progress/enrollment-status-progress/changing-your-field-or-program/">Changing Your Field or Program</a></li>
+		<li id="menu-item-48967" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48967"><a href="https://gradschool.cornell.edu/academic-progress/enrollment-status-progress/changing-your-status/">Changing Your Status</a></li>
+		<li id="menu-item-48968" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48968"><a href="https://gradschool.cornell.edu/academic-progress/enrollment-status-progress/petitioning-for-exceptions/">Petitioning for Exceptions</a></li>
+		<li id="menu-item-50645" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50645"><a href="https://gradschool.cornell.edu/academic-progress/enrollment-status-progress/commencement/">Commencement</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48499"><a href="https://gradschool.cornell.edu/academic-progress/opportunities-resources-support/">Opportunities, Resources &#038; Support</a>
+	<ul class="sub-menu">
+		<li id="menu-item-48970" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48970"><a href="https://gradschool.cornell.edu/academic-progress/opportunities-resources-support/advising-guide-for-research-students-2025/">Advising Guide for Research Students</a></li>
+		<li id="menu-item-48969" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48969"><a href="https://gradschool.cornell.edu/academic-progress/opportunities-resources-support/advising-guide-for-professional-students/">Advising Guide for Professional Students</a></li>
+		<li id="menu-item-48971" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48971"><a href="https://gradschool.cornell.edu/academic-progress/opportunities-resources-support/office-of-academic-affairs/">Office of Academic Affairs</a></li>
+		<li id="menu-item-48972" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48972"><a href="https://gradschool.cornell.edu/academic-progress/opportunities-resources-support/educational-opportunities-off-campus/">Educational Opportunities Off Campus</a></li>
+		<li id="menu-item-48973" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48973"><a href="https://gradschool.cornell.edu/academic-progress/opportunities-resources-support/finding-administrative-help/">Finding Administrative Help</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48501"><a href="https://gradschool.cornell.edu/academic-progress/guidelines-for-graduate-field-academic-handbooks/">Guidelines for Graduate Field Academic Handbooks</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current_page_ancestor menu-item-has-children menu-item-48502"><a href="https://gradschool.cornell.edu/financial-support/">Financial Support</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48507"><a href="https://gradschool.cornell.edu/financial-support/graduate-funding-and-enrollment/">Graduate Funding and Enrollment</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48503"><a href="https://gradschool.cornell.edu/financial-support/tuition-rates/">Tuition Rates</a>
+	<ul class="sub-menu">
+		<li id="menu-item-48982" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48982"><a href="https://gradschool.cornell.edu/financial-support/tuition-rates/health-insurance-rates/">Health Insurance Rates</a></li>
+		<li id="menu-item-48983" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48983"><a href="https://gradschool.cornell.edu/financial-support/tuition-rates/cost-of-attendance/">Cost of Attendance</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48504"><a href="https://gradschool.cornell.edu/financial-support/assistantships/">Assistantships</a>
+	<ul class="sub-menu">
+		<li id="menu-item-49722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49722"><a href="https://gradschool.cornell.edu/financial-support/assistantships/assistantships-for-professional-degree-students/">Assistantships for Professional Degree Students</a></li>
+		<li id="menu-item-50730" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50730"><a href="https://gradschool.cornell.edu/financial-support/assistantships/performance-expectations/">Performance Expectations</a></li>
+		<li id="menu-item-50731" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50731"><a href="https://gradschool.cornell.edu/financial-support/assistantships/pay-calendar-and-information/">Pay Calendar and Information</a></li>
+		<li id="menu-item-51097" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51097"><a href="https://gradschool.cornell.edu/financial-support/assistantships/time-away-from-assistantship-duties/">Time Away from Assistantship Duties</a></li>
+		<li id="menu-item-51297" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51297"><a href="https://gradschool.cornell.edu/financial-support/assistantships/open-assistantship-positions/">Open Assistantship Positions</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current_page_ancestor menu-item-has-children menu-item-48505"><a href="https://gradschool.cornell.edu/financial-support/fellowships/">Fellowships</a>
+	<ul class="sub-menu">
+		<li id="menu-item-50222" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50222"><a href="https://gradschool.cornell.edu/financial-support/fellowships/welcome-fellowships/">Welcome Fellowships</a></li>
+		<li id="menu-item-48866" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48866"><a href="https://gradschool.cornell.edu/financial-support/fellowships/new-student-fellowships/">New Student Fellowships</a></li>
+		<li id="menu-item-48867" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48867"><a href="https://gradschool.cornell.edu/financial-support/fellowships/continuing-student-fellowships/">Continuing Student Fellowships</a></li>
+		<li id="menu-item-48868" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-48868"><a href="https://gradschool.cornell.edu/financial-support/fellowships/external-fellowships-and-grants/">External Fellowships and Grants</a>
+		<ul class="sub-menu">
+			<li id="menu-item-48986" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48986"><a href="https://gradschool.cornell.edu/financial-support/fellowships/external-fellowships-and-grants/resources-and-workshops/">Resources and Workshops</a>
+			<ul class="sub-menu">
+				<li id="menu-item-52566" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52566"><a href="https://gradschool.cornell.edu/financial-support/fellowships/external-fellowships-and-grants/resources-and-workshops/budget-and-application-assistance/">Budget and Application Assistance</a></li>
+				<li id="menu-item-48987" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48987"><a href="https://gradschool.cornell.edu/financial-support/fellowships/external-fellowships-and-grants/resources-and-workshops/letters-of-recommendation/">Letters of Recommendation</a></li>
+				<li id="menu-item-48984" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48984"><a href="https://gradschool.cornell.edu/financial-support/fellowships/external-fellowships-and-grants/resources-and-workshops/writing-your-research-statement/">Writing Your Research Statement</a></li>
+			</ul>
+</li>
+			<li id="menu-item-48985" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2339 current_page_item menu-item-48985"><a href="https://gradschool.cornell.edu/financial-support/fellowships/external-fellowships-and-grants/supplementation-of-external-fellowships/" aria-current="page">Financial Supplementation of External Fellowships</a></li>
+			<li id="menu-item-48869" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48869"><a href="https://gradschool.cornell.edu/financial-support/fellowships/external-fellowships-and-grants/nsf-grfp-fellowship/">NSF GRFP Fellowship</a></li>
+			<li id="menu-item-48870" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48870"><a href="https://gradschool.cornell.edu/financial-support/fellowships/external-fellowships-and-grants/graduate-fellowships-listserv/">Graduate Fellowships Listserv</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48508"><a href="https://gradschool.cornell.edu/financial-support/emergency-fund-program/">Emergency Fund Program</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48509"><a href="https://gradschool.cornell.edu/financial-support/stipend-rates/">Stipend Rates</a>
+	<ul class="sub-menu">
+		<li id="menu-item-48988" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48988"><a href="https://gradschool.cornell.edu/financial-support/stipend-rates/receiving-your-stipend/">Receiving Your Stipend</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48510"><a href="https://gradschool.cornell.edu/financial-support/tax-information/">Tax Information</a>
+	<ul class="sub-menu">
+		<li id="menu-item-48844" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48844"><a href="https://gradschool.cornell.edu/financial-support/tax-information/understanding-the-1098-t-form/">Understanding the 1098-T Form</a></li>
+		<li id="menu-item-48843" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48843"><a href="https://gradschool.cornell.edu/financial-support/tax-information/tax-preparation-faqs/">Tax Preparation FAQs</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48511"><a href="https://gradschool.cornell.edu/financial-support/travel-funding-opportunities/">Travel Funding Opportunities</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48512"><a href="https://gradschool.cornell.edu/inclusion/">Inclusion &#038; Access</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48513"><a href="https://gradschool.cornell.edu/inclusion/about-oise/">Office of Inclusion and Student Engagement</a>
+	<ul class="sub-menu">
+		<li id="menu-item-48977" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48977"><a href="https://gradschool.cornell.edu/inclusion/about-oise/contact-oise-staff/">Contact OISE Staff</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48514"><a href="https://gradschool.cornell.edu/inclusion/recruitment/">Access &#038; Recruitment</a>
+	<ul class="sub-menu">
+		<li id="menu-item-48877" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48877"><a href="https://gradschool.cornell.edu/inclusion/recruitment/prospective-students/">Prospective Students</a>
+		<ul class="sub-menu">
+			<li id="menu-item-48876" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48876"><a href="https://gradschool.cornell.edu/inclusion/recruitment/prospective-students/requesting-letters-of-recommendation/">Requesting Letters of Recommendation</a></li>
+			<li id="menu-item-48875" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48875"><a href="https://gradschool.cornell.edu/inclusion/recruitment/prospective-students/writing-your-statement-of-purpose/">Writing Your Academic Statement of Purpose</a></li>
+			<li id="menu-item-48898" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48898"><a href="https://gradschool.cornell.edu/inclusion/recruitment/prospective-students/personal-statements/">Understanding and Preparing Your Personal Statement</a></li>
+			<li id="menu-item-48873" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48873"><a href="https://gradschool.cornell.edu/inclusion/recruitment/prospective-students/summer-research-internships-for-undergraduates/">Summer Research Internships for Undergraduates</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48515"><a href="https://gradschool.cornell.edu/inclusion/signature-initiatives/">Signature Initiatives</a>
+	<ul class="sub-menu">
+		<li id="menu-item-48924" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48924"><a href="https://gradschool.cornell.edu/inclusion/signature-initiatives/graduate-school-deans-scholars/">Graduate School Dean’s Scholars</a></li>
+		<li id="menu-item-48925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48925"><a href="https://gradschool.cornell.edu/inclusion/signature-initiatives/summer-success-symposium/">Summer Success Symposium</a></li>
+		<li id="menu-item-55479" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55479"><a href="https://gradschool.cornell.edu/inclusion/signature-initiatives/foundations-of-academic-success-belonging/">Foundations of Academic Success &#038; Belonging</a></li>
+		<li id="menu-item-48926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48926"><a href="https://gradschool.cornell.edu/inclusion/signature-initiatives/graduate-students-mentoring-undergraduates/">Graduate Students Mentoring Undergraduates</a></li>
+		<li id="menu-item-48927" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48927"><a href="https://gradschool.cornell.edu/inclusion/signature-initiatives/my-voice-my-story/">My Voice, My Story</a></li>
+		<li id="menu-item-48917" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48917"><a href="https://gradschool.cornell.edu/inclusion/signature-initiatives/nextgen-professors-program/">NextGen Professors Program</a>
+		<ul class="sub-menu">
+			<li id="menu-item-48916" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48916"><a href="https://gradschool.cornell.edu/inclusion/signature-initiatives/nextgen-professors-program/application-information/">Application Information</a></li>
+			<li id="menu-item-52416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52416"><a href="https://gradschool.cornell.edu/inclusion/signature-initiatives/nextgen-professors-program/2025-2026-cohort/">2025-2026 Cohort</a></li>
+			<li id="menu-item-48914" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48914"><a href="https://gradschool.cornell.edu/inclusion/signature-initiatives/nextgen-professors-program/nextgen-alumni/">NextGen Professors Alumni</a></li>
+		</ul>
+</li>
+		<li id="menu-item-48929" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48929"><a href="https://gradschool.cornell.edu/inclusion/signature-initiatives/future-professors-institute/">Future Professors Institute</a></li>
+		<li id="menu-item-48931" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48931"><a href="https://gradschool.cornell.edu/inclusion/signature-initiatives/mac-peer-mentoring-program/">MAC Doctoral Peer Mentoring Club</a>
+		<ul class="sub-menu">
+			<li id="menu-item-49054" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49054"><a href="https://gradschool.cornell.edu/inclusion/signature-initiatives/mac-peer-mentoring-program/mac-public-keynote-2/">Mentoring within the Academy Keynote</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48517"><a href="https://gradschool.cornell.edu/inclusion/bouchet-honor-society/">Bouchet Honor Society</a>
+	<ul class="sub-menu">
+		<li id="menu-item-48932" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48932"><a href="https://gradschool.cornell.edu/inclusion/bouchet-honor-society/bouchet-graduate-honor-society-scholars/">Bouchet Graduate Honor Society Scholars</a></li>
+		<li id="menu-item-48933" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48933"><a href="https://gradschool.cornell.edu/inclusion/bouchet-honor-society/bouchet-lecture/">Bouchet Society Lecture</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48518"><a href="https://gradschool.cornell.edu/inclusion/graduate-excellence-and-impact-awards/">Graduate Excellence &#038; Impact Awards</a>
+	<ul class="sub-menu">
+		<li id="menu-item-54456" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54456"><a href="https://gradschool.cornell.edu/inclusion/graduate-excellence-and-impact-awards/2026-graduate-excellence-impact-awardees/">2026 Graduate Excellence &#038; Impact Awardees</a></li>
+		<li id="menu-item-49933" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49933"><a href="https://gradschool.cornell.edu/inclusion/graduate-excellence-and-impact-awards/2025-graduate-diversity-inclusion-awardees/">2025 Graduate Excellence &amp; Impact Awardees</a></li>
+		<li id="menu-item-48978" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48978"><a href="https://gradschool.cornell.edu/inclusion/graduate-excellence-and-impact-awards/2024-graduate-diversity-inclusion-awardees/">2024 Graduate Excellence &amp; Impact Awardees</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48519"><a href="https://gradschool.cornell.edu/inclusion/funding-and-resources/">Funding and Resources</a>
+	<ul class="sub-menu">
+		<li id="menu-item-48934" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48934"><a href="https://gradschool.cornell.edu/inclusion/funding-and-resources/graduate-school-founders-fellowships/">Graduate School Founder’s Fellowships</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48520"><a href="https://gradschool.cornell.edu/inclusion/faculty-resources/">Faculty Resources</a>
+	<ul class="sub-menu">
+		<li id="menu-item-48979" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48979"><a href="https://gradschool.cornell.edu/inclusion/faculty-resources/practical-steps/">Practical Toolkit for Supporting Belonging</a></li>
+		<li id="menu-item-48980" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48980"><a href="https://gradschool.cornell.edu/inclusion/faculty-resources/implicit-bias-resources/">Implicit Bias Resources</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48521"><a href="https://gradschool.cornell.edu/inclusion/student-organizations/">Student Organizations</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48522"><a href="https://gradschool.cornell.edu/inclusion/reporting-bias/">Reporting Bias, Assault, &#038; Harassment</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48523"><a href="https://gradschool.cornell.edu/career-and-professional-development/">Professional Development</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48525"><a href="https://gradschool.cornell.edu/career-and-professional-development/office-of-career-and-professional-development-2/">Office of Career and Professional Development</a>
+	<ul class="sub-menu">
+		<li id="menu-item-51572" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51572"><a href="https://gradschool.cornell.edu/career-and-professional-development/office-of-career-and-professional-development-2/student-guide-for-ph-d-career-and-professional-development-milestones/">Student Guide for Ph.D. Career and Professional Development Milestones</a></li>
+		<li id="menu-item-51571" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51571"><a href="https://gradschool.cornell.edu/career-and-professional-development/office-of-career-and-professional-development-2/faculty-guide-for-supporting-career-and-professional-development-milestones/">Faculty Guide for Supporting Career and Professional Development Milestones</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48526"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/">Pathways to Success</a>
+	<ul class="sub-menu">
+		<li id="menu-item-50247" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50247"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/navigate-academia/">Navigate Academia</a></li>
+		<li id="menu-item-50248" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50248"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/build-your-skills/">Build Your Skills</a></li>
+		<li id="menu-item-50249" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50249"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/create-your-plan/">Create Your Plan</a></li>
+		<li id="menu-item-50250" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-50250"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/prepare-for-your-career/">Prepare for Your Career</a>
+		<ul class="sub-menu">
+			<li id="menu-item-50811" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-50811"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/prepare-for-your-career/understand-yourself/">Understand Yourself</a>
+			<ul class="sub-menu">
+				<li id="menu-item-50812" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50812"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/prepare-for-your-career/understand-yourself/present-your-key-skills-to-an-employer/">Present Your Key Skills to an Employer</a></li>
+			</ul>
+</li>
+			<li id="menu-item-50813" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-50813"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/prepare-for-your-career/explore-options/">Explore Options</a>
+			<ul class="sub-menu">
+				<li id="menu-item-50814" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50814"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/prepare-for-your-career/explore-options/find-a-postdoc-position/">Find a Postdoc Position</a></li>
+			</ul>
+</li>
+			<li id="menu-item-50815" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-50815"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/prepare-for-your-career/take-action/">Take Action</a>
+			<ul class="sub-menu">
+				<li id="menu-item-50816" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50816"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/prepare-for-your-career/take-action/resumes-and-cvs/">Resumes and CVs</a></li>
+				<li id="menu-item-50817" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50817"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/prepare-for-your-career/take-action/research-statement/">Research Statement</a></li>
+				<li id="menu-item-50818" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50818"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/prepare-for-your-career/take-action/teaching-philosophy-statement/">Teaching Philosophy Statement</a></li>
+				<li id="menu-item-50819" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50819"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/prepare-for-your-career/take-action/interviews/">Interviews</a></li>
+				<li id="menu-item-50820" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50820"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/prepare-for-your-career/take-action/present-your-research/">Present Your Research</a></li>
+				<li id="menu-item-50821" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50821"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/prepare-for-your-career/take-action/evaluate-offers/">Evaluate Offers</a></li>
+			</ul>
+</li>
+		</ul>
+</li>
+		<li id="menu-item-52994" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52994"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/2026-pathways-to-success-career-discovery-series/">2026 Pathways to Success: Career Discovery Series</a></li>
+		<li id="menu-item-50810" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50810"><a href="https://gradschool.cornell.edu/career-and-professional-development/pathways-to-success/free-memberships-for-cornell-graduate-students/">Free Memberships for Cornell Graduate Students and Postdocs</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48524"><a href="https://gradschool.cornell.edu/career-and-professional-development/three-minute-thesis/">Three Minute Thesis</a>
+	<ul class="sub-menu">
+		<li id="menu-item-52487" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52487"><a href="https://gradschool.cornell.edu/career-and-professional-development/three-minute-thesis/3mt-2026-2/">3MT 2026</a></li>
+		<li id="menu-item-51418" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51418"><a href="https://gradschool.cornell.edu/career-and-professional-development/three-minute-thesis/past-3mt-competitions/">Past 3MT Competitions</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48527"><a href="https://gradschool.cornell.edu/student-experience/">Student Experience</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48534"><a href="https://gradschool.cornell.edu/student-experience/big-red-barn/">Big Red Barn</a>
+	<ul class="sub-menu">
+		<li id="menu-item-55375" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55375"><a href="https://gradschool.cornell.edu/student-experience/big-red-barn/big-red-barn-programming/">Big Red Barn Programming</a></li>
+		<li id="menu-item-48974" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48974"><a href="https://gradschool.cornell.edu/student-experience/big-red-barn/reserving-the-brb/">Barn Reservation Guide</a>
+		<ul class="sub-menu">
+			<li id="menu-item-55398" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55398"><a href="https://gradschool.cornell.edu/student-experience/big-red-barn/reserving-the-brb/big-red-barn-reservation-quick-reference-checklist/">Barn Reservation Checklist</a></li>
+			<li id="menu-item-55584" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55584"><a href="https://gradschool.cornell.edu/student-experience/big-red-barn/reserving-the-brb/big-red-barn-marketing-submissions/">Barn Marketing Submissions</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48528"><a href="https://gradschool.cornell.edu/student-experience/office-of-graduate-student-life/">Office of Graduate Student Life</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48529"><a href="https://gradschool.cornell.edu/student-experience/help-and-support/">Help and Support</a>
+	<ul class="sub-menu">
+		<li id="menu-item-48976" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48976"><a href="https://gradschool.cornell.edu/student-experience/help-and-support/mental-health-while-away-from-campus/">Mental Health While Away from Campus</a></li>
+		<li id="menu-item-55660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55660"><a href="https://gradschool.cornell.edu/student-experience/help-and-support/sexual-assault-resources-and-support/">Sexual Assault Resources and Support</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48530"><a href="https://gradschool.cornell.edu/student-experience/student-communities/">Student Communities</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-48531"><a href="https://gradschool.cornell.edu/student-experience/student-life-programs/">Student Life Programs</a>
+	<ul class="sub-menu">
+		<li id="menu-item-48864" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48864"><a href="https://gradschool.cornell.edu/student-experience/student-life-programs/graduate-school-primer-navigating-academia-workshop-series/">Graduate School Primer: Navigating Academia Workshop Series</a></li>
+		<li id="menu-item-53501" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53501"><a href="https://gradschool.cornell.edu/student-experience/student-life-programs/wellbeing-essentials-a-series-for-graduate-and-professional-students/">Well-being Essentials: A Series for Graduate and Professional Students</a></li>
+		<li id="menu-item-48865" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48865"><a href="https://gradschool.cornell.edu/student-experience/student-life-programs/perspectives-the-complete-graduate-student/">Perspectives: The Complete Graduate Student</a></li>
+		<li id="menu-item-48862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48862"><a href="https://gradschool.cornell.edu/student-experience/student-life-programs/becoming-a-resilient-scientist-discussion-series/">Becoming a Resilient Scientist Discussion Series</a></li>
+		<li id="menu-item-48863" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48863"><a href="https://gradschool.cornell.edu/student-experience/student-life-programs/weeklywalks/">Weekly Walks</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48532"><a href="https://gradschool.cornell.edu/student-experience/student-governance/">Student Governance</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48533"><a href="https://gradschool.cornell.edu/student-experience/student-perks-and-discounts/">Student Perks and Discounts</a></li>
+</ul>
+</li>
+</ul></nav>														</div>
+				
+				<article id="main-article" class="primary">
+	<div id='breadcrumb-navigation'><nav class='breadcrumb' aria-label='Breadcrumb'><ul class='list-menu'><li class="home"><span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="https://gradschool.cornell.edu" class="home"><span property="name">Graduate School</span></a><meta property="position" content="1"></span></li>
+<li class="post post-page"><span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="https://gradschool.cornell.edu/financial-support/" class="post post-page"><span property="name">Financial Support</span></a><meta property="position" content="2"></span></li>
+<li class="post post-page"><span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="https://gradschool.cornell.edu/financial-support/fellowships/" class="post post-page"><span property="name">Fellowships</span></a><meta property="position" content="3"></span></li>
+<li class="post post-page"><span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="https://gradschool.cornell.edu/financial-support/fellowships/external-fellowships-and-grants/" class="post post-page"><span property="name">External Fellowships and Grants</span></a><meta property="position" content="4"></span></li>
+<li class="post post-page current-item"><span property="itemListElement" typeof="ListItem"><span property="name">Financial Supplementation of External Fellowships</span><meta property="position" content="5"></span></li>
+</ul></nav></div>
+	<h1>Financial Supplementation of External Fellowships</h1>
+
+	
+	
+		<section id="post-2339" class="post-2339 page type-page status-publish hentry" aria-label="Post Content for Financial Supplementation of External Fellowships">
+			<p>Cornell University Graduate School strongly encourages students to apply for external fellowships and grants. These may be offered by government agencies, private foundations, or corporations, and may provide one year or multiple years of support.</p>
+<p>To encourage doctoral students, in particular, to compete for external awards, the Graduate School may be able to provide top-off supplementation to bring an award to the minimum academic year stipend. If the following criteria are met, the Graduate School will coordinate supplementation of the stipend to the academic year TA rate, individual health insurance, and tuition.</p>
+<h2>Eligibility criteria:</h2>
+<ul>
+<li>Students must be research degree students in good academic standing.</li>
+<li>The award is external to Cornell; has been won by the student’s own initiative; and is open to multiple disciplines or fields.</li>
+<li>The award provides an amount equal to at least half of the cost of academic year TA stipend and <a class="ext" href="https://studenthealthbenefits.cornell.edu/" rel="noopener">health insurance</a>. It is estimated that the award eligibility amount for the 9-month academic year 2026-2027 will be $20,552. The award will need to be applied toward stipend, health insurance, tuition, or any combination of these per applicable policies.</li>
+<li>Fellowship top-off is not available to master&#8217;s students after the eighth registered semester or Ph.D. students after the 14th registered semester.</li>
+<li>Students must apply for top-off in the same year that the fellowship is won. A top-off cannot be applied retroactively.</li>
+<li>The award must directly support the student’s dissertation and thesis research. Awards that require a student to perform a service, engage in teaching, or conduct research not related to the student’s dissertation or thesis research, do not qualify for supplementation.</li>
+</ul>
+<h2>Additional information:</h2>
+<ul>
+<li>Awards that cover a 12-month period will be prorated to a nine-month standard.</li>
+<li>Awards that come in a “lump sum” will be apportioned to cover a percentage each of stipend, tuition, and health insurance.</li>
+<li>Awards that are funded in a foreign currency will be calculated using the published currency exchange rate on June 1 of that year.</li>
+<li>Supplementation is calculated by considering all awards granted for the academic year or 12-month period.&nbsp; If additional awards are granted after the initial calculation, supplementation amounts are recalculated.</li>
+<li>Certain exceptional external awards provide full coverage of all necessary living expenses and surpass the required stipend amount. Awards exceeding the base stipend amount may be allocated across additional semesters or utilized to offset essential billed costs, such as health insurance or tuition. These types of awards may not qualify for supplementation.</li>
+<li>By accepting and receiving fellowship supplementation, fellows are consenting to the review and approval of their budgets by the Office of Graduate Fellowships and Funding.</li>
+</ul>
+<p>Please reach out to your GFA to apply for supplemental funding. For questions regarding this program, please contact the Office of Graduate Fellowships and Funding&nbsp; <a class="mailto" href="mailto:grad_funding@cornell.edu?subject=Top-off">grad_funding@cornell.edu</a>.</p>
+					</section>
+
+		
+</article>
+
+				<div id="sidebar-bottom" class="secondary" role="complementary">
+									</div>
+
+			</div>
+
+		</main>
+	</div>
+
+		
+	<footer id="body-footer">
+		<div class="main-footer">
+			<div class="container-fluid sidebar-left">
+				<div class="row">
+					<div class="primary">
+
+				        						
+						<h2 class="sr-only">Footer Links</h2>
+						<div class="two-col padded footer-links">
+							<div>
+								<h3 class='h6'>Quick Links</h3>
+								<ul class="list-menu vertical"><li id="menu-item-3570" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3570"><a href="https://intranet.gradschool.cornell.edu">Intranet</a></li>
+<li id="menu-item-3571" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3571"><a href="/events">Events</a></li>
+<li id="menu-item-124" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-124"><a href="https://gradschool.cornell.edu/resources/">Resources</a></li>
+<li id="menu-item-3573" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3573"><a href="/forms">Forms</a></li>
+<li id="menu-item-3574" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3574"><a href="/policies">Policies</a></li>
+</ul>							</div>
+							<div>
+								<h3 class='h6'>Affiliated Offices</h3>								<ul class="list-menu vertical"><li id="menu-item-3565" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3565"><a href="https://teaching.cornell.edu/">Center for Teaching Innovation</a></li>
+<li id="menu-item-3566" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3566"><a href="https://elso.as.cornell.edu/">English Language Support Office</a></li>
+<li id="menu-item-3568" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3568"><a href="https://assembly.cornell.edu/shared-governance-cornell/graduate-and-professional-student-assembly">Graduate and Professional Student Assembly</a></li>
+<li id="menu-item-3567" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3567"><a href="https://international.globallearning.cornell.edu/">Office of Global Learning</a></li>
+<li id="menu-item-11623" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11623"><a href="https://career.cornell.edu/">University Career Development</a></li>
+</ul>							</div>
+						</div>
+					</div>
+					<div class="secondary">
+				        				          <h2 class="h5">Cornell University Graduate School</h2><div class="textwidget custom-html-widget"><p>Caldwell Hall<br>Cornell University<br>Ithaca, NY 14853-2602</p>
+<p>(607) 255-5820	</p>
+<p><a class="link-block" href="/about/contacts">Contact Us</a></p></div>				        					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sub-footer">
+			<div class="container-fluid sidebar-left">
+				<div class="row">
+					<div class="content">
+						<div class="two-col">
+							<div>
+																<ul class="custom inline no-bullet">
+									<li><a href="https://www.cornell.edu">Cornell University</a> &copy; 2026</li>
+									<li><a href="https://privacy.cornell.edu/">University Privacy</a></li>
+								</ul>
+							</div>
+							<div>
+								<ul class="custom inline no-bullet">
+									<li><a href="https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment">Equal Education & Employment</a></li>	
+									<li><a href="https://tdx.cornell.edu/TDClient/39/Portal/Requests/ServiceDet?ID=373">Web Accessibility Assistance</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/graduate_school/*","/wp-content/themes/cwd_cornell/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div class="simple-banner simple-banner-text" style="display:none !important"></div>		<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		<script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"}};/* ]]> */ </script><script id="cornell-script-cwd-utilities-js" src="https://gradschool.cornell.edu/wp-content/themes/cwd_cornell/js/cwd_utilities.js?ver=677095963"></script>
+<script id="tec-user-agent-js" src="https://gradschool.cornell.edu/wp-content/plugins/the-events-calendar/common/build/js/user-agent.js?ver=4098019"></script>
+<script id="tikemp_search_scroll-js" src="https://gradschool.cornell.edu/wp-content/plugins/fast-user-switching/js/jquery.nicescroll.min.js?ver=1202812555"></script>
+<script id="tikemp_script-js" src="https://gradschool.cornell.edu/wp-content/plugins/fast-user-switching/js/script.js?ver=1290857377"></script>
+<script id="page-scroll-to-id-plugin-script-js-extra">
+var mPS2id_params = {"instances":{"mPS2id_instance_0":{"selector":"a[rel='m_PageScroll2id']","autoSelectorMenuLinks":"false","excludeSelector":"a[href^='#tab-'], a[href^='#tabs-'], a[data-toggle]:not([data-toggle='tooltip']), a[data-slide], a[data-vc-tabs], a[data-vc-accordion]","scrollSpeed":1000,"autoScrollSpeed":"true","scrollEasing":"easeInOutQuint","scrollingEasing":"easeOutQuint","forceScrollEasing":"false","pageEndSmoothScroll":"true","stopScrollOnUserAction":"false","autoCorrectScroll":"false","autoCorrectScrollExtend":"false","layout":"vertical","offset":"200","dummyOffset":"false","highlightSelector":"","clickedClass":"mPS2id-clicked","targetClass":"mPS2id-target","highlightClass":"mPS2id-highlight","forceSingleHighlight":"false","keepHighlightUntilNext":"false","highlightByNextTarget":"false","appendHash":"true","scrollToHash":"true","scrollToHashForAll":"true","scrollToHashDelay":1005,"scrollToHashUseElementData":"true","scrollToHashRemoveUrlHash":"false","disablePluginBelow":0,"adminDisplayWidgetsId":"true","adminTinyMCEbuttons":"true","unbindUnrelatedClickEvents":"true","unbindUnrelatedClickEventsSelector":"","normalizeAnchorPointTargets":"true","encodeLinks":"false"}},"total_instances":"1","shortcode_class":"_ps2id"};
+//# sourceURL=page-scroll-to-id-plugin-script-js-extra
+</script>
+<script id="page-scroll-to-id-plugin-script-js" src="https://gradschool.cornell.edu/wp-content/plugins/page-scroll-to-id/js/page-scroll-to-id.min.js?ver=862910168"></script>
+<script id="wa-tribe-filterbar-js-js" src="https://gradschool.cornell.edu/wp-content/themes/graduate_school/js/wa-tribe-filterbar.js?ver=40061314"></script>
+<script id="wa-tribe-venue-js" src="https://gradschool.cornell.edu/wp-content/themes/graduate_school/js/wa-tribe-venue.js?ver=2101140134"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://gradschool.cornell.edu/wp-includes/js/wp-emoji-release.min.js?ver=353097273"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://gradschool.cornell.edu/wp-includes/js/wp-emoji-loader.min.js
+</script>
+
+	<script type="text/javascript">
+	/*<![CDATA[*/
+	(function() {
+	 var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
+	 sz.src = '//siteimproveanalytics.com/js/siteanalyze_6120104.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
+	})();
+	/*]]>*/
+	</script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"0b2b03b3e4","applicationID":"97227893","transactionName":"NFdVZEpWWksEBkcIWg0ddlNMXltWShVSBlA=","queueTime":0,"applicationTime":1201,"atts":"GBBWEgJMSUU=","errorBeacon":"bam.nr-data.net","agent":""}</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4d4d0f11c36c6b2',t:'MTc5MjQ2NTY4Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

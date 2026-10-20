@@ -490,3 +490,27 @@ nationality list from a page whose associate-state sentence is cut off. R is dev
 R shows no gain from rounds 30-35 over round 26 on this small sample; the gain is on the wrong-claim side only where the
 pages are ambiguous (10 answers were sent to review instead of claimed). It does not contradict P and Q, whose sets are
 5 to 5.5 times larger, but it is not evidence for them either.
+
+### Round 36: set S (programme pages reached by following lists)
+
+Sets Q and R showed that searching a domain for a named programme finds a single-programme page about 6% of the time. Set S
+reverses the method (`tests/heldout_s/collect.py`): it opens the list, home and several-award pages that sets P, Q and R fetched but never
+labelled, and follows, on the same site, the links whose text names a scholarship, fellowship, grant or award (robots.txt respected; a
+host that carries a labelled page of any earlier set is skipped). 548 list pages gave 661 pages after the code was frozen; 30 were
+single-programme pages with enough information to label (4.5%, mostly Fulbright commissions, foundations and named university
+awards); the other 631 are excluded without a per-page reason (generic aid pages, lists, news, PDFs, near-empty pages or not reviewed).
+
+Scored once on the frozen round-35 code: 120 decisions, **83 correct (69%) / 17 wrong claims (14%) / 13 sent to review (11%)**;
+round-33 code identical; round-30 78 / 20 / 14; round-26 code 81 (68%) / 34 (28%) / 0. Without the close calls (95 decisions):
+71 / 15 / 7 against 70 / 24 / 0 for round 26. Clean quotations on every claimed answer: 27/27. Per decision (frozen): eligibility
+20 / 4 / 3, funding 13 / 3 / 10, cycle 25 / 5 / 0, deadline 25 / 5 / 0. This is the first set on which the later rounds roughly halve the wrong
+claims without losing correct answers (R, with 14 programmes, could not show it; P and Q are consistent with it).
+
+Six S labels were then adjudicated (`tests/heldout_s/adjudication.json`): four missed an application period lower on the page (Tokyo
+Metropolitan, San Jose State, North Texas, Case Western), and two missed a stated nationality rule (Tokyo Metropolitan "non-Japanese
+national", Fulbright Finland "open to U.S. students"). With them: 90 / 10 / 13, or 78 / 8 / 7 without the close calls. The adjudication
+was written after the errors were seen, so it can only flatter the code; the frozen figures above are the headline. Remaining S errors: a "Hungarian citizens"
+line from another scheme on the same page, "Swedish and American students" read as including the US, a yearly deadline without a year taken
+from older dates, "room & board" not counted as living costs, and a mission sentence ("financial support to our international students") read as a
+stipend and tuition. Two rules tried on these (dual-citizenship "may not apply", "room & board") changed nothing; one (mission sentence with "our ...
+students") lost a correct answer and was rejected. S joins the development pool (K to S, 1,016 decisions: 719).
