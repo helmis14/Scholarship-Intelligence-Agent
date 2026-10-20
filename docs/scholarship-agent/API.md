@@ -30,6 +30,8 @@ Errors: `service.NotFound` (unknown opportunity/profile, maps to HTTP 404),
 | `get_profile(profile_id)` | `GET /profiles/{id}` | `profile`, `missing` |
 | `export_private_data(profile_id)` | `GET /profiles/{id}/export` | `profile`, `applications`, `status_history`, `checklist`, `documents`, `outcomes` |
 | `delete_private_data(profile_id)` | `DELETE /profiles/{id}` | `deleted` (row counts) |
+| `report_issue(ref, field, note, shown_value)` | `POST /opportunities/{id}/reports` | `report_id`, `status`; stores no profile or contact detail; two open reports on a field hold it as `needs_review` |
+| `list_issue_reports(status, ref)` / `resolve_issue_report(id, status, resolution)` | operator routes | `reports`, `count` / `status` |
 | `discover(destinations, levels, disciplines, nationality, source_ids, use_search)` | `POST /discovery-jobs` | `job_id`, `pages_fetched`, `opportunities_new`, `opportunities_updated`, `duplicates_merged`, `failures`, `injection_flags`, `search_provider`, `queries`, `sources_used` |
 | `scrape(urls, provider, countries)` | `POST /ingest` | same as discover |
 | `verify(ref, official_url)` | `POST /opportunities/{id}/verify` | `status`, `confirmed`, `conflicting`, `unverified`, `historical_deadlines`, `conflicts`, `notes` |

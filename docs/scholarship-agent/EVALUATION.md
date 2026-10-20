@@ -533,3 +533,18 @@ marks as past do not count toward "several dates". The gate is a reporting polic
 These figures are in-sample, because the thresholds came from the same data, so they will be somewhat optimistic on new pages; a fresh set is the check. The
 pool utility rose from 719 to 740.5 in standard mode. Wrong claims per set fell, for example, P 7% -> 3%, S 8% -> 6% (standard), P 7% -> 2%, S 8% -> 5% (strict).
 For a public site, strict is the setting that reaches the "under 5% of decisions" target on the pool, at the price of 19% of decisions going to review.
+
+### Round 37 follow-up: out-of-sample check of the risk gate, and a discovery finding
+
+**The gate on sets it was not chosen from.** The thresholds above were computed on K to S. Recomputed with only K to O as the training sets, the
+claim kinds gated in `standard` and `strict` keep their low precision on P to S, which were not used to choose them: assistantship and fee-waiver
+5 wrong of 5, "not_announced" 4 of 4, deadlines with several dates 7 of 9, stipend-only 4 of 12, tuition-only 3 of 5, "any nationality" 1 of 3,
+"upcoming" 2 of 5. On P to S (628 decisions) wrong claims were 8.1% before the gate; standard brings them to about 5.6% and strict to about 4.0%
+(correct 68.3% -> 68.0% standard, 65.6% strict). The extraction rules are still in-sample on these sets, so this is evidence about the gate, not a
+fresh-set result.
+
+**Country-by-country search finds mostly blogs.** A first attempt at set T searched, for each of 130 countries, in English and in the local
+language, and fetched the first hosts it found: 959 pages, but the large majority were scholarship-blog, agent and aggregator pages ("Fully
+Funded ... 2027", "Top 10 scholarships in ..."), which the agent must not treat as a source. The run was not labelled; its pages are kept local
+(`tests/heldout_t/urls_search_run1.json`, not committed). A second run keeps only hosts that look like a government, an education body, a foundation or a
+university (`OFFICIAL` in `tests/heldout_t/collect.py`).

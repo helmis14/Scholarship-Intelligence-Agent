@@ -268,8 +268,45 @@ class ScholarshipService:
 
     def get_opportunity(self, ref: str) -> dict:
         o = self._opp(ref)
+        reports = self.store.issue_reports("open", o.id)
+        held = {"eligibility": "eligible_countries", "funding": "funding_type", "cycle": "cycle", "deadline": "deadline"}
+        for field, key in held.items():
+            n = sum(1 for r in reports if r["field"] == field)
+            if n >= 2 and o.field_status.get(key, {}).get("state") not in (None, "not_stated", "needs_review"):
+                o.field_status[key] = {"state": "needs_review", "detail": f"{n} open user reports say this value is wrong"}
         return _out(opportunity=o.to_dict(), deadline_history=self.store.deadline_history(o.id),
-                    verifications=self.store.verifications(o.id))
+                    verifications=self.store.verifications(o.id), open_issue_reports=len(reports))
+
+    ISSUE_FIELDS = ("eligibility", "funding", "cycle", "deadline", "levels", "provider", "page", "other")
+
+    def report_issue(self, ref: str, field: str, note: str, shown_value: str = "") -> dict:
+        """A user says that a value shown for this opportunity is wrong. Stored without any profile or contact
+        detail; e-mail addresses and phone numbers in the note are removed. Reports are reviewed by the operator
+        (list_issue_reports / resolve_issue_report); a record with two or more open reports on one field is
+        shown as needs_review for that field until they are resolved."""
+        import re
+        o = self._opp(ref)
+        if field not in self.ISSUE_FIELDS:
+            raise ValueError(f"field must be one of {', '.join(self.ISSUE_FIELDS)}")
+        text = re.sub(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+", "[email removed]", (note or "").strip())
+        text = re.sub(r"(?<!\d)\+?\d[\d ()-]{7,}\d(?!\d)", "[number removed]", text)[:1000]
+        if len(text) < 5:
+            raise ValueError("say what is wrong in at least a few words")
+        rid = self.store.add_issue_report(o.id, field, (shown_value or "")[:200], text)
+        return _out(report_id=rid, opportunity_id=o.id, field=field, status="open",
+                    message="Thank you. The report is kept without any personal detail and is reviewed by the operator.")
+
+    def list_issue_reports(self, status: str = "open", ref: str = "") -> dict:
+        oid = self._opp(ref).id if ref else ""
+        rows = self.store.issue_reports(status, oid)
+        return _out(reports=rows, count=len(rows))
+
+    def resolve_issue_report(self, report_id: int, status: str, resolution: str = "") -> dict:
+        if status not in ("fixed", "not_an_error", "duplicate"):
+            raise ValueError("status must be fixed, not_an_error or duplicate")
+        if not self.store.resolve_issue_report(report_id, status, resolution):
+            raise NotFound(f"no issue report {report_id}")
+        return _out(report_id=report_id, status=status)
 
     def search_opportunities(self, country: str = "", level: str = "", text: str = "",
                              status: str = "") -> dict:

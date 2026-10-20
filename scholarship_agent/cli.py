@@ -34,6 +34,16 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("--set", action="append", default=[], metavar="FIELD=JSON",
                    help='e.g. --set citizenships=\'["ID"]\' --set target_levels=\'["master"]\'')
     sub.add_parser("profile", help="show the stored profile")
+    r = sub.add_parser("report-issue", help="report a value that is wrong on an opportunity (kept without personal details)")
+    r.add_argument("opportunity")
+    r.add_argument("--field", required=True, help="eligibility | funding | cycle | deadline | levels | provider | page | other")
+    r.add_argument("--note", required=True, help="what is wrong and what the page says")
+    r.add_argument("--shown", default="", help="the value that was shown")
+    i = sub.add_parser("issues", help="operator: list reports, or resolve one with --resolve ID --status fixed|not_an_error|duplicate")
+    i.add_argument("--status", default="open")
+    i.add_argument("--opportunity", default="")
+    i.add_argument("--resolve", type=int, default=0)
+    i.add_argument("--resolution", default="")
     sub.add_parser("export-data", help="export all private data for this profile")
     d = sub.add_parser("delete-data", help="delete the profile and its private data")
     d.add_argument("--yes", action="store_true", help="required: confirms permanent deletion")
@@ -213,6 +223,12 @@ def run(args, svc: ScholarshipService) -> dict:
         return svc.setup_profile(patch, pid)
     if c == "profile":
         return svc.get_profile(pid)
+    if c == "report-issue":
+        return svc.report_issue(args.opportunity, args.field, args.note, args.shown)
+    if c == "issues":
+        if args.resolve:
+            return svc.resolve_issue_report(args.resolve, args.status, args.resolution)
+        return svc.list_issue_reports(args.status, args.opportunity)
     if c == "export-data":
         return svc.export_private_data(pid)
     if c == "delete-data":

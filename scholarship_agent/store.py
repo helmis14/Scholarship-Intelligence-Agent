@@ -100,6 +100,13 @@ CATALOG_MIGRATIONS = [
     CREATE TABLE engine_health (engine TEXT PRIMARY KEY, kind TEXT, reason TEXT, until REAL, ok INTEGER, failed INTEGER,
         last_ok TEXT);
     """,
+    # round 38: "report a mistake". Public data only: no profile id, no contact details.
+    """
+    CREATE TABLE issue_reports (
+        id INTEGER PRIMARY KEY AUTOINCREMENT, opportunity_id TEXT NOT NULL, field TEXT NOT NULL, shown_value TEXT,
+        note TEXT, at TEXT, status TEXT NOT NULL DEFAULT 'open', resolution TEXT);
+    CREATE INDEX issue_reports_opp ON issue_reports (opportunity_id, status);
+    """,
 ]
 
 PRIVATE_MIGRATIONS = [
@@ -165,6 +172,27 @@ class Store:
     def close(self) -> None:
         self.catalog.close()
         self.private.close()
+
+    # ----------------------------------------------------------------- issue reports
+
+    def add_issue_report(self, opportunity_id: str, field: str, shown_value: str, note: str) -> int:
+        with self.catalog as c:
+            cur = c.execute("INSERT INTO issue_reports (opportunity_id, field, shown_value, note, at) VALUES (?,?,?,?,?)",
+                            (opportunity_id, field, shown_value, note, now()))
+            return int(cur.lastrowid)
+
+    def issue_reports(self, status: str = "open", opportunity_id: str = "") -> list[dict]:
+        q, args = "SELECT * FROM issue_reports WHERE 1=1", []
+        if status:
+            q += " AND status = ?"; args.append(status)
+        if opportunity_id:
+            q += " AND opportunity_id = ?"; args.append(opportunity_id)
+        return [dict(r) for r in self.catalog.execute(q + " ORDER BY id", args)]
+
+    def resolve_issue_report(self, report_id: int, status: str, resolution: str) -> bool:
+        with self.catalog as c:
+            return c.execute("UPDATE issue_reports SET status = ?, resolution = ? WHERE id = ?",
+                             (status, resolution[:500], report_id)).rowcount > 0
 
     # ---------------------------------------------------------- opportunities
 

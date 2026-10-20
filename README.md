@@ -66,6 +66,8 @@ Every rule change is measured against frozen test sets. Each set holds official 
 
 - **Risk gate:** claim kinds whose measured precision is low (assistantship and fee-waiver funding, "announcement pending" cycles, deadlines with several dates; in `SCHOLAR_RISK_GATE=strict` also tuition-only and stipend-only funding, "any nationality" and "upcoming") are shown as unverified and sent to review. On the development pool this brings wrong claims from 7.6% to 6.0% (standard) or 4.4% (strict) of decisions, at the cost of more answers going to review; confirm on a fresh set before relying on it.
 
+- **Privacy and terms:** see [docs/scholarship-agent/PRIVACY_AND_TERMS.md](docs/scholarship-agent/PRIVACY_AND_TERMS.md) for what is stored and sent, the user-rights commands (`export-data`, `delete-data`, `report-issue`), the gaps before a public service, and a terms/privacy checklist.
+
 See [docs/scholarship-agent/EVALUATION.md](docs/scholarship-agent/EVALUATION.md) for the method and the full history.
 
 ## Prerequisites
