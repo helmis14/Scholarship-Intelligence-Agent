@@ -1,0 +1,645 @@
+  
+
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MEC - Ministério da Educação e Cultura</title>
+
+    <link rel="icon" href="assets/img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="main.css">
+  
+  </head>
+
+<body>
+    <div class="top-header">
+    <a href="index.php">
+    <img src="assets/img/logo.png" alt="Logotipo MEC">
+    </a>
+
+    <div class="yellow-bar"></div>
+
+    <div class="ministry-text">
+    Ministério da Educação e Cultura
+    </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+
+    <li class="nav-item">
+    <a class="nav-link" href="index.php">Início</a>
+    </li>
+
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">MEC</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="natureza-atribuicoes.php">Natureza e Atribuições</a></li>
+        <li><a class="dropdown-item" href="documentos.php">Documentos</a></li>
+        <li><a class="dropdown-item" href="unidades-organicas.php">Unidades Orgânicas</a></li>
+        <li><a class="dropdown-item" href="instituicoes-subordinadas.php">Instituições Subordinadas</a></li>
+        <li><a class="dropdown-item" href="instituicoes-tuteladas.php">Instituições Tuteladas</a></li>
+        <li><a class="dropdown-item" href="estatisticas.php">Estatísticas do Sector</a></li>
+      </ul>
+    </li>
+
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"  data-bs-toggle="dropdown">Educação Geral</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="livro_1c.php">Livros do Aluno 1º e 2º Ciclo</a></li>
+        
+      </ul>
+    </li>
+    <li class="nav-item"><a class="nav-link" href="#">Ensino Técnico</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Ensino Superior</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Cultura</a></li>
+    <li class="nav-item"><a class="nav-link" href="https://www.mec.gov.mz/noticias/">Notícias</a></li>
+    <li class="nav-item"><a class="nav-link" href="contacto.php">Contactos</a></li> 
+
+    </ul>
+    </div>
+    </div> 
+    </nav>   <link rel="stylesheet" href="main.css"> 
+  <style>
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.8s ease-out;
+        }
+        
+        .splash-logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 25px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        .splash-text {
+            text-align: center;
+            line-height: 1.8;
+            margin: 8px 0;
+            font-weight: bold;
+            animation: slideUp 1s ease-out;
+        }
+       
+        .splash-screen.fade-out {
+            opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+  </style>
+  
+  <div class="splash-screen">
+        <img src="assets/img/logo.png" alt="Logo" class="splash-logo">
+        <p class="splash-text">República de Moçambique<br>
+       Ministério da Educação e Cultura</p>
+    </div>
+    
+    <!-- Conteúdo principal -->
+    
+    
+    <script>
+        // Quando o DOM estiver carregado
+        document.addEventListener('DOMContentLoaded', function() {
+            const splashScreen = document.querySelector('.splash-screen');
+            const content = document.querySelector('.content');
+            
+            // Tempo que o splash fica visível (4000ms = 4 segundos)
+            setTimeout(() => {
+                splashScreen.classList.add('fade-out');
+                
+                // Remove o splash após a animação terminar
+                splashScreen.addEventListener('transitionend', () => {
+                    splashScreen.remove();
+                    content.style.display = 'block';
+                });
+            }, 2000); 
+        });
+    </script> 
+
+
+  <!-- Carrossel -->
+ <div class="carousel-container">
+
+<div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+
+<div class="carousel-inner">
+
+
+
+<div class="carousel-item active">
+
+<img src="assets/img/cr1.webp" class="object-fit: cover" alt="">
+
+<div class="carousel-caption">
+
+<a href="https://www.mec.gov.mz/noticias/?p=407" class="text-decoration-none"><h2>ASSEGURADAS CONDIÇÕES LOGÍSTICAS PARA OS ATLETAS DURANTE O XVI FNJDE</h2></a>
+
+</div>
+
+</div>
+
+
+
+<div class="carousel-item">
+
+<img src="assets/img/cr2.webp" class="object-fit: cover" alt="">
+
+<div class="carousel-caption">
+
+<a href="https://www.mec.gov.mz/noticias/?p=424" class="text-decoration-none"><h2>PRESIDENTE DA REPÚBLICA DESTACA UNIDADE NA ABERTURA OFICIAL DO XVI FNJDE</h2></a>
+
+</div>
+
+</div>
+
+
+
+<div class="carousel-item">
+
+<img src="assets/img/cr3.webp" class="object-fit: cover" alt="">
+
+<div class="carousel-caption">
+
+<a href="#" class="text-decoration-none"><h2>XVI Festival Nacional dos Jogos Desportivos Escolares</h2></a>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="carousel-item">
+
+<img src="assets/img/cnl2.png" class="object-fit: cover" alt="">
+
+<div class="carousel-caption">
+
+<a href="https://www.mec.gov.mz/concursonacionalliteratura" class="text-decoration-none"><h2>CONCURSO NACIONAL DE LITERATURA</h2></a>
+
+</div>
+
+</div>
+
+
+
+<div class="carousel-item">
+
+<img src="assets/img/capa01.webp" alt="">
+
+<div class="carousel-caption">
+
+<h2>ANO LECTIVO ARRANCA COM MENSAGENS DE APELO À MANUTENÇÃO E CONSERVAÇÃO DAS INFRAESTRUTURAS</h2>
+
+</div>
+
+</div>
+
+
+
+
+<!--
+
+<div class="carousel-item">
+
+<img src="assets/img/logo.png" alt="">
+
+<div class="carousel-caption">
+
+<h2>MINEDH assina memorando de entendimento</h2>
+
+</div>
+
+</div>
+
+-->
+
+</div>
+
+
+
+<button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+
+<span class="carousel-control-prev-icon"></span>
+
+</button>
+
+
+
+<button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+
+<span class="carousel-control-next-icon"></span>
+
+</button>
+
+
+
+</div>
+
+</div> 
+  <!-- Seção de conteúdo -->
+ <div class="content-section">
+
+  <!-- Seção de Notícias (esquerda) -->
+  <div class="news-section">
+    <h2 class="section-title">Notícias</h2>
+
+ <div class="news-card">
+      <h3>MOÇAMBIQUE CONQUISTA SEGUNDO LUGAR EM ROBÓTICA INDUSTRIAL NA RÚSSIA</h3>
+      <div class="date">29 de Agosto de 2026</div>
+      <p>𝐌𝐨𝐜̧𝐚𝐦𝐛𝐢𝐪𝐮𝐞 𝐜𝐨𝐧𝐪𝐮𝐢𝐬𝐭𝐨𝐮 𝐨 𝐬𝐞𝐠𝐮𝐧𝐝𝐨 𝐥𝐮𝐠𝐚𝐫 𝐧𝐚 𝐚́𝐫𝐞𝐚 𝐝𝐞 𝐑𝐨𝐛𝐨́𝐭𝐢𝐜𝐚 𝐈𝐧𝐝𝐮𝐬𝐭𝐫𝐢𝐚𝐥 𝐧𝐨 𝐂𝐚𝐦𝐩𝐞𝐨𝐧𝐚𝐭𝐨 𝐝𝐞 𝐇𝐚𝐛𝐢𝐥𝐢𝐝𝐚𝐝𝐞𝐬 𝐏𝐫𝐨𝐟𝐢𝐬𝐬𝐢𝐨𝐧𝐚𝐢𝐬, 𝐪𝐮𝐞 𝐝𝐞𝐜𝐨𝐫𝐫𝐞 𝐝𝐞 𝟏𝟗 𝐚 𝟐𝟕 𝐝𝐞 𝐀𝐠𝐨𝐬𝐭𝐨 𝐝𝐞 𝟐𝟎𝟐𝟔, 𝐧𝐨 𝐏𝐚𝐫𝐪𝐮𝐞 𝐓𝐞𝐜𝐧𝐨𝐥𝐨́𝐠𝐢𝐜𝐨 𝐅𝐞𝐝𝐞𝐫𝐚𝐥, 𝐧𝐚 𝐅𝐞𝐝𝐞𝐫𝐚𝐜̧𝐚̃𝐨 𝐑𝐮𝐬𝐬𝐚. O país está representado na competição pelo formando Karson Fumo, do Instituto Industrial de Maputo, acompanhado pelo seu formador, Patrício Estera. A participação …</p>
+      <a href="https://www.mec.gov.mz/noticias/" class="btn btn-success">Ler mais</a>
+      
+    </div>     <!-- Adicione mais news-card conforme necessário -->
+<	    
+
+<div class="news-card">
+      <h3>SECRETÁRIO DE ESTADO LEO JAMAL VISITA MABOTE E AVALIA REABERTURA DO INSTITUTO POLITÉCNICOL</h3>
+      <div class="date">13 de Agosto de 2026</div>
+      <p>Dirigente recolhe informações para decisão do Governo sobre retoma das actividades da instituição, encerrada desde 2019 O Secretário de Estado do Ensino Técnico Profissional, 
+*Sua Excelência Leo Elias Jamal, efectuou nesta terça-feira, 11 de Agosto de 2026, uma visita de trabalho ao distrito de Mabote. O objetivo foi avaliar as condições para a reabertura do …</p>
+     <a href="https://www.mec.gov.mz/noticias/" class="btn btn-success">Ler mais</a>
+      
+    </div>
+
+    <div class="news-card"><h3>PRIMEIRA-DAMA GUETA CHAPO LANÇA PRIMEIRA PEDRA PARA CONSTRUÇÃO DE 21 SALAS NA ESCOLA BÁSICA 19 DE OUTUBRO, EM MARRACUENE</h3>
+      <div class="date">11 de Agosto de 2026</div>
+      <p>Obra vai beneficiar mais de mil alunos e inclui biblioteca, laboratórios e posto médico A Primeira-Dama da República de Moçambique, *Gueta Chapo, lançou esta segunda-feira, 10 de Agosto de 2026, a primeira pedra para a construção de 21 salas de aula na Escola Básica 19 de Outubro, no distrito de Marracuene, província de Maputo.…</p>
+      <a href="https://www.mec.gov.mz/noticias/" class="btn btn-success">Ler mais</a>
+      
+    </div>
+
+    <div class="news-card">
+      <h3>GOVERNO MOÇAMBICANO INVESTE 12 MILHÕES DE DÓLARES NA MODERNIZAÇÃO DE 9 INSTITUTOS TÉCNICOS</h3>
+      <div class="date">8 de Agosto de 2026</div>
+      <p>O Governo de Moçambique anunciou um investimento de 12 milhões de dólares norte-americanos para a reabilitação e modernização de nove institutos públicos do Ensino Técnico Profissional, distribuídos por oito províncias do país. A iniciativa integra o Programa de Apoio à Reforma da Educação Profissional e assenta em quatro pilares fundamentais: fortalecimento institucional, formação de formadores, …</p>
+      <a href="https://www.mec.gov.mz/noticias/" class="btn btn-success">Ler mais</a>
+      
+    </div>
+   
+  </div> <!-- Fim news-section -->
+
+  <!-- Seção de Direcção (direita) 
+  <div class="leadership-section">
+    <h2 class="section-title">Direcção do Ministério</h2>
+
+    <div class="leadership-card">
+      <img src="assets/img/team/samaria_tovela.jpeg" alt="Samaria Tovela">
+      <div class="leadership-info">
+        <h4><strong>Samaria Dos Anjos Tovela</strong></h4>
+        <p>Ministra da Educação e Cultura</p>
+      </div>
+     <a href="#" class="btn btn-success">Ler mais</a>
+      
+    </div>
+
+    <div class="leadership-card">
+      <img src="assets/img/team/edson_macuacua.jpeg" alt="Edson da Graça">
+      <div class="leadership-info">
+        <h4><strong>Edson da Graça Macuacua</strong></h4>
+        <p>Secretário de Estado da Ciência e Ensino Superior</p>
+      </div>
+      <a href="emacuacua.php" class="btn btn-success">Ler mais</a>
+      
+    </div>
+
+    <div class="leadership-card">
+      <img src="assets/img/team/matilde_muocha.jpeg" alt="Matilde Moucha">
+      <div class="leadership-info">
+        <h4><strong>Matilde Martins Muocha</strong></h4>
+        <p>Secretária de Estado das Artes e Cultura</p>
+      </div>
+      <a href="mmuocha.php" class="btn btn-success">Ler mais</a>
+    </div>
+
+    <div class="leadership-card">
+      <img src="assets/img/team/leo_jamal.jpeg" alt="Leo Jamal">
+      <div class="leadership-info">
+        <h4><strong>Leo Elias Jamal</strong></h4>
+        <p>Secretário de Estado do Ensino Técnico Profissional</p>
+      </div>
+      <a href="#" class="btn btn-success">Ler mais</a>
+      
+    </div>
+
+  </div> -->
+
+</div> <!-- Fim content-section --> 
+     
+         
+
+
+         
+      
+
+    <!-- Seção de Calendário (embaixo da liderança) -->
+    
+  </div>
+</div>
+ 
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      locale: 'pt',
+      height: 'auto',
+      events: [
+        {
+          title: 'Cerimónia de Graduação',
+          start: '2025-05-10'
+        },
+        {
+          title: 'Conferência Nacional de Educação',
+          start: '2025-05-15'
+        },
+        {
+          title: 'Lançamento do Livro "Educar Moçambique"',
+          start: '2025-05-25'
+        }
+      ]
+    });
+
+    calendar.render();
+  });
+</script>
+
+
+  </div>
+  </div>
+
+<!-- Galeria de Vídeos -->
+<div class="video-gallery">
+  <h2 class="section-title">Galeria de Vídeos</h2> 
+
+  <div class="video-container">
+
+   <div class="video-card">
+     <div class="video-wrapper">
+         <iframe width="996" height="566" src="https://www.youtube.com/embed/D58LBElOXVg" title="INVESTIR NAS ARTES E CULTURA É INVESTIR NO FUTURO!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+     </div>
+     <div class="video-info">
+       <h3>INVESTIR NAS ARTES E CULTURA É INVESTIR NO FUTURO!</h3>
+       <p>O MEC reforça as competências dos  gestores e fazedores das artes e cultura em matéria de gestão de projectos, financiamento e marketing cultural, na cidade da Beira.
+         Profissionalizar o sector é garantir que a nossa arte gere impacto e rendimento. 
+       </p>
+     </div>
+   </div>
+
+  
+
+
+   <div class="video-card">
+      <div class="video-wrapper">
+        <iframe width="996" height="560" src="https://www.youtube.com/embed/Zjyej3eZtKc" title="Desfecho do processo da  fraude nos exames da 9ª classe no distrito de Milange" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <h3>Desfecho do processo da  fraude nos exames da 9ª classe no distrito de Milange, provincia da Zambézia.</h3>
+        <p>Desfecho do processo da  fraude nos exames da 9ª classe no distrito de Milange, provincia da Zambézia.</p>
+      </div>
+    </div>
+    <div class="video-card">
+      <div class="video-wrapper">
+    
+          <iframe width="990" height="560" src="https://www.youtube.com/embed/_LM2UIqNW7Y" title="𝑩𝒆𝒎 𝒉𝒂𝒋𝒂 𝑺𝒆𝒄𝒕𝒐𝒓 𝒅𝒂 𝑬𝒅𝒖𝒄𝒂çã𝒐 𝒆 𝑪𝒖𝒍𝒕𝒖𝒓𝒂 𝒑𝒆𝒍𝒂 𝒎𝒆𝒅𝒊𝒅𝒂" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <h3>𝐃𝐄𝐂𝐈𝐒Ã𝐎 𝐃𝐄 𝐓𝐑𝐀𝐍𝐒𝐅𝐄𝐑𝐈𝐑 𝐌𝐄𝐍𝐎𝐑𝐄𝐒 𝐃𝐄 𝟏𝟖 𝐀𝐍𝐎𝐒 𝐏𝐀𝐑𝐀 𝐓𝐔𝐑𝐍𝐎 𝐃𝐈𝐔𝐑𝐍𝐎 É 𝐀𝐂𝐎𝐋𝐇𝐈𝐃𝐀 𝐏𝐎𝐒𝐈𝐓𝐈𝐕𝐀𝐌𝐄𝐍𝐓𝐄</h3>
+        <p>A decisão do Sector da Educação e Cultura de transferir menores de 18 anos para o turno diurno</p>
+      </div>
+    </div>
+  
+    
+  </div>
+</div>
+
+
+ <!-- Repetição para looping -->
+  </div>
+    <div class="slider-track" id="sliderTrack">
+    <img src="assets/img/instituicoes/anep.png" alt="Logo ANEP">
+    <img src="assets/img/instituicoes/cnaq.png" alt="Logo CNAQES">  
+    <img src="assets/img/instituicoes/placeholder.png" alt="Logo CNTHC">
+    <img src="assets/img/instituicoes/inde.png" alt="Logo INDE">
+    <img src="assets/img/instituicoes/inece.jpg" alt="Logo INECE">
+    <img src="assets/img/instituicoes/ined.jpg" alt="Logo INED">
+    <img src="assets/img/instituicoes/ieda.jpg" alt="Logo IEDA">
+    <img src="assets/img/instituicoes/inic.png" alt="Logo INICC">
+    <img src="assets/img/instituicoes/arpac.jpg" alt="Logo ARPAC">
+    <img src="assets/img/instituicoes/fni.jpg" alt="Logo FNI">
+    <img src="assets/img/instituicoes/placeholder.png" alt="Logo FUNDAC">
+    <img src="assets/img/instituicoes/ibe.jpeg" alt="Logo IBE">
+    <img src="assets/img/instituicoes/il.jpg" alt="Logo IL">
+    <img src="assets/img/instituicoes/iia.jpg" alt="Logo IIA">
+    <img src="assets/img/instituicoes/cnbb.png" alt="Logo CNBB">
+    <img src="assets/img/instituicoes/cide.jpg" alt="Logo CIDE">
+    <img src="assets/img/instituicoes/ccmc.jpeg" alt="Logo CCMC">
+    <img src="assets/img/instituicoes/eim.png" alt="Logo EIM">
+    <img src="assets/img/instituicoes/acm.webp" alt="Logo ACM">
+    <img src="assets/img/instituicoes/cncd.jpeg" alt="Logo CNCD">
+    <img src="assets/img/instituicoes/bnm.jpg" alt="Logo BNM">
+    <img src="assets/img/instituicoes/musarte.png" alt="Logo MUSART">
+    <img src="assets/img/instituicoes/" alt="Logo MUSET">
+    <img src="assets/img/instituicoes/" alt="Logo MOCIM">
+  </div>
+</div> 
+
+
+<script> const track = document.getElementById("sliderTrack");
+
+// duplicação automática
+track.innerHTML += track.innerHTML;
+
+let position = 0;
+let speed = 0.5;
+
+// animação infinita
+function animateSlider() {
+    position -= speed;
+
+    if (Math.abs(position) >= track.scrollWidth / 2) {
+        position = 0;
+    }
+
+    track.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(animateSlider);
+}
+
+animateSlider();
+
+// pausa ao passar o mouse
+track.addEventListener("mouseenter", () => speed = 0);
+track.addEventListener("mouseleave", () => speed = 0.5);
+
+</script>
+
+
+<div class="container py-5" style="max-width: 1200px;">
+<h2 class="section-title">Serviços</h2>
+  <div class="row g-2">
+    <div class="col-12 col-md-3">
+      <div class="card text-center p-3 shadow-sm h-100">
+       <a href="https://ieda.gov.mz/moodlemined/home-ieda/" target="_blank"> <i class="bi bi-book display-4 text-primary mb-2"></i></a>
+        <p class="fw-bold">Escola Virtual</p>
+      </div>
+    </div>
+
+
+    <div class="col-12 col-md-3">
+      <div class="card text-center p-3 shadow-sm h-100">
+         <a href="livro_1c.php" target="_blank"> 
+        <i class="bi bi-book display-4 text-primary mb-2"></i></a>
+        <p class="fw-bold">Livros do Aluno</p>
+      </div>
+    </div>
+    <!--
+    <div class="col-6 col-md-3">
+      <div class="card text-center p-3 shadow-sm h-100">
+        <i class="bi bi-chat-dots-fill display-4 text-info mb-2"></i>
+        <p class="fw-bold">Solicitação</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="card text-center p-3 shadow-sm h-100">
+        <i class="bi bi-lightbulb-fill display-4 text-warning mb-2"></i>
+        <p class="fw-bold">Sugestão</p>
+      </div>
+    </div>
+-->
+  </div>
+</div>
+  </div>
+<!-- Ícones flutuantes de contacto -->
+
+<!-- Email -->
+<a href="mailto:info@mec.gov.mz" 
+   class="email-float" target="_blank" title="Envie-nos um email">
+  <i class="bi bi-envelope-fill"></i>
+</a>
+
+<!-- Chamada -->
+<a href="tel:+25821480700" 
+   class="call-float" target="_blank" title="Ligue para nós">
+  <i class="bi bi-telephone-fill"></i>
+</a>
+
+<!-- Facebook -->
+<a href="https://www.facebook.com/mecmocambique" 
+   class="facebook-float" target="_blank" title="Siga-nos no Facebook">
+  <i class="bi bi-facebook"></i>
+</a>
+
+<!-- WhatsApp -->
+<a href="https://whatsapp.com/channel/0029Vb7UGqmAojZ2OW5Jom3G" 
+   class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<style>
+  </style> 
+ 
+   
+ 
+ 
+          </main>
+
+
+    <footer class="site-footer">
+    <div class="container">
+    <div class="row">
+
+    <div class="col-lg-4 col-md-6 footer-column">
+    <h3>MEC</h3>
+    <p>
+    O Ministério da Educação e Cultura é o órgão central do aparelho de Estado que, 
+    de acordo com os princípios, objectivos, prioridades e tarefas definidos pelo Governo, 
+    formula, implementa e supervisiona políticas públicas nas áreas de Educação Geral, 
+    Educação de Adultos, Educação Profissional, Educação e Formação de Professores, 
+    Ensino Superior, Ciência e Cultura.
+    </p>
+    </div>
+
+    <div class="col-lg-4 col-md-6 footer-column">
+    <h3>Contactos</h3>
+    <ul>
+    <li>Endereço: Av. 24 de Julho, Nº 167</li>
+    <li><a href="tel:+25821480700">Telefone: +258 21 480 700</a></li>
+    <li><a href="mailto:info@mec.gov.mz">Email: info@mec.gov.mz</a></li>
+    </ul>
+
+    <div class="social-links">
+    <a href="https://www.facebook.com/mecmocambique" target="_blank"><i class="bi bi-facebook"></i></a>
+    <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
+    <a href="#" target="_blank"><i class="bi bi-youtube"></i></a>
+    <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
+    <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+    </div>
+    </div>
+
+    <div class="col-lg-4 col-md-12 footer-column">
+    <h3>Links Úteis</h3>
+    <ul>
+    <li><a href="https://portaldogoverno.gov.mz/" target="_blank">Portal do Governo</a></li>
+    <li><a href="https://www.parlamento.mz/" target="_blank">Assembleia da República</a></li>
+    <li><a href="https://presidencia.gov.mz/" target="_blank">Presidência da República</a></li>
+    </ul>
+    </div>
+
+    </div>
+    </div>
+
+    <div class="copyright">
+    &copy; <script>document.write(new Date().getFullYear())</script>
+    Ministério da Educação e Cultura
+    </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+    </html> 

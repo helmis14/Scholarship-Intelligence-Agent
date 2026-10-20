@@ -8,8 +8,9 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO))
 
-from scholarship_agent.extract import extract_deadlines, extract_nationality  # noqa: E402
-from scholarship_agent.models import DeadlineKind  # noqa: E402
+from scholarship_agent.extract import extract_deadlines, extract_funding, extract_nationality  # noqa: E402
+from scholarship_agent.funding import classify  # noqa: E402
+from scholarship_agent.models import DeadlineKind, Opportunity  # noqa: E402
 
 TODAY = date(2026, 10, 20)
 URL = "https://www.example.org/scholarship"
@@ -71,6 +72,37 @@ class TestNationalityHostCountry(unittest.TestCase):
 
     def test_a_real_us_rule_still_counts(self):
         self.assertEqual(nat("Applicants must be citizens or nationals of the United States."), ("include", ["US"]))
+
+
+def fclass(text):
+    return classify(Opportunity(id="x", title="X", provider_name="P", info_url=URL, funding=extract_funding(text)[0]))["classification"]
+
+
+class TestFundingRound35(unittest.TestCase):
+    def test_a_mission_statement_is_not_a_stipend(self):
+        self.assertNotEqual(fclass("The Fund provides financial support for students who are active in progressive movements."), "stipend_only")
+
+    def test_administration_of_payments_is_not_a_benefit(self):
+        self.assertNotEqual(fclass("SHPE processes scholarship payments electronically via bill.com."), "stipend_only")
+
+    def test_university_and_college_fees_are_tuition(self):
+        self.assertNotEqual(fclass("A stipend of 21,500 per annum and payment of approved University and College fees."), "stipend_only")
+
+    def test_application_fee_waivers_are_not_a_tuition_waiver(self):
+        self.assertNotEqual(fclass("Some departments offer application fee waivers to students in the programme."), "fee_waiver")
+
+
+class TestRound36(unittest.TestCase):
+    def test_an_ineligibility_list_item_is_not_a_rule(self):
+        t = ("Must be a United States citizen, national, or a permanent resident.\nWho is not eligible\n"
+             "Individuals who are not United States citizens, United States nationals, or permanent residents.")
+        self.assertEqual(nat(t), ("include", ["US"]))
+
+    def test_opened_with_a_deadline(self):
+        self.assertEqual(applicant("The 2026 call opened on 24 August 2026 with a deadline on 21 September 2026."), ["2026-09-21"])
+
+    def test_receive_financial_support_to_aid_education_is_generic(self):
+        self.assertNotEqual(fclass("Recipients receive financial support to aid their education."), "stipend_only")
 
 
 if __name__ == "__main__":

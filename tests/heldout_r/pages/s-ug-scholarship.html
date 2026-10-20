@@ -1,0 +1,259 @@
+ <!DOCTYPE html>
+<!--
+              ,;r;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;r;,                 
+             .2@@@Superviser:Parick Kuti@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@h,
+             .@@Project+Managers:@@Michael##Phillips@Deborah###Allah@@@@@@@@@@@@@@@@@@@@@@*,
+             .X@@@Lead+Programmers:Gilbert_Gadzekpo@@@Ian Allotey@@@@@@@@@@@@@@@@@@@@@@@@@&,                
+              Developers@@BXi3@@@Alex#Tenkorang@@@@H2iG@@@@Emmanuel#Adu_Asare@@@A5Sh#@@@@@@@@@X.                
+              r#@@#####@@B2;;iA@@###############@@H5;;iH@@@##############@MXr;iA@@######@@2.                
+              r#@@#####@@M2r;i&#@@##############@@BXrri&#@@#############@@#Xr;i&#@@#####@@2.                
+              r#@@#####@@@ASrSH@@@##############@@@B5s2M@@@#############@@@ASr2B@@@@####@@2.                
+              r#@@###B3XH@@&29#BX3H#@#######@#H99B@@&5&#H9hB##########M9XH@M929#M9XH####@@2.                
+              r#@@##@#Girri5Siir;5M@@@######@@#&SrrS5iii;r2M@@@######@@hsrsS5Sisr;SB@@##@@2.                
+              r#@@###@@#2;;rsrrih@@@##########@@MS;rrsrri&@@@#########@@M2rrssrriG@@@#M#@@2.                
+              r#@@#HX5G#@BXisi2A@#h23H@@####A55G##H2iss2B@M923B@####HX5G#@B3iri2A@#hXhH#@@2.                
+              r#@@@#2;;s3A9SiS525r;s&#@@##@@#Xr;s3&XSii22S;;s&#@###@#X;:s3&9SiS225r;sA#@@@2.                
+              r#@@@@@B5;;;sSSir;;rX#@@@####@@@M5;;;sSSir;;r3#@@####@@@H5;;;sS5Ss;;rX#@@@@@2.                
+              r#@#AA#@@#G2iiiSSX&#@#HM####MAA#@@#G5iiiiSXA#@#BM####AA#@@Mh2iiiiSXGM@#HH#@@2.                
+              r@@@9sr2M@@#XsiSXB#H5rsh#@@@M3sr5M@@B2siS3M#H2rs&@@@#GsrX#@@MXisS3H#H2rs9#@@2.                
+              r#@@@Hi;;ri5SiSSisr;;SH@@@#@@#&s;;riSSiSSisr;;i&#@@@@@Ai;;ri55Siiisr;;SH@@@@2.                
+              r#@@@@M3sr;rsSSisrs2H@@@####@@@#hs;rriSSSsrs2A@@@###@@@M2rr;rsSSiiss2H@@@@@@2.                
+              r#@@@@@@@#&2iiiii9#@@@@#####@@@@@@#G5iiii5A@@@@@#####@@@@@#A2iiiiS9#@@@@##@@2.                
+              r#@@#@@@@@@#3ssi2H@@@@#######@@@@@@@#XissX#@@@@#######@@@@@@@hsri2H@@@@###@@X.                
+              s@@@@@@@@@@@ASss2B@@@@@@@@@@@@@@@@@@@ASsr2#@@@@@@@@@@@@@@@@@@HiriXB@@@@@@@@@3,                
+              :hB&h99GG&HA2srrs2GAG99hhhh9hhhGGGAA&2sr;s2G&hhhGGGGhh99hh&AA2srrs2h&Gh99hHAr                 
+              :3Hh333939G&AAAGhh9h93333hG&AAAAAAAAA&AA&h99hh&AAAAAAAG9339h&AAA&h9hh93339A&r                 
+              r#@@@@@@@@@@@@@@@@@@@@@@@@@MAGh9hA#@@@@@@@@@@@MAhh9GAM@@@@@@@@@@@@@@@@@@@@@@2.                
+              s@@@@@@@@@@@@@@@@@@@@@@@#A2issiirri3#@@@@@@@H2srsiissiXH@@@@@@@@@@@@@@@@@@@@3,                
+              r#@@#################@#9r;r2A#@@#&i;r2M@@@A5rrSA@@@#ASrrSA@@@#############@@X.                
+              r#@@##################&irX#@@@@@@@@Hs;sA#&sr2@@@@@@@@@Bi;SB@@#############@@2.                
+              r#@@###############@@HXsSB@@@B3SX#@@Birrssi3@@@H25&#@@@Gsi&#@@############@@2.                
+              r#@@###############@@HXs5B@@@#hs;sA@@B2r;sh@@@Xr;iA@@@@Aiih#@@############@@2.                
+              r#@@###############@@@HirSH@@@@hrrX@@@hs;iA@@#2riA@@@@Air5H@@#############@@2.                
+              r#@@################@@@H5r;rS25iS&@@#G25Si5G@@@Gisi5ir;s3M@@##############@@2.                
+              r#@@##########@@@@@@@@@@@MhX2XGM@@@M5r2#@As;X@@@@A3223A@@@@@@@@@@@@@######@@2.                
+              r#@@##########Bh223hAH#@@@@@@@@@#A2siXM@@@&iri3B#@@@@@@@@#BA&9X23A#@@#####@@2.                
+              r#@@########M9s:::::;;rrsS5222ir;::rA@@92A@@X;:;rsS222Sirrr;;::::;SA#@####@@2.                
+              r#@@#########A2srrssisiiS2222225isrs3MB9X&##3rriS22XX225Siiissrrrs2A######@@2.                
+              r#@@########@@@@BB#@@@@@@@@@#@@@@@B2rrh@@@9ss9#@@@@##@@@@@@@@@#BB@@@@#####@@2.                
+              r#@@########@@@@@@@@@@@@Mh5isi5h#@@@&siGHG55M@@@B35isi2A@@@@@@@@@@@#######@@2.                
+              r#@@#########@@@@@@@@@#Xr;s3BMhssX#@@A5rrih#@@Air5A#H2r;sG@@@@@@@@########@@2.                
+              r#@@##################hssh@@@@@hsr3@@#Xr;sA@@#5rSH@@@@#2riA#@@############@@2.                
+              r#@@###############@#A2s2#@@@#3sr2M@@GSsrs2H@@H5riG@@@@Ais9M@@############@@2.                
+              r#@@###############@@#GiiA@@@#HAM@@@Aii33SsSB@@@H&A#@@@GsiA#@@############@@2.                
+              r#@@################@@#5;rh#@@@@@@#Xrr3@@#S;rG@@@@@@@#hsrX#@@#############@@2.                
+              r#@@################@@@#Xr;r2hGhXSrrSH@@@@#9r;r53hhXSrri&#@@##############@@X,                
+              ;#@@#################@@@@M3SsrrrriXA@@@@@@@@#hSsrrrri2&#@@@###############@@2.                
+              :A@@##################@@@@@@#BAH#@@@@@####@@@@@@MHHM@@@@@@################@#s.                 
+              .2#@@###################@@@@@@@@@@@@#######@@@@@@@@@@@@@##################@@M;                 
+               :h@@@#####################@@@@@@####TEAM#####@@@@@@####################@@#9:                 
+                ;#@@@########Patrick#Kuti####Michael#Philips####Deborah#Allah#########@@3,                  
+                 :h@@@@@##########Gilbert#Gadzekpo#####Ian#Allotey#################@@@@B;                   
+                   rM@@@@@@@@@#######Alex#Tenkorang#####Emmanuel##Asare#####@@@@@@@@#5.                    
+                     ,s&@@@@@@@@@@@@@################################@@@@@@@@@@@@@Ai:                       
+         ...              ,;i3H@@@@@@@@@@@@@#################@@@@@@@@@@@@M&92s;:.          .:::.            
+      ,;r;:::::,.               .:;rs59A#@@@@@@@@@#######@@@@@@A3ir;;:..               .,::,,::;r;.         
+     :rrrssr;;iXi,                       .,;i2A#@@@@@@@@@#A2r:.                       ,s25r;;;;rs;,         
+     :r;::;:,.:;;.                             .;i&#@@H5;.                     ... .   ,::,,::;;sr:         
+     .r2S;,...    ..,,..                           ,;:                        ......,,.   ...,;SG2:         
+      ;2Ah2isr;rS2s:.,:;;rr;.                                               :rir;:. ,i92issi5X9h9s.         
+      ,SA&99h&&AHhr..;h@@@@@5,                                             ,2@@@@#S..rX&Ahhh93XXS;          
+       rX3X33393G3;.,r5399Gh2s;::,,.                                 ..,,,:r5XX23hs..;5993XXX22Sr,          
+         ,;sS5229X;..;s2&M@#M#@@###H&9X25isssrrrrrrrrrrrrrrsssssiiS2XGAHBMMAh&BMBGr. :s2X2Ssr:,             
+                 .  .rS3M@@@@##@@@@@@@@@@@@#HH#@@@@#UGCSMM#@@@@@@@##@@@@@@@#AB@@@Mi,                        
+                     :riXh&AAGhAM####@@@@@@#BM@@@@@@@@#@@@MM@@@@@@@@@@@@@@#MH&9X2s:.                        
+                            .,;rsii5Xh&&&AA&GGGh&ABBBBBBMBAAHBAAHH&9X5Sis;:,.                               
+                                        .,,:::,,,::::;;:::::::::,.                                          
+ -->
+
+
+<!--[if IE 7 ]><html class="ie ie7" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+
+  <head profile="http://www.w3.org/1999/xhtml/vocab">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/news/gnpc-foundation-awards-201718" />
+<link rel="shortlink" href="/node/32346" />
+<link rel="shortcut icon" href="http://www.old1.ug.edu.gh/sites/old1.ug.edu.gh/files/favicon_0.ico" type="image/vnd.microsoft.icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GNPC Foundation Awards, 2017/18 | University of Ghana</title>
+    <link type="text/css" rel="stylesheet" href="http://www.old1.ug.edu.gh/sites/old1.ug.edu.gh/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.old1.ug.edu.gh/sites/old1.ug.edu.gh/files/css/css_SfaULVUbIncJi6VSiXN_u3vFqcxGPx4Axf1bIpH10ew.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.old1.ug.edu.gh/sites/old1.ug.edu.gh/files/css/css_u0Mlsecsua8UwiN8u5u9XoIu4BG-BlX4NhJpGk4_qKA.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.old1.ug.edu.gh/sites/old1.ug.edu.gh/files/css/css_CTAzNfy8iqjfwi5ip7obdPy7r5wRrtoFtI6kO9qgN-8.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.old1.ug.edu.gh/sites/old1.ug.edu.gh/files/css/css_6LAj97fV70TWTyHFiBkYNeezTJ7QqXsxMc0AcpQfldg.css" media="all" />
+	
+
+
+      
+
+      <!-- menu font -->
+            <style type="text/css">
+        .custom_menu #menu > ul > li > a,#menu {
+          font-family:Open Sans;
+                  }
+      </style>
+      <!-- // menu font -->
+
+      <!-- menu font size -->
+            <style type="text/css">
+        #menu > ul > li > a{
+          font-size: 15px ;
+        }
+        #menu > ul > li ul > li > a{
+          font-size: 14px ;
+        }
+      </style>
+      <!-- // menu font size -->
+
+
+      <!-- main color -->
+            <style type="text/css">
+        a:hover, a:focus{
+          color: #0AD1E5 ;
+        }
+        .button:hover,
+        a:hover.button,
+        button:hover,
+        input[type="submit"]:hover,
+        input[type="reset"]:hover,	
+        input[type="button"]:hover,
+        .button_hilite, 
+        a.button_hilite,
+        .button_hilite,
+        a.button_hilite{
+          color: #FFF;
+          background-color: #0AD1E5;
+        }
+        .section_big_title h1 strong,
+        .section_featured_texts h3 a:hover,
+        .breadcrumb a:hover,
+        .post_meta a:hover,
+        #footer a:hover {
+          color: #0AD1E5 ;
+        }
+        .portfolio_filter div.current,
+        .next:hover,.prev:hover,
+        .pagination .links a:hover,
+        .info h2, 
+        .h2.ls-s2,
+        jcarousel-next-horizontal:hover, 
+        .jcarousel-prev-horizontal:hover{
+          background-color: #0AD1E5 ;
+        }
+        .footer_pic img:hover{
+          border: 1px solid #0AD1E5;
+        }
+      </style>
+      <!-- // main color -->
+
+      <!-- heading font -->
+            <style type="text/css">
+        h1, h2, h3, h4, h5, .title, .section_big_title h1, .heading, #footer h3,
+        .page_heading h1{
+          font-family: Open Sans;
+                  }
+      </style>
+      <!-- heading font -->
+
+      <!-- button font -->
+            <style type="text/css">
+        .button, a.button,	button,	input[type="submit"], input[type="reset"], input[type="button"]{
+          font-family: Open Sans;
+                  }
+      </style>
+      <!-- // button fonts -->
+
+      <!-- body font -->
+            <style typ="text/css">
+        body{
+          font-family: Open Sans;
+        }
+      </style>
+      <!-- // body font -->
+
+      <!-- body background and color -->
+            <style type="text/css">
+        body{
+          background-image: url(/sites/all/themes/ugmain/styler/bgrs/main_bgr.png);        }
+      </style>
+      <!-- // body bg -->
+
+  </head>
+  <body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-32346 node-type-article" >
+	<div class="ug_background">
+		<img src="/sites/all/themes/ugmain/images/great-hall-artwork.png" class="bg-img1">
+		<img src="/sites/all/themes/ugmain/images/balme-artwork.png" class="bg-img2">
+	</div>
+    <div id="skip-link">
+      <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    </div>
+        <div id="wrapper" class="not-home-page"><div class="container"><div class="header clearfix row"><div class="top_header"><div class="header_contacts clearfix"><div class="region region-top-menu"><div id="block-nice-menus-1" class="block block-nice-menus"><div class="content"><ul class="nice-menu nice-menu-down nice-menu-menu-top-menu" id="nice-menu-1"><li class="menu-492 menuparent menu-path-node-7309 first odd "><a href="/ug-staff">Staff</a><ul><li class="menu-4776 menu-path---outlookofficecom-mail- first odd "><a href="//outlook.office.com/mail/" target="_blank">Staff Email (Office 365)</a></li><li class="menu-644 menu-path-employment-opportunities even "><a href="/employment-opportunities">Employment</a></li><li class="menu-2862 menu-path-sugportalugedugh- odd "><a href="https://ugportal.ug.edu.gh/">Intranet Portal</a></li><li class="menu-1582 menu-path-sienablerugedugh-pls-prodi41-w99pkgmi-login even "><a href="https://ienabler.ug.edu.gh/pls/prodi41/w99pkg.mi_login" target="_blank">MIS Web</a></li><li class="menu-1800 menu-path-ugedugh-pad-publication-policies odd "><a href="http://www.ug.edu.gh/pad/publication/policies" target="_blank">Policies</a></li><li class="menu-640 menu-path-staff-directory even "><a href="/staff-directory">Staff directory</a></li><li class="menu-10665 menu-path-sstsugedugh-services- odd last"><a href="https://sts.ug.edu.gh/services/">STS Portal</a></li></ul></li><li class="menu-491 menuparent menu-path---ugedugh-students even "><a href="//www.ug.edu.gh/students">Student</a><ul><li class="menu-494 menu-path-mailgooglecom-a-stugedugh first odd "><a href="http://mail.google.com/a/st.ug.edu.gh" target="_blank">Email</a></li><li class="menu-642 menu-path-sienablerugedugh-pls-prodi41-w99pkgmi-login even "><a href="https://ienabler.ug.edu.gh/pls/prodi41/w99pkg.mi_login" target="_blank">MIS Web</a></li><li class="menu-11349 menu-path-sportalofficecom- odd "><a href="https://portal.office.com/">Office 365</a></li><li class="menu-643 menu-path---ugedugh-students-src-home even "><a href="//www.ug.edu.gh/students/src/home" target="_blank">SRC</a></li><li class="menu-10666 menu-path-sstsugedugh-services- odd "><a href="https://sts.ug.edu.gh/services/">STS Portal</a></li><li class="menu-5700 menu-path-sugedugh-students even "><a href="https://www.ug.edu.gh/students">Student Portal</a></li><li class="menu-2327 menu-path-ssitesgooglecom-a-ugedugh-ug-campus-wireless-network-2- odd last"><a href="https://sites.google.com/a/ug.edu.gh/ug-campus-wireless-network-2/" target="_blank">Wireless Access</a></li></ul></li><li class="menu-493 menuparent menu-path-node-62059 odd last"><a href="/ug-alumni" target="_blank">Alumni</a><ul><li class="menu-8266 menu-path-sarugedugh first odd "><a href="https://ar.ug.edu.gh">UG Alumni Relations Office</a></li><li class="menu-8265 menu-path-alumniugedugh even "><a href="http://alumni.ug.edu.gh">UG Alumni Association (Ghana)</a></li><li class="menu-8330 menu-path-sugaanaorg odd last"><a href="https://www.ugaana.org">UG Alumni Association (North America)</a></li></ul></li></ul></div></div></div></div></div><div class="eight columns header_left"> <a href="/"><img src="http://www.old1.ug.edu.gh/sites/old1.ug.edu.gh/files/ug_standard_new_sl_1.png" alt="Home" /></a></div><div class="eight columns"><div class="header_right"><div class="header_soc_search clearfix"><div class="header_search"><form class="search" action="/news/gnpc-foundation-awards-201718" method="post" id="searchform" accept-charset="UTF-8"><div><div class="container-inline"><h2 class="element-invisible">Search form</h2> <button class="button_search"></button><div class="form-item form-type-textfield form-item-search-block-form"> <label class="element-invisible" for="s">Search </label> <input title="Enter the terms you wish to search for." class="search-text-box form-text" type="text" id="s" name="search_block_form" value="" size="15" maxlength="128" /></div><div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-awo-xL6aXWhRNM8LFamred92-ACp2X5HJGtopoOQV98" /><input type="hidden" name="form_id" value="search_block_form" /></div></div></form></div></div><div><div class="region region-search"><div id="block-text-resize-0" class="block block-text-resize"><div class="content"> <a href="javascript:;" class="changer" id="text_resize_decrease"><sup>-</sup>A</a> <a href="javascript:;" class="changer" id="text_resize_reset">A</a> <a href="javascript:;" class="changer" id="text_resize_increase"><sup>+</sup>A</a><div id="text_resize_clear"></div></div></div></div></div></div></div></div><div class="row no_bm"><div class="dark_menu sixteen columns"><div id="menu" class=""><ul id="responsive" class="nav_simple sf-menu main-menu sf-horizontal sf-style-none sf-total-items-7 sf-parent-items-5 sf-single-items-2"><li><a href="/"><span class="home_icon"></span></a></li><li id="menu-680-1" class="first odd sf-item-1 sf-depth-1 sf-total-children-14 sf-parent-children-0 sf-single-children-14 mainMenu parent menuparent has-dropdown"><a href="/about/overview" class="sf-depth-1 mainMenu parent menuparent has-dropdown">About</a><ul class="dropdown"><li id="menu-686-1" class="first odd sf-item-1 sf-depth-2 mainMenu sf-no-children"><a href="/about/overview" class="sf-depth-2 ">Overview</a></li><li id="menu-684-1" class="middle even sf-item-2 sf-depth-2 mainMenu sf-no-children"><a href="/content/office-chancellor" class="sf-depth-2 ">Office of the Chancellor</a></li><li id="menu-687-1" class="middle odd sf-item-3 sf-depth-2 mainMenu sf-no-children"><a href="/vc/home" class="sf-depth-2 ">Office of the Vice Chancellor</a></li><li id="menu-468-1" class="middle even sf-item-4 sf-depth-2 mainMenu sf-no-children"><a href="https://www.ug.edu.gh/irpo/facts-figures" class="sf-depth-2 ">Enrolment Facts</a></li><li id="menu-8905-1" class="middle odd sf-item-5 sf-depth-2 mainMenu sf-no-children"><a href="https://app.powerbi.com/" class="sf-depth-2 ">UG Business Intelligence Portal</a></li><li id="menu-469-1" class="middle even sf-item-6 sf-depth-2 mainMenu sf-no-children"><a href="/about/university-history" class="sf-depth-2 ">History</a></li><li id="menu-688-1" class="middle odd sf-item-7 sf-depth-2 mainMenu sf-no-children"><a href="/university-leadership/officers" class="sf-depth-2 ">University Leadership</a></li><li id="menu-1649-1" class="middle even sf-item-8 sf-depth-2 mainMenu sf-no-children"><a href="/registry/office-registrar" class="sf-depth-2 ">Registry</a></li><li id="menu-877-1" class="middle odd sf-item-9 sf-depth-2 mainMenu sf-no-children"><a href="/about/institutional-affiliations" title="institutional-affiliations" class="sf-depth-2 ">UG Affiliates &amp; Partners</a></li><li id="menu-1742-1" class="middle even sf-item-10 sf-depth-2 mainMenu sf-no-children"><a href="/about/statutes-of-the-university" class="sf-depth-2 ">Statutes of the University</a></li><li id="menu-3479-1" class="middle odd sf-item-11 sf-depth-2 mainMenu sf-no-children"><a href="http://www.ug.edu.gh/pad/publication/policies" class="sf-depth-2 ">UG Policies</a></li><li id="menu-10156-1" class="middle even sf-item-12 sf-depth-2 mainMenu sf-no-children"><a href="https://www.ug.edu.gh/legalcounsel/news/office-legal-counsel" target="_blank" class="sf-depth-2 ">Office of Legal Counsel</a></li><li id="menu-876-1" class="middle odd sf-item-13 sf-depth-2 mainMenu sf-no-children"><a href="http://www.ug.edu.gh/pad/ug-publications" target="_blank" class="sf-depth-2 ">UG Publications</a></li><li id="menu-2733-1" class="last even sf-item-14 sf-depth-2 mainMenu sf-no-children"><a href="http://www.ug.edu.gh/pad" target="_blank" class="sf-depth-2 ">Public Affairs Directorate</a></li></ul></li><li id="menu-681-1" class="middle even sf-item-2 sf-depth-1 sf-total-children-3 sf-parent-children-0 sf-single-children-3 mainMenu parent menuparent has-dropdown"><a href="https://admission.ug.edu.gh/applying/" class="sf-depth-1 mainMenu parent menuparent has-dropdown">Admission</a><ul class="dropdown"><li id="menu-1054-1" class="first odd sf-item-1 sf-depth-2 mainMenu sf-no-children"><a href="https://admission.ug.edu.gh/applying/undergraduate/overview" class="sf-depth-2 ">Undergraduate</a></li><li id="menu-2139-1" class="middle even sf-item-2 sf-depth-2 mainMenu sf-no-children"><a href="https://sgs.ug.edu.gh/" class="sf-depth-2 ">School of Graduate Studies</a></li><li id="menu-473-1" class="last odd sf-item-3 sf-depth-2 mainMenu sf-no-children"><a href="/aid/welcome" class="sf-depth-2 ">Financial Aid</a></li></ul></li><li id="menu-683-1" class="middle odd sf-item-3 sf-depth-1 sf-total-children-10 sf-parent-children-0 sf-single-children-10 mainMenu parent menuparent has-dropdown"><a href="/academics/colleges" class="sf-depth-1 mainMenu parent menuparent has-dropdown">Academics</a><ul class="dropdown"><li id="menu-9101-1" class="first odd sf-item-1 sf-depth-2 mainMenu sf-no-children"><a href="https://www.ug.edu.gh/provc-asa/home" class="sf-depth-2 ">The Pro-Vice Chancellor</a></li><li id="menu-4921-1" class="middle even sf-item-2 sf-depth-2 mainMenu sf-no-children"><a href="//www.ug.edu.gh/dos" class="sf-depth-2 ">Dean of Student Affairs</a></li><li id="menu-419-1" class="middle odd sf-item-3 sf-depth-2 mainMenu sf-no-children"><a href="/academics/colleges" class="sf-depth-2 ">Colleges</a></li><li id="menu-2059-1" class="middle even sf-item-4 sf-depth-2 mainMenu sf-no-children"><a href="/academics/institutes-centres" class="sf-depth-2 ">Institutes &amp; Centres</a></li><li id="menu-420-1" class="middle odd sf-item-5 sf-depth-2 mainMenu sf-no-children"><a href="/departments" class="sf-depth-2 ">Departments A - Z</a></li><li id="menu-2138-1" class="middle even sf-item-6 sf-depth-2 mainMenu sf-no-children"><a href="http://sgs.ug.edu.gh" class="sf-depth-2 ">School of Graduate Studies</a></li><li id="menu-475-1" class="middle odd sf-item-7 sf-depth-2 mainMenu sf-no-children"><a href="/aad" class="sf-depth-2 ">Academic Affairs</a></li><li id="menu-476-1" class="middle even sf-item-8 sf-depth-2 mainMenu sf-no-children"><a href="/academics/calendar" class="sf-depth-2 ">Academic Calendar</a></li><li id="menu-2974-1" class="middle odd sf-item-9 sf-depth-2 mainMenu sf-no-children"><a href="http://www.ug.edu.gh/aqau/home" class="sf-depth-2 ">Academic Quality Assurance</a></li><li id="menu-875-1" class="last even sf-item-10 sf-depth-2 mainMenu sf-no-children"><a href="http://www.ug.edu.gh/aad/Students-Handbook" class="sf-depth-2 ">Student Handbook</a></li></ul></li><li id="menu-407-1" class="middle even sf-item-4 sf-depth-1 sf-total-children-9 sf-parent-children-1 sf-single-children-8 mainMenu parent menuparent has-dropdown"><a href="http://orid.ug.edu.gh" target="_blank" class="sf-depth-1 mainMenu parent menuparent has-dropdown">Research</a><ul class="dropdown"><li id="menu-465-1" class="first odd sf-item-1 sf-depth-2 mainMenu sf-no-children"><a href="http://orid.ug.edu.gh/overview" target="_blank" class="sf-depth-2 ">Overview</a></li><li id="menu-477-1" class="middle even sf-item-2 sf-depth-2 mainMenu sf-no-children"><a href="https://orid.ug.edu.gh/pro-vice-chancellor" target="_blank" class="sf-depth-2 ">The Pro-Vice Chancellor</a></li><li id="menu-478-1" class="middle odd sf-item-3 sf-depth-2 mainMenu sf-no-children"><a href="http://orid.ug.edu.gh/ug-research-grant" target="_blank" class="sf-depth-2 ">UG Research Grants</a></li><li id="menu-1652-1" class="middle even sf-item-4 sf-depth-2 sf-total-children-1 sf-parent-children-0 sf-single-children-1 mainMenu parent menuparent has-dropdown"><a href="https://orid.ug.edu.gh/research-ethics-team" class="sf-depth-2 mainMenu parent menuparent has-dropdown">Ethics </a><ul class="dropdown"><li id="menu-482-1" class="first odd sf-item-1 sf-depth-3 mainMenu sf-no-children"><a href="http://orid.ug.edu.gh/ethics-commitees" target="_blank" class="sf-depth-3 ">Ethics Committees</a></li></ul></li><li id="menu-479-1" class="middle odd sf-item-5 sf-depth-2 mainMenu sf-no-children"><a href="https://www.ug.edu.gh/ttips/" target="_blank" class="sf-depth-2 ">Intellectual Property</a></li><li id="menu-480-1" class="middle even sf-item-6 sf-depth-2 mainMenu sf-no-children"><a href="http://orid.ug.edu.gh/inaugural-lectures" target="_blank" class="sf-depth-2 ">Public Lectures</a></li><li id="menu-481-1" class="middle odd sf-item-7 sf-depth-2 mainMenu sf-no-children"><a href="http://orid.ug.edu.gh/research-opportunity-alerts-6" target="_blank" class="sf-depth-2 ">Research Opportunities Alerts</a></li><li id="menu-2384-1" class="middle even sf-item-8 sf-depth-2 mainMenu sf-no-children"><a href="http://orid.ug.edu.gh/annual-research-report" target="_blank" class="sf-depth-2 ">Annual Research Reports</a></li><li id="menu-9033-1" class="last odd sf-item-9 sf-depth-2 mainMenu sf-no-children"><a href="http://journals.ug.edu.gh/" class="sf-depth-2 ">UG Journal</a></li></ul></li><li id="menu-421-1" class="middle odd sf-item-5 sf-depth-1 sf-total-children-7 sf-parent-children-0 sf-single-children-7 mainMenu parent menuparent has-dropdown"><a href="http://balme.ug.edu.gh" target="_blank" class="sf-depth-1 mainMenu parent menuparent has-dropdown">Library</a><ul class="dropdown"><li id="menu-486-1" class="first odd sf-item-1 sf-depth-2 mainMenu sf-no-children"><a href="http://balme.ug.edu.gh/" target="_blank" class="sf-depth-2 ">Balme Library</a></li><li id="menu-1046-1" class="middle even sf-item-2 sf-depth-2 mainMenu sf-no-children"><a href="http://ugspace.ug.edu.gh/" target="_blank" class="sf-depth-2 ">Institutional Repository</a></li><li id="menu-483-1" class="middle odd sf-item-3 sf-depth-2 mainMenu sf-no-children"><a href="http://library.ug.edu.gh/" target="_blank" class="sf-depth-2 ">Online Catalogue</a></li><li id="menu-484-1" class="middle even sf-item-4 sf-depth-2 mainMenu sf-no-children"><a href="http://libguides.ug.edu.gh/" target="_blank" class="sf-depth-2 ">Research Guides</a></li><li id="menu-8267-1" class="middle odd sf-item-5 sf-depth-2 mainMenu sf-no-children"><a href="/library-resources/times-higher-education" class="sf-depth-2 ">Times Higher Education</a></li><li id="menu-485-1" class="middle even sf-item-6 sf-depth-2 mainMenu sf-no-children"><a href="http://ezproxy.ug.edu.gh/" target="_blank" class="sf-depth-2 ">Off-Campus Access</a></li><li id="menu-4117-1" class="last odd sf-item-7 sf-depth-2 mainMenu sf-no-children"><a href="http://libcal.ug.edu.gh/" class="sf-depth-2 ">Events &amp; Room Reservation</a></li></ul></li><li id="menu-464-1" class="middle even sf-item-6 sf-depth-1 mainMenu sf-no-children"><a href="http://ipo.ug.edu.gh/" class="sf-depth-1 ">International Programmes</a></li><li id="menu-3487-1" class="last odd sf-item-7 sf-depth-1 mainMenu sf-no-children"><a href="http://www.ug.edu.gh/freshers" class="sf-depth-1 ">Freshmen Info</a></li></ul></div></div></div><div class="row"><div class="sixteen columns"><div class="breadcrumb"> <a href="/">Home</a>GNPC Foundation Awards, 2017/18</div></div></div><div class="row"><div id="page-content" class="eleven columns "><div class="page_heading"><h1>GNPC Foundation Awards, 2017/18</h1></div><div class="region region-content"><div id="block-system-main" class="block block-system"><div class="content"><div id="node-32346" class="node node-article node-article clearfix" about="/news/gnpc-foundation-awards-201718" typeof="sioc:Item foaf:Document"><div class="submitted"> <span property="dc:date dc:created" content="2017-12-07T10:28:42+00:00" datatype="xsd:dateTime" rel="sioc:has_creator"><p class="post_meta"><span class="calendar">07 Dec, 2017</span><span class="author">by <span class="username" xml:lang="" about="/users/skdagudetse" typeof="sioc:UserAccount" property="foaf:name" datatype="">skdagudetse</span></span></p></span></div><div class="node-image"><div class="pic"> <a href="/news/gnpc-foundation-awards-201718"> <img typeof="foaf:Image" src="http://www.old1.ug.edu.gh/sites/old1.ug.edu.gh/files/styles/blog_teaser/public/field/image/IMG_6884.JPG?itok=SiH-O2RA" width="650" height="371" alt="" /> </a></div></div> <span property="dc:title" content="GNPC Foundation Awards, 2017/18" class="rdf-meta element-hidden"></span><div class="content"><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p style="text-align: justify;">The Ghana National Petroleum Company (GNPC) Foundation has awarded Gh¢9,000 worth of scholarship each to 134 students of the University of Ghana for the 2017/2018 academic year. The scholarship scheme, which covers tuition, living expenses, book allowance, and dissertation or project allowance, is the largest support offered by a sole organization, benefiting 700 awardees of public tertiary institutions across the country. The ceremony was chaired by the Pro-Vice-Chancellor of Academic Affairs, Professor Samuel Kwame Offei.</p><p style="text-align: justify;"><span style="font-size: 13.008px;">In appreciation of the award, Professor Offei lauded the scholarship scheme as the largest in the country and commended GNPC for the opportunity given to the students to aspire and to realise their dreams. He exhorted the students to work hard and make themselves worthy of the scholarship throughout their four-year study at the University.</span></p><p style="text-align: center;"><img alt="" src="/sites/default/files/images/prof%20offei46.jpg" style="width: 634px; height: 356px;" /></p><p style="text-align: center;"><em><strong><span style="font-size: 13.008px;">Professor Samuel Kwame Offei</span></strong></em></p><p style="text-align: justify;"><span style="font-size: 13.008px;">Dr. Patrick Ofori, the Manager in charge of Education and Training at the GNPC Foundation, spoke extensively on the range of benefits awardees are entitled to. Apart from career support systems available to scholars during the second and third years, there are schemes of mock interviews designed to prepare students for further academic or career opportunities. Dr. Ofori cautioned the awardees to be meticulous and honest with the information used to process various documents, and to seek clarification where necessary.</span></p><p style="text-align: justify;"><span style="font-size: 13.008px;">Although the scholarship could run for the four year period of study, awardees are annually expected to meet certain standards of performance set by the GNPC Foundation.</span></p><p style="text-align: justify;"><span style="font-size: 13.008px;">Dr. Kwame Baah Nuakoh, the Executive Director of the GNPC Foundation, reminisced about his days as the secretary of the Legon Hall JCR from 1995 to 1997 and the subsequent opportunity to study at Harvard University on scholarship. He encouraged the awardees to develop the self-discipline that comes with focusing on their education, and complying with the regulations of the University of Ghana and the code of conduct spelt out by GNPC. According to Dr. Nuakoh, the GNPC Foundation is spending over Gh¢1.2million on students of the University of Ghana to enable them focus on their studies.</span></p><p style="text-align: center;"><img alt="" src="/sites/default/files/images/gnpc%20boss00.jpg" style="font-size: 13.008px; width: 645px; height: 363px;" /></p><p style="text-align: center;"><em><strong><span style="font-size: 13.008px;">Dr. Kwame Baah Nuakoh</span></strong></em></p><p style="text-align: justify;"><span style="font-size: 13.008px;">On behalf of the awardees, Mr. Daniel Otting Awuah, the President of the Student Representative Council (SRC), thanked the GNPC Foundation for the award and appealed to the Foundation to accord the University of Ghana priority consideration.</span></p><p style="text-align: justify;"><span style="font-size: 13.008px;">Mr. Ebenezer Amoakohene Bonsra, the Economic Empowerment Officer of the GNPC Foundation, took his turn to congratulate the awardees and educated them on the code of conduct as set by the foundation.</span></p><p style="text-align: justify;"><span style="font-size: 13.008px; text-align: justify;">Professor Francis Nunoo, the Dean of Students Affairs, congratulated the awardees and admonished them to put in their maximum effort in their studies. He further expressed profound appreciation to the foundation for the benefit accorded students of the university.</span></p><p style="text-align: justify;"><span style="font-size: 13.008px;">The GNPC Foundation Scholarship Award is part of GNPC’s Corporate Social Investment, which is geared towards education, especially in areas of Science, Technology, Engineering and Mathematics (STEM).</span></p><p style="text-align: justify;"><span style="font-size: 13.008px;">The ceremony was hosted by Mrs. Christine Baning, the Head of the Students Financial Aid Office.</span></p><p style="text-align: justify;"> </p><p style="text-align: justify;"><a href="https://www.youtube.com/watch?v=9ZsWRTvZlRU">Please click here to view the video of the event</a></p><p style="text-align: justify;"> </p></div></div></div></div></div></div></div></div></div><div class="four columns sidebar "><div class="region region-sidebar-second"><div id="block-block-14" class="block block-block"><h4 class="title"><span>News &amp; Events</span></h4><div class="content"><ul class="arrowed"><li><a href="/news">UGNews</a></li><li><a href="/events">UGEvents</a></li><li><a href="/announcements">Announcements</a></li><li><a href="/announcements">Calender</a></li></ul></div></div><div id="block-views-news-block" class="block block-views"><h4 class="title"><span>Latest News</span></h4><div class="content"><div class="view view-news view-id-news view-display-id-block view-dom-id-6441c80bd8ff3479da1bd208464300e0"><div class="view-content"><div class="views-row views-row-1 views-row-odd views-row-first"><div class="views-field views-field-title"> <span class="field-content"><a href="/news/department-distance-education-hosts-3-day-workshop-academic-engagement-and-knowledge-sharing">Department of Distance Education Hosts a 3-Day Workshop on Academic Engagement and Knowledge Sharing</a></span></div></div><div class="views-row views-row-2 views-row-even"><div class="views-field views-field-title"> <span class="field-content"><a href="/news/ugcoe-celebrates-2024-day-scientific-renaissance-africa-posterlogo-challenge">UGCOE Celebrates the 2024 Day of Scientific Renaissance of Africa with a Poster/Logo Challenge</a></span></div></div><div class="views-row views-row-3 views-row-odd"><div class="views-field views-field-title"> <span class="field-content"><a href="/news/college-health-sciences-commemorates-dsra-exhibition-scholarly-works-faculty">College of Health Sciences Commemorates DSRA with Exhibition of Scholarly Works by Faculty</a></span></div></div><div class="views-row views-row-4 views-row-even"><div class="views-field views-field-title"> <span class="field-content"><a href="/news/improving-health-systems-effective-disease-elimination-and-eradication-training-held-nmimr">Improving Health Systems for Effective Disease Elimination and Eradication Training Held at NMIMR</a></span></div></div><div class="views-row views-row-5 views-row-odd views-row-last"><div class="views-field views-field-title"> <span class="field-content"><a href="/news/csr-has-come-stay-organisations-need-be-more-economic-efficient-and-productive-prof-dan-ofori">CSR Has Come to Stay, Organisations Need to Be More Economic, Efficient and Productive - Prof. Dan Ofori</a></span></div></div></div></div></div></div></div></div></div></div><div id="footer" class="container"><div class="row footer_inside"><div class="four columns f1" style="width:211px;"><div class="region region-footer-firstcolumn"><div id="block-block-5" class="block block-block"><h3>Get in Touch with Us</h3><div class="content"><div class="icon_phone" title="Phone">+233-(0)302-213820</div><div class="icon_phone" title="Phone">+233-(0)302-213850</div><div class="icon_mail" title="Email"><a href="mailto:pad@ug.edu.gh">pad@ug.edu.gh</a></div><div class="icon_loc" title="Location">P.O. Box LG 25<br />Legon, Accra</div><div class="clear"> </div><div class="h10"> </div></div></div></div></div><div class="three columns f2"><div class="region region-footer-secondcolumn"><div id="block-block-3" class="block block-block"><h3>Colleges</h3><div class="content"><ul class="margined_left"><li><a href="http://cbas.ug.edu.gh" target="_blank">Basic &amp; Applied Sciences</a></li><li><a href="http://coe.ug.edu.gh" target="_blank">Education</a></li><li><a href="http://chs.ug.edu.gh" target="_blank">Health Science</a></li><li><a href="http://coh.ug.edu.gh" target="_blank">Humanities</a></li><li><a href="http://sgs.ug.edu.gh" target="_blank">School of Graduate Studies</a></li></ul></div></div></div></div><div class="three columns f3"><div class="region region-footer-thirdcolumn"><div id="block-block-4" class="block block-block"><h3>Admissions</h3><div class="content"><ul class="margined_left"><li><a href="http://admission.ug.edu.gh/applying/undergraduate/overview" target="_blank">Undergraduate</a></li><li><a href="http://admission.ug.edu.gh/applying/postgraduate/overview" target="_blank">Postgraduate</a></li><li><a href="http://admission.ug.edu.gh/applying/international/overview" target="_blank">International</a></li><li><a href="http://admission.ug.edu.gh/applying/distance/undergraduate-overview" target="_blank">Distance Education</a></li></ul></div></div></div><div class="clearfix"></div></div><div class="three columns f4"><div class="region region-footer-fourthcolumn"><div id="block-block-10" class="block block-block"><h3>Quick Links</h3><div class="content"><ul class="margined_left"><li><a href="https://sts.ug.edu.gh/academicrecords/" target="_blank">Academic Record Verification</a></li><li><a href="http://journals.ug.edu.gh/">UG Journals</a></li><li><a href="https://www.ug.edu.gh/library-resources/times-higher-education" target="_blank">Times Higher Education</a></li><li><a href="https://ugportal.ug.edu.gh/">UG Intranet Portal</a></li><li><a href="http://pada.ug.edu.gh" target="_blank">The Pan-African Doctoral Academy (PADA)</a></li><li><a href="http://www.ug.edu.gh/employment-opportunities">Employment Opportunities</a></li></ul></div></div></div></div><div class="three columns f5"><div class="region region-footer-fifthcolumn"><div id="block-block-9" class="block block-block"><h3>Alumni</h3><div class="content"><ul class="margined_left"><li><a href="https://ar.ug.edu.gh" target="_blank">UG Alumni Relations Office </a></li><li><a href="http://alumni.ug.edu.gh" target="_blank">UG Alumni Association (Ghana)</a></li><li><a href="https://www.ugaana.org">UG Alumni Association (North America)</a></li><li><a href="https://ar.ug.edu.gh/give-ug" target="_blank">Give to UG</a></li></ul></div></div></div></div></div><div class="clear"></div><div class="footer_btm"><div class="footer_btm_inner"> <a href='https://twitter.com/UnivofGh' target='_blank' class='icon_tweet' title='Twitter'>Twitter</a> <a href='https://plus.google.com/u/0/+universityofghana/posts' target='_blank' class='icon_google' title='Google+'>Google+</a> <a href='https://www.facebook.com/univofgh' target='_blank' class='icon_facebook' title='Facebook'>Facebook</a> <a href="https://www.youtube.com/@UnivofGh" class='icon_skype' title='youtube' target="_blank">youtube</a><div id="powered"> Copyright &copy;&nbsp;2026,&nbsp;<a href="https://www.ug.edu.gh/">University of Ghana</a></div></div></div></div></div>    
+
+    
+      <!--[if lt IE 9]><link rel="stylesheet" type="text/css" media="screen" href="/sites/all/themes/ugmain/stylesheets/sequencejs-theme.sliding-horizontal-parallax-ie.css" /><![endif]-->
+      <script type="text/javascript" src="//code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/old1.ug.edu.gh/modules/jquery_update/replace/jquery/1.7/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://www.old1.ug.edu.gh/sites/old1.ug.edu.gh/files/js/js_gATYwZ2Yo6FsZrU-UVfTW1xo14Wro00REH2o31rSM-8.js"></script>
+<script type="text/javascript" src="http://www.old1.ug.edu.gh/sites/old1.ug.edu.gh/files/js/js_xqLA_4k_SXMKuic9fg5ToEzFZ0vZJ-G4G37LPmYrVqU.js"></script>
+<script type="text/javascript" src="http://www.old1.ug.edu.gh/sites/old1.ug.edu.gh/files/js/js_Cl0RumpiVc-4xPZgT5waU8dKTf-obio3uYy0FdssRD8.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var text_resize_scope = "page-content";
+          var text_resize_minimum = "12";
+          var text_resize_maximum = "20";
+          var text_resize_line_height_allow = 0;
+          var text_resize_line_height_min = "16";
+          var text_resize_line_height_max = "36";
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://www.old1.ug.edu.gh/sites/old1.ug.edu.gh/files/js/js_nGAK_OG81XOTobn0Okqi_ebrH4DlaE10eJUV3BBYCC0.js"></script>
+<script type="text/javascript" src="http://www.old1.ug.edu.gh/sites/old1.ug.edu.gh/files/js/js_PZVclffdZwD91p3L-dMGEGPeIE-JpqjzvtISnu0f_Bc.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"ugmain","theme_token":"gEVpsWhaeOghF0YW-cjWsuPOFgHTnjvgkdeQaAzeRCU","js":{"\/\/code.jquery.com\/jquery-1.7.2.min.js":1,"0":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"sites\/default\/files\/minify\/jquery.once.1.2.min.js":1,"sites\/default\/files\/minify\/drupal.min.js":1,"sites\/default\/files\/minify\/jquery.bgiframe.2.1.min.js":1,"sites\/default\/files\/minify\/jquery.hoverIntent.0.5.min.js":1,"sites\/default\/files\/minify\/superfish.v1.4.8.min.js":1,"sites\/default\/files\/minify\/nice_menus.1.0.min.js":1,"sites\/old1.ug.edu.gh\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/user_alert\/js\/user-alert.js":1,"1":1,"sites\/default\/files\/minify\/text_resize.min.js":1,"sites\/default\/files\/minify\/jquery.easing.1.3.min.js":1,"sites\/default\/files\/minify\/common.min.js":1,"sites\/default\/files\/minify\/isotope.min.js":1,"sites\/default\/files\/minify\/jquery.flexslider-min.min.js":1,"sites\/all\/themes\/ugmain\/js\/jquery.prettyPhoto.js":1,"sites\/default\/files\/minify\/jquery.jcarousel.min.min.js":1,"sites\/default\/files\/minify\/jquery.tipsy.min.js":1,"sites\/default\/files\/minify\/jquery.selectnav.min.js":1,"sites\/default\/files\/minify\/aqua.min.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/user_alert\/css\/user-alert.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/announcements\/announcements.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/nice_menus\/css\/nice_menus.css":1,"sites\/all\/modules\/nice_menus\/css\/nice_menus_default.css":1,"sites\/all\/modules\/text_resize\/text_resize.css":1,"sites\/all\/themes\/ugmain\/stylesheets\/ug-style-min.css":1,"sites\/all\/themes\/ugmain\/stylesheets\/links.css":1,"public:\/\/css_injector\/css_injector_1.css":1}},"user_alert":{"url_prefix":""},"nice_menus_options":{"delay":800,"speed":"slow"},"urlIsAjaxTrusted":{"\/news\/gnpc-foundation-awards-201718":true}});
+//--><!]]>
+</script>
+      <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    <!--  Fonts  -->
+
+	
+
+  </body>
+</html>

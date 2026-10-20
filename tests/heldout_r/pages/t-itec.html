@@ -1,0 +1,3094 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <style>
+        body { 
+            font-family: "Google Sans Flex";
+        }
+
+        /* Banner starts hidden below the screen */
+        .cookie-banner {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background: rgba(20, 20, 20, 0.65);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            gap: 16px;
+            z-index: 9999;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+ 
+            /* Hidden state – translated off screen */
+            transform: translateY(100%);
+            opacity: 0;
+ 
+            /* Smooth slide-up */
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                        opacity   0.45s ease;
+        }
+
+
+        /* Visible state toggled by JS */
+        .cookie-banner.is-visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Slide back down on dismiss */
+        .cookie-banner.is-hiding {
+            transform: translateY(110%);
+            opacity: 0;
+        }
+
+        .cookie-banner p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .cookie-actions {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .accept-btn,
+        .accept-btn-ess,
+        .reject-btn {
+            color: #fff;
+            border: none;
+            padding: 10px 22px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: filter 0.2s ease;
+        }
+
+        .accept-btn:hover,
+        .accept-btn-ess:hover,
+        .reject-btn:hover { filter: brightness(1.15); }
+
+        .accept-btn { background: #1a7f37; }
+        .accept-btn-ess { background: #0066ff; }
+        .reject-btn { background: #c0392b; }
+    </style>
+
+    <script>
+        function saveCookieConsent(consent) {
+            fetch(window.location.href, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'consent=' + encodeURIComponent(consent)
+            })
+            .then(r => r.text())
+            .then(t => {
+                if (t === 'success') {
+                    const banner = document.getElementById('cookieBanner');
+                    if (banner) {
+                        // Slide back down before removing
+                        banner.classList.remove('is-visible');
+                        banner.classList.add('is-hiding');
+                        banner.addEventListener('transitionend', () => {
+                            banner.remove();
+                            location.reload();
+                        }, { once: true });
+                    }
+                }
+            });
+        }
+
+        // Trigger slide-up shortly after page load
+        document.addEventListener('DOMContentLoaded', function () {
+            const banner = document.getElementById('cookieBanner');
+            if (banner) {
+                // Small delay so the transition is visible
+                setTimeout(() => banner.classList.add('is-visible'), 120);
+            }
+        });
+    </script>    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ITEC :Indian Technical and Economic Cooperation</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" sizes="48x48">
+
+    <!-- CSS only in head -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="./google_font/googlefont.css" rel="stylesheet">
+    <style>
+        .sticky-top-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
+        }
+
+        .navbar {
+            padding: 0;
+        }
+
+        .site-header .logo-title h3 {
+            font-size: 1.1rem;
+        }
+
+        .site-header .logo-title div {
+            font-size: 0.8rem;
+        }
+
+        .site-header img {
+            width: 40px;
+        }
+
+        .site-header .search-wrap {
+            width: 100%;
+        }
+
+        .site-header .search-wrap .form-control {
+            min-width: 0;
+        }
+
+        /* Pill-style search box */
+        .mea-search-form {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border: 1px solid #1f57b3;
+            padding: 2px 4px 2px 18px;
+            transition: border-color .15s ease, box-shadow .15s ease;
+        }
+
+        .mea-search-form:focus-within {
+            border-color: #1f57b3;
+            box-shadow: 0 0 0 3px rgba(31, 87, 179, .12);
+        }
+
+        .mea-search-form .form-control {
+            border: none;
+            background: transparent;
+            box-shadow: none;
+            padding: 8px 6px;
+            font-size: 15px;
+        }
+
+        .mea-search-form .form-control:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .mea-search-form .form-control::placeholder {
+            color: #6c757d;
+        }
+
+        .mea-search-form .search-submit-btn {
+            background: transparent;
+            border: none;
+            color: #1f57b3;
+            width: 38px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 18px;
+        }
+
+        .mea-search-form .search-submit-btn:hover {
+            background: #eef3fb;
+        }
+
+        @media (min-width: 768px) {
+            .site-header img {
+                width: 40px;
+            }
+
+            .site-header .logo-title h3 {
+                font-size: 1.5rem;
+            }
+
+            .site-header .logo-title div {
+                font-size: 1rem;
+            }
+
+            .site-header .search-wrap {
+                width: auto;
+            }
+        }
+
+        .navbar-nav .nav-link {
+            padding: 14px 16px;
+            color: #222;
+            font-weight: 500;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #1f57b3;
+        }
+
+        .navbar-toggler {
+            border-radius: 0;
+            border: none;
+            padding: 6px 4px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            background: transparent;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler .toggler-icon {
+            display: block;
+            width: 26px;
+            height: 3px;
+            background-color: #222;
+            border-radius: 2px;
+            transition: transform .3s ease, opacity .3s ease, background-color .3s ease;
+        }
+
+        .navbar-toggler.active .toggler-icon {
+            background-color: #2457c5;
+        }
+
+        .navbar-toggler.active .toggler-icon.icon-top {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .navbar-toggler.active .toggler-icon.icon-middle {
+            opacity: 0;
+        }
+
+        .navbar-toggler.active .toggler-icon.icon-bottom {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        .mega-dropdown {
+            position: static;
+        }
+
+        .mega-menu {
+            position: static;
+            width: 100%;
+            border: none;
+            border-top: none;
+            border-radius: 0;
+            margin-top: 0;
+            display: none;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+            transition: none;
+            box-shadow: none;
+            background-color: #f8f9fa;
+        }
+
+        .mega-menu.show {
+            display: block;
+        }
+
+        .mega-menu h4 {
+            color: #2457c5;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .mega-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mega-menu li {
+            padding: 8px 0;
+            color: #444;
+        }
+
+        .mega-menu li:hover {
+            color: #2457c5;
+            cursor: pointer;
+        }
+
+        .mega-menu-title {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 600;
+            color: #2457c5;
+            text-decoration: none;
+            margin-bottom: 12px;
+        }
+
+        .mega-menu-title:hover {
+            color: #1a4699;
+        }
+
+        .mega-menu-title-li {
+            display: inline-block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .mega-menu-title-li:hover {
+            color: #1a4699;
+            text-decoration: underline;
+        }
+
+        @media (min-width: 992px) {
+            .mega-menu {
+                position: absolute;
+                left: 0;
+                right: 0;
+                width: auto;
+                border: none;
+                border-top: 2px solid #2457c5;
+                border-radius: 0;
+                display: block;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(10px);
+                transition: .3s;
+                box-shadow: 0 12px 25px rgba(0, 0, 0, .08);
+                background-color: #fff;
+            }
+
+            .mega-dropdown:hover .mega-menu,
+            .mega-dropdown:focus-within .mega-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                display: block;
+            }
+
+            .navbar-nav .nav-link {
+                padding: 18px 22px;
+                font-size: 16px;
+            }
+
+            .mega-menu h4 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            .mega-menu-title {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                max-height: calc(100vh - 120px);
+                overflow-y: auto;
+            }
+
+            .dropdown-toggle::after {
+                float: right;
+                margin-top: 8px;
+            }
+
+            .navbar-nav .nav-item {
+                border-bottom: 1px solid #eee;
+            }
+        }
+
+        :root {
+            --a11y-bg: #ffffff;
+            --a11y-text: #1a1a1a;
+            --a11y-link: #2457c5;
+            --a11y-card-bg: #f8f9fa;
+            --a11y-border: #dee2e6;
+        }
+
+        html[data-theme="dark"] {
+            --a11y-bg: #000000;
+            --a11y-text: #ffe600;
+            /* ← ALL text becomes yellow in dark mode */
+            --a11y-link: #ffe600;
+            /* ← ALL links become yellow in dark mode */
+            --a11y-card-bg: #0d0d0d;
+            --a11y-border: #ffffff;
+        }
+
+        /* ===== DARK MODE — Global text & background ===== */
+        html[data-theme="dark"] body {
+            background-color: var(--a11y-bg);
+            color: var(--a11y-text);
+        }
+
+        /* All text elements → white */
+        html[data-theme="dark"] p,
+        html[data-theme="dark"] h1,
+        html[data-theme="dark"] h2,
+        html[data-theme="dark"] h3,
+        html[data-theme="dark"] h4,
+        html[data-theme="dark"] h5,
+        html[data-theme="dark"] h6,
+        html[data-theme="dark"] span,
+        html[data-theme="dark"] li,
+        html[data-theme="dark"] td,
+        html[data-theme="dark"] th,
+        html[data-theme="dark"] label,
+        html[data-theme="dark"] div,
+        html[data-theme="dark"] .nav-link,
+        html[data-theme="dark"] .navbar-nav .nav-link {
+            color: var(--a11y-text) !important;
+        }
+
+
+        /* All links → yellow */
+        html[data-theme="dark"] a,
+        html[data-theme="dark"] a:visited,
+        html[data-theme="dark"] a:hover {
+            color: var(--a11y-link) !important;
+        }
+
+        /* Card and footer components */
+        html[data-theme="dark"] .embassy-card,
+        html[data-theme="dark"] .footer-mea {
+            background-color: var(--a11y-card-bg) !important;
+            border-color: var(--a11y-border) !important;
+            color: var(--a11y-text) !important;
+        }
+
+        /* Navbar background in dark mode */
+        html[data-theme="dark"] .sticky-top-wrapper,
+        html[data-theme="dark"] .site-header,
+        html[data-theme="dark"] .navbar {
+            background-color: #111111 !important;
+        }
+
+        /* 1. Search box fix */
+        html[data-theme="dark"] .mea-search-form {
+            background: #111111 !important;
+            border-color: #ffe600 !important;
+        }
+
+        html[data-theme="dark"] .mea-search-form .form-control {
+            background: transparent !important;
+            color: #ffe600 !important;
+        }
+
+        html[data-theme="dark"] .mea-search-form .form-control::placeholder {
+            color: #aaaaaa !important;
+        }
+
+        html[data-theme="dark"] .mea-search-form .search-submit-btn {
+            color: #ffe600 !important;
+        }
+
+        /* 2. Accessibility button label */
+        html[data-theme="dark"] .a11y-trigger-label {
+            color: #ffe600 !important;
+        }
+
+        /* 3. Hamburger menu mobile */
+        html[data-theme="dark"] .navbar-toggler .toggler-icon {
+            background-color: #ffe600 !important;
+        }
+
+        /* 4. Smooth transition */
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sticky-top-wrapper,
+        .site-header,
+        .navbar,
+        .mega-menu {
+            transition: background-color 0.3s ease;
+        }
+
+        /* 5. Nav link hover */
+        html[data-theme="dark"] .navbar-nav .nav-link:hover {
+            color: #ffe600 !important;
+        }
+
+        /* ✅ turns the SVG fully white and visible in the dark Contrast */
+        html[data-theme="dark"] .emblem-logo {
+            filter: brightness(10) invert(1);
+        }
+
+        /* Mega menu dark */
+        html[data-theme="dark"] .mega-menu {
+            background-color: #111111 !important;
+            border-color: #ffe600 !important;
+        }
+
+        /* ===== TRIGGER BUTTON ===== */
+        .a11y-trigger-wrapper {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .a11y-trigger {
+            width: 40px;
+            height: 35px;
+            background: #ffffff !important;
+            color: #1f57b3 !important;
+            border: 1px solid #1f57b3;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            flex-shrink: 0;
+            transition: transform .15s ease, background-color .2s ease;
+        }
+
+        .a11y-trigger i {
+            color: inherit !important;
+        }
+
+        .a11y-trigger-label {
+            font-size: 10px;
+            color: #1f57b3;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        /*.a11y-trigger:hover {
+        transform: scale(1.06);
+        background: #0d6efd !important;
+		color: white !important;
+        border: 1px solid white;
+    }*/
+        html[data-theme="dark"] .a11y-trigger {
+            background: #000000 !important;
+            border-color: #ffe600;
+            color: #ffffff !important;
+        }
+
+        html[data-theme="dark"] .a11y-trigger:hover {
+            background: #222222 !important;
+        }
+
+        /* Translate button: Bhashini icon dark mode visible */
+        html[data-theme="dark"] .a11y-trigger.translate-btn,
+        html[data-theme="dark"] .a11y-trigger.translate-btn:hover {
+            background: #ffffff !important;
+            border-color: #ffe600;
+        }
+
+        /* ===== OVERLAY ===== */
+        .a11y-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            z-index: 2001;
+            display: none;
+        }
+
+        .a11y-overlay.open {
+            display: block;
+        }
+
+        /* ===== PANEL ===== */
+        .a11y-panel {
+            position: fixed;
+            top: 70px;
+            right: 24px;
+            width: 320px;
+            background: #ffffff;
+            color: #1a1a1a;
+            border: 1px solid #214aab;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            z-index: 2002;
+            font-family: Arial, Helvetica, sans-serif;
+            display: none;
+        }
+
+        .a11y-panel.open {
+            display: block;
+        }
+
+        html[data-theme="dark"] .a11y-panel {
+            background: #000000;
+            color: #ffffff;
+            border-color: #ffe600;
+        }
+
+        /* ===== PANEL HEADER ===== */
+        .a11y-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #214aab;
+            color: white;
+            padding: 12px 16px;
+        }
+
+        .a11y-panel-header h3 {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 700;
+            color: white !important;
+            /* always black — panel header is always yellow */
+        }
+
+        .a11y-panel-header .a11y-shortcut {
+            font-size: 12px;
+            font-weight: 500;
+            opacity: 0.8;
+            color: white !important;
+        }
+
+        html[data-theme="dark"] .a11y-panel-header {
+            background: #ffe600;
+            color: #ffffff;
+            border-color: #ffe600;
+        }
+
+        html[data-theme="dark"] .a11y-panel-header h3 {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 700;
+            color: black !important;
+            /* always black — panel header is always yellow */
+        }
+
+        html[data-theme="dark"] .a11y-panel-header .a11y-shortcut {
+            font-size: 12px;
+            font-weight: 500;
+            opacity: 0.8;
+            color: black !important;
+        }
+
+        /* ===== GRID & TILES ===== */
+        .a11y-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 14px;
+        }
+
+        .a11y-tile {
+            background: #f8f9fa;
+            border: 1px solid #214aab;
+            padding: 12px 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-align: center;
+            min-height: 84px;
+            cursor: pointer;
+            color: #1a1a1a;
+            font-size: 12px;
+            font-weight: 500;
+            transition: background-color .2s ease;
+            text-decoration: none;
+        }
+
+        .a11y-tile span {
+            color: #1f57b3;
+            font-weight: 600;
+        }
+
+        .a11y-tile:hover span,
+        .a11y-tile:focus span {
+            text-decoration: underline;
+        }
+
+        .a11y-tile:hover {
+            background: #eeeeee;
+        }
+
+        .a11y-tile[aria-pressed="true"] {
+            background: #fff6cc;
+            border-color: #e6cf00;
+        }
+
+        html[data-theme="dark"] .a11y-tile {
+            background: #000000;
+            border-color: #ffe600;
+            color: #ffffff !important;
+        }
+
+        html[data-theme="dark"] .a11y-tile span {
+            color: #ffffff !important;
+        }
+
+        html[data-theme="dark"] .a11y-tile:hover {
+            background: #1a1a1a;
+        }
+
+        html[data-theme="dark"] .a11y-tile[aria-pressed="true"] {
+            background: #1a1a00;
+        }
+
+        /* ===== TILE CONTROLS ===== */
+        .a11y-tile-controls {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* ===== MINI BUTTONS (A− A A+) ===== */
+        .a11y-mini-btn {
+            border: 1px solid #c9c9c9;
+            background: #ffffff;
+            color: #333333;
+            width: 26px;
+            height: 26px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .a11y-mini-btn:hover {
+            background: #f0f0f0;
+        }
+
+        .a11y-mini-btn.active {
+            background: #2457c5;
+            border-color: #2457c5;
+            color: #ffffff;
+        }
+
+        html[data-theme="dark"] .a11y-mini-btn {
+            border-color: #ffe600;
+            background: #000000;
+            color: #ffffff !important;
+        }
+
+        html[data-theme="dark"] .a11y-mini-btn:hover {
+            background: #1a1a1a;
+        }
+
+        html[data-theme="dark"] .a11y-mini-btn.active {
+            background: #ffe600;
+            border-color: #ffe600;
+            color: #000000 !important;
+        }
+
+        /* ===== CONTRAST SWATCHES ===== */
+        .a11y-swatch {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            border: 1px solid #c9c9c9;
+            cursor: pointer;
+        }
+
+        .a11y-swatch.light {
+            background: #ffffff;
+        }
+
+        .a11y-swatch.dark {
+            background: #333333;
+        }
+
+        .a11y-swatch[aria-pressed="true"] {
+            outline: 2px solid #2457c5;
+            outline-offset: 2px;
+        }
+
+        html[data-theme="dark"] .a11y-swatch {
+            border-color: #ffe600;
+        }
+
+        html[data-theme="dark"] .a11y-swatch[aria-pressed="true"] {
+            outline-color: #ffe600;
+        }
+
+        .a11y-tile-icon {
+            font-size: 18px;
+            line-height: 1;
+        }
+    </style>
+</head>
+<script>
+    (function() {
+        var ROOT = document.documentElement;
+
+        /* ---------- Font resize ---------- */
+        var FONT_STEPS = [87.5, 100, 112.5, 125, 137.5, 150]; // percentages
+        var DEFAULT_STEP_INDEX = 1; // 100%
+        var FONT_KEY = 'a11yFontStepIndex';
+
+        function getStepIndex() {
+            var saved = localStorage.getItem(FONT_KEY);
+            var idx = saved !== null ? parseInt(saved, 10) : DEFAULT_STEP_INDEX;
+            if (isNaN(idx) || idx < 0 || idx >= FONT_STEPS.length) idx = DEFAULT_STEP_INDEX;
+            return idx;
+        }
+
+        function applyFontStep(idx) {
+            ROOT.style.fontSize = FONT_STEPS[idx] + '%';
+            localStorage.setItem(FONT_KEY, idx);
+        }
+
+        /* ---------- Contrast / theme ---------- */
+        var THEME_KEY = 'a11yTheme';
+
+        function applyTheme(theme) {
+            var lightSwatch = document.getElementById('a11ySwatchLight');
+            var darkSwatch = document.getElementById('a11ySwatchDark');
+            if (theme === 'dark') {
+                ROOT.setAttribute('data-theme', 'dark');
+                if (darkSwatch) darkSwatch.setAttribute('aria-pressed', 'true');
+                if (lightSwatch) lightSwatch.setAttribute('aria-pressed', 'false');
+            } else {
+                ROOT.removeAttribute('data-theme');
+                if (darkSwatch) darkSwatch.setAttribute('aria-pressed', 'false');
+                if (lightSwatch) lightSwatch.setAttribute('aria-pressed', 'true');
+            }
+            localStorage.setItem(THEME_KEY, theme);
+        }
+
+        /* ---------- Panel open/close ---------- */
+        function openPanel() {
+            document.getElementById('a11yOverlay').classList.add('open');
+            document.getElementById('a11yPanel').classList.add('open');
+            document.getElementById('a11yTrigger').setAttribute('aria-expanded', 'true');
+        }
+
+        function closePanel() {
+            document.getElementById('a11yOverlay').classList.remove('open');
+            document.getElementById('a11yPanel').classList.remove('open');
+            document.getElementById('a11yTrigger').setAttribute('aria-expanded', 'false');
+        }
+
+        function togglePanel() {
+            var panel = document.getElementById('a11yPanel');
+            if (panel.classList.contains('open')) closePanel();
+            else openPanel();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            applyFontStep(getStepIndex());
+            applyTheme(localStorage.getItem(THEME_KEY) || 'light');
+
+
+
+            document.getElementById('a11yTrigger').addEventListener('click', togglePanel);
+            document.getElementById('a11yOverlay').addEventListener('click', closePanel);
+
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.key === 'F2') {
+                    e.preventDefault();
+                    togglePanel();
+                }
+                if (e.key === 'Escape') closePanel();
+            });
+
+            document.getElementById('a11yFontIncrease').addEventListener('click', function() {
+                applyFontStep(Math.min(getStepIndex() + 1, FONT_STEPS.length - 1));
+            });
+            document.getElementById('a11yFontDecrease').addEventListener('click', function() {
+                applyFontStep(Math.max(getStepIndex() - 1, 0));
+            });
+            document.getElementById('a11yFontReset').addEventListener('click', function() {
+                applyFontStep(DEFAULT_STEP_INDEX);
+            });
+
+            document.getElementById('a11ySwatchLight').addEventListener('click', function() {
+                applyTheme('light');
+            });
+            document.getElementById('a11ySwatchDark').addEventListener('click', function() {
+                applyTheme('dark');
+            });
+
+            /* ---------- Skip to Main Content ---------- */
+            document.getElementById('a11ySkipMain').addEventListener('click', function(e) {
+                e.preventDefault();
+                closePanel();
+                var target = document.getElementById('mainContent');
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    target.focus({
+                        preventScroll: true
+                    });
+                }
+            });
+
+            /* ---------- Screen Reader Access ---------- */
+            /* Opens the dedicated screen-reader-friendly page in a new tab via normal link navigation (href + target="_blank" above). */
+        });
+    })();
+
+    function headerappened() {
+        var eData = document.getElementById("txtsearch_H").value;
+        var encodedatadate = btoa(eData);
+
+        document.getElementById("encodeValue_H").value = encodedatadate;
+    }
+</script>
+
+
+<body>
+
+    
+    <div class="sticky-top-wrapper">
+        <header class="site-header">
+            <div class="container">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3 gap-3">
+                    <div class="d-flex align-items-center w-100 w-md-auto logo-title">
+                        <img src="./img/emblem.svg" alt="Emblem of India" class="emblem-logo">
+                        <a href="https://www.mea.gov.in/" title="Ministry of External Affairs, Government of India" style="color: black; text-decoration: none;" onclick="return confirm('You are about to proceed to an external website. Click YES to proceed.')" target="_blank">
+                            <div class="ms-3">
+                                <h3 class="mb-0 fw-bold">Ministry of External Affairs</h3>
+                                <div>Government of India</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-center w-100 w-md-auto logo-title">
+                        <a href="https://itecgoi.in/index" title="Indian Technical and Economic Cooperation Programme">
+                            <img src="./img/Picture1.png" alt="ITEC" class="img-fluid" style="width:180px;">
+                        </a>
+                    </div>
+                    <div class="d-flex w-100 w-md-auto align-items-center gap-2 search-wrap">
+                        <form class="d-flex ms-auto mea-search-form" action="" method="post" name="form1" autocomplete="off">
+                            <input type='hidden' size="100" name='encodeValue_H' id='encodeValue_H' />
+                            <!-- Identifies this form as the header search form to prevent conflicts with other page forms -->
+                            <input type="hidden" name="form_source" value="header_search">
+
+                            <input class="form-control" name="txtsearch_H" id="txtsearch_H" placeholder="Search Course or Institute" aria-label="Search" size="35" oninput="headerappened();">
+                            <button class="search-submit-btn" aria-label="Submit search">
+                                <i class="bi bi-search"></i>
+                            </button>
+
+                        </form>
+
+                        <div class="a11y-trigger-wrapper">
+                            <button type="button" class="a11y-trigger translate-btn flex-shrink-0"
+                                aria-haspopup="dialog" aria-expanded="false"
+                                aria-controls="a11yPanel"
+                                title="Translate this page">
+                                <div class="bhashini-plugin-container"></div>
+                            </button>
+                            <span class="a11y-trigger-label">Translate</span>
+                        </div>
+
+
+                        <div class="a11y-trigger-wrapper">
+                            <button type="button" class="a11y-trigger flex-shrink-0" id="a11yTrigger"
+                                aria-haspopup="dialog" aria-expanded="false"
+                                aria-controls="a11yPanel"
+                                aria-label="Open accessibility options"
+                                title="Accessibility options (Ctrl+F2)">
+                                <i class="bi bi-universal-access-circle" aria-hidden="true"></i>
+                            </button>
+                            <span class="a11y-trigger-label">Accessibility</span>
+                        </div>
+                    </div>
+
+                    <!-- Accessibility Control -->
+                    <div class="a11y-overlay" id="a11yOverlay"></div>
+                    <div class="a11y-panel" id="a11yPanel" role="dialog" aria-modal="true" aria-labelledby="a11yPanelTitle">
+                        <div class="a11y-panel-header">
+                            <h3 id="a11yPanelTitle">Accessibility Control</h3>
+                            <span class="a11y-shortcut">(ctrl+F2)</span>
+                        </div>
+                        <div class="a11y-grid">
+                            <div class="a11y-tile">
+                                <div class="a11y-tile-controls">
+                                    <button type="button" class="a11y-mini-btn" id="a11yFontDecrease" aria-label="Decrease text size">A−</button>
+                                    <button type="button" class="a11y-mini-btn active" id="a11yFontReset" aria-label="Reset text size">A</button>
+                                    <button type="button" class="a11y-mini-btn" id="a11yFontIncrease" aria-label="Increase text size">A+</button>
+                                </div>
+                                <span>Font Resize</span>
+                            </div>
+                            <div class="a11y-tile">
+                                <div class="a11y-tile-controls">
+                                    <button type="button" class="a11y-swatch light" id="a11ySwatchLight" aria-pressed="true" aria-label="Light contrast"></button>
+                                    <button type="button" class="a11y-swatch dark" id="a11ySwatchDark" aria-pressed="false" aria-label="Dark contrast"></button>
+                                </div>
+                                <span>Contrast View</span>
+                            </div>
+                            <a href="#mainContent" class="a11y-tile" id="a11ySkipMain" aria-label="Skip to main content">
+
+                                <span>Skip to Main Content</span>
+                            </a>
+                            <a href="screen-reader-access" target="_blank" rel="noopener noreferrer" class="a11y-tile" id="a11yScreenReader" aria-label="Open screen reader access page in a new tab">
+
+                                <span>Screen Reader Access</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Accessibility Control -->
+                </div>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container position-relative border-top border-bottom">
+                <button class="navbar-toggler my-2" type="button" id="navToggler"
+                    data-bs-toggle="collapse" data-bs-target="#mainNavCollapse"
+                    aria-controls="mainNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="toggler-icon icon-top"></span>
+                    <span class="toggler-icon icon-middle"></span>
+                    <span class="toggler-icon icon-bottom"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavCollapse">
+                    <ul class="navbar-nav w-100">
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-mega-toggle>About Us</a>
+                            <div class="dropdown-menu mega-menu">
+                                <div class="container">
+                                    <div class="row py-4">
+                                        <div class="col-lg-3">
+                                            <a href="about-us" class="mega-menu-title d-block">About ITEC</a>
+                                            <a href="itec-partner-countries" class="mega-menu-title d-block">ITEC Partner Countries</a>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <h4><a href="itec-modalities" class="mega-menu-title d-block">ITEC Modalities</a></h4>
+                                            <ul>
+                                                <li><a href="itec-regular" class="mega-menu-title-li">ITEC Regular Courses</a></li>
+                                                <li><a href="itec-security" class="mega-menu-title-li">ITEC-Security Courses</a></li>
+                                                <li><a href="itec-defence" class="mega-menu-title-li">ITEC-Defence Courses</a></li>
+                                                <li><a href="itec-onsite" class="mega-menu-title-li">ITEC-Onsite</a></li>
+                                                <li><a href="itec-expert" class="mega-menu-title-li">ITEC-Expert</a></li>
+                                                <li><a href="ceit" class="mega-menu-title-li">CEIT</a></li>
+                                                <li><a href="others" class="mega-menu-title-li">Others</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <a href="organization-structure" class="mega-menu-title d-block">Organization Structure</a>
+                                            <a href="itec-dashboard" class="mega-menu-title d-block">Dashboards</a>
+                                            <a href="https://www.itecgoi.in/meaportal/login" target="_blank" onclick="return confirm('You are about to proceed to an external website. Click OK to proceed.')" class="mega-menu-title d-block">ITEC Portal</a>
+                                            <a href="certificate-verification" class="mega-menu-title d-block">Certificate Verification</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link" href="area-of-study-list">Area of Study</a>
+                        </li>
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link" href="institute-list">Institutes</a>
+                        </li>
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link" href="courses-next-month">Upcoming Courses</a>
+                        </li>
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-mega-toggle>Apply/Login</a>
+                            <div class="dropdown-menu mega-menu">
+                                <div class="container">
+                                    <div class="row py-4">
+                                        <div class="col-lg-3">
+                                            <a href="process-flow" class="mega-menu-title d-block">ITEC Process Flow</a>
+                                            <a href="how-to-apply" class="mega-menu-title d-block">How to Apply</a>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <a href="terms-conditions" class="mega-menu-title d-block">ITEC Terms and Conditions</a>
+                                            <!-- <a href="candidate-login" class="mega-menu-title d-block">Candidate Login</a> -->
+
+                                            <a href="candidate-login" class="mega-menu-title d-block">Candidate Login</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-mega-toggle>
+                                Useful Links
+                            </a>
+                            <div class="dropdown-menu mega-menu">
+                                <div class="container">
+                                    <div class="row py-4">
+                                        <div class="col-lg-3">
+                                            <h4 class="mega-menu-title d-block">Scholarships</h4>
+                                            <ul>
+                                                <li><a href="quad" class="mega-menu-title-li">Quad Infrastructure Fellowships</a></li>
+                                                <li><a href="sagar-amrut" class="mega-menu-title-li">Sagar Amrut Scholarship</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <h4 class="mega-menu-title d-block">Planners</h4>
+                                            <ul>
+                                                <li><a href="downloads/institutePlanner.pdf" target="_blank" class="mega-menu-title-li">Institute planner</a></li>
+                                                <li><a href="downloads/monthlyPlanner.pdf" target="_blank" class="mega-menu-title-li">Monthly planner</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <a href="itec-brochure" class="mega-menu-title d-block">ITEC Brochures</a>
+                                            <a href="image-gallery" class="mega-menu-title d-block">ITEC Gallery</a>
+                                            <a href="itec-library" class="mega-menu-title d-block">ITEC Library</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link" href="whats-new">What's New</a>
+                        </li>
+
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- END sticky-top-wrapper -->
+
+    <!-- Skip-to-main-content target: marks the top of the page content that follows this header -->
+    <div id="mainContent" tabindex="-1"></div>
+
+    <!-- ✅ jQuery and Bootstrap JS loaded here, NO </body> or </html> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://translation-plugin.bhashini.co.in/v3/website_translation_utility.js" languages="arb,cmn,fra,rus,spa"></script>
+
+    <script>
+        /* Hamburger animation */
+        var navToggler = document.getElementById('navToggler');
+        var navCollapseEl = document.getElementById('mainNavCollapse');
+        navCollapseEl.addEventListener('show.bs.collapse', function() {
+            navToggler.classList.add('active');
+        });
+        navCollapseEl.addEventListener('hide.bs.collapse', function() {
+            navToggler.classList.remove('active');
+        });
+
+        /* Mega-menu mobile toggle */
+        document.querySelectorAll('[data-mega-toggle]').forEach(function(toggle) {
+            toggle.addEventListener('click', function(e) {
+                if (window.innerWidth >= 992) return;
+                e.preventDefault();
+                var menu = this.nextElementSibling;
+                var isOpen = menu.classList.contains('show');
+                document.querySelectorAll('.mega-menu.show').forEach(function(openMenu) {
+                    if (openMenu !== menu) openMenu.classList.remove('show');
+                });
+                menu.classList.toggle('show', !isOpen);
+            });
+        });
+
+        /* Resize handler */
+        var resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                if (window.innerWidth >= 992) {
+                    document.querySelectorAll('.mega-menu.show').forEach(function(menu) {
+                        menu.classList.remove('show');
+                    });
+                }
+            }, 100);
+        });
+    </script>
+
+    
+        <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
+        <p>🍪 We use cookies to improve your experience on this site.</p>
+        <div class="cookie-actions">
+            <button class="accept-btn" onclick="saveCookieConsent('acceptedAll')">Accept All</button>
+            <button class="accept-btn-ess" onclick="saveCookieConsent('acceptedEssential')">Accept Essential</button>
+            <button class="reject-btn" onclick="saveCookieConsent('rejected')">Reject</button>
+        </div>
+    </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ITEC :Indian Technical and Economic Cooperation</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" sizes="48x48">
+
+    <style>
+        @font-face {
+            font-family: "Google Sans Flex";
+            src: url("google_font/GoogleSansFlex-VariableFont_GRAD,ROND,opsz,slnt,wdth,wght.ttf") format("truetype");
+            font-weight: 100 1000;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* ============ HERO SLIDER ============ */
+        .hero-slider {
+            margin: auto;
+        }
+
+        .carousel {
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .15);
+            background: #fff;
+        }
+
+        #heroSlider,
+        #heroSlider .carousel-inner,
+        #heroSlider .carousel-item {
+            height: 670px;
+        }
+
+        #heroSlider .carousel-item {
+            display: flex !important;
+            flex-direction: column !important;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #heroSlider .carousel-item::before {
+            display: block !important;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 120px;
+            background-image: var(--slide-bg);
+            background-size: cover;
+            background-position: center;
+            filter: blur(18px) brightness(0.65);
+            transform: scale(1.08);
+            z-index: 0;
+        }
+
+        #heroSlider .carousel-item img {
+            flex: 1 1 auto !important;
+            width: 100% !important;
+            min-height: 0 !important;
+            object-fit: contain !important;
+            object-position: center center !important;
+            display: block !important;
+            height: auto !important;
+            position: relative !important;
+            z-index: 1 !important;
+        }
+
+        /* ============ CAPTION ============ */
+        #heroSlider .carousel-caption {
+            position: relative !important;
+            right: auto !important;
+            bottom: auto !important;
+            left: auto !important;
+            flex-shrink: 0 !important;
+            z-index: 2;
+            width: 100%;
+            background: #e8efff;
+            padding: 16px 28px;
+            text-align: left;
+            color: #222;
+            min-height: 110px;
+            max-height: 130px;
+            overflow: hidden;
+        }
+
+        .carousel-date {
+            display: block;
+            color: #6b7280;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            letter-spacing: .3px;
+            font-family: "google sans flex", sans-serif;
+        }
+
+        #heroSlider .carousel-caption h2 {
+            margin: 0;
+            font-family: "Google Sans Flex" !important;
+            font-size: 20px !important;
+            line-height: 26px !important;
+            font-weight: 400 !important;
+            color: #323232;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        #heroSlider .carousel-caption h2:hover {
+            color: rgb(33, 74, 171) !important;
+        }
+
+        #heroSlider .carousel-caption p {
+            margin-top: 10px;
+            margin-bottom: 0;
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        #heroSlider .carousel-caption .btn {
+            margin-top: 20px;
+            border-radius: 0;
+            padding: 10px 26px;
+        }
+
+        /* ============ CONTROLS ============ */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 48px;
+            height: 48px;
+            top: 40%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, .95);
+            border-radius: 50%;
+            opacity: 1;
+            transition: .3s;
+        }
+
+        .carousel-control-prev {
+            left: 18px;
+        }
+
+        .carousel-control-next {
+            right: 18px;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background: #214aab;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(1);
+        }
+
+        /* ============ PLAY / PAUSE ============ */
+        .playPauseBtn {
+            position: absolute;
+            right: 18px;
+            top: 18px;
+            z-index: 10;
+            width: 46px;
+            height: 46px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+            transition: .3s;
+        }
+
+        .playPauseBtn:hover {
+            background: #214aab;
+            color: #fff;
+        }
+
+        /* ============ INDICATORS ============ */
+        .carousel-indicators {
+            margin-bottom: 10px;
+            z-index: 3;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #2457c5;
+            opacity: .35;
+            border: 0;
+            transition: all .3s ease;
+        }
+
+        .carousel-indicators .active {
+            background-color: #162f6a;
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 991px) {
+
+            #heroSlider,
+            #heroSlider .carousel-inner,
+            #heroSlider .carousel-item {
+                height: 640px;
+            }
+
+            #heroSlider .carousel-item::before {
+                bottom: 110px;
+            }
+
+            #heroSlider .carousel-caption {
+                padding: 14px 22px;
+                min-height: 105px;
+            }
+
+            #heroSlider .carousel-caption h2 {
+                font-size: 18px !important;
+            }
+
+            #heroSlider .carousel-caption p {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 767px) {
+
+            #heroSlider,
+            #heroSlider .carousel-inner,
+            #heroSlider .carousel-item {
+                height: 560px;
+            }
+
+            #heroSlider .carousel-item::before {
+                bottom: 100px;
+            }
+
+            #heroSlider .carousel-caption {
+                padding: 12px 18px;
+                min-height: 90px;
+                max-height: 110px;
+            }
+
+            .carousel-date {
+                font-size: 12px;
+                margin-bottom: 4px;
+            }
+
+            #heroSlider .carousel-caption h2 {
+                font-size: 15px !important;
+                line-height: 21px !important;
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #heroSlider .carousel-caption {
+                padding: 20px 34px;
+            }
+
+            #heroSlider .carousel-caption h2 {
+                font-size: 22px !important;
+            }
+        }
+
+        /* ============ VERTICAL NEWS CARDS ============ */
+        .news-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 670px;
+        }
+
+        .news-track {
+            transition: .5s ease;
+        }
+
+        .news-card {
+            background: #e8efff;
+            margin-bottom: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 180px;
+            background-image: var(--card-bg);
+            background-size: cover;
+            background-position: center;
+            filter: blur(12px) brightness(0.65);
+            transform: scale(1.08);
+            z-index: 0;
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            position: relative;
+            z-index: 1;
+            background: transparent;
+        }
+
+        .news-content {
+            background: #e8efff;
+            height: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .news-date {
+            color: #6b7280;
+            font-family: "Inter", sans-serif;
+        }
+
+        .news-title {
+            display: block;
+            padding-left: 15px;
+            font-family: "google sans flex" !important;
+            font-size: clamp(13px, 1.4vw, 16px);
+            font-weight: 400;
+            color: #323232;
+            text-decoration: none;
+            line-height: 21px;
+        }
+
+        .news-title:hover {
+            color: #214aab;
+        }
+
+        @media (max-width: 991px) {
+            .news-wrapper {
+                height: 640px;
+            }
+
+            .news-card img {
+                height: 200px;
+            }
+
+            .news-card::before {
+                height: 200px;
+            }
+
+            .news-title {
+                font-size: clamp(14px, 2.2vw, 18px);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .news-wrapper {
+                height: 560px;
+            }
+
+            .news-card img {
+                height: 180px;
+            }
+
+            .news-card::before {
+                height: 180px;
+            }
+
+            .news-content {
+                padding: 16px;
+            }
+
+            .news-date {
+                font-size: 14px;
+            }
+
+            .news-title {
+                font-size: clamp(13px, 3.5vw, 16px);
+            }
+        }
+
+        .news-controls {
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+            display: flex;
+            gap: 6px;
+            z-index: 5;
+        }
+
+        .news-controls button {
+            width: 38px;
+            height: 38px;
+            border: none;
+            border-radius: 4px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+        }
+
+        .btn-gallery {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 4px;
+            white-space: nowrap;
+            color: #2457c5;
+            border: 1px solid #2457c5;
+            background: #fff;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+
+        .btn-gallery::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: #2457c5;
+            transition: width 0.5s ease;
+            z-index: -1;
+        }
+
+        .btn-gallery:hover {
+            color: #fff;
+        }
+
+        .btn-gallery:hover::before {
+            width: 100%;
+        }
+
+        .card-container:hover {
+            scrollbar-width: thin;
+        }
+
+        .card-container:hover::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .card-container:hover::-webkit-scrollbar-thumb {
+            background: #999;
+            border-radius: 20px;
+        }
+
+        /* ============ LEADERS SECTION ============ */
+        .leaders-section {
+            background: #fff;
+        }
+
+        .leader-image {
+            border-radius: 0px;
+            width: 100%;
+            max-width: 260px;
+        }
+
+        .quote-icon {
+            color: #17479e;
+            font-size: 40px;
+        }
+
+        .quote-text {
+            font-family: "Google Sans Flex" !important;
+            text-align: justify;
+            margin: 0;
+            font-size: 22px !important;
+            line-height: 32px !important;
+            font-weight: 400 !important;
+            color: rgb(50, 50, 50);
+        }
+
+        .pm {
+            font-family: "Google Sans Flex" !important;
+            margin: 0;
+            font-size: 16px !important;
+            line-height: 24px !important;
+            font-weight: 500 !important;
+            color: rgb(50, 50, 50);
+        }
+
+        .quote-bg {
+            position: absolute;
+            right: 20px;
+            bottom: -65px;
+            color: #eef3fa;
+            font-size: 140px;
+            transform: rotate(180deg);
+        }
+
+        .minister-wrapper {
+            border: 1px solid #d9e3f3;
+        }
+
+        .minister-wrapper>div {
+            border-right: 1px solid #d9e3f3;
+        }
+
+        .minister-wrapper>div:last-child {
+            border-right: none;
+        }
+
+        .minister-card {
+            padding: 30px;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            transition: .3s;
+            height: 100%;
+        }
+
+        .minister-card:hover {
+            background: #f8fbff;
+        }
+
+        .minister-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 0px;
+        }
+
+        .minister-card h3 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .minister-card p {
+            font-family: "Google Sans Flex" !important;
+            margin: 0;
+            font-size: 16px !important;
+            line-height: 24px !important;
+            font-weight: 400 !important;
+            color: rgb(50, 50, 50);
+        }
+
+        .minister-card a {
+            position: relative;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .minister-card a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0;
+            height: 2px;
+            background-color: #214aab;
+            transition: width 0.3s ease;
+        }
+
+        .minister-card a:hover {
+            color: #214aab;
+        }
+
+        .minister-card a:hover::after {
+            width: 100%;
+        }
+
+        .minster {
+            font-family: "Google Sans Flex" !important;
+            margin: 0;
+            font-size: 20px !important;
+            line-height: 22px !important;
+            font-weight: 600 !important;
+            color: rgb(50, 50, 50);
+        }
+
+        .minsters {
+            font-family: "Google Sans Flex" !important;
+            margin: 0;
+            font-size: 18px !important;
+            line-height: 27px !important;
+            font-weight: 600 !important;
+            color: rgb(50, 50, 50);
+        }
+
+        @media (max-width: 991px) {
+            .quote-text {
+                font-size: 1.5rem;
+            }
+
+            .minister-wrapper>div {
+                border-right: none;
+                border-bottom: 1px solid #d9e3f3;
+            }
+
+            .minister-wrapper>div:last-child {
+                border-bottom: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .quote-text {
+                font-size: 1.2rem;
+            }
+
+            .minister-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .minister-card img {
+                width: 110px;
+                height: 110px;
+            }
+
+            .minister-card h3 {
+                font-size: 22px;
+            }
+
+            .quote-bg {
+                display: none;
+            }
+        }
+
+        /* ============ PERFORMANCE INSIGHTS ============ */
+        .performance-section {
+            background: #fff;
+        }
+
+        .performance-title {
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 38px;
+            color: #323232;
+            font-family: "libre caslon text", serif;
+        }
+
+        .dashboard-link {
+            color: #214aab;
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 400;
+            font-family: "Google Sans Flex";
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .dashboard-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background: rgb(22, 47, 106);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .3s ease;
+        }
+
+        .dashboard-link:hover {
+            color: rgb(22, 47, 106);
+        }
+
+        .dashboard-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        .slider-btn {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            width: 42px;
+            height: 42px;
+            background: #fff;
+            border: 1px solid #2457c5;
+            color: #2457c5;
+            transition: color 0.3s ease;
+        }
+
+        .slider-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #2457c5;
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .slider-btn:hover {
+            color: #fff;
+        }
+
+        .slider-btn:hover::before {
+            width: 100%;
+        }
+
+        .performance-card {
+            border: 1px solid #bcd1ff;
+            padding: 30px;
+            min-height: 190px;
+            transition: .3s;
+            background: #fff;
+        }
+
+        .performance-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+            transform: translateY(-5px);
+        }
+
+        .performance-card h2 {
+            color: rgb(33, 74, 171);
+            font-size: 28px;
+            line-height: 32px;
+            font-weight: 400;
+            font-family: "libre caslon text", serif;
+        }
+
+        .performance-text-p {
+            font-size: 18px;
+            line-height: 26px;
+            color: rgb(50, 50, 50);
+            font-family: "google sans flex";
+            font-weight: 500;
+        }
+
+        .performance-card p {
+            color: rgb(102, 102, 102);
+            margin: 0;
+            font-size: 14px;
+            font-family: "google sans flex";
+            line-height: 21px;
+            font-weight: 400;
+        }
+
+        .swiper {
+            padding-bottom: 10px;
+            overflow: hidden;
+            width: 100%;
+            min-height: 0;
+        }
+
+        .performance-section .container {
+            overflow: visible;
+        }
+
+        @media (max-width: 991px) {
+            .performance-title {
+                font-size: 34px;
+            }
+
+            .performance-card {
+                min-height: 180px;
+            }
+
+            .performance-card h2 {
+                font-size: 40px;
+            }
+
+            .performance-card h5 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .performance-title {
+                font-size: 28px;
+            }
+
+            .performance-card {
+                padding: 20px;
+            }
+
+            .performance-card h2 {
+                font-size: 34px;
+            }
+
+            .performance-card h5 {
+                font-size: 20px;
+            }
+        }
+
+        /* ============ FOOTER 2 - LOGO SLIDER ============ */
+        .logo-slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .logo-track {
+            display: flex;
+            transition: none;
+            will-change: transform;
+        }
+
+        .logo-item {
+            flex: 0 0 calc(100% / 6);
+            padding: 15px;
+        }
+
+        .logo-item img {
+            width: 80%;
+            height: 70px;
+            object-fit: contain;
+            transition: .3s;
+            margin-right: 40px;
+        }
+
+        .logo-item:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 991px) {
+            .logo-item {
+                flex: 0 0 calc(100% / 4);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .logo-item {
+                flex: 0 0 calc(100% / 2);
+            }
+        }
+
+        /* ============ FOOTER 3 ============ */
+        .footer-mea {
+            background: #e8efff;
+        }
+
+        .social a {
+            position: relative;
+            overflow: hidden;
+            width: 42px;
+            height: 42px;
+            border: 1px solid #214aab80;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #162f6a;
+            transition: color .35s ease, border-color .35s ease;
+            z-index: 1;
+        }
+
+        .social a::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0%;
+            height: 100%;
+            background: #162f6a;
+            transition: width .35s ease;
+            z-index: -1;
+        }
+
+        .social a i {
+            font-size: 18px;
+            transition: color .35s ease, transform .35s ease;
+        }
+
+        .social a:hover {
+            border-color: #162f6a;
+            color: #fff;
+        }
+
+        .social a:hover::before {
+            width: 100%;
+        }
+
+        .social a:hover i {
+            color: #fff;
+            transform: scale(1.08);
+        }
+
+        .footer-links {
+            --bs-gutter-x: 0;
+            --bs-gutter-y: 18px;
+        }
+
+        .footer-links>div {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .footer-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #323232;
+            font-size: 16px;
+            font-weight: 500;
+            position: relative;
+            transition: color .3s ease;
+        }
+
+        .footer-links a i {
+            font-size: 18px;
+            color: #2457c5;
+            transition: transform .3s ease;
+        }
+
+        .footer-links a span {
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-links a span::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 2px;
+            background: #214aab;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .35s ease;
+        }
+
+        .footer-links a:hover {
+            color: #214aab;
+        }
+
+        .footer-links a:hover span::after {
+            transform: scaleX(1);
+        }
+
+        .footer-links a:hover i {
+            transform: translateX(4px);
+        }
+
+        @media (min-width: 992px) {
+            .footer-links>div {
+                flex: 0 0 auto;
+                width: 12.5%;
+            }
+        }
+
+        @media (min-width: 576px) and (max-width: 991.98px) {
+            .footer-links {
+                --bs-gutter-y: 16px;
+            }
+
+            .footer-links>div {
+                flex: 0 0 auto;
+                width: 25%;
+            }
+
+            .footer-links a {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .footer-links {
+                --bs-gutter-y: 14px;
+            }
+
+            .footer-links>div {
+                flex: 0 0 auto;
+                width: 50%;
+            }
+
+            .footer-links a {
+                font-size: 15px;
+                gap: 6px;
+            }
+
+            .footer-links a i {
+                font-size: 16px;
+            }
+        }
+
+        h3.mea {
+            font-family: "Google Sans Flex";
+            font-size: 20px !important;
+            line-height: 24px;
+            font-weight: 700;
+            color: rgb(50, 50, 50);
+            text-align: justify;
+            text-decoration: none;
+        }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- for Performance Insights slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        function initSwiper() {
+            if (typeof Swiper === "undefined") {
+                console.error("Swiper not loaded");
+                return;
+            }
+
+            const el = document.querySelector(".performanceSwiper");
+            if (!el) {
+                console.error("Swiper element not found");
+                return;
+            }
+
+            // Destroy if already initialized (prevents double-init)
+            if (el.swiper) {
+                el.swiper.destroy(true, true);
+            }
+
+            new Swiper(".performanceSwiper", {
+                slidesPerView: 1,
+                spaceBetween: 25,
+                loop: true,
+                speed: 700,
+                navigation: {
+                    nextEl: "#statsNext",
+                    prevEl: "#statsPrev"
+                },
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false
+                },
+                breakpoints: {
+                    576: {
+                        slidesPerView: 1
+                    },
+                    768: {
+                        slidesPerView: 2
+                    },
+                    992: {
+                        slidesPerView: 3
+                    },
+                    1200: {
+                        slidesPerView: 4
+                    }
+                }
+            });
+        }
+
+        // Handles both "already loaded" and "not yet loaded" cases
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initSwiper);
+        } else {
+            initSwiper();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="container hero-slider mt-5">
+            <div class="row">
+                <div class="col-sm-8">
+
+                    <div id="heroSlider" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                        data-bs-interval="5000">
+                        <div class="carousel-indicators" id="carouselDots"></div>
+
+                        <div class="carousel-inner">
+                                                            <div class="carousel-item active"
+                                    style="--slide-bg: url('/gallery/1792386940354_garba3.jpg?c=abc')">
+                                    <img src="/gallery/1792386940354_garba3.jpg?c=abc" class="d-block w-100 hero-img" alt="Celebrating  GARBA, The dance of devotion, love, and togetherness.">
+                                    <div class="carousel-caption">
+                                        <span class="carousel-date">
+                                            October, 2026                                        </span>
+                                        <h2>
+                                            Celebrating  GARBA, The dance of devotion, love, and togetherness.                                        </h2>
+                                    </div>
+                                </div>
+                                                            <div class="carousel-item "
+                                    style="--slide-bg: url('/gallery/1792386683697_garba2.jpg?c=abc')">
+                                    <img src="/gallery/1792386683697_garba2.jpg?c=abc" class="d-block w-100 hero-img" alt="Participants embracing the heritage culture of Garba at EDII, Ahmedabad">
+                                    <div class="carousel-caption">
+                                        <span class="carousel-date">
+                                            October, 2026                                        </span>
+                                        <h2>
+                                            Participants embracing the heritage culture of Garba at EDII, Ahmedabad                                        </h2>
+                                    </div>
+                                </div>
+                                                            <div class="carousel-item "
+                                    style="--slide-bg: url('/gallery/1792386477333_garba1.jpg?c=abc')">
+                                    <img src="/gallery/1792386477333_garba1.jpg?c=abc" class="d-block w-100 hero-img" alt="Participants enjoying garba at EDII, Ahmedabad">
+                                    <div class="carousel-caption">
+                                        <span class="carousel-date">
+                                            October, 2026                                        </span>
+                                        <h2>
+                                            Participants enjoying garba at EDII, Ahmedabad                                        </h2>
+                                    </div>
+                                </div>
+                                                            <div class="carousel-item "
+                                    style="--slide-bg: url('/gallery/1792038097543_hea1.jpg?c=abc')">
+                                    <img src="/gallery/1792038097543_hea1.jpg?c=abc" class="d-block w-100 hero-img" alt="International Certificate Programme on Higher Education Administration at Tata Institute of Social Sciences, Mumbai">
+                                    <div class="carousel-caption">
+                                        <span class="carousel-date">
+                                            October, 2026                                        </span>
+                                        <h2>
+                                            International Certificate Programme on Higher Education Administration at Tata Institute of Social Sciences, Mumbai                                        </h2>
+                                    </div>
+                                </div>
+                                                            <div class="carousel-item "
+                                    style="--slide-bg: url('/gallery/1791784833175_eflu.jpg?c=abc')">
+                                    <img src="/gallery/1791784833175_eflu.jpg?c=abc" class="d-block w-100 hero-img" alt="ITEC  PROFESSIONAL ATTENDING PROFESSIONAL DEVELOPMENT PROGRAMME FOR ENGLISH TEACHERS-II AT ENGLISH AND FOREIGN LANGUAGES UNIVERSITY">
+                                    <div class="carousel-caption">
+                                        <span class="carousel-date">
+                                            October, 2026                                        </span>
+                                        <h2>
+                                            ITEC  PROFESSIONAL ATTENDING PROFESSIONAL DEVELOPMENT PROGRAMME FOR ENGLISH TEACHERS-II AT ENGLISH AND FOREIGN LANGUAGES UNIVERSITY                                        </h2>
+                                    </div>
+                                </div>
+                                                            <div class="carousel-item "
+                                    style="--slide-bg: url('/gallery/1791354708548_Niesbud.jpg?c=abc')">
+                                    <img src="/gallery/1791354708548_Niesbud.jpg?c=abc" class="d-block w-100 hero-img" alt="Participants attending Entrepreneurship and Promotion of Livelihood Generation Activities Program at National Institute for Entrepreneurship and Small Business Development (NIESBUD), New Delhi">
+                                    <div class="carousel-caption">
+                                        <span class="carousel-date">
+                                            October, 2026                                        </span>
+                                        <h2>
+                                            Participants attending Entrepreneurship and Promotion of Livelihood Generation Activities Program at National Institute for Entrepreneurship and Small Business Development (NIESBUD), New Delhi                                        </h2>
+                                    </div>
+                                </div>
+                                                            <div class="carousel-item "
+                                    style="--slide-bg: url('/gallery/1791354482996_cdac D.jpg?c=abc')">
+                                    <img src="/gallery/1791354482996_cdac D.jpg?c=abc" class="d-block w-100 hero-img" alt="Professionals attending Applied Cyber security &amp; Malware Analytics(Women only) at CDAC Delhi">
+                                    <div class="carousel-caption">
+                                        <span class="carousel-date">
+                                            October, 2026                                        </span>
+                                        <h2>
+                                            Professionals attending Applied Cyber security &amp; Malware Analytics(Women only) at CDAC Delhi                                        </h2>
+                                    </div>
+                                </div>
+                                                    </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="news-wrapper">
+                        <div class="news-track" id="newsTrack">
+                                                            <div class="news-card" style="--card-bg: url('/gallery/1792386940354_garba3.jpg?c=abc')">
+                                    <img src="/gallery/1792386940354_garba3.jpg?c=abc" alt="Celebrating  GARBA, The dance of devotion, love, and togetherness.">
+                                    <div class="news-content">
+                                        <p class="news-date mb-1">October, 2026</p>
+                                        <a href="#" class="news-title">
+                                            Celebrating  GARBA, The dance of devotion, love, and togetherness.                                        </a>
+                                    </div>
+                                </div>
+                                                            <div class="news-card" style="--card-bg: url('/gallery/1792386683697_garba2.jpg?c=abc')">
+                                    <img src="/gallery/1792386683697_garba2.jpg?c=abc" alt="Participants embracing the heritage culture of Garba at EDII, Ahmedabad">
+                                    <div class="news-content">
+                                        <p class="news-date mb-1">October, 2026</p>
+                                        <a href="#" class="news-title">
+                                            Participants embracing the heritage culture of Garba at EDII, Ahmedabad                                        </a>
+                                    </div>
+                                </div>
+                                                            <div class="news-card" style="--card-bg: url('/gallery/1792386477333_garba1.jpg?c=abc')">
+                                    <img src="/gallery/1792386477333_garba1.jpg?c=abc" alt="Participants enjoying garba at EDII, Ahmedabad">
+                                    <div class="news-content">
+                                        <p class="news-date mb-1">October, 2026</p>
+                                        <a href="#" class="news-title">
+                                            Participants enjoying garba at EDII, Ahmedabad                                        </a>
+                                    </div>
+                                </div>
+                                                            <div class="news-card" style="--card-bg: url('/gallery/1792038097543_hea1.jpg?c=abc')">
+                                    <img src="/gallery/1792038097543_hea1.jpg?c=abc" alt="International Certificate Programme on Higher Education Administration at Tata Institute of Social Sciences, Mumbai">
+                                    <div class="news-content">
+                                        <p class="news-date mb-1">October, 2026</p>
+                                        <a href="#" class="news-title">
+                                            International Certificate Programme on Higher Education Administration at Tata Institute of Social Sciences, Mumbai                                        </a>
+                                    </div>
+                                </div>
+                                                            <div class="news-card" style="--card-bg: url('/gallery/1791784833175_eflu.jpg?c=abc')">
+                                    <img src="/gallery/1791784833175_eflu.jpg?c=abc" alt="ITEC  PROFESSIONAL ATTENDING PROFESSIONAL DEVELOPMENT PROGRAMME FOR ENGLISH TEACHERS-II AT ENGLISH AND FOREIGN LANGUAGES UNIVERSITY">
+                                    <div class="news-content">
+                                        <p class="news-date mb-1">October, 2026</p>
+                                        <a href="#" class="news-title">
+                                            ITEC  PROFESSIONAL ATTENDING PROFESSIONAL DEVELOPMENT PROGRAMME FOR ENGLISH TEACHERS-II AT ENGLISH AND FOREIGN LANGUAGES UNIVERSITY                                        </a>
+                                    </div>
+                                </div>
+                                                            <div class="news-card" style="--card-bg: url('/gallery/1791354708548_Niesbud.jpg?c=abc')">
+                                    <img src="/gallery/1791354708548_Niesbud.jpg?c=abc" alt="Participants attending Entrepreneurship and Promotion of Livelihood Generation Activities Program at National Institute for Entrepreneurship and Small Business Development (NIESBUD), New Delhi">
+                                    <div class="news-content">
+                                        <p class="news-date mb-1">October, 2026</p>
+                                        <a href="#" class="news-title">
+                                            Participants attending Entrepreneurship and Promotion of Livelihood Generation Activities Program at National Institute for Entrepreneurship and Small Business Development (NIESBUD), New Delhi                                        </a>
+                                    </div>
+                                </div>
+                                                            <div class="news-card" style="--card-bg: url('/gallery/1791354482996_cdac D.jpg?c=abc')">
+                                    <img src="/gallery/1791354482996_cdac D.jpg?c=abc" alt="Professionals attending Applied Cyber security &amp; Malware Analytics(Women only) at CDAC Delhi">
+                                    <div class="news-content">
+                                        <p class="news-date mb-1">October, 2026</p>
+                                        <a href="#" class="news-title">
+                                            Professionals attending Applied Cyber security &amp; Malware Analytics(Women only) at CDAC Delhi                                        </a>
+                                    </div>
+                                </div>
+                                                    </div>
+
+                        <div class="news-controls">
+                            <a href="image-gallery" class="btn-gallery">View Image Gallery</a>
+                            <button id="prevNews"><i class="bi bi-chevron-up"></i></button>
+                            <button id="nextNews"><i class="bi bi-chevron-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modi and Jaishankar section -->
+        <section class="leaders-section py-5">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-3 col-md-4 text-start">
+                        <img src="./img/PM-Narendra-Modi.jpg" class="img-fluid leader-image" alt="PM Narendra Modi">
+                    </div>
+                    <div class="col-lg-9 col-md-8 position-relative">
+                        <i class="bi bi-quote quote-icon"></i>
+                        <h3 class="quote-text">
+                            India has always believed that the whole world is one family. Our actions are guided by the principle of "Sarvajana Hitaya, Sarvajana Sukhaya" which means the welfare and happiness of all...
+                            <br /><br />
+                            <!--    India's development journey has taught us that progress is most meaningful when it is driven by the aspirations of the people. This principle also shapes our international partnerships. Guided by this vision, India has led several global initiatives, including the International Solar Alliance, Coalition for Disaster Resilient Infrastructure, Global Biofuels Alliance, Mission LiFE, and "Ek Ped Maa Ke Naam."
+                            <br /><br />
+                            India has always considered it our duty to help countries in times of crisis as a First Responder. During the COVID-19 pandemic, India supplied medicines and vaccines to more than 150 countries.
+                            <br /><br /> -->
+                            ...Whether it was a cyclone in Sri Lanka, an earthquake in Afghanistan, floods in Mozambique, or hurricanes in Cuba and Jamaica, India has always responded with a "Humanity First" approach. The same spirit guides our development partnerships, which focus on capacity building and skill development in partner countries.
+                            <br /><br />
+                            India believes that the true test of partnership is not what we build for others, but what we enable others to build for themselves.
+                        </h3>
+                        <div class="d-flex flex-wrap gap-4 mt-4 fw-semibold pm">
+                            <span style="color: #214aab;">Prime Minister's Statement during G7 Summit - Outreach Session: Forging New Partnerships and Rebuilding International Solidarity </span>
+                            <span style="color: #214aab;"><i class="bi bi-calendar3"></i> June 16, 2026</span>
+                        </div>
+                        <i class="bi bi-quote display-1 quote-bg"></i>
+                    </div>
+                </div>
+
+                <div class="row mt-5 g-0 minister-wrapper">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="minister-card">
+                            <img src="./img/Dr-S-Jaishankar.jpg" alt="Dr. S. Jaishankar">
+                            <div>
+                                <h5 class="minster">Dr. S. Jaishankar</h5>
+                                <p>External Affairs Minister</p>
+                                <a href="https://www.mea.gov.in/eam" onclick="return confirm('You are about to proceed to an external website. Click YES to proceed.')" target="_blank" style="font-size: 14px;">Profile</a><br>
+                                <a href="https://www.mea.gov.in/eam-speeches-interviews" onclick="return confirm('You are about to proceed to an external website. Click YES to proceed.')" target="_blank" style="font-size: 14px;">Speeches & Statements</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="minister-card">
+                            <img src="./img/Shri-Kirti-Vardhan-Singh.jpg" alt="Shri Kirti Vardhan Singh">
+                            <div>
+                                <h5 class="minsters">Shri Kirti Vardhan Singh</h5>
+                                <p>Minister of State for External Affairs</p>
+                                <a href="https://www.mea.gov.in/state-eam" onclick="return confirm('You are about to proceed to an external website. Click YES to proceed.')" target="_blank" style="font-size: 14px;">Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="minister-card">
+                            <img src="./img/Shri-Pabitra-Margherita.jpg" alt="Shri Pabitra Margherita">
+                            <div>
+                                <h5 class="minsters">Shri Pabitra Margherita</h5>
+                                <p>Minister of State for External Affairs</p>
+                                <a href="https://www.mea.gov.in/shri-pabitra-margherita" onclick="return confirm('You are about to proceed to an external website. Click YES to proceed.')" target="_blank" style="font-size: 14px;">Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Performance Insights section -->
+        <section class="performance-section py-2">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <p class="performance-title mb-0">Performance Insights</p>
+                    <div class="d-flex align-items-center gap-3">
+                        <!--  <a href="itec-dashboard" class="dashboard-link">View Dashboard</a> -->
+                        <button class="slider-btn" id="statsPrev"><i class="bi bi-chevron-left"></i></button>
+                        <button class="slider-btn" id="statsNext"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="swiper performanceSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>142</h2>
+                                <span class="performance-text-p">Courses Completed</span>
+                                <p>2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>120</h2>
+                                <span class="performance-text-p">Distinct Countries</span>
+                                <p>2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>4030</h2>
+                                <span class="performance-text-p">Slots Utilized </span>
+                                <p>2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>2414</h2>
+                                <span class="performance-text-p">Menu Based Courses</span>
+                                <p>2015-2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>784</h2>
+                                <span class="performance-text-p">Customised Courses</span>
+                                <p>2015-2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>417</h2>
+                                <span class="performance-text-p">e-ITEC Courses</span>
+                                <p>2015-2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>3615</h2>
+                                <span class="performance-text-p">Total Courses</span>
+                                <p>2015-2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>142761</h2>
+                                <span class="performance-text-p">Total Slots Offered</span>
+                                <p>2015-2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>83154</h2>
+                                <span class="performance-text-p">Total Participants Trained</span>
+                                <p>2015-2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>32276</h2>
+                                <span class="performance-text-p">Total Women Participants Trained</span>
+                                <p>2015-2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>32342</h2>
+                                <span class="performance-text-p">African Region Participants</span>
+                                <p>2015-2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>3831</h2>
+                                <span class="performance-text-p">Central Asian Region Participants</span>
+                                <p>2015-2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>19725</h2>
+                                <span class="performance-text-p">Indian Ocean Region Participants</span>
+                                <p>2015-2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>28618</h2>
+                                <span class="performance-text-p">Indo Pacific Region Participants</span>
+                                <p>2015-2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>4748</h2>
+                                <span class="performance-text-p">LAC Region Participants</span>
+                                <p>2015-2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>1103</h2>
+                                <span class="performance-text-p">Pacific Island Region Participants</span>
+                                <p>2015-2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>7908</h2>
+                                <span class="performance-text-p">SE Asia Region Participants</span>
+                                <p>2015-2026 [Till today]</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="performance-card">
+                                <h2>17010</h2>
+                                <span class="performance-text-p">Neighbourhood Region Participants</span>
+                                <p>2015-2026 [Till today]</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer 2 - Logo slider -->
+        <section class="logo-section py-5">
+            <div class="container">
+                <div class="logo-slider">
+                    <div class="logo-track" id="logoTrack">
+                        <div class="logo-item"><a href="https://www.mygov.in/" target="_blank"><img src="./img/footer-logo-1.jpg" class="img-fluid" onclick="return confirm('You are about to proceed to an external website. Click YES to proceed.')"></a></div>
+                        <div class="logo-item"><a href="https://www.india.gov.in" target="_blank"><img src="./img/footer-logo-2.jpg" class="img-fluid" onclick="return confirm('You are about to proceed to an external website. Click YES to proceed.')"></a></div>
+                        <div class="logo-item"><a href="https://www.madad.gov.in/madad/" target="_blank"><img src="./img/footer-logo-3.jpg" class="img-fluid" onclick="return confirm('You are about to proceed to an external website. Click YES to proceed.')"></a></div>
+                        <div class="logo-item"><a href="https://iccr.gov.in/" target="_blank"><img src="./img/footer-logo-4.jpg" class="img-fluid" onclick="return confirm('You are about to proceed to an external website. Click YES to proceed.')"></a></div>
+                        <div class="logo-item"><a href="https://www.emigrate.gov.in/#/emigrate" target="_blank"><img src="./img/footer-logo-5.jpg" class="img-fluid" onclick="return confirm('You are about to proceed to an external website. Click YES to proceed.')"></a></div>
+                        <div class="logo-item"><a href="https://pgportal.gov.in/" target="_blank"><img src="./img/footer-logo-6.jpg" class="img-fluid" onclick="return confirm('You are about to proceed to an external website. Click YES to proceed.')"></a></div>
+                        <div class="logo-item"><a href="https://msme.gov.in/" target="_blank"><img src="./img/footer-logo-7.jpg" class="img-fluid" onclick="return confirm('You are about to proceed to an external website. Click YES to proceed.')"></a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end .container -->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+
+    <script>
+        /* ── SUGGESTION: debounced resize reset (was firing on every pixel) ── */
+        var resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                if (window.innerWidth >= 992) {
+                    document.querySelectorAll('.mega-menu.show').forEach(function(menu) {
+                        menu.classList.remove('show');
+                    });
+                }
+            }, 100);
+        });
+
+        /* ── Hero carousel play/pause ── */
+        const carouselElement = document.getElementById("heroSlider");
+        //const carousel        = bootstrap.Carousel.getOrCreateInstance(carouselElement);
+        // const playPauseBtn    = document.getElementById("playPauseBtn");
+        //let isPlaying = true;
+
+        // playPauseBtn.addEventListener("click", function () {
+        //     if (isPlaying) {
+        //         carousel.pause();
+        //         playPauseBtn.innerHTML = "▶";
+        //     } else {
+        //         carousel.cycle();
+        //         playPauseBtn.innerHTML = "⏸";
+        //     }
+        //     isPlaying = !isPlaying;
+        // });
+
+        /* ── Dynamic indicators ── */
+        const items = carouselElement.querySelectorAll(".carousel-item");
+        const dotsContainer = document.getElementById("carouselDots");
+        dotsContainer.innerHTML = "";
+        items.forEach(function(item, index) {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.setAttribute("data-bs-target", "#heroSlider");
+            btn.setAttribute("data-bs-slide-to", index);
+            if (index === 0) btn.classList.add("active");
+            dotsContainer.appendChild(btn);
+        });
+
+        /* ── Vertical news card slider ── */
+        document.addEventListener("DOMContentLoaded", function() {
+            const wrapper = document.querySelector(".news-wrapper");
+            const track = document.getElementById("newsTrack");
+            const cards = document.querySelectorAll(".news-card");
+            const prevBtn = document.getElementById("prevNews");
+            const nextBtn = document.getElementById("nextNews");
+            const visibleCards = 2;
+            let current = 0;
+
+            const cardHeight =
+                cards[0].offsetHeight +
+                parseInt(window.getComputedStyle(cards[0]).marginBottom);
+
+            function showCards() {
+                track.style.transform = `translateY(-${current * cardHeight}px)`;
+            }
+
+            function nextSlide() {
+                current = current < cards.length - visibleCards ? current + 1 : 0;
+                showCards();
+            }
+
+            function prevSlide() {
+                current = current > 0 ? current - 1 : cards.length - visibleCards;
+                showCards();
+            }
+
+            nextBtn.addEventListener("click", nextSlide);
+            prevBtn.addEventListener("click", prevSlide);
+
+            let autoScroll = setInterval(nextSlide, 4000);
+            wrapper.addEventListener("mouseenter", function() {
+                clearInterval(autoScroll);
+            });
+            wrapper.addEventListener("mouseleave", function() {
+                autoScroll = setInterval(nextSlide, 4000);
+            });
+
+            let wheelLock = false;
+            wrapper.addEventListener("wheel", function(e) {
+                e.preventDefault();
+                if (wheelLock) return;
+                wheelLock = true;
+                e.deltaY > 0 ? nextSlide() : prevSlide();
+                setTimeout(function() {
+                    wheelLock = false;
+                }, 500);
+            }, {
+                passive: false
+            });
+        });
+
+        /* ── Footer 2 logo auto-scroll ── */
+        document.addEventListener("DOMContentLoaded", function() {
+            const slider = document.querySelector(".logo-slider");
+            const track = document.getElementById("logoTrack");
+            track.innerHTML += track.innerHTML;
+
+            let position = 0;
+            let speed = 1.2;
+            let paused = false;
+
+            function animate() {
+                if (!paused) {
+                    position -= speed;
+                    const halfWidth = track.scrollWidth / 2;
+                    if (Math.abs(position) >= halfWidth) position = 0;
+                    track.style.transform = `translateX(${position}px)`;
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+
+            slider.addEventListener("mouseenter", () => paused = true);
+            slider.addEventListener("mouseleave", () => paused = false);
+
+            document.addEventListener("visibilitychange", function() {
+                paused = document.hidden;
+            });
+
+            /* SUGGESTION: debounced resize reset for logo slider */
+            let resizeTimer;
+            window.addEventListener("resize", function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    position = 0;
+                    track.style.transform = "translateX(0px)";
+                }, 200);
+            });
+
+            window.logoSlider = {
+                pause: () => paused = true,
+                play: () => paused = false,
+                setSpeed: (v) => speed = v,
+                getSpeed: () => speed
+            };
+        });
+    </script>
+    
+<!-- Footer 3 -->
+<footer class='footer-mea py-4'>
+    <div class='container'>
+        <div class='d-flex flex-column flex-lg-row justify-content-between align-items-center border-bottom pb-4 gap-3'>
+            <div>
+                <h5>Download MEA Mobile App</h5>
+                <a href="https://play.google.com/store/apps/details?id=com.mea&pli=1" title="Google Play Store" target="_blank">
+                    <img src="./img/googlePlay.jpg" height="40" width="120" alt="Google Play Store" onclick="return confirm('You are about to proceed to an external website. Click YES to proceed.')"></a>
+                <a href="https://apps.apple.com/in/app/meaindia/id673095668" title="Apple Play Store" target="_blank">
+                    <img src="./img/appleStore.jpg" height="40" width="100" alt="Apple Play Store" onclick="return confirm('You are about to proceed to an external website. Click YES to proceed.')"></a>
+            </div>
+            <div class='social d-flex gap-2'>
+                <a aria-label="Twitter/X" title="Twitter/X"><i class='bi bi-twitter-x'></i></a>
+                <a aria-label="Facebook" title="Facebook"><i class='bi bi-facebook'></i></a>
+                <a aria-label="Instagram" title="Instagram"><i class='bi bi-instagram'></i></a>
+                <a aria-label="YouTube" title="YouTube"><i class='bi bi-youtube'></i></a>
+            </div>
+        </div>
+        <div class="py-3 border-bottom">
+            <div class="row footer-links">
+                <div class="col-6 col-md-3 col-lg"><a href="sitemap"><i class="bi bi-chevron-right"></i><span>Sitemap</span></a></div>
+                <div class="col-6 col-md-3 col-lg"><a href="contact-us"><i class="bi bi-chevron-right"></i><span>Contact</span></a></div>
+                <div class="col-6 col-md-3 col-lg"><a href="feedback.pdf" target="_blank"><i class="bi bi-chevron-right"></i><span>Feedback</span></a></div>
+            </div>
+        </div>
+        <div class='row pt-3'>
+            <div class='col-lg-8'>
+                <!-- <p>Terms & Conditions | Privacy Policy | Copyright Policy</p>-->
+                <p style="font-size: 14px; line-height:21px; color:rgb(102,102,102);">Copyright &copy; 2026 Ministry of External Affairs, Government of India. All Rights Reserved.</p>
+                <p style="font-size: 14px; line-height:21px; color:rgb(102,102,102);">Website managed by DPA II Division, Ministry of External Affairs, Government of India.</p>
+                <p style="font-size: 14px; line-height:21px; color:rgb(102,102,102);">
+                    For the best experience, please use a modern browser with JavaScript enabled. |
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#supportedBrowsersModal"
+                        style="color:rgb(102,102,102); text-decoration:none; font-weight:400;"
+                        onmouseover="this.style.color='#214aab'"
+                        onmouseout="this.style.color='rgb(102,102,102)'">
+                        Supported Browsers
+                    </a>
+                </p>
+            </div>
+            <div class='col-lg-4 text-lg-end'>
+                <p style="font-size: 14px; line-height:21px; color:rgb(102,102,102);">
+                    Page last updated on : <b>07 Oct 2026</b>
+                    <br />
+                    Visitors : <b>0</b>
+                    <br>
+                    Working hours at Headquarters 9:00 A.M. To 5:30 P.M.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Supported Browsers Modal -->
+    <div class="modal fade" id="supportedBrowsersModal" tabindex="-1" aria-labelledby="supportedBrowsersLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius:12px;">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-semibold" id="supportedBrowsersLabel" style="font-size:20px;">
+                        Supported Web Browsers
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-3">
+                    <div class="row g-3">
+
+                        <!-- Firefox -->
+                        <div class="col-6">
+                            <div class="border rounded p-3 text-center h-100">
+                                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/firefox/firefox.svg"
+                                    height="50" alt="Firefox">
+                                <p class="mt-2 mb-0" style="font-size:14px;">Mozilla Firefox 147.x or higher</p>
+                            </div>
+                        </div>
+
+                        <!-- Chrome -->
+                        <div class="col-6">
+                            <div class="border rounded p-3 text-center h-100">
+                                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/chrome/chrome.svg"
+                                    height="50" alt="Chrome">
+                                <p class="mt-2 mb-0" style="font-size:14px;">Google Chrome 142.x or higher</p>
+                            </div>
+                        </div>
+
+                        <!-- Edge -->
+                        <div class="col-6">
+                            <div class="border rounded p-3 text-center h-100">
+                                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/edge/edge.svg"
+                                    height="50" alt="Edge">
+                                <p class="mt-2 mb-0" style="font-size:14px;">Microsoft Edge 144.x or higher</p>
+                            </div>
+                        </div>
+
+                        <!-- Safari -->
+                        <div class="col-6">
+                            <div class="border rounded p-3 text-center h-100">
+                                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/safari/safari.svg"
+                                    height="50" alt="Safari">
+                                <p class="mt-2 mb-0" style="font-size:14px;">Safari 26.x or higher</p>
+                            </div>
+                        </div>
+
+                        <!-- Opera -->
+                        <div class="col-6">
+                            <div class="border rounded p-3 text-center h-100">
+                                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/opera/opera.svg"
+                                    height="50" alt="Opera">
+                                <p class="mt-2 mb-0" style="font-size:14px;">Opera 126.x or higher</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    body {
+        font-family: "Google Sans Flex";
+    }
+
+    h5 {
+        font-family: "Libre Caslon Text" !important;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+        color: rgb(50, 50, 50);
+    }
+
+    /* ============ FOOTER 3 ============ */
+    .footer-mea {
+        background: #e8efff;
+    }
+
+    .social a {
+        position: relative;
+        overflow: hidden;
+        width: 42px;
+        height: 42px;
+        border: 1px solid #214aab80;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #162f6a;
+        transition: color .35s ease, border-color .35s ease;
+        z-index: 1;
+    }
+
+    .social a::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0%;
+        height: 100%;
+        background: #162f6a;
+        transition: width .35s ease;
+        z-index: -1;
+    }
+
+    .social a i {
+        font-size: 18px;
+        transition: color .35s ease, transform .35s ease;
+    }
+
+    .social a:hover {
+        border-color: #162f6a;
+        color: #fff;
+    }
+
+    .social a:hover::before {
+        width: 100%;
+    }
+
+    .social a:hover i {
+        color: #fff;
+        transform: scale(1.08);
+    }
+
+    .footer-links {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 18px;
+    }
+
+    .footer-links>div {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .footer-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #323232;
+        font-size: 16px;
+        font-weight: 500;
+        position: relative;
+        transition: color .3s ease;
+    }
+
+    .footer-links a i {
+        font-size: 18px;
+        color: #2457c5;
+        transition: transform .3s ease;
+    }
+
+    .footer-links a span {
+        position: relative;
+        display: inline-block;
+    }
+
+    .footer-links a span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 2px;
+        background: #214aab;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .35s ease;
+    }
+
+    .footer-links a:hover {
+        color: #214aab;
+    }
+
+    .footer-links a:hover span::after {
+        transform: scaleX(1);
+    }
+
+    .footer-links a:hover i {
+        transform: translateX(4px);
+    }
+
+    @media (min-width: 992px) {
+        .footer-links>div {
+            flex: 0 0 auto;
+            width: 12.5%;
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 991.98px) {
+        .footer-links {
+            --bs-gutter-y: 16px;
+        }
+
+        .footer-links>div {
+            flex: 0 0 auto;
+            width: 25%;
+        }
+
+        .footer-links a {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        .footer-links {
+            --bs-gutter-y: 14px;
+        }
+
+        .footer-links>div {
+            flex: 0 0 auto;
+            width: 50%;
+        }
+
+        .footer-links a {
+            font-size: 15px;
+            gap: 6px;
+        }
+
+        .footer-links a i {
+            font-size: 16px;
+        }
+    }
+</style>
+
+</body>
+
+</html>

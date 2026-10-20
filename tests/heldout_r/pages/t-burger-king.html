@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="vi" id="top" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="vi" id="top" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="vi" id="top" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="vi" id="top" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="vi" id="top" class="no-js" xmlns="http://www.w3.org/1999/xhtml"> <!--<![endif]-->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]},distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"1386111501",accountID:"3628438",trustKey:"3628438",xpid:"VwAFWVJQABABVlhUBwADU1MH",licenseKey:"NRJS-7c7684aebbb279166db",applicationID:"1296014576",browserID:"1386111501"};;/*! For license information please see nr-loader-spa-1.324.0.min.js.LICENSE.txt */
+(()=>{var e={8122(e,t,r){"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),s=0===Object.keys(r).length?e:r;for(let a in s)if(void 0!==e[a])try{if(null===e[a]){r[a]=null;continue}Array.isArray(e[a])&&Array.isArray(t[a])?r[a]=Array.from(new Set([...e[a],...t[a]])):e[a]instanceof Map||e[a]instanceof Set||e[a]instanceof Date||e[a]instanceof RegExp?r[a]=e[a]:"object"==typeof e[a]&&null!==t[a]&&"object"==typeof t[a]?r[a]=i(e[a],t[a]):r[a]=e[a]}catch(e){r[a]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},2555(e,t,r){"use strict";r.d(t,{f:()=>a});var n=r(384),i=r(8122);const s={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function a(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}r.d(t,["D",0,e=>(0,i.a)(e,s)])},7699(e,t,r){"use strict";var n=r(860);const i=1e6,s={[n.K7.logging]:!0,[n.K7.genericEvents]:!0,[n.K7.jserrors]:!0,[n.K7.ajax]:!0};r.d(t,["It",0,i,"KC",0,s,"qh",0,"SESSION_ERROR","zd",0,5e5])},9324(e,t,r){"use strict";r.d(t,["A",0,"@newrelic/rrweb","x",0,"1.324.0"])},981(e,t,r){"use strict";r.d(t,["R",0,{AJAX:"AjaxRequest",PA:"PageAction",UA:"UserAction",BP:"BrowserPerformance",WS:"WebSocket",SPV:"SecurityPolicyViolation",JSE:"JavaScriptError",LOG:"Log",PVE:"PageView",PVT:"PageViewTiming",SR:"SessionReplay",ST:"SessionTrace",BI:"BrowserInteraction"}])},9752(e,t,r){"use strict";const n="newrelic-iframe-",i=n+"timing-update",s=n+"api",a=n+"api-response",o=n+"vitals-update",c=n+"ajax";r.d(t,["$8",0,o,"Gi",0,a,"KU",0,c,"Pl",0,n,"cS",0,s,"cr",0,i])},6154(e,t,r){"use strict";var n=r(1863);const i="undefined"!=typeof window&&!!window.document,s="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),a=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),o=Boolean("hidden"===a?.document?.visibilityState),c=""+a?.location,d=/iPad|iPhone|iPod/.test(a.navigator?.userAgent),u=d&&"undefined"==typeof SharedWorker,l=(()=>{const e=a.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);return Array.isArray(e)&&e.length>=2?+e[1]:0})(),f=Date.now()-(0,n.t)();r.d(t,["OF",0,d,"RI",0,i,"WN",0,f,"bv",0,s,"gm",0,a,"lR",0,l,"m",0,c,"mw",0,o,"sb",0,u,"zk",0,()=>{const e=a?.performance?.getEntriesByType?.("navigation")?.[0];if(e&&e.responseStart>0&&e.responseStart<a.performance.now())return e}])},7295(e,t,r){"use strict";r.d(t,{Xv:()=>a,gX:()=>i,iW:()=>s});var n=[];function i(e){if(!e||s(e))return!1;if(0===n.length)return!0;if("*"===n[0].hostname)return!1;for(var t=0;t<n.length;t++){var r=n[t];if(r.hostname.test(e.hostname)&&r.pathname.test(e.pathname))return!1}return!0}function s(e){return void 0===e.hostname}function a(e){if(n=[],e&&e.length)for(var t=0;t<e.length;t++){let r=e[t];if(!r)continue;if("*"===r)return void(n=[{hostname:"*"}]);0===r.indexOf("http://")?r=r.substring(7):0===r.indexOf("https://")&&(r=r.substring(8));const i=r.indexOf("/");let s,a;i>0?(s=r.substring(0,i),a=r.substring(i)):(s=r,a="*");let[c]=s.split(":");n.push({hostname:o(c),pathname:o(a,!0)})}}function o(e,t=!1){const r=e.replace(/[.+?^${}()|[\]\\]/g,e=>"\\"+e).replace(/\*/g,".*?");return new RegExp((t?"^":"")+r+"$")}},3241(e,t,r){"use strict";r.d(t,{W:()=>i});var n=r(6154);function i(e={}){try{n.gm.dispatchEvent(new CustomEvent("newrelic",{detail:e}))}catch(e){}}},1687(e,t,r){"use strict";r.d(t,{Ak:()=>o,Ze:()=>d,x3:()=>c});var n=r(3241),i=r(3606),s=r(860),a=r(2646);function o(e,t){if(!e)return;const r={staged:!1,priority:s.P3[t]||0};e.runtime.drainRegistry.get(t)||e.runtime.drainRegistry.set(t,r)}function c(e,t){if(!e)return;const r=e.runtime.drainRegistry;r&&(r.get(t)&&r.delete(t),l(e,t,!1),r.size&&u(e))}function d(e,t="feature",r=!1){if(e){if(!e.runtime.drainRegistry.get(t)||r)return l(e,t);e.runtime.drainRegistry.get(t).staged=!0,u(e)}}function u(e){if(!e)return;const t=Array.from(e.runtime.drainRegistry);t.every(([e,t])=>t.staged)&&(t.sort((e,t)=>e[1].priority-t[1].priority),t.forEach(([t])=>{e.runtime.drainRegistry.delete(t),l(e,t)}))}function l(e,t,r=!0){if(!e)return;const s=e.ee,o=i.i.handlers;if(s&&!s.aborted&&s.backlog&&o){if((0,n.W)({type:"lifecycle",name:"drain",feature:t}),r){const e=s.backlog[t],r=o[t];if(r){for(let t=0;e&&t<e.length;++t)f(e[t],r);Object.entries(r).forEach(([e,t])=>{Object.values(t||{}).forEach(t=>{t[0]?.on&&t[0].context()instanceof a.y&&!t[0].listeners(e).includes(t[1])&&t[0].on(e,t[1])})})}}s.isolatedBacklog||delete o[t],s.backlog[t]=null,s.emit("drain-"+t,[])}}function f(e,t){var r=e[1];Object.values(t[r]||{}).forEach(t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],s=e[2];n.apply(i,s)}})}},7836(e,t,r){"use strict";var n=r(384),i=r(8990),s=r(2646),a=r(5607);const o="nr@context:".concat(a.W),c=function e(t,r){var n={},a={},u={},l=!1;try{l=16===r.length&&d.initializedAgents?.[r]?.runtime.isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,s){!1!==s&&(s=!0);if(c.aborted&&!i)return;t&&s&&t.emit(e,r,n);var o=h(n);g(e).forEach(e=>{e.apply(o,r)});var d=v()[a[e]];d&&d.push([f,e,r,o]);return o},get:m,listeners:g,context:h,buffer:function(e,t){const r=v();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach(([e,n])=>{a[n]=t,t in r||(r[t]=[])})},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach(e=>{delete f.backlog[e]})},isBuffering:function(e){return!!v()[a[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function h(e){return e&&e instanceof s.y?e:e?(0,i.I)(e,o,()=>new s.y(o)):new s.y(o)}function p(e,t){n[e]=g(e).concat(t)}function g(e){return n[e]||[]}function m(t){return u[t]=u[t]||e(f,t)}function v(){return f.backlog}}(void 0,"globalEE"),d=(0,n.Zm)();d.ee||(d.ee=c),r.d(t,["P",0,o,"ee",0,c])},2646(e,t,r){"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},9908(e,t,r){"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(7836).ee.get("handle");function i(e,t,r,i,s){s?(s.buffer([e],i),s.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}},3606(e,t,r){"use strict";r.d(t,{i:()=>s});var n=r(9908);s.on=a;var i=s.handlers={};function s(e,t,r,s){a(s||n.d,i,e,t,r)}function a(e,t,r,i,s){s||(s="feature"),e||(e=n.d);var a=t[s]=t[s]||{};(a[r]=a[r]||[]).push([e,i])}},3878(e,t,r){"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function s(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>s,jT:()=>n,sp:()=>i})},5607(e,t,r){"use strict";const n=(0,r(9566).bz)();r.d(t,["W",0,n])},9566(e,t,r){"use strict";r.d(t,{LA:()=>a,ZF:()=>o,bz:()=>s,el:()=>c});var n=r(6154);function i(e,t){return e?15&e[t]:16*Math.random()|0}function s(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".split("").map(e=>"x"===e?i(t,r++).toString(16):"y"===e?(3&i()|8).toString(16):e).join("")}function a(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,s=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const a=[];for(var o=0;o<e;o++)a.push(i(r,s++).toString(16));return a.join("")}function o(){return a(16)}function c(){return a(32)}},2614(e,t,r){"use strict";r.d(t,["BB",0,18e5,"Wt",0,"NRBA_SESSION::","g",0,{OFF:0,FULL:1,ERROR:2},"iL",0,{SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},"tS",0,{STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},"wk",0,144e5])},733(e,t,r){"use strict";function n(e,t){return function(e){let t=2166136261;for(let r=0;r<e.length;r++)t^=e.charCodeAt(r),t=Math.imul(t,16777619);return(t>>>0).toString(16).padStart(8,"0")}("".concat(String(e),":").concat(String(t)))}r.d(t,{Y:()=>n})},1863(e,t,r){"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},9119(e,t,r){"use strict";r.d(t,{L:()=>s});var n=/([^?#]*)[^#]*(#[^?]*|$).*/,i=/([^?#]*)().*/;function s(e,t){return e?e.replace(t?n:i,"$1$2"):e}},7485(e,t,r){"use strict";r.d(t,{D:()=>i});var n=r(6154);function i(e){if(0===(e||"").indexOf("data:"))return{protocol:"data"};try{const t=new URL(e,location.href),r={port:t.port,hostname:t.hostname,pathname:t.pathname,search:t.search,protocol:t.protocol.slice(0,t.protocol.indexOf(":")),sameOrigin:t.protocol===n.gm?.location?.protocol&&t.host===n.gm?.location?.host};return r.port&&""!==r.port||("http:"===t.protocol&&(r.port="80"),"https:"===t.protocol&&(r.port="443")),r.pathname&&""!==r.pathname?r.pathname.startsWith("/")||(r.pathname="/".concat(r.pathname)):r.pathname="/",r}catch(e){return{}}}},7866(e,t,r){"use strict";r.d(t,["Nc",0,/^\s*at Function code \(Function code:\d+:\d+\)\s*/i,"cn",0,/^\s*(?:([^@]*)(?:\(.*?\))?@)?((?:file|http|https|chrome|safari-extension).*?):(\d+)(?::(\d+))?\s*$/i,"fL",0,/^\s*at .+ \(eval at \S+ \((?:(?:file|http|https):[^)]+)?\)(?:, [^:]*:\d+:\d+)?\)$/i,"h3",0,/function (.+?)\s*\(/,"hB",0,/^\s*at (?:((?:\[object object\])?(?:[^(]*\([^)]*\))*[^()]*(?: \[as \S+\])?) )?\(?((?:file|http|https|chrome-extension):.*?)?:(\d+)(?::(\d+))?\)?\s*$/i])},944(e,t,r){"use strict";r.d(t,{R:()=>i});var n=r(3241);function i(e,t){"function"==typeof console.debug&&(console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t),(0,n.W)({drained:null,type:"data",name:"warn",feature:"warn",data:{code:e,secondary:t}}))}},8990(e,t,r){"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},6389(e,t,r){"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout(()=>{i=clearTimeout(i)},t)),n||(clearTimeout(i),i=setTimeout(()=>{e.apply(this,r)},t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},1910(e,t,r){"use strict";r.d(t,{i:()=>s});var n=r(944);const i=new Map;function s(...e){return e.every(e=>{if(i.has(e))return i.get(e);const t="function"==typeof e?e.toString():"",r=t.includes("[native code]"),s=t.includes("nrWrapper");return r||s||(0,n.R)(64,e?.name||t),i.set(e,r),r})}},3304(e,t,r){"use strict";r.d(t,{A:()=>i});var n=r(7836);function i(e){try{return JSON.stringify(e,(()=>{const e=new WeakSet;return(t,r)=>{if("object"==typeof r&&null!==r){if(e.has(r))return;e.add(r)}return r}})())??""}catch(e){try{n.ee.emit("internal-error",[e])}catch(e){}return""}}},9232(e,t,r){"use strict";r.d(t,["f",0,{MFE:"MFE",BA:"BA"}])},7560(e,t,r){"use strict";r.d(t,{N:()=>a,j:()=>c});var n=r(9119),i=r(944);const s=(0,r(6389).J)(e=>(0,i.R)(80,e));function a(e){if(!Array.isArray(e?.assets)||!e.assets.length)return;const t=e.assets.map(o).filter(Boolean);return t.length?{assets:t,scripts:t.filter(e=>e.isScript)}:void 0}function o(e){if(!e||"object"!=typeof e)return;const{matcher:t,type:r}=e;let i="string"==typeof t&&t.endsWith(".js");return void 0!==r&&(!function(e){return"script"===e||"asset"===e}(r)?s(r):i=function(e){return"script"===e}(r)),a=t,"[object RegExp]"===Object.prototype.toString.call(a)?{pattern:t,test:e=>(t.lastIndex=0,t.test((0,n.L)(e))),isScript:i}:"string"==typeof t&&t.length>0?{pattern:t,test:e=>(0,n.L)(e).includes(t),isScript:i}:void s(t);var a}function c(e,t,{scriptsOnly:r=!1}={}){if(!e||!t)return!1;return(r?e.scripts:e.assets).some(e=>e.test(t))}},5718(e,t,r){"use strict";r.d(t,{xo:()=>A,AZ:()=>v,cI:()=>g,Qr:()=>S,QL:()=>y});var n=r(6154),i=r(1863),s=r(9119),a=r(7866);class o{dom=new c;performance=new c;constructor(e){this.url=e,this.claimedBy=new Set}get script(){const e=Math.max(this.dom.start,this.performance.end);return{start:e,end:Math.max(this.dom.end,this.performance.end,e)}}}class c{start=0;end=0;value=void 0}function d(e=()=>{},t){return{get:()=>void 0!==t?t:e(),set:e=>{t=e}}}let u;try{u=v(y())[0]}catch(e){u=v(e)[0]}const l=new Map;let f=[];const h=new WeakMap;function p(e){let t=h.get(e);return t||(t={weighedAssetUrls:new Set,widenedAssetUrls:new Set,recordManifestScriptWindow:(t,r)=>{t&&(e.scriptStart=e.scriptStart>0?Math.min(e.scriptStart,t):t),r&&(e.scriptEnd=e.scriptEnd>0?Math.max(e.scriptEnd,r):r)}},h.set(e,t)),t}function g(e){return l.get(e)}function m(e){const t=g(e);if(t)return t;const r=new o(e);if(l.set(e,r),l.size>1e3){const e=l.keys().next().value;l.delete(e)}return r}if(n.gm.MutationObserver&&n.gm.document){new MutationObserver(e=>{e.forEach(e=>{e.addedNodes.forEach(e=>{if("SCRIPT"===e.nodeName&&e.src){const t=m((0,s.L)(e.src));if(t.dom.value)return;t.dom.start=(0,i.t)(),t.dom.value=e;const r=()=>{t.dom.end=(0,i.t)()};["load","error"].forEach(t=>e.addEventListener(t,r,{once:!0}))}})})}).observe(n.gm.document,{childList:!0,subtree:!0})}if(n.gm.PerformanceObserver?.supportedEntryTypes.includes("resource")){new PerformanceObserver(e=>{e.getEntries().forEach(e=>{if((e=>"script"===e.initiatorType||["link","fetch"].includes(e.initiatorType)&&(0,s.L)(e.name).endsWith(".js"))(e)){const t=m((0,s.L)(e.name));t.performance.value||(t.performance.start=Math.floor(e.startTime),t.performance.end=Math.floor(e.responseEnd),t.performance.value=e)}if(!f.length)return;const t=[];f.forEach(({test:r,addedAt:n},s)=>{(r(e)||(0,i.t)()-n>1e4)&&t.push(s)}),f=f.filter((e,r)=>!t.includes(r))})}).observe({type:"resource",buffered:!0})}function v(e){if(!e||"string"!=typeof e)return[];const t=new Set,r=e.split("\n");for(const e of r){const r=e.match(a.cn)||e.match(a.hB)||e.match(a.fL);if(r&&r[2])t.add((0,s.L)(r[2]));else{const r=e.match(/\(([^)]+\.js):\d+:\d+\)/)||e.match(/^\s+at\s+([^\s(]+\.js):\d+:\d+/);r&&r[1]&&t.add((0,s.L)(r[1]))}}return[...t]}function y(){let e;try{const t=Error.stackTraceLimit;Error.stackTraceLimit=50,e=(new Error).stack,Error.stackTraceLimit=t}catch(t){e=(new Error).stack}return e}function b(e,t){return(0,s.L)(e.name)===t}function E(e,t){e.fetchStart=Math.floor(t.startTime),e.fetchEnd=Math.floor(t.responseEnd),e.asset=t.name,e.type=t.initiatorType,w(e,t)}function w(e,t){const r=(0,s.L)(t.name),{weighedAssetUrls:n}=p(e);n.has(r)||(n.add(r),e.totalWeight=(e.totalWeight||0)+(t.transferSize||0),"blocking"===t.renderBlockingStatus?e.renderBlocking=!0:"non-blocking"===t.renderBlockingStatus&&!0!==e.renderBlocking&&(e.renderBlocking=!1))}function R(e,t,r,n,i){if(w(e,t),"scripts"!==i&&"all"!==i)return;const{widenedAssetUrls:a}=p(e),o=(0,s.L)(t.name);if(a.has(o))return;a.add(o);if("all"===i||r.isScript){const r=Math.floor(t.startTime),n=Math.floor(t.responseEnd);e.fetchStart=e.fetchStart>0?Math.min(e.fetchStart,r):r,e.fetchEnd=e.fetchEnd>0?Math.max(e.fetchEnd,n):n}if(r.isScript){const r=g((0,s.L)(t.name));if(r){const t=()=>{const{start:t,end:n}=r.script;p(e).recordManifestScriptWindow(t,n)};t(),!r.dom.end&&r.dom.value&&["load","error"].forEach(e=>r.dom.value.addEventListener(e,t,{once:!0}))}n.resolved||(e.asset=t.name,e.type=t.initiatorType,n.resolved=!0)}}function T(e,t){const r=e.filter(e=>e.test(t.name));return r.find(e=>e.isScript)||r[0]}function A(e,t){const r=t?.manifest;if(!r||!r.assets.length)return;const s={resolved:!1},{assets:a}=r;(n.gm.performance?.getEntriesByType("resource")||[]).forEach(r=>{const n=T(a,r);n&&R(e,r,n,s,t.timingMethod)}),function(e,t,r,s){n.gm.PerformanceObserver?.supportedEntryTypes?.includes("resource")&&f.push({addedAt:(0,i.t)(),test:n=>{const i=T(t,n);return i&&R(e,n,i,r,s),!1}})}(e,a,s,t.timingMethod)}function S(e){const t=e?.id,r={registeredAt:(0,i.t)(),reportedAt:void 0,fetchStart:0,fetchEnd:0,scriptStart:0,scriptEnd:0,asset:void 0,type:"unknown",totalWeight:0,renderBlocking:void 0},a=y();if(!a)return r;const o=n.gm.performance?.getEntriesByType("navigation")?.[0]?.name||"";try{const e=v(a),c=(e.length>1?e.filter(e=>u!==e):e)[0];if(!c)return r;if(o.includes(c))return r.asset=(0,s.L)(o),r.type="inline",r;r.correlation=g(c);const l=r.correlation?.performance.value||n.gm.performance?.getEntriesByType("resource")?.find(e=>b(e,c));if(l)E(r,l);else{(function(e){if(!e||!n.gm.document)return!1;try{const t=n.gm.document.querySelectorAll('link[rel="preload"][as="script"]');for(const r of t)if((0,s.L)(r.href)===e)return!0}catch(e){}return!1})(c)&&(r.asset=c,r.type="preload"),function(e,t){n.gm.PerformanceObserver?.supportedEntryTypes?.includes("resource")&&f.push({addedAt:(0,i.t)(),test:r=>!!b(r,t)&&(E(e,r),!0)})}(r,c)}const h=r.correlation,m=!!t&&!!h?.claimedBy.has(t);h&&t&&h.claimedBy.add(t);const y=()=>{const e=h?.script.start;if(!m||!e)return!1;return r.registeredAt-e>1e4};let w=0,R=0;p(r).recordManifestScriptWindow=(e,t)=>{e&&(w=w>0?Math.min(w,e):e),t&&(R=R>0?Math.max(R,t):t)},Object.defineProperty(r,"scriptStart",d(()=>{const e=y()?r.registeredAt:h?.script.start??r.fetchEnd;return w>0?Math.min(e,w):e})),Object.defineProperty(r,"scriptEnd",d(()=>{const e=y()?r.registeredAt:h?.script.end??r.registeredAt;return R>0?Math.max(e,R):e}))}catch(e){}return r}},5732(e,t,r){"use strict";r.d(t,{$5:()=>m,B5:()=>g,K6:()=>u,M$:()=>o,Ms:()=>d,NG:()=>c,Ux:()=>h,YA:()=>p,yx:()=>l});var n=r(5718),i=r(7560),s=r(9119),a=r(9232);function o(e){return e?.type===a.f.MFE}function c(e,t){if(!y(e,t))return;const r=t.runtime.registeredEntities;return r?.find(t=>t.metadata.target.iframeInterfaceId===e)}function d(e,t){if(!y(e,t))return[];const r=t.runtime.registeredEntities;return r?.filter(t=>String(t.metadata.target.id)===String(e)).map(e=>e.metadata.target)||[]}function u(e,t){if(!y(e,t))return[];const r=t.runtime.registeredEntities,n=(0,s.L)(e),a=r?.filter(t=>{const r=t.metadata.target?.manifest;return r?(0,i.j)(r,e,{scriptsOnly:!1}):!!t.metadata.timings?.asset&&(0,s.L)(t.metadata.timings.asset)===n});return f(a).map(e=>e.metadata.target)}function l(e,t){if(!y(e,t))return[];const r=t.runtime.registeredEntities,n=r?.filter(t=>{const r=t.metadata.target?.manifest;return r?(0,i.j)(r,e,{scriptsOnly:!0}):!!t.metadata.timings?.asset?.endsWith(e)});return f(n).map(e=>e.metadata.target)}function f(e){if(!e?.length)return e||[];const t=new Map,r=[];for(const n of e){const e=n.metadata?.timings?.asset;if(!e){r.push(n);continue}const i="".concat(e,"::").concat(n.metadata?.target?.id),s=t.get(i);if(s){if(s.metadata.target?.blocked&&!n.metadata.target?.blocked){const e=r.indexOf(s);-1!==e&&(r[e]=n),t.set(i,n)}}else t.set(i,n),r.push(n)}return r}function h(e,t){return v(t)?o(e)?e.attributes:t.agentRef.runtime.v2Target.attributes:{}}function p(e,t){return g(e,t)?{"child.id":e.id,"child.type":e.type,...h(void 0,t)}:{}}function g(e,t){return o(e)&&!!v(t)&&t.agentRef.init.api.register.duplicate_data_to_container}function m(e){if(!e?.runtime)return[];if(!y(!0,e)||!e.runtime.registeredEntities?.length)return[e.runtime.v2Target];const t=[];try{var r=(0,n.AZ)((0,n.QL)());let i=r.length-1;for(;r[i];)t.push(...l(r[i--],e))}catch(e){}const i=function(e){const t=new Set,r=[];for(const n of e){const e=n?.instance;t.has(e)||(t.add(e),r.push(n))}return r}(t);return i.length||i.push(e.runtime.v2Target),i}function v(e){return 2===e?.harvestEndpointVersion}function y(e,t){return!!e&&!!t?.init.api.register.enabled}},5289(e,t,r){"use strict";r.d(t,{GG:()=>a,Qr:()=>c,sB:()=>o});var n=r(3878),i=r(6389);function s(){return"undefined"==typeof document||"complete"===document.readyState}function a(e,t){if(s())return e();const r=(0,i.J)(e),a=setInterval(()=>{s()&&(clearInterval(a),r())},500);(0,n.sp)("load",r,t)}function o(e){if(s())return e();(0,n.DD)("DOMContentLoaded",e)}function c(e){if(s())return e();(0,n.sp)("popstate",e)}},384(e,t,r){"use strict";r.d(t,{Zm:()=>c,bQ:()=>u,dV:()=>d,pV:()=>l});var n=r(6154),i=r(1863),s=r(944),a=r(1910);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function d(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,a.i)(...Object.values(e.o))),e}function u(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,s.R)(69)}function l(){return function(){let e=c();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),d(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}r.d(t,["NT",0,o])},2843(e,t,r){"use strict";r.d(t,{G:()=>s,u:()=>i});var n=r(3878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)},r,i)}function s(e,t,r){(0,n.sp)("pagehide",e,t,r)}},8139(e,t,r){"use strict";r.d(t,{u:()=>f});var n=r(7836),i=r(3434),s=r(8990),a=r(6154);const o={},c=a.gm.XMLHttpRequest,d="addEventListener",u="removeEventListener",l="nr@wrapped:".concat(n.P);function f(e,t){var r=function(e){return(e||n.ee).get("events")}(e);if(o[r.debugId]++)return r;o[r.debugId]=1;var f=(0,i.YM)(r,!0,t);function p(e){f.inPlace(e,[d,u],"-",g)}function g(e,t){return e[1]}return"getPrototypeOf"in Object&&(a.RI&&h(document,p),c&&h(c.prototype,p),h(a.gm,p)),r.on(d+"-start",function(e,t){var r=e[1];if(null!==r&&("function"==typeof r||"object"==typeof r)&&"newrelic"!==e[0]){var n=(0,s.I)(r,l,function(){var e={object:function(){if("function"!=typeof r.handleEvent)return;return r.handleEvent.apply(r,arguments)},function:r}[typeof r];return e?f(e,"fn-",null,e.name||"anonymous"):r});this.wrapped=e[1]=n}}),r.on(u+"-start",function(e){e[1]=this.wrapped||e[1]}),r}function h(e,t,...r){let n=e;for(;"object"==typeof n&&!Object.prototype.hasOwnProperty.call(n,d);)n=Object.getPrototypeOf(n);n&&t(n,...r)}},3434(e,t,r){"use strict";r.d(t,{YM:()=>d});var n=r(7836),i=r(5607),s=r(5732);const a="nr@original:".concat(i.W);var o=Object.prototype.hasOwnProperty,c=!1;function d(e,t,r){return e||(e=n.ee),i.inPlace=function(e,t,r,n,s,a){r||(r="");const o="-"===r.charAt(0);for(let c=0;c<t.length;c++){const d=t[c],u=e[d];l(u)||(e[d]=i(u,o?d+r:r,n,d,s,a))}},i.flag=a,i;function i(t,n,i,c,f,h){return l(t)?t:(n||(n=""),nrWrapper[a]=t,function(e,t,r){if(Object.defineProperty&&Object.keys)try{return Object.keys(e).forEach(function(r){Object.defineProperty(t,r,{get:function(){return e[r]},set:function(t){return e[r]=t,t}})}),t}catch(e){u([e],r)}for(var n in e)o.call(e,n)&&(t[n]=e[n])}(t,nrWrapper,e),nrWrapper);function nrWrapper(){var a,o,l,p;let g,m;try{o=this,a=[...arguments],m=h?(0,s.$5)(r):[r?.runtime?.v2Target],l="function"==typeof i?i(a,o):i||{}}catch(t){u([t,"",[a,o,c],l],e)}d(n+"start",[a,o,c,m],l,f);const v=performance.now();let y;try{return p=t.apply(o,a),y=performance.now(),p}catch(e){throw y=performance.now(),d(n+"err",[a,o,e,m],l,f),g=e,g}finally{const e=y-v,t={start:v,end:y,duration:e,isLongTask:e>=50,methodName:c,thrownError:g};t.isLongTask&&d("long-task",[t,o,m],l,f),d(n+"end",[a,o,p,m],l,f)}}}function d(r,n,i,s){if(!c||t){var a=c;c=!0;try{e.emit(r,n,i,t,s)}catch(t){u([t,r,n,i],e)}c=a}}}function u(e,t){t||(t=n.ee);try{t.emit("internal-error",e)}catch(e){}}function l(e){return!(e&&"function"==typeof e&&e.apply&&!e[a])}r.d(t,["Jt",0,a])},9300(e,t,r){"use strict";const n=r(860).K7.ajax;r.d(t,["TZ",0,n,"f5",0,"ajaxRequest.id","mo",0,{NONE:"none",FAILURES:"failures",ALL:"all"}])},3333(e,t,r){"use strict";var n=r(981);const i=r(860).K7.genericEvents,s=[n.R.PA,n.R.UA,n.R.BP];r.d(t,["$v",0,{RESOURCES:"experimental.resources",REGISTER:"register"},"TZ",0,i,"Zp",0,["auxclick","click","copy","keydown","paste","scrollend"],"kd",0,s,"qN",0,["focus","blur"]])},6774(e,t,r){"use strict";const n=r(860).K7.jserrors;r.d(t,["T",0,n])},993(e,t,r){"use strict";const n=r(860).K7.logging;r.d(t,["A$",0,{OFF:0,ERROR:1,WARN:2,INFO:3,DEBUG:4,TRACE:5},"TZ",0,n,"p_",0,{ERROR:"ERROR",WARN:"WARN",INFO:"INFO",DEBUG:"DEBUG",TRACE:"TRACE"}])},3785(e,t,r){"use strict";r.d(t,{R:()=>c,b:()=>d});var n=r(9908),i=r(1863),s=r(860),a=r(3969),o=r(993);function c(e,t,r={},c=o.p_.INFO,d=!0,u,l=(0,i.t)()){(0,n.p)(a.xV,["API/logging/".concat(c.toLowerCase(),"/called")],void 0,s.K7.metrics,e),(0,n.p)("log",[l,t,r,c,d,u],void 0,s.K7.logging,e)}function d(e){return"string"==typeof e&&Object.values(o.p_).some(t=>t===e.toUpperCase().trim())}},3969(e,t,r){"use strict";const n=r(860).K7.metrics;r.d(t,["TZ",0,n,"XG",0,"storeEventMetrics","xV",0,"storeSupportabilityMetrics"])},6630(e,t,r){"use strict";const n=r(860).K7.pageViewEvent;r.d(t,["T",0,n])},782(e,t,r){"use strict";const n=r(860).K7.pageViewTiming;r.d(t,["T",0,n])},6344(e,t,r){"use strict";var n=r(2614);const i=r(860).K7.sessionReplay,s={[n.g.ERROR]:15e3,[n.g.FULL]:3e5,[n.g.OFF]:0};r.d(t,["Qb",0,{API:"api",RESUME:"resume",SWITCH_TO_FULL:"switchToFull",INITIALIZE:"initialize",PRELOAD:"preload"},"TZ",0,i,"Vh",0,"errorDuringReplay","_s",0,{DomContentLoaded:0,Load:1,FullSnapshot:2,IncrementalSnapshot:3,Meta:4,Custom:5},"bc",0,{RESET:{message:"Session was reset",sm:"Reset"},IMPORT:{message:"Recorder failed to import",sm:"Import"},TOO_MANY:{message:"429: Too Many Requests",sm:"Too-Many"},TOO_BIG:{message:"Payload was too large",sm:"Too-Big"},CROSS_TAB:{message:"Session Entity was set to OFF on another tab",sm:"Cross-Tab"},ENTITLEMENTS:{message:"Session Replay is not allowed and will not be started",sm:"Entitlement"}},"yP",0,s])},5270(e,t,r){"use strict";r.d(t,{Aw:()=>a,SR:()=>s,rF:()=>o});var n=r(384),i=r(7767);function s(e){return!!(0,n.dV)().o.MO&&(0,i.V)(e)&&!0===e?.session_trace.enabled}function a(e){return!0===e?.session_replay.preload&&s(e)}function o(e,t){try{if("string"==typeof t?.type&&"password"===t.type.toLowerCase())return"*".repeat(e?.length||0);if(void 0!==t?.dataset?.nrUnmask||t?.classList?.contains("nr-unmask"))return e}catch(e){}return"string"==typeof e?e.replace(/[\S]/g,"*"):"*".repeat(e?.length||0)}},3738(e,t,r){"use strict";const n=r(860).K7.sessionTrace,i="-start",s="-end",a="fn"+i,o="fn"+s;r.d(t,["He",0,"bstResource","Kp",0,s,"Lc",0,o,"Rz",0,"pushState","TZ",0,n,"bD",0,"resource","bc",0,{CROSS_TAB:{message:"Session Entity was set to OFF on another tab"},ENTITLEMENTS:{message:"Session Trace is not allowed and will not be started"},RESET:{message:"Session was reset"},SESSION_CHANGED:{message:"Session identifier changed unexpectedly"}},"d3",0,i,"uP",0,a])},3962(e,t,r){"use strict";const n=r(860).K7.softNav;r.d(t,["O2",0,{INITIAL_PAGE_LOAD:"",ROUTE_CHANGE:1,UNSPECIFIED:2},"OV",0,"popstate","Qu",0,{INTERACTION:1,AJAX:2,CUSTOM_END:3,CUSTOM_TRACER:4},"TZ",0,n,"ih",0,{IP:"in progress",PF:"pending finish",FIN:"finished",CAN:"cancelled"},"pP",0,"initialPageLoad","tC",0,["click","keydown","submit"]])},4234(e,t,r){"use strict";r.d(t,{W:()=>i});var n=r(1687);class i{constructor(e,t){this.agentRef=e,this.ee=e?.ee,this.featureName=t,this.blocked=!1}deregisterDrain(){(0,n.x3)(this.agentRef,this.featureName)}}},7767(e,t,r){"use strict";var n=r(6154);r.d(t,["V",0,e=>n.RI&&!0===e?.privacy.cookies_enabled])},8362(e,t,r){"use strict";r.d(t,{d:()=>s});var n=r(9566),i=r(1741);class s extends i.W{agentIdentifier=(0,n.LA)(16)}},1741(e,t,r){"use strict";r.d(t,{W:()=>s});var n=r(944),i=r(4261);class s{#e(e,...t){if(this[e]!==s.prototype[e])return this[e](...t);(0,n.R)(35,e)}addPageAction(e,t){return this.#e(i.hG,e,t)}register(e){return this.#e(i.eY,e)}recordCustomEvent(e,t){return this.#e(i.fF,e,t)}setPageViewName(e,t){return this.#e(i.Fw,e,t)}setCustomAttribute(e,t,r){return this.#e(i.cD,e,t,r)}noticeError(e,t){return this.#e(i.o5,e,t)}setUserId(e,t=!1){return this.#e(i.Dl,e,t)}setApplicationVersion(e){return this.#e(i.nb,e)}setErrorHandler(e){return this.#e(i.bt,e)}addRelease(e,t){return this.#e(i.k6,e,t)}log(e,t){return this.#e("log",e,t)}start(){return this.#e("start")}finished(e){return this.#e(i.BL,e)}recordReplay(){return this.#e(i.CH)}pauseReplay(){return this.#e(i.Tb)}addToTrace(e){return this.#e(i.U2,e)}setCurrentRouteName(e){return this.#e(i.PA,e)}interaction(e){return this.#e(i.dT,e)}wrapLogger(e,t,r){return this.#e(i.Wb,e,t,r)}measure(e,t){return this.#e(i.V1,e,t)}consent(e){return this.#e(i.Pv,e)}}},4261(e,t,r){"use strict";r.d(t,["BL",0,"finished","CH",0,"recordReplay","Dl",0,"setUserId","Fw",0,"setPageViewName","PA",0,"setCurrentRouteName","Pv",0,"consent","Tb",0,"pauseReplay","U2",0,"addToTrace","V1",0,"measure","Wb",0,"wrapLogger","bt",0,"setErrorHandler","cD",0,"setCustomAttribute","dT",0,"interaction","eY",0,"register","fF",0,"recordCustomEvent","hG",0,"addPageAction","hw",0,"api-ixn-","k6",0,"addRelease","nb",0,"setApplicationVersion","o5",0,"noticeError"])},1738(e,t,r){"use strict";r.d(t,{U:()=>l,Y:()=>u});var n=r(3241),i=r(9908),s=r(1863),a=r(944),o=r(3969),c=r(8362),d=r(860);function u(e,t,r,s){const u=s||r;!u||u[e]&&u[e]!==c.d.prototype[e]||(u[e]=function(){(0,i.p)(o.xV,["API/"+e+"/called"],void 0,d.K7.metrics,r.ee),(0,n.W)({drained:!!r.runtime?.activatedFeatures,type:"data",name:"api",feature:"api-"+e,data:{}});try{return t.apply(this,arguments)}catch(e){(0,a.R)(23,e)}})}function l(e,t,r,n,a){const o=e.info;null===r?delete o.jsAttributes[t]:o.jsAttributes[t]=r,(a||null===r)&&(0,i.p)("api-"+n,[(0,s.t)(),t,r],void 0,"session",e.ee)}},8374(e,t,r){r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},860(e,t,r){"use strict";const n="events",i="jserrors",s="browser/blobs",a="browser/logs",o={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations"},c={[o.pageViewEvent]:1,[o.pageViewTiming]:2,[o.metrics]:3,[o.jserrors]:4,[o.softNav]:5,[o.ajax]:6,[o.sessionTrace]:7,[o.sessionReplay]:8,[o.logging]:9,[o.genericEvents]:10},d={[o.pageViewEvent]:"rum",[o.pageViewTiming]:n,[o.ajax]:n,[o.softNav]:n,[o.metrics]:i,[o.jserrors]:i,[o.sessionTrace]:s,[o.sessionReplay]:s,[o.logging]:a,[o.genericEvents]:"ins"};r.d(t,["$J",0,d,"K7",0,o,"P3",0,c,"XX",0,i,"Yy",0,a,"df",0,s,"hg",0,"connect"])}};const t={};function r(n){const i=t[n];if(void 0!==i)return i.exports;const s=t[n]={exports:{}};return e[n](s,s.exports,r),s.exports}r.m=e,r.d=(e,t)=>{if(Array.isArray(t))for(var n=0;n<t.length;){var i=t[n++],s=t[n++];r.o(e,i)?0===s&&n++:0===s?Object.defineProperty(e,i,{enumerable:!0,value:t[n++]}):Object.defineProperty(e,i,{enumerable:!0,get:s})}else for(var i in t)r.o(t,i)&&!r.o(e,i)&&Object.defineProperty(e,i,{enumerable:!0,get:t[i]})},r.f={},r.e=e=>Promise.all(Object.keys(r.f).reduce((t,n)=>(r.f[n](e,t),t),[])),r.u=e=>({212:"nr-spa-compressor",238:"nr-spa-iframe-message-handler",249:"nr-spa-recorder",478:"nr-spa"}[e]+"-1.324.0.min.js"),r.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),(()=>{const e={},t="NRBA-1.324.0.PROD:";r.l=(n,i,s,a)=>{if(e[n])return void e[n].push(i);let o,c;if(void 0!==s){const e=document.getElementsByTagName("script");for(var d=0;d<e.length;d++){const r=e[d];if(r.getAttribute("src")==n||r.getAttribute("data-webpack")==t+s){o=r;break}}}if(!o){c=!0;var u={478:"sha512-wBc4Jo38KDgcegfiGY8de3+U7Ie9CRrgHaI3qLQ8GCClIQOqAHS72qaUB7M5efXZamFpJr/8S6ceNJtUnFWEjg==",249:"sha512-ezxqyvONkTj5XIG5enxqVTHCQVKUdxkPeYdV58D03Q5+nm/gwjDEAKfY8K4b0PVE8NKpQGkD6qYKQKFpDgUjvg==",212:"sha512-7K8hQgy/QzYQntkPpH+4WLoubRsL3fOQMS4Q52I7M9zNjENoooXmNT04ibJy81FvQN8xvaMvOOwuP9fA2REiKg==",238:"sha512-4LvkJtloUOYh8K3VvfTBTUDyBYyvja9RWznqnMBjHI4cA+OQYzcP8ysSorpLF2ftlMbrolsXavJR3eOUgCdyjA=="};o=document.createElement("script"),o.charset="utf-8",r.nc&&o.setAttribute("nonce",r.nc),o.setAttribute("data-webpack",t+s),o.src=n,0!==o.src.indexOf(window.location.origin+"/")&&(o.crossOrigin="anonymous"),u[a]&&(o.integrity=u[a])}e[n]=[i];const l=(t,r)=>{o.onerror=o.onload=null,clearTimeout(f);const i=e[n];if(delete e[n],o.parentNode?.removeChild(o),i?.forEach(e=>e(r)),t)return t(r)},f=setTimeout(l.bind(null,void 0,{type:"timeout",target:o}),12e4);o.onerror=l.bind(null,o.onerror),o.onload=l.bind(null,o.onload),c&&document.head.appendChild(o)}})(),r.r=e=>{Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.p="https://js-agent.newrelic.com/",(()=>{const e={38:0,788:0};r.f.j=(t,n)=>{let i=r.o(e,t)?e[t]:void 0;if(0!==i)if(i)n.push(i[2]);else{const s=new Promise((r,n)=>i=e[t]=[r,n]);n.push(i[2]=s);const a=r.p+r.u(t),o=new Error,c=n=>{if(r.o(e,t)&&(i=e[t],0!==i&&(e[t]=void 0),i)){const e=n&&("load"===n.type?"missing":n.type),r=n&&n.target&&n.target.src;o.message="Loading chunk "+t+" failed: ("+e+": "+r+")",o.name="ChunkLoadError",o.type=e,o.request=r,i[1](o)}};r.l(a,c,"chunk-"+t,t)}};const t=(t,n)=>{let[i,s,a]=n;var o,c,d=0;if(i.some(t=>0!==e[t])){for(o in s)r.o(s,o)&&(r.m[o]=s[o]);if(a)a(r)}for(t&&t(n);d<i.length;d++)c=i[d],r.o(e,c)&&e[c]&&e[c][0](),e[c]=0},n=self["webpackChunk:NRBA-1.324.0.PROD"]=self["webpackChunk:NRBA-1.324.0.PROD"]||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})(),(()=>{"use strict";r(8374);var e=r(8362),t=r(860);const n=Object.values(t.K7);var i=r(384),s=r(1741);var a=r(2555),o=r(3333),c=r(9300);const d=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var u=r(2614),l=r(944),f=r(8122);const h="[data-nr-mask]",p=e=>(0,f.a)(e,(()=>{const e={feature_flags:[],experimental:{register:!1,resources:!1,iframe_bridge:!1,iframe_domains:[]},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0,capture_payloads:c.mo.NONE},api:{register:{get enabled(){return e.feature_flags.includes(o.$v.REGISTER)||e.experimental.register},set enabled(t){e.experimental.register=t},duplicate_data_to_container:!1,get allow_iframe_bridge(){return e.feature_flags.includes(o.$v.IFRAME_BRIDGE)||e.experimental.iframe_bridge},set allow_iframe_bridge(t){e.experimental.iframe_bridge=t},get iframe_domains(){return e.experimental.iframe_domains},set iframe_domains(t){Array.isArray(t)?e.experimental.iframe_domains=t:(0,l.R)(1,t)}}},browser_consent_mode:{enabled:!1},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{capture_marks:!1,capture_measures:!1,capture_detail:!0,resources:{get enabled(){return e.feature_flags.includes(o.$v.RESOURCES)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:u.wk,inactiveMs:u.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){d(t)?e.mask_selector="".concat(t,",").concat(h):""===t||null===t?e.mask_selector=h:(0,l.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){d(t)?e.block_selector+=",".concat(t):""!==t&&(0,l.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,l.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0,elementAttributes:["id","className","tagName","type"]},web_sockets:{enabled:!1}}})());var g=r(6154),m=r(9324);let v=0;const y={buildEnv:"PROD",distMethod:"CDN",version:m.x,originTime:g.WN},b={consented:!1},E={activatedFeatures:void 0,appMetadata:{},configured:!1,get consented(){return this.session?.state?.consent||b.consented},set consented(e){b.consented=e},customTransaction:void 0,denyList:[],disabled:!1,drainRegistry:new Map,connector:void 0,harvester:void 0,v2Target:void 0,isolatedBacklog:!1,isRecording:!1,loaderType:void 0,maxBytes:3e4,obfuscator:void 0,onerror:void 0,ptid:void 0,releaseIds:{},session:void 0,timeKeeper:void 0,registeredEntities:[],jsAttributesMetadata:{bytes:0},get harvestCount(){return++v},listeningForIframeMessages:!1};var w=r(9232);var R=r(7836),T=r(3241);const A={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0};var S=r(9908),x=r(9752);function O(e,t={},n,o){let{init:c,info:d,loader_config:u,runtime:l={},exposed:h=!0}=t;if(!d){const e=(0,i.pV)();c=e.init,d=e.info,u=e.loader_config}var m;e.init=p(c||{}),e.loader_config=(m=u||{},(0,f.a)(m,A)),d.jsAttributes??={},g.bv&&(d.jsAttributes.isWorker=!0),e.info=(0,a.D)(d);const v=e.init;e.runtime??=(e=>{const t=(0,f.a)(e,E),r=Object.keys(y).reduce((e,t)=>(e[t]={value:y[t],writable:!1,configurable:!0,enumerable:!0},e),{});return Object.defineProperties(t,r)})(l),e.runtime.v2Target??={type:w.f.BA,instance:e.agentIdentifier,get id(){return e.runtime.appMetadata?.agents?.[0]?.entityGuid},get attributes(){return{"entity.guid":this.id,appId:e.info.applicationID}}},v.proxy.assets&&(e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e})(v.proxy.assets),e.runtime.configured||(Object.defineProperty(e,"beacons",{get:()=>[e.info.beacon,e.info.errorBeacon,e.init.proxy.assets,e.init.proxy.beacon].filter(Boolean)}),Object.defineProperty(e.runtime,"denyList",{get:()=>[...e.init.ajax.deny_list||[],...e.init.ajax.block_internal?e.beacons:[]]}),e.runtime.ptid=e.agentIdentifier,function(e){const t=(0,i.pV)();Object.getOwnPropertyNames(s.W.prototype).forEach(r=>{const n=s.W.prototype[r];if("function"!=typeof n||"constructor"===n)return;let i=t[r];e[r]&&!1!==e.exposed&&"micro-agent"!==e.runtime?.loaderType&&(t[r]=(...t)=>{const n=e[r](...t);return i?i(...t):n})})}(e),e.runtime.loaderType=n,e.ee=R.ee.get(e.agentIdentifier),e.exposed=h,(0,T.W)({drained:!!e.runtime.activatedFeatures,type:"lifecycle",name:"initialize",feature:void 0,data:e.config}),e.init.api.register.allow_iframe_bridge&&g.gm.addEventListener("message",t=>{"string"==typeof t.data?.type&&t.data.type.startsWith(x.Pl)&&(0,S.p)("iframe-message",[t],void 0,"IFRAME",e.ee)}),e.runtime.configured=!0)}var _=r(1863),k=r(4261),N=r(1738);var L=r(1687),M=r(4234),P=r(5289),I=r(5270),j=r(7767),C=r(6389),D=r(7699);const B=new WeakSet,H=new WeakMap;class W extends M.W{constructor(e,t){super(e,t),this.abortHandler=void 0,this.featAggregate=void 0,this.loadedSuccessfully=void 0,this.onAggregateImported=new Promise(e=>{this.loadedSuccessfully=e}),this.deferred=Promise.resolve(),!1===e.init[this.featureName].autoStart?this.deferred=new Promise((t,r)=>{this.ee.on("manual-start-all",(0,C.J)(()=>{(0,L.Ak)(e,this.featureName),t()}))}):(0,L.Ak)(e,t)}importAggregator(e,t,n={}){if(this.featAggregate)return;const i=async()=>{if(await this.deferred,this.#t(e),!(0,a.f)(e.info))return(0,l.R)(43),e.ee.abort(),void this.loadedSuccessfully(!1);try{await async function(e,t,n){if(H.has(e))return H.get(e);const i=(async()=>{if((0,j.V)(e.init))try{const{setupAgentSession:t}=await r.e(478).then(r.bind(r,8766));t(e)}catch(e){(0,l.R)(20,e),t.emit("internal-error",[e]),(0,S.p)(D.qh,[e],void 0,n,t)}if(e.init.api.register.allow_iframe_bridge)try{const{setupIframeMFEMessageListener:t}=await r.e(238).then(r.bind(r,6417));t(e)}catch(e){(0,l.R)(23,e)}const[{Connector:i},{Harvester:s}]=await Promise.all([r.e(478).then(r.bind(r,6589)),r.e(478).then(r.bind(r,5237))]);e.runtime.connector=new i(e),e.runtime.harvester=new s(e);const a=Object.values(e.features).filter(t=>e.runtime.drainRegistry.has(t.featureName));Promise.all(a.map(e=>e.onAggregateImported)).then(()=>e.runtime.harvester.startTimer())})();H.set(e,i),await i}(e,this.ee,this.featureName)}catch(e){return(0,l.R)(79,e),this.ee.abort(),void this.loadedSuccessfully(!1)}try{if(!this.#r(this.featureName,e.runtime.session,e.init))return this.abortHandler?.(),(0,L.Ze)(this.agentRef,this.featureName),void this.loadedSuccessfully(!1);const{Aggregate:r}=await t();this.featAggregate=new r(e,n),e.runtime.harvester.initializedAggregates.push(this.featAggregate),this.loadedSuccessfully(!0)}catch(e){(0,l.R)(34,e),this.abortHandler?.(),(0,L.Ze)(this.agentRef,this.featureName,!0),this.loadedSuccessfully(!1)}};g.RI?(0,P.GG)(()=>i(),!0):i()}#r(e,r,n){if(this.blocked)return!1;switch(e){case t.K7.sessionReplay:return(0,I.SR)(n)&&!!r;case t.K7.sessionTrace:return!!r;default:return!0}}#t(e){if(!B.has(e)&&(B.add(e),!(0,a.f)(e.info))){const t=(0,i.pV)();let r={...t.info?.jsAttributes};try{r={...r,...e.info?.jsAttributes}}catch(e){}O(e,{...t,info:{...t.info,jsAttributes:r},runtime:e.runtime},e.runtime.loaderType)}}}var U=r(6630);class K extends W{static featureName=U.T;constructor(e){var t;super(e,U.T),this.setupInspectionEvents(),t=e,(0,N.Y)(k.Fw,function(e,r){"string"==typeof e&&("/"!==e.charAt(0)&&(e="/"+e),t.runtime.customTransaction=(r||"http://custom.transaction")+e,(0,S.p)("api-"+k.Fw,[(0,_.t)()],void 0,void 0,t.ee))},t),this.importAggregator(e,()=>e.init.feature_flags.includes("rum_v2")?r.e(478).then(r.bind(r,908)):r.e(478).then(r.bind(r,7927)))}setupInspectionEvents(){const e=(e,t)=>{e&&(0,T.W)({timeStamp:e.timeStamp,loaded:"complete"===e.target.readyState,type:"window",name:t,data:e.target.location+""})};(0,P.sB)(t=>{e(t,"DOMContentLoaded")}),(0,P.GG)(t=>{e(t,"load")}),(0,P.Qr)(t=>{e(t,"navigate")}),this.ee.on(u.tS.UPDATE,(e,t)=>{(0,T.W)({type:"lifecycle",name:"session",data:t})})}}class F extends e.d{constructor(e){var t;(super(),g.gm)?(this.features={},(0,i.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(K),O(this,e,e.loaderType||"agent"),t=this,(0,N.Y)(k.cD,function(e,r,n=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof r)||null===r)return(0,N.U)(t,e,r,k.cD,n);(0,l.R)(40,typeof r)}else(0,l.R)(39,typeof e)},t),function(e){(0,N.Y)(k.Dl,function(t,r=!1){if("string"!=typeof t&&null!==t)return void(0,l.R)(41,typeof t);const n=e.info.jsAttributes["enduser.id"];r&&null!=n&&n!==t?(0,S.p)("api-setUserIdAndResetSession",[t],void 0,"session",e.ee):(0,N.U)(e,"enduser.id",t,k.Dl,!0)},e)}(this),function(e){(0,N.Y)(k.nb,function(t){if("string"==typeof t||null===t)return(0,N.U)(e,"application.version",t,k.nb,!1);(0,l.R)(42,typeof t)},e)}(this),function(e){(0,N.Y)("start",function(){e.ee.emit("manual-start-all")},e)}(this),function(e){(0,N.Y)(k.Pv,function(t=!0){if("boolean"==typeof t){if((0,S.p)("api-"+k.Pv,[t],void 0,"session",e.ee),e.runtime.consented=t,t){const t=e.features.page_view_event;t.onAggregateImported.then(e=>{const r=t.featAggregate;e&&!r.sentRum&&r.sendRum?.()})}}else(0,l.R)(65,typeof t)},e)}(this),this.run()):(0,l.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}get api(){return this}run(){try{const e=function(e){const t={};return n.forEach(r=>{t[r]=!!e[r]?.enabled}),t}(this.init),r=[...this.desiredFeatures],i=this.init.feature_flags.includes("rum_v2");r.sort((e,r)=>t.P3[e.featureName]-t.P3[r.featureName]),r.forEach(r=>{if(!e[r.featureName]&&(i||r.featureName!==t.K7.pageViewEvent))return;const n=function(e){switch(e){case t.K7.ajax:return[t.K7.jserrors];case t.K7.sessionTrace:return[t.K7.ajax,t.K7.pageViewEvent];case t.K7.sessionReplay:return[t.K7.sessionTrace];case t.K7.pageViewTiming:return[t.K7.pageViewEvent];default:return[]}}(r.featureName).filter(e=>!(e in this.features));n.length>0&&(0,l.R)(36,{targetFeature:r.featureName,missingDependencies:n}),this.features[r.featureName]=new r(this)})}catch(e){(0,l.R)(22,e);for(const e in this.features)this.features[e].abortHandler?.();const t=(0,i.Zm)();delete t.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return t.ee.get(this.agentIdentifier).abort(),!1}}}var V=r(2843),z=r(782);class G extends W{static featureName=z.T;constructor(e){super(e,z.T),g.RI&&((0,V.u)(()=>(0,S.p)("docHidden",[(0,_.t)()],void 0,z.T,this.ee),!0),(0,V.G)(()=>(0,S.p)("winPagehide",[(0,_.t)()],void 0,z.T,this.ee)),this.importAggregator(e,()=>r.e(478).then(r.bind(r,9917))))}}var q=r(3969);class Y extends W{static featureName=q.TZ;constructor(e){super(e,q.TZ),this.importAggregator(e,()=>r.e(478).then(r.bind(r,6555)))}}var Z=r(6774),J=r(3878),X=r(3304);class Q{constructor(e,t,r,n,i){this.name="UncaughtError",this.message="string"==typeof e?e:(0,X.A)(e),this.sourceURL=t,this.line=r,this.column=n,this.__newrelic=i}}function ee(e){return ne(e)?e:new Q(void 0!==e?.message?e.message:e,e?.filename||e?.sourceURL,e?.lineno||e?.line,e?.colno||e?.col,e?.__newrelic,e?.cause)}function te(e){const t="Unhandled Promise Rejection: ";if(!e?.reason)return;if(ne(e.reason)){try{e.reason.message.startsWith(t)||(e.reason.message=t+e.reason.message)}catch(e){}return ee(e.reason)}const r=ee(e.reason);return(r.message||"").startsWith(t)||(r.message=t+r.message),r}function re(e){if(e.error instanceof SyntaxError&&!/:\d+$/.test(e.error.stack?.trim())){const t=new Q(e.message,e.filename,e.lineno,e.colno,e.error.__newrelic,e.cause);return t.name=SyntaxError.name,t}return ne(e.error)?e.error:ee(e)}function ne(e){return e instanceof Error&&!!e.stack}function ie(e,r,n,i,s=(0,_.t)()){"string"==typeof e&&(e=new Error(e)),(0,S.p)("err",[e,s,!1,r,n.runtime.isRecording,void 0,i],void 0,t.K7.jserrors,n.ee),(0,S.p)("uaErr",[],void 0,t.K7.genericEvents,n.ee)}var se=r(993),ae=r(3785);function oe(e,{customAttributes:t={},level:r=se.p_.INFO}={},n,i,s=(0,_.t)()){(0,ae.R)(n.ee,e,t,r,!1,i,s)}function ce(e,r,n,i,s=(0,_.t)()){(0,S.p)("api-"+k.hG,[s,e,r,i],void 0,t.K7.genericEvents,n.ee)}function de(e,r,n,i,s=(0,_.t)()){const{start:a,end:o,customAttributes:c}=r||{},d={customAttributes:c||{}};if("object"!=typeof d.customAttributes||"string"!=typeof e||0===e.length)return void(0,l.R)(57);const u=(e,t)=>null==e?t:"number"==typeof e?e:e instanceof PerformanceMark?e.startTime:Number.NaN;if(d.start=u(a,0),d.end=u(o,s),Number.isNaN(d.start)||Number.isNaN(d.end))(0,l.R)(57);else{if(d.duration=d.end-d.start,!(d.duration<0))return(0,S.p)("api-"+k.V1,[d,e,i],void 0,t.K7.genericEvents,n.ee),d;(0,l.R)(58)}}function ue(e,r={},n,i,s=(0,_.t)()){(0,S.p)("api-"+k.fF,[s,e,r,i],void 0,t.K7.genericEvents,n.ee)}var le=r(5718);const fe=(e,t)=>e?.nrMfeId===t.id&&(!e?.nrMfeObserved||e?.nrMfeObserved===t.instance),he=e=>{try{return g.gm.CSS.escape(e)}catch(t){return e}},pe=(e,t={})=>{const r=t.id,n=t.instance;if(!e||!r||!n)return!1;try{let r=1===e.nodeType?e:e.parentElement;for(;r?.tagName;){if(fe(r.dataset,t))return r.dataset.nrMfeObserved=n,!0;r=r.parentNode}}catch(e){}return!1},ge=(e,t)=>{const r=g.gm.document?.querySelectorAll('[data-nr-mfe-id="'.concat(he(e.id),'"]')),n=(Array.from(r)||[]).find(t=>fe(t.dataset,e));let i=!!n;i&&(n.dataset.nrMfeObserved??=e.instance);const s=new g.gm.MutationObserver(r=>{r.forEach(r=>{r.addedNodes.forEach(r=>{const n=1===r.nodeType?r:null;!i&&fe(n?.dataset,e)&&(s.disconnect(),s.observe(n,{childList:!0,subtree:!0}),i=!0,n.dataset.nrMfeObserved=e.instance),(e=>{try{return e?.textContent?.trim()||["img","video","canvas","svg"].includes(e?.nodeName?.toLowerCase())}catch(e){return!1}})(r)&&(i||pe(r,e))&&t(r,s)})})});return s.observe(n||g.gm.document,{childList:!0,subtree:!0}),s},me=(e,t,r)=>{try{const n=new g.gm.PerformanceObserver(e=>{e.getEntries().forEach(r)});return n.observe(t),e.push(n),n}catch(e){return null}};function ve(e,t){let r,n,i=!1;const s=e=>null==e?e:e-(t?.scriptStart||t?.registeredAt||0),a={fcp:{get value(){const e=s(r);return e>1e4?void 0:e},set value(e){i||(r=e)}},lcp:{get value(){if(void 0!==a.fcp.value)return s(n)},set value(e){i||(n=e)}},cls:{value:void 0},inp:{value:void 0},disconnect:()=>{}};if(!(e&&g.RI&&g.gm.MutationObserver&&g.gm.PerformanceObserver))return a;const o=[];setTimeout(()=>{r||a.disconnect()},1e4);const c=()=>{if(!i){if(null==r){const e=(0,_.t)();if(s(e)>1e4)return void a.disconnect();r=e}n??=(0,_.t)(),a.cls.value??=0}},d=ge(e,(e,t)=>{c(),t.disconnect()});o.push(d);let u=0,l=null;const f=new Set;try{l=new g.gm.ResizeObserver(e=>{i||e.forEach(e=>{try{const t=e.contentRect.width*e.contentRect.height;t>u&&(u=t,a.lcp.value=(0,_.t)()),l.unobserve(e.target)}catch(e){}})})}catch(e){}const h=ge(e,e=>{if(c(),l)try{const t=1===e.nodeType?e:e.parentElement;t&&!f.has(t)&&(f.add(t),"IMG"===t.tagName?t.complete?l.observe(t):t.addEventListener("load",()=>{l.observe(t)},{once:!0}):"VIDEO"===t.tagName?t.readyState>=2?l.observe(t):t.addEventListener("loadeddata",()=>{l.observe(t)},{once:!0}):l.observe(t))}catch(e){}});l&&o.push(l),o.push(h),me(o,{type:"layout-shift",buffered:!0},t=>{i||t.hadRecentInput||(t.sources||[]).some(r=>!!pe(r.node,e)&&(c(),a.cls.value+=t.value,!0))}),me(o,{type:"event",buffered:!0,durationThreshold:40},t=>{!i&&t.interactionId&&pe(t.target,e)&&(void 0===a.inp.value||t.duration>a.inp.value)&&(c(),a.inp.value=t.duration)});const p=["pointerdown","keydown"],m=()=>{p.forEach(e=>{g.gm.removeEventListener(e,v,{passive:!0})})};a.disconnect=()=>{i=!0,o.forEach(e=>{try{e?.disconnect()}catch(e){}}),m(),["visibilitychange","pagehide"].forEach(e=>{g.gm.removeEventListener(e,a.disconnect,{once:!0,passive:!0})})};const v=t=>{pe(t?.target,e)&&((()=>{try{h?.disconnect(),l?.disconnect()}catch(e){}})(),m())};p.forEach(e=>{g.gm.addEventListener(e,v,{passive:!0})}),["visibilitychange","pagehide"].forEach(e=>{g.gm.addEventListener(e,a.disconnect,{once:!0,passive:!0})});const y=g.gm.document?.querySelectorAll('[data-nr-mfe-id="'.concat(he(e.id),'"]'));return Array.from(y||[]).some(t=>fe(t.dataset,e))&&c(),a}var ye=r(9566),be=r(7560),Ee=r(9119);const we=["entry","scripts","all"],Re=["name","id","type"],Te=new Map([[ce,"addPageAction"],[oe,"log"],[de,"measure"],[ie,"noticeError"],[ue,"recordCustomEvent"]]),Ae={experimental:(0,C.J)(()=>(0,l.R)(54,"newrelic.register")),disabled:(0,C.J)(()=>(0,l.R)(55)),invalidTarget:(0,C.J)(e=>(0,l.R)(48,e)),deregistered:(0,C.J)(()=>(0,l.R)(68)),invalidTimingMethod:(0,C.J)(e=>(0,l.R)(80,e)),duplicateName:(0,C.J)(e=>(0,l.R)(81,e)),duplicateId:(0,C.J)(e=>(0,l.R)(82,e))};function Se(e){(0,N.Y)(k.eY,function(t){return xe(e,t)},e)}function xe(e,r){Ae.experimental(),r||={},r.instance=(0,ye.LA)(8),r.type=w.f.MFE,r.licenseKey||=e.info.licenseKey,r.blocked=!1,("object"!=typeof r.tags||null===r.tags||Array.isArray(r.tags))&&(r.tags={}),r.parent??={get id(){return e.runtime.appMetadata.agents?.[0].entityGuid},type:w.f.BA},r.manifest=(0,be.N)(r.manifest),void 0===r.timingMethod||we.includes(r.timingMethod)||(Ae.invalidTimingMethod(r.timingMethod),r.timingMethod=void 0);const n=(0,le.Qr)(r);r.manifest&&(0,le.xo)(n,r);const i=ve(r,n),s=(0,Ee.L)(""+location),a={};Object.prototype.hasOwnProperty.call(r,"attributes")||Object.defineProperty(r,"attributes",{get:()=>({...a,"source.id":r.id,"source.name":r.name,"source.type":r.type,"parent.type":r.parent?.type||w.f.BA,"parent.id":r.parent?.id})}),Object.entries(r.tags).forEach(([e,t])=>{Re.includes(e)||(a["source.".concat(e)]=t)});let o=()=>{};const c=e.runtime.registeredEntities,d=e=>{r.blocked=!0,o=e};function u(e){return"string"==typeof e&&!!e.trim()&&e.trim().length<501}e.init.api.register.enabled||d(Ae.disabled),u(r.id)&&u(r.name)||d(()=>Ae.invalidTarget(r)),c.forEach(e=>{try{const{name:t,id:n}=e.metadata.target;t===r.name&&n!==r.id&&Ae.duplicateName(r),n===r.id&&t!==r.name&&Ae.duplicateId(r)}catch(e){}});const f={addPageAction:(t,n={})=>m(ce,[t,{...a,...n},e],r),deregister:()=>{p(),d(Ae.deregistered)},log:(t,n={})=>m(oe,[t,{...n,customAttributes:{...a,...n.customAttributes||{}}},e],r),measure:(t,n={})=>m(de,[t,{...n,customAttributes:{...a,...n.customAttributes||{}}},e],r),noticeError:(t,n={})=>m(ie,[t,{...a,...n},e],r),recordCustomEvent:(t,n={})=>m(ue,[t,{...a,...n},e],r),setApplicationVersion:e=>g("application.version",e),setCustomAttribute:(e,t)=>g(e,t),setUserId:e=>g("enduser.id",e),metadata:{get customAttributes(){return a},target:r,timings:n,vitals:i,events:{latestTimestamp:void 0}}},h=()=>(r.blocked&&o(),r.blocked);function p(){if(n.reportedAt)return;n.reportedAt=(0,_.t)(),i.disconnect(),n.fcp=i.fcp,n.lcp=i.lcp,n.cls=i.cls,n.inp=i.inp;const e=n.fetchEnd-n.fetchStart,t=n.scriptEnd-n.scriptStart,r={assetUrl:n.asset,assetType:n.type,registerUrl:s,deregisterUrl:(0,Ee.L)(""+location),pageUrl:void 0,currentUrl:void 0,timeAlive:n.reportedAt-n.registeredAt,timeToBeRequested:n.fetchStart,timeToExecute:t,timeToFetch:e,timeToLoad:e+t,timeToRegister:n.registeredAt,totalWeight:n.totalWeight,...void 0!==n.renderBlocking&&{renderBlocking:n.renderBlocking},...i.fcp.value>=0&&{"vitals.fcp.value":i.fcp.value},...i.lcp.value>=0&&{"vitals.lcp.value":i.lcp.value},...i.cls.value>=0&&{"vitals.cls.value":i.cls.value},...i.inp.value>=0&&{"vitals.inp.value":i.inp.value}};f.recordCustomEvent("MicroFrontEndTiming",r)}h()||(c.push(f),(0,V.G)(p));const g=(e,t)=>{h()||(a[e]=t)},m=(r,n,i)=>{if(h()&&r!==xe)return;const s=f.metadata.events.latestTimestamp??(0,_.t)();f.metadata.events.latestTimestamp=void 0;const a=Te.get(r)||"unknown";(0,S.p)(q.xV,["API/register/".concat(a,"/called")],void 0,t.K7.metrics,e.ee);try{return r(...n,i,s)}catch(e){(0,l.R)(50,e)}};return f}class Oe extends W{static featureName=Z.T;constructor(e){var t;super(e,Z.T),t=e,(0,N.Y)(k.o5,(e,r)=>ie(e,r,t),t),function(e){(0,N.Y)(k.bt,function(t){e.runtime.onerror=t},e)}(e),function(e){let t=0;(0,N.Y)(k.k6,function(e,r){++t>10||(this.runtime.releaseIds[e.slice(-200)]=(""+r).slice(-200))},e)}(e),Se(e);try{this.removeOnAbort=new AbortController}catch(e){}this.ee.on("internal-error",(t,r)=>{this.abortHandler&&(0,S.p)("ierr",[ee(t),(0,_.t)(),!0,{},e.runtime.isRecording,r],void 0,this.featureName,this.ee)}),g.gm.addEventListener("unhandledrejection",t=>{this.abortHandler&&(0,S.p)("err",[te(t),(0,_.t)(),!1,{unhandledPromiseRejection:1},e.runtime.isRecording],void 0,this.featureName,this.ee)},(0,J.jT)(!1,this.removeOnAbort?.signal)),g.gm.addEventListener("error",t=>{this.abortHandler&&(0,S.p)("err",[re(t),(0,_.t)(),!1,{},e.runtime.isRecording],void 0,this.featureName,this.ee)},(0,J.jT)(!1,this.removeOnAbort?.signal)),this.abortHandler=this.#n,this.importAggregator(e,()=>r.e(478).then(r.bind(r,9377)))}#n(){this.removeOnAbort?.abort(),this.abortHandler=void 0}}var _e=r(8990);let ke=1;function Ne(e){const t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===g.gm?0:(0,_e.I)(e,"nr@id",function(){return ke++})}function Le(e){if("string"==typeof e)return e.length;if("object"==typeof e){if("undefined"!=typeof ArrayBuffer&&e instanceof ArrayBuffer&&e.byteLength)return e.byteLength;if("undefined"!=typeof Blob&&e instanceof Blob&&e.size)return e.size;if(!("undefined"!=typeof FormData&&e instanceof FormData))try{return(0,X.A)(e).length}catch(e){return}}}var Me=r(8139),Pe=r(3434),Ie=r(5732);const je={},Ce=["open","send","setRequestHeader"];function De(e,t){var r=e||R.ee;const n=function(e){return(e||R.ee).get("xhr")}(r);if(void 0===g.gm.XMLHttpRequest)return n;if(je[n.debugId]++)return n;je[n.debugId]=1,(0,Me.u)(r,t);var i=(0,Pe.YM)(n,void 0,t),s=g.gm.XMLHttpRequest,a=g.gm.MutationObserver,o=g.gm.Promise,c=g.gm.setInterval,d="readystatechange",u=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],f=[],h=g.gm.XMLHttpRequest=function(e){const r=new s(e),a=n.context(r);a.targets=(0,Ie.$5)(t);try{n.emit("new-xhr",[r],a),r.addEventListener(d,(o=a,function(){var e=this;e.readyState>3&&!o.resolved&&(o.resolved=!0,n.emit("xhr-resolved",[],e)),i.inPlace(e,u,"fn-",E)}),(0,J.jT)(!1))}catch(e){(0,l.R)(15,e);try{n.emit("internal-error",[e])}catch(e){}}var o;return r};function p(e,t){i.inPlace(t,["onreadystatechange"],"fn-",E)}if(function(e,t){for(var r in e)t[r]=e[r]}(s,h),h.prototype=s.prototype,i.inPlace(h.prototype,Ce,"-xhr-",E),n.on("send-xhr-start",function(e,t){p(e,t),function(e){f.push(e),a&&(m?m.then(b):c?c(b):(v=-v,y.data=v))}(t)}),n.on("open-xhr-start",p),a){var m=o&&o.resolve();if(!c&&!o){var v=1,y=document.createTextNode(v);new a(b).observe(y,{characterData:!0})}}else r.on("fn-end",function(e){e[0]&&e[0].type===d||b()});function b(){for(var e=0;e<f.length;e++)p(0,f[e]);f.length&&(f=[])}function E(e,t){return t}return n}var Be="fetch-",He=Be+"body-",We=["arrayBuffer","blob","json","text","formData"],Ue=g.gm.Request,Ke=g.gm.Response,Fe="prototype";const Ve={};function ze(e,t){const r=function(e){return(e||R.ee).get("fetch")}(e);if(!(Ue&&Ke&&g.gm.fetch))return r;if(Ve[r.debugId]++)return r;function n(e,n,i){var s=e[n];"function"==typeof s&&(e[n]=function(){var e=[...arguments];const n={},a=(0,Ie.$5)(t);var o;r.emit(i+"before-start",[e],n),n[R.P]&&n[R.P].dt&&(o=n[R.P].dt);var c=s.apply(this,e);return r.emit(i+"start",[e,o],c),c.then(function(e){return r.emit(i+"end",[null,e,a],c),e},function(e){throw r.emit(i+"end",[e,void 0,a],c),e})})}return Ve[r.debugId]=1,We.forEach(e=>{n(Ue[Fe],e,He),n(Ke[Fe],e,He)}),n(g.gm,"fetch",Be),r.on(Be+"end",function(e,n,i){var s=this;if(s.targets=i||[t.runtime.v2Target],n){var a=n.headers.get("content-length");null!==a&&(s.rxSize=a),r.emit(Be+"done",[null,n],s)}else r.emit(Be+"done",[e],s)}),r}var Ge=r(7485);class qe{constructor(e){this.agentRef=e}generateTracePayload(e){const t=this.agentRef.loader_config;if(!this.shouldGenerateTrace(e)||!t)return null;var r=(t.accountID||"").toString()||null,n=(t.agentID||"").toString()||null,i=(t.trustKey||"").toString()||null;if(!r||!n)return null;var s,a=(0,ye.ZF)(),o=(0,ye.el)(),c=Date.now();this.agentRef.runtime?.timeKeeper?.ready&&(s=Math.floor(this.agentRef.runtime.timeKeeper.correctAbsoluteTimestamp(c)));var d={spanId:a,traceId:o,timestamp:c,timestampCorrected:s};return(e.sameOrigin||this.isAllowedOrigin(e)&&this.useTraceContextHeadersForCors())&&(d.traceContextParentHeader=this.generateTraceContextParentHeader(a,o),d.traceContextStateHeader=this.generateTraceContextStateHeader(a,s??c,r,n,i)),(e.sameOrigin&&!this.excludeNewrelicHeader()||!e.sameOrigin&&this.isAllowedOrigin(e)&&this.useNewrelicHeaderForCors())&&(d.newrelicHeader=this.generateTraceHeader(a,o,s??c,r,n,i)),d}generateTraceContextParentHeader(e,t){return"00-"+t+"-"+e+"-01"}generateTraceContextStateHeader(e,t,r,n,i){return i+"@nr=0-1-"+r+"-"+n+"-"+e+"----"+t}generateTraceHeader(e,t,r,n,i,s){if(!("function"==typeof g.gm?.btoa))return null;var a={v:[0,1],d:{ty:"Browser",ac:n,ap:i,id:e,tr:t,ti:r}};return s&&n!==s&&(a.d.tk=s),btoa((0,X.A)(a))}shouldGenerateTrace(e){return this.agentRef.init?.distributed_tracing?.enabled&&this.isAllowedOrigin(e)}isAllowedOrigin(e){var t=!1;const r=this.agentRef.init?.distributed_tracing;if(e.sameOrigin)t=!0;else if(r?.allowed_origins instanceof Array)for(var n=0;n<r.allowed_origins.length;n++){var i=(0,Ge.D)(r.allowed_origins[n]);if(e.hostname===i.hostname&&e.protocol===i.protocol&&e.port===i.port){t=!0;break}}return t}excludeNewrelicHeader(){var e=this.agentRef.init?.distributed_tracing;return!!e&&!!e.exclude_newrelic_header}useNewrelicHeaderForCors(){var e=this.agentRef.init?.distributed_tracing;return!!e&&!1!==e.cors_use_newrelic_header}useTraceContextHeadersForCors(){var e=this.agentRef.init?.distributed_tracing;return!!e&&!!e.cors_use_tracecontext_headers}}var Ye=r(7295);function Ze(e){return"string"==typeof e?e:e instanceof(0,i.dV)().o.REQ?e.url:g.gm?.URL&&e instanceof URL?e.href:void 0}function $e(e,t){var r=(0,Ge.D)(t),n=e.params||e;n.hostname=r.hostname,n.port=r.port,n.protocol=r.protocol,n.host=r.hostname+":"+r.port,n.pathname=r.pathname,e.parsedOrigin=r,e.sameOrigin=r.sameOrigin}var Je=["load","error","abort","timeout"],Xe=Je.length,Qe=(0,i.dV)().o.REQ,et=(0,i.dV)().o.XHR;const tt="X-NewRelic-App-Data",rt="internal-error";class nt extends W{static featureName=c.TZ;constructor(e){super(e,c.TZ),this.dt=new qe(e),this.handler=(e,t,r,n)=>(0,S.p)(e,t,r,n,this.ee);try{const e={xmlhttprequest:"xhr",fetch:"fetch",beacon:"beacon"};g.gm?.performance?.getEntriesByType("resource").forEach(r=>{if(r.initiatorType in e&&0!==r.responseStatus){const n={status:r.responseStatus},i={rxSize:r.transferSize,duration:Math.floor(r.duration),cbTime:0};$e(n,r.name),this.handler("xhr",[n,i,r.startTime,r.responseEnd,e[r.initiatorType]],void 0,t.K7.ajax)}})}catch(e){}ze(this.ee,e),De(this.ee,e),function(e,r,n,i){const s=[c.mo.ALL,c.mo.FAILURES].includes(e.init.ajax?.capture_payloads);function a(e){var t=this;t.totalCbs=0,t.called=0,t.cbTime=0,t.end=A,t.ended=!1,t.xhrGuids={},t.lastSize=null,t.loadCaptureCalled=!1,t.params=this.params||{},t.metrics=this.metrics||{},t.latestLongtaskEnd=0,e.addEventListener("load",function(r){O(t,e)},(0,J.jT)(!1)),g.lR||e.addEventListener("progress",function(e){t.lastSize=e.loaded},(0,J.jT)(!1))}function o(e){this.params={method:e[0]},$e(this,e[1]),this.metrics={}}function d(t,r){e.loader_config.xpid&&this.sameOrigin&&r.setRequestHeader("X-NewRelic-ID",e.loader_config.xpid);var n=i.generateTracePayload(this.parsedOrigin);if(n){var s=!1;n.newrelicHeader&&(r.setRequestHeader("newrelic",n.newrelicHeader),s=!0),n.traceContextParentHeader&&(r.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&r.setRequestHeader("tracestate",n.traceContextStateHeader),s=!0),s&&(this.dt=n)}}function u(e,t){s&&e.length>=2&&(this.requestHeaders??={},this.requestHeaders[e[0].toLowerCase()]=e[1])}function l(e,t){var n=this.metrics,i=e[0],s=this;if(n&&i){var a=Le(i);a&&(n.txSize=a)}this.startTime=(0,_.t)(),this.requestBody=i,this.listener=function(e){try{"abort"!==e.type||s.loadCaptureCalled||(s.params.aborted=!0),("load"!==e.type||s.called===s.totalCbs&&(s.onloadCalled||"function"!=typeof t.onload)&&"function"==typeof s.end)&&s.end(t)}catch(e){try{r.emit(rt,[e])}catch(e){}}};for(var o=0;o<Xe;o++)t.addEventListener(Je[o],this.listener,(0,J.jT)(!1))}function f(e,t,r){this.cbTime+=e,t?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof r.onload||"function"!=typeof this.end||this.end(r)}function h(e,t){var r=""+Ne(e)+!!t;this.xhrGuids&&!this.xhrGuids[r]&&(this.xhrGuids[r]=!0,this.totalCbs+=1)}function p(e,t){var r=""+Ne(e)+!!t;this.xhrGuids&&this.xhrGuids[r]&&(delete this.xhrGuids[r],this.totalCbs-=1)}function m(){this.endTime=(0,_.t)()}function v(e,t){t instanceof et&&"load"===e[0]&&r.emit("xhr-load-added",[e[1],e[2]],t)}function y(e,t){t instanceof et&&"load"===e[0]&&r.emit("xhr-load-removed",[e[1],e[2]],t)}function b(e,t,r){t instanceof et&&("onload"===r&&(this.onload=!0),("load"===(e[0]&&e[0].type)||this.onload)&&(this.xhrCbStart=(0,_.t)()))}function E(e,t){this.xhrCbStart&&r.emit("xhr-cb-time",[(0,_.t)()-this.xhrCbStart,this.onload,t],t)}function w(e){var t,r=e[1]||{};if("string"==typeof e[0]?0===(t=e[0]).length&&g.RI&&(t=""+g.gm.location.href):e[0]&&e[0].url?t=e[0].url:g.gm?.URL&&e[0]&&e[0]instanceof URL?t=e[0].href:"function"==typeof e[0].toString&&(t=e[0].toString()),"string"==typeof t&&0!==t.length){t&&(this.parsedOrigin=(0,Ge.D)(t),this.sameOrigin=this.parsedOrigin.sameOrigin);var n=i.generateTracePayload(this.parsedOrigin);if(n&&(n.newrelicHeader||n.traceContextParentHeader))if(e[0]&&e[0].headers)o(e[0].headers,n)&&(this.dt=n);else{var s={};for(var a in r)s[a]=r[a];s.headers=new Headers(r.headers||{}),o(s.headers,n)&&(this.dt=n),e.length>1?e[1]=s:e.push(s)}}function o(e,t){var r=!1;return t.newrelicHeader&&(e.set("newrelic",t.newrelicHeader),r=!0),t.traceContextParentHeader&&(e.set("traceparent",t.traceContextParentHeader),t.traceContextStateHeader&&e.set("tracestate",t.traceContextStateHeader),r=!0),r}}function R(e,t){this.params={},this.metrics={},this.startTime=(0,_.t)(),this.dt=t;let[r,n={}]=e;$e(this,Ze(r));const i=(""+(r&&r instanceof Qe&&r.method||n.method||"GET")).toUpperCase();this.params.method=i,this.txSize=Le(n.body||r?.body)||0;try{var a=n.headers||r?.headers;if(s&&a)if(this.requestHeaders??={},a instanceof Headers)a.forEach(function(e,t){this.requestHeaders[t.toLowerCase()]=e}.bind(this));else if("object"==typeof a)for(var o in a)this.requestHeaders[o.toLowerCase()]=a[o]}catch(e){}this.requestBody=n.body||r?.body}function T(e,t){if(this.endTime=(0,_.t)(),this.params||(this.params={}),(0,Ye.iW)(this.params))return;this.params.status=t?t.status:0;const n=()=>{const e=+this.rxSize,t=null==this.rxSize||isNaN(e)?void 0:e,r={txSize:this.txSize,rxSize:t,duration:this.endTime-this.startTime},n=[this.params,r,this.startTime,this.endTime,"fetch"];this.targets.forEach(e=>x(n,this,e))};t&&s?t.clone().text().then(e=>{this.responseBody=e,this.rxSize&&"0"!==this.rxSize&&0!==this.rxSize||void 0===e||0===this.params.status||(this.rxSize=Le(e)),t?.headers&&(this.responseHeaders={},t.headers.forEach(function(e,t){this.responseHeaders[t.toLowerCase()]=e}.bind(this)))}).catch(e=>{r.emit(rt,[e])}).finally(()=>{n()}):n()}function A(e){const t=this.params,n=this.metrics;if(this.ended)return;this.ended=!0;for(let t=0;t<Xe;t++)e.removeEventListener(Je[t],this.listener,!1);if(t.aborted)return;if((0,Ye.iW)(t))return;if(n.duration=this.endTime-this.startTime,this.loadCaptureCalled||4!==e.readyState?null==t.status&&(t.status=0):O(this,e),n.cbTime=this.cbTime,s){try{this.responseBody=e.responseText}catch(t){this.responseBody=e.response}if((!n.rxSize||0===n.rxSize)&&void 0!==this.responseBody&&0!==t.status){const e=Le(this.responseBody);void 0!==e&&(n.rxSize=e)}try{this.responseHeaders=function(e){const t={};return e?(e.split("\r\n").forEach(function(e){const r=e.indexOf(": ");if(r>0){const n=e.substring(0,r),i=e.substring(r+2);t[n.toLowerCase()]=i}}),t):t}(e.getAllResponseHeaders())}catch(e){r.emit(rt,[e])}}const i=[t,n,this.startTime,this.endTime,"xhr"];this.targets.forEach(e=>x(i,this,e))}function x(e,r,i){n("xhr",[...e,i],r,t.K7.ajax)}function O(e,n){e.params.status=n.status;var i=function(e,t){var r=e.responseType;return"json"===r&&null!==t?t:"arraybuffer"===r||"blob"===r||"json"===r?Le(e.response):"text"===r||""===r||void 0===r?Le(e.responseText):void 0}(n,e.lastSize);if(void 0!==i&&0!==n.status&&(e.metrics.rxSize=i),e.sameOrigin&&n.getAllResponseHeaders().indexOf(tt)>=0){var s=n.getResponseHeader(tt);s&&((0,S.p)("sm",["Ajax/CrossApplicationTracing/Header/Seen"],void 0,t.K7.metrics,r),e.params.cat=s.split(", ").pop())}e.loadCaptureCalled=!0}r.on("new-xhr",a),r.on("open-xhr-start",o),r.on("open-xhr-end",d),r.on("send-xhr-start",l),r.on("setRequestHeader-xhr-start",u),r.on("xhr-cb-time",f),r.on("xhr-load-added",h),r.on("xhr-load-removed",p),r.on("xhr-resolved",m),r.on("addEventListener-end",v),r.on("removeEventListener-end",y),r.on("fn-end",E),r.on("fetch-before-start",w),r.on("fetch-start",R),r.on("fn-start",b),r.on("fetch-done",T)}(e,this.ee,this.handler,this.dt),this.importAggregator(e,()=>r.e(478).then(r.bind(r,3845)))}}const it={},st=["pushState","replaceState"];function at(e,t){const r=function(e){return(e||R.ee).get("history")}(e);return!g.RI||it[r.debugId]++||(it[r.debugId]=1,(0,Pe.YM)(r,void 0,t).inPlace(window.history,st,"-")),r}var ot=r(3738);function ct(e){(0,N.Y)(k.BL,function(r=Date.now()){const n=r-g.WN;n<0&&(0,l.R)(62,r),(0,S.p)(q.XG,[k.BL,{time:n}],void 0,t.K7.metrics,e.ee),e.addToTrace({name:k.BL,start:r,origin:"nr"}),(0,S.p)("api-"+k.hG,[n,k.BL],void 0,t.K7.genericEvents,e.ee)},e)}const{He:dt,bD:ut,d3:lt,Kp:ft,TZ:ht,Lc:pt,uP:gt,Rz:mt}=ot;class vt extends W{static featureName=ht;constructor(e){var n;super(e,ht),n=e,(0,N.Y)(k.U2,function(e){if(!(e&&"object"==typeof e&&e.name&&e.start))return;const r={n:e.name,s:e.start-g.WN,e:(e.end||e.start)-g.WN,o:e.origin||"",t:"api"};r.s<0||r.e<0||r.e<r.s?(0,l.R)(61,{start:r.s,end:r.e}):(0,S.p)("bstApi",[r],void 0,t.K7.sessionTrace,n.ee)},n),ct(e);if(!(0,j.V)(e.init))return void this.deregisterDrain();const i=this.ee;let s;at(i,e),this.eventsEE=(0,Me.u)(i,e),this.eventsEE.on(gt,function(e,t){this.bstStart=(0,_.t)()}),this.eventsEE.on(pt,function(e,r){(0,S.p)("bst",[e[0],r,this.bstStart,(0,_.t)()],void 0,t.K7.sessionTrace,i)}),i.on(mt+lt,function(e){this.time=(0,_.t)(),this.startPath=location.pathname+location.hash}),i.on(mt+ft,function(e){(0,S.p)("bstHist",[location.pathname+location.hash,this.startPath,this.time],void 0,t.K7.sessionTrace,i)});try{s=new PerformanceObserver(e=>{const r=e.getEntries();(0,S.p)(dt,[r],void 0,t.K7.sessionTrace,i)}),s.observe({type:ut,buffered:!0})}catch(e){}this.importAggregator(e,()=>r.e(478).then(r.bind(r,6974)),{resourceObserver:s})}}var yt=r(733),bt=r(6344);class Et extends W{static featureName=bt.TZ;#i;recorder;constructor(e){var n;let i;super(e,bt.TZ),n=e,(0,N.Y)(k.CH,function(){(0,S.p)(k.CH,[],void 0,t.K7.sessionReplay,n.ee)},n),function(e){(0,N.Y)(k.Tb,function(){(0,S.p)(k.Tb,[],void 0,t.K7.sessionReplay,e.ee)},e)}(e);const s="".concat(u.Wt).concat((0,yt.Y)(e.info.licenseKey,e.info.applicationID));try{i=JSON.parse(localStorage.getItem(s))}catch(e){}(0,I.SR)(e.init)&&this.ee.on(k.CH,()=>this.#s()),this.#a(i)&&this.importRecorder().then(e=>{e.startRecording(bt.Qb.PRELOAD,i?.sessionReplayMode)}),this.abortHandler=this.#n,this.importAggregator(this.agentRef,()=>r.e(478).then(r.bind(r,6167)),this),this.ee.on("err",e=>{this.blocked||this.agentRef.runtime.isRecording&&(this.errorNoticed=!0,(0,S.p)(bt.Vh,[e],void 0,this.featureName,this.ee))})}#a(e){return e&&(e.sessionReplayMode===u.g.FULL||e.sessionReplayMode===u.g.ERROR)||(0,I.Aw)(this.agentRef.init)}importRecorder(){return this.recorder?Promise.resolve(this.recorder):(this.#i??=Promise.all([r.e(478),r.e(249)]).then(r.bind(r,4866)).then(({Recorder:e})=>(this.recorder=new e(this),this.recorder)).catch(e=>{throw this.ee.emit("internal-error",[e]),this.blocked=!0,e}),this.#i)}#s(){this.blocked||(this.featAggregate?this.featAggregate.mode!==u.g.FULL&&this.featAggregate.initializeRecording(u.g.FULL,!0,bt.Qb.API):this.importRecorder().then(()=>{this.recorder.startRecording(bt.Qb.API,u.g.FULL)}))}#n(){this.recorder?.stopRecording()}}var wt=r(3962);class Rt extends W{static featureName=wt.TZ;constructor(e){if(super(e,wt.TZ),function(e){const r=e.ee.get("tracer");function n(){}(0,N.Y)(k.dT,function(e){return(new n).get("object"==typeof e?e:{})},e);const i=n.prototype={createTracer:function(n,i){var s={},a=this,o="function"==typeof i;return(0,S.p)(q.xV,["API/createTracer/called"],void 0,t.K7.metrics,e.ee),function(){if(r.emit((o?"":"no-")+"fn-start",[(0,_.t)(),a,o],s),o)try{return i.apply(this,arguments)}catch(e){const t="string"==typeof e?new Error(e):e;throw r.emit("fn-err",[arguments,this,t],s),t}finally{r.emit("fn-end",[(0,_.t)()],s)}}}};["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach(r=>{N.Y.apply(this,[r,function(){return(0,S.p)(k.hw+r,[performance.now(),...arguments],this,t.K7.softNav,e.ee),this},e,i])}),(0,N.Y)(k.PA,function(){(0,S.p)(k.hw+"routeName",[performance.now(),...arguments],void 0,t.K7.softNav,e.ee)},e)}(e),!g.RI||!(0,i.dV)().o.MO)return;const n=at(this.ee,e);try{this.removeOnAbort=new AbortController}catch(e){}wt.tC.forEach(e=>{(0,J.sp)(e,e=>{c(e)},!0,this.removeOnAbort?.signal)});const s=()=>(0,S.p)("newURL",[(0,_.t)(),""+window.location],void 0,this.featureName,this.ee);n.on("pushState-end",s),n.on("replaceState-end",s),(0,J.sp)(wt.OV,e=>{c(e),(0,S.p)("newURL",[e.timeStamp,""+window.location],void 0,this.featureName,this.ee)},!0,this.removeOnAbort?.signal);let a=!1;const o=new((0,i.dV)().o.MO)((e,t)=>{a||(a=!0,requestAnimationFrame(()=>{(0,S.p)("newDom",[(0,_.t)()],void 0,this.featureName,this.ee),a=!1}))}),c=(0,C.s)(e=>{"loading"!==document.readyState&&((0,S.p)("newUIEvent",[e],void 0,this.featureName,this.ee),o.observe(document.body,{attributes:!0,childList:!0,subtree:!0,characterData:!0}))},100,{leading:!0});this.abortHandler=function(){this.removeOnAbort?.abort(),o.disconnect(),this.abortHandler=void 0},this.importAggregator(e,()=>r.e(478).then(r.bind(r,4393)),{domObserver:o})}}var Tt=r(981);const At={},St=new Set;function xt(e){return"string"==typeof e?{type:"string",size:(new TextEncoder).encode(e).length}:e instanceof ArrayBuffer?{type:"ArrayBuffer",size:e.byteLength}:e instanceof Blob?{type:"Blob",size:e.size}:e instanceof DataView?{type:"DataView",size:e.byteLength}:ArrayBuffer.isView(e)?{type:"TypedArray",size:e.byteLength}:{type:"unknown",size:0}}class Ot{constructor(e,t){this.timestamp=(0,_.t)(),this.currentUrl=(0,Ee.L)(window.location.href),this.socketId=(0,ye.LA)(8),this.requestedUrl=(0,Ee.L)(e),this.requestedProtocols=Array.isArray(t)?t.join(","):t||"",this.openedAt=void 0,this.protocol=void 0,this.extensions=void 0,this.binaryType=void 0,this.messageOrigin=void 0,this.messageCount=0,this.messageBytes=0,this.messageBytesMin=0,this.messageBytesMax=0,this.messageTypes=void 0,this.sendCount=0,this.sendBytes=0,this.sendBytesMin=0,this.sendBytesMax=0,this.sendTypes=void 0,this.closedAt=void 0,this.closeCode=void 0,this.closeReason="unknown",this.closeWasClean=void 0,this.connectedDuration=0,this.hasErrors=void 0}}class _t extends W{static featureName=o.TZ;constructor(e){super(e,o.TZ);const n=e.init.feature_flags.includes("websockets")||e.init.web_sockets?.enabled,s=!e.init.feature_flags.includes("no_spv"),a=[e.init.page_action.enabled,e.init.performance.capture_marks,e.init.performance.capture_measures,e.init.performance.resources.enabled,e.init.user_actions.enabled,n,s];var c;let d;if(c=e,(0,N.Y)(k.hG,(e,t)=>ce(e,t,c),c),function(e){(0,N.Y)(k.fF,(t,r)=>ue(t,r,e),e)}(e),ct(e),Se(e),function(e){(0,N.Y)(k.V1,(t,r)=>de(t,r,e),e)}(e),this.removeOnAbort=new AbortController,this.abortHandler=()=>{this.removeOnAbort.abort(),this.abortHandler=void 0},n){const u=function(e,t){if(!(0,i.dV)().o.WS)return e;const r=e.get("websockets");if(At[r.debugId]++)return r;At[r.debugId]=1,(0,V.G)(()=>{const e=(0,_.t)();St.forEach(t=>{t.nrData.closedAt=e,t.nrData.closeCode=1001,t.nrData.closeReason="Page navigating away",t.nrData.closeWasClean=!1,t.nrData.openedAt&&(t.nrData.connectedDuration=e-t.nrData.openedAt),r.emit("ws",[t.nrData,t.targets],t)})});class n extends WebSocket{static name=Tt.R.WS;static toString(){return"function WebSocket() { [native code] }"}toString(){return"[object WebSocket]"}get[Symbol.toStringTag](){return n.name}#o(e){(e.__newrelic??={}).socketId=this.nrData.socketId,this.nrData.hasErrors??=!0}constructor(...e){super(...e),this.nrData=new Ot(e[0],e[1]),this.targets=(0,Ie.$5)(t),this.addEventListener("open",()=>{this.nrData.openedAt=(0,_.t)(),["protocol","extensions","binaryType"].forEach(e=>{this.nrData[e]=this[e]}),St.add(this)}),this.addEventListener("message",e=>{const{type:t,size:r}=xt(e.data);this.nrData.messageOrigin??=(0,Ee.L)(e.origin),this.nrData.messageCount++,this.nrData.messageBytes+=r,this.nrData.messageBytesMin=Math.min(this.nrData.messageBytesMin||1/0,r),this.nrData.messageBytesMax=Math.max(this.nrData.messageBytesMax,r),(this.nrData.messageTypes??"").includes(t)||(this.nrData.messageTypes=this.nrData.messageTypes?"".concat(this.nrData.messageTypes,",").concat(t):t)}),this.addEventListener("close",e=>{this.nrData.closedAt=(0,_.t)(),this.nrData.closeCode=e.code,e.reason&&(this.nrData.closeReason=e.reason),this.nrData.closeWasClean=e.wasClean,this.nrData.connectedDuration=this.nrData.closedAt-this.nrData.openedAt,St.delete(this),r.emit("ws",[this.nrData,this.targets],this)})}addEventListener(e,t,...r){const n=this,i="function"==typeof t?function(...e){try{return t.apply(this,e)}catch(e){throw n.#o(e),e}}:t?.handleEvent?{handleEvent:function(...e){try{return t.handleEvent.apply(t,e)}catch(e){throw n.#o(e),e}}}:t;return super.addEventListener(e,i,...r)}send(e){if(this.readyState===WebSocket.OPEN){const{type:t,size:r}=xt(e);this.nrData.sendCount++,this.nrData.sendBytes+=r,this.nrData.sendBytesMin=Math.min(this.nrData.sendBytesMin||1/0,r),this.nrData.sendBytesMax=Math.max(this.nrData.sendBytesMax,r),(this.nrData.sendTypes??"").includes(t)||(this.nrData.sendTypes=this.nrData.sendTypes?"".concat(this.nrData.sendTypes,",").concat(t):t)}try{return super.send(e)}catch(e){throw this.#o(e),e}}close(...e){try{super.close(...e)}catch(e){throw this.#o(e),e}}}return g.gm.WebSocket=n,r}(this.ee,e);u.on("ws",(e,t)=>{(0,S.p)("ws-complete",[e,t],void 0,this.featureName,this.ee)})}if(s){if("function"==typeof g.gm.ReportingObserver){const l=new g.gm.ReportingObserver(e=>{e.forEach(e=>{(0,S.p)("spv",[kt(e),(0,_.t)()],void 0,t.K7.genericEvents,this.ee)}),l.disconnect()},{types:["csp-violation"],buffered:!0});l.observe()}g.gm.addEventListener("securitypolicyviolation",e=>{(0,S.p)("spv",[kt(e),e.timeStamp],void 0,t.K7.genericEvents,this.ee)},(0,J.jT)(!1,this.removeOnAbort.signal))}if(g.RI){if(ze(this.ee,e),De(this.ee,e),d=at(this.ee,e),e.init.user_actions.enabled){function f(t){const r=(0,Ge.D)(t);return e.beacons.includes(r.hostname+":"+r.port)}function h(){d.emit("navChange")}o.Zp.forEach(e=>(0,J.sp)(e,e=>(0,S.p)("ua",[e],void 0,this.featureName,this.ee),!0)),o.qN.forEach(e=>{const t=(0,C.s)(e=>{(0,S.p)("ua",[e],void 0,this.featureName,this.ee)},500,{leading:!0});(0,J.sp)(e,t)}),g.gm.addEventListener("error",()=>{(0,S.p)("uaErr",[],void 0,t.K7.genericEvents,this.ee)},(0,J.jT)(!1,this.removeOnAbort.signal)),this.ee.on("open-xhr-start",(e,r)=>{f(e[1])||r.addEventListener("readystatechange",()=>{2===r.readyState&&(0,S.p)("uaXhr",[],void 0,t.K7.genericEvents,this.ee)},(0,J.jT)(void 0,this.removeOnAbort.signal))}),this.ee.on("fetch-start",e=>{e.length>=1&&!f(Ze(e[0]))&&(0,S.p)("uaXhr",[],void 0,t.K7.genericEvents,this.ee)}),d.on("pushState-end",h),d.on("replaceState-end",h),window.addEventListener("hashchange",h,(0,J.jT)(!0,this.removeOnAbort.signal)),window.addEventListener("popstate",h,(0,J.jT)(!0,this.removeOnAbort.signal))}if(e.init.performance.resources.enabled&&g.gm.PerformanceObserver?.supportedEntryTypes.includes("resource")){new PerformanceObserver(e=>{e.getEntries().forEach(e=>{(0,S.p)("browserPerformance.resource",[e],void 0,this.featureName,this.ee)})}).observe({type:"resource",buffered:!0})}}a.some(e=>e)?this.importAggregator(e,()=>r.e(478).then(r.bind(r,8019))):this.deregisterDrain()}}function kt(e){const t=e.body??e;return{blockedUrl:t.blockedURL??e.blockedURI,documentUrl:t.documentURL??e.documentURI,effectiveDirective:t.effectiveDirective,originalPolicy:t.originalPolicy,sourceFile:t.sourceFile,statusCode:t.statusCode,lineNumber:t.lineNumber,columnNumber:t.columnNumber,disposition:"reporting"===t.disposition?"report":t.disposition,sample:t.sample,referrer:t.referrer}}var Nt=r(2646);const Lt=new Map;function Mt(e,t,r,n,i=!0,s){if("object"!=typeof t||!t||"string"!=typeof r||!r||"function"!=typeof t[r])return(0,l.R)(29);const a=function(e){return(e||R.ee).get("logger")}(e),o=(0,Pe.YM)(a,void 0,s),c=new Nt.y(R.P);c.level=n.level,c.customAttributes=n.customAttributes,c.autoCaptured=i;const d=t[r]?.[Pe.Jt]||t[r];return Lt.set(d,c),o.inPlace(t,[r],"wrap-logger-",()=>Lt.get(d),void 0,!0),a}var Pt=r(1910);class It extends W{static featureName=se.TZ;constructor(e){var t;super(e,se.TZ),t=e,(0,N.Y)("log",(e,r)=>oe(e,r,t),t),function(e){(0,N.Y)(k.Wb,(t,r,{customAttributes:n={},level:i=se.p_.INFO}={})=>{Mt(e.ee,t,r,{customAttributes:n,level:i},!1,e)},e)}(e),Se(e);const n=this.ee;["log","error","warn","info","debug","trace"].forEach(t=>{(0,Pt.i)(g.gm.console[t]),Mt(n,g.gm.console,t,{level:"log"===t?"info":t},void 0,e)}),this.ee.on("wrap-logger-end",function([t],r,i,s=[e.runtime.v2Target]){const{level:a,customAttributes:o,autoCaptured:c}=this;s.forEach(e=>{(0,ae.R)(n,t,o,a,c,e)})}),this.importAggregator(e,()=>r.e(478).then(r.bind(r,5288)))}}new F({features:[nt,K,G,vt,Et,Y,Oe,_t,It,Rt],loaderType:"spa"})})()})();</script>
+<title>EXTREME CHEESE BURGER JR - Ala Carte - Burger King® Vietnam | Thực đơn</title>
+<meta name="description" content="Burger Bò Tắm Phô Mai (cỡ vừa)" />
+<meta name="keywords" content="EXTREME CHEESE BURGER JR" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<link rel="icon" href="https://vn.burgerking.com/media/favicon/default/BK_LOGO_ICON_1.png" type="image/x-icon" />
+<link rel="shortcut icon" href="https://vn.burgerking.com/media/favicon/default/BK_LOGO_ICON_1.png" type="image/x-icon" />
+
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = 'https://vn.burgerking.com/js/blank.html';
+    var BLANK_IMG = 'https://vn.burgerking.com/js/spacer.gif';
+//]]>
+</script>
+<![endif]-->
+  <meta property="og:title" content="EXTREME CHEESE BURGER JR" />
+ <meta property="og:type" content="product" />
+ <meta property="og:image" content="https://vn.burgerking.com/media/seo-image/imgpsh_fullsize_anim.png" />
+ <meta property="og:url" content="https://vn.burgerking.com/menu/ala-carte/extreme-cheesy-whopper-jr.html" />
+ <meta property="og:description" content="Burger Bò Tắm Phô Mai (cỡ vừa)" />
+ <meta property="og:site_name" content="VN" />
+<meta name="facebook-domain-verification" content="5mx2k19oro9s2qifonkkithlvj60wp" />
+
+<!-- 1. GOOGLE CONSENT MODE V2 DEFAULT -->
+<script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    var savedConsent = null;
+    try {
+        var rawConsent = localStorage.getItem('cookie_consent_status');
+        if (rawConsent) {
+            var parsed = JSON.parse(rawConsent);
+            // ponytail: timestamp check assuming client clock is reasonably close to reality; drifts of seconds don't affect 30-180d expiry
+            if (parsed && typeof parsed === 'object') {
+                if (!parsed.expiry || Date.now() < parsed.expiry) {
+                    savedConsent = parsed.status;
+                } else {
+                    localStorage.removeItem('cookie_consent_status');
+                }
+            }
+        }
+    } catch(e) {
+        // Fallback backward-compatibility if stored as plain string 'granted' / 'denied'
+        if (rawConsent === 'granted' || rawConsent === 'denied') {
+            savedConsent = rawConsent;
+        }
+    }
+
+    if (savedConsent === 'granted') {
+        gtag('consent', 'default', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted',
+            'personalization_storage': 'granted',
+            'functionality_storage': 'granted',
+            'security_storage': 'granted'
+        });
+    } else {
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied',
+            'personalization_storage': 'denied',
+            'functionality_storage': 'granted',
+            'security_storage': 'granted',
+            'wait_for_update': 500
+        });
+    }
+</script>
+
+<!-- 2. GOOGLE TAG MANAGER -->
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WK356VZ');</script>
+<!-- End Google Tag Manager -->
+
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/js/calendar/calendar-win2k-1.css" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/bk2/default/css/jquery-ui.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/bk2/default/css/about_us.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/bk2/default/css/font-awesome.min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/bk2/default/css/custom_storepickup.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/bk2/default/css/home.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/bk2/default/css/after-launch.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/bk2/default/css/flat-menu-mobile.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/bk2/default/css/menu-custom.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/bk2/default/lotusbreath/onestepcheckout/css/loading.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/base/default/css/amasty/ampromo/styles.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/base/default/ajaxcart/growler.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/base/default/ajaxcart/modalbox.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/base/default/inchoo_socialconnect/google/css/button.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/base/default/inchoo_socialconnect/facebook/css/button.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/bk2/default/css/levinci_news/tree.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/base/default/css/amasty/ambannerslite/styles.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/base/default/css/amasty/amrules/styles.css" media="all" />
+<script type="text/javascript" src="https://vn.burgerking.com/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/lib/jquery/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/lib/jquery/noconflict.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/lib/ccard.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/prototype/validation.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/scriptaculous/builder.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/scriptaculous/effects.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/scriptaculous/dragdrop.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/scriptaculous/controls.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/scriptaculous/slider.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/varien/js.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/varien/form.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/mage/translate.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/mage/cookies.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/amasty/ampromo/items.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/et/currencymanager/et_currencymanager_round.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/varien/product.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/varien/configurable.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/calendar/calendar.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/calendar/calendar-setup.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/js/varien/product_options.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/base/default/js/reCaptcha.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/lib/owl.carousel.min.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/lib/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/lib/wow.min.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/lib/modernizr.custom.min.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/lib/selectivizr.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/lib/matchMedia.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/lib/matchMedia.addListener.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/lib/enquire.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/app.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/lib/jquery.cycle2.min.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/lib/jquery.cycle2.swipe.min.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/slideshow.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/lib/imagesloaded.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/minicart.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/common.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/base/default/ajaxlogin/AjaxLogin.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/rwd/default/ajaxlogin/custom.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/base/default/ajaxcart/growler.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/base/default/ajaxcart/modalbox.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/ajaxcart/ajaxcart.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/bundle.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/animation-product-detail.js"></script>
+<script type="text/javascript" src="https://vn.burgerking.com/skin/frontend/bk2/default/js/lib/elevatezoom/jquery.elevateZoom-3.0.8.min.js"></script>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:300,400,500,700,600" />
+<!--[if  (lte IE 8) & (!IEMobile)]>
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/bk2/default/css/styles-ie8.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/bk2/default/css/madisonisland-ie8.css" media="all" />
+<![endif]-->
+<!--[if (gte IE 9) | (IEMobile)]><!-->
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/bk2/default/css/styles.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://vn.burgerking.com/skin/frontend/bk2/default/css/madisonisland.css" media="all" />
+<!--<![endif]-->
+
+<script type="text/javascript">
+//<![CDATA[
+Mage.Cookies.path     = '/';
+Mage.Cookies.domain   = '.burgerking.vn';
+//]]>
+</script>
+<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+<script type="text/javascript">
+//<![CDATA[
+optionalZipCountries = ["AF","AX","AL","DZ","AS","AD","AO","AI","AQ","AG","AR","AM","AW","AU","AT","AZ","BS","BH","BD","BB","BY","BE","BZ","BJ","BM","BT","BO","BA","BW","BV","BR","IO","VG","BN","BG","BF","BI","KH","CM","CA","CV","KY","CF","TD","CL","CN","CX","CC","CO","KM","CG","CD","CK","CR","CI","HR","CU","CY","CZ","DK","DJ","DM","DO","EC","EG","SV","GQ","ER","EE","ET","FK","FO","FJ","FI","FR","GF","PF","TF","GA","GM","GE","DE","GH","GI","GR","GL","GD","GP","GU","GT","GG","GN","GW","GY","HT","HM","HN","HK","HU","IS","IN","ID","IR","IQ","IE","IM","IL","IT","JM","JP","JE","JO","KZ","KE","KI","KW","KG","LA","LV","LB","LS","LR","LY","LI","LT","LU","MO","MK","MG","MW","MY","MV","ML","MT","MH","MQ","MR","MU","YT","MX","FM","MD","MC","MN","ME","MS","MA","MZ","MM","NA","NR","NP","NL","AN","NC","NZ","NI","NE","NG","NU","NF","MP","KP","NO","OM","PK","PW","PS","PA","PG","PY","PE","PH","PN","PL","PT","PR","QA","RE","RO","RU","RW","BL","SH","KN","LC","MF","PM","WS","SM","ST","SA","SN","RS","SC","SL","SG","SK","SI","SB","SO","ZA","GS","KR","ES","LK","VC","SD","SR","SJ","SZ","SE","CH","SY","TW","TJ","TZ","TH","TL","TG","TK","TO","TT","TN","TR","TM","TC","TV","UG","UA","AE","GB","US","UY","UM","VI","UZ","VU","VA","VE","VN","WF","EH","YE","ZM","ZW"];
+//]]>
+</script>
+<script type="text/javascript">
+    etCurrencyManagerJsConfig ={"precision":0,"position":8,"display":2,"excludecheckout":"1","cutzerodecimal":"0","cutzerodecimal_suffix":",-","min_decimal_count":"2"};
+    try {
+        extendProductConfigformatPrice();
+    } catch (e) {
+
+    }
+</script>    <!-- twitter product cards -->
+    <meta name="twitter:card" content="product" />
+    <meta name="twitter:domain" content="https://vn.burgerking.com/" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta name="twitter:title" content="EXTREME CHEESE BURGER JR" />
+    <meta name="twitter:description" content="Burger Bò Tắm Phô Mai (cỡ vừa)" />
+    <meta name="twitter:image" content="https://vn.burgerking.com/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/1/7/17-whopper-b_-t_m-ph_-mai-c_-l_n_1_1.jpg" />
+    <meta name="twitter:data1" content="VND74000" />
+    <meta name="twitter:label1" content="PRICE" />
+    <meta name="twitter:data2" content="US" />
+    <meta name="twitter:label2" content="LOCATION" />
+<script type="text/javascript">//<![CDATA[
+        var Translator = new Translate({"This is a required field.":"Tr\u01b0\u1eddng b\u1eaft bu\u1ed9c nh\u1eadp.","Please enter a valid number in this field.":"Vui l\u00f2ng nh\u1eadp m\u1ed9t s\u1ed1 h\u1ee3p l\u1ec7 trong tr\u01b0\u1eddng n\u00e0y.","Please use numbers only in this field. Please avoid spaces or other characters such as dots or commas.":"Vui l\u00f2ng ch\u1ec9 s\u1eed d\u1ee5ng s\u1ed1 trong tr\u01b0\u1eddng n\u00e0y. H\u00e3y tr\u00e1nh kh\u00f4ng gian ho\u1eb7c c\u00e1c k\u00fd t\u1ef1 kh\u00e1c nh\u01b0 d\u1ea5u ch\u1ea5m ho\u1eb7c d\u1ea5u ph\u1ea9y.","Please enter a valid email address. For example johndoe@domain.com.":"H\u00e3y nh\u1eadp \u0111\u1ecba ch\u1ec9 email, v\u00ed d\u1ee5: abc@domain.com","Please make sure your passwords match.":"H\u00e3y ch\u1eafc ch\u1eafn r\u1eb1ng m\u1eadt kh\u1ea9u c\u1ee7a b\u1ea1n ph\u00f9 h\u1ee3p.","Please enter a number greater than 0 in this field.":"\u0110\u1ecba ch\u1ec9 n\u00e0y n\u1eb1m ngo\u00e0i khu v\u1ef1c giao h\u00e0ng, qu\u00fd kh\u00e1ch vui l\u00f2ng li\u00ean h\u1ec7 t\u1ed5ng \u0111\u00e0i \u0111\u1ec3 bi\u1ebft th\u00eam chi ti\u1ebft.","Text length does not satisfy specified text range.":"Chi\u1ec1u d\u00e0i v\u0103n b\u1ea3n kh\u00f4ng th\u1ecfa m\u00e3n quy \u0111\u1ecbnh.","Complete":"Ho\u00e0n th\u00e0nh","Your order cannot be completed at this time as there is no shipping methods available for it. Please make necessary changes in your shipping address.":"\u0110\u01a1n \u0111\u1eb7t h\u00e0ng c\u1ee7a b\u1ea1n kh\u00f4ng th\u1ec3 ho\u00e0n th\u00e0nh v\u00e0o l\u00fac n\u00e0y v\u00ec kh\u00f4ng c\u00f3 ph\u01b0\u01a1ng th\u1ee9c v\u1eadn chuy\u1ec3n n\u00e0o c\u00f3 s\u1eb5n cho n\u00f3. Vui l\u00f2ng th\u1ef1c hi\u1ec7n nh\u1eefng thay \u0111\u1ed5i c\u1ea7n thi\u1ebft trong \u0111\u1ecba ch\u1ec9 giao h\u00e0ng c\u1ee7a b\u1ea1n.","Please specify shipping method.":"B\u1ea1n ph\u1ea3i ch\u1ecdn ph\u01b0\u01a1ng th\u1ee9c thanh to\u00e1n.","Please specify payment method.":"B\u1ea1n ph\u1ea3i ch\u1ecdn ph\u01b0\u01a1ng th\u1ee9c thanh to\u00e1n.","Add to Cart":"\u0110\u1eb7t mua","In Stock":"C\u00f2n h\u00e0ng","Out of Stock":"H\u1ebft h\u00e0ng","Full Name:":"H\u1ecd v\u00e0 t\u00ean:","Address:":"\u0110\u1ecba Ch\u1ec9","Telephone:":"\u0110i\u1ec7n tho\u1ea1i:","Processing":"\u0110ang x\u1eed l\u00fd","Warning!":"Tr\u1ea1ng th\u00e1i!","Information!":"Th\u00f4ng b\u00e1o!","Critical!":"Th\u00f4ng B\u00e1o!","Your address is not currently in our delivery area. Please visit the nearest BK store at the following addresses to be served:":"\u0110\u1ecba ch\u1ec9 c\u1ee7a Qu\u00fd Kh\u00e1ch hi\u1ec7n kh\u00f4ng n\u1eb1m trong khu v\u1ef1c giao h\u00e0ng. Qu\u00fd Kh\u00e1ch vui l\u00f2ng truy c\u1eadp c\u1eeda h\u00e0ng BK g\u1ea7n nh\u1ea5t t\u1ea1i \u0111\u00e2y: ",". Or call HOTLINE: 1900 6960 Sincerely thank you":". Ho\u1eb7c li\u00ean h\u1ec7 HOTLINE: 1900 6960 Tr\u00e2n tr\u1ecdng c\u1ea3m \u01a1n b\u1ea1n","Now":"Ngay b\u00e2y gi\u1edd ( C\u00e0ng nhanh c\u00e0ng t\u1ed1t )","Your address is located outside of our current delivery area, please ask the operator for more information.":"\u0110\u1ecba ch\u1ec9 n\u00e0y n\u1eb1m ngo\u00e0i khu v\u1ef1c giao h\u00e0ng, qu\u00fd kh\u00e1ch vui l\u00f2ng li\u00ean h\u1ec7 t\u1ed5ng \u0111\u00e0i \u0111\u1ec3 bi\u1ebft th\u00eam chi ti\u1ebft."});
+        //]]></script>
+</head>
+<body class=" catalog-product-view catalog-product-view product-extreme-cheesy-whopper-jr categorypath-menu-ala-carte-html category-ala-carte">
+
+<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDTDSNK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
+<div id="id-menu"></div><div class="wrapper">
+        <noscript>
+        <div class="global-site-notice noscript">
+            <div class="notice-inner">
+                <p>
+                    <strong>JavaScript seems to be disabled in your browser.</strong><br />
+                    You must have JavaScript enabled in your browser to utilize the functionality of this website.                </p>
+            </div>
+        </div>
+    </noscript>
+    <div class="page">
+        
+<div style="display:none;" class="image-orverlay">
+    <img src="https://vn.burgerking.com/skin/frontend/bk2/default/lotusbreath/onestepcheckout/images/ajax-loader_3.gif"  alt="loader-burgerking" class="v-middle" /> 
+    <div class="overlay">
+    </div>
+</div>
+
+<header id="header" class="page-header">
+            
+    <div class="header-bottom">
+        <div class="container">
+            <button class="js-toggle-menu">
+                <span></span>
+            </button>
+            <a class="logo" href="https://vn.burgerking.com/">
+                <img src="https://vn.burgerking.com/skin/frontend/bk2/default/images/BK_LOGO_ICON.png" alt="Burgerkinga" class="large" />
+            </a>
+            
+<nav id="nav">
+    <div class="header-info-mb hidden-lg-up d-flex">
+        <button class="js-toggle-menu">
+            <i class="icons icon-close-menu"></i>
+        </button>
+            </div>
+    <ul class="nav-primary">
+        <li class=""><a href="/khuyen-mai">KHUYẾN MÃI</a></li>
+        <li class="" ><a href="/new.html">THỰC ĐƠN</a></li>
+<!--        <li class="--><?php/* //echo $currentRoute == 'levinci_news' && $currentUrl == $dailyDealUrl ? 'menu-current-active' : '' ?><!--"><a href="--><?//= $dailyDealUrl ?><!--">--><!--</a></li>-->
+<!--        <li class="--><!--" ><a href="/new.html">--><!--</a></li>-->
+        <li class="" ><a href="/storepickup">CỬA HÀNG</a></li>
+            </ul>
+</nav>
+<script >
+    // function showNav() {
+    //     var element, name, arr;
+    //     element = document.getElementsByClassName("top-nav-carousel");
+    //     name = "onSite";
+    //     arr = element.className.split(" ");
+    //     if (arr.indexOf(name) == -1) {
+    //         element.className += " " + name;
+    //     }
+    // }
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log(window.location.pathname);
+        console.log(document.getElementsByClassName('top-nav-carousel').classList);
+    }, false);
+</script>
+
+                        <!--            <a href="--><?php/* //echo Mage::getUrl('thuc-don.html'); ?><!--" class="btn btn-white btn-order-custom">--><!--</a>-->
+            <div class="store-language-header">
+                
+            <li>
+                        <a href="https://vn.burgerking.com/menu/ala-carte/extreme-cheesy-whopper-jr.html?___store=en">
+                EN                            <img src="https://vn.burgerking.com/skin/frontend/bk2/default/images/en.png" alt="en burgerking"/>            </a>
+        </li>
+            <li>
+                        <a href="https://vn.burgerking.com/menu/ala-carte/extreme-cheesy-whopper-jr.html?___store=vn">
+                VN             <img src="https://vn.burgerking.com/skin/frontend/bk2/default/images/vn.png" alt="vn burgerking"/>            </a>
+        </li>
+                </div>
+        </div>
+    </div>
+    <div class="top-nav-carousel">
+    <div class="container">
+        <ul class="nav" id="nav-top-carousel">
+<li class="item"><a href="/menu/mon-moi.html"></a></li>
+<li class="item"><a href="/menu/mon-moi.html"><img class="thumbnail" src="https://vn.burgerking.com/media/wysiwyg/navigation/New.png" />M&oacute;n Mới</a></li>
+<li class="item"><a href="/menu/burger.html"><img class="thumbnail" src="https://vn.burgerking.com/media/wysiwyg/navigation/P-BURGER.jpg" />Burger</a></li>
+<li class="item"><a href="/menu/value-meals.html"><img class="thumbnail" src="https://vn.burgerking.com/media/wysiwyg/navigation/P-VALUE-MEALS.jpg" />Combo</a></li>
+<li class="item"><a href="/menu/ga-ran.html"><img class="thumbnail" src="https://vn.burgerking.com/media/wysiwyg/navigation/P-GA-RAN.jpg" />G&agrave; R&aacute;n</a></li>
+<li class="item"><a href="/menu/com-vua.html"><img class="thumbnail" src="https://vn.burgerking.com/media/wysiwyg/navigation/P-RICE-KING.png" />Cơm Vua</a></li>
+<li class="item"><a href="/menu/mon-an-kem.html"><img class="thumbnail" src="https://vn.burgerking.com/media/wysiwyg/navigation/P-MON-AN-KEM.png" />M&oacute;n Ăn K&egrave;m</a></li>
+<li class="item"><a href="/menu/thuc-uong.html"><img class="thumbnail" src="https://vn.burgerking.com/media/wysiwyg/navigation/P-THUC-UONG1.jpg" />Thức Uống</a></li>
+</ul>
+<div class="actions hidden-lg hidden-md hidden-sm"><span class="action prev"><img alt="" src="https://vn.burgerking.com/media/wysiwyg/navigation/icon-arrow-left.png" /></span> <span class="action next"><img alt="" src="https://vn.burgerking.com/media/wysiwyg/navigation/icon-arrow-right-2.png" /></span></div>
+<script type="text/javascript">// <![CDATA[
+jQuery(document).ready(function($) {
+	var owl = $('#nav-top-carousel');
+	
+	owl.owlCarousel({
+		margin: 10,
+		autoWidth: false,
+		items: 9,
+		loop:false,
+		autoplay: false,
+		autoplayTimeout: 5000,
+                nav: false,
+                dots: false,
+		responsive : {
+			320 : {
+				items: 2
+			},
+			// breakpoint from 480 up
+			480: {
+				items: 3
+			},
+			// breakpoint from 768 up
+			768 : {
+				items: 5
+			},
+			// breakpoint from 1024 up
+			1024: {
+				items: 9
+			}
+		}
+	});
+
+       
+	$('.actions .action.next').click(function() {
+		owl.trigger('next.owl.carousel');
+	});
+	$('.actions .action.prev').click(function() {
+		owl.trigger('prev.owl.carousel');
+	});
+});
+// ]]></script>
+<style><!--
+.top-nav-carousel .nav .item { margin-bottom: 5px }
+.top-nav-carousel .nav .item .thumbnail { min-height: 58px }
+.top-nav-carousel .owl-nav.disabled { display: none }
+@media only screen and (min-width: 1024px) {
+  .actions.hidden-sm {
+    display: none;
+  }
+}
+--></style>    </div>
+</div>
+<script type="text/javascript">
+    jQuery(function(){
+        var current = location.pathname;
+        jQuery('#nav-top-carousel li a').each(function(){
+            var $this = jQuery(this);
+            if(current !== '/' && $this.attr('href').indexOf(current) !== -1){
+                $this.addClass('active');
+            }
+        })
+    })
+</script></header>
+
+
+
+<a title="Scroll To Top" class="scrollup scrollup-custom" href="javascript:void(0);" style="display: none; position:fixed; bottom:50px; text-align:right;"><img src="https://vn.burgerking.com/skin/frontend/bk2/default/images/Top-icon.png"  alt="icon top"/></a>
+<script type="text/javascript">
+    jQuery(document).scroll(function () {
+        if (jQuery(this).scrollTop() > 300) {
+            jQuery('.scrollup').fadeIn();
+        } else {
+            jQuery('.scrollup').fadeOut();
+        }
+    });
+    jQuery('.scrollup').click(function () {
+        jQuery("html, body").animate({scrollTop: 0}, 600);
+        return false;
+    });
+</script>
+<script type="text/javascript">
+    Translator.add('Change the food detail', 'Thay đổi phần ăn');
+</script>        <main class="page-main">
+            <div class="container col1-layout">
+                                <div class="col-main">
+                                        
+
+
+    <div style="clear: both;"></div>
+    <div style="clear: both;"></div>
+
+
+
+    <div style="clear: both;"></div>
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice({"priceFormat":{"pattern":"%s\u00a0VND","precision":0,"requiredPrecision":0,"decimalSymbol":",","groupSymbol":".","groupLength":3,"integerRequired":1},"includeTax":"false","showIncludeTax":false,"showBothPrices":false,"idSuffix":"_clone","oldPlusDisposition":0,"plusDisposition":0,"plusDispositionTax":0,"oldMinusDisposition":0,"minusDisposition":0,"productId":"1255","productPrice":74000,"productOldPrice":74000,"priceInclTax":74000,"priceExclTax":74000,"skipCalculate":1,"defaultTax":0,"currentTax":0,"tierPrices":[],"tierPricesInclTax":[],"swatchPrices":null});
+</script>
+
+<div id="messages_product_view"></div>
+<div class="product-view product-view-customer" itemscope itemtype = �http://schema.org/Product�>
+    <div class="product-essential">
+        <form action="https://vn.burgerking.com/checkout/cart/add/uenc/aHR0cHM6Ly9idXJnZXJraW5nLnZuL21lbnUvYWxhLWNhcnRlL2V4dHJlbWUtY2hlZXN5LXdob3BwZXItanIuaHRtbA,,/product/1255/form_key/sEJ4qIFUcSr292fu/" method="post" id="product_addtocart_form">
+            <input name="form_key" type="hidden" value="sEJ4qIFUcSr292fu" />
+            <div data-store-code="vn" class="no-display" id="no-display">
+                <input type="hidden" name="product" value="1255" />
+                <input type="hidden" id="city_remote" name="city_remote" value="" />
+                <input type="hidden" name="related_product" id="related-products-field" value="" />
+            </div>
+
+            <div class="row">
+                <div class="product-img-box col-lg-6">
+                    <div class="product-name pro-name-customer">
+                        <h1 itemprop="name">EXTREME CHEESE BURGER JR</h1>
+                    </div>
+                    <div class="product-image product-image-zoom">
+    <div class="product-image-gallery img-gallery-custom">
+        <!-- <img id="image-main"
+             class="gallery-image visible"
+             src="https://vn.burgerking.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/7/17-whopper-b_-t_m-ph_-mai-c_-l_n_1_1.jpg"
+             alt="EXTREME CHEESE BURGER JR"
+             title="EXTREME CHEESE BURGER JR" /> -->
+
+                                <img id="image-0"
+                 class="gallery-image"
+                 src="https://vn.burgerking.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/e/x/ex_cheese_whp_jr_1.jpg"
+                 data-zoom-image="https://vn.burgerking.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/e/x/ex_cheese_whp_jr_1.jpg" />
+                                            <img id="image-1"
+                 class="gallery-image"
+                 src="https://vn.burgerking.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/1/7/17-whopper-b_-t_m-ph_-mai-c_-l_n_1_1.jpg"
+                 data-zoom-image="https://vn.burgerking.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/1/7/17-whopper-b_-t_m-ph_-mai-c_-l_n_1_1.jpg" />
+                        </div>
+</div>
+
+<!-- <div class="more-views">
+    <h2>Các hình khác</h2>
+    <ul class="product-image-thumbs">
+                    <li>
+            <a class="thumb-link" href="#" title="" data-image-index="0">
+                <img src="https://vn.burgerking.com/media/catalog/product/cache/1/thumbnail/75x/9df78eab33525d08d6e5fb8d27136e95/e/x/ex_cheese_whp_jr_1.jpg"
+                     width="75" height="75" alt="" />
+            </a>
+        </li>
+                            <li>
+            <a class="thumb-link" href="#" title="" data-image-index="1">
+                <img src="https://vn.burgerking.com/media/catalog/product/cache/1/thumbnail/75x/9df78eab33525d08d6e5fb8d27136e95/1/7/17-whopper-b_-t_m-ph_-mai-c_-l_n_1_1.jpg"
+                     width="75" height="75" alt="" />
+            </a>
+        </li>
+                </ul>
+</div> -->
+
+                </div>
+
+
+                <div class="product-shop col-lg-6">
+                    <div class="product-name">
+                        <span class="h1">EXTREME CHEESE BURGER JR</span>
+                    </div>
+                     <!-- <div class="price-info">
+                                              
+                        <div class="price-box">
+    <p class="price-as-configured">
+        <span class="price-label">Price as configured:</span>
+                <span class="full-product-price">
+                <span class="price" id="product-price-1255">
+                            74.000 VND                    </span>
+                </span>
+        </p>
+</div>
+<script type="text/javascript">
+document.observe("dom:loaded", function() {
+    bundle.reloadPrice();
+});
+</script>
+      
+                        
+     
+                 </div> -->
+
+                                            <div class="short-description">
+                            <div class="std" itemprop="description">Burger Bò Tắm Phô Mai (cỡ vừa)</div>
+                        </div>
+                                        
+                    
+
+
+
+                                            <div class="product-options" id="product-options-wrapper">
+    
+            <dl>
+                                <dt style="display: none;"><label class="required">Phần ăn chính<em>*</em></label></dt>
+<dd style="display: none;">
+    <div class="input-box">
+            MIẾNG BÒ WHOPPER NHỎ &nbsp; <span class="price-notice">+<span class="price">0 VND</span></span>        <input type="hidden" name="bundle_option[1816]" value="5207"/>
+        </div>
+</dd>
+                                <dt><label>Add-on</label></dt>
+<dd class="last">
+    <div class="input-box">
+            <div class="checkbox-2-col">
+                    <label class="checkbox-style checkbox-border upgrade-1817" for="bundle-option-1817-5208-checkbox">
+              <input onclick="bundle.changeSelection(this)" class="change-container-classname checkbox bundle-option-1817 " id="bundle-option-1817-5208-checkbox" type="checkbox" name="bundle_option[1817][]" value="5208"/>
+                <span class="label">MIẾNG BÒ WHOPPER NHỎ &nbsp; <span class="price-notice">+<span class="price">25.000 VND</span></span></span>
+                            </label>
+                    <label class="checkbox-style checkbox-border upgrade-1817" for="bundle-option-1817-5209-checkbox">
+              <input onclick="bundle.changeSelection(this)" class="change-container-classname checkbox bundle-option-1817 " id="bundle-option-1817-5209-checkbox" type="checkbox" name="bundle_option[1817][]" value="5209"/>
+                <span class="label">THỊT XÔNG KHÓI &nbsp; <span class="price-notice">+<span class="price">15.000 VND</span></span></span>
+                            </label>
+                    <label class="checkbox-style checkbox-border upgrade-1817" for="bundle-option-1817-5210-checkbox">
+              <input onclick="bundle.changeSelection(this)" class="change-container-classname checkbox bundle-option-1817 " id="bundle-option-1817-5210-checkbox" type="checkbox" name="bundle_option[1817][]" value="5210"/>
+                <span class="label">PHÔ MAI &nbsp; <span class="price-notice">+<span class="price">5.000 VND</span></span></span>
+                            </label>
+                </div>
+        <div id="bundle-option-1817-container"></div>
+        </div>
+</dd>
+                </dl>
+    <script type="text/javascript">
+    jQuery(document).ready(function() {
+
+        jQuery("select.bundle-option-select").change(function(event) {
+            var parts = jQuery(this).attr('id').split('-');
+            var opt = jQuery("option:selected", this);
+            var canChangeQty = jQuery(opt).attr('changeQty');
+            var input = jQuery('#bundle-option-' + parts[2] + '-qty-input');
+            if(canChangeQty == 1) {
+                jQuery(input).parent().show();
+            }else{
+                jQuery(input).parent().hide();
+            }
+        });
+
+        // handle scroll box in popup
+        if(jQuery("#MB_content").size() > 0 && jQuery(window).width() > 990) {
+            var popupMaxHeight = jQuery(window).height() * 80 / 100;
+            jQuery(".product-shop").css('max-height', popupMaxHeight + 'px');
+            jQuery(".product-shop").css('overflow', 'auto');
+        } else if(typeof renderVirtualCheckbox === "function") {
+            renderVirtualCheckbox();
+            // update value for edit product
+            jQuery("select.bundle-option-select").each(function () {
+                if(jQuery(this).val() != '' && jQuery(this).find("option").size() == 2){
+                    var vCB = jQuery(this).parent().parent().find('input.checkbox.virtual-cb');
+                    vCB.prop('checked', true);
+                    vCB.trigger('change');
+                }
+            });
+        } else {
+            console.log("Cannot load renderVirtualCheckbox() function");
+        }
+
+    });
+
+    jQuery(window).load(function(){
+
+        // update real value of input property follow input attribute
+        jQuery(".qty-holder input").each(function(){
+            jQuery(this).val(jQuery(this).attr('value'));
+            jQuery(this).keyup();
+        });
+
+    });
+</script><script type="text/javascript">
+//<![CDATA[
+var DateOption = Class.create({
+
+    getDaysInMonth: function(month, year)
+    {
+        var curDate = new Date();
+        if (!month) {
+            month = curDate.getMonth();
+        }
+        if (2 == month && !year) { // leap year assumption for unknown year
+            return 29;
+        }
+        if (!year) {
+            year = curDate.getFullYear();
+        }
+        return 32 - new Date(year, month - 1, 32).getDate();
+    },
+
+    reloadMonth: function(event)
+    {
+        var selectEl = event.findElement();
+        var idParts = selectEl.id.split("_");
+        if (idParts.length != 3) {
+            return false;
+        }
+        var optionIdPrefix = idParts[0] + "_" + idParts[1];
+        var month = parseInt($(optionIdPrefix + "_month").value);
+        var year = parseInt($(optionIdPrefix + "_year").value);
+        var dayEl = $(optionIdPrefix + "_day");
+
+        var days = this.getDaysInMonth(month, year);
+
+        //remove days
+        for (var i = dayEl.options.length - 1; i >= 0; i--) {
+            if (dayEl.options[i].value > days) {
+                dayEl.remove(dayEl.options[i].index);
+            }
+        }
+
+        // add days
+        var lastDay = parseInt(dayEl.options[dayEl.options.length-1].value);
+        for (i = lastDay + 1; i <= days; i++) {
+            this.addOption(dayEl, i, i);
+        }
+    },
+
+    addOption: function(select, text, value)
+    {
+        var option = document.createElement('OPTION');
+        option.value = value;
+        option.text = text;
+
+        if (select.options.add) {
+            select.options.add(option);
+        } else {
+            select.appendChild(option);
+        }
+    }
+});
+dateOption = new DateOption();
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+enUS = {"m":{"wide":["January","February","March","April","May","June","July","August","September","October","November","December"],"abbr":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]}}; // en_US locale reference
+Calendar._DN = ["Ch\u1ee7 Nh\u1eadt","Th\u1ee9 Hai","Th\u1ee9 Ba","Th\u1ee9 T\u01b0","Th\u1ee9 N\u0103m","Th\u1ee9 S\u00e1u","Th\u1ee9 B\u1ea3y"]; // full day names
+Calendar._SDN = ["CN","Th 2","Th 3","Th 4","Th 5","Th 6","Th 7"]; // short day names
+Calendar._FD = 1; // First day of the week. "0" means display Sunday first, "1" means display Monday first, etc.
+Calendar._MN = ["th\u00e1ng 1","th\u00e1ng 2","th\u00e1ng 3","th\u00e1ng 4","th\u00e1ng 5","th\u00e1ng 6","th\u00e1ng 7","th\u00e1ng 8","th\u00e1ng 9","th\u00e1ng 10","th\u00e1ng 11","th\u00e1ng 12"]; // full month names
+Calendar._SMN = ["thg 1","thg 2","thg 3","thg 4","thg 5","thg 6","thg 7","thg 8","thg 9","thg 10","thg 11","thg 12"]; // short month names
+Calendar._am = "SA"; // am/pm
+Calendar._pm = "CH";
+
+// tooltips
+Calendar._TT = {};
+Calendar._TT["INFO"] = 'About the calendar';
+
+Calendar._TT["ABOUT"] =
+'DHTML Date/Time Selector\n' +
+"(c) dynarch.com 2002-2005 / Author: Mihai Bazon\n" +
+'For latest version visit: http://www.dynarch.com/projects/calendar/\n' +
+'Distributed under GNU LGPL. See http://gnu.org/licenses/lgpl.html for details.' +
+'\n\n' +
+'Date selection:\n' +
+'- Use the \xab, \xbb buttons to select year\n' +
+'- Use the \u2039 buttons to select month\n' +
+'- Hold mouse button on any of the above buttons for faster selection.';
+Calendar._TT["ABOUT_TIME"] = '\n\n' +
+'Time selection:\n' +
+'- Click on any of the time parts to increase it\n' +
+'- or Shift-click to decrease it\n' +
+'- or click and drag for faster selection.';
+
+Calendar._TT["PREV_YEAR"] = 'Prev. year (hold for menu)';
+Calendar._TT["PREV_MONTH"] = 'Prev. month (hold for menu)';
+Calendar._TT["GO_TODAY"] = 'Go Today';
+Calendar._TT["NEXT_MONTH"] = 'Next month (hold for menu)';
+Calendar._TT["NEXT_YEAR"] = 'Next year (hold for menu)';
+Calendar._TT["SEL_DATE"] = 'Chọn ngày';
+Calendar._TT["DRAG_TO_MOVE"] = 'Drag to move';
+Calendar._TT["PART_TODAY"] = ' (' + "H\u00f4m nay" + ')';
+
+// the following is to inform that "%s" is to be the first day of week
+Calendar._TT["DAY_FIRST"] = 'Display %s first';
+
+// This may be locale-dependent. It specifies the week-end days, as an array
+// of comma-separated numbers. The numbers are from 0 to 6: 0 means Sunday, 1
+// means Monday, etc.
+Calendar._TT["WEEKEND"] = "0,6";
+
+Calendar._TT["CLOSE"] = 'Đóng';
+Calendar._TT["TODAY"] = "H\u00f4m nay";
+Calendar._TT["TIME_PART"] = '(Shift-)Click or drag to change value';
+
+// date formats
+Calendar._TT["DEF_DATE_FORMAT"] = "%d-%m-%Y";
+Calendar._TT["TT_DATE_FORMAT"] = "'Ng\u00e0%Y' %d 'th\u00e1ng' %m 'n\u0103m' %Y";
+
+Calendar._TT["WK"] = "Tu\u1ea7n";
+Calendar._TT["TIME"] = 'Time:';
+//]]>
+</script>
+            <p class="required"></p>
+    </div>
+<script type="text/javascript">decorateGeneric($$('#product-options-wrapper dl'), ['last']);</script>
+<div class="product-options-bottom">
+    <div class="product-note">
+        <label style="
+               width: 100%;
+               font-weight: bold;
+               ">Ghi chú:</label>
+        <textarea name="note_prod" rows="1" cols="50" maxlength="150"></textarea>
+    </div>
+    
+    <div class="add-to-cart">
+                                    <!--  show price -->
+                
+                                            <div class="price-box">
+                <p class="price-as-configured">
+                                        <span class="full-product-price">
+                                                <div id="nutritional_information"></div>
+                <input class="final-price"  value=74.000 VND type="hidden"/>
+                <h3 class="product-price"  id="product-price-1255">                                             74.000 VND                                    </h3>
+                                                </span>
+                                </p>
+            </div>
+                            <script type="text/javascript">
+                document.observe("dom:loaded", function () {
+                    bundle.reloadPrice();
+                });
+            </script>
+                        <div class="add-to-cart-buttons">
+                        <a href="tel:19006960" class="btn btn-cart btn-primary">GỌI ĐẶT HÀNG - 19006960</a>
+            
+                    </div>
+        <style>
+            #product-options-wrapper,.product-note {
+                display: none;
+            }
+            .product-shop .add-to-cart a.btn-cart {
+                width: 100%;
+            }
+        </style>
+    </div>
+
+</div>
+                                        <div class="add-to-cart-wrapper">
+                        
+    <script type="text/javascript">
+        //<![CDATA[
+        var skipTierPricePercentUpdate = true;
+        var bundle = new Product.Bundle({"options":{"1816":{"selections":{"5207":{"qty":1,"customQty":"1","price":20000,"priceInclTax":0,"priceExclTax":0,"priceValue":0,"priceType":"0","tierPrice":[],"name":"MI\u1ebeNG B\u00d2 WHOPPER NH\u1ece","plusDisposition":0,"minusDisposition":0,"canApplyMAP":false,"tierPriceHtml":"\n"}},"title":"Main","isMulti":true,"position":0},"1817":{"selections":{"5208":{"qty":1,"customQty":"1","price":20000,"priceInclTax":25000,"priceExclTax":25000,"priceValue":25000,"priceType":"0","tierPrice":[],"name":"MI\u1ebeNG B\u00d2 WHOPPER NH\u1ece","plusDisposition":0,"minusDisposition":0,"canApplyMAP":false,"tierPriceHtml":"\n"},"5209":{"qty":1,"customQty":"1","price":10000,"priceInclTax":15000,"priceExclTax":15000,"priceValue":15000,"priceType":"0","tierPrice":[],"name":"TH\u1ecaT X\u00d4NG KH\u00d3I","plusDisposition":0,"minusDisposition":0,"canApplyMAP":false,"tierPriceHtml":"\n"},"5210":{"qty":1,"customQty":"1","price":5000,"priceInclTax":5000,"priceExclTax":5000,"priceValue":5000,"priceType":"0","tierPrice":[],"name":"PH\u00d4 MAI","plusDisposition":0,"minusDisposition":0,"canApplyMAP":false,"tierPriceHtml":"\n"}},"title":"Add-on","isMulti":true,"position":1}},"selected":{"1816":["5207"]},"bundleId":"1255","priceFormat":{"pattern":"%s\u00a0VND","precision":0,"requiredPrecision":0,"decimalSymbol":",","groupSymbol":".","groupLength":3,"integerRequired":1},"basePrice":74000,"priceType":"1","specialPrice":null,"includeTax":"false","isFixedPrice":true,"isMAPAppliedDirectly":false});
+        var taxCalcMethod = "TOTAL_BASE_CALCULATION";
+        var CACL_UNIT_BASE = "UNIT_BASE_CALCULATION";
+        var CACL_ROW_BASE = "ROW_BASE_CALCULATION";
+        var CACL_TOTAL_BASE = "TOTAL_BASE_CALCULATION";
+        //]]>
+    </script>
+                                                                    </div>
+                </div>
+            </div>
+
+            
+            <div class="clearer"></div>
+                                                </form>
+        <script type="text/javascript">
+        //<![CDATA[
+            var productAddToCartForm = new VarienForm('product_addtocart_form');
+            productAddToCartForm.submit = function(button, url) {
+                if (this.validator.validate()) {
+                    var form = this.form;
+                    var oldUrl = form.action;
+
+                    if (url) {
+                       form.action = url;
+                    }
+                    var e = null;
+                    try {
+                        this.form.submit();
+                    } catch (e) {
+                    }
+                    this.form.action = oldUrl;
+                    if (e) {
+                        throw e;
+                    }
+
+                    if (button && button != 'undefined') {
+                        button.disabled = true;
+                    }
+                }
+            }.bind(productAddToCartForm);
+
+            productAddToCartForm.submitLight = function(button, url){
+                if(this.validator) {
+                    var nv = Validation.methods;
+                    delete Validation.methods['required-entry'];
+                    delete Validation.methods['validate-one-required'];
+                    delete Validation.methods['validate-one-required-by-name'];
+                    // Remove custom datetime validators
+                    for (var methodName in Validation.methods) {
+                        if (methodName.match(/^validate-datetime-.*/i)) {
+                            delete Validation.methods[methodName];
+                        }
+                    }
+
+                    if (this.validator.validate()) {
+                        if (url) {
+                            this.form.action = url;
+                        }
+                        this.form.submit();
+                    }
+                    Object.extend(Validation.methods, nv);
+                }
+            }.bind(productAddToCartForm);
+        //]]>
+        </script>
+    </div>
+
+    <!-- <div class="product-collateral toggle-content tabs">
+                  <dl id="collateral-tabs" class="collateral-tabs">
+                                  <dt class="tab"><span></span></dt>
+                   <dd class="tab-container">
+                       <div class="tab-content">    <h2>Chi tiết</h2>
+    <div class="std">
+        Burger Bò Tắm Phô Mai (cỡ vừa)    </div>
+</div>
+                   </dd>
+                                  <dt class="tab"><span></span></dt>
+                   <dd class="tab-container">
+                       <div class="tab-content">    <h2>Thông tin kỹ thuật</h2>
+    <table class="data-table" id="product-attribute-specs-table">
+        <col width="25%" />
+        <col />
+        <tbody>
+                    <tr>
+                <th class="label">Meta_information</th>
+                <td class="data">Không</td>
+            </tr>
+                    <tr>
+                <th class="label">Fat</th>
+                <td class="data">Không</td>
+            </tr>
+                    <tr>
+                <th class="label">Cholesterol</th>
+                <td class="data">Không</td>
+            </tr>
+                    <tr>
+                <th class="label">Calories</th>
+                <td class="data">Không</td>
+            </tr>
+                    <tr>
+                <th class="label">Sugar</th>
+                <td class="data">Không</td>
+            </tr>
+                    <tr>
+                <th class="label">Protein</th>
+                <td class="data">Không</td>
+            </tr>
+                    <tr>
+                <th class="label">Carbohydrates</th>
+                <td class="data">Không</td>
+            </tr>
+                </tbody>
+    </table>
+    <script type="text/javascript">decorateTable('product-attribute-specs-table')</script>
+</div>
+                   </dd>
+                                  <dt class="tab"><span></span></dt>
+                   <dd class="tab-container">
+                       <div class="tab-content">
+<div class="box-collateral box-reviews" id="customer-reviews">
+                <p class="no-rating"><a href="https://vn.burgerking.com/review/product/list/id/1255/category/57/#review-form">Nhận xét sản phẩm này</a></p>
+        </div>
+</div>
+                   </dd>
+                          </dl>
+          </div>
+ -->
+                <section class="section-nutritional-information" >
+        <h2 class="section-title" >THÔNG TIN DINH DƯỠNG</h2>
+        <div class="section-content">
+            <p class="section-desc"></p>
+            <ul class="nutri-info-list row">
+                <li class="nutri-info-item col-lg-4">
+                    <span>Calories</span>
+                    <span></span>
+                </li>
+                <li class="nutri-info-item col-lg-4">
+                    <span>Sugar</span>
+                    <span></span>
+                </li>
+                <li class="nutri-info-item col-lg-4">
+                    <span>Protein</span>
+                    <span></span>
+                </li>
+                <li class="nutri-info-item col-lg-4">
+                    <span>Fat</span>
+                    <span></span>
+                </li>
+                <li class="nutri-info-item col-lg-4">
+                    <span>Cholesterol</span>
+                    <span></span>
+                </li>
+                <li class="nutri-info-item col-lg-4">
+                    <span>Carbohydrates</span>
+                    <span></span>
+                </li>
+            </ul>
+        </div>
+    </section>
+  </div>
+
+<!-- 
+        <script type="text/javascript">
+        //<![CDATA[
+        var skipTierPricePercentUpdate = true;
+        var bundle = new Product.Bundle({"priceFormat":{"pattern":"%s\u00a0VND","precision":0,"requiredPrecision":0,"decimalSymbol":",","groupSymbol":".","groupLength":3,"integerRequired":1},"includeTax":"false","showIncludeTax":false,"showBothPrices":false,"idSuffix":"_clone","oldPlusDisposition":0,"plusDisposition":0,"plusDispositionTax":0,"oldMinusDisposition":0,"minusDisposition":0,"productId":"1255","productPrice":74000,"productOldPrice":74000,"priceInclTax":74000,"priceExclTax":74000,"skipCalculate":1,"defaultTax":0,"currentTax":0,"tierPrices":[],"tierPricesInclTax":[],"swatchPrices":null});
+        var taxCalcMethod = "TOTAL_BASE_CALCULATION";
+        var CACL_UNIT_BASE = "UNIT_BASE_CALCULATION";
+        var CACL_ROW_BASE = "ROW_BASE_CALCULATION";
+        var CACL_TOTAL_BASE = "TOTAL_BASE_CALCULATION";
+        //]]>
+    </script>
+ -->
+<script>
+  function update_total_price() {
+
+    var price_change_option = jQuery(".product-price").text().replace('VND' ,'');
+    var price_without_qty = optionsPrice.productPrice + optionsPrice.optionPrices.bundle;
+    var qtyProducts = document.getElementById('qtyProd').value;
+    jQuery(".price-box").parent().find("h3").html(numberWithCommas(showTwoDecimalPlaces(price_without_qty * qtyProducts)) + 'VND');
+}
+</script>
+
+<script>
+var qty = jQuery('.qty-wrapper');
+jQuery('.qty-minus', qty).click(function() {
+  var input = jQuery(this).parent().find('input');
+  var inVal = parseInt(input.val());
+  inVal > 1 ? inVal-- : inVal = 1;
+  input.val(inVal);
+  update_total_price();
+});
+jQuery('.qty-add', qty).click(function() {
+  var input = $j(this).parent().find('input');
+  var inVal = parseInt(input.val());
+  inVal++;
+  input.val(inVal);
+  update_total_price();
+});
+function showTwoDecimalPlaces(input){
+  number = parseFloat(Math.round((input) * 100) / 100).toFixed(0);
+  return number;
+}
+function numberWithCommas(input) {
+  number = input.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  return number;
+}
+
+</script>
+
+<script type="text/javascript">
+    var lifetime = 3600;
+    var expireAt = Mage.Cookies.expires;
+    if (lifetime > 0) {
+        expireAt = new Date();
+        expireAt.setTime(expireAt.getTime() + lifetime * 1000);
+    }
+    Mage.Cookies.set('external_no_cache', 1, expireAt);
+</script>
+                </div>
+            </div>
+                        <script src="https://www.google.com/recaptcha/api.js?hl=vi"></script>
+<div class="parent-footer">
+    <!--<footer class="footer">
+        <div class="container">
+            <a href="https://www.facebook.com/BurgerKingVN.FP/" target="_blank" class="facebook wow zoomIn"><img src="https://vn.burgerking.com/skin/frontend/bk2/default/images/icon-facebook.png" alt="icon facebook"/></a>
+            <div class="footer-bottom wow fadeIn" data-wow-delay="0.4s">
+                <h3>BURGER KING</h3>
+                <p>CÔNG TY TNHH DỊCH VỤ THỰC PHẨM VÀ GIẢI KHÁT CÁNH DIỀU XANH</p>
+                <p>Lầu 5, Tòa Nhà Saigon Royal, số 91 Pasteur, Phường Bến Nghé, Quận 1, TP.HCM</p>
+                <p>Điện thoại: 1900 6960  | MST: 0310840601 </p>
+            </div>
+        </div>
+    </footer>-->
+    <div class="footer-facebook">
+        <a href="https://www.instagram.com/burgerking.vn/" target="_blank" class="facebook wow zoomIn"><img src="https://vn.burgerking.com/skin/frontend/bk2/default/images/instagram-icon.png" alt="icon instagram"/></a>
+        <a href="https://www.facebook.com/BurgerKingVN.FP/" target="_blank" class="facebook wow zoomIn"><img src="https://vn.burgerking.com/skin/frontend/bk2/default/images/icon-facebook.png" alt="icon facebook"/></a>
+    </div>
+    <div class="header-top">
+<ul class="links">
+<li><a href="https://vn.burgerking.com/about-us">Giới Thiệu</a></li>
+<li><a href="https://vn.burgerking.com/contact">Li&ecirc;n Hệ </a></li>
+<li><a href="https://tuyendung.vfbs.vn">Tuyển Dụng</a></li>
+</ul>
+</div>    <div class="coppyright">
+        Copyright 2015 Burger King Corporation.All Rights Reserved.     </div>
+</div>
+<div class="hidden-all">
+    <div id="js-popup-login" class="popup-login">
+        <div class="tabs">
+            <ul class="tab-link">
+                <li>
+                    <a class="active" href="#tab-login">ĐĂNG NHẬP</a>
+                </li>
+                <li>
+                    <a href="#tab-register">Đăng ký</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="tab-login" class="tab-item active">
+                    <form data-current-url="https://vn.burgerking.com/" id="login-form" data-action="https://vn.burgerking.com/customer/account/loginPost/" method="post" data-recaptcha="0" autocomplete="off">
+                        <input type="hidden" name="form_key" value="QKZb74agBPfmkaMH" />
+                        <div  class="messages">
+                            <p class="error-msg"></p>
+                        </div>
+                        <div class="input-box">
+                            <label>Địa chỉ email<em>*</em></label>
+                            <!--<input type="text" name="email">-->
+                            <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="login[username]" value="" id="email" class="input-text required-entry validate-email" title="Địa chỉ email" />
+                        </div>
+                        <div class="input-box">
+                            <label>Mật khẩu <em>*</em></label>
+                            <!--<input type="password" name="password">-->
+                            <input type="password" name="login[password]" class="input-text required-entry validate-password" id="pass" title="Mật khẩu" />
+                        </div>
+                        <p class="forgot-link"><a href="https://vn.burgerking.com/customer/account/forgotpassword/" class="f-left">Quên mật khẩu</a></p>
+                        <div class="checkbot">
+                            <div class="recaptcha-login">
+	<div  class="g-recaptcha" data-callback="recaptchaCallback"  data-sitekey="6LfYpnUUAAAAAHrmdTdpM_lhh2rGAcHeJ1owBheu"></div>
+</div>
+
+<style>
+.g-recaptcha {
+    transform:none !important;
+    transform-origin:0 0;
+}
+</style>
+<script>
+var recaptchachecked;
+function recaptchaCallback() {
+    //If we managed to get into this function it means that the user checked the checkbox.
+    recaptchachecked = true;
+}
+</script>                        </div>
+                    </form>
+                    <div class="buttons-set">
+                        <button type="submit" class="btn btn-login btn-primary" title="ĐĂNG NHẬP" name="send" id="send2">ĐĂNG NHẬP</button>
+                    </div>
+                    <div class="no-account">
+                        Bạn chưa có tài khoản?<a href="#"> Đăng Ký?</a>
+                    </div>
+                    <div class="login-by">
+                        <p class="login-by-line"><span> Hoặc đăng nhập bằng</span></p>
+                        <div class="login-by-btn">
+                            <a class="facebook" href="https://graph.facebook.com/oauth/authorize?client_id=2109734582627649&redirect_uri=https%3A%2F%2Fburgerking.vn%2Fsocialconnect%2Ffacebook%2Fconnect%2F&scope=public_profile%2Cemail%2Cuser_birthday">
+                                <img src="https://vn.burgerking.com/skin/frontend/bk2/default/images/login-facebook.png" alt="login facebook"/>
+                                <span>Facebook</span>
+                            </a>
+                            <a class="google" href="https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=https%3A%2F%2Fburgerking.vn%2Fsocialconnect%2Fgoogle%2Fconnect%2F&client_id=34034146295-n7v9nptckblfkgs9mmm94pn4csbumu7j.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&state=&access_type=offline&approval_prompt=auto">
+                                <img src="https://vn.burgerking.com/skin/frontend/bk2/default/images/login-google.png" alt="login google"/>
+                                <span>Google</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-register" class="tab-item">
+                    <form id="register-form" data-action="https://vn.burgerking.com/customer/account/createPost/" enctype="multipart/form-data"  data-recaptcha="0" autocomplete="off">
+                        <div  class="messages">
+                            <p class="error-msg"></p>
+                        </div>
+                        <input type="hidden" name="form_key" value="QKZb74agBPfmkaMH" />
+                        <div class="input-box">
+                            <label>Tên<em>*</em></label>      
+                            <input type="text" id="firstname" name="firstname" value="" title="Tên" maxlength="255" class="input-text required-entry" />       
+                        </div>
+                        <div class="input-box">
+                            <label class="register-text-bottom">Họ<em>*</em></label>      
+                            <input type="text" id="lastname" name="lastname" value="" title="Họ"  maxlength="255" class="input-text required-entry"/>      
+                        </div>
+                        <div class="input-box">
+                            <label class="register-text-bottom">Địa chỉ email<em>*</em></label>
+                            <input autocomplete="username" type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" value="" id="personal-email" class="input-text required-entry validate-email" title="Địa chỉ email" />
+                        </div>
+                        <div class="input-box">
+                            <label class="register-text-bottom">Mật khẩu<em>*</em></label>
+                            <input type="password" name="password" class="input-text required-entry validate-password" id="personal-password" title="Mật khẩu" />
+                        </div>
+                        <div class="input-box">
+                            <label class="register-text-bottom">Nhập lại mật khẩu<em>*</em></label>
+                            <input type="password" name="confirmation" title="Nhập lại mật khẩu" id="personal-confirmation" class="input-text required-entry validate-cpassword" />
+                        </div>
+                        <div class="input-box">
+                            <label class="register-text-bottom">Điện thoại<em>*</em></label>
+                            <input type="tel" name="telephone" id="personal-telephone" value="" title="Điện thoại" class="input-text required-entry" />
+                        </div>
+                        <div class="input-box">
+                            <label class="register-text-bottom">Địa chỉ</label>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="select-style select-custom">
+                                        <select name="city" id="city" onchange="changeProvinState(this)">
+                                            <option value="">Chọn Tỉnh/Thành Phố</option>
+                                                                                                                                        <option data-id="1"
+                                                        data-textcode="ha noi"
+                                                        value="Hà Nội">Hà Nội</option>
+                                                                                            <option data-id="2"
+                                                        data-textcode="ho chi minh"
+                                                        value="Hồ Chí Minh">Hồ Chí Minh</option>
+                                                                                            <option data-id="3"
+                                                        data-textcode="kien giang"
+                                                        value="Kiên Giang">Kiên Giang</option>
+                                                                                    </select>
+                                        <script>
+                                            function changeProvinState(ele) {
+                                                var idProvince = jQuery('option:selected', ele).attr('data-id');
+                                                if (idProvince) {
+                                                    jQuery('#city_id').val(idProvince);
+                                                }
+                                                jQuery('#district_cus').html('<option value="">Chọn Quận/Huyện</option>');
+                                                var registerCounterDistrict = 0;
+                                                jQuery.each(lstDistrict, function (i, item) {
+                                                    if (item.id_province == idProvince) {
+                                                        registerCounterDistrict++;
+                                                        jQuery('#district_cus').append('<option data-id="' + item.id_district + '" value="' + item.name_district + '">' + item.name_district + '</option>');
+                                                    }
+                                                });
+                                                if(registerCounterDistrict > 0) {
+                                                    jQuery('#district_cus').prop("disabled", false);
+                                                } else {
+                                                    jQuery('#district_cus').prop("disabled", true);
+                                                }
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="select-style select-custom">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <select disabled name="district" id="district_cus" onchange="shippingdistrictChange(this)">
+                                            <option value="">Chọn Quận/Huyện</option>
+                                        </select>
+                                        <script>
+                                            var lstDistrict = {"Cau Giay":{"id_district":"62","id_province":"5","name_district":"C\u1ea7u Gi\u1ea5y"},"Tay Ho":{"id_district":"53","id_province":"5","name_district":"T\u00e2y H\u1ed3"},"Thanh Tri":{"id_district":"93","id_province":"5","name_district":"Thanh Tr\u00ec"},"Tu Liem":{"id_district":"149","id_province":"5","name_district":"T\u1eeb Li\u00eam"},"ba dinh":{"id_district":"76","id_province":"1","name_district":"Ba \u0110\u00ecnh"},"binh chanh":{"id_district":"24","id_province":"2","name_district":"B\u00ecnh Ch\u00e1nh"},"binh thanh":{"id_district":"17","id_province":"2","name_district":"B\u00ecnh Th\u1ea1nh"},"cau giay":{"id_district":"77","id_province":"1","name_district":"C\u1ea7u Gi\u1ea5y"},"dong da":{"id_district":"59","id_province":"1","name_district":"\u0110\u1ed1ng \u0110a"},"ha dong":{"id_district":"90","id_province":"1","name_district":"H\u00e0 \u0110\u00f4ng"},"hai ba trung":{"id_district":"60","id_province":"1","name_district":"Hai B\u00e0 Tr\u01b0ng"},"hoan kiem":{"id_district":"66","id_province":"1","name_district":"Ho\u00e0n Ki\u1ebfm"},"hoang mai":{"id_district":"55","id_province":"1","name_district":"Ho\u00e0ng Mai"},"long bien":{"id_district":"65","id_province":"1","name_district":"Long Bi\u00ean"},"nha be":{"id_district":"25","id_province":"2","name_district":"Nh\u00e0 B\u00e8"},"phu nhuan":{"id_district":"21","id_province":"2","name_district":"Ph\u00fa Nhu\u1eadn"},"phu quoc":{"id_district":"78","id_province":"3","name_district":"Ph\u00fa Qu\u1ed1c"},"tan binh":{"id_district":"16","id_province":"2","name_district":"T\u00e2n B\u00ecnh"},"tay ho":{"id_district":"54","id_province":"1","name_district":"T\u00e2y H\u1ed3"},"thanh xuan":{"id_district":"61","id_province":"1","name_district":"Thanh Xu\u00e2n"},"tu liem":{"id_district":"79","id_province":"1","name_district":"T\u1eeb Li\u00eam"},"1":{"id_district":"1","id_province":"2","name_district":"1"},"2":{"id_district":"3","id_province":"2","name_district":"2"},"3":{"id_district":"5","id_province":"2","name_district":"3"},"4":{"id_district":"6","id_province":"2","name_district":"4"},"5":{"id_district":"8","id_province":"2","name_district":"5"},"7":{"id_district":"10","id_province":"2","name_district":"7"},"8":{"id_district":"11","id_province":"2","name_district":"8"},"10":{"id_district":"13","id_province":"2","name_district":"10"},"11":{"id_district":"14","id_province":"2","name_district":"11"}};
+                                            function shippingdistrictChange(ele) {
+                                                jQuery('#billing\\:street_customer').val('');
+                                                var idDistrict = jQuery('option:selected', ele).attr('data-id');
+                                                if (idDistrict) {
+                                                    jQuery('#district_id').val(idDistrict);
+                                                }
+                                                jQuery('#shipping_ward_cus').html('<option value="">Chọn Phường/Xã</option>');
+                                                var flag = false;
+                                                var name_ward = '';
+                                                var idProvince = jQuery('option:selected', "#city").attr('data-id');
+                                                lstWards.sort();
+                                                var tmpCusIds = [];
+                                                var registerCounterWard = 0;
+                                                jQuery.each(lstWards, function (i, item) {
+                                                    if (item.id_district == idDistrict) {
+                                                        if(tmpCusIds.indexOf(item.name_ward) < 0) {
+                                                            registerCounterWard++;
+                                                            tmpCusIds.push(item.name_ward);
+                                                            jQuery('#shipping_ward_cus').append('<option data-id="' + item.id_ward + '" value="' + item.name_ward + '">' + item.name_ward + '</option>');
+                                                        }
+                                                    }
+                                                });
+                                                if(registerCounterWard > 0) {
+                                                    jQuery('#shipping_ward_cus').prop("disabled", false);
+                                                } else {
+                                                    jQuery('#shipping_ward_cus').prop("disabled", true);
+                                                }
+                                                if (flag) {
+                                                    jQuery('#shipping_ward_cus').val(name_ward).trigger('change');
+                                                }
+                                            }
+                                            jQuery(document).ready(function ($) {
+                                                var idProvince = jQuery('option:selected', $('#city')).attr('data-id');
+                                                if (idProvince) {
+                                                    jQuery('#city_id').val(idProvince);
+                                                }
+                                                jQuery.each(lstDistrict, function (i, item) {
+                                                    if (item.id_province == idProvince) {
+                                                        jQuery('#district').append('<option data-id="' + item.id_district + '" value="' + item.name_district + '">' + item.name_district + '</option>');
+                                                    }
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="select-style select-custom">
+                                                                                <select disabled id="shipping_ward_cus" name="shipping_ward" class="input-text" onchange="wardOnChange(this);">
+                                            <option value=""> Chọn Phường/Xã</option>
+                                        </select>
+                                        <script>
+                                            function wardOnChange(elm) {
+                                                var idwards = jQuery('option:selected', jQuery(elm)).attr('data-id');
+                                                if (idwards) {
+                                                    jQuery('#wards_id').val(idwards);
+                                                    jQuery('#street').prop("disabled", false);
+                                                    jQuery('#house_number').prop("disabled", false);
+                                                } else {
+                                                    jQuery('#street').prop("disabled", true);
+                                                    jQuery('#house_number').prop("disabled", false);
+                                                }
+                                            }
+                                            var lstWards = [{"id_ward":"20","id_district":"3","name_ward":"An Ph\u00fa"},{"id_ward":"21","id_district":"3","name_ward":"B\u00ecnh An"},{"id_ward":"26","id_district":"3","name_ward":"Th\u1ea3o \u0110i\u1ec1n"},{"id_ward":"201","id_district":"17","name_ward":"19"},{"id_ward":"363","id_district":"17","name_ward":"22"},{"id_ward":"378","id_district":"17","name_ward":"25"},{"id_ward":"58","id_district":"8","name_ward":"1"},{"id_ward":"59","id_district":"8","name_ward":"2"},{"id_ward":"60","id_district":"8","name_ward":"3"},{"id_ward":"61","id_district":"8","name_ward":"4"},{"id_ward":"62","id_district":"8","name_ward":"5"},{"id_ward":"63","id_district":"8","name_ward":"6"},{"id_ward":"67","id_district":"8","name_ward":"10"},{"id_ward":"68","id_district":"8","name_ward":"11"},{"id_ward":"69","id_district":"8","name_ward":"12"},{"id_ward":"101","id_district":"11","name_ward":"5"},{"id_ward":"106","id_district":"11","name_ward":"10"},{"id_ward":"126","id_district":"13","name_ward":"1"},{"id_ward":"127","id_district":"13","name_ward":"2"},{"id_ward":"128","id_district":"13","name_ward":"3"},{"id_ward":"129","id_district":"13","name_ward":"4"},{"id_ward":"130","id_district":"13","name_ward":"5"},{"id_ward":"131","id_district":"13","name_ward":"6"},{"id_ward":"132","id_district":"13","name_ward":"7"},{"id_ward":"133","id_district":"13","name_ward":"8"},{"id_ward":"133","id_district":"13","name_ward":"8"},{"id_ward":"134","id_district":"13","name_ward":"9"},{"id_ward":"134","id_district":"13","name_ward":"9"},{"id_ward":"135","id_district":"13","name_ward":"10"},{"id_ward":"135","id_district":"13","name_ward":"10"},{"id_ward":"136","id_district":"13","name_ward":"11"},{"id_ward":"137","id_district":"13","name_ward":"12"},{"id_ward":"138","id_district":"13","name_ward":"13"},{"id_ward":"139","id_district":"13","name_ward":"14"},{"id_ward":"140","id_district":"13","name_ward":"15"},{"id_ward":"140","id_district":"13","name_ward":"15"},{"id_ward":"140","id_district":"13","name_ward":"15"},{"id_ward":"140","id_district":"13","name_ward":"15"},{"id_ward":"142","id_district":"14","name_ward":"1"},{"id_ward":"143","id_district":"14","name_ward":"2"},{"id_ward":"144","id_district":"14","name_ward":"3"},{"id_ward":"145","id_district":"14","name_ward":"4"},{"id_ward":"145","id_district":"14","name_ward":"4"},{"id_ward":"146","id_district":"14","name_ward":"5"},{"id_ward":"147","id_district":"14","name_ward":"6"},{"id_ward":"148","id_district":"14","name_ward":"7"},{"id_ward":"149","id_district":"14","name_ward":"8"},{"id_ward":"149","id_district":"14","name_ward":"8"},{"id_ward":"150","id_district":"14","name_ward":"9"},{"id_ward":"151","id_district":"14","name_ward":"10"},{"id_ward":"152","id_district":"14","name_ward":"11"},{"id_ward":"153","id_district":"14","name_ward":"12"},{"id_ward":"154","id_district":"14","name_ward":"13"},{"id_ward":"155","id_district":"14","name_ward":"14"},{"id_ward":"156","id_district":"14","name_ward":"15"},{"id_ward":"157","id_district":"14","name_ward":"16"},{"id_ward":"173","id_district":"16","name_ward":"6"},{"id_ward":"174","id_district":"16","name_ward":"7"},{"id_ward":"175","id_district":"16","name_ward":"8"},{"id_ward":"176","id_district":"16","name_ward":"9"},{"id_ward":"177","id_district":"16","name_ward":"10"},{"id_ward":"178","id_district":"16","name_ward":"11"},{"id_ward":"328","id_district":"5","name_ward":"3"},{"id_ward":"1","id_district":"1","name_ward":"B\u1ebfn Ngh\u00e9"},{"id_ward":"2","id_district":"1","name_ward":"B\u1ebfn Th\u00e0nh"},{"id_ward":"3","id_district":"1","name_ward":"C\u00f4 Giang"},{"id_ward":"4","id_district":"1","name_ward":"C\u1ea7u Kho"},{"id_ward":"5","id_district":"1","name_ward":"C\u1ea7u \u00d4ng L\u00e3nh"},{"id_ward":"13","id_district":"1","name_ward":"\u0110a Kao"},{"id_ward":"14","id_district":"1","name_ward":"Nguy\u1ec5n Th\u00e1i B\u00ecnh"},{"id_ward":"16","id_district":"1","name_ward":"Ph\u1ea1m Ng\u0169 L\u00e3o"},{"id_ward":"32","id_district":"6","name_ward":"4"},{"id_ward":"33","id_district":"6","name_ward":"5"},{"id_ward":"36","id_district":"6","name_ward":"8"},{"id_ward":"36","id_district":"6","name_ward":"8"},{"id_ward":"37","id_district":"6","name_ward":"9"},{"id_ward":"38","id_district":"6","name_ward":"10"},{"id_ward":"40","id_district":"6","name_ward":"12"},{"id_ward":"41","id_district":"6","name_ward":"13"},{"id_ward":"42","id_district":"6","name_ward":"14"},{"id_ward":"330","id_district":"5","name_ward":"5"},{"id_ward":"331","id_district":"5","name_ward":"6"},{"id_ward":"334","id_district":"5","name_ward":"9"},{"id_ward":"379","id_district":"6","name_ward":"18"},{"id_ward":"395","id_district":"6","name_ward":"15"},{"id_ward":"168","id_district":"16","name_ward":"1"},{"id_ward":"169","id_district":"16","name_ward":"2"},{"id_ward":"234","id_district":"21","name_ward":"2"},{"id_ward":"234","id_district":"21","name_ward":"2"},{"id_ward":"170","id_district":"16","name_ward":"3"},{"id_ward":"179","id_district":"16","name_ward":"3"},{"id_ward":"235","id_district":"21","name_ward":"3"},{"id_ward":"171","id_district":"16","name_ward":"4"},{"id_ward":"179","id_district":"16","name_ward":"4"},{"id_ward":"172","id_district":"16","name_ward":"5"},{"id_ward":"173","id_district":"16","name_ward":"6"},{"id_ward":"174","id_district":"16","name_ward":"7"},{"id_ward":"179","id_district":"16","name_ward":"7"},{"id_ward":"175","id_district":"16","name_ward":"8"},{"id_ward":"179","id_district":"21","name_ward":"8"},{"id_ward":"179","id_district":"16","name_ward":"8"},{"id_ward":"239","id_district":"21","name_ward":"8"},{"id_ward":"240","id_district":"21","name_ward":"9"},{"id_ward":"177","id_district":"21","name_ward":"10"},{"id_ward":"177","id_district":"16","name_ward":"10"},{"id_ward":"241","id_district":"21","name_ward":"10"},{"id_ward":"179","id_district":"16","name_ward":"11"},{"id_ward":"242","id_district":"21","name_ward":"11"},{"id_ward":"179","id_district":"16","name_ward":"12"},{"id_ward":"242","id_district":"21","name_ward":"12"},{"id_ward":"243","id_district":"21","name_ward":"12"},{"id_ward":"180","id_district":"16","name_ward":"13"},{"id_ward":"244","id_district":"21","name_ward":"13"},{"id_ward":"179","id_district":"16","name_ward":"14"},{"id_ward":"181","id_district":"21","name_ward":"14"},{"id_ward":"181","id_district":"16","name_ward":"14"},{"id_ward":"245","id_district":"21","name_ward":"14"},{"id_ward":"406","id_district":"5","name_ward":"14"},{"id_ward":"179","id_district":"21","name_ward":"15"},{"id_ward":"182","id_district":"16","name_ward":"15"},{"id_ward":"246","id_district":"21","name_ward":"15"},{"id_ward":"248","id_district":"21","name_ward":"17"},{"id_ward":"1","id_district":"1","name_ward":"B\u1ebfn Ngh\u00e9"},{"id_ward":"2","id_district":"1","name_ward":"B\u1ebfn Th\u00e0nh"},{"id_ward":"3","id_district":"1","name_ward":"C\u00f4 Giang"},{"id_ward":"5","id_district":"1","name_ward":"C\u1ea7u \u00d4ng L\u00e3nh"},{"id_ward":"13","id_district":"1","name_ward":"\u0110a Kao"},{"id_ward":"14","id_district":"1","name_ward":"Nguy\u1ec5n Th\u00e1i B\u00ecnh"},{"id_ward":"16","id_district":"1","name_ward":"Ph\u1ea1m Ng\u0169 L\u00e3o"},{"id_ward":"17","id_district":"1","name_ward":"T\u00e2n \u0110\u1ecbnh"},{"id_ward":"60","id_district":"8","name_ward":"3"},{"id_ward":"136","id_district":"13","name_ward":"11"},{"id_ward":"327","id_district":"5","name_ward":"2"},{"id_ward":"327","id_district":"5","name_ward":"2"},{"id_ward":"328","id_district":"5","name_ward":"3"},{"id_ward":"329","id_district":"5","name_ward":"4"},{"id_ward":"330","id_district":"5","name_ward":"5"},{"id_ward":"330","id_district":"5","name_ward":"5"},{"id_ward":"331","id_district":"5","name_ward":"6"},{"id_ward":"332","id_district":"5","name_ward":"7"},{"id_ward":"333","id_district":"5","name_ward":"8"},{"id_ward":"334","id_district":"5","name_ward":"9"},{"id_ward":"335","id_district":"5","name_ward":"10"},{"id_ward":"87","id_district":"10","name_ward":"B\u00ecnh Thu\u1eadn"},{"id_ward":"88","id_district":"10","name_ward":"Ph\u00fa M\u1ef9"},{"id_ward":"89","id_district":"10","name_ward":"Ph\u00fa Thu\u1eadn"},{"id_ward":"90","id_district":"10","name_ward":"T\u00e2n H\u01b0ng"},{"id_ward":"91","id_district":"10","name_ward":"T\u00e2n Phong"},{"id_ward":"92","id_district":"10","name_ward":"T\u00e2n Ki\u1ec3ng"},{"id_ward":"93","id_district":"10","name_ward":"T\u00e2n Ph\u00fa"},{"id_ward":"94","id_district":"10","name_ward":"T\u00e2n Quy"},{"id_ward":"95","id_district":"10","name_ward":"T\u00e2n Thu\u1eadn T\u00e2y"},{"id_ward":"292","id_district":"25","name_ward":"Ph\u00fa Xu\u00e2n"},{"id_ward":"380","id_district":"24","name_ward":"B\u00ecnh H\u01b0ng"},{"id_ward":"434","id_district":"25","name_ward":"Ph\u01b0\u1edbc Ki\u1ec3n"},{"id_ward":"727","id_district":"10","name_ward":"T\u00e2n Thu\u1eadn"},{"id_ward":"481","id_district":"66","name_ward":"Ch\u01b0\u01a1ng D\u01b0\u01a1ng"},{"id_ward":"482","id_district":"66","name_ward":"C\u1eeda \u0110\u00f4ng"},{"id_ward":"483","id_district":"66","name_ward":"C\u1eeda Nam"},{"id_ward":"486","id_district":"66","name_ward":"H\u00e0ng B\u00e0i"},{"id_ward":"487","id_district":"66","name_ward":"H\u00e0ng B\u1ed3"},{"id_ward":"489","id_district":"66","name_ward":"H\u00e0ng Bu\u1ed3m"},{"id_ward":"490","id_district":"66","name_ward":"H\u00e0ng \u0110\u00e0o"},{"id_ward":"491","id_district":"66","name_ward":"H\u00e0ng Gai"},{"id_ward":"492","id_district":"66","name_ward":"H\u00e0ng M\u00e3"},{"id_ward":"493","id_district":"66","name_ward":"H\u00e0ng Tr\u1ed1ng"},{"id_ward":"494","id_district":"66","name_ward":"L\u00fd Th\u00e1i T\u1ed5"},{"id_ward":"495","id_district":"66","name_ward":"Phan Chu Trinh"},{"id_ward":"496","id_district":"66","name_ward":"Ph\u00fac T\u1ea5n"},{"id_ward":"497","id_district":"66","name_ward":"Tr\u1ea7n H\u01b0ng \u0110\u1ea1o"},{"id_ward":"498","id_district":"66","name_ward":"Tr\u00e0ng Ti\u1ec1n"},{"id_ward":"551","id_district":"53","name_ward":"Th\u1ee5y Khuy\u00ea"},{"id_ward":"552","id_district":"53","name_ward":"Y\u00ean Ph\u1ee5"},{"id_ward":"558","id_district":"59","name_ward":"V\u0103n Mi\u1ebfu"},{"id_ward":"574","id_district":"59","name_ward":"Trung Ph\u1ee5ng"},{"id_ward":"579","id_district":"60","name_ward":"B\u1ea1ch \u0110\u1eb1ng"},{"id_ward":"582","id_district":"60","name_ward":"B\u00f9i Th\u1ecb Xu\u00e2n"},{"id_ward":"584","id_district":"60","name_ward":"\u0110\u1ed1ng M\u00e1c"},{"id_ward":"585","id_district":"60","name_ward":"\u0110\u1ed3ng Nh\u00e2n"},{"id_ward":"587","id_district":"60","name_ward":"L\u00ea \u0110\u1ea1i H\u00e0nh"},{"id_ward":"589","id_district":"60","name_ward":"Ng\u00f4 Th\u00ec Nh\u1eadm"},{"id_ward":"590","id_district":"60","name_ward":"Nguy\u1ec5n Du"},{"id_ward":"591","id_district":"60","name_ward":"Ph\u1ea1m \u0110\u00ecnh H\u1ed5"},{"id_ward":"592","id_district":"60","name_ward":"Ph\u1ed1 Hu\u1ebf"},{"id_ward":"630","id_district":"65","name_ward":"B\u1ed3 \u0110\u1ec1"},{"id_ward":"714","id_district":"76","name_ward":"V\u0103n Mi\u1ebfu"},{"id_ward":"717","id_district":"76","name_ward":"\u0110i\u1ec7n Bi\u00ean"},{"id_ward":"722","id_district":"76","name_ward":"Qu\u00e1n Th\u00e1nh"},{"id_ward":"723","id_district":"76","name_ward":"Nguy\u1ec5n Trung Tr\u1ef1c"},{"id_ward":"724","id_district":"76","name_ward":"Ph\u00fa X\u00e1"},{"id_ward":"725","id_district":"76","name_ward":"Tr\u00fac B\u1ea1ch"},{"id_ward":"726","id_district":"66","name_ward":"\u0110\u1ed3ng Xu\u00e2n"},{"id_ward":"728","id_district":"65","name_ward":"Ng\u1ecdc L\u00e2m"},{"id_ward":"628","id_district":"65","name_ward":"Ph\u00fac \u0110\u1ed3ng"},{"id_ward":"629","id_district":"65","name_ward":"Long Bi\u00ean"},{"id_ward":"630","id_district":"65","name_ward":"B\u1ed3 \u0110\u1ec1"},{"id_ward":"631","id_district":"65","name_ward":"Th\u1ea1ch B\u00e0n"},{"id_ward":"721","id_district":"65","name_ward":"S\u00e0i \u0110\u1ed3ng"},{"id_ward":"729","id_district":"65","name_ward":"C\u1ef1 Kh\u1ed1i"},{"id_ward":"483","id_district":"66","name_ward":"C\u1eeda Nam"},{"id_ward":"488","id_district":"66","name_ward":"H\u00e0ng B\u00f4ng"},{"id_ward":"501","id_district":"55","name_ward":"Gi\u00e1p B\u00e1t"},{"id_ward":"551","id_district":"53","name_ward":"Th\u1ee5y Khu\u00ea"},{"id_ward":"559","id_district":"59","name_ward":"Qu\u1ed1c T\u1eed Gi\u00e1m"},{"id_ward":"562","id_district":"59","name_ward":"Trung Lie\u1ec7t"},{"id_ward":"563","id_district":"59","name_ward":"Kh\u00e2m Thi\u00ean"},{"id_ward":"566","id_district":"59","name_ward":"Kh\u01b0\u01a1ng Th\u01b0\u1ee3ng"},{"id_ward":"569","id_district":"59","name_ward":"C\u00e1t Linh"},{"id_ward":"571","id_district":"59","name_ward":"\u00d4 Ch\u1ee3 D\u1eeba"},{"id_ward":"572","id_district":"59","name_ward":"Quang Trung"},{"id_ward":"576","id_district":"59","name_ward":"Trung T\u1ef1"},{"id_ward":"578","id_district":"59","name_ward":"L\u00e1ng H\u1ea1"},{"id_ward":"700","id_district":"59","name_ward":"X\u00e3 \u0110\u00e0n"},{"id_ward":"701","id_district":"59","name_ward":"khuong mai"},{"id_ward":"702","id_district":"59","name_ward":"Gi\u1ea3ng V\u00f5"},{"id_ward":"704","id_district":"76","name_ward":"Kim M\u00e3"},{"id_ward":"705","id_district":"76","name_ward":"NGo\u1ecdc Kh\u00e1nh"},{"id_ward":"706","id_district":"76","name_ward":"Th\u00e0nh C\u00f4ng"},{"id_ward":"707","id_district":"76","name_ward":"Trung Li\u1ec7t"},{"id_ward":"708","id_district":"76","name_ward":"Kh\u01b0\u01a1ng Trung"},{"id_ward":"709","id_district":"76","name_ward":"C\u1ed1ng V\u0129"},{"id_ward":"710","id_district":"76","name_ward":"Li\u1ec5u Giai"},{"id_ward":"711","id_district":"76","name_ward":"H\u00e0ng B\u00f4ng"},{"id_ward":"712","id_district":"76","name_ward":"C\u00e1t Linh"},{"id_ward":"713","id_district":"59","name_ward":"Quo\u1ed1c T\u1eed Gi\u00e1m"},{"id_ward":"713","id_district":"76","name_ward":"Linh Lang"},{"id_ward":"714","id_district":"76","name_ward":"V\u0103n Mi\u1ebfu"},{"id_ward":"715","id_district":"76","name_ward":"C\u1eeda Nam"},{"id_ward":"716","id_district":"76","name_ward":"Ng\u1ecdc H\u00e0"},{"id_ward":"717","id_district":"76","name_ward":"\u0110i\u1ec7n Bi\u00ean"},{"id_ward":"718","id_district":"76","name_ward":"L\u00e1ng H\u1ea1"},{"id_ward":"719","id_district":"60","name_ward":"Kha\u00e2m Thi\u00ean"},{"id_ward":"720","id_district":"61","name_ward":"C\u1ef1 L\u1ed9c"},{"id_ward":"554","id_district":"54","name_ward":"Qu\u1ea3ng An"},{"id_ward":"730","id_district":"77","name_ward":"M\u1eb7c \u0111\u1ecbnh"},{"id_ward":"731","id_district":"59","name_ward":"M\u1eb7c \u0111\u1ecbnh"},{"id_ward":"732","id_district":"61","name_ward":"M\u1eb7c \u0111\u1ecbnh"},{"id_ward":"733","id_district":"79","name_ward":"M\u1eb7c \u0111\u1ecbnh"},{"id_ward":"734","id_district":"90","name_ward":"M\u1eb7c \u0111\u1ecbnh"},{"id_ward":"735","id_district":"54","name_ward":"buoi"},{"id_ward":"736","id_district":"77","name_ward":"co nhue"},{"id_ward":"737","id_district":"77","name_ward":"dich vong"},{"id_ward":"738","id_district":"77","name_ward":"nghia do"},{"id_ward":"739","id_district":"77","name_ward":"nghia tan"},{"id_ward":"740","id_district":"54","name_ward":"nhat tan"},{"id_ward":"741","id_district":"77","name_ward":"quan hoa"},{"id_ward":"742","id_district":"76","name_ward":"vinh phuc"},{"id_ward":"743","id_district":"79","name_ward":"xuan dinh"},{"id_ward":"744","id_district":"54","name_ward":"xuan la"},{"id_ward":"745","id_district":"79","name_ward":"xuan tao"},{"id_ward":"746","id_district":"60","name_ward":"Thanh Nh\u00e0n"},{"id_ward":"747","id_district":"60","name_ward":"\u0110i\u1ec7n Bi\u00ean Ph\u1ee7"},{"id_ward":"703","id_district":"76","name_ward":"Gi\u1ea3ng V\u00f5"},{"id_ward":"707","id_district":"59","name_ward":"Trung Li\u1ec7t"},{"id_ward":"551","id_district":"0","name_ward":"Th\u1ee5y Khu\u00ea"},{"id_ward":"500","id_district":"61","name_ward":"\u0111\u1ea1i kim"},{"id_ward":"602","id_district":"61","name_ward":"Kh\u01b0\u01a1ng Mai"},{"id_ward":"603","id_district":"61","name_ward":"Kh\u01b0\u01a1ng Trung"},{"id_ward":"712","id_district":"59","name_ward":"C\u00e1t Linh"},{"id_ward":"604","id_district":"61","name_ward":"nh\u00e2n ch\u00ednh"},{"id_ward":"607","id_district":"61","name_ward":"thanh xu\u00e2n trung"},{"id_ward":"499","id_district":"55","name_ward":"\u0110\u1ecbnh C\u00f4ng"},{"id_ward":"550","id_district":"53","name_ward":"B\u01b0\u1edfi"},{"id_ward":"556","id_district":"53","name_ward":"Xu\u00e2n La"},{"id_ward":"554","id_district":"53","name_ward":"Nh\u1eadt T\u00e2n"},{"id_ward":"736","id_district":"0","name_ward":"C\u1ed5 Nhu\u1ebf"},{"id_ward":"736","id_district":"62","name_ward":"C\u1ed5 Nhu\u1ebf"},{"id_ward":"515","id_district":"62","name_ward":"D\u1ecbch V\u1ecdng"},{"id_ward":"751","id_district":"62","name_ward":"Ho\u00e0ng Qu\u1ed1c Vi\u1ec7t"},{"id_ward":"519","id_district":"62","name_ward":"Mai d\u1ecbch"},{"id_ward":"513","id_district":"62","name_ward":"Ngh\u0129a \u0110\u00f4"},{"id_ward":"734","id_district":"76","name_ward":"Th\u1ee5y Khu\u00ea"},{"id_ward":"749","id_district":"76","name_ward":"V\u0129nh Ph\u00fac"},{"id_ward":"752","id_district":"0","name_ward":"Xu\u00e2n \u0110\u1ec9nh"},{"id_ward":"752","id_district":"149","name_ward":"Xu\u00e2n \u0110\u1ec9nh"},{"id_ward":"753","id_district":"149","name_ward":"Xu\u00e2n T\u1ea3o"},{"id_ward":"754","id_district":"149","name_ward":"\u0110\u00f4ng Ng\u1ea1c"},{"id_ward":"755","id_district":"149","name_ward":"\u0110\u1ee9c Th\u1eafng"},{"id_ward":"736","id_district":"149","name_ward":"C\u1ed5 Nhu\u1ebf"},{"id_ward":"756","id_district":"149","name_ward":"C\u1ed5 Nhu\u1ebf 1"},{"id_ward":"757","id_district":"149","name_ward":"C\u1ed5 Nhu\u1ebf 2"},{"id_ward":"758","id_district":"149","name_ward":"Th\u1ee5y Ph\u01b0\u01a1ng"},{"id_ward":"518","id_district":"62","name_ward":"Ngh\u0129a T\u00e2n"},{"id_ward":"750","id_district":"62","name_ward":"Ph\u00fa Di\u1ec5n"},{"id_ward":"514","id_district":"62","name_ward":"Quan Hoa"},{"id_ward":"557","id_district":"53","name_ward":"Ph\u00fa th\u01b0\u1ee3ng"},{"id_ward":"750","id_district":"149","name_ward":"Ph\u00fa Di\u1ec5n"},{"id_ward":"484","id_district":"66","name_ward":"\u0110\u1ed3ng Xu\u00e2n"},{"id_ward":"748","id_district":"66","name_ward":"Tr\u00e0ng Ti\u1ec1n"},{"id_ward":"596","id_district":"60","name_ward":"Thanh Nh\u00e0n"},{"id_ward":"591","id_district":"66","name_ward":"Ph\u1ea1m \u0110\u00ecnh H\u1ed5"},{"id_ward":"595","id_district":"60","name_ward":"Thanh L\u01b0\u01a1ng"},{"id_ward":"598","id_district":"60","name_ward":"V\u0129nh Tuy"},{"id_ward":"581","id_district":"60","name_ward":"B\u1ea1ch Mai"},{"id_ward":"580","id_district":"60","name_ward":"B\u00e1ch Khoa"},{"id_ward":"505","id_district":"55","name_ward":"Mai \u0110\u00f4ng"},{"id_ward":"586","id_district":"55","name_ward":"\u0110\u1ed3ng T\u00e2m"},{"id_ward":"510","id_district":"55","name_ward":"T\u01b0\u01a1ng Mai"},{"id_ward":"326","id_district":"5","name_ward":"1"},{"id_ward":"70","id_district":"8","name_ward":"13"},{"id_ward":"98","id_district":"11","name_ward":"2"},{"id_ward":"104","id_district":"11","name_ward":"8"},{"id_ward":"99","id_district":"11","name_ward":"3"},{"id_ward":"71","id_district":"8","name_ward":"14"},{"id_ward":"72","id_district":"8","name_ward":"15"},{"id_ward":"73","id_district":"6","name_ward":"1"},{"id_ward":"73","id_district":"9","name_ward":"1"},{"id_ward":"86","id_district":"9","name_ward":"14"},{"id_ward":"74","id_district":"9","name_ward":"2"},{"id_ward":"76","id_district":"9","name_ward":"4"},{"id_ward":"66","id_district":"8","name_ward":"9"},{"id_ward":"77","id_district":"9","name_ward":"5"},{"id_ward":"80","id_district":"9","name_ward":"8"},{"id_ward":"31","id_district":"6","name_ward":"3"},{"id_ward":"34","id_district":"6","name_ward":"6"},{"id_ward":"747","id_district":"24","name_ward":"trung son"},{"id_ward":"96","id_district":"10","name_ward":"T\u00e2n thu\u1eadn \u0111\u00f4ng"},{"id_ward":"97","id_district":"11","name_ward":"1"},{"id_ward":"275","id_district":"24","name_ward":"B\u00ecnh H\u01b0ng"},{"id_ward":"100","id_district":"11","name_ward":"4"},{"id_ward":"293","id_district":"25","name_ward":"Ph\u01b0\u1edbc Ki\u1ec3n"},{"id_ward":"424","id_district":"25","name_ward":"Ph\u00fa Xu\u00e2n"},{"id_ward":"337","id_district":"5","name_ward":"12"},{"id_ward":"15","id_district":"1","name_ward":"Nguy\u1ec5n C\u01b0 Trinh"},{"id_ward":"1","id_district":"11","name_ward":"B\u1ebfn Ngh\u00e9"},{"id_ward":"233","id_district":"21","name_ward":"1"},{"id_ward":"244","id_district":"16","name_ward":"13"},{"id_ward":"247","id_district":"21","name_ward":"17"},{"id_ward":"236","id_district":"21","name_ward":"4"},{"id_ward":"238","id_district":"21","name_ward":"7"},{"id_ward":"336","id_district":"5","name_ward":"11"},{"id_ward":"183","id_district":"17","name_ward":"1"},{"id_ward":"196","id_district":"17","name_ward":"14"},{"id_ward":"187","id_district":"17","name_ward":"5"},{"id_ward":"213","id_district":"0","name_ward":"1"},{"id_ward":"214","id_district":"19","name_ward":"3"},{"id_ward":"216","id_district":"19","name_ward":"5"},{"id_ward":"218","id_district":"19","name_ward":"7"},{"id_ward":"405","id_district":"19","name_ward":"10"},{"id_ward":"203","id_district":"0","name_ward":"T\u00e2y Th\u1ea1nh"},{"id_ward":"355","id_district":"19","name_ward":"8"},{"id_ward":"220","id_district":"19","name_ward":"12"},{"id_ward":"746","id_district":"18","name_ward":"8"},{"id_ward":"204","id_district":"18","name_ward":"S\u01a1n K\u1ef3"},{"id_ward":"208","id_district":"18","name_ward":"Ph\u00fa Th\u1ea1nh"},{"id_ward":"209","id_district":"18","name_ward":"Ph\u00fa Trung"},{"id_ward":"19","id_district":"3","name_ward":"An Kh\u00e1nh"},{"id_ward":"19","id_district":"17","name_ward":"An Kh\u00e1nh"},{"id_ward":"21","id_district":"17","name_ward":"B\u00ecnh An"},{"id_ward":"22","id_district":"3","name_ward":"B\u00ecnh Kh\u00e1nh"},{"id_ward":"371","id_district":"17","name_ward":"26"},{"id_ward":"396","id_district":"17","name_ward":"21"},{"id_ward":"520","id_district":"62","name_ward":"y\u00ean h\u00f2a"},{"id_ward":"517","id_district":"62","name_ward":"trung h\u00f2a"},{"id_ward":"568","id_district":"59","name_ward":"l\u00e1ng th\u01b0\u1ee3ng"},{"id_ward":"606","id_district":"61","name_ward":"thanh xu\u00e2n b\u1eafc"},{"id_ward":"609","id_district":"61","name_ward":"th\u01b0\u1ee3ng \u0111\u00ecnh"},{"id_ward":"599","id_district":"61","name_ward":"h\u1ea1 \u0111\u00ecnh"},{"id_ward":"608","id_district":"61","name_ward":"thanh xu\u00e2n nam"},{"id_ward":"604","id_district":"62","name_ward":"Nh\u00e2n Ch\u00ednh"},{"id_ward":"742","id_district":"62","name_ward":"C\u1ed1ng V\u1ecb"},{"id_ward":"516","id_district":"62","name_ward":"D\u1ecbch V\u1ecdng H\u1eadu"},{"id_ward":"738","id_district":"78","name_ward":"M\u1ef9 \u0110\u00ecnh 2"},{"id_ward":"578","id_district":"62","name_ward":"L\u00e1ng H\u1ea1"},{"id_ward":"578","id_district":"76","name_ward":"L\u00e1ng H\u1ea1"},{"id_ward":"741","id_district":"78","name_ward":"M\u1ec5 Tr\u00ec"},{"id_ward":"743","id_district":"62","name_ward":"C\u1ea7u Gi\u1ea5y"},{"id_ward":"745","id_district":"0","name_ward":"T\u00e2n Tri\u1ec1u"},{"id_ward":"744","id_district":"61","name_ward":"Nguy\u1ec5n Tr\u00e3i"},{"id_ward":"739","id_district":"78","name_ward":"Trung V\u0103n"},{"id_ward":"740","id_district":"78","name_ward":"Ph\u00fa \u0110\u00f4"},{"id_ward":"737","id_district":"78","name_ward":"M\u1ef9 \u0110\u00ecnh 1"},{"id_ward":"553","id_district":"53","name_ward":"T\u1ee9 Li\u00ean"},{"id_ward":"555","id_district":"53","name_ward":"Qu\u1ea3ng An"},{"id_ward":"722","id_district":"66","name_ward":"Qu\u00e1n Th\u00e1nh"}];
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <input disabled type="text"
+                                           name="street" id="street"
+                                           class="input-text select-custom"
+                                           placeholder="Vui lòng nhập tên đường" />
+
+                                </div>
+                                <div class="col-md-4 ">
+                                    <input disabled type="number"
+                                           title="House Number "
+                                           name="house_number" id="house_number"
+                                           class="input-text  select-custom-input validate-greater-than-zero"
+                                           placeholder="Nhập số nhà" />
+                                </div>
+                                <div class="col-md-12 ">
+                                    <input type="text"
+                                           title="Customer Note"
+                                           name="cus_note" id="cus_note"
+                                           class="input-text  select-custom-input"
+                                           placeholder="Vui lòng ghi đầy đủ số nhà ví dụ : 120/E7" />
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="city_id" name="city_id">
+                        <input type="hidden" id="district_id" name="district_id">
+                        <input type="hidden" id="wards_id" name="wards_id">
+                        <div class="input-box">
+                            <label class="checkbox-style bold">
+                                <input type="checkbox" name="is_subscribed" value="" id="is_subscribed">
+                                <span>Tôi muốn nhận đề nghị qua email</span>
+                            </label>
+                        </div>
+                                                                                                                    </form>
+                    <div class="buttons-set">
+                        <button   title="Đăng Ký" class="btn btn-register  btn-primary">Đăng Ký</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="free-delivery">
+                <a href="tel:19006960"><img src="https://vn.burgerking.com/skin/frontend/bk2/default/images/Burgerking-Delivery-Desktop.png" alt="delivery"/></a>
+            </div>
+<script>
+    jQuery(document).ready(function(){
+        var heightWindow = jQuery(window).height();
+        var heightDocument = jQuery('html').height();
+        if(heightDocument < heightWindow) {
+            jQuery('.parent-footer').addClass('custom_footer');
+        }
+    });
+</script>
+<script>
+    jQuery('#is_subscribed').click(function () {
+        jQuery('#is_subscribed').val(1);
+    });
+    var registerform = new VarienForm('register-form');
+    var loginform = new VarienForm('login-form');
+    jQuery(document).ready(function () {
+        jQuery('#login-form').submit(function (event) {
+            event.preventDefault();
+            if (!recaptchachecked) {
+                alert('Invaild capcha');
+                return;
+            } else {
+                document.getElementById('login-form').submit();
+            }
+        });
+        jQuery('.recaptcha-checkbox-checkmark').addClass('required-entry');
+    });
+
+</script>
+
+<script>
+    jQuery(window).load(function(){
+        if(jQuery("#osc-loader").size() <= 0){
+            var oscLoader = jQuery('' +
+                '    <div class="osc-loader" id="osc-loader" style="display: none;">\n' +
+                '        <div class="osc-loader-background"></div>\n' +
+                '        <div class="loading-mask" data-role="loader">\n' +
+                '            <div class="loader">\n' +
+                '                <img alt="Đang tải thông tin..."\n' +
+                '                    src="https://vn.burgerking.com/skin/frontend/bk2/default/lotusbreath/onestepcheckout/images/ajax-loader_3.gif"/>\n' +
+                '                <p>Đang tải thông tin...</p>\n' +
+                '            </div>\n' +
+                '        </div>\n' +
+                '    </div>');
+            jQuery('body').append(oscLoader);
+        }
+    });
+</script>
+
+<!-- COOKIE CONSENT BANNER (FULL WIDTH 100%) -->
+<style>
+    #cookie-consent-modal {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        box-sizing: border-box;
+        background: #522e1d;
+        color: #baa699;
+        padding: 16px 24px;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+        z-index: 999999;
+        font-family: "Roboto", sans-serif;
+        font-size: 13.5px;
+        line-height: 1.6;
+    }
+    .cookie-consent-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+    }
+    #cookie-consent-modal p {
+        margin: 0;
+        color: #baa699;
+        flex: 1;
+    }
+    #cookie-consent-modal a {
+        color: #ffcc00;
+        text-decoration: underline;
+        font-weight: 500;
+    }
+    #cookie-consent-modal a:hover {
+        color: #ffffff;
+    }
+    .cookie-consent-buttons {
+        display: flex;
+        gap: 12px;
+        flex-shrink: 0;
+    }
+    .cookie-btn {
+        padding: 9px 22px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        border-radius: 4px;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+        text-transform: uppercase;
+    }
+    /* Button Chấp nhận màu đỏ #c21d1b */
+    .cookie-btn-accept {
+        background: #c21d1b;
+        color: #ffffff;
+    }
+    .cookie-btn-accept:hover {
+        background: #a31816;
+    }
+    /* Button Từ chối màu trắng */
+    .cookie-btn-decline {
+        background: #ffffff;
+        color: #333333;
+        border: 1px solid #ffffff;
+    }
+    .cookie-btn-decline:hover {
+        background: #f0f0f0;
+        color: #111111;
+    }
+    /* Responsive Mobile */
+    @media (max-width: 768px) {
+        #cookie-consent-modal {
+            padding: 14px 16px;
+        }
+        .cookie-consent-container {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 14px;
+        }
+        .cookie-consent-buttons {
+            flex-direction: column-reverse;
+            gap: 8px;
+        }
+        .cookie-btn {
+            width: 100%;
+            text-align: center;
+            padding: 11px;
+        }
+    }
+</style>
+
+<div id="cookie-consent-modal">
+    <div class="cookie-consent-container">
+        <p>
+            Trang web này sử dụng Cookies để cá nhân hóa trải nghiệm và cung cấp các tính năng phù hợp đến bạn. Bằng cách nhấp vào CHẤP NHẬN, bạn đồng ý với việc sử dụng Cookies và 
+            <a href="https://vn.burgerking.com/policy/" target="_blank">Chính sách hoạt động, Chính sách bảo mật và Điều khoản, điều kiện sử dụng</a> 
+            của Buger King Việt Nam.        </p>
+        <div class="cookie-consent-buttons">
+            <button type="button" id="cookie-btn-decline" class="cookie-btn cookie-btn-decline">TỪ CHỐI</button>
+            <button type="button" id="cookie-btn-accept" class="cookie-btn cookie-btn-accept">CHẤP NHẬN</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var CONSENT_KEY = 'cookie_consent_status';
+    var banner = document.getElementById('cookie-consent-modal');
+    var btnAccept = document.getElementById('cookie-btn-accept');
+    var btnDecline = document.getElementById('cookie-btn-decline');
+
+    function sendConsentUpdate(status) {
+        if (typeof gtag === 'function') {
+            gtag('consent', 'update', {
+                'ad_storage': status,
+                'ad_user_data': status,
+                'ad_personalization': status,
+                'analytics_storage': status,
+                'personalization_storage': status
+            });
+        }
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'cookie_consent_changed',
+            'consent_status': status
+        });
+    }
+
+    function saveConsent(status, days) {
+        var expiry = Date.now() + days * 86400000;
+        try {
+            localStorage.setItem(CONSENT_KEY, JSON.stringify({ status: status, expiry: expiry }));
+        } catch(e) {}
+        sendConsentUpdate(status);
+        if (banner) banner.style.display = 'none';
+    }
+
+    try {
+        var rawStatus = localStorage.getItem(CONSENT_KEY);
+        var hasValidConsent = false;
+        if (rawStatus) {
+            try {
+                var parsed = JSON.parse(rawStatus);
+                // ponytail: timestamp check assuming client clock is reasonably close to reality; drifts of seconds don't affect 30-180d expiry
+                if (parsed && typeof parsed === 'object') {
+                    if (!parsed.expiry || Date.now() < parsed.expiry) {
+                        hasValidConsent = true;
+                    } else {
+                        localStorage.removeItem(CONSENT_KEY);
+                    }
+                }
+            } catch(jsonErr) {
+                // Fallback backward-compatibility for old plain string values
+                if (rawStatus === 'granted' || rawStatus === 'denied') {
+                    hasValidConsent = true;
+                }
+            }
+        }
+        if (!hasValidConsent && banner) {
+            banner.style.display = 'block';
+        }
+    } catch(e) {
+        if (banner) banner.style.display = 'block';
+    }
+
+    if (btnAccept) {
+        btnAccept.onclick = function() {
+            saveConsent('granted', 180); // 6 months
+        };
+    }
+
+    if (btnDecline) {
+        btnDecline.onclick = function() {
+            saveConsent('denied', 30); // 30 days
+        };
+    }
+})();
+</script>
+                
+
+        </main>
+    </div>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-7c7684aebbb279166db","applicationID":"1296014576","transactionName":"NgEGYhNVV0VRWhdeDQ9LJVUVXVZYH1oCQwMNCwMZEUZWUkVaFxgUCAET","queueTime":0,"applicationTime":194,"atts":"GkYFFFtPREs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/getfund-site-icon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/logos/getfund-site-icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/logos/getfund-site-icon-192x192.png" />
+    <link rel="shortcut icon" href="/images/logos/getfund-cropped-icon.png" />
+    
+    <!-- Meta tags for SEO and PWA -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Ghana Education Trust Fund (GETFund) - Supporting quality education for all Ghanaians from basic to tertiary level through infrastructure development, scholarships, and educational sector support." />
+    <meta name="keywords" content="Ghana Education Trust Fund, GETFund, education, scholarships, infrastructure, Ghana, trust fund, tertiary education, basic education" />
+    <meta name="author" content="Ghana Education Trust Fund" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#059669" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="GETFund Ghana" />
+    
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="GETFund Ghana - Ghana Education Trust Fund" />
+    <meta property="og:description" content="Supporting quality education for all Ghanaians from basic to tertiary level through infrastructure development, scholarships, and educational sector support." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://getfund.gov.gh" />
+    <meta property="og:image" content="/images/logos/getfund-site-icon-192x192.png" />
+    <meta property="og:locale" content="en_GH" />
+    
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GETFund Ghana - Ghana Education Trust Fund" />
+    <meta name="twitter:description" content="Supporting quality education for all Ghanaians from basic to tertiary level." />
+    <meta name="twitter:image" content="/images/logos/getfund-site-icon-192x192.png" />
+    
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://getfund-cms-backend.vercel.app" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://getfund-cms-backend.vercel.app">
+    
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GovernmentOrganization",
+      "name": "Ghana Education Trust Fund",
+      "alternateName": "GETFund",
+      "description": "Supporting quality education for all Ghanaians from basic to tertiary level through infrastructure development, scholarships, and educational sector support.",
+      "url": "https://getfund.gov.gh",
+      "logo": "/images/logos/getfund-logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Ghana"
+      },
+      "sameAs": [
+        "https://twitter.com/getfundgh",
+        "https://facebook.com/getfundghana"
+      ],
+      "foundingDate": "2000",
+      "areaServed": "Ghana",
+      "knowsAbout": ["Education", "Infrastructure", "Scholarships", "Ghana"]
+    }
+    </script>
+    
+    <title>GETFund Ghana - Ghana Education Trust Fund</title>
+    <script type="module" crossorigin src="/assets/index-CxMLORKP.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-DiAAtd1u.js">
+    <link rel="modulepreload" crossorigin href="/assets/router-BZaAR6xE.js">
+    <link rel="modulepreload" crossorigin href="/assets/icons-Cle0kIgN.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-CudMGBYs.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <script>
+(function () {
+  var EFPI = 'https://efpi.getfund.gov.gh';
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest && e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf(EFPI) !== 0) return;
+    if (href.indexOf('donate=') !== -1) return;
+    if ((a.textContent || '').trim().toLowerCase() !== 'donate') return;
+    e.preventDefault();
+    window.location.href = EFPI + '/?donate=1';
+  }, true);
+})();
+</script>
+
+  </body>
+</html>

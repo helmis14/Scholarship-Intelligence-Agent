@@ -1,0 +1,576 @@
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"41518fd2dd",applicationID:"271001434",browserID:"271003506"};;/*! For license information please see nr-loader-rum-1.324.0.min.js.LICENSE.txt */
+(()=>{var e={8122(e,t,r){"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),a=0===Object.keys(r).length?e:r;for(let s in a)if(void 0!==e[s])try{if(null===e[s]){r[s]=null;continue}Array.isArray(e[s])&&Array.isArray(t[s])?r[s]=Array.from(new Set([...e[s],...t[s]])):e[s]instanceof Map||e[s]instanceof Set||e[s]instanceof Date||e[s]instanceof RegExp?r[s]=e[s]:"object"==typeof e[s]&&null!==t[s]&&"object"==typeof t[s]?r[s]=i(e[s],t[s]):r[s]=e[s]}catch(e){r[s]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},2555(e,t,r){"use strict";r.d(t,{f:()=>s});var n=r(384),i=r(8122);const a={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function s(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}r.d(t,["D",0,e=>(0,i.a)(e,a)])},7699(e,t,r){"use strict";var n=r(860);const i=1e6,a={[n.K7.logging]:!0,[n.K7.genericEvents]:!0,[n.K7.jserrors]:!0,[n.K7.ajax]:!0};r.d(t,["It",0,i,"KC",0,a,"qh",0,"SESSION_ERROR","zd",0,5e5])},9324(e,t,r){"use strict";r.d(t,["xv",0,"1.324.0"])},981(e,t,r){"use strict";r.d(t,["R",0,{AJAX:"AjaxRequest",PA:"PageAction",UA:"UserAction",BP:"BrowserPerformance",WS:"WebSocket",SPV:"SecurityPolicyViolation",JSE:"JavaScriptError",LOG:"Log",PVE:"PageView",PVT:"PageViewTiming",SR:"SessionReplay",ST:"SessionTrace",BI:"BrowserInteraction"}])},6154(e,t,r){"use strict";var n=r(1863);const i="undefined"!=typeof window&&!!window.document,a="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),s=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),o=Boolean("hidden"===s?.document?.visibilityState),c=""+s?.location,u=/iPad|iPhone|iPod/.test(s.navigator?.userAgent),d=u&&"undefined"==typeof SharedWorker,l=((()=>{const e=s.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Date.now()-(0,n.t)());r.d(t,["OF",0,u,"RI",0,i,"WN",0,l,"bv",0,a,"gm",0,s,"m",0,c,"mw",0,o,"sb",0,d,"zk",0,()=>{const e=s?.performance?.getEntriesByType?.("navigation")?.[0];if(e&&e.responseStart>0&&e.responseStart<s.performance.now())return e}])},3241(e,t,r){"use strict";r.d(t,{W:()=>i});var n=r(6154);function i(e={}){try{n.gm.dispatchEvent(new CustomEvent("newrelic",{detail:e}))}catch(e){}}},1687(e,t,r){"use strict";r.d(t,{Ak:()=>o,Ze:()=>u,x3:()=>c});var n=r(3241),i=r(3606),a=r(860),s=r(2646);function o(e,t){if(!e)return;const r={staged:!1,priority:a.P3[t]||0};e.runtime.drainRegistry.get(t)||e.runtime.drainRegistry.set(t,r)}function c(e,t){if(!e)return;const r=e.runtime.drainRegistry;r&&(r.get(t)&&r.delete(t),l(e,t,!1),r.size&&d(e))}function u(e,t="feature",r=!1){if(e){if(!e.runtime.drainRegistry.get(t)||r)return l(e,t);e.runtime.drainRegistry.get(t).staged=!0,d(e)}}function d(e){if(!e)return;const t=Array.from(e.runtime.drainRegistry);t.every(([e,t])=>t.staged)&&(t.sort((e,t)=>e[1].priority-t[1].priority),t.forEach(([t])=>{e.runtime.drainRegistry.delete(t),l(e,t)}))}function l(e,t,r=!0){if(!e)return;const a=e.ee,o=i.i.handlers;if(a&&!a.aborted&&a.backlog&&o){if((0,n.W)({type:"lifecycle",name:"drain",feature:t}),r){const e=a.backlog[t],r=o[t];if(r){for(let t=0;e&&t<e.length;++t)f(e[t],r);Object.entries(r).forEach(([e,t])=>{Object.values(t||{}).forEach(t=>{t[0]?.on&&t[0].context()instanceof s.y&&!t[0].listeners(e).includes(t[1])&&t[0].on(e,t[1])})})}}a.isolatedBacklog||delete o[t],a.backlog[t]=null,a.emit("drain-"+t,[])}}function f(e,t){var r=e[1];Object.values(t[r]||{}).forEach(t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],a=e[2];n.apply(i,a)}})}},7836(e,t,r){"use strict";var n=r(384),i=r(8990),a=r(2646),s=r(5607);const o="nr@context:".concat(s.W),c=function e(t,r){var n={},s={},d={},l=!1;try{l=16===r.length&&u.initializedAgents?.[r]?.runtime.isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,a){!1!==a&&(a=!0);if(c.aborted&&!i)return;t&&a&&t.emit(e,r,n);var o=g(n);m(e).forEach(e=>{e.apply(o,r)});var u=v()[s[e]];u&&u.push([f,e,r,o]);return o},get:h,listeners:m,context:g,buffer:function(e,t){const r=v();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach(([e,n])=>{s[n]=t,t in r||(r[t]=[])})},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach(e=>{delete f.backlog[e]})},isBuffering:function(e){return!!v()[s[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function g(e){return e&&e instanceof a.y?e:e?(0,i.I)(e,o,()=>new a.y(o)):new a.y(o)}function p(e,t){n[e]=m(e).concat(t)}function m(e){return n[e]||[]}function h(t){return d[t]=d[t]||e(f,t)}function v(){return f.backlog}}(void 0,"globalEE"),u=(0,n.Zm)();u.ee||(u.ee=c),r.d(t,["P",0,o,"ee",0,c])},2646(e,t,r){"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},9908(e,t,r){"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(7836).ee.get("handle");function i(e,t,r,i,a){a?(a.buffer([e],i),a.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}},3606(e,t,r){"use strict";r.d(t,{i:()=>a});var n=r(9908);a.on=s;var i=a.handlers={};function a(e,t,r,a){s(a||n.d,i,e,t,r)}function s(e,t,r,i,a){a||(a="feature"),e||(e=n.d);var s=t[a]=t[a]||{};(s[r]=s[r]||[]).push([e,i])}},3878(e,t,r){"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function a(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>a,jT:()=>n,sp:()=>i})},5607(e,t,r){"use strict";const n=(0,r(9566).bz)();r.d(t,["W",0,n])},9566(e,t,r){"use strict";r.d(t,{LA:()=>s,bz:()=>a});var n=r(6154);function i(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".split("").map(e=>"x"===e?i(t,r++).toString(16):"y"===e?(3&i()|8).toString(16):e).join("")}function s(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,a=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const s=[];for(var o=0;o<e;o++)s.push(i(r,a++).toString(16));return s.join("")}},2614(e,t,r){"use strict";r.d(t,["BB",0,18e5,"Wt",0,"NRBA_SESSION::","iL",0,{SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},"tS",0,{STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},"wk",0,144e5])},1863(e,t,r){"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},944(e,t,r){"use strict";r.d(t,{R:()=>i});var n=r(3241);function i(e,t){"function"==typeof console.debug&&(console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t),(0,n.W)({drained:null,type:"data",name:"warn",feature:"warn",data:{code:e,secondary:t}}))}},8990(e,t,r){"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},6389(e,t,r){"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout(()=>{i=clearTimeout(i)},t)),n||(clearTimeout(i),i=setTimeout(()=>{e.apply(this,r)},t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},1910(e,t,r){"use strict";r.d(t,{i:()=>a});var n=r(944);const i=new Map;function a(...e){return e.every(e=>{if(i.has(e))return i.get(e);const t="function"==typeof e?e.toString():"",r=t.includes("[native code]"),a=t.includes("nrWrapper");return r||a||(0,n.R)(64,e?.name||t),i.set(e,r),r})}},5289(e,t,r){"use strict";r.d(t,{GG:()=>s,Qr:()=>c,sB:()=>o});var n=r(3878),i=r(6389);function a(){return"undefined"==typeof document||"complete"===document.readyState}function s(e,t){if(a())return e();const r=(0,i.J)(e),s=setInterval(()=>{a()&&(clearInterval(s),r())},500);(0,n.sp)("load",r,t)}function o(e){if(a())return e();(0,n.DD)("DOMContentLoaded",e)}function c(e){if(a())return e();(0,n.sp)("popstate",e)}},384(e,t,r){"use strict";r.d(t,{Zm:()=>c,bQ:()=>d,dV:()=>u,pV:()=>l});var n=r(6154),i=r(1863),a=r(944),s=r(1910);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function u(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,s.i)(...Object.values(e.o))),e}function d(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,a.R)(69)}function l(){return function(){let e=c();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),u(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}r.d(t,["NT",0,o])},2843(e,t,r){"use strict";r.d(t,{G:()=>a,u:()=>i});var n=r(3878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)},r,i)}function a(e,t,r){(0,n.sp)("pagehide",e,t,r)}},9300(e,t,r){"use strict";r(860).K7.ajax;r.d(t,["mo",0,{NONE:"none",FAILURES:"failures",ALL:"all"}])},3969(e,t,r){"use strict";const n=r(860).K7.metrics;r.d(t,["TZ",0,n,"XG",0,"storeEventMetrics","xV",0,"storeSupportabilityMetrics"])},6630(e,t,r){"use strict";const n=r(860).K7.pageViewEvent;r.d(t,["T",0,n])},782(e,t,r){"use strict";const n=r(860).K7.pageViewTiming;r.d(t,["T",0,n])},4234(e,t,r){"use strict";r.d(t,{W:()=>i});var n=r(1687);class i{constructor(e,t){this.agentRef=e,this.ee=e?.ee,this.featureName=t,this.blocked=!1}deregisterDrain(){(0,n.x3)(this.agentRef,this.featureName)}}},7767(e,t,r){"use strict";var n=r(6154);r.d(t,["V",0,e=>n.RI&&!0===e?.privacy.cookies_enabled])},8362(e,t,r){"use strict";r.d(t,{d:()=>a});var n=r(9566),i=r(1741);class a extends i.W{agentIdentifier=(0,n.LA)(16)}},1741(e,t,r){"use strict";r.d(t,{W:()=>a});var n=r(944),i=r(4261);class a{#e(e,...t){if(this[e]!==a.prototype[e])return this[e](...t);(0,n.R)(35,e)}addPageAction(e,t){return this.#e(i.hG,e,t)}register(e){return this.#e(i.eY,e)}recordCustomEvent(e,t){return this.#e(i.fF,e,t)}setPageViewName(e,t){return this.#e(i.Fw,e,t)}setCustomAttribute(e,t,r){return this.#e(i.cD,e,t,r)}noticeError(e,t){return this.#e(i.o5,e,t)}setUserId(e,t=!1){return this.#e(i.Dl,e,t)}setApplicationVersion(e){return this.#e(i.nb,e)}setErrorHandler(e){return this.#e(i.bt,e)}addRelease(e,t){return this.#e(i.k6,e,t)}log(e,t){return this.#e("log",e,t)}start(){return this.#e("start")}finished(e){return this.#e(i.BL,e)}recordReplay(){return this.#e(i.CH)}pauseReplay(){return this.#e(i.Tb)}addToTrace(e){return this.#e(i.U2,e)}setCurrentRouteName(e){return this.#e(i.PA,e)}interaction(e){return this.#e(i.dT,e)}wrapLogger(e,t,r){return this.#e(i.Wb,e,t,r)}measure(e,t){return this.#e(i.V1,e,t)}consent(e){return this.#e(i.Pv,e)}}},4261(e,t,r){"use strict";r.d(t,["BL",0,"finished","CH",0,"recordReplay","Dl",0,"setUserId","Fw",0,"setPageViewName","PA",0,"setCurrentRouteName","Pv",0,"consent","Tb",0,"pauseReplay","U2",0,"addToTrace","V1",0,"measure","Wb",0,"wrapLogger","bt",0,"setErrorHandler","cD",0,"setCustomAttribute","dT",0,"interaction","eY",0,"register","fF",0,"recordCustomEvent","hG",0,"addPageAction","k6",0,"addRelease","nb",0,"setApplicationVersion","o5",0,"noticeError"])},1738(e,t,r){"use strict";r.d(t,{U:()=>l,Y:()=>d});var n=r(3241),i=r(9908),a=r(1863),s=r(944),o=r(3969),c=r(8362),u=r(860);function d(e,t,r,a){const d=a||r;!d||d[e]&&d[e]!==c.d.prototype[e]||(d[e]=function(){(0,i.p)(o.xV,["API/"+e+"/called"],void 0,u.K7.metrics,r.ee),(0,n.W)({drained:!!r.runtime?.activatedFeatures,type:"data",name:"api",feature:"api-"+e,data:{}});try{return t.apply(this,arguments)}catch(e){(0,s.R)(23,e)}})}function l(e,t,r,n,s){const o=e.info;null===r?delete o.jsAttributes[t]:o.jsAttributes[t]=r,(s||null===r)&&(0,i.p)("api-"+n,[(0,a.t)(),t,r],void 0,"session",e.ee)}},8374(e,t,r){r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},860(e,t,r){"use strict";const n="events",i="jserrors",a="browser/blobs",s="browser/logs",o={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations"},c={[o.pageViewEvent]:1,[o.pageViewTiming]:2,[o.metrics]:3,[o.jserrors]:4,[o.softNav]:5,[o.ajax]:6,[o.sessionTrace]:7,[o.sessionReplay]:8,[o.logging]:9,[o.genericEvents]:10},u={[o.pageViewEvent]:"rum",[o.pageViewTiming]:n,[o.ajax]:n,[o.softNav]:n,[o.metrics]:i,[o.jserrors]:i,[o.sessionTrace]:a,[o.sessionReplay]:a,[o.logging]:s,[o.genericEvents]:"ins"};r.d(t,["$J",0,u,"K7",0,o,"P3",0,c,"XX",0,i,"Yy",0,s,"df",0,a,"hg",0,"connect"])}};const t={};function r(n){const i=t[n];if(void 0!==i)return i.exports;const a=t[n]={exports:{}};return e[n](a,a.exports,r),a.exports}r.m=e,r.d=(e,t)=>{if(Array.isArray(t))for(var n=0;n<t.length;){var i=t[n++],a=t[n++];r.o(e,i)?0===a&&n++:0===a?Object.defineProperty(e,i,{enumerable:!0,value:t[n++]}):Object.defineProperty(e,i,{enumerable:!0,get:a})}else for(var i in t)r.o(t,i)&&!r.o(e,i)&&Object.defineProperty(e,i,{enumerable:!0,get:t[i]})},r.f={},r.e=e=>Promise.all(Object.keys(r.f).reduce((t,n)=>(r.f[n](e,t),t),[])),r.u=e=>"nr-rum-1.324.0.min.js",r.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),(()=>{const e={},t="NRBA-1.324.0.PROD:";r.l=(n,i,a,s)=>{if(e[n])return void e[n].push(i);let o,c;if(void 0!==a){const e=document.getElementsByTagName("script");for(var u=0;u<e.length;u++){const r=e[u];if(r.getAttribute("src")==n||r.getAttribute("data-webpack")==t+a){o=r;break}}}if(!o){c=!0;var d={296:"sha512-Pjy0Jxmo6oAG6oGKLKrf8x8xyaSM1NuL7vLGv9xRLEw0hrpERDruLI5RxlCHNy0NpMyEPWhlC34zujXIR3qJPQ=="};o=document.createElement("script"),o.charset="utf-8",r.nc&&o.setAttribute("nonce",r.nc),o.setAttribute("data-webpack",t+a),o.src=n,0!==o.src.indexOf(window.location.origin+"/")&&(o.crossOrigin="anonymous"),d[s]&&(o.integrity=d[s])}e[n]=[i];const l=(t,r)=>{o.onerror=o.onload=null,clearTimeout(f);const i=e[n];if(delete e[n],o.parentNode?.removeChild(o),i?.forEach(e=>e(r)),t)return t(r)},f=setTimeout(l.bind(null,void 0,{type:"timeout",target:o}),12e4);o.onerror=l.bind(null,o.onerror),o.onload=l.bind(null,o.onload),c&&document.head.appendChild(o)}})(),r.r=e=>{Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.p="https://js-agent.newrelic.com/",(()=>{const e={374:0,840:0};r.f.j=(t,n)=>{let i=r.o(e,t)?e[t]:void 0;if(0!==i)if(i)n.push(i[2]);else{const a=new Promise((r,n)=>i=e[t]=[r,n]);n.push(i[2]=a);const s=r.p+r.u(t),o=new Error,c=n=>{if(r.o(e,t)&&(i=e[t],0!==i&&(e[t]=void 0),i)){const e=n&&("load"===n.type?"missing":n.type),r=n&&n.target&&n.target.src;o.message="Loading chunk "+t+" failed: ("+e+": "+r+")",o.name="ChunkLoadError",o.type=e,o.request=r,i[1](o)}};r.l(s,c,"chunk-"+t,t)}};const t=(t,n)=>{let[i,a,s]=n;var o,c,u=0;if(i.some(t=>0!==e[t])){for(o in a)r.o(a,o)&&(r.m[o]=a[o]);if(s)s(r)}for(t&&t(n);u<i.length;u++)c=i[u],r.o(e,c)&&e[c]&&e[c][0](),e[c]=0},n=self["webpackChunk:NRBA-1.324.0.PROD"]=self["webpackChunk:NRBA-1.324.0.PROD"]||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})(),(()=>{"use strict";r(8374);var e=r(8362),t=r(860);const n=Object.values(t.K7);var i=r(384),a=r(1741);var s=r(2555),o=r(981);t.K7.genericEvents,o.R.PA,o.R.UA,o.R.BP;const c={RESOURCES:"experimental.resources",REGISTER:"register"};var u=r(9300);const d=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var l=r(2614),f=r(944),g=r(8122);const p="[data-nr-mask]",m=e=>(0,g.a)(e,(()=>{const e={feature_flags:[],experimental:{register:!1,resources:!1,iframe_bridge:!1,iframe_domains:[]},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0,capture_payloads:u.mo.NONE},api:{register:{get enabled(){return e.feature_flags.includes(c.REGISTER)||e.experimental.register},set enabled(t){e.experimental.register=t},duplicate_data_to_container:!1,get allow_iframe_bridge(){return e.feature_flags.includes(c.IFRAME_BRIDGE)||e.experimental.iframe_bridge},set allow_iframe_bridge(t){e.experimental.iframe_bridge=t},get iframe_domains(){return e.experimental.iframe_domains},set iframe_domains(t){Array.isArray(t)?e.experimental.iframe_domains=t:(0,f.R)(1,t)}}},browser_consent_mode:{enabled:!1},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{capture_marks:!1,capture_measures:!1,capture_detail:!0,resources:{get enabled(){return e.feature_flags.includes(c.RESOURCES)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:l.wk,inactiveMs:l.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){d(t)?e.mask_selector="".concat(t,",").concat(p):""===t||null===t?e.mask_selector=p:(0,f.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){d(t)?e.block_selector+=",".concat(t):""!==t&&(0,f.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,f.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0,elementAttributes:["id","className","tagName","type"]},web_sockets:{enabled:!1}}})());var h=r(6154),v=r(9324);let b=0;const y={buildEnv:"PROD",distMethod:"CDN",version:v.xv,originTime:h.WN},_={consented:!1},w={activatedFeatures:void 0,appMetadata:{},configured:!1,get consented(){return this.session?.state?.consent||_.consented},set consented(e){_.consented=e},customTransaction:void 0,denyList:[],disabled:!1,drainRegistry:new Map,connector:void 0,harvester:void 0,v2Target:void 0,isolatedBacklog:!1,isRecording:!1,loaderType:void 0,maxBytes:3e4,obfuscator:void 0,onerror:void 0,ptid:void 0,releaseIds:{},session:void 0,timeKeeper:void 0,registeredEntities:[],jsAttributesMetadata:{bytes:0},get harvestCount(){return++b},listeningForIframeMessages:!1},R="BA";var A=r(7836),x=r(3241);const E={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0};var S=r(9908);const k="newrelic-iframe-";function T(e,t={},n,o){let{init:c,info:u,loader_config:d,runtime:l={},exposed:f=!0}=t;if(!u){const e=(0,i.pV)();c=e.init,u=e.info,d=e.loader_config}var p;e.init=m(c||{}),e.loader_config=(p=d||{},(0,g.a)(p,E)),u.jsAttributes??={},h.bv&&(u.jsAttributes.isWorker=!0),e.info=(0,s.D)(u);const v=e.init;e.runtime??=(e=>{const t=(0,g.a)(e,w),r=Object.keys(y).reduce((e,t)=>(e[t]={value:y[t],writable:!1,configurable:!0,enumerable:!0},e),{});return Object.defineProperties(t,r)})(l),e.runtime.v2Target??={type:R,instance:e.agentIdentifier,get id(){return e.runtime.appMetadata?.agents?.[0]?.entityGuid},get attributes(){return{"entity.guid":this.id,appId:e.info.applicationID}}},v.proxy.assets&&(e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e})(v.proxy.assets),e.runtime.configured||(Object.defineProperty(e,"beacons",{get:()=>[e.info.beacon,e.info.errorBeacon,e.init.proxy.assets,e.init.proxy.beacon].filter(Boolean)}),Object.defineProperty(e.runtime,"denyList",{get:()=>[...e.init.ajax.deny_list||[],...e.init.ajax.block_internal?e.beacons:[]]}),e.runtime.ptid=e.agentIdentifier,function(e){const t=(0,i.pV)();Object.getOwnPropertyNames(a.W.prototype).forEach(r=>{const n=a.W.prototype[r];if("function"!=typeof n||"constructor"===n)return;let i=t[r];e[r]&&!1!==e.exposed&&"micro-agent"!==e.runtime?.loaderType&&(t[r]=(...t)=>{const n=e[r](...t);return i?i(...t):n})})}(e),e.runtime.loaderType=n,e.ee=A.ee.get(e.agentIdentifier),e.exposed=f,(0,x.W)({drained:!!e.runtime.activatedFeatures,type:"lifecycle",name:"initialize",feature:void 0,data:e.config}),e.init.api.register.allow_iframe_bridge&&h.gm.addEventListener("message",t=>{"string"==typeof t.data?.type&&t.data.type.startsWith(k)&&(0,S.p)("iframe-message",[t],void 0,"IFRAME",e.ee)}),e.runtime.configured=!0)}var j=r(1863),P=r(4261),N=r(1738);var O=r(1687),M=r(4234),I=r(5289),D=r(7767);function V(e){return!!(0,i.dV)().o.MO&&(0,D.V)(e)&&!0===e?.session_trace.enabled}var W=r(6389),B=r(7699);const C=new WeakSet,K=new WeakMap;class U extends M.W{constructor(e,t){super(e,t),this.abortHandler=void 0,this.featAggregate=void 0,this.loadedSuccessfully=void 0,this.onAggregateImported=new Promise(e=>{this.loadedSuccessfully=e}),this.deferred=Promise.resolve(),!1===e.init[this.featureName].autoStart?this.deferred=new Promise((t,r)=>{this.ee.on("manual-start-all",(0,W.J)(()=>{(0,O.Ak)(e,this.featureName),t()}))}):(0,O.Ak)(e,t)}importAggregator(e,t,n={}){if(this.featAggregate)return;const i=async()=>{if(await this.deferred,this.#t(e),!(0,s.f)(e.info))return(0,f.R)(43),e.ee.abort(),void this.loadedSuccessfully(!1);try{await async function(e,t,n){if(K.has(e))return K.get(e);const i=(async()=>{if((0,D.V)(e.init))try{const{setupAgentSession:t}=await r.e(296).then(r.bind(r,1768));t(e)}catch(e){(0,f.R)(20,e),t.emit("internal-error",[e]),(0,S.p)(B.qh,[e],void 0,n,t)}if(e.init.api.register.allow_iframe_bridge)try{const{setupIframeMFEMessageListener:t}=await Promise.resolve().then(function(){const e=new Error("Cannot find module '../../loaders/configure/iframe-message-handler'");throw e.code="MODULE_NOT_FOUND",e});t(e)}catch(e){(0,f.R)(23,e)}const[{Connector:i},{Harvester:a}]=await Promise.all([r.e(296).then(r.bind(r,6589)),r.e(296).then(r.bind(r,5237))]);e.runtime.connector=new i(e),e.runtime.harvester=new a(e);const s=Object.values(e.features).filter(t=>e.runtime.drainRegistry.has(t.featureName));Promise.all(s.map(e=>e.onAggregateImported)).then(()=>e.runtime.harvester.startTimer())})();K.set(e,i),await i}(e,this.ee,this.featureName)}catch(e){return(0,f.R)(79,e),this.ee.abort(),void this.loadedSuccessfully(!1)}try{if(!this.#r(this.featureName,e.runtime.session,e.init))return this.abortHandler?.(),(0,O.Ze)(this.agentRef,this.featureName),void this.loadedSuccessfully(!1);const{Aggregate:r}=await t();this.featAggregate=new r(e,n),e.runtime.harvester.initializedAggregates.push(this.featAggregate),this.loadedSuccessfully(!0)}catch(e){(0,f.R)(34,e),this.abortHandler?.(),(0,O.Ze)(this.agentRef,this.featureName,!0),this.loadedSuccessfully(!1)}};h.RI?(0,I.GG)(()=>i(),!0):i()}#r(e,r,n){if(this.blocked)return!1;switch(e){case t.K7.sessionReplay:return V(n)&&!!r;case t.K7.sessionTrace:return!!r;default:return!0}}#t(e){if(!C.has(e)&&(C.add(e),!(0,s.f)(e.info))){const t=(0,i.pV)();let r={...t.info?.jsAttributes};try{r={...r,...e.info?.jsAttributes}}catch(e){}T(e,{...t,info:{...t.info,jsAttributes:r},runtime:e.runtime},e.runtime.loaderType)}}}var L=r(6630);class F extends U{static featureName=L.T;constructor(e){var t;super(e,L.T),this.setupInspectionEvents(),t=e,(0,N.Y)(P.Fw,function(e,r){"string"==typeof e&&("/"!==e.charAt(0)&&(e="/"+e),t.runtime.customTransaction=(r||"http://custom.transaction")+e,(0,S.p)("api-"+P.Fw,[(0,j.t)()],void 0,void 0,t.ee))},t),this.importAggregator(e,()=>e.init.feature_flags.includes("rum_v2")?r.e(296).then(r.bind(r,908)):r.e(296).then(r.bind(r,7927)))}setupInspectionEvents(){const e=(e,t)=>{e&&(0,x.W)({timeStamp:e.timeStamp,loaded:"complete"===e.target.readyState,type:"window",name:t,data:e.target.location+""})};(0,I.sB)(t=>{e(t,"DOMContentLoaded")}),(0,I.GG)(t=>{e(t,"load")}),(0,I.Qr)(t=>{e(t,"navigate")}),this.ee.on(l.tS.UPDATE,(e,t)=>{(0,x.W)({type:"lifecycle",name:"session",data:t})})}}class G extends e.d{constructor(e){var t;(super(),h.gm)?(this.features={},(0,i.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(F),T(this,e,e.loaderType||"agent"),t=this,(0,N.Y)(P.cD,function(e,r,n=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof r)||null===r)return(0,N.U)(t,e,r,P.cD,n);(0,f.R)(40,typeof r)}else(0,f.R)(39,typeof e)},t),function(e){(0,N.Y)(P.Dl,function(t,r=!1){if("string"!=typeof t&&null!==t)return void(0,f.R)(41,typeof t);const n=e.info.jsAttributes["enduser.id"];r&&null!=n&&n!==t?(0,S.p)("api-setUserIdAndResetSession",[t],void 0,"session",e.ee):(0,N.U)(e,"enduser.id",t,P.Dl,!0)},e)}(this),function(e){(0,N.Y)(P.nb,function(t){if("string"==typeof t||null===t)return(0,N.U)(e,"application.version",t,P.nb,!1);(0,f.R)(42,typeof t)},e)}(this),function(e){(0,N.Y)("start",function(){e.ee.emit("manual-start-all")},e)}(this),function(e){(0,N.Y)(P.Pv,function(t=!0){if("boolean"==typeof t){if((0,S.p)("api-"+P.Pv,[t],void 0,"session",e.ee),e.runtime.consented=t,t){const t=e.features.page_view_event;t.onAggregateImported.then(e=>{const r=t.featAggregate;e&&!r.sentRum&&r.sendRum?.()})}}else(0,f.R)(65,typeof t)},e)}(this),this.run()):(0,f.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}get api(){return this}run(){try{const e=function(e){const t={};return n.forEach(r=>{t[r]=!!e[r]?.enabled}),t}(this.init),r=[...this.desiredFeatures],i=this.init.feature_flags.includes("rum_v2");r.sort((e,r)=>t.P3[e.featureName]-t.P3[r.featureName]),r.forEach(r=>{if(!e[r.featureName]&&(i||r.featureName!==t.K7.pageViewEvent))return;const n=function(e){switch(e){case t.K7.ajax:return[t.K7.jserrors];case t.K7.sessionTrace:return[t.K7.ajax,t.K7.pageViewEvent];case t.K7.sessionReplay:return[t.K7.sessionTrace];case t.K7.pageViewTiming:return[t.K7.pageViewEvent];default:return[]}}(r.featureName).filter(e=>!(e in this.features));n.length>0&&(0,f.R)(36,{targetFeature:r.featureName,missingDependencies:n}),this.features[r.featureName]=new r(this)})}catch(e){(0,f.R)(22,e);for(const e in this.features)this.features[e].abortHandler?.();const t=(0,i.Zm)();delete t.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return t.ee.get(this.agentIdentifier).abort(),!1}}}var H=r(2843),z=r(782);class Y extends U{static featureName=z.T;constructor(e){super(e,z.T),h.RI&&((0,H.u)(()=>(0,S.p)("docHidden",[(0,j.t)()],void 0,z.T,this.ee),!0),(0,H.G)(()=>(0,S.p)("winPagehide",[(0,j.t)()],void 0,z.T,this.ee)),this.importAggregator(e,()=>r.e(296).then(r.bind(r,9981))))}}var Z=r(3969);class q extends U{static featureName=Z.TZ;constructor(e){super(e,Z.TZ),this.importAggregator(e,()=>r.e(296).then(r.bind(r,9623)))}}new G({features:[F,Y,q],loaderType:"lite"})})()})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2" href="https://hewlett.org/wp-content/themes/hewlett/dist/fonts/31A39F_0_0.woff2">
+  <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2" href="https://hewlett.org/wp-content/themes/hewlett/dist/fonts/31A39F_1_0.woff2">
+  <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2" href="https://hewlett.org/wp-content/themes/hewlett/dist/fonts/31A39F_3_0.woff2">
+  <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2" href="https://hewlett.org/wp-content/themes/hewlett/dist/fonts/31A39F_5_0.woff2">
+  <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2" href="https://hewlett.org/wp-content/themes/hewlett/dist/fonts/31A39F_6_0.woff2">
+  <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2" href="https://hewlett.org/wp-content/themes/hewlett/dist/fonts/31A39F_8_0.woff2">
+
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.google-analytics.com">
+
+
+  <!-- GTM tracking meta tags -->
+
+  <script>!!function(){var a,e=document.documentElement,n=(n=e.className).replace("no-js","js"),o=((["iPad Simulator","iPhone Simulator","iPod Simulator","iPad","iPhone","iPod"].includes(navigator.platform)||navigator.userAgent.includes("Mac")&&"ontouchend"in document)&&(n+=" ua-ios",a=navigator.userAgent.match(/OS (\d+)_(\d+)(?:_(\d+))?/))&&(o=parseInt(a[1],10),a=parseInt(a[2],10),o<18||18===o&&a<=3)&&(n+=" ua-old-safari"),/^((?!chrome|android|crios|fxios).)*safari/i.test(navigator.userAgent)&&navigator.platform.toUpperCase().includes("MAC"));o&&(n+=" ua-safari",a=navigator.userAgent.match(/Version\/(\d+)(?:\.(\d+))?/))&&(o=parseInt(a[1],10),a=parseInt(a[2]||"0",10),o<18||18===o&&a<=3)&&(n+=" ua-old-safari"),e.className=n}();</script>
+
+    <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MRH9JH7');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/83097849ca9bfcc053b241df/script.js"></script> <!-- End cookieyes banner -->
+
+  <!-- Legacy Swiftype meta fields - deprecated -->
+  
+  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/7285101849de90880295b4721e8efd61/script.js"></script>
+	<!-- This site is optimized with the Yoast SEO plugin v27.7 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Our Grants</title>
+	<link rel="canonical" href="https://hewlett.org/our-grants/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Our Grants" />
+	<meta property="og:description" content="We invest in creative thinkers who imagine a better future and in problem solvers who turn ideas into action. We promote constructive dialogue across difference, and we provide reliable, responsive, and strategic support to our partners. In 2024, the foundation awarded $631 million in grants, with nearly three-fourths of that total awarded as flexible funding.&hellip;" />
+	<meta property="og:url" content="https://hewlett.org/our-grants/" />
+	<meta property="og:site_name" content="Hewlett Foundation" />
+	<meta property="article:publisher" content="https://www.facebook.com/HewlettFoundation" />
+	<meta property="article:modified_time" content="2025-05-06T20:32:08+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@Hewlett_Found" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="1 minute" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/hewlett.org\/our-grants\/","url":"https:\/\/hewlett.org\/our-grants\/","name":"Our Grants","isPartOf":{"@id":"https:\/\/hewlett.org\/#website"},"datePublished":"2025-04-21T19:19:58+00:00","dateModified":"2025-05-06T20:32:08+00:00","breadcrumb":{"@id":"https:\/\/hewlett.org\/our-grants\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/hewlett.org\/our-grants\/"]}]},{"@type":"BreadcrumbList","@id":"https:\/\/hewlett.org\/our-grants\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/hewlett.org\/"},{"@type":"ListItem","position":2,"name":"Our Grants"}]},{"@type":"WebSite","@id":"https:\/\/hewlett.org\/#website","url":"https:\/\/hewlett.org\/","name":"Hewlett Foundation","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/hewlett.org\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//hewlett.org' />
+<style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id='wp-block-library-inline-css' type='text/css'>
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=wp-block-library-inline-css */
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--highlight: #ffdc55;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);--wp--custom--typography--drop-cap: ;}.wp-block-cover{--wp--preset--color--navy: #13232F;--wp--preset--color--green: #558122;--wp--preset--color--teal-light: #37A397;}.wp-block-group{--wp--preset--color--navy: #13232F;--wp--preset--color--green: #558122;--wp--preset--color--teal-light: #37A397;}:root { --wp--style--global--content-size: 1014px;--wp--style--global--wide-size: 1214px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-highlight-color{color: var(--wp--preset--color--highlight) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-highlight-background-color{background-color: var(--wp--preset--color--highlight) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-highlight-border-color{border-color: var(--wp--preset--color--highlight) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.wp-block-cover.has-navy-color{color: var(--wp--preset--color--navy) !important;}.wp-block-cover.has-green-color{color: var(--wp--preset--color--green) !important;}.wp-block-cover.has-teal-light-color{color: var(--wp--preset--color--teal-light) !important;}.wp-block-cover.has-navy-background-color{background-color: var(--wp--preset--color--navy) !important;}.wp-block-cover.has-green-background-color{background-color: var(--wp--preset--color--green) !important;}.wp-block-cover.has-teal-light-background-color{background-color: var(--wp--preset--color--teal-light) !important;}.wp-block-cover.has-navy-border-color{border-color: var(--wp--preset--color--navy) !important;}.wp-block-cover.has-green-border-color{border-color: var(--wp--preset--color--green) !important;}.wp-block-cover.has-teal-light-border-color{border-color: var(--wp--preset--color--teal-light) !important;}.wp-block-group.has-navy-color{color: var(--wp--preset--color--navy) !important;}.wp-block-group.has-green-color{color: var(--wp--preset--color--green) !important;}.wp-block-group.has-teal-light-color{color: var(--wp--preset--color--teal-light) !important;}.wp-block-group.has-navy-background-color{background-color: var(--wp--preset--color--navy) !important;}.wp-block-group.has-green-background-color{background-color: var(--wp--preset--color--green) !important;}.wp-block-group.has-teal-light-background-color{background-color: var(--wp--preset--color--teal-light) !important;}.wp-block-group.has-navy-border-color{border-color: var(--wp--preset--color--navy) !important;}.wp-block-group.has-green-border-color{border-color: var(--wp--preset--color--green) !important;}.wp-block-group.has-teal-light-border-color{border-color: var(--wp--preset--color--teal-light) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='webdam-imported-asset-css' href='https://hewlett.org/wp-content/plugins/Webdam-Wordpress-Asset-Chooser/assets/webdam-imported-asset.css?ver=6.9.10' type='text/css' media='screen' />
+<link rel='stylesheet' id='open_education_network-css' href='https://hewlett.org/wp-content/plugins/open-education-network/public/css/open_education_network-public.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-color-picker-css' href='https://hewlett.org/wp/wp-admin/css/color-picker.min.css?ver=6.9.10' type='text/css' media='all' />
+<link rel='stylesheet' id='sage/css-css' href='https://hewlett.org/wp-content/themes/hewlett/dist/styles/main.css?ver=6ad09ddb6add7' type='text/css' media='all' />
+<script type="text/javascript" src="https://hewlett.org/wp/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://hewlett.org/wp/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="open_education_network-js-extra">
+/* <![CDATA[ */
+var wp_ajax = {"ajax_url":"https://hewlett.org/wp/wp-admin/admin-ajax.php","_nonce":"5b97413d23"};
+//# sourceURL=open_education_network-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://hewlett.org/wp-content/plugins/open-education-network/public/js/open_education_network-public.js?ver=1.0.0" id="open_education_network-js"></script>
+<link rel="https://api.w.org/" href="https://hewlett.org/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://hewlett.org/wp-json/wp/v2/pages/29967226" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://hewlett.org/wp/xmlrpc.php?rsd" />
+<link rel='shortlink' href='https://hewlett.org/?p=29967226' />
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="https://hewlett.org/wp-content/uploads/2025/05/cropped-favicon-32x32-1-32x32.jpg" sizes="32x32" />
+<link rel="icon" href="https://hewlett.org/wp-content/uploads/2025/05/cropped-favicon-32x32-1-192x192.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://hewlett.org/wp-content/uploads/2025/05/cropped-favicon-32x32-1-180x180.jpg" />
+<meta name="msapplication-TileImage" content="https://hewlett.org/wp-content/uploads/2025/05/cropped-favicon-32x32-1-270x270.jpg" />
+</head>
+  <body class="wp-singular page-template page-template-page-templates page-template-our-grants page-template-page-templatesour-grants-php page page-id-29967226 wp-embed-responsive wp-theme-hewlett our-grants sidebar-primary">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRH9JH7"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!--[if IE]>
+      <div class="alert alert-warning">
+        You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.      </div>
+    <![endif]-->
+    
+  <!-- Note: Only add additional skip links when absolutely necessary.
+        For example, a “skip to nav” link isn’t necessary if the nav
+        immediately follows the skip links in the tabbing order. -->
+
+<div class="SkipLinks">
+  <ul>
+    <li><a href="#menu-nav">Skip to main navigation</a></li>
+        <li><a href="#main">Skip to main content</a></li>        <li><a href="#footer">Skip to footer</a></li>
+  </ul>
+</div>
+    <header class="menu">
+  
+<!-- <header class="menu" data-swiftype-index='false'> -->
+  <div class="container PrimaryNav-container desktop">
+    <div class="PrimaryNav-headerWrapper">
+      <div class="menu-header">
+                  <a href="https://hewlett.org/" class="menu-logo">
+            <img src="https://hewlett.org/wp-content/themes/hewlett/dist/images/logo.svg" alt="William &amp; Flora Hewlett Foundation">
+          </a>
+        
+        <div class="menu-controls">
+          <div class="menu-control toggle-menu">
+            <input id="menu-toggle-cb" class="toggle-cb" name="menu-toggle-cb" type="checkbox">
+            <label class="toggle-labels" for="menu-toggle-cb">
+              <span class="toggle-label toggle-true icon-burger">
+                Menu
+              </span>
+              <span class="toggle-label toggle-false icon-x">
+                Close
+              </span>
+            </label>
+          </div>
+          <div class="menu-control toggle-search">
+            <input id="search-toggle-cb" class="toggle-cb" name="search-toggle-cb" type="checkbox">
+            <label class="toggle-labels" for="search-toggle-cb">
+              <span class="toggle-label toggle-true icon-search">
+                Search
+              </span>
+              <span class="toggle-label toggle-false icon-x">
+                Close
+              </span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+    
+  <div class="PrimaryNav-container-inner show-color-bar">
+    <div class="PrimaryNav-utility">
+              <ul class="PrimaryNav-utility-list">
+                      <li class="PrimaryNav-utility-item" id="utility-29597439">
+              <a href="https://grantees.hewlett.org" class="PrimaryNav-utility-link">
+                Grantee Center              </a>
+            </li>
+                    <li class="PrimaryNav-utility-item" id="utility-search">
+            <a href="https://hewlett.org/search/" class="PrimaryNav-utility-link">
+              Search
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 13 13" focusable="false" aria-hidden="true" height="15" width="15" class="icon-search">
+  <g clip-path="url(#a_811d62)" stroke="var(--icon-color, #737B7D)" stroke-width="1.5">
+    <path d="M5.95833 10.2917c2.39324 0 4.33337-1.94013 4.33337-4.33337 0-2.39323-1.94013-4.33333-4.33337-4.33333C3.5651 1.625 1.625 3.5651 1.625 5.95833c0 2.39324 1.9401 4.33337 4.33333 4.33337Z" stroke-linecap="round"/>
+    <path d="M11.375 11.3748 9.0188 9.01855" stroke-linecap="square"/>
+  </g>
+  <defs>
+    <clipPath id="a_811d62">
+      <path fill="#fff" d="M0 0h13v13H0z"/>
+    </clipPath>
+  </defs>
+</svg>            </a>
+          </li>
+        </ul>
+          </div>
+    <nav class="PrimaryNav-nav">
+      <ul class="PrimaryNav-list">
+      
+
+        
+        <li class="PrimaryNav-list-item ">
+                      <a href="https://hewlett.org/our-programs/" class="PrimaryNav-list-link"><span>Programs</span> </a>
+             <!-- if/item->children -->
+        </li>
+           <!-- end if/break -->
+        
+
+        
+        <li class="PrimaryNav-list-item active">
+                      <a href="https://hewlett.org/our-grants/" class="PrimaryNav-list-link"><span>Grants</span> </a>
+             <!-- if/item->children -->
+        </li>
+           <!-- end if/break -->
+        
+
+        
+        <li class="PrimaryNav-list-item ">
+                      <a href="https://hewlett.org/making-progress-possible/" class="PrimaryNav-list-link"><span>Progress</span> </a>
+             <!-- if/item->children -->
+        </li>
+           <!-- end if/break -->
+        
+
+        
+        <li class="PrimaryNav-list-item ">
+                      <a href="https://hewlett.org/about-us/" class="PrimaryNav-list-link"><span>About Us</span> </a>
+             <!-- if/item->children -->
+        </li>
+           <!-- end if/break -->
+         <!-- end foreach -->
+        <li class="PrimaryNav-list-item">
+                      <a
+              href="/sign-up/"
+              class="PrimaryNav-list-btn"
+                          >
+              Subscribe            </a>
+                  </li>
+      </ul>
+    </nav>
+  </div>
+ <!-- end if($nav) -->
+      <!-- <div class="menu-search">
+        <form role="search" method="get" class="search-bar" action="/search/">
+          <label for="search-header" class="screenreader">Search</label>
+          <input type="search" id="search-header" class="search-input" placeholder="Search" name="_search" />
+          <button type="submit" class="search-submit" title="Search"></button>
+        </form>
+      </div> -->
+    </div>
+  </div>
+<!-- </header> -->
+
+<div class="container PrimaryNav-mobile">
+    <div class="menu-header">
+            <a href="https://hewlett.org/" class="menu-logo">
+        <img src="https://hewlett.org/wp-content/themes/hewlett/dist/images/logo.svg" alt="William &amp; Flora Hewlett Foundation">
+      </a>
+      
+      <div class="menu-controls">
+        <div class="menu-control toggle-menu">
+          <input id="menu-toggle-cntrl" class="toggle-cntrl" name="menu-toggle-cntrl" type="checkbox">
+          <label class="toggle-labels" for="menu-toggle-cntrl">
+            <span class="toggle-label toggle-true icon-burger">
+              Menu
+            </span>
+            <span class="toggle-label toggle-false icon-x">
+              Close
+            </span>
+          </label>
+        </div>
+        <div class="menu-control toggle-search">
+          <input id="search-toggle-cntrl" class="toggle-cntrl" name="search-toggle-cntrl" type="checkbox">
+          <label class="toggle-labels" for="search-toggle-cntrl">
+            <span class="toggle-label toggle-true icon-search">
+              Search
+            </span>
+            <span class="toggle-label toggle-false icon-x">
+              Close
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-search">
+      <form role="search" method="get" class="search-bar" action="/search/">
+        <label for="search-header" class="screenreader">Search</label>
+        <input type="search" id="search-header" class="search-input" placeholder="Search" name="_search" />
+        <button type="submit" class="search-submit" title="Search"></button>
+      </form>
+
+      <a class="advanced-search-button" href="https://hewlett.org/search/">Advanced search</a>
+    </div>
+
+    <nav id="menu-nav" class="menu-nav">
+<!--
+menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28970648
+-->
+              <ul class="menu-primary primary-nav-mobile">
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-29967370">
+                              <a class="PrimaryNav-mobile-link"  href="https://hewlett.org/our-programs/">
+                  Programs                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 18" preserveAspectRatio="xMidYMid meet" focusable="false" aria-hidden="true" height="10" width="15">
+  <path d="M0 1.05 1.05 0 10 8.95 1.05 17.9 0 16.86l7.9-7.91z"/>
+</svg>                </a>
+                          </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-29967371">
+                              <a class="PrimaryNav-mobile-link"  href="https://hewlett.org/our-grants/">
+                  Grants                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 18" preserveAspectRatio="xMidYMid meet" focusable="false" aria-hidden="true" height="10" width="15">
+  <path d="M0 1.05 1.05 0 10 8.95 1.05 17.9 0 16.86l7.9-7.91z"/>
+</svg>                </a>
+                          </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-29967383">
+                              <a class="PrimaryNav-mobile-link"  href="https://hewlett.org/making-progress-possible/">
+                  Progress                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 18" preserveAspectRatio="xMidYMid meet" focusable="false" aria-hidden="true" height="10" width="15">
+  <path d="M0 1.05 1.05 0 10 8.95 1.05 17.9 0 16.86l7.9-7.91z"/>
+</svg>                </a>
+                          </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-28970651">
+                              <a class="PrimaryNav-mobile-link"  href="https://hewlett.org/about-us/">
+                  About Us                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 18" preserveAspectRatio="xMidYMid meet" focusable="false" aria-hidden="true" height="10" width="15">
+  <path d="M0 1.05 1.05 0 10 8.95 1.05 17.9 0 16.86l7.9-7.91z"/>
+</svg>                </a>
+                          </li>
+                  </ul>
+      
+              <ul class="PrimaryNav-mobile-utility-list">
+                      <li class="PrimaryNav-mobile-utility-item">
+              <a 
+                href="/sign-up/" 
+                class="PrimaryNav-list-btn"
+                              >
+                Subscribe              </a>
+            </li>
+                                <li class="PrimaryNav-mobile-utility-item" id="utility-29597439-mobile">
+              <a href="https://grantees.hewlett.org" class="PrimaryNav-mobile-utility-link">
+                Grantee Center              </a>
+            </li>
+                  </ul>
+          </nav>
+  </div></header>
+    <div class="wrap" role="document">
+      <main id="main" class="main">
+        
+  
+<div class="PageBanner">
+  <div class="l-padding">
+    <div class="l-wrap PageBanner-inner">
+      <h1 class="PageBanner-title">
+        Our Grants      </h1>
+
+          </div>
+  </div>
+
+  <div class="PageBanner-bg">
+    <img class="PageBanner-bg-img" src="https://hewlett.org/wp-content/themes/hewlett/assets/images/dot-banner.png" alt="">
+  </div>
+</div>
+
+  <div class="l-padding">
+    <div class="l-wrap">
+    <div class="row no-bottom-margin">
+  <div class="container narrow-container">
+    
+          
+        
+        <div class="component-group ">
+
+          
+                      <div class="components">
+                                                                  <div class="component wysiwyg no-sidebar ">
+
+                    
+                      <p>We invest in creative thinkers who imagine a better future and in problem solvers who turn ideas into action. We promote constructive dialogue across difference, and we provide reliable, responsive, and strategic support to our partners. In 2024, the foundation awarded $631 million in grants, with nearly three-fourths of that total awarded as flexible funding. At any one time, we have about 3,000 active grants to organizations around the world. That includes support to organizations large and small — from research universities building public knowledge to community-based organizations meeting on-the-ground needs, from Bay Area artists engaging local audiences to African think tanks developing policy solutions. As of December 31, 2024, the foundation’s assets were approximately $13.9 billion.</p>
+
+                                        </div>
+                              
+              
+            </div>
+          
+        </div>
+             </div>
+</div>
+
+    
+<div class="FeaturedLinkCards">
+      <ul class="FeaturedLinkCards-list">
+                      <li class="FeaturedLinkCards-item">
+          <div class="FeaturedLinkCards-card">
+            <div class="FeaturedLinkCards-card-content">
+              <h2 class="FeaturedLinkCards-card-title">
+                <a 
+                  class="FeaturedLinkCards-card-link" 
+                  href="https://www.hewlett.org/grants/"
+                   
+                >
+                  Grants Search                </a>
+              </h2>
+
+                              <p class="FeaturedLinkCards-card-description">
+                  Explore the grantee partners we support.                </p>
+                          </div>
+            
+            <img src="https://hewlett.org/wp-content/themes/hewlett/assets/images/small-dots.png" alt="" class="FeaturedLinkCards-bg">
+          </div>
+        </li>
+                      <li class="FeaturedLinkCards-item">
+          <div class="FeaturedLinkCards-card">
+            <div class="FeaturedLinkCards-card-content">
+              <h2 class="FeaturedLinkCards-card-title">
+                <a 
+                  class="FeaturedLinkCards-card-link" 
+                  href="https://www.hewlett.org/grantmaking-faq/"
+                   
+                >
+                  Grantmaking FAQ                </a>
+              </h2>
+
+                              <p class="FeaturedLinkCards-card-description">
+                  Learn about our approach to grantmaking.                </p>
+                          </div>
+            
+            <img src="https://hewlett.org/wp-content/themes/hewlett/assets/images/small-dots.png" alt="" class="FeaturedLinkCards-bg">
+          </div>
+        </li>
+                      <li class="FeaturedLinkCards-item">
+          <div class="FeaturedLinkCards-card">
+            <div class="FeaturedLinkCards-card-content">
+              <h2 class="FeaturedLinkCards-card-title">
+                <a 
+                  class="FeaturedLinkCards-card-link" 
+                  href="https://www.hewlett.org/grantee-feedback/"
+                   
+                >
+                  Grantee Feedback                </a>
+              </h2>
+
+                              <p class="FeaturedLinkCards-card-description">
+                  View our latest grantee perception report.                </p>
+                          </div>
+            
+            <img src="https://hewlett.org/wp-content/themes/hewlett/assets/images/small-dots.png" alt="" class="FeaturedLinkCards-bg">
+          </div>
+        </li>
+          </ul>
+  
+
+</div>    </div>
+  </div>
+      </main><!-- /.main -->
+    </div><!-- /.wrap -->
+    
+<footer class="Footer" id="footer">
+  <div class="Footer-wrapper l-padding">
+    <div class="l-wrap">
+      <div class="Footer-row">
+        <div class="Footer-subscription">
+                      <h2 class="Footer-subscription-title">
+              Get Updates from Hewlett in Your Inbox            </h2>
+          
+                      <p class="Footer-subscription-text">
+              Sign up for email updates on the latest news, perspectives, and grantee stories of progress.            </p>
+          
+                                  <a
+              class="Footer-button"
+              href="https://www.hewlett.org/sign-up/"
+                            >
+              Subscribe            </a>
+
+                  </div>
+
+        <div class="Footer-search">
+          <form class="Footer-search-form" action="/grants/">
+            <h2 class="Footer-search-title">Search Our Grantmaking</h2>
+            <label class="screenreader" for="keyword-search"> Search Keyword</label>
+            <input class="Footer-search-input search-field input dark" type="search" id="keyword-search" value="" name="_grant_search" placeholder="By Keyword">
+
+            <div class="select-wrapper">
+              <label class="screenreader" for="program-search"> Search Program</label>
+              <select id="program-search" name="_grant_programs_dropdown" class="select dark Footer-search-select">
+                <option value="">By Program</option>
+                                <option value="29970134">Emerging Technology and Security</option>
+                                <option value="29057789">Racial Justice</option>
+                                <option value="24372977">Economy and Society</option>
+                                <option value="31392">Education</option>
+                                <option value="31521">Performing Arts</option>
+                                <option value="21943">Environment</option>
+                                <option value="31528">Effective Philanthropy</option>
+                                <option value="21300">Gender Equity and Governance</option>
+                                <option value="70694">Cyber Initiative: 2014 - 2023</option>
+                                <option value="31532">Special Projects</option>
+                                <option value="70696">U.S. Democracy</option>
+                              </select>
+            </div>
+
+            <button class="grantsearch-submit Footer-button" type="submit">Search Grants&nbsp;<span
+                class="button-icon icon-arrow-right"></span></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="Footer-row">
+        <div class="Footer-brand">
+          <a class="Footer-logo" href="https://hewlett.org/">
+            <img src="https://hewlett.org/wp-content/themes/hewlett/dist/images/logo-alt.svg" alt="William &amp; Flora Hewlett Foundation">
+          </a>
+        </div>
+
+        <div class="Footer-socials">
+          <h2 class="Footer-socials-title">Connect With Us</h2>
+          <ul class="Footer-socials-list">
+            <li class="Footer-socials-item">
+              <a class="Footer-socials-icon" href="https://www.instagram.com/hewlett_found/">
+                <span class="screenreader">Instagram</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 1792 1792" focusable="false" aria-hidden="true">
+  <path fill="var(--icon-color, #fff)" d="M1152 896q0-106-75-181t-181-75-181 75-75 181 75 181 181 75 181-75 75-181zm138 0q0 164-115 279t-279 115-279-115-115-279 115-279 279-115 279 115 115 279zm108-410q0 38-27 65t-65 27-65-27-27-65 27-65 65-27 65 27 27 65zm-502-220q-7 0-76.5-.5t-105.5 0-96.5 3-103 10-71.5 18.5q-50 20-88 58t-58 88q-11 29-18.5 71.5t-10 103-3 96.5 0 105.5.5 76.5-.5 76.5 0 105.5 3 96.5 10 103 18.5 71.5q20 50 58 88t88 58q29 11 71.5 18.5t103 10 96.5 3 105.5 0 76.5-.5 76.5.5 105.5 0 96.5-3 103-10 71.5-18.5q50-20 88-58t58-88q11-29 18.5-71.5t10-103 3-96.5 0-105.5-.5-76.5.5-76.5 0-105.5-3-96.5-10-103-18.5-71.5q-20-50-58-88t-88-58q-29-11-71.5-18.5t-103-10-96.5-3-105.5 0-76.5.5zm768 630q0 229-5 317-10 208-124 322t-322 124q-88 5-317 5t-317-5q-208-10-322-124t-124-322q-5-88-5-317t5-317q10-208 124-322t322-124q88-5 317-5t317 5q208 10 322 124t124 322q5 88 5 317z"/>
+</svg>              </a>
+            </li>
+            <li class="Footer-socials-item">
+              <a class="Footer-socials-icon" href="https://www.facebook.com/HewlettFoundation">
+                <span class="screenreader">Facebook</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 35 35" focusable="false" aria-hidden="true" height="35" width="35">
+  <path d="M26.2497 2.9165h-4.375c-1.9339 0-3.7886.76823-5.156 2.13568-1.3675 1.36746-2.1357 3.22212-2.1357 5.15602v4.375h-4.375v5.8333h4.375v11.6667h5.8333V20.4165h4.375l1.4584-5.8333h-5.8334v-4.375c0-.3868.1537-.75774.4272-1.03123.2735-.27349.6444-.42713 1.0312-.42713h4.375V2.9165Z" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" stroke="var(--icon-color)"/>
+</svg>              </a>
+            </li>
+            <li class="Footer-socials-item">
+              <a class="Footer-socials-icon" href="https://www.linkedin.com/company/the-william-and-flora-hewlett-foundation">
+                <span class="screenreader">Linkedin</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 35 35" focusable="false" aria-hidden="true" height="35" width="35">
+  <path d="M23.333 11.6665c2.3207 0 4.5463.9219 6.1872 2.5628 1.6409 1.641 2.5628 3.8666 2.5628 6.1872v10.2083h-5.8333V20.4165c0-.7735-.3073-1.5154-.8543-2.0624-.547-.547-1.2888-.8543-2.0624-.8543-.7735 0-1.5154.3073-2.0624.8543-.547.547-.8543 1.2889-.8543 2.0624v10.2083H14.583V20.4165c0-2.3206.9219-4.5462 2.5628-6.1872 1.641-1.6409 3.8666-2.5628 6.1872-2.5628v0ZM8.75033 13.125H2.91699v17.5h5.83334v-17.5ZM5.83366 8.74984c1.61083 0 2.91667-1.30584 2.91667-2.91667S7.44449 2.9165 5.83366 2.9165 2.91699 4.22234 2.91699 5.83317s1.30584 2.91667 2.91667 2.91667Z" stroke="var(--icon-color, #fff)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>              </a>
+            </li>
+          </ul>
+        </div>
+
+                  <div class="Footer-nav">
+            <ul class="Footer-nav-list">
+                              <li class="Footer-nav-item">
+                  <a class="Footer-nav-link" href="https://hewlett.org/newsroom/" id="72574">
+                    Newsroom                  </a>
+                </li>
+                              <li class="Footer-nav-item">
+                  <a class="Footer-nav-link" href="https://hewlett.org/careers/" id="4892322">
+                    Careers                  </a>
+                </li>
+                              <li class="Footer-nav-item">
+                  <a class="Footer-nav-link" href="https://hewlett.org/sitemap/" id="72908">
+                    Sitemap                  </a>
+                </li>
+                              <li class="Footer-nav-item">
+                  <a class="Footer-nav-link" href="https://hewlett.org/contact/" id="73571">
+                    Contact                  </a>
+                </li>
+                              <li class="Footer-nav-item">
+                  <a class="Footer-nav-link" href="https://grantees.hewlett.org" id="29597440">
+                    Grantee Center                  </a>
+                </li>
+                          </ul>
+          </div>
+              </div>
+
+              <div class="Footer-secondaryNav">
+          <ul class="Footer-secondaryNav-list">
+                                          <li class="Footer-secondaryNav-item">
+                  <a class="Footer-secondaryNav-text Footer-secondaryNav-link Footer-cookiePrefs cky-banner-element">
+                    Cookie Preferences
+                  </a>
+                </li>
+                            <li class="Footer-secondaryNav-item">
+                <a class="Footer-secondaryNav-text Footer-secondaryNav-link" href="https://hewlett.org/privacy-policy/" id="73641">
+                  Privacy Policy                </a>
+              </li>
+                                        <li class="Footer-secondaryNav-item">
+                <a class="Footer-secondaryNav-text Footer-secondaryNav-link" href="https://hewlett.org/terms-of-use/" id="73642">
+                  Terms of Use                </a>
+              </li>
+                                        <li class="Footer-secondaryNav-item">
+                <a class="Footer-secondaryNav-text Footer-secondaryNav-link" href="https://hewlett.org/creative-commons/" id="73643">
+                  Creative Commons                </a>
+              </li>
+                        <li class="Footer-secondaryNav-item">
+              <span class="Footer-secondaryNav-text">
+                © 2026 William and Flora Hewlett Foundation
+              </span>
+            </li>
+          </ul>
+        </div>
+          </div>
+  </div>
+</footer>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp/wp-*.php","/wp/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/hewlett/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script type="text/javascript" src="https://hewlett.org/wp-content/themes/hewlett/dist/scripts/main.js?ver=6ad09ddb6add7" id="sage/js-js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"41518fd2dd","applicationID":"271001434","transactionName":"MQBSYkNWWEZTURULDAhKZURYGBlcXFYEGk0WDUA=","queueTime":0,"applicationTime":403,"atts":"HUdRFAtMS0g=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
+<!-- plugin=object-cache-pro client=phpredis metric#hits=2877 metric#misses=32 metric#hit-ratio=98.9 metric#bytes=1345500 metric#prefetches=179 metric#store-reads=45 metric#store-writes=53 metric#store-hits=206 metric#store-misses=23 metric#sql-queries=9 metric#ms-total=401.01 metric#ms-cache=44.30 metric#ms-cache-avg=0.4567 metric#ms-cache-ratio=11.1 -->

@@ -351,7 +351,7 @@ DEADLINE_WORDS = re.compile(
     r"data limite|inscrições até|scadenza|(?-i:termine)|batas (?:akhir|waktu)|pendaftaran (?:ditutup|dibuka)|tenggat|"
     r"applications? close|\bclose (?:on|at|by)\b|closing call|call closes|cierre|cerrará|finaliza(?:rá)?|hasta el|clôture|"
     r"締切|마감|截止" + "|" + words_rx(deadline_words()), re.I)
-OPENING_WORDS = re.compile(r"abierto desde|^\W*applications?\s*:|\bopens?\b|opening call|application (?:period|window)|bewerbungszeitraum|bewerbungsphase|periode pendaftaran|dibuka|from\s+\d|"
+OPENING_WORDS = re.compile(r"\bopened\b|abierto desde|^\W*applications?\s*:|\bopens?\b|opening call|application (?:period|window)|bewerbungszeitraum|bewerbungsphase|periode pendaftaran|dibuka|from\s+\d|"
                            r"ouverture des candidatures|apertura|abertura das inscrições|bewerbungsbeginn|se abrirá|"
                            r"abrirá|\babre\b", re.I)
 EVENT_WORDS = re.compile(r"\b(?:results?|publication|announce\w*|notification|interviews?|selection (?:date|takes)|"
@@ -787,7 +787,7 @@ PERIOD_RX = re.compile(r"per month|a month|monthly|/\s?month|per (?:academic )?y
                        r"one[- ]off|lump sum|in total|total", re.I)
 
 FUNDING_KEYS = [
-    ("tuition", r"tuition|course fees?|programme fees?|study fees?|fee waiver|fees? (?:are )?waived|fee offset|"
+    ("tuition", r"tuition|(?:university|college)(?: and college)? fees|course fees?|programme fees?|study fees?|fee waiver|fees? (?:are )?waived|fee offset|"
                 # round 30: "a contribution of up to £15,000 towards fees paid directly to your university"
                 r"\btowards (?:the |your )?fees\b|"
                 r"studiengebühren|frais de scolarité|frais d'inscription|matr[ií]cula|tasas académicas|"
@@ -796,8 +796,8 @@ FUNDING_KEYS = [
               r"\bcrédito\b|préstamo|\bloan\b|preisgeld|bursary of|"
               # "These fellowships, worth CHF 10,000 per semester", "a grant amounting to CHF 10'000"
               r"(?:scholarships?|fellowships?|grants?),? worth|grant amounting to"),
-    ("stipend", r"\bstipends?\b|\d[\d.,]* ?(?:euro|€) (?:im|pro) monat|monthly allowance|maintenance|salary|bursary payment|scholarship payments?|stipendienleistung|"
-                r"monatliche (?:rate|zahlung)|\bmonatlich\b|(?<!other )(?<!any )(?<!existing )(?<!graduate )financial support|"
+    ("stipend", r"\bstipends?\b|\d[\d.,]* ?(?:euro|€) (?:im|pro) monat|monthly allowance|maintenance|salary|bursary payment|(?<!processes )(?<!process )scholarship payments?|stipendienleistung|"
+                r"monatliche (?:rate|zahlung)|\bmonatlich\b|(?<!other )(?<!any )(?<!existing )(?<!graduate )financial support(?! to (?:aid|help|assist|support|enable|allow)\b)(?! (?:for|to) (?:students|applicants|those|people|yourself|individuals|young|recipients|[\w-]+ (?:students|scholars)))|"
                 r"monthly (?:scholarship|payment|rate|instalment)|monatlich(?:e|es)? (?:stipendium|rate)|"
                 r"allocation mensuelle|asignaci[oó]n mensual|manuten[cç][aã]o|uang saku|tunjangan bulanan"),
     ("living_allowance", r"living (?:and related )?(?:allowance|costs?|expenses)|subsistence|cost[- ]of[- ]living|"
@@ -999,6 +999,9 @@ def extract_funding(text: str) -> tuple[list[FundingComponent], list[str]]:
                 # round 30: "50% or 100%", "a full or partial waiver", "20% to 100%": most awards are partial, so the
                 # page does not prove full tuition for an applicant
                 comp.full = False
+            if kind == "tuition" and re.search(r"application fees?", low) and re.search(r"fee waiver|waived|waiver", low):
+                comps.pop("tuition", None) if comps.get("tuition") is comp else None
+                continue   # round 35: "application fee waivers" are about applying
             if kind == "tuition" and re.search(r"fee waiver|waived|waiver", low):
                 comp.note = (comp.note or "fee waiver mentioned")
             # the amount nearest the keyword, and only if it is close: one sentence often lists several components
@@ -1424,6 +1427,8 @@ def extract_nationality(text: str) -> tuple[NationalityRule, list[str]]:
                      r"\bdual[- ][\w.]+[-–/][\w.]+ (?:citizen|national)", s, re.I) \
                 and re.search(r"not eligible|ineligible|no son elegibles|no se acepta|not accepted|not (?:be )?considered|no pueden|cannot", s, re.I):
             continue  # round 34: "persons holding dual Japan-U.S. citizenship are NOT eligible": the rule names who is excluded, not a second country
+        if re.fullmatch(r"\W*(?:individuals|persons|people|applicants|students|candidates|those) who (?:are|is) not (?!.*\b(?:are|is|may|must|can|cannot|will|should|do|does)\b)[^,;]*(?:citizens?|nationals?|residents?)[^.;]*\.?\W*", s, re.I):
+            continue  # round 36: "Individuals who are not United States citizens, ..." under "who is not eligible": a list item, not the rule
         if re.search(r"\bdoes not (?:refer to|include|mean|apply to)\b", s, re.I):
             continue  # round 30: "It does not refer to a citizen of another country ...": a definition, not a ban
         if re.search(r"\b(?:is|are|be) (?:considered|classified|defined|recognized|recognised|treated) (?:as |to be )?(?:an? )?international|"

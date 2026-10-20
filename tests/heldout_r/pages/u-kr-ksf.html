@@ -1,0 +1,673 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko" >
+<head>
+<link href="/resources/favicon.ico?v=2" type="image/x-icon" rel="shortcut icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Cache-Control" content="no-Cache" />
+<meta http-equiv="Pragma" content="no-Cache" />
+<meta http-equiv="imagetoolbar" content="no" />
+<title>한국섬유산업연합회 장학재단</title>
+
+
+<link rel="stylesheet" type="text/css" href="/resources/client/css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="/resources/client/css/board.css" />
+<link rel="stylesheet" type="text/css" href="/resources/client/css/common.css" />
+<link rel="stylesheet" type="text/css" href="/resources/client/css/contents.css" />
+<link rel="stylesheet" type="text/css" href="/resources/client/css/ui_sub.css" />
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script type="text/javascript" src="/resources/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/resources/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/resources/js/jquery.tmpl.js"></script>
+<script type="text/javascript" src="/resources/se2/js/HuskyEZCreator.js"></script>
+<script type="text/javascript" src="/resources/js/EgovMultiFile.js" ></script>
+<script type="text/javascript" src="/resources/js/prefixfree.min.js"></script>
+<script type="text/javascript" src="/resources/js/common/common.js"></script>
+<script type="text/javascript" src="/resources/js/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/ui.js"></script>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!--[if lt IE 9]>
+    <script src="/resources/js/html5shiv.min.js"></script>
+    <script src="/resources/js/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+ 
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/resources/js/EgovMultiFile.js;jsessionid=09B0756DE06CB718EC1A911EE0626C5C" ></script>
+<script type="text/javascript">
+
+
+
+var isLogin = "false";
+
+function goView(code,val){
+	
+	$("#cForm").attr("action", "/"+code.toLowerCase()+"/boardView.do;jsessionid=09B0756DE06CB718EC1A911EE0626C5C");
+	$("#Code").val(code);
+	$("#Seq").val(val);
+	$("#cForm").submit();
+}
+
+
+function fileAttachDown(seq){
+	var $form	= $('#fileAttachDownForm');
+	if($form.length < 1){
+		$form	= $('<form>').appendTo('body');
+		$form.attr({'id':'fileAttachDownForm','method':'post','action':'/file/fileAttachDown.do;jsessionid=09B0756DE06CB718EC1A911EE0626C5C'});
+	}
+	$form.empty();
+	$('<input>').attr({'type':'hidden','name':'atch_num'}).val(seq).appendTo($form);
+	$form.submit();
+	
+}
+// 공통  아작스 AOP 체크 함수
+function cnnmAjaxFlterFn(data){
+	if(data != null && data.aopCode != null){
+		if(data.aopCode == 'session'){
+			alert(data.aopMsg);
+			location.href='/apage.do';
+		}else if(data.aopCode == 'author'){
+			alert(data.aopMsg);
+		}
+		return false;
+	}
+	return true;
+}
+
+//통합검색
+function totalSearch(){
+	if($("#total_search").val() == ''){
+		alert("검색어를 입력하세요.");
+		$("#total_search").focus();
+		return;
+	}
+	var searchForm = $("<form></form>");
+	searchForm.attr("name","searchForm");
+	searchForm.attr("method","post");
+	searchForm.attr("action","/search.do");
+	searchForm.append($("<input/>",{type: 'hidden', name:'srch_input', value:$("#total_search").val()}));
+	searchForm.appendTo("body");
+	searchForm.submit();
+}
+</script>
+
+</head>
+<body>
+	<div class="app-wrap">
+        <header class="app-header-wrap">
+        	<div class="inner">
+                <strong class="logo"><a href="/main.do">한국섬유산업연합회 장학재단</a></strong>
+				
+                <nav class="app-gnb-wrap">
+                    <ul class="app-gnb clearfix">
+                        <li class="menu">
+                            <strong class="gnb-tit"><span><a href="javascript:void(0);">재단소개</a></span></strong>
+                            <ul class="sub-menu">
+                                <li><a href="/info/infoOpen.do">설립취지</a></li>
+                                <li><a href="/info/infoGreeting.do">인사말</a></li>
+                                <li><a href="/info/infoHistory.do">연혁</a></li>
+                                <li><a href="/info/infoOrg.do">조직도</a></li>
+                                <li><a href="/info/infoLocation.do">찾아오시는 길</a></li>
+                            </ul>
+                        </li>
+						<li class="menu_divi">/</li>
+						<li class="menu">
+                            <strong class="gnb-tit"><span><a href="javascript:void(0);">장학사업</a></span></strong>
+                            <ul class="sub-menu">
+                            	<li><a href="/busi/busiLearn.do">장학금지원</a></li>
+                                <li><a href="/busi/busiEdu.do">교육복지지원사업</a></li>
+                                <li><a href="/busi/busiScholarship.do">학술활동지원사업</a></li>
+                                <li><a href="/busi/busiEtc.do">기타지원사업</a></li>
+                            </ul>
+                        </li>
+						<li class="menu_divi">/</li>
+                        <li class="menu">
+                            <strong class="gnb-tit"><span><a href="javascript:void(0);">후원안내</a></span></strong>
+                            <ul class="sub-menu">
+                                <li><a href="/fund/fundInfo.do">장학기금 후원안내</a></li>
+                                <!--li><a href="/fund/fundJoin.do">섬기기운동 참여</a></li-->
+                                <li><a href="/fund/fundCard.do">제휴카드사업 참여</a></li>
+								<li><a href="/fund/fundWalk.do">섬유패션인 걷기대회</a></li>
+                                <!--li><a href="/fund/fundList.do">기부금 영수증확인</a></li-->
+                            </ul>
+                        </li>
+						<li class="menu_divi">/</li>
+                        <li class="menu">
+                            <strong class="gnb-tit"><span><a href="javascript:void(0);">후원자 소개</a></span></strong>
+                            <ul class="sub-menu">
+                                <li><a href="/sponsor/boardList.do?Code=SPONSTORYS">후원 스토리</a></li>
+                                <li><a href="/sponsor/sponsorList.do?Code=SPONSOR">후원자 정보</a></li>
+                            </ul>
+                        </li>
+						<li class="menu_divi">/</li>
+						<li class="menu">
+                            <strong class="gnb-tit"><span><a href="/reports/boardList.do?Code=REPORTS">제보를 받습니다</a></span></strong>
+                            <ul class="sub-menu">
+                                <li></li>
+                            </ul>
+                        </li>
+						<li class="menu_divi">/</li>
+						<li class="menu">
+                            <strong class="gnb-tit"><span><a href="javascript:void(0);">뉴스룸</a></span></strong>
+                            <ul class="sub-menu">
+                                <li><a href="/notice/boardList.do?Code=NOTICE">공지사항/News</a></li>
+                                <li><a href="/notice/boardList.do?Code=EVENT">주요행사안내</a></li>
+                                <li><a href="/notice/boardList.do?Code=REFERENCE">자료실</a></li>
+                                <li><a href="/notice/boardList.do?Code=QNA">묻고답하기</a></li>
+                            </ul>
+                        </li>
+						<li class="menu_divi">/</li>
+						<li class="menu">
+                            <strong class="gnb-tit"><span><a href="/community/boardList.do?Code=COMMUNITY">커뮤니티</a></span></strong>
+                            <ul class="sub-menu bd-last">
+                                <li></li>
+                                <!-- <li><a href="https://cafe.naver.com/ksfcafe" target="_blank">장학생 커뮤니티</a></li>
+                                <li><a href="https://cafe.naver.com/ksfcafe" target="_blank">후원자 커뮤니티</a></li>
+                                <li><a href="/community/boardList.do?Code=COMMUNITY">커뮤니티</a></li> -->
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+				
+				<p class="util">
+					
+						
+							<a href="/member/memberLogin.do">로그인</a><span>｜</span><a href="/member/memberJoinAgree.do">회원가입</a>
+						
+						
+					
+                </p>
+				
+				<div class="top_btn">
+                	<span><a href="javascript:void(0);" class="btn_total_menu"></a></span>
+					<span><a href="javascript:void(0);" class="allBtn"></a></span>
+                </div>
+            </div>
+        </header>
+        <!-- //header -->
+        
+        <!-- sitemap -->
+		<div class="sitemap" style="display:none;" >
+			<p>전체메뉴</p>
+			<div class="sitemap_cnt">
+				
+				<dl>
+					<dt>재단소개</dt>
+					<dd><a href="/info/infoOpen.do">설립취지</a></dd>
+					<dd><a href="/info/infoGreeting.do">인사말</a></dd>
+					<dd><a href="/info/infoHistory.do">연혁</a></dd>
+					<dd><a href="/info/infoOrg.do">조직도</a></dd>
+					<dd><a href="/info/infoLocation.do">찾아오시는 길</a></dd>
+				</dl>
+				<dl>
+					<dt>장학사업</dt>
+					<dd><a href="/busi/busiLearn.do">장학금지원</a></dd>
+					<dd><a href="/busi/busiEdu.do">교육복지지원사업</a></dd>
+					<dd><a href="/busi/busiScholarship.do">학술활동지원사업</a></dd>
+					<dd><a href="/busi/busiEtc.do">기타지원사업</a></dd>
+				</dl>
+				<dl>
+					<dt>후원안내</dt>
+					<dd><a href="/fund/fundInfo.do">장학기금 후원안내</a></dd>
+					<!--dd><a href="/fund/fundJoin.do">섬기기운동 참여</a></dd-->
+					<dd><a href="/fund/fundCard.do">제휴카드사업 참여</a></dd>
+					<dd><a href="/fund/fundWalk.do">섬유패션인 걷기대회</a></dd>
+					<!--dd><a href="/fund/fundList.do">기부금 영수증확인</a></dd-->
+				</dl>
+
+				<dl>
+					<dt>후원자 소개</dt>
+					<dd><a href="/sponsor/boardList.do?Code=SPONSTORYS">후원 스토리</a></dd>
+					<dd><a href="/sponsor/sponsorList.do?Code=SPONSOR">후원자 정보</a></dd>
+				</dl>
+
+				<dl>
+					<dt><a href="/reports/boardList.do?Code=REPORTS">제보를 받습니다</a></dt>
+				</dl>
+				
+				<dl>
+					<dt>뉴스룸</dt>
+					<dd><a href="/notice/boardList.do?Code=NOTICE">공지사항/News</a></dd>
+					<dd><a href="/notice/boardList.do?Code=EVENT">주요행사안내</a></dd>
+					<dd><a href="/notice/boardList.do?Code=REFERENCE">자료실</a></dd>
+					<dd><a href="/notice/boardList.do?Code=QNA">묻고답하기</a></dd>
+				</dl>
+				
+				<dl>
+					<dt><a href="/community/boardList.do?Code=COMMUNITY">커뮤니티</a></dt>
+					<!-- <dd><a href="https://cafe.naver.com/ksfcafe" target="_blank">장학생 커뮤니티</a></dd>
+					<dd><a href="https://cafe.naver.com/ksfcafe" target="_blank">후원자 커뮤니티</a></dd>
+					<dd><a href="/community/boardList.do?Code=COMMUNITY">커뮤니티</a></dd> -->
+				</dl>
+				
+				<dl>
+			 		
+			 			
+			 				<!-- 로그인 안됨 -->
+			 				<dt>회원가입</dt>
+	                    	<dd><a href="/member/memberLogin.do">로그인</a></dd>
+	                    	<dd><a href="/member/memberSearch.do">아이디/비밀번호 찾기</a></dd>
+	                    	<dd><a href="/member/memberJoinAgree.do">회원가입</a></dd>
+			 			
+			 			
+			 		
+			 	</dl>
+			</div>
+			<span class="close"><a href="javascript:void(0);" class="closeBtn">닫기</a></span>
+		</div>
+		 <!-- //sitemap -->
+        
+        <!-- gnavM -->
+        <div class="gnavM" >
+            <div class="gnavM_top">
+                <h1 class="logo"><a href="/">한국섬유산업연합회 장학재단</a></h1>
+                <div class="member">                	
+                	
+	                	<span><a href="/member/memberLogin.do">로그인</a></span>
+	                    <span><a href="/member/memberJoinAgree.do">회원가입</a></span>
+                    
+                    
+                </div>
+            </div>
+			<ul class="depth1">
+            	<li>
+                 	<a href="">재단소개</a><span class="arrow"></span>
+					<ul class="depth2">
+						<li><a href="/info/infoOpen.do">설립취지</a></li>
+						<li><a href="/info/infoGreeting.do">인사말</a></li>
+						<li><a href="/info/infoHistory.do">연혁</a></li>
+						<li><a href="/info/infoOrg.do">조직도</a></li>
+						<li><a href="/info/infoLocation.do">찾아오시는 길</a></li>
+					</ul>
+                </li> 
+                <li>
+                	<a href="">장학사업</a><span class="arrow"></span>
+                    <ul class="depth2">
+                    	<li><a href="/busi/busiLearn.do">장학금지원</a></li>
+						<li><a href="/busi/busiEdu.do">교육복지지원사업</a></li>
+						<li><a href="/busi/busiScholarship.do">학술활동지원사업</a></li>
+						<li><a href="/busi/busiEtc.do">기타지원사업</a></li>
+					</ul>
+			 	</li>
+				<li>
+                	<a href="">후원안내</a><span class="arrow"></span>
+                    <ul class="depth2">
+		 				<li><a href="/fund/fundInfo.do">장학기금 후원안내</a></li>
+						<!--li><a href="/fund/fundJoin.do">섬기기운동 참여</a></li-->
+						<li><a href="/fund/fundCard.do">제휴카드사업 참여</a></li>
+						<li><a href="/fund/fundWalk.do">섬유패션인 걷기대회</a></li>
+						<!--li><a href="/fund/fundList.do">기부금 영수증확인</a></li-->
+					</ul>
+			 	</li>
+				
+				<li>
+                	<a href="">후원자 소개</a><span class="arrow"></span>
+                    <ul class="depth2">
+                    	<li><a href="/sponsor/boardList.do?Code=SPONSTORYS">후원 스토리</a></li>
+                    	<li><a href="/sponsor/sponsorList.do?Code=SPONSOR">후원자 정보</a></li>
+					</ul>
+			 	</li>
+				
+				<li>
+                	<a href="/reports/boardList.do?Code=REPORTS">제보받습니다</a>
+			 	</li>
+				
+				<li>
+                	<a href="">뉴스룸</a><span class="arrow"></span>
+                    <ul class="depth2">
+                    	<li><a href="/notice/boardList.do?Code=NOTICE">공지사항/News</a></li>
+                    	<li><a href="/notice/boardList.do?Code=EVENT">주요행사안내</a></li>
+                    	<li><a href="/notice/boardList.do?Code=REFERENCE">자료실</a></li>
+                    	<li><a href="/notice/boardList.do?Code=QNA">묻고답하기</a></li>
+					</ul>
+			 	</li>
+				
+				<li>
+                	<a href="/community/boardList.do?Code=COMMUNITY">커뮤니티</a>
+                   	<!-- 
+                    <ul class="depth2"><li><a href="https://cafe.naver.com/ksfcafe" target="_blank">장학생 커뮤니티</a></li>
+                    	<li><a href="https://cafe.naver.com/ksfcafe" target="_blank">후원자 커뮤니티</a></li>
+                    	<li><a href="/community/boardList.do?Code=COMMUNITY">커뮤니티</a></li>
+					</ul>
+					 -->
+			 	</li>
+			 	
+            </ul>
+            <div class="close_btn">
+                <a href="javascript:void(0);">닫기</a>
+            </div>
+        </div>
+        <div class="gnavM_bg"></div>   
+        <!-- // gnavM -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+});
+	
+	function fund_request()
+	{
+		window.open('/fund/fundInfo_request.do', '타이틀', 'top=100,left=100,width=800,height=870,scrollbars=1,resizable=0');
+	}
+</script>
+<!-- app-container-wrap -->
+<section class="app-container-wrap">
+	
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="lnb">
+
+	<div class="top_navi">
+		<ul>
+			<li><a href="/main.do"><img src="/resources/client/images/sub/btn_lnb_home.png" alt="home"></a></li>
+			
+			<li class="sub_depth">
+				
+				
+				<a href=javascript:void(0);>후원안내</a>
+				
+				
+				
+				
+				
+				
+				
+				<ul class="sub_depth_menu">
+					<li><a href="/info/infoOpen.do">재단소개</a></li>
+					<li><a href="/busi/busiLearn.do">장학사업</a></li>
+					<li><a href="/fund/fundInfo.do">후원안내</a></li>
+					<li><a href="/sponsor/boardList.do?Code=SPONSTORYS">후원자 소개</a></li>
+					<li><a href="/reports/boardList.do?Code=REPORTS">제보를 받습니다</a></li>
+					<li><a href="/notice/boardList.do?Code=NOTICE">뉴스룸</a></li>
+					<li><a href="/community/boardList.do?Code=COMMUNITY">커뮤니티</a></li>
+					
+					<li><a href="/member/memberLogin.do">로그인</a></li>
+					
+					
+				</ul>
+				
+			</li>
+			
+			
+			
+			
+			
+			
+			 <!-- 후원안내-->
+			<li class="sub_depth">
+				<a href="javascript:void(0);">장학기금 후원안내</a>
+				<!---->
+				
+				
+				<!---->
+				<ul class="sub_depth_menu">
+					<li><a href="/fund/fundInfo.do">장학기금 후원안내</a></li>
+					<!--li><a href="/fund/fundJoin.do">섬기기운동 참여</a></li-->
+					<li><a href="/fund/fundCard.do">제휴카드사업 참여</a></li>
+					<li><a href="/fund/fundWalk.do">섬유패션인 걷기대회</a></li>
+					<!--li><a href="/fund/fundList.do">기부금 영수증확인</a></li-->
+				</ul>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</ul>
+	</div>
+</div>
+<!-- // lnb --> 
+ 
+    <div id="contents">
+    	<div class="titWrap">
+        	
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+	AOS.init();
+	
+	//페이지 타이틀 및 nav표시 생성
+	var menu1 = $("#lnb .top_navi li.sub_depth > a").eq(0).text();
+	var menu2;
+	var menu3;
+	var pageTitle = $("#lnb .top_navi li.sub_depth").eq(1).find("a").eq(0).text();
+	var is3depth = false;
+	
+	if (pageTitle == "") {
+		pageTitle = $("#lnb .top_navi li.sub_depth").eq(0).find("a").eq(0).text();
+	}
+	
+	var navHtml = "<h3 id='menuTitle' data-aos='fade-up' data-aos-delay='400'>"+pageTitle+"</h3>";
+
+	$(".titWrap").html(navHtml);
+	
+});
+</script>
+
+ 
+        </div>
+        <!-- //titWrap -->
+		<div class="fund_info">
+			<div class="fund_info_head">
+				<img src="/resources/client/images/contents/img_fund_info_1.png" alt="">
+				<span class="head_line"></span>
+			</div>
+			
+			<div class="fund_info_box">
+				<ul>
+					<li>
+						<span>재단발전<br>기금</span>
+						<ul>
+							<li><span><span class="comment_num">1</span></span><span>한국섬유산업연합회 장학재단은 100억원을 목표로 합니다.</span></li>
+							<li><span><span class="comment_num">2</span></span><span>장학재단 기금으로 조성되며, 장학사업은 재단에 위임하여 기금의 운용수익으로 실시합니다.</span></li>
+							<li><span><span class="comment_num">3</span></span><span>소득세 및 법인세의 세재 혜택이 가능합니다.(기부금 영수증 및 출연증서 발급)</span></li>
+						</ul>
+					</li>
+					<li>
+						<span>특정장학<br>기금</span>
+						<ul>
+							<li><span><span class="comment_num">1</span></span><span>한국섬유산업연합회 장학재단 내에 개인, 법인, 단체 등이 출연한 재산을 기본재산으로 하는 특지장학회를 별도로 설립·운영하는 제도이며, 그 출연금의 운용수익 범위 내에서 출연자 명의로 장학사업을 실시합니다.</span></li>
+							<li><span><span class="comment_num">2</span></span><span>본 장학재단에서 모든 행정적 업무를 대행함으로써 운영의 문제를 해소할 수 있으며, 소득세 및 법인세의 세재 혜택 등 개별 장학재단의 설립과 동일한 혜택을 받을 수 있습니다.(기부금 영수증 및 출연증서 발급)</span></li>
+							<li><span><span class="comment_num">3</span></span><span>출연자의 사망 등 유고시에는 특지장학회의 모든 권리가 출연자가 지정하는 분에게 귀속됩니다.</span></li>
+						</ul>
+					</li>
+					<li>
+						<span>지정장학<br>기금</span>
+						<ul>
+							<li><span><span class="comment_num">1</span></span><span>일정금액을 장학재단에 출연하여 지정장학회를 별도로 설립·운영하는 제도이며, 그 출연금 범위 내에서 출연자 명의로 장학사업으로 실시합니다.</span></li>
+							<li><span><span class="comment_num">2</span></span><span>본 장학재단에서 모든 행정적 업무를 대행함으로써 운영의 문제를 해소할 수 있으며, 소득세 및 법인세의 세재 혜택 등 개별 장학재단의 설립과 동일한 혜택을 받을 수 있습니다.(기부금 영수증 및 출연증서 발급)</span></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			
+			
+		</div>
+    </div>
+	<!-- //contents -->
+</section>
+<!-- //app-container-wrap -->	
+
+
+	
+	<footer class="app-footer-wrap">
+		<address>
+			<div class="footer_left">
+				<div>법인명 : (재)한국섬유산업연합회 장학재단<span>/</span>고유번호(사업자번호) : 120-82-10322<span>/</span>대표자 : 최병오 이사장</div>
+				<div>주소 : 06180 서울시 강남구 테헤란로 518(대치동) 섬유센터 16층<span>/</span>TEL : 02-528-4084<span>/</span>FAX : 02-528-4070<span>/</span>E-mail : ss@kofoti.or.kr</div>
+				<div>Copyright © 2020 재단법인 한국섬유산업연합회장학재단 All Rights Reserved.</div>
+			</div>
+			<div class="footer_right">
+				<select class="select" name="exp1" id="exp1">
+					<option value="">관련기관 바로가기</option>
+					<option value="http://www.kofoti.or.kr">한국섬유산업연합회</option>
+					<option value="http://www.sen.go.kr">서울특별시 교육청</option>
+					<option value="https://www.nts.go.kr">국세청</option>
+					<option value="https://www.acrc.go.kr">국민권익위원회</option>
+				</select>
+				<button id="btn_exp1">GO</button>					
+			</div>
+		</address>
+	</footer>
+	<!-- //footer -->
+	</div>
+	<!-- //app-wrap -->
+
+</body>
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script type="text/javascript">
+$(function() {
+	$( "input[name$='start_date']" ).datepicker({
+	  showOn: "both", // 버튼과 텍스트 필드 모두 캘린더를 보여준다.
+	  buttonImage: "/images/board/ico_cal.gif", // 버튼 이미지
+	  buttonImageOnly: true, // 버튼에 있는 이미지만 표시한다.
+	  changeMonth: true, // 월을 바꿀수 있는 셀렉트 박스를 표시한다.
+	  changeYear: true, // 년을 바꿀 수 있는 셀렉트 박스를 표시한다.
+	  minDate: '-100y', // 현재날짜로부터 100년이전까지 년을 표시한다.
+	  nextText: '다음 달', // next 아이콘의 툴팁.
+	  prevText: '이전 달', // prev 아이콘의 툴팁.
+	  numberOfMonths: [1,1], // 한번에 얼마나 많은 월을 표시할것인가. [2,3] 일 경우, 2(행) x 3(열) = 6개의 월을 표시한다.
+	  //stepMonths: 3, // next, prev 버튼을 클릭했을때 얼마나 많은 월을 이동하여 표시하는가.
+	  yearRange: 'c-100:c+10', // 년도 선택 셀렉트박스를 현재 년도에서 이전, 이후로 얼마의 범위를 표시할것인가.
+	  showButtonPanel: true, // 캘린더 하단에 버튼 패널을 표시한다.
+	  currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널
+	  closeText: '닫기',  // 닫기 버튼 패널
+	  dateFormat: "yy-mm-dd", // 텍스트 필드에 입력되는 날짜 형식.
+	  showAnim: "slide", //애니메이션을 적용한다.
+	  showMonthAfterYear: true , // 월, 년순의 셀렉트 박스를 년,월 순으로 바꿔준다.
+	  dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'], // 요일의 한글 형식.
+	  monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'], // 월의 한글 형식.
+	  onSelect: function( selectedDate ) {// 이전날짜 선택 금지
+           var option = this.name == "start_date" ? "minDate" : "maxDate",
+           instance = $( this ).data( "datepicker" ),
+           date = $.datepicker.parseDate(
+           instance.settings.dateFormat || $.datepicker._defaults.dateFormat,
+           selectedDate, instance.settings );
+           jQuery( "input[name$='start_date'], input[name$='end_date']" ).not( this ).datepicker( "option", option, date );
+       }
+	 });
+	$( "input[name$='end_date']" ).datepicker({
+	  showOn: "both", // 버튼과 텍스트 필드 모두 캘린더를 보여준다.
+	  buttonImage: "/images/sub/btn_calendar.gif", // 버튼 이미지
+	  buttonImageOnly: true, // 버튼에 있는 이미지만 표시한다.
+	  changeMonth: true, // 월을 바꿀수 있는 셀렉트 박스를 표시한다.
+	  changeYear: true, // 년을 바꿀 수 있는 셀렉트 박스를 표시한다.
+	  minDate: '-100y', // 현재날짜로부터 100년이전까지 년을 표시한다.
+	  nextText: '다음 달', // next 아이콘의 툴팁.
+	  prevText: '이전 달', // prev 아이콘의 툴팁.
+	  numberOfMonths: [1,1], // 한번에 얼마나 많은 월을 표시할것인가. [2,3] 일 경우, 2(행) x 3(열) = 6개의 월을 표시한다.
+	  //stepMonths: 3, // next, prev 버튼을 클릭했을때 얼마나 많은 월을 이동하여 표시하는가.
+	  yearRange: 'c-100:c+10', // 년도 선택 셀렉트박스를 현재 년도에서 이전, 이후로 얼마의 범위를 표시할것인가.
+	  showButtonPanel: true, // 캘린더 하단에 버튼 패널을 표시한다.
+	  currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널
+	  closeText: '닫기',  // 닫기 버튼 패널
+	  dateFormat: "yy-mm-dd", // 텍스트 필드에 입력되는 날짜 형식.
+	  showAnim: "slide", //애니메이션을 적용한다.
+	  showMonthAfterYear: true , // 월, 년순의 셀렉트 박스를 년,월 순으로 바꿔준다.
+	  dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'], // 요일의 한글 형식.
+	  monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'], // 월의 한글 형식.
+	  onSelect: function( selectedDate ) {//// 이전날짜 선택 금지
+           var option = this.name == "start_date" ? "minDate" : "maxDate",
+           instance = $( this ).data( "datepicker" ),
+           date = $.datepicker.parseDate(
+           instance.settings.dateFormat ||
+           $.datepicker._defaults.dateFormat,
+           selectedDate, instance.settings );
+           jQuery( "input[name$='start_date'], input[name$='end_date']"  ).not( this ).datepicker( "option", option, date );
+      }
+	 });
+	
+	$.datepicker.setDefaults({
+		showOn: "both", // 버튼과 텍스트 필드 모두 캘린더를 보여준다.
+		buttonImage: "/images/sub/btn_calendar.gif", // 버튼 이미지
+		buttonImageOnly: true, // 버튼에 있는 이미지만 표시한다.
+		changeMonth: true, // 월을 바꿀수 있는 셀렉트 박스를 표시한다.
+		changeYear: true, // 년을 바꿀 수 있는 셀렉트 박스를 표시한다.
+		minDate: '-100y', // 현재날짜로부터 100년이전까지 년을 표시한다.
+		nextText: '다음 달', // next 아이콘의 툴팁.
+		prevText: '이전 달', // prev 아이콘의 툴팁.
+		numberOfMonths: [1,1], // 한번에 얼마나 많은 월을 표시할것인가. [2,3] 일 경우, 2(행) x 3(열) = 6개의 월을 표시한다.
+		yearRange: 'c-100:c+10', // 년도 선택 셀렉트박스를 현재 년도에서 이전, 이후로 얼마의 범위를 표시할것인가.
+		showButtonPanel: true, // 캘린더 하단에 버튼 패널을 표시한다.
+		currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널
+		closeText: '닫기',  // 닫기 버튼 패널
+		dateFormat: "yy-mm-dd", // 텍스트 필드에 입력되는 날짜 형식.
+		showAnim: "slide", //애니메이션을 적용한다.
+		showMonthAfterYear: true , // 월, 년순의 셀렉트 박스를 년,월 순으로 바꿔준다.
+		dayNamesMin: ['일', '월', '화', '수', '목', '금', '토' ], // 요일의 한글 형식.
+		monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']// 월의 한글 형식.
+    });
+	
+	$("#btn_exp1").click(function() {
+		const exp1 = $("#exp1 option:selected").val();
+		
+		if(exp1 == "") {
+			alert("관련기관 바로가기를 선택해주세요.");
+			return;
+		}
+		
+		window.open(exp1, "_blank");
+	});
+});
+</script>
+</html>

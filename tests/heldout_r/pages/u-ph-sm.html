@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+    <title>Login</title>
+
+    
+
+    
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="/smscholars/Custom/Assets/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="/smscholars/Custom/Assets/vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="/smscholars/Custom/Assets/css/fontastic.css">
+
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/smscholars/Custom/Assets/css/style.blue.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/smscholars/Custom/Assets/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="/smscholars/Content/img/LOGO.png">
+
+    
+    <link rel="stylesheet" href="/smscholars/Custom/Plugin/textAngular/dist/textAngular.css" type="text/css">
+    <link rel="stylesheet" href="/smscholars/Custom/Plugin/textAngular/spectrum/spectrum.css" type="text/css" />
+
+    <link rel="stylesheet" href="/smscholars/Content/angular-material.layouts.min.css" />
+    <link rel="stylesheet" href="/smscholars/Content/angular-material.min.css" />
+
+    
+    <link rel="stylesheet" href="/smscholars/Custom/Plugin/loadingbar/loading-bar.min.css">
+    <link rel="stylesheet" href="/smscholars/Custom/Plugin/loading/angular-loading.css">
+
+    
+    <link rel="stylesheet" href="/smscholars/Custom/Plugin/angucomplete/angucomplete.css">
+
+    <script src="/smscholars/Scripts/modernizr-2.6.2.js"></script>
+
+
+</head>
+<body ng-app="Application" ng-cloak dw-loading="mybody" dw-loading-options="{text: '', className: 'custom-loading', spinnerOptions: {lines: 13, length: 0, width: 10, radius: 30,corners:1,trail:60,direction:1,speed: 3,color:'#FAD10B'}}">
+
+    <script src="/smscholars/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="/smscholars/Scripts/jquery.inputmask.bundle.min.js"></script>
+
+    
+    <script src="/smscholars/Scripts/angular.min.js"></script>
+    <script src="/smscholars/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="/smscholars/Scripts/angular-animate.min.js"></script>
+    <script src="/smscholars/Scripts/angular-aria.min.js"></script>
+    <script src="/smscholars/Scripts/angular-messages.min.js"></script>
+    <script src="/smscholars/Scripts/angular-ui/ui-utils.min.js"></script>
+
+    <script src="/smscholars/Scripts/angular-material.min.js"></script>
+
+    <script src="/smscholars/Scripts/FileSaver.js"></script>
+    
+
+    
+    <script src="/smscholars/Custom/Scripts/dirPagination.js"></script>
+
+    <script src="/smscholars/Custom/Scripts/Module.js"></script>
+    <script src="/smscholars/Custom/Scripts/Service.js"></script>
+
+    <script src="/smscholars/Custom/Scripts/ListCntrl.js"></script>
+
+    <script src="/smscholars/Custom/Assets/js/jquery-resizable.js"></script>
+    <script src="/smscholars/Custom/Assets/js/jquery-resizableTableColumns.js"></script>
+
+    
+    
+    <script src="/smscholars/Custom/Plugin/loadingbar/loading-bar.min.js"></script>
+    <script src="/smscholars/Custom/Plugin/loading/spin.min.js"></script>
+    <script src="/smscholars/Custom/Plugin/loading/angular-loading.js"></script>
+
+    
+    <script src="/smscholars/Custom/Plugin/mask/mask.js"></script>
+
+    
+    <script src="/smscholars/Custom/Plugin/angucomplete/angucomplete.js"></script>
+
+    
+    <script src="/smscholars/Custom/Plugin/canvasviewer/dist/CanvasViewer.all.min.js"></script>
+
+    
+    <script src="/smscholars/Custom/Plugin/textAngular/spectrum/spectrum.js"></script>
+    <script src="/smscholars/Custom/Plugin/textAngular/angular-spectrum-colorpicker/dist/angular-spectrum-colorpicker.js"></script>
+    
+    <script src="/smscholars/Custom/Plugin/textAngular/dist/textAngular-rangy.min.js"></script>
+    <script src='/smscholars/Custom/Plugin/textAngular/dist/textAngular-sanitize.min.js'></script>
+    <script src="/smscholars/Custom/Plugin/textAngular/dist/textAngularSetup.js"></script>
+    <script src='/smscholars/Custom/Plugin/textAngular/dist/textAngular.min.js'></script>
+
+
+    
+    <script src='/smscholars/Custom/Plugin/ng-csv/ng-csv.js'></script>
+
+    <script src='/smscholars/Custom/Plugin/protect/aes.js'></script>
+
+
+    
+
+
+
+    
+    <!-- Javascript files-->
+    <script src="/smscholars/Custom/Assets/vendor/popper.js/umd/popper.min.js"></script>
+    <script src="/smscholars/Custom/Assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/smscholars/Custom/Assets/vendor/jquery.cookie/jquery.cookie.js"></script>
+    <script src="/smscholars/Custom/Assets/vendor/jquery-validation/jquery.validate.min.js"></script>
+
+    <!-- Main File-->
+    <script src="/smscholars/Custom/Assets/js/front.js"></script>
+
+
+    
+
+<div ng-controller="Shared">
+    <div class="page login-page" dw-loading="loadingpage" dw-loading-options="{text: '', className: 'custom-loading', spinnerOptions: {lines: 13, length: 0, width: 10, radius: 30,corners:1,trail:60,direction:1,speed: 3,color:'#FAD10B'}}" ng-controller="Login">
+        <div class="container d-flex align-items-center">
+            <div class="form-holder has-shadow">
+                <div class="row">
+                    <!-- Logo & Information Panel-->
+                    <div class="col-lg-6">
+                        <div class="info d-flex align-items-center">
+                            <div class="content">
+                                <div class="logo">
+                                    <h1><img src="/smscholars/Content/img/smfoundationlogo.png " /></h1>
+                                </div>
+                                <p>Scholars Login </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Form Panel    -->
+                    <div class="col-lg-6 bg-white" data-ng-init="function1()">
+                        <div class="form d-flex align-items-center">
+                            <div class="content">
+
+                                <form id="login-form" ng-submit="checkuserlogin()">
+                                    <div class="form-group">
+                                        <input id="login-username" type="text" name="loginUsername" required ng-model="userid" class="input-material">
+                                        <label for="login-username" class="label-material">User Name</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="login-password" type="password" name="loginPassword" ng-model="userpass" required class="input-material">
+                                        <label for="login-password" class="label-material">Password</label>
+                                    </div>
+
+                                    <div class="form-group terms-conditions">
+                                        <input id="license" type="checkbox" class="checkbox-template">
+                                        <label for="license">Remember me</label>
+                                    </div>
+
+
+                                    
+                                    <button class="btn btn-primary btn-block" type="submit">Login</button>
+                                    <!-- This should be submit button but I replaced it with <a> for demo purposes-->
+                                    <br />
+                                </form>
+                                <a href="#" class="forgot-pass" data-toggle="modal" data-target="#alertModalForgotPassword" ng-click="ResponseResult=null" style="text-align:center !important;">Forgot Password?</a>
+    
+
+                                <div ng-show="showalertmsg">
+                                    <br />
+                                    <br />
+                                    <div class="alert alert-warning">
+                                        
+                                        <strong><i class="fa fa-warning"></i></strong> {{msg}}
+                                    </div>
+                                </div>
+
+                                <div ng-show="IDLEMessage!= null">
+                                    <br />
+                                    <br />
+                                    <div class="alert alert-warning">
+                                        <i class="fa fa-warning"></i> {{IDLEMessage}}
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="alertModalForgotPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false">
+            <div role="document" class="modal-dialog">
+                <div class="modal-content">
+                    
+                    <div class="modal-body">
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close text-danger"><span aria-hidden="true">×</span></button>
+                        <h3>Forgot your password?</h3>
+                        <ul class="list-unstyled">
+                            <li>1. Enter your email address in the box below.</li>
+                            <li>2. Click Get Password to generate a password reset email.</li>
+                            <li>3. When the email arrives, click the link and follow the instructions on the password reset page</li>
+                        </ul>
+
+                        <br />
+                        <form ng-submit="SendResetPassword()">
+                            <div class="form-group">
+                                <label>Email:</label>
+                                <input class="custom-input form-control" ng-model="Email" placeholder="Email Address" required />
+                            </div>
+                            <div class="pull-right">
+                                <button type="submit" class="btn btn-sm btn-primary">Get Password</button>
+                            </div>
+                        </form>
+                        <br /><br />
+
+                        <div ng-switch="ResponseResult">
+                            <div class="alert alert-info" ng-switch-when="OK">
+                                <i class="fa fa-info-circle"></i> Email sent.! Please check your email.
+                            </div>
+                            <div class="alert alert-warning" ng-switch-default ng-show="ResponseResult!=null">
+                                <i class="fa fa-warning"></i> {{ResponseResult}}
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="alertModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left" data-backdrop="static" data-keyboard="false">
+            <div role="document" class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header card-header bg-orange text-white">
+                        <h4 id="exampleModalLabel" class="modal-title"><i class="fa fa-warning"></i> Message</h4>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body card-body text-center">
+                        {{msg}}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" ng-click="alertmsg()" class="btn btn-primary">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyrights text-center">
+            <p>&copy; 2017 - SM Foundation M2 v2.5.1 </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <script src="/smscholars/ViewsScripts/Shared/Shared.js"></script>
+    <script src="/smscholars/ViewsScripts/Account/Login.js"></script>
+    
+    
+
+
+
+</body>
+</html>

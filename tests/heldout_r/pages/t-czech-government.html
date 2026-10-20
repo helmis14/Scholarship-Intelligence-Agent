@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head><meta http-equiv="content-type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="description" content="Operační program Výzkum, vývoj a vzdělávání je tematickým programem MŠMT. Cílem programu je podpora vzdělávání, vývoje a výzkumu v ČR." /><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Cookie Consent by TermsFeed (https://www.TermsFeed.com) -->
+    <script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.0.0/cookie-consent.js" charset="UTF-8"></script>
+    <script type="text/javascript" charset="UTF-8">
+    document.addEventListener('DOMContentLoaded', function () {
+    cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palette":"light","language":"cs","page_load_consent_levels":["strictly-necessary"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_name":"Operační program Výzkum, vývoj a vzdělávání","open_preferences_center_selector":"#open_preferences_center","website_privacy_policy_url":"https://opvvv.msmt.cz/privacy-policy"});
+    });
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        // 14.07.2022  - I-IT - FIX MENU
+        /*
+        $(document).ready(function(){
+            $('body').find('a:not(.archiv-aktualit)[href="/aktuality"]').each(function(){
+                    $(this).attr('href', '/aktuality-2022');
+                }
+            );
+        });
+        */
+        $(document).ready(function(){
+            $('body').find('a[href="/aktualni-vyzvy"]').each(function(){
+                    if(!$(this).closest('.sh-box-facet').length){
+                        $(this).attr('href', '/ukoncene-vyzvy');
+                    }
+                }
+            );
+        });
+    </script>
+
+    <style>
+    .cc-cp-body-tabs > .cc-cp-body-tabs-item:nth-child(5),.cc-cp-body-tabs > .cc-cp-body-tabs-item:nth-child(6) {display:none !important;}
+    .cc-cp-foot-byline {pointer-events:none !important;opacity:0.0 !important;}
+    .termsfeed-com---palette-light .cc-cp-foot-save, 
+    .termsfeed-com---palette-light .cc-nb-okagree,
+    .termsfeed-com---palette-light .cc-nb-reject {background:steelblue !important;}
+    </style>
+
+    <!-- OLD: Google Tag Manager -->
+    <!--
+    <script type="text/plain" cookie-consent="tracking" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123589311-1"></script>
+    <script type="text/plain" cookie-consent="tracking">
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-123589311-1');
+        </script>
+    -->
+    <!-- end of Google Tag Manager-->
+
+    <!-- NEW: Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QV4NP7FD23"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QV4NP7FD23');
+    </script>
+
+    <!-- Google Analytics -->
+    <script type="text/plain" cookie-consent="tracking" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <!-- end of Google Analytics-->
+
+    <!-- Google Maps -->
+    <!-- cookie-consent="functionality" -->
+    <script type="text/plain" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/47/3/intl/cs_ALL/common.js"></script>
+    <script type="text/plain" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/47/3/intl/cs_ALL/util.js"></script>
+    <script type="text/plain" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/47/3/intl/cs_ALL/map.js"></script>
+    <script type="text/plain" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/47/3/intl/cs_ALL/onion.js"></script>
+    <script type="text/plain" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/47/3/intl/cs_ALL/controls.js"></script>
+    <script type="text/plain" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/47/3/intl/cs_ALL/marker.js"></script>
+    <script type="text/plain" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/47/3/intl/cs_ALL/overlay.js"></script>
+    <!-- end of Google Maps-->
+
+    <!-- Notifiy Box -->
+    <script type="text/plain" cookie-consent="functionality">$('#idNotifyBoxForm').notifyvalidation({"InputEmail":"ctl07_ctl00_idEmail","Pattern":"^[a-zA-Z0-9.!#$%&\u0027*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$","ErrMsg":"Email nemá správný tvar!"});
+    $('#idBody_idHPChallenge').tabs({"Tab":".hp-challenges-bm \u003e a","Body":".hp-challenges \u003e .row","AC":"hp-challenges-bm-in-selected"});
+    </script>
+    <!-- end of Notifiy Box-->
+
+    <noscript>ePrivacy and GPDR Cookie Consent by <a href="https://www.TermsFeed.com/" rel="nofollow">TermsFeed Generator</a></noscript>
+    <!-- End Cookie Consent by TermsFeed (https://www.TermsFeed.com) -->
+
+<title>
+Operační program Výzkum, vývoj, vzdělávání / MŠMT
+</title><script src="/bundle/js?v=OzhC-wyKrI7g2lz_E0xI-pY3Pv7IaOTlUtRePLy1dfE1"></script>
+<link href="/bundle/css?v=HkxzXchITmiJm-qvQ1SghUYd1VRBGmyL0bD91wKXe3o1" rel="stylesheet"/>
+
+<script src="/handler/res.ashx?LangId=1029&amp;v=419667"></script>
+</head>
+<body>
+<form method="post" action="./" id="Main" novalidate="">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="1NjUURJUNeu2xu/1ne0dK0zewDu6E3fSSJxh5tdsRWmOown5616Kutf5qQtemk9tVEJaz9wul+UNDPytsn6dTa6yPUP4p7TxxWOjUH6+lJBvWEkTFp21/WNM6o9eBq6lAYFeukXfb7MSxSwn5qdU+60t8yeXCy/S4KydjYsQtc4pqnf3IlQeBTkGogfdPFFCao/49Iikfkn0rLz7L3+7ww==" />
+</div>
+
+<div class="aspNetHidden">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="SOFEuuInsQQHXwyJtjXWWiML2BlaivrPu83sfWObwZuC7TXjgxHFAH+b5woHKzrZjd+rKbeTnjRT+qJlhLY+sOWAgDFui7Apap4hJhkRJq3iyBOi4fm4hhgMM9ifA6OP" />
+</div>
+
+<div class="opvvv-header-print-logo">
+    <img src="/email/logo.png" title="Operační program Výzkum, vývoj, vzdělávání / MŠMT" alt="Operační program Výzkum, vývoj, vzdělávání / MŠMT" />
+    <hr />
+</div>
+<div class="container-fluid" id="opvvv-header-scroll">
+    <div class="opvvv-header-scroll-bg">
+        <div class="container">
+            <div class="opvvv-header-scroll-circle">
+                
+            </div>
+            <div class="clearfix">
+                <div class="pull-left">
+                    <a href="/default.aspx" title="Operační program Výzkum, vývoj a vzdělávání - úvodní strana" class="opvvv-header-scroll-logo">Operační program<br />
+                        Výzkum, vývoj a vzdělávání</a>
+                </div>
+                
+                <div class="opvvv-header-box-search hidden-xs pull-left">
+                    <input id="idsearchinput" type="text" autocomplete="off" value="" onfocus="SearchF_OnFocus('idsearchinput', 'S čím můžeme pomoci?');" onkeydown="SearchF_TryEnterAndRedir(event,'idsearchinput', 'S čím můžeme pomoci?');" aria-label="S čím můžeme pomoci?" />
+                    <button class="box-full" type="button" onclick="SearchF_RoutedRedir(event,'idsearchinput','S čím můžeme pomoci?');">Hledat</button>
+                </div>
+                
+                <div class="opvvv-header-box-social pull-right">
+                    
+                    <a href="/kontakty" title="Kontakty" class="box-border-last hidden-sm hidden-md hidden-lg" aria-label="Kontakty"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                    <a href="/kontakty" title="Kontakty" class="box-border hidden-xs">Kontakty</a>
+                    <a href=" https://www.facebook.com/opvvv/" target="_blank" title="OP VVV na Facebooku" class="facebook" aria-label="OP VVV na Facebooku"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href="https://www.youtube.com/channel/UCGXUZRp91morTJbiusxdo4g/videos" target="_blank" title="OP VVV na Youtube" class="youtube" aria-label="OP VVV na Youtube"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <div class="opvvv-header-box-menu">
+        <div class="container">
+            <div class="clearfix">
+                <div class="pull-left hidden-sm hidden-md hidden-lg opvvv-header-box-search-small">
+                    <input id="idsearchinputsmall" type="text" autocomplete="off" value="" onfocus="SearchF_OnFocus('idsearchinputsmall', 'S čím můžeme pomoci?');" onkeydown="SearchF_TryEnterAndRedir(event,'idsearchinputsmall', 'S čím můžeme pomoci?');" aria-label="S čím můžeme pomoci?" />
+                    <button class="box-full" type="button" onclick="SearchF_RoutedRedir(event,'idsearchinputsmall','S čím můžeme pomoci?');">Hledat</button>
+                </div>
+                <div class="pull-left opvvv-header-box-menu-left">
+                    <a href="/aktualni-vyzvy" title="V&#253;zvy" class="hidden-xs">V&#253;zvy</a><a href="/otazky-odpovedi" title="Čast&#233; dotazy" class="hidden-xs showsplash">Čast&#233; dotazy</a><a href="/seminare" title="Akce a semin&#225;ře" class="hidden-xs">Akce a semin&#225;ře</a><a href="/aktuality" title="Aktuality" class="hidden-xs showsplash">Aktuality</a><a href="/dokumenty" title="Dokumenty" class="hidden-xs">Dokumenty</a><a href="/publicita" title="Publicita" class="hidden-xs">Publicita</a><a href="/o-programu" title="O programu" class="hidden-sm hidden-xs">O programu</a>
+                </div>
+                <div class="pull-right hidden-sm hidden-xs hidden-md opvvv-header-box-menu-right">
+
+                    <!-- 11.2.2022 I-IT -->
+                        <a href="https://opjak.cz/" title="OP JAK" target="_blank">OP JAK</a>
+                    <!-- 11.2.2022 I-IT -->
+
+                    <a href="/kariera-opvvv" title="Kari&#233;ra" class="showsplash">Kari&#233;ra</a>
+                </div>
+                <div class="pull-right hidden-lg opvvv-header-box-menu-right">
+                    <a title="Další nabídka OP VVV" class="navigation" id="opvvv-header-scroll-menu-link"><span class="hidden-xxs">Menu</span><i class="fa fa-bars" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="opvvv-header-scroll-menu" class="opvvv-header-scroll-menu">
+        <div class="clearfix ml40">
+            <div class="pull-left">
+                <a href="/default.aspx" title="Operační program Výzkum, vývoj a vzdělávání - úvodní strana" class="opvvv-header-scroll-menu-logo">OP VVV
+                    <span>Operační program<br />
+                        Výzkum, vývoj a vzdělávání</span></a>
+            </div>
+            <div class="pull-right"><a href="#" class="opvvv-header-scroll-menu-close" aria-label="Zavřít nabídku"><i class="fa fa-close" aria-hidden="true"></i></a></div>
+        </div>
+        <hr />
+        <div class="opvvv-header-scroll-menu-wrap">
+            <div class="opvvv-header-scroll-menu-container">
+                <h3>Operační program</h3>
+                <ul>
+                    
+                    <li><a href="/aktualni-vyzvy" title="V&#253;zvy">V&#253;zvy</a></li>
+                    <li><a href="/otazky-odpovedi" title="Čast&#233; dotazy">Čast&#233; dotazy</a></li>
+                    <li><a href="/seminare" title="Akce a semin&#225;ře">Akce a semin&#225;ře</a></li>
+                    <li><a href="/aktuality" title="Aktuality">Aktuality</a></li>
+                    <li><a href="/dokumenty" title="Dokumenty">Dokumenty</a></li>
+                    <li><a href="/publicita" title="Publicita">Publicita</a></li>
+                    <li><a href="/o-programu" title="O programu">O programu</a></li>
+                    <li><a href="/kariera-opvvv" title="Kari&#233;ra">Kari&#233;ra</a></li>
+                    
+
+                    <!-- 11.2.2022 I-IT -->
+                        <li><a href="https://opjak.cz/" title="OP JAK" target="_blank">OP JAK</a></li>
+                    <!-- 11.2.2022 I-IT -->
+
+                    
+                </ul>
+                <hr />
+                <h3>Uživatel webu OP VVV</h3>
+                <ul>
+                    
+                    <li><a href="/uzivatel/prihlaseni">Přihlášení</a></li>
+                    <li><a href="/uzivatel/zapomenute-heslo">Zapomenuté heslo</a></li>
+                    <li><a href="/uzivatel/registrace">Registrace</a></li>
+                    
+                </ul>
+                <hr />
+                <div class="opvvv-header-scroll-social text-center">
+                    <a href="/rss" title="Odběr RSS" class="rss" aria-label="Odběr RSS"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/opvvv/" target="_blank" title="OP VVV na Facebooku" class="facebook" aria-label="OP VVV na Facebooku"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href="https://www.youtube.com/channel/UCGXUZRp91morTJbiusxdo4g/videos" target="_blank" title="OP VVV na Youtube" class="youtube" aria-label="OP VVV na Youtube"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+                </div>
+                <hr />
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    // start on document ready
+    $(document).ready(function () {
+        $("#opvvv-header-scroll-menu-link").click(function (e) {
+            var $menu = $("#opvvv-header-scroll-menu");
+            if ($menu.is(":visible")) {
+                //$menu.hide("slide");
+                $menu.hide();
+            }
+            else {
+                $menu.css('height', '' + $(window).height() + 'px');
+                $menu.show();
+                //$menu.show("slide");
+            }
+        });
+        $("#opvvv-header-scroll-menu").mouseleave(function (e) {
+            $(this).hide();
+        });
+        $(".opvvv-header-scroll-menu-close").click(function (e) {
+            var $menu = $("#opvvv-header-scroll-menu");
+            if ($menu.is(":visible")) {
+                $menu.hide();
+            }
+        });
+
+        $(".opvvv-header-scroll-menu-container h3").click(function (e) {
+            var t = $(this);
+            var s = $(this).next();
+            if (s.is(":visible")) {
+                s.hide();
+                t.addClass('down');
+            }
+            else {
+                s.show();
+                t.removeClass('down');
+            }
+        });
+		
+    });
+</script>
+
+    <div id="opvvv-header-body">
+        
+<div id="idBody_idCarousel" class="carousel desk slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+<div class="item active" style="">
+    <div class="container">
+	
+	<div class="car-img-desc car-gate">
+	
+	<div class="row">
+		<div class="col-sm-5">
+		
+		<a href="https://databaze.opvvv.msmt.cz/" title="Datab&#225;ze v&#253;stupů projektů OP VVV"><img src="/media/Origin/2003/Image2323.png" alt="Datab&#225;ze v&#253;stupů projektů OP VVV" /></a>
+		
+		</div>
+		<div class="col-sm-7">
+		<h3><a href="https://databaze.opvvv.msmt.cz/">Databáze výstupů projektů OP VVV</a></h3>
+        <div class="annot"><p>Databáze výstupů projektů OP VVV je veřejně přístupným portálem, který vedle základních informací o jednotlivých podpořených projektech umožňuje odborné i laické veřejnosti prohlížet, stahovat a&nbsp;případně i využívat materiály vzniklé s přispěním OP VVV. Smyslem je tedy volné šíření materiálů, které byly vytvořeny, popř. inovovány v rámci projektů OP VVV, a zajištění jejich většího praktického využití pro účely vzdělávacího systému České republiky.</p></div>
+		
+		<a href="https://databaze.opvvv.msmt.cz/" class="redirect-btn black">Více</a>
+		
+		</div>
+	</div>
+	</div>
+	
+	</div>
+	</div>
+<div class="item" style="">
+    <div class="container">
+	
+	<div class="car-img-desc car-gate">
+	
+	<div class="row">
+		<div class="col-sm-5">
+		
+		<a href="https://opvvv.msmt.cz/clanek/projekty-op-vvv-v-krajich.htm?a=1" title="Projekty OP VVV v kraj&#237;ch"><img src="/media/Origin/2003/Image2330.png" alt="Projekty OP VVV v kraj&#237;ch" /></a>
+		
+		</div>
+		<div class="col-sm-7">
+		<h3><a href="https://opvvv.msmt.cz/clanek/projekty-op-vvv-v-krajich.htm?a=1">Projekty OP VVV v krajích</a></h3>
+        <div class="annot"><p>Zajímá Vás, jaké projekty OP VVV jsou financované z prostředků Evropské unie (EU) ve vašem kraji?</p> 
+<p>Každý měsíc pro Vás aktualizujeme přehlednou tabulku o projektech, které jsou realizovány z OP VVV na celém území České republiky.</p></div>
+		
+		<a href="https://opvvv.msmt.cz/clanek/projekty-op-vvv-v-krajich.htm?a=1" class="redirect-btn black">Více</a>
+		
+		</div>
+	</div>
+	</div>
+	
+	</div>
+	</div>
+
+    </div>
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+<li data-target="#idBody_idCarousel" data-slide-to="0" class="active"></li><li data-target="#idBody_idCarousel" data-slide-to="1"></li>
+    </ol>
+	<a class="left carousel-control" href="#idBody_idCarousel" data-slide="prev" aria-label="Předchozí"><span></span></a>
+    <a class="right carousel-control" href="#idBody_idCarousel" data-slide="next" aria-label="Další"><span></span></a>
+  </div>
+
+        <div class="container mt20">
+            <div class="row row-eq-height">
+                
+                <div class="col-md-4 col-sm-6 col-xs-12 mt10">
+                    <a class="hp-box-axis" href="/prioritni-osa/prioritni-osa-1--posilovani-kapacit-pro-kvalitni-vyzkum.htm" style="background-image: url('/media/Origin/1804/Image918.png');">
+                        <h3>Prioritní osa 1</h3>
+                        <span>Posilování kapacit pro&nbsp;kvalitní výzkum (EFRR)</span>
+                    </a>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 col-xs-12 mt10">
+                    <a class="hp-box-axis" href="/prioritni-osa/prioritni-osa-2--rozvoj-vysokych-skol-a-lidskych-zdroju-pro-vyzkum-a-vyvoj.htm" style="background-image: url('/media/Origin/1804/Image919.png');">
+                        <h3>Prioritní osa 2</h3>
+                        <span>Rozvoj vysokých škol a lidských zdrojů pro&nbsp;výzkum a&nbsp;vývoj (EFRR/ESF)</span>
+                    </a>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 col-xs-12 mt10">
+                    <a class="hp-box-axis" href="/prioritni-osa/prioritni-osa-3--rovny-pristup-ke-kvalitnimu-predskolnimu-primarnimu-a-sekundarnimu-vzdelavani.htm" style="background-image: url('/media/Origin/1804/Image920.png');">
+                        <h3>Prioritní osa 3</h3>
+                        <span>Rovný přístup ke kvalitnímu předškolnímu, primárnímu a sekundárnímu vzdělávání (ESF)</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div style="clear: both;"></div>
+
+        
+
+        <div class="container">
+            <div class="hp-box-actual">
+                <div class="row row-eq-height">
+                    
+                    <div class="col-sm-12">
+                        <div class="box-4 hidden-xs">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    
+<div class="box-2">
+	<img src="/media/Origin/2604/Image3110.jpg" class="w100p" alt="Metodický výklad Logolink k Pravidlům pro žadatele a příjemce – obecná část všech verzí OP VVV" />
+    <h3><a href="/aktualita/metodicky-vyklad-logolink-k-pravidlum-pro-zadatele-a-prijemce-obecna-cast-vsech-verzi-op-vvv.htm">Metodický výklad Logolink k Pravidlům pro žadatele a příjemce – obecná část všech verzí OP VVV</a></h3>
+	<p><em><p><strong>Řídicí orgán OP VVV vydává dne 1. 4. 2026 Metodický výklad Logolink k Pravidlům pro žadatele a příjemce – obecná část, všechny verze. </strong></p></em></p>
+	<p class="datum">1. dubna 2026</p>
+</div>
+                                </div>
+                                <div class="col-sm-5 p0">
+                                    
+<div class="box-3">
+<h3>Aktuality</h3>
+<ul>
+
+	<li>
+        <a href="/aktualita/zverejneni-metodickeho-dopisu-c-1-k-pravidlum-pro-zadatele-a-prijemce-specificka-cast-verze-3-pro-vyzvu-smart-akcelerator-ii.htm">Zveřejnění Metodického dopisu č. 1 k Pravidlům pro žadatele a příjemce – specifická část, verze 3, pro výzvu Smart Akcelerátor II</a>
+        <p class="datum">20. března 2025</p>		
+	</li>
+
+	<li>
+        <a href="/aktualita/stanovisko-ro-pro-zadatele-a-prijemce-zasazene-povodnemi.htm">Stanovisko ŘO pro žadatele a příjemce zasažené povodněmi</a>
+        <p class="datum">27. září 2024</p>		
+	</li>
+
+	<li>
+        <a href="/aktualita/projekt-op-vvv-mezi-finalisty-regiostars-2024.htm">Projekt OP VVV mezi finalisty Regiostars 2024</a>
+        <p class="datum">7. srpna 2024</p>		
+	</li>
+
+	<li>
+        <a href="/aktualita/zverejneni-aktualizovaneho-metodickeho-vykladu-k-nakladani-s-majetkem-spolufinancovanym-z-op-vvv-2.htm">Zveřejnění aktualizovaného Metodického výkladu k nakládání s majetkem spolufinancovaným z OP VVV</a>
+        <p class="datum">3. června 2024</p>		
+	</li>
+
+	<li>
+        <a href="/aktualita/unikatni-publikace-3d-star-3d-tisk-ve-stavebnictvi-a-architekture.htm">Unikátní publikace 3D STAR: 3D tisk ve stavebnictví a architektuře</a>
+        <p class="datum">13. prosince 2023</p>		
+	</li>
+
+</ul>
+
+	<a href="/aktuality" class="link-btn-1 mt15 mb10">Další zprávy (895)</a>
+
+</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-1 hidden-sm hidden-md hidden-lg">
+                            
+<div class="box-3">
+<h3>Aktuality</h3>
+<ul>
+
+	<li>
+        <a href="/aktualita/metodicky-vyklad-logolink-k-pravidlum-pro-zadatele-a-prijemce-obecna-cast-vsech-verzi-op-vvv.htm">Metodický výklad Logolink k Pravidlům pro žadatele a příjemce – obecná část všech verzí OP VVV</a>
+        <p class="datum">1. dubna 2026</p>		
+	</li>
+
+	<li>
+        <a href="/aktualita/zverejneni-metodickeho-dopisu-c-1-k-pravidlum-pro-zadatele-a-prijemce-specificka-cast-verze-3-pro-vyzvu-smart-akcelerator-ii.htm">Zveřejnění Metodického dopisu č. 1 k Pravidlům pro žadatele a příjemce – specifická část, verze 3, pro výzvu Smart Akcelerátor II</a>
+        <p class="datum">20. března 2025</p>		
+	</li>
+
+	<li>
+        <a href="/aktualita/stanovisko-ro-pro-zadatele-a-prijemce-zasazene-povodnemi.htm">Stanovisko ŘO pro žadatele a příjemce zasažené povodněmi</a>
+        <p class="datum">27. září 2024</p>		
+	</li>
+
+	<li>
+        <a href="/aktualita/projekt-op-vvv-mezi-finalisty-regiostars-2024.htm">Projekt OP VVV mezi finalisty Regiostars 2024</a>
+        <p class="datum">7. srpna 2024</p>		
+	</li>
+
+	<li>
+        <a href="/aktualita/zverejneni-aktualizovaneho-metodickeho-vykladu-k-nakladani-s-majetkem-spolufinancovanym-z-op-vvv-2.htm">Zveřejnění aktualizovaného Metodického výkladu k nakládání s majetkem spolufinancovaným z OP VVV</a>
+        <p class="datum">3. června 2024</p>		
+	</li>
+
+	<li>
+        <a href="/aktualita/unikatni-publikace-3d-star-3d-tisk-ve-stavebnictvi-a-architekture.htm">Unikátní publikace 3D STAR: 3D tisk ve stavebnictví a architektuře</a>
+        <p class="datum">13. prosince 2023</p>		
+	</li>
+
+</ul>
+
+	<a href="/aktuality" class="link-btn-1 mt15 mb10">Další zprávy (895)</a>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="container" style="margin-top: 25px;">
+            <h2 style="font-size: 30pt">Mapa projektů OP VVV</h2>
+            <div id="map" class="loading">
+                <!-- <div id="map-loading-anim"></div> -->
+            </div>
+                <p>
+                    Všechny projekty podpořené z fondů EU najdete na webu 
+                    <a href="https://dotaceeu.cz/cs/Statistiky-a-analyzy/Mapa-projektu" class="link-underline">DotaceEU.cz</a>.
+                </p>
+                <!-- <div id="map" class="loading"></div> -->
+                <style>
+                    #map {
+                        height: 500px;
+                        /* The height is 400 pixels */
+                        width: 100%;
+                        /* The width is the width of the web page */
+                    }
+                    /* #map.loading>div::before{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: white;
+                        opacity: .5;
+                        z-index: 999999999;
+                    }
+                    #map.loading>div::after{
+                        content: '';
+                        position: absolute;
+                        background-image: url('data:image/svg+xml;utf8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20viewBox%3D%220%200%20100%20100%22%20enable-background%3D%22new%200%200%20100%20100%22%20xml%3Aspace%3D%22preserve%22%20fill%3D%22%23eeeae3%22%3E%3Cg%20id%3D%22SVGRepo_bgCarrier%22%20stroke-width%3D%220%22%3E%3C%2Fg%3E%3Cg%20id%3D%22SVGRepo_tracerCarrier%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3C%2Fg%3E%3Cg%20id%3D%22SVGRepo_iconCarrier%22%3E%20%3Cg%20id%3D%22Download_x5F_25_x25_%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Download_x5F_50_x25_%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Download_x5F_75_x25_%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Download_x5F_100_x25_%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Upload%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Next%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Last%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22OK%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Fail%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Add%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Spinner_x5F_0_x25_%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Spinner_x5F_25_x25_%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Spinner_x5F_50_x25_%22%3E%20%3Cg%3E%20%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23eeeae3%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%2210%22%20d%3D%22M50.188%2C26.812%20c12.806%2C0%2C23.188%2C10.381%2C23.188%2C23.188S62.994%2C73.188%2C50.188%2C73.188c0%2C0-1.947-0.008-3.035-0.176%22%3E%3C%2Fpath%3E%20%3Cg%3E%20%3Cellipse%20transform%3D%22matrix(0.9968%20-0.0794%200.0794%200.9968%20-4.0326%202.3121)%22%20cx%3D%2227.045%22%20cy%3D%2251.843%22%20rx%3D%221.959%22%20ry%3D%221.959%22%3E%3C%2Fellipse%3E%20%3Cellipse%20transform%3D%22matrix(0.9968%20-0.0794%200.0794%200.9968%20-4.628%202.4912)%22%20cx%3D%2228.998%22%20cy%3D%2259.416%22%20rx%3D%221.959%22%20ry%3D%221.959%22%3E%3C%2Fellipse%3E%20%3Cellipse%20transform%3D%22matrix(0.9968%20-0.0794%200.0794%200.9968%20-5.1348%202.8556)%22%20cx%3D%2233.325%22%20cy%3D%2265.967%22%20rx%3D%221.959%22%20ry%3D%221.959%22%3E%3C%2Fellipse%3E%20%3Cellipse%20transform%3D%22matrix(0.9968%20-0.0794%200.0794%200.9968%20-5.4877%203.3713)%22%20cx%3D%2239.63%22%20cy%3D%2270.661%22%20rx%3D%221.959%22%20ry%3D%221.959%22%3E%3C%2Fellipse%3E%20%3Cellipse%20transform%3D%22matrix(0.9968%20-0.0794%200.0794%200.9968%20-5.6506%203.9762)%22%20cx%3D%2247.152%22%20cy%3D%2273.012%22%20rx%3D%221.959%22%20ry%3D%221.959%22%3E%3C%2Fellipse%3E%20%3C%2Fg%3E%20%3Cg%3E%20%3Cellipse%20transform%3D%22matrix(0.9962%20-0.0867%200.0867%200.9962%20-3.713%202.567)%22%20cx%3D%2227.71%22%20cy%3D%2244.049%22%20rx%3D%221.959%22%20ry%3D%221.959%22%3E%3C%2Fellipse%3E%20%3Cellipse%20transform%3D%22matrix(0.9962%20-0.0867%200.0867%200.9962%20-3.079%202.8158)%22%20cx%3D%2230.892%22%20cy%3D%2236.872%22%20rx%3D%221.959%22%20ry%3D%221.959%22%3E%3C%2Fellipse%3E%20%3Cellipse%20transform%3D%22matrix(0.9962%20-0.0867%200.0867%200.9962%20-2.567%203.266)%22%20cx%3D%2236.334%22%20cy%3D%2231.199%22%20rx%3D%221.959%22%20ry%3D%221.959%22%3E%3C%2Fellipse%3E%20%3Cellipse%20transform%3D%22matrix(0.9962%20-0.0867%200.0867%200.9962%20-2.2318%203.8617)%22%20cx%3D%2243.363%22%20cy%3D%2227.636%22%20rx%3D%221.959%22%20ry%3D%221.959%22%3E%3C%2Fellipse%3E%20%3C%2Fg%3E%20%3C%2Fg%3E%20%3Cg%20id%3D%22Spinner_x5F_75_x25_%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Brightest_x5F_25_x25_%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Brightest_x5F_50_x25_%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Brightest_x5F_75_x25_%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Brightest_x5F_100_x25_%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Reload%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Forbidden%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Clock%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Compass%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22World%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Speed%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Microphone%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Options%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Chronometer%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Lock%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22User%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Position%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22No_x5F_Signal%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Low_x5F_Signal%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Mid_x5F_Signal%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22High_x5F_Signal%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Options_1_%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Flash%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22No_x5F_Signal_x5F_02%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Low_x5F_Signal_x5F_02%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Mid_x5F_Signal_x5F_02%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22High_x5F_Signal_x5F_02%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Favorite%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Search%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Stats_x5F_01%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Stats_x5F_02%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Turn_x5F_On_x5F_Off%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Full_x5F_Height%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Full_x5F_Width%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Full_x5F_Screen%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Compress_x5F_Screen%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Chat%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Bluetooth%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Share_x5F_iOS%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Share_x5F_Android%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Love__x2F__Favorite%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Hamburguer%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Flying%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Take_x5F_Off%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Land%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22City%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Nature%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Pointer%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Prize%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Extract%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Play%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Pause%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Stop%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Forward%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Reverse%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Next_1_%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Last_1_%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Empty_x5F_Basket%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Add_x5F_Basket%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Delete_x5F_Basket%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22Error_x5F_Basket%22%3E%3C%2Fg%3E%20%3Cg%20id%3D%22OK_x5F_Basket%22%3E%3C%2Fg%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E');
+                        background-position: center;
+                        background-size: cover;
+                        top: 50%;
+                        left: 50%;
+                        width: 100px;
+                        height: 100px;
+                        z-index: 9999999999;
+                        transform: translate(-50%, -50%)
+                    } */
+                </style>
+                <script>
+                    function initMap() {
+                        map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 7,
+                            center: { lat: 49.9693204, lng: 14.3159077 },
+                            mapId: "DEMO_MAP_ID",
+                        });
+                        // google.maps.event.addListenerOnce(map, 'idle', () => {
+                        //     document.getElementsByTagName('iframe')[0].title = "Mapa projektů OPVVV";
+                        // });
+                    }
+                </script>
+                <script src="/js/markerClusterer.js"></script>
+                <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIza-REDACTED-third-party-site-key"></script> -->
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIza-REDACTED-third-party-site-key&callback=initMap&v=weekly&libraries=marker"
+                    defer></script>
+                <script type="text/javascript" src="/js/EuropeanSubsidies.js"></script>
+        </div>
+    </div>
+
+
+
+<div class="container-fluid opvvv-footer">
+	<div class="container opvvv-footer-container">
+		<div class="row">
+			<div class="col-sm-12 col-md-7">
+				<div class="row">
+					
+					<div class="col-sm-7 opvvv-footer-box-link">
+						<h3>OP VVV</h3>
+                        <div class="row">
+			                <div class="col-sm-6">
+						        <ul>
+							        
+									<li><a href="/aktualni-vyzvy" title="V&#253;zvy">V&#253;zvy</a></li><li><a href="/otazky-odpovedi" title="Čast&#233; dotazy">Čast&#233; dotazy</a></li><li><a href="/seminare" title="Akce a semin&#225;ře">Akce a semin&#225;ře</a></li><li><a href="/aktuality" title="Aktuality">Aktuality</a></li><li><a href="/dokumenty" title="Dokumenty">Dokumenty</a></li><li><a href="/publicita" title="Publicita">Publicita</a></li><li><a href="/o-programu" title="O programu">O programu</a></li>
+						        </ul>
+                            </div>
+                            <div class="col-sm-6">
+						        <ul>
+							        
+
+									<li><a href="/kariera-opvvv" title="Kari&#233;ra">Kari&#233;ra</a></li>
+
+									<!-- 11.2.2022 I-IT -->
+										<li><a href="https://opjak.cz/" title="OP JAK" target="_blank">OP JAK</a></li>
+									<!-- 11.2.2022 I-IT -->
+
+									<li><a href="/kontaktni-formular.htm" title="Kontaktní formulář">Kontaktní formulář</a></li>
+                                    <li><a href="/kontakty" title="Kontakty">Kontakty</a></li>									
+                                    
+						        </ul>
+                            </div>
+                        </div>
+					</div>
+					<div class="col-sm-5 opvvv-footer-box-link">
+                        <h3>Uživatel webu OP VVV</h3>
+                        <ul>
+                        
+							<li><a href="/uzivatel/prihlaseni">Přihlášení</a></li>
+                            <li><a href="/uzivatel/zapomenute-heslo">Zapomenuté heslo</a></li>
+                            <li><a href="/uzivatel/registrace">Registrace</a></li>
+                        
+                        </ul>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-sm-12 col-md-5">
+                
+                <div id="idNotifyBoxForm">
+                    <h3>Novinky emailem</h3>
+			        <p>Důležité zprávy z OP VVV už vám neuniknou</p>
+                    
+			            <div class="opvvv-footer-box-notify">
+                            <input name="X$ctl07$ctl00$idEmail" type="text" id="ctl07_ctl00_idEmail" autocomplete="off" onclick="this.value = &#39;&#39;;" value="Váš e-mail" aria-label="Váš e-mail" /><button class="box-full" type="submit" id="idSubmitNotifyBox">Přihlásit</button>
+			            </div>
+                        <p class="error"></p>
+                    
+                </div>
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-9 opvvv-footer-box-logo clearfix" style="display: flex;max-width: 500px;">
+                <a href="/default.aspx" class="pull-left mr10" style="max-width: 65%;"><img class="logo-euro" src="/res/EU_logo.png" alt="EVROPSKÁ UNIE" style="object-fit: contain;width: 100%;border: none;"/></a>
+                <a href="/default.aspx" class="pull-left ml10"><img class="logo-msmt" src="/res/MSMT_logo.png" alt="MINISTERSTVO ŠKOLSTVÍ, MLÁDEŽE A TĚLOVÝCHOVY" /></a>                    
+			</div>
+			<div class="col-sm-3 opvvv-footer-box-social">
+                <a href=" https://www.facebook.com/opvvv/" target="_blank" title="OP VVV na Facebooku" class="facebook" aria-label="OP VVV na Facebooku"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                &nbsp;<a href="https://www.youtube.com/channel/UCGXUZRp91morTJbiusxdo4g/videos" target="_blank" title="OP VVV na Youtube" class="youtube" aria-label="OP VVV na Youtube"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+			</div>
+		</div>
+		<div class="row opvvv-footer-box-bottom">
+			<div class="col-md-8 p10">
+				<span title="Copyright 2017 © Operační program Výzkum, vývoj a vzdělávání">Copyright 2017 © Operační program Výzkum, vývoj a vzdělávání</span>
+				<a href="/clanek/prohlaseni-o-pristupnosti.htm" title="Prohlášení o přístupnosti">Prohlášení o přístupnosti</a>
+				<a href="/clanek/struktura-webu-op-vvv.htm" title="Struktura webu">Struktura webu</a>
+				<a href="/rss" title="Odběr RSS">Odběr RSS</a>
+				<br /><a href="#" id="open_preferences_center">Preference cookies</a>
+			</div>
+			<div class="col-md-4 text-right p10">
+				
+<p>Související weby: <a href="https://opjak.cz/">OP JAK</a>&nbsp;<a class="right" href="http://www.msmt.cz/" target="_blank" rel="noopener">MŠMT</a>&nbsp;<a href="https://www.mmr.cz/cs/Uvod">MMR</a>&nbsp;<a class="right" href="http://www.europa.eu" target="_blank" rel="noopener">EK</a>&nbsp;<br/>
+<a class="nav-link " style="text-decoration: underline;" href="https://databaze.opvvv.msmt.cz/">Databáze produktů spolufinancovaných z fondů EU</a><a class="right" href="http://www.europa.eu" target="_blank" rel="noopener">&nbsp;</a></p>
+
+			</div>
+		</div>
+	</div>
+</div>
+</form>
+<script type="text/javascript">$('#idNotifyBoxForm').notifyvalidation({"InputEmail":"ctl07_ctl00_idEmail","Pattern":"^[a-zA-Z0-9.!#$%&\u0027*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$","ErrMsg":"Email nemá správný tvar!"});
+</script>
+
+
+</body>
+</html>

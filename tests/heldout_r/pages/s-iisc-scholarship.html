@@ -1,0 +1,1427 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indian Institute of Science Bangalore</title>
+<meta name="keywords" content="Indian Institute of Science, IISc, Bangalore, India" />
+<meta name="description" content="IISc is the premier institute for advanced scientific and technological research and education in India.">
+<link rel="apple-touch-icon" sizes="57x57" href="https://www.iisc.ac.in/wp-content/themes/iisc/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://www.iisc.ac.in/wp-content/themes/iisc/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://www.iisc.ac.in/wp-content/themes/iisc/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://www.iisc.ac.in/wp-content/themes/iisc/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://www.iisc.ac.in/wp-content/themes/iisc/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://www.iisc.ac.in/wp-content/themes/iisc/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://www.iisc.ac.in/wp-content/themes/iisc/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://www.iisc.ac.in/wp-content/themes/iisc/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.iisc.ac.in/wp-content/themes/iisc/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://www.iisc.ac.in/wp-content/themes/iisc/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.iisc.ac.in/wp-content/themes/iisc/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://www.iisc.ac.in/wp-content/themes/iisc/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.iisc.ac.in/wp-content/themes/iisc/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://www.iisc.ac.in/wp-content/themes/iisc/images/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://www.iisc.ac.in/wp-content/themes/iisc/images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- Bootstrap core CSS -->
+<link href="https://www.iisc.ac.in/wp-content/themes/iisc/css/bootstrap.min.css" rel="stylesheet">
+<!-- Rocket extras -->
+<link href="https://www.iisc.ac.in/wp-content/themes/iisc/css/animate.css" rel="stylesheet">
+<link href="https://www.iisc.ac.in/wp-content/themes/iisc/css/prettyPhoto.css" rel="stylesheet">
+<link href="https://www.iisc.ac.in/wp-content/themes/iisc/style.css" rel="stylesheet">
+<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+
+		<![endif]-->
+<!-- Favicons -->
+<link rel="stylesheet" href="https://www.iisc.ac.in/wp-content/themes/iisc/css/menu-styles.css">
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
+<!-- Fancybox -->
+<link rel="stylesheet" type="text/css" href="https://www.iisc.ac.in/wp-content/themes/iisc/css/jquery.fancybox.css?v=2.1.5" media="screen" />
+<script type="text/javascript">
+
+<!--
+
+function MM_validateForm() { //v4.0
+
+  if (document.getElementById){
+
+    var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+
+    for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
+
+      if (val) { nm=val.name; if ((val=val.value)!="") {
+
+        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+
+          if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+
+        } else if (test!='R') { num = parseFloat(val);
+
+          if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+
+          if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+
+            min=test.substring(8,p); max=test.substring(p+1);
+
+            if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+
+      } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+
+    } if (errors) alert('The following error(s) occurred:\n'+errors);
+
+    document.MM_returnValue = (errors == '');
+
+} }
+
+//-->
+
+</script>
+<meta name='robots' content='max-image-preview:large' />
+<link rel="alternate" hreflang="en" href="https://www.iisc.ac.in/admissions/fees-and-scholarships/" />
+<link rel="alternate" hreflang="hi" href="https://www.iisc.ac.in/admissions/fees-and-scholarships/?lang=hi" />
+<link rel="alternate" hreflang="ka" href="https://www.iisc.ac.in/admissions/fees-and-scholarships/?lang=ka" />
+<link rel="alternate" hreflang="x-default" href="https://www.iisc.ac.in/admissions/fees-and-scholarships/" />
+		<!-- This site uses the Google Analytics by ExactMetrics plugin v10.3.0 - Using Analytics tracking - https://www.exactmetrics.com/ -->
+		<!-- Note: ExactMetrics is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the ExactMetrics settings panel. -->
+					<!-- No tracking code set -->
+				<!-- / Google Analytics by ExactMetrics -->
+		<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<link rel='stylesheet' id='metaslider-blocks-editor-css-css' href='https://www.iisc.ac.in/wp-content/plugins/ml-slider/admin/assets/dist/css/editor-block.css?ver=3.113.1' media='all' property='stylesheet' />
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='wpml-legacy-dropdown-0-css' href='https://www.iisc.ac.in/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-dropdown/style.min.css?ver=510000' media='all' />
+<style id="wpml-legacy-dropdown-0-inline-css">
+.wpml-ls-statics-shortcode_actions{background-color:#e5e5e5;}.wpml-ls-statics-shortcode_actions, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu, .wpml-ls-statics-shortcode_actions a {border-color:#cdcdcd;}.wpml-ls-statics-shortcode_actions a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link, .wpml-ls-statics-shortcode_actions li:not(.wpml-ls-current-language) .wpml-ls-link, .wpml-ls-statics-shortcode_actions li:not(.wpml-ls-current-language) .wpml-ls-link:link {color:#222222;background-color:#e5e5e5;}.wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:hover,.wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:focus, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link:hover, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link:focus {color:#000000;background-color:#eeeeee;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language > a {color:#222222;background-color:#eeeeee;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language:hover>a, .wpml-ls-statics-shortcode_actions .wpml-ls-current-language>a:focus {color:#000000;background-color:#eeeeee;}
+/*# sourceURL=wpml-legacy-dropdown-0-inline-css */
+</style>
+<link rel='stylesheet' id='supsystic-pricing-fonts-css' href='https://www.iisc.ac.in/wp-content/plugins/data-tables-generator-by-supsystic/src/SupsysticTables/Pricing/assets/css/pricing.fonts.css?ver=1.0.0' media='all' />
+<link rel='stylesheet' id='supsystic-pricing-icons-css' href='https://www.iisc.ac.in/wp-content/plugins/data-tables-generator-by-supsystic/src/SupsysticTables/Pricing/assets/css/font-awesome.min.css?ver=4.7.0' media='all' />
+<link rel='stylesheet' id='supsystic-pricing-css' href='https://www.iisc.ac.in/wp-content/plugins/data-tables-generator-by-supsystic/src/SupsysticTables/Pricing/assets/css/pricing.frontend.css?ver=1.6.4' media='all' />
+<link rel='stylesheet' id='tablepress-default-css' href='https://www.iisc.ac.in/wp-content/tablepress-combined.min.css?ver=3' media='all' />
+<link rel='stylesheet' id='ffs-easyResponsiveTabs-css' href='https://www.iisc.ac.in/wp-content/plugins/fruitful-shortcodes/includes/shortcodes/js/tabs/easy-responsive-tabs.css?ver=7.1.3' media='all' />
+<link rel='stylesheet' id='ffs-fontawesome-css' href='https://www.iisc.ac.in/wp-content/plugins/fruitful-shortcodes/includes/shortcodes/css/font-awesome.min.css?ver=7.1.3' media='all' />
+<link rel='stylesheet' id='ffs-styles-css' href='https://www.iisc.ac.in/wp-content/plugins/fruitful-shortcodes/includes/shortcodes/css/ffs_styles.css?ver=7.1.3' media='all' />
+<script id="jquery-core-js-extra">
+var SDT_DATA = {"ajaxurl":"https://www.iisc.ac.in/wp-admin/admin-ajax.php","siteUrl":"https://www.iisc.ac.in/","pluginsUrl":"https://www.iisc.ac.in/wp-content/plugins","isAdmin":""};
+//# sourceURL=jquery-core-js-extra
+</script>
+<script id="jquery-core-js" src="https://www.iisc.ac.in/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://www.iisc.ac.in/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script id="jquery-ui-core-js-before">
+jQuery.uiBackCompat = true;
+//# sourceURL=jquery-ui-core-js-before
+</script>
+<script id="jquery-ui-core-js" src="https://www.iisc.ac.in/wp-includes/js/jquery/ui/core.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-mouse-js" src="https://www.iisc.ac.in/wp-includes/js/jquery/ui/mouse.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-sortable-js" src="https://www.iisc.ac.in/wp-includes/js/jquery/ui/sortable.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-datepicker-js" src="https://www.iisc.ac.in/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-datepicker-js-after">
+jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+//# sourceURL=jquery-ui-datepicker-js-after
+</script>
+<script id="jquery-ui-resizable-js" src="https://www.iisc.ac.in/wp-includes/js/jquery/ui/resizable.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-draggable-js" src="https://www.iisc.ac.in/wp-includes/js/jquery/ui/draggable.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-controlgroup-js" src="https://www.iisc.ac.in/wp-includes/js/jquery/ui/controlgroup.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-checkboxradio-js" src="https://www.iisc.ac.in/wp-includes/js/jquery/ui/checkboxradio.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-button-js" src="https://www.iisc.ac.in/wp-includes/js/jquery/ui/button.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-dialog-js" src="https://www.iisc.ac.in/wp-includes/js/jquery/ui/dialog.min.js?ver=1.14.2"></script>
+<script id="events-manager-js-extra">
+var EM = {"ajaxurl":"https://www.iisc.ac.in/wp-admin/admin-ajax.php","locationajaxurl":"https://www.iisc.ac.in/wp-admin/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"yy-mm-dd","ui_css":"https://www.iisc.ac.in/wp-content/plugins/events-manager/includes/css/jquery-ui/build.min.css","show24hours":"0","is_ssl":"1","autocomplete_limit":"10","calendar":{"breakpoints":{"small":560,"medium":908,"large":false},"month_format":"M Y"},"phone":"","datepicker":{"format":"d/m/Y"},"search":{"breakpoints":{"small":650,"medium":850,"full":false}},"url":"https://www.iisc.ac.in/wp-content/plugins/events-manager","assets":{"input.em-uploader":{"js":{"em-uploader":{"url":"https://www.iisc.ac.in/wp-content/plugins/events-manager/includes/js/em-uploader.js?v=7.4.7","event":"em_uploader_ready"}}},".em-event-editor":{"js":{"event-editor":{"url":"https://www.iisc.ac.in/wp-content/plugins/events-manager/includes/js/events-manager-event-editor.js?v=7.4.7","event":"em_event_editor_ready"}},"css":{"event-editor":"https://www.iisc.ac.in/wp-content/plugins/events-manager/includes/css/events-manager-event-editor.min.css?v=7.4.7"}},".em-recurrence-sets, .em-timezone":{"js":{"luxon":{"url":"luxon/luxon.js?v=7.4.7","event":"em_luxon_ready"}}},".em-booking-form, #em-booking-form, .em-booking-recurring, .em-event-booking-form":{"js":{"em-bookings":{"url":"https://www.iisc.ac.in/wp-content/plugins/events-manager/includes/js/bookingsform.js?v=7.4.7","event":"em_booking_form_js_loaded"}}},"#em-opt-archetypes":{"js":{"archetypes":"https://www.iisc.ac.in/wp-content/plugins/events-manager/includes/js/admin-archetype-editor.js?v=7.4.7","archetypes_ms":"https://www.iisc.ac.in/wp-content/plugins/events-manager/includes/js/admin-archetypes.js?v=7.4.7","qs":"qs/qs.js?v=7.4.7"}}},"cached":"","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading...","event_detach_warning":"Are you sure you want to detach this event? By doing so, this event will be independent of the recurring set of events.","delete_recurrence_warning":"Are you sure you want to delete all recurrences of this event? All events will be moved to trash."};
+//# sourceURL=events-manager-js-extra
+</script>
+<script id="events-manager-js" src="https://www.iisc.ac.in/wp-content/plugins/events-manager/includes/js/events-manager.js?ver=7.4.7"></script>
+<script id="wpml-legacy-dropdown-0-js" src="https://www.iisc.ac.in/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-dropdown/script.min.js?ver=510000"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.iisc.ac.in/xmlrpc.php?rsd" />
+<link rel="canonical" href="https://www.iisc.ac.in/admissions/fees-and-scholarships/" />
+<meta name="generator" content="WPML ver:5.1.0 stt:1,21,65;" />
+</head>
+<body>
+<!-- Start Header
+
+	================================================== -->
+<header id="header" class="navbar navbar-inverse" role="banner">
+  <div class="container">
+   <div class="col-md-6 navbar-header iiscpress"><a href="https://www.iisc.ac.in" class="navbar-brand"><img src="https://www.iisc.ac.in/wp-content/uploads/2016/06/logo-iisc.png" alt="IISc Admissions"></a></div>
+<div class="col-md-3 logos-org">
+
+<!--div class="hindi"><a href="https://www.iisc.ac.in">Back to IISc</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fff;">|</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[glt language="English" label="English" image="no" text="yes" image_size="24"]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#fff;">|</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[glt language="Hindi" label="हिंदी" image="no" text="yes" image_size="24"]</div-->
+<!--div>
+<div
+	 role="navigation" aria-label="Language Switcher" class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-dropdown js-wpml-ls-legacy-dropdown">
+	<ul>
+		<li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-dropdown">
+									<a href="#" hreflang="en" lang="en" class="js-wpml-ls-item-toggle wpml-ls-item-toggle" aria-current="page" aria-expanded="false" aria-controls="wpml-ls-submenu-default" aria-label="English – Language switcher, press tab to navigate to other languages" title="Switch to English">
+				                                    <img
+            class="wpml-ls-flag"
+            src="https://www.iisc.ac.in/wp-content/plugins/sitepress-multilingual-cms/res/flags/en.png"
+            alt=""
+            loading="lazy"
+            width=18
+            height=12
+    /><span class="wpml-ls-native">English</span></a>
+
+			<ul id="wpml-ls-submenu-default" class="wpml-ls-sub-menu">
+				
+					<li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-hi">
+						<a href="https://www.iisc.ac.in/admissions/fees-and-scholarships/?lang=hi" hreflang="hi" lang="hi" class="wpml-ls-link" aria-label="Switch to हिन्दी (Hindi)" title="Switch to हिन्दी (Hindi)">
+							                                    <img
+            class="wpml-ls-flag"
+            src="https://www.iisc.ac.in/wp-content/plugins/sitepress-multilingual-cms/res/flags/hi.png"
+            alt=""
+            loading="lazy"
+            width=18
+            height=12
+    /><span class="wpml-ls-native">हिन्दी</span><span class="wpml-ls-display"><span class="wpml-ls-bracket"> (</span>Hindi<span class="wpml-ls-bracket">)</span></span></a>
+					</li>
+
+				
+					<li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ka wpml-ls-last-item">
+						<a href="https://www.iisc.ac.in/admissions/fees-and-scholarships/?lang=ka" hreflang="ka" lang="ka" class="wpml-ls-link" aria-label="Switch to ಕನ್ನಡ (Kannada)" title="Switch to ಕನ್ನಡ (Kannada)">
+							                                    <img
+            class="wpml-ls-flag"
+            src="https://www.iisc.ac.in/wp-content/plugins/sitepress-multilingual-cms/res/flags/nil.svg"
+            alt=""
+            loading="lazy"
+            width=18
+            height=12
+    /><span class="wpml-ls-native">ಕನ್ನಡ</span><span class="wpml-ls-display"><span class="wpml-ls-bracket"> (</span>Kannada<span class="wpml-ls-bracket">)</span></span></a>
+					</li>
+
+							</ul>
+
+		</li>
+
+	</ul>
+</div>
+</div--><br>
+<!--div class="hindi"><a href="https://www.iisc.ac.in">Back to IISc</a></div-->
+<div class="hindi"><h1>Admissions</h1></div>
+</div>
+  </div>
+  <div class="clearfix"></div>
+  <div id='cssmenu'  class="align-center">
+    <ul id="menu-admshns" class=" "><li id="menu-item-58192" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-page-parent menu-item-58192"><a href="https://www.iisc.ac.in/admissions/">Announcements</a></li>
+<li id="menu-item-58194" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-58194"><a href="https://www.iisc.ac.in/admissions/programmes/">Degree Programmes</a>
+<ul class="sub-menu">
+	<li id="menu-item-58188" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-58188"><a href="/admissions/programmes/">Under-graduate (UG) Programmes</a>
+	<ul class="sub-menu">
+		<li id="menu-item-58196" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58196"><a href="https://bs-ug.iisc.ac.in">Bachelor of Science (Research)</a></li>
+		<li id="menu-item-58219" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58219"><a target="_blank" href="https://btech-ug.iisc.ac.in/">Bachelor of Technology</a></li>
+	</ul>
+</li>
+	<li id="menu-item-58200" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-58200"><a href="/admissions/programmes/">Post-graduate (PG) Course Programmes</a>
+	<ul class="sub-menu">
+		<li id="menu-item-58190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58190"><a href="https://www.iisc.ac.in/admissions/m-tech-m-des/">M.Tech. and  M.Des.</a></li>
+		<li id="menu-item-58189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58189"><a href="https://www.iisc.ac.in/admissions/m-mgt/">M.Mgt.</a></li>
+		<li id="menu-item-58220" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58220"><a href="https://www.iisc.ac.in/admissions/m-tech-through-cfti-mode-2/">M.Tech through CFTI Mode</a></li>
+		<li id="menu-item-58222" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58222"><a href="https://www.iisc.ac.in/admissions/joint-m-tech-in-semiconductor-technology-2/">Joint M. Tech in Semiconductor Technology</a></li>
+		<li id="menu-item-58221" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58221"><a href="https://www.iisc.ac.in/admissions/1-year-m-engg-2/">1 Year M. Engg.</a></li>
+		<li id="menu-item-58191" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58191"><a href="https://www.iisc.ac.in/admissions/m-tech-for-sponsored-candidates/">M.Tech/M.Des for Sponsored Candidates (Govt. &#038; PSU)</a></li>
+		<li id="menu-item-58197" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58197"><a href="https://www.iisc.ac.in/admissions/msc-programmes/">M.Sc.</a></li>
+		<li id="menu-item-58198" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58198"><a href="https://iken.iisc.ac.in/mtech-online/">M.Tech. (Online) for Sponsored Candidates</a></li>
+	</ul>
+</li>
+	<li id="menu-item-58218" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-58218"><a href="/admissions/programmes/">Post-graduate (PG) Research Programs</a>
+	<ul class="sub-menu">
+		<li id="menu-item-58184" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58184"><a href="https://www.iisc.ac.in/admissions/ph-d-integratedprogrammes/">Integrated Ph.D.</a></li>
+		<li id="menu-item-58185" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58185"><a href="https://www.iisc.ac.in/admissions/research-programmes/">M.Tech. (Research) and Ph.D. Programmes</a></li>
+		<li id="menu-item-58183" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58183"><a href="https://www.iisc.ac.in/admissions/external-registration-programme-ph-d/">External Registration Program (ERP) for Ph.D./M.Tech. (Research)</a></li>
+	</ul>
+</li>
+	<li id="menu-item-58199" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58199"><a href="https://oir.iisc.ac.in/">Programs for OCI and International Students</a></li>
+</ul>
+</li>
+<li id="menu-item-58193" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-58193"><a href="https://www.iisc.ac.in/admissions/overview/">Overview</a>
+<ul class="sub-menu">
+	<li id="menu-item-58186" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58186"><a href="https://www.iisc.ac.in/admissions/message-from-deans-of-faculties/">Message From Deans of Faculties</a></li>
+	<li id="menu-item-58195" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58195"><a href="https://www.iisc.ac.in/admissions/entry-modes-into-iisc/">Entry Modes into IISc</a></li>
+	<li id="menu-item-58187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58187"><a href="https://www.iisc.ac.in/admissions/information-at-a-glance/">Information at a Glance</a></li>
+	<li id="menu-item-58214" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58214"><a href="/admissions/overview/centrally-funded-technical-institute-cfti/">List of CFTI</a></li>
+	<li id="menu-item-58205" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-4685 current_page_item menu-item-58205"><a href="https://www.iisc.ac.in/admissions/fees-and-scholarships/" aria-current="page">Fees and Scholarship</a></li>
+	<li id="menu-item-58213" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58213"><a href="https://www.iisc.ac.in/admissions/certificate-formats/">Formats for Certificates</a></li>
+	<li id="menu-item-58210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-58210"><a href="https://www.iisc.ac.in/admissions/statistics/">Previous Years Statistics</a>
+	<ul class="sub-menu">
+		<li id="menu-item-58203" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58203"><a href="https://www.iisc.ac.in/admissions/cut-off-report-and-gate-score-of-previous-years/">Cut off  Report of previous years</a></li>
+	</ul>
+</li>
+	<li id="menu-item-58206" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58206"><a href="https://www.iisc.ac.in/admissions/admission-unit-contact-details/">Contact &#8211; Admissions Unit</a></li>
+	<li id="menu-item-58215" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58215"><a href="/admissions/overview/department-contact-details/">Contact &#8211; Departments</a></li>
+	<li id="menu-item-58209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58209"><a href="https://www.iisc.ac.in/admissions/my-iisc-my-life-a-student-perspective/">My Life@IISc: a student perspective</a></li>
+	<li id="menu-item-58212" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58212"><a href="https://www.iisc.ac.in/admissions/overview/relevant-external-websites/">Relevant External Websites</a></li>
+</ul>
+</li>
+<li id="menu-item-58211" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58211"><a href="https://www.iisc.ac.in/admissions/important-dates/">Important Dates</a></li>
+<li id="menu-item-58204" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58204"><a href="https://oir.iisc.ac.in/">International and OCI Students</a></li>
+<li id="menu-item-58208" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58208"><a href="https://www.iisc.ac.in/admissions/faq/">FAQ</a></li>
+<li id="menu-item-4920" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4920"><a href="/instructions/">Apply Online</a>
+<ul class="sub-menu">
+	<li id="menu-item-36503" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36503"><a href="https://www.iisc.ac.in/admissions/instructions/">Instructions for Online Admissions Portal</a></li>
+	<li id="menu-item-36502" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-36502"><a href="https://admissions.iisc.ac.in/">Online Admissions Portal</a></li>
+</ul>
+</li>
+</ul>  </div>
+  </div>
+  </div>
+</header>
+<!-- Start Home Block
+  ================================================== -->
+
+<div class="container commonoutercontainer">
+  <section id="common" class="section">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-12 breadcrumbs">
+                  </div>
+        <div class="col-md-9">
+          <h1>Fee Structure and Scholarships/Fellowships</h1>
+          
+<p><strong>Online Application Fees</strong></p>
+<p>The fees payable for each online admissions application form are as follows:</p>
+<p><span style="text-decoration: underline;"><strong>For PG/ PhD Progrmmes</strong></span></p>
+<ul>
+<li>General / OBC / EWS: Rs. 800</li>
+<li>SC / ST / PwD: Rs. 400</li>
+<li>ERP candidates (all categories): Rs. 2000</li>
+<li>Sponsored candidates from government and PSU: Rs. 800</li>
+<li>M Tech (Online) : Rs. 2000</li>
+</ul>
+<p><span style="text-decoration: underline;"><strong>For UG Progrmmes</strong></span></p>
+<ul>
+<li>General / OBC / EWS: Rs. 500</li>
+<li>SC / ST / PwD: Rs. 250</li>
+</ul>
+<p>Online payment has to be made through UPI, net-banking, debit card or visa/master credit card</p>
+<p><strong>Scholarship/Fellowship</strong></p>
+<p style="text-align: justify;">(a)   Students are awarded scholarships/fellowships from the date of joining the Institute. The value of the scholarship/fellowship per month for students enrolled in  different programmes of the Institute is as given below.</p>
+<table style="border-color: black; background-color: aliceblue;" border="black" width="93%">
+<tbody>
+<tr>
+<td width="47%"><strong>Programmes</strong></td>
+<td style="text-align: right;" width="47%"><strong>Scholarship/Fellowship </strong></td>
+</tr>
+<tr>
+<td width="47%"><strong><a href="https://www.iisc.ac.in/admissions/external-registration-programme-ph-d/">Ph.D.</a> </strong></td>
+<td style="text-align: right;" width="47%">JRF – Rs. 37000/ SRF – Rs. 42000</td>
+</tr>
+<tr>
+<td width="47%"><strong><a href="https://www.iisc.ac.in/admissions/research-programmes/">M.Tech. (Research) </a></strong></td>
+<td style="text-align: right;" width="47%">Rs. 12400</td>
+</tr>
+<tr>
+<td width="47%"><strong><a href="https://www.iisc.ac.in/admissions/m-tech-m-des/">M.Tech./M.Des.</a></strong></td>
+<td style="text-align: right;" width="47%">Rs. 12400</td>
+</tr>
+<tr>
+<td width="47%"><strong><a href="https://www.iisc.ac.in/admissions/ph-d-integratedprogrammes/">Integrated Ph.D.</a> </strong></td>
+<td style="text-align: right;" width="47%">Rs. 16000/JRF – Rs. 37000/SRF – Rs. 42000</td>
+</tr>
+</tbody>
+</table>
+<!--p><strong>Ph.D.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>-&nbsp; &nbsp; &nbsp; &nbsp;JRF - Rs.31000/ SRF – Rs.35000</p>
+<p><strong>Bachelor of Science (Research) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>-&nbsp; &nbsp; &nbsp; &nbsp;Rs.5000</p>
+<p><strong>M.Tech. (Res)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>- &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rs. 12400</p>
+<p><strong>M.Tech./M.Des.&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; </strong>- &nbsp; &nbsp; &nbsp; &nbsp;Rs. 12400</p>
+<p><strong>Integrated Ph.D.&nbsp;</strong> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; -&nbsp; &nbsp; &nbsp; Rs.16000/JRF – Rs.31000/SRF – Rs.35000</p-->
+<p> </p>
+<p style="text-align: justify;">(b) All the students who join the Institute (except for M Sc/ M.Mgt/ BS(Res) /B.Tech/M.Tech through CFTI Mode/Joint M. Tech in Semiconductor Technology/1 Year M. Engg.) are eligible for scholarship/ Fellowship from CSIR/UGC/DBT/ICMR/MHRD/AICTE/DAE (NBHM)/ DST as the case may be depending on their mode of entry. Immediately on joining the Institute the students must send the joining report to the concerned authorities/agencies appropriately for activating their scholarship/fellowship.</p>
+<p style="text-align: justify;">(c) Scholarships from GE/ INFOSYS/ IBM/ HP/ TATA/ PHILIPS/ BELL LAB/ MICROSOFT/Department of Electronics and Information Technology (DietY) are also available for deserving students.</p>
+<p style="text-align: justify;">(d) Scholarship is provided for a maximum period of 2 years in the case of M Tech/M Des/M Tech (Res) and Fellowship of 5 years in the case of Ph D programme.</p>
+<p style="text-align: justify;">(e) Students after joining the M Tech/ M Des programmes are by default agree to and assure that they will not leave the course midway. In case, due to unavoidable reason/situation made to leave the course midway, in such cases, the students must refund the entire scholarship drawn by them before leaving the Institute.</p>
+<p>(f) Students who receive salary from their Employers/Sponsors are not eligible for scholarship/fellowship.</p>
+<p>(g) Students admitted to the M.Sc., M.Mgt., BS(Res), B.Tech., M.Tech. (through CFTI mode), Joint M.Tech, and the one-year M.Engg. programmes are ordinarily not entitled for Institute-funded scholarships. However, such students may avail themselves of scholarships/ fellowships offered by external funding agencies, subject to their eligibility as per the terms and conditions prescribed by the respective agencies.</p>
+<p>Notwithstanding the above, B.E./B.Tech. graduates from IITs with a CGPA of 8.0 or above (on a 10-point scale) admitted for the M.Tech through the CFTI mode of entry may be considered for the award of scholarship/assistantship at the rate of ₹12,400/- per month, subject to the applicable provisions and guidelines issued by the Ministry of Education from time to time.</p>
+<p>IIT students [with a CGPA of 8.0 or above (on a 10-point scale)] admitted to M.Tech (Research) under project mode will also be eligible to avail Institute/MoE fellowship in case the Department/Research Supervisor/student opts to switch the fellowship from project mode.</p>
+<p style="text-align: justify;">(h) Students are compulsorily required to take medical insurance provided through the Institute and the premium for the same will be payable as per actual.</p>
+<p>(i) Tuition fees and other charges (excluding refundable deposits) mentioned in the ensuing tables will increase uniformly at a rate of 5% annually.</p>
+<table style="border-color: black; background-color: aliceblue;" border="1" width="82%">
+<tbody>
+<tr>
+<td colspan="7">
+<h4 style="color: red;">Fee structure for Regular Research Program (INR per annum)</h4>
+</td>
+</tr>
+<tr>
+<td width="27%"><strong> </strong></td>
+<td colspan="3" width="58%"><center>GN/OBC/EWS Category</center></td>
+<td colspan="3" width="58%"><center>SC/ST/PwD Category</center></td>
+</tr>
+<tr>
+<td width="27%"><strong>Particulars</strong></td>
+<td style="text-align: right;" width="10%"><strong>Ph.D.</strong></td>
+<td style="text-align: right;" width="10%"><strong>M.Tech. (Res)</strong></td>
+<td style="text-align: right;" width="12%"><strong>Int. Ph.D.</strong></td>
+<td style="text-align: right;" width="10%"><strong>Ph.D.</strong></td>
+<td style="text-align: right;" width="10%"><strong>M.Tech. (Res)</strong></td>
+<td style="text-align: right;" width="12%"><strong>Int. Ph.D.</strong></td>
+</tr>
+<tr>
+<td width="27%"><strong>Tuition Fee (Annual)</strong></td>
+<td style="text-align: right;" width="10%">20,000</td>
+<td style="text-align: right;" width="10%">15,000</td>
+<td style="text-align: right;" width="12%">15,000</td>
+<td style="text-align: center;" colspan="3" width="12%">Fully waived</td>
+</tr>
+<tr>
+<td width="27%"><strong>Gymkhana Fee (Annual)</strong></td>
+<td style="text-align: right;" width="10%">1,800</td>
+<td style="text-align: right;" width="10%">1,800</td>
+<td style="text-align: right;" width="12%">1,800</td>
+<td style="text-align: right;" width="12%">1,800</td>
+<td style="text-align: right;" width="13%">1,800</td>
+<td style="text-align: right;" width="14%">1,800</td>
+</tr>
+<tr>
+<td width="27%"><strong>Other Academic Fees (Annual)</strong></td>
+<td style="text-align: right;" width="10%">3,700</td>
+<td style="text-align: right;" width="10%">3,700</td>
+<td style="text-align: right;" width="12%">3,700</td>
+<td style="text-align: right;" width="12%">3,700</td>
+<td style="text-align: right;" width="13%">3,700</td>
+<td style="text-align: right;" width="14%">3,700</td>
+</tr>
+<tr>
+<td width="27%"><strong>Statutory Deposit (Refundable)*</strong></td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+<td style="text-align: right;" width="13%">7,500</td>
+<td style="text-align: right;" width="14%">7,500</td>
+</tr>
+<tr>
+<td width="27%"><strong>Library Deposit (Refundable)*</strong></td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+<td style="text-align: right;" width="13%">7,500</td>
+<td style="text-align: right;" width="14%">7,500</td>
+</tr>
+<tr>
+<td width="27%"><strong>Students Emergency Fund (Annual)</strong></td>
+<td style="text-align: right;" width="10%">300</td>
+<td style="text-align: right;" width="10%">300</td>
+<td style="text-align: right;" width="12%">300</td>
+<td style="text-align: right;" width="12%">300</td>
+<td style="text-align: right;" width="13%">300</td>
+<td style="text-align: right;" width="14%">300</td>
+</tr>
+<tr>
+<td width="27%"><strong>TOTAL</strong></td>
+<td style="text-align: right;" width="10%"><strong>40,800</strong></td>
+<td style="text-align: right;" width="10%"><strong>35,800</strong></td>
+<td style="text-align: right;" width="12%"><strong>35,800</strong><strong>**</strong></td>
+<td style="text-align: right;" width="12%"><strong>20,800</strong></td>
+<td style="text-align: right;" width="13%"><strong>20,800</strong></td>
+<td style="text-align: right;" width="14%"><strong>20,800</strong></td>
+</tr>
+<tr>
+<td style="color: blue;" colspan="7">* to be paid in the first year only<br />** for the first two years and thereafter on par with Ph.D.</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<table style="border-color: black; background-color: floralwhite;" border="1" width="82%">
+<tbody>
+<tr>
+<td colspan="5">
+<h4 style="color: red;">Fee structure for Course Programme (M.Tech./M.Tech (CFTI Mode of entry)/M.Des./M.Mgt.) (INR per annum)</h4>
+</td>
+</tr>
+<tr>
+<td width="27%"><strong> </strong></td>
+<td colspan="2" width="58%"><center>GN/OBC/EWS Category</center></td>
+<td colspan="2" width="58%"><center>SC/ST/PwD Category</center></td>
+</tr>
+<tr>
+<td width="27%"><strong>Particulars</strong></td>
+<td style="text-align: right;" width="10%"><strong>M.Tech./M.Des.</strong></td>
+<td style="text-align: right;" width="10%"><strong>M.Mgt.</strong></td>
+<td style="text-align: right;" width="10%"><strong>M.Tech./M.Des.</strong></td>
+<td style="text-align: right;" width="10%"><strong>M.Mgt.</strong></td>
+</tr>
+<tr>
+<td width="27%"><strong>Tuition Fee (Annual)</strong></td>
+<td style="text-align: right;" width="10%">15,000</td>
+<td style="text-align: right;" width="10%">2,00,000</td>
+<td style="text-align: center;" colspan="2" width="12%">Fully waived</td>
+</tr>
+<tr>
+<td width="27%"><strong>Gymkhana Fee (Annual)</strong></td>
+<td style="text-align: right;" width="10%">1,800</td>
+<td style="text-align: right;" width="10%">1,800</td>
+<td style="text-align: right;" width="12%">1,800</td>
+<td style="text-align: right;" width="12%">1,800</td>
+</tr>
+<tr>
+<td width="27%"><strong>Other Academic Fees (Annual)</strong></td>
+<td style="text-align: right;" width="10%">3,700</td>
+<td style="text-align: right;" width="10%">80,000</td>
+<td style="text-align: right;" width="12%">3,700</td>
+<td style="text-align: right;" width="12%">80,000</td>
+</tr>
+<tr>
+<td width="27%"><strong>Statutory Deposit (Refundable)*</strong></td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+</tr>
+<tr>
+<td width="27%"><strong>Library Deposit (Refundable)*</strong></td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+</tr>
+<tr>
+<td width="27%"><strong>Students Emergency Fund (Annual)</strong></td>
+<td style="text-align: right;" width="10%">300</td>
+<td style="text-align: right;" width="10%">300</td>
+<td style="text-align: right;" width="12%">300</td>
+<td style="text-align: right;" width="12%">300</td>
+</tr>
+<tr>
+<td width="27%"><strong>TOTAL</strong></td>
+<td style="text-align: right;" width="10%"><strong>35,800</strong></td>
+<td style="text-align: right;" width="10%"><strong>2,97,100</strong></td>
+<td style="text-align: right;" width="12%"><strong>20,800</strong></td>
+<td style="text-align: right;" width="12%"><strong>97,100</strong></td>
+</tr>
+<tr>
+<td style="color: blue;" colspan="7">* to be paid in the first year only</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<table style="border-color: black; background-color: ghostwhite;" border="1" width="82%">
+<tbody>
+<tr>
+<td colspan="5">
+<h4 style="color: red;">Fee structure for 1 year M.Engg. programme in Semiconductor Technology (INR per annum)</h4>
+</td>
+</tr>
+<tr>
+<td width="27%"><strong> </strong></td>
+<td style="text-align: right;" width="10%"><strong>GN/OBC/EWS Category</strong></td>
+<td style="text-align: right;" width="10%"><strong>SC/ST/PwD Category</strong></td>
+<td style="text-align: right;" width="10%"><strong>Industry Sponsored </strong></td>
+</tr>
+<tr>
+<td width="27%"><strong>Tuition Fee (Annual)</strong></td>
+<td style="text-align: right;" width="10%">25,000</td>
+<td style="text-align: right;" width="10%">Fully waived</td>
+<td style="text-align: right;" width="10%">50,000</td>
+</tr>
+<tr>
+<td width="27%"><strong>Bench Fee (Annual)</strong></td>
+<td style="text-align: right;" width="10%">1,20,000</td>
+<td style="text-align: right;" width="10%">60,000</td>
+<td style="text-align: right;" width="10%">2,40,000</td>
+</tr>
+<tr>
+<td width="27%"><strong>Gymkhana Fee (Annual)</strong></td>
+<td style="text-align: right;" width="10%">1,800</td>
+<td style="text-align: right;" width="10%">1,800</td>
+<td style="text-align: right;" width="12%">1,800</td>
+</tr>
+<tr>
+<td width="27%"><strong>Other Academic Fees (Annual)</strong></td>
+<td style="text-align: right;" width="10%">3,700</td>
+<td style="text-align: right;" width="10%">3,700</td>
+<td style="text-align: right;" width="12%">3,700</td>
+</tr>
+<tr>
+<td width="27%"><strong>Statutory Deposit (Refundable)*</strong></td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+</tr>
+<tr>
+<td width="27%"><strong>Library Deposit (Refundable)*</strong></td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+</tr>
+<tr>
+<td width="27%"><strong>Students Emergency Fund (Annual)</strong></td>
+<td style="text-align: right;" width="10%">300</td>
+<td style="text-align: right;" width="10%">300</td>
+<td style="text-align: right;" width="12%">300</td>
+</tr>
+<tr>
+<td width="27%"><strong>TOTAL paid in1 Year</strong></td>
+<td style="text-align: right;" width="10%"><strong>1,65,800</strong></td>
+<td style="text-align: right;" width="10%"><strong>80,800</strong></td>
+<td style="text-align: right;" width="12%"><strong>3,10,800</strong></td>
+</tr>
+<tr>
+<td style="color: blue;" colspan="7">* to be paid in the first year only</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<table style="border-color: black; background-color: cream white;" border="1" width="82%">
+<tbody>
+<tr>
+<td colspan="5">
+<h4 style="color: red;">Fee structure for Joint M. Tech programme in Semiconductor Technology (INR per annum)</h4>
+</td>
+</tr>
+<tr>
+<td width="27%"><strong> </strong></td>
+<td style="text-align: right;" width="10%"><strong>GN/OBC/EWS Category</strong></td>
+<td style="text-align: right;" width="10%"><strong>SC/ST/PwD Category</strong></td>
+<td style="text-align: right;" width="10%"><strong>Industry Sponsored </strong></td>
+</tr>
+<tr>
+<td width="27%"><strong>Tuition Fee (Annual)</strong></td>
+<td style="text-align: right;" width="10%">15,000</td>
+<td style="text-align: right;" width="10%">Fully waived</td>
+<td style="text-align: right;" width="10%">2,40,000</td>
+</tr>
+<tr>
+<td width="27%"><strong>Gymkhana Fee (Annual)</strong></td>
+<td style="text-align: right;" width="10%">1,800</td>
+<td style="text-align: right;" width="10%">1,800</td>
+<td style="text-align: right;" width="12%">1,800</td>
+</tr>
+<tr>
+<td width="27%"><strong>Other Academic Fees (Annual)</strong></td>
+<td style="text-align: right;" width="10%">3,700</td>
+<td style="text-align: right;" width="10%">3,700</td>
+<td style="text-align: right;" width="12%">3,700</td>
+</tr>
+<tr>
+<td width="27%"><strong>Statutory Deposit (Refundable)*</strong></td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+</tr>
+<tr>
+<td width="27%"><strong>Library Deposit (Refundable)*</strong></td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+</tr>
+<tr>
+<td width="27%"><strong>Students Emergency Fund (Annual)</strong></td>
+<td style="text-align: right;" width="10%">300</td>
+<td style="text-align: right;" width="10%">300</td>
+<td style="text-align: right;" width="12%">300</td>
+</tr>
+<tr>
+<td width="27%"><strong>TOTAL</strong></td>
+<td style="text-align: right;" width="10%"><strong>35,800</strong></td>
+<td style="text-align: right;" width="10%"><strong>20,800</strong></td>
+<td style="text-align: right;" width="12%"><strong>2,60,800</strong></td>
+</tr>
+<tr>
+<td style="color: blue;" colspan="7">* to be paid in the first year only</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<table style="border-color: black; background-color: honeydew;" border="1" width="82%">
+<tbody>
+<tr>
+<td colspan="2">
+<h4 style="color: red;">Fee structure for Sponsored students from DRDO/ISRO/NAL etc.(M.Tech.) (INR per annum)</h4>
+</td>
+</tr>
+<tr>
+<td width="27%"><strong>Particulars</strong></td>
+<td style="text-align: right;" width="10%"><strong>M.Tech.</strong></td>
+</tr>
+<tr>
+<td width="27%"><strong>Tuition Fee (Annual)</strong></td>
+<td style="text-align: right;" width="10%">23,400</td>
+</tr>
+<tr>
+<td width="27%"><strong>Gymkhana Fee (Annual)</strong></td>
+<td style="text-align: right;" width="10%">1,800</td>
+</tr>
+<tr>
+<td width="27%"><strong>Other Academic Fees (Annual)</strong></td>
+<td style="text-align: right;" width="10%">3,700</td>
+</tr>
+<tr>
+<td width="27%"><strong>Statutory Deposit (Refundable)*</strong></td>
+<td style="text-align: right;" width="10%">7,500</td>
+</tr>
+<tr>
+<td width="27%"><strong>Library Deposit (Refundable)*</strong></td>
+<td style="text-align: right;" width="10%">7,500</td>
+</tr>
+<tr>
+<td width="27%"><strong>Students Emergency Fund (Annual)</strong></td>
+<td style="text-align: right;" width="10%">300</td>
+</tr>
+<tr>
+<td width="27%"><strong>TOTAL</strong></td>
+<td style="text-align: right;" width="10%"><strong>44,200</strong></td>
+</tr>
+<tr>
+<td style="color: blue;" colspan="7">* to be paid in the first year only</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<table style="border-color: black; background-color: lavenderblush;" border="1" width="82%">
+<tbody>
+<tr>
+<td colspan="7">
+<h4 style="color: red;">Fee structure for Regular Course Programmes in M.Sc. (INR per annum)</h4>
+</td>
+</tr>
+<tr>
+<td width="27%"><strong> </strong></td>
+<td colspan="2" width="58%"><center>M.Sc. (Life Sciences)</center></td>
+<td colspan="2" width="58%"><center>M.Sc. (Chemical Sciences)</center></td>
+<td colspan="2" width="58%"><center>M.Sc. ( Physics)</center></td>
+</tr>
+<tr>
+<td width="27%"><strong> </strong></td>
+<td><center>GN/OBC/EWS Category</center></td>
+<td><center>SC/ST/PwD Category</center></td>
+<td><center>GN/OBC/EWS Category</center></td>
+<td><center>SC/ST/PwD Category</center></td>
+<td><center>GN/OBC/EWS Category</center></td>
+<td><center>SC/ST/PwD Category</center></td>
+</tr>
+<tr>
+<td width="27%"><strong>Tuition Fee (Annual)</strong></td>
+<td style="text-align: right;" width="10%">16,000</td>
+<td style="text-align: right;" width="12%">Fully waived</td>
+<td style="text-align: right;" width="10%">16,000</td>
+<td style="text-align: right;" width="12%">Fully waived</td>
+<td style="text-align: right;" width="10%">16,000</td>
+<td style="text-align: right;" width="12%">Fully waived</td>
+</tr>
+<tr>
+<td width="27%"><strong>Bench Fee (Annual)</strong></td>
+<td style="text-align: right;" width="10%">85,000</td>
+<td style="text-align: right;" width="12%">42,500</td>
+<td style="text-align: right;" width="10%">45,000</td>
+<td style="text-align: right;" width="12%">22,500</td>
+<td style="text-align: right;" width="10%">45,000</td>
+<td style="text-align: right;" width="12%">22,500</td>
+</tr>
+<tr>
+<td width="27%"><strong>Gymkhana Fee (Annual)</strong></td>
+<td style="text-align: right;" width="10%">1,800</td>
+<td style="text-align: right;" width="10%">1,800</td>
+<td style="text-align: right;" width="12%">1,800</td>
+<td style="text-align: right;" width="12%">1,800</td>
+<td style="text-align: right;" width="12%">1,800</td>
+<td style="text-align: right;" width="12%">1,800</td>
+</tr>
+<tr>
+<td width="27%"><strong>Other Academic Fees (Annual)</strong></td>
+<td style="text-align: right;" width="10%">3,700</td>
+<td style="text-align: right;" width="10%">3,700</td>
+<td style="text-align: right;" width="12%">3,700</td>
+<td style="text-align: right;" width="12%">3,700</td>
+<td style="text-align: right;" width="12%">3,700</td>
+<td style="text-align: right;" width="12%">3,700</td>
+</tr>
+<tr>
+<td width="27%"><strong>Statutory Deposit (Refundable)*</strong></td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+</tr>
+<tr>
+<td width="27%"><strong>Library Deposit (Refundable)*</strong></td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="10%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+<td style="text-align: right;" width="12%">7,500</td>
+</tr>
+<tr>
+<td width="27%"><strong>Students Emergency Fund (Annual)</strong></td>
+<td style="text-align: right;" width="10%">300</td>
+<td style="text-align: right;" width="10%">300</td>
+<td style="text-align: right;" width="12%">300</td>
+<td style="text-align: right;" width="12%">300</td>
+<td style="text-align: right;" width="12%">300</td>
+<td style="text-align: right;" width="12%">300</td>
+</tr>
+<tr>
+<td width="27%"><strong>TOTAL</strong></td>
+<td style="text-align: right;" width="10%"><strong>1,21,800</strong></td>
+<td style="text-align: right;" width="10%"><strong>63,300</strong></td>
+<td style="text-align: right;" width="12%"><strong>81,800</strong></td>
+<td style="text-align: right;" width="12%"><strong>43,300</strong></td>
+<td style="text-align: right;" width="12%"><strong>81,800</strong></td>
+<td style="text-align: right;" width="12%"><strong>43,300</strong></td>
+</tr>
+<tr>
+<td style="color: blue;" colspan="7">* to be paid in the first year only</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<table style="border-color: black; background-color: antiquewhite; width: 100%; height: 301px;" border="black" width="93%">
+<tbody>
+<tr style="height: 71px;">
+<td style="height: 71px;" colspan="4">
+<h4 style="color: red;">Fee structure for External Registration Programme (Ph.D.) (INR per annum)</h4>
+</td>
+</tr>
+<tr style="height: 46px;">
+<td style="height: 46px;" width="47%"><strong>Particulars/ Students admitted from</strong></td>
+<td style="text-align: right; height: 46px;" width="17%"><strong>Educational Institutions</strong></td>
+<td style="text-align: right; height: 46px;" width="17%"><strong>Government Organization</strong></td>
+<td style="text-align: right; height: 46px;" width="17%"><strong>Private Organization</strong></td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px;" width="47%"><strong>Tuition Fee (Annual)</strong></td>
+<td style="text-align: right; height: 23px;" width="17%">66,500</td>
+<td style="text-align: right; height: 23px;" width="17%">1,33,000</td>
+<td style="text-align: right; height: 23px;" width="17%">1,99,500</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px;" width="47%"><strong>Gymkhana Fee (Annual)</strong></td>
+<td style="text-align: right; height: 23px;" width="17%">1,800</td>
+<td style="text-align: right; height: 23px;" width="17%">1,800</td>
+<td style="text-align: right; height: 23px;" width="17%">1,800</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px;" width="47%"><strong>Other Academic Fees(Annual)</strong></td>
+<td style="text-align: right; height: 23px;" width="17%">3,700</td>
+<td style="text-align: right; height: 23px;" width="17%">3,700</td>
+<td style="text-align: right; height: 23px;" width="17%">3,700</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px;" width="47%"><strong>Statutory Deposit (Refundable)*</strong></td>
+<td style="text-align: right; height: 23px;" width="17%">7,500</td>
+<td style="text-align: right; height: 23px;" width="17%">7,500</td>
+<td style="text-align: right; height: 23px;" width="17%">7,500</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px;" width="47%"><strong>Library Deposit (Refundable)*</strong></td>
+<td style="text-align: right; height: 23px;" width="17%">7,500</td>
+<td style="text-align: right; height: 23px;" width="17%">7,500</td>
+<td style="text-align: right; height: 23px;" width="17%">7,500</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px;" width="47%"><strong>Students Emergency Fund (Annual)</strong></td>
+<td style="text-align: right; height: 23px;" width="17%">300</td>
+<td style="text-align: right; height: 23px;" width="17%">300</td>
+<td style="text-align: right; height: 23px;" width="17%">300</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px;" width="47%"><strong>TOTAL</strong></td>
+<td style="text-align: right; height: 23px;" width="17%"><strong>87,300</strong></td>
+<td style="text-align: right; height: 23px;" width="17%"><strong>1,53,800</strong></td>
+<td style="text-align: right; height: 23px;" width="17%"><strong>2,20,300</strong></td>
+</tr>
+<tr style="height: 23px;">
+<td style="color: blue; height: 23px;" colspan="7">* to be paid in the first year only</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<table style="border-color: black; background-color: beige;" border="black" width="93%">
+<tbody>
+<tr>
+<td colspan="4">
+<h4 style="color: red;">Fee structure for External Registration Programme M.Tech. (Research) (INR per annum)</h4>
+</td>
+</tr>
+<tr>
+<td width="47%"><strong>Particulars/ Students admitted from</strong></td>
+<td style="text-align: right;" width="17%"><strong>Educational Institutions</strong></td>
+<td style="text-align: right;" width="17%"><strong>Government Organization</strong></td>
+<td style="text-align: right;" width="17%"><strong>Private Organization</strong></td>
+</tr>
+<tr>
+<td width="47%"><strong>Tuition Fee (Annual)</strong></td>
+<td style="text-align: right;" width="17%">39,900</td>
+<td style="text-align: right;" width="17%">79,800</td>
+<td style="text-align: right;" width="17%">1,19,700</td>
+</tr>
+<tr>
+<td width="47%"><strong>Gymkhana Fee (Annual)</strong></td>
+<td style="text-align: right;" width="17%">1,800</td>
+<td style="text-align: right;" width="17%">1,800</td>
+<td style="text-align: right;" width="17%">1,800</td>
+</tr>
+<tr>
+<td width="47%"><strong>Other Academic Fees(Annual)</strong></td>
+<td style="text-align: right;" width="17%">3,700</td>
+<td style="text-align: right;" width="17%">3,700</td>
+<td style="text-align: right;" width="17%">3,700</td>
+</tr>
+<tr>
+<td width="47%"><strong>Statutory Deposit (Refundable)*</strong></td>
+<td style="text-align: right;" width="17%">7,500</td>
+<td style="text-align: right;" width="17%">7,500</td>
+<td style="text-align: right;" width="17%">7,500</td>
+</tr>
+<tr>
+<td width="47%"><strong>Library Deposit (Refundable)*</strong></td>
+<td style="text-align: right;" width="17%">7,500</td>
+<td style="text-align: right;" width="17%">7,500</td>
+<td style="text-align: right;" width="17%">7,500</td>
+</tr>
+<tr>
+<td width="47%"><strong>Students Emergency Fund (Annual)</strong></td>
+<td style="text-align: right;" width="17%">300</td>
+<td style="text-align: right;" width="17%">300</td>
+<td style="text-align: right;" width="17%">300</td>
+</tr>
+<tr>
+<td width="47%"><strong>TOTAL</strong></td>
+<td style="text-align: right;" width="17%"><strong>60,700</strong></td>
+<td style="text-align: right;" width="17%"><strong>1,00,600</strong></td>
+<td style="text-align: right;" width="17%"><strong>1,40,500</strong></td>
+</tr>
+<tr>
+<td style="color: blue;" colspan="7">* to be paid in the first year only</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<table style="border-color: black; background-color: cornsilk; width: 100%;" border="black" width="93%">
+<tbody>
+<tr>
+<td style="width: 107%;" colspan="3">
+<h4 style="color: red;">Fee structure for Regular B.Tech. Programme (INR per annum)</h4>
+</td>
+</tr>
+<tr>
+<td style="width: 47.119%;" width="47%"><strong>Particulars</strong></td>
+<td style="text-align: right; width: 29.881%;" width="30%"><strong>Gen/OBC/EWS Category</strong></td>
+<td style="text-align: right; width: 30%;" width="30%"><strong>SC/ST/PwD Category</strong></td>
+</tr>
+<tr>
+<td style="width: 47.119%;" width="47%"><strong>Tuition Fee (Annual)</strong></td>
+<td style="text-align: right; width: 29.881%;" width="30%">2,00,000</td>
+<td style="text-align: right; width: 30%;" width="30%">Fully Waived</td>
+</tr>
+<tr>
+<td style="width: 47.119%;" width="47%"><strong>Gymkhana Fee (Annual)</strong></td>
+<td style="text-align: right; width: 29.881%;" width="30%">1,800</td>
+<td style="text-align: right; width: 30%;" width="30%">1,800</td>
+</tr>
+<tr>
+<td style="width: 47.119%;" width="47%"><strong> Other Academic Fees (Annual)</strong></td>
+<td style="text-align: right; width: 29.881%;" width="30%">3,700</td>
+<td style="text-align: right; width: 30%;" width="30%">3,700</td>
+</tr>
+<tr>
+<td style="width: 47.119%;" width="47%"><strong>Statutory Deposit (Refundable)*</strong></td>
+<td style="text-align: right; width: 29.881%;" width="30%">7,500</td>
+<td style="text-align: right; width: 30%;" width="30%">7,500</td>
+</tr>
+<tr>
+<td style="width: 47.119%;" width="47%"><strong>Library Deposit (Refundable)*</strong></td>
+<td style="text-align: right; width: 29.881%;" width="30%">7,500</td>
+<td style="text-align: right; width: 30%;" width="30%">7,500</td>
+</tr>
+<tr>
+<td style="width: 47.119%;" width="47%"><strong>Students Emergency Fund (Annual)</strong></td>
+<td style="text-align: right; width: 29.881%;" width="30%">300</td>
+<td style="text-align: right; width: 30%;" width="30%">300</td>
+</tr>
+<tr>
+<td style="width: 47.119%;" width="47%"><strong>TOTAL (1st year)</strong></td>
+<td style="text-align: right; width: 29.881%;" width="30%"><strong>2,20,800</strong></td>
+<td style="text-align: right; width: 30%;" width="30%"><strong>20,800</strong></td>
+</tr>
+<tr>
+<td style="color: blue; width: 111.762%;" colspan="7">* to be paid in the first year only</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<table style="border-color: black; background-color: antiquewhite;" border="black" width="93%">
+<tbody>
+<tr>
+<td colspan="4">
+<h4 style="color: red;"><span style="color: #000000;"><span style="font-weight: 400;">Fee structure for Regular Bachelor of Science (Research) Programme (INR per annum)</span></span></h4>
+</td>
+</tr>
+<tr>
+<td width="47%">Particulars</td>
+<td style="text-align: right;" width="17%">Gen/OBC/EWS Category</td>
+<td style="text-align: right;" width="17%">SC/ST/PwD Category</td>
+</tr>
+<tr>
+<td width="47%">Tuition Fee (Annual)</td>
+<td style="text-align: right;" width="17%">80,000</td>
+<td style="text-align: right;" width="17%">Fully Waived</td>
+</tr>
+<tr>
+<td width="47%">Gymkhana Fee (Annual)</td>
+<td style="text-align: right;" width="17%">1,800</td>
+<td style="text-align: right;" width="17%">1,800</td>
+</tr>
+<tr>
+<td width="47%">Other Academic Fees(Annual)</td>
+<td style="text-align: right;" width="17%">3,700</td>
+<td style="text-align: right;" width="17%">3,700</td>
+</tr>
+<tr>
+<td width="47%">Statutory Deposit (Refundable)*</td>
+<td style="text-align: right;" width="17%">7,500</td>
+<td style="text-align: right;" width="17%">7,500</td>
+</tr>
+<tr>
+<td width="47%">Library Deposit (Refundable)*</td>
+<td style="text-align: right;" width="17%">7,500</td>
+<td style="text-align: right;" width="17%">7,500</td>
+</tr>
+<tr>
+<td width="47%">Students Emergency Fund (Annual)</td>
+<td style="text-align: right;" width="17%">300</td>
+<td style="text-align: right;" width="17%">300</td>
+</tr>
+<tr>
+<td width="47%">TOTAL (1st year)</td>
+<td style="text-align: right;" width="17%">1,00,800</td>
+<td style="text-align: right;" width="17%">20,800</td>
+</tr>
+<tr>
+<td style="color: blue;" colspan="7"><span style="color: #000000;">* to be paid in the first year only</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+        <div class="col-md-3">
+	<div  id="sidepanel">
+          <aside id="text-2" class="widget widget_text">			<div class="textwidget"><div class="randomBox1">
+<h4 class="box_header page_margin_top_section">
+General Information
+</h4>
+<div class="homepanel" style="background-image: url('/wp-content/uploads/2017/10/research.png'); background-size: cover;">
+<div class="description tile_inner">
+<a href="/research/"></p>
+<h4>Research</h4>
+<p></a><br />
+<a href=/research/research-highlights/">Research Highlights</a><br />
+<a href="/research-highlights/accolades/">Accolades</a><br />
+<a href="iisc-in-the-news/">IISc in the News</a><br />
+<a href="/research/">more&#8230;</a>
+</div>
+</div>
+
+</div>
+<div class="randomBox1">
+<h4 class="box_header page_margin_top_section">
+Arting Science
+</h4>
+<p><strong>Metamorphosis in Church Art</strong><br />
+<a href="http://www.iisc.ac.in/arting-science/#ChurchArt"><img fetchpriority="high" decoding="async" class="alignnone size-medium wp-image-3438" src="http://www.iisc.ac.in/wp-content/uploads/2016/10/Church-Art-192x300.jpg" alt="Church Art" width="192" height="300" srcset="https://www.iisc.ac.in/wp-content/uploads/2016/10/Church-Art-192x300.jpg 192w, https://www.iisc.ac.in/wp-content/uploads/2016/10/Church-Art-655x1024.jpg 655w, https://www.iisc.ac.in/wp-content/uploads/2016/10/Church-Art.jpg 672w" sizes="(max-width: 192px) 100vw, 192px" /></a></p>
+
+</div>
+<div class="randomBox1">
+<h4 class="box_header page_margin_top_section">
+Campus Life
+</h4>
+<div id="attachment_3966" style="width: 310px" class="wp-caption alignnone"><a href="http://www.iisc.ac.in/campus-life#shubhabhat"><img aria-describedby="caption-attachment-3966" decoding="async" class="size-medium wp-image-3966" src="http://www.iisc.ac.in/wp-content/uploads/2016/11/smooth-coated-otter1-300x169.jpeg" alt="Smooth Coated Otter" width="300" height="169" srcset="https://www.iisc.ac.in/wp-content/uploads/2016/11/smooth-coated-otter1-300x169.jpeg 300w, https://www.iisc.ac.in/wp-content/uploads/2016/11/smooth-coated-otter1-768x432.jpeg 768w, https://www.iisc.ac.in/wp-content/uploads/2016/11/smooth-coated-otter1-1024x576.jpeg 1024w, https://www.iisc.ac.in/wp-content/uploads/2016/11/smooth-coated-otter1.jpeg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a><p id="caption-attachment-3966" class="wp-caption-text">Smooth Coated Otter</p></div>
+
+</div>
+<div class="randomBox1">
+<h4 class="box_header page_margin_top_section">
+Did You know?
+</h4>
+<p>May 1902 &#8211; Mysore  govt. gave  an undertaking to cede  justification over the site of civil and military station of Bangalore.</p>
+
+</div>
+<div class="randomBox1">
+<h4 class="box_header page_margin_top_section">
+Artsy Research
+</h4>
+<p><img decoding="async" width="1024" height="707" class="alignnone size-thumbnail wp-image-16797" src="http://www.iisc.ac.in/wp-content/uploads/2018/04/Gold-wires.jpg" alt="" srcset="https://www.iisc.ac.in/wp-content/uploads/2018/04/Gold-wires.jpg 1024w, https://www.iisc.ac.in/wp-content/uploads/2018/04/Gold-wires-300x207.jpg 300w, https://www.iisc.ac.in/wp-content/uploads/2018/04/Gold-wires-768x530.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+
+</div></div>
+		</aside></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- ==================================================
+
+
+
+  End Home Block -->
+  
+<!-- ==================================================
+
+	Begin Footer Block -->
+
+<section id="footer" class="section">
+<div id="innerfooter">
+<div class="container">
+    <div class="row" style="width:100%;">
+
+      <div class="col-md-3 text-center fl">© Indian Institute of Science, Bengaluru<br />
+
+</div>
+
+<div class="col-md-6 text-center fc">
+<!--Email: <a class="darklinks" href="mailto:webadmin@iisc.ac.in">webadmin@iisc.ac.in</a> &nbsp;&nbsp;-->
+<a class="darklinks" href="https://www.iisc.ac.in/about/general-information/contact/">Contact</a>&nbsp;&nbsp;
+	
+Phone: +91 80 2293 2228 &nbsp;&nbsp;
+<a class="darklinks" href="https://www.iisc.ac.in/about/general-information/how-to-reach-iisc/">Maps & Directions</a> &nbsp;&nbsp;<br>
+<!--a class="darklinks" href="/credits/">Credits</a> &nbsp;&nbsp;-->
+<a class="darklinks" target="_blank" href="https://office365.com">Email Login</a> &nbsp;&nbsp;
+<a class="darklinks" href="https://www.iisc.ac.in/news-and-events-submission/"><span class="glyphicon glyphicon-lock glyphicon-small"></span>&nbsp;Submit Content</a>&nbsp;&nbsp;
+</div>
+
+      <div class="col-md-3 text-center fr">
+
+      	
+      	<a href="https://www.facebook.com/iiscbangalore/" target="_blank"><img src="https://www.iisc.ac.in/wp-content/themes/iisc/images/facebook.png" width="20" height="20" alt="Facebook"></a>
+
+      	
+
+      	
+      	
+      	<a href="https://twitter.com/iiscbangalore" target="_blank"><img src="https://www.iisc.ac.in/wp-content/themes/iisc/images/twitter.png" width="20" height="20" alt="Twitter"></a>
+
+      	
+
+      	
+      	
+      	<a href="https://www.youtube.com/channel/UCw8h53attkSwTvGRaMcPWBw/videos"><img src="https://www.iisc.ac.in/wp-content/themes/iisc/images/youtube.png" width="20" height="20" alt="YouTube"></a>
+
+      	
+
+      	
+      	
+      	<a href="https://www.linkedin.com/edu/indian-institute-of-science-13495" target="_blank"><img src="https://www.iisc.ac.in/wp-content/themes/iisc/images/linkedin.png" width="20" height="20" alt="YouTube"></a>
+
+      	
+  </div>
+
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+
+<!-- ==================================================
+
+	End Footer Block -->
+
+<!-- Bootstrap core JavaScript
+
+	================================================== -->
+
+<!-- Placed at the end of the document so the pages load faster -->
+
+<script src="https://www.iisc.ac.in/wp-content/themes/iisc/js/jquery-1.10.2.min.js"></script>
+
+<script src="https://www.iisc.ac.in/wp-content/themes/iisc/js/bootstrap.js"></script>
+
+<script src="https://www.iisc.ac.in/wp-content/themes/iisc/js/waypoints.min.js"></script>
+
+<script src="https://www.iisc.ac.in/wp-content/themes/iisc/js/jquery.scrollto.min.js"></script>
+
+<script src="https://www.iisc.ac.in/wp-content/themes/iisc/js/jquery.localscroll.min.js"></script>
+
+<script src="https://www.iisc.ac.in/wp-content/themes/iisc/js/jquery.prettyPhoto.js"></script>
+
+<script type="text/javascript" src="https://www.iisc.ac.in/wp-content/themes/iisc/js/jquery.fancybox.js?v=2.1.5"></script>
+
+<script src="https://www.iisc.ac.in/wp-content/themes/iisc/js/scripts.js"></script>
+
+<script src="https://www.iisc.ac.in/wp-content/themes/iisc/js/menu-script.js"></script>
+
+
+
+<script type="text/javascript">
+
+// Window load event used just in case window height is dependant upon images
+
+$(window).bind("load", function() { 
+
+       
+
+       var footerHeight = 0,
+
+           footerTop = 0,
+
+           $footer = $("#footer");
+
+           
+
+       positionFooter();
+
+       
+
+       function positionFooter() {
+
+       
+
+                footerHeight = $footer.height();
+
+                footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
+
+       
+
+               if ( ($(document.body).height()+footerHeight) < $(window).height()) {
+
+                   $footer.css({
+
+                        position: "absolute"
+
+                   }).css({
+
+                        top: footerTop
+
+                   })
+
+               } else {
+
+                   $footer.css({
+
+                        position: "static"
+
+                   })
+
+               }
+
+               
+
+       }
+
+
+
+       $(window).resize(positionFooter)
+
+               
+
+});
+
+</script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">  
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.js"></script>
+  <script>
+  	$( function() {
+		$('.datepicker').datetimepicker({
+		minDate:'0',//yesterday is minimum date(for today use 0 or -1970/01/01)
+ 		// maxDate:'-1970/01/01'//tomorrow is maximum date calendar
+});
+  	} );
+
+//$("form.submit").click(function(){
+$("#submit").click(function(e){
+var startDate = new Date($('#startdt').val());
+var endDate = new Date($('#enddt').val());
+if (startDate > endDate){
+
+ alert("End Date should be later than Start Date!");
+e.preventDefault();
+return false;
+}
+var now = new Date();
+now.setHours(0,0,0,0);
+if (startDate < now){
+ alert("Start Date cannot be earlier than today!");
+e.preventDefault();
+return false;
+}
+var neCat = $(form.radio-684).val();
+if (neCat == ''){
+alert("Please select a Category!!");
+
+e.preventDefault();
+return false;
+}
+});
+  </script>
+
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/iisc/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+		<script type="text/javascript">
+			(function() {
+				let targetObjectName = 'EM';
+				if ( typeof window[targetObjectName] === 'object' && window[targetObjectName] !== null ) {
+					Object.assign( window[targetObjectName], []);
+				} else {
+					console.warn( 'Could not merge extra data: window.' + targetObjectName + ' not found or not an object.' );
+				}
+			})();
+		</script>
+		<script id="dtgs_nonce_frontend-js" src="https://www.iisc.ac.in/wp-content/plugins/data-tables-generator-by-supsystic/app/assets/js/dtgsnonce.js?ver=0.01"></script>
+<script id="dtgs_nonce_frontend-js-after">
+var DTGS_NONCE_FRONTEND = "da9795645a"
+//# sourceURL=dtgs_nonce_frontend-js-after
+</script>
+<script id="ffs-easyResponsiveTabs-js" src="https://www.iisc.ac.in/wp-content/plugins/fruitful-shortcodes/includes/shortcodes/js/tabs/easyResponsiveTabs.js?ver=20142803"></script>
+<script id="ffs-script-js" src="https://www.iisc.ac.in/wp-content/plugins/fruitful-shortcodes/includes/shortcodes/js/fss_script.js?ver=20142803"></script>
+<script id="ffs-bootstrap-js" src="https://www.iisc.ac.in/wp-content/plugins/fruitful-shortcodes/includes/shortcodes/bootstrap/js/bootstrap.min.js?ver=20142803"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://www.iisc.ac.in/wp-includes/js/wp-emoji-release.min.js?ver=7.1.3"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://www.iisc.ac.in/wp-includes/js/wp-emoji-loader.min.js
+</script>
+<script>
+$(document).ready(function(){
+      $("a[rel^='prettyPhoto']").prettyPhoto({
+        allow_resize: true, /* Resize the photos bigger than viewport. true/false */
+        default_width: 400,
+        default_height: 500,
+        horizontal_padding: 20
+      });
+});
+
+
+jQuery(document).ready(function() {
+	myClassNames = ["", "News", "News", "News", "News", "News", "News", "News", "Events", "Events", "Events", "Events", "Events"];
+    	jQuery.each(jQuery("#catne option"), function(index, value) {
+        jQuery(value).addClass(myClassNames[index]);
+    	});
+
+
+	var checkboxes = document.querySelectorAll('.wpcf7-exclusive-checkbox input[type=checkbox]');
+
+	for (var i in checkboxes) {
+		var checkbox = checkboxes[i];
+		checkbox.type='radio';
+	}
+
+});
+</script>
+<script>
+	function showSameGroup(target1, target2, el){
+    		if(target1 == el){
+        		$(target2).find("option").show().not("."+el).hide();
+    		}
+	};
+
+
+	$("#cbcat input[type='checkbox']").click(function(){
+	// alert ("Test");
+		var s1 = $(this).val(), s2 = $("#catne");
+    
+    		if(s1 == "News"){
+        		showSameGroup(s1, s2, "News");
+    		}
+    		else if(s1 == "Events"){
+        		showSameGroup(s1, s2, "Events");
+    		}
+	});		
+</script>
+<script>
+var divs = $("div.randomBox").get().sort(function(){ 
+  return Math.round(Math.random())-0.5; //random so we get the right +/- combo
+}).slice(0,2)
+$(divs).appendTo(divs[0].parentNode).show();
+</script>
+</body></html>

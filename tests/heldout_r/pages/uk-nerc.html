@@ -1,0 +1,875 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="no-js">
+    <head>
+        
+    <base href="https://engagementhub.ukri.org/nerc-funding-ops/nerc-peer-review-college-self-nomination/"/>
+
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Find and participate in activities run by UK Research and Innovation">
+        
+        
+    
+
+        <title>
+            
+    NERC Peer Review College - Self-nomination
+
+             - UK Research and Innovation
+            - Citizen Space
+        </title>
+        
+        <link rel="stylesheet" href="/static_frontend/vendor/lato-2.015/fonts.css">
+        <link type="text/css" href="/static_frontend/vendor/dlb-public-ui/css/bootstrap.css" rel="stylesheet">
+        
+        <link type="text/css" href="https://engagementhub.ukri.org/static_frontend/vendor/dlb-public-ui/css/dlb-public-ui-compiled.css" rel="stylesheet">
+        <link type="text/css" href="https://engagementhub.ukri.org/static_frontend/css/citizenspace.css" rel="stylesheet">
+
+        
+
+        
+        <script type="text/javascript">
+            var tr_auto_embed = true;
+        </script>
+
+        <!--jQuery -->
+        <script type="text/javascript" src="/static_frontend/vendor/dlb-public-ui/libraries/jquery/jquery.min.js"></script>
+        <!--/jQuery -->
+        <script type="text/javascript" src="/static_frontend/js/fluid-resize.js?version=8.19.1"></script>
+        
+        <script type="text/javascript" src="/static_frontend/js/tr-safe-embed.js?version=8.19.1"></script>
+        <script type="text/javascript" src="/static_frontend/js/text-truncate.js?version=8.19.1"></script>
+        <script type="text/javascript" src="/static_frontend/js/tr-pdf.js?version=8.19.1"></script>
+        <script type="text/javascript" src="/static_frontend/js/typeahead/typeahead.bundle.min.js?version=8.19.1"></script>
+        
+        
+        
+
+        <!--
+            Part of the Bootstrap 5 migration involves prefixing Bootstrap JS attributes with bs-
+            This has been done in our codebase, but copy/pasted content such as fact banks may still have old attributes.
+            Shim these attributes to allow these to remain working.
+        -->
+        <script>
+            const bootstrapEventShim = function() {
+                document.querySelectorAll('[data-toggle]').forEach((el) => {
+                    let attrVal = el.dataset.toggle;
+                    el.dataset.bsToggle = attrVal;
+                });
+                document.querySelectorAll('[data-target]').forEach((el) => {
+                    let attrVal = el.dataset.target;
+                    el.dataset.bsTarget = attrVal;
+                });
+            }
+            document.addEventListener("DOMContentLoaded", bootstrapEventShim);
+        </script>
+
+         <!-- Bootstrap JS Components -->
+        <script src="/static_frontend/vendor/dlb-public-ui/libraries/bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        
+
+        <!-- Page-specific CSS and JS can go here -->
+        
+
+        
+            
+        
+
+        <!-- Remove no-js class if scripts are enabled -->
+        <script>
+            document.documentElement.classList.remove('no-js')
+        </script>
+
+        <!-- Ensure collapsible content is displayed and misleading links are hidden if JS is disabled -->
+        <noscript>
+            <style>
+                .collapse {
+                    display: block;
+                }
+
+                .show-when-no-js {
+                    display:block;
+                }
+
+                .hide-when-no-js {
+                    display:none;
+                }
+            </style>
+        </noscript>
+
+    </head>
+
+    <body
+          data-site-root="https://engagementhub.ukri.org">
+        <div id="skip">
+            <a href="https://engagementhub.ukri.org/nerc-funding-ops/nerc-peer-review-college-self-nomination/consult_view/#page-content">Skip to Main Content</a>
+        </div>
+        
+
+<script>
+
+    jQuery(document).ready(function() {
+        
+
+        var options = {};
+        // used to disable the go button when the selected page is the current page
+        var cur_page = jQuery("#preview-navigation-page-select").val()
+
+        jQuery("#preview-navigation-page-select").change(function() {
+            var page = jQuery(this).val();
+            var button = jQuery("#preview-navigation button");
+            if (page != "" && page != cur_page) {
+                button.prop('disabled',false);
+            } else {
+                button.prop('disabled','disabled');
+            }
+        });
+
+        jQuery("#preview-navigation button").click(function(event) {
+            var page = jQuery("#preview-navigation-page-select").val();
+            var consultation_root = jQuery("#preview-navigation").data("consultation-root");
+            var survey_root = jQuery("#preview-navigation").data("survey-root");
+            var cookie_path = jQuery("#preview-navigation").data("cookie-path");
+
+            function set_state(state) {
+                document.cookie="preview_state="+state+";path="+cookie_path+";";
+            }
+
+            set_state("open");
+            if (page === "_hub") {
+                window.location = survey_root;
+            } else if (page == "_overview_open") {
+                window.location = consultation_root;
+            } else if (page == "_overview_closed") {
+                set_state("closed");
+                window.location = consultation_root;
+            } else if (page == "_overview_forthcoming") {
+                set_state("forthcoming");
+                window.location = consultation_root;
+            } else if (page == "_response_submitted") {
+                window.location = survey_root + "confirm_submit_thankyou";
+            } else if (page == "_published_responses") {
+                set_state("closed");
+                window.location = survey_root + "published_select_respondent";
+            } else if (page == "") {
+                // No-op, shouldn't get here (hah..).
+            } else {
+                window.location = survey_root + page;
+            }
+        });
+
+    });
+</script>
+
+        <div id="global-wrapper">
+
+            
+
+            <header id="global-nav" class="navbar navbar-default navbar-expand-md navbar-static-top dss-navbar">
+                <div class="container-fluid">
+                    <div class="row flex-grow-1 py-2 pb-md-0 pt-lg-1">
+                        <div class="mb-md-2 py-lg-1 col-md-8 ">
+                            <div class="navbar-header d-flex justify-content-between">
+                                <div id="global-nav-main-heading">
+                                    
+                                        <a id="global-nav-site-title" href="https://engagementhub.ukri.org/">
+                                            <img src="https://engagementhub.ukri.org/os-custom-logos/ukri-logo_horiz-cmyk.png"
+                                                alt="UK Research and Innovation logo" class="global-nav-logo ms-3 ms-md-0" />
+                                        </a>
+                                    
+                                </div>
+                                <button class="navbar-toggler d-md-none align-self-center"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#global-navbar-collapse"
+                                    aria-expanded="false"
+                                    aria-controls="global-navbar-collapse">
+                                    <span class="fa-solid fa-caret-down"></span>
+                                    <span>Menu</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col align-content-center d-flex align-items-center">
+                            <div id="cs-global-search-container-md" class="d-none d-md-block flex-grow-1">
+                                <!-- Javascript puts the search form here for sm viewports -->
+                                <form id="cs-global-search" action="https://engagementhub.ukri.org/consultation_finder/" method="GET">
+                                    
+                                    <div role="search">
+                                        
+                                        <label for="cs-global-search-input" class="visually-hidden">Search</label>
+                                        <div class="input-group">
+                                            <input class="form-control" size="27" id="cs-global-search-input" type="text" name="keyword" placeholder="Search"/>
+                                            <button class="btn btn-primary" aria-label="Search" id="cs-global-search-button">
+                                                <span class="fa-solid fa-magnifying-glass"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            
+                        </div>
+                        
+                        <div class="w-100"></div>
+                        <div>
+                            <nav class="collapse navbar-collapse navbar-left px-3 px-md-0"
+                                id="global-navbar-collapse"
+                                aria-label="primary">
+
+                                <div id="global-navbar-collapse-inner" class="py-2">
+
+                                    <div id="cs-global-search-container-xs" class="d-md-none">
+                                        <!-- Javascript puts the search form here for xs viewports -->
+                                    </div>
+                                    
+                                    <ul class="cs-navbar-nav-list">
+                                        <li class="cs-navbar-nav-list-item">
+    <a class="cs-navbar-nav-link" href="/">
+        <span class="cs-navbar-nav-link-text">Engagement Hub</span>
+    </a>
+</li>
+<li class="cs-navbar-nav-list-item">
+    <a class="cs-navbar-nav-link" href="/consultation_finder/">
+        <span class="cs-navbar-nav-link-text">Find and Participate</span>
+    </a>
+</li>
+<li class="cs-navbar-nav-list-item">
+    <a class="cs-navbar-nav-link" href="/we_asked_you_said/">
+        <span class="cs-navbar-nav-link-text">We Asked, You Said, We Did</span>
+    </a>
+</li>
+<li class="cs-navbar-nav-list-item">
+    <a class="cs-navbar-nav-link" href="/about/">
+        <span class="cs-navbar-nav-link-text">About</span>
+    </a>
+</li>
+
+                                    </ul>
+                                    
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main id="page-content-wrapper">
+                <div id="page-content" tabindex="-1">
+                    
+
+    
+        <section>
+
+    
+        <div
+                class="dss-rhino cs-consultation-banner"
+                style="background-image: url('https://engagementhub.ukri.org/os-custom-logos/4121_ukri_engagement-hub-web-banner-3-proof.jpg')">
+            
+        </div>
+    
+
+    
+
+    
+
+    <div class="dss-rhino dss-rhino-brand-color dss-rhino-padding-bottom-15">
+        <div class="container-fluid dss-text-brand-color">
+            <div class="row">
+                <div>
+                    <h1 id="cs-consultation-title-in-banner">
+                        
+                            NERC Peer Review College - Self-nomination
+                        
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+    
+
+    
+        <div class="container-fluid">
+        
+<div class="cs-status-message-container">
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+</div>
+
+        </div>
+    
+
+    
+        
+    
+
+    
+    <section class="" >
+        <div class="dss-rhino dss-rhino dss-rhino-padding-top-5 dss-rhino-padding-bottom-40 ">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8 order-2 order-md-1">
+                        <div class="dss-easy-reading cs-constrain-overview-column-for-readability">
+                            <div id="overview" class="clearfix">
+    <h2>Overview</h2>
+    <p>Expert review plays a vital role in ensuring that the Natural Environment Research Council (NERC) supports the highest quality research across our portfolio remit. It provides a fundamental contribution to our application assessment process; the expert knowledge provided through this process allows our panels to make appropriate, considered funding decisions.</p>
+
+<p>NERC's Peer Review College members are our preferred source of expert reviewers, as they have undertaken appropriate training and have committed to contribute to our peer review process.</p>
+
+<p>College members form a valuable component of the decision-making process and are critical to the assessment of applications for funding. Members will gain a broad view of the novel ideas coming through the funding pipeline in their area. Assessing high-quality applications provides members with in-depth knowledge of our expert review processes and principles, experience of providing a balanced, informed perspective on applications and helps them to increase their knowledge of writing applications for funding. College members are also kept regularly updated about current relevant NERC news and opportunities.</p>
+
+<p>The NERC Peer Review College would strongly encourage applications to help strengthen the following areas:</p>
+
+<div>
+<div class="dss-table-container">
+<table class="MsoTableGrid cs-table">
+	<tbody>
+		<tr>
+			<td valign="top">
+			<p><span><span><span><b>General area</b></span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span><b>Details</b></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>AI</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Using AI to analyse vegetation cover.</span></span></span></p>
+
+			<p><span><span><span>Using AI for weather/climate modelling.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>AI/Atmosphere</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Data management and AI for atmospheric modelling.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Biological oceanographers</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Ocean acidification, coral formation, microbial experts, phytoplankton, carbon uptake in the ocean.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Climate change resilience</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Sea level rise, extreme weather prediction, AI, machine learning, climate prediction modelling, climate adaptation.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Digital Environment &amp; Environmental Informatics</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>AI, machine learning, sensor networks, data science.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Droughts</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Extreme drought, ecological responses, biodiversity.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Ecology</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Use of AI, machine learning, neural node networks, deep learning to build/run community, population, ecosystem or ecological models.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Epidemiologists / Ecology of diseases</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Disease transmission. From parasites in livestock to fly and mosquito ecologists.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Floods</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Extreme flooding, river dynamics, sedimentology, flood prediction models and warning systems, AI flood modelling technology, hazard risk assessment.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Genetics/Genomics</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>All areas within NERC remit. Use of ancient DNA (aDNA) in palaeobiology, palaeoenvironments, archaeology and conservation biology contexts; </span></span></span></p>
+
+			<p><span><span><span>Use of environmental DNA (eDNA) for survey/monitoring, conservation, and/or ecosystem process/health studies.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Geochemists</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Experts in Isotopic analyses and testing. From geological and paleoenvironmental testing to conservation efforts (Pangolin scales for example).</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Lidar and remote sensing</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Specifically, when looking at biodiversity measuring of insects using these tools.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Marine ecology</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Coral reef/coral experts covering coral mineral composition, coral genetics, coral symbioses, coral physiology, coral restoration (inc. methods such as 3D printing, transplantation &amp; artificial anchor structures).</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Ocean ecologists</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Particularly experts in deep ocean organisms and their interactions.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Palaeontology</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Specific expertise in how biota moves, musculoskeletal reconstructions.</span></span></span></p>
+
+			<p><span><span><span>Area overlapping palaeo and modern ecology, reconstruction of fossil organisms to understand modern ecological stressors, using genetics.</span></span></span></p>
+
+			<p><span><span><span>Diet/taphonomy/anatomy reconstructions from fossil organism&#8217;s teeth.</span></span></span></p>
+
+			<p><span><span><span>Brachiopod experts.</span></span></span></p>
+
+			<p><span><span><span>Biodiversity over time &#8211; speciation, evolution. Digital modelling. Hybridisation.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Physical Oceanographers</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Eddy structures, climate modelling interactions, General Circulation Model.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Pollution</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Biomarkers and population health.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Space Weather</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Effect of space weather on Earth&#8217;s infrastructure.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Symbiosis/Host-symbiont interactions</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Impacts of endosymbiotes on hosts and/or symbiote populations. Genetic/physiological studies of symbiotes and impact on host-symbiont relationships. </span></span></span></p>
+
+			<p><span><span><span>Impacts of climate change/environmental stresses on host-symbiont relationships, hosts and/or symbiote populations.</span></span></span></p>
+
+			<p><span><span><span>Bacterial, viral, plant, fungal &amp; invertebrate symbioses.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<p><span><span><span>Wildfires</span></span></span></p>
+			</td>
+			<td valign="top">
+			<p><span><span><span>Air pollution, soil contaminants, post-fire toxins.</span></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+
+</div>
+                            
+<div id="why_we_are_consulting" class="clearfix">
+    <h2>Why your views matter</h2>
+    <p><u>Who is eligible to join the NERC Peer Review College?</u></p>
+
+<p>NERC seeks college members from academic and non-academic backgrounds (such as commercial, industrial, public services and charity roles) relevant to the <a href="https://www.ukri.org/councils/nerc/guidance-for-applicants/how-to-submit-your-application/research-area-selection-in-je-s/">NERC remit</a>. We are looking for UK and international college members.</p>
+
+<p>We welcome applications from a broad range of roles and expect you to provide evidence of experience and expertise in areas such as:</p>
+
+<ul>
+	<li>Scientific expertise</li>
+	<li>Grant or project management</li>
+	<li>Multi-discplinary work</li>
+	<li>Public engagement</li>
+	<li>Collaborative work (academic and non-academic)</li>
+	<li>International work</li>
+	<li>Influencing policy</li>
+</ul>
+
+<p><u>Early Career Researchers (ECR's)</u></p>
+
+<p>It is not a requirement to hold an academic appointment. The NERC Peer Review College will consider applications from all career stages.</p>
+
+<p><strong>Please complete all requested fields of the form to be considered for a position in the NERC Peer Review College. Our internal assessors will assess based on the information given within your application.</strong></p>
+
+<p>The self-nomination process to join the NERC Peer Review College will take 10-20 minutes to complete.&#160;</p>
+
+<p>&#160;</p>
+
+<p>&#160;</p>
+
+</div>
+
+                            
+                            
+    <div class="cs-consultation-cta" style="margin-top: 40px">
+        
+            
+            
+    <h2 data-test-hook="cta-heading" class="cs-consultation-cta-heading">
+        Apply to join the NERC Peer Review College
+    </h2>
+
+<div class="cs-consultation-cta-link-container">
+    <a href="https://engagementhub.ukri.org/nerc-funding-ops/nerc-peer-review-college-self-nomination/consultation/" aria-label="Online application process">
+        
+        <span data-test-hook="cta-text" class="cs-consultation-cta-link-text">Online application <span class="cs-consultation-cta-tail">process<span class="cs-consultation-cta-link-icon"><span class="fa fa-angle-right"></span></span></span>
+        </span>
+    </a>
+</div>
+        
+    </div>
+
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-4 order-1 order-md-2">
+                        
+                            
+                                <div class="cs-consultation-sidebar-container"
+     id="consultation_overview_sidebar">
+     <div class="cs-consultation-dates-container">
+        <div class="cs-consultation-primary-dates-container">
+            <div>
+                <p class="cs-consultation-sidebar-primary-date">
+                  <span>Closes</span> 31 Jan 2030
+                </p>
+
+                <p class="cs-consultation-sidebar-secondary-date">
+                    <span>Opened</span> 12 Dec 2025
+                </p>
+            </div>
+            
+            
+        </div>
+        <div class="cs-consultation-sidebar-tertiary-dates-container">
+            
+            
+        </div>
+    </div>
+    <div class="cs-consultation-contact-details dss-force-links-to-wrap"
+    >
+        <h2 class="cs-consultation-contact-details-heading">Contact</h2>
+        
+        
+        
+            <p id="contact_team">NERC Peer Review College Team<p>
+        
+        
+        
+            <p id="contact_email"><a href="mailto:college@nerc.ukri.org">college@nerc.ukri.org</a></p>
+        
+    </div>
+</div>
+
+                            
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+        
+    
+
+    
+        
+        <section class="cs-overview-secondary-info-container">
+            <div class="dss-rhino dss-rhino-greige-darker dss-rhino-padding-top-15 dss-rhino-padding-bottom-40">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div>
+                            
+                            
+    <div id="audiences">
+        <h2><small style="font-weight:200; color:black;">Audiences</small></h2>
+        <ul class="list-inline" style="font-weight:200;">
+            
+                
+                    <li class="list-inline-item"><small>Research Community</small></li>
+                
+            
+        </ul>
+    </div>
+
+                            
+    <div id="interests">
+        <h2><small style="font-weight:200; color:black;">Interests</small></h2>
+        <ul class="list-inline" style="font-weight:200;">
+            
+                <li class="list-inline-item"><small>Research and Innovation Sector Engagement</small></li>
+            
+        </ul>
+    </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    
+
+    
+        
+            <div id="social_media_buttons">
+                <div class="dss-rhino dss-rhino-white dss-rhino-padding-top-25 dss-rhino-padding-bottom-25">
+                    <div class="container-fluid">
+                        <div class="d-flex justify-content-end align-items-center">
+                            
+
+    
+    <h2 class="my-0 me-3">Share</h2>
+    
+
+    
+    <a href="http://twitter.com/share?url=https%3A%2F%2Fengagementhub.ukri.org%2Fnerc-funding-ops%2Fnerc-peer-review-college-self-nomination%2Fconsult_view%2F&text=Have+a+look+at+this+consultation+from+%23citizenspace%3A"
+    class="dss-force-no-underline"
+    title="Share on Twitter"
+    target="_blank">
+        <span class="fa-brands fa-square-twitter me-3" style="font-size: 3em; color: #00aced;"></span>
+        <span class="visually-hidden">Share on Twitter</span>
+    </a>
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fengagementhub.ukri.org%2Fnerc-funding-ops%2Fnerc-peer-review-college-self-nomination%2Fconsult_view%2F"
+    class="dss-force-no-underline"
+    title="Share on Facebook"
+    target="_blank">
+        <span class="fa-brands fa-square-facebook" style="font-size: 3em; color: #3b5998"></span>
+        <span class="visually-hidden">Share on Facebook</span>
+    </a>
+    
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    
+
+
+
+                </div>
+            </main>
+        </div>
+        <footer id="configurable-footer-wrapper">
+            <div class="cs-page-component-group">
+                
+                    <section class="dss-rhino cs-page-component-container dss-rhino-footer" style="">
+    <div class="container-fluid">
+        <div class="cs-page-component cs-page-component-contrast">
+    <div class="row" id="global-footer">
+            <div id="citizen-space-footer-nav" 
+                class="col-12 col-md-8 order-1 order-md-2" 
+                role="navigation"
+                aria-label="miscellaneous">
+                <ul class="list-inline">
+                    
+                        <li id="nav-item-accessibility_policy" class="list-inline-item"><a href="https://engagementhub.ukri.org/accessibility_policy/">Accessibility</a></li>
+                    
+                        <li id="nav-item-terms_and_conditions" class="list-inline-item"><a href="https://engagementhub.ukri.org/terms_and_conditions/">Terms of Use</a></li>
+                    
+                        <li id="nav-item-cookie_policy" class="list-inline-item"><a href="https://engagementhub.ukri.org/cookie_policy/">Cookies</a></li>
+                    
+                        <li id="nav-item-privacy_policy" class="list-inline-item"><a href="https://engagementhub.ukri.org/privacy_policy/">Privacy</a></li>
+                    
+                        <li id="nav-item-support" class="list-inline-item"><a href="https://engagementhub.ukri.org/support/">Help / feedback</a></li>
+                    
+                </ul>
+            </div>
+            <div class="col-12 col-md-4 order-2 order-md-1">
+                <span id="citizen-space-footer-logo">
+                <a href="https://www.delib.net/citizen_space">Citizen Space</a>
+                <span>from</span> 
+                <a href="https://www.delib.net">Delib</a>
+                </span>
+            </div>
+    </div>
+
+</div>
+
+        
+    </div>
+</section>
+
+
+                
+            </div>
+        </footer>
+
+        
+        
+        
+
+        <script type="text/javascript">
+            $(function() {
+                // Skip to content workaround for absolute skip links
+                jQuery('#skip a').bind("click", function(event) {
+                    var target = jQuery(this).attr('href').split('#')[1];
+                    jQuery("#"+target+"").focus();
+                });
+            });
+        </script>
+
+        <script type="text/javascript">
+        //<!-- js contains some invalid HTML characters
+            $(function() {
+                // Global search
+                var search_form = $("#cs-global-search");
+                var search_form_input = $("#cs-global-search-input");
+
+                // Scroll to search results on submit of global search form
+                search_form.submit(function() {
+                    if (search_form_input.attr('placeholder') == search_form_input.val()) {
+                        search_form_input.val('');
+                    }
+                    sessionStorage.setItem('saved-scrollTop', '500');
+                });
+
+                // Move the global search form into the appropriate container depending on viewport size
+                function move_global_search_form() {
+                    // if global nav (and global search) are turned off, bail
+                    if(!search_form.length) {
+                        return;
+                    }
+
+                    var md_container = $("#cs-global-search-container-md");
+                    var xs_container = $("#cs-global-search-container-xs");
+
+                    // btw we can't test if xs_container is visible because it's hidden inside the burger menu
+
+                    if (md_container.is(":visible")) {
+                        if(!md_container.find("#cs-global-search").length) {
+                            md_container.append(search_form);
+                        }
+                    }
+                    else {
+                        if(!xs_container.find("#cs-global-search").length) {
+                            xs_container.append(search_form);
+                        }
+                    }
+                }
+                move_global_search_form();
+                $(window).resize(move_global_search_form);
+
+                // Function to update the query string
+                function updateQueryStringParameter(uri, key, value) {
+                    var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+                    var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+                    if (uri.match(re)) {
+                        return uri.replace(re, '$1' + key + "=" + value + '$2');
+                    } else {
+                        return uri + separator + key + "=" + value;
+                    }
+                }
+
+                // Event listener to detect changes in the large viewport language `select`
+                var languageSelect = document.getElementById('language-picker-select');
+                if (languageSelect) {
+                    languageSelect.addEventListener('change', function() {
+                        var form = document.getElementById('global-language-picker');
+                        form.submit();
+                    });
+                }
+
+            });
+
+            // a11y hax. There are some elements generated by the ol libraries that need some extra attributes for a11y.
+            // Putting them here was preferable to overriding masses of ol code.
+            $(window).on("load", function() {
+              var zoomins = document.getElementsByClassName('ol-zoom-in');
+              for (let i=0; i<zoomins.length; i++) {
+                zoomins[i].setAttribute('aria-label', 'Zoom in');
+              }
+              var zoomouts = document.getElementsByClassName('ol-zoom-out');
+              for (let j=0; j<zoomouts.length; j++) {
+                zoomouts[j].setAttribute('aria-label', 'Zoom out');
+              }
+              var attributions = document.getElementsByClassName('ol-attribution');
+              for (let k=0; k<attributions.length; k++) {
+                attributions[k].getElementsByTagName('button')[0].setAttribute('aria-label', 'Attribution');
+              }
+              var recentre = document.getElementsByClassName('cs-zoom-to-extent');
+              for (let m=0; m<recentre.length; m++) {
+                recentre[m].getElementsByTagName('button')[0].setAttribute('aria-label', 'Recentre map');
+              }
+              var search = document.getElementsByClassName('cs-map-postcode-popup');
+              for (let m=0; m<search.length; m++) {
+                search[m].getElementsByTagName('button')[0].setAttribute('aria-label', 'Go to a postcode');
+              }
+            }
+            );
+        //-->
+        </script>
+
+        
+          
+          
+          
+        
+    </body>
+</html>
+
+

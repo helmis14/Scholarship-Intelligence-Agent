@@ -1,0 +1,1014 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="keywords" content="KF지원사업신청포털, 사업신청포털"/>
+<meta name="description" content="한국국제교류재단 지원 사업 공고, 소식, 신청 안내.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KF지원사업신청포털">
+<meta property="og:description" content="한국국제교류재단 지원 사업 공고, 소식, 신청 안내.">
+<meta property="og:url" content="https://apply.kf.or.kr/">
+<meta property="og:image" content="https://apply.kf.or.kr/images/kf/ko/logo.gif"/>
+<title>KF Application Portal</title>
+<link rel="stylesheet" href="/css/kf/new/main.css" media="all">
+<style>
+       /*이메일 발송 불가 안내팝업 스타일(삭제예정)  */
+        #pureImagePopup {
+            position: fixed;
+            top: 150px;
+            left: 150px;
+            z-index: 9999;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        #pureImagePopup img {
+            display: block;
+            width: 500px; /* 원하는 이미지 가로 크기로 조절하세요 */
+            height: auto;
+        }
+        /* 하단 미니 바 스타일 (투명하거나 깔끔하게 처리) */
+        #pureImagePopup .popup-mini-bar {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #pureImagePopup .popup-mini-bar label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        #pureImagePopup .popup-mini-bar button {
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        #pureImagePopup .popup-mini-bar button:hover {
+            text-decoration: underline;
+        }
+        /*이메일 발송 불가 안내팝업 스타일(삭제예정)  */
+    </style>
+<script language=JavaScript> 
+
+	function cookieSet(dayNum){
+		
+		var cookieFlag, oDate, expiresDate; 
+
+		cookieFlag = "popupCheck1"; 
+        
+		oDate = new Date(); 
+		oDate.setDate(oDate.getDate() + dayNum); 
+		expiresDate = new Date(oDate.getFullYear(),oDate.getMonth(),oDate.getDate());
+		
+		//쿠키셋팅 
+		if ( document.all.popupCheck1.checked == 1 ){ 
+			document.cookie = "popnew=" + cookieFlag + "; expires=" + expiresDate + "; path=/;";		
+		}else{ 
+			document.cookie = "popnew=" + "" + "; expires=" + expiresDate + "; path=/;";
+		} 
+	}
+	
+	function closePop(){
+		$("#layer1").hide();
+	}
+</script>
+</head>
+<body id="mbody"> 
+	<div id="wrap">
+	<!-- top 메뉴 start -->
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <link rel="stylesheet" type="text/css" href="https://apply.kf.or.kr:443/css/kf/layout.css"/> -->
+<!-- <link rel="stylesheet" type="text/css" href="https://apply.kf.or.kr:443/css/kf/ellipsis.css" /> -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+<link rel="stylesheet" href="/css/kf/new/sub_cnt.css" media="all">
+<link rel="stylesheet" href="/00_common/css/ntt.css" media="all">
+<link rel="stylesheet" href="/00_common/js/mCustomScrollbar/jquery.mCustomScrollbar.min.css" media="all">
+
+<script language="javascript" type="text/javascript" src="https://apply.kf.or.kr:443/js/kf/common.js"></script>
+<script src="https://apply.kf.or.kr:443/js/kf/jquery/jquery-1.8.3.js"></script>
+<script src="https://apply.kf.or.kr:443/js/kf/jquery/jquery-ui.js"></script>
+<script language="javascript" type="text/javascript" src="https://apply.kf.or.kr:443/js/kf/jquery/jquery.cookie.js"></script>
+
+<script language="javascript" type="text/javascript" src="/00_common/js/T3_layout.js"></script>
+<script language="javascript" type="text/javascript" src="/00_common/js/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+
+
+<!-- 이미지on/off -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".imgonoff").mouseover(function() {
+			$(this).attr("src", $(this).attr("src").replace("off","on"));
+		});
+		
+		$(".imgonoff").mouseout(function() {
+			$(this).attr("src", $(this).attr("src").replace("on", "off"));
+		});
+		
+		$(".gnb .menu").mouseenter(function() {
+			$(this).children().show();
+			var imgSrc = $(this).children().children().attr("src").replace("off","on");
+			$(this).children().children().attr("src",imgSrc);
+		});
+		
+		$(".gnb .menu").mouseleave(function() {
+			$(this).children("ul").hide();
+			var imgSrc = $(this).children().children().attr("src").replace("on","off");
+			$(this).children().children().attr("src",imgSrc);
+		});
+		
+		//전체 선택해지
+		$(".gnb .menu").mouseover(function() {
+			if(eval("false")){
+				$(".gnb main").children("ul").hide();
+				var imgSrc = $(".gnb main").children().children().attr("src").replace("on","off");
+				$(".gnb main").children().children().attr("src",imgSrc);
+			}
+		});
+		
+		$(".gnb .menu").mouseout(function() {
+			if(eval("false")){
+				$(".gnb main").children("ul").show();
+				var imgSrc = $(".gnb main").children().children().attr("src").replace("off","on");
+				$(".gnb main").children().children().attr("src",imgSrc);
+			}
+		});
+		
+		//언어변경
+		$("#changeLang").click(function(event) {
+			event.preventDefault();
+			var url = "https://apply.kf.or.kr:443/main.nkf?lang=ko_KR";
+			$(location).attr("href",url);
+		});
+	});
+	
+	fnAddInnoDS = function(name){
+		InnoDSInitMulti("500MB", "500MB", 1, 700, 88, name);
+		InnoDS.LimitExt = "hwp;doc;docx;pdf;";
+		
+		if(browserOS == "MacIntel" || browserOS == "MacPPC") {
+			document.getElementById(name).AppendFilter("Attached Files", "*.hwp;*.doc;*.docx;*.pdf;");
+		} 
+		else {
+			InnoDS.AppendFilter("Attached Files", "*.hwp;*.doc;*.docx;*.pdf;");
+		}
+	};
+	fnAddInnoDS1 = function(name){
+		InnoDSInitMulti("500MB", "500MB", 1, 700, 88, name);
+		InnoDS.LimitExt = "jpg;gif;bmp;";
+		
+		if(browserOS == "MacIntel" || browserOS == "MacPPC") {
+			document.getElementById(name).AppendFilter("Attached Files", "*.gif;*.jpg;*.bmp;");
+		} 
+		else {
+			InnoDS.AppendFilter("Attached Files", "*.gif;*.jpg;*.bmp;");
+		}
+	};
+
+	fnAddInnoDSIE10 = function(divId, objName) {
+		var htmlStr = InnoDSInitMultiIE10("500MB", "500MB", 1, 700, 88, objName);
+		$('#'+divId).html(htmlStr);
+		var InnoDSObj = GetDSObject(objName);
+		InnoDSObj.AppendFilter("Attached Files", "*.hwp;*.doc;*.docx;*.pdf;");
+		InnoDSObj.LimitExt = "hwp;doc;docx;pdf;";
+	};
+	fnAddInnoDS1IE10 = function(divId, objName) {
+		var htmlStr = InnoDSInitMultiIE10("500MB", "500MB", 1, 700, 88, objName);
+		$('#'+divId).html(htmlStr);
+		var InnoDSObj = GetDSObject(objName);
+		InnoDSObj.AppendFilter("Attached Files", "*.gif;*.jpg;*.bmp;");
+		InnoDSObj.LimitExt = "jpg;gif;bmp;";
+	};
+	
+	
+	// 맥 환경 업로드 적용을 위해 추가
+	fnAddInnoDS_initFilter = function(objName){
+		if(browserOS == "MacIntel" || browserOS == "MacPPC") {
+			document.getElementById(objName).AppendFilter("Attached Files", "*.hwp;*.doc;*.docx;*.pdf;");
+		} 
+		else {
+			var InnoDSObj = GetDSObject(objName);
+			InnoDSObj.AppendFilter("Attached Files", "*.hwp;*.doc;*.docx;*.pdf;");
+			InnoDSObj.LimitExt = "hwp;doc;docx;pdf;";
+		}	
+	};
+	
+	fnAddInnoDS1_initFilter = function(objName){
+		if(browserOS == "MacIntel" || browserOS == "MacPPC") {
+			document.getElementById(objName).AppendFilter("Attached Files", "*.gif;*.jpg;*.bmp;");
+		} 
+		else {
+			var InnoDSObj = GetDSObject(objName);
+			InnoDSObj.AppendFilter("Attached Files", "*.gif;*.jpg;*.bmp;");
+			InnoDSObj.LimitExt = "jpg;gif;bmp;";
+		}	
+	};
+	
+	fnNotReady = function(){
+		alert("Please wait; in process.");
+	};
+	
+	fn_selectList = function(pageIndex){
+		$("#pageIndex").val(pageIndex);
+		$('#searchFrm').submit();
+	};
+	
+	function goUnityMyPage(sysId, cmmSysId) {
+	   var finalSysId = sysId;
+	   if('kid' == sysId) {
+	      finalSysId = cmmSysId;
+	   }
+	   var newForm = document.createElement('form');
+	   newForm.name = 'newForm';
+	   newForm.method = 'post';
+	   newForm.action = 'https://www.kf.or.kr/kid/mypage.do';
+	   var input1 = document.createElement('input');
+	   input1.setAttribute("type", "hidden");
+	   input1.setAttribute("name", "sysId");
+	   input1.setAttribute("value", finalSysId);
+	   newForm.appendChild(input1);
+	   document.body.appendChild(newForm);
+	   newForm.submit();
+	}
+	
+	function goUnityJoinPage(sysId, cmmSysId) {
+		
+		var langType = "en_US";
+		var langParam = "";
+		
+		if("en_US" == "ko_KR"){
+			langParam = "KOR";
+		}else{
+			langParam = "ENG";
+		}
+		
+	   var finalSysId = sysId;
+	   if('kid' == sysId) {
+	      finalSysId = cmmSysId;
+	   }
+	   var newForm = document.createElement('form');
+	   newForm.name = 'newForm';
+	   newForm.method = 'post';
+	   newForm.action = 'https://www.kf.or.kr/kid/sb/sbscrb/insertSbscrbInfo00.do?langTy='+langParam;
+	   var input1 = document.createElement('input');
+	   input1.setAttribute("type", "hidden");
+	   input1.setAttribute("name", "sysId");
+	   input1.setAttribute("value", finalSysId);
+	   newForm.appendChild(input1);
+	   document.body.appendChild(newForm);
+	   newForm.submit();
+	}
+	
+</script>
+<!-- //이미지on/off -->
+
+<!-- header  -->
+<header id="header">
+	<div class="container">
+		<!-- KF logo -->
+		<!-- <h1><a href="http://www.kf.or.kr"><img src="https://apply.kf.or.kr:443/images/kf/en/logo_kf.png" alt="The Korea Foundation"></a></h1> -->
+		<h1>
+			
+				
+				
+					<a href="https://www.kf.or.kr/kfEng/main.do?langTy=ENG">
+				
+				
+			
+				<img src="/images/kf/ko/main/logo_kf.png" alt="국민과 함께 세계와 소통하는 한국국제교류재단"><em>The Korea Foundation</em>
+			</a>
+		</h1>
+		<div class="top_link">
+			<ul class="linklst">
+				<!-- 로그인 전 (로그인, 회원가입) / 로그인 후 (로그아웃, 회원정보 수정)-->
+				
+					 
+						<li><a href="https://apply.kf.or.kr:443/loginView.nkf">LOGIN</a></li>
+						<li><a href="javascript:;" onclick="goUnityJoinPage('kf','')">JOIN</a></li>
+					
+					
+				
+				<!-- <li class="lang"><a href="#">KOR</a>
+					<ul class="lst langList">
+						<li><a href="#">ENG</a></li>
+						<li><a href="#">JPN</a></li>
+						<li><a href="#">CHI</a></li>
+					</ul>
+				</li> -->
+				<li>
+					<a href="#" id="changeLang">
+						KOR
+						<!-- <img src="https://apply.kf.or.kr:443/images/kf/en/sta_btn4_off.gif" alt="English" class="imgonoff" id="English" /> -->
+					</a>
+				</li>
+			</ul>
+			<p class="snslst">
+				<a href="https://www.facebook.com/koreafoundation" target="_blank"><i class="xi-facebook"></i><em class="sr-only">페이스북 바로가기</em></a>
+				<a href="https://www.instagram.com/koreafoundation/" target="_blank"><i class="xi-instagram"></i><em class="sr-only">인스타그램 바로가기</em></a>
+				<a href="https://www.youtube.com/user/TheKoreaFoundation" target="_blank"><i class="xi-youtube-play"></i><em class="sr-only">유튜브 바로가기</em></a>
+				<a href="https://twitter.com/koreafoundation" target="_blank" title="x/ 새 창 열림" class="twitter-icon"><em class="sr-only">x 바로가기</em></a>
+			</p>
+			<div class="kfPlus">
+				<a class="hashSlide" href="#kfPlusList">KF Plus</a>
+			</div>
+			<!-- <p class="popBtn"><a href="#" id="uppopBtn" class="on">POPUP</a></p> -->
+		</div>	
+	</div>
+	
+	<!-- logo -->
+	<h2><a href="https://apply.kf.or.kr:443/main.nkf"><img src="/images/kf/ko/main/logo.png" alt="KF Application Portal" /><span>Application Portal</span></a></h2>
+
+	
+	
+	<!-- gnb -->
+	<div id="nav">
+		<div id="gnb">
+			<div class="dep01_tit container">
+				<ul>
+					<li><a href="https://apply.kf.or.kr:443/board/selectNewsList.nkf"><span>Notices</span></a></li>
+					<li><a href="https://apply.kf.or.kr:443/board/applGuide.nkf"><span>About Applying</span></a></li>
+					<li><a href="https://apply.kf.or.kr:443/selectNoticeAndApplicationList.nkf"><span>Programs & Apply</span></a></li>
+					<li><a href="https://apply.kf.or.kr:443/mybiz/selectMyApplList.kf"><span>My Project</span></a></li>
+					
+				</ul>
+			</div>
+			<div class="wrap">
+				<ul class="dep01">
+					<!-- 공지사항 -->
+					<li class="menu gnb_nonebg sub1">
+						<a href="https://apply.kf.or.kr:443/board/selectNewsList.nkf"><span>Notices</span></a>
+					</li>
+					
+					<!-- 신청안내 -->
+					<li class="menu sub2">
+						<a href="https://apply.kf.or.kr:443/board/applGuide.nkf"><span>About Applying</span></a>
+					</li>
+					
+					<!-- 공고 및 신청 -->
+					<li class="menu sub3">
+						<a href="https://apply.kf.or.kr:443/selectNoticeAndApplicationList.nkf"><span>Programs & Apply</span></a>
+					</li>
+					
+					<!-- 나의사업 -->
+					<li class="menu sub4">
+						<a href="https://apply.kf.or.kr:443/mybiz/selectMyApplList.kf"><span>My Project</span></a>
+						<ul class="dep02">
+							<!-- 신청현황 -->
+							<li class=""><a href="https://apply.kf.or.kr:443/mybiz/selectMyApplList.kf"><span>Application</span></a></li>
+							<!-- 수행현황 -->
+							<li class=""><a href="https://apply.kf.or.kr:443/mybiz/selectMyCurrList.kf"><span>Ongoing</span></a></li> 
+							
+						</ul>
+					</li>
+					
+					<!-- 사업심의 -->
+					
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- shadow -->
+	<div class="gnbblind"></div>	
+	<!-- //gnb-->
+	
+	
+</header>
+<!-- //header -->
+	<!-- top 메뉴 end -->
+	<script language="javascript" type="text/javascript" src="/js/kf/new/main.js"></script>
+	<script language="javascript" type="text/javascript" src="/00_common/js/ScrollMagic.min.js"></script>
+	<script language="javascript" type="text/javascript" src="/00_common/js/slick.min.js"></script>
+	
+	<!-- main_container -->
+	
+	<div id="container" style="position:relative;">
+	
+		<div id="layer1" class="pop-layer" style="display:none;">
+		    <div class="pop-container">
+		    	<div style="background: #eee; padding: 0.5em; height:40px;">
+		    		<span style="float:left; width:90%;">사업신청포탈(apply.kf.or.kr) 사용 불가 공지</span>
+		    		<span style="float:right; padding-right:0.5em; padding-top:0.4em;">
+		    			<a href="javascript:closePop();" class="" style=""><img src="images/kf/ko/icon_delete.png"/></a>
+		    		</span>
+		    	</div>
+		    	
+		        <div class="pop-conts" style="padding:10px;" >
+		            <!--content //-->
+		           <img src="images/kf/ko/notice_popup0305.png" width="100%" height="500" />
+		
+		            <div class="btn-r">
+		                <input type="checkbox" name="popupCheck1" onclick="cookieSet(1);"  />
+						<span style="font-size:15px;">
+							오늘 더 이상 보지 않기 / Do not show this message again.
+							<br/>
+							<a href="javascript:closePop();" class="" style="">[닫기/Close]</a>
+						</span>
+		            </div>
+		            <!--// content-->
+		        </div>
+		    </div>
+		</div>
+		
+		<div class="conBox01">
+			<div class="con_wrap">
+				
+				<div class="T3_D00">
+					<div class="glnLink">
+						
+					</div>
+				</div>
+				
+				<div class="T3_D01">
+					<form id="searchFrm" name="noticeAndApplicationListSearch" method="post" action="https://apply.kf.or.kr:443/selectNoticeAndApplicationList.nkf">
+					<div id="totalSearch">
+						<h2 class="sr-only">Search</h2>
+							<fieldset>
+								<legend class="sr-only">Search</legend>
+								<!-- <select class="srchOption">
+									<option value="">사업분류</option>
+									<option value="">사업분류</option>
+									<option value="">사업분류</option>
+								</select> -->
+								<input type="text" id="searchKeyword" value="" name="searchKeyword" title="검색어 입력" placeholder="" />
+								<button type="button" id="searchList">Search</button>
+							</fieldset>
+					</div>
+					</form>
+				</div>
+				<div class="T3_D02">
+					<div class="question">
+						<div class="btn_wrap">
+							<a href="https://apply.kf.or.kr:443/mybiz/selectMyApplList.kf">
+								<p><img src="/images/kf/ko/main/ico_que02.png" alt=""></p>My Application</a>
+							<!-- <a href="#">
+								<p><img src="/images/kf/ko/main/ico_que01.png" alt=""></p>
+								<span>E-Mail</span>
+							</a> -->
+							<!-- <a href="#">
+								<p><img src="/images/kf/ko/main/ico_que02.png" alt=""></p>
+								<span>Q&A</span>
+							</a> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="conBox02">
+			<div class="con_wrap">
+				<div class="T3_D03">
+					<div class="program">
+						<div class="tit">
+							<!-- <p>PROGRAMS & APPLY</p> -->
+							<h3>Programs & Apply</h3>
+							<p style="font-size:0.75rem;">The Korea Foundation offers a variety of funding programs to individuals and organizations that do diverse activities to promote mutual understanding between Korea and the world.</p>
+						</div>
+						<form id="searchFrm" name="searchVO" action="https://apply.kf.or.kr:443/main.nkf" method="post">
+							<input id="searchClass" name="searchClass" type="hidden" value=""/>
+							<input id="pageIndex" name="pageIndex" value="1" type="hidden" value="1"/>
+							<ul>								
+								
+									
+									
+										<div class="box_st3_1">
+											<ul>
+												<li style="width:100%; height:auto; border:0px; text-align:center; font-size:1.3rem; font-weight:600;">
+													
+														
+														
+															There are currently no programs in progress.
+														
+														
+													
+												</li>
+											</ul>
+										</div>
+									
+								
+							</ul>
+							<a href="https://apply.kf.or.kr:443/selectNoticeAndApplicationList.nkf" class="btn_more">VIEW MORE</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="conBox03">
+			<div class="con_wrap">
+				<div class="T3_D04">
+					<div class="m_link01">
+						<ul>
+							<li>
+								<a href="https://apply.kf.or.kr:443" name="pdfPreview" id="en">
+									<span><i class="xi-comment"></i></span>
+									<h4>
+										<!-- 
+										
+											
+											
+												KF 2024 Program Guidelines
+											
+											
+										
+										 -->
+										KF 2027 Program Guideline
+									</h4>
+									<p>Learn about <br>KF Program Guideline</p>
+								</a>
+							</li>
+							<li><a href="https://apply.kf.or.kr:443/board/applGuide.nkf#who">		
+								<span><i class="xi-group"></i></span>
+								<h4>Who can apply?</h4>
+								<p>Learn about <br>eligibility</p>
+							</a></li>
+							<li><a href="https://apply.kf.or.kr:443/board/applGuide.nkf#how">
+								<span><i class="xi-touch"></i></span>
+								<h4>How to apply?</h4>
+								<p>Learn about <br>application steps</p>
+							</a></li>
+							<li><a href="https://apply.kf.or.kr:443/board/applGuide.nkf#result">
+								<span><i class="xi-desktop"></i></span>
+								<h4>Application results?</h4>
+								<p>How to find out about your results</p>
+							</a></li>
+						</ul>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</div>
+	<!-- //main_container -->
+	
+	<!-- 상세 이동 폼 -->
+	<form id="viewFrm" name="viewFrm" method="post">
+		<input type="hidden" id="notiSeq" name="notiSeq" value="" />
+		<input type="hidden" id="anucNo" name="anucNo" value="" />
+		<input type="hidden" name="pageIndex" value="1" />
+	</form>
+	
+	<form id="appForm" method="post">
+		<input type="hidden" id="aplDocNo" name="aplDocNo" value="" />
+		<input type="hidden" id="rcmdDocNo" name="rcmdDocNo" value="" />
+		<input type="hidden" id="sryDocNo" name="sryDocNo" value="" />
+		<input type="hidden" id="prgLvCd" name="prgLvCd" value="" />
+		<input type="hidden" name="viewType" value="P" />
+	</form>
+	<!-- 이메일 발송 불가 안내팝업 스타일(삭제예정) -->
+	<form id="popupForm" method="post">
+	</form>
+	<div id="pureImagePopup" style="display:none;">
+        <!-- 이미지만 덩그러니 나오는 영역 (클릭 시 이동할 링크가 있다면 href 속성 변경) -->
+        <a href="javascript:void(0);">
+             <img src="/00_common/images/T3_layout/img_kfplus18.png" alt="팝업 이미지"> 
+        </a>
+        <!-- 이미지 바로 아래나 우측에 작게 들어가는 '오늘 하루 보지 않기' 바 -->
+        <div class="popup-mini-bar">
+            <label>
+                <input type="checkbox" id="todayCloseCheck" value="Y"> 오늘 그만 보기
+            </label>
+            <button type="button" onclick="closePopup()">닫기</button>
+        </div>
+    </div>
+    <!-- 이메일 발송 불가 안내팝업 스타일(삭제예정) -->
+<!-- bottom start -->
+
+<!-- bottom end -->
+<script type="text/javascript" >
+fnValidation = function(form){	
+	if($("#usrId").val() == ""){
+		alert("Please enter your username.");
+		return false;
+	}
+
+	if($("#pswd").val() == ""){
+		alert("Please enter your password.");
+		return false;
+	}
+	
+	return true;
+};
+
+//아이디저장(쿠키이용)
+idSaveCheck = function(){
+	var checkStatus = $("#box").is(":checked");
+   
+	if(checkStatus){
+		$.cookie("userId", $("#usrId").val(), {expires:10});       
+		$.cookie("userId");
+	}else{    
+		$.cookie("userId", '');
+	}
+};  
+
+// 서버시간을 가져온다.
+var xmlHttp;
+function srvTime(){
+	try {
+		//FF, Opera, safari, Chrome
+		xmlHttp = new XMLHttpRequest();
+	} catch (err1) {
+		//IE
+		try {
+			xmlHttp = new ActiveXObject('Msxml2.XMLHTTP');
+		} catch (err2){
+			try {
+				xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+			} catch (eer3) {
+				console.log("AJAX not supported!!");
+			}
+		}
+	}
+	var locationUrl = window.location.href.toString();
+	var endIndex = locationUrl.indexOf("?");
+	if (endIndex > -1) {
+		locationUrl = locationUrl.substring(0, endIndex);
+	}
+	xmlHttp.open('GET', locationUrl + "?" + (new Date()).getTime(), false);
+	xmlHttp.send(null);
+	return xmlHttp.getResponseHeader("Date");
+}
+
+$(document).ready(function(){
+	<!-- 이메일 발송 불가 안내팝업 스타일(삭제예정) -->
+	 if (getCookie("purePopupYN") == "Y") {
+	        document.getElementById("pureImagePopup").style.display = "none";
+	    } else {
+	        document.getElementById("pureImagePopup").style.display = "block";
+	    }
+	 <!-- 이메일 발송 불가 안내팝업 스타일(삭제예정) -->
+	// 특수문자 제거
+	$('input[type="text"]').live("change", function(){
+		$(this).val(gfnValidmergeInput($(this).val()));
+	});
+	
+	//사업공고 탭 전환
+	$(".noticeTab").click(function(event){
+		event.preventDefault();
+		var noticeClass = this.id.replace("noticeTab",""); 
+		$("#searchClass").val(noticeClass);
+		$("#pageIndex").val("1");
+		$("#searchFrm").submit();
+	});
+	
+	//뉴스레터 페이지 호출(selectbox)
+	$("#selectNewsLetter").change(function(event){
+		var url = $(this).val();
+		if(url != "")window.open(url,"newsletter","");
+	});
+	
+	// 공고 상세보기 
+	$("a[name='detailView']").click(function(event){
+		
+		event.preventDefault();
+		var id = $(this).attr("id");
+		
+		$('#anucNo').attr("value", id);
+		
+		$('#viewFrm')
+			.attr("method", "get")
+			.attr("action", "https://apply.kf.or.kr:443/selectNoticeAndApplicationView.nkf")
+			.submit();
+	});
+	
+	// 새소식 상세
+	$('a[name="readNews"]').click(function(event){
+		event.preventDefault();
+		
+		$('#notiSeq').val($(this).attr("id"));
+
+		$('#viewFrm')
+			.attr("action", "https://apply.kf.or.kr:443/board/selectNewsView.nkf")
+			.submit();
+	});
+	
+});
+
+$(window).load(function(){
+	//로그인 아이디 로드
+	var userId = $.cookie("userId");  
+	
+	if(userId != null && userId != ""){
+		$("#usrId").val(userId);
+		$("#box").attr("checked", "checked");
+		$("#usrId").focus();		
+	}	
+	
+	
+ 	var stime = srvTime();
+	var serverTime = new Date(stime);
+	
+	//팝업시작시간
+	var startTime = new Date("03/05/2025 09:00:00"); // "9/18/2018 18:10:00" (2018년 9월 18일. 18시 10분)
+	//팝업종료시간
+	var endTime = new Date("03/08/2025 20:01:00");
+	console.log("date : " + startTime + " ~ " + endTime);
+	
+	if ( serverTime > startTime && serverTime < endTime) {
+		
+		//console.log("==============");
+		var url = "https://apply.kf.or.kr:443/popup.nkf";
+		var getCookie = document.cookie;
+		
+		if (getCookie.indexOf("popupCheck1") < 0){
+			//window.open('','popup','width=740, height=435, top=200, left=200');
+			//$('#popupForm').attr("target", "popup").attr("action", url).submit();
+			
+			$("#layer1").show();
+	 	}
+		
+		/* 추석 공지띄우기 시작    추석 공지띄우기 끝 */
+		/* 2020.05.08 팝업 내리기 */
+		/* 팝업 실행
+		if("en_US" == "ko_KR"){
+			
+			// 한글
+			// 2020.04.13 2020kf국민공공외교 팝업 공지 (한글 페이지만 띄우기)
+		 	if (getCookie.indexOf("popupCheck1") < 0){
+				window.open('','popup','width=520, height=550, top=200, left=200');
+				$('#popupForm').attr("target", "popup").attr("action", url).submit();
+		 	}
+		}else{
+			// 영어
+			
+		}
+		*/
+
+		/* 
+		 추석 공지띄우기 시작    추석 공지띄우기 끝 
+	 	if (getCookie.indexOf("popupCheck1") < 0){
+			window.open('','popup','width=600, height=390, top=200, left=200');
+			$('#popupForm').attr("target", "popup").attr("action", url).submit();
+	 	}
+		공지띄우기 시작 공지띄우기 끝 
+	 	if (getCookie.indexOf("popupCheck1") < 0){
+			window.open('','popup','width=740, height=435, top=200, left=200');
+			$('#popupForm').attr("target", "popup").attr("action", url).submit();
+	 	}
+		*/
+	}
+
+});
+
+//검색부분
+$('#searchList').bind("click", function(){
+	$("#pageIndex").val("1");
+	$('#searchFrm').submit();
+});
+
+//PDF 미리보기
+$('a[name="pdfPreview"]').click(function(event){
+	event.preventDefault();
+	var url = "https://apply.kf.or.kr:443/cmm/mainpdf.nkf?id="+ $(this).attr("id");
+	
+	window.open('','viewWin', 'width=1000, height=800, scrollbars=yes');
+	$('#appForm')
+		.attr("target", "viewWin")
+		.attr("method", "post")
+		.attr("action", url)
+		.submit();
+});
+// 이메일 발송 불가 안내팝업 스타일(삭제예정) -->
+//쿠키 설정 함수
+function setCookie(name, value, expiredays) {
+    var todayDate = new Date();
+    todayDate.setDate(todayDate.getDate() + expiredays);
+    document.cookie = name + '=' + escape(value) + '; path=/; expires=' + todayDate.toUTCString() + ';';
+}
+
+// 쿠키 가져오기 함수
+function getCookie(name) {
+    var obj = name + "=";
+    var x = 0;
+    while (x <= document.cookie.length) {
+        var y = (x + obj.length);
+        if (document.cookie.substring(x, y) == obj) {
+            var endOfCookie = document.cookie.indexOf(";", y);
+            if (endOfCookie == -1) endOfCookie = document.cookie.length;
+            return unescape(document.cookie.substring(y, endOfCookie));
+        }
+        x = document.cookie.indexOf(" ", x) + 1;
+        if (x == 0) break;
+    }
+    return "";
+}
+
+// 닫기 및 오늘 하루 안 보기 처리
+function closePopup() {
+    if (document.getElementById("todayCloseCheck").checked) {
+        setCookie("purePopupYN", "Y", 1);
+    }
+    document.getElementById("pureImagePopup").style.display = "none";
+}
+ //이메일 발송 불가 안내팝업 스타일(삭제예정)
+
+</script>
+<!-- bottom start -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- footer -->
+
+<footer id="footer">
+	<div class="ft_wrap">
+		<div class="container">
+			<ul class="lst">
+				
+				
+				
+				
+					<li><a href="https://www.kf.or.kr/kfEng/cm/cntnts/cntntsView.do?mi=2293&cntntsId=1750">Terms of Use</a></li>
+					<li><a href="https://www.kf.or.kr/kfEng/cm/cntnts/cntntsView.do?mi=2294&cntntsId=1751">Privacy Policy</a></li>
+					<li><a href="https://www.kf.or.kr/kfEng/cm/cntnts/cntntsView.do?mi=2129&cntntsId=1630">Annual report</a></li>
+					<li><a href="https://www.kf.or.kr/kfEng/cm/cntnts/cntntsView2.do?mi=2131">Directions</a></li>
+				
+				
+			
+			
+			</ul>
+
+			<!-- site link -->
+			<div class="ftBtn_wrap">
+				<div class="ftBtn">
+					<button type="button">KF List<i class="xi-angle-up-thin"></i></button>
+					<div>
+						<ul>
+							<li><a href="www.mofa.go.kr" target="_blank" title="새창으로 열기">Ministry of Forein Affairs</a></li>
+							<li><a href="http://www.korean.net" target="_blank" title="새창으로 열기">코리안넷</a></li>
+							<li><a href="http://study.korean.net/" target="_blank" title="새창으로 열기">스터디코리안</a></li>
+							<li><a href="http://www.ikorea.ac.kr/" target="_blank" title="새창으로 열기">The Center for information on Korea Culture</a></li>
+							<li><a href="http://world.kbs.co.kr/" target="_blank" title="새창으로 열기">KBS World Radio</a></li>
+							<li><a href="https://www.nahf.or.kr/" target="_blank" title="새창으로 열기">동북아역사재단</a></li>
+							<li><a href="https://www.acrc.go.kr/" target="_blank" title="새창으로 열기">Anti-curruption & Civil Rights Commission</a></li>
+							<li><a href="http://www.koreancenter.or.kr/" target="_blank" title="새창으로 열기">연합뉴스 한민족센터</a></li>
+							<li><a href="https://culture360.asef.org/" target="_blank" title="새창으로 열기">culture360.org</a></li>
+							<li><a href="http://www.overseaschf.or.kr/" target="_blank" title="새창으로 열기">국외소재문화재재단</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+	
+	<div class="ft_box container">
+		<a href="http://apply.kf.or.kr" class="logo"><img src="/images/kf/ko/main/f_logo.png" alt="KOREA Foundation"></a>
+		<address>
+			<span class="fsSCD">
+				<em>55 Sinjung-ro, Seogwipo-si, Jeju-do, Republic of Korea</em>
+				<em>Tel : (+82)064-804-1000</em>
+				<em>Fax : 064-804-1274</em>
+				<em>Mail  : webmaster@kf.or.kr</em>
+			</span>
+			<span>
+				<strong>[KF Global Center]</strong>
+				<em>19 Fl., Mirae Asset Center 1 West Tower, 26 Euljiro 5-gil, Jung-gu, Seoul, 04539, Republic of Korea </em>
+				<em>Tel : 02-2151-6565</em>
+				<em>Fax : 02-2151-6592</em>
+				<em>Mail  : webmaster@kf.or.kr</em>
+			</span>
+			<span>
+				<strong>[Korea-Central Asia Cooperation Forum Secretariat]</strong>
+				<em>19 Fl., Mirae Asset Center 1 West Tower, 26 Euljiro 5-gil, Jung-gu, Seoul, 04539, Republic of Korea </em>
+				<em>Tel : 02-2151-6565</em>
+				<em>Fax : 02-2151-6592</em>
+				<em>Mail  : casecretariat@kf.or.kr</em>
+			</span>
+			<span>
+				<strong>[ASEAN Culture House]</strong>
+				<em>162, Jwadong-ro, Haeundae-gu, Busan, 48108, Republic of Korea </em>
+				<em>Tel : 051-775-2000</em>
+				<em>Fax : 051-775-2020</em>
+				<em>Mail  : ach@kf.or.kr</em>
+			</span>
+		</address>
+		<p>Copyright ⓒ The Korea Foundation. All rights reserved.</p>
+	</div>						
+</footer>
+<!-- //footer -->				
+
+<!-- KF PLUS -->
+<div class="kfPluslst fixSlide" id="kfPlusList">
+	<div class="wrap">
+		<ul>
+			<!-- <li><a href="#"><img src="/00_common/images/T3_layout/img_kfplus01.png" alt="KOREA Foundation 로고 이미지">
+				<p>한국국제교류재단</p>
+			</a></li> -->
+			<li><a href="http://www.ach.or.kr" target="_blank" title="새창"><img src="/00_common/images/T3_layout/img_kfplus02.png" alt="Asean Culture House">
+				<p>Asean Culture House</p>
+			</a></li>
+			<li><a href="http://centralasia-korea.org" target="_blank" title="새창"><img src="/00_common/images/T3_layout/img_kfplus03.png" alt="Korea-Central Asia Cooperation Forum Secretariat">
+				<p>Korea-Central Asia Cooperation Forum Secretariat</p>
+			</a></li>
+			<li><a href="http://www.koreana.or.kr" target="_blank" title="새창"><img src="/00_common/images/T3_layout/img_kfplus08.png" alt="Koreana">
+				<p>Koreana</p>
+			</a></li>
+			
+			
+			<li><a href="https://apply.kf.or.kr/main.nkf"><img src="/00_common/images/T3_layout/img_kfplus10.png" alt="KF APPLICATION POTAL">
+				<p>KF APPLICATION POTAL</p>
+			</a></li>
+			
+			
+			<li><a href="https://www.kf.or.kr/koreanstudies/koreaStudiesList.do" target="_blank" title="새창"><img src="/00_common/images/T3_layout/img_kfplus12.png" alt="Statistics Center">
+				<p>Statistics Center</p>
+			</a></li>
+			<!-- <li><a href="#"><img src="/00_common/images/T3_layout/img_kfplus10.png" alt="KF지원사업신청포털 로고 이미지">
+				<p>KF지원사업신청포털</p>
+			</a></li> -->
+			<!-- <li><a href="#"><img src="/00_common/images/T3_layout/img_kfplus11.png" alt="GLN초정인사글로벌네트워크 로고 이미지">
+				<p>GLN초정인사글로벌네트워크</p>
+			</a></li> -->
+			<li><a href="http://www.kf.or.kr/archives" target="_blank" title="새창"><img src="/00_common/images/T3_layout/img_kfplus13.png" alt="Digital Archives">
+				<p>Digital Archives</p>
+			</a></li>
+			<li><a href="https://www.kf.or.kr/reserve/main.do" target="_blank" title="새창"><img src="/00_common/images/T3_layout/img_kfplus15.png" alt="KF RESERVAION POTAL">
+				<p>KF RESERVAION POTAL</p>
+			</a></li>
+			<li><a href="https://www.kf.or.kr/kf/cm/cntnts/cntntsView2.do?mi=1658" target="_blank" title="새창"><img src="/00_common/images/T3_layout/img_kfplus16.png" alt="KF GLOBAL CENTER">
+				<p>KF GLOBAL CENTER</p>
+			</a></li>
+			<li><a href="https://www.kf.or.kr/metaverse" target="_blank" title="새창"><img src="/00_common/images/T3_layout/img_kfplus17.png" alt="KF GLOBALCENTER ">
+				<p>KF GLOBALCENTER </p>
+			</a></li>
+		</ul>
+	</div>
+	<div class="fixblind"></div>	
+</div>	
+
+<!-- 전체메뉴 -->
+<div class="popFullmenu">
+	<div class="fullMenuBox">
+		<h3 class="sr-only">전체메뉴</h3>
+		<div class="nav"></div>				
+		<a href="#fullmenuOpen" id="fullmenuClose"><i class="xi-close"></i><em class="sr-only">전체메뉴 닫기</em></a>
+	</div>
+</div>
+<!-- //전체메뉴 -->
+
+<script type="text/javascript"> //<![CDATA[
+function openCert(address,height){
+	window.open(address,'openCert','toolbar=no,scrollbars=no,status=yes, height='+height+'px, width=460px');
+	//window.open("https://apply.kf.or.kr:443/images/kf/ko/apply_kf_or_kr.jpg",'openCert','toolbar=no,scrollbars=yes,status=yes, height='+height+'px, width=470px');
+}
+
+//]]></script>
+<!-- bottom end -->
+</div>
+</body>
+</html>

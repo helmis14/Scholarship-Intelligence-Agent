@@ -467,3 +467,26 @@ proposed, 54 accepted after quote checks. On the round-34 rules: 141 / 27 / 20 a
 (+4 correct, +1 wrong claim). The model fills dates and cycle states the rules abstain on (CHED, Fulbright Malaysia: closed
 with the right deadline) and one stipend; it also asserted a deadline and a closed state for a page whose label is
 "not stated" (Dutch-Bangla Bank). Total spent on Claude evaluations so far: $2.11.
+
+### Round 35 (pool K to Q): funding sentences
+
+Four more funding-sentence rules, each judged on the pool: "provides financial support for students" is a mission statement,
+not a stipend; "processes scholarship payments" is administration; "University and College fees" are tuition; "application
+fee waivers" are not a tuition waiver. Rejected: "reimbursement of their PhD stipend" (no effect). Pool 610 -> 619 (816 correct,
+89 wrong, 122 review on 1,112 decisions); Q 137 / 26 / 18 -> 138 / 22 / 20. The code was frozen here and set R (below) was
+fetched from hosts no earlier set used; nothing on R was read before this freeze.
+
+**Set R** (`tests/heldout_r/`, scored once on the frozen round-35 code, 2026-10-20): 239 pages fetched from hosts no earlier set used
+(ministries, agencies, foundations, companies, professional associations, universities); only 14 were single-programme pages
+(the rest were lists, home pages, news, portals or several awards, excluded with the reason recorded), so R holds 56
+decisions and its figures carry a wide margin (roughly +/- 12 points). Round-35 code 37 correct / 6 wrong / 10 review (66% /
+11% / 18%); round-33 and round-30 code identical; round-26 code 39 / 7 / 0. Leaving out the close calls (45 decisions): 31 / 5 / 8
+(round 26: 33 / 5 / 0). Clean quotations on every claimed answer: 15/15. The six wrong claims: "Individuals who are not United
+States citizens" (an ineligibility list item) read as an exclusion of US citizens; an opening date read as a deadline ("The
+call opened on 24 August with a deadline on 21 September"); "awards must be used before August 1, 2027" read as a deadline;
+an "open" cycle taken from that date; "receive financial support to aid their education" read as a stipend; and a
+nationality list from a page whose associate-state sentence is cut off. R is development data from here: the first three
+(and the stipend phrase) were fixed after R was scored (pool +9: N12, D7, F9 kept; the "must be used" date rule was rejected).
+R shows no gain from rounds 30-35 over round 26 on this small sample; the gain is on the wrong-claim side only where the
+pages are ambiguous (10 answers were sent to review instead of claimed). It does not contradict P and Q, whose sets are
+5 to 5.5 times larger, but it is not evidence for them either.

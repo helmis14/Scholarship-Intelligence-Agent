@@ -1,0 +1,3734 @@
+    <!doctype html>
+<html lang="tr"
+    dir="ltr">
+
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    
+    
+            <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXGNKQLXV"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+
+            gtag('config', 'G-HKXGNKQLXV');
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="icon" href="https://proje.yok.gov.tr/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://proje.yok.gov.tr/designV2/assets/front/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://proje.yok.gov.tr/designV2/assets/front/css/responsive.css">
+    <link rel="stylesheet" href="https://proje.yok.gov.tr/designV2/CDN/fontawesome/all.min.css" />
+    <link rel="stylesheet" href="https://proje.yok.gov.tr/designV2/CDN/bootstrap/dist.min.css">
+    <link rel="stylesheet" href="https://proje.yok.gov.tr/designV2/CDN/datatable/datatable.min.css" />
+    <link rel="stylesheet" href="https://proje.yok.gov.tr/designV2/assets/front/css/style.css">
+    <link rel="stylesheet" href="https://proje.yok.gov.tr/designV2/assets/front/css/accessibility_menu.css?v=1792461213">
+    <style>
+        .boxed {
+            position: relative;
+            background-color: #fff;
+            width: 100%;
+            min-height: 100vh;
+        }
+    </style>
+    <script src="https://proje.yok.gov.tr/designV2/CDN/jquery/ajax.min.js"></script>
+    <script src="https://proje.yok.gov.tr/designV2/CDN/fontawesome/1ab97ad3d2.js"></script>
+    <script src="https://proje.yok.gov.tr/designV2/CDN/popper/popper.min.js"></script>
+    <script src="https://proje.yok.gov.tr/designV2/CDN/bootstrap/npmBundle.min.js"></script>
+    <script src="https://proje.yok.gov.tr/designV2/CDN/jquery/jquery-3-5-1.js"></script>
+    <script src="https://proje.yok.gov.tr/designV2/CDN/jquery/ajax.min.js"></script>
+    <link rel="stylesheet" href="https://proje.yok.gov.tr/designV2/assets/front/js/swiper/swiper-bundle.min.css">
+    <script src="https://proje.yok.gov.tr/designV2/assets/front/js/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+    <!-- Setup Ajax -->
+    <script>
+
+        $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+            });
+        });
+
+    </script>
+
+    <title>    Öğrenci Bursları
+ | Yükseköğretim Kurulu</title>
+        <style>
+        *,
+        :after,
+        :before {
+            border: 0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            outline: 0;
+            text-decoration: none
+        }
+
+        body {
+            font-family: Roboto, sans-serif;
+            background: #fff
+        }
+
+        #slide-out {
+            background: #222;
+            display: block;
+            z-index: 1;
+            height: 100%;
+            width: 300px;
+            color: #ddd;
+
+        }
+
+        .search-mobile {
+            margin: 15px 10px;
+            height: 30px;
+            overflow: hidden;
+            background: #fcfcfc;
+            border: 1px solid #ddd;
+            border-top-color: #d1d1d1;
+            border-left-color: #d1d1d1;
+            overflow: hidden;
+            position: relative;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+
+            -webkit-box-shadow: inset 0 2px 5px #eee;
+            -moz-box-shadow: inset 0 2px 5px #eee;
+            box-shadow: inset 0 2px 5px #eee;
+        }
+
+        .search-mobile #s-mobile {
+            background: transparent;
+            float: right;
+            margin: 0;
+            padding: 7px 12px;
+            width: 100%;
+            color: #444;
+            border: 0 none;
+        }
+
+        .search-mobile button.search-button {
+            background: transparent;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 28px;
+            padding: 0;
+            width: 40px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .search-mobile button.search-button:hover {
+            color: #000;
+        }
+
+        #slide-out .social-icons {
+            margin-bottom: 15px;
+        }
+
+        #slide-out .social-icons a {
+            color: #ccc;
+            font-size: 16px;
+            padding: 0 4px;
+        }
+
+        #slide-out .social-icons a:hover {
+            color: #FFF;
+        }
+
+        #mobile-menu {
+            border-top: 1px solid #2D2D2D;
+
+        }
+
+        #mobile-menu.mobile-hide-icons i.fa {
+            display: none;
+        }
+
+        #slide-out #mobile-menu .mega-menu-block {
+            padding: 0 !important;
+            background: transparent !important;
+            min-height: inherit !important;
+        }
+
+        #slide-out #mobile-menu ul ul,
+        #slide-out #mobile-menu .sub-menu-columns-item {
+            display: none;
+            background: #333;
+        }
+
+        #slide-out #mobile-menu li {
+            list-style: none;
+            position: relative
+        }
+
+        #slide-out #mobile-menu ul li.menu-item-has-children i.mobile-arrows {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 12px;
+            border-left: 1px solid #333;
+            margin: 0;
+            cursor: pointer;
+            display: block;
+        }
+
+        #slide-out #mobile-menu a {
+            color: #ccc;
+            display: block;
+            font-size: 16px;
+            padding: 10px;
+            padding-right: 0;
+            border-bottom: 1px solid #2D2D2D;
+        }
+
+        #slide-out #mobile-menu a:hover {
+            background: #111;
+            color: #FFF;
+        }
+
+        #slide-out #mobile-menu ul ul a {
+            font-size: 14px;
+            padding-left: 30px
+        }
+
+        #slide-out #mobile-menu ul ul ul a {
+            font-size: 12px;
+            padding-left: 40px
+        }
+
+        #slide-out #mobile-menu ul ul ul a {
+            padding-left: 50px
+        }
+
+        #slide-out #mobile-menu ul ul ul ul a {
+            padding-left: 60px
+        }
+
+        #mobile-menu li.menu-item-home a:before {
+
+        }
+
+        .news-entrance-info {
+            position: absolute;
+            width: 100%;
+        }
+
+        @media  only screen and (max-width: 639px) {
+            .news-entrance .news-entrance-title {
+                font-size: 40px;
+            }
+        }
+
+        .swiper-wrapper {
+            gap: 0.5rem;
+        }
+
+        .mySwiper .swiper-slide img {
+            width: 150px !important;
+            height: 150px !important;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .mySwiper .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mySwiper .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .full-screen-slider {
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            position: fixed;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .full-screen-slider .swiper-slide img {
+            width: max-content;
+            height: max-content;
+        }
+
+        .full-screen-slider .swiper-slide {
+            background: rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        .full-screen-slider .close-modal {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 30px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .full-screen-slider .close-modal i {
+            font-size: 25px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .full-screen-slider .swiper-button-prev,
+        .full-screen-slider .swiper-button-next {
+            z-index: 9999999999;
+            color: black;
+        }
+
+        .index-content-info * {
+            font-weight: revert;
+            line-height: normal;
+        }
+        address{
+            margin-bottom: 0;
+            text-decoration: revert; /* Tarayıcı varsayılan text-decoration'ını uygula */
+            font-style: revert; /* Tarayıcı varsayılan font stilini uygula */
+        }
+        .news-entrance-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .news-entrance-title p {
+            color: white;
+        }
+    </style>
+    <style>
+        /* Please ❤ this if you like it! */
+
+
+        @import  url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+        body {
+            -webkit-overflow-x: hidden !important;
+        }
+
+        .sec-center {
+            position: relative;
+            max-width: 100%;
+            text-align: center;
+            z-index: 200;
+        }
+
+        .dropdown:checked,
+        .dropdown:not(:checked) {
+            position: absolute;
+            left: -9999px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .dropdown-sub:checked,
+        .dropdown-sub:not(:checked) {
+            position: absolute;
+            left: -9999px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .dark-light:checked+label {
+            transform: rotate(360deg);
+        }
+
+        .dark-light:checked+label:after {
+            opacity: 1;
+        }
+
+        .dark-light:checked+label:before {
+            background-color: #000;
+        }
+
+        .dark-light:checked~.light-back {
+            opacity: 1;
+        }
+
+        .dropdown:checked+label,
+        .dropdown:not(:checked)+label {
+            margin: 0;
+            position: relative;
+            padding: 0 10px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 2;
+            height: 38px;
+            transition: all 200ms linear;
+            border-radius: 8px;
+            letter-spacing: 1px;
+            display: -webkit-inline-flex;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            -ms-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            -ms-justify-content: center;
+            -ms-flex-pack: center;
+            text-align: center;
+            background-color: white;
+            cursor: pointer;
+            color: var(--text-color);
+            border: 1px solid #e1e1e1;
+            justify-content: center;
+        }
+
+        .dark-light:checked~.sec-center .for-dropdown {
+            background-color: var(--red-color);
+            color: var(--text-color);
+            box-shadow: 0 12px 35px 0 rgba(16, 39, 112, .25);
+        }
+
+        .dropdown:checked+label:before,
+        .dropdown:not(:checked)+label:before {
+            position: fixed;
+            top: 0;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            cursor: auto;
+            pointer-events: none;
+        }
+
+        .dropdown:checked+label:before {
+            pointer-events: auto;
+        }
+
+        .dropdown:not(:checked)+label .uil {
+            font-size: 14px;
+            margin-left: 10px;
+            transition: transform 200ms linear;
+        }
+
+        .dropdown:checked+label .uil {
+            transform: rotate(180deg);
+            font-size: 14px;
+            margin-left: 10px;
+            transition: transform 200ms linear;
+        }
+
+        .section-dropdown {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            padding: 10px 0;
+            min-width: 320px;
+            width: max-content;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: all 250ms ease-in-out;
+            border: none;
+        }
+
+        /* RTL support for dropdown */
+        [dir="rtl"] .section-dropdown {
+            right: auto;
+            left: 0;
+        }
+
+        [dir="rtl"] .fast-access {
+            direction: ltr;
+        }
+
+        [dir="rtl"] .for-dropdown {
+            direction: ltr;
+            text-align: left;
+        }
+
+        /* Ensure proper RTL handling for Arabic */
+        html[lang="ar"] .section-dropdown {
+            right: auto;
+            left: 0;
+            direction: rtl;
+        }
+
+        html[lang="ar"] .section-dropdown a {
+            text-align: right;
+            direction: rtl;
+        }
+
+        html[lang="ar"] .fast-access .sec-center {
+            direction: ltr;
+        }
+
+        .dropdown:checked~.section-dropdown {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .section-dropdown:before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            display: block;
+            z-index: 1;
+        }
+
+        .section-dropdown a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            margin: 0;
+            color: #333;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: all 0.2s ease-in-out;
+            border-left: 4px solid transparent;
+        }
+
+        .section-dropdown a:hover {
+            background-color: #f5f5f5;
+            border-left: 4px solid var(--red-color);
+            color: var(--red-color);
+        }
+
+        .section-dropdown a .uil {
+            font-size: 16px;
+            margin-left: 8px;
+        }
+
+        .dark-light:checked~.sec-center .section-dropdown {
+            background-color: #2b2b2b;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .dark-light:checked~.sec-center .section-dropdown a {
+            color: #f1f1f1;
+        }
+
+        .dark-light:checked~.sec-center .section-dropdown a:hover {
+            background-color: #3a3a3a;
+            border-left-color: var(--red-color);
+            color: var(--red-color);
+        }
+
+        .dropdown-sub:checked+label,
+        .dropdown-sub:not(:checked)+label {
+            position: relative;
+            color: var(--text-color);
+            transition: all 200ms linear;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            gap: 1.5rem;
+            font-size: 15px;
+            border-radius: 2px;
+            padding: 5px 0;
+            padding-left: 20px;
+            padding-right: 15px;
+            text-align: left;
+            text-decoration: none;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            -ms-align-items: center;
+            align-items: center;
+            justify-content: space-between;
+            -ms-flex-pack: distribute;
+            cursor: pointer;
+        }
+
+        .dropdown-sub:checked+label .uil,
+        .dropdown-sub:not(:checked)+label .uil {
+            font-size: 14px;
+        }
+
+        .dropdown-sub:not(:checked)+label .uil {
+            transition: transform 200ms linear;
+        }
+
+        .dropdown-sub:checked+label .uil {
+            transform: rotate(135deg);
+            transition: transform 200ms linear;
+        }
+
+        .dropdown-sub:checked+label:hover,
+        .dropdown-sub:not(:checked)+label:hover {
+            color: var(--red-color);
+            background-color: var(--backColor);
+        }
+
+        .dark-light:checked~.sec-center .section-dropdown .for-dropdown-sub {
+            color: var(--red-color);
+        }
+
+        .dark-light:checked~.sec-center .section-dropdown .for-dropdown-sub:hover {
+            color: var(--red-color);
+            background-color: var(--red-color);
+        }
+
+        .section-dropdown-sub {
+            position: relative;
+            display: block;
+            width: 100%;
+            pointer-events: none;
+            opacity: 0;
+            max-height: 0;
+            padding-left: 10px;
+            padding-right: 3px;
+            overflow: hidden;
+            transition: all 200ms linear;
+        }
+
+        .dropdown-sub:checked~.section-dropdown-sub {
+            pointer-events: auto;
+            opacity: 1;
+            max-height: 999px;
+        }
+
+        .section-dropdown-sub a {
+            font-size: 14px;
+        }
+
+        .section-dropdown-sub a .uil {
+            font-size: 14px;
+        }
+
+        .dark-light:checked~.logo img {
+            filter: brightness(10%);
+        }
+
+        @media  screen and(min-width: 1024px) {
+            .header__language {
+                text-align: justify;
+            }
+        }
+
+        @media  screen and (max-width: 991px) {
+
+            .dark-light:checked+label,
+            .dark-light:not(:checked)+label {
+                top: 20px;
+                right: 20px;
+            }
+        }
+
+        .dropdown:checked+.for-dropdown {
+            background-color: var(--backColor);
+        }
+
+        .dropdown-sub:checked+.for-dropdown-sub {
+            background-color: var(--backColor);
+        }
+
+        .section-dropdown-sub.active {
+            display: block;
+        }
+
+        .section-dropdown-sub a.active {
+            background-color: var(--backColor);
+        }
+
+        .for-dropdown-sub.active {
+            background-color: var(--backColor);
+        }
+
+        .section-dropdown-sub {
+            display: none;
+        }
+
+        .close {
+            position: absolute;
+            left: 2rem;
+            background: transparent;
+            border: 0;
+            font-size: 1rem;
+            font-weight: 700;
+            display: block;
+            cursor: pointer;
+            color: black;
+            border-radius: 50%;
+            outline: none;
+        }
+
+        .search-box.search-elem {
+            margin: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999999;
+            background: rgb(0 0 0 / 90%);
+            transition: all 0.3s ease-in-out;
+            -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+            transform: scale(0);
+        }
+
+        .search-box.search-elem .inner {
+            width: 70%;
+            margin: 0 auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .search-box.search-elem label {
+            color: white;
+            font-weight: 300;
+            font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+        }
+
+        .search-box.search-elem button.submit {
+            outline: none;
+            border-radius: 0 20px 20px 0;
+            position: absolute;
+            top: 0;
+            right: 12px;
+            height: 72px;
+            padding: 10px 2rem;
+            background: var(--red-color);
+            font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+            font-size: 1rem;
+            color: white;
+            border: none;
+        }
+
+        .search-box.search-elem button {
+            background: var(--red-color);
+            color: #ffffff;
+            padding: 20px 25px;
+        }
+
+        .search-box.search-elem input[type="text"] {
+            padding: 20px;
+            height: 72px;
+            font-size: 32px;
+            font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+            font-weight: 300;
+            border: none;
+            width: 100%;
+            border-radius: 20px;
+            transition: border 0.3s;
+        }
+
+        .search-box.search-elem input[type="text"]:focus {
+            border-bottom: solid 2px #00a896;
+            box-shadow: none;
+        }
+
+        .search-box.search-elem label.placeholder {
+            position: absolute;
+            top: 10px;
+            left: 2rem;
+            font-size: 32px;
+            font-weight: 300;
+            font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+            color: #999;
+            transition: all 0.3s;
+        }
+
+        .search-box.search-elem label.placeholder.move-up {
+            top: -25px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .search-box.search-elem.search-open {
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+        }
+
+        .search-btn {
+            text-transform: uppercase;
+            font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+            font-size: 0.875rem;
+            padding: 0.75rem;
+            display: inline-block;
+            background: white;
+        }
+
+        .search-btn:hover {
+            text-decoration: none;
+        }
+
+        .small-12 button {
+            background: var(--red-color);
+
+        }
+
+        .scroll-disabled {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .img-full-screen,
+        .img-placeholder {
+            cursor: pointer;
+        }
+
+        .img-placeholder {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: none;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: #fff;
+            z-index: 999;
+        }
+
+        .footer-images {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .footer-images img {
+            width: calc(100% / 7);
+            height: 200px;
+        }
+
+        .footer-slogan {
+            margin: 10px;
+            padding: 10px;
+            border-bottom: 0.3px solid white;
+            border-right: 0.3px solid white;
+            color: white;
+            "
+
+        }
+
+        .footer-sloganb h4 {
+            font-weight: 200;
+            font-size: 20px;
+        }
+
+        @media  screen and (max-width: 1024px) {
+            #language {
+                width: 200px;
+                height: 200px;
+                border-radius: 30%;
+                background-color: white;
+                text-align: center;
+                line-height: 300px;
+                color: inherit !important;
+                padding: 8px;
+            }
+        }
+
+        @media  only screen and(max-width: 360px) {
+            .small-menu__list>li>a {
+                padding: 0.1rem 0.1rem;
+                letter-spacing: 1px;
+                color: #494949;
+                font-size: 12px !important;
+            }
+        }
+
+        #menuToggle {
+            position: absolute;
+            left: 1rem;
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 0 11px #0000004f;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #menuToggle label {
+            display: flex;
+            flex-direction: column;
+            width: 25px;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        #menuToggle label span {
+            background: #343a40;
+            border-radius: 10px;
+            height: 3px;
+            margin: 2px 0;
+            transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+        }
+
+
+        #menuToggle span:nth-of-type(1) {
+            width: 50%;
+
+        }
+
+        #menuToggle span:nth-of-type(2) {
+            width: 100%;
+        }
+
+
+        #menuToggle span:nth-of-type(3) {
+            width: 75%;
+
+        }
+
+
+        #menuToggle.active span:nth-of-type(1) {
+            transform-origin: bottom;
+            transform: rotatez(45deg) translate(14px, 2px);
+        }
+
+
+        #menuToggle.active span:nth-of-type(2) {
+            transform-origin: top;
+            transform: translate(7px, 9px) rotatez(-45deg);
+        }
+
+
+        #menuToggle.active span:nth-of-type(3) {
+            transform-origin: bottom;
+            width: 50%;
+            transform: translate(17px, 5px) rotatez(45deg);
+        }
+
+        #mobil-menu {
+            position: absolute;
+            width: 100vw;
+            left: -100vw;
+            min-height: calc(100vh - 4.5rem);
+            height: max-content;
+            top: 4.5rem;
+            z-index: 999999999999999;
+            padding: 30px;
+            background: white;
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+            transform-origin: 0% 0%;
+            transform: translate(-100%, 0);
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        }
+
+        #mobil-menu li a {
+            color: var(--text-color);
+        }
+
+        #mobil-menu.active {
+            transform: none;
+            left: 0;
+        }
+
+        #mobil-menu li {
+            padding: 10px 0;
+            font-size: 22px;
+        }
+
+        #mobil-menu li {
+            border-bottom: 1px solid #e6e6e6;
+            list-style: none;
+        }
+
+        #mobil-menu li ul {
+            display: none;
+        }
+
+        #mobil-menu li.active>ul {
+            display: block;
+        }
+
+        #mobil-menu .mobil-menu-list-head {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+        }
+
+        .stop-scrolling {
+            height: 100%;
+            overflow: hidden;
+        }
+
+
+        /* Logo Section */
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #c20b09;
+            font-weight: 700;
+            font-size: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 8px 12px;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(194, 11, 9, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .logo:hover::before {
+            left: 100%;
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(194, 11, 9, 0.15);
+        }
+
+        .logo img {
+            height: 65px;
+            width: auto;
+            max-width: 220px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .rtl-content {
+            direction: rtl;
+            /* Metin yönünü sağdan sola yapar */
+            text-align: right;
+            /* Metni sağa hizalar */
+        }
+
+        /* Language picker z-index override - must be above all elements */
+        .language-picker {
+            position: relative !important;
+            z-index: 999998 !important;
+        }
+
+        .language-picker__dropdown {
+            z-index: 999999 !important;
+            position: absolute !important;
+        }
+
+        .language-picker__list {
+            z-index: 1000000 !important;
+            position: relative !important;
+        }
+
+        .language-picker__button {
+            position: relative !important;
+            z-index: 999997 !important;
+        }
+
+        .header-right .language {
+            position: relative !important;
+            z-index: 999996 !important;
+        }
+
+        /* Ensure header elements don't overlap */
+        .header-sub {
+            z-index: 100 !important;
+        }
+
+        .menu {
+            z-index: 100 !important;
+        }
+
+        .fast-access {
+            position: relative;
+            z-index: 200 !important;
+        }
+    </style>
+</head>
+
+<body id="a11y-body-root">
+    <div class="boxed">
+        <header class="header-fixed">
+            <div class="header-top yok-container ">
+                <a href="https://www.yok.gov.tr/" target="_blank" class="logo-section">
+                    <div class="logo">
+                        <img src="https://proje.yok.gov.tr/designV2/assets/front/img/yok_logo.png" alt="">
+                    </div>
+                </a>
+                <div class="header-title">
+                    <h3>
+                        <div class="title">
+                            <h5>Yükseköğretim Proje Geliştirme ve Destekleme Dairesi Başkanlığı</h5>
+                        </div>
+                    </h3>
+                </div>
+                <div class="header-right">
+                    <!-- <a href="#" class="search-btn search"><i class="fa fa-search" aria-hidden="true"></i></a> -->
+                    <div class="search-box search-elem">
+                        <button class="close">x</button>
+                        <div class="inner row">
+                            <form action="https://proje.yok.gov.tr/tr/search">
+                                <div class="small-12 columns">
+                                    <label class="placeholder"
+                                        for="search-field">Arama Yap...</label>
+                                    <input type="text" name="search" id="search-field">
+                                    <button class="submit"
+                                        type="submit">Ara</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                                            <div class="language">
+                            <div class="js">
+                                <div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle">
+                                    <form action="" class="language-picker__form">
+                                        <label for="language-picker-select">Select your language</label>
+                                        <select name="language-picker-select" id="language-picker-select">
+                                                                                                                                            <option lang="tr" value="tr"
+                                                     selected >
+                                                    TR
+                                                </option>
+                                                                                                                                            <option lang="en" value="en"
+                                                    >
+                                                    EN
+                                                </option>
+                                                                                                                                                                                        </select>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                                        <div class="fast-access">
+                        <div class="sec-center">
+                            <input class="dropdown" type="checkbox" id="dropdown" name="dropdown" />
+                            <label class="for-dropdown" for="dropdown">Hızlı Erişim                                <i class="fa fa-arrow-down" aria-hidden="true"></i></label>
+                            <div class="section-dropdown">
+                                                                    <li>
+                                                                                    <a target="_blank" class="sub-border  "
+                                                href="https://proje.yok.gov.tr/tr">Anasayfa</a>
+                                                                                                                    </li>
+                                                                    <li>
+                                                                                    <a target="_blank" class="sub-border  "
+                                                href=" https://#">Hakkımızda</a>
+                                                                                                                            <style>
+    .fast-access-submenu li {
+        position: relative;
+    }
+
+    .ikon {
+        margin-left: 15rem !important;
+    }
+</style>
+<button style="padding: 7px 30px;    position: absolute;
+width: 100%;
+right: 0;
+    top: 0rem;
+    border: 0;
+    background: transparent;" class="open-menu-button first-open-button open-first sub-border"><i
+        class="ul-open-icon fas fa-plus ikon"></i></button>
+<ul class="fast-access-submenu" style="display: none">
+
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/133">Daire Başkanı</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/135">Hakkımızda</a>
+                    
+        </li>
+    </ul>
+
+<script>
+document.addEventListener('click', function(event) {
+    const submenu = document.querySelector('.fast-access-submenu');
+    const openButton = document.querySelector('.open-menu-button');
+    
+    // Check if click is outside submenu and button
+    if (!submenu.contains(event.target) && !openButton.contains(event.target)) {
+        submenu.style.display = 'none';
+        const icon = openButton.querySelector('.ul-open-icon');
+        if (icon.classList.contains('fa-minus')) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+        }
+    }
+});
+</script>                                                                            </li>
+                                                                    <li>
+                                                                                    <a target="_blank" class="sub-border  "
+                                                href=" https://#">Faaliyetler</a>
+                                                                                                                            <style>
+    .fast-access-submenu li {
+        position: relative;
+    }
+
+    .ikon {
+        margin-left: 15rem !important;
+    }
+</style>
+<button style="padding: 7px 30px;    position: absolute;
+width: 100%;
+right: 0;
+    top: 0rem;
+    border: 0;
+    background: transparent;" class="open-menu-button first-open-button open-first sub-border"><i
+        class="ul-open-icon fas fa-plus ikon"></i></button>
+<ul class="fast-access-submenu" style="display: none">
+
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/313">Öğrenci Bursları</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/314">Araştırmacı Destekleri</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/315">Misyon Farklılaşması</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/316">OSB-MYO</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/581">Avrupa Uyum Projesi</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/621">YÖK Üstün Başarı Ödülleri</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/633">Engelsiz Üniversite Ödülleri</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/634">Spor Dostu Kampüs Projesi</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://www.yok.gov.tr/documents/documents/68e652769d934.pdf">2030 Yol Haritası</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/635">Yapay Zeka Kullanımına Dair Etik Rehber</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/636">Ortak Uygulama ve Araştırma Merkezleri</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/637">Yurt İçi Yabancı Dil Eğitim Programı</a>
+                    
+        </li>
+    </ul>
+
+<script>
+document.addEventListener('click', function(event) {
+    const submenu = document.querySelector('.fast-access-submenu');
+    const openButton = document.querySelector('.open-menu-button');
+    
+    // Check if click is outside submenu and button
+    if (!submenu.contains(event.target) && !openButton.contains(event.target)) {
+        submenu.style.display = 'none';
+        const icon = openButton.querySelector('.ul-open-icon');
+        if (icon.classList.contains('fa-minus')) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+        }
+    }
+});
+</script>                                                                            </li>
+                                                                    <li>
+                                                                                    <a target="_blank" class="sub-border  "
+                                                href=" https://#">Bilgi Bankası</a>
+                                                                                                                            <style>
+    .fast-access-submenu li {
+        position: relative;
+    }
+
+    .ikon {
+        margin-left: 15rem !important;
+    }
+</style>
+<button style="padding: 7px 30px;    position: absolute;
+width: 100%;
+right: 0;
+    top: 0rem;
+    border: 0;
+    background: transparent;" class="open-menu-button first-open-button open-first sub-border"><i
+        class="ul-open-icon fas fa-plus ikon"></i></button>
+<ul class="fast-access-submenu" style="display: none">
+
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/577">Mevzuat</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/580">Formlar</a>
+                    
+        </li>
+    </ul>
+
+<script>
+document.addEventListener('click', function(event) {
+    const submenu = document.querySelector('.fast-access-submenu');
+    const openButton = document.querySelector('.open-menu-button');
+    
+    // Check if click is outside submenu and button
+    if (!submenu.contains(event.target) && !openButton.contains(event.target)) {
+        submenu.style.display = 'none';
+        const icon = openButton.querySelector('.ul-open-icon');
+        if (icon.classList.contains('fa-minus')) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+        }
+    }
+});
+</script>                                                                            </li>
+                                                                    <li>
+                                                                                    <a target="_blank" class="sub-border "
+                                                href="https://proje.yok.gov.tr/tr/page/141">Sıkça Sorulan Sorular</a>
+                                                                                                                    </li>
+                                                                    <li>
+                                                                                    <a target="_blank" class="sub-border "
+                                                href="https://proje.yok.gov.tr/tr/page/143">İletişim</a>
+                                                                                                                    </li>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+                
+                    
+                    
+                    
+                                    <div class="header__language">
+                        
+                                                                                <span class="language__tr">
+                                <a hreflang="tr" style="color:white"
+                                    href="https://proje.yok.gov.tr/tr"
+                                     id="language" >
+                                    TR
+                                </a>
+                            </span>
+                                                                                <span class="language__en">
+                                <a hreflang="en" style="color:white"
+                                    href="https://proje.yok.gov.tr/en"
+                                    >
+                                    EN
+                                </a>
+                            </span>
+                                                                                                        </div>
+                                <div id="menuToggle">
+                    <label for="check">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+                <nav role="navigation">
+                    <ul id="mobil-menu">
+                                                    <li>
+                                                                    <a target="_blank"
+                                        href="https://proje.yok.gov.tr/tr">
+                                        Ana Sayfa
+                                    </a>
+                                                                                            </li>
+                                                    <li>
+                                                                    <a>Hakkımızda</a>
+                                                                                                    <div class="mobil-menu-list-head" style="position: relative;top:-22px;max-height: 5px">
+    <span class="mobil-menu-li"></span>
+    <i class="fa fa-angle-right" aria-hidden="true"></i>
+</div>
+<ul>
+            <li>
+                            <a href="https://proje.yok.gov.tr/tr/page/133">Daire Başkanı</a>
+                        
+        </li>
+            <li>
+                            <a href="https://proje.yok.gov.tr/tr/page/135">Hakkımızda</a>
+                        
+        </li>
+    </ul>
+                                                            </li>
+                                                    <li>
+                                                                    <a>Bilgi Bankası</a>
+                                                                                                    <div class="mobil-menu-list-head" style="position: relative;top:-22px;max-height: 5px">
+    <span class="mobil-menu-li"></span>
+    <i class="fa fa-angle-right" aria-hidden="true"></i>
+</div>
+<ul>
+            <li>
+                            <a href="https://proje.yok.gov.tr/tr/page/577">Mevzuat</a>
+                        
+        </li>
+            <li>
+                            <a href="https://proje.yok.gov.tr/tr/page/580">Formlar</a>
+                        
+        </li>
+    </ul>
+                                                            </li>
+                                                    <li>
+                                                                    <a>Faaliyetler</a>
+                                                                                                    <div class="mobil-menu-list-head" style="position: relative;top:-22px;max-height: 5px">
+    <span class="mobil-menu-li"></span>
+    <i class="fa fa-angle-right" aria-hidden="true"></i>
+</div>
+<ul>
+            <li>
+                            <a href="https://proje.yok.gov.tr/tr/page/313">Öğrenci Bursları</a>
+                        
+        </li>
+            <li>
+                            <a href="https://proje.yok.gov.tr/tr/page/314">Araştırmacı Destekleri</a>
+                        
+        </li>
+            <li>
+                            <a href="https://proje.yok.gov.tr/tr/page/315">Misyon Farklılaşması</a>
+                        
+        </li>
+            <li>
+                            <a href="https://proje.yok.gov.tr/tr/page/316">OSB-MYO</a>
+                        
+        </li>
+            <li>
+                            <a href="https://proje.yok.gov.tr/tr/page/581">Avrupa Uyum Projesi</a>
+                        
+        </li>
+            <li>
+                            <a href="https://proje.yok.gov.tr/tr/page/621">YÖK Üstün Başarı Ödülleri</a>
+                        
+        </li>
+            <li>
+                            <a href="https://proje.yok.gov.tr/tr/page/633">Engelsiz Üniversite Ödülleri</a>
+                        
+        </li>
+            <li>
+                            <a href="https://proje.yok.gov.tr/tr/page/634">Spor Dostu Kampüs Projesi</a>
+                        
+        </li>
+            <li>
+                            <a target="_blank"
+                   href="https://www.yok.gov.tr/documents/documents/68e652769d934.pdf">
+                               2030 Yol Haritası
+                        </a>
+                            
+        </li>
+            <li>
+                            <a href="https://proje.yok.gov.tr/tr/page/635">Yapay Zeka Kullanımına Dair Etik Rehber</a>
+                        
+        </li>
+            <li>
+                            <a href="https://proje.yok.gov.tr/tr/page/636">Ortak Uygulama ve Araştırma Merkezleri</a>
+                        
+        </li>
+            <li>
+                            <a href="https://proje.yok.gov.tr/tr/page/637">Yurt İçi Yabancı Dil Eğitim Programı</a>
+                        
+        </li>
+            <li>
+                            <a href="https://proje.yok.gov.tr/tr/page/684">İşletmede Mesleki Eğitim (İME)</a>
+                        
+        </li>
+    </ul>
+                                                            </li>
+                                                    <li>
+                                                                    <a href="https://proje.yok.gov.tr/tr/page/141">Sıkça Sorulan Sorular</a>
+                                                                                            </li>
+                                                    <li>
+                                                                    <a href="https://proje.yok.gov.tr/tr/page/143">İletişim</a>
+                                                                                            </li>
+                        
+                                                <li>
+                                                    </li>
+                                                                    </ul>
+                </nav>
+                <div class="mobil-circle" onclick="qwert()">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </div>
+                <div class="small-menu circle-menu">
+                    <div class="small-menu__header">Hızlı Erişim</div>
+                    <ul class="small-menu__list">
+                                                    <li style="display: flex;" class="small-menu__item">
+                                                                    <a target="_blank"
+                                        href="https://proje.yok.gov.tr/tr">Anasayfa</a>
+                                                                                            </li>
+                                                    <li style="display: flex;" class="small-menu__item">
+                                                                    <a target="_blank"
+                                        href=" https://#">Hakkımızda</a>
+                                                                                                    <style>
+    .sub-border{
+        color: var(--text-color);
+        font-size: 18px;
+        font-weight: 200;
+    }
+    .fast-access-submenu li{
+        position: relative;
+    }
+    .open-menu-button .ul-open-icon{
+        font-size: 12px;
+        margin-left: 6rem;
+    }
+</style>
+
+<div class="inner-list-head">
+    <i class="fa fa-solid fa-plus menu-plus" onclick=hizlierisim(this)></i>
+    <i class="fa fa-solid fa-minus menu-minus"></i>
+</div>
+<ul class="inner-list alk " style="margin-top: 3.5rem; margin-left: -8rem">
+
+            <li style="width: 110%" class="inner-list__item d-flex">
+                            <a class="inner-list__link " href=" https://proje.yok.gov.tr/tr/page/133">Daire Başkanı</a>
+                        
+        </li>
+            <li style="width: 110%" class="inner-list__item d-flex">
+                            <a class="inner-list__link " href=" https://proje.yok.gov.tr/tr/page/135">Hakkımızda</a>
+                        
+        </li>
+    </ul>                                                            </li>
+                                                    <li style="display: flex;" class="small-menu__item">
+                                                                    <a target="_blank"
+                                        href=" https://#">Faaliyetler</a>
+                                                                                                    <style>
+    .sub-border{
+        color: var(--text-color);
+        font-size: 18px;
+        font-weight: 200;
+    }
+    .fast-access-submenu li{
+        position: relative;
+    }
+    .open-menu-button .ul-open-icon{
+        font-size: 12px;
+        margin-left: 6rem;
+    }
+</style>
+
+<div class="inner-list-head">
+    <i class="fa fa-solid fa-plus menu-plus" onclick=hizlierisim(this)></i>
+    <i class="fa fa-solid fa-minus menu-minus"></i>
+</div>
+<ul class="inner-list alk " style="margin-top: 3.5rem; margin-left: -8rem">
+
+            <li style="width: 110%" class="inner-list__item d-flex">
+                            <a class="inner-list__link " href=" https://proje.yok.gov.tr/tr/page/313">Öğrenci Bursları</a>
+                        
+        </li>
+            <li style="width: 110%" class="inner-list__item d-flex">
+                            <a class="inner-list__link " href=" https://proje.yok.gov.tr/tr/page/314">Araştırmacı Destekleri</a>
+                        
+        </li>
+            <li style="width: 110%" class="inner-list__item d-flex">
+                            <a class="inner-list__link " href=" https://proje.yok.gov.tr/tr/page/315">Misyon Farklılaşması</a>
+                        
+        </li>
+            <li style="width: 110%" class="inner-list__item d-flex">
+                            <a class="inner-list__link " href=" https://proje.yok.gov.tr/tr/page/316">OSB-MYO</a>
+                        
+        </li>
+            <li style="width: 110%" class="inner-list__item d-flex">
+                            <a class="inner-list__link " href=" https://proje.yok.gov.tr/tr/page/581">Avrupa Uyum Projesi</a>
+                        
+        </li>
+            <li style="width: 110%" class="inner-list__item d-flex">
+                            <a class="inner-list__link " href=" https://proje.yok.gov.tr/tr/page/621">YÖK Üstün Başarı Ödülleri</a>
+                        
+        </li>
+            <li style="width: 110%" class="inner-list__item d-flex">
+                            <a class="inner-list__link " href=" https://proje.yok.gov.tr/tr/page/633">Engelsiz Üniversite Ödülleri</a>
+                        
+        </li>
+            <li style="width: 110%" class="inner-list__item d-flex">
+                            <a class="inner-list__link " href=" https://proje.yok.gov.tr/tr/page/634">Spor Dostu Kampüs Projesi</a>
+                        
+        </li>
+            <li style="width: 110%" class="inner-list__item d-flex">
+                            <a class="inner-list__link " href=" https://www.yok.gov.tr/documents/documents/68e652769d934.pdf">2030 Yol Haritası</a>
+                        
+        </li>
+            <li style="width: 110%" class="inner-list__item d-flex">
+                            <a class="inner-list__link " href=" https://proje.yok.gov.tr/tr/page/635">Yapay Zeka Kullanımına Dair Etik Rehber</a>
+                        
+        </li>
+            <li style="width: 110%" class="inner-list__item d-flex">
+                            <a class="inner-list__link " href=" https://proje.yok.gov.tr/tr/page/636">Ortak Uygulama ve Araştırma Merkezleri</a>
+                        
+        </li>
+            <li style="width: 110%" class="inner-list__item d-flex">
+                            <a class="inner-list__link " href=" https://proje.yok.gov.tr/tr/page/637">Yurt İçi Yabancı Dil Eğitim Programı</a>
+                        
+        </li>
+    </ul>                                                            </li>
+                                                    <li style="display: flex;" class="small-menu__item">
+                                                                    <a target="_blank"
+                                        href=" https://#">Bilgi Bankası</a>
+                                                                                                    <style>
+    .sub-border{
+        color: var(--text-color);
+        font-size: 18px;
+        font-weight: 200;
+    }
+    .fast-access-submenu li{
+        position: relative;
+    }
+    .open-menu-button .ul-open-icon{
+        font-size: 12px;
+        margin-left: 6rem;
+    }
+</style>
+
+<div class="inner-list-head">
+    <i class="fa fa-solid fa-plus menu-plus" onclick=hizlierisim(this)></i>
+    <i class="fa fa-solid fa-minus menu-minus"></i>
+</div>
+<ul class="inner-list alk " style="margin-top: 3.5rem; margin-left: -8rem">
+
+            <li style="width: 110%" class="inner-list__item d-flex">
+                            <a class="inner-list__link " href=" https://proje.yok.gov.tr/tr/page/577">Mevzuat</a>
+                        
+        </li>
+            <li style="width: 110%" class="inner-list__item d-flex">
+                            <a class="inner-list__link " href=" https://proje.yok.gov.tr/tr/page/580">Formlar</a>
+                        
+        </li>
+    </ul>                                                            </li>
+                                                    <li style="display: flex;" class="small-menu__item">
+                                                                    <a target="_blank"
+                                        href="https://proje.yok.gov.tr/tr/page/141">Sıkça Sorulan Sorular</a>
+                                                                                            </li>
+                                                    <li style="display: flex;" class="small-menu__item">
+                                                                    <a target="_blank"
+                                        href="https://proje.yok.gov.tr/tr/page/143">İletişim</a>
+                                                                                            </li>
+                                            </ul>
+                </div>
+                <div class="header-sub yok-container">
+                    <nav class="menu">
+                                                    <ol>
+                                                            </ol>
+                                                    <ol>
+                                                            </ol>
+                                                    <ol>
+                                                            </ol>
+                                                    <ol>
+                                                                    <li class="menu-item">
+                                                                                    <a style="line-height: 25px;"
+                                                href="https://proje.yok.gov.tr/tr">Ana Sayfa</a>
+                                                                                                                    </li>
+                                                            </ol>
+                                                    <ol>
+                                                                    <li class="menu-item">
+                                                                                    <a>Hakkımızda</a>
+                                                                                                                            <ol class="sub-menu">
+            <li class="sub-menu-item">
+                            <a href="https://proje.yok.gov.tr/tr/page/133">Daire Başkanı</a>
+                            
+                    </li>
+
+            <li class="sub-menu-item">
+                            <a href="https://proje.yok.gov.tr/tr/page/135">Hakkımızda</a>
+                            
+                    </li>
+
+    
+</ol>
+                                                                            </li>
+                                                            </ol>
+                                                    <ol>
+                                                            </ol>
+                                                    <ol>
+                                                            </ol>
+                                                    <ol>
+                                                                    <li class="menu-item">
+                                                                                    <a>Bilgi Bankası</a>
+                                                                                                                            <ol class="sub-menu">
+            <li class="sub-menu-item">
+                            <a href="https://proje.yok.gov.tr/tr/page/577">Mevzuat</a>
+                            
+                    </li>
+
+            <li class="sub-menu-item">
+                            <a href="https://proje.yok.gov.tr/tr/page/580">Formlar</a>
+                            
+                    </li>
+
+    
+</ol>
+                                                                            </li>
+                                                            </ol>
+                                                    <ol>
+                                                                    <li class="menu-item">
+                                                                                    <a>Faaliyetler</a>
+                                                                                                                            <ol class="sub-menu">
+            <li class="sub-menu-item">
+                            <a href="https://proje.yok.gov.tr/tr/page/313">Öğrenci Bursları</a>
+                            
+                    </li>
+
+            <li class="sub-menu-item">
+                            <a href="https://proje.yok.gov.tr/tr/page/314">Araştırmacı Destekleri</a>
+                            
+                    </li>
+
+            <li class="sub-menu-item">
+                            <a href="https://proje.yok.gov.tr/tr/page/315">Misyon Farklılaşması</a>
+                            
+                    </li>
+
+            <li class="sub-menu-item">
+                            <a href="https://proje.yok.gov.tr/tr/page/316">OSB-MYO</a>
+                            
+                    </li>
+
+            <li class="sub-menu-item">
+                            <a href="https://proje.yok.gov.tr/tr/page/581">Avrupa Uyum Projesi</a>
+                            
+                    </li>
+
+            <li class="sub-menu-item">
+                            <a href="https://proje.yok.gov.tr/tr/page/621">YÖK Üstün Başarı Ödülleri</a>
+                            
+                    </li>
+
+            <li class="sub-menu-item">
+                            <a href="https://proje.yok.gov.tr/tr/page/633">Engelsiz Üniversite Ödülleri</a>
+                            
+                    </li>
+
+            <li class="sub-menu-item">
+                            <a href="https://proje.yok.gov.tr/tr/page/634">Spor Dostu Kampüs Projesi</a>
+                            
+                    </li>
+
+            <li class="sub-menu-item">
+                            <a target="_blank"
+                   href=" https://www.yok.gov.tr/documents/documents/68e652769d934.pdf">2030 Yol Haritası</a>
+                            
+                    </li>
+
+            <li class="sub-menu-item">
+                            <a href="https://proje.yok.gov.tr/tr/page/635">Yapay Zeka Kullanımına Dair Etik Rehber</a>
+                            
+                    </li>
+
+            <li class="sub-menu-item">
+                            <a href="https://proje.yok.gov.tr/tr/page/636">Ortak Uygulama ve Araştırma Merkezleri</a>
+                            
+                    </li>
+
+            <li class="sub-menu-item">
+                            <a href="https://proje.yok.gov.tr/tr/page/637">Yurt İçi Yabancı Dil Eğitim Programı</a>
+                            
+                    </li>
+
+            <li class="sub-menu-item">
+                            <a href="https://proje.yok.gov.tr/tr/page/684">İşletmede Mesleki Eğitim (İME)</a>
+                            
+                    </li>
+
+    
+</ol>
+                                                                            </li>
+                                                            </ol>
+                                                    <ol>
+                                                            </ol>
+                                                    <ol>
+                                                            </ol>
+                                                    <ol>
+                                                            </ol>
+                                                    <ol>
+                                                                    <li class="menu-item">
+                                                                                    <a style="line-height: 25px;"
+                                                href="https://proje.yok.gov.tr/tr/page/141">Sıkça Sorulan Sorular</a>
+                                                                                                                    </li>
+                                                            </ol>
+                                                    <ol>
+                                                            </ol>
+                                                    <ol>
+                                                            </ol>
+                                                    <ol>
+                                                            </ol>
+                                                    <ol>
+                                                            </ol>
+                                                    <ol>
+                                                                    <li class="menu-item">
+                                                                                    <a style="line-height: 25px;"
+                                                href="https://proje.yok.gov.tr/tr/page/143">İletişim</a>
+                                                                                                                    </li>
+                                                            </ol>
+                                                    <ol>
+                                                            </ol>
+                                                    <ol>
+                                                            </ol>
+                                                    <ol>
+                                                            </ol>
+                                                    <ol>
+                                                            </ol>
+                                                    <ol>
+                                                            </ol>
+                                                <ol>
+                            
+                            
+                                                                                                                
+                        </ol>
+                        <span class="bar"></span>
+                    </nav>
+
+                </div>
+        </header>
+        <header class="header-responsive">
+            <div class="header-title-responsive">
+                <h3>
+                    <div class="title">
+                        <h5>Yükseköğretim Proje Geliştirme ve Destekleme Dairesi Başkanlığı</h5>
+                    </div>
+                </h3>
+            </div>
+        </header>
+
+        
+    <div class="news-entrance">
+        <img src="https://proje.yok.gov.tr/designV2/assets/front/img/yok-subheader2.jpg" alt="">
+        <div class="news-entrance-overlay"></div> <!-- Add overlay -->
+        <div class="news-entrance-info yok-container">
+            <div class="news-entrance-title yok-container">
+                <p>Öğrenci Bursları</p><!---Dinamik--->
+            </div>
+        </div>
+    </div>
+
+    <div class="index-page yok-container mt-5 my-page-mt">
+        <div class="col-8 index-content my-page-left  mb-5"
+             style="">
+            <!-- <div class="index-content-right-shape"></div> -->
+            <div class="index-content-info">
+                                <h4> Öğrenci Bursları </h4>
+                <p style="text-align:justify"><span style="font-size:16px">&Ouml;ğrenci Bursları,<strong>&nbsp;</strong>Y&Ouml;K Destek Bursu ve Uluslararası &Ouml;ğrenci Burs Programları olmak &uuml;zere ikiye ayrılmaktadır.</span></p>
+
+<ul>
+	<li style="text-align:justify"><span style="font-size:16px">1-&nbsp;Y&Ouml;K Destek Bursu; Y&Ouml;K&rsquo;&uuml;n belirlediği devlet y&uuml;ksek&ouml;ğretim kurumlarının&nbsp;lisans programlarına YKS sonucu ilk &uuml;&ccedil; sırada yerleşen &ouml;ğrencilere verilmektedir.</span></li>
+	<li style="text-align:justify"><span style="font-size:16px">2- Uluslararası &Ouml;ğrenci Burs Programları; Y&Ouml;K Bursu ile Diğer Burs Programları altında d&ouml;rt farklı burs verilmektedir;</span>
+	<ol style="margin-left:40px">
+		<li><span style="font-size:16px">a. Y&Ouml;K Bursu; mutabakat zaptı imzalanan &uuml;lkelerden gelen &ouml;ğrencilere aylık burs sağlanmakta ve t&uuml;m masrafları Y&Ouml;K tarafından karşılanmaktadır.</span></li>
+		<li><span style="font-size:16px">b. Diğer Burs Programları; d&ouml;rt ayrı burs programı sunulmakta ve t&uuml;m masrafları ilgili &uuml;lke ve kurumlar tarafından karşılanmaktadır. Bunlar;</span>
+		<ul>
+			<li><span style="font-size:16px">&bull;&nbsp;H&uuml;k&uuml;met Bursları; mutabakat zaptı kapsamında t&uuml;m masrafları ilgili &uuml;lke tarafından karşılanmaktadır.</span></li>
+			<li><span style="font-size:16px">&bull;&nbsp;T&uuml;rkiye Bursları; t&uuml;m masrafları Yurt Dışı T&uuml;rkler ve Akraba Topluluklar Başkanlığı tarafından karşılanmaktadır.</span></li>
+			<li><span style="font-size:16px">&bull;&nbsp;Uluslararası İlahiyat Programı; t&uuml;m masrafları Diyanet İşleri Başkanlığı tarafından karşılanmaktadır.</span></li>
+			<li><span style="font-size:16px">&bull;&nbsp;İslam Kalkınma Bankası Burs Programı; t&uuml;m masrafları İKB tarafından karşılanmaktadır.</span></li>
+		</ul>
+		</li>
+	</ol>
+	</li>
+</ul>
+
+<p style="text-align:justify">&nbsp;</p>
+
+                                
+
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                                            </div>
+
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; display: none"
+                     class="swiper full-screen-slider">
+                    <div class="close-modal">
+                        <i class="fa-light fa-xmark"></i>
+                    </div>
+                    <div class="swiper-wrapper">
+                                            </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                
+                                                <div class="collapse-item" data-item-id="286" data-level="0">
+                    <div class="collapse-header" onclick="toggleExpand('286')">
+                <span class="collapse-arrow" id="arrow-286">
+                    ▶
+                </span>
+                <span class="collapse-title">YÖK Destek Bursu</span>
+            </div>
+
+            
+            <div class="collapse-content" id="content-286">
+                <div class="collapse-item" data-item-id="287" data-level="1">
+                                    <div class="collapse-leaf-link">
+                    <p style="text-align:justify"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif"><span style="color:black">2016-2017 eğitim-&ouml;ğretim yılında başlatılan Y&Ouml;K Destek Bursu Programı kapsamında bug&uuml;ne kadar toplam 6.265 &ouml;ğrenciye burs desteği sağlanmış olup, 2026 itibarıyla 503 &ouml;ğrenciye aktif olarak burs verilmeye devam edilmektedir.</span></span></span></span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif"><span style="color:black">Y&Ouml;K Destek Bursu tutarlar, Y&uuml;ksek&ouml;ğretim Y&uuml;r&uuml;tme Kurulu tarafından her yıl nisan ayında yeniden değerlendirilerek belirlenmektedir. Bu kapsamda, 2016 yılında aylık 600,- TL olarak uygulanan burs tutar, 2026 yılı itibarıyla aylık 6.000,- TL&#39;ye y&uuml;kseltilmiştir.</span></span></span></span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif"><span style="color:black">Burs almaya hak kazanan &ouml;ğrenciler, &ouml;ğrenim s&uuml;releri boyunca Y&Ouml;K Destek Bursunun yanı sıra almaya hak kazandıkları diğer burs ve kredi imk&acirc;nlarından da yararlanmaya devam edebilmektedir. Bu durum, &ouml;ğrencilerin mevcut burs veya kredi haklarını etkilememektedir.</span></span></span></span></span></span></p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:16px"><strong>2026-2027&nbsp;Eğitim &Ouml;ğretim Yılında Burs Verilecek&nbsp;&Uuml;niversiteler:</strong> </span></p>
+
+<p style="text-align:justify"><span style="font-size:16px">1)Boğazi&ccedil;i &Uuml;niversitesi</span></p>
+
+<p style="text-align:justify"><span style="font-size:16px">2)İstanbul Teknik &Uuml;niversitesi</span></p>
+
+<p style="text-align:justify"><span style="font-size:16px">3)İzmir Y&uuml;ksek Teknoloji Enstit&uuml;s&uuml;</span></p>
+
+<p style="text-align:justify"><span style="font-size:16px">4)Orta Doğu Teknik &Uuml;niversitesi</span></p>
+
+<p style="text-align:justify"><span style="font-size:16px">5)Yıldız Teknik &Uuml;niversitesi</span></p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:16px"><strong>Desteklenecek Programlar:</strong></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px">1)Biyoloji</span></p>
+
+<p style="text-align:justify"><span style="font-size:16px">2)Fizik</span></p>
+
+<p style="text-align:justify"><span style="font-size:16px">3)Kimya</span></p>
+
+<p style="text-align:justify"><span style="font-size:16px">4)Matematik</span></p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:16px"><strong>Burs Şartları:</strong></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px">a.T&uuml;rkiye Cumhuriyeti vatandaşı olmak.</span></p>
+
+<p style="text-align:justify"><span style="font-size:16px">b.&Ouml;SYM tarafından yapılan &uuml;niversiteye giriş sınavı sonucunda, yukarıda yer alan devlet y&uuml;ksek&ouml;ğretim kurumlarının lisans programlarına yerleştirmede kullanılan başarı sırasına g&ouml;re ilk &uuml;&ccedil; sırada yerleşmiş olmak.</span></p>
+
+<p style="text-align:justify"><span style="font-size:16px">c.&Ouml;ğrencinin yerleştiği lisans programının, tercihlerinin arasında ilk 15 tercihinin i&ccedil;inde yer alması.</span></p>
+
+<p style="text-align:justify"><span style="font-size:16px">d.&Ouml;nceden&nbsp;yurt i&ccedil;inde veya yurt dışında herhangi bir lisans derecesine sahip olmamak.</span></p>
+
+<p style="text-align:justify"><span style="font-size:16px">e.Sınavın yapıldığı yıl, Y&Ouml;K&nbsp;tarafından belirlenen alanlardan birine &Ouml;SYM tarafından yapılan ilk yerleştirmede yerleşmiş ve kesin kayıt yaptırmış olmak.</span></p>
+
+<p style="text-align:justify"><span style="font-size:16px">f.Daha &ouml;nce Y&Ouml;K Destek Bursu kapsamında desteklenmemiş olmak.</span></p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:16px">Yukarıda yer alan şartları sağlayan &ouml;ğrencilere zorunlu hazırlık sınıfı ve lisans &ouml;ğrenim s&uuml;resi (4 yıl, &ccedil;ift anadal programında kayıtlı &ouml;ğrencilere ise en fazla 5 yıl) boyunca ağırlıklı genel not ortalamasının yıllık olarak 4 &uuml;zerinden 2,5 veya 100 &uuml;zerinden 65&rsquo;in altına d&uuml;şmemesi şartıyla 2026&nbsp;yılı i&ccedil;in aylık 6.000,- TL &ldquo;Y&Ouml;K Destek Bursu&rdquo; verilecektir. </span></p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:16px">2027&nbsp;Nisan ayından itibaren (12 ay boyunca) verilecek Y&Ouml;K Destek Bursunun yıllık artış oranı Y&uuml;ksek&ouml;ğretim Y&uuml;r&uuml;tme Kurulu tarafından belirlenecektir. </span></p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:16px">Burs almaya hak kazanan &ouml;ğrencilerin &ouml;ğrenim g&ouml;rd&uuml;kleri s&uuml;re i&ccedil;inde aldıkları diğer burslar ve krediler devam eder. </span></p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:16px">Y&Ouml;K Destek Bursuna&nbsp;ilişkin ayrıntılı bilgilerin yer aldığı &ldquo;Y&uuml;ksek&ouml;ğretim Kurumlarındaki Lisans Programlarına Kayıtlı &Ouml;ğrencilere Program Esaslı Verilecek Burslara İlişkin Usul ve Esaslar&rdquo; Y&uuml;ksek&ouml;ğretim Kurulunun internet sayfasında yer almaktadır.</span></p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:16px"><a href="https://proje.yok.gov.tr/tr/document/2769" target="_blank">Y&uuml;ksek&ouml;ğretim kurumlarındaki lisans programlarına kayıtlı &ouml;ğrencilere verilecek burslara ilişkin usul ve esaslara erişmek i&ccedil;in tıklayınız.</a></span></p>
+
+<p>&nbsp;</p>
+                </div>
+                        </div>
+
+<script>
+
+window.expandedMap = window.expandedMap || {};
+
+function updateParentHeights(element) {
+    let parent = element.parentElement;
+    while (parent) {
+        if (parent.classList && parent.classList.contains('collapse-content')) {
+            const parentId = parent.id.replace('content-', '');
+            if (window.expandedMap[parentId]) {
+                parent.style.maxHeight = 50+parent.scrollHeight + "px";
+            }
+        }
+        parent = parent.parentElement;
+    }
+}
+
+function toggleExpand(id) {
+    const isExpanded = window.expandedMap[id] || false;
+    const newState = !isExpanded;
+
+    window.expandedMap[id] = newState;
+
+    const content = document.getElementById('content-' + id);
+    const arrow = document.getElementById('arrow-' + id);
+
+    if (content && arrow) {
+        if (newState) {
+            // Set maxHeight to scrollHeight for smooth expansion
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.style.opacity = "1";
+
+            arrow.classList.add('open-collapse');
+            arrow.setAttribute('aria-label', 'Kapat');
+        } else {
+            // Collapse by setting maxHeight to 0
+            content.style.maxHeight = "0";
+            content.style.opacity = "0";
+
+            arrow.classList.remove('open-collapse');
+            arrow.setAttribute('aria-label', 'Aç');
+        }
+
+        // Ensure parent heights are updated after animation
+        setTimeout(() => {
+            updateParentHeights(content);
+        }, 400); // Match the transition duration
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+   
+});
+</script>
+
+<style>
+.collapse-item {
+    margin-top: 10px;
+    background: #ffffff;
+}
+
+.collapse-item[data-level="0"] {
+    margin-bottom: 10px;
+}
+
+.collapse-item[data-level="1"] {
+    margin-left: 20px;
+}
+
+.collapse-item[data-level="2"] {
+    margin-left: 40px;
+}
+
+/* Header styling */
+.collapse-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: #f8f9fb;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.collapse-item[data-level="0"] .collapse-header {
+    background: #f8f9fb;
+    font-weight: 600;
+    border-left: 3px solid #c8102e;
+}
+
+.collapse-item[data-level="1"] .collapse-header {
+    background: #fafbfc;
+    border-left: 3px solid #ff6b6b;
+}
+
+.collapse-item[data-level="2"] .collapse-header {
+    background: #fcfdfe;
+    border-left: 3px solid #ffa8a8;
+}
+
+.collapse-header:hover {
+    background-color: #f0f1f5;
+}
+
+.collapse-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 10px;
+    color: #666;
+    margin-right: 8px;
+    width: 12px;
+}
+
+.collapse-arrow.open-collapse {
+    transform: rotate(90deg);
+}
+
+.collapse-title {
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+.collapse-leaf-link {
+    display: block;
+    padding: 12px 16px;
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    background: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.collapse-leaf-link:hover {
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+}
+
+.collapse-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.document-download {
+    padding: 8px 16px;
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.document-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.document-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.document-link i {
+    margin-right: 6px;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .collapse-item[data-level="1"],
+    .collapse-item[data-level="2"] {
+        margin-left: 0;
+    }
+    
+    .collapse-item[data-level="1"] .collapse-header {
+        border-left-width: 2px;
+    }
+    
+    .collapse-item[data-level="2"] .collapse-header {
+        border-left-width: 1px;
+    }
+    
+    .collapse-header,
+    .collapse-leaf-link {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
+
+.collapse-item:first-child {
+    margin-top: 10px;
+}
+
+.collapse-item:last-child {
+    margin-bottom: 0;
+}
+</style>            </div>
+            </div>
+    
+    <div class="collapse-item" data-item-id="288" data-level="0">
+                    <div class="collapse-header" onclick="toggleExpand('288')">
+                <span class="collapse-arrow" id="arrow-288">
+                    ▶
+                </span>
+                <span class="collapse-title">Uluslararası Öğrenci Burs Programları</span>
+            </div>
+
+            
+            <div class="collapse-content" id="content-288">
+                <div class="collapse-item" data-item-id="289" data-level="1">
+                                    <div class="collapse-leaf-link">
+                    <p style="text-align:justify"><span style="font-size:16px"><strong>Y&Ouml;K Bursu:</strong></span></p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:16px">Y&uuml;ksek&ouml;ğretim Kurulu (Y&Ouml;K) Başkanlığı ile &ccedil;eşitli &uuml;lkelerin ilgili kurumlarıyla iş birliği protokol&uuml; ve/veya mutabakat zaptı imzalanarak, yabancı &uuml;lkelerden gelen ve devlet y&uuml;ksek&ouml;ğretim kurumlarına yerleştirilen ve T&uuml;rkiye Cumhuriyeti vatandaşı olmayan &ouml;ğrencilere; eğitim &ouml;ğretim &uuml;creti, T&uuml;rk&ccedil;e dil eğitimi, genel sağlık sigortası primi, yurt &uuml;cretleri ve diğer giderleri i&ccedil;in aylık burs sağlanmaktadır.</span></p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:16px">Program, 2016 yılında Kosova ve Pakistan ile başlatılmış olup, 2017 yılında Arnavutluk, Bangladeş, Kuzey Makedonya, Ruanda ve Ukrayna; 2018 yılında Filistin ve Gambiya; 2019 yılında ise Etiyopya, Filipin, Sudan ve Uganda&#39;dan gelecek &ouml;ğrenciler programa dahil olmuştur.</span></p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:16px">2025-2026&nbsp;eğitim &ouml;ğretim yılı itibarıyla 13&nbsp;farklı &uuml;lkeden 222 &ouml;ğrenci Y&Ouml;K&nbsp;Bursu Programından yararlanmaktadır.</span></p>
+
+<p>&nbsp;</p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:16px"><strong>Diğer Burs Programları:</strong></span></p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:16px">1. H&uuml;k&uuml;met Bursları: Y&Ouml;K ile mutabakat zaptı imzalanan; Afganistan, Cibuti, Cezayir, Irak, Libya, Malezya, Suudi Arabistan ve Yemen H&uuml;k&uuml;metince belirlenen ve burslandırılan &ouml;ğrenciler, Y&Ouml;K tarafından devlet y&uuml;ksek&ouml;ğretim kurumlarına yerleştirilmektedir. Burs programından 2011 yılından bu yana 2.500&#39;den fazla &ouml;ğrenci yararlanmıştır. Mutabakat zaptı kapsamında t&uuml;m masraflar ilgili &uuml;lke tarafından karşılanmaktadır. </span></p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:16px">2. T&uuml;rkiye Bursları: 2012 yılından g&uuml;n&uuml;m&uuml;ze kadar 63.000&#39;den fazla yabancı &ouml;ğrenci bu programdan yararlanmıştır. Başvurular, YTB&#39;ye yapılmakta olup, detaylı bilgiye <a href="http://www.turkiyeburslari.gov.tr" target="_blank">www.turkiyeburslari.gov.tr</a> adresinden ulaşılabilmektedir. T&uuml;m masraflar, Yurt Dışı T&uuml;rkler ve Akraba Topluluklar Başkanlığı tarafından karşılanmaktadır.</span></p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:16px">3. Uluslararası İlahiyat Programı: 2006 yılından itibaren 4.684&nbsp;&ouml;ğrenci bu programdan yararlanmıştır. Program kapsamında; Ankara &Uuml;niversitesi, Ankara Sosyal Bilimler &Uuml;niversitesi, Erciyes &Uuml;niversitesi, Marmara &Uuml;niversitesi, İstanbul &Uuml;niversitesi, Necmettin Erbakan &Uuml;niversitesi, Bursa Uludağ &Uuml;niversitesi ve İstanbul 29 Mayıs &Uuml;niversitesi yer almaktadır. T&uuml;m masraflar, Diyanet İşleri Başkanlığı tarafından karşılanmaktadır.</span></p>
+
+<p style="text-align:justify">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:16px">4. İslam Kalkınma Bankası Burs Programı: 1989 yılında başlatılan program kapsamında, 2011 yılından g&uuml;n&uuml;m&uuml;ze kadar toplam 431 &ouml;ğrenci yararlanmıştır. Başvuru ve detaylı bilgiye <a href="http://www.isdb.org/scholarships" target="_blank">www.isdb.org/scholarships</a> adresinden ulaşılabilmektedir. T&uuml;m masraflar, İKB tarafından karşılanmaktadır.</span></p>
+
+<p>&nbsp;</p>
+                </div>
+                        </div>
+
+<script>
+
+window.expandedMap = window.expandedMap || {};
+
+function updateParentHeights(element) {
+    let parent = element.parentElement;
+    while (parent) {
+        if (parent.classList && parent.classList.contains('collapse-content')) {
+            const parentId = parent.id.replace('content-', '');
+            if (window.expandedMap[parentId]) {
+                parent.style.maxHeight = 50+parent.scrollHeight + "px";
+            }
+        }
+        parent = parent.parentElement;
+    }
+}
+
+function toggleExpand(id) {
+    const isExpanded = window.expandedMap[id] || false;
+    const newState = !isExpanded;
+
+    window.expandedMap[id] = newState;
+
+    const content = document.getElementById('content-' + id);
+    const arrow = document.getElementById('arrow-' + id);
+
+    if (content && arrow) {
+        if (newState) {
+            // Set maxHeight to scrollHeight for smooth expansion
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.style.opacity = "1";
+
+            arrow.classList.add('open-collapse');
+            arrow.setAttribute('aria-label', 'Kapat');
+        } else {
+            // Collapse by setting maxHeight to 0
+            content.style.maxHeight = "0";
+            content.style.opacity = "0";
+
+            arrow.classList.remove('open-collapse');
+            arrow.setAttribute('aria-label', 'Aç');
+        }
+
+        // Ensure parent heights are updated after animation
+        setTimeout(() => {
+            updateParentHeights(content);
+        }, 400); // Match the transition duration
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+   
+});
+</script>
+
+<style>
+.collapse-item {
+    margin-top: 10px;
+    background: #ffffff;
+}
+
+.collapse-item[data-level="0"] {
+    margin-bottom: 10px;
+}
+
+.collapse-item[data-level="1"] {
+    margin-left: 20px;
+}
+
+.collapse-item[data-level="2"] {
+    margin-left: 40px;
+}
+
+/* Header styling */
+.collapse-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: #f8f9fb;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.collapse-item[data-level="0"] .collapse-header {
+    background: #f8f9fb;
+    font-weight: 600;
+    border-left: 3px solid #c8102e;
+}
+
+.collapse-item[data-level="1"] .collapse-header {
+    background: #fafbfc;
+    border-left: 3px solid #ff6b6b;
+}
+
+.collapse-item[data-level="2"] .collapse-header {
+    background: #fcfdfe;
+    border-left: 3px solid #ffa8a8;
+}
+
+.collapse-header:hover {
+    background-color: #f0f1f5;
+}
+
+.collapse-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 10px;
+    color: #666;
+    margin-right: 8px;
+    width: 12px;
+}
+
+.collapse-arrow.open-collapse {
+    transform: rotate(90deg);
+}
+
+.collapse-title {
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+.collapse-leaf-link {
+    display: block;
+    padding: 12px 16px;
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    background: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.collapse-leaf-link:hover {
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+}
+
+.collapse-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.document-download {
+    padding: 8px 16px;
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.document-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.document-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.document-link i {
+    margin-right: 6px;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .collapse-item[data-level="1"],
+    .collapse-item[data-level="2"] {
+        margin-left: 0;
+    }
+    
+    .collapse-item[data-level="1"] .collapse-header {
+        border-left-width: 2px;
+    }
+    
+    .collapse-item[data-level="2"] .collapse-header {
+        border-left-width: 1px;
+    }
+    
+    .collapse-header,
+    .collapse-leaf-link {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
+
+.collapse-item:first-child {
+    margin-top: 10px;
+}
+
+.collapse-item:last-child {
+    margin-bottom: 0;
+}
+</style>            </div>
+            </div>
+
+<script>
+
+window.expandedMap = window.expandedMap || {};
+
+function updateParentHeights(element) {
+    let parent = element.parentElement;
+    while (parent) {
+        if (parent.classList && parent.classList.contains('collapse-content')) {
+            const parentId = parent.id.replace('content-', '');
+            if (window.expandedMap[parentId]) {
+                parent.style.maxHeight = 50+parent.scrollHeight + "px";
+            }
+        }
+        parent = parent.parentElement;
+    }
+}
+
+function toggleExpand(id) {
+    const isExpanded = window.expandedMap[id] || false;
+    const newState = !isExpanded;
+
+    window.expandedMap[id] = newState;
+
+    const content = document.getElementById('content-' + id);
+    const arrow = document.getElementById('arrow-' + id);
+
+    if (content && arrow) {
+        if (newState) {
+            // Set maxHeight to scrollHeight for smooth expansion
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.style.opacity = "1";
+
+            arrow.classList.add('open-collapse');
+            arrow.setAttribute('aria-label', 'Kapat');
+        } else {
+            // Collapse by setting maxHeight to 0
+            content.style.maxHeight = "0";
+            content.style.opacity = "0";
+
+            arrow.classList.remove('open-collapse');
+            arrow.setAttribute('aria-label', 'Aç');
+        }
+
+        // Ensure parent heights are updated after animation
+        setTimeout(() => {
+            updateParentHeights(content);
+        }, 400); // Match the transition duration
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+   
+});
+</script>
+
+<style>
+.collapse-item {
+    margin-top: 10px;
+    background: #ffffff;
+}
+
+.collapse-item[data-level="0"] {
+    margin-bottom: 10px;
+}
+
+.collapse-item[data-level="1"] {
+    margin-left: 20px;
+}
+
+.collapse-item[data-level="2"] {
+    margin-left: 40px;
+}
+
+/* Header styling */
+.collapse-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: #f8f9fb;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.collapse-item[data-level="0"] .collapse-header {
+    background: #f8f9fb;
+    font-weight: 600;
+    border-left: 3px solid #c8102e;
+}
+
+.collapse-item[data-level="1"] .collapse-header {
+    background: #fafbfc;
+    border-left: 3px solid #ff6b6b;
+}
+
+.collapse-item[data-level="2"] .collapse-header {
+    background: #fcfdfe;
+    border-left: 3px solid #ffa8a8;
+}
+
+.collapse-header:hover {
+    background-color: #f0f1f5;
+}
+
+.collapse-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 10px;
+    color: #666;
+    margin-right: 8px;
+    width: 12px;
+}
+
+.collapse-arrow.open-collapse {
+    transform: rotate(90deg);
+}
+
+.collapse-title {
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+.collapse-leaf-link {
+    display: block;
+    padding: 12px 16px;
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    background: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.collapse-leaf-link:hover {
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+}
+
+.collapse-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.document-download {
+    padding: 8px 16px;
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.document-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.document-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.document-link i {
+    margin-right: 6px;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .collapse-item[data-level="1"],
+    .collapse-item[data-level="2"] {
+        margin-left: 0;
+    }
+    
+    .collapse-item[data-level="1"] .collapse-header {
+        border-left-width: 2px;
+    }
+    
+    .collapse-item[data-level="2"] .collapse-header {
+        border-left-width: 1px;
+    }
+    
+    .collapse-header,
+    .collapse-leaf-link {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
+
+.collapse-item:first-child {
+    margin-top: 10px;
+}
+
+.collapse-item:last-child {
+    margin-bottom: 0;
+}
+</style>                            
+
+                <div style="margin-top: 3rem" id="files">
+                                    </div>
+
+
+            </div>
+        </div>
+                    <div class="col-4 fast-access my-page-right">
+                <div class="fast-access-title">
+                    <p>Hızlı Erişim</p>
+                </div>
+                <ul class="fast-access-menu">
+                                            <li>
+                                                            <a target="_blank" class="sub-border "
+                                   href="https://proje.yok.gov.tr/tr">Anasayfa</a>
+                                                                                </li>
+                                            <li>
+                                                            <a target="_blank" class="sub-border "
+                                   href=" https://#">Hakkımızda</a>
+                                                                                        <style>
+    .fast-access-submenu li {
+        position: relative;
+    }
+
+    .ikon {
+        margin-left: 15rem !important;
+    }
+</style>
+<button style="padding: 7px 30px;    position: absolute;
+width: 100%;
+right: 0;
+    top: 0rem;
+    border: 0;
+    background: transparent;" class="open-menu-button first-open-button open-first sub-border"><i
+        class="ul-open-icon fas fa-plus ikon"></i></button>
+<ul class="fast-access-submenu" style="display: none">
+
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/133">Daire Başkanı</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/135">Hakkımızda</a>
+                    
+        </li>
+    </ul>
+
+<script>
+document.addEventListener('click', function(event) {
+    const submenu = document.querySelector('.fast-access-submenu');
+    const openButton = document.querySelector('.open-menu-button');
+    
+    // Check if click is outside submenu and button
+    if (!submenu.contains(event.target) && !openButton.contains(event.target)) {
+        submenu.style.display = 'none';
+        const icon = openButton.querySelector('.ul-open-icon');
+        if (icon.classList.contains('fa-minus')) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+        }
+    }
+});
+</script>                                                    </li>
+                                            <li>
+                                                            <a target="_blank" class="sub-border "
+                                   href=" https://#">Faaliyetler</a>
+                                                                                        <style>
+    .fast-access-submenu li {
+        position: relative;
+    }
+
+    .ikon {
+        margin-left: 15rem !important;
+    }
+</style>
+<button style="padding: 7px 30px;    position: absolute;
+width: 100%;
+right: 0;
+    top: 0rem;
+    border: 0;
+    background: transparent;" class="open-menu-button first-open-button open-first sub-border"><i
+        class="ul-open-icon fas fa-plus ikon"></i></button>
+<ul class="fast-access-submenu" style="display: none">
+
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/313">Öğrenci Bursları</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/314">Araştırmacı Destekleri</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/315">Misyon Farklılaşması</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/316">OSB-MYO</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/581">Avrupa Uyum Projesi</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/621">YÖK Üstün Başarı Ödülleri</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/633">Engelsiz Üniversite Ödülleri</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/634">Spor Dostu Kampüs Projesi</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://www.yok.gov.tr/documents/documents/68e652769d934.pdf">2030 Yol Haritası</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/635">Yapay Zeka Kullanımına Dair Etik Rehber</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/636">Ortak Uygulama ve Araştırma Merkezleri</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/637">Yurt İçi Yabancı Dil Eğitim Programı</a>
+                    
+        </li>
+    </ul>
+
+<script>
+document.addEventListener('click', function(event) {
+    const submenu = document.querySelector('.fast-access-submenu');
+    const openButton = document.querySelector('.open-menu-button');
+    
+    // Check if click is outside submenu and button
+    if (!submenu.contains(event.target) && !openButton.contains(event.target)) {
+        submenu.style.display = 'none';
+        const icon = openButton.querySelector('.ul-open-icon');
+        if (icon.classList.contains('fa-minus')) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+        }
+    }
+});
+</script>                                                    </li>
+                                            <li>
+                                                            <a target="_blank" class="sub-border "
+                                   href=" https://#">Bilgi Bankası</a>
+                                                                                        <style>
+    .fast-access-submenu li {
+        position: relative;
+    }
+
+    .ikon {
+        margin-left: 15rem !important;
+    }
+</style>
+<button style="padding: 7px 30px;    position: absolute;
+width: 100%;
+right: 0;
+    top: 0rem;
+    border: 0;
+    background: transparent;" class="open-menu-button first-open-button open-first sub-border"><i
+        class="ul-open-icon fas fa-plus ikon"></i></button>
+<ul class="fast-access-submenu" style="display: none">
+
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/577">Mevzuat</a>
+                    
+        </li>
+    
+                    <li><a class="sub-border "
+                    href=" https://proje.yok.gov.tr/tr/page/580">Formlar</a>
+                    
+        </li>
+    </ul>
+
+<script>
+document.addEventListener('click', function(event) {
+    const submenu = document.querySelector('.fast-access-submenu');
+    const openButton = document.querySelector('.open-menu-button');
+    
+    // Check if click is outside submenu and button
+    if (!submenu.contains(event.target) && !openButton.contains(event.target)) {
+        submenu.style.display = 'none';
+        const icon = openButton.querySelector('.ul-open-icon');
+        if (icon.classList.contains('fa-minus')) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+        }
+    }
+});
+</script>                                                    </li>
+                                            <li>
+                                                            <a target="_blank" class="sub-border "
+                                   href="https://proje.yok.gov.tr/tr/page/141">Sıkça Sorulan Sorular</a>
+                                                                                </li>
+                                            <li>
+                                                            <a target="_blank" class="sub-border "
+                                   href="https://proje.yok.gov.tr/tr/page/143">İletişim</a>
+                                                                                </li>
+                                    </ul>
+            </div>
+            </div>
+
+        <footer class="yok-container">
+            <div class="map">
+                <div class="map-inner">
+                                            <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3061.516147571918!2d32.75794617598436!3d39.87674467153145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34700088bb613%3A0xa2cf462ce0a0def6!2zWcO8a3Nla8O2xJ9yZXRpbSBLdXJ1bHU!5e0!3m2!1str!2sus!4v1752843550713!5m2!1str!2sus"
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                    </div>
+            </div>
+            <div class="footer-top ">
+                <div class="yok-container">
+                    <div>
+                        <div class="footer-top-icon ">
+                            <div>
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            </div>
+                            <p>                                 projegelistirme@yok.gov.tr
+                                                        </p>
+                        </div>
+                                                                    </div>
+                    <!-- <div class="number-visitors">
+                    <p>Ziyaretçi Sayısı: <span> 470083</span></p>
+                </div> -->
+
+                    <div class="social-icon-sub">
+                                                                                                
+                    </div>
+
+                </div>
+            </div>
+            <!-- <div class="footer-sub" style="background-image: url(" https://proje.yok.gov.tr/assets/front/img/announcement-img.jpg")"> 
+            <div class="yok-container" style="gap: 1rem">
+                <div class="yok-logo">
+                    <img src="https://proje.yok.gov.tr/designV2/assets/front/img/yok_logo_beyaz.png" alt="">
+                </div>
+                                    <div>
+                        <div class="web-administrators">
+                            <div class="title">
+                                <p>Web Sitesi Sorumluları</p>
+                            </div>
+                            <div class="administrators">
+                                                                                                                                                                                                                                                                                                                                                                                                                
+                            </div>
+
+                        </div>
+
+                    </div>
+                                <div class="footer-adreses">
+                    <div class="address">
+                        <p>Yükseköğretim Kurulu</p>
+                        <p>ANKARA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cizgi">
+                <div class="line yok-container"></div>
+            </div>
+
+            <div class="copyright yok-container">
+                <center style="font-size: 10px; color: white; margin-top: 5px">
+                    © 2025 <a style="color: white"
+                        href="https:/bilgiislem.yok.gov.tr/">Yükseköğretim Kurulu Bilgi İşlem Daire Başkanlığı</a>
+                </center>
+                <div class="footer-social-icon">
+                                                                                
+                </div>
+                <!-- <center style="font-size: 10px; color: white; margin-top: 5px">
+            <a style="color: white" target="_blank" href="https://acikriza.yok.gov.tr:444/portal/?pref=A49843B3-1ED5-4414-9D3B-B4DD38DE50A3&dept=1">KVKK</a>
+        </center> -->
+            <!-- </div>
+        </div> -->
+        </footer>
+
+    </div>
+    <script>
+    (function () {
+        // OpenDyslexic Font — programmatic injection to avoid Blade @font-face issues
+        var style = document.createElement('style');
+        style.textContent = "@font-face { font-family: 'OpenDyslexic'; src: url('https://cdn.jsdelivr.net/gh/antijingoist/opendyslexic@2/font/OpenDyslexic-Regular.woff2') format('woff2'), url('https://cdn.jsdelivr.net/gh/antijingoist/opendyslexic@2/font/OpenDyslexic-Regular.woff') format('woff'); font-weight: normal; font-style: normal; font-display: swap; }";
+        document.head.appendChild(style);
+
+        var translations = {
+            title: "Erişilebilirlik Menüsü",
+            clearAll: "Seçimleri Temizle",
+            sections: {
+                profiles: "Özel Mod",
+                content: "İçerik Ayarları",
+                navigation: "Navigasyon",
+                color: "Renk"
+            },
+            profiles: {
+                seizureSafe: "Nöbet Güvenli Profili",
+                seizureSafe_desc: "Epilepsi veya nöbet geçirme riski olan kullanıcılar için güvenli bir deneyim sunar.",
+                visionImpaired: "Kısıtlı Görme Profili",
+                visionImpaired_desc: "Görme engelli kullanıcılar için metin boyutunu ve kontrastı artırarak erişilebilirliği iyileştirir.",
+                adhd: "Dikkat Eksikliği Profili",
+                adhd_desc: "Dikkat eksikliği olan kullanıcılar için dikkat dağıtıcı unsurları azaltarak odaklanmayı artırır.",
+                blind: "Görme Engelli Profili",
+                blind_desc: "Görme engelli kullanıcılar için ekran okuyucu desteği ve yüksek kontrast seçenekleri sunar.",
+                dyslexia: "Disleksi Profili",
+                dyslexia_desc: "Disleksi olan kullanıcılar için metin okuma ve anlama kolaylığı sağlar.",
+                oldAge: "Yaşlılık Profili",
+                oldAge_desc: "Yaşlı kullanıcılar için metin boyutunu artırır ve kontrastı iyileştirir."
+            },
+            content: {
+                lineHeight: "Satır Aralığı",
+                fontSize: "Metin Boyutu",
+                bigCursor: "Büyük İmleç",
+                hideImages: "Resimleri Gizle",
+                stopAnimations: "Animasyonları Durdur",
+                tooltips: "İpucu",
+                fonts: "Fontlar",
+                letterSpacing: "Metin Aralığı",
+                textAlign: "Metin Hizalama"
+            },
+            navigation: {
+                readingGuide: "Okuma Kılavuzu",
+                readingMask: "Okuma Maskesi",
+                highlightLinks: "Bağlantıları Vurgula",
+                readingProfile: "Okuma Profili",
+                muteSound: "Sesi Kapat",
+                focusHighlight: "Odak Vurgusu"
+            },
+            color: {
+                monochrome: "Monokrom",
+                saturation: "Doygunluk",
+                contrastPlus: "Kontrast +",
+                brightness: "Parlaklık",
+                contrast: "Kontrast"
+            }
+        };
+
+        function initWidget() {
+            if (window.AccessibilityWidget) {
+                if (!window.a11yWidget) {
+                    window.a11yWidget = new AccessibilityWidget(translations);
+                    console.log('[A11y] Widget initialized successfully.');
+                }
+            } else {
+                console.error('[A11y] AccessibilityWidget class not found. Make sure accessibility_menu.js is loaded before this script.');
+            }
+        }
+
+        // Robust initialization: handle both cases where DOMContentLoaded
+        // has already fired or hasn't yet.
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initWidget);
+        } else {
+            // DOM is already ready (interactive or complete)
+            initWidget();
+        }
+    })();
+</script>
+    <style>
+        thead,
+        tbody,
+        tfoot,
+        tr,
+        td,
+        th {
+            border-width: initial;
+            /* Varsayılan border genişliğini kullan */
+        }
+    </style>
+    
+    <script>
+
+    </script>
+    <script>
+        $('.sub-menu ul').hide();
+        $(".sub-menu a").click(function () {
+            $(this).parent(".sub-menu").children("ul").slideToggle("100");
+            $(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
+        });
+    </script>
+    <script>
+        var mobileItems = document.querySelectorAll('#slide-out .nav-mobile .main-menu li.menu-item-has-children');
+        [].forEach.call(mobileItems, function (el) {
+            var i = document.createElement('i');
+            i.setAttribute('class', 'mobile-arrows fa fa-chevron-down');
+            el.appendChild(i);
+        });
+
+        var li_is = document.querySelectorAll('li.menu-item-has-children i.mobile-arrows');
+        li_is.forEach.call(li_i, function (el) {
+            el.addEventListener('click', function () {
+                if (this.className.indexOf('fa-chevron-down') != -1) {
+                    this.classList.remove("fa-chevron-down");
+                    this.classList.add("fa-chevron-up");
+                } else {
+                    this.classList.remove("fa-chevron-up");
+                    this.classList.add("fa-chevron-down");
+                }
+
+                var ul = this.parentNode.querySelectorAll('ul')[0];
+                ul.style.display = ul.offsetParent === null ? 'block' : 'none';
+
+            });
+        });
+
+        var mobileItems = document.querySelectorAll('#slide-out .st-nav-mobile .main-menu *');
+        var elpai = mobileItems[0].parentNode;
+        [].forEach.call(mobileItems, function (el) {
+            elpai.parentNode.appendChild(el);
+
+            var tn = el.nodeName.toLowerCase();
+            if (tn == "div" && el.className.indexOf('menu-mega-latest-posts') != -1) el.outerHTML = '';
+            if (tn == "div" && el.className.indexOf('mega-cat-content-tab') != -1) el.outerHTML = '';
+            if (tn == "div" && el.className.indexOf('mega-recent-post') != -1) el.outerHTML = '';
+        });
+
+        elpai.outerHTML = '';
+    </script>
+
+    <script>
+        $('.sub-menu ul').hide();
+        $(".sub-menu a").click(function () {
+            $(this).parent(".sub-menu").children("ul").slideToggle("100");
+            $(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
+        });
+    </script>
+    <script>
+        var swiper1 = new Swiper(".mySwiper", {
+            slidesPerView: 5,
+            spaceBetween: 15,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 2000,
+            },
+        });
+    </script>
+    <script>
+        var swiper2 = new Swiper(".full-screen-slider", {
+            zoom: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+        $(".mySwiper .swiper-slide").click(function (event) {
+            $(".full-screen-slider").css("display", "block")
+            swiper2.slideTo($(event.currentTarget).attr("data-modal-id"))
+        })
+        $(".close-modal i").click(function () {
+            $(".full-screen-slider").css("display", "none")
+        })
+        $(".full-screen-slider .swiper-zoom-container").click(function (event) {
+            if ($(event.target).hasClass("swiper-zoom-container")) {
+                $(".full-screen-slider").css("display", "none")
+            }
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            function toggleTableResponsive() {
+                if ($(window).width() <= 500) {
+                    $('.index-content-info table').addClass('table-responsive');
+                } else {
+                    $('.index-content-info table').removeClass('table-responsive');
+                }
+            }
+
+            // Initial check
+            toggleTableResponsive();
+
+            // Check on window resize
+            $(window).resize(function() {
+                toggleTableResponsive();
+            });
+        });
+    </script>
+
+    <script>
+        // HTML elementlerini seçin
+        var menuToggle = document.getElementById("menu-toggle");
+        var mobileMenu = document.getElementById("mobile-menu");
+
+        // Menü durumu için bir değişken tanımlayın
+        var isMenuOpen = false;
+
+        // Menüyü açma/kapatma işlevini tanımlayın
+        function toggleMenu() {
+            if (isMenuOpen) {
+                // Menüyü ve alt menüleri gizle
+                mobileMenu.style.display = "none";
+                // Alt menüleri de kapat
+                var subMenus = document.querySelectorAll("#mobil-menu li ul");
+                subMenus.forEach(function (subMenu) {
+                    subMenu.classList.remove("active");
+                    // Alt menü simgelerini 'fa-angle-right' olarak değiştir
+                    subMenu.previousElementSibling.querySelector("i").classList.remove("fa-angle-down");
+                    subMenu.previousElementSibling.querySelector("i").classList.add("fa-angle-right");
+                });
+                isMenuOpen = false;
+            } else {
+                // Menüyü göster
+                mobileMenu.style.display = "block";
+                isMenuOpen = true;
+            }
+        }
+
+        // Menüyü açma/kapatma işlevini tetiklemek için düğmeye tıklama olayını dinleyin
+        menuToggle?.addEventListener("click", toggleMenu);
+    </script>
+
+    <script>
+        $("#menuToggle").click(function () {
+            $("#menuToggle").toggleClass("active")
+            $("#mobil-menu").toggleClass("active")
+        })
+
+        $(".mobil-menu-list-head").click(function (event) {
+            // Alt menüyü aç/kapat
+            $(event.currentTarget).next("ul").toggleClass("active");
+
+            // İlgili simgeyi değiştir
+            var icon = $(event.currentTarget).find("i");
+            if ($(event.currentTarget).next("ul").hasClass("active")) {
+                icon.removeClass("fa-angle-right").addClass("fa-angle-down");
+            } else {
+                icon.removeClass("fa-angle-down").addClass("fa-angle-right");
+            }
+        })
+
+
+
+    </script>
+
+
+
+    <style>
+        .ikon2 {
+            margin-left: -50px;
+        }
+
+        .altikon {
+            margin-left: -19rem !important;
+        }
+    </style>
+    <script>
+
+
+
+        function hizlierisim(sub) {
+            var ulElement = sub.parentElement.nextElementSibling;
+
+
+            // açılan menünün kspnması için
+            if (ulElement.classList.contains("active")) {
+                ulElement.classList.remove("active");
+                ulElement.classList.add("inner-list");
+
+            } else { // açılması için
+                ulElement.classList.remove("inner-list");
+                ulElement.classList.add("active");
+
+                ulElement.querySelectorAll(".menu-plus").forEach(function (element) {
+                    element.classList.add("ikon2");
+                });
+
+                let i = 1;
+                ulElement.querySelectorAll(".alk").forEach(function (element) {
+                    element.classList.add("altikon");
+                });
+
+
+
+            }
+        }
+
+
+
+        $('.open-menu-button').click(function () {
+            if ($(this).next(".fast-access-submenu").css('display') == 'none') {
+
+                $(".ul-open-icon").each(function () {
+                    $(this).removeClass("fa-minus").addClass("fa-plus");
+                });
+                $(this).children().first().removeClass("fa-plus").addClass("fa-minus");
+                $(this).parents().each(function () {
+                    if ($(this).hasClass("fast-access-submenu")) {
+                        $(this).slideDown(300);
+                    }
+                    if ($(this).children().eq(1).children().first().hasClass("ul-open-icon")) {
+                        $(this).children().eq(1).children().first().removeClass("fa-plus").addClass("fa-minus");
+                    }
+                });
+                $(this).next(".fast-access-submenu").slideDown(300);
+            } else {
+                $(this).next(".fast-access-submenu").slideUp(300);
+                $(this).children().first().removeClass("fa-minus").addClass("fa-plus");
+                $(this).parents().each(function () {
+                    if ($(this).hasClass("fa-minus")) {
+                        $(this).removeClass("fa-minus").addClass("fa-plus");
+                    }
+                });
+            }
+        });
+
+        // Close fast access dropdown when clicking outside
+        $(document).click(function (event) {
+            // Check if the click is outside the fast access area
+            if (!$(event.target).closest('.fast-access').length) {
+                // Close the fast access dropdown
+                $('.dropdown').prop('checked', false);
+            }
+        });
+
+        // Prevent the fast access dropdown from closing when clicking inside it
+        $('.fast-access').click(function (event) {
+            event.stopPropagation();
+        });
+    </script>
+    <script>
+        // Makes the clicked image full screen (uses a <div> with a background image)
+        $('.img-full-screen').click(function () {
+
+            // Prevents scrolling
+            $('body').addClass('scroll-disabled');
+
+            // Optional: Enables pinch and zoom
+            $('meta[name=viewport]').attr('content', 'width = device-width, initial-scale = 1.00, minimum-scale = 1.00, maximum-scale = 2.00, user-scalable=yes');
+
+            // Get image path source
+            var imagePath = $(this).attr('src');
+
+            // Set image path source
+            $('.img-placeholder').attr('style', 'background-image: url(' + imagePath + ')');
+
+            // Show image
+            $('.img-placeholder').fadeIn();
+
+        });
+
+        $('.img-placeholder').click(function () {
+
+            // Enables scrolling again
+            $('body').removeClass('scroll-disabled');
+
+            // Optional: Disables pinch and zoom
+            $('meta[name=viewport]').attr('content', 'width = device-width, initial-scale = 1.00, minimum-scale = 1.00, maximum-scale = 1.00');
+
+            // Hide image
+            $('.img-placeholder').fadeOut();
+        });
+    </script>
+    <script>
+        (function ($) {
+
+            $.fn.searchBox = function (ev) {
+                var $searchEl = $('.search-elem');
+                var $placeHolder = $('.placeholder');
+                var $sField = $('#search-field');
+                var moveText = function () {
+                    $placeHolder.addClass('move-up').html('Aranıyor...');
+                }
+
+                $sField.keydown(moveText);
+                $sField.keydown(moveText);
+                $placeHolder.on('click', moveText);
+
+                if (ev === "open") {
+                    $searchEl.addClass('search-open')
+                    $sField.focus();
+                }
+                ;
+
+                if (ev === 'close') {
+                    $searchEl.removeClass('search-open'),
+                        $placeHolder.removeClass('move-up').html('Type something...'),
+                        $sField.val('');
+                }
+                ;
+
+                $('.submit').prop('disabled', true);
+                $('#search-field').keyup(function () {
+                    if ($(this).val() != '') {
+                        $('.submit').prop('disabled', false);
+                    }
+                });
+            }
+
+        }(jQuery));
+
+        $('.search-btn').on('click', function (e) {
+            $(this).searchBox('open');
+            e.preventDefault();
+        });
+
+        $('.close').on('click', function () {
+            $(this).searchBox('close');
+        });
+    </script>
+    <script>
+        function Util() {
+        };
+        Util.hasClass = function (el, className) {
+            if (el.classList) return el.classList.contains(className);
+            else return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
+        };
+        Util.addClass = function (el, className) {
+            var classList = className.split(' ');
+            if (el.classList) el.classList.add(classList[0]);
+            else if (!Util.hasClass(el, classList[0])) el.className += " " + classList[0];
+            if (classList.length > 1) Util.addClass(el, classList.slice(1).join(' '));
+        };
+        Util.removeClass = function (el, className) {
+            var classList = className.split(' ');
+            if (el.classList) el.classList.remove(classList[0]);
+            else if (Util.hasClass(el, classList[0])) {
+                var reg = new RegExp('(\\s|^)' + classList[0] + '(\\s|$)');
+                el.className = el.className.replace(reg, ' ');
+            }
+            if (classList.length > 1) Util.removeClass(el, classList.slice(1).join(' '));
+        };
+        Util.toggleClass = function (el, className, bool) {
+            if (bool) Util.addClass(el, className);
+            else Util.removeClass(el, className);
+        };
+        Util.setAttributes = function (el, attrs) {
+            for (var key in attrs) {
+                el.setAttribute(key, attrs[key]);
+            }
+        };
+        Util.getChildrenByClassName = function (el, className) {
+            var children = el.children,
+                childrenByClass = [];
+            for (var i = 0; i < el.children.length; i++) {
+                if (Util.hasClass(el.children[i], className)) childrenByClass.push(el.children[i]);
+            }
+            return childrenByClass;
+        };
+        Util.is = function (elem, selector) {
+            if (selector.nodeType) {
+                return elem === selector;
+            }
+            var qa = (typeof (selector) === 'string' ? document.querySelectorAll(selector) : selector),
+                length = qa.length,
+                returnArr = [];
+            while (length--) {
+                if (qa[length] === elem) {
+                    return true;
+                }
+            }
+            return false;
+        };
+        Util.setHeight = function (start, to, element, duration, cb) {
+            var change = to - start,
+                currentTime = null;
+            var animateHeight = function (timestamp) {
+                if (!currentTime) currentTime = timestamp;
+                var progress = timestamp - currentTime;
+                var val = parseInt((progress / duration) * change + start);
+                element.style.height = val + "px";
+                if (progress < duration) {
+                    window.requestAnimationFrame(animateHeight);
+                } else {
+                    cb();
+                }
+            };
+            element.style.height = start + "px";
+            window.requestAnimationFrame(animateHeight);
+        };
+        Util.scrollTo = function (final, duration, cb) {
+            var start = window.scrollY || document.documentElement.scrollTop,
+                currentTime = null;
+            var animateScroll = function (timestamp) {
+                if (!currentTime) currentTime = timestamp;
+                var progress = timestamp - currentTime;
+                if (progress > duration) progress = duration;
+                var val = Math.easeInOutQuad(progress, start, final - start, duration);
+                window.scrollTo(0, val);
+                if (progress < duration) {
+                    window.requestAnimationFrame(animateScroll);
+                } else {
+                    cb && cb();
+                }
+            };
+            window.requestAnimationFrame(animateScroll);
+        };
+        Util.moveFocus = function (element) {
+            if (!element) element = document.getElementsByTagName("body")[0];
+            element.focus();
+            if (document.activeElement !== element) {
+                element.setAttribute('tabindex', '-1');
+                element.focus();
+            }
+        };
+        Util.getIndexInArray = function (array, el) {
+            return Array.prototype.indexOf.call(array, el);
+        };
+        Util.cssSupports = function (property, value) {
+            if ('CSS' in window) {
+                return CSS.supports(property, value);
+            } else {
+                var jsProperty = property.replace(/-([a-z])/g, function (g) {
+                    return g[1].toUpperCase();
+                });
+                return jsProperty in document.body.style;
+            }
+        };
+        Util.extend = function () {
+            var extended = {};
+            var deep = false;
+            var i = 0;
+            var length = arguments.length;
+            if (Object.prototype.toString.call(arguments[0]) === '[object Boolean]') {
+                deep = arguments[0];
+                i++;
+            }
+            var merge = function (obj) {
+                for (var prop in obj) {
+                    if (Object.prototype.hasOwnProperty.call(obj, prop)) {
+                        if (deep && Object.prototype.toString.call(obj[prop]) === '[object Object]') {
+                            extended[prop] = extend(true, extended[prop], obj[prop]);
+                        } else {
+                            extended[prop] = obj[prop];
+                        }
+                    }
+                }
+            };
+            for (; i < length; i++) {
+                var obj = arguments[i];
+                merge(obj);
+            }
+            return extended;
+        };
+        if (!Element.prototype.matches) {
+            Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+        }
+
+        function changeLanguage(event) {
+            console.log(event)
+            if (event.target.innerText === "TR") {
+                window.location.href = "https://proje.yok.gov.tr/tr";
+            }
+            if (event.target.innerText === "EN") {
+                window.location.href = "https://proje.yok.gov.tr/en";
+            }
+            if (event.target.innerText === "AR") {
+                window.location.href = "https://proje.yok.gov.tr/ar";
+            }
+        }
+
+        if (!Element.prototype.closest) {
+            Element.prototype.closest = function (s) {
+                var el = this;
+                if (!document.documentElement.contains(el)) return null;
+                do {
+                    if (el.matches(s)) return el;
+                    el = el.parentElement || el.parentNode;
+                } while (el !== null && el.nodeType === 1);
+                return null;
+            };
+        }
+        if (typeof window.CustomEvent !== "function") {
+            function CustomEvent(event, params) {
+                params = params || {
+                    bubbles: false,
+                    cancelable: false,
+                    detail: undefined
+                };
+                var evt = document.createEvent('CustomEvent');
+                evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+                return evt;
+            }
+
+            CustomEvent.prototype = window.Event.prototype;
+            window.CustomEvent = CustomEvent;
+        }
+        Math.easeInOutQuad = function (t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        };
+        /**/
+        (function () {
+            var LanguagePicker = function (element) {
+                this.element = element;
+                this.select = this.element.getElementsByTagName('select')[0];
+                this.options = this.select.getElementsByTagName('option');
+                this.selectedOption = getSelectedOptionText(this);
+                this.pickerId = this.select.getAttribute('id');
+                this.trigger = false;
+                this.dropdown = false;
+                this.firstLanguage = false;
+                // dropdown arrow inside the button element
+                this.svgPath = '<svg viewBox="0 0 16 16"><polygon points="3,5 8,11 13,5 "></polygon></svg>';
+                initLanguagePicker(this);
+                initLanguagePickerEvents(this);
+            };
+
+            function initLanguagePicker(picker) {
+                // create the HTML for the custom dropdown element
+                picker.element.insertAdjacentHTML('beforeend', initButtonPicker(picker) + initListPicker(picker));
+
+                // save picker elements
+                picker.dropdown = picker.element.getElementsByClassName('language-picker__dropdown')[0];
+                picker.firstLanguage = picker.dropdown.getElementsByClassName('language-picker__item')[0];
+                picker.trigger = picker.element.getElementsByClassName('language-picker__button')[0];
+            };
+
+            function initLanguagePickerEvents(picker) {
+                // make sure to add the icon class to the arrow dropdown inside the button element
+                Util.addClass(picker.trigger.getElementsByTagName('svg')[0], 'icon');
+                // language selection in dropdown
+                // ⚠️ Important: you need to modify this function in production
+                initLanguageSelection(picker);
+
+                // click events
+                picker.trigger.addEventListener('click', function () {
+                    toggleLanguagePicker(picker, false);
+                });
+            };
+
+            function toggleLanguagePicker(picker, bool) {
+                var ariaExpanded;
+                if (bool) {
+                    ariaExpanded = bool;
+                } else {
+                    ariaExpanded = picker.trigger.getAttribute('aria-expanded') == 'true' ? 'false' : 'true';
+                }
+                picker.trigger.setAttribute('aria-expanded', ariaExpanded);
+                if (ariaExpanded == 'true') {
+                    picker.firstLanguage.focus(); // fallback if transition is not supported
+                    picker.dropdown.addEventListener('transitionend', function cb() {
+                        picker.firstLanguage.focus();
+                        picker.dropdown.removeEventListener('transitionend', cb);
+                    });
+                }
+            };
+            let oldLang = ""
+
+            function checkLanguagePickerClick(picker, target) { // if user clicks outside the language picker -> close it
+                if (!picker.element.contains(target)) toggleLanguagePicker(picker, 'false');
+            };
+
+            function moveFocusToPickerTrigger(picker) {
+                if (picker.trigger.getAttribute('aria-expanded') == 'false') return;
+                if (document.activeElement.closest('.language-picker__dropdown') == picker.dropdown) picker.trigger.focus();
+            };
+
+            function initButtonPicker(picker) { // create the button element -> picker trigger
+                // check if we need to add custom classes to the button trigger
+                var customClasses = picker.element.getAttribute('data-trigger-class') ? ' ' + picker.element.getAttribute('data-trigger-class') : '';
+
+                var button = '<button class="language-picker__button' + customClasses + '" aria-label="' + picker.select.value + ' ' + picker.element.getElementsByTagName('label')[0].innerText + '" aria-expanded="false" aria-contols="' + picker.pickerId + '-dropdown">';
+                button = button + '<span aria-hidden="true" class="language-picker__label language-picker__flag language-picker__flag--' + picker.select.value + '"><em>' + picker.selectedOption + '</em>';
+                button = button + picker.svgPath + '</span>';
+                return button + '</button>';
+            };
+
+            function initListPicker(picker) { // create language picker dropdown
+                var list = '<div class="language-picker__dropdown" aria-describedby="' + picker.pickerId + '-description" id="' + picker.pickerId + '-dropdown">';
+                list = list + '<p class="sr-only" id="' + picker.pickerId + '-description">' + picker.element.getElementsByTagName('label')[0].innerText + '</p>';
+                list = list + '<ul class="language-picker__list" role="listbox">';
+                for (var i = 0; i < picker.options.length; i++) {
+                    var selected = picker.options[i].hasAttribute('selected') ? ' aria-selected="true"' : '',
+                        language = picker.options[i].getAttribute('lang');
+                    let li = '<li><a lang="' + language + '" data-value="' + picker.options[i].value + '" onclick="changeLanguage(event)" class="language-picker__item language-picker__flag language-picker__flag--' + picker.options[i].value + '"><span>' + picker.options[i].text + '</span></a></li>'
+                    list = list + li;
+                }
+                return list;
+            };
+
+            function getSelectedOptionText(picker) { // used to initialize the label of the picker trigger button
+                var label = '';
+                if ('selectedIndex' in picker.select) {
+                    label = picker.options[picker.select.selectedIndex].text;
+                } else {
+                    label = picker.select.querySelector('option[selected]').text;
+                }
+                return label;
+            };
+
+            function getLanguageUrl(option) {
+                // ⚠️ Important: You should replace this return value with the real link to your website in the selected language
+                // option.value gives you the value of the language that you can use to create your real url (e.g, 'english' or 'italiano')
+                return '#';
+            };
+
+            function initLanguageSelection(picker) {
+                picker.element.getElementsByClassName('language-picker__list')[0].addEventListener('click', function (event) {
+                    var language = event.target.closest('.language-picker__item');
+                    if (!language) return;
+
+                    if (language.hasAttribute('aria-selected') && language.getAttribute('aria-selected') == 'true') {
+                        // selecting the same language
+                        event.preventDefault();
+                        picker.trigger.setAttribute('aria-expanded', 'false'); // hide dropdown
+                    } else {
+                        // ⚠️ Important: this 'else' code needs to be removed in production.
+                        // The user has to be redirected to the new url -> nothing to do here
+                        event.preventDefault();
+                        picker.element.getElementsByClassName('language-picker__list')[0].querySelector('[aria-selected="true"]').removeAttribute('aria-selected');
+                        language.setAttribute('aria-selected', 'true');
+                        picker.trigger.getElementsByClassName('language-picker__label')[0].setAttribute('class', 'language-picker__label language-picker__flag language-picker__flag--' + language.getAttribute('data-value'));
+                        picker.trigger.getElementsByClassName('language-picker__label')[0].getElementsByTagName('em')[0].innerText = language.innerText;
+                        picker.trigger.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            };
+
+            //initialize the LanguagePicker objects
+            var languagePicker = document.getElementsByClassName('js-language-picker');
+            if (languagePicker.length > 0) {
+                var pickerArray = [];
+                for (var i = 0; i < languagePicker.length; i++) {
+                    (function (i) {
+                        pickerArray.push(new LanguagePicker(languagePicker[i]));
+                    })(i);
+                }
+
+                // listen for key events
+                window.addEventListener('keyup', function (event) {
+                    if (event.keyCode && event.keyCode == 27 || event.key && event.key.toLowerCase() == 'escape') {
+                        // close language picker on 'Esc'
+                        pickerArray.forEach(function (element) {
+                            moveFocusToPickerTrigger(element); // if focus is within dropdown, move it to dropdown trigger
+                            toggleLanguagePicker(element, 'false'); // close dropdown
+                        });
+                    }
+                });
+                // close language picker when clicking outside it
+                window.addEventListener('click', function (event) {
+                    pickerArray.forEach(function (element) {
+                        checkLanguagePickerClick(element, event.target);
+                    });
+                });
+            }
+        }());
+
+        document.body.style.overflowX = "hidden";
+    </script>
+    <script src="https://proje.yok.gov.tr/designV2/assets/front/js/responsive.js"></script>
+    <script src="https://proje.yok.gov.tr/designV2/assets/front/js/accessibility_menu.js?v=1792461213"></script>
+</body>
+
+</html>
