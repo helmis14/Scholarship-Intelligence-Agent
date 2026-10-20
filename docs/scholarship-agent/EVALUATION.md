@@ -558,3 +558,12 @@ being read as deadlines); the plainer version (any date older than two years) ga
 characters before the date. After this round the pool reads 70.8% correct / 7.6% wrong / 10.9% review with the gate off, 69.7% / 5.9% / 13.7% in standard mode and
 65.7% / 4.3% / 19.2% in strict mode. Many of the remaining wrong claims are label-policy differences rather than reading errors (for example "All nationalities
 are welcome" read as "any" where the label says not stated), which is why the second labeller matters.
+
+### Round 40: source registry from the lists the benchmark sets fetched
+
+217 official list or portal pages that sets P, Q, R and S fetched but never labelled (and whose hosts carry no labelled page of any set) were
+checked again (reachable, robots-permitted, page kind listing, opportunity or guidance) and added to `sources.json`: the registry grows from 111 to 328
+sources and from 54 to 63 countries (197 universities, 10 government bodies, 10 foundations, mostly US because P was a US-university set). Hosts of labelled
+pages were left out on purpose so the evidence-authority checks on every benchmark page are unchanged; the pool figures did not move (standard mode 743.5).
+These are portal pages, not verified records: each still goes through discovery, extraction, verification and the risk gate. Wider cover outside the US
+needs the curated per-region lists described in the plan.
