@@ -567,3 +567,22 @@ sources and from 54 to 63 countries (197 universities, 10 government bodies, 10 
 pages were left out on purpose so the evidence-authority checks on every benchmark page are unchanged; the pool figures did not move (standard mode 743.5).
 These are portal pages, not verified records: each still goes through discovery, extraction, verification and the risk gate. Wider cover outside the US
 needs the curated per-region lists described in the plan.
+
+## Round 41: set T (fresh country-search set), measured once
+
+Set T was collected by country-by-country search of official hosts (university, ministry, agency, embassy, foundation, national
+programme sites), 584 pages fetched on 2026-10-20, 40 single-programme pages labelled by hand (see
+`tests/heldout_t/make_labels.py`; the 544 excluded pages stay local, only the 40 labelled pages are in the repository).
+Code, labels and scorer were frozen before scoring; the code was scored once, with the standard and the strict gate.
+
+| Gate | Wrong claims among answered (all labels) | Wrong claims, clear labels only | Sent to review |
+|---|---|---|---|
+| standard | 14.6% (20/137) | 12.7% | 23 |
+| strict | 11.6% (15/129) | 10.4% | 31 |
+
+The target (under 5%) is **not met** on a fresh country-search set; the in-sample figures (4.3%) and the P to S figures (about 4%)
+did not carry over. Of the 15 strict wrong claims, about nine are real extractor bugs: "citizen of any country outside the UK"
+read as include GB, "outside of New Zealand" read as include NZ, "UK first class honours degree" read as nationality GB,
+"same conditions as Ukrainian citizens" read as include UA, and a cycle read as open from renewal or other-year dates. The rest
+are close calls (domestic and international applicants on one page, a 25/75 tuition split, "contribute towards maintenance").
+From now on T is development data. A new untouched set (U) is needed for the next honest figure.

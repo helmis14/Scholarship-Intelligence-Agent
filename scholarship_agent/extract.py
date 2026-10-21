@@ -512,6 +512,8 @@ def _date_role(s: str, raw: str, prev: list[str], raws: list[str]) -> Optional[D
     # round 31: "News from Dec 10, 2025", "published April 21, 2026": the page's own date, not a deadline
     if re.search(r"\b(?:news|posted|published|updated|last modified|stand)\s*(?:from|on|am)?\s*:?\s*$", before[-40:], re.I):
         return DeadlineKind.OTHER
+    if re.search(r"renovaci[o\u00f3]n|renovaciones|\brenewals?\b|renouvellement|verl[a\u00e4]ngerung", s, re.I):
+        return DeadlineKind.OTHER   # round 41: the renewal period of current awardees, not an application window
     # round 31: "The fellowship term must begin no earlier than July 1, 2027 ... must conclude no later than ..."
     if re.search(r"\b(?:term|tenure|award (?:period|year)|funding period|fellowship period)\b[^.;]{0,60}"
                  r"\b(?:begin|start|commenc|end|conclude)", s[max(0, start - 120):start], re.I) \
@@ -1412,6 +1414,11 @@ def extract_nationality(text: str) -> tuple[NationalityRule, list[str]]:
     # "US Citizens", "non-US citizens": the letters US only before a citizenship word (never the pronoun "us")
     text = re.sub(r"\bU\.?S\.?(?=[\s-]+(?:[Cc]itizens?|[Nn]ationals?|[Pp]assport|[Pp]ermanent))", "United States", text)
     text = re.sub(r"\bAmerican Indians?\b", "Native American", text)   # round 30: not India
+    text = re.sub(r"\b(?:same|equal|equivalent)\b[^.;]{0,30}?\bas\s+(?:[A-Z][\w-]+\s+){0,2}(?:citizens|nationals)\b", "the same conditions", text)   # round 41
+    text = re.sub(r"\b(agreements?|treat(?:y|ies)|arrangements?)\s+(?:with|between)\s+(?:the\s+)?[A-Z][\w'-]+(?: [A-Z][\w'-]+)?", r"\1", text)   # round 41: not an applicant nationality
+    text = re.sub(r"(?i:\b(citizens?|nationals?)\s+of\s+any\s+(?:other\s+)?countr(?:y|ies)\s+(?:outside|other than|excluding|except|apart from)\s+(?:of\s+)?(?:the\s+)?)(United Kingdom|UK|U\.K\.|[A-Z][\w'-]+(?: [A-Z][\w'-]+)?)", r"non-\2 citizens", text)   # round 41
+    text = re.sub(r"\b(?:UK|U\.K\.|British|American|Australian|Canadian|German|French)\s+(?=(?:first|second|upper|lower|2:[12]|honou?rs?|bachelor|master|undergraduate|degree|diploma|qualifications?)\b)", "", text)   # round 41: "equivalent of a UK first class honours degree"
+    text = re.sub(r"\(\s*outside (?:of )?(?:the )?[A-Z][\w'-]+(?: [A-Z][\w'-]+)?\s*\)", "", text)   # round 41: "overseas (outside of New Zealand)"
     review = []
     foreign_also = False
     banned: list[str] = []   # countries a clause excludes by negation; another sentence never turns them eligible
