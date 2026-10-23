@@ -1,0 +1,74 @@
+{
+ "_comment": "Round 46: adjudication of set-X labels after the first and only scoring. Found by comparing every label with the cached independent reading of Claude Haiku and re-reading each page where they differed on a decision not marked as a close call (the labeller had read keyword-filtered lines). labels.json and the frozen X results are NOT changed; decisions.py --adjudicate applies these overrides in memory and reports them as a separate result.",
+ "decided": "2026-10-23",
+ "cases": {
+  "x-bo-3": {
+   "verdict": "label wrong",
+   "fields": {
+    "nationality": {
+     "mode": "include",
+     "countries": [
+      "BO"
+     ]
+    }
+   },
+   "quote": "Tener nacionalidad Boliviana.",
+   "why": "a requirement line the labeller's filtered view did not show"
+  },
+  "x-dj-3": {
+   "verdict": "label incomplete",
+   "fields": {
+    "deadlines": [
+     {
+      "kind": "scholarship",
+      "date": "2026-01-15",
+      "status": "historical"
+     },
+     {
+      "kind": "scholarship",
+      "date": "2026-01-22",
+      "status": "historical"
+     }
+    ]
+   },
+   "quote": "تودع الملفات على مستوى نيابة مديرية الجامعة للعلاقات الخارجية ... قبل 22جانفي 2026",
+   "why": "the file deposit at the university is a second applicant deadline"
+  },
+  "x2-ht-1": {
+   "verdict": "label wrong",
+   "fields": {
+    "funding_class": "fully_funded",
+    "components": {
+     "tuition": "full",
+     "stipend": "covered"
+    }
+   },
+   "quote": "Le versement de l'allocation mensuelle ; Les règlements des frais de formation ; ... billets d'avion prépayés",
+   "why": "the coverage section lower on the page lists a monthly allowance, training fees and flights"
+  },
+  "x2-si-3-2": {
+   "verdict": "label wrong",
+   "fields": {
+    "funding_class": "stipend_only",
+    "components": {
+     "stipend": "covered"
+    }
+   },
+   "quote": "stipendista pobírá stipendium každoročně po dobu 5 měsíců ... Perioda vyplacení: měsíčně",
+   "why": "a stipend paid monthly, tuition not mentioned"
+  },
+  "x2-id-3": {
+   "verdict": "label wrong",
+   "fields": {
+    "nationality": {
+     "mode": "include",
+     "countries": [
+      "ID"
+     ]
+    }
+   },
+   "quote": "Warga Negara Indonesia (WNI)",
+   "why": "a requirement line the labeller's filtered view did not show"
+  }
+ }
+}

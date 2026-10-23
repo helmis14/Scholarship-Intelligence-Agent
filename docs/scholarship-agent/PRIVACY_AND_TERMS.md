@@ -28,16 +28,27 @@ Keys are never written to logs, the ledger or error messages (`anthropic_llm.py`
 - **Correction of public data:** `report-issue` / `report_issue` (this round). Two open reports on one field hold that field as `needs_review` until an operator resolves them; `issues` lists and resolves reports.
 - **Transparency:** every claimed value carries its quotation and the page URL; low-precision claim kinds are shown as unverified (`SCHOLAR_RISK_GATE`).
 
-## 4. Gaps before a multi-user public service
+## 4. Multi-user service: done in round 46, and what is left
 
-1. **Authentication and tenant isolation.** One data directory per tenant exists in the service constructor, but there is no login, session, or per-user authorisation layer. Add one before exposing any route that takes a `profile_id`.
-2. **Encryption at rest and backups.** SQLite files are permission-protected only. A hosted service needs disk encryption, encrypted backups, and a backup retention that honours deletion (a deleted profile must age out of backups).
-3. **Rate limiting and abuse controls** on `report_issue`, search and ingest routes; CAPTCHA on public forms.
-4. **Retention.** Define how long `profile_history` and `document_versions` are kept; offer "delete my account" in one step.
-5. **Sensitive data minimisation.** The profile can hold family and financial circumstances written into essays. Mark these fields as sensitive, exclude them from logs and from model prompts unless the user opts in per document.
-6. **Children.** Many programmes target students under 18. Decide the minimum age, parental-consent flow, and whether to accept minors' data at all.
-7. **Cross-border transfer.** If users are in the EU/UK or Indonesia and servers elsewhere, document the transfer basis.
-8. **Audit log** of operator access to private data (none exists; today there is no operator access path by design).
+Done (code and tests in `accounts.py`, `crypto.py`, `web.py`, `tests/test_scholarship_round46.py`):
+
+1. **Authentication and tenant isolation.** Accounts with scrypt password hashes, expiring sessions (30 days, 7 idle
+   days), lockout after 5 failed logins, password change and reset (reset needs an SMTP server; nothing is sent without
+   one). The HTTP API (`serve`) maps every private route to the logged-in account's own profile; tested.
+2. **Encryption at rest.** Private free text and the e-mail address are AES-256-GCM encrypted per field; production mode
+   requires keys from the environment; `encrypt-private` encrypts older rows and rewraps after key rotation;
+   `security-status` reports the state without showing secrets.
+3. **Rate limits** on login, registration, reset and "report a mistake"; 1 MB body limit; generic errors.
+4. **Retention.** Earlier profile versions: last 20 (`SCHOLAR_PROFILE_HISTORY_KEEP`). Account deletion removes the account,
+   sessions, events and all private records in one step (`DELETE /api/v1/account`).
+5. **Consent records.** Registration requires accepting the current terms and privacy versions and confirming age; the
+   AI-drafting choice is stored and can be changed.
+6. **Account event log** without IP address or user agent; the per-user lessons list no longer shows other users'
+   outcomes.
+
+Left before launch: lawyer review (packet and drafts in `legal/`), disk and backup encryption at the host and a backup
+period that honours deletion, CAPTCHA or e-mail confirmation on registration, a decision on minors, transfer basis for
+the hosting, e-mail and AI providers, monitoring and a penetration test.
 
 ## 5. Terms of service: points to include
 
@@ -57,11 +68,14 @@ What is collected (section 1), why (to match and draft), the legal basis (consen
 
 ## 7. Pre-launch checklist
 
-- [ ] Lawyer review of terms and privacy notice for target countries.
-- [ ] Authentication, authorisation, and per-tenant isolation tested.
-- [ ] Encryption at rest and tested restore plus deletion-from-backup procedure.
-- [ ] Rate limits and abuse controls on public routes.
+- [ ] Lawyer review of terms and privacy notice for target countries (packet and drafts: `legal/`).
+- [x] Authentication, authorisation, and per-tenant isolation tested (round 46).
+- [x] Encryption at rest (round 46).
+- [ ] Tested restore plus deletion-from-backup procedure at the host.
+- [x] Rate limits on public routes (round 46).
+- [ ] CAPTCHA or e-mail confirmation on registration.
 - [ ] Data-processing agreement with the model provider, or documents drafted only on the user's side.
 - [ ] Contact address set in `SCHOLAR_USER_AGENT`; takedown address published.
-- [ ] Fresh-set accuracy check passed (wrong claims under 5% of decisions with `SCHOLAR_RISK_GATE=strict`, quotation on every shown value, two labellers agree).
+- [x] Fresh-set accuracy check passed: set X 2.1% wrong claims with the strict gate and the second reading (round 45).
+- [ ] Two labellers agree.
 - [ ] "Report a mistake" visible next to every value, operator process to resolve within a stated time.

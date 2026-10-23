@@ -68,3 +68,35 @@ Object shapes are the `to_dict()` forms of the dataclasses in
 - **Notifications:** implement `tracker.Notifier.deliver(reminders)`; an email or calendar adapter must require the user's explicit approval before sending.
 - **Drafting model:** implement `documents.LLMProvider.complete(brief)`; output always goes through `review.review`.
 - **Storage:** `store.Store` is the only module that touches SQL; a server database can replace it behind the same methods.
+
+## HTTP API (round 46): `python3 -m scholarship_agent serve`
+
+Standard-library server for the multi-user service, meant to run on 127.0.0.1 behind a reverse proxy that terminates
+HTTPS (it refuses other addresses unless `SCHOLAR_ALLOW_PUBLIC_BIND=1`). JSON in and out, bodies up to 1 MB, errors as
+`{"error": code, "message": text}` with 400/401/404/405/413/415/429/500. Settings: `SCHOLAR_HTTPS=1` (HSTS),
+`SCHOLAR_TRUST_PROXY=1` (client address from X-Forwarded-For for rate limits), `SCHOLAR_CORS_ORIGINS` (allowed front
+ends), `SCHOLAR_SMTP_*` (password-reset e-mail), `SCHOLAR_ENV=production` with `SCHOLAR_DATA_KEY` and
+`SCHOLAR_LOOKUP_KEY` (encryption keys from a secret store; `new-key` prints a fresh one).
+
+| Route | Login | Calls |
+|---|---|---|
+| `GET /api/v1/health` | no | encryption state |
+| `GET /api/v1/opportunities?country=&level=&text=` | no | `search_opportunities` |
+| `GET /api/v1/opportunities/{id}` | no | `get_opportunity` |
+| `POST /api/v1/opportunities/{id}/reports` | no | `report_issue` (5 a minute per client) |
+| `POST /api/v1/auth/register` | no | `accounts.register` — `email`, `password`, `accept_terms`, `accept_privacy`, `age_confirmed`, `ai_drafting_consent`; returns a token |
+| `POST /api/v1/auth/login` | no | `accounts.login` (10 a minute per client; 5 failures lock the account for 15 minutes) |
+| `POST /api/v1/auth/password-reset/request` / `.../confirm` | no | one-time code by e-mail; the same answer whether or not the address exists |
+| `POST /api/v1/auth/logout`, `POST /api/v1/auth/password` | yes | end the session; change the password (ends all sessions) |
+| `GET /api/v1/account`, `PATCH /api/v1/account/consent` | yes | account and consent record; AI-drafting choice |
+| `GET /api/v1/account/export` | yes | everything stored about the account |
+| `DELETE /api/v1/account` | yes | `{"password": ...}`: deletes the account and all its private data |
+| `GET/PATCH /api/v1/profile` | yes | `get_profile` / `setup_profile` for the caller's own profile |
+| `GET /api/v1/ranking?top=` and `GET /api/v1/matches/{id}` | yes | `rank`, `match` |
+| `GET /api/v1/applications`, `GET/PATCH /api/v1/applications/{id}` | yes | `track` |
+| `POST /api/v1/applications/{id}/plan`, `GET .../readiness`, `GET .../briefs/{kind}`, `PUT .../documents/{kind}` | yes | `plan`, `documents_audit`, `brief`, `save_draft` |
+| `GET /api/v1/deadlines?within_days=&tracked_only=1` | yes | `deadlines` |
+
+Authenticated routes take `Authorization: Bearer <token>`. Discovery, ingestion, verification and operator routes are
+not exposed over HTTP; run them from the command line or a scheduler.
+

@@ -202,6 +202,12 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("--split", choices=["dev", "test"], help="set C only")
     s.add_argument("--providers", default="rules,anthropic",
                    help="comma list: rules,anthropic (gemini and ollama remain available but are inactive)")
+    s = sub.add_parser("serve", help="HTTP JSON API with accounts (run behind an HTTPS reverse proxy; see web.py)")
+    s.add_argument("--host", default="127.0.0.1")
+    s.add_argument("--port", type=int, default=8765)
+    sub.add_parser("security-status", help="encryption at rest, keys in use, accounts and sessions (no secrets shown)")
+    sub.add_parser("encrypt-private", help="encrypt private data written before encryption, rewrap old keys")
+    sub.add_parser("new-key", help="print a new random key for SCHOLAR_DATA_KEY or SCHOLAR_LOOKUP_KEY")
     s = sub.add_parser("ai-usage", help="AI provider, paid/dry-run requests, tokens and estimated cost (no keys)")
     s = sub.add_parser("sources", help="source registry, coverage, freshness, failures")
     s.add_argument("--check", action="store_true", help="fetch every source now (network)")
@@ -350,6 +356,15 @@ def run(args, svc: ScholarshipService) -> dict:
         from .compare import compare
         root = heldout.ROOT if args.set == "a" else heldout.ROOT.parent / f"heldout_{args.set}"
         return compare(root, [x.strip() for x in args.providers.split(",") if x.strip()], svc.store, split=args.split)
+    if c == "security-status":
+        st = svc.store
+        return {"crypto": st.cipher.describe(),
+                "accounts": st.q("SELECT COUNT(*) n FROM users")[0]["n"],
+                "active_sessions": st.q("SELECT COUNT(*) n FROM auth_tokens")[0]["n"],
+                "private_db_mode": oct((st.dir / "private" / "private.db").stat().st_mode & 0o777),
+                "plaintext_private_values": _plaintext_count(st)}
+    if c == "encrypt-private":
+        return svc.store.encrypt_private()
     if c == "ai-usage":
         return svc.ai_usage()
     if c == "sources":
@@ -357,6 +372,18 @@ def run(args, svc: ScholarshipService) -> dict:
             return svc.add_source(json.loads(args.add))
         return svc.sources_status(check=args.check)
     raise ValueError(f"unknown command {c}")
+
+
+def _plaintext_count(store) -> int:
+    from .store import SENSITIVE
+    if not store.cipher.enabled:
+        return -1
+    n = 0
+    for table, cols in SENSITIVE.items():
+        for col in cols:
+            n += store.q(f"SELECT COUNT(*) n FROM {table} WHERE {col} IS NOT NULL AND {col} != '' "
+                         f"AND {col} NOT LIKE 'enc1:%'")[0]["n"]
+    return n
 
 
 def _with_usage(result, llm):
@@ -372,6 +399,23 @@ def main(argv=None, svc: ScholarshipService | None = None) -> int:
         except (AttributeError, ValueError):
             pass
     args = build_parser().parse_args(argv)
+    if args.cmd == "new-key":
+        from .crypto import new_key
+        print(json.dumps({"key": new_key(), "note": "store it in your secret manager; never commit it"}))
+        return 0
+    if args.cmd == "serve":
+        from .web import serve
+        try:
+            httpd = serve(args.host, args.port)
+        except Exception as e:
+            print(json.dumps({"error": str(e), "type": type(e).__name__}))
+            return 1
+        sys.stderr.write(f"serving the API on http://{args.host}:{args.port}/api/v1 (Ctrl+C to stop)\n")
+        try:
+            httpd.serve_forever()
+        except KeyboardInterrupt:
+            pass
+        return 0
     try:
         out = run(args, svc or ScholarshipService())
         rc = 0

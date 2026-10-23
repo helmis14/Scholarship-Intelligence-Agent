@@ -156,13 +156,15 @@ Full reference: [docs/scholarship-agent/README.md](docs/scholarship-agent/README
 ## Privacy and safety
 
 - **Separate stores:** the public catalog (`data/catalog.db`) and private applicant data (`data/private/`, file mode 0600) are kept apart and are both gitignored. `export-data` and `delete-data` cover everything private.
+- **Encryption at rest (round 46):** profiles, notes, checklists, document drafts, outcomes and account e-mail addresses are stored AES-256-GCM encrypted (needs the `cryptography` package; `security-status` shows the state, `encrypt-private` encrypts older rows). In production (`SCHOLAR_ENV=production`) the keys must come from the environment or a secret store.
+- **Accounts (round 46):** `serve` starts an HTTP JSON API with registration, login, expiring sessions, lockout, rate limits, password reset (only with an SMTP server), account export and one-step account deletion; every private route sees only the caller's own profile. Run it behind an HTTPS reverse proxy. Privacy and terms: [PRIVACY_AND_TERMS.md](docs/scholarship-agent/PRIVACY_AND_TERMS.md); drafts for a lawyer in [docs/scholarship-agent/legal/](docs/scholarship-agent/legal/).
 - **No outgoing messages:** nothing leaves your machine except page fetches, search queries and, only if you enable them, Claude requests.
 - **API keys:** keys are read from your shell environment only and never written to files or logs. `.env.example` lists every setting with empty values. Never commit a real key.
 - **Paid calls:** Claude usage is budget-capped per run and across runs; `ai-usage` shows tokens and estimated cost. A misconfigured provider is an error; the agent never silently switches provider.
 
 ## Building on it (API)
 
-The CLI and the Claude Code commands are thin callers of one service class, `scholarship_agent.service.ScholarshipService`. A future multi-user website or REST API can call the same methods. Each takes plain arguments and returns a JSON-serialisable dict with a `schema_version`. One data directory per tenant keeps users apart. See [docs/scholarship-agent/API.md](docs/scholarship-agent/API.md) for suggested routes.
+The CLI and the Claude Code commands are thin callers of one service class, `scholarship_agent.service.ScholarshipService`. Each method takes plain arguments and returns a JSON-serialisable dict with a `schema_version`. `python3 -m scholarship_agent serve` exposes the public catalogue and the per-account routes over HTTP (`/api/v1/...`, bearer tokens); see [docs/scholarship-agent/API.md](docs/scholarship-agent/API.md).
 
 ## Project layout
 
@@ -191,7 +193,7 @@ A rule change is kept only when it improves the pooled development score without
 - **Eligibility:** exclusion lists ("not open to students from ... (A, B, C)") and two-nationality rules ("Spanish or Portuguese").
 - **Claude-assisted extraction** evaluated on the decision benchmarks, with quote checks kept.
 - **A rubric benchmark** for the quality of generated application documents.
-- **A web API and multi-user website** on top of `ScholarshipService`.
+- **A website front end** on top of the HTTP API (`serve`), with e-mail confirmation or CAPTCHA on registration.
 
 ## License
 

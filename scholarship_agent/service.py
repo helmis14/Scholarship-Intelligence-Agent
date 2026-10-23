@@ -277,6 +277,54 @@ class ScholarshipService:
         return _out(opportunity=o.to_dict(), deadline_history=self.store.deadline_history(o.id),
                     verifications=self.store.verifications(o.id), open_issue_reports=len(reports))
 
+    FUNDING_LABELS = {"fully_funded": "Fully funded (tuition and living costs)", "partially_funded": "Partly funded",
+                      "tuition_funded": "Tuition only", "stipend_only": "Living allowance only",
+                      "fee_waiver": "Fee waiver", "assistantship": "Assistantship"}
+    CYCLE_LABELS = {"open": "Open", "closed": "Closed", "upcoming": "Opens later", "not_announced": "Next round not announced",
+                    "rolling": "Rolling (any time)"}
+
+    def decision_card(self, ref: str) -> dict:
+        """The four decisions an applicant acts on, as a reader-facing card (round 46, for the web front end): each with
+        a state (answered | check | not_stated), a plain value, the quotations and the official page. A value held for
+        review is shown with state "check": it is what the page seems to say, unconfirmed."""
+        from .audit import cycle_status, decision_evidence, field_status, funding_type
+        from .countries import COUNTRIES
+        from .models import DeadlineKind
+        o = self._opp(ref)
+        fs, ev = field_status(o, self.today), decision_evidence(o, self.today)
+        name = lambda c: COUNTRIES.get(c, (c, ""))[0]   # noqa: E731
+
+        def state(key: str, value_present: bool) -> str:
+            st = fs.get(key, {}).get("state")
+            if not value_present or st in ("not_stated", None):
+                return "not_stated"
+            return "check" if st in ("needs_review", "unsupported") else "answered"
+
+        n = o.nationality
+        nat_value = {"any": "Open to every nationality",
+                     "include": "Only citizens of: " + ", ".join(name(c) for c in n.countries[:60]),
+                     "exclude": "Everyone except citizens of: " + ", ".join(name(c) for c in n.countries[:60])}.get(n.mode, "")
+        ft = funding_type(o)["state"]
+        cyc = cycle_status(o, self.today)
+        dates = sorted({d.date for d in o.deadlines if d.date and d.kind in (DeadlineKind.SCHOLARSHIP, DeadlineKind.ADMISSION)})
+        dl_quotes = [{"quote": d.label[:300], "url": d.source_url} for d in o.deadlines
+                     if d.date in dates and d.label][:3]
+        card = {
+            "eligibility": {"state": state("eligible_countries", bool(nat_value)), "value": nat_value or "Not stated on the page",
+                            "quotes": ev.get("eligibility", {}).get("quotes", [])},
+            "funding": {"state": state("funding_type", ft in self.FUNDING_LABELS), "value": self.FUNDING_LABELS.get(ft, "Not stated on the page"),
+                        "quotes": ev.get("funding", {}).get("quotes", [])},
+            "deadline": {"state": state("deadline", bool(dates)), "value": ", ".join(dates) or "No dated deadline on the page",
+                         "quotes": dl_quotes},
+            "cycle": {"state": state("cycle", cyc["state"] in self.CYCLE_LABELS), "value": self.CYCLE_LABELS.get(cyc["state"], "Not stated"),
+                      "detail": cyc.get("detail", ""), "quotes": ev.get("cycle", {}).get("quotes", [])},
+        }
+        return _out(id=o.id, title=o.title, provider=o.provider_name, official_url=o.info_url, application_url=o.application_url,
+                    destination_countries=[name(c) for c in o.destination_countries], levels=o.study_levels,
+                    last_checked=o.last_verified_at or o.updated_at, decisions=card, as_of=self.today.isoformat(),
+                    note="Confirm every value on the official page before you apply. Values marked 'check' could not "
+                         "be confirmed automatically.")
+
     ISSUE_FIELDS = ("eligibility", "funding", "cycle", "deadline", "levels", "provider", "page", "other")
 
     def report_issue(self, ref: str, field: str, note: str, shown_value: str = "") -> dict:
@@ -623,5 +671,5 @@ class ScholarshipService:
                     urgent_tasks=dl["urgent_tasks"],
                     coverage={k: cov[k] for k in ("countries_total", "countries_with_official_source",
                                                   "countries_with_verified_healthy_source", "by_region")},
-                    recent_jobs=self.store.jobs(5), lessons=tracker.lessons(self.store)[:5],
+                    recent_jobs=self.store.jobs(5), lessons=tracker.lessons(self.store, profile_id)[:5],
                     disclaimer=ranking.DISCLAIMER)

@@ -100,18 +100,21 @@ def missing_core(p: Profile) -> list[str]:
 def export(store: Store, profile_id: str = "default") -> dict:
     """Everything private stored for this profile, for the user's own copy."""
     p = store.get_profile(profile_id)
-    apps = [dict(r) for r in store.q("SELECT * FROM applications WHERE profile_id = ?", (profile_id,))]
+    apps = [store.dec_row(r, "applications") for r in store.q("SELECT * FROM applications WHERE profile_id = ?", (profile_id,))]
     ids = [a["id"] for a in apps]
     marks = ",".join("?" * len(ids)) or "''"
     return {
         "profile": p.to_dict() if p else None,
         "applications": apps,
-        "status_history": [dict(r) for r in store.q(f"SELECT * FROM status_history WHERE application_id IN ({marks})", ids)],
-        "checklist": [dict(r) for r in store.q(f"SELECT * FROM checklist_items WHERE application_id IN ({marks})", ids)],
-        "documents": [dict(r) for r in store.q(
+        "status_history": [store.dec_row(r, "status_history") for r in store.q(
+            f"SELECT * FROM status_history WHERE application_id IN ({marks})", ids)],
+        "checklist": [store.dec_row(r, "checklist_items") for r in store.q(
+            f"SELECT * FROM checklist_items WHERE application_id IN ({marks})", ids)],
+        "documents": [store.dec_row(r, "document_versions") for r in store.q(
             f"SELECT d.kind, d.title, d.application_id, v.version, v.content, v.created_at FROM documents d "
             f"JOIN document_versions v ON v.document_id = d.id WHERE d.application_id IN ({marks})", ids)],
-        "outcomes": [dict(r) for r in store.q(f"SELECT * FROM outcomes WHERE application_id IN ({marks})", ids)],
+        "outcomes": [store.dec_row(r, "outcomes") for r in store.q(
+            f"SELECT * FROM outcomes WHERE application_id IN ({marks})", ids)],
     }
 
 

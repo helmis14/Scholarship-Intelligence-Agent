@@ -22,6 +22,15 @@ CHECK_FIELDS = {
     "deadline": "the applicant's application deadline(s) for this programme as YYYY-MM-DD, comma separated, only dates "
                 "with a year written on the page; not_stated when there is none. Not openings, events, webinars, "
                 "programme start dates, results or nomination steps.",
+    # round 46: the cycle, the decision most often wrong after the first three were checked. Asked only with
+    # SCHOLAR_SECOND_READING_STATUS=1: on sets K to X it cut wrong claims from 2.64% to 2.18% of answered decisions but
+    # held 29 right answers for review, a lower utility, so it is a stricter option rather than the default.
+    "application_status": "whether applicants can apply as of TODAY: open (the page says applications are open, or an "
+                          "applicant deadline with a year is on or after TODAY and no later opening date is given), closed "
+                          "(the page says applications are closed, or every applicant deadline with a year is before TODAY), "
+                          "upcoming (the page gives an opening date after TODAY), not_announced (the page says the next round "
+                          "or its dates will be announced later), rolling (applications are accepted at any time), or "
+                          "not_stated",
 }
 SYSTEM = ("You check scholarship facts. Read only the page text given. For each field give the value the page states and "
           "a short exact quotation from the page that shows it (empty quotation for not_stated). Do not guess.")
@@ -40,14 +49,22 @@ def _norm(v: str) -> str:
     return re.sub(r"[\s-]+", "_", (v or "").strip().lower())
 
 
+def asked_fields() -> dict:
+    import os
+    if os.environ.get("SCHOLAR_SECOND_READING_STATUS") == "1":
+        return CHECK_FIELDS
+    return {k: v for k, v in CHECK_FIELDS.items() if k != "application_status"}
+
+
 def second_reading(page_text: str, url: str, llm, today: date) -> Optional[dict]:
-    """The model's four values, or None when there is no answer (dry run, budget, error)."""
+    """The model's values, or None when there is no answer (dry run, budget, error)."""
+    fields = asked_fields()
     user = (f"TODAY: {today.isoformat()}\nURL: {url}\n\nPAGE TEXT:\n{page_text[:MAX_CHARS]}\n\n"
-            "Fields:\n" + "\n".join(f"- {k}: {v}" for k, v in CHECK_FIELDS.items())
+            "Fields:\n" + "\n".join(f"- {k}: {v}" for k, v in fields.items())
             + '\n\nAnswer as JSON: {"fields": [{"field": "<name>", "value": "<value>", "quote": "<exact quotation>"}]}')
     try:
         try:
-            data = llm.complete_json(SYSTEM, user, fields=CHECK_FIELDS, meta={"purpose": "second_reading", "source_url": url})
+            data = llm.complete_json(SYSTEM, user, fields=fields, meta={"purpose": "second_reading", "source_url": url})
         except TypeError:   # local providers (Ollama, OpenAI-compatible) take only the two prompts
             data = llm.complete_json(SYSTEM, user)
     except Exception:   # dry run, budget, refusal, network: the rules' answer stands
@@ -57,7 +74,7 @@ def second_reading(page_text: str, url: str, llm, today: date) -> Optional[dict]
         items = [{"field": k, "value": v} for k, v in (data or {}).items()]
     out = {}
     for item in items:
-        if isinstance(item, dict) and item.get("field") in CHECK_FIELDS:
+        if isinstance(item, dict) and item.get("field") in fields:
             v = item.get("value")
             f = item["field"]
             out[f] = ", ".join(map(str, v)) if isinstance(v, list) else str(v).strip()
@@ -79,9 +96,10 @@ def quote_on_page(quote: str, page_text: str) -> bool:
 
 NOT_A_CLAIM = ("not_stated", "needs_review", "unsupported", "funding_unclear")
 # a second reading that finds nothing ("not_stated") holds these answers: the rules may have read a country, a funding
-# class or a date into text that does not state one. A past deadline makes a cycle "closed" even when the page never says
-# so, which a reader that only quotes statements will not repeat, so silence does not hold a cycle.
-SILENCE_HOLDS = {"eligible_countries": True, "funding_type": True, "deadline": True}
+# class, a date or a cycle into text that does not state one. The reader is given today's date and told that a past
+# deadline means closed (round 46), so its silence on the status also holds a cycle.
+SILENCE_HOLDS = {"eligible_countries": True, "funding_type": True, "deadline": True, "cycle": True}
+CYCLE_STATES = ("open", "closed", "upcoming", "not_announced", "rolling")
 
 
 def _silent(v: str) -> bool:
@@ -113,6 +131,14 @@ def disagreements(o, out: dict, reading: dict, today: date) -> dict[str, str]:
         theirs = reading["funding_class"]
         if not (_silent(theirs) and not SILENCE_HOLDS["funding_type"]) and _norm(theirs) != out["funding_type"]["state"]:
             held["funding_type"] = theirs
+    # round 46: the cycle. A reading of the status that differs from the rules' cycle holds it; the reader is told
+    # today's date, so a past deadline reads as closed for both.
+    if out["cycle"]["state"] in CYCLE_STATES and "application_status" in reading \
+            and reading.get("application_status_quote_ok", True):
+        theirs = _norm(reading["application_status"])
+        theirs = "not_stated" if _silent(theirs) else theirs
+        if theirs != out["cycle"]["state"] and (theirs in CYCLE_STATES or SILENCE_HOLDS["cycle"]):
+            held["cycle"] = reading["application_status"]
     mine = {d.date for d in o.deadlines if d.date and d.kind in (DeadlineKind.SCHOLARSHIP, DeadlineKind.ADMISSION)}
     if mine and out["deadline"]["state"] not in ("needs_review", "unsupported") and "deadline" in reading \
             and reading.get("deadline_quote_ok", True):
@@ -121,7 +147,7 @@ def disagreements(o, out: dict, reading: dict, today: date) -> dict[str, str]:
             held["deadline"] = reading["deadline"]
             # the cycle is read from these dates (audit.cycle_status), so it is held with them; a reader is not asked
             # for the cycle itself because comparing dates with today is where small models slip
-            if out["cycle"]["state"] in ("open", "closed", "upcoming") and \
+            if out["cycle"]["state"] in ("open", "closed", "upcoming") and "cycle" not in held and \
                     re.match(r"(closes|opens|last deadline)", out["cycle"].get("detail", "")):
                 held["cycle"] = "depends on the held deadline"
     return held

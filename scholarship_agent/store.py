@@ -132,7 +132,31 @@ PRIVATE_MIGRATIONS = [
         sent_at TEXT);
     CREATE TABLE outcomes (application_id TEXT PRIMARY KEY, result TEXT, lessons TEXT, at TEXT);
     """,
+    # round 46: accounts for the multi-user service. The e-mail is stored encrypted and found through a keyed hash;
+    # tokens are stored as SHA-256 hashes only; auth_events keep no IP address or user agent.
+    """
+    CREATE TABLE users (
+        id TEXT PRIMARY KEY, email_lookup TEXT NOT NULL UNIQUE, email TEXT NOT NULL, pw_hash TEXT NOT NULL,
+        profile_id TEXT NOT NULL UNIQUE, created_at TEXT, last_login_at TEXT, failed_logins INTEGER NOT NULL DEFAULT 0,
+        locked_until TEXT, disabled INTEGER NOT NULL DEFAULT 0, consent TEXT);
+    CREATE TABLE auth_tokens (
+        token_hash TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE, kind TEXT NOT NULL,
+        created_at TEXT, expires_at TEXT, last_used_at TEXT);
+    CREATE INDEX auth_tokens_user ON auth_tokens (user_id);
+    CREATE TABLE auth_events (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id TEXT, event TEXT NOT NULL, at TEXT);
+    """,
+    """
+    CREATE TABLE password_resets (
+        code_hash TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE, expires_at TEXT,
+        used_at TEXT);
+    """,
 ]
+
+# round 46: private columns stored encrypted (crypto.FieldCipher); the table and column are the associated data.
+# reminders.message is derived from public deadlines and stays searchable in clear.
+SENSITIVE = {"profiles": ("data",), "profile_history": ("data",), "applications": ("notes",), "status_history": ("note",),
+             "checklist_items": ("data",), "document_versions": ("content", "review"), "outcomes": ("lessons",),
+             "users": ("email",)}
 
 
 def _migrate(conn: sqlite3.Connection, migrations: list[str]) -> None:
@@ -162,12 +186,49 @@ def _connect(path: Path, private: bool) -> sqlite3.Connection:
 
 class Store:
     def __init__(self, directory: Optional[Path] = None):
+        from .crypto import FieldCipher
         d = Path(directory) if directory else data_dir()
         self.dir = d
         self.catalog = _connect(d / "catalog.db", private=False)
         self.private = _connect(d / "private" / "private.db", private=True)
         _migrate(self.catalog, CATALOG_MIGRATIONS)
         _migrate(self.private, PRIVATE_MIGRATIONS)
+        self.cipher = FieldCipher.from_env(d / "private")
+
+    # ---------------------------------------------------------- encryption at rest (round 46)
+
+    def enc(self, value: Optional[str], table: str, column: str) -> Optional[str]:
+        return self.cipher.encrypt(value, f"{table}.{column}")
+
+    def dec(self, value: Optional[str], table: str, column: str) -> Optional[str]:
+        return self.cipher.decrypt(value, f"{table}.{column}")
+
+    def dec_row(self, row, table: str) -> dict:
+        d = dict(row)
+        for col in SENSITIVE.get(table, ()):
+            if col in d:
+                d[col] = self.dec(d[col], table, col)
+        return d
+
+    def encrypt_private(self) -> dict:
+        """Encrypt plaintext private values and rewrap values under an older key with the current one."""
+        if not self.cipher.enabled:
+            return {"encrypted": 0, "note": "encryption is off: install 'cryptography' (see crypto.py)"}
+        counts = {}
+        with self.private as c:
+            for table, cols in SENSITIVE.items():
+                for row in c.execute(f"SELECT rowid AS _rid, {', '.join(cols)} FROM {table}").fetchall():
+                    new = {}
+                    for col in cols:
+                        v = row[col]
+                        if self.cipher.needs_rewrap(v):
+                            new[col] = self.enc(self.dec(v, table, col), table, col)
+                    if new:
+                        c.execute(f"UPDATE {table} SET {', '.join(f'{k} = ?' for k in new)} WHERE rowid = ?",
+                                  (*new.values(), row["_rid"]))
+                        counts[table] = counts.get(table, 0) + 1
+        self.private.execute("VACUUM")   # no plaintext left in free pages
+        return {"encrypted": sum(counts.values()), "by_table": counts}
 
     def close(self) -> None:
         self.catalog.close()
@@ -395,15 +456,19 @@ class Store:
     def save_profile(self, profile: Profile) -> None:
         profile.updated_at = now()
         data = json.dumps(profile.to_dict())
+        keep = int(os.environ.get("SCHOLAR_PROFILE_HISTORY_KEEP", "20"))
         with self.private as c:
             c.execute("INSERT INTO profiles VALUES (?,?,?) ON CONFLICT(id) DO UPDATE SET data=excluded.data, "
-                      "updated_at=excluded.updated_at", (profile.id, data, profile.updated_at))
+                      "updated_at=excluded.updated_at", (profile.id, self.enc(data, "profiles", "data"), profile.updated_at))
             c.execute("INSERT INTO profile_history (profile_id, data, at) VALUES (?,?,?)",
-                      (profile.id, data, profile.updated_at))
+                      (profile.id, self.enc(data, "profile_history", "data"), profile.updated_at))
+            # round 46 retention: earlier versions of a profile are kept for undo only, the last `keep` of them
+            c.execute("DELETE FROM profile_history WHERE profile_id = ? AND id NOT IN (SELECT id FROM profile_history "
+                      "WHERE profile_id = ? ORDER BY id DESC LIMIT ?)", (profile.id, profile.id, keep))
 
     def get_profile(self, profile_id: str = "default") -> Optional[Profile]:
         row = self.private.execute("SELECT data FROM profiles WHERE id = ?", (profile_id,)).fetchone()
-        return Profile.from_dict(json.loads(row["data"])) if row else None
+        return Profile.from_dict(json.loads(self.dec(row["data"], "profiles", "data"))) if row else None
 
     # ---------------------------------------------------------- generic private helpers
 

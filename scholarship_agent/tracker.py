@@ -26,7 +26,7 @@ def ensure_application(store: Store, profile_id: str, opp_id: str) -> dict:
         store.x("INSERT INTO applications VALUES (?,?,?,?,?,?,?)",
                 (aid, profile_id, opp_id, str(AppStatus.DISCOVERED), ts, ts, ""))
         store.x("INSERT INTO status_history (application_id, from_status, to_status, at, note) VALUES (?,?,?,?,?)",
-                (aid, None, str(AppStatus.DISCOVERED), ts, "created"))
+                (aid, None, str(AppStatus.DISCOVERED), ts, store.enc("created", "status_history", "note")))
     return get_application(store, aid)
 
 
@@ -34,15 +34,15 @@ def get_application(store: Store, aid: str) -> Optional[dict]:
     rows = store.q("SELECT * FROM applications WHERE id = ?", (aid,))
     if not rows:
         return None
-    app = dict(rows[0])
-    app["history"] = [dict(r) for r in store.q("SELECT from_status, to_status, at, note FROM status_history "
-                                               "WHERE application_id = ? ORDER BY id", (aid,))]
+    app = store.dec_row(rows[0], "applications")
+    app["history"] = [store.dec_row(r, "status_history") for r in store.q(
+        "SELECT from_status, to_status, at, note FROM status_history WHERE application_id = ? ORDER BY id", (aid,))]
     return app
 
 
 def list_applications(store: Store, profile_id: str = "default") -> list[dict]:
-    return [dict(r) for r in store.q("SELECT * FROM applications WHERE profile_id = ? ORDER BY updated_at DESC",
-                                     (profile_id,))]
+    return [store.dec_row(r, "applications") for r in store.q(
+        "SELECT * FROM applications WHERE profile_id = ? ORDER BY updated_at DESC", (profile_id,))]
 
 
 def transition(store: Store, aid: str, to: str, note: str = "") -> dict:
@@ -58,7 +58,7 @@ def transition(store: Store, aid: str, to: str, note: str = "") -> dict:
     ts = now()
     store.x("UPDATE applications SET status = ?, updated_at = ? WHERE id = ?", (str(new), ts, aid))
     store.x("INSERT INTO status_history (application_id, from_status, to_status, at, note) VALUES (?,?,?,?,?)",
-            (aid, str(cur), str(new), ts, note))
+            (aid, str(cur), str(new), ts, store.enc(note, "status_history", "note")))
     return get_application(store, aid)
 
 
@@ -70,13 +70,13 @@ def save_checklist(store: Store, aid: str, matrix: list[dict]) -> int:
         status = prev[0]["status"] if prev and prev[0]["status"] == "done" else r["status"]
         store.x("INSERT INTO checklist_items (application_id, name, status, data) VALUES (?,?,?,?) "
                 "ON CONFLICT(application_id, name) DO UPDATE SET status = excluded.status, data = excluded.data",
-                (aid, r["name"], status, json.dumps(r)))
+                (aid, r["name"], status, store.enc(json.dumps(r), "checklist_items", "data")))
         n += 1
     return n
 
 
 def checklist(store: Store, aid: str) -> list[dict]:
-    return [json.loads(r["data"]) | {"status": r["status"]}
+    return [json.loads(store.dec(r["data"], "checklist_items", "data")) | {"status": r["status"]}
             for r in store.q("SELECT status, data FROM checklist_items WHERE application_id = ? ORDER BY id", (aid,))]
 
 
@@ -101,7 +101,8 @@ def save_document(store: Store, aid: str, kind: str, title: str, content: str, r
                          (aid, kind, title))
         version = 1
     store.x("INSERT INTO document_versions (document_id, version, content, review, created_at) VALUES (?,?,?,?,?)",
-            (doc_id, version, content, json.dumps(review) if review else None, now()))
+            (doc_id, version, store.enc(content, "document_versions", "content"),
+             store.enc(json.dumps(review), "document_versions", "review") if review else None, now()))
     return {"document_id": doc_id, "version": version, "kind": kind, "title": title}
 
 
@@ -112,7 +113,7 @@ def documents(store: Store, aid: str, latest_only: bool = True) -> list[dict]:
         sql += " AND v.version = d.current_version"
     out = []
     for r in store.q(sql + " ORDER BY d.id, v.version", (aid,)):
-        d = dict(r)
+        d = store.dec_row(r, "document_versions")
         d["review"] = json.loads(d["review"]) if d["review"] else None
         out.append(d)
     return out
@@ -228,9 +229,16 @@ def record_outcome(store: Store, aid: str, result: str, lessons: str = "") -> di
         raise ValueError(f"result must be one of {sorted(status)}")
     app = transition(store, aid, str(status[result]), note=f"outcome: {result}")
     if status[result] in (AppStatus.ACCEPTED, AppStatus.REJECTED, AppStatus.WITHDRAWN, AppStatus.EXPIRED):
-        store.x("INSERT OR REPLACE INTO outcomes VALUES (?,?,?,?)", (aid, result, lessons, now()))
+        store.x("INSERT OR REPLACE INTO outcomes VALUES (?,?,?,?)", (aid, result, store.enc(lessons, "outcomes", "lessons"), now()))
     return app | {"lessons": lessons}
 
 
-def lessons(store: Store) -> list[dict]:
-    return [dict(r) for r in store.q("SELECT * FROM outcomes ORDER BY at DESC")]
+def lessons(store: Store, profile_id: Optional[str] = None) -> list[dict]:
+    """Outcomes and lessons; with a profile id only that applicant's (round 46: a multi-user service must not show
+    one user's lessons to another)."""
+    if profile_id is None:
+        rows = store.q("SELECT * FROM outcomes ORDER BY at DESC")
+    else:
+        rows = store.q("SELECT o.* FROM outcomes o JOIN applications a ON a.id = o.application_id WHERE a.profile_id = ? "
+                       "ORDER BY o.at DESC", (profile_id,))
+    return [store.dec_row(r, "outcomes") for r in rows]

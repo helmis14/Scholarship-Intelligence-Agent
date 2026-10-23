@@ -710,3 +710,38 @@ Sets W and X together, strict gate + second reading: 19 wrong of 665 answered (2
 condition for public status (a fresh set of at least 100 pages, wrong claims at most 5% and the interval's upper end at most
 7%) is met on set X. Still open for public status: a second labeller's agreement, a legal review of privacy and terms, and
 login with encrypted user data. Set X is now development data (`tests/devpool.py`).
+
+## Round 46: accounts and encryption, legal packet, second labeller, and a cycle check
+
+**Multi-user service.** `accounts.py` (scrypt passwords, expiring sessions, lockout, password reset through an optional
+SMTP server, consent records, account export and one-step deletion), `crypto.py` (AES-256-GCM encryption of every private
+free-text field and the account e-mail, per-field binding, key rotation, production mode that requires keys from the
+environment) and `web.py` (`serve`: an HTTP JSON API behind an HTTPS proxy, rate limits, security headers, every private
+route bound to the caller's own profile). Tests: `tests/test_scholarship_round46.py`. A cross-tenant leak was fixed on the
+way: `tracker.lessons` returned every user's outcomes.
+
+**Legal readiness** (engineering material for counsel, not legal advice): `docs/scholarship-agent/legal/` holds a review
+packet (records of processing, rights and the routes that serve them, security measures, processors and transfers,
+children, breach procedure, questions for counsel) and draft privacy notice and terms in English and Indonesian.
+
+**Label quality.** Every set-X label was compared with the cached independent Claude reading; where they differed on a
+decision not marked as a close call, the page was read again in full. Five labels were wrong (requirement and coverage
+lines the labeller's filtered view had not shown) and are recorded in `tests/heldout_x/adjudication.json`. Adjudicated set
+X, strict gate: rules 5.4% (22/409), rules + second reading 1.8% (7/389). A human second labeller fills a 24-page form;
+`tests/heldout_x/second_labeller.py` reports agreement and Cohen's kappa per decision.
+
+**A cycle check in the second reading** (`SCHOLAR_SECOND_READING_STATUS=1`): the reader is also asked whether applicants
+can apply as of today, and a different answer holds the cycle. Development data only (sets K to X, adjudicated labels,
+strict gate; Claude Haiku 5.5 re-read 733 pages for USD 0.32):
+
+| Second reading | Wrong claims among answered | Correct | Held but right | Cycle wrong | Utility |
+|---|---|---|---|---|---|
+| none (rules) | 5.17% (122/2358) | 1843 | 227 | 36 | 1485.5 |
+| v1 prompt (round 44, the default) | 2.60% (58/2232) | 1781 | 289 | 28 | 1520.5 |
+| new readings, status not used | 2.64% (59/2238) | 1786 | 284 | 27 | 1526.0 |
+| new readings with the cycle check | **2.18% (48/2198)** | 1757 | 313 | 16 | 1504.5 |
+
+The check removes 11 wrong claims and holds 29 right answers for review: a lower utility, so it stays off by default and
+is the setting for a deployment that puts precision first. Asking the extra field did not change the other readings
+(row 3 against row 2).
+
