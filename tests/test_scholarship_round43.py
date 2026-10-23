@@ -17,11 +17,11 @@ TEXT = ("Example Scholarship\nThe scholarship is open to citizens of Kenya and U
 
 
 class FakeLLM:
-    def __init__(self, fields):
-        self.fields = fields
+    def __init__(self, fields, quote="Application deadline: 15 January 2027"):
+        self.fields, self.quote = fields, quote
 
     def complete_json(self, system, user, fields=None, meta=None):
-        return {"fields": [{"field": k, "value": v, "quote": ""} for k, v in self.fields.items()]}
+        return {"fields": [{"field": k, "value": v, "quote": self.quote} for k, v in self.fields.items()]}
 
 
 class Broken:
@@ -69,3 +69,12 @@ class TestSecondReadingExclusions(unittest.TestCase):
         before = field_status(o, TODAY)["eligible_countries"]["state"]
         attach_second_reading(o, text, FakeLLM({"nationality": "not_stated"}), TODAY)
         self.assertEqual(field_status(o, TODAY)["eligible_countries"]["state"], before)
+
+
+class TestQuoteCheck(unittest.TestCase):
+    def test_a_reading_whose_quote_is_not_on_the_page_holds_nothing(self):
+        base = status(None)
+        got = status(FakeLLM({"funding_class": "partially_funded", "deadline": "2027-02-01"},
+                             quote="a sentence that the page does not contain"))
+        self.assertEqual(got["deadline"]["state"], base["deadline"]["state"])
+        self.assertEqual(got["funding_type"]["state"], base["funding_type"]["state"])

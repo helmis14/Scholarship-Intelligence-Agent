@@ -1,0 +1,5832 @@
+{
+ "set": "X",
+ "decisions": {
+  "set": "heldout_x",
+  "split": "all",
+  "ambiguous_left_out": false,
+  "adjudicated": false,
+  "today": "2026-10-23",
+  "decisions": {
+   "eligibility": {
+    "correct": 85,
+    "wrong_claim": 3,
+    "flagged": 23,
+    "abstained": 15
+   },
+   "funding": {
+    "correct": 54,
+    "wrong_claim": 3,
+    "flagged": 45,
+    "abstained": 24
+   },
+   "cycle": {
+    "correct": 66,
+    "wrong_claim": 9,
+    "flagged": 17,
+    "abstained": 34
+   },
+   "deadline": {
+    "correct": 78,
+    "wrong_claim": 8,
+    "flagged": 10,
+    "abstained": 30
+   }
+  },
+  "correct_rate": {
+   "eligibility": 0.675,
+   "funding": 0.429,
+   "cycle": 0.524,
+   "deadline": 0.619
+  },
+  "wrong_claim_rate": {
+   "eligibility": 0.024,
+   "funding": 0.024,
+   "cycle": 0.071,
+   "deadline": 0.063
+  },
+  "known_with_clean_quotation": {
+   "eligibility": "8/8",
+   "funding": "5/5",
+   "cycle": "46/46"
+  },
+  "flagged_but_right": {
+   "eligibility": 10,
+   "funding": 10,
+   "cycle": 15,
+   "deadline": 1
+  },
+  "review": {
+   "decisions": 504,
+   "answered_without_review": 409,
+   "correct_without_review": 283,
+   "wrong_claims": 23,
+   "sent_to_review": 95,
+   "correct_but_held_in_review": 36,
+   "share_answered": 0.812,
+   "share_correct_without_review": 0.562,
+   "wrong_claims_among_answered": 0.056
+  },
+  "eligibility_by_label_rule": {
+   "not_stated": {
+    "correct": 80,
+    "wrong_claim": 2,
+    "flagged": 9,
+    "abstained": 0
+   },
+   "exclude": {
+    "correct": 2,
+    "wrong_claim": 0,
+    "flagged": 4,
+    "abstained": 1
+   },
+   "include": {
+    "correct": 3,
+    "wrong_claim": 1,
+    "flagged": 8,
+    "abstained": 14
+   },
+   "any": {
+    "correct": 0,
+    "wrong_claim": 0,
+    "flagged": 2,
+    "abstained": 0
+   }
+  },
+  "programmes": 126
+ },
+ "fields": {
+  "rates": {
+   "deadline_exact": {
+    "correct": 56,
+    "total": 98,
+    "accuracy": 0.571
+   },
+   "deadline_status": {
+    "correct": 56,
+    "total": 56,
+    "accuracy": 1.0
+   },
+   "funding_components": {
+    "correct": 15,
+    "total": 43,
+    "accuracy": 0.349
+   },
+   "nationality": {
+    "correct": 95,
+    "total": 126,
+    "accuracy": 0.754
+   },
+   "page_kind": {
+    "correct": 82,
+    "total": 126,
+    "accuracy": 0.651
+   }
+  },
+  "unsupported_values": 36,
+  "scored_values": 122,
+  "missing_values": 85,
+  "labelled_values": 176
+ },
+ "rows": [
+  {
+   "id": "x-de-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "fully_funded",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "open",
+    "label": "open",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-10-30"
+    ],
+    "label": [
+     "2026-10-30"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-de-1-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "exclude",
+     [
+      "ID"
+     ]
+    ],
+    "label": [
+     "exclude",
+     [
+      "ID"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "partially_funded",
+    "label": "partially_funded",
+    "state": "partially_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-de-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-10-30"
+    ],
+    "label": [
+     "2026-10-30"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-de-4-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "upcoming",
+    "label": "upcoming",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2026-08-31"
+    ],
+    "label": [
+     "2026-08-31",
+     "2027-08-31"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-li-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "stipend_only",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "open",
+    "label": "not_stated",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2026-11-02"
+    ],
+    "label": [],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-fr-3",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "open",
+    "label": "open",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-11-23"
+    ],
+    "label": [
+     "2026-11-23"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-fr-3-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-fr-4",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "MN"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-lu-2-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "tuition_funded",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-lu-2-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "tuition_funded",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2027-01-22"
+    ],
+    "label": [
+     "2027-01-22"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-cl-3",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-08-31"
+    ],
+    "label": [
+     "2026-08-31"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-co-4",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "any",
+     []
+    ],
+    "label": [
+     "exclude",
+     [
+      "CO"
+     ]
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "tuition_funded",
+    "label": "tuition_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "flagged",
+    "predicted": [
+     "2025-04-04",
+     "2025-06-13"
+    ],
+    "label": [
+     "2025-06-13"
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-pe-1-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "fully_funded",
+    "label": "not_stated",
+    "state": "fully_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-05-18",
+     "2026-05-19"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-pe-1-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "fully_funded",
+    "label": "fully_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-04-17"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-uy-3-1",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "KR"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-10-07"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-ec-3",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "EC"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "funding_unclear",
+    "label": "fully_funded",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-bo-3",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "BO"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation is a heading or label, not an eligibility statement"
+    ]
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "partially_funded",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "flagged",
+    "predicted": [
+     "2026-06-19",
+     "2026-06-20"
+    ],
+    "label": [
+     "2026-06-19"
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-cr-2-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2027-02-08"
+    ],
+    "label": [
+     "2027-02-08"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-gt-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "upcoming",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-11-23",
+     "2027-01-08"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-hn-1-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-04-24"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-hn-1-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "fully_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-03-31"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-hn-4",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "HN"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "HN"
+     ]
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "quotation does not state who is eligible"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "tuition_funded",
+    "label": "fully_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-06-18"
+    ],
+    "label": [
+     "2026-06-18"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-do-4",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "tuition_funded",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "upcoming",
+    "label": "upcoming",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2027-04-10"
+    ],
+    "label": [
+     "2027-04-10"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-cu-1",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "KN"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-03-20"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-pr-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "stipend_only",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "flagged",
+    "predicted": [
+     "2026-08-01",
+     "2027-02-08",
+     "2027-04-01"
+    ],
+    "label": [
+     "2027-02-08"
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-pr-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2027-01-05"
+    ],
+    "label": [
+     "2027-01-05"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-pr-2-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2027-01-05"
+    ],
+    "label": [
+     "2027-01-05"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-br-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "fully_funded",
+    "label": "fully_funded",
+    "state": "fully_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-pt-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2026-10-29"
+    ],
+    "label": [
+     "2026-10-02",
+     "2027-05-31"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-ao-3-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "partially_funded",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-05-08"
+    ],
+    "label": [
+     "2026-05-08"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-cv-1-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "partially_funded",
+    "label": "tuition_funded",
+    "state": "partially_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-cv-3",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-st-4-2",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "exclude",
+     [
+      "ZA"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "ZA"
+     ]
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation is a heading or label, not an eligibility statement"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-11-10"
+    ],
+    "label": [
+     "2026-11-10"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-tl-1-1",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "exclude",
+     [
+      "AU",
+      "NZ"
+     ]
+    ],
+    "label": [
+     "exclude",
+     [
+      "AU",
+      "NZ"
+     ]
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "partially_funded",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "not_announced",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_published",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-tl-4",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "exclude",
+     [
+      "ID"
+     ]
+    ],
+    "label": [
+     "exclude",
+     [
+      "ID"
+     ]
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page",
+     "quotation is a heading or label, not an eligibility statement"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "fee_waiver",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a announcement page, not the programme's own page",
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-09-30"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-it-1-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "stipend_only",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "flagged",
+    "predicted": [
+     "2024-06-18",
+     "2024-06-20"
+    ],
+    "label": [
+     "2024-06-18"
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-sm-1-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-va-1-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "stipend_only",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-09-06"
+    ],
+    "label": [
+     "2026-09-06"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-nl-2-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "open",
+    "label": "upcoming",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2027-02-20"
+    ],
+    "label": [
+     "2027-02-20"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-nl-2-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-fi-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "include",
+     [
+      "ID"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "ID"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "funding_unclear",
+    "label": "fully_funded",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-01-15"
+    ],
+    "label": [
+     "2026-01-15"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-pl-3",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "closed",
+    "label": "open",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-10-15"
+    ],
+    "label": [
+     "2026-10-15"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-rs-4",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "RS"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "stipend_only",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "open",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-10-30"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-me-2-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-hu-2-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2023-01-16"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-hu-3-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2024-03-28"
+    ],
+    "label": [
+     "2024-03-28"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-kz-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "include",
+     [
+      "KZ"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "KZ"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "stipend_only",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-02-22"
+    ],
+    "label": [
+     "2026-02-22"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-ua-2",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "UA"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "stipend_only",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "open",
+    "label": "open",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-12-01"
+    ],
+    "label": [
+     "2026-12-01"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-cy-1",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "BH",
+      "EG",
+      "ET",
+      "FJ",
+      "GH",
+      "JO",
+      "KE",
+      "KI",
+      "KM",
+      "LB",
+      "MG",
+      "MH",
+      "MU",
+      "NR",
+      "PG",
+      "PS",
+      "SB",
+      "SC",
+      "TO",
+      "TV",
+      "TZ",
+      "UG",
+      "VU",
+      "WS",
+      "ZA"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "fully_funded",
+    "label": "fully_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page",
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2025-06-15"
+    ],
+    "label": [
+     "2025-06-15"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-cy-4",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-04-08"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-eg-3",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "EG"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "fully_funded",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-08-14"
+    ],
+    "label": [
+     "2026-08-14"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-eg-4",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-08-14"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-ma-4",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "MA"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "MA"
+     ]
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "quotation is a heading or label, not an eligibility statement"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "fully_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "open",
+    "label": "closed",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "flagged",
+    "predicted": [
+     "2026-05-14",
+     "2026-05-15",
+     "2026-05-31",
+     "2027-02-28",
+     "2027-07-30"
+    ],
+    "label": [
+     "2026-05-14",
+     "2026-05-15"
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-dz-3-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "stipend_only",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2024-10-24"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-dz-3-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2024-10-30"
+    ],
+    "label": [
+     "2024-10-30"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-jo-1-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "funding_unclear",
+    "label": "tuition_funded",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-lb-3",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "FR"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "funding_unclear",
+    "label": "partially_funded",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "open",
+    "label": "closed",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2026-12-31"
+    ],
+    "label": [
+     "2026-09-11"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-iq-3-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "stipend_only",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "rolling",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-ye-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-sd-3-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "stipend_only",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-ps-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "funding_unclear",
+    "label": "fully_funded",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "flagged",
+    "predicted": [
+     "2026-01-01",
+     "2026-03-30"
+    ],
+    "label": [
+     "2026-03-30"
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-af-2-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "stipend_only",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2027-01-07"
+    ],
+    "label": [
+     "2027-01-07"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-tw-1-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-tw-4",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "include",
+     [
+      "AS",
+      "GU",
+      "MH",
+      "MX"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "funding_unclear",
+    "label": "stipend_only",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "rolling",
+    "label": "not_stated",
+    "state": "rolling",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_applicable",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-hk-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2027-01-08"
+    ],
+    "label": [
+     "2027-01-08"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-sg-1-1",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "exclude",
+     [
+      "ID"
+     ]
+    ],
+    "label": [
+     "exclude",
+     [
+      "ID"
+     ]
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "quotation is a heading or label, not an eligibility statement"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "fully_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "amount not stated in the quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2025-05-25"
+    ],
+    "label": [
+     "2026-05-31"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-id-3-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "stipend_only",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-ke-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-05-11",
+     "2026-05-21"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-ci-2",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-gn-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "not_announced",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-cg-1-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "fully_funded",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "flagged",
+    "predicted": [
+     "2026-08-15",
+     "2026-09-13"
+    ],
+    "label": [
+     "2026-08-15"
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-ga-1",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "FR"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-mg-3",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-11-15"
+    ],
+    "label": [
+     "2026-11-15"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-rw-2-1",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "any",
+     []
+    ],
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "fully_funded",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-10-12"
+    ],
+    "label": [
+     "2026-10-12"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-rw-2-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2026-07-23"
+    ],
+    "label": [
+     "2026-08-25"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-dj-3",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-01-15"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-km-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "flagged",
+    "predicted": [
+     "2026-08-16",
+     "2026-11-15",
+     "2027-02-21",
+     "2027-05-16"
+    ],
+    "label": [
+     "2026-08-16",
+     "2026-11-15",
+     "2027-02-21",
+     "2027-05-16"
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-km-1-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-cf-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "stipend_only",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "open",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-11-19"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-cf-1-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "open",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-12-03"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-r-fr-eiffel-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "exclude",
+     [
+      "FR"
+     ]
+    ],
+    "label": [
+     "exclude",
+     [
+      "FR"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "stipend_only",
+    "label": "stipend_only",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2021-05-10"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-r-jp-jsps-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": [
+     "include",
+     [
+      "JP"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "JP"
+     ]
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-r-gb-edinburgh-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "tuition_funded",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-r-c-studyaustralia-gov-au-au-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "funding_unclear",
+    "label": "partially_funded",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-r-x-admissions-uc-edu-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "closed",
+    "label": "not_announced",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x-r-c-usask-ca-ca-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-de-2-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-07-03"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-es-4-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "stipend_only",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-07-30"
+    ],
+    "label": [
+     "2026-07-30"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-co-2-1",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "CL"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "fully_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-10-01"
+    ],
+    "label": [
+     "2026-10-01"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-sk-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "stipend_only",
+    "label": "stipend_only",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "open",
+    "label": "closed",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2027-06-30"
+    ],
+    "label": [
+     "2026-05-25"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-mr-3",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2025-04-25"
+    ],
+    "label": [
+     "2025-04-25"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-ht-1",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "HT"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "HT"
+     ]
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "quotation does not state who is eligible"
+    ]
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-05-29",
+     "2026-05-30"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-mx-3",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "wrong_claim",
+    "predicted": "partially_funded",
+    "label": "tuition_funded",
+    "state": "partially_funded",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "open",
+    "label": "open",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "the quotation names another programme: Spring Opportunity Scholarship"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-12-07"
+    ],
+    "label": [
+     "2026-12-07"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-mx-3-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "tuition_funded",
+    "label": "tuition_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-si-3-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-si-3-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2025-01-26",
+     "2026-01-29"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-ba-1",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "AU",
+      "NZ"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "AU",
+      "NZ"
+     ]
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "quotation does not state who is eligible"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "open",
+    "label": "open",
+    "state": "open",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-10-31"
+    ],
+    "label": [
+     "2026-10-31"
+    ],
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-ba-3",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "AL",
+      "BA",
+      "HR",
+      "ME",
+      "MK",
+      "RS",
+      "SI",
+      "UA",
+      "XK"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "fully_funded",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-03-23"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-ba-4-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "open",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-11-01"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-eg-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-09-15"
+    ],
+    "label": [
+     "2026-09-15"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-eg-1-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-09-01"
+    ],
+    "label": [
+     "2026-09-01"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-ar-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-04-15"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-ar-1-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2025-06-22"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-id-3",
+   "eligibility": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "include",
+     [
+      "ID"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "present",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-05-31"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-vn-2",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "US"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "US",
+      "VN"
+     ]
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "stipend_only",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-uy-4-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-09-16"
+    ],
+    "label": [
+     "2026-09-16"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-se-1-1",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "IN"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation does not state who is eligible"
+    ]
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2023-12-10"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-se-1-2",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "IN"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation does not state who is eligible"
+    ]
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-pl-4",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "flagged",
+    "predicted": [
+     "2024-09-20",
+     "2024-10-18"
+    ],
+    "label": [
+     "2024-10-18"
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-hu-1",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "AF",
+      "AL",
+      "AM",
+      "AO",
+      "AZ",
+      "BA",
+      "BD",
+      "BF",
+      "BY",
+      "CD",
+      "CV",
+      "DZ",
+      "EG",
+      "ET",
+      "GE",
+      "GH",
+      "GM",
+      "JO",
+      "KE",
+      "KG",
+      "KH",
+      "KP",
+      "KZ",
+      "LA",
+      "LB",
+      "MD",
+      "ME",
+      "MG",
+      "MK",
+      "ML",
+      "MM",
+      "MN",
+      "NA",
+      "NG",
+      "PH",
+      "PS",
+      "RS",
+      "SD",
+      "SO",
+      "SS",
+      "TD",
+      "TJ",
+      "TM",
+      "UA",
+      "UG",
+      "UZ",
+      "VN",
+      "XK",
+      "YE"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "fully_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a announcement page, not the programme's own page",
+     "quotation is a heading or label, not a funding statement"
+    ]
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-02-28"
+    ],
+    "label": [
+     "2026-02-28"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-hu-2",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "NG"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "fully_funded",
+    "label": "fully_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-02-28"
+    ],
+    "label": [
+     "2026-02-28"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-iq-2",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "GB"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a announcement page, not the programme's own page",
+     "the quotation names another programme: Master's Scholarship"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-iq-4",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "any",
+     []
+    ],
+    "label": [
+     "any",
+     []
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page",
+     "quotation does not state who is eligible"
+    ]
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-sd-2-1",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "AO",
+      "BF",
+      "BI",
+      "BJ",
+      "BW",
+      "CD",
+      "CF",
+      "CG",
+      "CI",
+      "CM",
+      "CV",
+      "DJ",
+      "DZ",
+      "EG",
+      "ER",
+      "ET",
+      "GA",
+      "GH",
+      "GM",
+      "GN",
+      "GQ",
+      "GW",
+      "KE",
+      "KM",
+      "LR",
+      "LS",
+      "LY",
+      "MA",
+      "MG",
+      "ML",
+      "MR",
+      "MU",
+      "MW",
+      "MZ",
+      "NA",
+      "NE",
+      "NG",
+      "RW",
+      "SC",
+      "SD",
+      "SL",
+      "SN",
+      "SO",
+      "SS",
+      "ST",
+      "SZ",
+      "TD",
+      "TG",
+      "TN",
+      "TZ",
+      "UG",
+      "ZA",
+      "ZM",
+      "ZW"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-sd-2-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "tuition_funded",
+    "label": "partially_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "wrong_claim",
+    "predicted": "closed",
+    "label": "not_stated",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "wrong_claim",
+    "predicted": [
+     "2010-01-15"
+    ],
+    "label": [],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-af-1",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "AF",
+      "IN"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "AF"
+     ]
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "quotation does not state who is eligible"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "tuition_funded",
+    "label": "tuition_funded",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-07-27"
+    ],
+    "label": [
+     "2026-07-27"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-sg-1-1",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "any",
+     []
+    ],
+    "label": [
+     "any",
+     []
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [],
+    "label": [],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-td-4",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "include",
+     [
+      "FR"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "funding_unclear",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-09-18"
+    ],
+    "label": [
+     "2026-09-18"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-dj-1",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "IN"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a announcement page, not the programme's own page",
+     "quotation is a heading or label, not an eligibility statement"
+    ]
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "closed",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "flagged",
+    "predicted": [
+     "2026-01-30",
+     "2026-08-29"
+    ],
+    "label": [],
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-ec-4",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "EC"
+     ]
+    ],
+    "label": [
+     "include",
+     [
+      "EC"
+     ]
+    ],
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "partially_funded",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "closed",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-08-30"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-ec-4-1",
+   "eligibility": {
+    "outcome": "flagged",
+    "predicted": [
+     "include",
+     [
+      "EC"
+     ]
+    ],
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "read on a announcement page, not the programme's own page",
+     "quotation does not state who is eligible"
+    ]
+   },
+   "funding": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "partially_funded",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-06-30"
+    ],
+    "label": [
+     "2026-06-30"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-rs-2",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "open",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-10-30"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-ro-4",
+   "eligibility": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": [
+     "exclude",
+     [
+      "AT",
+      "BE",
+      "BG",
+      "CY",
+      "CZ",
+      "DE",
+      "DK",
+      "EE",
+      "ES",
+      "FI",
+      "FR",
+      "GR",
+      "HR",
+      "HU",
+      "IE",
+      "IT",
+      "LT",
+      "LU",
+      "LV",
+      "MT",
+      "NL",
+      "PL",
+      "PT",
+      "RO",
+      "SE",
+      "SI",
+      "SK"
+     ]
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "flagged",
+    "predicted": "funding_unclear",
+    "label": "not_stated",
+    "state": "needs_review",
+    "flagged_value_was_right": false,
+    "evidence": [
+     "a value without a quotation"
+    ]
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-03-31"
+    ],
+    "label": [
+     "2026-03-31"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-ro-4-1",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "correct",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "closed",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-03-31"
+    ],
+    "label": [
+     "2026-03-31"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-gr-4",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "abstained",
+    "predicted": "not_stated",
+    "label": "open",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "deadline": {
+    "outcome": "abstained",
+    "predicted": [],
+    "label": [
+     "2026-11-16"
+    ],
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  },
+  {
+   "id": "x2-jp-3",
+   "eligibility": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "funding": {
+    "outcome": "correct",
+    "predicted": "not_stated",
+    "label": "not_stated",
+    "state": "not_stated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   },
+   "cycle": {
+    "outcome": "flagged",
+    "predicted": "closed",
+    "label": "closed",
+    "state": "needs_review",
+    "flagged_value_was_right": true,
+    "evidence": [
+     "read on a announcement page, not the programme's own page"
+    ]
+   },
+   "deadline": {
+    "outcome": "correct",
+    "predicted": [
+     "2026-04-30"
+    ],
+    "label": [
+     "2026-04-30"
+    ],
+    "state": "outdated",
+    "flagged_value_was_right": null,
+    "evidence": []
+   }
+  }
+ ],
+ "field_misses": {
+  "x-de-1": [
+   "page_kind: predicted news, label opportunity"
+  ],
+  "x-de-4-2": [
+   "deadline missed 2027-08-31"
+  ],
+  "x-li-2": [
+   "deadline spurious 2026-11-02"
+  ],
+  "x-fr-3": [
+   "page_kind: predicted news, label opportunity"
+  ],
+  "x-fr-3-1": [
+   "page_kind: predicted not_relevant, label opportunity"
+  ],
+  "x-fr-4": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "nationality: predicted unknown [], label ('include', ['MN'])"
+  ],
+  "x-co-4": [
+   "page_kind: predicted news, label opportunity",
+   "deadline spurious 2025-04-04",
+   "nationality: predicted any [], label ('exclude', ['CO'])"
+  ],
+  "x-pe-1-1": [
+   "deadline missed 2026-05-18",
+   "deadline missed 2026-05-19"
+  ],
+  "x-pe-1-2": [
+   "deadline missed 2026-04-17",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-uy-3-1": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "deadline missed 2026-10-07",
+   "nationality: predicted unknown [], label ('include', ['KR'])"
+  ],
+  "x-ec-3": [
+   "nationality: predicted unknown [], label ('include', ['EC'])",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-bo-3": [
+   "deadline spurious 2026-06-20",
+   "nationality: predicted include ['BO'], label not_stated"
+  ],
+  "x-gt-1": [
+   "deadline missed 2026-11-23",
+   "deadline missed 2027-01-08"
+  ],
+  "x-hn-1-1": [
+   "deadline missed 2026-04-24"
+  ],
+  "x-hn-1-2": [
+   "deadline missed 2026-03-31",
+   "component tuition: predicted not covered, label full",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-hn-4": [
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-cu-1": [
+   "deadline missed 2026-03-20",
+   "nationality: predicted unknown [], label ('include', ['KN'])"
+  ],
+  "x-pr-1": [
+   "deadline spurious 2026-08-01",
+   "deadline spurious 2027-04-01"
+  ],
+  "x-br-1": [
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-pt-1": [
+   "deadline missed 2026-10-02",
+   "deadline missed 2027-05-31",
+   "deadline spurious 2026-10-29"
+  ],
+  "x-cv-3": [
+   "page_kind: predicted not_relevant, label opportunity"
+  ],
+  "x-st-4-2": [
+   "nationality: predicted exclude ['ZA'], label ('include', ['ZA'])"
+  ],
+  "x-tl-1-1": [
+   "page_kind: predicted news, label opportunity"
+  ],
+  "x-tl-4": [
+   "page_kind: predicted news, label opportunity",
+   "deadline missed 2026-09-30"
+  ],
+  "x-it-1-1": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "deadline spurious 2024-06-20"
+  ],
+  "x-fi-1": [
+   "component tuition: predicted not covered, label full",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-rs-4": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "deadline missed 2026-10-30",
+   "nationality: predicted unknown [], label ('include', ['RS'])",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-me-2-1": [
+   "page_kind: predicted not_relevant, label opportunity"
+  ],
+  "x-hu-2-1": [
+   "page_kind: predicted news, label opportunity",
+   "deadline missed 2023-01-16"
+  ],
+  "x-hu-3-1": [
+   "page_kind: predicted news, label opportunity"
+  ],
+  "x-ua-2": [
+   "page_kind: predicted news, label opportunity",
+   "nationality: predicted include ['UA'], label not_stated",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-cy-1": [
+   "page_kind: predicted news, label opportunity",
+   "nationality: predicted unknown [], label ('include', ['KE', 'UG', 'TZ', 'ZA', 'GH', 'EG'])",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-cy-4": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "deadline missed 2026-04-08"
+  ],
+  "x-eg-3": [
+   "nationality: predicted unknown [], label ('include', ['EG'])",
+   "component tuition: predicted not covered, label full",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-eg-4": [
+   "deadline missed 2026-08-14"
+  ],
+  "x-ma-4": [
+   "deadline spurious 2027-07-30",
+   "deadline spurious 2027-02-28",
+   "deadline spurious 2026-05-31",
+   "component tuition: predicted not covered, label full",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-dz-3-1": [
+   "deadline missed 2024-10-24",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-lb-3": [
+   "deadline missed 2026-09-11",
+   "deadline spurious 2026-12-31",
+   "nationality: predicted unknown [], label ('include', ['FR'])"
+  ],
+  "x-iq-3-1": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-sd-3-1": [
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-ps-2": [
+   "deadline spurious 2026-01-01",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-tw-1-1": [
+   "page_kind: predicted not_relevant, label opportunity"
+  ],
+  "x-tw-4": [
+   "nationality: predicted include ['AS', 'GU', 'MH', 'MX'], label ('include', ['US'])",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-sg-1-1": [
+   "deadline missed 2026-05-31",
+   "deadline spurious 2025-05-25",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-ke-2": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "deadline missed 2026-05-11",
+   "deadline missed 2026-05-21"
+  ],
+  "x-ci-2": [
+   "nationality: predicted include ['US'], label not_stated"
+  ],
+  "x-gn-2": [
+   "page_kind: predicted not_relevant, label opportunity"
+  ],
+  "x-cg-1-1": [
+   "deadline spurious 2026-09-13"
+  ],
+  "x-ga-1": [
+   "nationality: predicted unknown [], label ('include', ['FR'])"
+  ],
+  "x-rw-2-1": [
+   "nationality: predicted any [], label not_stated"
+  ],
+  "x-rw-2-2": [
+   "deadline missed 2026-08-25",
+   "deadline spurious 2026-07-23"
+  ],
+  "x-dj-3": [
+   "page_kind: predicted news, label opportunity",
+   "deadline missed 2026-01-15"
+  ],
+  "x-cf-1": [
+   "deadline missed 2026-11-19"
+  ],
+  "x-cf-1-2": [
+   "deadline missed 2026-12-03"
+  ],
+  "x-r-fr-eiffel-1": [
+   "deadline missed 2021-05-10",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x-r-jp-jsps-1": [
+   "page_kind: predicted not_relevant, label opportunity"
+  ],
+  "x2-de-2-2": [
+   "page_kind: predicted listing, label opportunity",
+   "deadline missed 2026-07-03"
+  ],
+  "x2-es-4-1": [
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x2-co-2-1": [
+   "page_kind: predicted news, label opportunity",
+   "nationality: predicted unknown [], label ('include', ['CL'])",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x2-sk-1": [
+   "deadline missed 2026-05-25",
+   "deadline spurious 2027-06-30",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x2-ht-1": [
+   "deadline missed 2026-05-29",
+   "deadline missed 2026-05-30"
+  ],
+  "x2-si-3-2": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "deadline missed 2026-01-29",
+   "deadline missed 2025-01-26"
+  ],
+  "x2-ba-3": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "deadline missed 2026-03-23",
+   "nationality: predicted unknown [], label ('include', ['RS', 'ME', 'AL', 'BA', 'HR', 'MK'])"
+  ],
+  "x2-ba-4-1": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "deadline missed 2026-11-01"
+  ],
+  "x2-ar-1": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "deadline missed 2026-04-15"
+  ],
+  "x2-ar-1-2": [
+   "deadline missed 2025-06-22"
+  ],
+  "x2-id-3": [
+   "deadline missed 2026-05-31",
+   "nationality: predicted include ['ID'], label not_stated"
+  ],
+  "x2-vn-2": [
+   "page_kind: predicted news, label opportunity",
+   "nationality: predicted include ['US'], label ('include', ['US', 'VN'])"
+  ],
+  "x2-uy-4-1": [
+   "page_kind: predicted news, label opportunity"
+  ],
+  "x2-se-1-1": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "deadline missed 2023-12-10",
+   "nationality: predicted include ['IN'], label not_stated"
+  ],
+  "x2-se-1-2": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "nationality: predicted include ['IN'], label not_stated"
+  ],
+  "x2-pl-4": [
+   "deadline spurious 2024-09-20"
+  ],
+  "x2-hu-1": [
+   "page_kind: predicted news, label opportunity",
+   "nationality: predicted unknown [], label ('include', ['AF', 'AL', 'AM', 'AO', 'AZ', 'BA'])",
+   "component tuition: predicted not covered, label full",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x2-hu-2": [
+   "page_kind: predicted news, label opportunity",
+   "nationality: predicted include ['NG'], label not_stated",
+   "component stipend: predicted not covered, label covered"
+  ],
+  "x2-iq-2": [
+   "page_kind: predicted news, label opportunity",
+   "nationality: predicted include ['GB'], label not_stated"
+  ],
+  "x2-iq-4": [
+   "page_kind: predicted news, label opportunity"
+  ],
+  "x2-sd-2-1": [
+   "nationality: predicted unknown [], label ('include', ['AO', 'BF', 'BI', 'BJ', 'BW', 'CD'])"
+  ],
+  "x2-sd-2-2": [
+   "deadline spurious 2010-01-15"
+  ],
+  "x2-af-1": [
+   "nationality: predicted include ['AF', 'IN'], label ('include', ['AF'])"
+  ],
+  "x2-td-4": [
+   "nationality: predicted unknown [], label ('include', ['FR'])"
+  ],
+  "x2-dj-1": [
+   "page_kind: predicted news, label opportunity",
+   "deadline spurious 2026-08-29",
+   "deadline spurious 2026-01-30",
+   "nationality: predicted include ['IN'], label not_stated"
+  ],
+  "x2-ec-4": [
+   "page_kind: predicted news, label opportunity",
+   "deadline missed 2026-08-30"
+  ],
+  "x2-ec-4-1": [
+   "page_kind: predicted news, label opportunity",
+   "nationality: predicted include ['EC'], label not_stated"
+  ],
+  "x2-rs-2": [
+   "page_kind: predicted news, label opportunity",
+   "deadline missed 2026-10-30"
+  ],
+  "x2-ro-4": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "nationality: predicted unknown [], label ('exclude', ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ'])"
+  ],
+  "x2-gr-4": [
+   "page_kind: predicted not_relevant, label opportunity",
+   "deadline missed 2026-11-16"
+  ],
+  "x2-jp-3": [
+   "page_kind: predicted news, label opportunity"
+  ]
+ }
+}

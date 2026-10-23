@@ -59,8 +59,22 @@ def second_reading(page_text: str, url: str, llm, today: date) -> Optional[dict]
     for item in items:
         if isinstance(item, dict) and item.get("field") in CHECK_FIELDS:
             v = item.get("value")
-            out[item["field"]] = ", ".join(map(str, v)) if isinstance(v, list) else str(v).strip()
+            f = item["field"]
+            out[f] = ", ".join(map(str, v)) if isinstance(v, list) else str(v).strip()
+            # round 45: a value whose quotation is not on the page is a guess; it may not hold the rules' answer
+            out[f + "_quote_ok"] = _silent(out[f]) or quote_on_page(str(item.get("quote") or ""), page_text)
     return out or None
+
+
+def _flat(t: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"[\u2018\u2019\u201c\u201d\"'`]", "", t or "")).strip().lower()
+
+
+def quote_on_page(quote: str, page_text: str) -> bool:
+    """Every part of the quotation (split at ellipses) of 12 or more characters appears in the page text."""
+    page = _flat(page_text)
+    parts = [p for p in (_flat(x) for x in re.split(r"\.\.\.|\u2026", quote)) if len(p) >= 12]
+    return bool(parts) and all(p in page for p in parts)
 
 
 NOT_A_CLAIM = ("not_stated", "needs_review", "unsupported", "funding_unclear")
@@ -86,7 +100,7 @@ def disagreements(o, out: dict, reading: dict, today: date) -> dict[str, str]:
     from .models import DeadlineKind
     held = {}
     n = o.nationality
-    if out["eligible_countries"]["state"] == "present" and "nationality" in reading:
+    if out["eligible_countries"]["state"] == "present" and "nationality" in reading and reading.get("nationality_quote_ok", True):
         r = reading["nationality"].lower()
         mode = "any" if r.startswith("any") else "include" if r.startswith("include") else \
             "exclude" if r.startswith("exclude") else "not_stated"
@@ -95,12 +109,13 @@ def disagreements(o, out: dict, reading: dict, today: date) -> dict[str, str]:
         elif mode != n.mode or (mode in ("include", "exclude")
                                 and not _confirms(set(n.countries), _codes(r.split(":", 1)[-1]))):
             held["eligible_countries"] = reading["nationality"]
-    if out["funding_type"]["state"] not in NOT_A_CLAIM and "funding_class" in reading:
+    if out["funding_type"]["state"] not in NOT_A_CLAIM and "funding_class" in reading and reading.get("funding_class_quote_ok", True):
         theirs = reading["funding_class"]
         if not (_silent(theirs) and not SILENCE_HOLDS["funding_type"]) and _norm(theirs) != out["funding_type"]["state"]:
             held["funding_type"] = theirs
     mine = {d.date for d in o.deadlines if d.date and d.kind in (DeadlineKind.SCHOLARSHIP, DeadlineKind.ADMISSION)}
-    if mine and out["deadline"]["state"] not in ("needs_review", "unsupported") and "deadline" in reading:
+    if mine and out["deadline"]["state"] not in ("needs_review", "unsupported") and "deadline" in reading \
+            and reading.get("deadline_quote_ok", True):
         theirs = set(re.findall(r"\d{4}-\d{2}-\d{2}", reading["deadline"]))
         if not (not theirs and not SILENCE_HOLDS["deadline"]) and theirs != mine:
             held["deadline"] = reading["deadline"]

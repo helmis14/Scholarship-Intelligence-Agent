@@ -11,7 +11,7 @@ import json, sys
 from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 sys.path.append(str(REPO / "tests"))
-SETS = ["heldout_k", "heldout_l", "heldout_m", "heldout_n", "heldout_o", "heldout_p", "heldout_q", "heldout_r", "heldout_s", "heldout_t", "heldout_u", "heldout_v"]
+SETS = ["heldout_k", "heldout_l", "heldout_m", "heldout_n", "heldout_o", "heldout_p", "heldout_q", "heldout_r", "heldout_s", "heldout_t", "heldout_u", "heldout_v", "heldout_w", "heldout_x"]
 
 
 def utility(rev: dict) -> float:

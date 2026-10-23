@@ -61,3 +61,31 @@ class TestRound44(unittest.TestCase):
     def test_education_completed_outside_x(self):
         self.assertNotIn("AE", self.rule("The scholarships are open to those who completed their secondary education "
                                          "outside the UAE.")[1])
+
+
+class TestRound45(unittest.TestCase):
+    def rule(self, text):
+        from scholarship_agent.extract import extract_nationality
+        r, _ = extract_nationality(text)
+        return r.mode, r.countries
+
+    def test_uk_and_overseas_students_is_fee_status(self):
+        self.assertNotIn("GB", self.rule("The award is open to UK and overseas students applying to start their PhD.")[1])
+
+    def test_non_x_applicants_may_also_be_considered(self):
+        # others may also apply: not an exclusion of South Africa (round 31 turns the rule into a note)
+        self.assertNotEqual(self.rule("Applicants must be South African citizens. In exceptional cases, non-South African "
+                                      "applicants may also be considered.")[0], "exclude")
+
+    def test_dual_nationals_sentence_is_not_an_exclusion(self):
+        self.assertEqual(self.rule("Be a Pakistani national and permanent resident of Pakistan. Dual nationals are not "
+                                   "eligible."), ("include", ["PK"]))
+
+    def test_workshop_week_is_an_event(self):
+        d = extract_deadlines("Fellows attend a 2-day workshop the week of August 12-13, 2026 in Seattle.",
+                              "https://example.org/", date(2026, 10, 23))
+        self.assertNotIn("2026-08-12", [x.date for x in d if x.kind.value == "scholarship"])
+
+    def test_closed_until_date_is_an_opening(self):
+        d = extract_deadlines("Applications are now closed until November 10, 2026.", "https://example.org/", date(2026, 10, 23))
+        self.assertEqual([(x.date, x.kind.value) for x in d if x.date == "2026-11-10"], [("2026-11-10", "opening")])

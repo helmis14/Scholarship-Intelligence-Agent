@@ -1,0 +1,36 @@
+{
+ "_comment": "Round 45: adjudication of set-W labels questioned in the error analysis after the first and only scoring (the labeller's view cut lines lower on the page). labels.json and the frozen W results are NOT changed; decisions.py --adjudicate applies these overrides in memory and reports them as a separate result.",
+ "decided": "2026-10-23",
+ "cases": {
+  "w2-rw-1": {
+   "verdict": "label wrong",
+   "fields": {"funding_class": "fully_funded", "components": {"tuition": "full", "stipend": "covered"}},
+   "quote": "Monthly scholarships are 1.325 EUR (during stays in Rwanda) and 1.200 EUR ... Tuition fees are covered. Travel costs (if applicable) are covered. Health insurance costs are covered.",
+   "why": "the funding section lower on the page lists a monthly scholarship and covered tuition"
+  },
+  "w2-pt-3": {
+   "verdict": "label wrong",
+   "fields": {"cycle_status": "rolling"},
+   "quote": "Applications are open throughout the year. Limited spaces are available for each intake",
+   "why": "the same reading as w2-pt-3-2 ('open throughout the year' = rolling); the line was missed"
+  },
+  "w2-pt-3-1": {
+   "verdict": "label wrong",
+   "fields": {"cycle_status": "rolling"},
+   "quote": "Applications are open throughout the year. Limited spaces are available for each intake",
+   "why": "as w2-pt-3"
+  },
+  "w2-dj-1": {
+   "verdict": "label wrong",
+   "fields": {"deadlines": [{"kind": "scholarship", "date": "2026-02-03", "status": "historical"}], "cycle_status": "closed"},
+   "quote": "The deadline for applications is 12:00 (midday) UTC on 3 February 2026. ... Applications are closed",
+   "why": "the deadline section lower on the page was missed"
+  },
+  "w2-li-3": {
+   "verdict": "close call",
+   "fields": {"deadlines": [{"kind": "scholarship", "date": "2024-03-31", "status": "historical"}], "cycle_status": "closed"},
+   "quote": "Physical Sciences (Application deadline extended till 31st March 2024)",
+   "why": "the only dated deadline on the page is one department's; read as the programme's last deadline"
+  }
+ }
+}

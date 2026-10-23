@@ -527,6 +527,10 @@ def _date_role(s: str, raw: str, prev: list[str], raws: list[str]) -> Optional[D
     if re.search(r"\b(?:programs?|programmes?|courses?|studies|study|stays?|projects?)\s+(?:beginning|starting|commencing|that (?:begin|start))"
                  r"\s+(?:between|on|after|before|from|in|by)?\s*[^.;()]{0,45}$", s[max(0, start - 120):start], re.I):
         return DeadlineKind.EVENT   # round 42: "(for study abroad programs beginning between December 1, 2026, to October 31, 2027)"
+    if re.search(r"\b(?:the )?week of\s*$", before[-30:], re.I):
+        return DeadlineKind.EVENT   # round 45: "a workshop the week of August 12-13, 2026"
+    if re.search(r"\b(?:closed|close)\s+(?:until|till)\s*$", before[-30:], re.I):
+        return DeadlineKind.OPENING   # round 45: "Applications are now closed until November 10, 2026"
     if re.match(r"\W{0,3}opening call\b", after, re.I):
         return DeadlineKind.OPENING
     if re.match(r"\W{0,3}closing call\b", after, re.I):
@@ -1396,7 +1400,8 @@ def _scope(s: str) -> str:
         "international" if intl else ""
 
 
-FOREIGN_ALSO_RX = re.compile(r"\bforeign nationals?\b[^.;]{0,200}\b(?:is|are) (?:also )?eligible\b", re.I)
+FOREIGN_ALSO_RX = re.compile(r"\bforeign nationals?\b[^.;]{0,200}\b(?:is|are) (?:also )?eligible\b|"
+                             r"\bnon-[A-Z][\w ]{1,30}?\b(?:applicants?|candidates?|students?|nationals?)\b[^.;]{0,60}\bmay also (?:be considered|apply|be eligible)", re.I)
 INTL_GROUP_RX = re.compile(r"\b(?:and|or) (?:an? )?international (?:\w+ )?(?:students?|applicants?)\b", re.I)
 US_TERRITORIES = {"AS", "GU", "PR", "VI", "MP", "UM"}
 
@@ -1422,6 +1427,8 @@ def extract_nationality(text: str) -> tuple[NationalityRule, list[str]]:
     text = re.sub(r"(?i:\b(citizens?|nationals?)\s+of\s+any\s+(?:other\s+)?countr(?:y|ies)\s+(?:outside|other than|excluding|except|apart from)\s+(?:of\s+)?(?:the\s+)?)(United Kingdom|UK|U\.K\.|[A-Z][\w'-]+(?: [A-Z][\w'-]+)?)", r"non-\2 citizens", text)   # round 41
     text = re.sub(r"\b(?:UK|U\.K\.|British|American|Australian|Canadian|German|French)\s+(?=(?:first|second|upper|lower|2:[12]|honou?rs?|bachelor|master|undergraduate|degree|diploma|qualifications?)\b)", "", text)   # round 41: "equivalent of a UK first class honours degree"
     text = re.sub(r"\(\s*outside (?:of )?(?:the )?[A-Z][\w'-]+(?: [A-Z][\w'-]+)?\s*\)", "", text)   # round 41: "overseas (outside of New Zealand)"
+    text = re.sub(r"(?i:\bdual (?:nationals?|citizens?|nationality holders?)\s+(?:are|is)\s+not\s+eligible[^.;]*[.;]?)", " ", text)   # round 45: a rule about dual citizens, not a list
+    text = re.sub(r"(?i:\b(?:UK|U\.K\.|home|EU|domestic)\s+(?:and|&|or)\s+(?:overseas|international|non-UK|non-EU|EU)\s+(?:students|applicants|candidates)\b)", "all students", text)   # round 45
     text = re.sub(r"(?i:\b(education|studies|schooling|school|degree|qualifications?|diploma|completed|obtained|earned|graduated)\b([^.;]{0,30}?)\boutside\s+(?:of\s+)?(?:the\s+)?)(?:UAE|UK|USA|US|U\.S\.|EU|[A-Z][a-z][\w'-]+(?: [A-Z][\w'-]+)?)\b", r"\1\2 abroad", text)   # round 44: "completed their secondary education outside the UAE"
     text = re.sub(r"(?i:\bfrom\s+(?:any\s+|all\s+)?(?:other\s+)?countr(?:y|ies)\s+(?:outside|other than|except)\s+(?:of\s+)?(?:the\s+)?)(United Kingdom|UK|U\.K\.|[A-Z][\w'-]+(?: [A-Z][\w'-]+)?)", r"from non-\1 citizens", text)   # round 44
     text = re.sub(r"\b[Cc]urrent\s+(?:[A-Z][\w&-]*\s+){1,4}students?\b", "current students", text)   # round 43: "Current VCUarts Qatar students are not eligible"

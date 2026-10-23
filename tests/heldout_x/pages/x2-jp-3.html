@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="vi" prefix="og: https://ogp.me/ns#">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.5",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseout","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))},{isRocket:!0})}o(){window.addEventListener("pageshow",t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0},{isRocket:!0}),window.addEventListener("pagehide",()=>{this.onFirstUserAction=null},{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",function i(o){o.changedTouches[0]&&t.changedTouches[0]&&Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}),"INPUT"===o.target.tagName&&"text"===o.target.type||(o.target.dispatchEvent(new TouchEvent("touchend",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new MouseEvent("mouseover",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1,clientX:o.changedTouches[0].clientX,clientY:o.changedTouches[0].clientY})),event.preventDefault()))},{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,t.composedPath&&t.composedPath()[0].getRootNode()instanceof ShadowRoot&&(t.rocketTarget=t.composedPath()[0]),this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach(t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.addEventListener("visibilitychange",this.userEventHandler,{isRocket:!0})}U(){this.userEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.removeEventListener("visibilitychange",this.userEventHandler,{isRocket:!0}),this.savedUserEvents.forEach(t=>{(t.rocketTarget||t.target).dispatchEvent(new window[t.constructor.name](t.type,t))})}m(){const t="return false",e=Array.from(this.attributeEvents,t=>"data-rocket-"+t),i="["+this.attributeEvents.join("],[")+"]",o="[data-rocket-"+this.attributeEvents.join("],[data-rocket-")+"]",s=(e,i,o)=>{o&&o!==t&&(e.setAttribute("data-rocket-"+i,o),e["rocket"+i]=new Function("event",o),e.setAttribute(i,t))};new MutationObserver(t=>{for(const n of t)"attributes"===n.type&&(n.attributeName.startsWith("data-rocket-")||this.everythingLoaded?n.attributeName.startsWith("data-rocket-")&&this.everythingLoaded&&this.N(n.target,n.attributeName.substring(12)):s(n.target,n.attributeName,n.target.getAttribute(n.attributeName))),"childList"===n.type&&n.addedNodes.forEach(t=>{if(t.nodeType===Node.ELEMENT_NODE)if(this.everythingLoaded)for(const i of[t,...t.querySelectorAll(o)])for(const t of i.getAttributeNames())e.includes(t)&&this.N(i,t.substring(12));else for(const e of[t,...t.querySelectorAll(i)])for(const t of e.getAttributeNames())this.attributeEvents.includes(t)&&s(e,t,e.getAttribute(t))})}).observe(document,{subtree:!0,childList:!0,attributeFilter:[...this.attributeEvents,...e]})}I(){this.attributeEvents.forEach(t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach(e=>{this.N(e,t)})})}N(t,e){const i=t.getAttribute("data-rocket-"+e);i&&(t.setAttribute(e,i),t.removeAttribute("data-rocket-"+e))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):(t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o}),"mouseenter"!==e&&"mouseleave"!==e||t.originalAddEventListener.call(this,e,t.savedUserEvents.push,o))},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}J(t,e){this.savedEventListeners=this.savedEventListeners.filter(i=>{let o=i.type,s=i.target||window;return e!==o||t!==s||(this.B(o,s)&&(i.type="rocket-"+o),this.$(i),!1)})}H(){EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener,this.savedEventListeners.forEach(t=>this.$(t))}$(t){t.remove?this.originalRemoveEventListener.call(t.target,t.type,t.func,t.options):this.originalAddEventListener.call(t.target,t.type,t.func,t.options)}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map(t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e})),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,()=>{e[t].forEach(t=>t())},{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout(()=>i.bind(document)(o)):i.bind(document)(o)}return"function"==typeof i&&(t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s)),this},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise(t=>{this.userActionTriggered?t():this.onFirstUserAction=t})}async L(){return new Promise(t=>{document.addEventListener("DOMContentLoaded",()=>{this.realDomReadyFired=!0,t()},{isRocket:!0})})}async j(){return this.realWindowLoadedFired?Promise.resolve():new Promise(t=>{window.addEventListener("load",t,{isRocket:!0})})}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver(t=>{for(const e of t)e.addedNodes.forEach(t=>{"SCRIPT"!==t.tagName||!t.src||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise(e=>{const i=()=>{const i=this.pendingScripts.findIndex(e=>e.script===t);i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)})})})}),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async F(){await this.X(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.F()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this.Y(t,"preconnect")}async G(t){if(await this.K(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise(e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))}),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",()=>{i.setAttribute("data-rocket-status","failed-network"),e()},{isRocket:!0}),setTimeout(()=>{i.isConnected||e()},1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.G(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())},{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}});t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.G(e),this.C(t)):Promise.resolve()}O(){this.Y([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}Y(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach(t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}}),document.head.appendChild(o)}W(){this.trash.forEach(t=>t.remove())}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(document,"DOMContentLoaded"),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.K(),this.J(window,"DOMContentLoaded"),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(window,"load"),window.dispatchEvent(new Event("rocket-load")),await this.K(),window.rocketonload&&window.rocketonload(),await this.K(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this.K(),this.J(window,"pageshow");const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.K(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async K(){Date.now()-this.lastBreath>45&&(await this.X(),this.lastBreath=Date.now())}async X(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}B(t,e=window){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();
+</script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- DataLayer Chế độ đồng ý của thẻ Google (gtag.js) do Site Kit thêm vào -->
+<script type="rocketlazyloadscript" id="google_gtagjs-js-consent-mode-data-layer">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {"ad_personalization":"denied","ad_storage":"denied","ad_user_data":"denied","analytics_storage":"denied","functionality_storage":"denied","security_storage":"denied","personalization_storage":"denied","region":["AT","BE","BG","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IS","IT","LI","LT","LU","LV","MT","NL","NO","PL","PT","RO","SE","SI","SK"],"wait_for_update":500});
+window._googlesitekitConsentCategoryMap = {"statistics":["analytics_storage"],"marketing":["ad_storage","ad_user_data","ad_personalization"],"functional":["functionality_storage","security_storage"],"preferences":["personalization_storage"]};
+window._googlesitekitConsents = {"ad_personalization":"denied","ad_storage":"denied","ad_user_data":"denied","analytics_storage":"denied","functionality_storage":"denied","security_storage":"denied","personalization_storage":"denied","region":["AT","BE","BG","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IS","IT","LI","LT","LU","LV","MT","NL","NO","PL","PT","RO","SE","SI","SK"],"wait_for_update":500};
+</script>
+<!-- Kết thúc dataLayer Chế độ đồng ý của thẻ Google (gtag.js) do Site Kit thêm vào -->
+
+<!-- Tối ưu hóa công cụ tìm kiếm bởi Rank Math PRO - https://rankmath.com/ -->
+<title>GO JAPAN SCHOLARSHIP 2026 – CHẮP CÁNH TƯƠNG LAI THẾ HỆ GLOBAL CITIZEN 🚀 - Trường Đại học FPT</title>
+<link data-rocket-prefetch href="https://analytics.tiktok.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://connect.facebook.net" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://scripts.clarity.ms" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://s.eclick.vn" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.clarity.ms" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.google-analytics.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.googletagmanager.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://qhdn-hcmuni.fpt.edu.vn" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://analytics.ahrefs.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://googleads.g.doubleclick.net" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://s.zzcdn.me" rel="dns-prefetch">
+<link data-rocket-preload as="style" data-wpr-hosted-gf-parameters="family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" href="https://daihoc.fpt.edu.vn/wp-content/cache/fonts/1/google-fonts/css/c/d/a/dcaa94597792b3c41c6fc36bd4b04.css" rel="preload">
+<link crossorigin data-rocket-preload as="font" href="https://daihoc.fpt.edu.vn/wp-content/cache/fonts/1/google-fonts/fonts/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMaxKUBGEe.woff2" rel="preload">
+<link data-wpr-hosted-gf-parameters="family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" href="https://daihoc.fpt.edu.vn/wp-content/cache/fonts/1/google-fonts/css/c/d/a/dcaa94597792b3c41c6fc36bd4b04.css" media="print" onload="this.media=&#039;all&#039;" rel="stylesheet">
+<noscript data-wpr-hosted-gf-parameters=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&#038;display=swap"></noscript>
+<meta name="description" content="Sức nóng từ những mùa trước vẫn chưa hạ nhiệt, GO JAPAN SCHOLARSHIP 2026 đã chính thức khởi động với quy mô bùng nổ hơn bao giờ hết!"/>
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+<link rel="canonical" href="https://daihoc.fpt.edu.vn/hoc-bong-doanh-nghiep/go-japan-scholarship-2026-chap-canh-tuong-lai-the-he-global-citizen-%f0%9f%9a%80/" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="GO JAPAN SCHOLARSHIP 2026 – CHẮP CÁNH TƯƠNG LAI THẾ HỆ GLOBAL CITIZEN 🚀 - Trường Đại học FPT" />
+<meta property="og:description" content="Sức nóng từ những mùa trước vẫn chưa hạ nhiệt, GO JAPAN SCHOLARSHIP 2026 đã chính thức khởi động với quy mô bùng nổ hơn bao giờ hết!" />
+<meta property="og:url" content="https://daihoc.fpt.edu.vn/hoc-bong-doanh-nghiep/go-japan-scholarship-2026-chap-canh-tuong-lai-the-he-global-citizen-%f0%9f%9a%80/" />
+<meta property="og:site_name" content="Trường Đại học FPT" />
+<meta property="article:section" content="Học bổng doanh nghiệp" />
+<meta property="og:updated_time" content="2026-03-04T17:14:46+07:00" />
+<meta property="og:image" content="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/03/sssss-1024x575.jpg" />
+<meta property="og:image:secure_url" content="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/03/sssss-1024x575.jpg" />
+<meta property="og:image:width" content="1024" />
+<meta property="og:image:height" content="575" />
+<meta property="og:image:alt" content="GO JAPAN SCHOLARSHIP 2026 – CHẮP CÁNH TƯƠNG LAI THẾ HỆ GLOBAL CITIZEN 🚀" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="article:published_time" content="2026-03-04T13:27:18+07:00" />
+<meta property="article:modified_time" content="2026-03-04T17:14:46+07:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="GO JAPAN SCHOLARSHIP 2026 – CHẮP CÁNH TƯƠNG LAI THẾ HỆ GLOBAL CITIZEN 🚀 - Trường Đại học FPT" />
+<meta name="twitter:description" content="Sức nóng từ những mùa trước vẫn chưa hạ nhiệt, GO JAPAN SCHOLARSHIP 2026 đã chính thức khởi động với quy mô bùng nổ hơn bao giờ hết!" />
+<meta name="twitter:image" content="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/03/sssss-1024x575.jpg" />
+<meta name="twitter:label1" content="Được viết bởi" />
+<meta name="twitter:data1" content="Phòng QHDN" />
+<meta name="twitter:label2" content="Thời gian để đọc" />
+<meta name="twitter:data2" content="1 phút" />
+<script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":["Person","Organization"],"@id":"https://daihoc.fpt.edu.vn/#person","name":"Tr\u01b0\u1eddng \u0110\u1ea1i h\u1ecdc FPT"},{"@type":"WebSite","@id":"https://daihoc.fpt.edu.vn/#website","url":"https://daihoc.fpt.edu.vn","name":"Tr\u01b0\u1eddng \u0110\u1ea1i h\u1ecdc FPT","publisher":{"@id":"https://daihoc.fpt.edu.vn/#person"},"inLanguage":"vi"},{"@type":"ImageObject","@id":"https://daihoc.fpt.edu.vn/wp-content/uploads/2026/03/sssss-scaled.jpg","url":"https://daihoc.fpt.edu.vn/wp-content/uploads/2026/03/sssss-scaled.jpg","width":"2560","height":"1436","inLanguage":"vi"},{"@type":"BreadcrumbList","@id":"https://daihoc.fpt.edu.vn/hoc-bong-doanh-nghiep/go-japan-scholarship-2026-chap-canh-tuong-lai-the-he-global-citizen-%f0%9f%9a%80/#breadcrumb","itemListElement":[{"@type":"ListItem","position":"1","item":{"@id":"https://daihoc.fpt.edu.vn","name":"Trang ch\u1ee7"}},{"@type":"ListItem","position":"2","item":{"@id":"https://daihoc.fpt.edu.vn/chuyen-muc/hoc-bong-doanh-nghiep/","name":"H\u1ecdc b\u1ed5ng doanh nghi\u1ec7p"}},{"@type":"ListItem","position":"3","item":{"@id":"https://daihoc.fpt.edu.vn/hoc-bong-doanh-nghiep/go-japan-scholarship-2026-chap-canh-tuong-lai-the-he-global-citizen-%f0%9f%9a%80/","name":"GO JAPAN SCHOLARSHIP 2026 \u2013 CH\u1eaeP C\u00c1NH T\u01af\u01a0NG LAI TH\u1ebe H\u1ec6 GLOBAL CITIZEN \ud83d\ude80"}}]},{"@type":"WebPage","@id":"https://daihoc.fpt.edu.vn/hoc-bong-doanh-nghiep/go-japan-scholarship-2026-chap-canh-tuong-lai-the-he-global-citizen-%f0%9f%9a%80/#webpage","url":"https://daihoc.fpt.edu.vn/hoc-bong-doanh-nghiep/go-japan-scholarship-2026-chap-canh-tuong-lai-the-he-global-citizen-%f0%9f%9a%80/","name":"GO JAPAN SCHOLARSHIP 2026 \u2013 CH\u1eaeP C\u00c1NH T\u01af\u01a0NG LAI TH\u1ebe H\u1ec6 GLOBAL CITIZEN \ud83d\ude80 - Tr\u01b0\u1eddng \u0110\u1ea1i h\u1ecdc FPT","datePublished":"2026-03-04T13:27:18+07:00","dateModified":"2026-03-04T17:14:46+07:00","isPartOf":{"@id":"https://daihoc.fpt.edu.vn/#website"},"primaryImageOfPage":{"@id":"https://daihoc.fpt.edu.vn/wp-content/uploads/2026/03/sssss-scaled.jpg"},"inLanguage":"vi","breadcrumb":{"@id":"https://daihoc.fpt.edu.vn/hoc-bong-doanh-nghiep/go-japan-scholarship-2026-chap-canh-tuong-lai-the-he-global-citizen-%f0%9f%9a%80/#breadcrumb"}},{"@type":"Person","@id":"https://daihoc.fpt.edu.vn/author/qhdn_hcm/","name":"Ph\u00f2ng QHDN","url":"https://daihoc.fpt.edu.vn/author/qhdn_hcm/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/78f23d81ce270acfe0552d12b62078c50b3dcf7adec0952a4a51fd81e6142b8e?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/78f23d81ce270acfe0552d12b62078c50b3dcf7adec0952a4a51fd81e6142b8e?s=96&amp;d=mm&amp;r=g","caption":"Ph\u00f2ng QHDN","inLanguage":"vi"}},{"@type":"BlogPosting","headline":"GO JAPAN SCHOLARSHIP 2026 \u2013 CH\u1eaeP C\u00c1NH T\u01af\u01a0NG LAI TH\u1ebe H\u1ec6 GLOBAL CITIZEN \ud83d\ude80 - Tr\u01b0\u1eddng \u0110\u1ea1i h\u1ecdc FPT","datePublished":"2026-03-04T13:27:18+07:00","dateModified":"2026-03-04T17:14:46+07:00","articleSection":"H\u1ecdc b\u1ed5ng doanh nghi\u1ec7p, H\u1ecdc b\u1ed5ng doanh nghi\u1ec7p, H\u1ecdc b\u1ed5ng doanh nghi\u1ec7p","author":{"@id":"https://daihoc.fpt.edu.vn/author/qhdn_hcm/","name":"Ph\u00f2ng QHDN"},"publisher":{"@id":"https://daihoc.fpt.edu.vn/#person"},"description":"S\u1ee9c n\u00f3ng t\u1eeb nh\u1eefng m\u00f9a tr\u01b0\u1edbc v\u1eabn ch\u01b0a h\u1ea1 nhi\u1ec7t, GO JAPAN SCHOLARSHIP 2026 \u0111\u00e3 ch\u00ednh th\u1ee9c kh\u1edfi \u0111\u1ed9ng v\u1edbi quy m\u00f4 b\u00f9ng n\u1ed5 h\u01a1n bao gi\u1edd h\u1ebft!","name":"GO JAPAN SCHOLARSHIP 2026 \u2013 CH\u1eaeP C\u00c1NH T\u01af\u01a0NG LAI TH\u1ebe H\u1ec6 GLOBAL CITIZEN \ud83d\ude80 - Tr\u01b0\u1eddng \u0110\u1ea1i h\u1ecdc FPT","@id":"https://daihoc.fpt.edu.vn/hoc-bong-doanh-nghiep/go-japan-scholarship-2026-chap-canh-tuong-lai-the-he-global-citizen-%f0%9f%9a%80/#richSnippet","isPartOf":{"@id":"https://daihoc.fpt.edu.vn/hoc-bong-doanh-nghiep/go-japan-scholarship-2026-chap-canh-tuong-lai-the-he-global-citizen-%f0%9f%9a%80/#webpage"},"image":{"@id":"https://daihoc.fpt.edu.vn/wp-content/uploads/2026/03/sssss-scaled.jpg"},"inLanguage":"vi","mainEntityOfPage":{"@id":"https://daihoc.fpt.edu.vn/hoc-bong-doanh-nghiep/go-japan-scholarship-2026-chap-canh-tuong-lai-the-he-global-citizen-%f0%9f%9a%80/#webpage"}}]}</script>
+<!-- /Plugin SEO WordPress Rank Math -->
+
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Trường Đại học FPT &raquo; GO JAPAN SCHOLARSHIP 2026 – CHẮP CÁNH TƯƠNG LAI THẾ HỆ GLOBAL CITIZEN 🚀 Dòng bình luận" href="https://daihoc.fpt.edu.vn/hoc-bong-doanh-nghiep/go-japan-scholarship-2026-chap-canh-tuong-lai-the-he-global-citizen-%f0%9f%9a%80/feed/" />
+<link rel="alternate" title="oNhúng (JSON)" type="application/json+oembed" href="https://daihoc.fpt.edu.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdaihoc.fpt.edu.vn%2Fhoc-bong-doanh-nghiep%2Fgo-japan-scholarship-2026-chap-canh-tuong-lai-the-he-global-citizen-%25f0%259f%259a%2580%2F" />
+<link rel="alternate" title="oNhúng (XML)" type="text/xml+oembed" href="https://daihoc.fpt.edu.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdaihoc.fpt.edu.vn%2Fhoc-bong-doanh-nghiep%2Fgo-japan-scholarship-2026-chap-canh-tuong-lai-the-he-global-citizen-%25f0%259f%259a%2580%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link data-minify="1" rel='stylesheet' id='dashicons-css' href='https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-includes/css/dashicons.min.css?ver=1792383931' media='all' />
+<link data-minify="1" rel='stylesheet' id='post-views-counter-frontend-css' href='https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/plugins/post-views-counter/css/frontend.css?ver=1792383931' media='all' />
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="wp-block-heading-inline-css">
+h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+/*# sourceURL=https://daihoc.fpt.edu.vn/wp-includes/blocks/heading/style.min.css */
+</style>
+<style id="wp-block-group-inline-css">
+.wp-block-group{box-sizing:border-box}:where(.wp-block-group.wp-block-group-is-layout-constrained){position:relative}
+/*# sourceURL=https://daihoc.fpt.edu.vn/wp-includes/blocks/group/style.min.css */
+</style>
+
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<style id="dominant-color-styles-inline-css">
+img[data-dominant-color]:not(.has-transparency) { background-color: var(--dominant-color); }
+/*# sourceURL=dominant-color-styles-inline-css */
+</style>
+<link rel='stylesheet' id='eztoc-css' href='https://daihoc.fpt.edu.vn/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=2.0.88' media='all' />
+<style id="eztoc-inline-css">
+div#ez-toc-container .ez-toc-title, .ez-toc-split-section .ez-toc-title {font-size: 120%;}div#ez-toc-container .ez-toc-title, .ez-toc-split-section .ez-toc-title {font-weight: 500;}div#ez-toc-container ul li , div#ez-toc-container ul li a, .ez-toc-split-section ul li , .ez-toc-split-section ul li a {font-size: 95%;}div#ez-toc-container ul li , div#ez-toc-container ul li a, .ez-toc-split-section ul li , .ez-toc-split-section ul li a {font-weight: 500;}div#ez-toc-container nav ul ul li, .ez-toc-split-section nav ul ul li {font-size: 90%;}.ez-toc-box-title {font-weight: bold; margin-bottom: 10px; text-align: center; text-transform: uppercase; letter-spacing: 1px; color: #666; padding-bottom: 5px;position:absolute;top:-4%;left:5%;background-color: inherit;transition: top 0.3s ease;}.ez-toc-box-title.toc-closed {top:-25%;}
+.ez-toc-container-direction {direction: ltr;}.ez-toc-counter ul{counter-reset: item ;}.ez-toc-counter nav ul li a::before {content: counters(item, '.', decimal) '. ';display: inline-block;counter-increment: item;flex-grow: 0;flex-shrink: 0;margin-right: .2em; float: left; }.ez-toc-widget-direction {direction: ltr;}.ez-toc-widget-container ul{counter-reset: item ;}.ez-toc-widget-container nav ul li a::before {content: counters(item, '.', decimal) '. ';display: inline-block;counter-increment: item;flex-grow: 0;flex-shrink: 0;margin-right: .2em; float: left; }
+/*# sourceURL=eztoc-inline-css */
+</style>
+
+<link data-minify="1" rel='stylesheet' id='fptu-fontawesome-css' href='https://daihoc.fpt.edu.vn/wp-content/cache/min/1/ajax/libs/font-awesome/7.0.1/css/all.min.css?ver=1792383931' media='all' />
+<link data-minify="1" rel='stylesheet' id='fptu-main-css' href='https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/themes/fpt-university/assets/css/style.css?ver=1792383931' media='all' />
+<link data-minify="1" rel='stylesheet' id='fptu-custom-css' href='https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/themes/fpt-university/assets/css/style_2.css?ver=1792383931' media='all' />
+<link data-minify="1" rel='stylesheet' id='swiper-css-css' href='https://daihoc.fpt.edu.vn/wp-content/cache/min/1/npm/swiper@10/swiper-bundle.min.css?ver=1792383931' media='all' />
+<link data-minify="1" rel='stylesheet' id='fptu-custom-hcm-css' href='https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/themes/fpt-university/assets/css/style_hcm.css?ver=1792383931' media='all' />
+<script id="real3d-flipbook-global-js-extra">
+var flipbookOptions_global = {"pages":[],"pdfUrl":"","printPdfUrl":"","tableOfContent":[],"id":"","bookId":"","date":"","lightboxThumbnailUrl":"","mode":"normal","viewMode":"webgl","rangeChunkSize":"256","minPixelRatio":"1","pdfTextLayer":"true","zoomMin":"0.9","zoomStep":"2","zoomSize":"","zoomReset":"false","doubleClickZoom":"true","pageDrag":"true","singlePageMode":"false","pageFlipDuration":"1","sound":"true","startPage":"1","pageNumberOffset":"0","deeplinking":{"enabled":"false","prefix":""},"responsiveView":"true","responsiveViewTreshold":"768","responsiveViewRatio":"1","minimalView":"false","minimalViewBreakpoint":"280","cover":"true","backCover":"true","scaleCover":"false","pageCaptions":"false","height":"400","responsiveHeight":"true","containerRatio":"","thumbnailsOnStart":"false","contentOnStart":"false","searchOnStart":"","searchResultsThumbs":"false","tableOfContentCloseOnClick":"true","thumbsCloseOnClick":"true","autoplayOnStart":"false","autoplayInterval":"3000","autoplayLoop":"true","autoplayStartPage":"1","rightToLeft":"false","pageWidth":"","pageHeight":"","thumbSize":"130","logoImg":"","logoUrl":"","logoUrlTarget":"","logoCSS":"position:absolute;left:0;top:0;","menuSelector":"","zIndex":"auto","preloaderText":"","googleAnalyticsTrackingCode":"","pdfBrowserViewerIfIE":"false","modeMobile":"","viewModeMobile":"","aspectMobile":"","aspectRatioMobile":"0.71","singlePageModeIfMobile":"false","logoHideOnMobile":"false","mobile":{"thumbnailsOnStart":"false","contentOnStart":"false","pagesInMemory":"6","bitmapResizeHeight":"","bitmapResizeQuality":"","currentPage":{"enabled":"false"},"pdfUrl":"","minimalViewBreakpoint":"280","zoomMin":"","autoplayInterval":""},"lightboxCssClass":"","lightboxLink":"","lightboxLinkNewWindow":"true","lightboxBackground":"rgb(81, 85, 88)","lightboxBackgroundPattern":"","lightboxBackgroundImage":"","lightboxContainerCSS":"display:inline-block;padding:10px;","lightboxThumbnailHeight":"300","lightboxThumbnailUrlCSS":"display:block;","lightboxThumbnailInfo":"false","lightboxThumbnailInfoText":"","lightboxThumbnailInfoCSS":"top: 0;  width: 100%; height: 100%; font-size: 16px; color: #000; background: rgba(255,255,255,.8); ","showTitle":"false","showDate":"false","hideThumbnail":"false","lightboxText":"","lightboxTextCSS":"display:block;","lightboxTextPosition":"top","lightBoxOpened":"false","lightBoxFullscreen":"false","lightboxStartPage":"","lightboxMarginV":"0","lightboxMarginH":"0","lights":"true","lightPositionX":"0","lightPositionY":"150","lightPositionZ":"1400","lightIntensity":"0.6","shadows":"true","shadowMapSize":"2048","shadowOpacity":"0.2","shadowDistance":"15","pageHardness":"2","coverHardness":"2","pageRoughness":"1","pageMetalness":"0","pageSegmentsW":"6","pageSegmentsH":"1","pagesInMemory":"20","bitmapResizeHeight":"","bitmapResizeQuality":"","pageMiddleShadowSize":"4","pageMiddleShadowColorL":"#7F7F7F","pageMiddleShadowColorR":"#AAAAAA","antialias":"false","pan":"0","tilt":"0","rotateCameraOnMouseDrag":"true","panMax":"20","panMin":"-20","tiltMax":"0","tiltMin":"0","currentPage":{"enabled":"true","title":"Current page","hAlign":"left","vAlign":"top"},"btnAutoplay":{"enabled":"true","title":"Autoplay"},"btnNext":{"enabled":"true","title":"Next Page"},"btnLast":{"enabled":"false","title":"Last Page"},"btnPrev":{"enabled":"true","title":"Previous Page"},"btnFirst":{"enabled":"false","title":"First Page"},"btnZoomIn":{"enabled":"true","title":"Zoom in"},"btnZoomOut":{"enabled":"true","title":"Zoom out"},"btnToc":{"enabled":"true","title":"Table of Contents"},"btnThumbs":{"enabled":"true","title":"Pages"},"btnShare":{"enabled":"true","title":"Share"},"btnNotes":{"enabled":"false","title":"Notes"},"btnDownloadPages":{"enabled":"false","url":"","title":"Download pages"},"btnDownloadPdf":{"enabled":"true","url":"","title":"Download PDF","forceDownload":"true","openInNewWindow":"true"},"btnSound":{"enabled":"true","title":"Sound"},"btnExpand":{"enabled":"true","title":"Toggle fullscreen"},"btnSingle":{"enabled":"true","title":"Toggle single page"},"btnSearch":{"enabled":"false","title":"Search"},"search":{"enabled":"false","title":"Search"},"btnBookmark":{"enabled":"false","title":"Bookmark"},"btnPrint":{"enabled":"true","title":"Print"},"btnTools":{"enabled":"true","title":"Tools"},"btnClose":{"enabled":"true","title":"Close"},"whatsapp":{"enabled":"true"},"twitter":{"enabled":"true"},"facebook":{"enabled":"true"},"pinterest":{"enabled":"true"},"email":{"enabled":"true"},"linkedin":{"enabled":"true"},"digg":{"enabled":"false"},"reddit":{"enabled":"false"},"shareUrl":"","shareTitle":"","shareImage":"","layout":"1","iconSet":"fontawesome","progressBar":{"enabled":"false"},"skin":"light","useFontAwesome5":"true","sideNavigationButtons":"true","menuNavigationButtons":"false","backgroundColor":"rgb(81, 85, 88)","backgroundPattern":"","backgroundImage":"","backgroundTransparent":"false","menuBackground":"","menuShadow":"","menuMargin":"0","menuPadding":"0","menuOverBook":"false","menuFloating":"false","menuTransparent":"false","menu2Background":"","menu2Shadow":"","menu2Margin":"0","menu2Padding":"0","menu2OverBook":"true","menu2Floating":"false","menu2Transparent":"true","skinColor":"","skinBackground":"","hideMenu":"false","menuAlignHorizontal":"center","btnColor":"","btnColorHover":"","btnBackground":"none","btnRadius":"0","btnMargin":"0","btnSize":"18","btnPaddingV":"10","btnPaddingH":"10","btnShadow":"","btnTextShadow":"","btnBorder":"","arrowColor":"#fff","arrowColorHover":"#fff","arrowBackground":"rgba(0,0,0,0)","arrowBackgroundHover":"rgba(0, 0, 0, .15)","arrowRadius":"4","arrowMargin":"4","arrowSize":"40","arrowPadding":"10","arrowTextShadow":"0px 0px 1px rgba(0, 0, 0, 1)","arrowBorder":"","closeBtnColorHover":"#FFF","closeBtnBackground":"rgba(0,0,0,.4)","closeBtnRadius":"0","closeBtnMargin":"0","closeBtnSize":"20","closeBtnPadding":"5","closeBtnTextShadow":"","closeBtnBorder":"","floatingBtnColor":"","floatingBtnColorHover":"","floatingBtnBackground":"","floatingBtnBackgroundHover":"","floatingBtnRadius":"","floatingBtnMargin":"","floatingBtnSize":"","floatingBtnPadding":"","floatingBtnShadow":"","floatingBtnTextShadow":"","floatingBtnBorder":"","currentPageMarginV":"5","currentPageMarginH":"5","arrowsAlwaysEnabledForNavigation":"true","arrowsDisabledNotFullscreen":"true","touchSwipeEnabled":"true","fitToWidth":"false","rightClickEnabled":"true","linkColor":"rgba(0, 0, 0, 0)","linkColorHover":"rgba(255, 255, 0, 1)","linkOpacity":"0.4","linkTarget":"_blank","pdfAutoLinks":"false","disableRange":"false","strings":{"print":"Print","printLeftPage":"Print left page","printRightPage":"Print right page","printCurrentPage":"Print current page","printAllPages":"Print all pages","download":"Download","downloadLeftPage":"Download left page","downloadRightPage":"Download right page","downloadCurrentPage":"Download current page","downloadAllPages":"Download all pages","bookmarks":"Bookmarks","bookmarkLeftPage":"Bookmark left page","bookmarkRightPage":"Bookmark right page","bookmarkCurrentPage":"Bookmark current page","search":"Search","findInDocument":"Find in document","pagesFoundContaining":"pages found containing","noMatches":"No matches","matchesFound":"matches found","page":"Page","matches":"matches","thumbnails":"Thumbnails","tableOfContent":"Table of Contents","share":"Share","pressEscToClose":"Press ESC to close","password":"Password","addNote":"Add note","typeInYourNote":"Type in your note..."},"access":"free","backgroundMusic":"","backgroundMusicOnAutoplay":"false","cornerCurl":"false","pdfTools":{"pageHeight":1500,"thumbHeight":200,"quality":0.8,"textLayer":"true","autoConvert":"true"},"slug":"","convertPDFLinks":"true","convertPDFLinksWithClass":"","convertPDFLinksWithoutClass":"","overridePDFEmbedder":"true","overrideDflip":"true","overrideWonderPDFEmbed":"true","override3DFlipBook":"true","overridePDFjsViewer":"true","resumeReading":"false","previewPages":"","previewMode":"","pageTextureSize":"3000","pageTextureSizeSmall":"1500","pageTextureSizeMobile":"","pageTextureSizeMobileSmall":"1000","icons":"FontAwesome"};
+//# sourceURL=real3d-flipbook-global-js-extra
+</script>
+<script id="post-views-counter-frontend-js-before">
+var pvcArgsFrontend = {"mode":"js","postID":129918,"requestURL":"https:\/\/daihoc.fpt.edu.vn\/wp-admin\/admin-ajax.php","nonce":"fe1d356a89","dataStorage":"cookies","multisite":false,"path":"\/","domain":""};
+
+//# sourceURL=post-views-counter-frontend-js-before
+</script>
+<script data-minify="1" id="post-views-counter-frontend-js" src="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/plugins/post-views-counter/js/frontend.js?ver=1792383931" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" id="jquery-core-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" id="jquery-migrate-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" data-rocket-defer defer></script>
+<link rel="https://api.w.org/" href="https://daihoc.fpt.edu.vn/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://daihoc.fpt.edu.vn/wp-json/wp/v2/posts/129918" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://daihoc.fpt.edu.vn/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.3" />
+<link rel='shortlink' href='https://daihoc.fpt.edu.vn/?p=129918' />
+<meta name="generator" content="auto-sizes 1.8.0">
+<meta name="generator" content="dominant-color-images 1.3.0">
+<meta name="generator" content="Site Kit by Google 1.190.0" /><script type="rocketlazyloadscript">
+    window.EnrollmentOSConfig = {
+        endpoint: 'https://crmfu.fpt.edu.vn/api/tracking',
+        token: 'a9ebc64c8de4811bed86c148c3901916088ecd8ba6a95c3584cc86d283e99244',
+        admissionYear: 2026,
+        autoPageView: true,
+        sessionTtlMinutes: 30,
+        debug: false
+    };
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://crmfu.fpt.edu.vn/js/enrollment-os-tracking.js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://crmfu.fpt.edu.vn/js/enrollment-os-form-integration.js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript">
+    document.addEventListener('DOMContentLoaded', function () {
+        if (!window.EnrollmentOS) {
+            return;
+        }
+
+        function findValue(form, selectors) {
+            for (var i = 0; i < selectors.length; i++) {
+                var input = form.querySelector(selectors[i]);
+                if (input && input.value) {
+                    return input.value.trim();
+                }
+            }
+
+            return '';
+        }
+
+        function enrollmentOSDelayedIdentify(phone, email) {
+            if (!window.EnrollmentOS || (!phone && !email)) {
+                return;
+            }
+
+            setTimeout(function () {
+                window.EnrollmentOS.identify({
+                    phone: phone,
+                    email: email,
+                    source_type: 'website_form_delayed',
+                    confidence: 90
+                });
+            }, 5000);
+        }
+
+        document.querySelectorAll('form').forEach(function (form) {
+            form.addEventListener('submit', function () {
+                var phone = findValue(form, [
+                    '[name="phone"]',
+                    '[name="tel"]',
+                    '[name="mobile"]',
+                    '[name="so_dien_thoai"]',
+                    '[name="soDienThoai"]',
+                    'input[type="tel"]'
+                ]);
+
+                var email = findValue(form, [
+                    '[name="email"]',
+                    'input[type="email"]'
+                ]);
+
+                window.EnrollmentOS.track('submit_form', {
+                    entity_type: 'website_form',
+                    entity_id: form.id || form.getAttribute('name') || window.location.pathname,
+                    payload: {
+                        form_id: form.id || null,
+                        form_name: form.getAttribute('name') || null,
+                        page_url: window.location.href,
+                        has_phone: !!phone,
+                        has_email: !!email
+                    }
+                });
+
+                if (phone || email) {
+                    window.EnrollmentOS.identify({
+                        phone: phone,
+                        email: email,
+                        source_type: 'website_form',
+                        confidence: 90
+                    });
+
+                    enrollmentOSDelayedIdentify(phone, email);
+                }
+            }, true);
+        });
+    });
+</script><meta name="generator" content="performance-lab 4.2.0; plugins: auto-sizes, dominant-color-images, embed-optimizer, image-prioritizer, performant-translations, nocache-bfcache, speculation-rules, webp-uploads">
+<meta name="generator" content="performant-translations 1.2.0">
+<meta name="generator" content="webp-uploads 2.7.1">
+<meta name="generator" content="speculation-rules 1.7.0">
+<meta data-od-replaced-content="optimization-detective 1.0.0-beta7" name="generator" content="optimization-detective 1.0.0-beta7; url_metric_groups={0:populated, 480:populated, 600:empty, 782:populated}">
+<meta name="generator" content="embed-optimizer 1.0.0-beta6">
+<meta name="generator" content="image-prioritizer 1.0.0-beta4">
+
+<!-- Đoạn mã Google Tag Manager được thêm bởi Site Kit -->
+<script>
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-53RSV23' );
+			
+</script>
+
+<!-- Kết thúc đoạn mã Google Tag Manager được thêm bởi Site Kit -->
+<link rel="icon" href="https://daihoc.fpt.edu.vn/wp-content/uploads/2025/12/cropped-cropped-favicon-4-192x192-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://daihoc.fpt.edu.vn/wp-content/uploads/2025/12/cropped-cropped-favicon-4-192x192-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://daihoc.fpt.edu.vn/wp-content/uploads/2025/12/cropped-cropped-favicon-4-192x192-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://daihoc.fpt.edu.vn/wp-content/uploads/2025/12/cropped-cropped-favicon-4-192x192-1-270x270.png" />
+<style id="wp-custom-css">
+.popup-top a img {
+max-width: 140px;
+max-height: 40px;
+width: 100%;
+height: 100%;
+object-fit: contain;
+}
+.recruitment-method-bg img {
+    max-height: 496px;
+}
+
+.admission-page .overview-hero .banner img, .overview-hero .banner iframe, .overview-hero .banner video {
+    object-fit: contain !important;
+}
+</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><link data-od-added-tag rel="preload" fetchpriority="high" as="image" href="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/event-hoc-bong.png" media="screen and (782px &lt; width)">
+<link data-od-added-tag rel="preload" fetchpriority="high" as="image" href="https://qhdn-hcmuni.fpt.edu.vn/wp-content/uploads/2026/02/sssss.jpg" media="screen and (width &lt;= 480px)">
+<style id="rocket-lazyrender-inline-css">[data-wpr-lazyrender] {content-visibility: auto;}</style><meta name="generator" content="WP Rocket 3.20.5" data-wpr-features="wpr_delay_js wpr_defer_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_preconnect_external_domains wpr_auto_preload_fonts wpr_automatic_lazy_rendering wpr_image_dimensions wpr_minify_css wpr_cdn wpr_preload_links wpr_host_fonts_locally wpr_desktop" /></head>
+
+<body class="wp-singular post-template-default single single-post postid-129918 single-format-standard wp-theme-fpt-university">
+		<!-- Đoạn mã Google Tag Manager (noscript) được thêm bởi Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53RSV23" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- Kết thúc đoạn mã Google Tag Manager (noscript) được thêm bởi Site Kit -->
+		
+<header >
+
+  <!-- HEADER TOP -->
+  <div  class="header-top">
+    <div  class="container">
+      <form class="header-top-search" role="search" method="get" action="https://daihoc.fpt.edu.vn/">
+        <span>
+          <img width="20" height="20" data-od-xpath="/HTML/BODY/HEADER/*[1][self::DIV]/*[1][self::DIV]/*[1][self::FORM]/*[1][self::SPAN]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-search.svg"><noscript><img width="20" height="20" data-od-xpath="/HTML/BODY/HEADER/*[1][self::DIV]/*[1][self::DIV]/*[1][self::FORM]/*[1][self::SPAN]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-search.svg" alt=""></noscript>
+        </span>
+        <input type="search" name="s" placeholder="Search" value="">
+      </form>
+
+      <div class="header-top-right">
+        <ul class="header-top-base">
+                      <li><a href="https://daihoc.fpt.edu.vn/hn">Campus Hà Nội</a></li>
+                      <li><a href="https://daihoc.fpt.edu.vn/hcm">Campus TP.HCM</a></li>
+                      <li><a href="https://daihoc.fpt.edu.vn/da-nang">Campus Đà Nẵng</a></li>
+                      <li><a href="https://daihoc.fpt.edu.vn/can-tho">Campus Cần Thơ</a></li>
+                      <li><a href="https://daihoc.fpt.edu.vn/quy-nhon">Campus Quy Nhơn</a></li>
+                  </ul>
+
+        <div class="header-top-language">
+          <span><img width="24" height="24" data-od-xpath="/HTML/BODY/HEADER/*[1][self::DIV]/*[1][self::DIV]/*[2][self::DIV]/*[2][self::DIV]/*[1][self::SPAN]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-lang.svg"><noscript><img width="24" height="24" data-od-xpath="/HTML/BODY/HEADER/*[1][self::DIV]/*[1][self::DIV]/*[2][self::DIV]/*[2][self::DIV]/*[1][self::SPAN]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-lang.svg" alt=""></noscript></span>
+          <div>
+            <p class="active">VN</p>
+            <span></span>
+            <p><a href="https://daihoc.fpt.edu.vn/en">EN</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER MAIN -->
+  <div  class="header-main-wrapper">
+    <div  class="container">
+      <div class="header-main">
+
+        <a href="https://daihoc.fpt.edu.vn/" class="header-logo">
+          <h1>
+            <img width="330" height="93" data-od-xpath="/HTML/BODY/HEADER/*[2][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::A]/*[1][self::H1]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%2093'%3E%3C/svg%3E" alt="Trường Đại học FPT" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/logo.png"><noscript><img width="330" height="93" data-od-xpath="/HTML/BODY/HEADER/*[2][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::A]/*[1][self::H1]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/logo.png" alt="Trường Đại học FPT"></noscript>
+          </h1>
+        </a>
+
+        <nav class="header-nav">
+
+          <!-- MOBILE POPUP TOP -->
+          <div class="popup-top">
+            <a href="https://daihoc.fpt.edu.vn/">
+              <h1>
+                <img width="330" height="93" data-od-added-fetchpriority data-od-xpath="/HTML/BODY/HEADER/*[2][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::NAV]/*[1][self::DIV]/*[1][self::A]/*[1][self::H1]/*[1][self::IMG]" fetchpriority="low" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%2093'%3E%3C/svg%3E" alt="Trường Đại học FPT" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/logo.png"><noscript><img width="330" height="93" data-od-added-fetchpriority data-od-xpath="/HTML/BODY/HEADER/*[2][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::NAV]/*[1][self::DIV]/*[1][self::A]/*[1][self::H1]/*[1][self::IMG]" fetchpriority="low" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/logo.png" alt="Trường Đại học FPT"></noscript>
+              </h1>
+            </a>
+            <div class="icon-close-menu">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+          </div>
+
+          <!-- MAIN MENU -->
+          <ul class="header-menu">
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1544"><a href="https://daihoc.fpt.edu.vn/ve-fptu/" class="js-toggle-submenu" aria-expanded="false">Về FPTU <i class="fa-solid fa-chevron-down"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1430"><a href="https://daihoc.fpt.edu.vn/ve-fptu/#brand-story">Câu chuyện về FPTU</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1431"><a href="https://daihoc.fpt.edu.vn/ve-fptu/#leadership">Ban lãnh đạo</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27450"><a href="https://daihoc.fpt.edu.vn/ve-fptu/#management">Ban giám hiệu</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27452"><a href="https://daihoc.fpt.edu.vn/ve-fptu/#achievements">Thành tựu</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27451"><a href="https://daihoc.fpt.edu.vn/ve-fptu/#outstanding-position">Vị thế</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27453"><a href="https://daihoc.fpt.edu.vn/ve-fptu/#quality-standards">Chất lượng</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27454"><a href="https://daihoc.fpt.edu.vn/ve-fptu/#overview-major">Ngành đào tạo</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27455"><a href="https://daihoc.fpt.edu.vn/ve-fptu/#branch">Campus</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27456"><a href="https://daihoc.fpt.edu.vn/ve-fptu/#campus-base">Cơ sở vật chất</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27457"><a href="https://daihoc.fpt.edu.vn/ve-fptu/#partners">Đối tác &#038; Hợp tác quốc tế</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7"><a href="https://daihoc.fpt.edu.vn/chuong-trinh-dao-tao/" class="js-toggle-submenu" aria-expanded="false">Đào tạo <i class="fa-solid fa-chevron-down"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27871"><a href="https://daihoc.fpt.edu.vn/chuong-trinh-dao-tao/#introduction">Giới thiệu</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27872"><a href="https://daihoc.fpt.edu.vn/chuong-trinh-dao-tao/#overview-major">Ngành đào tạo tại FPTU</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27873"><a href="https://daihoc.fpt.edu.vn/chuong-trinh-dao-tao/#overview-train">Tổng quan chương trình đào tạo</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27874"><a href="https://daihoc.fpt.edu.vn/chuong-trinh-dao-tao/#overview-experience">Trải nghiệm học tập</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27875"><a href="https://daihoc.fpt.edu.vn/chuong-trinh-dao-tao/#overview-why">5 lý do chọn FPTU</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27876"><a href="https://daihoc.fpt.edu.vn/chuong-trinh-dao-tao/#overview-link">Chương trình Sau đại học &#038; Liên kết quốc tế</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27877"><a href="https://daihoc.fpt.edu.vn/chuong-trinh-dao-tao/#overview-info">Khám phá thêm cùng FPTU</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-689"><a href="https://daihoc.fpt.edu.vn/tuyen-sinh/" class="js-toggle-submenu" aria-expanded="false">Tuyển sinh <i class="fa-solid fa-chevron-down"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27886"><a href="https://daihoc.fpt.edu.vn/phuong-thuc-tuyen-sinh/">Phương thức tuyển sinh</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27887"><a href="https://daihoc.fpt.edu.vn/hoc-bong">Học bổng</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27888"><a href="https://daihoc.fpt.edu.vn/tuyen-sinh/#fee">Học phí</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27889"><a href="https://daihoc.fpt.edu.vn/chinh-sach-tai-chinh/">Chính sách ưu đãi tài chính 2026</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27890"><a href="https://daihoc.fpt.edu.vn/openday/">Open day</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27891"><a href="https://daihoc.fpt.edu.vn/chuyen-muc/thong-bao-tuyen-sinh/">Thông tin tuyển sinh</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27892"><a href="https://daihoc.fpt.edu.vn/tuyen-sinh/#form">Đăng ký tuyển sinh</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27893"><a href="https://daihoc.fpt.edu.vn/tuyen-sinh/#faq">FAQ</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1429"><a href="https://daihoc.fpt.edu.vn/doi-song-sinh-vien/" class="js-toggle-submenu" aria-expanded="false">Đời sống sinh viên <i class="fa-solid fa-chevron-down"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27879"><a href="https://daihoc.fpt.edu.vn/doi-song-sinh-vien/#facilities">Cơ sở vật chất</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27880"><a href="https://daihoc.fpt.edu.vn/doi-song-sinh-vien/#activity">Hoạt động ngoại khóa &#038; CLB</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27881"><a href="https://daihoc.fpt.edu.vn/doi-song-sinh-vien/#international">Trải nghiệm quốc tế</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27882"><a href="https://daihoc.fpt.edu.vn/doi-song-sinh-vien/#job">OJT &#038; Cơ hội việc làm</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27883"><a href="https://daihoc.fpt.edu.vn/doi-song-sinh-vien/#alumni">Alumni và Câu chuyện thành công</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27884"><a href="https://daihoc.fpt.edu.vn/doi-song-sinh-vien/#explore">Hỗ trợ sinh viên</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27885"><a href="https://daihoc.fpt.edu.vn/doi-song-sinh-vien/#campus">Đời sống sinh viên tại các campus</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1236"><a href="https://daihoc.fpt.edu.vn/nghien-cuu-doi-moi/" class="js-toggle-submenu" aria-expanded="false">Nghiên cứu &#038; Đổi mới <i class="fa-solid fa-chevron-down"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27894"><a href="https://daihoc.fpt.edu.vn/nghien-cuu-doi-moi/#intro">Giới thiệu</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27895"><a href="https://daihoc.fpt.edu.vn/nghien-cuu-doi-moi/#achivement">Thành tựu</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27896"><a href="https://daihoc.fpt.edu.vn/nghien-cuu-doi-moi/#exam-intro">Chính sách khuyến khích nghiên cứu khoa học</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27897"><a href="https://daihoc.fpt.edu.vn/nghien-cuu-doi-moi/#project">Dự án nổi bật</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27898"><a href="https://daihoc.fpt.edu.vn/nghien-cuu-doi-moi/#forum">Diễn đàn nghiên cứu khoa học</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27899"><a href="https://daihoc.fpt.edu.vn/nghien-cuu-doi-moi/#news">Tin tức cập nhật</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27900"><a href="https://daihoc.fpt.edu.vn/nghien-cuu-doi-moi/#partner">Gương mặt khoa học</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-688"><a href="https://daihoc.fpt.edu.vn/tin-tuc-su-kien/" class="js-toggle-submenu" aria-expanded="false">Tin tức &#038; Sự kiện <i class="fa-solid fa-chevron-down"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27901"><a href="https://daihoc.fpt.edu.vn/chuyen-muc/tin-tuc/">Tin nổi bật</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27902"><a href="https://daihoc.fpt.edu.vn/chuyen-muc/thong-bao-tuyen-sinh/">Thông báo tuyển sinh</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27903"><a href="https://daihoc.fpt.edu.vn/tin-tuc-su-kien/hoat-dong-nha-truong/">Hoạt động nhà trường</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27905"><a href="https://daihoc.fpt.edu.vn/event/">Sự kiện</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1756"><a href="https://daihoc.fpt.edu.vn/lien-he/">Liên hệ</a></li>
+            <!-- Campus links below the main menu on mobile. -->
+                          <li class="campus-item"><a href="https://daihoc.fpt.edu.vn/hn">Campus Hà Nội</a></li>
+                          <li class="campus-item"><a href="https://daihoc.fpt.edu.vn/hcm">Campus TP.HCM</a></li>
+                          <li class="campus-item"><a href="https://daihoc.fpt.edu.vn/da-nang">Campus Đà Nẵng</a></li>
+                          <li class="campus-item"><a href="https://daihoc.fpt.edu.vn/can-tho">Campus Cần Thơ</a></li>
+                          <li class="campus-item"><a href="https://daihoc.fpt.edu.vn/quy-nhon">Campus Quy Nhơn</a></li>
+                      </ul>
+        </nav>
+
+        <!-- MOBILE RIGHT -->
+        <div class="header-right-mobile">
+          <div class="header-search">
+            <span class="icon-search-sm">
+              <img width="24" height="24" data-od-xpath="/HTML/BODY/HEADER/*[2][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[3][self::DIV]/*[1][self::DIV]/*[1][self::SPAN]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-search-mb.svg"><noscript><img width="24" height="24" data-od-xpath="/HTML/BODY/HEADER/*[2][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[3][self::DIV]/*[1][self::DIV]/*[1][self::SPAN]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-search-mb.svg" alt=""></noscript>
+            </span>
+
+            <form class="header-top-search" role="search" method="get" action="https://daihoc.fpt.edu.vn/">
+              <span>
+                <img width="20" height="20" data-od-added-fetchpriority data-od-xpath="/HTML/BODY/HEADER/*[2][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[3][self::DIV]/*[1][self::DIV]/*[2][self::FORM]/*[1][self::SPAN]/*[1][self::IMG]" fetchpriority="low" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-search.svg"><noscript><img width="20" height="20" data-od-added-fetchpriority data-od-xpath="/HTML/BODY/HEADER/*[2][self::DIV]/*[1][self::DIV]/*[1][self::DIV]/*[3][self::DIV]/*[1][self::DIV]/*[2][self::FORM]/*[1][self::SPAN]/*[1][self::IMG]" fetchpriority="low" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-search.svg" alt=""></noscript>
+              </span>
+              <input type="search" name="s" placeholder="Search" value="">
+            </form>
+          </div>
+
+          <span class="icon-menu">
+            <i class="fa-solid fa-bars"></i>
+            <!-- <img width="32" height="32" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3C/svg%3E" alt="" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-menu.png"><noscript><img width="32" height="32" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-menu.png" alt=""></noscript> -->
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</header>
+
+<div  class="overview-hero">
+    <div  class="container">
+        <div  class="breadcrumb">
+                        <span>
+                <a href="https://daihoc.fpt.edu.vn"><img width="24" height="24" data-od-xpath="/HTML/BODY/DIV[@class=&apos;overview-hero&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::SPAN]/*[1][self::A]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="home" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-house.svg"><noscript><img width="24" height="24" data-od-xpath="/HTML/BODY/DIV[@class=&apos;overview-hero&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::SPAN]/*[1][self::A]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-house.svg" alt="home"></noscript></a>
+            </span>
+            <span>
+                <img width="14" height="14" data-od-xpath="/HTML/BODY/DIV[@class=&apos;overview-hero&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::SPAN]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2014%2014'%3E%3C/svg%3E" alt="" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-arrow-right-gray.svg"><noscript><img width="14" height="14" data-od-xpath="/HTML/BODY/DIV[@class=&apos;overview-hero&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::SPAN]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-arrow-right-gray.svg" alt=""></noscript>
+            </span>
+
+                            <a href="https://daihoc.fpt.edu.vn/tin-tuc-su-kien/">
+                    Tin tức &amp; Sự kiện                </a>
+            
+                            <span>
+                    <img width="14" height="14" data-od-xpath="/HTML/BODY/DIV[@class=&apos;overview-hero&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[4][self::SPAN]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2014%2014'%3E%3C/svg%3E" alt="" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-arrow-right-gray.svg"><noscript><img width="14" height="14" data-od-xpath="/HTML/BODY/DIV[@class=&apos;overview-hero&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[4][self::SPAN]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-arrow-right-gray.svg" alt=""></noscript>
+                </span>
+                <p><a href="https://daihoc.fpt.edu.vn/chuyen-muc/hoc-bong-doanh-nghiep/">Học bổng doanh nghiệp</a></p>
+                    </div>
+    </div>
+</div>
+
+<section  class="article-detail-section">
+    <div  class="container">
+        <div  class="article-detail-wrapper">
+            
+<article id="post-129918" class="article-detail-main post-129918 post type-post status-publish format-standard has-post-thumbnail hentry category-hoc-bong-doanh-nghiep category-hoc-bong category-hoc-bong-doanh-nghiep-co-so-ha-noi campus_area-hcm">
+    <!-- Article Header -->
+    <header class="article-header">
+        <h1 class="article-title">GO JAPAN SCHOLARSHIP 2026 – CHẮP CÁNH TƯƠNG LAI THẾ HỆ GLOBAL CITIZEN 🚀</h1>
+        <div class="article-meta">
+            <img width="20" height="20" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::ARTICLE]/*[1][self::HEADER]/*[2][self::DIV]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="Calendar" class="meta-icon" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-card.png"><noscript><img width="20" height="20" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::ARTICLE]/*[1][self::HEADER]/*[2][self::DIV]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-card.png" alt="Calendar" class="meta-icon"></noscript>
+            <span>
+                Thứ Tư, 04/03/2026            </span>
+        </div>
+    </header>
+
+    <!-- Article Quote -->
+    
+    <!-- Article Content -->
+    <div class="article-content-group">
+        <p><span style="font-size: 12pt"><b>Sức nóng từ những mùa trước vẫn chưa hạ nhiệt, GO JAPAN SCHOLARSHIP 2026 đã chính thức khởi động với quy mô bùng nổ hơn bao giờ hết!</b></span></p>
+<p><span style="font-weight: 400;font-size: 12pt">Tiếp nối thành công rực rỡ của 2 năm vừa qua, FPT tiếp tục hành trình tìm kiếm những tài năng công nghệ xuất sắc nhất để trao tấm vé đến Nhật Bản vào mùa hè này. Năm thứ 3 liên tiếp, chương trình khẳng định vị thế là bước đệm vững chắc dành cho sinh viên Công nghệ &#8211; Kỹ thuật Việt Nam vươn tầm quốc tế.</span></p>
+<p><span style="font-size: 12pt"><img data-od-removed-fetchpriority="high" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::ARTICLE]/*[2][self::DIV]/*[3][self::P]/*[1][self::SPAN]/*[1][self::IMG]"  decoding="async" class="aligncenter size-full wp-image-22629" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%203322%201864'%3E%3C/svg%3E" alt="sssss" width="3322" height="1864" data-lazy-src="https://qhdn-hcmuni.fpt.edu.vn/wp-content/uploads/2026/02/sssss.jpg"><noscript><img data-od-removed-fetchpriority="high" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::ARTICLE]/*[2][self::DIV]/*[3][self::P]/*[1][self::SPAN]/*[1][self::IMG]"  decoding="async" class="aligncenter size-full wp-image-22629" src="https://qhdn-hcmuni.fpt.edu.vn/wp-content/uploads/2026/02/sssss.jpg" alt="sssss" width="3322" height="1864"></noscript></span></p>
+<p><span style="font-size: 12pt"><b>🌟 CÓ GÌ MỚI TẠI GO JAPAN SCHOLARSHIP 2026?</b></span></p>
+<p><span style="font-weight: 400;font-size: 12pt">Không chỉ dừng lại ở những giá trị cũ, năm nay chương trình mang đến quy mô đầu tư &#8220;khủng&#8221;: </span></p>
+<p><span style="font-size: 12pt"><span style="font-weight: 400">🔹 </span><b>65 suất học bổng</b><span style="font-weight: 400"> – Số lượng lớn nhất từ trước đến nay. </span></span></p>
+<p><span style="font-size: 12pt"><span style="font-weight: 400">🔹 Tổng giá trị học bổng cực hấp dẫn lên tới </span><b>175,000 USD</b><span style="font-weight: 400"> </span></span></p>
+<p><span style="font-size: 12pt"><span style="font-weight: 400">🔹 </span><b>Nâng cấp Mentor:</b><span style="font-weight: 400"> Trực tiếp làm việc cùng các chuyên gia hàng đầu trong các mảng công nghệ &#8220;hot&#8221; nhất: </span><b>AI, Cloud, Data Science, Low-code</b><span style="font-weight: 400">.</span></span></p>
+<p><span style="font-size: 12pt"><b>📍 THÔNG TIN CHI TIẾT HÀNH TRÌNH CHINH PHỤC TOKYO:</b></span></p>
+<ul>
+<li style="font-weight: 400"><span style="font-size: 12pt"><b>Điểm đến:</b><span style="font-weight: 400"> 01 tháng trải nghiệm thực tế tại thủ đô Tokyo &#8211; Nhật Bản.</span></span></li>
+<li style="font-weight: 400"><span style="font-size: 12pt"><b>Đặc quyền:</b><span style="font-weight: 400"> Nâng trình tiếng Nhật với giáo viên bản xứ, tham gia dự án thật tại công ty IT Global, và đắm mình vào văn hóa xứ sở mặt trời mọc.</span></span></li>
+<li style="font-weight: 400"><span style="font-size: 12pt"><b>Hạn chót:</b><span style="font-weight: 400"> Trước ngày </span><b>30/04/2026</b><span style="font-weight: 400"> (Đặc biệt: Ưu tiên xét học bổng toàn phần cho các bạn đăng ký sớ</span></span></li>
+<li style="font-weight: 400"><span style="font-size: 12pt"><span style="font-weight: 400">m).</span></span></li>
+</ul>
+<p><span style="font-size: 12pt"><b>🎯 BẠN CÓ PHẢI LÀ ỨNG VIÊN CHÚNG TÔI TÌM KIẾM?</b></span></p>
+<ul>
+<li style="font-weight: 400"><span style="font-weight: 400;font-size: 12pt">Sinh viên các ngành Công nghệ &#8211; Kỹ thuật (IT, Khoa học máy tính, Cơ điện tử, Tự động hóa&#8230;).</span></li>
+<li style="font-weight: 400"><span style="font-weight: 400;font-size: 12pt">Dự kiến tốt nghiệp năm 2026 hoặc 2027.</span></li>
+<li style="font-weight: 400"><span style="font-size: 12pt"><span style="font-weight: 400">GPA đạt từ </span><b>3.0/4.0</b><span style="font-weight: 400">.</span></span></li>
+<li style="font-weight: 400"><span style="font-size: 12pt"><span style="font-weight: 400">Trình độ tiếng Nhật từ </span><b>N3</b><span style="font-weight: 400"> trở lên.</span></span></li>
+</ul>
+<p><span style="font-size: 12pt"><span style="font-weight: 400">🔥 </span><b>HÃY VIẾT TIẾP CÂU CHUYỆN GO JAPAN CÙNG FPT!</b><span style="font-weight: 400"> Đừng bỏ lỡ cơ hội ghi tên mình vào thế hệ sinh viên Global Citizen – những người trẻ bản lĩnh, sẵn sàng chinh phục bản đồ công nghệ  thế giới.</span></span></p>
+<p><span style="font-size: 12pt"><span style="font-weight: 400">👉 </span><b>ĐĂNG KÝ SỞ HỮU PASSPORT GLOBAL CITIZEN NGAY TẠI: </b><span style="color: #0000ff"><a style="color: #0000ff" href="https://forms.gle/ozpPK3484NtYhVTZ8" rel="noopener"><b>https://forms.gle/ozpPK3484NtYhVTZ8</b></a><b> </b></span></span></p>
+<p><span style="font-size: 12pt"><strong>GO JAPAN SCHOLARSHIP 2026 &#8211; From Student to Global Citizen 🌎</strong></span></p>
+<p><span style="font-weight: 400;font-size: 12pt"><strong>Email</strong>: <span style="color: #0000ff"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a0c5c1d2ccd9c3c1d2c5c5d2d3e0c6d0d48ec3cfcd">[email&#160;protected]</a></span></span></p>
+<p><span style="font-weight: 400;font-size: 12pt"><strong>Hotline:</strong> 0839 421 997 (Ms.Thảo Lê)</span></p>
+<p style="text-align: right"><span style="font-size: 12pt"><strong>FPT SOFTWARE</strong></span></p>
+    </div>
+
+    <!-- Article Author -->
+    <!-- có thông tin tác giả thì hiển thị -->
+             <div class="article-author">
+            <img width="20" height="20" data-od-added-loading data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::ARTICLE]/*[3][self::DIV]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="Author" class="author-icon" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-author.png"><noscript><img width="20" height="20" data-od-added-loading data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::ARTICLE]/*[3][self::DIV]/*[1][self::IMG]" loading="lazy" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-author.png" alt="Author" class="author-icon"></noscript>
+            <span class="author-name">Phòng QHDN</span>
+        </div>
+     </article>
+
+<aside class="article-sidebar">
+    <!-- Latest Posts -->
+    <div class="sidebar-widget">
+        <h3 class="widget-title">Bài viết mới nhất</h3>
+        <div class="latest-posts">
+                                <article class="latest-post-item">
+                        <a href="https://daihoc.fpt.edu.vn/tin-tuc/fptu-hop-tac-cung-lien-minh-aipartners-asia-dua-bai-toan-thuc-te-cua-doanh-nghiep-vao-chuong-trinh-dao-tao-va-nghien-cuu-ai/" class="latest-post-link">
+                            <div class="latest-post-thumb">
+                                <img width="768" height="512" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[1][self::DIV]/*[2][self::DIV]/*[1][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20768%20512'%3E%3C/svg%3E" alt="FPTU hợp tác cùng Liên minh AIPartners Asia: Đưa “bài toán” thực tế của doanh nghiệp vào chương trình đào tạo và nghiên cứu AI" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/10/860045445_1102322965995658_5519803028375870431_n-768x512.webp"><noscript><img width="768" height="512" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[1][self::DIV]/*[2][self::DIV]/*[1][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/10/860045445_1102322965995658_5519803028375870431_n-768x512.webp" alt="FPTU hợp tác cùng Liên minh AIPartners Asia: Đưa “bài toán” thực tế của doanh nghiệp vào chương trình đào tạo và nghiên cứu AI"></noscript>
+                            </div>
+                            <h4 class="latest-post-title">
+                                FPTU hợp tác cùng Liên minh AIPartners Asia: Đưa “bài toán” thực tế của...                            </h4>
+                        </a>
+                    </article>
+                                        <article class="latest-post-item">
+                        <a href="https://daihoc.fpt.edu.vn/tin-campus/tin-campus-can-tho/ai-ho-tro-cham-soc-suc-khoe-thi/" class="latest-post-link">
+                            <div class="latest-post-thumb">
+                                <img width="768" height="614" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[1][self::DIV]/*[2][self::DIV]/*[2][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20768%20614'%3E%3C/svg%3E" alt="Sinh viên Trường Đại học FPT phát triển hệ sinh thái AI hỗ trợ chăm sóc sức khỏe thị giác" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/10/ai-ho-tro-cham-soc-suc-khoe-thi-giac-2-768x614.webp"><noscript><img width="768" height="614" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[1][self::DIV]/*[2][self::DIV]/*[2][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/10/ai-ho-tro-cham-soc-suc-khoe-thi-giac-2-768x614.webp" alt="Sinh viên Trường Đại học FPT phát triển hệ sinh thái AI hỗ trợ chăm sóc sức khỏe thị giác"></noscript>
+                            </div>
+                            <h4 class="latest-post-title">
+                                Sinh viên Trường Đại học FPT phát triển hệ sinh thái AI hỗ trợ...                            </h4>
+                        </a>
+                    </article>
+                                        <article class="latest-post-item">
+                        <a href="https://daihoc.fpt.edu.vn/tin-tuc/3-coc-vang-ky-summer-2026-fptu-co-so-ha-noi-thanh-tich-bat-dau-bang-3-tu-thu-lam-va-kien-tri/" class="latest-post-link">
+                            <div class="latest-post-thumb">
+                                <img width="768" height="356" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[1][self::DIV]/*[2][self::DIV]/*[3][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20768%20356'%3E%3C/svg%3E" alt="3 Cóc Vàng kỳ Summer 2026 FPTU cơ sở Hà Nội: Thành tích bắt đầu bằng 3 từ: “Thử”, “Làm” và “Kiên trì”" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/10/Thumbweb-Cocvang-HN-768x356.webp"><noscript><img width="768" height="356" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[1][self::DIV]/*[2][self::DIV]/*[3][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/10/Thumbweb-Cocvang-HN-768x356.webp" alt="3 Cóc Vàng kỳ Summer 2026 FPTU cơ sở Hà Nội: Thành tích bắt đầu bằng 3 từ: “Thử”, “Làm” và “Kiên trì”"></noscript>
+                            </div>
+                            <h4 class="latest-post-title">
+                                3 Cóc Vàng kỳ Summer 2026 FPTU cơ sở Hà Nội: Thành tích bắt...                            </h4>
+                        </a>
+                    </article>
+                                        <article class="latest-post-item">
+                        <a href="https://daihoc.fpt.edu.vn/tin-tuc/sinh-vien-truong-dai-hoc-fpt-dua-di-san-viet-vao-the-gioi-game-3d-duoc-nhan-ho-tro-khoi-nghiep-tu-giang-duong/" class="latest-post-link">
+                            <div class="latest-post-thumb">
+                                <img width="768" height="512" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[1][self::DIV]/*[2][self::DIV]/*[4][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20768%20512'%3E%3C/svg%3E" alt="Sinh viên Trường Đại học FPT đưa di sản Việt vào thế giới game 3D, được nhận hỗ trợ khởi nghiệp từ giảng đường" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/10/Ban-sao-cua-DBL08077-768x512.webp"><noscript><img width="768" height="512" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[1][self::DIV]/*[2][self::DIV]/*[4][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/10/Ban-sao-cua-DBL08077-768x512.webp" alt="Sinh viên Trường Đại học FPT đưa di sản Việt vào thế giới game 3D, được nhận hỗ trợ khởi nghiệp từ giảng đường"></noscript>
+                            </div>
+                            <h4 class="latest-post-title">
+                                Sinh viên Trường Đại học FPT đưa di sản Việt vào thế giới game...                            </h4>
+                        </a>
+                    </article>
+                                        <article class="latest-post-item">
+                        <a href="https://daihoc.fpt.edu.vn/hoat-dong-cong-dong/buoc-ra-the-gioi-voi-mot-tieng-dan-bau-trong-tim-hanh-trinh-12-nam-gieo-am-nhac-dan-toc-cua-truong-dai-hoc-fpt/" class="latest-post-link">
+                            <div class="latest-post-thumb">
+                                <img width="768" height="466" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[1][self::DIV]/*[2][self::DIV]/*[5][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20768%20466'%3E%3C/svg%3E" alt="“Bước ra thế giới với một tiếng đàn bầu trong tim”: Hành trình 12 năm gieo âm nhạc dân tộc của Trường Đại học FPT" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/10/HAM01690-768x466.webp"><noscript><img width="768" height="466" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[1][self::DIV]/*[2][self::DIV]/*[5][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/10/HAM01690-768x466.webp" alt="“Bước ra thế giới với một tiếng đàn bầu trong tim”: Hành trình 12 năm gieo âm nhạc dân tộc của Trường Đại học FPT"></noscript>
+                            </div>
+                            <h4 class="latest-post-title">
+                                “Bước ra thế giới với một tiếng đàn bầu trong tim”: Hành trình 12...                            </h4>
+                        </a>
+                    </article>
+                                        <article class="latest-post-item">
+                        <a href="https://daihoc.fpt.edu.vn/cau-chuyen-sinh-vien/sinh-vien-k20-fptu-toa-sang-tai-chung-ket-cuoc-thi-hung-bien-tieng-trung-cup-tong-lanh-su-quan-trung-quoc-tai-tp-hcm-2026/" class="latest-post-link">
+                            <div class="latest-post-thumb">
+                                <img width="768" height="512" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[1][self::DIV]/*[2][self::DIV]/*[6][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20768%20512'%3E%3C/svg%3E" alt="Sinh viên K20 FPTU tỏa sáng tại Chung kết Cuộc thi Hùng biện Tiếng Trung – Cúp Tổng Lãnh sự quán Trung Quốc tại TP.HCM 2026" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/10/Anh-bia-Ttrung-768x512.webp"><noscript><img width="768" height="512" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[1][self::DIV]/*[2][self::DIV]/*[6][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/10/Anh-bia-Ttrung-768x512.webp" alt="Sinh viên K20 FPTU tỏa sáng tại Chung kết Cuộc thi Hùng biện Tiếng Trung – Cúp Tổng Lãnh sự quán Trung Quốc tại TP.HCM 2026"></noscript>
+                            </div>
+                            <h4 class="latest-post-title">
+                                Sinh viên K20 FPTU tỏa sáng tại Chung kết Cuộc thi Hùng biện Tiếng...                            </h4>
+                        </a>
+                    </article>
+                            </div>
+    </div>
+
+    <!-- Sidebar Banners linh hoạt bằng widget -->
+            <div class="sidebar-banners">
+            <div id="block-5" class="sidebar-banner widget_block">
+<div class="wp-block-group"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow">
+<h2 class="wp-block-heading"></h2>
+</div></div>
+</div>        </div>
+        <!-- Sidebar Banners (tĩnh) -->
+    <div class="sidebar-banner">
+        <a href="https://daihoc.fpt.edu.vn/hoc-bong">
+            <img width="345" height="200" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[3][self::DIV]/*[1][self::A]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20345%20200'%3E%3C/svg%3E" alt="Học bổng" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/event-hoc-bong.png"><noscript><img width="345" height="200" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[3][self::DIV]/*[1][self::A]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/event-hoc-bong.png" alt="Học bổng"></noscript>
+            <span class="sidebar-banner-label">Học bổng</span>
+        </a>
+    </div>
+
+    <div class="sidebar-banner">
+        <a href="https://daihoc.fpt.edu.vn/tuyen-sinh">
+            <img width="345" height="200" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[4][self::DIV]/*[1][self::A]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20345%20200'%3E%3C/svg%3E" alt="Tuyển sinh" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/event-tuyen-sinh.png"><noscript><img width="345" height="200" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[4][self::DIV]/*[1][self::A]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/event-tuyen-sinh.png" alt="Tuyển sinh"></noscript>
+            <span class="sidebar-banner-label">Tuyển sinh</span>
+        </a>
+    </div>
+
+    <div class="sidebar-banner">
+        <a href="https://daihoc.fpt.edu.vn/open-days">
+            <img width="345" height="200" data-od-added-loading data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[5][self::DIV]/*[1][self::A]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20345%20200'%3E%3C/svg%3E" alt="Openday" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/event-openday.png"><noscript><img width="345" height="200" data-od-added-loading data-od-xpath="/HTML/BODY/SECTION[@class=&apos;article-detail-section&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::ASIDE]/*[5][self::DIV]/*[1][self::A]/*[1][self::IMG]" loading="lazy" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/event-openday.png" alt="Openday"></noscript>
+            <span class="sidebar-banner-label">Openday</span>
+        </a>
+    </div>
+</aside>
+        </div>
+    </div>
+</section>
+
+
+<section  class="related-news scroll-fade-up">
+    <div  class="container">
+        <div  class="title-common">
+            <h2 class="title-common-text">
+                Tin cùng chuyên mục            </h2>
+            <span class="title-common-decor-right">
+                <img width="164" height="29" data-od-added-loading data-od-xpath="/HTML/BODY/SECTION[@class=&apos;related-news scroll-fade-up&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::SPAN]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20164%2029'%3E%3C/svg%3E" alt="" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/title-common-decor-right.svg"><noscript><img width="164" height="29" data-od-added-loading data-od-xpath="/HTML/BODY/SECTION[@class=&apos;related-news scroll-fade-up&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[2][self::SPAN]/*[1][self::IMG]" loading="lazy" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/title-common-decor-right.svg" alt=""></noscript>
+            </span>
+        </div>
+
+                    <div  class="related-news-grid">
+                                    <article class="related-news-card">
+                        <a href="https://daihoc.fpt.edu.vn/hoc-bong-doanh-nghiep/lsmse-recruitment-opening-application-form-gen-9-2/" class="related-news-link">
+                            <div class="related-news-image">
+                                <img width="900" height="600" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;related-news scroll-fade-up&apos;]/*[1][self::DIV]/*[2][self::DIV]/*[1][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20900%20600'%3E%3C/svg%3E" alt="LSMSE RECRUITMENT: OPENING APPLICATION FORM – GEN 9.2" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/new-4.png"><noscript><img width="900" height="600" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;related-news scroll-fade-up&apos;]/*[1][self::DIV]/*[2][self::DIV]/*[1][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/new-4.png" alt="LSMSE RECRUITMENT: OPENING APPLICATION FORM – GEN 9.2" loading="lazy"></noscript>
+                            </div>
+                            <div class="related-news-content">
+                                <h3 class="related-news-title">
+                                    LSMSE RECRUITMENT: OPENING APPLICATION FORM – GEN 9.2                                </h3>
+                            </div>
+                        </a>
+                    </article>
+                                        <article class="related-news-card">
+                        <a href="https://daihoc.fpt.edu.vn/hoc-bong/nam-sinh-vien-dai-hoc-fpt-xuat-sac-nhan-hoc-bong-amcham-2025/" class="related-news-link">
+                            <div class="related-news-image">
+                                <img width="900" height="600" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;related-news scroll-fade-up&apos;]/*[1][self::DIV]/*[2][self::DIV]/*[2][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20900%20600'%3E%3C/svg%3E" alt="NĂM SINH VIÊN ĐẠI HỌC FPT XUẤT SẮC NHẬN HỌC BỔNG AMCHAM 2025" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/new-4.png"><noscript><img width="900" height="600" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;related-news scroll-fade-up&apos;]/*[1][self::DIV]/*[2][self::DIV]/*[2][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/new-4.png" alt="NĂM SINH VIÊN ĐẠI HỌC FPT XUẤT SẮC NHẬN HỌC BỔNG AMCHAM 2025" loading="lazy"></noscript>
+                            </div>
+                            <div class="related-news-content">
+                                <h3 class="related-news-title">
+                                    NĂM SINH VIÊN ĐẠI HỌC FPT XUẤT SẮC NHẬN HỌC BỔNG AMCHAM 2025                                </h3>
+                            </div>
+                        </a>
+                    </article>
+                                        <article class="related-news-card">
+                        <a href="https://daihoc.fpt.edu.vn/hoc-bong/le-trao-hoc-bong-ielts-mentor-tiep-suc-hanh-trinh-tri-thuc-cho-sinh-vien-tot-nghiep-thu-khoa/" class="related-news-link">
+                            <div class="related-news-image">
+                                <img width="900" height="600" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;related-news scroll-fade-up&apos;]/*[1][self::DIV]/*[2][self::DIV]/*[3][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20900%20600'%3E%3C/svg%3E" alt="🎓 LỄ TRAO HỌC BỔNG IELTS MENTOR – TIẾP SỨC HÀNH TRÌNH TRI THỨC CHO SINH VIÊN TỐT NGHIỆP THỦ KHOA" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/new-4.png"><noscript><img width="900" height="600" data-od-xpath="/HTML/BODY/SECTION[@class=&apos;related-news scroll-fade-up&apos;]/*[1][self::DIV]/*[2][self::DIV]/*[3][self::ARTICLE]/*[1][self::A]/*[1][self::DIV]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/new-4.png" alt="🎓 LỄ TRAO HỌC BỔNG IELTS MENTOR – TIẾP SỨC HÀNH TRÌNH TRI THỨC CHO SINH VIÊN TỐT NGHIỆP THỦ KHOA" loading="lazy"></noscript>
+                            </div>
+                            <div class="related-news-content">
+                                <h3 class="related-news-title">
+                                    🎓 LỄ TRAO HỌC BỔNG IELTS MENTOR – TIẾP SỨC HÀNH TRÌNH TRI THỨC CHO SINH VIÊN TỐT...                                </h3>
+                            </div>
+                        </a>
+                    </article>
+                                </div>
+        
+            </div>
+</section><style>
+	div.gtranslate_wrapper img {
+	    width: 30px;
+	}
+</style>
+<div  class="cta">
+    <a href="https://daihoc.fpt.edu.vn/" class="cta-logo">
+      <img width="40" height="40" data-od-xpath="/HTML/BODY/DIV[@class=&apos;cta&apos;]/*[1][self::A]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3C/svg%3E" alt="" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-cta-icon1.svg"><noscript><img width="40" height="40" data-od-xpath="/HTML/BODY/DIV[@class=&apos;cta&apos;]/*[1][self::A]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-cta-icon1.svg" alt=""></noscript>
+    </a>
+    <a href="https://daihoc.fpt.edu.vn/dang-ky-tu-van-tuyen-sinh-2026" class="cta-logo">
+      <img width="40" height="40" data-od-xpath="/HTML/BODY/DIV[@class=&apos;cta&apos;]/*[2][self::A]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3C/svg%3E" alt="" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-cta-icon2.svg"><noscript><img width="40" height="40" data-od-xpath="/HTML/BODY/DIV[@class=&apos;cta&apos;]/*[2][self::A]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-cta-icon2.svg" alt=""></noscript>
+    </a>
+    <a href="https://daihoc.fpt.edu.vn/lien-he">
+      <img width="40" height="40" data-od-xpath="/HTML/BODY/DIV[@class=&apos;cta&apos;]/*[3][self::A]/*[1][self::IMG]" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3C/svg%3E" alt="" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-cta-icon3.svg"><noscript><img width="40" height="40" data-od-xpath="/HTML/BODY/DIV[@class=&apos;cta&apos;]/*[3][self::A]/*[1][self::IMG]" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-cta-icon3.svg" alt=""></noscript>
+    </a>
+  </div>
+<footer data-wpr-lazyrender="1" class="footer2">
+  <div  class="container">
+    <div  class="footer-list">
+
+      <!-- Logo footer -->
+      <a href="https://daihoc.fpt.edu.vn/" class="footer-logo">
+                  <img width="330" height="93" data-od-added-fetchpriority data-od-xpath="/HTML/BODY/FOOTER[@class=&apos;footer2&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::A]/*[1][self::IMG]" fetchpriority="low" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20330%2093'%3E%3C/svg%3E" alt="Trường Đại học FPT" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/logo.png"><noscript><img width="330" height="93" data-od-added-fetchpriority data-od-xpath="/HTML/BODY/FOOTER[@class=&apos;footer2&apos;]/*[1][self::DIV]/*[1][self::DIV]/*[1][self::A]/*[1][self::IMG]" fetchpriority="low" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/logo.png" alt="Trường Đại học FPT"></noscript>
+              </a>
+
+      <!-- CỘT 1: Giới thiệu chung -->
+      <div class="footer-item">
+        <span>Giới thiệu chung</span>
+                        <ul>
+                  <li><a href="https://daihoc.fpt.edu.vn/ve-fptu">Về FPTU</a></li>
+                  <li><a href="https://daihoc.fpt.edu.vn/doi-song-sinh-vien/#facilities">Cơ sở vật chất &amp; campus</a></li>
+                  <li><a href="https://daihoc.fpt.edu.vn/ve-fptu/#partners">Đối tác &amp; hợp tác quốc tế</a></li>
+                  <li><a href="https://daihoc.fpt.edu.vn/lien-he">Liên hệ với chúng tôi</a></li>
+                </ul>
+                      </div>
+
+      <!-- CỘT 2: Truy cập nhanh -->
+      <div class="footer-item">
+        <span>Truy cập nhanh</span>
+                        <ul>
+                  <li><a href="https://daihoc.fpt.edu.vn/tuyen-sinh">Thông tin tuyển sinh năm 2026</a></li>
+                  <li><a href="https://daihoc.fpt.edu.vn/openday">Open days</a></li>
+                  <li><a href="https://daihoc.fpt.edu.vn/tuyen-sinh/#fee">Học phí</a></li>
+                  <li><a href="https://daihoc.fpt.edu.vn/hoc-bong">Học bổng</a></li>
+                </ul>
+                      </div>
+
+      <!-- CỘT 3: Học tập tại FPTU -->
+      <div class="footer-item">
+        <span>Học tập tại FPTU</span>
+                        <ul>
+                  <li><a href="https://daihoc.fpt.edu.vn/chuong-trinh-dao-tao/#overview-major">Ngành - Chuyên ngành đào tạo</a></li>
+                  <li><a href="https://daihoc.fpt.edu.vn/doi-song-sinh-vien">Cuộc sống sinh viên</a></li>
+                  <li><a href="https://daihoc.fpt.edu.vn/nghien-cuu-doi-moi/#project">Dự án startup nổi bật</a></li>
+                  <li><a href="https://daihoc.fpt.edu.vn/openday">Trải nghiệm học tập toàn cầu</a></li>
+                </ul>
+                      </div>
+		
+      <!-- CỘT 4: Contact (tuỳ, dùng menu hoặc text) -->
+      <div class="footer-item">
+        <span>Liên hệ</span>
+                        <ul>
+                  <!--<li><a href="tel:(024) 7300 5588">(024) 7300 5588</a></li>-->
+                  <li><a href="/cdn-cgi/l/email-protection#710503041e1f16151018191e12170105311701055f1415045f071f"><span class="__cf_email__" data-cfemail="750107001a1b1211141c1d1a16130501351305015b1011005b031b">[email&#160;protected]</span></a></li>
+                </ul>
+                        <div class="html2">Chọn ngôn ngữ: <div class="gtranslate_wrapper" id="gt-wrapper-71935702"></div></div>
+      </div>
+
+      <!-- CÁC KHỐI CAMPUS (tạm để static, nếu muốn động sau mình tách tiếp) -->
+      <div class="footer-item">
+        <span>HÀ NỘI</span>
+        <div>
+          <strong>Địa chỉ</strong>
+          <p>Khu Giáo dục và Đào tạo - Khu Công nghệ cao Hòa Lạc - Km29 Đại lộ Thăng Long, Xã Hòa Lạc, TP. Hà Nội</p>
+        </div>
+        <div>
+          <strong>Hotline</strong>
+          <a href="tel:(024) 7300 5588">(024) 7300 5588</a>
+        </div>
+        <div>
+          <strong>Email</strong>
+          <a href="/cdn-cgi/l/email-protection#20545559454e53494e4848414e4f49604650540e4544550e564e"><span class="__cf_email__" data-cfemail="1266676b777c617b7c7a7a737c7d7b527462663c7776673c647c">[email&#160;protected]</span></a>
+        </div>
+      </div>
+
+      <div class="footer-item">
+        <span>TP. HỒ CHÍ MINH</span>
+        <div>
+          <strong>Địa chỉ</strong>
+          <p>Lô E2a-7, Đường D1, Khu Công nghệ cao, Phường Tăng Nhơn Phú, TP. Hồ Chí Minh</p>
+        </div>
+        <div>
+          <strong>Hotline</strong>
+          <a href="tel:(028) 7300 5588">(028) 7300 5588</a>
+        </div>
+        <div>
+          <strong>Email</strong>
+          <a href="/cdn-cgi/l/email-protection#2b5f5e524e45584245434348466b4d5b5f054e4f5e055d45"><span class="__cf_email__" data-cfemail="cabebfb3afa4b9a3a4a2a2a9a78aacbabee4afaebfe4bca4">[email&#160;protected]</span></a>
+        </div>
+      </div>
+
+      <div class="footer-item">
+        <span>ĐÀ NẴNG</span>
+        <div>
+          <strong>Địa chỉ</strong>
+          <p>Khu đô thị công nghệ FPT Đà Nẵng, Phường Ngũ Hành Sơn, TP. Đà Nẵng</p>
+        </div>
+        <div>
+          <strong>Hotline</strong>
+          <a href="tel:(0236) 730 0999">(0236) 730 0999</a>
+        </div>
+        <div>
+          <strong>Email</strong>
+          <a href="/cdn-cgi/l/email-protection#6b1f1e120e05180205030f0a050a050c2b0d1b1f450e0f1e451d05"><span class="__cf_email__" data-cfemail="3d49484458534e545355595c535c535a7d5b4d4913585948134b53">[email&#160;protected]</span></a>
+        </div>
+      </div>
+
+      <div class="footer-item">
+        <span>CẦN THƠ</span>
+        <div>
+          <strong>Địa chỉ</strong>
+          <p>Số 600, đường Nguyễn Văn Cừ (nối dài), Phường An Bình, Thành phố Cần Thơ</p>
+        </div>
+        <div>
+          <strong>Hotline</strong>
+          <a href="tel:(0292) 730 3636">(0292) 730 3636</a>
+        </div>
+        <div>
+          <strong>Email</strong>
+          <a href="/cdn-cgi/l/email-protection#e397969a868d908a8d8b80828d978b8ca3859397cd868796cd958d"><span class="__cf_email__" data-cfemail="ea9e9f938f8499838482898b849e8285aa8c9a9ec48f8e9fc49c84">[email&#160;protected]</span></a>
+        </div>
+      </div>
+
+      <div class="footer-item">
+        <span>QUY NHƠN</span>
+        <div>
+          <strong>Địa chỉ</strong>
+          <p>Khu đô thị mới An Phú Thịnh, Phường Quy Nhơn Đông, Tỉnh Gia Lai</p>
+        </div>
+        <div>
+          <strong>Hotline</strong>
+          <a href="tel:(0256) 7300 999">(0256) 7300 999</a>
+        </div>
+        <div>
+          <strong>Email</strong>
+          <a href="/cdn-cgi/l/email-protection#8afefff3efe4f9e3e4e2fbfff3e4e2e5e4caecfafea4efeeffa4fce4"><span class="__cf_email__" data-cfemail="0f7b7a766a617c6661677e7a76616760614f697f7b216a6b7a217961">[email&#160;protected]</span></a>
+        </div>
+      </div>
+
+    </div><!-- /.footer-list -->
+
+    <!-- BOTTOM -->
+    <div  class="footer-bottom">
+      <p>© 2026 Bản quyền thuộc về Trường Đại học FPT.</p>
+      
+      <div class="footer-social">
+                    <a href="https://www.facebook.com/university.fpt.edu.vn"><img width="32" height="32" data-od-added-fetchpriority data-od-xpath="/HTML/BODY/FOOTER[@class=&apos;footer2&apos;]/*[1][self::DIV]/*[2][self::DIV]/*[2][self::DIV]/*[1][self::A]/*[1][self::IMG]" fetchpriority="low" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3C/svg%3E" alt="Facebook" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-fb-color.svg"><noscript><img width="32" height="32" data-od-added-fetchpriority data-od-xpath="/HTML/BODY/FOOTER[@class=&apos;footer2&apos;]/*[1][self::DIV]/*[2][self::DIV]/*[2][self::DIV]/*[1][self::A]/*[1][self::IMG]" fetchpriority="low" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-fb-color.svg" alt="Facebook"></noscript></a>
+            <a href="https://zalo.me/daihocfpt"><img width="20" height="20" data-od-added-fetchpriority data-od-xpath="/HTML/BODY/FOOTER[@class=&apos;footer2&apos;]/*[1][self::DIV]/*[2][self::DIV]/*[2][self::DIV]/*[2][self::A]/*[1][self::IMG]" fetchpriority="low" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="Zalo" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-zalo.svg"><noscript><img width="20" height="20" data-od-added-fetchpriority data-od-xpath="/HTML/BODY/FOOTER[@class=&apos;footer2&apos;]/*[1][self::DIV]/*[2][self::DIV]/*[2][self::DIV]/*[2][self::A]/*[1][self::IMG]" fetchpriority="low" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-zalo.svg" alt="Zalo"></noscript></a>
+            <a href="https://www.youtube.com/@FPTUniversityChannel-1"><img width="32" height="32" data-od-added-fetchpriority data-od-xpath="/HTML/BODY/FOOTER[@class=&apos;footer2&apos;]/*[1][self::DIV]/*[2][self::DIV]/*[2][self::DIV]/*[3][self::A]/*[1][self::IMG]" fetchpriority="low" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3C/svg%3E" alt="YouTube" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-ytb-color.svg"><noscript><img width="32" height="32" data-od-added-fetchpriority data-od-xpath="/HTML/BODY/FOOTER[@class=&apos;footer2&apos;]/*[1][self::DIV]/*[2][self::DIV]/*[2][self::DIV]/*[3][self::A]/*[1][self::IMG]" fetchpriority="low" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-ytb-color.svg" alt="YouTube"></noscript></a>
+            <a href="https://www.tiktok.com/@fptuniversity?lang=vi-VN"><img width="32" height="32" data-od-added-fetchpriority data-od-xpath="/HTML/BODY/FOOTER[@class=&apos;footer2&apos;]/*[1][self::DIV]/*[2][self::DIV]/*[2][self::DIV]/*[4][self::A]/*[1][self::IMG]" fetchpriority="low" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3C/svg%3E" alt="TikTok" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-tiktok-color.svg"><noscript><img width="32" height="32" data-od-added-fetchpriority data-od-xpath="/HTML/BODY/FOOTER[@class=&apos;footer2&apos;]/*[1][self::DIV]/*[2][self::DIV]/*[2][self::DIV]/*[4][self::A]/*[1][self::IMG]" fetchpriority="low" src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/assets/images/icon-tiktok-color.svg" alt="TikTok"></noscript></a>
+                  </div>
+    </div>
+    
+
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="speculationrules">
+{"prerender":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/fpt-university/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prerender, .no-prerender a"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"moderate"}]}
+</script>
+        <script type="rocketlazyloadscript" data-cfasync="false">
+            window.dFlipLocation = 'https://daihoc.fpt.edu.vn/wp-content/plugins/3d-flipbook-dflip-lite/assets/';
+            window.dFlipWPGlobal = {"text":{"toggleSound":"Turn on\/off Sound","toggleThumbnails":"Toggle Thumbnails","toggleOutline":"Toggle Outline\/Bookmark","previousPage":"Previous Page","nextPage":"Next Page","toggleFullscreen":"Toggle Fullscreen","zoomIn":"Zoom In","zoomOut":"Zoom Out","toggleHelp":"Toggle Help","singlePageMode":"Single Page Mode","doublePageMode":"Double Page Mode","downloadPDFFile":"Download PDF File","gotoFirstPage":"Goto First Page","gotoLastPage":"Goto Last Page","share":"Share","mailSubject":"I wanted you to see this FlipBook","mailBody":"Check out this site {{url}}","loading":"DearFlip: Loading "},"viewerType":"flipbook","moreControls":"download,pageMode,startPage,endPage,sound","hideControls":"","scrollWheel":"false","backgroundColor":"#777","backgroundImage":"","height":"auto","paddingLeft":"20","paddingRight":"20","controlsPosition":"bottom","duration":800,"soundEnable":"true","enableDownload":"true","showSearchControl":"false","showPrintControl":"false","enableAnnotation":false,"enableAnalytics":"false","webgl":"true","hard":"none","maxTextureSize":"1600","rangeChunkSize":"524288","zoomRatio":1.5,"stiffness":3,"pageMode":"0","singlePageMode":"0","pageSize":"0","autoPlay":"false","autoPlayDuration":5000,"autoPlayStart":"false","linkTarget":"2","sharePrefix":"flipbook-"};
+        </script>
+      <script id="real3d-flipbook-forntend-js-extra">
+var r3d_frontend = {"rootFolder":"https://daihoc.fpt.edu.vn/wp-content/plugins/real3d-flipbook-lite/","version":"5.4"};
+//# sourceURL=real3d-flipbook-forntend-js-extra
+</script>
+<script type="rocketlazyloadscript" data-minify="1" id="real3d-flipbook-forntend-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/plugins/real3d-flipbook-lite/js/frontend.js?ver=1792383931" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" id="fpl-post-views-inline-js-after">
+(function() {
+        try {
+          var postId = 129918;
+          var endpoint = "https:\/\/daihoc.fpt.edu.vn\/wp-json\/fpl-views\/v2\/track";
+          var pvDebounceMin = 30;
+          var evDebounceMin = 30;
+          var evSeconds = 8;
+          var scrollPct = 30;
+
+          // skip if prerender/prefetch
+          try {
+            var nav = performance.getEntriesByType && performance.getEntriesByType('navigation');
+            if (nav && nav[0] && nav[0].type && (nav[0].type === 'prerender')) return;
+          } catch(e) {}
+
+          function getCookie(name) {
+            var value = '; ' + document.cookie;
+            var parts = value.split('; ' + name + '=');
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+          }
+          function setCookie(name, value, minutes) {
+            var d = new Date();
+            d.setTime(d.getTime() + (minutes*60*1000));
+            document.cookie = name + '=' + value + '; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
+          }
+
+          function postTrack(type) {
+            fetch(endpoint, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ post_id: postId, type: type })
+            }).catch(function(){});
+          }
+
+          // 1) PV: count early (but not instant) to reduce noise
+          var pvKey = 'fplpv_pv_' + postId;
+          if (!getCookie(pvKey)) {
+            setTimeout(function(){
+              // set cookie at send time
+              if (getCookie(pvKey)) return;
+              setCookie(pvKey, '1', pvDebounceMin);
+              postTrack('pv');
+            }, 1200);
+          }
+
+          // 2) EV: count when engaged (>=evSeconds OR scroll>=scrollPct)
+          var evKey = 'fplpv_ev_' + postId;
+          if (getCookie(evKey)) return;
+
+          var evFired = false;
+          function fireEV() {
+            if (evFired) return;
+            evFired = true;
+            if (!getCookie(evKey)) {
+              setCookie(evKey, '1', evDebounceMin);
+              postTrack('ev');
+            }
+            cleanup();
+          }
+
+          // time threshold
+          var tmr = setTimeout(fireEV, evSeconds * 1000);
+
+          // scroll threshold
+          function onScroll() {
+            try {
+              var doc = document.documentElement;
+              var body = document.body;
+              var scrollTop = window.pageYOffset || doc.scrollTop || body.scrollTop || 0;
+              var winH = window.innerHeight || doc.clientHeight || 0;
+              var docH = Math.max(body.scrollHeight, doc.scrollHeight, body.offsetHeight, doc.offsetHeight, body.clientHeight, doc.clientHeight);
+              var denom = Math.max(1, docH - winH);
+              var pct = (scrollTop / denom) * 100;
+              if (pct >= scrollPct) fireEV();
+            } catch(e) {}
+          }
+          window.addEventListener('scroll', onScroll, { passive: true });
+
+          // visibility: if tab hidden too early, keep timers but no extra behavior
+          function cleanup(){
+            clearTimeout(tmr);
+            window.removeEventListener('scroll', onScroll);
+          }
+        } catch(e) {}
+      })();
+    
+//# sourceURL=fpl-post-views-inline-js-after
+</script>
+<script id="eztoc-scroll-scriptjs-js-extra">
+var eztoc_smooth_local = {"scroll_offset":"30","add_request_uri":"","add_self_reference_link":""};
+//# sourceURL=eztoc-scroll-scriptjs-js-extra
+</script>
+<script type="rocketlazyloadscript" id="eztoc-scroll-scriptjs-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/plugins/easy-table-of-contents/assets/js/smooth_scroll.min.js?ver=2.0.88" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" id="eztoc-js-cookie-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/plugins/easy-table-of-contents/vendor/js-cookie/js.cookie.min.js?ver=2.2.1" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" id="eztoc-jquery-sticky-kit-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?ver=1.9.2" data-rocket-defer defer></script>
+<script id="eztoc-js-js-extra">
+var ezTOC = {"smooth_scroll":"1","visibility_hide_by_default":"","scroll_offset":"30","fallbackIcon":"\u003Cspan class=\"\"\u003E\u003Cspan class=\"eztoc-hide\" style=\"display:none;\"\u003EToggle\u003C/span\u003E\u003Cspan class=\"ez-toc-icon-toggle-span\"\u003E\u003Csvg style=\"fill: #999;color:#999\" xmlns=\"http://www.w3.org/2000/svg\" class=\"list-377408\" width=\"20px\" height=\"20px\" viewBox=\"0 0 24 24\" fill=\"none\"\u003E\u003Cpath d=\"M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z\" fill=\"currentColor\"\u003E\u003C/path\u003E\u003C/svg\u003E\u003Csvg style=\"fill: #999;color:#999\" class=\"arrow-unsorted-368013\" xmlns=\"http://www.w3.org/2000/svg\" width=\"10px\" height=\"10px\" viewBox=\"0 0 24 24\" version=\"1.2\" baseProfile=\"tiny\"\u003E\u003Cpath d=\"M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z\"/\u003E\u003C/svg\u003E\u003C/span\u003E\u003C/span\u003E","chamomile_theme_is_on":""};
+//# sourceURL=eztoc-js-js-extra
+</script>
+<script type="rocketlazyloadscript" id="eztoc-js-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?ver=2.0.88-1790558941" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/hn/tuyen-sinh/|/openday/|/openday-da-nang/|/openday-quy-nhon/|/can-tho/fptufest/|/hn/campus-tour/|/can-tho/tuyen-sinh-2026/|/hcm/|/hn/|/da-nang/|/can-tho/|/quy-nhon/|/wp-content/themes/fpt-university/assets/css/single-event.css/|/hn/tuyen-sinh-1/|/can-tho-tuyen-sinh/|/hcm/fisat/|/hn/futuretalk/|/quy-nhon/hoi-thao-phu-huynh-2026/|/can-tho/quan-tam-xet-tuyen/|/can-tho/dang-ky-kv1/|/hn/nganh-cong-nghe-thong-tin/|/workshop-dong-hanh-cung-2k8/|/dang-ky-tu-van-tuyen-sinh-2026/|/hn/fptucamp/|/kiem-tra-dieu-kien-xet-tuyen-fptu/|/kiem-tra-dieu-kien-xet-tuyen-fptu/|/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://daihoc.fpt.edu.vn","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script type="rocketlazyloadscript" data-minify="1" id="swiper-js-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/npm/swiper@10/swiper-bundle.min.js?ver=1792383931" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" id="fptu-main-js-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/themes/fpt-university/assets/js/index.js?ver=1792383931" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" id="fptu-custom-js-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/themes/fpt-university/assets/js/script.js?ver=1792383931" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" id="fptu-hcm-js-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/themes/fpt-university/assets/js/script_hcm.js?ver=1792383931" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" id="sweetalert2-js" data-rocket-src="https://cdn.jsdelivr.net/npm/sweetalert2@11" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" id="demo-lead-inline-js-after">
+(function(){
+  // ===== UTM helper =====
+  function getUtmParams(){
+    var params = new URLSearchParams(window.location.search);
+    var keys = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content", "utm_bts"];
+    var utm = {};
+    keys.forEach(function(k){ if(params.get(k)) utm[k] = params.get(k); });
+    return utm;
+  }
+
+  var form = document.getElementById('demoForm');
+  if(!form) return;
+  var btn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    // Honeypot
+    var hpEl = document.getElementById('website');
+    if(hpEl && hpEl.value){ return; }
+
+    // Collect
+    var data = {
+      role:           document.getElementById('role')?.value?.trim(),
+      name:           document.getElementById('name')?.value?.trim(),
+      phone:          document.getElementById('phone')?.value?.trim(),
+      email:          document.getElementById('email')?.value?.trim(),
+      province:       document.getElementById('province')?.value?.trim(),
+      school:         document.getElementById('school')?.value?.trim(),
+      lop:            document.getElementById('lop')?.value?.trim(),
+      major:          document.getElementById('major')?.value?.trim(),
+      campus:         document.getElementById('campus')?.value?.trim(),
+      hoctrainghiem:  document.getElementById('hoctrainghiem')?.value?.trim(),
+      event_name:    (document.querySelector('input[name="event_name"]')?.value || '').trim(),
+      event_time:     document.getElementById('event_time')?.value?.trim(),
+      utm:            getUtmParams(),
+      ref:            window.location.href
+    };
+
+    // Validate
+    var phoneOk = /^(0|\+84)\d{9,10}$/.test((data.phone||'').replace(/\s+/g,''));
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email||'');
+    if(!phoneOk){ Swal.fire('⚠️ Thông báo', 'Số điện thoại không hợp lệ.', 'warning'); return; }
+    if(!emailOk){ Swal.fire('⚠️ Thông báo', 'Email không hợp lệ.', 'warning'); return; }
+
+    // Disable button + show loading
+    if(btn){ btn.disabled = true; btn.dataset.originalText = btn.textContent; btn.textContent = 'Đang gửi...'; }
+    Swal.fire({
+      title: 'Đang gửi đăng ký...',
+      html: 'Vui lòng đợi trong giây lát',
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      didOpen: () => { Swal.showLoading(); }
+    });
+
+    // Send
+    fetch("https://daihoc.fpt.edu.vn/wp-json/demo/v1/lead", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-WP-Nonce': '1a7416f3ad'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(async function (r) {
+      let json = null;
+      try { json = await r.json(); } catch(e) {}
+
+      // Success -> redirect immediately (keep loading until navigate)
+      if (r.ok && json && json.ok) {
+        var url = new URL('https://daihoc.fpt.edu.vn/dang-ky-thanh-cong-openday/');
+        if (json.code) url.searchParams.set('code', json.code);
+        window.location.href = url.toString();
+        return;
+      }
+
+      // Error -> close loading then show message
+      Swal.close();
+
+      // Duplicate registered
+      var isDuplicate = json && json.code === 'da_dang_ky' && (json.data?.status === 400);
+      if (isDuplicate) {
+        Swal.fire({
+          title: '⚠️ Đã đăng ký trước đó',
+          text: json.message || 'Số điện thoại này đã đăng ký cho sự kiện này tại campus này. Vui lòng kiểm tra email!',
+          icon: 'info',
+          confirmButtonText: 'Đã hiểu',
+          confirmButtonColor: '#00c2ff'
+        });
+        return;
+      }
+
+      var msg = (json && (json.message || json.data?.message)) || 'Gửi thất bại. Vui lòng thử lại.';
+      Swal.fire('❌ Lỗi', msg, 'error');
+    })
+    .catch(function (err) {
+      console.error(err);
+      Swal.close();
+      Swal.fire('❌ Lỗi mạng', 'Không thể gửi dữ liệu. Vui lòng thử lại.', 'error');
+    })
+    .finally(function () {
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = btn.dataset.originalText || 'Gửi đăng ký';
+      }
+    });
+  });
+})();
+//# sourceURL=demo-lead-inline-js-after
+</script>
+<script type="rocketlazyloadscript" id="googlesitekit-consent-mode-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-consent-mode-5ef17bce870a966299fc.js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" id="gt_widget_script_71935702-js-before">
+window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {};window.gtranslateSettings['71935702'] = {"default_language":"vi","languages":["en","vi"],"url_structure":"sub_directory","flag_style":"2d","flag_size":24,"wrapper_selector":"#gt-wrapper-71935702","alt_flags":[],"horizontal_position":"inline","flags_location":"\/wp-content\/plugins\/gtranslate\/flags\/"};
+//# sourceURL=gt_widget_script_71935702-js-before
+</script><script type="rocketlazyloadscript" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/plugins/gtranslate/js/flags.js?ver=5.0.1" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/hoc-bong-doanh-nghiep/go-japan-scholarship-2026-chap-canh-tuong-lai-the-he-global-citizen-%F0%9F%9A%80/" data-gt-orig-domain="daihoc.fpt.edu.vn" data-gt-widget-id="71935702" defer></script><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://daihoc.fpt.edu.vn/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><!--<script type="rocketlazyloadscript" data-rocket-src="/assets/js/index.js?v=5"></script>-->
+<script id="optimization-detective-detect-args" type="application/json">
+["https://daihoc.fpt.edu.vn/wp-content/plugins/optimization-detective/detect.min.js?ver=1.0.0-beta7",{"minViewportAspectRatio":0.4,"maxViewportAspectRatio":2.5,"isDebug":false,"extensionModuleUrls":["https://daihoc.fpt.edu.vn/wp-content/plugins/image-prioritizer/detect.min.js?ver=1.0.0-beta4"],"restApiEndpoint":"https://daihoc.fpt.edu.vn/wp-json/optimization-detective/v1/url-metrics:store","currentETag":"8229b60641a571aba12e5ec6ec950403","currentUrl":"https://daihoc.fpt.edu.vn/hoc-bong-doanh-nghiep/go-japan-scholarship-2026-chap-canh-tuong-lai-the-he-global-citizen-%F0%9F%9A%80/","urlMetricSlug":"6aa1b27493680e9f1621e21df1389e34","cachePurgePostId":129918,"urlMetricHMAC":"4c7a824ece860033207afca9f4f26757","urlMetricGroupStatuses":[{"minimumViewportWidth":0,"maximumViewportWidth":480,"complete":false},{"minimumViewportWidth":480,"maximumViewportWidth":600,"complete":false},{"minimumViewportWidth":600,"maximumViewportWidth":782,"complete":false},{"minimumViewportWidth":782,"maximumViewportWidth":null,"complete":false}],"storageLockTTL":60,"freshnessTTL":604800,"webVitalsLibrarySrc":"https://daihoc.fpt.edu.vn/wp-content/plugins/optimization-detective/build/web-vitals.js?ver=6.1.0","gzdecodeAvailable":true,"maxUrlMetricSize":1048576}]
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="module">
+async function load(){await new Promise(t=>{"complete"===document.readyState?t():window.addEventListener("load",()=>t(),{once:!0})}),"function"==typeof requestIdleCallback&&await new Promise(t=>{requestIdleCallback(t)});const t="script#optimization-detective-detect-args",e=document.querySelector(t);if(!(e instanceof HTMLScriptElement))throw new Error(`Missing: ${t}`);const o=JSON.parse(e.text);if(!Array.isArray(o)||2!==o.length||"string"!=typeof o[0]||"object"!=typeof o[1])throw new Error("SCRIPT#optimization-detective-detect-args is not [ string, object ]");const i=o[0],a=o[1],n=(await import(i)).default;await n(a)}load();
+//# sourceURL=https://daihoc.fpt.edu.vn/wp-content/plugins/optimization-detective/detect-loader.min.js?ver=1.0.0-beta7
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"56c6dd7e4ecf4947aa540f48289e45af","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1792739936 -->

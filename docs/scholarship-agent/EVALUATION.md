@@ -662,3 +662,51 @@ second reading, wrong claims are under 5% on a fresh set for the first time; the
 5%, so the next fresh set should confirm it. The manifest of W hashes `ai_check.py` as it was at freezing; the final policy
 differs in the exclusion rule above (decided on sets K to V), so the checker results come from `tests/decisions_check.py`
 with the cached readings in `results/`.
+
+## Round 45: rules from set W, checker variants, and set X, measured once
+
+**Rules** (decided on sets K to W only): "UK and overseas students" is a fee status, not a country rule; "non-X applicants may
+also be considered" is an allowance, not an exclusion; "Dual nationals are not eligible" names no country; a date after
+"the week of" is an event; a date after "closed until" is when applications open (`_date_role`; two wrong
+claims fewer on set W, no set worse). Tried and dropped: German "öffnet am" as an opening (no effect) and "closed, next
+round to be announced" as not announced (one gained, one lost). Unit tests in
+`tests/test_scholarship_round42.py` (class `TestRound45`).
+
+**Checker variants** (development data only; cached readings, strict gate):
+
+| Second reading | Sets | Wrong claims among answered | Correct | Held but right | Utility |
+|---|---|---|---|---|---|
+| rules only | K–O | 6.61% (38/575) | 460 | 75 | 346.5 |
+| Claude Haiku 5.5, v1 prompt | K–O | 4.46% (24/538) | 437 | 98 | 340.0 |
+| Claude Sonnet 5.5, v1 prompt | K–O | 4.41% (24/544) | 443 | 92 | 349.0 |
+| Haiku and Sonnet, hold if either disagrees | K–O | 4.17% (22/528) | 429 | 106 | 332.0 |
+| Haiku and Sonnet, hold if both disagree | K–O | 4.69% (26/554) | 451 | 84 | 357.0 |
+
+A second prompt (fee-status and exclusion wording, stricter "fully funded") was slightly worse on K–W and was reverted; the
+quotation check stays (a value whose quotation is not on the page cannot hold an answer). Sonnet reads about as well as Haiku
+here at about 20 times the price (USD 1.32 for 182 pages), so the checker stays on Haiku.
+
+**Set X** (sixth fresh set; 551 pages fetched on 2026-10-23: 320 from country searches, 39 award links from the agent's own
+registry pages, 192 from a second country search with government and doctoral queries; every address of an earlier set and
+every host labelled in sets T to W left out; 126 single-programme pages labelled blind and frozen before any page was
+scored). Measured once:
+
+| Code on set X | Wrong claims among answered | 95% interval | Correct answers |
+|---|---|---|---|
+| rules, no gate | 9.8% (43/437) | 7.4–13.0% | 291 |
+| rules, standard gate | 8.0% (34/427) | 5.8–10.9% | 290 |
+| rules, strict gate | 5.6% (23/409) | 3.8–8.3% | 283 |
+| rules + Claude second reading, no gate | 2.3% (9/390) | 1.2–4.3% | 278 |
+| rules, standard gate + Claude second reading | 2.5% (10/396) | 1.4–4.6% | 283 |
+| **rules, strict gate + Claude second reading** | **2.1% (8/389)** | **1.0–4.0%** | 278 |
+
+Clear decisions only (close calls left out): rules with the strict gate 4.6% (15/329), with the second reading 1.3% (4/315).
+Claude cost: USD 0.05 for 126 pages. The second reading held 15 of the 23 wrong claims of the rules (dates read from an
+age limit, a start date, a staff tenure date and a training period; a country list read from a list of US areas;
+residence read as citizenship) and cost 5 right answers (283 to 278). Of the 8 wrong claims left, 5 are cycle states: the
+reader is not asked for the cycle, which is held only together with a held deadline, so a cycle check is the next lever.
+
+Sets W and X together, strict gate + second reading: 19 wrong of 665 answered (2.9%, 95% interval 1.8–4.4%). The accuracy
+condition for public status (a fresh set of at least 100 pages, wrong claims at most 5% and the interval's upper end at most
+7%) is met on set X. Still open for public status: a second labeller's agreement, a legal review of privacy and terms, and
+login with encrypted user data. Set X is now development data (`tests/devpool.py`).
