@@ -586,3 +586,79 @@ read as include GB, "outside of New Zealand" read as include NZ, "UK first class
 "same conditions as Ukrainian citizens" read as include UA, and a cycle read as open from renewal or other-year dates. The rest
 are close calls (domestic and international applicants on one page, a 25/75 tuition split, "contribute towards maintenance").
 From now on T is development data. A new untouched set (U) is needed for the next honest figure.
+
+## Round 42: set U (third fresh set), measured once
+
+Set U was collected after the round-41 code was finished: country searches for programmes for students from each country and
+for each country's university scholarships, every host of sets A to T left out. 556 pages fetched on 2026-10-21, 44
+single-programme pages labelled by hand (`tests/heldout_u/make_labels.py`), code, labels and scorer frozen, scored once.
+
+| Code | Wrong claims among answered | Clear labels only |
+|---|---|---|
+| round-33 rules (before the gate) | 10.3% (16/156) | |
+| round-41 rules, no gate | 9.0% (14/156) | |
+| round-41 rules, standard gate | 7.2% (11/152) | 5.9% (7/119) |
+| round-41 rules, strict gate | 5.4% (8/147) | 4.3% (5/116) |
+
+One label was wrong (u-qa-2 lists six countries lower on the page; `adjudication.json`); the extractor still missed Bosnia, so
+the adjudicated figures are the same. The eight strict wrong claims: a webinar date read as a deadline, a cycle read as open
+between two rounds, "rolling basis" (the label policy calls this not stated), a capped tuition award read as fully funded, a
+"fully funded" page read as partial, and the Graz country list. With 147 answered decisions the 95% interval of 5.4% is
+roughly 2.4% to 10%: the strict gate is near the 5% target on fresh pages but this does not yet prove it. From now on U is
+development data.
+
+## Round 43: set V (the agent's own registry pages), measured once
+
+Set V is the first fresh set taken from the pages the agent itself reads: every source in `sources.json` was fetched and award
+links on it were followed (501 pages, 2026-10-21). 86 single-programme pages were labelled by hand before any extractor ran;
+code, labels and scorer were frozen and scored once. The Claude second reading (round 43) was not active (no model key yet).
+
+| Code | Wrong claims among answered | Clear labels only |
+|---|---|---|
+| round-33 rules | 11.2% (35/313) | |
+| round-42 rules, no gate | 10.8% (34/314) | |
+| round-42 rules, standard gate | 9.2% (28/306) | 7.7% (20/260) |
+| round-42 rules, strict gate | 7.2% (21/293) | 5.6% (14/250) |
+
+Sets U and V together (strict gate): 29 wrong claims in 440 answered decisions, 6.6% (95% interval about 4.6% to 9.3%). The
+target of under 5% is not met. The largest real error class on V is a host or destination country read as the applicant's
+nationality ("countries outside the UK", "University of Nebraska", a UAE university page, "study in the UK"); the rest are
+funding-class and cycle close calls. From now on V is development data.
+
+## Round 44: second reading (Claude Haiku 5.5) and set W, measured once
+
+**Second reading** (`scholarship_agent/ai_check.py`): a model reads the page on its own and gives the applicant's
+nationality rule, funding class and deadlines with quotations. Every answered decision it reads differently is held for
+review; the model never replaces a value, so it can only withhold answers. A cycle is not asked for (small models compare
+dates with today badly); it is held together with a held deadline. A reader that finds no nationality rule does not hold
+an exclusion (exclusions are often worded as fee rules). Enabled with `SCHOLAR_SECOND_READING=1` and the configured
+provider (production stays Claude-only; a local Ollama model was used only for testing).
+
+Development data (sets K to V, 509 pages, strict gate; policy chosen here):
+
+| Reading | Wrong claims among answered | Correct answers | Utility |
+|---|---|---|---|
+| rules only | 6.19% (102/1648) | 1293 | 1011.0 |
+| + Claude Haiku 5.5, hold every disagreement | 3.47% (54/1555) | 1248 | 1039.5 |
+| + Claude Haiku 5.5, final policy | 3.52% (55/1563) | 1255 | 1048.0 |
+| + local Qwythos 9B (sets K to O only) | 4.10% | | |
+
+Claude cost: USD 0.20 for 507 pages (USD 0.0004 a page).
+
+**Set W** (fifth fresh set; 426 pages from registry pages and country searches, 100 labelled; frozen before the checker
+policy was final and before any W row was looked at). Rules-only results were recorded at freezing; the checker was then
+finalised on development data only and run on W once (USD 0.04):
+
+| Code on set W | Wrong claims among answered | 95% interval | Correct answers |
+|---|---|---|---|
+| rules, no gate | 16.3% (56/343) | | 255 |
+| rules, standard gate | 13.9% (46/331) | | 253 |
+| rules, strict gate | 8.3% (25/302) | 5.7–11.9% | 245 |
+| rules, standard gate + Claude second reading | 7.2% (21/292) | | 239 |
+| **rules, strict gate + Claude second reading** | **4.0% (11/276)** | 2.2–7.0% | 233 |
+
+Set W is harder than U and V (more fellowships, research and US graduate-school pages). With the strict gate and the Claude
+second reading, wrong claims are under 5% on a fresh set for the first time; the upper end of the interval is still above
+5%, so the next fresh set should confirm it. The manifest of W hashes `ai_check.py` as it was at freezing; the final policy
+differs in the exclusion rule above (decided on sets K to V), so the checker results come from `tests/decisions_check.py`
+with the cached readings in `results/`.

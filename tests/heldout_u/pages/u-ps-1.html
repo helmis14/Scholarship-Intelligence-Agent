@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en" class="no-js ">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    var hidecookiecontrol = false;
+  </script>
+
+<script>
+    // Include the following lines to define the gtag() function
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // Call the default command before Tag Manager runs
+    gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+    });
+</script>
+
+<!-- Form tracking function -->
+<script>console.log("Tracking allowed");</script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-54HRKX');
+    </script>
+    <!-- End Google Tag Manager -->
+    
+    <script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js"></script>
+    <script>
+        var config = {
+            apiKey: "6083b9c08a2f568ceccbbe0ad3fca860c19f0e60",
+            product: "PRO",
+            necessaryCookies: ["gold", "PHPSESSID", "info.gold.ac.uk", "appView", "resolution", "AWSALB", "UB_UUID", "redux:authState", "__cfduid", "pusherTransportTLS", "Firebase Device ID"],
+            initialState: "notify",
+            notifyDismissButton: !1,
+            acceptBehaviour: "recommended",
+            rejectButton: !1,
+            closeStyle: "button",
+            settingsStyle: "button",
+            layout: "slideout",
+            notifyOnce: !1,
+            position: "left",
+            theme: "dark",
+            text: {
+                notifyTitle: "Your choice regarding cookies on this site",
+                notifyDescription: "Cookies and similar technologies are used to provide functionality, understand how people use our website, and personalise content on and off gold.ac.uk. This includes matching visitors with their details held by other platforms.",
+                accept: "Accept and continue",
+                settings: "Review cookie settings",
+                acceptRecommended: "Accept all cookies",
+                closeLabel: "Close panel",
+                title: "This website uses cookies",
+                intro: "Cookies and similar technologies are used to provide functionality, understand how people use our website, and personalise content on and off gold.ac.uk. This includes matching visitors with their details held by other platforms. ",
+                necessaryTitle: "Necessary Cookies",
+                necessaryDescription: "These are technically essential to the provision of the gold.ac.uk website. For example, to enable secure sign-in to restricted areas."
+            },
+            statement: {
+                description: "We use cookies as the collective term for these technologies. For more detailed information on what we use, please see our",
+                name: "cookies page",
+                url: "https://www.gold.ac.uk/cookies-statement/",
+                updated: "01/12/2020"
+            },
+            optionalCookies: [{
+                name: "analytics",
+                label: "Analytics",
+                description: "These help us understand how people use our website and make improvements to what we do.",
+                cookies: ["_ga", "_gid", "_gat", "__utma", "__utmb", "__utmc", "__utmt", "__utmz"],
+                recommendedState: "on",
+                onAccept: function() {
+                    dataLayer.push({
+                        civic_cookies_analytics: "consent_given",
+                        event: "analytics_consent_given"
+                    });
+                    gtag("consent", "update", {
+                        analytics_storage: "granted"
+                    })
+                },
+                onRevoke: function() {
+                    dataLayer.push({
+                        event: "analytics_revoked"
+                    }), gtag("consent", "update", {
+                        analytics_storage: "denied"
+                    })
+                }
+            }, {
+                name: "embedded",
+                label: "Embedded content",
+                description: "Our videos, maps and some other content is embedded from other websites (eg Vimeo and Google Maps) that will use their own cookies.",
+                thirdPartyCookies: [{
+                    name: "Airtable",
+                    optOutLink: "https://airtable.com/privacy"
+                }, {
+                    name: "Google/YouTube",
+                    optOutLink: "https://policies.google.com/technologies/types?hl=en"
+                }, {
+                    name: "Issuu",
+                    optOutLink: "https://issuu.com/legal/cookies"
+                }, {
+                    name: "Soundcloud",
+                    optOutLink: "https://soundcloud.com/pages/cookies"
+                }, {
+                    name: "Vimeo",
+                    optOutLink: "https://vimeo.com/cookie_policy"
+                }],
+                recommendedState: "on",
+                onAccept: function() {
+                    dataLayer.push({
+                        civic_cookies_embedded: "consent_given",
+                        event: "embedded_consent_given"
+                    });
+                    var e = new Event("embeddedConsentGiven");
+                    document.dispatchEvent(e)
+                },
+                onRevoke: function() {
+                    dataLayer.push({
+                        civic_cookies_embedded: "consent_revoked"
+                    })
+                }
+            }, {
+                name: "advertising",
+                label: "Advertising/targeting cookies",
+                description: "These are used by companies we use to help us monitor the effectiveness of our advertising. \n\n Sometimes we use remarketing advertising services, which use cookies to show adverts from Goldsmiths on other websites that you visit. \n\n We have advanced matching enabled on forms used by visitors who are enquiring about coming to study at Goldsmiths (for example open day registration). This securely checks to see if the information provided matches users of other services.",
+                cookies: ["ad-id", "ad-privacy", "fr", "_fbp", "IDE", "DSID", "bscookie", "_uetvid", "_uetsid"],
+                recommendedState: "on",
+                onAccept: function() {
+                    dataLayer.push({
+                        civic_cookies_marketing: "consent_given",
+                        event: "marketing_consent_given"
+                    });
+                    gtag('consent', 'update', {
+                        'ad_storage': 'granted',
+                        'ad_user_data': 'granted',
+                        'ad_personalization': 'granted'
+                    });
+                },
+                onRevoke: function() {
+                    dataLayer.push({
+                        civic_cookies_marketing: "consent_revoked"
+                    });
+                    gtag('consent', 'update', {
+                        'ad_storage': 'denied',
+                        'ad_user_data': 'denied',
+                        'ad_personalization': 'denied'
+                    });
+                    CookieControl.delete("ad-id"), CookieControl.delete("ad-privacy"), CookieControl.delete("fr"), CookieControl.delete("_fbp"), CookieControl.delete("IDE"), CookieControl.delete("DSID"), CookieControl.delete("bscookie"), CookieControl.delete("_uetvid"), CookieControl.delete("_uetsid")
+                }
+            }],
+            branding: {
+                acceptBackground: "#ffcd6e",
+                acceptText: "#333",
+                fontColor: "#FFF",
+                fontSizeTitle: "1.2em",
+                fontSizeIntro: "1em",
+                fontSizeHeaders: "1.2em",
+                fontSize: "1em",
+                backgroundColor: "#37424a",
+                toggleText: "#fff",
+                toggleColor: "#f6f7f7",
+                toggleBackground: "#111125",
+                closeBackground: "#333",
+                closeText: "#FFF",
+                buttonIcon: null,
+                buttonIconWidth: "32px",
+                buttonIconHeight: "32px",
+                removeIcon: !1,
+                removeAbout: !1
+            },
+            accessibility: {
+                outline: !0
+            }
+        };
+        CookieControl.load(config);
+    </script>
+    <meta property="fb:pages" content="196821702848">
+<!-- Metadata -->
+ 
+
+<link rel="canonical" href="https://www.gold.ac.uk/fees-funding/scholarships/palestinian-scholarship/">
+<title>Palestinian Scholarship | Goldsmiths, University of London</title>
+<meta name="description"          content="">
+<meta name="name"                 content="Palestinian Scholarship">
+<meta name="summary"              content="">
+<meta name="image"                content="https://www.gold.ac.uk">
+<meta property="og:url"           content="https://www.gold.ac.uk/fees-funding/scholarships/palestinian-scholarship/">
+<meta property="og:type"          content="article">
+<meta property="og:title"         content="Palestinian Scholarship">
+<meta property="og:description"   content="">
+<meta property="og:site_name"     content="Goldsmiths, University of London">
+<meta name="twitter:card"         content="summary">
+<meta name="twitter:site"         content="@goldsmithsuol">
+<meta name="twitter:title"        content="Palestinian Scholarship">
+<meta name="twitter:description"  content="">
+<meta property="og:image"         content="https://www.gold.ac.uk/static/images/generic-social-media-card.jpg">
+<meta name="twitter:image"        content="https://www.gold.ac.uk/static/images/generic-social-media-card.jpg">
+<meta name="theme-color" content="#37424A">
+<meta name='breadcrumb' content="&lt;a href=&quot;/study/&quot;&gt;Study&lt;/a&gt; &gt; &lt;a href=&quot;/fees-funding/&quot;&gt;Fees and funding&lt;/a&gt; &gt; &lt;a href=&quot;/fees-funding/scholarships/palestinian-scholarship/&quot;&gt;Palestinian Scholarship&lt;/a&gt;">
+<script>document.cookie='resolution='+Math.max(screen.width,screen.height)+("devicePixelRatio" in window ? ","+devicePixelRatio : ",1")+'; path=/';</script>
+<!-- Set the head no-js/js class before the browsers had chance to render anything. -->
+<script>
+  (function(H) {
+    H.className = H.className.replace(/\bno-js\b/, 'js')
+  })(document.documentElement);
+</script>
+
+<link href="/assets/css/styles.9ffa5b86a2e668a0b335908fc0b523a6.css" rel="stylesheet">
+<!-- New padding css -->
+<link href="/assets/css/new-padding.4d42bb4a2cec71cfdf70c66fe638d9a4.css" rel="stylesheet">
+
+<!-- navigation object:  Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="mask-icon" href="/safari-pinned-tab1.svg" color="#37424A">
+
+  <noscript><style>.noscripthide {display:none;}</style></noscript>
+</head>
+
+<body class="menu-closed staff-students-closed search-closed">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54HRKX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="site-wrapper">
+
+  <header id="top" class="header new-navigation">
+    <div id="skiptocontent"><a href="#maincontent">skip to main content</a></div>
+    <div class="header-container">
+      <a href="/"><span class="site-logo header__logo">Goldsmiths - University of London</span></a>
+      <div class="top-nav-right">
+        <ul class="top-upper-nav desktop">
+          <li>
+            <a class="header__charm header__charm--text" href="#" aria-label="Toggles staff and students menu">Students, Staff and Alumni</a>
+          </li>
+        </ul>
+        <ul class="top-upper-nav mobile">
+          <li>
+            <a class="header__charm charm-search" href="/search-results/" aria-label="Toggles search">Search</a>
+            <a class="header__charm header__charm--text" href="#" aria-label="Toggles staff and students menu">Students, Staff and Alumni</a>
+          </li>
+        </ul>
+        <ul class="header__charms desktop-header-menu">
+          <li><a class="" href="/study">Study</a></li>
+          <li><a class="" href="/course-finder">Course finder</a></li>
+          <li><a class="" href="/international">International</a></li>
+          <li class="more-menu"><a class="text-menu more" href="#" aria-label="Toggles staff and students menu">More</a></li>
+          <li class="search-parent"><a class="header__charm charm-search" href="/search-results/" aria-label="Toggles search">Search</a></li>
+        </ul>
+    </div>
+    </div>
+      <div class="mobile-top-nav">
+        <ul class="header__charms mobile-header-menu">
+          <li><a class="" href="/study">Study</a></li>
+          <li><a class="" href="/course-finder">Courses</a></li>
+          <li><a class="" href="/international">International</a></li>
+          <li class="more-menu"><a class="text-menu more" href="#" aria-label="Toggles staff and students menu">More</a></li>
+        </ul>
+      </div>
+  </header>
+
+  <!-- Drop down search  -->
+  <nav class="section section--site-search" tabindex="-1" aria-hidden="true">
+    <div class="wrapper clearfix">
+      <div class="full-width fluid-search">
+        <form role="search" id="main-search" action="/search-results" method="GET">
+        <div class="search-wrapper">
+          <div class="search-icon">&nbsp;</div>
+          <div class="search-form-wrapper">
+            <div class="search-form">
+              <div class="search-form-input">
+                <label for="search-site" id="searchTitle">Search Goldsmiths</label>
+                <input type="hidden" name="collection" value="goldsmiths~sp-meta">
+                <input type="text" name="query" class="meta-query" id="search-site" aria-describedby="searchTitle">
+              </div>
+              <div class="search-cta-button">
+                <input type="submit" class="button search-submit-button" value="Search">
+                <!-- GO button only on mobile -->
+                <input type="submit" class="button go-submit-button" value="Go">
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  </nav>
+
+  <main aria-label="Main page content">
+    <div class="pusher-wrapper">
+      <div class="charm-menu--no-js"><a class="header__charm charm-menu" href="#">Main menu</a></div>
+      <nav id="primary-nav" class="primary-nav pusher" aria-hidden="true">
+        <h2 id="primaryNavigationTitle" class="visuallyhidden">Primary</h2>
+        <ul role="menu" aria-describedby="primaryNavigationTitle">
+                    <li role="menuitem"><a href="/about/">About Goldsmiths</a></li>
+          <li role="menuitem"><a href="/study/">Study with us</a></li>
+          <li role="menuitem"><a href="/research/">Research</a></li>
+          <li role="menuitem"><a href="/business/">Business and partnerships</a></li>
+          <li role="menuitem"><a href="/community/">For the local community</a></li>
+          <li role="menuitem"><a href="/schools/">Faculties and Schools</a></li>
+          <li role="menuitem"><a href="/news/">News and features</a></li>
+          <li role="menuitem"><a href="/events/">Events</a></li>
+
+<a class="button donateBtn" href="/giving-to-goldsmiths/">Give to Goldsmiths</a>
+        </ul>
+      </nav>
+
+      <div class="charm-students--no-js"><a class="header__charm header__charm--text" href="#">Staff & students</a></div>
+      <nav id="student-nav" class="staff-students-nav pusher" aria-hidden="true">
+        <h2 id="studentNavigationTitle" class="visuallyhidden">Staff + students</h2>
+        <ul role="menu" aria-describedby="studentNavigationTitle">
+                    <li role="menuitem"><a href="/new-students/">New students</a></li>
+          <li role="menuitem"><a href="/students/">Current students</a></li>
+          <li role="menuitem"><a href="/alumni/">Alumni</a></li>
+          <li role="menuitem"><a href="/library/">Library</a></li>
+          <li role="menuitem"><a href="/students/timetable/">Timetable</a></li>
+          <li role="menuitem"><a href="https://learn.gold.ac.uk/">Learn.gold - VLE</a></li>
+          <li role="menuitem"><a href="https://outlook.com/gold.ac.uk">Email - Outlook</a></li>
+          <li role="menuitem"><a href="/it/">IT support</a></li>
+          <li role="menuitem"><a href="/staff-directory/">Staff directory</a></li>
+          <li role="menuitem"><a href="https://goldsmithscollege.sharepoint.com/sites/goldmine">Staff intranet - Goldmine</a></li>
+          <li role="menuitem"><a href="/graduate-school/">Graduate School - PGR students</a></li>
+          <li role="menuitem"><a href="/talic/">Teaching and Learning Innovation Centre</a></li>
+          <li role="menuitem"><a href="/calendar/?action=admin">Events admin</a></li>
+        </ul>
+      </nav>
+
+      <div class="main-container push-this">
+        <div class="breadcrumb" role="navigation" aria-label="Secondary">
+          <div class="breadcrumb-wrapper">
+          <div class="dropdown-nav">In this section<div class="touchButton" role="button" tabindex="0" aria-label="Toggle breadcrumb menu" aria-expanded="false"><span class="touchButton--plus"></span><span class="touchButton--minus"></span></div>
+            </div>
+            <nav class="secondary-nav">
+              <h2 id="breadcrumbTitle" class="visuallyhidden">Breadcrumbs</h2>
+              <ul aria-describedby="breadcrumbTitle">
+                
+<li class="expanded">
+	<a href="/study/">Study</a>
+	<ul role="menu" aria-label="Study submenu"><li><a href="/why-goldsmiths/">Why Goldsmiths?</a></li><li><a href="/open-days/">Open Days and visits</a></li><li><a href="/ug/">Undergraduate</a></li><li><a href="/pg/">Postgraduate</a></li><li><a href="/preparation/">Preparation</a></li><li><a href="/international/">International</a></li><li><a href="/pgce/">PGCE</a></li><li><a href="/online-learning/">Online, distance and flexible learning</a></li><li><a href="/apply/">How to apply</a></li><li><a href="/fees-funding/">Fees and funding</a></li><li><a href="/study/order-prospectus/">Request a prospectus </a></li><li><a href="/clearing/">Clearing</a></li><li><a href="/skills-careers/">Your future</a></li><li><a href="/schools-and-colleges/">Information for schools and colleges</a></li><li><a href="/summer-schools/">Summer schools at Goldsmiths</a></li><li><a href="/support/">Support</a></li><li><a href="https://virtualtours.gold.ac.uk/" target="_blank">Goldsmiths virtual tour</a></li><li><a href="/study/studying-locally/">Choosing to stay local</a></li><li><a href="/unibuddy/">Unibuddy</a></li><li><a href="/study/contact/">Contact us</a></li><li><a href="/study/careers-support/">Careers support at Goldsmiths</a></li><li><a href="/our-goals/">Our goals</a></li>
+	</ul>
+</li>
+<li class="disabled"><a href="/fees-funding/">Fees and funding</a></li>
+<li class="expanded">
+	<a href="/fees-funding/scholarships/palestinian-scholarship/">Palestinian Scholarship</a>
+	<ul role="menu" aria-label="Palestinian Scholarship submenu"><li><a href="/fees-funding/scholarships/palestinian-scholarship/humanitarian-scholarship-application-form/">Humanitarian scholarship application form</a></li>
+	</ul>
+</li>
+
+              </ul>
+            </nav>
+          </div>
+        </div>
+<!--<a id="d.en.3417333"></a>-->
+
+        <article id="maincontent" class="standard">
+                    <header class="section hero hero--new-vi hero--yellow">
+            <div class="hero__content">
+              <h1>Palestinian Scholarship</h1>
+            </div>
+            <div class="hero__image" style="background-image:url('/media/images-by-section/study/fees-and-funding/scholarships/humanitarian_scholarships_burst_2020.jpg');"></div>
+          </header>
+
+
+
+
+
+          <section class="section">
+            <h2 class="visuallyhidden">Primary page content</h2>
+            <div class="content-wrapper">
+              <div class="primary-content">
+                <div class="content">
+                
+
+                
+
+<div class="alert-container">
+	<div class="cta-icon cta-icon--info"></div>
+	<div class="alert-text">
+		<p>Applications for 2026 entry have now closed.</p>
+      	</div>
+</div>
+
+<a id="d.en.721191"></a>
+<h2>Value</h2>
+Successful applicants will receive a full tuition fee waiver and a living allowance of &pound;20,500 per year during their studies. We will also cover the cost of the student visa and the Immigration Health Surcharge (IHS), and a return trip to and from the UK.
+                  <h2>Number available</h2>
+2 Undergraduate and 3 Postgraduate
+                  <h2>Year of entry</h2>
+2026
+                  <h2>Eligibility criteria</h2>
+<p><strong>Please note, if you are applying for a two-year postgraduate course, the scholarship will only cover one year.</strong></p>
+<p><strong>Applicants who have applied for an&nbsp;<a href="/ug/integrated-degrees/">integrated degree</a> are eligible; however, those who have applied for an <a href="/international/pathways/ifc/">Integrated Foundation Certificate</a> are not.</strong></p>
+<p>You must meet the&nbsp;<a href="https://www.gold.ac.uk/fees-funding/scholarship-regulations/">general eligibility criteria and regulations</a>. You must also:</p>
+<ul>
+<li>Be Palestinian, priority will be given to those who normally reside in the West Bank, Gaza or one of the Palestinian refugee camps</li>
+<li>Be currently residing in Palestine or be a holder of Palestinian travel documents</li>
+<li>Require a Student visa to study in the UK</li>
+<li>Apply and hold an offer of study for a foundation, undergraduate or a postgraduate taught Masters course at Goldsmiths for 2026 entry</li>
+<li>Be taught in person (online degrees are not eligible)</li>
+<li>Priority will be given to applicants who have not studied at a university outside the West Bank, Gaza, Israel, or Lebanon</li>
+<li>Priority will be given to applicants who have not previously completed a degree or who are not currently studying for a degree at the time of application</li>
+</ul>
+
+                  <h2>Application deadlines</h2>
+<p>Applications are now closed for 2026/27 entry. Applications will reopen in January 2027.</p>
+
+                  <h2>How to apply</h2>
+<p>Applications for 2026 entry have now closed.</p>
+                  <h2>Selection process</h2>
+<p>Successful applicants will be selected on a competitive basis.</p>
+<p>Initial shortlisting by eligibility criteria will be completed by our Scholarships Co-ordinator. All applicants who meet the eligibility criteria are then forwarded to the next selection stage.</p>
+<p>Applications will then be considered by an awarding panel. All panel members understand that applicants will have a broad range of differing skills, attributes and experiences, so they will give equal consideration to both the applicant’s academic record and their answers to the questions posed in the award application form. Panel members also understand that what is important is the content of the answers and their relevance to the questions, not the standard of writing. &nbsp;</p>
+<p>The panel will consist of representatives from Admissions, an academic school, and the Students’ Union (or associated student representative eg President of the Palestine Society). The panel will assess the applications against the stated criteria.</p>
+<p>Final award recipients and reserve candidates will be decided by the panel.</p>
+
+<p>If you have any questions, please contact&nbsp;<a href="mailto:scholarships@gold.ac.uk">scholarships@gold.ac.uk</a></p>
+<p>Find out more about&nbsp;<a href="/fees-funding/scholarship-regulations/">Goldsmiths scholarships and bursaries regulations</a>.</p>
+
+
+                </div>
+              </div>
+
+              <aside class="secondary-content">
+                
+              </aside>
+
+            </div>
+          </section>
+
+
+
+        </article>
+
+
+<!--<a id="d.en.721191"></a>--><!-- navigation object : Pull Twitter feed into footer -->
+
+</div>
+</div>
+</main>
+<!-- navigation object : Pull promotion to above footer -->
+
+
+  <!--Normal promotion – use content values-->
+  <div class="branched-promotion">
+    <div class="svg-background"></div>
+    <div class="svg-background-line"></div>
+    <div class="full-width-wrapper">
+      <div class="wrapper">
+          <div class="text">
+            Join Goldsmiths this autumn.
+          </div>
+          <a href="/course-finder/" class="link">Find your degree</a>
+      </div>
+    </div>
+  </div>
+
+<footer class="section" aria-label="Footer links and social sharing options">
+<div class="footer">
+<ul class="site-map">
+  <li><a href="/about/">About us</a></li>
+  <li><a href="/contact/">Contact us</a></li>
+  <li><a href="/find-us/">Find us</a></li>
+  <li><a href="/working/">Jobs</a></li>
+  <li><a href="/accessibility/">Accessibility statement</a></li>
+  <li><a href="/cookies-statement/">Cookie use</a></li>
+	<li><a href="/disclaimer/">Copyright and disclaimer</a></li>
+  <li><a href="/governance/public-information/statements-reports/slavery-and-human-trafficking/">Slavery and human trafficking statement</a></li>
+</ul>
+<ul class="cms-login">
+<li>
+<a class="admin-login" href="https://cms.gold.ac.uk/terminalfour/page/section#edit/57078/contents">Admin login</a></li>
+</ul>
+<ul class="social-hubs social-hubs--footer">
+  <li><a href="https://twitter.com/goldsmithsuol">Twitter</a> </li>
+  <li><a href="https://www.linkedin.com/edu/school?id=12593">LinkedIn</a> </li>
+	<li><a href="https://www.tiktok.com/@goldsmithsuol/">TikTok</a> </li>
+  <li><a href="https://instagram.com/goldsmithsuol/">Instagram</a> </li>
+  <li><a href="https://www.youtube.com/user/GoldsmithsLondon">YouTube</a></li>
+</ul>
+</div>
+<div class="footer__meta">
+<small class="footer__copyright">© <script>document.write(new Date().getFullYear())</script> Goldsmiths, University of London</small>
+<small><a class="footer__back-top" href="#top">Back to top</a></small>
+</div>
+</footer>
+
+</div>
+
+<script src="/assets/js/common.db4883317972066f90bf76e18054abcd.js"></script>
+<script src="/assets/js/main.f9743a01c858cd21f4460b022e084bdc.js"></script>
+<script src="/assets/js/search.ef961bf8b6235c7f903e4bace268c28c.js"></script>
+<script src="/assets/js/helpful.37c29487f605a04e5c3324db64f4a0ea.js"></script>
+<!-- text/code content -->
+
+	
+    <script>
+    window.GeckoChatSettings = {
+        account_id: 'lMCbi6m5IyDhcv2',
+        auto_boot: true
+    };
+</script>
+<script src="https://embed.geckochat.io"></script>
+  
+<script>
+const el1 = document.querySelectorAll('[data-class="gecko-chat-link"]');
+  // el1.setAttribute("gecko-chat-open", 'lMCbi6m5IyDhcv2');
+  const el1_rayaa = Array.from(el1);
+  el1_rayaa.forEach((item) => { item.setAttribute("gecko-chat-open", 'lMCbi6m5IyDhcv2');});
+</script>
+
+<script>
+if ((document.querySelector('.vimeoVideo')) || (document.querySelector('.vimeoPlaylist')) || (document.querySelector('.youtubeVideo')) || (document.querySelector('.bilibiliVideo')) || (document.querySelector('.youtube-stream'))) {
+    dataLayer.push({
+        'event': 'video_found'
+    });
+}
+if (document.querySelector('.soundcloud')) {
+    dataLayer.push({
+        'event': 'soundcloud_found'
+    });
+}
+  if (document.querySelector('.issuu')) {
+    dataLayer.push({
+        'event': 'issuu_found'
+    });
+}
+if (document.querySelector('.airtable')) {
+    dataLayer.push({
+        'event': 'airtable_found'
+    });
+}
+  if (document.querySelector('.unibuddy')) {
+    dataLayer.push({
+        'event': 'unibuddy_found'
+    });
+}
+</script>
+</body>
+</html>

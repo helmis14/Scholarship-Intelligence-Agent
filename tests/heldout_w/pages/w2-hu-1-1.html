@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="pingback" href="https://www.hungaryfoundation.org/xmlrpc.php" />
+
+	<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><style id="et-builder-googlefonts-cached-inline">/* Original: https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic|Lora:regular,500,600,700,italic,500italic,600italic,700italic|Oswald:200,300,regular,500,600,700&#038;subset=latin,latin-ext&#038;display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Lora';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoqF2mQ.ttf) format('truetype');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-PgFoqF2mQ.ttf) format('truetype');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-BQCoqF2mQ.ttf) format('truetype');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-C0CoqF2mQ.ttf) format('truetype');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787weuxJPkqg.ttf) format('truetype');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787wsuxJPkqg.ttf) format('truetype');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787zAvBJPkqg.ttf) format('truetype');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787z5vBJPkqg.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R8WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR9WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq_p9WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq5Z9WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq3p6WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR6WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqw16WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Xw3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr6Hw3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvC73w3aX8.ttf) format('truetype');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs13FvsUhiYA.ttf) format('truetype');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs169vsUhiYA.ttf) format('truetype');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUhiYA.ttf) format('truetype');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs18NvsUhiYA.ttf) format('truetype');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1y9osUhiYA.ttf) format('truetype');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZosUhiYA.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Lora';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoqF2mg.woff) format('woff');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-PgFoqF2mg.woff) format('woff');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-BQCoqF2mg.woff) format('woff');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-C0CoqF2mg.woff) format('woff');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787weuxJPkqs.woff) format('woff');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787wsuxJPkqs.woff) format('woff');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787zAvBJPkqs.woff) format('woff');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787z5vBJPkqs.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R8WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR9WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq_p9WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq5Z9WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq3p6WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR6WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqw16WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Xw3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr6Hw3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvC73w3aXw.woff) format('woff');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs13FvsUhiYw.woff) format('woff');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs169vsUhiYw.woff) format('woff');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUhiYw.woff) format('woff');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs18NvsUhiYw.woff) format('woff');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1y9osUhiYw.woff) format('woff');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZosUhiYw.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Lora';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoqF2nA.woff2) format('woff2');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-PgFoqF2nA.woff2) format('woff2');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-BQCoqF2nA.woff2) format('woff2');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-C0CoqF2nA.woff2) format('woff2');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787weuxJPkq0.woff2) format('woff2');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787wsuxJPkq0.woff2) format('woff2');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787zAvBJPkq0.woff2) format('woff2');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787z5vBJPkq0.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R8WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR9WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq_p9WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq5Z9WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq3p6WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR6WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqw16WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Xw3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr6Hw3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvC73w3aXo.woff2) format('woff2');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs13FvsUhiZQ.woff2) format('woff2');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs169vsUhiZQ.woff2) format('woff2');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUhiZQ.woff2) format('woff2');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs18NvsUhiZQ.woff2) format('woff2');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1y9osUhiZQ.woff2) format('woff2');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZosUhiZQ.woff2) format('woff2');}</style><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<script type="text/javascript">
+			let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(window.jQuery)return jQuery=window.jQuery,$=window.jQuery,customHeadScripts=!0,jQuery.noConflict},jQuery.ready=function(r){jqueryParams=[...jqueryParams,r]},$.ready=function(r){jqueryParams=[...jqueryParams,r]},jQuery.load=function(r){jqueryParams=[...jqueryParams,r]},$.load=function(r){jqueryParams=[...jqueryParams,r]},jQuery.fn.ready=function(r){jqueryParams=[...jqueryParams,r]},$.fn.ready=function(r){jqueryParams=[...jqueryParams,r]};</script>
+	<!-- This site is optimized with the Yoast SEO plugin v27.6 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Hungary Foundation-Hudson Institute Visiting Research Fellowship - Hungary Foundation</title>
+	<link rel="canonical" href="https://www.hungaryfoundation.org/hif-hudson-institute-visiting-research-fellowship/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Hungary Foundation-Hudson Institute Visiting Research Fellowship - Hungary Foundation" />
+	<meta property="og:description" content="&nbsp; The Hudson Institute, together with the Hungary Foundation, has created the Visiting Research Fellowship. This Visiting Fellowship opportunity is a 10-month fully funded research fellowship at Hudson Institute’s headquarters in Washington, DC, offered to a mid-career Hungarian policy professional with specific areas of interest in protecting religious freedom and promoting democratic sovereignty. The visiting [&hellip;]" />
+	<meta property="og:url" content="https://www.hungaryfoundation.org/hif-hudson-institute-visiting-research-fellowship/" />
+	<meta property="og:site_name" content="Hungary Foundation" />
+	<meta property="article:publisher" content="https://www.facebook.com/thehungaryinitiativesfoundation/" />
+	<meta property="article:modified_time" content="2021-01-03T20:06:01+00:00" />
+	<meta property="og:image" content="https://www.hungaryfoundation.org/wp-content/uploads/2020/10/Liberty-Bridge-New-700x541.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@HungInit" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="3 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/www.hungaryfoundation.org\/hif-hudson-institute-visiting-research-fellowship\/","url":"https:\/\/www.hungaryfoundation.org\/hif-hudson-institute-visiting-research-fellowship\/","name":"Hungary Foundation-Hudson Institute Visiting Research Fellowship - Hungary Foundation","isPartOf":{"@id":"https:\/\/www.hungaryfoundation.org\/#website"},"primaryImageOfPage":{"@id":"https:\/\/www.hungaryfoundation.org\/hif-hudson-institute-visiting-research-fellowship\/#primaryimage"},"image":{"@id":"https:\/\/www.hungaryfoundation.org\/hif-hudson-institute-visiting-research-fellowship\/#primaryimage"},"thumbnailUrl":"https:\/\/www.hungaryfoundation.org\/wp-content\/uploads\/2020\/10\/Liberty-Bridge-New-700x541.png","datePublished":"2020-05-17T19:13:10+00:00","dateModified":"2021-01-03T20:06:01+00:00","breadcrumb":{"@id":"https:\/\/www.hungaryfoundation.org\/hif-hudson-institute-visiting-research-fellowship\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/www.hungaryfoundation.org\/hif-hudson-institute-visiting-research-fellowship\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/www.hungaryfoundation.org\/hif-hudson-institute-visiting-research-fellowship\/#primaryimage","url":"https:\/\/www.hungaryfoundation.org\/wp-content\/uploads\/2020\/10\/Liberty-Bridge-New.png","contentUrl":"https:\/\/www.hungaryfoundation.org\/wp-content\/uploads\/2020\/10\/Liberty-Bridge-New.png","width":792,"height":612},{"@type":"BreadcrumbList","@id":"https:\/\/www.hungaryfoundation.org\/hif-hudson-institute-visiting-research-fellowship\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/www.hungaryfoundation.org\/"},{"@type":"ListItem","position":2,"name":"Hungary Foundation-Hudson Institute Visiting Research Fellowship"}]},{"@type":"WebSite","@id":"https:\/\/www.hungaryfoundation.org\/#website","url":"https:\/\/www.hungaryfoundation.org\/","name":"The Hungary Foundation","description":"We Invest in Talent","publisher":{"@id":"https:\/\/www.hungaryfoundation.org\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.hungaryfoundation.org\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/www.hungaryfoundation.org\/#organization","name":"The Hungary Foundation","url":"https:\/\/www.hungaryfoundation.org\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/www.hungaryfoundation.org\/#\/schema\/logo\/image\/","url":"https:\/\/www.hungaryfoundation.org\/wp-content\/uploads\/2020\/05\/HIF_logo_horiz.png","contentUrl":"https:\/\/www.hungaryfoundation.org\/wp-content\/uploads\/2020\/05\/HIF_logo_horiz.png","width":850,"height":187,"caption":"The Hungary Foundation"},"image":{"@id":"https:\/\/www.hungaryfoundation.org\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/thehungaryinitiativesfoundation\/","https:\/\/x.com\/HungInit","https:\/\/www.instagram.com\/hungaryfoundation\/","https:\/\/www.youtube.com\/channel\/UCrAepI3e3rkQMLgqS_thRMg"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//stats.wp.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Hungary Foundation &raquo; Feed" href="https://www.hungaryfoundation.org/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Hungary Foundation &raquo; Comments Feed" href="https://www.hungaryfoundation.org/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.hungaryfoundation.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.hungaryfoundation.org%2Fhif-hudson-institute-visiting-research-fellowship%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.hungaryfoundation.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.hungaryfoundation.org%2Fhif-hudson-institute-visiting-research-fellowship%2F&#038;format=xml" />
+<meta content="Divi Child for HF v.1.0.0" name="generator"/><style id='wp-block-library-inline-css' type='text/css'>
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=wp-block-library-inline-css */
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: 823px;--wp--style--global--wide-size: 1080px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='et_monarch-css-css' href='https://www.hungaryfoundation.org/wp-content/plugins/monarch/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='et-gf-open-sans-css' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' type='text/css' media='all' />
+<link rel='stylesheet' id='popup-maker-site-css' href='//www.hungaryfoundation.org/wp-content/uploads/pum/pum-site-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-style-parent-css' href='https://www.hungaryfoundation.org/wp-content/themes/Divi/style-static.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-style-pum-css' href='https://www.hungaryfoundation.org/wp-content/themes/Divi-HF/style.css' type='text/css' media='all' />
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-5M882RX" id="google_gtagjs-js" async></script>
+<script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["www.hungaryfoundation.org"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-5M882RX");
+//# sourceURL=google_gtagjs-js-after
+/* ]]> */
+</script>
+<link rel="https://api.w.org/" href="https://www.hungaryfoundation.org/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.hungaryfoundation.org/wp-json/wp/v2/pages/27173" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.hungaryfoundation.org/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.9.10" />
+<link rel='shortlink' href='https://www.hungaryfoundation.org/?p=27173' />
+<meta name="generator" content="Site Kit by Google 1.190.0" />	<style>img#wpstats{display:none}</style>
+		<style type="text/css" id="et-social-custom-css">
+				 
+			</style><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><link rel="stylesheet" id="et-divi-customizer-global-cached-inline-styles" href="https://www.hungaryfoundation.org/wp-content/et-cache/global/et-divi-customizer-global.min.css" /><link rel="stylesheet" id="et-core-unified-tb-26502-tb-26654-27173-cached-inline-styles" href="https://www.hungaryfoundation.org/wp-content/et-cache/27173/et-core-unified-tb-26502-tb-26654-27173.min.css" /></head>
+<body class="wp-singular page-template-default page page-id-27173 wp-theme-Divi wp-child-theme-Divi-HF et-tb-has-template et-tb-has-body et-tb-has-footer et_monarch et_pb_button_helper_class et_fullwidth_nav et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_expand et_secondary_nav_dropdown_animation_fade et_header_style_left et_cover_background et_pb_gutter osx et_pb_gutters2 et_divi_theme et-db">
+	<div id="page-container">
+<div id="et-boc" class="et-boc">
+			
+		
+
+	<header id="main-header" data-height-onload="70">
+		<div class="container clearfix et_menu_container">
+					<div class="logo_container">
+				<span class="logo_helper"></span>
+				<a href="https://www.hungaryfoundation.org/">
+				<img src="https://www.hungaryfoundation.org/wp-content/uploads/2021/01/Website-Menu-275x56-1.png" width="301" height="57" alt="Hungary Foundation" id="logo" data-height-percentage="65" />
+				</a>
+			</div>
+					<div id="et-top-navigation" data-height="70" data-fixed-height="49">
+									<nav id="top-menu-nav">
+					<ul id="top-menu" class="nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-4150"><a href="https://www.hungaryfoundation.org/">HOME</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-23"><a href="https://www.hungaryfoundation.org/about-us/">ABOUT US</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4130"><a href="https://www.hungaryfoundation.org/about-us/mission-statement/">Mission statement</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4131"><a href="https://www.hungaryfoundation.org/about-us/board-of-trustees/">Board of Trustees</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30624"><a href="https://www.hungaryfoundation.org/about-us/academic-advisory-board/">Academic Advisory Board</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25701"><a href="https://www.hungaryfoundation.org/executive-director/">Executive Director</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26751"><a href="https://www.hungaryfoundation.org/category/current-scholars/">Current Scholars</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26174"><a href="https://www.hungaryfoundation.org/category/annual-reports/">Annual Reports</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26173"><a href="https://www.hungaryfoundation.org/category/newsletters/">Newsletters</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-27460"><a href="https://www.hungaryfoundation.org/programs-projects/funding-policy/">GRANTS</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26991"><a href="https://www.hungaryfoundation.org/programs-projects/funding-policy/">Funding policy</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-990"><a href="https://www.hungaryfoundation.org/for-grantees/">Grant Reporting</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4135"><a href="https://www.hungaryfoundation.org/frequently-asked-questions/">FAQs</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2522"><a href="https://www.hungaryfoundation.org/category/current-applications/">Current Applications</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2523"><a href="https://www.hungaryfoundation.org/category/past-applications/">Past Applications</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current_page_ancestor menu-item-has-children menu-item-4138"><a href="https://www.hungaryfoundation.org/initiatives/initiatives-overview/">INITIATIVES</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26941"><a href="https://www.hungaryfoundation.org/initiatives/initiatives-overview/">Initiatives Overview</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-4139"><a>Hungary to USA</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4140"><a>Undergraduate</a>
+		<ul class="sub-menu">
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27385"><a href="https://www.hungaryfoundation.org/szell-kalman-fellowship/">Széll Kálmán Public Policy Fellowship</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30102"><a href="https://www.hungaryfoundation.org/initiatives/young-hungarian-leaders-program/">Young Hungarian Leaders Program</a></li>
+		</ul>
+</li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4141"><a>Graduate/Post-Graduate</a>
+		<ul class="sub-menu">
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27450"><a href="https://www.hungaryfoundation.org/post-graduate-visiting-research-fellowship/">Visiting Research Fellowship</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27390"><a href="https://www.hungaryfoundation.org/the-central-european-american-business-leaders-scholarship-at-quinnipiac-university/">Business Leaders Scholarship</a></li>
+		</ul>
+</li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-4142"><a>Young Professional/Mid-Career</a>
+		<ul class="sub-menu">
+			<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-27173 current_page_item menu-item-27449"><a href="https://www.hungaryfoundation.org/hif-hudson-institute-visiting-research-fellowship/" aria-current="page">Hungary Foundation-Hudson Institute Visiting Research Fellowship</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27392"><a href="https://www.hungaryfoundation.org/andrassy-national-security-fellowship/">Andrássy Fellowship</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4143"><a>USA to Hungary</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4144"><a>Graduate/Post-Graduate</a>
+		<ul class="sub-menu">
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27870"><a href="https://www.hungaryfoundation.org/budapest-fellowship-program/">Budapest Fellowship Program</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4147"><a href="https://www.hungaryfoundation.org/initiatives/digital-engagement/">Digital Engagement</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26267"><a href="https://www.hungaryfoundation.org/category/cultural-ambassador-of-the-year/">Cultural Ambassador</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33395"><a href="https://www.hungaryfoundation.org/michael-kovats-300/">Michael Kovats 300</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-26764"><a href="https://www.hungaryfoundation.org/category/featured-alumni/">ALUMNI</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33078"><a href="https://www.hungaryfoundation.org/alumni-board/">Alumni Board</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26752"><a href="https://www.hungaryfoundation.org/category/featured-alumni/">Featured Alumni</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26284"><a href="https://www.hungaryfoundation.org/category/alumni-programs/">Alumni Programs</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33121"><a href="https://www.hungaryfoundation.org/alumni-support/">Alumni Support</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27"><a href="https://www.hungaryfoundation.org/category/news/">NEWS</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="https://www.hungaryfoundation.org/contact/">CONTACT</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30557"><a href="https://www.hungaryfoundation.org/donate/">DONATE</a></li>
+<li class="shopify-menu-icon menu-item menu-item-type-custom menu-item-object-custom menu-item-35514"><a target="_blank" href="https://the-golden-freedom-store.myshopify.com">STORE</a></li>
+</ul>					</nav>
+				
+				
+				
+									<div id="et_top_search">
+						<span id="et_search_icon"></span>
+					</div>
+				
+				<div id="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="select_page">Select Page</span>
+					<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+				</div>
+			</div>			</div> <!-- #et-top-navigation -->
+		</div> <!-- .container -->
+				<div class="et_search_outer">
+			<div class="container et_search_form_container">
+				<form role="search" method="get" class="et-search-form" action="https://www.hungaryfoundation.org/">
+				<input type="search" class="et-search-field" placeholder="Search &hellip;" value="" name="s" title="Search for:" />				</form>
+				<span class="et_close_search_field"></span>
+			</div>
+		</div>
+			</header> <!-- #main-header -->
+<div id="et-main-area">
+	
+    <div id="main-content">
+    <div class="et-l et-l--body">
+			<div class="et_builder_inner_content et_pb_gutters2">
+		<div class="et_pb_section et_pb_section_0_tb_body et_section_regular et_pb_section--with-menu" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_1_tb_body">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_1_tb_body  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div id="#Description" class="et_pb_with_border et_pb_module et_pb_post_title et_pb_post_title_0_tb_body et_pb_bg_layout_light  et_pb_text_align_left"   >
+				
+				
+				
+				
+				
+				<div class="et_pb_title_container">
+					<h1 class="entry-title">Hungary Foundation-Hudson Institute Visiting Research Fellowship</h1>
+				</div>
+				
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div class="et_pb_section et_pb_section_1_tb_body et_section_regular section_has_divider et_pb_bottom_divider" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_2_tb_body">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_2_tb_body  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_post_content et_pb_post_content_0_tb_body">
+				
+				
+				
+				
+				<p>&nbsp;</p>
+<p><img decoding="async" class="aligncenter wp-image-28406 size-large" src="https://www.hungaryfoundation.org/wp-content/uploads/2020/10/Liberty-Bridge-New-700x541.png" alt="" width="700" height="541" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2020/10/Liberty-Bridge-New-700x541.png 700w, https://www.hungaryfoundation.org/wp-content/uploads/2020/10/Liberty-Bridge-New-480x371.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 700px, 100vw" /></p>
+<p style="text-align: justify;">The <strong>Hudson Institute</strong>, together with the<strong> Hungary Foundation</strong>, has created the<strong> Visiting Research Fellowship.</strong></p>
+<p style="text-align: justify;">This Visiting Fellowship opportunity is a <strong>10-month fully funded research fellowship</strong> at <a href="https://www.hudson.org">Hudson Institute</a>’s headquarters in Washington, DC, offered to a mid-career Hungarian policy professional with specific areas of interest in <em>protecting religious freedom and promoting democratic sovereignty</em>.</p>
+<p style="text-align: justify;">The visiting fellow will become an active member of Hudson’s <a href="https://www.hudson.org/policycenters/7-center-for-religious-freedom"><strong>Center for Religious Freedom</strong></a> and the <a href="https://www.hudson.org/topics/61-culture-social-policy"><strong>Center for Common Culture</strong></a>. The fellow will have the opportunity to refine his/her research skills, to meet with policymakers and subject matter experts, and to participate in coalition building and advocacy efforts.</p>
+<p style="text-align: justify;">The fellow will undertake a specific research program in his/her area of interest and publish a report at the end of the fellowship. As an integrated member of Hudson’s research team, the fellow will be invited to participate in workshops, briefings, roundtables, networking opportunities, and other events organized by the Institute.</p>
+<p style="text-align: justify;">We invite applications from policy professionals holding Hungarian citizenship with at least four years of relevant work experience, or post-graduate scholars with at least two years of focused research, outstanding academic credentials and English language skills.</p>
+<p style="text-align: justify;"><strong>The fellowship will provide: </strong></p>
+<ul style="text-align: justify;">
+<li>a $7,500 monthly stipend to cover living expenses in Washington,</li>
+<li>roundtrip air travel to Washington, DC,</li>
+<li>assistance for the fellow’s visa application process,</li>
+<li>mentorship and dedicated funds to support the fellow’s professional development.</li>
+</ul>
+<p style="text-align: justify;">In addition to the fellow’s work at the Hudson Institute, he/she will be invited to participate in all Hungary Foundation-organized professional development programs, networking events and leadership programs held in Washington, DC, and will enjoy staff support from the Hungary Foundation to help the initial onboarding and settling-in process and will be provided mentorship and assistance during their entire stay in the US.                                                                                                 <strong> </strong></p>
+<p style="text-align: justify;"><strong>Application Criteria</strong></p>
+<ul style="text-align: justify;">
+<li><strong>Full CV</strong>: in English, must include date of birth, citizenship, and full employment history as well as a full publication list</li>
+<li><strong>Research Project Statement: </strong>must include full description of the candidate’s specific research project relevant to the Hudson Institute’s ongoing work</li>
+<li><strong>Two Letters of Recommendation</strong>: must be tailored to this specific fellowship</li>
+<li><strong>Cover Letter: </strong>must include whether the applicant is applying alone or with family members, and any previous research done in the United States</li>
+</ul>
+<p style="text-align: justify;"> For questions regarding the scholarship, please e-mail <a href="mailto:hf@hungaryfoundation.org">hf@hungaryfoundation.org</a>.</p>
+<p style="text-align: justify;">For application deadlines please refer to our ‘applications now open’ <a href="https://www.hungaryfoundation.org/category/current-applications/">here</a>, or Call For Applications posts in the news section.</p>
+<h2 style="text-align: justify;"><strong>ABOUT THE LIBERTY BRIDGE PROGRAM</strong></h2>
+<p style="text-align: justify;">The goal of the Hungary Foundation’s <strong>Liberty Bridge Program,</strong> launched in 2020, is to reinvigorate the US-Hungary relationship by building up a new framework of programs that will bolster the professional, academic, public and people-to-people dialogue between the two countries. The idea behind the program is our core conviction that the US and Hungary share value-driven special bonds built on the concept of Liberty. As part of this program, Hungary Foundation will invest in scholars and fellows who have demonstrated leadership skills and will serve as future bridge builders between the two countries.</p>
+
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_3_tb_body">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_3_tb_body  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+				
+				
+				
+				
+				
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				<div class="et_pb_bottom_inside_divider et-no-transition"></div>
+			</div><div class="et_pb_section et_pb_section_3_tb_body et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_4_tb_body et_animated">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_4_tb_body  et_pb_css_mix_blend_mode_passthrough et_pb_column_empty">
+				
+				
+				
+				
+				
+			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_5_tb_body  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_signup_0_tb_body et_hover_enabled et_pb_newsletter_layout_left_right et_pb_newsletter et_pb_subscribe clearfix  et_pb_text_align_center et_pb_bg_layout_dark et_pb_no_bg et_pb_newsletter_description_no_content">
+				
+				
+				
+				
+				<div class="et_pb_newsletter_description"><h2 class="et_pb_module_header">Join Our Newsletter</h2></div>
+				
+				<div class="et_pb_newsletter_form">
+					<form method="post">
+						<div class="et_pb_newsletter_result et_pb_newsletter_error"></div>
+						<div class="et_pb_newsletter_result et_pb_newsletter_success">
+							<h2>Success!</h2>
+						</div>
+						<div class="et_pb_newsletter_fields">
+							
+					<p class="et_pb_newsletter_field et_pb_contact_field_last et_pb_contact_field_last_tablet et_pb_contact_field_last_phone">
+						<label class="et_pb_contact_form_label" for="et_pb_signup_firstname" style="display: none;">Name</label>
+						<input id="et_pb_signup_firstname" class="input" type="text" placeholder="Name" name="et_pb_signup_firstname">
+					</p>
+							
+							
+					<p class="et_pb_newsletter_field et_pb_contact_field_last et_pb_contact_field_last_tablet et_pb_contact_field_last_phone">
+						<label class="et_pb_contact_form_label" for="et_pb_signup_email" style="display: none;">Email</label>
+						<input id="et_pb_signup_email" class="input" type="text" placeholder="Email" name="et_pb_signup_email">
+					</p>
+							
+							
+					<p class="et_pb_newsletter_button_wrap">
+						<a class="et_pb_newsletter_button et_pb_button" href="#" data-icon="">
+							<span class="et_subscribe_loader"></span>
+							<span class="et_pb_newsletter_button_text">Subscribe</span>
+						</a>
+					</p>
+							
+						</div>
+						
+						<input type="hidden" value="emma" name="et_pb_signup_provider" />
+						<input type="hidden" value="3646025" name="et_pb_signup_list_id" />
+						<input type="hidden" value="annasmithlacey@hungaryfoundationorg" name="et_pb_signup_account_name" />
+						<input type="hidden" value="true" name="et_pb_signup_ip_address" /><input type="hidden" value="dd21405025bc93329ad77df7fe29b85a" name="et_pb_signup_checksum" />
+					</form>
+				</div>
+			</div><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_0_tb_body clearfix  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				
+				
+				<li
+            class='et_pb_social_media_follow_network_0_tb_body et_pb_social_icon et_pb_social_network_link  et-social-facebook'><a
+              href='https://www.facebook.com/hungaryfoundation/'
+              class='icon et_pb_with_border'
+              title='Follow on Facebook'
+               target="_blank"><span
+                class='et_pb_social_media_follow_network_name'
+                aria-hidden='true'
+                >Follow</span></a></li><li
+            class='et_pb_social_media_follow_network_1_tb_body et_pb_social_icon et_pb_social_network_link  et-social-youtube'><a
+              href='https://www.youtube.com/channel/UCrAepI3e3rkQMLgqS_thRMg/featured'
+              class='icon et_pb_with_border'
+              title='Follow on Youtube'
+               target="_blank"><span
+                class='et_pb_social_media_follow_network_name'
+                aria-hidden='true'
+                >Follow</span></a></li><li
+            class='et_pb_social_media_follow_network_2_tb_body et_pb_social_icon et_pb_social_network_link  et-social-instagram'><a
+              href='https://www.instagram.com/hungaryfoundation/'
+              class='icon et_pb_with_border'
+              title='Follow on Instagram'
+               target="_blank"><span
+                class='et_pb_social_media_follow_network_name'
+                aria-hidden='true'
+                >Follow</span></a></li>
+			</ul>
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_6_tb_body  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+				
+				
+				
+				
+				
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div>		</div>
+	</div>
+	    </div>
+    
+	<footer class="et-l et-l--footer">
+			<div class="et_builder_inner_content et_pb_gutters2">
+		<div class="et_pb_section et_pb_section_0_tb_footer et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_0_tb_footer">
+				<div class="et_pb_column et_pb_column_1_3 et_pb_column_0_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_0_tb_footer  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><p><a href="https://www.hungaryfoundation.org/about-us/mission-statement/">Mission Statement</a><br /><a href="https://www.hungaryfoundation.org/about-us/achieving-our-mission/">Achieving Our Mission</a><br /><a href="https://www.hungaryfoundation.org/programs-projects/funding-policy/">Funding Policy</a><br /><a href="https://www.hungaryfoundation.org/about-us/terms-of-use-and-conditions/">Terms of Use and Conditions</a><br /><a href="https://www.hungaryfoundation.org/about-us/privacy-policy/">Privacy Policy</a><br /><a href="https://www.hungaryfoundation.org/frequently-asked-questions/" title="FAQ"><span>Frequently Asked Questions</span></a></p></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_3 et_pb_column_1_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_1_tb_footer  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner">1455 Pennsylvania Ave, NW, Suite 400<br />
+Washington, DC 20004<br />
+Phone: (202)-627-6810<br />
+E-mail: <a href="mailto:hf@hungaryfoundation.org" target="_blank" rel="noopener noreferrer">hf@hungaryfoundation.org</a></p>
+<form action="https://www.paypal.com/donate" method="post" target="_top">
+<input type="hidden" name="hosted_button_id" value="HWGQJWADZBFFE" /><br />
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" /><br />
+<img loading="lazy" decoding="async" alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" /><br />
+</form></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_3 et_pb_column_2_tb_footer  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_0_tb_footer">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img loading="lazy" decoding="async" width="257" height="135" src="https://www.hungaryfoundation.org/wp-content/uploads/2021/01/Website-Footer-176x134-1.png" alt="" title="Website Footer 176x134" class="wp-image-28816" /></span>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div class="et_pb_section et_pb_section_1_tb_footer et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_1_tb_footer">
+				<div class="et_pb_column et_pb_column_2_3 et_pb_column_3_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_2_tb_footer  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner">Copyright © 2026 Hungary Foundation</div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_3 et_pb_column_4_tb_footer  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_3_tb_footer  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><p style="text-align: left;">Designed and hosted by <a href="https://www.zsoltmolnar.com/">Zsolt Molnar</a></p></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div>		</div>
+	</footer>
+		</div>
+
+			
+		</div>
+		</div>
+
+			<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/Divi-HF/*","/wp-content/themes/Divi/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div 
+	id="pum-32748" 
+	role="dialog" 
+	aria-modal="false"
+	class="pum pum-overlay pum-theme-32742 pum-theme-cutting-edge popmake-overlay auto_open click_open" 
+	data-popmake="{&quot;id&quot;:32748,&quot;slug&quot;:&quot;emma-singnup&quot;,&quot;theme_id&quot;:32742,&quot;cookies&quot;:[{&quot;event&quot;:&quot;on_popup_close&quot;,&quot;settings&quot;:{&quot;name&quot;:&quot;pum-32748&quot;,&quot;key&quot;:&quot;&quot;,&quot;session&quot;:false,&quot;path&quot;:&quot;1&quot;,&quot;time&quot;:&quot;1 month&quot;}}],&quot;triggers&quot;:[{&quot;type&quot;:&quot;auto_open&quot;,&quot;settings&quot;:{&quot;delay&quot;:6000,&quot;cookie_name&quot;:[&quot;pum-32748&quot;]}},{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;,&quot;cookie_name&quot;:null}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;200&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}">
+
+	<div id="popmake-32748" class="pum-container popmake theme-32742 pum-responsive pum-responsive-small responsive size-small">
+
+				
+				
+		
+				<div class="pum-content popmake-content" tabindex="0">
+			<p><iframe src="https://signup.e2ma.net/signup/1817711/1775177/" width="710" height="500" frameborder="0"></iframe></p>
+		</div>
+
+				
+							<button type="button" class="pum-close popmake-close" aria-label="Close">
+			×			</button>
+		
+	</div>
+
+</div>
+<div class="et_social_pin_images_outer">
+					<div class="et_social_pinterest_window">
+						<div class="et_social_modal_header"><h3>Pin It on Pinterest</h3><span class="et_social_close"></span></div>
+						<div class="et_social_pin_images" data-permalink="https://www.hungaryfoundation.org/hif-hudson-institute-visiting-research-fellowship/" data-title="Hungary Foundation-Hudson Institute Visiting Research Fellowship" data-post_id="27173"></div>
+					</div>
+				</div><div class="et_social_sidebar_networks et_social_visible_sidebar et_social_slideright et_social_animated et_social_rectangle et_social_sidebar_flip et_social_mobile_on">
+					
+					<ul class="et_social_icons_container"><li class="et_social_facebook">
+									<a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.hungaryfoundation.org%2Fhif-hudson-institute-visiting-research-fellowship%2F&#038;t=Hungary%20Foundation-Hudson%20Institute%20Visiting%20Research%20Fellowship" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="27173" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_facebook"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_twitter">
+									<a href="http://twitter.com/share?text=Hungary%20Foundation-Hudson%20Institute%20Visiting%20Research%20Fellowship&#038;url=https%3A%2F%2Fwww.hungaryfoundation.org%2Fhif-hudson-institute-visiting-research-fellowship%2F&#038;via=HungInit" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="27173" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_twitter"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_pinterest">
+									<a href="#" class="et_social_share_pinterest" rel="nofollow" data-social_name="pinterest" data-post_id="27173" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_pinterest"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_linkedin">
+									<a href="http://www.linkedin.com/shareArticle?mini=true&#038;url=https%3A%2F%2Fwww.hungaryfoundation.org%2Fhif-hudson-institute-visiting-research-fellowship%2F&#038;title=Hungary%20Foundation-Hudson%20Institute%20Visiting%20Research%20Fellowship" class="et_social_share" rel="nofollow" data-social_name="linkedin" data-post_id="27173" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_linkedin"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li></ul>
+					<span class="et_social_hide_sidebar et_social_icon"></span>
+				</div><div class="et_social_mobile_button"></div>
+					<div class="et_social_mobile et_social_fadein">
+						<div class="et_social_heading">Share This</div>
+						<span class="et_social_close"></span>
+						<div class="et_social_networks et_social_simple et_social_rounded et_social_left">
+							<ul class="et_social_icons_container"><li class="et_social_facebook">
+									<a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.hungaryfoundation.org%2Fhif-hudson-institute-visiting-research-fellowship%2F&#038;t=Hungary%20Foundation-Hudson%20Institute%20Visiting%20Research%20Fellowship" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="27173" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_facebook"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Facebook</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_twitter">
+									<a href="http://twitter.com/share?text=Hungary%20Foundation-Hudson%20Institute%20Visiting%20Research%20Fellowship&#038;url=https%3A%2F%2Fwww.hungaryfoundation.org%2Fhif-hudson-institute-visiting-research-fellowship%2F&#038;via=HungInit" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="27173" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_twitter"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Twitter</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_pinterest">
+									<a href="#" class="et_social_share_pinterest" rel="nofollow" data-social_name="pinterest" data-post_id="27173" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_pinterest"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Pinterest</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_linkedin">
+									<a href="http://www.linkedin.com/shareArticle?mini=true&#038;url=https%3A%2F%2Fwww.hungaryfoundation.org%2Fhif-hudson-institute-visiting-research-fellowship%2F&#038;title=Hungary%20Foundation-Hudson%20Institute%20Visiting%20Research%20Fellowship" class="et_social_share" rel="nofollow" data-social_name="linkedin" data-post_id="27173" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_linkedin"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">LinkedIn</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li></ul>
+						</div>
+					</div>
+					<div class="et_social_mobile_overlay"></div>	<script type="text/javascript">
+				var et_animation_data = [{"class":"et_pb_row_4_tb_body","style":"zoom","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"5%","starting_opacity":"0%","speed_curve":"ease-in-out"}];
+				</script>
+	<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="jquery-js-after">
+/* <![CDATA[ */
+jqueryParams.length&&$.each(jqueryParams,function(e,r){if("function"==typeof r){var n=String(r);n.replace("$","jQuery");var a=new Function("return "+n)();$(document).ready(a)}});
+//# sourceURL=jquery-js-after
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-content/plugins/monarch/js/idle-timer.min.js" id="et_monarch-idle-js"></script>
+<script type="text/javascript" id="et_monarch-custom-js-js-extra">
+/* <![CDATA[ */
+var monarchSettings = {"ajaxurl":"https://www.hungaryfoundation.org/wp-admin/admin-ajax.php","pageurl":"https://www.hungaryfoundation.org/hif-hudson-institute-visiting-research-fellowship/","stats_nonce":"d54f7bca95","share_counts":"8f1199422b","follow_counts":"8da24f237b","total_counts":"1e52307071","media_single":"9adfeb136f","media_total":"ffa3c7189f","generate_all_window_nonce":"af294fcaf4","no_img_message":"No images available for sharing on this page"};
+//# sourceURL=et_monarch-custom-js-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-content/plugins/monarch/js/custom.js" id="et_monarch-custom-js-js"></script>
+<script type="text/javascript" id="divi-custom-script-js-extra">
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
+var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_custom = {"ajaxurl":"https://www.hungaryfoundation.org/wp-admin/admin-ajax.php","images_uri":"https://www.hungaryfoundation.org/wp-content/themes/Divi/images","builder_images_uri":"https://www.hungaryfoundation.org/wp-content/themes/Divi/includes/builder/images","et_frontend_nonce":"289dd43dff","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"e0082f7101","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"27173","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"no","is_shortcode_tracking":"","tinymce_uri":"https://www.hungaryfoundation.org/wp-content/themes/Divi/includes/builder/frontend-builder/assets/vendors","accent_color":"#ff5c5c","waypoints_options":{"context":[".pum-overlay"]}};
+var et_pb_box_shadow_elements = [];
+//# sourceURL=divi-custom-script-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-content/themes/Divi/js/scripts.min.js" id="divi-custom-script-js"></script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-includes/js/jquery/ui/core.min.js" id="jquery-ui-core-js"></script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-includes/js/dist/hooks.min.js" id="wp-hooks-js"></script>
+<script type="text/javascript" id="popup-maker-site-js-extra">
+/* <![CDATA[ */
+var pum_vars = {"version":"1.22.0","pm_dir_url":"https://www.hungaryfoundation.org/wp-content/plugins/popup-maker/","ajaxurl":"https://www.hungaryfoundation.org/wp-admin/admin-ajax.php","restapi":"https://www.hungaryfoundation.org/wp-json/pum/v1","rest_nonce":null,"default_theme":"32738","debug_mode":"","disable_tracking":"","home_url":"/","message_position":"top","core_sub_forms_enabled":"1","popups":[],"cookie_domain":"","paramNames":{"popup_id":"pid","cta":"cta","notrack":"notrack"},"analytics_enabled":"1","analytics_route":"analytics","analytics_api":"https://www.hungaryfoundation.org/wp-json/pum/v1"};
+var pum_sub_vars = {"ajaxurl":"https://www.hungaryfoundation.org/wp-admin/admin-ajax.php","message_position":"top"};
+var pum_popups = {"pum-32748":{"triggers":[{"type":"auto_open","settings":{"delay":6000,"cookie_name":["pum-32748"]}}],"cookies":[{"event":"on_popup_close","settings":{"name":"pum-32748","key":"","session":false,"path":"1","time":"1 month"}}],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":"32742","size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center","position_top":"100","position_bottom":"0","position_left":"0","position_right":"0","position_from_trigger":false,"position_fixed":false,"overlay_disabled":false,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"200","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":"0","close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"cutting-edge","id":32748,"slug":"emma-singnup"}};
+//# sourceURL=popup-maker-site-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.hungaryfoundation.org/wp-content/uploads/pum/pum-site-scripts.js" id="popup-maker-site-js"></script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-content/themes/Divi/core/admin/js/common.js" id="et-core-common-js"></script>
+<script type="text/javascript" id="jetpack-stats-js-before">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", {"v":"ext","blog":"121148953","post":"27173","tz":"-4","srv":"www.hungaryfoundation.org","j":"1:15.8.1"} ]);
+_stq.push([ "clickTrackerInit", "121148953", "27173" ]);
+//# sourceURL=jetpack-stats-js-before
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://stats.wp.com/e-202643.js" id="jetpack-stats-js" defer="defer" data-wp-strategy="defer"></script>
+	
+	</body>
+</html>
+<!--
+Performance optimized by Redis Object Cache. Learn more: https://wprediscache.com
+
+Retrieved 6347 objects (2 MB) from Redis using PhpRedis (v6.3.0).
+-->
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/?utm_source=w3tc&utm_medium=footer_comment&utm_campaign=free_plugin
+
+Page Caching using Disk: Enhanced 
+
+Served from: www.hungaryfoundation.org @ 2026-10-22 09:06:07 by W3 Total Cache
+-->

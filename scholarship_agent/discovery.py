@@ -368,6 +368,10 @@ class Discovery:
                 result.ai_errors.append({"url": url, "error": st["error"]})
             for e in opp.evidence:
                 e.authority = e.authority or str(authority)
+            if os.environ.get("SCHOLAR_SECOND_READING") == "1":
+                # round 43: an independent reading of the four decisions; disagreements are held for review
+                from .ai_check import attach_second_reading
+                attach_second_reading(opp, page.text, self.llm, self.today)
         for e in opp.evidence:   # where and how each claim was read
             e.final_url = e.final_url or resp.url
             e.programme = e.programme or opp.title

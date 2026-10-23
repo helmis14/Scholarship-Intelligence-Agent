@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="pingback" href="https://www.hungaryfoundation.org/xmlrpc.php" />
+
+	<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><style id="et-builder-googlefonts-cached-inline">/* Original: https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic|Lora:regular,500,600,700,italic,500italic,600italic,700italic|Oswald:200,300,regular,500,600,700&#038;subset=latin,latin-ext&#038;display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Lora';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoqF2mQ.ttf) format('truetype');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-PgFoqF2mQ.ttf) format('truetype');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-BQCoqF2mQ.ttf) format('truetype');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-C0CoqF2mQ.ttf) format('truetype');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787weuxJPkqg.ttf) format('truetype');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787wsuxJPkqg.ttf) format('truetype');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787zAvBJPkqg.ttf) format('truetype');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787z5vBJPkqg.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R8WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR9WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq_p9WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq5Z9WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq3p6WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR6WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqw16WXZ0ow.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Xw3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr6Hw3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w3aX8.ttf) format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvC73w3aX8.ttf) format('truetype');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs13FvsUhiYA.ttf) format('truetype');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs169vsUhiYA.ttf) format('truetype');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUhiYA.ttf) format('truetype');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs18NvsUhiYA.ttf) format('truetype');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1y9osUhiYA.ttf) format('truetype');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZosUhiYA.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Lora';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoqF2mg.woff) format('woff');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-PgFoqF2mg.woff) format('woff');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-BQCoqF2mg.woff) format('woff');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-C0CoqF2mg.woff) format('woff');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787weuxJPkqs.woff) format('woff');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787wsuxJPkqs.woff) format('woff');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787zAvBJPkqs.woff) format('woff');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787z5vBJPkqs.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R8WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR9WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq_p9WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq5Z9WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq3p6WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR6WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqw16WXZ0oA.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Xw3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr6Hw3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w3aXw.woff) format('woff');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvC73w3aXw.woff) format('woff');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs13FvsUhiYw.woff) format('woff');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs169vsUhiYw.woff) format('woff');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUhiYw.woff) format('woff');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs18NvsUhiYw.woff) format('woff');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1y9osUhiYw.woff) format('woff');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZosUhiYw.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Lora';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoqF2nA.woff2) format('woff2');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-PgFoqF2nA.woff2) format('woff2');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-BQCoqF2nA.woff2) format('woff2');}@font-face {font-family: 'Lora';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-C0CoqF2nA.woff2) format('woff2');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787weuxJPkq0.woff2) format('woff2');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787wsuxJPkq0.woff2) format('woff2');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787zAvBJPkq0.woff2) format('woff2');}@font-face {font-family: 'Lora';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787z5vBJPkq0.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R8WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR9WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq_p9WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq5Z9WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq3p6WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR6WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqw16WXZ0pg.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Xw3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr6Hw3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w3aXo.woff2) format('woff2');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvC73w3aXo.woff2) format('woff2');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs13FvsUhiZQ.woff2) format('woff2');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs169vsUhiZQ.woff2) format('woff2');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUhiZQ.woff2) format('woff2');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs18NvsUhiZQ.woff2) format('woff2');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1y9osUhiZQ.woff2) format('woff2');}@font-face {font-family: 'Oswald';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZosUhiZQ.woff2) format('woff2');}</style><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<script type="text/javascript">
+			let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(window.jQuery)return jQuery=window.jQuery,$=window.jQuery,customHeadScripts=!0,jQuery.noConflict},jQuery.ready=function(r){jqueryParams=[...jqueryParams,r]},$.ready=function(r){jqueryParams=[...jqueryParams,r]},jQuery.load=function(r){jqueryParams=[...jqueryParams,r]},$.load=function(r){jqueryParams=[...jqueryParams,r]},jQuery.fn.ready=function(r){jqueryParams=[...jqueryParams,r]},$.fn.ready=function(r){jqueryParams=[...jqueryParams,r]};</script>
+	<!-- This site is optimized with the Yoast SEO plugin v27.6 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Budapest Fellowship Program - Hungary Foundation</title>
+	<link rel="canonical" href="https://www.hungaryfoundation.org/budapest-fellowship-program/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Budapest Fellowship Program - Hungary Foundation" />
+	<meta property="og:url" content="https://www.hungaryfoundation.org/budapest-fellowship-program/" />
+	<meta property="og:site_name" content="Hungary Foundation" />
+	<meta property="article:publisher" content="https://www.facebook.com/thehungaryinitiativesfoundation/" />
+	<meta property="article:modified_time" content="2025-03-06T21:33:33+00:00" />
+	<meta property="og:image" content="https://www.hungaryfoundation.org/wp-content/uploads/2020/05/Budapest-Fellowship-Program-Call-for-Applications2.png" />
+	<meta property="og:image:width" content="1100" />
+	<meta property="og:image:height" content="400" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content="https://www.hungaryfoundation.org/wp-content/uploads/2020/05/Budapest-Fellowship-Program-Call-for-Applications2.png" />
+	<meta name="twitter:site" content="@HungInit" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="16 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/www.hungaryfoundation.org\/budapest-fellowship-program\/","url":"https:\/\/www.hungaryfoundation.org\/budapest-fellowship-program\/","name":"Budapest Fellowship Program - Hungary Foundation","isPartOf":{"@id":"https:\/\/www.hungaryfoundation.org\/#website"},"primaryImageOfPage":{"@id":"https:\/\/www.hungaryfoundation.org\/budapest-fellowship-program\/#primaryimage"},"image":{"@id":"https:\/\/www.hungaryfoundation.org\/budapest-fellowship-program\/#primaryimage"},"thumbnailUrl":"https:\/\/www.hungaryfoundation.org\/wp-content\/uploads\/2020\/08\/BFP-Master-Logo-1.png","datePublished":"2020-07-31T13:05:38+00:00","dateModified":"2025-03-06T21:33:33+00:00","breadcrumb":{"@id":"https:\/\/www.hungaryfoundation.org\/budapest-fellowship-program\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/www.hungaryfoundation.org\/budapest-fellowship-program\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/www.hungaryfoundation.org\/budapest-fellowship-program\/#primaryimage","url":"https:\/\/www.hungaryfoundation.org\/wp-content\/uploads\/2020\/08\/BFP-Master-Logo-1.png","contentUrl":"https:\/\/www.hungaryfoundation.org\/wp-content\/uploads\/2020\/08\/BFP-Master-Logo-1.png","width":2542,"height":950},{"@type":"BreadcrumbList","@id":"https:\/\/www.hungaryfoundation.org\/budapest-fellowship-program\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/www.hungaryfoundation.org\/"},{"@type":"ListItem","position":2,"name":"Budapest Fellowship Program"}]},{"@type":"WebSite","@id":"https:\/\/www.hungaryfoundation.org\/#website","url":"https:\/\/www.hungaryfoundation.org\/","name":"The Hungary Foundation","description":"We Invest in Talent","publisher":{"@id":"https:\/\/www.hungaryfoundation.org\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.hungaryfoundation.org\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/www.hungaryfoundation.org\/#organization","name":"The Hungary Foundation","url":"https:\/\/www.hungaryfoundation.org\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/www.hungaryfoundation.org\/#\/schema\/logo\/image\/","url":"https:\/\/www.hungaryfoundation.org\/wp-content\/uploads\/2020\/05\/HIF_logo_horiz.png","contentUrl":"https:\/\/www.hungaryfoundation.org\/wp-content\/uploads\/2020\/05\/HIF_logo_horiz.png","width":850,"height":187,"caption":"The Hungary Foundation"},"image":{"@id":"https:\/\/www.hungaryfoundation.org\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/thehungaryinitiativesfoundation\/","https:\/\/x.com\/HungInit","https:\/\/www.instagram.com\/hungaryfoundation\/","https:\/\/www.youtube.com\/channel\/UCrAepI3e3rkQMLgqS_thRMg"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//stats.wp.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Hungary Foundation &raquo; Feed" href="https://www.hungaryfoundation.org/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Hungary Foundation &raquo; Comments Feed" href="https://www.hungaryfoundation.org/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.hungaryfoundation.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.hungaryfoundation.org%2Fbudapest-fellowship-program%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.hungaryfoundation.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.hungaryfoundation.org%2Fbudapest-fellowship-program%2F&#038;format=xml" />
+<meta content="Divi Child for HF v.1.0.0" name="generator"/><link rel='stylesheet' id='et_monarch-css-css' href='https://www.hungaryfoundation.org/wp-content/plugins/monarch/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='et-gf-open-sans-css' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' type='text/css' media='all' />
+<link rel='stylesheet' id='popup-maker-site-css' href='//www.hungaryfoundation.org/wp-content/uploads/pum/pum-site-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-style-parent-css' href='https://www.hungaryfoundation.org/wp-content/themes/Divi/style-static.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-style-pum-css' href='https://www.hungaryfoundation.org/wp-content/themes/Divi-HF/style.css' type='text/css' media='all' />
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-5M882RX" id="google_gtagjs-js" async></script>
+<script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["www.hungaryfoundation.org"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-5M882RX");
+//# sourceURL=google_gtagjs-js-after
+/* ]]> */
+</script>
+<link rel="https://api.w.org/" href="https://www.hungaryfoundation.org/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.hungaryfoundation.org/wp-json/wp/v2/pages/27783" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.hungaryfoundation.org/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.9.10" />
+<link rel='shortlink' href='https://www.hungaryfoundation.org/?p=27783' />
+<meta name="generator" content="Site Kit by Google 1.190.0" />	<style>img#wpstats{display:none}</style>
+		<style type="text/css" id="et-social-custom-css">
+				 
+			</style><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><link rel="stylesheet" id="et-core-unified-tb-26502-tb-26654-27783-cached-inline-styles" href="https://www.hungaryfoundation.org/wp-content/et-cache/27783/et-core-unified-tb-26502-tb-26654-27783.min.css" /><link rel="stylesheet" id="et-core-unified-27783-cached-inline-styles" href="https://www.hungaryfoundation.org/wp-content/et-cache/27783/et-core-unified-27783.min.css" /><link rel="stylesheet" id="et-core-unified-tb-26502-tb-26654-deferred-27783-cached-inline-styles" href="https://www.hungaryfoundation.org/wp-content/et-cache/27783/et-core-unified-tb-26502-tb-26654-deferred-27783.min.css" /><link rel='stylesheet' id='mediaelement-css' href='https://www.hungaryfoundation.org/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css' href='https://www.hungaryfoundation.org/wp-includes/js/mediaelement/wp-mediaelement.min.css' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: 823px;--wp--style--global--wide-size: 1080px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+</head>
+<body class="wp-singular page-template-default page page-id-27783 page-parent wp-theme-Divi wp-child-theme-Divi-HF et-tb-has-template et-tb-has-body et-tb-has-footer et_monarch et_pb_button_helper_class et_fullwidth_nav et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_expand et_secondary_nav_dropdown_animation_fade et_header_style_left et_cover_background et_pb_gutter et_pb_gutters2 et_pb_pagebuilder_layout et_divi_theme et-db">
+	<div id="page-container">
+<div id="et-boc" class="et-boc">
+			
+		
+
+	<header id="main-header" data-height-onload="70">
+		<div class="container clearfix et_menu_container">
+					<div class="logo_container">
+				<span class="logo_helper"></span>
+				<a href="https://www.hungaryfoundation.org/">
+				<img src="https://www.hungaryfoundation.org/wp-content/uploads/2021/01/Website-Menu-275x56-1.png" width="301" height="57" alt="Hungary Foundation" id="logo" data-height-percentage="65" />
+				</a>
+			</div>
+					<div id="et-top-navigation" data-height="70" data-fixed-height="49">
+									<nav id="top-menu-nav">
+					<ul id="top-menu" class="nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-4150"><a href="https://www.hungaryfoundation.org/">HOME</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-23"><a href="https://www.hungaryfoundation.org/about-us/">ABOUT US</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4130"><a href="https://www.hungaryfoundation.org/about-us/mission-statement/">Mission statement</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4131"><a href="https://www.hungaryfoundation.org/about-us/board-of-trustees/">Board of Trustees</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30624"><a href="https://www.hungaryfoundation.org/about-us/academic-advisory-board/">Academic Advisory Board</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25701"><a href="https://www.hungaryfoundation.org/executive-director/">Executive Director</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26751"><a href="https://www.hungaryfoundation.org/category/current-scholars/">Current Scholars</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26174"><a href="https://www.hungaryfoundation.org/category/annual-reports/">Annual Reports</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26173"><a href="https://www.hungaryfoundation.org/category/newsletters/">Newsletters</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-27460"><a href="https://www.hungaryfoundation.org/programs-projects/funding-policy/">GRANTS</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26991"><a href="https://www.hungaryfoundation.org/programs-projects/funding-policy/">Funding policy</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-990"><a href="https://www.hungaryfoundation.org/for-grantees/">Grant Reporting</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4135"><a href="https://www.hungaryfoundation.org/frequently-asked-questions/">FAQs</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2522"><a href="https://www.hungaryfoundation.org/category/current-applications/">Current Applications</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2523"><a href="https://www.hungaryfoundation.org/category/past-applications/">Past Applications</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current_page_ancestor menu-item-has-children menu-item-4138"><a href="https://www.hungaryfoundation.org/initiatives/initiatives-overview/">INITIATIVES</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26941"><a href="https://www.hungaryfoundation.org/initiatives/initiatives-overview/">Initiatives Overview</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4139"><a>Hungary to USA</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4140"><a>Undergraduate</a>
+		<ul class="sub-menu">
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27385"><a href="https://www.hungaryfoundation.org/szell-kalman-fellowship/">Széll Kálmán Public Policy Fellowship</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30102"><a href="https://www.hungaryfoundation.org/initiatives/young-hungarian-leaders-program/">Young Hungarian Leaders Program</a></li>
+		</ul>
+</li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4141"><a>Graduate/Post-Graduate</a>
+		<ul class="sub-menu">
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27450"><a href="https://www.hungaryfoundation.org/post-graduate-visiting-research-fellowship/">Visiting Research Fellowship</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27390"><a href="https://www.hungaryfoundation.org/the-central-european-american-business-leaders-scholarship-at-quinnipiac-university/">Business Leaders Scholarship</a></li>
+		</ul>
+</li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4142"><a>Young Professional/Mid-Career</a>
+		<ul class="sub-menu">
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27449"><a href="https://www.hungaryfoundation.org/hif-hudson-institute-visiting-research-fellowship/">Hungary Foundation-Hudson Institute Visiting Research Fellowship</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27392"><a href="https://www.hungaryfoundation.org/andrassy-national-security-fellowship/">Andrássy Fellowship</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-4143"><a>USA to Hungary</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-4144"><a>Graduate/Post-Graduate</a>
+		<ul class="sub-menu">
+			<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-27783 current_page_item menu-item-27870"><a href="https://www.hungaryfoundation.org/budapest-fellowship-program/" aria-current="page">Budapest Fellowship Program</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4147"><a href="https://www.hungaryfoundation.org/initiatives/digital-engagement/">Digital Engagement</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26267"><a href="https://www.hungaryfoundation.org/category/cultural-ambassador-of-the-year/">Cultural Ambassador</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33395"><a href="https://www.hungaryfoundation.org/michael-kovats-300/">Michael Kovats 300</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-26764"><a href="https://www.hungaryfoundation.org/category/featured-alumni/">ALUMNI</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33078"><a href="https://www.hungaryfoundation.org/alumni-board/">Alumni Board</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26752"><a href="https://www.hungaryfoundation.org/category/featured-alumni/">Featured Alumni</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26284"><a href="https://www.hungaryfoundation.org/category/alumni-programs/">Alumni Programs</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33121"><a href="https://www.hungaryfoundation.org/alumni-support/">Alumni Support</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27"><a href="https://www.hungaryfoundation.org/category/news/">NEWS</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="https://www.hungaryfoundation.org/contact/">CONTACT</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30557"><a href="https://www.hungaryfoundation.org/donate/">DONATE</a></li>
+<li class="shopify-menu-icon menu-item menu-item-type-custom menu-item-object-custom menu-item-35514"><a target="_blank" href="https://the-golden-freedom-store.myshopify.com">STORE</a></li>
+</ul>					</nav>
+				
+				
+				
+									<div id="et_top_search">
+						<span id="et_search_icon"></span>
+					</div>
+				
+				<div id="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="select_page">Select Page</span>
+					<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+				</div>
+			</div>			</div> <!-- #et-top-navigation -->
+		</div> <!-- .container -->
+				<div class="et_search_outer">
+			<div class="container et_search_form_container">
+				<form role="search" method="get" class="et-search-form" action="https://www.hungaryfoundation.org/">
+				<input type="search" class="et-search-field" placeholder="Search &hellip;" value="" name="s" title="Search for:" />				</form>
+				<span class="et_close_search_field"></span>
+			</div>
+		</div>
+			</header> <!-- #main-header -->
+<div id="et-main-area">
+	
+    <div id="main-content">
+    <div class="et-l et-l--body">
+			<div class="et_builder_inner_content et_pb_gutters2">
+		<div class="et_pb_section et_pb_section_0_tb_body et_section_regular et_pb_section--with-menu" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_0_tb_body et_pb_row--with-menu">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_0_tb_body  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column--with-menu">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_menu et_pb_menu_0_tb_body et_pb_bg_layout_light  et_pb_text_align_left et_dropdown_animation_fade et_pb_menu--without-logo et_pb_menu--style-centered">
+					
+					
+					
+					
+					<div class="et_pb_menu_inner_container clearfix">
+						
+						<div class="et_pb_menu__wrap">
+							<div class="et_pb_menu__menu">
+								<nav class="et-menu-nav"><ul id="menu-bfp-m" class="et-menu nav"><li id="menu-item-31721" class="et_pb_menu_page_id-31721 menu-item menu-item-type-custom menu-item-object-custom menu-item-31721"><a href="#Description">Program Description</a></li>
+<li id="menu-item-31711" class="et_pb_menu_page_id-31711 menu-item menu-item-type-custom menu-item-object-custom menu-item-31711"><a href="#Latest">Latest News</a></li>
+<li id="menu-item-31718" class="et_pb_menu_page_id-31718 menu-item menu-item-type-custom menu-item-object-custom menu-item-31718"><a href="#Staff">Program Staff and Current Fellows</a></li>
+<li id="menu-item-31719" class="et_pb_menu_page_id-31719 menu-item menu-item-type-custom menu-item-object-custom menu-item-31719"><a href="#Alumni">BFP Alumni</a></li>
+<li id="menu-item-31720" class="et_pb_menu_page_id-31720 menu-item menu-item-type-custom menu-item-object-custom menu-item-31720"><a href="#Organizers">About the Organizers</a></li>
+</ul></nav>
+							</div>
+							
+							
+							<div class="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="mobile_menu_bar"></span>
+				</div>
+			</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_1_tb_body">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_1_tb_body  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div id="#Description" class="et_pb_with_border et_pb_module et_pb_post_title et_pb_post_title_0_tb_body et_pb_bg_layout_light  et_pb_text_align_left"   >
+				
+				
+				
+				
+				
+				<div class="et_pb_title_container">
+					<h1 class="entry-title">Budapest Fellowship Program</h1>
+				</div>
+				
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div class="et_pb_section et_pb_section_1_tb_body et_section_regular section_has_divider et_pb_bottom_divider" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_2_tb_body">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_2_tb_body  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_post_content et_pb_post_content_0_tb_body">
+				
+				
+				
+				
+				<div class="et-l et-l--post">
+			<div class="et_builder_inner_content et_pb_gutters2"><div class="et_pb_section et_pb_section_0 et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_0">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_0  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><div class="et_pb_column et_pb_column_4_4 et_pb_column_1_tb_body et_pb_css_mix_blend_mode_passthrough et-last-child"></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div><img fetchpriority="high" decoding="async" class="size-large wp-image-27977 aligncenter" src="https://www.hungaryfoundation.org/wp-content/uploads/2020/08/BFP-Master-Logo-1-700x262.png" alt="" width="529" height="198" /></div>
+<div></div>
+<div></div>
+<p style="text-align: justify;">In September 2020, the  <b>Hungary Foundation</b> together with <b>Mathias Corvinus Collegium </b>(Budapest, Hungary)  established the <b>Budapest Fellowship Program</b>, a full-time, <b>fully-funded transatlantic fellowship opportunity in Budapest, Hungary</b>, for young American scholars and professionals.</p>
+<p style="text-align: justify;">The goal of the 10-month program is to cultivate the next generation of American policy professionals and equip them with a thorough understanding of Central and Eastern Europe (CEE) and Hungary.  The fellows will have an opportunity to conduct independent research on the topic fellows choose independently while gaining practical experience working at a Hungarian host institution that matches their professional interests.</p>
+<p style="text-align: justify;">The program’s structure is designed to nurture an understanding of Central and Eastern European, and specifically, Hungarian history and culture. The program will offer extensive professional and personal networking opportunities and fellows will be matched with local mentors to guide them during their fellowship journey.</p>
+<p style="text-align: justify;"><b style="font-size: 16px;">The scholarship provides: </b><span style="font-size: 16px;">a monthly stipend to cover living expenses in Budapest ($3,000/month for Junior Fellows, $4,000/month for Senior Fellows, $4,500/month for Senior Fellows with a family),</span></p>
+<ul style="text-align: justify;">
+<li>housing in Budapest (upgraded college dorms downtown for Junior Fellows, private apartment for Senior Fellows),</li>
+<li>roundtrip air travel to Hungary,</li>
+<li>health insurance assistance for the fellow’s visa application process,</li>
+<li>Hungarian language classes,</li>
+<li>book stipend and research support,</li>
+<li>organized field trips to neighboring countries and the Hungarian countryside.</li>
+</ul></div>
+			</div><div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><div class="et_pb_column et_pb_column_4_4 et_pb_column_1_tb_body et_pb_css_mix_blend_mode_passthrough et-last-child"><b style="color: #005376; font-family: Muli, sans-serif; font-size: 22px; text-align: justify;">PROGRAM HIGHLIGHTS</b></div>
+<p style="text-align: justify;"><b><i>Research, Teach, Learn and Network in Hungary </i></b></p>
+<p style="text-align: justify;"><b>RESEARCH. </b>Fellows conduct their own independent research guided by a mentor and gain practical experience during the 10-month internship/fellowship experience at a Budapest-based host institution (Hungarian think tank, NGO, academic institution, government agency, parliamentary office, etc.) corresponding with their own participants academic or professional fields.</p>
+<p style="text-align: justify;"><b>TEACH</b>. Fellows have an opportunity to work out teaching plans for lectures, courses and workshops for BA students of specialized training programs in Mathias Corvinus Collegium (MCC), and for MA students of the MCC Leadership Academy as well as for the participants of the postgraduate programs (e.g. MCC Women Public Leadership Program, Transylvanian Political School, Subcarpathian Public Leadership Program).</p>
+<p style="text-align: justify;"><b>LEARN. </b>The program also features <b>thematic seminars</b> on the history of Hungary, Hungarian democratic traditions, the post-communist legacy in CEE, Hungary’s foreign policy orientations, Hungarian cultural geography, US-Hungary and EU-Hungary relations, and current human rights issues. The program also includes monthly organized <b>field trips</b> to neighboring countries in the Carpathian Basin and cities in the countryside of Hungary to better understand the regional differences and dynamics within Hungary, the Visegrád countries, and the Carpathian basin. Fellows also are enrolled in a basic <b>Hungarian language course </b>to support their cultural immersion process.</p>
+<p style="text-align: justify;"><b>NETWORK. </b>The program holds <b>regular discussions </b>with practitioners, area experts, scholars and business leaders allowing the fellows to refine their leadership skills, advance their professional development, and deepen their economic, political, historical and cultural understanding of Central and Eastern Europe. Continuous <b>mentoring</b> is provided for fellows to help set realistic personal goals, research and/or teaching plans, as well as to develop strong personal connections with key individuals in their respective profession or field of study. Upon completion of the program, participants are integrated into HF’s alumni activities in Washington and Budapest and will be invited back to Hungary to participate in MCC-organized events.</p>
+<h3 style="text-align: justify;"><b>Eligibility and Application Information</b></h3>
+<p style="text-align: justify;">The <b>Budapest Fellowship Program</b>, is open for two categories of applicants:</p>
+<p style="text-align: justify;">–       <b>Junior Fellows: </b>senior graduate students</p>
+<p style="text-align: justify;">–       <b>Senior Fellows</b>: post-doctoral researchers and early career professionals</p>
+<p style="text-align: justify;"><b>All applicants must: </b></p>
+<ul style="text-align: justify;">
+<li>Be US citizens,</li>
+<li>Have a research interest in Central and Eastern Europe,</li>
+<li>Have outstanding research and academic credentials,</li>
+<li>Have demonstrated leadership potential,</li>
+<li>Develop a research plan specifically tailored to Hungary focusing on one of the following areas: economic development, human rights, foreign and defense policy, energy security, public diplomacy, EU-Hungary relations, US-Hungary relations, the history and legacy of communism in Hungary, contemporary Hungarian society and the neighboring countries.</li>
+</ul>
+<p style="text-align: justify;">Questions regarding the program or the application process may be directed to <a href="mailto:hf@hungaryfoundation.org">hf@hungaryfoundation.org</a></p>
+<p style="text-align: justify;">
+<p style="text-align: justify;"><a href="https://www.hungaryfoundation.org/call-for-applications-budapest-fellowship-program-2024-2025/">Click here for the current application page. </a></p></div>
+			</div><div class="et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><div class="et_pb_column et_pb_column_4_4 et_pb_column_1_tb_body et_pb_css_mix_blend_mode_passthrough et-last-child"></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<h1 class="entry-title"></h1>
+<h1 class="entry-title"></h1>
+<h1 class="entry-title"></h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_1">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_1  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div id="Latest" class="et_pb_module et_pb_text et_pb_text_3  et_pb_text_align_left et_pb_bg_layout_dark">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2>Latest news about Budapest Fellowship Program:</h2></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_2 et_pb_equal_columns">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_2  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_blog_0 et_animated et_clickable et_pb_blog_grid_wrapper et_pb_bg_layout_light">
+					<div class="et_pb_blog_grid clearfix  et_pb_text_align_center">
+					
+					
+					
+					
+					<div class="et_pb_ajax_pagination_container">
+						<div class="et_pb_salvattore_content" data-columns>
+			<article id="post-34430" class="et_pb_post clearfix et_pb_blog_item_0_0 post-34430 post type-post status-publish format-standard has-post-thumbnail hentry category-budapest-fellowship-program category-news">
+
+				<div class="et_pb_image_container"><a href="https://www.hungaryfoundation.org/budapest-fellowship-program-discover-transylvania/" class="entry-featured-image-url"><img decoding="async" src="https://www.hungaryfoundation.org/wp-content/uploads/2025/02/Budapest_Fellowship_Program_Discover_Transylvania_2025_16-400x250.jpg" alt="Budapest Fellowship Program &#8211; Discover Transylvania" class="" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2025/02/Budapest_Fellowship_Program_Discover_Transylvania_2025_16.jpg 479w, https://www.hungaryfoundation.org/wp-content/uploads/2025/02/Budapest_Fellowship_Program_Discover_Transylvania_2025_16-400x250.jpg 480w " sizes="(max-width:479px) 479px, 100vw "  width="400" height="250" /></a></div>
+														<h2 class="entry-title">
+													<a href="https://www.hungaryfoundation.org/budapest-fellowship-program-discover-transylvania/">Budapest Fellowship Program &#8211; Discover Transylvania</a>
+											</h2>
+				
+					<p class="post-meta"><span class="published">Feb 3, 2025</span></p><div class="post-content"><div class="post-content-inner"><p>&nbsp; January 15-20, Budapest Fellowship Program participants embarked on a study trip to Transylvania. During the six-day journey, the fellows explored Marosvásárhely (Târgu Mureș), a city known for its vibrant Hungarian cultural heritage,...</p>
+</div><a href="https://www.hungaryfoundation.org/budapest-fellowship-program-discover-transylvania/" class="more-link">read more</a></div>			
+			</article>
+				
+			<article id="post-33842" class="et_pb_post clearfix et_pb_blog_item_0_1 post-33842 post type-post status-publish format-standard has-post-thumbnail hentry category-budapest-fellowship-program category-news">
+
+				<div class="et_pb_image_container"><a href="https://www.hungaryfoundation.org/introducing-helen-roy-budapest-fellowship-participant/" class="entry-featured-image-url"><img decoding="async" src="https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Helen-Roy-BFP-Participant-01-400x250.jpg" alt="Introducing Helen Roy, Budapest Fellowship Participant" class="" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Helen-Roy-BFP-Participant-01-scaled.jpg 479w, https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Helen-Roy-BFP-Participant-01-400x250.jpg 480w " sizes="(max-width:479px) 479px, 100vw "  width="400" height="250" /></a></div>
+														<h2 class="entry-title">
+													<a href="https://www.hungaryfoundation.org/introducing-helen-roy-budapest-fellowship-participant/">Introducing Helen Roy, Budapest Fellowship Participant</a>
+											</h2>
+				
+					<p class="post-meta"><span class="published">Oct 17, 2024</span></p><div class="post-content"><div class="post-content-inner"><p>Helen Roy is a mother and writer, focusing on family policy, women's issues, and culture. She graduated magna cum laude with a degree in Chinese Language from Wofford College as a Phi Beta Kappa. Helen earned a Masters in Statecraft and National...</p>
+</div><a href="https://www.hungaryfoundation.org/introducing-helen-roy-budapest-fellowship-participant/" class="more-link">read more</a></div>			
+			</article>
+				
+			<article id="post-33786" class="et_pb_post clearfix et_pb_blog_item_0_2 post-33786 post type-post status-publish format-standard has-post-thumbnail hentry category-budapest-fellowship-program category-news">
+
+				<div class="et_pb_image_container"><a href="https://www.hungaryfoundation.org/meet-daniel-whitehead-budapest-fellowship-program-participant/" class="entry-featured-image-url"><img decoding="async" src="https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Daniel-Whitehead-BFP-Participant-02-400x250.jpg" alt="Meet Daniel Whitehead, Budapest Fellowship Program Participant" class="" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Daniel-Whitehead-BFP-Participant-02-scaled.jpg 479w, https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Daniel-Whitehead-BFP-Participant-02-400x250.jpg 480w " sizes="(max-width:479px) 479px, 100vw "  width="400" height="250" /></a></div>
+														<h2 class="entry-title">
+													<a href="https://www.hungaryfoundation.org/meet-daniel-whitehead-budapest-fellowship-program-participant/">Meet Daniel Whitehead, Budapest Fellowship Program Participant</a>
+											</h2>
+				
+					<p class="post-meta"><span class="published">Oct 14, 2024</span></p><div class="post-content"><div class="post-content-inner"><p>Daniel Whitehead is a former Assistant General Counsel to Governor Ron DeSantis. He clerked for two federal appellate courts, the U.S. Court of Appeals for the Seventh Circuit for Judge Daniel Manion and the U.S. Court of Appeals for Veterans...</p>
+</div><a href="https://www.hungaryfoundation.org/meet-daniel-whitehead-budapest-fellowship-program-participant/" class="more-link">read more</a></div>			
+			</article>
+				</div>
+					</div>
+					</div> 
+				</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_3">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_3  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div id="Staff" class="et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h1 style="text-align: center;"><strong>PROGRAM STAFF</strong></h1></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_4">
+				<div class="et_pb_column et_pb_column_1_2 et_pb_column_4  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_team_member et_pb_team_member_0 clearfix  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_team_member_image et-waypoint et_pb_animation_off"><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Noemi-Palfalvi-BFP-MCC.jpg" alt="Noémi Pálfalvi" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Noemi-Palfalvi-BFP-MCC.jpg 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Noemi-Palfalvi-BFP-MCC-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Noemi-Palfalvi-BFP-MCC-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-33778" /></div>
+				<div class="et_pb_team_member_description">
+					<h4 class="et_pb_module_header">Noémi Pálfalvi</h4>
+					<p class="et_pb_member_position">Director of International Relations at MCC</p>
+					<div><p style="text-align: left;">palfalvi.noemi@mcc.hu</p></div>
+					
+				</div>
+			</div><div class="et_pb_module et_pb_team_member et_pb_team_member_1 clearfix  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_team_member_image et-waypoint et_pb_animation_off"><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Zita-Boriska-Polet-BFP-MCC.jpg" alt="Zita Boriska Polet" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Zita-Boriska-Polet-BFP-MCC.jpg 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Zita-Boriska-Polet-BFP-MCC-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Zita-Boriska-Polet-BFP-MCC-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-33779" /></div>
+				<div class="et_pb_team_member_description">
+					<h4 class="et_pb_module_header">Zita Boriska Polet</h4>
+					<p class="et_pb_member_position">International Relations Coordinator at MCC</p>
+					<div><p style="text-align: left;">polet.zita@mcc.hu</p></div>
+					
+				</div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_5  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_team_member et_pb_team_member_2 clearfix  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_team_member_image et-waypoint et_pb_animation_off"><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Laszlo-Krisztian-BFP-MCC.jpg" alt="Krisztián László" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Laszlo-Krisztian-BFP-MCC.jpg 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Laszlo-Krisztian-BFP-MCC-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Laszlo-Krisztian-BFP-MCC-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-33777" /></div>
+				<div class="et_pb_team_member_description">
+					<h4 class="et_pb_module_header">Krisztián László</h4>
+					<p class="et_pb_member_position">Senior International Relations Coordinator at MCC</p>
+					<div><p>laszlo.krisztian@mcc.hu</p></div>
+					
+				</div>
+			</div><div class="et_pb_module et_pb_team_member et_pb_team_member_3 clearfix  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_team_member_image et-waypoint et_pb_animation_off"><img decoding="async" src="https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Júlia-Hajas-Janka-BFP-MCC.jpg" alt="Júlia Hajas-Janka" /></div>
+				<div class="et_pb_team_member_description">
+					<h4 class="et_pb_module_header">Júlia Hajas-Janka</h4>
+					<p class="et_pb_member_position">Budapest Fellowship Program Associate</p>
+					<div><p style="text-align: left;">julia@budapestfellowship.org</p></div>
+					
+				</div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_5">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_6  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_5  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3 style="text-align: center;"><strong>Publications by 2024/25</strong><strong> Budapest Fellowship Program Participants</strong></h3></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_6">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_7  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_0">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Helen-Roy-BFP-Participant-Landing.jpg" alt="" title="Helen Roy BFP Participant Landing" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Helen-Roy-BFP-Participant-Landing.jpg 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Helen-Roy-BFP-Participant-Landing-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Helen-Roy-BFP-Participant-Landing-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-33908" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_8  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_6  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong></strong></h3>
+<h5 class="&#091; c-PostTitle__title &#093;"></h5>
+<h3><strong>Helen Roy<br /></strong></h3>
+<h5 class="widget__headline h1"><a href="https://www.theblaze.com/align/what-moving-my-family-to-budapest-has-taught-me-about-america" target="_blank" rel="noopener"><span class="widget__headline-text custom-post-headline" data-type="text">What moving my family to Budapest has taught me about America</span> &#8211; Blaze Media</a></h5>
+<h5 class="post-title unpublished"><a href="https://helenroy.substack.com/p/the-aesthetes-guide-to-budapest?triedRedirect=true" target="_blank" rel="noopener">embodied tourism in a disembodied age &#8211; Substack.com</a></h5>
+<h5 class="post-title unpublished"><a href="https://helenroy.substack.com/p/ushas-awesome-opportunity?publication_id=1767131&amp;post_id=155548105&amp;triggerShare=true&amp;isFreemail=true&amp;r=38pxmh&amp;triedRedirect=true" target="_blank" rel="noopener">Usha&#8217;s Awesome Opportunity &#8211; Substack.com</a></h5>
+<h5 class="post-title unpublished"><a href="https://helenroy.substack.com/p/chestnut-and-cherry?publication_id=1767131&amp;post_id=157216813&amp;isFreemail=true&amp;r=38pxmh&amp;triedRedirect=true" target="_blank" rel="noopener">Chestnut &amp; Cherry / culinary idiosyncrasies of the Carpathian Basin &#8211; Substack.com</a></h5></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_7">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_9  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_1">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Matthew-Roy-BFP-Landing.jpg" alt="" title="Matthew Roy BFP Landing" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Matthew-Roy-BFP-Landing.jpg 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Matthew-Roy-BFP-Landing-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Matthew-Roy-BFP-Landing-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-33851" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_10  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_7  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong></strong></h3>
+<h5 class="&#091; c-PostTitle__title &#093;"></h5>
+<h3><strong>Matthew Roy<br /></strong></h3>
+<h5><a href="https://www.realclearenergy.org/articles/2024/10/22/both_green_dreams_and_real_needs_pose_challenges_for_energy_future_1066956.html" target="_blank" rel="noopener">Both Green Dreams and Real Needs Pose Challenges for Energy Future &#8211; RealClear Energy</a></h5>
+<h5><a href="https://www.realclearenergy.org/articles/2024/10/22/both_green_dreams_and_real_needs_pose_challenges_for_energy_future_1066956.html" target="_blank" rel="noopener"></a></h5>
+<h5><a href="https://www.realclearenergy.org/articles/2024/12/02/us_energy_dominance_a_key_to_trumps_peace_bid_1075812.html" target="_blank" rel="noopener">U.S. &#8220;Energy Dominance:&#8221; A Key to Trump&#8217;s Peace Bid</a><a href="https://www.realclearenergy.org/articles/2024/12/02/us_energy_dominance_a_key_to_trumps_peace_bid_1075812.html" target="_blank" rel="noopener"> &#8211; RealClear Energy</a></h5>
+<p>&nbsp;</p>
+<h5></h5></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_8">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_11  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_2">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Charles-Landing-BFP.jpg" alt="" title="Charles Landing BFP" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Charles-Landing-BFP.jpg 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Charles-Landing-BFP-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2024/09/Charles-Landing-BFP-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-33805" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_12  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_8  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong></strong></h3>
+<h5 class="&#091; c-PostTitle__title &#093;"></h5>
+<h3><strong>Charles Yockey</strong></h3>
+<h5 class="headline headline--single-fallback"><a href="https://nypost.com/2025/03/01/opinion/how-global-refuge-blurs-line-between-politics-and-philanthropy-and-why-it-should-retire-to-history/" target="_blank" rel="noopener">How Global Refuge blurs line between politics and philanthropy — and why it should retire to history &#8211; New York Post</a></h5>
+<h5></h5></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_9">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_13  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_3">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Daniel-Whitehead-BFP-Participant-Landing.jpg" alt="" title="Daniel Whitehead BFP Participant Landing" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Daniel-Whitehead-BFP-Participant-Landing.jpg 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Daniel-Whitehead-BFP-Participant-Landing-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Daniel-Whitehead-BFP-Participant-Landing-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-33870" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_14  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_9  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong></strong></h3>
+<h5 class="&#091; c-PostTitle__title &#093;"></h5>
+<h3><strong>Daniel Whitehead</strong></h3>
+<h5 class="post-title unpublished"><a href="https://thenewdigest.substack.com/p/securitization-a-solution-to-the" target="_blank" rel="noopener">Securitization: A Solution to the Migration Crisis in the United States &#8211; The New Digest</a></h5>
+<h5></h5></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_10">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_15  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_4">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Evelyn-Whitehead-BFP-Landing.jpg" alt="" title="Evelyn Whitehead BFP Landing" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Evelyn-Whitehead-BFP-Landing.jpg 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Evelyn-Whitehead-BFP-Landing-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2024/10/Evelyn-Whitehead-BFP-Landing-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-33824" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_16  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_10  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong></strong></h3>
+<h5 class="&#091; c-PostTitle__title &#093;"></h5>
+<h3><strong>Evelyn Whitehead</strong></h3>
+<h5><a data-sheets-formula-bar-text-link="https://evelynanne23.substack.com/p/the-music-of-budapest?publication_id=3008886&amp;r=38pxmh" data-sheets-formula-bar-text-style="font-size:13px;color:#1155cc;font-weight:normal;text-decoration:underline;font-family:'Times New Roman';font-style:normal;text-decoration-skip-ink:none;" href="https://evelynanne23.substack.com/p/the-music-of-budapest?publication_id=3008886&amp;r=38pxmh" target="_blank" rel="noopener">The Music of Budapest &#8211; Substack.com</a></h5>
+<h5><a href="https://t.e2ma.net/click/vvidqt/z6lqcpd/vn44nqc" target="_blank" rel="noopener">On Gratitude, Chandeliers, and Other Things That Glitter &#8211; Substack.com</a></h5>
+<h5><a href="https://evelynanne23.substack.com/p/december-and-its-delights?publication_id=3008886&amp;post_id=152678048&amp;isFreemail=true&amp;r=38pxmh&amp;triedRedirect=true" target="_blank" rel="noopener">December and its Delights &#8211; Substack.com</a></h5>
+<h5><a href="https://cne.news/article/4590-review-family-first-documentary-shows-why-it-is-important-to-honour-families" target="_blank" rel="noopener">Review: Family First documentary shows why it is important to honour families &#8211; Christian Network Europe</a></h5>
+<h5><a href="https://www.hungarianconservative.com/articles/opinion/jd-vance-prolife-america-family-policy-hungary-abortion/" target="_blank" rel="noopener">JD Vance and the Next Chapter for ProLife America &#8211; Hungarian Conservative</a></h5>
+<h5 class="post-title unpublished"><a href="https://evelynanne23.substack.com/p/good-hunting?publication_id=3008886&amp;post_id=158177484&amp;isFreemail=true&amp;r=38pxmh&amp;triedRedirect=true" target="_blank" rel="noopener">Good Hunting &#8211; Substack.com</a></h5></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_11">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_17  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_11  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3 style="text-align: center;"><strong>Publications by 2023/24</strong><strong> Budapest Fellowship Program Participants</strong></h3></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_12">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_18  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_5">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2023/10/Meg-Landing.jpg" alt="" title="Meg Hansen Budapest Fellowship Program Landing" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2023/10/Meg-Landing.jpg 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2023/10/Meg-Landing-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2023/10/Meg-Landing-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-32683" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_19  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_12  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong></strong></h3>
+<h5 class="&#091; c-PostTitle__title &#093;"></h5>
+<h3><strong>Meg Hansen<br /></strong></h3>
+<h5><a href="https://www.americanthinker.com/blog/2023/10/central_europe_turns_postliberal.html" target="_blank" rel="noopener">Central Europe turns postliberal &#8211; American Thinker</a></h5>
+<h5><a href="https://spectator.org/hungary-may-side-with-china-instead-of-the-west/">Hungary May Side With China Instead of the West &#8211; The American Spectator</a></h5>
+<h5><a href="https://www.takimag.com/article/brussels-shows-budapest-whos-boss/" target="_blank" rel="noopener">Brussels Shows Budapest Who’s Boss &#8211; Taki&#8217;s Magazine</a></h5>
+<h5><a data-sheets-formula-bar-text-link="https://www.hungarianconservative.com/articles/interview/statesmanship_aristo-populist_mcc_interview_john-burtka/" data-sheets-formula-bar-text-style="font-size:13px;color:#1155cc;font-weight:normal;text-decoration:underline;font-family:'Times New Roman';font-style:normal;text-decoration-skip-ink:none;" href="https://www.hungarianconservative.com/articles/interview/statesmanship_aristo-populist_mcc_interview_john-burtka/" target="_blank" rel="noopener">Cultivating a New Generation of ‘Aristo-Populist’ Statesmen — An Interview with John Burtka &#8211; Hungarian Conservative</a></h5>
+<h5><a href="https://www.takimag.com/article/brussels-shows-budapest-whos-boss/" target="_blank" rel="noopener"></a><a data-sheets-formula-bar-text-link="https://www.hungarianconservative.com/articles/opinion/whos-afraid-of-national-conservatism-in-europe/" data-sheets-formula-bar-text-style="font-size:13px;color:#1155cc;font-weight:normal;text-decoration:underline;font-family:'Times New Roman';font-style:normal;text-decoration-skip-ink:none;" href="https://www.hungarianconservative.com/articles/opinion/whos-afraid-of-national-conservatism-in-europe/" target="_blank" rel="noopener">Who’s Afraid of National Conservatism in Europe? &#8211; Hungarian Conservative</a></h5>
+<h5><a href="https://www.youtube.com/watch?v=bmoZ59cWBns" target="_blank" rel="noopener">&#8220;Utopian Quests v. Shoals of Reality&#8221; &#8211; Danube Institute</a></h5>
+<h5><a data-sheets-formula-bar-text-link="https://www.hungarianconservative.com/articles/opinion/whos-afraid-of-national-conservatism-in-europe/" data-sheets-formula-bar-text-style="font-size:13px;color:#1155cc;font-weight:normal;text-decoration:underline;font-family:'Times New Roman';font-style:normal;text-decoration-skip-ink:none;" href="https://www.hungarianconservative.com/articles/opinion/whos-afraid-of-national-conservatism-in-europe/" target="_blank" rel="noopener"></a><a href="https://www.nationalreview.com/2024/07/europes-ev-obsession-plays-right-into-chinas-hands/" target="_blank" rel="noopener">Europe’s EV Obsession Plays Right into China’s Hands &#8211; National Review</a></h5></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_13">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_20  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_6">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2023/09/TPM-Landing.jpg" alt="" title="Budapest Fellowship Program 2023 Thomas Paul Moran" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2023/09/TPM-Landing.jpg 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2023/09/TPM-Landing-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2023/09/TPM-Landing-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-32578" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_21  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_13  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong></strong></h3>
+<h5 class="&#091; c-PostTitle__title &#093;"></h5>
+<h3><strong>Thomas Paul Moran<br /></strong></h3>
+<h5><a href="https://www.hungarianconservative.com/articles/opinion/israel_hungary_history_hungarian-jews_lessons_haven_allies_friends/" target="_blank" rel="noopener"><strong>Israel and Hungary: Two Nations United &#8211; Hungarian Conservative</strong></a></h5>
+<h5><a href="https://ifjusagkutatointezet.hu/en/kiadvany/youth-and-generation-studies-volume-1-issue-1-2024" target="_blank" rel="noopener"><strong>The Impact of Crises on Youth &#8211; </strong></a><strong><a href="https://ifjusagkutatointezet.hu/en/kiadvany/youth-and-generation-studies-volume-1-issue-1-2024" target="_blank" rel="noopener">Youth and Generation Studies</a><br /></strong></h5>
+<h5><a href="https://europeanconservative.com/articles/essay/emthe-door-em-friendship-or-toxic-relationship/" target="_blank" rel="noopener"><strong>The Door: Friendship or Toxic Relationship? &#8211; </strong><strong>The European Conservative</strong></a></h5>
+<h5><a href="https://www.hungarianconservative.com/articles/culture_society/anna-edes_hungarian-novel_case-study_mental-illness_society/" target="_blank" rel="noopener"><strong>Anna Édes: A Case Study of Mental Illness from the Past and for the Present &#8211; </strong><strong></strong><strong>Hungarian Conservative</strong></a></h5></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_14">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_22  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_7">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2023/10/JWR-Landing.jpg" alt="" title="John Wesley Reid Budapest Fellowship Program" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2023/10/JWR-Landing.jpg 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2023/10/JWR-Landing-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2023/10/JWR-Landing-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-32653" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_23  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_14  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong></strong></h3>
+<h5 class="&#091; c-PostTitle__title &#093;"></h5>
+<h3><strong>John Wesley Reid</strong></h3>
+<h5><a href="https://www.dailysignal.com/2024/04/04/in-hungary-embrace-of-free-speech-echoes-americas-roots/" target="_blank" rel="noopener"><strong>Hungary’s Wariness of Forced Speech Reflects Post-Communist Ideals &#8211; The Daily Signal</strong></a></h5>
+<h5><a href="https://www2.cbn.com/news/world/analysis-natcon-brussels-sprouts-outrage-liberal-leaders-waffle-free-speech" target="_blank" rel="noopener"><strong><a data-sheets-formula-bar-text-link="https://www2.cbn.com/news/world/analysis-natcon-brussels-sprouts-outrage-liberal-leaders-waffle-free-speech" class="waffle-rich-text-link" data-sheets-formula-bar-text-style="font-size:13px;color:#1155cc;font-weight:normal;text-decoration:underline;font-family:'Times New Roman';font-style:normal;text-decoration-skip-ink:none;">ANALYSIS: NatCon in Brussels Sprouts Outrage, Liberal Leaders Waffle on Free Speech</a> &#8211; CBN</strong></a></h5>
+<h5><a href="https://www2.cbn.com/news/world/analysis-natcon-brussels-sprouts-outrage-liberal-leaders-waffle-free-speech" target="_blank" rel="noopener"><strong></strong></a><strong><a data-sheets-formula-bar-text-link="https://constitutionaldiscourse.com/liberty-vs-dignity-a-euro-american-comparison-of-two-free-speech-baselines/" data-sheets-formula-bar-text-style="font-size:13px;color:#1155cc;font-weight:normal;text-decoration:underline;font-family:'Times New Roman';font-style:normal;text-decoration-skip-ink:none;" href="https://constitutionaldiscourse.com/liberty-vs-dignity-a-euro-american-comparison-of-two-free-speech-baselines/" target="_blank" rel="noopener">Liberty vs. Dignity? A Euro-American Comparison of Two Free Speech Baselines &#8211; Constitutional Discourse</a><br /></strong></h5></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_15">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_24  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_8">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2023/10/James-Landing.jpg" alt="" title="James Carrabino Budapest Fellowship Program Landing" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2023/10/James-Landing.jpg 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2023/10/James-Landing-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2023/10/James-Landing-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-32682" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_25  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_15  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong></strong></h3>
+<h5 class="&#091; c-PostTitle__title &#093;"></h5>
+<h3><strong>James Carrabino</strong></h3>
+<h5></h5></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_16">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_26  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_16  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3 style="text-align: center;"><strong>Publications by 2022/23 Budapest Fellowship Program Participants</strong></h3></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_17">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_27  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_9">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2022/10/395E6295-E9AA-47B3-ABDE-5D4D08BFF873.png" alt="" title="Luke Larson BFP Fellow" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2022/10/395E6295-E9AA-47B3-ABDE-5D4D08BFF873.png 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2022/10/395E6295-E9AA-47B3-ABDE-5D4D08BFF873-980x980.png 980w, https://www.hungaryfoundation.org/wp-content/uploads/2022/10/395E6295-E9AA-47B3-ABDE-5D4D08BFF873-480x480.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-31669" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_28  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_17  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong></strong></h3>
+<h5 class="&#091; c-PostTitle__title &#093;"></h5>
+<h3><strong>Luke Larson</strong></h3>
+<h5 class="&#091; c-PostTitle__title &#093;"><a href="https://www.theamericanconservative.com/what-hungary-can-teach-post-roe-america/" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.theamericanconservative.com/what-hungary-can-teach-post-roe-america/&amp;source=gmail&amp;ust=1668139740834000&amp;usg=AOvVaw0sDghtiv-gupgKxo5xPTb_" rel="noopener">What Hungary Can Teach Post-Roe America</a> &#8211; <a href="https://www.theamericanconservative.com/what-hungary-can-teach-post-roe-america/"><span>The American Conservative</span></a><span></span></h5>
+<h5 class="&#091; c-PostTitle__title &#093;"><a href="https://www.theamericanconservative.com/what-hungary-can-teach-post-roe-america/" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.theamericanconservative.com/what-hungary-can-teach-post-roe-america/&amp;source=gmail&amp;ust=1668139740834000&amp;usg=AOvVaw0sDghtiv-gupgKxo5xPTb_" rel="noopener"></a><a href="https://www.youtube.com/watch?v=ZFR3NzYHvUo" target="_blank" rel="noopener">TV interview: insights on the upcoming Danish elections.- <span>M1 Híradó</span></a></h5>
+<h5 class="&#091; c-PostTitle__title &#093;"><a href="https://americanmind.org/salvo/hungary-on-the-cutting-edge/" target="_blank" rel="noopener">Hungary on the Cutting Edge &#8211; <span>The American Mind</span></a></h5>
+<h5><a href="https://spectator.org/hungary-and-the-nordic-countries-five-ways-the-darlings-of-the-american-right-and-left-might-not-be-so-different-after-all/" target="_blank" rel="noopener"><span>Hungary and the Nordic Countries: Five Ways the Darlings of the American Right and Left Might Not Be So Different After All &#8211; The American Spectator</span></a></h5></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_18">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_29  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_10">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2022/10/8F386C87-6EF3-4B00-ABD7-BBD553FC618C.png" alt="" title="Bence Szechenyi BFP Fellow" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2022/10/8F386C87-6EF3-4B00-ABD7-BBD553FC618C.png 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2022/10/8F386C87-6EF3-4B00-ABD7-BBD553FC618C-980x980.png 980w, https://www.hungaryfoundation.org/wp-content/uploads/2022/10/8F386C87-6EF3-4B00-ABD7-BBD553FC618C-480x480.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-31668" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_30  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_18  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><span>Bence Szechenyi</span></h3>
+<h5 class="&#091; c-PostTitle__title &#093;"><a href="https://hungarianreview.com/article/a-conversation-with-myself/" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://hungarianreview.com/article/a-conversation-with-myself/&amp;source=gmail&amp;ust=1668139740834000&amp;usg=AOvVaw1ZAAelnZYZAb2-PkkjsAou" rel="noopener">A conversation with myself</a><a href="https://www.theamericanconservative.com/what-hungary-can-teach-post-roe-america/" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.theamericanconservative.com/what-hungary-can-teach-post-roe-america/&amp;source=gmail&amp;ust=1668139740834000&amp;usg=AOvVaw0sDghtiv-gupgKxo5xPTb_" rel="noopener"> </a> &#8211; <span>Hungarian Review</span></h5>
+<h5 class="&#091; c-PostTitle__title &#093;"><a href="https://corvinak.hu/en/velemeny/2022/11/06/hungarian-ancestry-a-shared-starting-point" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://corvinak.hu/en/velemeny/2022/11/06/hungarian-ancestry-a-shared-starting-point&amp;source=gmail&amp;ust=1668139740834000&amp;usg=AOvVaw0OdTTwKJwbwTXE3zoFgGSQ" rel="noopener">Hungarian ancestry: a shared starting point</a> &#8211; <a href="https://corvinak.hu/en/velemeny/2022/11/06/hungarian-ancestry-a-shared-starting-point"><span>MCC Corvinak Blog</span></a></h5>
+<h5 class="&#091; c-PostTitle__title &#093;"><a href="https://vsquare.org/untold-effects-of-the-war-in-eastern-slovakia-how-roma-communities-are-left-behind/" target="_blank" rel="noopener">Untold Effects of the War in Eastern Slovakia: How Roma Communities Are Left Behind</a> &#8211; <span>VSquare</span></h5>
+<p><span></span></p>
+<p><span></span></p>
+<p><span></span></p></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_19">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_31  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_11">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2022/10/8A541A9D-FAB3-4283-A7B3-B3F4DA94043C.png" alt="" title="Logan West BFP Fellow" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2022/10/8A541A9D-FAB3-4283-A7B3-B3F4DA94043C.png 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2022/10/8A541A9D-FAB3-4283-A7B3-B3F4DA94043C-980x980.png 980w, https://www.hungaryfoundation.org/wp-content/uploads/2022/10/8A541A9D-FAB3-4283-A7B3-B3F4DA94043C-480x480.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-31670" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_32  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_19  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><span>Logan West</span><span></span></h3>
+<h5 class="elementor-heading-title elementor-size-default"><a href="https://europeanconservative.com/articles/commentary/a-winter-of-discontent" target="_blank" rel="noopener">A Winter of Discontent: The Coming Cold Season May Trigger a Spring of Political Change in European Elections &#8211; European Conservative</a></h5>
+<h5 class="elementor-heading-title elementor-size-default"><a href="https://www.hungarianconservative.com/articles/opinion/the-european-unions-push-to-control-hungary-may-drive-it-away/" target="_blank" rel="noopener">The European Union’s Push To Control Hungary May Drive It Away &#8211; Hungarian Conservative</a></h5>
+<h5><a href="https://www.hungarianconservative.com/articles/current/hungarian-aid-turkey-syria-earthquake-2023-dangerous/?_thumbnail_id=7795" target="_blank" rel="noopener"><span data-sheets-formula-bar-text-style="font-size:13px;color:#000000;font-weight:normal;text-decoration:none;font-family:'Arial';font-style:normal;text-decoration-skip-ink:none;">Continued Hungarian Aid to Turkey is Sorely Needed, But Dangerous Obstacles Lay Ahead</span> &#8211; Hungarian Conservative</a></h5>
+<p><span></span></p></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_20">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_33  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_12">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2022/10/2A2C22A1-D294-4484-B2E3-28095FEE4C9D.png" alt="" title="Tom Pearson BFP Fellow" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2022/10/2A2C22A1-D294-4484-B2E3-28095FEE4C9D.png 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2022/10/2A2C22A1-D294-4484-B2E3-28095FEE4C9D-980x980.png 980w, https://www.hungaryfoundation.org/wp-content/uploads/2022/10/2A2C22A1-D294-4484-B2E3-28095FEE4C9D-480x480.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-31667" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_34  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_20  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><span>Tom Pearson</span><span></span></h3>
+<p><span></span></p></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_21">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_35  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div id="Alumni" class="et_pb_module et_pb_text et_pb_text_21  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3 style="text-align: center;"><strong>Publications by 2021 Budapest Fellowship Program Participants</strong></h3></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_22">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_36  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_13">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2021/11/Kelli-Landing.jpg" alt="" title="Kelli Buzzard Landing" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2021/11/Kelli-Landing.jpg 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2021/11/Kelli-Landing-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2021/11/Kelli-Landing-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-30084" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_37  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_22  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong>Kelli Buzzard</strong></h3>
+<h5 class="&#091; c-PostTitle__title &#093;"><a href="https://www.hungarianconservative.com/articles/culture-society/boosting-christian-belief/"><em><strong>Boosting Christian Belief</strong></em></a> &#8211; Hungarian Conservative</h5>
+<h5 class="bell-name-num"><a href="https://americanmind.org/features/parents-rights/from-kids-to-comrades/"><em>From Kids to Comrades</em></a> &#8211; The American Mind</h5>
+<h5 class="bell-name-num"><a href="https://americanmind.org/features/no-new-normal/life-in-the-real-world/" target="_blank" rel="noopener"><em><strong>Life in the Real World</strong></em></a> &#8211; The American Mind</h5>
+<h5><em><a data-sheets-formula-bar-text-link="https://elamerican.com/hungary-florida-are-protecting-children/" data-sheets-formula-bar-text-style="font-size:13px;color:#1155cc;font-weight:normal;text-decoration:underline;font-family:'Arial';font-style:normal;text-decoration-skip-ink:none;" href="https://elamerican.com/hungary-florida-are-protecting-children/" target="_blank" rel="noopener">Hungary and Florida Lead the Way in Protecting Children and Parental Rights</a> &#8211;</em> El American</h5>
+<h5><a href="https://www.hungarianconservative.com/articles/culture-society/the-return-of-hungarys-holy-crown/" target="_blank" rel="noopener"><em>The Return of Hungary’s Holy Crown</em></a> &#8211; Hungarian Conservative</h5>
+<h5><a href="https://americanmind.org/salvo/based-hungarians/" target="_blank" rel="noopener"><em>Based Hungarians</em></a> &#8211; The American Mind</h5>
+<h5 class="headline"><a href="https://www.crisismagazine.com/2022/abortions-bed-of-lies" target="_blank" rel="noopener"><strong><em>Abortion’s Bed of Lies</em></strong></a> &#8211; Crisis Magazine</h5>
+<h5 class="entry-title"><a href="https://rmx.news/hungary/why-viktor-orban-is-a-thorn-in-the-side-of-the-liberal-elite/" target="_blank" rel="noopener"><em><strong>Why Viktor Orbán is a thorn in the side of the liberal elite</strong></em></a> &#8211; ReMix</h5></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_23">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_38  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_14">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2021/11/Michael-Van-Ginkel-BFP-Landing.jpg" alt="" title="Michael Van Ginkel BFP Landing" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2021/11/Michael-Van-Ginkel-BFP-Landing.jpg 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2021/11/Michael-Van-Ginkel-BFP-Landing-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2021/11/Michael-Van-Ginkel-BFP-Landing-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-30298" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_39  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_23  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong>Michael van Ginkel</strong></h3>
+<h5><a href="https://www.realcleardefense.com/articles/2021/12/18/reconciling_the_hungarian-ukrainian_schism_808516.html"><strong>Reconciling the Hungarian-Ukrainian Schism</strong></a> &#8211; RealClear Defense</h5>
+<h5 class="entry-title"><a href="https://www.eurasiareview.com/17012022-opioid-smuggling-in-the-black-sea-analysis/"><em><strong>Opioid Smuggling In The Black Sea – Analysis</strong></em></a> &#8211; Eurasian Review</h5>
+<h5><a href="https://www.europeum.org/en/articles/detail/4692/policy-brief-black-sea-synergy-adopting-a-holistic-approach-to-maritime-security"><em><strong>Policy Brief: Black Sea Synergy: Adopting a Holistic Approach to Maritime Security</strong></em></a> &#8211; Europeum</h5>
+<h5 class="title-lg"><a href="https://thefederalist.com/2022/06/21/if-the-supreme-court-overturns-roe-the-united-states-will-still-have-looser-abortion-laws-than-europe/" target="_blank" rel="noopener"><em><strong></strong></em></a></h5></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_24">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_40  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_15">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2021/11/MOS-Landing.jpg" alt="" title="Michael O&#039;Shea Landing" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2021/11/MOS-Landing.jpg 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2021/11/MOS-Landing-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2021/11/MOS-Landing-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-30245" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_41  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_24  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong>Michael O&#8217;Shea</strong></h3>
+<h4 class="&#091; c-PostTitle__category &#093;"></h4>
+<div class="&#091; c-PostTitle__title-container &#093;">
+<h5 class="&#091; c-PostTitle__title &#093;"><a href="https://www.hungarianconservative.com/articles/current/pope-franciss-missed-opportunity-in-hungary/"><em><strong>Pope Francis’s Missed Opportunity in Hungary</strong></em></a> &#8211; Hungarian Conservative</h5>
+<h5 class="sc_layouts_title_caption"><a href="https://visegradpost.com/en/2021/10/28/the-czech-elections-implications-for-visegrad-and-the-eu/"><em><strong>The Czech Elections: Implications for Visegrád and the EU</strong></em></a> &#8211; Visegrád Post</h5>
+<h5 class="&#091; c-PostTitle__title &#093;"><a href="https://europeanconservative.com/articles/commentary/hungarian-friends-stick-with-us/"><em><strong>Hungarian Friends, Stick with Us!</strong></em></a> &#8211; The European Conservative</h5>
+<h5 class="ArticlePage-headline" itemprop="headline"><a href="https://www.washingtonexaminer.com/opinion/time-for-the-state-department-to-stop-ignoring-hungary"><em><strong>Time for the State Department to stop ignoring Hungary</strong></em></a> &#8211; Washington Examiner</h5>
+<h5 class="&#091; c-PostTitle__title &#093;"><a href="‘We%20are exiting the world where a single superpower calls the shots’ – Interview with Abishur Prakash"><em><strong>‘We are exiting the world where a single superpower calls the shots’ – Interview with Abishur Prakash</strong></em></a> &#8211; Hungarian Conservative</h5>
+<h5 class="title"><em><strong><a href="https://www.newsweek.com/foreigners-guide-hungarian-elections-opinion-1684547" target="_blank" rel="noopener">A Foreigner&#8217;s Guide to the Hungarian Elections | Opinion</a> &#8211; </strong></em><strong>Newsweek</strong><em><strong><br /></strong></em></h5>
+<h5 class="title-lg"><a href="https://thefederalist.com/2022/04/07/white-collar-support-for-military-action-in-ukraine-is-deeply-concerning/"><strong><em>The People Most Willing To Risk Nuclear War With Russia Are Those Least Likely To Fight It</em></strong></a> &#8211; The Federalist</h5>
+<h5><a href="https://thefederalist.com/2022/03/10/western-leaders-who-cry-undemocratic-and-authoritarian-should-look-in-the-mirror/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=western-leaders-who-cry-undemocratic-and-authoritarian-should-look-in-the-mirror&amp;utm_term=2022-03-10" target="_blank" rel="noopener"><em>Western Leaders Who Cry ‘Undemocratic’ And ‘Authoritarian’ Should Look In The Mirror</em></a> &#8211; The Federalist</h5>
+<h5><a href="https://thefederalist.com/2022/03/10/western-leaders-who-cry-undemocratic-and-authoritarian-should-look-in-the-mirror/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=western-leaders-who-cry-undemocratic-and-authoritarian-should-look-in-the-mirror&amp;utm_term=2022-03-10" target="_blank" rel="noopener"><em></em></a><em><a data-sheets-formula-bar-text-link="https://www.newsweek.com/time-reset-us-hungary-relations-opinion-1706521" data-sheets-formula-bar-text-style="font-size:13px;color:#1155cc;font-weight:normal;text-decoration:underline;font-family:'Arial';font-style:normal;text-decoration-skip-ink:none;" href="https://www.newsweek.com/time-reset-us-hungary-relations-opinion-1706521">Time to Reset U.S.-Hungary Relations</a></em> &#8211; Newsweek</h5>
+<h5 class="title-lg"><a href="https://thefederalist.com/2022/06/21/if-the-supreme-court-overturns-roe-the-united-states-will-still-have-looser-abortion-laws-than-europe/" target="_blank" rel="noopener"><em><strong>If The Supreme Court Overturns Roe, The United States Will Still Have Looser Abortion Laws Than Europe</strong></em></a> &#8211; The Federalist</h5>
+<h5 class="&#091; c-PostTitle__title &#093;"><a href="https://europeanconservative.com/articles/essay/playgrounds-parallel-societies/" target="_blank" rel="noopener"><em><strong>Playgrounds &amp; Parallel Societies: </strong></em></a><br /><a href="https://europeanconservative.com/articles/essay/playgrounds-parallel-societies/" target="_blank" rel="noopener"><em><strong>My Journey to Sweden’s Most Notorious ‘No-Go’ Zone in Malmö</strong></em></a> &#8211; The European Conservative</h5>
+</div></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_25">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_42  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_16">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="1080" height="1080" src="https://www.hungaryfoundation.org/wp-content/uploads/2021/11/Tate-Sanders-Landing.jpg" alt="" title="BFP Tate Sanders Landing" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2021/11/Tate-Sanders-Landing.jpg 1080w, https://www.hungaryfoundation.org/wp-content/uploads/2021/11/Tate-Sanders-Landing-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2021/11/Tate-Sanders-Landing-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw" class="wp-image-30277" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_43  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_25  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong>Tate Sanders<br /></strong></h3>
+<div class="&#091; c-PostTitle__title-container &#093;">
+<h5 class="&#091; c-PostTitle__title &#093;"><a href="https://www.hungarianconservative.com/articles/culture-society/march-15th-1848-and-july-4th-1776-reminders-from-hungarian-and-american-desires-for-independence/"><em>15 March 1848 and 4 July 1776: Reminders of Hungarian and American Desires for Independence</em></a> &#8211; Hungarian Conservative</h5>
+<div class="&#091; c-PostTitle__text &#093;">
+<div class="&#091; c-PostTitle__text__main &#093;">
+<div class="&#091; c-PostTitle__title-container &#093;">
+<h5 class="&#091; c-PostTitle__title &#093;"><a href="https://www.hungarianconservative.com/articles/current/aukus-a-potential-boon-for-central-and-eastern-europe/" target="_blank" rel="noopener"><em><strong>AUKUS: A Potential Boon for Central and Eastern Europe?</strong></em></a> &#8211; Hungarian Conservative</h5>
+</div>
+</div>
+</div>
+</div></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_26">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_44  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div id="publications" class="et_pb_module et_pb_text et_pb_text_26  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3 style="text-align: center;"><strong>Publications by 2020 Budapest Fellowship Program Participants</strong></h3></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_27">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_45  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_17">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="300" height="300" src="https://www.hungaryfoundation.org/wp-content/uploads/2020/10/2-2-300x300.jpg" alt="" title="Nicole Nemeth Landing" class="wp-image-28531" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_46  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_27  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong>Nicole Nemeth / Senior Fellow<br />
+</strong></h3>
+<h5 class="article-title"><a href="https://corvinak.hu/en/corvina/miert-fontos-amerika-uj-legfelsobb-birojanak-szemelye"><em><strong>Miért fontos Amerika új legfelsőbb bírójának személye?</strong></em></a> &#8211; Corvinas Blog</h5>
+<h5 class="article-title"><a href="https://corvinak.hu/en/corvina/why-this-justice-matters"><em><strong>Why This Justice Matters</strong></em></a> &#8211; Corvinas Blog</h5>
+<h5 class="article-title"><a href="Nationalism%20and The Core Idea of Americanism"><em>Nationalism and The Core Idea of Americanism</em></a> &#8211; Corvinas Blog</h5></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_28">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_47  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_18">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="300" height="300" src="https://www.hungaryfoundation.org/wp-content/uploads/2020/10/Ryan-Brockhaus-Landing-Featured-300x300.jpg" alt="" title="Ryan Brockhaus Landing Featured" class="wp-image-28263" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_48  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_28  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong>Ryan Brockhaus / Senior Fellow<br />
+</strong></h3>
+<h5 class="text-black"><a href="https://ajtk.hu/en/research/research-blog/new-weapons-acquisitions-show-hungarys-moving-full-speed-ahead-with-defence-modernisation-programme"><em><strong>New Weapons Acquisitions Show Hungary’s Moving Full Speed Ahead with Defence Modernisation Programme</strong></em></a> &#8211; Antall József Knowledge Centre</h5>
+<h5><a href="https://us.uni-nke.hu/document/kti-uni-nke-hu/Ryan%20Brockhaus%20Supreme%20Court%20101920.pdf"><em><strong>Supreme Court Nomination Battle in US Sets Up Ideological Paradigm Shift</strong> </em></a>&#8211; University of Public Service</h5>
+<h5 tabindex="0"><a href="https://us.uni-nke.hu/hirek/2021/01/21/the-capitol-protests-and-the-future-of-the-us"><em><strong>The Capitol Protests and the Future of the US</strong></em></a> &#8211; University of Public Service</h5>
+<h5 class="article-title"><a href="https://corvinak.hu/vilag/2020/11/24/megerositheti-e-biden-elnoksege-a-nato-t"><em><strong>Megerősítheti-e Biden elnöksége a NATO-t?</strong></em></a> &#8211; Corvinák</h5>
+<h5 class="article-title"><em><a href="https://corvinak.hu/en/vilag/2021/05/14/despite-low-odds-of-open-conflict-forces-massed-on-ukraines-border-are-worrying" target="_blank" rel="noopener">Despite low odds of open conflict, forces massed on Ukraine’s border are worrying</a> &#8211; </em>Corvinák<em><br />
+</em></h5>
+<h5 class="text-center"><a href="https://digitalistudastar.ajtk.hu/en/ajrc-analyses/joe-biden-s-department-of-state-and-defense" target="_blank" rel="noopener"><em>Joe Biden’s Department of State and Defense</em></a> &#8211; Antall József Knowledge Centre</h5></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_29">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_49  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_19">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="300" height="300" src="https://www.hungaryfoundation.org/wp-content/uploads/2020/10/Stephen-Sholl-Landing-Featured-300x300.jpg" alt="" title="Stephen Sholl Landing Featured" class="wp-image-28352" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_50  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_29  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong>Stephen Sholl / Junior Fellow</strong></h3>
+<h5 class="single-title"><a href="https://ujkor.hu/content/hitvallo-egyhaz-martirjai-magyarorszagon-1945-es-1989-kozott"><em><strong>A hitvalló egyház mártírjai Magyarországon 1945 és 1989 között</strong></em></a> &#8211; Újkor.hu</h5>
+<h5 class="single-title"><a href="https://ujkor.hu/content/nemzeti-emlekezet-bizottsaga-2014-2015-os-evkonyve-amerikai-szemmel"><em><strong>A Nemzeti Emlékezet Bizottsága 2014–2015-ös évkönyve amerikai szemmel</strong></em></a> &#8211; Újkor.hu</h5>
+<h5 class="article-header__title"><a href="https://www.nationalreview.com/2020/12/a-communist-christmas-story/"><em><strong>A Communist Christmas Story</strong></em></a> &#8211; National Review</h5>
+<h5 class="single-title"><em><strong><a href="https://ujkor.hu/content/kiraly-legy-bar-jojj-es-reszketve-nezz-egy-amerikai-benyomasai-memento-parkrol?fbclid=IwAR3jdn4t50YvkLFTwYL4icJSHGdLxNqlq_sPb70wCJ-opFlQw9AuuyOWBVg">„Király légy bár, jöjj és reszketve nézz!” – Egy amerikai benyomásai a Memento Parkról</a> &#8211;</strong></em> Újkor.hu</h5>
+<h5 class="single-title"><a href="https://ujkor.hu/content/koncepcios-perek-munkastanacsok-neb-20162017-es-evkonyve"><em>Koncepciós perek, munkástanácsok – A NEB 2016/2017-es évkönyve</em></a> &#8211; Újkor.hu</h5>
+<h5 class="text-center mt-5 mb-3 pt-0"><a href="https://europeanconservative.com/2021/02/the-road-to-martyrdom/"><em>The Road to Martyrdom</em></a> &#8211; The European Conservative</h5>
+<h5 class="entry-title"><a href="https://thefederalist.com/2021/04/26/what-happened-when-hungary-revived-classical-architecture-in-budapest/?fbclid=IwAR0bh3AO6rHCTlQoz-vHLZicdlom7OLwn6xuf0hhuOFRo0MoTn74KmW3XLk"><em><strong>What Happened When Hungary Revived Classical Architecture In Budapest</strong></em></a> &#8211; The Federalist</h5>
+<h5 class="single-title"><a href="https://ujkor.hu/content/hodmezovasarhelyi-emlekpont-es-kommunista-mult-amerikai-szemmel" target="_blank" rel="noopener"><em>A hódmezővásárhelyi Emlékpont és a kommunista múlt amerikai szemmel</em></a> &#8211; Újkor.hu</h5>
+<h5 class="c-single-blog__title c-title wow animated" style="visibility: visible;"><em><a href="https://www.theamericanconservative.com/articles/lessons-in-critical-race-theory-from-behind-the-iron-curtain/?fbclid=IwAR1lXtkmmzgeJWpnxgikrs9BY_6EeTU3XNsoKyxqQSwSGRcLp5B-wAB1jQU" target="_blank" rel="noopener"><span class="c-title-inner">Lessons in Critical Race Theory from Behind the Iron Curtain</span></a> &#8211; </em>The American Conservative</h5></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_30">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_51  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_20">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="2560" height="2560" src="https://www.hungaryfoundation.org/wp-content/uploads/2021/05/61A8725-scaled.jpg" alt="" title="Dr. George Bogden BFP" srcset="https://www.hungaryfoundation.org/wp-content/uploads/2021/05/61A8725-scaled.jpg 2560w, https://www.hungaryfoundation.org/wp-content/uploads/2021/05/61A8725-1280x1280.jpg 1280w, https://www.hungaryfoundation.org/wp-content/uploads/2021/05/61A8725-980x980.jpg 980w, https://www.hungaryfoundation.org/wp-content/uploads/2021/05/61A8725-480x480.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 2560px, 100vw" class="wp-image-29423" /></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_52  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_30  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3><strong>Dr. George Bogden / Senior Fellow</strong></h3>
+<h5 class="&#091; c-PostTitle__title &#093;"><a href="https://www.hungarianconservative.com/articles/politics/what-bidens-presidency-will-mean-for-central-and-eastern-europe/" target="_blank" rel="noopener"><em>What Biden’s Presidency Will Mean For Central and Eastern Europe</em></a> &#8211; Hungarian Conservative</h5>
+<h5 class="news-title text-left text-primary display-3 mt-0 mb-2"><a href="https://danubeinstitute.hu/en/publications/all-s-fair-in-vaccine-diplomacy" target="_blank" rel="noopener"><em>All&#8217;s Fair in Vaccine Diplomacy</em></a> &#8211; Danube Institute</h5>
+<h5><a href="https://www.nyujll.com/home/blog-post-one-zxsaj"><em><strong>Traditions of Early American Treaty Inheritance: Universal Succession as a Means to Achieve Stability and Security</strong></em></a> &#8211; New York University Journal of Law and Liberty</h5>
+<h5><a href="https://wavellroom.com/2021/07/16/britain-suez-canal-strategy-1854-1882/"><em><strong>Britain’s strategic failure: Suez Canal 1854–1882</strong></em></a> &#8211; Wavell Room</h5>
+<h5><a href="https://www.youtube.com/watch?v=vMVgc4OX0uw"><em><strong>Alliances and Misalliances: the Changing Face of the Middle East</strong></em></a> &#8211; Danube Institute</h5>
+<h5><em>Turkey&#8217;s Strategic Culture in the Twenty-First Century &#8211; </em>Routledge Handbook on Strategic Studies (Forthcoming)<em><br /></em></h5></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_31">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_53  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div id="Organizers" class="et_pb_module et_pb_text et_pb_text_31  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3 style="text-align: center;"><b>About the Organizers</b></h3></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_32">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_54  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_32  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h3></h3>
+<p style="text-align: center;"> <b style="font-size: 16px;"><a href="https://www.hungaryfoundation.org/">Hungary Foundation</a> – Washington, DC</b></p>
+<p><img decoding="async" class="wp-image-28863 size-medium aligncenter" title="Budapest Fellowship Program Partner HIF" src="https://www.hungaryfoundation.org/wp-content/uploads/2021/01/HF-Black-Horizontal-300x66.png" alt="" width="300" height="66" data-attachment-id="4105" data-permalink="https://www.hungaryfoundation.org/?attachment_id=4105" data-orig-file="https://www.hungaryfoundation.org/wp-content/uploads/2020/05/HIF_logo_horiz.png" data-orig-size="850,187" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="HIF_logo_horiz" data-image-description="" data-medium-file="https://www.hungaryfoundation.org/wp-content/uploads/2020/05/HIF_logo_horiz-300x66.png" data-large-file="https://www.hungaryfoundation.org/wp-content/uploads/2020/05/HIF_logo_horiz-700x154.png" /></p>
+<p style="text-align: justify;">Hungary Foundation is an independent, US-based non-partisan and non-profit organization committed to strengthening the understanding and cooperation between Hungary and the United States of America. This program is part of Hungary Foundation’s <b>Liberty Bridge Program,</b> launched in 2020, with the goal of reinvigorating the US-Hungary relationship through programs that will bolster the professional, academic, public, and people-to-people dialogue between the two countries. The idea behind the program is the core conviction that the US and Hungary share value-driven bonds built on the concept of Liberty. As part of this program, the Hungary Foundation invests in scholars and fellows who have demonstrated leadership skills and will serve as future bridge-builders between the two countries.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><b><a href="https://www.mcc.hu/">Mathias Corvinus Collegium (MCC)</a> – Budapest, Hungary</b></p>
+<p><img decoding="async" class="aligncenter wp-image-27051" title="Budapest Fellowship Program Partner MCC" src="https://www.hungaryfoundation.org/wp-content/uploads/2020/05/MCClogo_honlapra-300x98.jpg" alt="Budapest Fellowship Program Partner MCC" width="129" height="42" data-attachment-id="27051" data-permalink="https://www.hungaryfoundation.org/?attachment_id=27051" data-orig-file="https://www.hungaryfoundation.org/wp-content/uploads/2020/05/MCClogo_honlapra.jpg" data-orig-size="640,210" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="MCClogo_honlapra" data-image-description="" data-medium-file="https://www.hungaryfoundation.org/wp-content/uploads/2020/05/MCClogo_honlapra-300x98.jpg" data-large-file="https://www.hungaryfoundation.org/wp-content/uploads/2020/05/MCClogo_honlapra.jpg" /></p>
+<p style="text-align: justify;">MCC is an extracurricular educational institution and knowledge center in Hungary with an outstanding reputation for its academic excellence. With more than twenty years of experience in talent promotion, MCC aims to educate well-prepared intellectuals with critical thinking who are also able to responsibly address the challenges of our time. MCC Research is the “university think tank” of the Collegium which aspires to elaborate on relevant yet socially divisive topics while communicating them for the public applying clear and plain language in a thoughtful, logical manner.</p>
+<h3></h3>
+<h3 style="text-align: center;"><b>In Partnership with</b></h3>
+<p>&nbsp;</p>
+<p style="text-align: center;"><strong><a href="https://en.uni-nke.hu/student-life/life-at-nups">Ludovika – University of Public Service</a> – Budapest, Hungary </strong></p>
+<p><img decoding="async" class="aligncenter wp-image-27050" title="Budapest Fellowship Program Partner Ludovika" src="https://www.hungaryfoundation.org/wp-content/uploads/2020/05/NUPS-150x150.png" alt="Budapest Fellowship Program Partner Ludovika" width="69" height="69" data-attachment-id="27050" data-permalink="https://www.hungaryfoundation.org/?attachment_id=27050" data-orig-file="https://www.hungaryfoundation.org/wp-content/uploads/2020/05/NUPS.png" data-orig-size="709,709" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="NUPS" data-image-description="" data-medium-file="https://www.hungaryfoundation.org/wp-content/uploads/2020/05/NUPS-300x300.png" data-large-file="https://www.hungaryfoundation.org/wp-content/uploads/2020/05/NUPS-700x700.png" /></p>
+<p style="text-align: justify;">Ludovika is a specialised higher educational institution, the principal aim of which is to educate highly qualified personnel for the civil service, the military as well as the different branches of law enforcement. Besides the faculties, the Ludovika research institutions focus on topical international questions as well as the theory of the state. In the autumn, new programs like the College of Visegrád and the Hungarian Diplomatic Academy will be launched. The beautifully restored old Royal Ludovika Academy symbolises the important heritage of the university, while the newly built educational facilities are equipped with state of the art technology to help the educational activities. The campus in Orczy Park is easy to reach by public transport and home to sports facilities, like a swimming pool, a sports hall as well as horse riding stables. The dorms for visiting fellows are self-contained units.  Erasmus as well as Stipendium Hungaricum students ensure vibrant international student life.</p>
+<p>For application deadlines please refer to our ‘applications now open’ <a href="https://www.hungaryfoundation.org/">here</a>, or Call For Applications posts in the news section.</div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div>		</div>
+	</div>
+	
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_3_tb_body">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_3_tb_body  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+				
+				
+				
+				
+				
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				<div class="et_pb_bottom_inside_divider et-no-transition"></div>
+			</div><div class="et_pb_section et_pb_section_3_tb_body et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_4_tb_body et_animated">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_4_tb_body  et_pb_css_mix_blend_mode_passthrough et_pb_column_empty">
+				
+				
+				
+				
+				
+			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_5_tb_body  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_signup_0_tb_body et_hover_enabled et_pb_newsletter_layout_left_right et_pb_newsletter et_pb_subscribe clearfix  et_pb_text_align_center et_pb_bg_layout_dark et_pb_no_bg et_pb_newsletter_description_no_content">
+				
+				
+				
+				
+				<div class="et_pb_newsletter_description"><h2 class="et_pb_module_header">Join Our Newsletter</h2></div>
+				
+				<div class="et_pb_newsletter_form">
+					<form method="post">
+						<div class="et_pb_newsletter_result et_pb_newsletter_error"></div>
+						<div class="et_pb_newsletter_result et_pb_newsletter_success">
+							<h2>Success!</h2>
+						</div>
+						<div class="et_pb_newsletter_fields">
+							
+					<p class="et_pb_newsletter_field et_pb_contact_field_last et_pb_contact_field_last_tablet et_pb_contact_field_last_phone">
+						<label class="et_pb_contact_form_label" for="et_pb_signup_firstname" style="display: none;">Name</label>
+						<input id="et_pb_signup_firstname" class="input" type="text" placeholder="Name" name="et_pb_signup_firstname">
+					</p>
+							
+							
+					<p class="et_pb_newsletter_field et_pb_contact_field_last et_pb_contact_field_last_tablet et_pb_contact_field_last_phone">
+						<label class="et_pb_contact_form_label" for="et_pb_signup_email" style="display: none;">Email</label>
+						<input id="et_pb_signup_email" class="input" type="text" placeholder="Email" name="et_pb_signup_email">
+					</p>
+							
+							
+					<p class="et_pb_newsletter_button_wrap">
+						<a class="et_pb_newsletter_button et_pb_button" href="#" data-icon="">
+							<span class="et_subscribe_loader"></span>
+							<span class="et_pb_newsletter_button_text">Subscribe</span>
+						</a>
+					</p>
+							
+						</div>
+						
+						<input type="hidden" value="emma" name="et_pb_signup_provider" />
+						<input type="hidden" value="3646025" name="et_pb_signup_list_id" />
+						<input type="hidden" value="annasmithlacey@hungaryfoundationorg" name="et_pb_signup_account_name" />
+						<input type="hidden" value="true" name="et_pb_signup_ip_address" /><input type="hidden" value="dd21405025bc93329ad77df7fe29b85a" name="et_pb_signup_checksum" />
+					</form>
+				</div>
+			</div><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_0_tb_body clearfix  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				
+				
+				<li
+            class='et_pb_social_media_follow_network_0_tb_body et_pb_social_icon et_pb_social_network_link  et-social-facebook'><a
+              href='https://www.facebook.com/hungaryfoundation/'
+              class='icon et_pb_with_border'
+              title='Follow on Facebook'
+               target="_blank"><span
+                class='et_pb_social_media_follow_network_name'
+                aria-hidden='true'
+                >Follow</span></a></li><li
+            class='et_pb_social_media_follow_network_1_tb_body et_pb_social_icon et_pb_social_network_link  et-social-youtube'><a
+              href='https://www.youtube.com/channel/UCrAepI3e3rkQMLgqS_thRMg/featured'
+              class='icon et_pb_with_border'
+              title='Follow on Youtube'
+               target="_blank"><span
+                class='et_pb_social_media_follow_network_name'
+                aria-hidden='true'
+                >Follow</span></a></li><li
+            class='et_pb_social_media_follow_network_2_tb_body et_pb_social_icon et_pb_social_network_link  et-social-instagram'><a
+              href='https://www.instagram.com/hungaryfoundation/'
+              class='icon et_pb_with_border'
+              title='Follow on Instagram'
+               target="_blank"><span
+                class='et_pb_social_media_follow_network_name'
+                aria-hidden='true'
+                >Follow</span></a></li>
+			</ul>
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_6_tb_body  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+				
+				
+				
+				
+				
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div>		</div>
+	</div>
+	    </div>
+    
+	<footer class="et-l et-l--footer">
+			<div class="et_builder_inner_content et_pb_gutters2">
+		<div class="et_pb_section et_pb_section_0_tb_footer et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_0_tb_footer">
+				<div class="et_pb_column et_pb_column_1_3 et_pb_column_0_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_0_tb_footer  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><p><a href="https://www.hungaryfoundation.org/about-us/mission-statement/">Mission Statement</a><br /><a href="https://www.hungaryfoundation.org/about-us/achieving-our-mission/">Achieving Our Mission</a><br /><a href="https://www.hungaryfoundation.org/programs-projects/funding-policy/">Funding Policy</a><br /><a href="https://www.hungaryfoundation.org/about-us/terms-of-use-and-conditions/">Terms of Use and Conditions</a><br /><a href="https://www.hungaryfoundation.org/about-us/privacy-policy/">Privacy Policy</a><br /><a href="https://www.hungaryfoundation.org/frequently-asked-questions/" title="FAQ"><span>Frequently Asked Questions</span></a></p></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_3 et_pb_column_1_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_1_tb_footer  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner">1455 Pennsylvania Ave, NW, Suite 400<br />
+Washington, DC 20004<br />
+Phone: (202)-627-6810<br />
+E-mail: <a href="mailto:hf@hungaryfoundation.org" target="_blank" rel="noopener noreferrer">hf@hungaryfoundation.org</a></p>
+<form action="https://www.paypal.com/donate" method="post" target="_top">
+<input type="hidden" name="hosted_button_id" value="HWGQJWADZBFFE" /><br />
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" /><br />
+<img loading="lazy" decoding="async" alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" /><br />
+</form></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_3 et_pb_column_2_tb_footer  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_0_tb_footer">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img loading="lazy" decoding="async" width="257" height="135" src="https://www.hungaryfoundation.org/wp-content/uploads/2021/01/Website-Footer-176x134-1.png" alt="" title="Website Footer 176x134" class="wp-image-28816" /></span>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div class="et_pb_section et_pb_section_1_tb_footer et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_1_tb_footer">
+				<div class="et_pb_column et_pb_column_2_3 et_pb_column_3_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_2_tb_footer  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner">Copyright © 2026 Hungary Foundation</div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_3 et_pb_column_4_tb_footer  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_3_tb_footer  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><p style="text-align: left;">Designed and hosted by <a href="https://www.zsoltmolnar.com/">Zsolt Molnar</a></p></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div>		</div>
+	</footer>
+		</div>
+
+			
+		</div>
+		</div>
+
+			<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/Divi-HF/*","/wp-content/themes/Divi/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div 
+	id="pum-32748" 
+	role="dialog" 
+	aria-modal="false"
+	class="pum pum-overlay pum-theme-32742 pum-theme-cutting-edge popmake-overlay auto_open click_open" 
+	data-popmake="{&quot;id&quot;:32748,&quot;slug&quot;:&quot;emma-singnup&quot;,&quot;theme_id&quot;:32742,&quot;cookies&quot;:[{&quot;event&quot;:&quot;on_popup_close&quot;,&quot;settings&quot;:{&quot;name&quot;:&quot;pum-32748&quot;,&quot;key&quot;:&quot;&quot;,&quot;session&quot;:false,&quot;path&quot;:&quot;1&quot;,&quot;time&quot;:&quot;1 month&quot;}}],&quot;triggers&quot;:[{&quot;type&quot;:&quot;auto_open&quot;,&quot;settings&quot;:{&quot;delay&quot;:6000,&quot;cookie_name&quot;:[&quot;pum-32748&quot;]}},{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;,&quot;cookie_name&quot;:null}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;200&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}">
+
+	<div id="popmake-32748" class="pum-container popmake theme-32742 pum-responsive pum-responsive-small responsive size-small">
+
+				
+				
+		
+				<div class="pum-content popmake-content" tabindex="0">
+			<p><iframe src="https://signup.e2ma.net/signup/1817711/1775177/" width="710" height="500" frameborder="0"></iframe></p>
+		</div>
+
+				
+							<button type="button" class="pum-close popmake-close" aria-label="Close">
+			×			</button>
+		
+	</div>
+
+</div>
+<div class="et_social_pin_images_outer">
+					<div class="et_social_pinterest_window">
+						<div class="et_social_modal_header"><h3>Pin It on Pinterest</h3><span class="et_social_close"></span></div>
+						<div class="et_social_pin_images" data-permalink="https://www.hungaryfoundation.org/budapest-fellowship-program/" data-title="Budapest Fellowship Program" data-post_id="27783"></div>
+					</div>
+				</div><div class="et_social_sidebar_networks et_social_visible_sidebar et_social_slideright et_social_animated et_social_rectangle et_social_sidebar_flip et_social_mobile_on">
+					
+					<ul class="et_social_icons_container"><li class="et_social_facebook">
+									<a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.hungaryfoundation.org%2Fbudapest-fellowship-program%2F&#038;t=Budapest%20Fellowship%20Program" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="27783" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_facebook"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_twitter">
+									<a href="http://twitter.com/share?text=Budapest%20Fellowship%20Program&#038;url=https%3A%2F%2Fwww.hungaryfoundation.org%2Fbudapest-fellowship-program%2F&#038;via=HungInit" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="27783" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_twitter"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_pinterest">
+									<a href="#" class="et_social_share_pinterest" rel="nofollow" data-social_name="pinterest" data-post_id="27783" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_pinterest"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_linkedin">
+									<a href="http://www.linkedin.com/shareArticle?mini=true&#038;url=https%3A%2F%2Fwww.hungaryfoundation.org%2Fbudapest-fellowship-program%2F&#038;title=Budapest%20Fellowship%20Program" class="et_social_share" rel="nofollow" data-social_name="linkedin" data-post_id="27783" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_linkedin"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li></ul>
+					<span class="et_social_hide_sidebar et_social_icon"></span>
+				</div><div class="et_social_mobile_button"></div>
+					<div class="et_social_mobile et_social_fadein">
+						<div class="et_social_heading">Share This</div>
+						<span class="et_social_close"></span>
+						<div class="et_social_networks et_social_simple et_social_rounded et_social_left">
+							<ul class="et_social_icons_container"><li class="et_social_facebook">
+									<a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.hungaryfoundation.org%2Fbudapest-fellowship-program%2F&#038;t=Budapest%20Fellowship%20Program" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="27783" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_facebook"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Facebook</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_twitter">
+									<a href="http://twitter.com/share?text=Budapest%20Fellowship%20Program&#038;url=https%3A%2F%2Fwww.hungaryfoundation.org%2Fbudapest-fellowship-program%2F&#038;via=HungInit" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="27783" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_twitter"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Twitter</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_pinterest">
+									<a href="#" class="et_social_share_pinterest" rel="nofollow" data-social_name="pinterest" data-post_id="27783" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_pinterest"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Pinterest</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_linkedin">
+									<a href="http://www.linkedin.com/shareArticle?mini=true&#038;url=https%3A%2F%2Fwww.hungaryfoundation.org%2Fbudapest-fellowship-program%2F&#038;title=Budapest%20Fellowship%20Program" class="et_social_share" rel="nofollow" data-social_name="linkedin" data-post_id="27783" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_linkedin"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">LinkedIn</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li></ul>
+						</div>
+					</div>
+					<div class="et_social_mobile_overlay"></div>	<script type="text/javascript">
+				var et_animation_data = [{"class":"et_pb_blog_0","style":"zoom","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"12%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_row_4_tb_body","style":"zoom","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"5%","starting_opacity":"0%","speed_curve":"ease-in-out"}];
+					var et_link_options_data = [{"class":"et_pb_blog_0","url":"https:\/\/www.hungaryfoundation.org\/category\/news\/","target":"_self"}];
+			</script>
+	<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="jquery-js-after">
+/* <![CDATA[ */
+jqueryParams.length&&$.each(jqueryParams,function(e,r){if("function"==typeof r){var n=String(r);n.replace("$","jQuery");var a=new Function("return "+n)();$(document).ready(a)}});
+//# sourceURL=jquery-js-after
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-content/plugins/monarch/js/idle-timer.min.js" id="et_monarch-idle-js"></script>
+<script type="text/javascript" id="et_monarch-custom-js-js-extra">
+/* <![CDATA[ */
+var monarchSettings = {"ajaxurl":"https://www.hungaryfoundation.org/wp-admin/admin-ajax.php","pageurl":"https://www.hungaryfoundation.org/budapest-fellowship-program/","stats_nonce":"d54f7bca95","share_counts":"8f1199422b","follow_counts":"8da24f237b","total_counts":"1e52307071","media_single":"9adfeb136f","media_total":"ffa3c7189f","generate_all_window_nonce":"af294fcaf4","no_img_message":"No images available for sharing on this page"};
+//# sourceURL=et_monarch-custom-js-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-content/plugins/monarch/js/custom.js" id="et_monarch-custom-js-js"></script>
+<script type="text/javascript" id="divi-custom-script-js-extra">
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
+var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_custom = {"ajaxurl":"https://www.hungaryfoundation.org/wp-admin/admin-ajax.php","images_uri":"https://www.hungaryfoundation.org/wp-content/themes/Divi/images","builder_images_uri":"https://www.hungaryfoundation.org/wp-content/themes/Divi/includes/builder/images","et_frontend_nonce":"289dd43dff","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"e0082f7101","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"27783","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"no","is_shortcode_tracking":"","tinymce_uri":"https://www.hungaryfoundation.org/wp-content/themes/Divi/includes/builder/frontend-builder/assets/vendors","accent_color":"#ff5c5c","waypoints_options":{"context":[".pum-overlay"]}};
+var et_pb_box_shadow_elements = [];
+//# sourceURL=divi-custom-script-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-content/themes/Divi/js/scripts.min.js" id="divi-custom-script-js"></script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-includes/js/jquery/ui/core.min.js" id="jquery-ui-core-js"></script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-includes/js/dist/hooks.min.js" id="wp-hooks-js"></script>
+<script type="text/javascript" id="popup-maker-site-js-extra">
+/* <![CDATA[ */
+var pum_vars = {"version":"1.22.0","pm_dir_url":"https://www.hungaryfoundation.org/wp-content/plugins/popup-maker/","ajaxurl":"https://www.hungaryfoundation.org/wp-admin/admin-ajax.php","restapi":"https://www.hungaryfoundation.org/wp-json/pum/v1","rest_nonce":null,"default_theme":"32738","debug_mode":"","disable_tracking":"","home_url":"/","message_position":"top","core_sub_forms_enabled":"1","popups":[],"cookie_domain":"","paramNames":{"popup_id":"pid","cta":"cta","notrack":"notrack"},"analytics_enabled":"1","analytics_route":"analytics","analytics_api":"https://www.hungaryfoundation.org/wp-json/pum/v1"};
+var pum_sub_vars = {"ajaxurl":"https://www.hungaryfoundation.org/wp-admin/admin-ajax.php","message_position":"top"};
+var pum_popups = {"pum-32748":{"triggers":[{"type":"auto_open","settings":{"delay":6000,"cookie_name":["pum-32748"]}}],"cookies":[{"event":"on_popup_close","settings":{"name":"pum-32748","key":"","session":false,"path":"1","time":"1 month"}}],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":"32742","size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center","position_top":"100","position_bottom":"0","position_left":"0","position_right":"0","position_from_trigger":false,"position_fixed":false,"overlay_disabled":false,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"200","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":"0","close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"cutting-edge","id":32748,"slug":"emma-singnup"}};
+//# sourceURL=popup-maker-site-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.hungaryfoundation.org/wp-content/uploads/pum/pum-site-scripts.js" id="popup-maker-site-js"></script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-content/themes/Divi/core/admin/js/common.js" id="et-core-common-js"></script>
+<script type="text/javascript" id="jetpack-stats-js-before">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", {"v":"ext","blog":"121148953","post":"27783","tz":"-4","srv":"www.hungaryfoundation.org","j":"1:15.8.1"} ]);
+_stq.push([ "clickTrackerInit", "121148953", "27783" ]);
+//# sourceURL=jetpack-stats-js-before
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://stats.wp.com/e-202643.js" id="jetpack-stats-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="mediaelement-core-js-before">
+/* <![CDATA[ */
+var mejsL10n = {"language":"en","strings":{"mejs.download-file":"Download File","mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https://get.adobe.com/flashplayer/","mejs.fullscreen":"Fullscreen","mejs.play":"Play","mejs.pause":"Pause","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left/Right Arrow keys to advance one second, Up/Down arrows to advance ten seconds.","mejs.live-broadcast":"Live Broadcast","mejs.volume-help-text":"Use Up/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.captions-subtitles":"Captions/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};
+//# sourceURL=mediaelement-core-js-before
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-includes/js/mediaelement/mediaelement-and-player.min.js" id="mediaelement-core-js"></script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-includes/js/mediaelement/mediaelement-migrate.min.js" id="mediaelement-migrate-js"></script>
+<script type="text/javascript" id="mediaelement-js-extra">
+/* <![CDATA[ */
+var _wpmejsSettings = {"pluginPath":"/wp-includes/js/mediaelement/","classPrefix":"mejs-","stretching":"responsive","audioShortcodeLibrary":"mediaelement","videoShortcodeLibrary":"mediaelement"};
+//# sourceURL=mediaelement-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-includes/js/mediaelement/wp-mediaelement.min.js" id="wp-mediaelement-js"></script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/salvattore.js" id="salvattore-js"></script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.fitvids.js" id="fitvids-js"></script>
+<script type="text/javascript" src="https://www.hungaryfoundation.org/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/easypiechart.js" id="easypiechart-js"></script>
+	
+	</body>
+</html>
+<!--
+Performance optimized by Redis Object Cache. Learn more: https://wprediscache.com
+
+Retrieved 7729 objects (2 MB) from Redis using PhpRedis (v6.3.0).
+-->
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/?utm_source=w3tc&utm_medium=footer_comment&utm_campaign=free_plugin
+
+Page Caching using Disk: Enhanced 
+
+Served from: www.hungaryfoundation.org @ 2026-10-22 08:16:16 by W3 Total Cache
+-->

@@ -101,6 +101,8 @@ def field_status(o: Opportunity, today: Optional[date] = None) -> dict[str, dict
     _require_evidence(o, out)
     _decision_evidence_gate(o, out)
     _risk_gate(o, out)
+    from .ai_check import apply as _second_reading
+    _second_reading(o, out, today)   # round 43: hold what an independent reading disagrees with
     # what the page is, and whether the record stands for one named programme (identity.py); domain trust alone
     # (official_source) never makes a record a verified programme
     from .identity import record_identity

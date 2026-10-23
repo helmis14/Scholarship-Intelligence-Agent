@@ -524,6 +524,9 @@ def _date_role(s: str, raw: str, prev: list[str], raws: list[str]) -> Optional[D
         return DeadlineKind.DOCUMENT
     if re.match(r"\W{0,3}(?:deadline )?for (?:sending|submitting|giving|providing) (?:the )?feedback\b", after, re.I):
         return DeadlineKind.OTHER   # round 34: "17 November 2027: deadline for sending feedback"
+    if re.search(r"\b(?:programs?|programmes?|courses?|studies|study|stays?|projects?)\s+(?:beginning|starting|commencing|that (?:begin|start))"
+                 r"\s+(?:between|on|after|before|from|in|by)?\s*[^.;()]{0,45}$", s[max(0, start - 120):start], re.I):
+        return DeadlineKind.EVENT   # round 42: "(for study abroad programs beginning between December 1, 2026, to October 31, 2027)"
     if re.match(r"\W{0,3}opening call\b", after, re.I):
         return DeadlineKind.OPENING
     if re.match(r"\W{0,3}closing call\b", after, re.I):
@@ -1362,7 +1365,7 @@ def _negated_countries(s: str) -> list[str]:
     return list(dict.fromkeys(out))
 
 
-RELATIVES_RX = re.compile(r"\b(?:parents?|mother|father|grandparents?|spouse|partner's)\b", re.I)
+RELATIVES_RX = re.compile(r"\b(?:parents?|mother|father|grandparents?|spouse|partner's|family members?|relatives?)\b", re.I)
 COUNTRY_CITIZENS_RX = re.compile(r"\b((?:[A-Z][\w.]+ ){1,3})(?:[Cc]itizens?|nationals?|Nationals(?! [A-Z]))\b")   # not "National University"
 
 
@@ -1419,6 +1422,12 @@ def extract_nationality(text: str) -> tuple[NationalityRule, list[str]]:
     text = re.sub(r"(?i:\b(citizens?|nationals?)\s+of\s+any\s+(?:other\s+)?countr(?:y|ies)\s+(?:outside|other than|excluding|except|apart from)\s+(?:of\s+)?(?:the\s+)?)(United Kingdom|UK|U\.K\.|[A-Z][\w'-]+(?: [A-Z][\w'-]+)?)", r"non-\2 citizens", text)   # round 41
     text = re.sub(r"\b(?:UK|U\.K\.|British|American|Australian|Canadian|German|French)\s+(?=(?:first|second|upper|lower|2:[12]|honou?rs?|bachelor|master|undergraduate|degree|diploma|qualifications?)\b)", "", text)   # round 41: "equivalent of a UK first class honours degree"
     text = re.sub(r"\(\s*outside (?:of )?(?:the )?[A-Z][\w'-]+(?: [A-Z][\w'-]+)?\s*\)", "", text)   # round 41: "overseas (outside of New Zealand)"
+    text = re.sub(r"(?i:\b(education|studies|schooling|school|degree|qualifications?|diploma|completed|obtained|earned|graduated)\b([^.;]{0,30}?)\boutside\s+(?:of\s+)?(?:the\s+)?)(?:UAE|UK|USA|US|U\.S\.|EU|[A-Z][a-z][\w'-]+(?: [A-Z][\w'-]+)?)\b", r"\1\2 abroad", text)   # round 44: "completed their secondary education outside the UAE"
+    text = re.sub(r"(?i:\bfrom\s+(?:any\s+|all\s+)?(?:other\s+)?countr(?:y|ies)\s+(?:outside|other than|except)\s+(?:of\s+)?(?:the\s+)?)(United Kingdom|UK|U\.K\.|[A-Z][\w'-]+(?: [A-Z][\w'-]+)?)", r"from non-\1 citizens", text)   # round 44
+    text = re.sub(r"\b[Cc]urrent\s+(?:[A-Z][\w&-]*\s+){1,4}students?\b", "current students", text)   # round 43: "Current VCUarts Qatar students are not eligible"
+    text = re.sub(r"\bBritish (?:Protected Persons?|Overseas (?:citizens?|territor\w+)|Nationals? \(Overseas\))", "protected person", text)   # round 43
+    text = re.sub(r"\b(?:Latin|South|North|Central|Ibero)[- ]America\b|\bthe Americas\b", "the region", text)   # round 43: not the United States
+    text = re.sub(r"(?i:\b(?:applicants?|students?|candidates?|people|individuals)\s+from\s+(?:any\s+|all\s+)?(?:other\s+)?countr(?:y|ies)\s+(?:outside|other than|except)\s+(?:of\s+)?(?:the\s+)?)(United Kingdom|UK|U\.K\.|[A-Z][\w'-]+(?: [A-Z][\w'-]+)?)", r"non-\1 citizens", text)   # round 43
     review = []
     foreign_also = False
     banned: list[str] = []   # countries a clause excludes by negation; another sentence never turns them eligible

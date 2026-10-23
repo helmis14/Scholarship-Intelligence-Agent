@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.5",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseout","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))},{isRocket:!0})}o(){window.addEventListener("pageshow",t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0},{isRocket:!0}),window.addEventListener("pagehide",()=>{this.onFirstUserAction=null},{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",function i(o){o.changedTouches[0]&&t.changedTouches[0]&&Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}),"INPUT"===o.target.tagName&&"text"===o.target.type||(o.target.dispatchEvent(new TouchEvent("touchend",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new MouseEvent("mouseover",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1,clientX:o.changedTouches[0].clientX,clientY:o.changedTouches[0].clientY})),event.preventDefault()))},{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,t.composedPath&&t.composedPath()[0].getRootNode()instanceof ShadowRoot&&(t.rocketTarget=t.composedPath()[0]),this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach(t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.addEventListener("visibilitychange",this.userEventHandler,{isRocket:!0})}U(){this.userEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.removeEventListener("visibilitychange",this.userEventHandler,{isRocket:!0}),this.savedUserEvents.forEach(t=>{(t.rocketTarget||t.target).dispatchEvent(new window[t.constructor.name](t.type,t))})}m(){const t="return false",e=Array.from(this.attributeEvents,t=>"data-rocket-"+t),i="["+this.attributeEvents.join("],[")+"]",o="[data-rocket-"+this.attributeEvents.join("],[data-rocket-")+"]",s=(e,i,o)=>{o&&o!==t&&(e.setAttribute("data-rocket-"+i,o),e["rocket"+i]=new Function("event",o),e.setAttribute(i,t))};new MutationObserver(t=>{for(const n of t)"attributes"===n.type&&(n.attributeName.startsWith("data-rocket-")||this.everythingLoaded?n.attributeName.startsWith("data-rocket-")&&this.everythingLoaded&&this.N(n.target,n.attributeName.substring(12)):s(n.target,n.attributeName,n.target.getAttribute(n.attributeName))),"childList"===n.type&&n.addedNodes.forEach(t=>{if(t.nodeType===Node.ELEMENT_NODE)if(this.everythingLoaded)for(const i of[t,...t.querySelectorAll(o)])for(const t of i.getAttributeNames())e.includes(t)&&this.N(i,t.substring(12));else for(const e of[t,...t.querySelectorAll(i)])for(const t of e.getAttributeNames())this.attributeEvents.includes(t)&&s(e,t,e.getAttribute(t))})}).observe(document,{subtree:!0,childList:!0,attributeFilter:[...this.attributeEvents,...e]})}I(){this.attributeEvents.forEach(t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach(e=>{this.N(e,t)})})}N(t,e){const i=t.getAttribute("data-rocket-"+e);i&&(t.setAttribute(e,i),t.removeAttribute("data-rocket-"+e))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):(t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o}),"mouseenter"!==e&&"mouseleave"!==e||t.originalAddEventListener.call(this,e,t.savedUserEvents.push,o))},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}J(t,e){this.savedEventListeners=this.savedEventListeners.filter(i=>{let o=i.type,s=i.target||window;return e!==o||t!==s||(this.B(o,s)&&(i.type="rocket-"+o),this.$(i),!1)})}H(){EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener,this.savedEventListeners.forEach(t=>this.$(t))}$(t){t.remove?this.originalRemoveEventListener.call(t.target,t.type,t.func,t.options):this.originalAddEventListener.call(t.target,t.type,t.func,t.options)}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map(t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e})),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,()=>{e[t].forEach(t=>t())},{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout(()=>i.bind(document)(o)):i.bind(document)(o)}return"function"==typeof i&&(t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s)),this},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise(t=>{this.userActionTriggered?t():this.onFirstUserAction=t})}async L(){return new Promise(t=>{document.addEventListener("DOMContentLoaded",()=>{this.realDomReadyFired=!0,t()},{isRocket:!0})})}async j(){return this.realWindowLoadedFired?Promise.resolve():new Promise(t=>{window.addEventListener("load",t,{isRocket:!0})})}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver(t=>{for(const e of t)e.addedNodes.forEach(t=>{"SCRIPT"!==t.tagName||!t.src||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise(e=>{const i=()=>{const i=this.pendingScripts.findIndex(e=>e.script===t);i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)})})})}),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async F(){await this.X(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.F()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this.Y(t,"preconnect")}async G(t){if(await this.K(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise(e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))}),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",()=>{i.setAttribute("data-rocket-status","failed-network"),e()},{isRocket:!0}),setTimeout(()=>{i.isConnected||e()},1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.G(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())},{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}});t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.G(e),this.C(t)):Promise.resolve()}O(){this.Y([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}Y(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach(t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}}),document.head.appendChild(o)}W(){this.trash.forEach(t=>t.remove())}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(document,"DOMContentLoaded"),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.K(),this.J(window,"DOMContentLoaded"),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(window,"load"),window.dispatchEvent(new Event("rocket-load")),await this.K(),window.rocketonload&&window.rocketonload(),await this.K(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this.K(),this.J(window,"pageshow");const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.K(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async K(){Date.now()-this.lastBreath>45&&(await this.X(),this.lastBreath=Date.now())}async X(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}B(t,e=window){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();
+</script>
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" 
+    href="https://www.sdfoundation.org/wp-content/uploads/2022/05/sdf_favicon.png">
+  <meta name='robots' content='noindex, nofollow' />
+<script type="text/rocketlazyloadscript" id="cookie-law-info-gcm-var-js">
+var _ckyGcm = {"status":true,"default_settings":[{"analytics":"denied","advertisement":"denied","functional":"denied","necessary":"granted","ad_user_data":"denied","ad_personalization":"denied","regions":"All"}],"wait_for_update":2000,"url_passthrough":false,"ads_data_redaction":false}</script>
+<script type="text/rocketlazyloadscript" id="cookie-law-info-gcm-js" data-rocket-type="text/javascript" data-rocket-src="https://www.sdfoundation.org/wp-content/plugins/cookie-law-info/lite/frontend/js/gcm.min.js" data-rocket-defer defer></script> <script type="text/rocketlazyloadscript" id="cookieyes" data-rocket-type="text/javascript" data-rocket-src="https://cdn-cookieyes.com/client_data/c1d44171efef7f9e45e1135a499127ad/script.js" data-rocket-defer defer></script>
+	<!-- This site is optimized with the Yoast SEO Premium plugin v28.7 (Yoast SEO v28.7) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->
+	<title>Community Scholarship Program | San Diego Foundation</title>
+<link data-rocket-prefetch href="https://scripts.clarity.ms" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://munchkin.marketo.net" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://a2.adform.net" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://s2.adform.net" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://connect.facebook.net" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.clarity.ms" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://snap.licdn.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.googletagmanager.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://go.sdfoundation.org" rel="dns-prefetch">
+<style id="wpr-usedcss">img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}:root{--wp--preset--aspect-ratio--square:1;--wp--preset--aspect-ratio--4-3:4/3;--wp--preset--aspect-ratio--3-4:3/4;--wp--preset--aspect-ratio--3-2:3/2;--wp--preset--aspect-ratio--2-3:2/3;--wp--preset--aspect-ratio--16-9:16/9;--wp--preset--aspect-ratio--9-16:9/16;--wp--preset--color--black:#000000;--wp--preset--color--cyan-bluish-gray:#abb8c3;--wp--preset--color--white:#ffffff;--wp--preset--color--pale-pink:#f78da7;--wp--preset--color--vivid-red:#cf2e2e;--wp--preset--color--luminous-vivid-orange:#ff6900;--wp--preset--color--luminous-vivid-amber:#fcb900;--wp--preset--color--light-green-cyan:#7bdcb5;--wp--preset--color--vivid-green-cyan:#00d084;--wp--preset--color--pale-cyan-blue:#8ed1fc;--wp--preset--color--vivid-cyan-blue:#0693e3;--wp--preset--color--vivid-purple:#9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple:linear-gradient(135deg,rgb(6, 147, 227) 0%,rgb(155, 81, 224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan:linear-gradient(135deg,rgb(122, 220, 180) 0%,rgb(0, 208, 130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange:linear-gradient(135deg,rgb(252, 185, 0) 0%,rgb(255, 105, 0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red:linear-gradient(135deg,rgb(255, 105, 0) 0%,rgb(207, 46, 46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray:linear-gradient(135deg,rgb(238, 238, 238) 0%,rgb(169, 184, 195) 100%);--wp--preset--gradient--cool-to-warm-spectrum:linear-gradient(135deg,rgb(74, 234, 220) 0%,rgb(151, 120, 209) 20%,rgb(207, 42, 186) 40%,rgb(238, 44, 130) 60%,rgb(251, 105, 98) 80%,rgb(254, 248, 76) 100%);--wp--preset--gradient--blush-light-purple:linear-gradient(135deg,rgb(255, 206, 236) 0%,rgb(152, 150, 240) 100%);--wp--preset--gradient--blush-bordeaux:linear-gradient(135deg,rgb(254, 205, 165) 0%,rgb(254, 45, 45) 50%,rgb(107, 0, 62) 100%);--wp--preset--gradient--luminous-dusk:linear-gradient(135deg,rgb(255, 203, 112) 0%,rgb(199, 81, 192) 50%,rgb(65, 88, 208) 100%);--wp--preset--gradient--pale-ocean:linear-gradient(135deg,rgb(255, 245, 203) 0%,rgb(182, 227, 212) 50%,rgb(51, 167, 181) 100%);--wp--preset--gradient--electric-grass:linear-gradient(135deg,rgb(202, 248, 128) 0%,rgb(113, 206, 126) 100%);--wp--preset--gradient--midnight:linear-gradient(135deg,rgb(2, 3, 129) 0%,rgb(40, 116, 252) 100%);--wp--preset--font-size--small:13px;--wp--preset--font-size--medium:20px;--wp--preset--font-size--large:36px;--wp--preset--font-size--x-large:42px;--wp--preset--spacing--20:0.44rem;--wp--preset--spacing--30:0.67rem;--wp--preset--spacing--40:1rem;--wp--preset--spacing--50:1.5rem;--wp--preset--spacing--60:2.25rem;--wp--preset--spacing--70:3.38rem;--wp--preset--spacing--80:5.06rem;--wp--preset--shadow--natural:6px 6px 9px rgba(0, 0, 0, .2);--wp--preset--shadow--deep:12px 12px 50px rgba(0, 0, 0, .4);--wp--preset--shadow--sharp:6px 6px 0px rgba(0, 0, 0, .2);--wp--preset--shadow--outlined:6px 6px 0px -3px rgb(255, 255, 255),6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp:6px 6px 0px rgb(0, 0, 0)}:where(body){margin:0}:where(.is-layout-flex){gap:.5em}:where(.is-layout-grid){gap:.5em}body{padding-top:0;padding-right:0;padding-bottom:0;padding-left:0}:root :where(.wp-element-button,.wp-block-button__link){background-color:#32373c;border-width:0;color:#fff;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;padding-top:calc(.667em + 2px);padding-right:calc(1.333em + 2px);padding-bottom:calc(.667em + 2px);padding-left:calc(1.333em + 2px);text-decoration:none;text-transform:inherit}a,body,button,div,dl,fieldset,form,h1,h2,h3,h5,html,iframe,img,input,legend,li,object,ol,p,select,span,textarea,ul{margin:0;padding:0;outline:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}article,aside,footer,header,nav,section{display:block}video{display:inline-block}[hidden]{display:none}svg:not(:root){overflow:hidden}html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}button,html,input,select,textarea{font-family:sans-serif}a{background:0 0}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}a:active,a:hover,label:active,label:focus{outline:0}img{border:0;-ms-interpolation-mode:bicubic;vertical-align:middle}fieldset{border:none}button,input,select,textarea{font-size:100%;vertical-align:baseline}textarea{overflow:auto;min-height:30px;max-height:400px;resize:vertical}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;vertical-align:middle}button,html input[type=button],input[type=submit]{-webkit-appearance:button;cursor:pointer}input[type=search]{-webkit-appearance:textfield}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}button[disabled],input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}strong,th{font-weight:700}strong{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}td,td img{vertical-align:top}h1,h2,h3,h5{font-weight:400;margin:0}@font-face{font-family:"Stabil Grotesk Bold";src:url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/StabilGrotesk-Bold.eot");src:local("Stabil Grotesk Bold"),local("StabilGrotesk-Bold"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/StabilGrotesk-Bold.eot?#iefix") format("embedded-opentype"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/StabilGrotesk-Bold.woff2") format("woff2"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/StabilGrotesk-Bold.woff") format("woff"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/StabilGrotesk-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:"Stabil Grotesk Medium";src:url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/StabilGrotesk-Medium.eot");src:local("Stabil Grotesk Medium"),local("StabilGrotesk-Medium"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/StabilGrotesk-Medium.eot?#iefix") format("embedded-opentype"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/StabilGrotesk-Medium.woff2") format("woff2"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/StabilGrotesk-Medium.woff") format("woff"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/StabilGrotesk-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}@font-face{font-family:"Stabil Grotesk";src:url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/StabilGrotesk-Regular.eot");src:local("Stabil Grotesk Regular"),local("StabilGrotesk-Regular"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/StabilGrotesk-Regular.eot?#iefix") format("embedded-opentype"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/StabilGrotesk-Regular.woff2") format("woff2"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/StabilGrotesk-Regular.woff") format("woff"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/StabilGrotesk-Regular.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}@font-face{font-family:"Suisse Works Medium";src:url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/SuisseWorks-Medium.eot");src:local("Suisse Works Medium"),local("SuisseWorks-Medium"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/SuisseWorks-Medium.eot?#iefix") format("embedded-opentype"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/SuisseWorks-Medium.woff2") format("woff2"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/SuisseWorks-Medium.woff") format("woff"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/SuisseWorks-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}@font-face{font-family:"Suisse Works";src:url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/SuisseWorks.eot");src:local("Suisse Works"),local("SuisseWorks"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/SuisseWorks.eot?#iefix") format("embedded-opentype"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/SuisseWorks.woff2") format("woff2"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/SuisseWorks.woff") format("woff"),url("https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/fonts/SuisseWorks.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}@keyframes fadein{from{opacity:0}to{opacity:1}}@-moz-keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@-ms-keyframes fadein{from{opacity:0}to{opacity:1}}@-o-keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0)}100%{-webkit-transform:rotate(360deg)}}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes sway{0%{right:30px}100%{right:20px}}@keyframes sway-table{0%{right:0}100%{right:5px}}.display{display:block!important}.modal-window{background:#fff;display:none;flex-direction:column;justify-content:center;overflow:hidden;position:fixed;width:70%;height:90%;margin-left:auto;margin-right:auto;left:0;right:0;top:50%;transform:translateY(-50%);max-height:0;z-index:9999;opacity:0;border-radius:10px}.modal-window.show-modal{max-height:100%;opacity:1;transition:.5s opacity ease-out;display:flex}.form-backdrop{width:100%;height:100%;display:none;position:fixed;background-color:rgba(0,0,0,.65);left:0;top:0;z-index:9998}.form-backdrop.active-backdrop{display:block}.iframe-video-section{display:none!important;opacity:0;position:fixed;z-index:999;top:0;width:100%;height:100%;display:block;transition:.25s opacity ease-in-out}.iframe-video-open{display:block!important;opacity:1}.iframe-video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;z-index:999;margin-top:150px!important}@media only screen and (max-width:768px){.iframe-video{width:90%}}#main-vid{position:absolute;top:0;left:0;width:100%;height:100%;max-height:850px;z-index:9991}.modal-close,.vid-close{position:absolute;top:2%;right:2%;cursor:pointer;width:90px;height:35px;line-height:30px;color:#00685e;text-align:center;border-radius:5px;background-color:#fff;padding:5px;font-size:25px;font-family:arial;font-weight:700}.modal-close svg,.vid-close svg{fill:#00685E;margin-left:5px}.full-width{width:100%}.ta-center{text-align:center}@media screen and (max-width:1420px){.pad-hit{padding-left:50px;padding-right:50px}}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .title{height:fit-content;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2}.black{color:#303030!important}.white{color:#fff!important}.orange{color:#c88539!important}.red{color:#ba4f3a!important}.bg-dark-green{background-color:#00685e}#mega-menu .alt-nav>li .bg-dark-green .subnav>li,#mega-menu .bg-dark-green .alt-nav>li,#mega-menu .bg-dark-green .main-nav>li,.bg-dark-green #mega-menu .alt-nav>li,.bg-dark-green #mega-menu .alt-nav>li .subnav>li,.bg-dark-green #mega-menu .main-nav>li,.bg-dark-green .floating-search-bar form input,.bg-dark-green .floating-search-bar form select,.bg-dark-green .floating-search-bar form textarea,.bg-dark-green .h1,.bg-dark-green .h3,.bg-dark-green .h3-bold,.bg-dark-green .h5,.bg-dark-green article,.bg-dark-green caption,.bg-dark-green div,.bg-dark-green footer .footer-container .footer-navigation ul#menu-footer-menu li a,.bg-dark-green h1,.bg-dark-green h2,.bg-dark-green h3,.bg-dark-green h5,.bg-dark-green i,.bg-dark-green li,.bg-dark-green ol,.bg-dark-green p,.bg-dark-green section,.bg-dark-green ul,.floating-search-bar form .bg-dark-green input,.floating-search-bar form .bg-dark-green select,.floating-search-bar form .bg-dark-green textarea,footer .footer-container .footer-navigation ul#menu-footer-menu li .bg-dark-green a{color:#fff;fill:#FFF}.bg-white{background-color:#fff}.bg-orange-lighter{background-color:#fee1ba}.mt-0{margin-top:0!important}.pt-0{padding-top:0!important}.mt-20{margin-top:20px!important}.mt-50{margin-top:50px!important}.pt-50{padding-top:50px!important}.pt-75{padding-top:75px!important}.pt-80{padding-top:80px!important}.mb-0{margin-bottom:0!important}.mb-20{margin-bottom:20px!important}.pb-25{padding-bottom:25px!important}.mb-40{margin-bottom:40px!important}.pb-50{padding-bottom:50px!important}.pb-75{padding-bottom:75px!important}.pb-80{padding-bottom:80px!important}.pr-10{padding-right:10px!important}@media only screen and (max-width:768px){.mt-sm-0{margin-top:0!important}.pt-sm-5{padding-top:5px!important}.pt-sm-10{padding-top:10px!important}.mt-sm-30{margin-top:30px!important}.pt-sm-30{padding-top:30px!important}.pt-sm-80{padding-top:80px!important}.mb-sm-0{margin-bottom:0!important}.pb-sm-5{padding-bottom:5px!important}.pb-sm-25{padding-bottom:25px!important}.pb-sm-30{padding-bottom:30px!important}.mb-sm-55{margin-bottom:55px!important}.pb-sm-80{padding-bottom:80px!important}}.fadein{-webkit-animation:.7s cubic-bezier(.47,0,.745,.715) both fadein;animation:.7s cubic-bezier(.47,0,.745,.715) both fadein}.flickity-enabled{position:relative}.flickity-enabled:focus{outline:0}.flickity-viewport{overflow:hidden;position:relative;height:100%}.flickity-slider{position:absolute;width:100%;height:100%}.flickity-enabled.is-draggable{-webkit-tap-highlight-color:transparent;tap-highlight-color:transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.flickity-enabled.is-draggable .flickity-viewport{cursor:move;cursor:-webkit-grab;cursor:grab}.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down{cursor:-webkit-grabbing;cursor:grabbing}.flickity-button{position:absolute;background:hsla(0,0%,100%,.75);border:none;color:#333}.flickity-button:hover{background:#fff;cursor:pointer}.flickity-button:focus{outline:0;box-shadow:0 0 0 5px #19f}.flickity-button:active{opacity:.6}.flickity-button:disabled{opacity:.3;cursor:auto;pointer-events:none}.flickity-button-icon{fill:#333}.flickity-prev-next-button{top:auto;bottom:0;width:44px;height:44px;border-radius:50%;transform:translateY(-50%);border-radius:0}.flickity-prev-next-button.previous{left:-50px;right:0;margin:auto}.flickity-prev-next-button.next{left:0;right:-50px;margin:auto}.flickity-prev-next-button .flickity-button-icon{position:absolute;left:20%;top:20%;width:60%;height:60%}.flickity-page-dots{position:absolute;width:100%;bottom:-25px;padding:0;margin:0;list-style:none;text-align:center;line-height:1}.flickity-rtl .flickity-page-dots{direction:rtl}.flickity-page-dots .dot{display:inline-block;width:10px;height:10px;margin:0 8px;background:#333;border-radius:50%;opacity:.25;cursor:pointer}.flickity-page-dots .dot.is-selected{opacity:1}.flickity-page-dots{margin:0;position:relative;padding:0}.flickity-page-dots .dot{height:18px;width:18px;margin:0 15px;border-radius:25px;opacity:1;background:#3d3d3d}.flickity-page-dots .dot.is-selected{background:#000}[data-aos][data-aos][data-aos-duration="100"],body[data-aos-duration="100"] [data-aos]{transition-duration:.1s}[data-aos][data-aos][data-aos-delay="100"],body[data-aos-delay="100"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="100"].aos-animate,body[data-aos-delay="100"] [data-aos].aos-animate{transition-delay:0.1s}[data-aos][data-aos][data-aos-duration="200"],body[data-aos-duration="200"] [data-aos]{transition-duration:.2s}[data-aos][data-aos][data-aos-delay="200"],body[data-aos-delay="200"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="200"].aos-animate,body[data-aos-delay="200"] [data-aos].aos-animate{transition-delay:0.2s}[data-aos][data-aos][data-aos-duration="250"],body[data-aos-duration="250"] [data-aos]{transition-duration:.25s}[data-aos][data-aos][data-aos-delay="250"],body[data-aos-delay="250"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="250"].aos-animate,body[data-aos-delay="250"] [data-aos].aos-animate{transition-delay:0.25s}[data-aos][data-aos][data-aos-duration="400"],body[data-aos-duration="400"] [data-aos]{transition-duration:.4s}[data-aos][data-aos][data-aos-delay="400"],body[data-aos-delay="400"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="400"].aos-animate,body[data-aos-delay="400"] [data-aos].aos-animate{transition-delay:0.4s}[data-aos][data-aos][data-aos-duration="500"],body[data-aos-duration="500"] [data-aos]{transition-duration:.5s}[data-aos][data-aos][data-aos-delay="500"],body[data-aos-delay="500"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="500"].aos-animate,body[data-aos-delay="500"] [data-aos].aos-animate{transition-delay:0.5s}[data-aos][data-aos][data-aos-duration="750"],body[data-aos-duration="750"] [data-aos]{transition-duration:.75s}[data-aos][data-aos][data-aos-delay="750"],body[data-aos-delay="750"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="750"].aos-animate,body[data-aos-delay="750"] [data-aos].aos-animate{transition-delay:0.75s}[data-aos][data-aos][data-aos-duration="1000"],body[data-aos-duration="1000"] [data-aos]{transition-duration:1s}[data-aos][data-aos][data-aos-delay="1000"],body[data-aos-delay="1000"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1000"].aos-animate,body[data-aos-delay="1000"] [data-aos].aos-animate{transition-delay:1s}[data-aos][data-aos][data-aos-easing=ease],body[data-aos-easing=ease] [data-aos]{transition-timing-function:ease}[data-aos^=fade][data-aos^=fade]{opacity:0;transition-property:opacity,transform}[data-aos^=fade][data-aos^=fade].aos-animate{opacity:1;transform:translateZ(0)}[data-aos^=flip][data-aos^=flip]{backface-visibility:hidden;transition-property:transform}body,html{color:#303030}body{width:100%;overflow-x:hidden;margin-top:80px;position:relative}a{transition:.25s all ease-in-out}img{width:100%;max-width:100%;height:100%;object-fit:cover;object-position:center}ol,ul{margin-left:30px;margin-bottom:30px}ol li,ul li{padding-left:5px}button{border:0}#loader{display:none;border:10px solid #f3f3f3;border-radius:50%;border-top:10px solid #00685e;width:75px;height:75px;-webkit-animation:2s linear infinite spin;animation:2s linear infinite spin;position:absolute;left:50%;z-index:9999}*{box-sizing:border-box}html{scroll-behavior:smooth}.arrow{fill:#00685E;flex:0 0 17px}.embed-container{position:relative;overflow:hidden;max-width:100%;height:auto;border-radius:10px}.embed-container iframe,.embed-container object{position:absolute;top:0;left:0;width:100%;height:100%}@media only screen and (max-width:768px){.mobile-arrow{position:relative;width:100%}.mobile-arrow:before{width:50px;height:50px;position:absolute;content:"↙";color:#fff;background-color:#00685e;font-size:18px;bottom:-15px;transform:rotate(225deg);border-radius:100%;display:flex;justify-content:center;align-items:center;animation:1s ease-in infinite alternate sway;z-index:99}.mobile-arrow.table:before{animation-name:sway-table}.header .header-container{padding:20px}}.header{position:relative;width:100%;z-index:9992;background-color:#fff;transition:.25s top ease}.header.sticky-nav{position:fixed;top:0}.header.hide-nav{top:-80px;transition:.25s top ease}.header .header-box-shadow{background-color:#fff}.header .header-container{display:flex;justify-content:space-between;align-items:center;max-height:80px;color:#00685e}.header .header-container__left-side{width:40%}.header .header-container__right-side{width:70%;display:flex;justify-content:flex-end;align-items:center}.header .header-container__right-side a{text-decoration:none;margin-right:40px}.header .header-container__right-side a svg{margin-left:5px}.header .logo{display:block;float:left;padding:0;text-decoration:none;max-width:450px}@media only screen and (min-width:1025px){.header .logo{padding-left:0}}@media only screen and (max-width:1024px){.flickity-page-dots{margin:0 0 25px}.header .logo{max-width:250px}}@media only screen and (max-width:575px){.header .logo{max-width:200px;padding:0}}.hamburger-container{display:flex;justify-content:center;align-items:center}.hamburger-container .hamburger{cursor:pointer;padding:35px 10px;user-select:none}.hamburger-container .hamburger .line{width:35px;height:3px;background-color:#00685e;display:block;margin:6px auto;-webkit-transition:.3s ease-in-out;-o-transition:.3s ease-in-out;transition:all .3s ease-in-out}.hamburger-container .hamburger:hover{cursor:pointer}.hamburger-container .hamburger.is-active{-webkit-transition:.3s ease-in-out;-o-transition:.3s ease-in-out;transition:all .3s ease-in-out;-webkit-transition-delay:0.6s;-o-transition-delay:0.6s;transition-delay:0.6s;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}.hamburger-container .hamburger.is-active .line:nth-child(2){width:0}.hamburger-container .hamburger.is-active .line:first-child,.hamburger-container .hamburger.is-active .line:nth-child(3){-webkit-transition-delay:0.3s;-o-transition-delay:0.3s;transition-delay:0.3s}.hamburger-container .hamburger.is-active .line:first-child{-webkit-transform:translateY(8px);-ms-transform:translateY(8px);-o-transform:translateY(8px);transform:translateY(8px)}.hamburger-container .hamburger.is-active .line:nth-child(3){-webkit-transform:translateY(-10px) rotate(90deg);-ms-transform:translateY(-10px) rotate(90deg);-o-transform:translateY(-10px) rotate(90deg);transform:translateY(-10px) rotate(90deg);margin-left:0}#mega-menu{padding-top:90px;padding-bottom:200px;box-shadow:0 0 30px rgba(0,97,89,.2);position:absolute;width:100%;max-width:100%;max-height:100vh;background-color:#fff;z-index:-99;margin:0;top:-10000%;left:-100%;right:0;transition:.5s top ease;overflow-y:scroll}#mega-menu.active-mm{top:80px;left:0;transition:.5s top ease}#mega-menu ul{list-style:none;margin:auto;max-width:900px}#mega-menu ul li{margin:0;padding:0}#mega-menu ul li a{text-decoration:none!important;color:#303030}#mega-menu ul li a:hover{color:#00685e}#mega-menu .main-nav>li{padding-top:30px;padding-bottom:30px;border-bottom:3px solid #00685e}#mega-menu .main-nav>li>a{display:inline-block!important;font-family:"Stabil Grotesk",Helvetica,san-serif!important}#mega-menu .main-nav .subnav{display:flex;flex-direction:column;justify-content:space-between;max-height:0;opacity:0;transition:.25s max-height ease-in-out,1s opacity ease-in-out;overflow:hidden}#mega-menu .main-nav .subnav.active-subnav{transition:.25s max-height ease-in-out,1s opacity ease-in-out;opacity:1;max-height:1000px}#mega-menu .main-nav .subnav li{width:fit-content;margin-top:20px;font-size:22px!important}#mega-menu .alt-nav>li{margin-top:30px}#mega-menu .alt-nav>li .subnav{max-height:unset;opacity:1;flex-wrap:wrap}#mega-menu .alt-nav>li .subnav>li{width:49%;text-transform:capitalize!important;margin-top:0;justify-content:flex-start}@media only screen and (max-width:768px){#mega-menu{padding-top:50px}#mega-menu .main-nav>li{padding-top:20px;padding-bottom:20px}#mega-menu .alt-nav>li{padding-top:20px;padding-bottom:20px;margin-top:0;border-bottom:5px solid #e3eeeb;font-family:"Suisse Works","Times New Roman","serif"!important;font-size:32px;line-height:36px}#mega-menu .alt-nav>li .subnav{flex-direction:column}#mega-menu .alt-nav>li .subnav>li{margin-top:10px;width:100%}}@media only screen and (max-width:768px) and (min-width:400px){#mega-menu .alt-nav>li{font-size:calc(32px + 8 * (100vw - 400px) / 1040)}#mega-menu .alt-nav>li{line-height:calc(36px + 8 * (100vw - 400px) / 1040)}}@media only screen and (max-width:768px) and (min-width:1440px){#mega-menu .alt-nav>li{font-size:40px}#mega-menu .alt-nav>li{line-height:44px}}#mega-menu .arrow{width:100%;max-width:16px;margin-right:5px}#mega-menu .nav-toggle-item{background-color:transparent;float:right;position:relative;right:30px;bottom:0;transform:rotate(180deg);transition:.25s transform ease}#mega-menu .nav-toggle-item.nti-rotate{transform:rotate(0)}#mega-menu .nav-toggle-item svg{font-size:30px;color:#00685e}.spanish-translate{display:none;color:#00685e;text-decoration:underline;cursor:pointer;position:absolute;z-index:9;top:20px;max-width:1440px;text-align:right;left:0;right:0;margin:auto}.spanish-translate .gt-dropdown{text-decoration:none}.spanish-translate.link-group .notranslate:first-child{display:none}#mega-menu .mobile-menu{display:none}#mega-menu .mobile-menu a{text-decoration:none;margin-right:40px;margin-top:40px}#mega-menu .mobile-menu a svg{margin-left:5px}@media (max-width:998px){#mega-menu .main-nav>li a{font-size:20px}header .desktop-menu{display:none}#mega-menu .mobile-menu{display:flex;flex-wrap:wrap}}footer{position:relative;padding-top:80px;background-color:#00685e}footer .footer-container{display:flex;justify-content:space-between}@media only screen and (max-width:768px){footer .footer-container{flex-direction:column}}footer .footer-container.max-width{max-width:1300px}footer .footer-container__left-side{display:flex;flex-direction:column;width:50%}footer .footer-container__left-side .socials-item a:hover{color:#e3eeeb}@media only screen and (max-width:768px){footer .footer-container__left-side{width:100%}}footer .footer-container__left-side .logo{max-width:165px}footer .footer-container__left-side .logo .logo-image{width:164px;max-height:80px}footer .footer-container__right-side{width:50%;max-width:454px;color:#fff}footer .footer-container .footer-navigation-container{display:flex;flex-wrap:wrap}@media only screen and (max-width:768px){footer .footer-container__right-side{width:100%;max-width:100%}footer .footer-container .footer-navigation-container{display:none}footer .socials{margin-top:40px;margin-bottom:40px}}footer .footer-container .footer-navigation{display:flex;margin-top:70px}footer .footer-container .footer-navigation ul{flex-direction:column;list-style:none;margin-left:0}footer .footer-container .footer-navigation ul#menu-footer-menu{margin-right:80px}footer .footer-container .footer-navigation ul#menu-footer-menu li{padding-left:0}footer .footer-container .footer-navigation ul#menu-footer-menu li a:hover{color:#e3eeeb}footer .footer-container .footer-navigation ul#menu-footer-alt-menu li:not(:last-child){margin-bottom:20px}footer .footer-container .footer-navigation ul#menu-footer-alt-menu li a:hover{color:#e3eeeb}footer .footer-container .footer-navigation>ul{display:flex}footer .footer-container .footer-navigation>ul li ul{display:flex;flex-direction:column}footer .socials{display:flex;flex-wrap:wrap}footer .socials div:not(:last-child){margin-right:10px}footer .socials a{font-size:21px}footer #copyright{height:100px;margin-top:110px;background-color:#fff;display:flex;justify-content:center;align-items:center}footer #copyright .copyright-container{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center}footer #copyright .copyright-container .fifty-logo-markbox{width:30px;height:30px}footer a{color:#fff;text-decoration:none}.h1,h1{font-family:"Suisse Works","Times New Roman","serif";font-weight:500;letter-spacing:-.02em;font-size:44px;line-height:48px}@media (min-width:400px){.h1,h1{font-size:calc(44px + 12 * (100vw - 400px) / 1040)}.h1,h1{line-height:calc(48px + 12 * (100vw - 400px) / 1040)}}@media (min-width:1440px){.h1,h1{font-size:56px}.h1,h1{line-height:60px}}#mega-menu .main-nav>li,h2{font-family:"Stabil Grotesk",Helvetica,san-serif;font-weight:500;font-size:32px;line-height:36px}@media (min-width:400px){#mega-menu .main-nav>li,h2{font-size:calc(32px + 8 * (100vw - 400px) / 1040)}#mega-menu .main-nav>li,h2{line-height:calc(36px + 4 * (100vw - 400px) / 1040)}}@media (min-width:1440px){#mega-menu .main-nav>li,h2{font-size:40px}#mega-menu .main-nav>li,h2{line-height:40px}}#mega-menu .main-nav>li{line-height:38px;font-family:"Suisse Works","Times New Roman","serif"}@media (min-width:400px){#mega-menu .main-nav>li{line-height:calc(38px + 6 * (100vw - 400px) / 1040)}}@media (min-width:1440px){#mega-menu .main-nav>li{line-height:44px}}#mega-menu .alt-nav>li,.h3,.h3-bold,footer .footer-container .footer-navigation ul#menu-footer-menu li a,h3{font-family:"Stabil Grotesk",Helvetica,san-serif;font-weight:500;font-size:22px;line-height:28px}@media (min-width:400px){#mega-menu .alt-nav>li,.h3,.h3-bold,footer .footer-container .footer-navigation ul#menu-footer-menu li a,h3{font-size:calc(22px + 2 * (100vw - 400px) / 1040)}#mega-menu .alt-nav>li,.h3,.h3-bold,footer .footer-container .footer-navigation ul#menu-footer-menu li a,h3{line-height:calc(28px + 4 * (100vw - 400px) / 1040)}}@media (min-width:1440px){#mega-menu .alt-nav>li,.h3,.h3-bold,footer .footer-container .footer-navigation ul#menu-footer-menu li a,h3{font-size:24px}#mega-menu .alt-nav>li,.h3,.h3-bold,footer .footer-container .footer-navigation ul#menu-footer-menu li a,h3{line-height:32px}}.h3-bold,footer .footer-container .footer-navigation ul#menu-footer-menu li a{font-family:"Stabil Grotesk Bold",Helvetica,san-serif;font-weight:700}.floating-search-bar form input,.floating-search-bar form select,.floating-search-bar form textarea,.h5,h5{font-family:"Stabil Grotesk",Helvetica,san-serif;font-weight:500;font-size:18px;line-height:24px}@media (min-width:400px){.floating-search-bar form input,.floating-search-bar form select,.floating-search-bar form textarea,.h5,h5{font-size:calc(18px + 2 * (100vw - 400px) / 1040)}.floating-search-bar form input,.floating-search-bar form select,.floating-search-bar form textarea,.h5,h5{line-height:calc(24px + 4 * (100vw - 400px) / 1040)}}@media (min-width:1440px){.floating-search-bar form input,.floating-search-bar form select,.floating-search-bar form textarea,.h5,h5{font-size:20px}.floating-search-bar form input,.floating-search-bar form select,.floating-search-bar form textarea,.h5,h5{line-height:28px}}#mega-menu .alt-nav>li .subnav>li{font-family:"Stabil Grotesk",Helvetica,san-serif;font-weight:500;font-size:15px;line-height:16px;letter-spacing:1px}p{font-family:"Stabil Grotesk",Helvetica,san-serif;font-weight:500;font-size:16px;line-height:24px}.caption{font-family:"Stabil Grotesk",Helvetica,san-serif;font-weight:500;font-size:12px;line-height:20px}a{font-family:"Stabil Grotesk",Helvetica,san-serif;font-weight:inherit;font-size:inherit;line-height:inherit}#footer-form input[type=submit],.button,.button-dark-green,.button-light-green,.button-text,.button-white,footer .footer-container .footer-navigation ul#menu-footer-alt-menu li a{font-family:"Stabil Grotesk",Helvetica,san-serif;font-weight:500;font-size:16px;line-height:20px}span{font-family:inherit}a{color:#00685e;text-decoration:underline}a:hover{color:#303030}a svg{margin-right:10px}#footer-form input[type=submit],.button,.button-dark-green,.button-light-green,.button-white{color:#303030;display:inline-flex;justify-content:center;align-items:center;padding:20px 32px;border-radius:50px;text-decoration:none;transition:all .2s ease-out}#footer-form input[type=submit] svg,.button svg,.button-dark-green svg,.button-light-green svg,.button-white svg{margin-right:10px;transform:scale(1);transition:all .2s ease-out}#footer-form input[type=submit],.button-light-green{background-color:#e3eeeb;color:#000}#footer-form input[type=submit] svg,.button-light-green svg{fill:#00685E;color:#00685e}#footer-form input[type=submit]:hover,.button-light-green:hover{background-color:#c1dad6}.button-dark-green{color:#fff;background-color:#00685e}.button-dark-green .arrow,.button-dark-green svg{fill:#FFF!important;color:#fff!important}.button-dark-green:hover{color:#fff;background-color:#13524c}.button-white{background-color:#fff;color:#303030}.button-white svg{fill:#00685E;color:#00685e}.button-white:hover{background-color:#f0f0f0}.link{display:inline-flex;align-items:center;text-decoration:none;transition:all .2s ease-out;color:#00685e;cursor:pointer}#mega-menu .main-nav .subnav li svg,.link svg{transform:scale(1);transition:all .2s ease-out}.link:hover .arrow,.link:hover .fa-long-arrow-right{margin-left:5px;transform:scale(1.65,1.3);transition:all .2s ease-out}#mega-menu .main-nav .subnav li{display:inline-flex;align-items:center;text-decoration:none;font-family:"Stabil Grotesk",Helvetica,san-serif;font-weight:400;font-size:22px;line-height:28px;color:#303030;cursor:pointer}#mega-menu .main-nav .subnav li .arrow{fill:#303030}#mega-menu .main-nav .subnav li:hover{color:#00685e;transition:all .2s ease-out}#mega-menu .main-nav .subnav li:hover .arrow{fill:#00685E}#mega-menu .main-nav .subnav li:hover .arrow{margin-left:5px;padding-right:3px;transform:scale(1.65,1.3);transition:all .2s ease-out}@media screen and (min-width:1420px){.header .header-container{padding-left:50px!important;padding-right:50px!important}}.header .logo-image{max-height:48px;max-width:166px}.header.utility.hide-nav{top:-115px}.header.utility .header-utility-bar{background:#00685e;color:#fff;text-align:center}.header.utility .header-utility-bar a{color:#fff;display:inline-block;font-family:"Stabil Grotesk Medium",Helvetica,san-serif;line-height:1.2em;padding:.5em 0;text-decoration:none}.header.utility .header-utility-bar a svg{fill:#FFF;margin-left:8px}footer.grey{background:#303030}.modal{display:none;align-content:center;justify-content:center;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.75);justify-content:center;align-items:center;z-index:99999999;box-sizing:border-box}#impact .mcgbgi_button_two{background:0 0!important;padding:16px 0 0;display:block}#impact .mcgbgi_button_two svg{display:none}.impact{background:#e3eeeb;text-align:center;padding-top:60px;padding-bottom:60px}.impact .title{max-width:840px}.impact .progress{background:#fff;border-radius:20px;margin-left:auto;margin-top:30px;margin-right:auto;padding-top:40px;padding-right:32px;padding-bottom:64px;padding-left:32px;max-width:1743px}@media (min-width:400px){#mega-menu .main-nav .subnav li{font-size:calc(22px + 2 * (100vw - 400px) / 1040)}#mega-menu .main-nav .subnav li{line-height:calc(28px + 4 * (100vw - 400px) / 1040)}.impact{padding-top:calc(60px + 30 * (100vw - 400px)/ 1040)}.impact{padding-bottom:calc(60px + 30 * (100vw - 400px)/ 1040)}.impact .progress{margin-top:calc(30px + 20 * (100vw - 400px)/ 1040)}.impact .progress{padding-top:calc(40px + 32 * (100vw - 400px)/ 1040)}.impact .progress{padding-right:calc(32px + 53 * (100vw - 400px)/ 1040)}.impact .progress{padding-bottom:calc(64px + 16 * (100vw - 400px)/ 1040)}.impact .progress{padding-left:calc(32px + 53 * (100vw - 400px)/ 1040)}}@media (min-width:1440px){#mega-menu .main-nav .subnav li{font-size:24px}#mega-menu .main-nav .subnav li{line-height:32px}.impact{padding-top:90px}.impact{padding-bottom:90px}.impact .progress{margin-top:50px}.impact .progress{padding-top:72px}.impact .progress{padding-right:85px}.impact .progress{padding-bottom:80px}.impact .progress{padding-left:85px}}.priorities{text-align:center;padding-top:48px;padding-bottom:64px}.priorities .title{font-family:"Stabil Grotesk Medium",Helvetica,san-serif;margin-bottom:24px}.priorities .title p{max-width:580px;margin-left:auto;margin-right:auto}#main-block{position:relative}.general-section{position:relative}.cms-content-container{min-height:600px}.team-grid-container{max-width:1165px;margin-left:auto;margin-right:auto;margin-bottom:100px}.floating-search-bar{position:fixed;top:0;left:0;width:100%;height:100%;max-height:0;overflow:hidden;justify-content:center;align-content:center;align-items:center;background:rgba(0,0,0,.65);z-index:999;transition:.25s opacity ease-in-out}.floating-search-bar.active-fsb{display:flex;opacity:1;z-index:9998;max-height:100%;overflow:visible}.floating-search-bar form{width:100%;padding-left:12.5%;padding-right:12.5%;display:flex;margin-top:-20%;position:relative;left:50%;transform:translateX(-50%)}@media only screen and (max-width:768px){footer .socials div:not(:last-child){margin-right:30px;margin-bottom:20px}#impact .bg-white .multi-col-grid-item{margin-bottom:0!important}.cms-content-container{min-height:100%}.floating-search-bar form{padding-left:50px;padding-right:50px}}.floating-search-bar form .close-search-form{position:absolute;top:-50px;right:5%;font-size:30px;text-align:right;color:#fff;cursor:pointer;width:100%;max-width:30px}.floating-search-bar form input,.floating-search-bar form select,.floating-search-bar form textarea{height:60px;padding:15px 30px;border:0;appearance:none;-webkit-appearance:none;-moz-appearance:none}.floating-search-bar form input[type=text]{width:80%;border-top-left-radius:10px;border-bottom-left-radius:10px}@media only screen and (max-width:575px){.floating-search-bar form{padding-left:30px;padding-right:30px}.floating-search-bar form input[type=text]{width:90%}}.floating-search-bar form input[type=submit]{height:60px;background-color:#00685e;color:#fff;font-weight:700;appearance:none;-webkit-appearance:none;-moz-appearance:none;border:0;border-top-left-radius:0;border-bottom-left-radius:0;padding:15px 60px 15px 30px;width:20%;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNTAiIGhlaWdodD0iNTAiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDE3MnYtMTcyaDE3MnYxNzJ6IiBmaWxsPSJub25lIj48L3BhdGg+PGcgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTcyLjI0LDEwLjMyYy0zMi4zMzA2MiwwIC01OC40OCwyNi4xNDkzOCAtNTguNDgsNTguNDhjMCwzMi4zMzA2MyAyNi4xNDkzOCw1OC40OCA1OC40OCw1OC40OGMxMS41NDI4MSwwIDIyLjIyNTYzLC0zLjM4NjI1IDMxLjI4MjUsLTkuMTM3NWw0Mi4yNDc1LDQyLjI0NzVsMTQuNjIsLTE0LjYybC00MS43MSwtNDEuNjAyNWM3LjQ5ODEzLC05LjgzNjI1IDEyLjA0LC0yMi4wMjQwNiAxMi4wNCwtMzUuMzY3NWMwLC0zMi4zMzA2MiAtMjYuMTQ5MzcsLTU4LjQ4IC01OC40OCwtNTguNDh6TTcyLjI0LDI0LjA4YzI0Ljc2NTMxLDAgNDQuNzIsMTkuOTU0NjkgNDQuNzIsNDQuNzJjMCwyNC43NjUzMSAtMTkuOTU0NjksNDQuNzIgLTQ0LjcyLDQ0LjcyYy0yNC43NjUzMSwwIC00NC43MiwtMTkuOTU0NjkgLTQ0LjcyLC00NC43MmMwLC0yNC43NjUzMSAxOS45NTQ2OSwtNDQuNzIgNDQuNzIsLTQ0LjcyeiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+");background-size:27px 37px;background-position:top 10px right 35px;background-repeat:no-repeat}@media only screen and (max-width:575px){.floating-search-bar form input[type=submit]{padding:15px 30px;font-size:0;min-width:0;width:auto;background-size:35px 35px;background-position:top 10px right 15px}}.floating-search-bar form input[type=submit]:hover{background-color:#1e6f85}@media print{*{background:0 0!important;color:#000!important;text-shadow:none!important;filter:none!important;-ms-filter:none!important}.nav{display:none!important}.header .logo *{display:block!important;padding:0}a,a:visited{text-decoration:underline}img,tr{page-break-inside:avoid}img{max-width:100%!important}.page{margin:.5cm}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}}.block.full-width{max-width:100%}.banner-two{position:relative;height:687px}.banner-two .banner-two-messaging{position:absolute;top:50%;transform:translateY(-50%);background-color:#fff;border-top-right-radius:300px;border-bottom-right-radius:300px;padding:60px 118px;max-width:710px}.content-block{max-width:1165px;margin-right:auto;margin-left:auto}.two-col-block .content-block{display:flex;justify-content:space-between}.two-col-block .content-block .two-col-block-col{width:50%}.two-col-block .content-block .two-col-block-col h2,.two-col-block .content-block .two-col-block-col p:not(:last-child){margin-bottom:20px}.two-col-block .content-block .two-col-block-col p a:not(:first-child){margin-top:20px}.two-col-block .content-block .two-col-block-col a.button-dark-green:not(:last-child):not(.button-dark-green-icon):not(.button-light-green-icon),.two-col-block .content-block .two-col-block-col a.button-light-green:not(:last-child):not(.button-dark-green-icon):not(.button-light-green-icon),.two-col-block .content-block .two-col-block-col a.button-white:not(:last-child):not(.button-dark-green-icon):not(.button-light-green-icon),.two-col-block .content-block .two-col-block-col a.button:not(:last-child):not(.button-dark-green-icon):not(.button-light-green-icon){margin-right:20px}.two-col-block .content-block .two-col-block-col a svg{font-size:16px}.two-col-block-simple .content-block .two-col-block-col:first-child{margin-right:40px}.two-col-block-simple .content-block .two-col-block-col:last-child{width:100%}#footer-form .two-col-block-simple input[type=submit],.two-col-block-simple #footer-form input[type=submit],.two-col-block-simple .button,.two-col-block-simple .button-dark-green,.two-col-block-simple .button-light-green,.two-col-block-simple .button-white{margin-top:10px}.two-col-photo-links .content-block{display:block;max-width:1400px}.two-col-photo-links .content-block a{margin-top:10px}@media only screen and (max-width:768px){.banner-two{height:100%}.banner-two .banner-two-background-image{height:366px}.banner-two .banner-two-messaging{position:static;top:unset;transform:unset;border-radius:0;padding:40px 50px}.two-col-block .content-block{flex-wrap:wrap}.two-col-block .content-block .two-col-block-col{width:100%;max-width:100%}.two-col-block-simple .content-block .two-col-block-col{max-width:100%!important}.two-col-block-simple .content-block .two-col-block-col:first-child{width:100%;margin-right:0;padding-bottom:30px}#footer-form .two-col-block-simple .content-block .two-col-block-col:last-child input[type=submit],.two-col-block-simple .content-block .two-col-block-col:last-child #footer-form input[type=submit],.two-col-block-simple .content-block .two-col-block-col:last-child .button,.two-col-block-simple .content-block .two-col-block-col:last-child .button-dark-green,.two-col-block-simple .content-block .two-col-block-col:last-child .button-light-green,.two-col-block-simple .content-block .two-col-block-col:last-child .button-white{width:100%}.two-col-photo-links .content-block{justify-content:center}}.two-col-photo-links .content-block .two-col-block-container{display:flex;align-items:center}@media only screen and (max-width:768px){.two-col-photo-links .content-block .two-col-block-container{flex-direction:column-reverse!important;justify-content:center;flex-wrap:wrap}.two-col-photo-links .content-block .two-col-block-container .two-col-block-col:last-child{margin-top:0}}.two-col-photo-links .content-block .two-col-block-col:first-child{margin-right:50px}@media (min-width:400px){.priorities{padding-top:calc(48px + 24 * (100vw - 400px)/ 1040)}.priorities{padding-bottom:calc(64px + 16 * (100vw - 400px)/ 1040)}.priorities .title{margin-bottom:calc(24px + 40 * (100vw - 400px)/ 1040)}.two-col-photo-links .content-block .two-col-block-col:first-child{margin-right:calc(50px + 50 * (100vw - 400px)/ 1040)}}@media (min-width:1440px){.priorities{padding-top:72px}.priorities{padding-bottom:80px}.priorities .title{margin-bottom:64px}.two-col-photo-links .content-block .two-col-block-col:first-child{margin-right:100px}}.two-col-photo-links .content-block .two-col-block-col .tcpl-link{display:flex}.two-col-photo-links .content-block .two-col-block-col .tcpl-link:hover a{padding:20px 32px;border-radius:50px;transition:padding .25s ease}.two-col-photo-links .content-block .two-col-block-col .tcpl-link:first-child:hover a{background-color:#dedefe!important}.two-col-photo-links .content-block .two-col-block-col .tcpl-link:nth-child(2):hover a{background-color:#d6f1f8!important}.two-col-photo-links .content-block .two-col-block-col .tcpl-link:nth-child(3):hover a{background-color:#fee1ba!important}.two-col-photo-links .content-block .two-col-block-col .tcpl-link:nth-child(4):hover a{background-color:#e1f2cc!important}.two-col-photo-links .content-block .two-col-block-col .tcpl-link:nth-child(5):hover a{background-color:#d1eee9!important}.two-col-photo-links .content-block .two-col-block-col .tcpl-link:nth-child(6):hover a{background-color:#f8d0c8}.two-col-photo-links .content-block .two-col-block-col .tcpl-link:nth-child(7):hover a{background-color:#e3eeeb}.two-col-photo-links .content-block .two-col-block-col .tcpl-link a{display:inline-flex;justify-content:center;align-items:center;margin:0;color:#303030}#mega-menu .main-nav .subnav .two-col-photo-links .content-block .two-col-block-col li,.two-col-photo-links .content-block .two-col-block-col #mega-menu .main-nav .subnav li{color:#00685e}#mega-menu .main-nav .subnav .two-col-photo-links .content-block .two-col-block-col li:hover,.two-col-photo-links .content-block .two-col-block-col #mega-menu .main-nav .subnav li:hover{color:#303030}@media only screen and (max-width:768px){.two-col-photo-links .content-block .two-col-block-col{max-width:100%!important}.two-col-photo-links .content-block .two-col-block-col:first-child{margin-right:0}.two-col-photo-links .content-block .two-col-block-col:last-child{max-width:100%;margin-top:50px}}.two-col-photo-links .content-block .embed-container,.two-col-photo-links .content-block .image-container{width:100%;max-width:685px;position:relative}.two-col-photo-links .content-block .embed-container img,.two-col-photo-links .content-block .image-container img{border-radius:10px}.two-col-photo-links .content-block .embed-container .tcpl-link-image,.two-col-photo-links .content-block .image-container .tcpl-link-image{position:absolute;top:0;left:0;opacity:0;transition:all .5s ease}.two-col-photo-links .content-block .embed-container .tcpl-link-image.active,.two-col-photo-links .content-block .image-container .tcpl-link-image.active{opacity:1;transition:all .5s ease}@media only screen and (max-width:768px){.two-col-photo-links .content-block .embed-container,.two-col-photo-links .content-block .image-container{max-width:100%;height:500px!important}}.two-col-photo-links .content-block .embed-container{background-color:#000}.two-col-photo-links .content-block .embed-container iframe,.two-col-photo-links .content-block .embed-container video{border-radius:10px}.two-col-photo-links .content-block .embed-container{aspect-ratio:16/9}#mega-menu .two-col-photo-links .content-block .alt-nav>li.tcpl-headline,.two-col-photo-links .content-block #mega-menu .alt-nav>li.tcpl-headline,.two-col-photo-links .content-block .tcpl-headline.h3,.two-col-photo-links .content-block .tcpl-headline.h3-bold,.two-col-photo-links .content-block footer .footer-container .footer-navigation ul#menu-footer-menu li a.tcpl-headline,footer .footer-container .footer-navigation ul#menu-footer-menu li .two-col-photo-links .content-block a.tcpl-headline{color:#00685e}.two-col-photo-links.orientation-content-first .two-col-block-container{flex-direction:row-reverse}.two-col-photo-links.orientation-content-first .two-col-block-container .two-col-block-col:first-child{margin-right:0;margin-left:50px}@media (min-width:400px){.two-col-photo-links.orientation-content-first .two-col-block-container .two-col-block-col:first-child{margin-left:calc(50px + 50 * (100vw - 400px)/ 1040)}}@media (min-width:1440px){.two-col-photo-links.orientation-content-first .two-col-block-container .two-col-block-col:first-child{margin-left:100px}}.multi-col-grid .content-block{max-width:1400px;margin-left:auto;margin-right:auto}.multi-col-grid .content-block .main-content-block p.h3,.multi-col-grid .content-block .main-content-block p.h3-bold{max-width:807px;margin-left:auto;margin-right:auto;text-align:center}.multi-col-grid .content-block .main-content-block{max-width:1165px;margin:auto}@media (max-width:1010px){.multi-col-grid .content-block .main-content-block{padding-left:40px;padding-right:40px}}.multi-col-grid .content-block .multi-col-grid-container{display:flex;justify-content:space-evenly;flex-wrap:wrap}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item{max-width:453px;min-width:350px;padding:50px 30px;flex:1;border-radius:10px;transition:all .2s ease-out;cursor:pointer}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item:hover{transition:all .2s ease-out;background-color:#fff}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item:hover .mcgbgi_button_one{background-color:#00685e;color:#fff!important}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item:hover .mcgbgi_button_one .arrow,.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item:hover .mcgbgi_button_one svg{fill:#FFF;color:#fff}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item:hover .mcgbgi_button_two{background-color:#e3eeeb}@media only screen and (max-width:892px){.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item{width:100%}}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link{text-decoration:none}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link .button-white,.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link h3,.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link p,.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link p a{color:#303030;text-decoration:none}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link h3{margin-bottom:10px}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link h3 a,.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link h3.h3-bold{font-size:20px;line-height:1.25}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link h3 a{text-decoration:none;color:#303030}:is(:is(:is(:is(.multi-col-grid.bg-dark-green .content-block) .multi-col-grid-container) .multi-col-grid-item) .grid-link) h3{color:#fff}:is(:is(:is(:is(:is(.multi-col-grid.bg-dark-green .content-block) .multi-col-grid-container) .multi-col-grid-item) .grid-link) h3) a{color:#fff!important}:is(:is(:is(.multi-col-grid.bg-dark-green .content-block) .multi-col-grid-container) .multi-col-grid-item) p.button-text{color:#fff!important}:is(:is(:is(:is(.multi-col-grid.bg-dark-green .content-block) .multi-col-grid-container) .multi-col-grid-item):hover .grid-link) h3{color:#00685e}:is(:is(:is(:is(:is(.multi-col-grid.bg-dark-green .content-block) .multi-col-grid-container) .multi-col-grid-item):hover .grid-link) h3) a{color:#00685e!important}:is(:is(:is(.multi-col-grid.bg-dark-green .content-block) .multi-col-grid-container) .multi-col-grid-item):hover p.button-text{color:#00685e!important}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link .image-container,.multi-col-grid .two-col-photo-links .content-block .multi-col-grid-container .multi-col-grid-item .grid-link .embed-container,.two-col-photo-links .multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link .embed-container{height:250px}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link .image-container img,.multi-col-grid .two-col-photo-links .content-block .multi-col-grid-container .multi-col-grid-item .grid-link .embed-container img,.two-col-photo-links .multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link .embed-container img{border-radius:10px}#footer-form .multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link input[type=submit]:not(:nth-child(2)),.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link #footer-form input[type=submit]:not(:nth-child(2)),.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link .button-dark-green:not(:nth-child(2)),.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link .button-light-green:not(:nth-child(2)),.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link .button-white:not(:nth-child(2)),.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link .button:not(:nth-child(2)){margin-top:30px}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link .mcgbgi_button_two:hover{background-color:#e0f2ce;color:#fff}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .grid-link .mcgbgi_button_two:hover svg{fill:#00685E;color:#00685e}@media only screen and (max-width:768px){.two-col-photo-links.orientation-content-first .two-col-block-container .two-col-block-col:first-child{margin-left:0}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item{min-width:350px;padding:50px 30px}:is(:is(:is(.multi-col-grid.bg-dark-green .content-block) .multi-col-grid-container) .multi-col-grid-item) .grid-link h3,:is(:is(:is(.multi-col-grid.bg-dark-green .content-block) .multi-col-grid-container) .multi-col-grid-item) .grid-link h3 a,:is(:is(:is(.multi-col-grid.bg-dark-green .content-block) .multi-col-grid-container) .multi-col-grid-item) p.button-text{color:#00685e!important}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item{background-color:#fff;margin-right:30px}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item:first-child{margin-left:20px}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .button-white{background-color:#00685e;color:#fff!important}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .button-white .arrow{fill:#FFF}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .mcgbgi_button_two{background-color:#e3eeeb;color:#303030!important}.multi-col-grid .content-block .multi-col-grid-container .multi-col-grid-item .mcgbgi_button_two svg{fill:#00685E!important;color:#00685e!important}.multi-col-grid .content-block .multi-col-grid-container.overflow-y{flex-flow:row nowrap;overflow-y:scroll;justify-content:flex-start;position:relative}}.tag #content{padding-top:80px;padding-bottom:80px}.max-width{width:100%;margin-left:auto;margin-right:auto;max-width:1440px}.cms-content-container>a,.cms-content-container>h1,.cms-content-container>h2,.cms-content-container>h3,.cms-content-container>h5,.cms-content-container>li,.cms-content-container>p,.cms-content-container>span,.cms-content-container>ul{max-width:1440px;margin-left:auto;margin-right:auto}.spanish-translate.push{top:55px}@media only screen and (max-width:480px){.header.utility.hide-nav{top:-135px}.header.utility .header-utility-bar a{max-width:320px}.two-col-photo-links .content-block .embed-container,.two-col-photo-links .content-block .image-container{height:300px!important}.multi-col-grid .content-block .multi-col-grid-container.overflow-y .multi-col-grid-item{margin-left:20px;margin-right:20px}.spanish-translate.push{top:75px}}a.glink{text-decoration:none}a.glink.gt-current-lang{font-weight:700}ul.list{font-family:"Stabil Grotesk",Helvetica,san-serif}table{font-family:"Stabil Grotesk",Helvetica,san-serif;font-size:24px!important}div.lightgreenbox{font-family:"Stabil Grotesk",Helvetica,san-serif!important;font-size:24px!important;text-align:center;border-radius:25px;background-color:#e3eeeb;padding:25px;vertical-align:middle!important}div.whitemodulecenter{font-family:"Stabil Grotesk",Helvetica,san-serif!important;text-align:center;border-radius:25px;background-color:#fff;padding:30px;width:100%}td.lightgreenbox{font-family:"Stabil Grotesk",Helvetica,san-serif!important;font-size:24px!important;text-align:center;border-radius:25px;background-color:#e3eeeb;padding:25px;vertical-align:middle!important}h5.introsentence{color:#555;margin-bottom:3%}img.roundcorners{border-radius:25px!important}img.mediumicon{margin-bottom:15px;width:100px;height:100px}div.storymodule{font-family:"Stabil Grotesk",Helvetica,san-serif!important;font-size:20px!important;border-radius:25px;background-color:#e3eeeb;padding:30px;width:100%}span.storymodulequoteauthor{color:#00685e!important;font-size:13px!important}table.measuringprogresscenter{margin-left:auto;margin-right:auto}h2.leaderboardnumber{font-family:"Suisse Works Medium","Times New Roman","serif";font-size:1.75em;color:#00685e;margin-top:10px;margin-bottom:5px}.spanish-translate a{color:#fff!important}.breadcrumbs li .last-item ul{margin:0!important;padding:0!important}.breadcrumbs li .last-item ul li::after{content:", ";display:inline-block;margin-right:5px}.breadcrumbs li .last-item ul li:last-child::after{display:none}#popup-29,#popup-30,#popup-31,#popup-32,#popup-33,#popup-34,#popup-35,#popup-36,#popup-37,#popup-38,#popup-39,#popup-40,#popup-41,#popup-42,#popup-43,#popup-44,#popup-45{width:100%;max-width:500px}.content-block .mktoForm{width:100%;max-width:100%}.mktoFieldWrap .mktoLabel,.mktoForm.mktoLayoutAbove .mktoLabel{width:100%!important;float:left!important}.modal-window .mktoForm{width:100%!important}.mktoForm .mktoFormRow{display:flex!important}.mktoForm .mktoFieldDescriptor{display:inline-block!important;float:none!important}.mktoForm .mktoFieldDescriptor .mktoFieldWrap{width:100%;margin-bottom:10px}.mktoFormRow .mktoFormCol{width:100%!important}.mktoFormRow .mktoFormCol:not(:only-child){width:50%}.mktoForm .mktoAsterix{padding-left:0}.mktoForm .mktoGutter{width:0!important}.mktoForm .mktoFieldWrap{width:100%!important;padding-right:10px!important}.mktoForm .mktoCheckboxList>label,.mktoForm .mktoRadioList>label{margin-left:0!important;width:90%}.mktoForm .mktoRadioList>input{width:10%!important;margin:7px 0 0!important}.mktoForm .mktoButtonRow{margin-top:30px!important}.mktoForm .mktoButtonRow span{margin-left:0!important}.mktoForm .mktoAsterix{float:none!important;display:inline-block!important}.mktoForm button{background:#00685e!important;border-radius:50px!important;color:#fff!important;font-family:"Stabil Grotesk",Helvetica,san-serif!important;font-size:16px!important;padding-top:20px!important;padding-bottom:20px!important;padding-left:40px!important;padding-right:40px!important;border:1px solid #fff!important}.mktoForm button:hover{background-color:#13524c!important}.mktoForm input[type=tel],.mktoForm input[type=url]{height:40px!important}.mktoForm input{width:100%!important;display:block!important;font-size:15px!important}.mktoForm textarea{font-size:15px!important}.mktoForm .mktoGutter{display:none!important}#footer-form h2{margin-bottom:15px;font-family:"Suisse Works","Times New Roman","serif"}#footer-form .mktoForm{max-width:100%;margin-top:18px}#footer-form .mktoForm label{font-family:"Stabil Grotesk",Helvetica,san-serif!important;font-weight:400!important;font-size:16px!important;line-height:16px!important;letter-spacing:1px!important;margin-bottom:10px!important;color:#fff!important}#footer-form .mktoForm .mktoAsterix{padding:0 2px 0 0!important}#footer-form .mktoFieldDescriptor .mktoFieldWrap{margin-bottom:0!important}#footer-form .mktoForm input[type=email],#footer-form .mktoForm input[type=text]{font-size:15px!important;margin-bottom:0!important;margin-top:0!important;padding:8px!important;height:40px!important;border-radius:5px!important;border:1px solid #00685e!important}#footer-form .mktoForm select{width:100%!important;max-width:100%!important;height:40px!important;padding:8px 8px 6px!important;font-size:16px!important}#footer-form .mktoForm button{background-color:#e3eeeb!important;border:1px solid #e3eeeb!important;color:#000!important}#footer-form .mktoForm button:hover{background-color:#c1dad6!important;border:1px solid #c1dad6!important}@media screen and (max-width:575px){#popup-29,#popup-30,#popup-31,#popup-32,#popup-33,#popup-34,#popup-35,#popup-36,#popup-37,#popup-38,#popup-39,#popup-40,#popup-41,#popup-42,#popup-43,#popup-44,#popup-45{width:90%;max-width:90%!important;margin:0 5%!important}.modal-window .modal-window-content{overflow-x:hidden;width:90%;max-width:90%}.modal-window .gform_title{font-size:23px!important;line-height:25px!important}.mktoForm input[type=email],.mktoForm input[type=tel],.mktoForm input[type=text]{height:40px!important}.mktoForm .mktoButtonWrap{margin-left:0!important}.mktoForm .mktoButton{background-color:#00685e!important}.mktoForm .mktoFormRow{display:inline-block!important;width:100%}.mktoFormRow .mktoFormCol:not(:only-child){width:100%!important}.three-col-small .three-col-items .three-col-item{width:100%;max-width:100%;margin-right:0}}.html-embed-block .mktoForm{width:100%!important;max-width:100%!important;font-family:"Stabil Grotesk",Helvetica,san-serif!important;color:#000!important}.html-embed-block .mktoForm .mktoFieldWrap,.html-embed-block .mktoForm .mktoHtmlText,.html-embed-block .mktoForm .mktoLogicalField{width:100%!important}.html-embed-block .mktoForm .mktoFormCol{min-width:0!important}.html-embed-block .mktoForm .mktoFormRow{gap:0 24px}.html-embed-block .mktoForm .mktoFieldWrap{padding-right:0!important}.html-embed-block .mktoForm .mktoFieldDescriptor .mktoFieldWrap{margin-bottom:22px!important}.html-embed-block .mktoForm .mktoHtmlText p{margin:0 0 4px!important;line-height:1.4!important}.html-embed-block .mktoForm .mktoHtmlText br{display:none!important}.html-embed-block .mktoForm .mktoHtmlText strong,.html-embed-block .mktoForm .mktoHtmlText strong span{font-family:"Stabil Grotesk",Helvetica,san-serif!important;font-size:20px!important;line-height:26px!important;font-weight:600!important;color:#00685e!important}.html-embed-block .mktoForm .mktoHtmlText hr{margin:10px 0 26px!important;border:0!important;border-top:1px solid #c1dad6!important}.html-embed-block .mktoForm .mktoLabel{font-family:"Stabil Grotesk",Helvetica,san-serif!important;font-size:16px!important;line-height:22px!important;font-weight:500!important;color:#00685e!important;margin-bottom:8px!important}.html-embed-block .mktoForm .mktoAsterix{color:#b3261e!important;padding:0 4px 0 0!important}.html-embed-block .mktoForm input[type=email],.html-embed-block .mktoForm input[type=number],.html-embed-block .mktoForm input[type=tel],.html-embed-block .mktoForm input[type=text],.html-embed-block .mktoForm input[type=url],.html-embed-block .mktoForm select,.html-embed-block .mktoForm textarea{width:100%!important;max-width:100%!important;box-sizing:border-box!important;font-family:"Stabil Grotesk",Helvetica,san-serif!important;font-size:16px!important;line-height:22px!important;color:#000!important;background-color:#fff!important;padding:10px 12px!important;border:1px solid #00685e!important;border-radius:5px!important;box-shadow:none!important}.html-embed-block .mktoForm input[type=email],.html-embed-block .mktoForm input[type=number],.html-embed-block .mktoForm input[type=tel],.html-embed-block .mktoForm input[type=text],.html-embed-block .mktoForm input[type=url],.html-embed-block .mktoForm select{height:48px!important}.html-embed-block .mktoForm textarea{height:auto!important;min-height:120px!important;resize:vertical!important}.html-embed-block .mktoForm input:focus,.html-embed-block .mktoForm select:focus,.html-embed-block .mktoForm textarea:focus{outline:#00685E solid 2px!important;outline-offset:1px!important}.html-embed-block .mktoForm input::placeholder,.html-embed-block .mktoForm textarea::placeholder{color:#6b7a77!important}.html-embed-block .mktoForm .mktoCheckboxList,.html-embed-block .mktoForm .mktoRadioList{display:grid!important;grid-template-columns:auto 1fr;gap:12px 10px;align-items:start;padding-top:4px!important}.html-embed-block .mktoForm .mktoCheckboxList>input,.html-embed-block .mktoForm .mktoRadioList>input{width:18px!important;height:18px!important;min-height:0!important;margin:2px 0 0!important;padding:0!important;accent-color:#00685E}.html-embed-block .mktoForm .mktoCheckboxList>label,.html-embed-block .mktoForm .mktoRadioList>label{width:auto!important;margin:0!important;font-size:16px!important;line-height:22px!important;font-weight:400!important;color:#000!important}.html-embed-block .mktoForm .mktoError .mktoErrorMsg{font-family:"Stabil Grotesk",Helvetica,san-serif!important;font-size:14px!important;line-height:20px!important}.html-embed-block .mktoForm .mktoButtonRow{margin-top:10px!important}@media screen and (max-width:575px){.html-embed-block .mktoForm .mktoFormRow{gap:0}.html-embed-block .mktoForm .mktoFieldDescriptor .mktoFieldWrap{margin-bottom:18px!important}}@media only screen and (max-width:768px){.two-col-block-simple.pad-hit{padding-left:30px;padding-right:30px}.two-col-block-simple .content-block .two-col-block-col:first-child,.two-col-block-simple .content-block .two-col-block-col:last-child{width:100%!important;max-width:100%!important}#footer-form .mktoForm .mktoButtonRow{margin-top:0!important}}</style><link rel="preload" data-rocket-preload as="image" href="https://www.sdfoundation.org/wp-content/uploads/2026/09/Flagship-Community-Scholarships-Program-Banner-2-Option-2-scaled.png" fetchpriority="high">
+	<meta name="description" content="Providing financial support to help San Diego students pursue and complete higher education." />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Community Scholarship Program" />
+	<meta property="og:description" content="Providing financial support to help San Diego students pursue and complete higher education." />
+	<meta property="og:url" content="https://www.sdfoundation.org/community-impact/education/community-scholarship-program/" />
+	<meta property="og:site_name" content="San Diego Foundation" />
+	<meta property="article:publisher" content="https://www.facebook.com/SanDiegoFoundation" />
+	<meta property="article:modified_time" content="2026-10-21T15:43:05+00:00" />
+	<meta property="og:image" content="https://www.sdfoundation.org/wp-content/uploads/2026/10/multicolumngridblock_education_scholarshipscelebration.png" />
+	<meta property="og:image:width" content="790" />
+	<meta property="og:image:height" content="500" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@sd_fdn" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="1 minute" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/www.sdfoundation.org\/community-impact\/education\/community-scholarship-program\/","url":"https:\/\/www.sdfoundation.org\/community-impact\/education\/community-scholarship-program\/","name":"Community Scholarship Program | San Diego Foundation","isPartOf":{"@id":"https:\/\/www.sdfoundation.org\/#website"},"primaryImageOfPage":{"@id":"https:\/\/www.sdfoundation.org\/community-impact\/education\/community-scholarship-program\/#primaryimage"},"image":{"@id":"https:\/\/www.sdfoundation.org\/community-impact\/education\/community-scholarship-program\/#primaryimage"},"thumbnailUrl":"https:\/\/www.sdfoundation.org\/wp-content\/uploads\/2026\/10\/multicolumngridblock_education_scholarshipscelebration.png","datePublished":"2026-09-23T21:29:34+00:00","dateModified":"2026-10-21T15:43:05+00:00","description":"Providing financial support to help San Diego students pursue and complete higher education.","breadcrumb":{"@id":"https:\/\/www.sdfoundation.org\/community-impact\/education\/community-scholarship-program\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/www.sdfoundation.org\/community-impact\/education\/community-scholarship-program\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/www.sdfoundation.org\/community-impact\/education\/community-scholarship-program\/#primaryimage","url":"https:\/\/www.sdfoundation.org\/wp-content\/uploads\/2026\/10\/multicolumngridblock_education_scholarshipscelebration.png","contentUrl":"https:\/\/www.sdfoundation.org\/wp-content\/uploads\/2026\/10\/multicolumngridblock_education_scholarshipscelebration.png","width":790,"height":500,"caption":"Students with college pennants at a Scholarships Celebration"},{"@type":"BreadcrumbList","@id":"https:\/\/www.sdfoundation.org\/community-impact\/education\/community-scholarship-program\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/www.sdfoundation.org\/"},{"@type":"ListItem","position":2,"name":"Community Impact","item":"https:\/\/www.sdfoundation.org\/community-impact\/"},{"@type":"ListItem","position":3,"name":"Education","item":"https:\/\/www.sdfoundation.org\/community-impact\/education\/"},{"@type":"ListItem","position":4,"name":"Community Scholarship Program"}]},{"@type":"WebSite","@id":"https:\/\/www.sdfoundation.org\/#website","url":"https:\/\/www.sdfoundation.org\/","name":"San Diego Foundation","description":"Just, Equitable and Resilient Communities","publisher":{"@id":"https:\/\/www.sdfoundation.org\/#organization"},"alternateName":"SDF","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.sdfoundation.org\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/www.sdfoundation.org\/#organization","name":"San Diego Foundation","alternateName":"SDF","url":"https:\/\/www.sdfoundation.org\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/www.sdfoundation.org\/#\/schema\/logo\/image\/","url":"https:\/\/www.sdfoundation.org\/wp-content\/uploads\/2026\/03\/san-diego-foundation-logo-stacked-square-web.jpg","contentUrl":"https:\/\/www.sdfoundation.org\/wp-content\/uploads\/2026\/03\/san-diego-foundation-logo-stacked-square-web.jpg","width":696,"height":696,"caption":"San Diego Foundation"},"image":{"@id":"https:\/\/www.sdfoundation.org\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/SanDiegoFoundation","https:\/\/x.com\/sd_fdn","https:\/\/www.linkedin.com\/company\/san-diego-foundation","https:\/\/www.instagram.com\/sandiegofoundation\/","https:\/\/www.youtube.com\/c\/SanDiegoFoundation"],"description":"San Diego Foundation brings together philanthropy, community insight and trusted stewardship to support solutions that strengthen our region and transform lives. From flexible giving solutions to strategic investments in community priorities and partnerships, we help people and organizations make meaningful, lasting impact across San Diego County.","email":"info@sdfoundation.org","telephone":"619-235-2300","legalName":"The San Diego Foundation","foundingDate":"1975-05-09","taxID":"95-2942582","numberOfEmployees":{"@type":"QuantitativeValue","minValue":"51","maxValue":"200"},"ownershipFundingInfo":"https:\/\/www.sdfoundation.org\/about-us\/","diversityPolicy":"https:\/\/www.sdfoundation.org\/about-us\/careers-culture\/","diversityStaffingReport":"https:\/\/www.sdfoundation.org\/about-us\/careers-culture\/"}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.sdfoundation.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sdfoundation.org%2Fcommunity-impact%2Feducation%2Fcommunity-scholarship-program%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.sdfoundation.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sdfoundation.org%2Fcommunity-impact%2Feducation%2Fcommunity-scholarship-program%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css"></style>
+<style id="classic-theme-styles-inline-css"></style>
+
+<style id="global-styles-inline-css"></style>
+
+
+
+
+<!--n2css--><!--n2js-->
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+<!-- Google Analytics snippet added by Site Kit -->
+<script id="google_gtagjs-js" src="https://www.googletagmanager.com/gtag/js" async></script>
+<script id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["www.sdfoundation.org"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "G-X46600F5NT");
+ window._googlesitekit = window._googlesitekit || {}; window._googlesitekit.throttledEvents = []; window._googlesitekit.gtagEvent = (name, data) => { var key = JSON.stringify( { name, data } ); if ( !! window._googlesitekit.throttledEvents[ key ] ) { return; } window._googlesitekit.throttledEvents[ key ] = true; setTimeout( () => { delete window._googlesitekit.throttledEvents[ key ]; }, 5 ); gtag( "event", name, { ...data, event_source: "site-kit" } ); }; 
+//# sourceURL=google_gtagjs-js-after
+</script>
+<script id="jquery-core-js" src="https://www.sdfoundation.org/wp-includes/js/jquery/jquery.min.js" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="jquery-core-js-after">window.addEventListener('DOMContentLoaded', function() {
+window.$ = window.$ || window.jQuery;
+//# sourceURL=jquery-core-js-after
+});</script>
+<link rel="https://api.w.org/" href="https://www.sdfoundation.org/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.sdfoundation.org/wp-json/wp/v2/pages/14576" /><meta name="generator" content="Site Kit by Google 1.190.0" /><link rel="icon" href="https://www.sdfoundation.org/wp-content/uploads/2022/05/cropped-sdf_favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.sdfoundation.org/wp-content/uploads/2022/05/cropped-sdf_favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.sdfoundation.org/wp-content/uploads/2022/05/cropped-sdf_favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.sdfoundation.org/wp-content/uploads/2022/05/cropped-sdf_favicon-270x270.png" />
+<style id="wp-custom-css"></style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>    <script type="text/rocketlazyloadscript" data-rocket-src="https://kit.fontawesome.com/cd518a6585.js" crossorigin="anonymous" data-rocket-defer defer></script>
+
+
+      <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NGFSKG');</script>
+<!-- End Google Tag Manager -->
+
+
+<!-- Marketo Forms -->
+<script async src="//go.sdfoundation.org/js/forms2/js/forms2.min.js"></script>
+
+<script type="text/javascript">
+/* config area - replace with your instance values */
+
+var mktoFormConfig = {
+    podId : "//go.sdfoundation.org",
+    munchkinId : "899-JTE-278",
+    /* kept for reference only. The loader below reads the form ids straight off the page,
+       so adding a popup or changing which Marketo form it points at needs no edit here. */
+     formIds : [1005,1103,1104,1117,1106,1107,1109,1139,1142,1151,1167,1182]
+};
+
+/* ---- NO NEED TO TOUCH ANYTHING BELOW THIS LINE! ---- */
+
+function mktoFormChain(config) {
+  var arrayify = getSelection.call.bind([].slice);
+  var MKTOFORM_ID_ATTRNAME = "data-formId";
+
+  /* bind the label fixer once only, this function can now be called repeatedly */
+  if (!mktoFormChain.rendererBound) {
+    mktoFormChain.rendererBound = true;
+
+    MktoForms2.whenRendered(function(form) {
+      var formEl = form.getFormElem()[0],
+          rando = "_" + new Date().getTime() + Math.random();
+
+      arrayify(formEl.querySelectorAll("label[for]")).map(function(labelEl){
+           return {
+              label : labelEl,
+              for: formEl.querySelector('[id="' + labelEl.htmlFor + '"]')
+           }
+        }).forEach(function(labelDesc) {
+        if(labelDesc.for){
+              if(!labelDesc.for.hasAttribute("data-uniquified")){
+                labelDesc.for.id = labelDesc.for.id + rando;
+                labelDesc.for.setAttribute("data-uniquified","true");
+              }
+            labelDesc.label.htmlFor = labelDesc.for.id;
+        }
+      });
+    });
+  }
+
+  /*
+   * Discover the Marketo containers actually present in the DOM rather than trusting the
+   * hardcoded formIds list above. Otherwise every new popup, or any popup repointed at a
+   * different Marketo form, silently renders blank until somebody remembers to edit that
+   * list in the theme options.
+   *
+   * The class="mktoForm" part is required: Gravity Forms also puts data-formid on its
+   * <form> elements (data-formid="2", "7", ...), and those must not be sent to Marketo.
+   */
+  var formsById = {};
+
+  arrayify(document.querySelectorAll("form.mktoForm[" + MKTOFORM_ID_ATTRNAME + "]:not([data-mkto-init])"))
+    .forEach(function(el) {
+      var formId = el.getAttribute(MKTOFORM_ID_ATTRNAME);
+      if (!/^[0-9]+$/.test(formId)) { return; }
+      if (!formsById[formId]) { formsById[formId] = []; }
+      formsById[formId].push(el);
+    });
+
+  Object.keys(formsById).forEach(function(formId) {
+    var loadForm = MktoForms2.loadForm.bind(MktoForms2,config.podId,config.munchkinId,formId),
+        formEls = formsById[formId];
+
+    (function loadFormCb(formEls) {
+      var formEl = formEls.shift();
+
+      if (formEl) {
+          /* mark straight away so a later pass never loads the same container twice */
+          formEl.setAttribute("data-mkto-init", "1");
+          formEl.id = "mktoForm_" + formId;
+          loadForm(function(form) {
+            formEl.id = "";
+            if (formEls.length) {
+              loadFormCb(formEls);
+            }
+          });
+      }
+    })(formEls);
+  });
+}
+
+/*
+ * Two things have to be true before the chain can do anything, and neither of them
+ * is guaranteed at the point this inline script runs:
+ *
+ * 1. The form containers must exist. Every popup lives base64-encoded in
+ *    #enc-popup-data and is only injected into the DOM by an inline script at the
+ *    very end of <body>. Running the chain during <head> parsing finds zero
+ *    containers, so every popup form silently stays blank.
+ *
+ * 2. MktoForms2 must exist. The CookieYes / cookie-law-info consent blocker strips
+ *    the marketo.com script tag above until the visitor accepts cookies, so this
+ *    inline script can run while MktoForms2 is still undefined (that throws a
+ *    ReferenceError and kills the whole chain).
+ *
+ * So: wait for the DOM, then poll until the library shows up, then run.
+ */
+function mktoFormChainReady() {
+  if (typeof MktoForms2 === "undefined" || !MktoForms2.loadForm) { return false; }
+  mktoFormChain(mktoFormConfig);
+  return true;
+}
+
+function mktoFormChainStart() {
+  if (mktoFormChainReady()) { return; }
+  var tries = 0;
+  var timer = setInterval(function() {
+    /* stop after roughly 60s, by then the library is either blocked or broken */
+    if (mktoFormChainReady() || ++tries > 120) { clearInterval(timer); }
+  }, 500);
+}
+
+/* readyState check matters because WP Rocket delays this script until the first user
+   interaction on cached pages, long after DOMContentLoaded has already fired */
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", mktoFormChainStart);
+} else {
+  mktoFormChainStart();
+}
+
+/* catch anything injected after DOMContentLoaded, idempotent thanks to data-mkto-init */
+window.addEventListener("load", mktoFormChainStart);
+
+</script>
+  
+  <style></style>
+<style id="rocket-lazyrender-inline-css">[data-wpr-lazyrender] {content-visibility: auto;}</style><style id="wpr-lazyload-bg-container"></style><style id="wpr-lazyload-bg-exclusion"></style>
+<noscript>
+<style id="wpr-lazyload-bg-nostyle"></style>
+</noscript>
+<script type="application/javascript">const rocket_pairs = []; const rocket_excluded_pairs = [];</script><meta name="generator" content="WP Rocket 3.23.5.1" data-wpr-features="wpr_lazyload_css_bg_img wpr_remove_unused_css wpr_delay_js wpr_defer_js wpr_lazyload_images wpr_lazyload_iframes wpr_preconnect_external_domains wpr_automatic_lazy_rendering wpr_oci wpr_image_dimensions wpr_minify_css wpr_cdn wpr_desktop" /></head>
+
+<body class="wp-singular page-template-default page page-id-14576 page-child parent-pageid-14544 wp-theme-tsdf">
+      <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGFSKG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->  
+      <style></style>
+  
+  <div  id="loader"></div>
+
+  <div  class="spanish-translate pr-10 link-group push display">
+    <a href="#" data-gt-lang="en" class="gt-current-lang notranslate">Read in English</a>    <a href="#" data-gt-lang="es" class="notranslate">Leer en Español</a>  </div>
+  
+  <div  class="spanish-translate pr-10 gt-dropdown">
+    <div  class="gtranslate_wrapper" id="gt-wrapper-49903644"></div>  </div>
+
+
+    <header  class="header utility sticky-nav">
+    <div  class="header-utility-bar green">
+      <div  class="utility-container max-width pad-hit">
+        <p><a href="https://votereducation.sdfoundation.org/" target="_blank" rel="noopener">Get the facts on Measure B, the San Diego County Health & Safety Act. <svg class="arrow" width="17" height="12" viewBox="0 0 17 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3536 4.35355C16.5488 4.15829 16.5488 3.84171 16.3536 3.64645L13.1716 0.464465C12.9763 0.269203 12.6597 0.269203 12.4645 0.464465C12.2692 0.659727 12.2692 0.97631 12.4645 1.17157L15.2929 4L12.4645 6.82843C12.2692 7.02369 12.2692 7.34027 12.4645 7.53553C12.6597 7.73079 12.9763 7.73079 13.1716 7.53553L16.3536 4.35355ZM4.37114e-08 4.5L16 4.5L16 3.5L-4.37114e-08 3.5L4.37114e-08 4.5Z"></path></svg></a></p>
+      </div>
+    </div>
+      <div  class="header-box-shadow">
+      <div  class="header-container max-width pad-hit">
+        <div class="header-container__left-side">
+          <a href="https://www.sdfoundation.org" class="logo">
+                          <img class="logo-image" src="https://www.sdfoundation.org/wp-content/uploads/2026/01/sdf_siteheaderlogo.svg" alt="SDF Logo"/>
+                      </a>
+        </div><!-- left side -->
+        
+        <div class="header-container__right-side">
+          <div class="desktop-menu">
+                      <a href="https://sdfoundation.spectrumportal.net/" target="_blank">MySDF</a>
+
+            <a href="/ways-to-give/give-now/donate-online/strategic-initiatives/" target="_self">Donate</a>
+
+          
+            <a href="#!" class="home-nav-search">Search <i class="fa-regular fa-magnifying-glass"></i></i></a>
+          </div>
+          
+          <div class="hamburger-container">
+            <p>Menu</p>
+            <div id="hamburger-menu" class="hamburger">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div><!-- right side -->
+      </div>
+    </div>
+
+    <aside id="mega-menu">
+      <ul class="main-nav pad-hit">
+          
+        <li>
+          <a href="/community-impact/" target="_self">Community Impact</a>
+           
+            <button type="button" class="nav-toggle-item"><i class="fa-regular fa-angle-up"></i></button>
+            <ul class="subnav">
+                              <li><a href="https://votereducation.sdfoundation.org/" target="_blank">Get the Facts on Measure B</a></li>
+                              <li><a href="/community-impact/impact-areas/crisis-philanthropy/" target="_self">Crisis Philanthropy</a></li>
+                              <li><a href="/community-impact/regional-affiliates/" target="_self">Regional Affiliates</a></li>
+                              <li><a href="/community-impact/partner-organizations/" target="_self">Partner Organizations</a></li>
+                              <li><a href="/community-impact/research/" target="_self">Research</a></li>
+                          </ul>
+                  </li>
+    
+                        
+        <li>
+          <a href="/ways-to-give/" target="_self">Ways to Give</a>
+           
+            <button type="button" class="nav-toggle-item"><i class="fa-regular fa-angle-up"></i></button>
+            <ul class="subnav">
+                              <li><a href="/ways-to-give/give-now/" target="_self">Give Now</a></li>
+                              <li><a href="/ways-to-give/give-later/" target="_self">Give Later</a></li>
+                              <li><a href="/ways-to-give/give-now/donate-online/" target="_self">Donate Online</a></li>
+                              <li><a href="https://www.sdfoundation.org/ways-to-give/open-a-fund/" target="_self">Open a Fund</a></li>
+                              <li><a href="https://www.sdfoundation.org/community-impact/impact-areas/affinity-funds/" target="_self">Affinity Funds</a></li>
+                              <li><a href="/ways-to-give/investment-portfolios/" target="_self">Investment Portfolios</a></li>
+                              <li><a href="https://www.sdfoundation.org/ways-to-give/give-now/what-to-give/" target="_self">What to Give</a></li>
+                              <li><a href="/ways-to-give/advantages-of-a-community-foundation/" target="_self">Advantages of a Community Foundation</a></li>
+                              <li><a href="/ways-to-give/current-donor-resources/" target="_self">Donor Resources</a></li>
+                          </ul>
+                  </li>
+    
+                        
+        <li>
+          <a href="/professional-advisors/" target="_self">Professional Advisors</a>
+           
+            <button type="button" class="nav-toggle-item"><i class="fa-regular fa-angle-up"></i></button>
+            <ul class="subnav">
+                              <li><a href="/professional-advisors/wealth-advisors/" target="_self">Wealth Advisors</a></li>
+                              <li><a href="/professional-advisors/estate-planning-attorneys/" target="_self">Estate Planning Attorneys</a></li>
+                              <li><a href="/professional-advisors/tax-planners/" target="_self">Tax Planners</a></li>
+                              <li><a href="/professional-advisors/investment-strategy/" target="_self">Investment Strategy</a></li>
+                              <li><a href="/professional-advisors/donor-advised-fund-clients/" target="_self">Donor-Advised Funds for Clients</a></li>
+                              <li><a href="https://www.sdfoundation.org/professional-advisors/wealth-advisors/qualified-charitable-distributions-clients/" target="_self">Qualified Charitable Distributions</a></li>
+                              <li><a href="/professional-advisors/professional-advisor-toolkit/" target="_self">Professional Advisor Toolkit</a></li>
+                          </ul>
+                  </li>
+    
+                        
+        <li>
+          <a href="/nonprofits/" target="_self">Nonprofits</a>
+           
+            <button type="button" class="nav-toggle-item"><i class="fa-regular fa-angle-up"></i></button>
+            <ul class="subnav">
+                              <li><a href="/nonprofits/apply-for-a-grant/" target="_self">Apply for a Grant</a></li>
+                              <li><a href="/nonprofits/what-we-fund/" target="_self">What We Fund</a></li>
+                              <li><a href="/nonprofits/nonprofit-faqs/" target="_self">Nonprofit FAQs</a></li>
+                              <li><a href="/nonprofits/nonprofit-newsletter/" target="_self">Nonprofit Newsletter</a></li>
+                          </ul>
+                  </li>
+    
+                        
+        <li>
+          <a href="/students/" target="_self">Students</a>
+           
+            <button type="button" class="nav-toggle-item"><i class="fa-regular fa-angle-up"></i></button>
+            <ul class="subnav">
+                              <li><a href="/community-impact/impact-areas/education/community-scholarship-program/" target="_self">Community Scholarship Program</a></li>
+                              <li><a href="/students/common-scholarship-application/" target="_self">Common Scholarship Application</a></li>
+                              <li><a href="https://rainbowcollegefund.org/" target="_blank">National Rainbow College Fund</a></li>
+                              <li><a href="/students/other-sdf-scholarships/" target="_self">Other SDF Scholarships</a></li>
+                              <li><a href="/students/local-scholarship-opportunities/" target="_self">Local Scholarship Opportunities</a></li>
+                              <li><a href="/students/scholarship-evaluators/" target="_self">Scholarship Evaluators</a></li>
+                              <li><a href="/students/teachers-counselors-advisors/" target="_self">Teachers, Counselors &amp; Advisors</a></li>
+                          </ul>
+                  </li>
+    
+                        
+        <li>
+          <a href="/news-events/" target="_self">News &amp; Events</a>
+           
+            <button type="button" class="nav-toggle-item"><i class="fa-regular fa-angle-up"></i></button>
+            <ul class="subnav">
+                              <li><a href="/news-events/sdf-news/" target="_self">SDF News Blog</a></li>
+                              <li><a href="/news-events/events/" target="_self">Events</a></li>
+                              <li><a href="/news-events/#media" target="_self">Media Resources</a></li>
+                              <li><a href="/news-events/category/press-releases/" target="_self">Press Releases</a></li>
+                              <li><a href="/news-events/media/logos/" target="_self">Logos</a></li>
+                          </ul>
+                  </li>
+    
+                        
+        <li>
+          <a href="/about-us/" target="_self">About Us</a>
+           
+            <button type="button" class="nav-toggle-item"><i class="fa-regular fa-angle-up"></i></button>
+            <ul class="subnav">
+                              <li><a href="/about-us/team/" target="_self">Team</a></li>
+                              <li><a href="/about-us/careers-culture/" target="_self">Careers &amp; Culture</a></li>
+                              <li><a href="/about-us/strategic-plan/" target="_self">Strategic Plan</a></li>
+                              <li><a href="/annualreport" target="_self">Annual Report</a></li>
+                              <li><a href="/timeline/" target="_self">History &amp; Accomplishments</a></li>
+                              <li><a href="/about-us/financials/" target="_self">Financials</a></li>
+                          </ul>
+                  </li>
+    
+                        
+        <li>
+          <a href="/contact/" target="_self">Contact</a>
+                  </li>
+    
+                          </ul>
+    
+      <ul class="alt-nav pad-hit">
+            </ul>
+    
+      <div class="mobile-menu pad-hit">
+                <a href="https://sdfoundation.spectrumportal.net/" target="_blank">MySDF <i class="fa-regular fa-lock-keyhole"></i></a>
+
+          <a href="/ways-to-give/give-now/donate-online/strategic-initiatives/" target="_self">Donate <i class="fa-regular fa-heart"></i></a>
+
+                
+        <a href="#!" class="home-nav-search">Search <i class="fa-regular fa-magnifying-glass"></i></i></a>
+      </div>
+    </aside>
+  </header>
+
+
+    <section  id="main-block" class="fadein general-section">
+        <div  class="cms-content-container">
+                        
+	 
+		
+					
+			<div  class="banner-two banner-block">
+									<style></style>
+
+					<img fetchpriority="high" class="banner-two-background-image" src="https://www.sdfoundation.org/wp-content/uploads/2026/09/Flagship-Community-Scholarships-Program-Banner-2-Option-2-scaled.png" alt="Scholarship recipients at a Scholarships Celebration" />
+				
+				<div class="banner-two-messaging">
+					
+											<h1 class="mb-20">Community <span class="orange">Scholarship</span> Program</h1>
+					
+											<p class="h5 mb-40">Providing financial support to help San Diego students pursue and complete higher education.<br />
+<br />
+<a class="button-dark-green" style="margin-right: 3%;" href="https://www.sdfoundation.org/closetohome" rel="noopener">Give Close to Home</a> <a class="button-light-green" style="margin-top: 5%;" href="https://www.sdfoundation.org/students/common-scholarship-application/"  rel="noopener">Common Scholarship Application</a></p>
+					
+									</div><!-- banner-two-messaging -->
+
+				
+			</div><!-- banner-two -->
+		
+		            
+			
+			<div  class="two-col-block two-col-block-simple bg-white pad-hit mt-0 mb-0 pt-75 pb-50 mt-sm-0 mb-sm-0 pt-sm-10 pb-sm-25">
+				<div class="content-block" style="align-items:flex-start">
+
+					<div class="two-col-block-col" style="max-width:680px">
+					
+													<h2 class="">Helping Students Pursue Their Dreams</h2>
+						
+													<h5 class="introsentence">When every child has the chance to learn, San Diego grows with them — but the cost of college keeps too many local students from finishing what they started.</h5>
+<p>Since 1997, the Community Scholarship Program has awarded $65.2 million to more than 16,200 students, making it the largest non-university scholarship provider in San Diego County.</p>
+<p>By offering financial assistance, the program helps students dedicate more time to their studies, stay enrolled and complete their degrees.</p>
+<p>These scholarships exist because donors like you make them possible. Individuals, families and <a href="https://www.sdfoundation.org/ways-to-give/open-a-fund/scholarship-fund/">fundholders</a> across San Diego come together, year after year, to support students who share their values, interests or life experiences.</p>
+											</div>
+
+					<div class="two-col-block-col" style="max-width:550px">
+					
+						
+													<div class="storymodule" style="background-color: #FEE1BA;">
+<p><a href="https://www.sdfoundation.org/news-events/sdf-news/tag/community-scholarships-program/"><img decoding="async" class="roundcorners" src="https://www.sdfoundation.org/wp-content/uploads/2026/09/Community-Scholarships-Celebration-4-Students.png" /></a></p>
+<h5 style="font-weight: bold; font-size: 20px;">&#8220;I’m bettering my education so that I can come back and help my community more.”</h5>
+<p><span class="storymodulequoteauthor" style="color: #C88539 !important;">–Michelle Caro, Scholarship Recipient</span></p>
+<p><a class="ff-arrow" href="https://www.sdfoundation.org/news-events/sdf-news/tag/community-scholarships-program/" rel="noopener">Impact Stories</a></p>
+</div>
+											</div>
+
+				</div>
+			</div>
+
+
+
+
+				
+			<div  class="multi-col-grid bg-white mt-0 mb-0 pt-0 pb-25 mt-sm-0 mb-sm-0 pt-sm-5 pb-sm-5">
+				<div class="content-block">
+					<div class="main-content-block mb-sm-55 pad-hit">
+													<h2 class="h1 mb-20 ta-center"><h2 style="text-align: center;">Measuring Progress and Results</h2></h2>
+												
+											</div>
+
+																<div class="mobile-arrow"></div>
+										<div class="multi-col-grid-container mt-20 overflow-y">
+													<div class="multi-col-grid-item" 
+																	style="cursor: default"
+															>
+								<div class="grid-link ta-center">		
+									
+																		
+																			<p class="h3"><table class="measuringprogresscenter"><tr><td class="lightgreenbox" style="background-color: #FEE1BA; width: 337px;"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"  class="mediumicon" data-lazy-src="https://www.sdfoundation.org/wp-content/uploads/2026/05/impactmetricicon_gradcap.png"><noscript><img src="https://www.sdfoundation.org/wp-content/uploads/2026/05/impactmetricicon_gradcap.png"  class="mediumicon"></noscript>
+<h2 class="leaderboardnumber" style="color: #C88539;">$65.2M</h2>
+Scholarships awarded since program inception
+</td>
+</tr>
+</table></p>
+											
+									
+																	</div>
+							</div><!--end multi-col-grid-item-->
+													<div class="multi-col-grid-item" 
+																	style="cursor: default"
+															>
+								<div class="grid-link ta-center">		
+									
+																		
+																			<p class="h3"><table class="measuringprogresscenter"><tr><td class="lightgreenbox" style="background-color: #FEE1BA; width: 337px;"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"  class="mediumicon" data-lazy-src="https://www.sdfoundation.org/wp-content/uploads/2026/05/impactmetricicon_people.png"><noscript><img src="https://www.sdfoundation.org/wp-content/uploads/2026/05/impactmetricicon_people.png"  class="mediumicon"></noscript>
+<h2 class="leaderboardnumber" style="color: #C88539;">16,200+</h2>
+Student scholars since program inception
+</td>
+</tr>
+</table></p>
+											
+									
+																	</div>
+							</div><!--end multi-col-grid-item-->
+													<div class="multi-col-grid-item" 
+																	style="cursor: default"
+															>
+								<div class="grid-link ta-center">		
+									
+																		
+																			<p class="h3"><table class="measuringprogresscenter"><tr><td class="lightgreenbox" style="background-color: #FEE1BA; width: 337px;"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"  class="mediumicon" data-lazy-src="https://www.sdfoundation.org/wp-content/uploads/2026/05/impactmetricicon_schoolbuilding.png"><noscript><img src="https://www.sdfoundation.org/wp-content/uploads/2026/05/impactmetricicon_schoolbuilding.png"  class="mediumicon"></noscript>
+<h2 class="leaderboardnumber" style="color: #C88539;">75%</h2>
+First-generation college students in 2026
+</td>
+</tr>
+</table></p>
+											
+									
+																	</div>
+							</div><!--end multi-col-grid-item-->
+											</div><!-- end multi-col-grid-container -->
+
+
+
+
+					
+									</div>
+			</div><!-- end multi-col-grid-->
+
+
+			
+					
+			<div  class="two-col-block two-col-block-simple bg-dark-green pad-hit mt-0 mb-0 pt-75 pb-75 mt-sm-0 mb-sm-0 pt-sm-30 pb-sm-30">
+				<div class="content-block" style="align-items:center">
+
+					<div class="two-col-block-col" style="max-width:550px">
+					
+													<h2 class="">Give Close to Home</h2>
+						
+													<p>San Diego is the home we all share. And when our neighbors need us, we show up. A gift to San Diego Foundation is how we take care of each other – one family, one neighborhood, one gift at a time.</p>
+											</div>
+
+					<div class="two-col-block-col" style="max-width:550px">
+					
+						
+													<div class="whitemodulecenter"><a class="button-dark-green" style="margin-right: 3% !important; margin-top: 0px !important; margin-bottom: 0% !important;" href="https://www.sdfoundation.org/closetohome" rel="noopener">Give Close to Home</a><a class="button-light-green" style="margin-right: 0px !important; margin-top: 5% !important; margin-bottom: 5% !important;" href="https://sdfoundation.spectrumportal.net/" target="_blank" rel="noopener">Give From Your Fund</a></div>
+											</div>
+
+				</div>
+			</div>
+
+
+
+
+					
+
+		<div  class="two-col-block two-col-photo-links bg-white orientation-content-first pad-hit mt-0 mb-0 pt-80 pb-80 mt-sm-0 mb-sm-0 pt-sm-80 pb-sm-80">
+			<div class="content-block media-top">
+				
+				
+				<div class="two-col-block-container">
+					<div class="two-col-block-col mt-sm-30">
+							
+						
+							<div class="embed-container">
+								<iframe loading="lazy" title="Your Support, Their Dreams: A Message from Our 2025 Student Scholars" src="about:blank" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" data-rocket-lazyload="fitvidscompatible" data-lazy-src="https://player.vimeo.com/video/1150737234?h=1f09287242&#038;dnt=1&#038;app_id=122963&#038;controls=1&#038;mute=0&#038;muted=0&#038;autoplay=0&#038;start=0&#038;#t=0&#038;playlist=1f09287242&#038;loop=0&#038;modestbranding=1&#038;rel=0"></iframe><noscript><iframe title="Your Support, Their Dreams: A Message from Our 2025 Student Scholars" src="https://player.vimeo.com/video/1150737234?h=1f09287242&amp;dnt=1&amp;app_id=122963&controls=1&mute=0&muted=0&autoplay=0&start=0&#t=0&playlist=1f09287242&loop=0&modestbranding=1&rel=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" frameborder="0"></iframe></noscript>							</div>
+																		</div>
+	
+					<div class="two-col-block-col" style="max-width:550px">
+													<h2 class="tcpl-headline h3"><h2>The Community Scholarship Program helps to:</h2></h2>
+							
+													<p><strong>Provide Need-Based Support:</strong> Reduce the cost of higher education so students can focus on academic success rather than financial stress.</p>
+<p><strong>Support Degree Attainment:</strong> Help students persist through college by easing financial pressures that often interrupt or delay graduation.</p>
+<p><strong>Build Resilient Communities:</strong> Support students who contribute their skills and education to San Diego&#8217;s economy and communities.</p>
+<p><a class="button-dark-green" href="#footer" rel="noopener"><i class="fal fa-long-arrow-right"></i> Stay Informed</a></p>
+							
+																	</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+				
+			<div  class="multi-col-grid bg-orange-lighter mt-0 mb-0 pt-50 pb-50 mt-sm-0 mb-sm-0 pt-sm-30 pb-sm-30">
+				<div class="content-block">
+					<div class="main-content-block mb-sm-55 pad-hit">
+													<h2 class="h1 mb-20 ta-center"><h2 style="text-align: center;">More Education Initiatives</h2></h2>
+												
+											</div>
+
+																<div class="mobile-arrow"></div>
+										<div class="multi-col-grid-container mt-20 overflow-y">
+													<div class="multi-col-grid-item" 
+																	data-url="https://www.sdfoundation.org/community-impact/education/bigi/" 
+									data-target="_self"
+															>
+								<div class="grid-link ta-center">		
+																			<div class="image-container">
+											<img width="400" height="253" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20253'%3E%3C/svg%3E" class="attachment-400x300 size-400x300" alt="BiGI student" decoding="async" data-lazy-srcset="https://www.sdfoundation.org/wp-content/uploads/2026/07/multicolumngridblock_education_bigistudent.png 790w, https://www.sdfoundation.org/wp-content/uploads/2026/07/multicolumngridblock_education_bigistudent-300x190.png 300w" data-lazy-sizes="(max-width: 400px) 100vw, 400px" data-lazy-src="https://www.sdfoundation.org/wp-content/uploads/2026/07/multicolumngridblock_education_bigistudent.png" /><noscript><img width="400" height="253" src="https://www.sdfoundation.org/wp-content/uploads/2026/07/multicolumngridblock_education_bigistudent.png" class="attachment-400x300 size-400x300" alt="BiGI student" decoding="async" srcset="https://www.sdfoundation.org/wp-content/uploads/2026/07/multicolumngridblock_education_bigistudent.png 790w, https://www.sdfoundation.org/wp-content/uploads/2026/07/multicolumngridblock_education_bigistudent-300x190.png 300w" sizes="(max-width: 400px) 100vw, 400px" /></noscript>										</div>
+									
+																			<h3 class="mt-20 h3-bold">BiGI</h3>
+																		
+																			<p class="button-text">Providing mentorship, academic support and family engagement for students furthest from opportunity.</p>
+											
+																			<div class="button-white mcgbgi_button_one"><svg class="arrow" width="17" height="12" viewBox="0 0 17 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3536 4.35355C16.5488 4.15829 16.5488 3.84171 16.3536 3.64645L13.1716 0.464465C12.9763 0.269203 12.6597 0.269203 12.4645 0.464465C12.2692 0.659727 12.2692 0.97631 12.4645 1.17157L15.2929 4L12.4645 6.82843C12.2692 7.02369 12.2692 7.34027 12.4645 7.53553C12.6597 7.73079 12.9763 7.73079 13.1716 7.53553L16.3536 4.35355ZM4.37114e-08 4.5L16 4.5L16 3.5L-4.37114e-08 3.5L4.37114e-08 4.5Z"/></svg>Explore</div>
+									
+																	</div>
+							</div><!--end multi-col-grid-item-->
+													<div class="multi-col-grid-item" 
+																	data-url="https://www.sdfoundation.org/community-impact/education/expanded-learning/" 
+									data-target="_self"
+															>
+								<div class="grid-link ta-center">		
+																			<div class="image-container">
+											<img width="400" height="253" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20253'%3E%3C/svg%3E" class="attachment-400x300 size-400x300" alt="Children doing activities at the Armed Services YMCA" decoding="async" data-lazy-srcset="https://www.sdfoundation.org/wp-content/uploads/2026/10/multicolumngridblock_education_ymca.png 790w, https://www.sdfoundation.org/wp-content/uploads/2026/10/multicolumngridblock_education_ymca-300x190.png 300w" data-lazy-sizes="(max-width: 400px) 100vw, 400px" data-lazy-src="https://www.sdfoundation.org/wp-content/uploads/2026/10/multicolumngridblock_education_ymca.png" /><noscript><img width="400" height="253" src="https://www.sdfoundation.org/wp-content/uploads/2026/10/multicolumngridblock_education_ymca.png" class="attachment-400x300 size-400x300" alt="Children doing activities at the Armed Services YMCA" decoding="async" srcset="https://www.sdfoundation.org/wp-content/uploads/2026/10/multicolumngridblock_education_ymca.png 790w, https://www.sdfoundation.org/wp-content/uploads/2026/10/multicolumngridblock_education_ymca-300x190.png 300w" sizes="(max-width: 400px) 100vw, 400px" /></noscript>										</div>
+									
+																			<h3 class="mt-20 h3-bold">Expanded Learning</h3>
+																		
+																			<p class="button-text">Supporting enriching after-school and summer programs that help students grow beyond the classroom.</p>
+											
+																			<div class="button-white mcgbgi_button_one"><svg class="arrow" width="17" height="12" viewBox="0 0 17 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3536 4.35355C16.5488 4.15829 16.5488 3.84171 16.3536 3.64645L13.1716 0.464465C12.9763 0.269203 12.6597 0.269203 12.4645 0.464465C12.2692 0.659727 12.2692 0.97631 12.4645 1.17157L15.2929 4L12.4645 6.82843C12.2692 7.02369 12.2692 7.34027 12.4645 7.53553C12.6597 7.73079 12.9763 7.73079 13.1716 7.53553L16.3536 4.35355ZM4.37114e-08 4.5L16 4.5L16 3.5L-4.37114e-08 3.5L4.37114e-08 4.5Z"/></svg>Explore</div>
+									
+																	</div>
+							</div><!--end multi-col-grid-item-->
+													<div class="multi-col-grid-item" 
+																	data-url="https://www.sdfoundation.org/community-impact/education/classroom-to-career-initiative/" 
+									data-target="_self"
+															>
+								<div class="grid-link ta-center">		
+																			<div class="image-container">
+											<img width="400" height="253" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20253'%3E%3C/svg%3E" class="attachment-400x300 size-400x300" alt="Teacher with student in classroom looking at a laptop" decoding="async" data-lazy-srcset="https://www.sdfoundation.org/wp-content/uploads/2026/10/multicolumngridblock_education_teacherwithstudent.png 790w, https://www.sdfoundation.org/wp-content/uploads/2026/10/multicolumngridblock_education_teacherwithstudent-300x190.png 300w" data-lazy-sizes="(max-width: 400px) 100vw, 400px" data-lazy-src="https://www.sdfoundation.org/wp-content/uploads/2026/10/multicolumngridblock_education_teacherwithstudent.png" /><noscript><img width="400" height="253" src="https://www.sdfoundation.org/wp-content/uploads/2026/10/multicolumngridblock_education_teacherwithstudent.png" class="attachment-400x300 size-400x300" alt="Teacher with student in classroom looking at a laptop" decoding="async" srcset="https://www.sdfoundation.org/wp-content/uploads/2026/10/multicolumngridblock_education_teacherwithstudent.png 790w, https://www.sdfoundation.org/wp-content/uploads/2026/10/multicolumngridblock_education_teacherwithstudent-300x190.png 300w" sizes="(max-width: 400px) 100vw, 400px" /></noscript>										</div>
+									
+																			<h3 class="mt-20 h3-bold">Classroom to Career Initiative</h3>
+																		
+																			<p class="button-text">Helping San Diegans prepare for, pay for and persist through college.</p>
+											
+																			<div class="button-white mcgbgi_button_one"><svg class="arrow" width="17" height="12" viewBox="0 0 17 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3536 4.35355C16.5488 4.15829 16.5488 3.84171 16.3536 3.64645L13.1716 0.464465C12.9763 0.269203 12.6597 0.269203 12.4645 0.464465C12.2692 0.659727 12.2692 0.97631 12.4645 1.17157L15.2929 4L12.4645 6.82843C12.2692 7.02369 12.2692 7.34027 12.4645 7.53553C12.6597 7.73079 12.9763 7.73079 13.1716 7.53553L16.3536 4.35355ZM4.37114e-08 4.5L16 4.5L16 3.5L-4.37114e-08 3.5L4.37114e-08 4.5Z"/></svg>Explore</div>
+									
+																	</div>
+							</div><!--end multi-col-grid-item-->
+													<div class="multi-col-grid-item" 
+																	data-url="https://www.sdfoundation.org/community-impact/education/community-scholars-initiative/" 
+									data-target="_self"
+															>
+								<div class="grid-link ta-center">		
+																			<div class="image-container">
+											<img width="400" height="253" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20253'%3E%3C/svg%3E" class="attachment-400x300 size-400x300" alt="Two students smiling in library" decoding="async" data-lazy-srcset="https://www.sdfoundation.org/wp-content/uploads/2026/07/multicolumngridblock_education_twostudentssmiling.png 790w, https://www.sdfoundation.org/wp-content/uploads/2026/07/multicolumngridblock_education_twostudentssmiling-300x190.png 300w" data-lazy-sizes="(max-width: 400px) 100vw, 400px" data-lazy-src="https://www.sdfoundation.org/wp-content/uploads/2026/07/multicolumngridblock_education_twostudentssmiling.png" /><noscript><img width="400" height="253" src="https://www.sdfoundation.org/wp-content/uploads/2026/07/multicolumngridblock_education_twostudentssmiling.png" class="attachment-400x300 size-400x300" alt="Two students smiling in library" decoding="async" srcset="https://www.sdfoundation.org/wp-content/uploads/2026/07/multicolumngridblock_education_twostudentssmiling.png 790w, https://www.sdfoundation.org/wp-content/uploads/2026/07/multicolumngridblock_education_twostudentssmiling-300x190.png 300w" sizes="(max-width: 400px) 100vw, 400px" /></noscript>										</div>
+									
+																			<h3 class="mt-20 h3-bold">Community Scholars Initiative</h3>
+																		
+																			<p class="button-text">Preparing educators and opening pathways from the classroom to college and career.</p>
+											
+																			<div class="button-white mcgbgi_button_one"><svg class="arrow" width="17" height="12" viewBox="0 0 17 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3536 4.35355C16.5488 4.15829 16.5488 3.84171 16.3536 3.64645L13.1716 0.464465C12.9763 0.269203 12.6597 0.269203 12.4645 0.464465C12.2692 0.659727 12.2692 0.97631 12.4645 1.17157L15.2929 4L12.4645 6.82843C12.2692 7.02369 12.2692 7.34027 12.4645 7.53553C12.6597 7.73079 12.9763 7.73079 13.1716 7.53553L16.3536 4.35355ZM4.37114e-08 4.5L16 4.5L16 3.5L-4.37114e-08 3.5L4.37114e-08 4.5Z"/></svg>Explore</div>
+									
+																	</div>
+							</div><!--end multi-col-grid-item-->
+											</div><!-- end multi-col-grid-container -->
+
+
+
+
+					
+									</div>
+			</div><!-- end multi-col-grid-->
+
+
+			
+			        </div>
+    </section>
+    
+
+<footer data-wpr-lazyrender="1" id="footer" class="footer full-width grey">
+    <div  class="footer-container max-width pad-hit">
+        <div  class="footer-container__left-side">
+            <a href="https://www.sdfoundation.org" class="logo">
+                                    <img class="logo-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="SDF Logo" data-lazy-src="https://www.sdfoundation.org/wp-content/uploads/2026/01/sdf_sitefooterlogo.svg"/><noscript><img class="logo-image" src="https://www.sdfoundation.org/wp-content/uploads/2026/01/sdf_sitefooterlogo.svg" alt="SDF Logo"/></noscript>
+                            </a>
+
+            <div class="footer-navigation-container">
+                <div class="footer-navigation">
+                    <ul id="menu-footer-menu" class="sitemap-ul"><li id="menu-item-3242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3242"><a href="https://www.sdfoundation.org/about-us/">About Us</a></li>
+<li id="menu-item-6602" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-6602"><a href="https://www.sdfoundation.org/community-impact/">Community Impact</a></li>
+<li id="menu-item-6603" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6603"><a href="https://www.sdfoundation.org/ways-to-give/">Ways to Give</a></li>
+<li id="menu-item-6604" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6604"><a href="https://www.sdfoundation.org/professional-advisors/">Professional Advisors</a></li>
+<li id="menu-item-6605" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6605"><a href="https://www.sdfoundation.org/nonprofits/">Nonprofits</a></li>
+<li id="menu-item-6606" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6606"><a href="https://www.sdfoundation.org/students/">Students</a></li>
+<li id="menu-item-6607" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6607"><a href="https://www.sdfoundation.org/news-events/">News &amp; Events</a></li>
+<li id="menu-item-3249" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3249"><a href="https://www.sdfoundation.org/contact/">Contact</a></li>
+</ul>                </div>
+
+                <div class="footer-navigation">
+                    <ul id="menu-footer-alt-menu" class="sitemap-ul"><li id="menu-item-6620" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6620"><a href="https://www.sdfoundation.org/news-events/sdf-news/">Blog</a></li>
+<li id="menu-item-6612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6612"><a href="https://www.sdfoundation.org/ways-to-give/give-now/open-a-fund/">Open a Fund</a></li>
+<li id="menu-item-6613" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6613"><a href="https://www.sdfoundation.org/ways-to-give/give-now/donate-online/">Donate Online</a></li>
+<li id="menu-item-6614" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6614"><a href="https://www.sdfoundation.org/nonprofits/apply-for-a-grant/">Apply for a Grant</a></li>
+<li id="menu-item-11665" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11665"><a href="https://www.sdfoundation.org/about-us/careers-culture/">Careers</a></li>
+<li id="menu-item-6616" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6616"><a href="https://www.sdfoundation.org/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-6617" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6617"><a href="https://www.sdfoundation.org/terms-of-use/">Terms of Use</a></li>
+</ul>                </div>
+            </div>
+
+                            <div class="socials">
+                    
+                        <div class="socials-item">
+                            <a class="social-icon-Linkedin" href="https://www.linkedin.com/company/san-diego-foundation" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+
+                    
+                        <div class="socials-item">
+                            <a class="social-icon-Facebook" href="https://www.facebook.com/SanDiegoFoundation" target="_blank"><i class="fab fa-facebook"></i></a>
+                        </div>
+
+                    
+                        <div class="socials-item">
+                            <a class="social-icon-Instagram" href="https://www.instagram.com/sandiegofoundation/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+
+                    
+                        <div class="socials-item">
+                            <a class="social-icon-Youtube" href="https://www.youtube.com/c/SanDiegoFoundation" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+
+                    
+                </div>
+                    </div>
+
+        <div  id="footer-form" class="footer-container__right-side">
+            <h2>Stay Informed</h2>
+            <p>Subscribe to our SDF News monthly newsletter to receive timely updates on impacts across our region.</p>
+            <!--<script src="//go.sdfoundation.org/js/forms2/js/forms2.min.js"></script>
+            <form id="mktoForm_1151"></form> <script>MktoForms2.loadForm("//go.sdfoundation.org", "899-JTE-278", 1151);</script>
+            
+            <form class="mktoForm" data-formid="1151" data-forminstance="one"></form></div>--> 
+    
+        
+            <script src='//go.sdfoundation.org/js/forms2/js/forms2.min.js'></script><form id='mktoForm_1151'></form> <script>MktoForms2.loadForm('//go.sdfoundation.org', '899-JTE-278', 1151);</script>        </div>
+    </div>
+
+    <div  class="max-width pad-hit white mt-50">
+        <p>
+            2508 Historic Decatur Rd., Ste. 200 | San Diego, CA 92106 | <a href="tel:(619) 235-2300">(619) 235-2300</a> | <a href="/cdn-cgi/l/email-protection#71181f171e310215171e041f151005181e1f5f1e0316"><span class="__cf_email__" data-cfemail="a3cacdc5cce3d0c7c5ccd6cdc7c2d7cacccd8dccd1c4">[email&#160;protected]</span></a>
+        </p>
+        <p>
+            Hours of Operation: M-F 8:00 a.m. - 5:00 p.m.
+        </p>
+    </div>
+
+
+    <div  id="copyright" class="copyright pad-hit">
+        <div  class="copyright-container max-width">
+            <p>
+                &copy; 2026 San Diego Foundation. All Rights Reserved. FED. ID: #95-2942582
+            </p>
+    
+            <p><a class="black" href="https://fiftyandfifty.org" rel="noopener" target="_blank">Designed and managed by <img width="30" height="30" class="fifty-logo-markbox" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2030%2030'%3E%3C/svg%3E" alt="" data-lazy-src="https://www.sdfoundation.org/wp-content/themes/tsdf/assets/img/fifty-logo-markbox.svg"><noscript><img width="30" height="30" class="fifty-logo-markbox" src="https://www.sdfoundation.org/wp-content/themes/tsdf/assets/img/fifty-logo-markbox.svg" alt=""></noscript></a></p>
+        </div>
+    </div>
+</footer>
+
+<!-- ATTENTION: below is "backdrop" overlay for video / modal - see JS -->
+<div  class="form-backdrop"></div>
+
+<!-- ATTENTION: below is for iframe, check JS for how this works-->
+<div  class="iframe-video-section full-width" style="display:none;">
+    <div  class="iframe-video max-width" style="overflow:visible;">
+        <iframe id="main-vid" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen allowscriptaccess="always"></iframe>
+        <div  class="vid-close">X</div>
+    </div>
+</div>
+
+
+
+<div  id="enc-popup-data" style="display:none;" data-payload="Cgo="></div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" data-cfasync="false" data-rocketoptimiced="true">
+(function() {
+    var container = document.getElementById('enc-popup-data');
+    if (container) {
+        var payload = container.getAttribute('data-payload');
+        if (payload) {
+            var decodedHtml = atob(payload);
+            container.insertAdjacentHTML('afterend', decodedHtml);
+            container.parentNode.removeChild(container);
+        }
+    }
+})();
+</script>
+
+
+
+
+
+<div  class="floating-search-bar">
+    <form action="https://www.sdfoundation.org/" method="get">
+        <label class="close-search-form"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="close" data-lazy-src=""><noscript><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAA10lEQVRIie2W3Q2CUAyFiztIcAe3YG4mwCcxYQeX+HxpIiEX6JEmJspJeKE9fLfl/pkd+ksBNXDzp97h78N+4AzceWsELgL0M7+PdK4hMnKvdCj4+3nuKVjI1cy6NbjHOs/VVWjVVMW2BTxNOjwNqsDToRP40mTB36/F5GWoVJ5b6Q54HlSAS9DoOo6qSv2a2Orw9poFzYPzjeW0UekINIEcrfIIVMiNwRVoKpzyeQwb/431+fDxefwws7aqqudSgsdaz9VVaJu0I+3ye9t6lMtaov/Qb+gFR+sH5aRmFKEAAAAASUVORK5CYII=" alt="close"></noscript></label>
+        <input type="text" name="s" id="search" value="" />
+        <input id="searchSubmitBtn" type="submit" class="button-dark-green" value="Search" />
+    </form>
+</div>
+
+
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/tsdf/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="rocket_lazyload_css-js-extra">
+var rocket_lazyload_css_data = {"threshold":"300"};
+//# sourceURL=rocket_lazyload_css-js-extra
+</script>
+<script id="rocket_lazyload_css-js-after">
+!function o(n,a,c){function l(t,e){if(!a[t]){if(!n[t]){var r="function"==typeof require&&require;if(!e&&r)return r(t,!0);if(u)return u(t,!0);throw(e=new Error("Cannot find module '"+t+"'")).code="MODULE_NOT_FOUND",e}r=a[t]={exports:{}},n[t][0].call(r.exports,function(e){return l(n[t][1][e]||e)},r,r.exports,o,n,a,c)}return a[t].exports}for(var u="function"==typeof require&&require,e=0;e<c.length;e++)l(c[e]);return l}({1:[function(e,t,r){{let r="undefined"==typeof rocket_pairs?[]:rocket_pairs,o=(("undefined"==typeof rocket_excluded_pairs?[]:rocket_excluded_pairs).map(t=>{var e=t.selector;document.querySelectorAll(e).forEach(e=>{e.setAttribute("data-rocket-lazy-bg-"+t.hash,"excluded")})}),document.querySelector("#wpr-lazyload-bg-container"));var a=rocket_lazyload_css_data.threshold||300;let n=new IntersectionObserver(e=>{e.forEach(t=>{t.isIntersecting&&r.filter(e=>t.target.matches(e.selector)).map(t=>{var e;t&&((e=document.createElement("style")).textContent=t.style,o.insertAdjacentElement("afterend",e),t.elements.forEach(e=>{n.unobserve(e),e.setAttribute("data-rocket-lazy-bg-"+t.hash,"loaded")}))})})},{rootMargin:a+"px"});function c(){0<(0<arguments.length&&void 0!==arguments[0]?arguments[0]:[]).length&&r.forEach(t=>{try{document.querySelectorAll(t.selector).forEach(e=>{"loaded"!==e.getAttribute("data-rocket-lazy-bg-"+t.hash)&&"excluded"!==e.getAttribute("data-rocket-lazy-bg-"+t.hash)&&(n.observe(e),(t.elements||=[]).push(e))})}catch(e){console.error(e)}})}c(),(()=>{let r=window.MutationObserver;return function(e,t){if(e&&1===e.nodeType)return(t=new r(t)).observe(e,{attributes:!0,childList:!0,subtree:!0}),t}})()(document.querySelector("body"),c)}},{}]},{},[1]);
+//# sourceURL=rocket_lazyload_css-js-after
+</script>
+<script type="text/rocketlazyloadscript" id="googlesitekit-events-provider-content-events-js-before">
+window._googlesitekit = window._googlesitekit || {};
+window._googlesitekit.contentEvents = {"postID":14576,"isReadableSinglePost":false,"hasVimeoEmbed":false,"wordCount":0,"estimatedReadTimeSeconds":0,"isLastPageOfMultiPagePost":false,"readTimeThresholdPercent":85,"minimumReadTimeSeconds":5};
+//# sourceURL=googlesitekit-events-provider-content-events-js-before
+</script>
+<script type="text/rocketlazyloadscript" id="googlesitekit-events-provider-content-events-js" data-rocket-src="https://www.sdfoundation.org/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-events-provider-content-events-90bacb156ab34fa090db.js" defer></script>
+<script id="base-js-js" src="https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/js/scripts.js" data-rocket-defer defer></script>
+<script id="miresball-js-js" src="https://www.sdfoundation.org/wp-content/themes/tsdf/assets/src/js/miresball.js" data-rocket-defer defer></script>
+<script id="aos-js-js" src="https://www.sdfoundation.org/wp-content/themes/tsdf/assets/vendor/aos-2.3.1.min.js" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="gt_widget_script_33518390-js-before">
+window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {};window.gtranslateSettings['33518390'] = {"default_language":"en","languages":["ar","zh-CN","en","tl","ko","fa","so","es","vi"],"url_structure":"none","flag_style":"3d","flag_size":24,"alt_flags":{"en":"usa"},"flags_location":"\/wp-content\/plugins\/gtranslate\/flags\/"};
+//# sourceURL=gt_widget_script_33518390-js-before
+</script><script type="text/rocketlazyloadscript" data-rocket-src="https://www.sdfoundation.org/wp-content/plugins/gtranslate/js/base.js" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/community-impact/education/community-scholarship-program/" data-gt-orig-domain="www.sdfoundation.org" data-gt-widget-id="33518390" defer></script><script type="text/rocketlazyloadscript" id="gt_widget_script_49903644-js-before">
+window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {};window.gtranslateSettings['49903644'] = {"default_language":"en","languages":["ar","zh-CN","en","tl","ko","fa","so","es","vi"],"url_structure":"none","wrapper_selector":"#gt-wrapper-49903644","select_language_label":"Select Language","horizontal_position":"inline","flags_location":"\/wp-content\/plugins\/gtranslate\/flags\/"};
+//# sourceURL=gt_widget_script_49903644-js-before
+</script><script type="text/rocketlazyloadscript" data-rocket-src="https://www.sdfoundation.org/wp-content/plugins/gtranslate/js/dropdown.js" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/community-impact/education/community-scholarship-program/" data-gt-orig-domain="www.sdfoundation.org" data-gt-widget-id="49903644" defer></script><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.sdfoundation.org/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
+
+  <script type="text/rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+     duration: 750,
+     delay: 250,
+});
+
+$('.main-carousel').flickity({
+  // options
+  cellAlign: 'left',
+  contain: true
+});  });</script>
+
+
+
+
+</body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

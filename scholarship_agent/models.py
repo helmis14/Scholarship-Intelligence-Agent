@@ -354,6 +354,9 @@ class Opportunity(Model):
     own_programme_words: list[str] = field(default_factory=list)
     # per key field: {"state": present | not_stated | not_applicable | ..., "detail": ...}; see audit.py
     field_status: dict[str, dict] = field(default_factory=dict)
+    # round 43: an independent model's own reading of the four decisions (ai_check.py); answers it reads differently are
+    # held for review, never replaced
+    second_reading: dict[str, str] = field(default_factory=dict)
     tags: list[str] = field(default_factory=list)
     # scholarship_programme | research_position | funded_project | admission_programme | fellowship | grant | unknown
     opportunity_type: str = "unknown"

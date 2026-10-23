@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="google-site-verification" content="X7FZp8jUzbS-UK83zfOrle14ERjlfS7d3xPfqusGKoE" />
+    <meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.5",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseout","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))},{isRocket:!0})}o(){window.addEventListener("pageshow",t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0},{isRocket:!0}),window.addEventListener("pagehide",()=>{this.onFirstUserAction=null},{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",function i(o){o.changedTouches[0]&&t.changedTouches[0]&&Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}),"INPUT"===o.target.tagName&&"text"===o.target.type||(o.target.dispatchEvent(new TouchEvent("touchend",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new MouseEvent("mouseover",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1,clientX:o.changedTouches[0].clientX,clientY:o.changedTouches[0].clientY})),event.preventDefault()))},{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,t.composedPath&&t.composedPath()[0].getRootNode()instanceof ShadowRoot&&(t.rocketTarget=t.composedPath()[0]),this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach(t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.addEventListener("visibilitychange",this.userEventHandler,{isRocket:!0})}U(){this.userEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.removeEventListener("visibilitychange",this.userEventHandler,{isRocket:!0}),this.savedUserEvents.forEach(t=>{(t.rocketTarget||t.target).dispatchEvent(new window[t.constructor.name](t.type,t))})}m(){const t="return false",e=Array.from(this.attributeEvents,t=>"data-rocket-"+t),i="["+this.attributeEvents.join("],[")+"]",o="[data-rocket-"+this.attributeEvents.join("],[data-rocket-")+"]",s=(e,i,o)=>{o&&o!==t&&(e.setAttribute("data-rocket-"+i,o),e["rocket"+i]=new Function("event",o),e.setAttribute(i,t))};new MutationObserver(t=>{for(const n of t)"attributes"===n.type&&(n.attributeName.startsWith("data-rocket-")||this.everythingLoaded?n.attributeName.startsWith("data-rocket-")&&this.everythingLoaded&&this.N(n.target,n.attributeName.substring(12)):s(n.target,n.attributeName,n.target.getAttribute(n.attributeName))),"childList"===n.type&&n.addedNodes.forEach(t=>{if(t.nodeType===Node.ELEMENT_NODE)if(this.everythingLoaded)for(const i of[t,...t.querySelectorAll(o)])for(const t of i.getAttributeNames())e.includes(t)&&this.N(i,t.substring(12));else for(const e of[t,...t.querySelectorAll(i)])for(const t of e.getAttributeNames())this.attributeEvents.includes(t)&&s(e,t,e.getAttribute(t))})}).observe(document,{subtree:!0,childList:!0,attributeFilter:[...this.attributeEvents,...e]})}I(){this.attributeEvents.forEach(t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach(e=>{this.N(e,t)})})}N(t,e){const i=t.getAttribute("data-rocket-"+e);i&&(t.setAttribute(e,i),t.removeAttribute("data-rocket-"+e))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):(t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o}),"mouseenter"!==e&&"mouseleave"!==e||t.originalAddEventListener.call(this,e,t.savedUserEvents.push,o))},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}J(t,e){this.savedEventListeners=this.savedEventListeners.filter(i=>{let o=i.type,s=i.target||window;return e!==o||t!==s||(this.B(o,s)&&(i.type="rocket-"+o),this.$(i),!1)})}H(){EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener,this.savedEventListeners.forEach(t=>this.$(t))}$(t){t.remove?this.originalRemoveEventListener.call(t.target,t.type,t.func,t.options):this.originalAddEventListener.call(t.target,t.type,t.func,t.options)}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map(t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e})),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,()=>{e[t].forEach(t=>t())},{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout(()=>i.bind(document)(o)):i.bind(document)(o)}return"function"==typeof i&&(t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s)),this},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise(t=>{this.userActionTriggered?t():this.onFirstUserAction=t})}async L(){return new Promise(t=>{document.addEventListener("DOMContentLoaded",()=>{this.realDomReadyFired=!0,t()},{isRocket:!0})})}async j(){return this.realWindowLoadedFired?Promise.resolve():new Promise(t=>{window.addEventListener("load",t,{isRocket:!0})})}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver(t=>{for(const e of t)e.addedNodes.forEach(t=>{"SCRIPT"!==t.tagName||!t.src||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise(e=>{const i=()=>{const i=this.pendingScripts.findIndex(e=>e.script===t);i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)})})})}),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async F(){await this.X(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.F()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this.Y(t,"preconnect")}async G(t){if(await this.K(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise(e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))}),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",()=>{i.setAttribute("data-rocket-status","failed-network"),e()},{isRocket:!0}),setTimeout(()=>{i.isConnected||e()},1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.G(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())},{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}});t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.G(e),this.C(t)):Promise.resolve()}O(){this.Y([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}Y(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach(t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}}),document.head.appendChild(o)}W(){this.trash.forEach(t=>t.remove())}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(document,"DOMContentLoaded"),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.K(),this.J(window,"DOMContentLoaded"),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(window,"load"),window.dispatchEvent(new Event("rocket-load")),await this.K(),window.rocketonload&&window.rocketonload(),await this.K(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this.K(),this.J(window,"pageshow");const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.K(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async K(){Date.now()-this.lastBreath>45&&(await this.X(),this.lastBreath=Date.now())}async X(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}B(t,e=window){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();
+</script>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/./images/favicon.png" type="image/png" />
+   
+<!-- Google Tag Manager -->
+<script type="text/rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MZ55C4Z');</script>
+<!-- End Google Tag Manager -->
+	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	
+	<link href="//www.ncuindia.edu/wp-content/uploads/omgf/omgf-stylesheet-93/omgf-stylesheet-93.css?ver=1792039601" rel="stylesheet" />
+	<link href="//www.ncuindia.edu/wp-content/uploads/omgf/omgf-stylesheet-67/omgf-stylesheet-67.css?ver=1792039601" rel="stylesheet" />
+	<link href="//www.ncuindia.edu/wp-content/uploads/omgf/omgf-stylesheet-94/omgf-stylesheet-94.css?ver=1792039601" rel="stylesheet" />
+	
+    <link rel="stylesheet" href="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/css/style.min.css" type="text/css" />
+	
+	<link rel="stylesheet" href="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/css/custom_style.min.css" type="text/css" />
+	
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.css'>
+	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+	<link rel="stylesheet" href="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/css/animation.css" type="text/css" />
+	
+<!-- Search Engine Optimization by Rank Math - https://rankmath.com/ -->
+<title>Study in India: Exclusive SAARC Scholarships at NCU</title>
+<link data-rocket-prefetch href="https://stackpath.bootstrapcdn.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://cdnjs.cloudflare.com" rel="dns-prefetch"><link rel="preload" data-rocket-preload as="image" href="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/images/sr-banner.webp" fetchpriority="high">
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+<link rel="canonical" href="https://www.ncuindia.edu/scholarship-for-saarc-countries/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Study in India: Exclusive SAARC Scholarships at NCU" />
+<meta property="og:url" content="https://www.ncuindia.edu/scholarship-for-saarc-countries/" />
+<meta property="og:site_name" content="The NorthCap University" />
+<meta property="og:updated_time" content="2026-10-15T09:42:10+00:00" />
+<meta property="article:published_time" content="2026-04-16T03:54:45+00:00" />
+<meta property="article:modified_time" content="2026-10-15T09:42:10+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Study in India: Exclusive SAARC Scholarships at NCU" />
+<meta name="twitter:label1" content="Time to read" />
+<meta name="twitter:data1" content="Less than a minute" />
+<script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":"Place","@id":"https://www.ncuindia.edu/#place","geo":{"@type":"GeoCoordinates","latitude":"28.414457","longitude":" 77.069120"},"hasMap":"https://www.google.com/maps/search/?api=1&amp;query=28.414457, 77.069120","address":{"@type":"PostalAddress","streetAddress":"Sector 23-A","addressRegion":"Gurugram","postalCode":"122017","addressLocality":"HUDA"}},{"@type":["CollegeOrUniversity","Organization"],"@id":"https://www.ncuindia.edu/#organization","name":"NCUIndia","url":"https://www.ncuindia.edu","email":"ncu@ncuindia.edu","address":{"@type":"PostalAddress","streetAddress":"Sector 23-A","addressRegion":"Gurugram","postalCode":"122017","addressLocality":"HUDA"},"logo":{"@type":"ImageObject","@id":"https://www.ncuindia.edu/#logo","url":"https://www.ncuindia.edu/wp-content/uploads/2025/02/NCU-white-Logo-150x145.webp","contentUrl":"https://www.ncuindia.edu/wp-content/uploads/2025/02/NCU-white-Logo-150x145.webp","caption":"The NorthCap University","inLanguage":"en-US","width":"181","height":"145"},"contactPoint":[{"@type":"ContactPoint","telephone":"+ 91 124 2365811","contactType":"customer support"},{"@type":"ContactPoint","telephone":"+ 91 124 2365812","contactType":"customer support"},{"@type":"ContactPoint","telephone":"+ 91 124 2365813","contactType":"customer support"}],"description":"Ranked among the best universities for engineering in India, The NorthCap University offers industry-focused B.Tech programs, innovation-driven learning, and top placements.","foundingDate":"1996","location":{"@id":"https://www.ncuindia.edu/#place"}},{"@type":"WebSite","@id":"https://www.ncuindia.edu/#website","url":"https://www.ncuindia.edu","name":"The NorthCap University","publisher":{"@id":"https://www.ncuindia.edu/#organization"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","@id":"https://www.ncuindia.edu/scholarship-for-saarc-countries/#breadcrumb","itemListElement":[{"@type":"ListItem","position":"1","item":{"@id":"https://www.ncuindia.edu","name":"Home"}},{"@type":"ListItem","position":"2","item":{"@id":"https://www.ncuindia.edu/scholarship-for-saarc-countries/","name":"Scholarship for Students from Selected SAARC Countries"}}]},{"@type":"WebPage","@id":"https://www.ncuindia.edu/scholarship-for-saarc-countries/#webpage","url":"https://www.ncuindia.edu/scholarship-for-saarc-countries/","name":"Study in India: Exclusive SAARC Scholarships at NCU","datePublished":"2026-04-16T03:54:45+00:00","dateModified":"2026-10-15T09:42:10+00:00","isPartOf":{"@id":"https://www.ncuindia.edu/#website"},"inLanguage":"en-US","breadcrumb":{"@id":"https://www.ncuindia.edu/scholarship-for-saarc-countries/#breadcrumb"}},{"@type":"Person","@id":"https://www.ncuindia.edu/author/satyaraj/","name":"Satya Raj","url":"https://www.ncuindia.edu/author/satyaraj/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/86ec0d143313ba5d2a2e51ec9a89e1200ade0837f5f685e28fe81413dd1e5815?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/86ec0d143313ba5d2a2e51ec9a89e1200ade0837f5f685e28fe81413dd1e5815?s=96&amp;d=mm&amp;r=g","caption":"Satya Raj","inLanguage":"en-US"},"worksFor":{"@id":"https://www.ncuindia.edu/#organization"}},{"@type":"BlogPosting","headline":"Study in India: Exclusive SAARC Scholarships at NCU","datePublished":"2026-04-16T03:54:45+00:00","dateModified":"2026-10-15T09:42:10+00:00","author":{"@id":"https://www.ncuindia.edu/author/satyaraj/","name":"Satya Raj"},"publisher":{"@id":"https://www.ncuindia.edu/#organization"},"name":"Study in India: Exclusive SAARC Scholarships at NCU","@id":"https://www.ncuindia.edu/scholarship-for-saarc-countries/#richSnippet","isPartOf":{"@id":"https://www.ncuindia.edu/scholarship-for-saarc-countries/#webpage"},"inLanguage":"en-US","mainEntityOfPage":{"@id":"https://www.ncuindia.edu/scholarship-for-saarc-countries/#webpage"}}]}</script>
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel="alternate" type="application/rss+xml" title="The NorthCap University &raquo; Feed" href="https://www.ncuindia.edu/feed/" />
+<link rel="alternate" type="application/rss+xml" title="The NorthCap University &raquo; Comments Feed" href="https://www.ncuindia.edu/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.ncuindia.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ncuindia.edu%2Fscholarship-for-saarc-countries%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.ncuindia.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ncuindia.edu%2Fscholarship-for-saarc-countries%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel='stylesheet' id='post-views-counter-frontend-css' href='https://www.ncuindia.edu/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.8.0' media='all' />
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=https://www.ncuindia.edu/wp-includes/blocks/paragraph/style.min.css */
+</style>
+
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<link rel='stylesheet' id='content-control-block-styles-css' href='https://www.ncuindia.edu/wp-content/plugins/content-control/dist/style-block-editor.css?ver=2.7.4' media='all' />
+<style id="content-control-block-styles-inline-css">
+@media (max-width: 640px) {
+	.cc-hide-on-mobile {
+		display: none !important;
+	}
+}
+@media (min-width: 641px) and (max-width: 920px) {
+	.cc-hide-on-tablet {
+		display: none !important;
+	}
+}
+@media (min-width: 921px) and (max-width: 1440px) {
+	.cc-hide-on-desktop {
+		display: none !important;
+	}
+}
+/*# sourceURL=content-control-block-styles-inline-css */
+</style>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='sign-in-with-google-css' href='https://www.ncuindia.edu/wp-content/plugins/sign-in-with-google/src/public/css/sign-in-with-google-public.css?ver=1.8.0' media='all' />
+<link rel='stylesheet' id='megamenu-css' href='https://www.ncuindia.edu/wp-content/uploads/maxmegamenu/style.css?ver=8b3946' media='all' />
+<link rel='stylesheet' id='dashicons-css' href='https://www.ncuindia.edu/wp-includes/css/dashicons.min.css?ver=03efc4a3074596dfbd915693d2316cf2' media='all' />
+<link rel='stylesheet' id='megamenu-genericons-css' href='https://www.ncuindia.edu/wp-content/plugins/megamenu-pro/icons/genericons/genericons/genericons.css?ver=2.5' media='all' />
+<link rel='stylesheet' id='megamenu-fontawesome6-css' href='https://www.ncuindia.edu/wp-content/plugins/megamenu-pro/icons/fontawesome6/css/all.min.css?ver=2.5' media='all' />
+<link rel='stylesheet' id='ncuindia_starter-style-css' href='https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/style.css?ver=1.0.0' media='all' />
+<script type="text/rocketlazyloadscript" id="jquery-core-js" data-rocket-src="https://www.ncuindia.edu/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script type="text/rocketlazyloadscript" id="jquery-migrate-js" data-rocket-src="https://www.ncuindia.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<link rel="https://api.w.org/" href="https://www.ncuindia.edu/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.ncuindia.edu/wp-json/wp/v2/pages/25778" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.ncuindia.edu/xmlrpc.php?rsd" />
+
+<link rel='shortlink' href='https://www.ncuindia.edu/?p=25778' />
+<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><noscript><style>.lazyload[data-src]{display:none !important;}</style></noscript><style>.lazyload{background-image:none !important;}.lazyload:before{background-image:none !important;}</style><link rel="icon" href="https://www.ncuindia.edu/wp-content/uploads/2023/01/cropped-favicon-32x32-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.ncuindia.edu/wp-content/uploads/2023/01/cropped-favicon-32x32-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.ncuindia.edu/wp-content/uploads/2023/01/cropped-favicon-32x32-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.ncuindia.edu/wp-content/uploads/2023/01/cropped-favicon-32x32-1-270x270.png" />
+<style id="wp-custom-css">
+.table_popup{
+	margin-top:-975px;
+	Margin-bottom: -53px;
+}
+
+span.post-views-icon.dashicons {
+    display: none !important;
+}
+
+.bloginnersocail {
+    display: flex;
+    align-items: end !important;
+    justify-content: space-between;
+}
+.blog-sepindi img {
+    width: 100%;
+}
+.blogsharein img {
+    width: 20px;
+    margin: auto;
+    display: block;
+}
+
+@media (min-width:768px) and (max-width:993px)
+{
+.socialbtn .btn {
+    font-size: 15px;
+}
+}
+@media (min-width: 1270px) and (max-width: 1399px)
+{
+#footer .footer--follow-us ul li a {
+    border-radius: 20px;
+    transition: all ease-in-out 0.2s;
+    display: block;
+    background-color: #fff;
+    color: #333033;
+    width: 31px;
+    height: 31px;
+    line-height: 40px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+}
+
+@media (min-width: 1921px)
+{
+.container
+{
+    max-width: 1920px;
+    width: 100%;
+    padding: 0px 4rem;
+}
+}
+#department--admission .page-course-selection-area > div:nth-child(1) select{
+font-size: 1.4rem;
+}
+#department--admission .page-course-selection-area > div:nth-child(1) select.custom-select {
+    background-image: url(/wp-content/themes/ncuindia_starter/images/select-arrow.png);
+    background-size: 21px;
+}
+#footer .footer--note p {
+    font-size: 1.4rem !important;
+    font-weight: 300;
+}
+.textwidth {
+    width: 98%;
+}
+.textwidthtext {
+	   width: 98%;
+    height: 180px;
+}
+.textdropd {
+    width: 98%;
+    height: 35px;
+}
+.upcoming-tab-parent .faqinner-parent .innertabb-accor .accordion .card .card-header h2 .btn {
+    text-transform: none;
+}
+b {
+    font-weight: 600;
+}
+.a-virtual-img.sr1 {
+    width: 38%;
+}
+
+.a-virtual-text.sr2 {
+    width: 60%;
+}
+#accordionExample .card-header button {
+	font-size:19px;
+	font-weight:800;	
+}
+.bdbg{background:#eaecee}
+
+/* .btn.btn-link.btn-block.text-left.collapsed {
+    font-size: large;
+    color: #000;
+} */
+
+#department--rdil .content-area ul>li::before {line-height: 26px;}
+
+/* updated by satya date 18.2.26*/
+body {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Headings *//* Menu *//* Buttons */
+/* h1, h2, h3, h4, h5, h6 {
+font-family: 'Montserrat', sans-serif !important;
+}
+
+
+.navbar, .menu, .main-navigation {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+button, .btn {
+    font-family: 'Montserrat', sans-serif !important;
+} */
+/*kam chalau*/
+/* html, body {
+    overflow-x: hidden !important;
+} */
+</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>	<script type="text/rocketlazyloadscript">(function() {
+		var _fbq = window._fbq || (window._fbq = []);
+		if (!_fbq.loaded) {
+			var fbds = document.createElement('script');
+			fbds.async = true;
+			fbds.src = '//connect.facebook.net/en_US/fbds.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(fbds, s);
+			_fbq.loaded = true;
+		}
+	})();
+	window._fbq = window._fbq || [];
+	window._fbq.push(['track', '6024506370117', {'value':'0.01','currency':'INR'}]);
+	</script>
+	
+	
+	<script type="text/rocketlazyloadscript" data-rocket-type="text/javascript">
+		/* <![CDATA[ */
+		var google_conversion_id = 844992540;
+		var google_conversion_language = "en";
+		var google_conversion_format = "3";
+		var google_conversion_color = "ffffff";
+		var google_conversion_label = "rwPGCN6GnnMQnKD2kgM";
+		var google_remarketing_only = false;
+		/* ]]> */
+	</script>
+	<script type="text/rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="//www.googleadservices.com/pagead/conversion.js">
+	</script>
+	
+<!-- Meta Pixel Code -->
+<script type="text/rocketlazyloadscript">
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1132818306737234');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1132818306737234&ev=PageView&noscript=1" alt="fb"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<script type="text/rocketlazyloadscript">
+  fbq('track', 'Lead');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollegeOrUniversity",
+  "@id": "https://www.ncuindia.edu/#university",
+  "name": "NorthCap University",
+  "url": "https://www.ncuindia.edu/",
+  "logo": "https://ncuindia.edu/ncuupload/NCU-Logo.svg",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-124-2365811",
+    "contactType": "customer service",
+    "areaServed": "IN"
+  },
+  "sameAs": [
+    "https://www.facebook.com/TheNorthCapUniversity",
+    "https://twitter.com/NorthCap_Univ",
+    "https://www.instagram.com/the_northcap_univ/",
+    "https://www.youtube.com/user/ITMUGurgaon",
+    "https://www.linkedin.com/school/the-northcap-university-ggn/"
+  ]
+}
+</script>
+<link rel='stylesheet' id='pgntn_stylesheet-css' href='https://www.ncuindia.edu/wp-content/plugins/pagination/css/nav-style.css?ver=1.2.7' media='all' />
+
+<meta name="generator" content="WP Rocket 3.23.5.1" data-wpr-features="wpr_delay_js wpr_minify_js wpr_lazyload_iframes wpr_preconnect_external_domains wpr_oci wpr_preload_links wpr_desktop" /></head>
+<body data-spy="scroll" data-target="#scrollspy" data-offset="15" cz-shortcut-listen="true">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZ55C4Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<script type="text/rocketlazyloadscript" data-rocket-type="text/javascript">
+		var npf_d='https://ncu.nopaperforms.com'; var npf_c='406'; var npf_m='1'; var s=document.createElement("script"); s.type="text/javascript"; s.async=true; s.src="https://track.nopaperforms.com/js/track.js"; document.body.appendChild(s); 
+	</script>
+    <div  class="container-fluid">
+
+				
+									<header  id="header" class="row eis-header">				
+									
+				<div  class="container">
+					<div class="row no-gutters d-none d-lg-flex">
+						<div class="col-12 col-lg-2 logo mt-3 pb-4 align-self-end">
+							<a href="https://www.ncuindia.edu">
+							<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALUAAACRAQMAAAC/oGvKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAABpJREFUGBntwTEBAAAAwiD7p14MH2AAAABcBQ2YAAE35NL0AAAAAElFTkSuQmCC" data-src="https://www.ncuindia.edu/wp-content/uploads/2025/02/NCU-white-Logo.webp" decoding="async" class="lazyload" data-eio-rwidth="181" data-eio-rheight="145"><noscript><img src="https://www.ncuindia.edu/wp-content/uploads/2025/02/NCU-white-Logo.webp" data-eio="l"></noscript>							</a>
+						</div>
+						<div class="col-12 col-lg-10 py-4 py-xl-3">
+							
+							<div class="row justify-content-end">
+								
+								<div class="col-10 flex-grow-0 login-link align-self-center text-right">
+																		<div class="col-12 d-flex justify-content-end">
+											<ul id="menu-topmenu" class="nav login-nav justify-content-end"><li id="menu-item-23004" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23004 mr-4"><a target="_blank" href="https://www.ncuonline.edu.in/">Online Programme</a></li>
+<li id="menu-item-20825" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20825 mr-4"><a href="https://www.ncuindia.edu/careers/">Careers</a></li>
+<li id="menu-item-22801" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22801 mr-4"><a href="https://www.ncuindia.edu/public-self-disclosure/">Public Self Disclosure</a></li>
+</ul>											<ul class="nav login-nav justify-content-end">
+											<li class="mr-4"><a href="/?social_login">Login</a></li>
+											<li> <a href="javascript:void(0)" class="AnnouncementLink  font-admission" data-toggle="modal" data-target="#AnnouncementModal">Admission Enquiry</a></li>
+											</ul>
+									</div>										
+																	</div>
+								
+								<div class="col-2 pl-2">
+									<div class="search-box">
+										
+										<form role="search" action="https://www.ncuindia.edu/" method="get" id="searchform">
+											
+											<input type="text" name="s" placeholder="Search" />
+											
+											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="search icon" class="search-icon lazyload" loading='lazy' data-src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/images/search-icon.svg" decoding="async" /><noscript><img src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/images/search-icon.svg" alt="search icon" class="search-icon" loading='lazy' data-eio="l" /></noscript>
+										</form>
+									</div>
+								</div>
+							</div>
+							
+							<div id="topMenu" class="row mt-4 pt-1">
+								<div class="col-12 d-flex justify-content-end">
+									<div id="mega-menu-wrap-menu-1" class="mega-menu-wrap"><div class="mega-menu-toggle"><div class="mega-toggle-blocks-left"></div><div class="mega-toggle-blocks-center"></div><div class="mega-toggle-blocks-right"><div class='mega-toggle-block mega-menu-toggle-block mega-toggle-block-1' id='mega-toggle-block-1'><button aria-controls="mega-menu-menu-1" aria-expanded="false" aria-haspopup="true" class='mega-toggle-standard mega-toggle-label'><span class='mega-toggle-label-closed'>OPEN</span><span class='mega-toggle-label-open'>CLOSE</span></button></div></div></div><ul id="mega-menu-menu-1" class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js" data-event="hover" data-effect="disabled" data-effect-speed="200" data-effect-mobile="disabled" data-effect-speed-mobile="0" data-mobile-force-width="false" data-second-click="go" data-document-click="collapse" data-vertical-behaviour="standard" data-breakpoint="768" data-unbind="true" data-mobile-state="collapse_all" data-mobile-direction="vertical" data-mobile-back-text="{parent_title}"><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-item-align-float-left mega-menu-item-444" id="mega-menu-item-444"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-444">About Us<span class="mega-indicator" aria-hidden="true"></span></a>
+<ul class="mega-sub-menu" id='mega-sub-menu-444'>
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-441" id="mega-menu-item-441"><a class="mega-menu-link" href="https://www.ncuindia.edu/educate-india-society/">Educate India Society</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-3-columns mega-sub-columns mega-menu-item-4017" style="--columns:3" id="mega-menu-item-4017"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-4017">Mandatory Disclosures<span class="mega-indicator" aria-hidden="true"></span></a>
+	<ul class="mega-sub-menu" id='mega-sub-menu-4017'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-19752" id="mega-menu-item-19752"><a target="_blank" class="mega-menu-link" href="https://www.ncuindia.edu/public-self-disclosure/">Public Self Disclosure</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4035" id="mega-menu-item-4035"><a class="mega-menu-link" href="https://www.ncuindia.edu/university-grants-commission/">University Grants Commission</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-19751" id="mega-menu-item-19751"><a target="_blank" class="mega-menu-link" href="https://www.ncuindia.edu/wp-content/uploads/2025/01/Haryana_Pvt_Univ._Act_32_2006.pdf">Haryana. Pvt. Univ. Act</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4034" id="mega-menu-item-4034"><a class="mega-menu-link" href="https://www.ncuindia.edu/government-of-haryana/">Government of Haryana</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-18954" id="mega-menu-item-18954"><a class="mega-menu-link" href="https://www.ncuindia.edu/aadc-ncu/">AADC @NCU</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4033" id="mega-menu-item-4033"><a class="mega-menu-link" href="https://www.ncuindia.edu/bar-council-of-india/">Bar Council of India</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4041" id="mega-menu-item-4041"><a class="mega-menu-link" href="https://www.ncuindia.edu/the-internal-quality-assurance-cell-iqac/">The Internal Quality Assurance Cell (IQAC)</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-9053" id="mega-menu-item-9053"><a class="mega-menu-link" href="https://www.ncuindia.edu/mom-of-last-statutory-meeting/">MOM of Last Statutory Meeting</a></li>	</ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-425" id="mega-menu-item-425"><a class="mega-menu-link" href="https://www.ncuindia.edu/the-northcap-university/">The NorthCap University</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-445" id="mega-menu-item-445"><a class="mega-menu-link" href="https://www.ncuindia.edu/governance/">Governance</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-8671" id="mega-menu-item-8671"><a class="mega-menu-link" href="https://www.ncuindia.edu/honorary-adjunct-professor/">Honorary Adjunct Professor</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-24429" id="mega-menu-item-24429"><a target="_blank" class="mega-menu-link" href="https://www.ncuindia.edu/wp-content/uploads/2025/12/Org-Chart.pdf">Organisational Structure</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-20661" id="mega-menu-item-20661"><a class="mega-menu-link" href="https://www.ncuindia.edu/careers/">Careers</a></li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-22800" id="mega-menu-item-22800"><a class="mega-menu-link" href="https://www.ncuindia.edu/international-relations/">International Relations</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-tabbed mega-menu-megamenu mega-menu-item-448" id="mega-menu-item-448"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-448">Schools<span class="mega-indicator" aria-hidden="true"></span></a>
+<ul class="mega-sub-menu" id='mega-sub-menu-448'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-megamenu mega-menu-grid mega-menu-item-618" id="mega-menu-item-618"><a class="mega-menu-link" href="/school/department-of-cse/" aria-expanded="false" aria-controls="mega-sub-menu-618">School of Engineering  & Technology<span class="mega-indicator" aria-hidden="true"></span></a>
+	<ul class="mega-sub-menu" role='presentation' id='mega-sub-menu-618'>
+<li class="mega-menu-row" id="mega-menu-618-0">
+		<ul class="mega-sub-menu" style='--columns:12' role='presentation'>
+<li class="mega-menu-column mega-menu-columns-6-of-12" style="--columns:12; --span:6" id="mega-menu-618-0-0">
+			<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-6 mega-menu-item-1724" style="--columns:6; --span:1" id="mega-menu-item-1724"><a class="mega-menu-link" href="/school/department-of-cse/">Department of CSE<span class="mega-indicator" aria-hidden="true"></span></a>
+				<ul class="mega-sub-menu" id='mega-sub-menu-1724'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1730" id="mega-menu-item-1730"><a class="mega-menu-link" href="/programme/b-tech-cse-with-specialization-in-full-stack-development/">B.Tech CSE - Full Stack Development</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1732" id="mega-menu-item-1732"><a class="mega-menu-link" href="/programme/b-tech-cse-with-specialization-in-cyber-security-and-forensics/">B.Tech CSE - Cyber Security and Forensics</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1735" id="mega-menu-item-1735"><a class="mega-menu-link" href="/programme/b-tech-cse-with-specialization-in-data-science/">B.Tech CSE - Data Science</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1736" id="mega-menu-item-1736"><a class="mega-menu-link" href="/programme/b-tech-cse-with-specialization-in-gaming-augmented-reality-and-virtual-reality/">B.Tech CSE - Gaming, Augmented Reality and Virtual Reality</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1738" id="mega-menu-item-1738"><a class="mega-menu-link" href="/programme/b-tech-cse-with-specialization-in-artificial-intelligence-and-machine-learning/">B.Tech CSE - Artificial Intelligence and Machine Learning</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-19403" id="mega-menu-item-19403"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/b-tech-cse-quantum-computing-in-ai/">B.Tech CSE - Quantum Computing</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-17735" id="mega-menu-item-17735"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/mca">MCA</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1740" id="mega-menu-item-1740"><a class="mega-menu-link" href="/programme/m-tech-cse-with-specialization-in-data-science/">M.Tech CSE - Data Science</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1741" id="mega-menu-item-1741"><a class="mega-menu-link" href="/programme/m-tech-cse-with-specialization-in-cyber-security-and-forensics/">M.Tech CSE - Cyber Security and Forensics</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-3895" id="mega-menu-item-3895"><a class="mega-menu-link" href="/programme/p-hd-in-computer-science-and-engineering/#admission-details">Ph.D.</a></li>				</ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-school mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-6 mega-menu-item-422" style="--columns:6; --span:1" id="mega-menu-item-422"><a class="mega-menu-link" href="https://www.ncuindia.edu/school/school-of-applied-sciences/">Department of Applied Sciences<span class="mega-indicator" aria-hidden="true"></span></a>
+				<ul class="mega-sub-menu" id='mega-sub-menu-422'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-3910" id="mega-menu-item-3910"><a class="mega-menu-link" href="/programme/phd-applied-sciences/#admission-details">Ph.D.</a></li>				</ul>
+</li>			</ul>
+</li><li class="mega-menu-column mega-menu-columns-6-of-12" style="--columns:12; --span:6" id="mega-menu-618-0-1">
+			<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-6 mega-menu-item-1727" style="--columns:6; --span:1" id="mega-menu-item-1727"><a class="mega-menu-link" href="/school/department-of-mde/">Department of MDE<span class="mega-indicator" aria-hidden="true"></span></a>
+				<ul class="mega-sub-menu" id='mega-sub-menu-1727'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-20294" id="mega-menu-item-20294"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/b-tech-in-semiconductor-design-technology/">B.Tech (ECE) - Semiconductor Design & Technology</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-24616" id="mega-menu-item-24616"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/b-tech-in-robotics-and-ai/">*B.Tech in Robotics and AI</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1748" id="mega-menu-item-1748"><a class="mega-menu-link" href="/programme/m-tech-in-ece-with-specialization-in-iot-5g">M.Tech in ECE - IoT & 5G</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1755" id="mega-menu-item-1755"><a class="mega-menu-link" href="/programme/m-tech-in-ece-with-specialization-in-semiconductor-technology/">MTech in ECE - Semiconductor Technology</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1745" id="mega-menu-item-1745"><a class="mega-menu-link" href="/programme/mtech-in-civil-engineering-with-specialization-in-environmental-engineering/">M.Tech in Civil Engineering - Environmental Engineering</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1750" id="mega-menu-item-1750"><a class="mega-menu-link" href="/programme/m-tech-me-with-specialization-in-electric-vehicles/">M.Tech ME - Electric Vehicles</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-6394" id="mega-menu-item-6394"><a class="mega-menu-link" href="/programme/m-tech-in-production-and-industrial-engineering/">M.Tech ME - Production and Industrial Engineering</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1754" id="mega-menu-item-1754"><a class="mega-menu-link" href="/programme/m-tech-me-with-specialization-in-thermal-engineering/">M.Tech ME - Thermal Engineering</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1756" id="mega-menu-item-1756"><a class="mega-menu-link" href="/programme/m-tech-me-with-specialization-in-mechanical-engineering-design/">MTech ME - Mechanical Engineering Design</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-3896" id="mega-menu-item-3896"><a class="mega-menu-link" href="/programme/phd-electrical-electronics-and-communication-engineering/#admission-details">Ph.D.</a></li>				</ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-6 mega-menu-item-21221" style="--columns:6; --span:1" id="mega-menu-item-21221"><a class="mega-menu-link" href="/school/media-and-entertainment/">Centre for Media and Entertainment (CME)<span class="mega-indicator" aria-hidden="true"></span></a>
+				<ul class="mega-sub-menu" id='mega-sub-menu-21221'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-21222" id="mega-menu-item-21222"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/b-sc-sound-engineering/">B.Sc Sound Engineering</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-21224" id="mega-menu-item-21224"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/b-sc-visual-effects-and-animation/">B.Sc Visual Effects and Animation</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-21223" id="mega-menu-item-21223"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/b-des-communication-design/">B.Des Communication Design</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-21225" id="mega-menu-item-21225"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/bca-media-and-it/">BCA – Media and Information Technology</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-21226" id="mega-menu-item-21226"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/bca-game-development/">BCA Game Development</a></li>				</ul>
+</li>			</ul>
+</li>		</ul>
+</li>	</ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-megamenu mega-menu-grid mega-menu-item-25287" id="mega-menu-item-25287"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-25287">School of Management and Liberal Studies<span class="mega-indicator" aria-hidden="true"></span></a>
+	<ul class="mega-sub-menu" role='presentation' id='mega-sub-menu-25287'>
+<li class="mega-menu-row" id="mega-menu-25287-0">
+		<ul class="mega-sub-menu" style='--columns:12' role='presentation'>
+<li class="mega-menu-column mega-menu-columns-6-of-12" style="--columns:12; --span:6" id="mega-menu-25287-0-0">
+			<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-6 mega-menu-item-20347" style="--columns:6; --span:1" id="mega-menu-item-20347"><a class="mega-menu-link" href="/school/school-of-management/">Department of Management and Commerce (DMAC)<span class="mega-indicator" aria-hidden="true"></span></a>
+				<ul class="mega-sub-menu" id='mega-sub-menu-20347'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1714" id="mega-menu-item-1714"><a class="mega-menu-link" href="/programme/bachelor-of-business-administration-bba/">BBA</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1715" id="mega-menu-item-1715"><a class="mega-menu-link" href="/programme/bachelor-of-business-administration-bba-with-specialization-in-digital-marketing/">BBA - Digital Marketing (DM)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1716" id="mega-menu-item-1716"><a class="mega-menu-link" href="/programme/bachelor-of-business-administration-bba-with-specialization-in-business-analytics/">BBA - Business Analytics (BA)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-8338" id="mega-menu-item-8338"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/bachelor-of-business-administration-bba-with-specialization-in-entrepreneurship-and-family-business/">BBA - Entrepreneurship and Family Business (EFB)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1717" id="mega-menu-item-1717"><a class="mega-menu-link" href="/programme/bachelor-of-commerce-b-com-hons/">B.Com (Hons.)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-8362" id="mega-menu-item-8362"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/bachelor-of-commerce-b-com-with-specialization-in-financial-market/">B.Com (Hons.) - Financial Markets (FM)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1718" id="mega-menu-item-1718"><a class="mega-menu-link" href="/programme/bachelor-of-arts-ba-economics-hons/">BA (Hons.) - Economics</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25074" id="mega-menu-item-25074"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/mcom-bfsi/">M.Com - Banking, Financial Services & Insurance (BFSI)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-3909" id="mega-menu-item-3909"><a class="mega-menu-link" href="/programme/ph-d/#admission-details">Ph.D.</a></li>				</ul>
+</li>			</ul>
+</li><li class="mega-menu-column mega-menu-columns-6-of-12" style="--columns:12; --span:6" id="mega-menu-25287-0-1">
+			<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-6 mega-menu-item-23811" style="--columns:6; --span:1" id="mega-menu-item-23811"><a class="mega-menu-link" href="/school/department-of-psychology/">Department of Psychology<span class="mega-indicator" aria-hidden="true"></span></a>
+				<ul class="mega-sub-menu" id='mega-sub-menu-23811'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-17734" id="mega-menu-item-17734"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/m-a-psychology/">M.A.  Psychology</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1719" id="mega-menu-item-1719"><a class="mega-menu-link" href="/programme/ba-hons-psychology/">Bachelor of Arts (BA) (Hons.) Psychology</a></li>				</ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-6 mega-menu-item-23054" style="--columns:6; --span:1" id="mega-menu-item-23054"><a class="mega-menu-link" href="https://www.ncuindia.edu/school/centre-for-languages-learning/">Centre for Language Learning<span class="mega-indicator" aria-hidden="true"></span></a>
+				<ul class="mega-sub-menu" id='mega-sub-menu-23054'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-23055" id="mega-menu-item-23055"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/bachelor-of-arts-ba-hons-in-english/">Bachelor of Arts (BA) – English(Hons.)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-23057" id="mega-menu-item-23057"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/m-a-english/">M.A. English</a></li>				</ul>
+</li>			</ul>
+</li>		</ul>
+</li>	</ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-school mega-menu-item-has-children mega-menu-megamenu mega-menu-item-421" id="mega-menu-item-421"><a class="mega-menu-link" href="https://www.ncuindia.edu/school/school-of-law/" aria-expanded="false" aria-controls="mega-sub-menu-421">School of Law<span class="mega-indicator" aria-hidden="true"></span></a>
+	<ul class="mega-sub-menu" id='mega-sub-menu-421'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-1 mega-menu-item-20349" style="--columns:1; --span:1" id="mega-menu-item-20349"><a class="mega-menu-link" href="https://www.ncuindia.edu/school/school-of-law/">Department of Law<span class="mega-indicator" aria-hidden="true"></span></a>
+		<ul class="mega-sub-menu" id='mega-sub-menu-20349'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1712" id="mega-menu-item-1712"><a class="mega-menu-link" href="/programme/bachelor-of-law-bba-ll-b-hons/">Bachelor of Law -BBA.LL.B (Hons.) Integrated Degree Programme</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-12295" id="mega-menu-item-12295"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/ll-b-3-years/">LLB 3-Years</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1713" id="mega-menu-item-1713"><a class="mega-menu-link" href="/programme/master-of-laws-llm/">Master of Laws (LLM)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-3908" id="mega-menu-item-3908"><a class="mega-menu-link" href="/programme/ph-d-law/#admission-details">Ph.D.</a></li>		</ul>
+</li>	</ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-megamenu mega-menu-item-14319" id="mega-menu-item-14319"><a class="mega-menu-link" href="https://schoolofbusiness.ncuindia.edu/">School of Business</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-megamenu mega-menu-item-25429" id="mega-menu-item-25429"><a class="mega-menu-link" href="https://www.ncuindia.edu/school/school-of-life-sciences-and-allied-health-sciences/" aria-expanded="false" aria-controls="mega-sub-menu-25429">School of Life Sciences and Allied Health Sciences<span class="mega-indicator" aria-hidden="true"></span></a>
+	<ul class="mega-sub-menu" id='mega-sub-menu-25429'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-1 mega-menu-item-25425" style="--columns:1; --span:1" id="mega-menu-item-25425"><a class="mega-menu-link" href="https://www.ncuindia.edu/school/school-of-life-sciences-and-allied-health-sciences/">School of Life Sciences and Allied Health Sciences<span class="mega-indicator" aria-hidden="true"></span></a>
+		<ul class="mega-sub-menu" id='mega-sub-menu-25425'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25426" id="mega-menu-item-25426"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/bachelor-of-emergency-medical-technologist-paramedics/">Bachelor of Emergency Medical Technologist – Paramedics (B.EMT)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25427" id="mega-menu-item-25427"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/bachelor-of-medical-laboratory-science/">Bachelor of Medical Laboratory Science (B.MLS)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25462" id="mega-menu-item-25462"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/bachelor-of-dialysis-therapy-technology/">Bachelor of Dialysis Therapy Technology (B.DTT)</a></li>		</ul>
+</li>	</ul>
+</li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-current-menu-ancestor mega-current-menu-parent mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-24312" id="mega-menu-item-24312"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-24312">Admissions<span class="mega-indicator" aria-hidden="true"></span></a>
+<ul class="mega-sub-menu" id='mega-sub-menu-24312'>
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-17053" id="mega-menu-item-17053"><a class="mega-menu-link" href="https://www.ncuindia.edu/eligibility-criteria/">Eligibility criteria</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-item-25860" id="mega-menu-item-25860"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-25860">Admission Brochures<span class="mega-indicator" aria-hidden="true"></span></a>
+	<ul class="mega-sub-menu" id='mega-sub-menu-25860'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25079" id="mega-menu-item-25079"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/ADMISSION-BROCHURE-2026.pdf">All Courses Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25861" id="mega-menu-item-25861"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/cse-brochure.pdf">CSE Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25862" id="mega-menu-item-25862"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/robotics-ai-brochure.pdf">Robotics & AI Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25863" id="mega-menu-item-25863"><a class="mega-menu-link" href="https://ncuindia.edu/ncuupload/semiconductor-brochure.pdf">Semiconductor Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25864" id="mega-menu-item-25864"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/dmac-brochure.pdf">DMAC Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25865" id="mega-menu-item-25865"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/psychology-brochure.pdf">Psychology Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25895" id="mega-menu-item-25895"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/cll-brochure.pdf">CLL Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25894" id="mega-menu-item-25894"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/law-brochure.pdf">Law Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25980" id="mega-menu-item-25980"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/cme/Sound-Eng-Digital-Brochure.pdf">B.Sc Sound Engineering Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25986" id="mega-menu-item-25986"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/cme/media-Animation-and-VFX-Digital.pdf">B.Sc Visual Effects and Animation</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25984" id="mega-menu-item-25984"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/cme/media-B.Des.-Communication-Design-Visual-Communication-Digital.pdf">B.Des. Communication  Visual Communication</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25985" id="mega-menu-item-25985"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/cme/media-B.Des.%20UI-UX-Digital.pdf">B.Des. UI UX Digital</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25982" id="mega-menu-item-25982"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/cme/media-BCA-Media-&#038;%20-IT.pdf">BCA Media IT Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25983" id="mega-menu-item-25983"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/cme/media-BCA-GD-Digital.pdf">BCA GD Digital Brochure</a></li>	</ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-item-24805" id="mega-menu-item-24805"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-24805">Admission Policy 2026-27<span class="mega-indicator" aria-hidden="true"></span></a>
+	<ul class="mega-sub-menu" id='mega-sub-menu-24805'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-24806" id="mega-menu-item-24806"><a class="mega-menu-link" href="https://www.ncuindia.edu/wp-content/uploads/SOET-Policy.pdf">SOET Policy</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-24807" id="mega-menu-item-24807"><a class="mega-menu-link" href="https://www.ncuindia.edu/wp-content/uploads/SOM-Policy.pdf">SOM Policy</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-24808" id="mega-menu-item-24808"><a class="mega-menu-link" href="https://www.ncuindia.edu/wp-content/uploads/Law-Policy.pdf">Law Policy</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-24809" id="mega-menu-item-24809"><a class="mega-menu-link" href="https://schoolofbusiness.ncuindia.edu/wp-content/uploads/2026/09/Admission-Policy-SOB-2026.pdf">SOB Policy</a></li>	</ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-8433" id="mega-menu-item-8433"><a class="mega-menu-link" href="https://www.ncuindia.edu/fee-structure/">Fee Structure</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-8434" id="mega-menu-item-8434"><a class="mega-menu-link" href="https://www.ncuindia.edu/scholarship/">Scholarships</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-current-menu-item mega-page_item mega-page-item-25778 mega-current_page_item mega-menu-item-25793" id="mega-menu-item-25793"><a class="mega-menu-link" href="https://www.ncuindia.edu/scholarship-for-saarc-countries/" aria-current="page">Scholarship for  SAARC Countries</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-19006" id="mega-menu-item-19006"><a target="_blank" class="mega-menu-link" href="https://www.ncuindia.edu/wp-content/uploads/2024/10/SOP-for-Migration-Process-at-NCU-Amended-in-Sep-2024-Final.pdf">SOP for Migration to NCU</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-24774" id="mega-menu-item-24774"><a class="mega-menu-link" href="https://www.ncuindia.edu/faqs-for-admissions/">FAQ's For Admissions</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-24309" id="mega-menu-item-24309"><a class="mega-menu-link" href="https://www.ncuindia.edu/phd/">Ph.D Admission</a></li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-3279" id="mega-menu-item-3279"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-3279">Campus Life<span class="mega-indicator" aria-hidden="true"></span></a>
+<ul class="mega-sub-menu" id='mega-sub-menu-3279'>
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-12302" id="mega-menu-item-12302"><a class="mega-menu-link" href="https://www.ncuindia.edu/blog/">Blog</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-item-27139" id="mega-menu-item-27139"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-27139">Convocation<span class="mega-indicator" aria-hidden="true"></span></a>
+	<ul class="mega-sub-menu" id='mega-sub-menu-27139'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-27140" id="mega-menu-item-27140"><a target="_blank" class="mega-menu-link" href="https://www.youtube.com/live/EQWslP_rhMk">Convocation 2025 (Morning)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-27141" id="mega-menu-item-27141"><a class="mega-menu-link" href="https://www.youtube.com/live/PtfIAhTIrlA">Convocation 2025 (Evening)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-27142" id="mega-menu-item-27142"><a target="_blank" class="mega-menu-link" href="https://www.youtube.com/live/G_PLzd4V46Q">Convocation 2024 (Morning)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-27143" id="mega-menu-item-27143"><a target="_blank" class="mega-menu-link" href="https://www.youtube.com/live/VQJzxHjP30k">Convocation 2024 (Evening)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-27144" id="mega-menu-item-27144"><a target="_blank" class="mega-menu-link" href="https://www.youtube.com/live/Ue2Av6LQyb8">Convocation 2023</a></li>	</ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-23436" id="mega-menu-item-23436"><a class="mega-menu-link" href="https://www.ncuindia.edu/events/">Events</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-19922" id="mega-menu-item-19922"><a class="mega-menu-link" href="https://www.ncuindia.edu/newsletters/">Newsletters</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25027" id="mega-menu-item-25027"><a class="mega-menu-link" href="https://www.ncuindia.edu/tinkering-lab-magazine/">Tinkering Lab Magazine</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-12957" id="mega-menu-item-12957"><a class="mega-menu-link" href="https://www.ncuindia.edu/master-class/">Masterclass</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-3280" id="mega-menu-item-3280"><a class="mega-menu-link" href="/campus-life/">About The Campus</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-428" id="mega-menu-item-428"><a class="mega-menu-link" href="https://www.ncuindia.edu/societies-clubs/">Societies & Clubs</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-781" id="mega-menu-item-781"><a class="mega-menu-link" href="/facilities/?facility_id=472">Facilities</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-960" id="mega-menu-item-960"><a class="mega-menu-link" href="https://www.ncuindia.edu/library/">Library</a></li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-449" id="mega-menu-item-449"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-449">Research<span class="mega-indicator" aria-hidden="true"></span></a>
+<ul class="mega-sub-menu" id='mega-sub-menu-449'>
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-10510" id="mega-menu-item-10510"><a class="mega-menu-link" href="https://www.ncuindia.edu/phd/">Ph.D. Programme</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-411" id="mega-menu-item-411"><a class="mega-menu-link" href="https://www.ncuindia.edu/rdil/">About RDIL</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-17054" id="mega-menu-item-17054"><a class="mega-menu-link" href="https://www.ncuindia.edu/central-research-facility/">About the Central Research Facility</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-417" id="mega-menu-item-417"><a class="mega-menu-link" href="https://www.ncuindia.edu/completed-sponsored-projects/">Completed Sponsored Projects</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-418" id="mega-menu-item-418"><a class="mega-menu-link" href="https://www.ncuindia.edu/call-for-proposals/">Call for Proposals</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-8359" id="mega-menu-item-8359"><a class="mega-menu-link" href="https://www.ncuindia.edu/ipr-cell/">Intellectual Property Rights Cell</a></li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-22001" id="mega-menu-item-22001"><a class="mega-menu-link" href="https://www.ncuindia.edu/our-placements/">Placements</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-7590" id="mega-menu-item-7590"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-7590">Quality Benchmarks<span class="mega-indicator" aria-hidden="true"></span></a>
+<ul class="mega-sub-menu" id='mega-sub-menu-7590'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25688" id="mega-menu-item-25688"><a class="mega-menu-link" href="https://www.ncuindia.edu/nirf-ncu/">NIRF</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-17050" id="mega-menu-item-17050"><a class="mega-menu-link" href="https://www.ncuindia.edu/quality-benchmark/">Recognitions & Affiliations</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-17051" id="mega-menu-item-17051"><a class="mega-menu-link" href="https://www.ncuindia.edu/quality-benchmark/#alliances-collaborations">Alliances & Collaborations</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-17052" id="mega-menu-item-17052"><a class="mega-menu-link" href="https://www.ncuindia.edu/quality-benchmark/#rankings">Rankings</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-6250" id="mega-menu-item-6250"><a class="mega-menu-link" href="https://www.ncuindia.edu/nisp-policy/">NISP Policy</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-7589" id="mega-menu-item-7589"><a class="mega-menu-link" href="https://www.ncuindia.edu/innovation-page/">IIC</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-7625" id="mega-menu-item-7625"><a class="mega-menu-link" href="https://www.ncuindia.edu/the-northcap-incubation-innovation-centre/">NorthCap Incubation &#038; Innovation Centre</a></li></ul>
+</li><li class="mega-visible-xs mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-8132 visible-xs" id="mega-menu-item-8132"><a class="mega-menu-link" href="https://www.ncuindia.edu/?social_login">Login</a></li></ul></div>								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+					
+					<div class="row d-flex d-lg-none">
+					
+                    <div class="col-3 mob--menu text-center order-3">
+                        <button type="button" class="navbar-toggle x collapsed hidden-md hidden-lg" data-toggle="collapse" data-target="#mob-slideNav">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+						</button>
+					</div>
+                    <div class="col-4 d-flex justify-content-start py-3 header_logo">
+                        <a href="/">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="The Northcap University" height="40px" loading='lazy' data-src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/images/logo.svg" decoding="async" class="lazyload" /><noscript><img src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/images/logo.svg" alt="The Northcap University" height="40px" loading='lazy' data-eio="l" /></noscript>
+						</a>
+					</div>
+                    <div class="col-5 mob--search text-center header_mob">
+                    	    <!------satya login logout---->
+
+                    <div class="flex-grow-0 align-self-center text-right">
+															</div>
+
+                   <!------satya login logout---->
+<!-- 					<a href="#"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="search icon" class="search-icon lazyload" loading='lazy' data-src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/images/search-icon.svg" decoding="async" /><noscript><img src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/images/search-icon.svg" alt="search icon" class="search-icon" loading='lazy' data-eio="l" /></noscript></a> | 
+						<div class="mob-helpline">
+							<i class="fa fa-phone" aria-hidden="true"></i> <strong>
+							<?php// if(is_active_sidebar('contact_number')){ ?><a href="tel:<?php// dynamic_sidebar('contact_number'); ?>"></a><?php// } ?></strong>
+						</div> -->
+                        
+					</div>
+				</div>
+					
+					<div class="row my-5">
+					
+										<div class="col-12">
+					<h1 class="page-title">Scholarship for SAARC Countries</h1>
+					</div>
+					
+											
+					</div>
+					
+				</div>
+              		<a href="https://apply.ncuindia.edu/" class="apply-now">Apply Now!</a>
+				
+			</header>
+<!-- 	<section class="row bdbg">
+	<div  class="container">
+			
+		</div>
+	</section>																																									 -->
+ 
+
+<style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 3px 3px 0 3px;
+            text-align: left;
+			text-align:.5rem;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        
+     li.nav-item.bd {
+        border-bottom: 1px solid #c5c5c5;
+     }
+	#department--rdil .content-area ul>li {
+    margin-left: 19px;
+}
+h1{line-height: 1.3;}
+
+</style>
+<section  id="department--rdil">
+	<div  class="container">
+		<h1>Scholarship for Students from Selected SAARC Countries</h1>
+		<div class="row justify-content-between">	
+			<div class="col-12 col-lg-12 content-area">
+			<div class="row">
+														<div class="col-12">
+						<p>As part of its commitment to internationalization and cultural diversity,  <strong>The NorthCap University (NCU)</strong> offers a special scholarship for students from selected SAARC countries.</p>
+<p>This initiative is designed to attract academically talented students from neighbouring nations and provide them with access to quality education in India.</p>
+<p>Students from <strong>Nepal, Bhutan, Sri Lanka, and Bangladesh</strong> are eligible for this scholarship. Under the scheme, selected candidates benefit from <strong>domestic fee rates</strong>, making education at NCU more accessible and affordable.</p>
+					</div>	
+											<div class="col-12">
+						<h2>Scholarship Criteria</h2>
+<table>
+<tbody>
+<tr>
+<td width="139"><strong>Scholarship Type</strong></td>
+<td width="180"><strong>Eligibility Criteria (Qualifying Examination)</strong></td>
+<td width="160"><strong>Applicable Programs</strong></td>
+<td width="160"><strong>Scholarship Limit</strong></td>
+</tr>
+<tr>
+<td width="139">100% Scholarship</td>
+<td width="180">Above 90%</td>
+<td rowspan="3" width="160">Any Undergraduate, Postgraduate or PhD Program</td>
+<td width="160">One student per program</td>
+</tr>
+<tr>
+<td width="139">50% Scholarship</td>
+<td width="180">Between 80% to 90%</td>
+<td width="160">One student per program</td>
+</tr>
+<tr>
+<td width="139">25% Scholarship</td>
+<td width="180">Between 70% and 80%</td>
+<td width="160">One student per program</td>
+</tr>
+</tbody>
+</table>
+					</div>	
+											<div class="col-12">
+						<div class="pt-5 pb-4">The number of scholarships is capped at one student per program per scholarship category. The qualifying examination criteria will be relaxed by 5% for female students.</div>
+					</div>	
+									</div>
+
+
+		</div>
+		
+	</div>
+	
+</div>
+</section>
+
+<style type="text/css">
+	
+.sr li {
+  display: inline-block;padding:3px;}
+
+</style>
+<!--<a href="https://www.youtube.com/user/ITMUGurgaon" target="_blank" class="yt-link">Youtube</a>-->
+<a href="/announcements/" target="_blank" class="yt-link">Announcement</a><a href="javascript:void(0)" class="AnnouncementLinkmobile" data-toggle="modal" data-target="#AnnouncementModal">Admission Enquiry</a>
+<footer id="footer" class="row z-index-1 position-relative" >
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-lg-9 col-xl-9 py-5">
+<!-- 				<div class="row">
+					<div class="col-12"> 
+											</div>
+				</div> -->
+				<div class="row mt-4">
+					
+					<div class="col-12 col-lg-6 footer--address-info">
+						
+						<h4>Contact Us</h4>
+						
+						<ul class="mt-4 pt-2">
+														<li><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading='lazy' alt="address-icon" data-src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/./images/address-icon.svg" decoding="async" class="lazyload" /><noscript><img src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/./images/address-icon.svg" loading='lazy' alt="address-icon" data-eio="l" /></noscript> Address: HUDA Sector 23-A Gurugram – 122017</li>
+														
+														<li><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading='lazy' alt="phone" data-src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/./images/call-icon.svg" decoding="async" class="lazyload" /><noscript><img src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/./images/call-icon.svg" loading='lazy' alt="phone" data-eio="l" /></noscript> Phone:<br> <a href="tel:+ 91 124 2365811">+ 91 124 2365811</a><br>
+							<a href="tel:+ 91 124 2365812">+ 91 124 2365812</a><br>
+						<a href="tel:+ 91 124 2365813">+ 91 124 2365813</a><br>
+						<a href="tel:"></a></li>
+														
+														<li><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading='lazy' alt="helpline" data-src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/./images/call-icon.svg" decoding="async" class="lazyload" /><noscript><img src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/./images/call-icon.svg" loading='lazy' alt="helpline" data-eio="l" /></noscript> Admissions Hotline: <a href="tel:9311300803 ">9311300803 </a> </li>
+														
+					
+                           								<li><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading='lazy' alt="helpline" data-src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/./images/call-icon.svg" decoding="async" class="lazyload" /><noscript><img src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/./images/call-icon.svg" loading='lazy' alt="helpline" data-eio="l" /></noscript> MBA Admissions: <a href="tel:9311300803 ">9311300802 </a> </li>
+								
+
+														<li><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading='lazy' alt="email" data-src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/./images/email-icon.svg" decoding="async" class="lazyload" /><noscript><img src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/./images/email-icon.svg" loading='lazy' alt="email" data-eio="l" /></noscript> Email: <a href="mailto:ncu@ncuindia.edu">ncu@ncuindia.edu</a></li>
+														
+							<li class="mt-4"><a href="https://www.google.co.in/maps/place/The+NorthCap+University/@28.5036494,77.0476778,17z/data=!3m1!4b1!4m5!3m4!1s0x390d199c98e90ff1:0x8b2aa76c53fb738e!8m2!3d28.504167!4d77.049091" target="_blank">Locate Us</a> | <a href="/contact-us/">Contact Us</a> | <a href="/public-self-disclosure/">Public Self Disclosure</a></li>
+							
+						</ul>
+					</div>
+					<div class="col-12 col-lg-6 footer--imp-link mt-4 mt-lg-0 pt-2 pt-lg-0">
+						<h4>Important Links</h4>
+						<ul id="menu-important-links" class="nav"><li id="menu-item-11425" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11425"><a href="https://www.ncuindia.edu/blog/">Blog</a></li>
+<li id="menu-item-20662" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20662"><a href="https://www.ncuindia.edu/careers/">Careers</a></li>
+<li id="menu-item-13838" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13838"><a href="https://www.ncuindia.edu/anti-ragging/">Anti Ragging Notices</a></li>
+<li id="menu-item-21510" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21510"><a href="https://www.ncuindia.edu/feedback/">Stakeholders Feedback</a></li>
+<li id="menu-item-21506" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21506"><a href="https://www.ncuindia.edu/statutory-committee-links/">Statutory Committee Links</a></li>
+<li id="menu-item-14206" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14206"><a href="https://www.ncuindia.edu/academic-bank-of-credits-abc/">Academic Bank of Credits (ABC)</a></li>
+<li id="menu-item-12304" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12304"><a href="https://alumni.ncuindia.edu/">Alumni</a></li>
+<li id="menu-item-14183" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14183"><a href="https://www.ncuindia.edu/wp-content/uploads/2025/01/FEE-REFUND-POLICY.pdf">Refund Policy 2024-25</a></li>
+<li id="menu-item-12849" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12849"><a href="https://www.ncuindia.edu/code-of-conduct/">Code of Conduct</a></li>
+<li id="menu-item-15313" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15313"><a target="_blank" href="https://ncuhelpdesk.ncuindia.edu/">Help Desk</a></li>
+<li id="menu-item-16127" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16127"><a target="_blank" href="https://samadhaan.ugc.ac.in/">e-Samadhan</a></li>
+<li id="menu-item-15223" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15223"><a href="https://www.ncuindia.edu/faqs-for-admissions/">FAQs for admissions</a></li>
+<li id="menu-item-14541" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14541"><a href="https://www.ncuindia.edu/wp-content/uploads/2023/12/Sexual-Harassment-at-Workplace-Act-2013.pdf">Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act 2013</a></li>
+<li id="menu-item-23365" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23365"><a href="#">National Toll Free <br>De-addiction<br> Helpline- <b>14446</b></a></li>
+<li id="menu-item-22710" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22710"><a target="_blank" href="https://studyinindia.gov.in">Study in India-Portal link</a></li>
+</ul>	
+						
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-lg-3 col-xl-3 mt-3 mt-xl-0">
+				<div class="row fullHeight mx-0" style="height:100px;">
+					<div class="col-12 col-lg-12 py-5 px-0 px-lg-4">
+						<div class="col-12 px-0 px-lg-4">
+
+							<h4>Follow Us</h4>
+							<ul class="nav sr">
+								<li><a href="https://www.facebook.com/TheNorthCapUniversity/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfAQMAAAAlYIR6AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAAtJREFUCB1jGLwAAACbAAGvngDzAAAAAElFTkSuQmCC" alt="NCU facebook" data-src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/images/social/fb.png" decoding="async" class="lazyload" data-eio-rwidth="31" data-eio-rheight="31"><noscript><img src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/images/social/fb.png" alt="NCU facebook" data-eio="l"></noscript></a></li>
+								<li><a href="https://x.com/NorthCap_Univ"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfAQMAAAAlYIR6AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAAtJREFUCB1jGLwAAACbAAGvngDzAAAAAElFTkSuQmCC" alt="NCU twitter" data-src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/images/social/tiwiter.png" decoding="async" class="lazyload" data-eio-rwidth="31" data-eio-rheight="31"><noscript><img src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/images/social/tiwiter.png" alt="NCU twitter" data-eio="l"></noscript></a></li>
+								<li><a href="https://www.instagram.com/the_northcap_univ/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfAQMAAAAlYIR6AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAAtJREFUCB1jGLwAAACbAAGvngDzAAAAAElFTkSuQmCC" alt="NCU instagram" data-src="https://www.ncuindia.edu/wp-content/uploads/2024/04/instagram.png" decoding="async" class="lazyload" data-eio-rwidth="31" data-eio-rheight="31"><noscript><img src="https://www.ncuindia.edu/wp-content/uploads/2024/04/instagram.png" alt="NCU instagram" data-eio="l"></noscript></a></li>
+								<li><a href="https://www.youtube.com/user/ITMUGurgaon/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfAQMAAAAlYIR6AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAAtJREFUCB1jGLwAAACbAAGvngDzAAAAAElFTkSuQmCC" alt="NCU youtube" data-src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/images/social/youtube.png" decoding="async" class="lazyload" data-eio-rwidth="31" data-eio-rheight="31"><noscript><img src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/images/social/youtube.png" alt="NCU youtube" data-eio="l"></noscript></a></li>
+								<li><a href="https://www.linkedin.com/school/the-northcap-university-ggn/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfAQMAAAAlYIR6AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAAtJREFUCB1jGLwAAACbAAGvngDzAAAAAElFTkSuQmCC" alt="NCU linkedin" data-src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/images/social/linkedin.png" decoding="async" class="lazyload" data-eio-rwidth="31" data-eio-rheight="31"><noscript><img src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/images/social/linkedin.png" alt="NCU linkedin" data-eio="l"></noscript></a></li>
+							</ul>
+								
+						</div>
+             <!--<div class="col-12 px-0 px-lg-4">
+							<h4>Virtual Tour</h4>
+							<div class="position-relative cl-gallery--img" style="width: 100px;">
+								<a href="https://ncuindia.edu/virtual-tour/">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjAAAAIwAQMAAACiP8MsAAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAD1JREFUeNrtwYEAAAAAw6D5U5/gBlUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMA3m1AAAe1RZAoAAAAASUVORK5CYII=" alt="virtual tour" class="z-index-0 lazyload" loading='lazy' data-src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/./images/360_icon_v2.gif" decoding="async" data-eio-rwidth="560" data-eio-rheight="560" /><noscript><img src="https://www.ncuindia.edu/wp-content/themes/ncuindia_starter/./images/360_icon_v2.gif" alt="virtual tour" class="z-index-0" loading='lazy' data-eio="l" /></noscript>
+								</a>
+								<div class="cl-gallery--caption w-100 px-5 pb-3">
+									<h4></h4>
+									<p></p>
+								</div>
+							</div>
+						</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row mt-5">
+					
+			<div class="col-12 footer--note">
+<p class="wp-block-paragraph">"The Information Technology related network guidelines issued by NCU is in consonance with the laws of the Government of India and rules and regulations under the information technology and network resources policy of the university. Therefore any misuse or unlawful activities are strictly prohibited and shall be dealt with under the applicable law."</p>
+			</div>
+			&nbsp;&nbsp;The NorthCap University © 2026 All Rights Reserved.<br/><br/>
+		</div>
+	</div>
+</footer> 
+<div id="mob-slideNav" class="navbar-collapse collapse mobileNav">
+	
+	<div id="mega-menu-wrap-menu-1" class="mega-menu-wrap"><div class="mega-menu-toggle"><div class="mega-toggle-blocks-left"></div><div class="mega-toggle-blocks-center"></div><div class="mega-toggle-blocks-right"><div class='mega-toggle-block mega-menu-toggle-block mega-toggle-block-1' id='mega-toggle-block-1'><button aria-controls="mega-menu-menu-1" aria-expanded="false" aria-haspopup="true" class='mega-toggle-standard mega-toggle-label'><span class='mega-toggle-label-closed'>OPEN</span><span class='mega-toggle-label-open'>CLOSE</span></button></div></div></div><ul id="mega-menu-menu-1" class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js" data-event="hover" data-effect="disabled" data-effect-speed="200" data-effect-mobile="disabled" data-effect-speed-mobile="0" data-mobile-force-width="false" data-second-click="go" data-document-click="collapse" data-vertical-behaviour="standard" data-breakpoint="768" data-unbind="true" data-mobile-state="collapse_all" data-mobile-direction="vertical" data-mobile-back-text="{parent_title}"><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-item-align-float-left mega-menu-item-444" id="mega-menu-item-444"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-444">About Us<span class="mega-indicator" aria-hidden="true"></span></a>
+<ul class="mega-sub-menu" id='mega-sub-menu-444'>
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-441" id="mega-menu-item-441"><a class="mega-menu-link" href="https://www.ncuindia.edu/educate-india-society/">Educate India Society</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-3-columns mega-sub-columns mega-menu-item-4017" style="--columns:3" id="mega-menu-item-4017"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-4017">Mandatory Disclosures<span class="mega-indicator" aria-hidden="true"></span></a>
+	<ul class="mega-sub-menu" id='mega-sub-menu-4017'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-19752" id="mega-menu-item-19752"><a target="_blank" class="mega-menu-link" href="https://www.ncuindia.edu/public-self-disclosure/">Public Self Disclosure</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4035" id="mega-menu-item-4035"><a class="mega-menu-link" href="https://www.ncuindia.edu/university-grants-commission/">University Grants Commission</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-19751" id="mega-menu-item-19751"><a target="_blank" class="mega-menu-link" href="https://www.ncuindia.edu/wp-content/uploads/2025/01/Haryana_Pvt_Univ._Act_32_2006.pdf">Haryana. Pvt. Univ. Act</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4034" id="mega-menu-item-4034"><a class="mega-menu-link" href="https://www.ncuindia.edu/government-of-haryana/">Government of Haryana</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-18954" id="mega-menu-item-18954"><a class="mega-menu-link" href="https://www.ncuindia.edu/aadc-ncu/">AADC @NCU</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4033" id="mega-menu-item-4033"><a class="mega-menu-link" href="https://www.ncuindia.edu/bar-council-of-india/">Bar Council of India</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4041" id="mega-menu-item-4041"><a class="mega-menu-link" href="https://www.ncuindia.edu/the-internal-quality-assurance-cell-iqac/">The Internal Quality Assurance Cell (IQAC)</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-9053" id="mega-menu-item-9053"><a class="mega-menu-link" href="https://www.ncuindia.edu/mom-of-last-statutory-meeting/">MOM of Last Statutory Meeting</a></li>	</ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-425" id="mega-menu-item-425"><a class="mega-menu-link" href="https://www.ncuindia.edu/the-northcap-university/">The NorthCap University</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-445" id="mega-menu-item-445"><a class="mega-menu-link" href="https://www.ncuindia.edu/governance/">Governance</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-8671" id="mega-menu-item-8671"><a class="mega-menu-link" href="https://www.ncuindia.edu/honorary-adjunct-professor/">Honorary Adjunct Professor</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-24429" id="mega-menu-item-24429"><a target="_blank" class="mega-menu-link" href="https://www.ncuindia.edu/wp-content/uploads/2025/12/Org-Chart.pdf">Organisational Structure</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-20661" id="mega-menu-item-20661"><a class="mega-menu-link" href="https://www.ncuindia.edu/careers/">Careers</a></li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-22800" id="mega-menu-item-22800"><a class="mega-menu-link" href="https://www.ncuindia.edu/international-relations/">International Relations</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-tabbed mega-menu-megamenu mega-menu-item-448" id="mega-menu-item-448"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-448">Schools<span class="mega-indicator" aria-hidden="true"></span></a>
+<ul class="mega-sub-menu" id='mega-sub-menu-448'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-megamenu mega-menu-grid mega-menu-item-618" id="mega-menu-item-618"><a class="mega-menu-link" href="/school/department-of-cse/" aria-expanded="false" aria-controls="mega-sub-menu-618">School of Engineering  & Technology<span class="mega-indicator" aria-hidden="true"></span></a>
+	<ul class="mega-sub-menu" role='presentation' id='mega-sub-menu-618'>
+<li class="mega-menu-row" id="mega-menu-618-0">
+		<ul class="mega-sub-menu" style='--columns:12' role='presentation'>
+<li class="mega-menu-column mega-menu-columns-6-of-12" style="--columns:12; --span:6" id="mega-menu-618-0-0">
+			<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-6 mega-menu-item-1724" style="--columns:6; --span:1" id="mega-menu-item-1724"><a class="mega-menu-link" href="/school/department-of-cse/">Department of CSE<span class="mega-indicator" aria-hidden="true"></span></a>
+				<ul class="mega-sub-menu" id='mega-sub-menu-1724'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1730" id="mega-menu-item-1730"><a class="mega-menu-link" href="/programme/b-tech-cse-with-specialization-in-full-stack-development/">B.Tech CSE - Full Stack Development</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1732" id="mega-menu-item-1732"><a class="mega-menu-link" href="/programme/b-tech-cse-with-specialization-in-cyber-security-and-forensics/">B.Tech CSE - Cyber Security and Forensics</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1735" id="mega-menu-item-1735"><a class="mega-menu-link" href="/programme/b-tech-cse-with-specialization-in-data-science/">B.Tech CSE - Data Science</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1736" id="mega-menu-item-1736"><a class="mega-menu-link" href="/programme/b-tech-cse-with-specialization-in-gaming-augmented-reality-and-virtual-reality/">B.Tech CSE - Gaming, Augmented Reality and Virtual Reality</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1738" id="mega-menu-item-1738"><a class="mega-menu-link" href="/programme/b-tech-cse-with-specialization-in-artificial-intelligence-and-machine-learning/">B.Tech CSE - Artificial Intelligence and Machine Learning</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-19403" id="mega-menu-item-19403"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/b-tech-cse-quantum-computing-in-ai/">B.Tech CSE - Quantum Computing</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-17735" id="mega-menu-item-17735"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/mca">MCA</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1740" id="mega-menu-item-1740"><a class="mega-menu-link" href="/programme/m-tech-cse-with-specialization-in-data-science/">M.Tech CSE - Data Science</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1741" id="mega-menu-item-1741"><a class="mega-menu-link" href="/programme/m-tech-cse-with-specialization-in-cyber-security-and-forensics/">M.Tech CSE - Cyber Security and Forensics</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-3895" id="mega-menu-item-3895"><a class="mega-menu-link" href="/programme/p-hd-in-computer-science-and-engineering/#admission-details">Ph.D.</a></li>				</ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-school mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-6 mega-menu-item-422" style="--columns:6; --span:1" id="mega-menu-item-422"><a class="mega-menu-link" href="https://www.ncuindia.edu/school/school-of-applied-sciences/">Department of Applied Sciences<span class="mega-indicator" aria-hidden="true"></span></a>
+				<ul class="mega-sub-menu" id='mega-sub-menu-422'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-3910" id="mega-menu-item-3910"><a class="mega-menu-link" href="/programme/phd-applied-sciences/#admission-details">Ph.D.</a></li>				</ul>
+</li>			</ul>
+</li><li class="mega-menu-column mega-menu-columns-6-of-12" style="--columns:12; --span:6" id="mega-menu-618-0-1">
+			<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-6 mega-menu-item-1727" style="--columns:6; --span:1" id="mega-menu-item-1727"><a class="mega-menu-link" href="/school/department-of-mde/">Department of MDE<span class="mega-indicator" aria-hidden="true"></span></a>
+				<ul class="mega-sub-menu" id='mega-sub-menu-1727'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-20294" id="mega-menu-item-20294"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/b-tech-in-semiconductor-design-technology/">B.Tech (ECE) - Semiconductor Design & Technology</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-24616" id="mega-menu-item-24616"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/b-tech-in-robotics-and-ai/">*B.Tech in Robotics and AI</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1748" id="mega-menu-item-1748"><a class="mega-menu-link" href="/programme/m-tech-in-ece-with-specialization-in-iot-5g">M.Tech in ECE - IoT & 5G</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1755" id="mega-menu-item-1755"><a class="mega-menu-link" href="/programme/m-tech-in-ece-with-specialization-in-semiconductor-technology/">MTech in ECE - Semiconductor Technology</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1745" id="mega-menu-item-1745"><a class="mega-menu-link" href="/programme/mtech-in-civil-engineering-with-specialization-in-environmental-engineering/">M.Tech in Civil Engineering - Environmental Engineering</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1750" id="mega-menu-item-1750"><a class="mega-menu-link" href="/programme/m-tech-me-with-specialization-in-electric-vehicles/">M.Tech ME - Electric Vehicles</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-6394" id="mega-menu-item-6394"><a class="mega-menu-link" href="/programme/m-tech-in-production-and-industrial-engineering/">M.Tech ME - Production and Industrial Engineering</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1754" id="mega-menu-item-1754"><a class="mega-menu-link" href="/programme/m-tech-me-with-specialization-in-thermal-engineering/">M.Tech ME - Thermal Engineering</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1756" id="mega-menu-item-1756"><a class="mega-menu-link" href="/programme/m-tech-me-with-specialization-in-mechanical-engineering-design/">MTech ME - Mechanical Engineering Design</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-3896" id="mega-menu-item-3896"><a class="mega-menu-link" href="/programme/phd-electrical-electronics-and-communication-engineering/#admission-details">Ph.D.</a></li>				</ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-6 mega-menu-item-21221" style="--columns:6; --span:1" id="mega-menu-item-21221"><a class="mega-menu-link" href="/school/media-and-entertainment/">Centre for Media and Entertainment (CME)<span class="mega-indicator" aria-hidden="true"></span></a>
+				<ul class="mega-sub-menu" id='mega-sub-menu-21221'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-21222" id="mega-menu-item-21222"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/b-sc-sound-engineering/">B.Sc Sound Engineering</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-21224" id="mega-menu-item-21224"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/b-sc-visual-effects-and-animation/">B.Sc Visual Effects and Animation</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-21223" id="mega-menu-item-21223"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/b-des-communication-design/">B.Des Communication Design</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-21225" id="mega-menu-item-21225"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/bca-media-and-it/">BCA – Media and Information Technology</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-21226" id="mega-menu-item-21226"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/bca-game-development/">BCA Game Development</a></li>				</ul>
+</li>			</ul>
+</li>		</ul>
+</li>	</ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-megamenu mega-menu-grid mega-menu-item-25287" id="mega-menu-item-25287"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-25287">School of Management and Liberal Studies<span class="mega-indicator" aria-hidden="true"></span></a>
+	<ul class="mega-sub-menu" role='presentation' id='mega-sub-menu-25287'>
+<li class="mega-menu-row" id="mega-menu-25287-0">
+		<ul class="mega-sub-menu" style='--columns:12' role='presentation'>
+<li class="mega-menu-column mega-menu-columns-6-of-12" style="--columns:12; --span:6" id="mega-menu-25287-0-0">
+			<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-6 mega-menu-item-20347" style="--columns:6; --span:1" id="mega-menu-item-20347"><a class="mega-menu-link" href="/school/school-of-management/">Department of Management and Commerce (DMAC)<span class="mega-indicator" aria-hidden="true"></span></a>
+				<ul class="mega-sub-menu" id='mega-sub-menu-20347'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1714" id="mega-menu-item-1714"><a class="mega-menu-link" href="/programme/bachelor-of-business-administration-bba/">BBA</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1715" id="mega-menu-item-1715"><a class="mega-menu-link" href="/programme/bachelor-of-business-administration-bba-with-specialization-in-digital-marketing/">BBA - Digital Marketing (DM)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1716" id="mega-menu-item-1716"><a class="mega-menu-link" href="/programme/bachelor-of-business-administration-bba-with-specialization-in-business-analytics/">BBA - Business Analytics (BA)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-8338" id="mega-menu-item-8338"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/bachelor-of-business-administration-bba-with-specialization-in-entrepreneurship-and-family-business/">BBA - Entrepreneurship and Family Business (EFB)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1717" id="mega-menu-item-1717"><a class="mega-menu-link" href="/programme/bachelor-of-commerce-b-com-hons/">B.Com (Hons.)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-8362" id="mega-menu-item-8362"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/bachelor-of-commerce-b-com-with-specialization-in-financial-market/">B.Com (Hons.) - Financial Markets (FM)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1718" id="mega-menu-item-1718"><a class="mega-menu-link" href="/programme/bachelor-of-arts-ba-economics-hons/">BA (Hons.) - Economics</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25074" id="mega-menu-item-25074"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/mcom-bfsi/">M.Com - Banking, Financial Services & Insurance (BFSI)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-3909" id="mega-menu-item-3909"><a class="mega-menu-link" href="/programme/ph-d/#admission-details">Ph.D.</a></li>				</ul>
+</li>			</ul>
+</li><li class="mega-menu-column mega-menu-columns-6-of-12" style="--columns:12; --span:6" id="mega-menu-25287-0-1">
+			<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-6 mega-menu-item-23811" style="--columns:6; --span:1" id="mega-menu-item-23811"><a class="mega-menu-link" href="/school/department-of-psychology/">Department of Psychology<span class="mega-indicator" aria-hidden="true"></span></a>
+				<ul class="mega-sub-menu" id='mega-sub-menu-23811'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-17734" id="mega-menu-item-17734"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/m-a-psychology/">M.A.  Psychology</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1719" id="mega-menu-item-1719"><a class="mega-menu-link" href="/programme/ba-hons-psychology/">Bachelor of Arts (BA) (Hons.) Psychology</a></li>				</ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-6 mega-menu-item-23054" style="--columns:6; --span:1" id="mega-menu-item-23054"><a class="mega-menu-link" href="https://www.ncuindia.edu/school/centre-for-languages-learning/">Centre for Language Learning<span class="mega-indicator" aria-hidden="true"></span></a>
+				<ul class="mega-sub-menu" id='mega-sub-menu-23054'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-23055" id="mega-menu-item-23055"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/bachelor-of-arts-ba-hons-in-english/">Bachelor of Arts (BA) – English(Hons.)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-23057" id="mega-menu-item-23057"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/m-a-english/">M.A. English</a></li>				</ul>
+</li>			</ul>
+</li>		</ul>
+</li>	</ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-school mega-menu-item-has-children mega-menu-megamenu mega-menu-item-421" id="mega-menu-item-421"><a class="mega-menu-link" href="https://www.ncuindia.edu/school/school-of-law/" aria-expanded="false" aria-controls="mega-sub-menu-421">School of Law<span class="mega-indicator" aria-hidden="true"></span></a>
+	<ul class="mega-sub-menu" id='mega-sub-menu-421'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-1 mega-menu-item-20349" style="--columns:1; --span:1" id="mega-menu-item-20349"><a class="mega-menu-link" href="https://www.ncuindia.edu/school/school-of-law/">Department of Law<span class="mega-indicator" aria-hidden="true"></span></a>
+		<ul class="mega-sub-menu" id='mega-sub-menu-20349'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1712" id="mega-menu-item-1712"><a class="mega-menu-link" href="/programme/bachelor-of-law-bba-ll-b-hons/">Bachelor of Law -BBA.LL.B (Hons.) Integrated Degree Programme</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-12295" id="mega-menu-item-12295"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/ll-b-3-years/">LLB 3-Years</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1713" id="mega-menu-item-1713"><a class="mega-menu-link" href="/programme/master-of-laws-llm/">Master of Laws (LLM)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-3908" id="mega-menu-item-3908"><a class="mega-menu-link" href="/programme/ph-d-law/#admission-details">Ph.D.</a></li>		</ul>
+</li>	</ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-megamenu mega-menu-item-14319" id="mega-menu-item-14319"><a class="mega-menu-link" href="https://schoolofbusiness.ncuindia.edu/">School of Business</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-megamenu mega-menu-item-25429" id="mega-menu-item-25429"><a class="mega-menu-link" href="https://www.ncuindia.edu/school/school-of-life-sciences-and-allied-health-sciences/" aria-expanded="false" aria-controls="mega-sub-menu-25429">School of Life Sciences and Allied Health Sciences<span class="mega-indicator" aria-hidden="true"></span></a>
+	<ul class="mega-sub-menu" id='mega-sub-menu-25429'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-column-standard mega-menu-columns-1-of-1 mega-menu-item-25425" style="--columns:1; --span:1" id="mega-menu-item-25425"><a class="mega-menu-link" href="https://www.ncuindia.edu/school/school-of-life-sciences-and-allied-health-sciences/">School of Life Sciences and Allied Health Sciences<span class="mega-indicator" aria-hidden="true"></span></a>
+		<ul class="mega-sub-menu" id='mega-sub-menu-25425'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25426" id="mega-menu-item-25426"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/bachelor-of-emergency-medical-technologist-paramedics/">Bachelor of Emergency Medical Technologist – Paramedics (B.EMT)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25427" id="mega-menu-item-25427"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/bachelor-of-medical-laboratory-science/">Bachelor of Medical Laboratory Science (B.MLS)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25462" id="mega-menu-item-25462"><a class="mega-menu-link" href="https://www.ncuindia.edu/programme/bachelor-of-dialysis-therapy-technology/">Bachelor of Dialysis Therapy Technology (B.DTT)</a></li>		</ul>
+</li>	</ul>
+</li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-current-menu-ancestor mega-current-menu-parent mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-24312" id="mega-menu-item-24312"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-24312">Admissions<span class="mega-indicator" aria-hidden="true"></span></a>
+<ul class="mega-sub-menu" id='mega-sub-menu-24312'>
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-17053" id="mega-menu-item-17053"><a class="mega-menu-link" href="https://www.ncuindia.edu/eligibility-criteria/">Eligibility criteria</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-item-25860" id="mega-menu-item-25860"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-25860">Admission Brochures<span class="mega-indicator" aria-hidden="true"></span></a>
+	<ul class="mega-sub-menu" id='mega-sub-menu-25860'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25079" id="mega-menu-item-25079"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/ADMISSION-BROCHURE-2026.pdf">All Courses Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25861" id="mega-menu-item-25861"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/cse-brochure.pdf">CSE Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25862" id="mega-menu-item-25862"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/robotics-ai-brochure.pdf">Robotics & AI Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25863" id="mega-menu-item-25863"><a class="mega-menu-link" href="https://ncuindia.edu/ncuupload/semiconductor-brochure.pdf">Semiconductor Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25864" id="mega-menu-item-25864"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/dmac-brochure.pdf">DMAC Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25865" id="mega-menu-item-25865"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/psychology-brochure.pdf">Psychology Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25895" id="mega-menu-item-25895"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/cll-brochure.pdf">CLL Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25894" id="mega-menu-item-25894"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/law-brochure.pdf">Law Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25980" id="mega-menu-item-25980"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/cme/Sound-Eng-Digital-Brochure.pdf">B.Sc Sound Engineering Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25986" id="mega-menu-item-25986"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/cme/media-Animation-and-VFX-Digital.pdf">B.Sc Visual Effects and Animation</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25984" id="mega-menu-item-25984"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/cme/media-B.Des.-Communication-Design-Visual-Communication-Digital.pdf">B.Des. Communication  Visual Communication</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25985" id="mega-menu-item-25985"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/cme/media-B.Des.%20UI-UX-Digital.pdf">B.Des. UI UX Digital</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25982" id="mega-menu-item-25982"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/cme/media-BCA-Media-&#038;%20-IT.pdf">BCA Media IT Brochure</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25983" id="mega-menu-item-25983"><a class="mega-menu-link" href="https://www.ncuindia.edu/ncuupload/cme/media-BCA-GD-Digital.pdf">BCA GD Digital Brochure</a></li>	</ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-item-24805" id="mega-menu-item-24805"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-24805">Admission Policy 2026-27<span class="mega-indicator" aria-hidden="true"></span></a>
+	<ul class="mega-sub-menu" id='mega-sub-menu-24805'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-24806" id="mega-menu-item-24806"><a class="mega-menu-link" href="https://www.ncuindia.edu/wp-content/uploads/SOET-Policy.pdf">SOET Policy</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-24807" id="mega-menu-item-24807"><a class="mega-menu-link" href="https://www.ncuindia.edu/wp-content/uploads/SOM-Policy.pdf">SOM Policy</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-24808" id="mega-menu-item-24808"><a class="mega-menu-link" href="https://www.ncuindia.edu/wp-content/uploads/Law-Policy.pdf">Law Policy</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-24809" id="mega-menu-item-24809"><a class="mega-menu-link" href="https://schoolofbusiness.ncuindia.edu/wp-content/uploads/2026/09/Admission-Policy-SOB-2026.pdf">SOB Policy</a></li>	</ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-8433" id="mega-menu-item-8433"><a class="mega-menu-link" href="https://www.ncuindia.edu/fee-structure/">Fee Structure</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-8434" id="mega-menu-item-8434"><a class="mega-menu-link" href="https://www.ncuindia.edu/scholarship/">Scholarships</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-current-menu-item mega-page_item mega-page-item-25778 mega-current_page_item mega-menu-item-25793" id="mega-menu-item-25793"><a class="mega-menu-link" href="https://www.ncuindia.edu/scholarship-for-saarc-countries/" aria-current="page">Scholarship for  SAARC Countries</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-19006" id="mega-menu-item-19006"><a target="_blank" class="mega-menu-link" href="https://www.ncuindia.edu/wp-content/uploads/2024/10/SOP-for-Migration-Process-at-NCU-Amended-in-Sep-2024-Final.pdf">SOP for Migration to NCU</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-24774" id="mega-menu-item-24774"><a class="mega-menu-link" href="https://www.ncuindia.edu/faqs-for-admissions/">FAQ's For Admissions</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-24309" id="mega-menu-item-24309"><a class="mega-menu-link" href="https://www.ncuindia.edu/phd/">Ph.D Admission</a></li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-3279" id="mega-menu-item-3279"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-3279">Campus Life<span class="mega-indicator" aria-hidden="true"></span></a>
+<ul class="mega-sub-menu" id='mega-sub-menu-3279'>
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-12302" id="mega-menu-item-12302"><a class="mega-menu-link" href="https://www.ncuindia.edu/blog/">Blog</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-item-27139" id="mega-menu-item-27139"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-27139">Convocation<span class="mega-indicator" aria-hidden="true"></span></a>
+	<ul class="mega-sub-menu" id='mega-sub-menu-27139'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-27140" id="mega-menu-item-27140"><a target="_blank" class="mega-menu-link" href="https://www.youtube.com/live/EQWslP_rhMk">Convocation 2025 (Morning)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-27141" id="mega-menu-item-27141"><a class="mega-menu-link" href="https://www.youtube.com/live/PtfIAhTIrlA">Convocation 2025 (Evening)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-27142" id="mega-menu-item-27142"><a target="_blank" class="mega-menu-link" href="https://www.youtube.com/live/G_PLzd4V46Q">Convocation 2024 (Morning)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-27143" id="mega-menu-item-27143"><a target="_blank" class="mega-menu-link" href="https://www.youtube.com/live/VQJzxHjP30k">Convocation 2024 (Evening)</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-27144" id="mega-menu-item-27144"><a target="_blank" class="mega-menu-link" href="https://www.youtube.com/live/Ue2Av6LQyb8">Convocation 2023</a></li>	</ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-23436" id="mega-menu-item-23436"><a class="mega-menu-link" href="https://www.ncuindia.edu/events/">Events</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-19922" id="mega-menu-item-19922"><a class="mega-menu-link" href="https://www.ncuindia.edu/newsletters/">Newsletters</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25027" id="mega-menu-item-25027"><a class="mega-menu-link" href="https://www.ncuindia.edu/tinkering-lab-magazine/">Tinkering Lab Magazine</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-12957" id="mega-menu-item-12957"><a class="mega-menu-link" href="https://www.ncuindia.edu/master-class/">Masterclass</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-3280" id="mega-menu-item-3280"><a class="mega-menu-link" href="/campus-life/">About The Campus</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-428" id="mega-menu-item-428"><a class="mega-menu-link" href="https://www.ncuindia.edu/societies-clubs/">Societies & Clubs</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-781" id="mega-menu-item-781"><a class="mega-menu-link" href="/facilities/?facility_id=472">Facilities</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-960" id="mega-menu-item-960"><a class="mega-menu-link" href="https://www.ncuindia.edu/library/">Library</a></li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-449" id="mega-menu-item-449"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-449">Research<span class="mega-indicator" aria-hidden="true"></span></a>
+<ul class="mega-sub-menu" id='mega-sub-menu-449'>
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-10510" id="mega-menu-item-10510"><a class="mega-menu-link" href="https://www.ncuindia.edu/phd/">Ph.D. Programme</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-411" id="mega-menu-item-411"><a class="mega-menu-link" href="https://www.ncuindia.edu/rdil/">About RDIL</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-17054" id="mega-menu-item-17054"><a class="mega-menu-link" href="https://www.ncuindia.edu/central-research-facility/">About the Central Research Facility</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-417" id="mega-menu-item-417"><a class="mega-menu-link" href="https://www.ncuindia.edu/completed-sponsored-projects/">Completed Sponsored Projects</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-418" id="mega-menu-item-418"><a class="mega-menu-link" href="https://www.ncuindia.edu/call-for-proposals/">Call for Proposals</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-8359" id="mega-menu-item-8359"><a class="mega-menu-link" href="https://www.ncuindia.edu/ipr-cell/">Intellectual Property Rights Cell</a></li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-22001" id="mega-menu-item-22001"><a class="mega-menu-link" href="https://www.ncuindia.edu/our-placements/">Placements</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-7590" id="mega-menu-item-7590"><a class="mega-menu-link" href="#" aria-expanded="false" aria-controls="mega-sub-menu-7590">Quality Benchmarks<span class="mega-indicator" aria-hidden="true"></span></a>
+<ul class="mega-sub-menu" id='mega-sub-menu-7590'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25688" id="mega-menu-item-25688"><a class="mega-menu-link" href="https://www.ncuindia.edu/nirf-ncu/">NIRF</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-17050" id="mega-menu-item-17050"><a class="mega-menu-link" href="https://www.ncuindia.edu/quality-benchmark/">Recognitions & Affiliations</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-17051" id="mega-menu-item-17051"><a class="mega-menu-link" href="https://www.ncuindia.edu/quality-benchmark/#alliances-collaborations">Alliances & Collaborations</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-17052" id="mega-menu-item-17052"><a class="mega-menu-link" href="https://www.ncuindia.edu/quality-benchmark/#rankings">Rankings</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-6250" id="mega-menu-item-6250"><a class="mega-menu-link" href="https://www.ncuindia.edu/nisp-policy/">NISP Policy</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-7589" id="mega-menu-item-7589"><a class="mega-menu-link" href="https://www.ncuindia.edu/innovation-page/">IIC</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-7625" id="mega-menu-item-7625"><a class="mega-menu-link" href="https://www.ncuindia.edu/the-northcap-incubation-innovation-centre/">NorthCap Incubation &#038; Innovation Centre</a></li></ul>
+</li><li class="mega-visible-xs mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-8132 visible-xs" id="mega-menu-item-8132"><a class="mega-menu-link" href="https://www.ncuindia.edu/?social_login">Login</a></li></ul></div>	
+</div>
+
+
+<script type="text/rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.ncuindia.edu/wp-content/cache/min/1/ajax/libs/jquery/2.2.2/jquery.min.js?ver=1792147463"></script>
+
+<script type="text/rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.ncuindia.edu/wp-content/cache/min/1/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js?ver=1792147463" data-rocket-type="text/javascript" charset="utf-8"></script>
+
+<script type="text/rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.ncuindia.edu/wp-content/cache/min/1/bootstrap/4.3.1/js/bootstrap.min.js?ver=1792147463" crossorigin="anonymous"></script>
+
+<script type="text/rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.ncuindia.edu/wp-content/cache/min/1/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js?ver=1792147463"></script>
+
+<script type="text/rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.ncuindia.edu/wp-content/cache/min/1/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js?ver=1792147463"></script>
+
+<script type="text/rocketlazyloadscript" data-minify="1" data-rocket-src='https://www.ncuindia.edu/wp-content/cache/min/1/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js?ver=1792147463'></script>
+<script type="text/rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.ncuindia.edu/wp-content/cache/min/1/ajax/libs/jquery-validate/1.19.0/jquery.validate.js?ver=1792147463"></script>
+<script type="text/rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.ncuindia.edu/wp-content/cache/min/1/jquery.validation/1.15.0/additional-methods.min.js?ver=1792147463"></script>
+
+<script type="text/rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.ncuindia.edu/wp-content/cache/min/1/wp-content/themes/ncuindia_starter/js/css3-animate-it.js?ver=1792147463"></script>
+
+<script type="text/rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.ncuindia.edu/wp-content/cache/min/1/wp-content/themes/ncuindia_starter/js/custom.js?ver=1792147463"></script>
+
+
+<script type="text/rocketlazyloadscript">
+	
+	window.onload = function(){
+		
+		var type = window.location.hash.substr(1);
+		
+		if(type=='admission-details'){
+			
+			$("#pills-tab a:last").tab('show');
+			$("#admission-details-tab").addClass('active');
+		}
+		
+	}
+	
+</script>	
+
+
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/ncuindia_starter/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+		<style type="text/css">
+							.pgntn-page-pagination {
+					text-align: center !important;
+				}
+				.pgntn-page-pagination-block {
+					width: 80% !important;
+					padding: 0 0 0 0;
+												margin: 0 auto;
+									}
+				.pgntn-page-pagination a {
+					color: #1e14ca !important;
+					background-color: #ffffff !important;
+					text-decoration: none !important;
+					border: 1px solid #cc0404 !important;
+											-webkit-border-radius: 2px;
+						-moz-border-radius: 2px;
+						border-radius: 2px;
+									}
+				.pgntn-page-pagination a:hover {
+					color: #000 !important;
+				}
+				.pgntn-page-pagination-intro,
+				.pgntn-page-pagination .current {
+					background-color: #f89421 !important;
+					color: #000 !important;
+					border: 1px solid #cc0404 !important;
+											-webkit-border-radius: 2px;
+						-moz-border-radius: 2px;
+						border-radius: 2px;
+									}
+				.archive #nav-above,
+					.archive #nav-below,
+					.search #nav-above,
+					.search #nav-below,
+					.blog #nav-below,
+					.blog #nav-above,
+					.navigation.paging-navigation,
+					.navigation.pagination,
+					.pagination.paging-pagination,
+					.pagination.pagination,
+					.pagination.loop-pagination,
+					.bicubic-nav-link,
+					#page-nav,
+					.camp-paging,
+					#reposter_nav-pages,
+					.unity-post-pagination,
+					.wordpost_content .nav_post_link,.page-link,
+					.post-nav-links,
+					.page-links,#comments .navigation,
+					#comment-nav-above,
+					#comment-nav-below,
+					#nav-single,
+					.navigation.comment-navigation,
+					comment-pagination,.navigation {
+						display: none !important;
+					}
+					.single-gallery .pagination.gllrpr_pagination {
+						display: block !important;
+					}		</style>
+		<script id="eio-lazy-load-js-before">
+const eio_lazy_vars = {"bg_min_dpr":1.1,"exactdn_domain":"","safe_paths":["\/wp-content\/plugins","\/wp-content\/themes","\/wp-includes\/"],"safe_domains":["www.ncuindia.edu","ncuindia.edu"],"skip_autoscale":0,"threshold":0,"use_dpr":1};Object.freeze(eio_lazy_vars);
+//# sourceURL=eio-lazy-load-js-before
+</script>
+<script async data-wp-strategy="async" id="eio-lazy-load-js" src="https://www.ncuindia.edu/wp-content/plugins/ewww-image-optimizer/includes/lazysizes.min.js?ver=890"></script>
+<script type="text/rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://www.ncuindia.edu","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script type="text/rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script type="text/rocketlazyloadscript" data-minify="1" id="ncuindia_starter-navigation-js" data-rocket-src="https://www.ncuindia.edu/wp-content/cache/min/1/wp-content/themes/ncuindia_starter/js/navigation.js?ver=1792147464"></script>
+<script type="text/rocketlazyloadscript" id="hoverIntent-js" data-rocket-src="https://www.ncuindia.edu/wp-includes/js/hoverIntent.min.js?ver=1.10.2"></script>
+<script type="text/rocketlazyloadscript" id="megamenu-js" data-rocket-src="https://www.ncuindia.edu/wp-content/plugins/megamenu/js/maxmegamenu.min.js?ver=3.10.8"></script>
+<script type="text/rocketlazyloadscript" data-minify="1" id="megamenu-pro-js" data-rocket-src="https://www.ncuindia.edu/wp-content/cache/min/1/wp-content/plugins/megamenu-pro/assets/public.js?ver=1792147464"></script>
+<script>window.lazyLoadOptions={elements_selector:"iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.ncuindia.edu/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><div  class="modal fade AnnouncementModal" id="AnnouncementModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div  class="modal-dialog" role="document">
+		<div  class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="formModalLabel">Enquiry Cum Registration Form</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			</div>
+			<div class="modal-body">
+				<div class="npf_wgts" data-height="400px" data-w="fc303a7d37c33646aca06a190dcec500"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div  class="npf_chatbots" data-w="2e28ab04c5ae4106a9244766118c6adb" style="display:none;"></div>
+<script type="text/rocketlazyloadscript" data-rocket-type="text/javascript">    var s=document.createElement("script");    s.type="text/javascript";    s.async=true;    s.src="https://chatbot.nopaperforms.com/en-gb/backend/bots/niaachtbtscpt.js/4065f35478c533bf/2e28ab04c5ae4106a9244766118c6adb";    document.body.appendChild(s);
+
+</script> 
+
+<script type="text/rocketlazyloadscript" data-rocket-type="text/javascript">var s=document.createElement("script");
+ 	s.type="text/javascript"; s.async=true; s.src="https://widgets.nopaperforms.com/emwgts.js";
+document.body.appendChild(s);</script>
+</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1792719254 -->

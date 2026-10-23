@@ -1,0 +1,1213 @@
+<!DOCTYPE HTML><html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>National Science Foundation Graduate Research Fellowship (GRFP) | Graduate School</title>
+      <meta name="Description" content="The National Science Foundation Graduate Research Fellowship Program (GRFP) recognizes and supports outstanding graduate students in NSF-supported science, technology, engineering, and mathematics disciplines.">
+      <meta name="Keywords" content="National Science Foundation Graduate Research Fellowship, NSFGRFP, NSF-GRFP, GRFP, NSF, science, technology, engineering, and mathematics (STEM)">
+      
+
+
+	<link rel="stylesheet" href="//www.mtu.edu/mtu_resources/styles/n/base.css" />
+
+<link href="//www.mtu.edu/mtu_resources/styles/n/print.css" type="text/css" rel="stylesheet" media="print" />
+<script>/**
+ * +------------------------------------------------------------------------+
+ * | Global Settings                                                        |
+ * +------------------------------------------------------------------------+
+ */
+(function() {
+	// TODO: Fix if the user has switched their system preferences. 
+	// Only set cookie in settings page.	
+	function setFontSize(value) {
+		if (value) {
+			document.documentElement.classList.remove(window.mtuFontSize);
+			document.documentElement.classList.add(value);
+			window.mtuFontSize = value;
+		}
+	}
+
+	function setReducedMotion(value) {
+		if (value) {
+			document.documentElement.classList.add("reduce-animations");
+		} else {
+			document.documentElement.classList.remove("reduce-animations");
+		}
+	}
+
+	function setTheme(value) {
+		if (value) {
+			document.documentElement.classList.remove(window.mtuTheme);
+			document.documentElement.classList.add(value);
+			window.mtuTheme = value;
+		}
+	}
+	
+	const animQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+	const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+	let mtuAnimations;
+	let mtuFontSize;
+	let mtuTheme;
+
+	try {
+		mtuAnimations = localStorage.getItem("mtuAnimations");
+		mtuFontSize = localStorage.getItem("mtuFontSize");
+		mtuTheme = localStorage.getItem("mtuTheme");
+	} catch (error) {
+		console.error(error);
+		return;
+	}
+
+	setFontSize(mtuFontSize);
+	setReducedMotion(mtuAnimations === "reduced" || animQuery.matches);
+
+	if (mtuTheme === "system") {
+		mtuTheme = darkQuery.matches ? "dark" : "light";
+	}
+
+	if (mtuTheme === "dark") {
+		const link = document.createElement("link");
+		link.href = "/mtu_resources/assets/css/app-dark.css";
+		link.rel = "stylesheet";
+		link.type = "text/css";
+
+		document.head.append(link);
+	}
+
+	setTheme(mtuTheme);
+})();
+
+/**
+ * +------------------------------------------------------------------------+
+ * | Global Header and Navigation                                           |
+ * +------------------------------------------------------------------------+
+ */
+(function() {
+	function adjustNav() {
+		let navBar = document.querySelector('.nav-bar');
+		if (navBar) {
+			let navCount = navBar.querySelectorAll('.menu_item').length;
+			let height = navBar.clientHeight;	
+
+			if (height > 50) {
+			  navBar.style.setProperty('--navCount', navCount);
+			  navBar.classList.add('nav-tall');
+			} else {
+			  navBar.style.removeProperty('--navCount');
+			  navBar.classList.remove('nav-tall');
+			}	
+		}
+	}
+	
+	// Re-adjust header height as content loads.
+	window.addEventListener("DOMContentLoaded", adjustNav);
+	window.addEventListener("load", adjustNav);
+	
+	// Setting up some space for items after the nav to be seen.
+	function onResize() {
+		let header = document.querySelector(".nav, .mtu-nav");
+		let headerHeight;
+		
+		if (header) {
+			headerHeight = Math.floor(header.getBoundingClientRect().height || header.clientHeight) + "px";
+			document.documentElement.style.setProperty("--mtu-header-height", headerHeight);
+		}
+	}
+	
+	// Update --mtu-header-height on load.
+	window.addEventListener("DOMContentLoaded", onResize);
+	window.addEventListener("load", onResize);
+	
+	// Update --mtu-header-height on resize.
+	let frameId;
+	window.addEventListener("resize", function() {
+		// Debounce the resize event.
+		if (frameId) {
+			window.cancelAnimationFrame(frameId);
+		}
+		
+		frameId = window.requestAnimationFrame(onResize);
+	});
+})();
+
+/**
+ * Defers execution of the given function until after jQuery is loaded.
+ */
+function defer(fn) {
+	if (window.jsSet) {
+		fn();
+		return;
+	}
+	
+	setTimeout(function() {
+		defer(fn);
+	}, 100);
+}
+</script><meta property="mtu:ou_content_type" content="generic">
+      <meta property="mtu:ou_content_id" content="2d781cc0-82d6-43aa-bdc8-fb910a54b89a">
+      <meta property="og:title" content="National Science Foundation Graduate Research Fellowship (GRFP) | Graduate School">
+      <meta property="og:description" content="The National Science Foundation Graduate Research Fellowship Program (GRFP) recognizes and supports outstanding graduate students in NSF-supported science, technology, engineering, and mathematics disciplines.">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://www.mtu.edu/gradschool/resources-for/nsf-grfp/">
+      <meta property="og:site_name" content="Michigan Technological University">
+      <meta property="fb:pages" content="5652694310">
+      <meta property="og:image" content="https://www.mtu.edu/mtu_resources/images/logos/logo-full-social.png">
+      <meta property="og:image:alt" content="Michigan Technological University">
+      <meta property="og:image:height" content="250">
+      <meta property="og:image:width" content="300">
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:site" content="@michigantech">
+      <meta name="twitter:creator" content="@michigantech">
+      <meta name="twitter:title" content="National Science Foundation Graduate Research Fellowship (GRFP) | Graduate School">
+      <meta name="twitter:url" content="https://www.mtu.edu/gradschool/resources-for/nsf-grfp/">
+      <meta name="twitter:description" content="The National Science Foundation Graduate Research Fellowship Program (GRFP) recognizes and supports outstanding graduate students in NSF-supported science, technology, engineering, and mathematics disciplines.">
+      <link rel="canonical" href="https://www.mtu.edu/gradschool/resources-for/nsf-grfp/"><style>div.body-links{border-left:3px solid #ffce00;padding-left:15px;width:auto;margin-bottom:3em} @media only screen and (min-width:320px){.sitetitle-logo>div>div{width:26%;top:-20px;max-width:122px}.sitetitle div+div+.sitetitle-logo>div>div{width:26%;max-width:122px;top:-50px}}@media only screen and (min-width:881px){.sitetitle-logo>div>div{top:-43px}.sitetitle div+div+.sitetitle-logo>div>div{top:-85px}}
+																																									
+																																						.tout-solid.none.tout-row.tout-light-green .tout-stat{
+																																						max-width:125px;
+																																						max-height: 125px;
+																																						background-size: 100px;
+																																						background-color:#fc0;
+																																						}
+																																						.text-thin p {
+																																									
+																																						}
+																																									
+																																						.text-thin p a {
+																																						color: #315196;
+																																						text-decoration: underline;
+																																						padding: 0;			
+																																						}
+																																						.text-thin p a:hover, .text-thin p a:focus {
+																																						text-decoration: none;
+																																						box-shadow: unset;
+																																						transition: unset;			
+																																						}				
+																																									
+																																						</style>
+																																						<script>
+window.dataLayer = window.dataLayer || [];
+if(window.devicePixelRatio > 1.5) {
+	dataLayer.push({'retina':'true'});
+} else {
+	dataLayer.push({'retina':'false'});
+}
+let theme = localStorage.getItem('mtuTheme') || 'light';
+let animations = localStorage.getItem('mtuAnimations') || 'no-preference';
+let fontSize = localStorage.getItem('mtuFontSize') || 'font-normal';
+
+dataLayer.push({'themes':theme,'animations':animations,'font_size':fontSize});
+dataLayer.push({'internalExternal' : 'external'});
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://gtm-tagging-1.mtu.edu/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K6W7S4L9');</script>
+<!-- End Google Tag Manager -->
+
+
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap">
+</noscript> -->
+
+<link rel="preload" as="font" type="font/woff2" crossorigin
+    href="https://www.mtu.edu/mtu_resources/assets/fonts/open-sans-italic-v44.woff2"></head>
+   <body>
+      <div aria-atomic="true" aria-live="polite" class="sr-only" id="sr-announcements" role="status"></div>
+      <div class="stick"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>
+
+<section aria-label="skip links">
+    <div class="skip-links" id="skip">
+        <a href="#main">Skip to page content</a>
+        <a href="#mtu-footer">Skip to footer navigation</a>
+    </div>
+</section>
+
+<header class="mtu-nav">
+    <div class="pre-nav-wrapper background-gold">
+        <div class="pre-nav">
+            <button class="mobile-menu-button hide-for-desktop"
+                    data-inactive>
+                <span class="mobile-button-text">Menu</span>
+            </button>
+
+            <div class="pre-nav-logo">
+                <a class="pre-nav-logo-link" href="https://www.mtu.edu">
+                    <img alt="Michigan Tech Logo"                          class="pre-nav-logo-image"                          src="https://www.mtu.edu/_resources/images/sitewide/michigan-tech-logo-full-black.svg"                          width="255"                          height="45" />
+                </a>
+            </div>
+
+            <div class="audience-search show-for-desktop">
+                <div class="audience-wrapper show-for-desktop">
+                    <ul aria-label="Audiences"
+                        class="audience-nav">
+                        <li class="menu_item">
+                                <a class="menu_link"
+									aria-label="Request Information from Michigan Tech"
+                                   href="/request/index.html">
+                                    Request Info
+                                </a>
+                            </li><li class="menu_item">
+                                <a class="menu_link"
+									aria-label="Visit Michigan Tech"
+                                   href="/visit/index.html">
+                                    Visit
+                                </a>
+                            </li><li class="menu_item">
+                                <a class="menu_link"
+									aria-label="Apply to Michigan Tech"
+                                   href="/apply/index.html">
+                                    Apply
+                                </a>
+                            </li><li class="menu_item">
+                                <a class="menu_link"
+									aria-label="Give to Michigan Tech"
+                                   href="/giving/">
+                                    Give
+                                </a>
+                            </li> 
+                        
+                        <li class="menu_item resources-links tech-links">
+                                        <div class="menu_link">
+                                            Resources for You
+                                        </div>
+                                        
+                                        <button aria-label="Open sub-menu"
+                                                class="submenu-button arrow"></button>
+                                        
+                                        <ul class="tech-links-menu menu_submenu">
+                                        
+                                            <li class="submenu_item">
+                                                    <a
+                                                       href="/future/index.html">
+                                                        Prospective Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/admissions/enroll/index.html">
+                                                        Admitted Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/current/index.html">
+                                                        Current Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/faculty-staff/index.html">
+                                                        Faculty and Staff
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/alumni/index.html">
+                                                        Alumni and Friends
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/admissions/connect/parents/index.html">
+                                                        Parents and Family
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/industry/index.html">
+                                                        Industry and Partners
+                                                    </a>
+                                                </li> 
+                                            
+                                        </ul>
+                                    </li>
+                        
+                        <li class="menu_item tech-links">
+                            <div class="menu_link">
+                                Tech Links
+                            </div>
+
+                            <button aria-label="Open sub-menu"
+                                    class="submenu-button arrow"></button>
+
+                            <ul class="tech-links-menu menu_submenu">
+    <li class="submenu_item">
+        <a class="link-az" href="/a2z/index.html">
+            A to Z
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-directory" href="/directory/">
+            Campus Directory
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-canvas" href="https://mtu.instructure.com/">
+            Canvas
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-concur" href="https://sso.mtu.edu/cas/idp/profile/SAML2/Unsolicited/SSO?providerId=https%3A%2F%2Fwww.concursolutions.com">
+            Concur
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-email" href="https://mail.google.com/a/mtu.edu/">
+            Email
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-mymt" href="https://www.mtu.edu/experience/">
+            Experience
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-sds" href="https://www.mtu.edu/sds/">
+            Safety Data Sheets
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-settings" href="/site-settings/index.html">
+            Website Settings
+        </a>
+    </li>
+</ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Google Tag Manager (noscript) -->
+<noscript aria-hidden="true"><iframe src="https://gtm-tagging-1.mtu.edu/ns.html?id=GTM-K6W7S4L9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="desktop-search-bar search-bar show-for-desktop">
+		<form action="https://www.mtu.edu/search/" class="search-fields">
+				<label for="desktop-search">
+					Search
+				</label>
+
+			<input class="search-text"
+				id="desktop-search"
+				name="q"
+				placeholder="Search"
+				type="search" />
+
+			<button class="search-clear">
+				Clear Search Input
+			</button>
+
+			<label for="search-options" hidden>
+				Search Category
+			</label>
+
+			<select class="search-options" id="search-options">
+				<option value="mtu">
+					Michigan Tech
+				</option>
+								<option data-action="https://www.mtu.edu/gradschool/" data-name="s" value="site">
+					This Site
+				</option>
+								<option data-action="https://www.mtu.edu/majors/"
+						value="programs">
+					Programs
+				</option>
+			</select>
+
+			<button class="search-button" type="submit">
+				Go
+			</button>
+		</form>
+	</div>
+            </div>
+        </div>
+    </div>
+
+   <nav class="nav-bar show-for-desktop">
+      <ul class="menu" aria-label="Main Navigation">
+      <li class="menu_item menu_has-submenu"><a href="/globalcampus/gradadmissions/prospective/" class="menu_link">Graduate Admissions</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Graduate Admissions sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/prospective/apply-now/"><span>Apply Now</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/prospective/request-information/"><span>Request Information</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/prospective/international-applicants/"><span>International Applicants</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/directors/"><span>Program Directors and Faculty</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/locator/"><span>Graduate Faculty Locator</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/10-reasons-grad-degree/"><span>10 Reasons a Graduate Degrees Pays</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/prospective/apply-now/faq/"><span>Frequently Asked Questions</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/prospective/visit/"><span>Plan a Visit</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/about/"><span>About Michigan Tech</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/globalcampus/gradadmissions/programs/" class="menu_link">Programs</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Programs sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/programs/degrees/"><span>Degree Programs</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/programs/certificates/"><span>Certificate Programs</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/programs/degrees/"><span>Online Programs</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/programs/interest-areas/"><span>Areas of Interest</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/directors/"><span>Program Directors</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/programs/agreements/"><span>Negotiated Agreements</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/gradschool/financial/" class="menu_link">Financial Information</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Financial Information sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/gradschool/financial/cost/"><span>Cost of Education Calculator</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/financial/assistantships/"><span>Graduate Assistantships</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/finaid/students/graduate/"><span>Student Financial Services</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/financial/tools/"><span>Tools and Resources</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/financial/tuition-support/"><span>Tuition Assistance</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/financial/fellowship/"><span>Fellowships</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/financial/reduced-tuition/"><span>Reduced Tuition Programs</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/gradschool/policies-procedures/" class="menu_link">Policies and Procedures</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Policies and Procedures sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/gradschool/policies-procedures/forms-deadlines/"><span>Forms and Deadlines</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/policies-procedures/timelines/"><span>Degree Completion Timelines</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/policies-procedures/requirements/"><span>Degree Requirements</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/policies-procedures/academic/"><span>Academic Policies</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/resources-for/students/holds/"><span>Holds FAQ</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/policies-procedures/reports/"><span>Reports</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/policies-procedures/theses-dissertations/"><span>Theses and Dissertations</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/policies-procedures/graduation-certification/"><span>Graduation, Certification, and Commencement</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/gradschool/resources-for/" class="menu_link">Resources</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Resources sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/gradschool/resources-for/admitted/"><span>Admitted Students</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/resources-for/students/"><span>Current Students</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/resources-for/faculty-staff/"><span>Faculty and Staff</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/resources-for/postdoc/"><span>Postdoctoral Scholars</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/resources-for/alumni/"><span>Alumni Resources</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/resources-for/msgc/"><span>Michigan Space Grant Consortium (MSGC)</span></a>
+</li><li class="submenu_item  active-in"><a class="submenu_link" href="/gradschool/resources-for/nsf-grfp/"><span>NSF Graduate Research Fellowship Program (GRFP)</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/gradschool/about/dean/" class="menu_link">About Us</a><button class="submenu-button arrow" aria-expanded="false" aria-label="About Us sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/dean/"><span>Dean's Office</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/governance/"><span>Governance</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/staff/"><span>Staff Listing</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/directors/"><span>Program Directors and Faculty</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/locator/"><span>Graduate Faculty Locator</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/news/"><span>News and Reports</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/calendar/"><span>Graduate School Calendars</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/giving/"><span>Giving Opportunities</span></a>
+</li></ul>
+</li><li class="menu_item menu_item-yellow"><a href="/globalcampus/gradadmissions/prospective/apply-now/" class="menu_link">Apply Now</a>
+</li>      </ul>
+   </nav>
+
+    <nav class="offscreen-nav invisible">
+      <div class="mobile-search-bar search-bar">
+	<form action="https://www.mtu.edu/search/">
+		<label for="mobile-search"
+			   hidden>
+			Search
+		</label>
+
+		<input class="search-text"
+			   id="mobile-search"
+			   name="q"
+			   placeholder="Search"
+			   type="search" />
+
+		<button class="search-clear">
+			Clear Search Input
+		</button>
+
+		<label for="mobile-search-options"
+			   hidden>
+			Search Category
+		</label>
+
+		<select class="search-options"
+				id="mobile-search-options">
+			<option value="mtu">
+				Michigan Tech
+			</option>
+
+						<option data-action="https://www.mtu.edu/gradschool/" data-name="s" value="site">
+				This Site
+			</option>
+			
+			<option data-action="https://www.mtu.edu/majors"
+					value="programs">
+				Programs
+			</option>
+		</select>
+
+		<button class="search-button"
+				type="submit">
+			Search
+		</button>
+	</form>
+</div>
+        
+
+        <ul class="menu"
+            aria-label="Main Navigation">
+
+           
+            <li class="menu_item menu_has-submenu"><a href="/globalcampus/gradadmissions/prospective/" class="menu_link">Graduate Admissions</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Graduate Admissions sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/prospective/apply-now/"><span>Apply Now</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/prospective/request-information/"><span>Request Information</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/prospective/international-applicants/"><span>International Applicants</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/directors/"><span>Program Directors and Faculty</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/locator/"><span>Graduate Faculty Locator</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/10-reasons-grad-degree/"><span>10 Reasons a Graduate Degrees Pays</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/prospective/apply-now/faq/"><span>Frequently Asked Questions</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/prospective/visit/"><span>Plan a Visit</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/about/"><span>About Michigan Tech</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/globalcampus/gradadmissions/programs/" class="menu_link">Programs</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Programs sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/programs/degrees/"><span>Degree Programs</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/programs/certificates/"><span>Certificate Programs</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/programs/degrees/"><span>Online Programs</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/programs/interest-areas/"><span>Areas of Interest</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/directors/"><span>Program Directors</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/gradadmissions/programs/agreements/"><span>Negotiated Agreements</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/gradschool/financial/" class="menu_link">Financial Information</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Financial Information sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/gradschool/financial/cost/"><span>Cost of Education Calculator</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/financial/assistantships/"><span>Graduate Assistantships</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/finaid/students/graduate/"><span>Student Financial Services</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/financial/tools/"><span>Tools and Resources</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/financial/tuition-support/"><span>Tuition Assistance</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/financial/fellowship/"><span>Fellowships</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/financial/reduced-tuition/"><span>Reduced Tuition Programs</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/gradschool/policies-procedures/" class="menu_link">Policies and Procedures</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Policies and Procedures sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/gradschool/policies-procedures/forms-deadlines/"><span>Forms and Deadlines</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/policies-procedures/timelines/"><span>Degree Completion Timelines</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/policies-procedures/requirements/"><span>Degree Requirements</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/policies-procedures/academic/"><span>Academic Policies</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/resources-for/students/holds/"><span>Holds FAQ</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/policies-procedures/reports/"><span>Reports</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/policies-procedures/theses-dissertations/"><span>Theses and Dissertations</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/policies-procedures/graduation-certification/"><span>Graduation, Certification, and Commencement</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/gradschool/resources-for/" class="menu_link">Resources</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Resources sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/gradschool/resources-for/admitted/"><span>Admitted Students</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/resources-for/students/"><span>Current Students</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/resources-for/faculty-staff/"><span>Faculty and Staff</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/resources-for/postdoc/"><span>Postdoctoral Scholars</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/resources-for/alumni/"><span>Alumni Resources</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/resources-for/msgc/"><span>Michigan Space Grant Consortium (MSGC)</span></a>
+</li><li class="submenu_item  active-in"><a class="submenu_link" href="/gradschool/resources-for/nsf-grfp/"><span>NSF Graduate Research Fellowship Program (GRFP)</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/gradschool/about/dean/" class="menu_link">About Us</a><button class="submenu-button arrow" aria-expanded="false" aria-label="About Us sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/dean/"><span>Dean's Office</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/governance/"><span>Governance</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/staff/"><span>Staff Listing</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/directors/"><span>Program Directors and Faculty</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/locator/"><span>Graduate Faculty Locator</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/news/"><span>News and Reports</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/calendar/"><span>Graduate School Calendars</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/gradschool/about/giving/"><span>Giving Opportunities</span></a>
+</li></ul>
+</li><li class="menu_item menu_item-yellow"><a href="/globalcampus/gradadmissions/prospective/apply-now/" class="menu_link">Apply Now</a>
+</li>    
+            <li class="menu_item menu_has-submenu menu_item-black">
+                <div class="menu_link">
+				Connect with Us                </div>
+
+                <button aria-label="Open sub-menu"
+                        class="submenu-button arrow"></button>
+
+                <ul class="tech-links-menu menu_submenu">
+                    <li class="submenu_item">
+                            <a class="submenu_link"
+							   aria-label="Request Information from Michigan Tech"
+                               href="/request/index.html">
+                                Request Info
+                            </a>
+                        </li><li class="submenu_item">
+                            <a class="submenu_link"
+							   aria-label="Visit Michigan Tech"
+                               href="/visit/index.html">
+                                Visit
+                            </a>
+                        </li><li class="submenu_item">
+                            <a class="submenu_link"
+							   aria-label="Apply to Michigan Tech"
+                               href="/apply/index.html">
+                                Apply
+                            </a>
+                        </li><li class="submenu_item">
+                            <a class="submenu_link"
+							   aria-label="Give to Michigan Tech"
+                               href="/giving/">
+                                Give
+                            </a>
+                        </li> 
+                </ul>
+            </li>
+            
+            <li class="menu_item menu_has-submenu menu_item-black">
+                                        <div class="menu_link">
+                                            Resources for You
+                                        </div>
+                                        
+                                        <button aria-label="Open sub-menu"
+                                                class="submenu-button arrow"></button>
+                                        
+                                        <ul class="tech-links-menu menu_submenu">
+                                        
+                                            <li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/future/index.html">
+                                                        Prospective Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/admissions/enroll/index.html">
+                                                        Admitted Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/current/index.html">
+                                                        Current Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/faculty-staff/index.html">
+                                                        Faculty and Staff
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/alumni/index.html">
+                                                        Alumni and Friends
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/admissions/connect/parents/index.html">
+                                                        Parents and Family
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/industry/index.html">
+                                                        Industry and Partners
+                                                    </a>
+                                                </li> 
+                                            
+                                        </ul>
+                                    </li>
+
+            <li class="menu_item menu_has-submenu menu_item-black">
+                <div class="menu_link">
+                    Tech Links
+                </div>
+
+                <button aria-label="Open sub-menu"
+                        class="submenu-button arrow"></button>
+
+                <ul class="tech-links-menu menu_submenu">
+    <li class="submenu_item">
+        <a class="link-az" href="/a2z/index.html">
+            A to Z
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-directory" href="/directory/">
+            Campus Directory
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-canvas" href="https://mtu.instructure.com/">
+            Canvas
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-concur" href="https://sso.mtu.edu/cas/idp/profile/SAML2/Unsolicited/SSO?providerId=https%3A%2F%2Fwww.concursolutions.com">
+            Concur
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-email" href="https://mail.google.com/a/mtu.edu/">
+            Email
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-mymt" href="https://www.mtu.edu/experience/">
+            Experience
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-sds" href="https://www.mtu.edu/sds/">
+            Safety Data Sheets
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-settings" href="/site-settings/index.html">
+            Website Settings
+        </a>
+    </li>
+</ul>
+            </li>
+        </ul>
+    </nav>
+	<script>
+		(function () {
+    var nav = document.querySelector(".nav, .mtu-nav");
+    if (nav && nav.clientHeight) {
+        document.documentElement.style.setProperty("--mtu-header-height", Math.floor(nav.getBoundingClientRect().height || nav.clientHeight) + "px");
+    }
+})();
+	</script>
+</header>         <section class="background-light-gray" aria-label="Site Title">
+            <div class="site-title-wrapper">
+               <div class="site-title">
+                  <div class="title"><span><a href="/gradschool/">Graduate School</a></span></div>
+                  <div id="breadcrumbs" role="navigation" aria-label="breadcrumbs" class="breadcrumbs">
+                     <ul>
+                        <li><a href="/gradschool/">Graduate School</a></li>
+                        <li><a href="/gradschool/resources-for/">Resources For . . .</a></li>
+                        <li class="active" aria-current="page">NSF-GRFP</li>
+                     </ul>
+                  </div>
+               </div>
+               </div>
+         </section>
+         <div id="main" role="main" class="main">
+            <section id="body_section" class="body-section" aria-label="main content">
+               <div class="full-width">
+                  <div class="clearer"></div>
+                  <div class="left leftnav">
+                     <div id="toggle-left"><img class="more-menu left" height="16" width="20" aria-hidden="true" role="presentation" src="/_resources/images/icons/hamburger.svg" alt="Open"><button class="left not-button"> Also in this section</button></div>
+                     <nav aria-label="left side navigtion bar">
+                        <ul id="main_links">
+                           <li class="nav-title active"><a class="nav-title-heading" href="/gradschool/resources-for/">Resources For . . .</a><div class="sublinks">
+                                 <ul class="firstlevel"><li><a  href="/gradschool/resources-for/admitted/">Admitted Students</a></li><li><a  href="/gradschool/resources-for/students/">Current Students</a></li><li><a  href="/gradschool/resources-for/faculty-staff/">Faculty and Staff</a></li><li><a  href="/gradschool/resources-for/postdoc/">Postdoctoral Scholars</a></li><li><a  href="/gradschool/resources-for/alumni/">Alumni Resources</a></li><li><a  href="/gradschool/resources-for/msgc/">Michigan Space Grant Consortium (MSGC)</a></li><li class="active"><a  href="/gradschool/resources-for/nsf-grfp/">NSF Graduate Research Fellowship Program (GRFP)</a></li></ul>
+                              </div>
+                           </li>
+                        </ul>
+                     </nav>
+                  </div>
+                  <h1 class="pagetitle">National Science Foundation Graduate Research Fellowship (GRFP)</h1>
+                  <div id="content" class="content rsidebar">
+                     <article id="content_body" aria-label="content" class="main-content">
+                        <p>Congratulations to the awardees for the 2026 cycle! Information about the awards can
+                           be found at <a href="https://www.nsf.gov/funding/opportunities/grfp-nsf-graduate-research-fellowship-program">NSF GRFP</a>. Thank you to all the applicants!</p>
+                        
+                        <p>The Michigan Tech Graduate School provides dedicated resources, workshops, and one-on-one
+                           writing support for students applying to the National Science Foundation’s Graduate
+                           Research Fellowship Program (NSF GRFP).</p>
+                        
+                        <h2>Program Overview</h2>
+                        
+                        <p>The NSF GRFP recognizes and supports outstanding graduate students in NSF-supported
+                           science, technology, engineering, and mathematics (STEM) disciplines who are pursuing
+                           research-based master's and doctoral degrees.</p>
+                        
+                        <h3>Fellowship Benefits</h3>
+                        
+                        <ul>
+                           
+                           <li><strong>Duration:</strong> Three years of financial support over a five-year fellowship period</li>
+                           
+                           <li><a href="https://www.nsf.gov/funding/opportunities/grfp-nsf-graduate-research-fellowship-program">Stipend and allowance information.</a></li>
+                           </ul>
+                        
+                        <p><em>Note: NSF GRFP Fellowships are open to U.S. citizens, nationals, and permanent residents
+                              only.</em></p>
+                        
+                        <h3>Eligibility Requirements</h3>
+                        
+                        <p data-path-to-node="13">To be eligible for the NSF GRFP, applicants must meet the following criteria:</p>
+                        
+                        <ul data-path-to-node="14">
+                           
+                           <li>
+                              
+                              <p data-path-to-node="14,0,0">Be a <b data-path-to-node="14,0,0" data-index-in-node="5">U.S. citizen, national, or permanent resident</b>.</p>
+                              </li>
+                           
+                           <li>
+                              
+                              <p data-path-to-node="14,1,0">Have <b data-path-to-node="14,1,0" data-index-in-node="5">never previously applied</b> to the GRFP while enrolled in a graduate degree program.</p>
+                              </li>
+                           
+                           <li>
+                              
+                              <p data-path-to-node="14,2,0">Have <b data-path-to-node="14,2,0" data-index-in-node="5">never earned a master’s or professional degree</b> in any field.</p>
+                              </li>
+                           
+                           <li>
+                              
+                              <p data-path-to-node="14,3,0">Have completed <b data-path-to-node="14,3,0" data-index-in-node="15">no more than one academic year</b> in a graduate degree-granting program.</p>
+                              </li>
+                           </ul>
+                        
+                        <p data-path-to-node="15">For full program guidelines and field-specific eligibility details, visit the official
+                           <a class="ng-star-inserted" href="https://www.nsf.gov/funding/initiatives/grfp" target="_blank" rel="noopener">NSF Graduate Research Fellowship Program Website</a>.</p>
+                        
+                        <h3 data-path-to-node="17">Application Deadlines</h3>
+                        
+                        <ul data-path-to-node="18">
+                           
+                           <li><b data-path-to-node="18,0,0" data-index-in-node="0">How to Apply:</b> <a href="https://www.nsf.gov/funding/initiatives/grfp">Application information and resources</a>&nbsp;</li>
+                           
+                           <li>
+                              
+                              <p data-path-to-node="18,0,0"><b data-path-to-node="18,0,0" data-index-in-node="0">Deadlines Begin:</b> <b data-path-to-node="18,0,0" data-index-in-node="17">October 19</b> <i data-path-to-node="18,0,0" data-index-in-node="28">(Deadlines vary by discipline/field of study)</i></p>
+                              </li>
+                           
+                           <li>
+                              
+                              <p data-path-to-node="18,1,0"><b data-path-to-node="18,1,0" data-index-in-node="0">Reference Letters Due:</b> Check official <a href="https://www.nsf.gov/funding/opportunities/grfp-nsf-graduate-research-fellowship-program">NSF GRFP site</a> for exact submission cutoffs.</p>
+                              </li>
+                           </ul>
+                        
+                        <p data-path-to-node="19"><i data-path-to-node="19" data-index-in-node="0">Applicants are strongly encouraged to review the official NSF deadlines for their
+                              specific field of study well in advance of the deadline week.</i></p>
+                        
+                        <h2 data-path-to-node="21">Graduate School Support &amp; Workshops</h2>
+                        
+                        <p data-path-to-node="22">The Graduate School hosts interactive workshops for prospective applicants and faculty
+                           reference letter writers. All sessions are presented by <b data-path-to-node="22" data-index-in-node="143">Lea Marlor</b>, Graduate Academic Coordinator.</p>
+                        
+                        <div class="callout row-left-image">
+                           <div class="movie-row-left-image">
+                              <div class="movie-wrapper preview"><a class="various fancybox.iframe yt-embed" href="https://www.youtube.com/embed/bpSFQkCnu3E?autoplay=true&amp;rel=0&amp;showinfo=1&amp;enablejsapi=1&amp;origin=https://www.mtu.edu" rel="noopener" target="_blank"><div class="yt-iframe" id="yt-bpSFQkCnu3E" data-yt="bpSFQkCnu3E"><div class="movie new-movie yt-iframe" style="height:auto;">
+		<div class="show-for-sr">Watch NSF GRFP Workshop 1: Tips and Overview video</div>
+		<img loading="lazy" src="https://i.ytimg.com/vi/bpSFQkCnu3E/maxresdefault.jpg" height="720" width="1280" alt="Preview image for NSF GRFP Workshop 1: Tips and Overview video" />
+		<button class="playhead" aria-hidden="true" tabindex="-1" aria-label="Watch NSF GRFP Workshop 1: Tips and Overview">
+		<svg xmlns="http://www.w3.org/2000/svg" height="155" width="120" stroke="#000" fill="#fff" stroke-width="0" viewBox="0 -10 120 155" role="presentation">
+			<polygon points="25,0 100,40 25,80"></polygon>
+			<text x="10" y="140" fill="#000" stroke="none" style="font-size: 34px; font-family: 'Open Sans', Arial, sans-serif; font-weight:600;">Watch</text>
+		</svg>
+		</button>
+		</div></div></a></div>
+                           </div>
+                           <div>
+                              
+                              <h3>NSF GRFP Workshop 1: Overview and Tips</h3>
+                              
+                              <p>An overview of fellowship components, eligibility, and strategies for a competitive
+                                 application.</p>
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="movie-row-left-image">
+                              <div class="movie-wrapper preview"><a class="various fancybox.iframe yt-embed" href="https://www.youtube.com/embed/N2a4h-EO0QE?autoplay=true&amp;rel=0&amp;showinfo=1&amp;enablejsapi=1&amp;origin=https://www.mtu.edu" rel="noopener" target="_blank"><div class="yt-iframe" id="yt-N2a4h-EO0QE" data-yt="N2a4h-EO0QE"><div class="movie new-movie yt-iframe" style="height:auto;">
+		<div class="show-for-sr">Watch NSF GRFP Workshop 2: Crafting Your Statements video</div>
+		<img loading="lazy" src="https://i.ytimg.com/vi/N2a4h-EO0QE/maxresdefault.jpg" height="720" width="1280" alt="Preview image for NSF GRFP Workshop 2: Crafting Your Statements video" />
+		<button class="playhead" aria-hidden="true" tabindex="-1" aria-label="Watch NSF GRFP Workshop 2: Crafting Your Statements">
+		<svg xmlns="http://www.w3.org/2000/svg" height="155" width="120" stroke="#000" fill="#fff" stroke-width="0" viewBox="0 -10 120 155" role="presentation">
+			<polygon points="25,0 100,40 25,80"></polygon>
+			<text x="10" y="140" fill="#000" stroke="none" style="font-size: 34px; font-family: 'Open Sans', Arial, sans-serif; font-weight:600;">Watch</text>
+		</svg>
+		</button>
+		</div></div></a></div>
+                           </div>
+                           <div>
+                              
+                              <h3>NSF GRFP Workshop 2: Crafting Your Statements&nbsp;</h3>
+                              
+                              <p>A deep dive into structure, content, and organization for Personal and Research Statements.</p>
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="movie-row-left-image">
+                              <div class="movie-wrapper preview"><a class="various fancybox.iframe yt-embed" href="https://www.youtube.com/embed/gEEYRjTTlMk?autoplay=true&amp;rel=0&amp;showinfo=1&amp;enablejsapi=1&amp;origin=https://www.mtu.edu" rel="noopener" target="_blank"><div class="yt-iframe" id="yt-gEEYRjTTlMk" data-yt="gEEYRjTTlMk"><div class="movie new-movie yt-iframe" style="height:auto;">
+		<div class="show-for-sr">Watch NSF GRFP Workshop 3: Reference Letters video</div>
+		<img loading="lazy" src="https://i.ytimg.com/vi/gEEYRjTTlMk/maxresdefault.jpg" height="720" width="1280" alt="Preview image for NSF GRFP Workshop 3: Reference Letters video" />
+		<button class="playhead" aria-hidden="true" tabindex="-1" aria-label="Watch NSF GRFP Workshop 3: Reference Letters">
+		<svg xmlns="http://www.w3.org/2000/svg" height="155" width="120" stroke="#000" fill="#fff" stroke-width="0" viewBox="0 -10 120 155" role="presentation">
+			<polygon points="25,0 100,40 25,80"></polygon>
+			<text x="10" y="140" fill="#000" stroke="none" style="font-size: 34px; font-family: 'Open Sans', Arial, sans-serif; font-weight:600;">Watch</text>
+		</svg>
+		</button>
+		</div></div></a></div>
+                           </div>
+                           <div>
+                              
+                              <h3>NSF GRFP Reference Letter Writer’s Workshop</h3>
+                              
+                              <p>Tailored for faculty and advisors crafting strong reference letters for GRFP applicants.</p>
+                              
+                              <p><a href="/gradschool/resources-for/nsf-grfp/avoiding-gender-bias-referrences.pdf">Avoiding gender bias in reference writing</a></p>
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        
+                        
+                        <h2 data-path-to-node="25">Writing Support &amp; Drop-In Office Hours</h2>
+                        
+                        <p data-path-to-node="26">Get direct feedback and one-on-one writing support for your application materials.</p>
+                        
+                        <ul data-path-to-node="27">
+                           
+                           <li>
+                              
+                              <p data-path-to-node="27,0,0"><b data-path-to-node="27,0,0" data-index-in-node="0">Location:</b> Library Lobby Exhibit Space</p>
+                              </li>
+                           
+                           <li><strong>Schedule: </strong>
+                              
+                              <ul data-path-to-node="27">
+                                 
+                                 <li>Tuesday Schedule: 9/22 (2–3:30 p.m.), 9/29 (3–4:30 p.m.), 10/6 (10–11:30 a.m.), and
+                                    10/13 (1–2:30 p.m.)</li>
+                                 
+                                 <li>Friday Schedule: 9/18 through 10/16 (9:30–11 a.m.)</li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        
+                        <p>See the <a href="https://www.nsf.gov/funding/initiatives/grfp">NSF's Graduate Research Fellowship Program</a> website for more details. Questions? Contact Lea Marlor, NSF GRFP Support Coordinator,
+                           at <a href="mailto:gradschool@mtu.edu?subject=">gradschool@mtu.edu</a>.</p>
+                        
+                        <h3>Additional Information:</h3>
+                        
+                        <ul>
+                           
+                           <li><a href="https://www.nsf.gov/funding/initiatives/grfp">NSF Graduate Research Fellowship Program (NSF GRFP) Webpage</a></li>
+                           
+                           <li><a href="https://www.nsf.gov/funding/initiatives/grfp/applicants">Application Guide</a></li>
+                           
+                           <li><a href="https://www.research.gov/grfp/Login.do">Application Portal</a></li>
+                           
+                           <li><a href="https://www.nsf.gov/funding/initiatives/grfp/applicants/faq">FAQs</a></li>
+                           
+                           <li><a title="NSF Seminar Series" href="https://www.nsf.gov/events?query=grfp&amp;sort=date_ASC" target="_blank" rel="noopener">NSF Seminar Series</a></li>
+                           </ul>
+                        
+                        <div class="clearer"></div>
+                     </article>
+                  </div>
+                  <div class="right-sidebar">
+                     <aside aria-label="sidebar content">
+                        <p><img class="" src="/gradschool/resources-for/nsf-grfp/images/nsf-logo-square250.jpg" alt="NSF Logo" width="250" height="250"></p>
+                     </aside>
+                     <div class="clearer"></div>
+                  </div>
+                  <div class="clearer"></div>
+               </div>
+               		
+               	</section>
+         </div>
+         <div class="push"></div>
+      </div>
+      <footer xmlns:xlink="http://www.w3.org/1999/xlink" id="mtu-footer" class="mtu-footer">
+   <div class="footer__pre-nav-wrapper footer__pre-nav-wrapper--cards">
+      <ul class="footer__pre-nav row no-bullet">
+         <li class="footer-cta-group__item footer-cta-group__item--connect"><a class="footer-button footer-button--request" href="/request/index.html" aria-label="Request Information from Michigan Tech"><span class="footer-button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg></span><span class="footer-button__text"><span class="footer-button__title">Request Information</span><span class="footer-button__desc">Tell us about yourself and stay connected with Michigan Tech.</span></span><span class="footer-button__chevron"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/></svg></span></a></li>
+         <li class="footer-cta-group__item footer-cta-group__item--connect"><a class="footer-button footer-button--visit" href="/visit/index.html" aria-label="Schedule a Visit at Michigan Tech"><span class="footer-button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"/></svg></span><span class="footer-button__text"><span class="footer-button__title">Schedule a Visit</span><span class="footer-button__desc">See campus for yourself and discover what makes Tech special.</span></span><span class="footer-button__chevron"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/></svg></span></a></li>
+         <li class="footer-cta-group__item footer-cta-group__item--connect"><a class="footer-button-apply footer-button--apply" href="/apply/index.html" aria-label="Apply to Michigan Tech"><span class="footer-button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"/></svg></span><span class="footer-button__text"><span class="footer-button__title">Apply Now</span><span class="footer-button__desc">Take the next step toward becoming a Michigan Tech Husky.</span></span><span class="footer-button__chevron"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/></svg></span></a></li>
+         <li class="footer-cta-group__item footer-cta-group__item--give"><a class="footer-button-give footer-button--give" href="/giving/index.html" aria-label="Give to Michigan Tech"><span class="footer-button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/></svg></span><span class="footer-button__text"><span class="footer-button__title">Give to <span class="footer-cta__dept">Michigan Tech</span></span><span class="footer-button__desc">Support the people, ideas, and research that move Tech forward.</span></span><span class="footer-button__chevron"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/></svg></span></a></li>
+      </ul>
+   </div>
+   <div class="footer row">
+      <div class="footer-menu">
+         <h2 class="footer-menu__title">Admissions</h2>
+         <ul class="no-bullet">
+            <li><a href="/admissions/index.html">Undergraduate Admissions</a></li>
+            <li><a href="/gradschool/index.html">Graduate Admissions</a></li>
+            <li><a href="/globalcampus/index.html">Global Campus</a></li>
+            <li><a aria-label="Request Information from Michigan Tech" href="/request/index.html" class="footer-rfi">Request Information</a></li>
+            <li><a aria-label="Schedule a Visit to Michigan Tech" href="/visit/index.html" class="footer-visit">Schedule a Visit</a></li>
+            <li><a aria-label="Apply to Michigan Tech" href="/apply/index.html" class="footer-apply">Apply</a></li>
+            <li><a aria-label="Virtual Tours of Michigan Tech" href="/virtual-tours/index.html">Virtual Tours</a></li>
+         </ul>
+      </div>
+      <div class="footer-menu">
+         <h2 class="footer-menu__title">Study and Live</h2>
+         <ul class="no-bullet">
+            <li><a href="/academics/index.html">Academics</a></li>
+            <li><a href="/majors/index.html">Degrees / Majors</a></li>
+            <li><a href="/library/index.html">Library</a></li>
+            <li><a href="https://michigantechhuskies.com/">Athletics</a></li>
+            <li><a href="/tour/index.html">Campus and Beyond</a></li>
+            <li><a href="https://events.mtu.edu/">Events Calendar</a></li>
+            <li><a href="https://michigantechrecreation.com/">Recreation</a></li>
+         </ul>
+      </div>
+      <div class="footer-menu">
+         <h2 class="footer-menu__title">Campus Info</h2>
+         <ul class="no-bullet">
+            <li><a href="/about/index.html">About Michigan Tech</a></li>
+            <li><a href="/provost/accreditation/index.html" aria-label="University Accreditation">Accreditation</a></li>
+            <li><a href="https://map.mtu.edu/">Campus Map</a></li>
+            <li><a href="/jobs/index.html">Jobs at Michigan Tech</a></li>
+            <li><a href="/news/index.html">News</a></li>
+            <li><a href="/syp/index.html">Summer Youth Programs</a></li>
+            <li><a href="/webcams/index.html">Webcams</a></li>
+         </ul>
+      </div>
+      <div class="footer-menu">
+         <h2 class="footer-menu__title">Policies and Safety</h2>
+         <ul class="no-bullet">
+            <li><a href="/title-ix/resources/campus-safety/index.html" aria-label="Campus Safety Information and Resources">Campus Safety Information</a></li>
+            <li><a href="/emergencycontacts/index.html">Emergency Contact Information</a></li>
+            <li><a href="/deanofstudents/concern/index.html">Report a Concern</a></li>
+            <li><a href="/publicsafety/index.html">Public Safety / Police Services</a></li>
+            <li><a href="/student-affairs/interests/student-disclosure/index.html">Student Disclosures</a></li>
+            <li><a href="/title-ix/index.html">Title IX</a></li>
+            <li><a href="/policy/policies/index.html">University Policies</a></li>
+         </ul>
+      </div>
+   </div>
+   <div class="row footer__contact">
+      <div class="footer__contact-info"><script type="text/javascript">
+				(function () {
+				let givingHostnames = ["www.mtu.edu", "give.mtu.edu"];
+				let givingHref = "\/gradschool\/about\/giving\/index.html";
+				
+				function applyHref() {
+					let givingBtn = document.querySelector(".footer-button-give");
+					if (givingBtn === null) {
+						return;
+					}
+
+					let givingUrl = new URL(givingHref, "https://www.mtu.edu/");
+
+					if (Array.from(givingHostnames).includes(givingUrl.hostname)) {
+						givingBtn.href = givingUrl.toString();
+					}
+				}
+				if (document.readyState === "loading") {
+					document.addEventListener("DOMContentLoaded", applyHref);
+					} else {
+					applyHref();
+					}
+			})();
+			</script><script type="text/javascript">
+				(function () {
+					var givingTitle = "Graduate School";
+
+					if (givingTitle === "") {
+						return;
+					}
+
+					function applyTitle() {
+						var slots = document.querySelectorAll(".footer-cta__dept");
+						var i;
+
+						for (i = 0; i < slots.length; i++) {
+							slots[i].textContent = givingTitle;
+						}
+
+						var givingBtn = document.querySelector(".footer-button-give");
+						if (givingBtn !== null) {
+							givingBtn.setAttribute("aria-label", "Give to " + givingTitle);
+						}
+					}
+					if (document.readyState === "loading") {
+						document.addEventListener("DOMContentLoaded", applyTitle);
+					} else {
+						applyTitle();
+					}
+				})();
+			</script><style>
+				.footer__pre-nav li:nth-of-type(1), .footer__pre-nav li:nth-of-type(2), .footer__pre-nav li:nth-of-type(3), .footer__pre-nav li:nth-of-type(4) {
+					display: block;
+				}
+			</style><h2><a class="text-gold underline-on-hover" href="/gradschool/">Graduate School</a></h2><div class="footer__contact-info-address">Administration Building, 4th Floor<br />																																						1400 Townsend Drive<br />																																						Houghton, MI 49931-1295</div><div><ul class="bar-separator no-bullet"><li class="phone"><a href="tel:9064872815">906-487-2815</a></li><li class="fax"><a href="tel:9064872284">906-487-2284</a></li><li class="email"><a href="mailto:gradschool@mtu.edu">gradschool@mtu.edu</a></li></ul></div><a class="text-gold" href="/globalcampus/gradadmissions/prospective/request-information/">Contact Us</a><ul class="social-medium center"><li><a class="facebook" href="https://www.facebook.com/michigantechgraduateschool/" target="_blank">Facebook</a></li></ul></div>
+      <div class="footer__contact-social">
+         <div class="mtu-logo logo"><a href="/" class="mtu-logo mtu-logo-footer"><img src="//www.mtu.edu/mtu_resources/images/logos/michigan-tech-logo-fullname-solid-old.svg" height="132" width="200" alt="Michigan Technological University" loading="lazy"></a></div>
+      </div>
+   </div>
+   <div class="footer__post-info row">
+      <div>
+         <ul class="bar-separator no-bullet aside">
+            <li><a href="/accessibility/index.html">Accessibility</a></li>
+            <li><a href="/eo-compliance/equal-opportunity-hiring/index.html">Equal Opportunity</a></li>
+            <li><a href="mailto:webmaster@mtu.edu">Email the Webmaster</a></li>
+         </ul>
+      </div>
+      <div>
+         <ul class="bar-separator no-bullet">
+            <li><span id="directedit">©</span>
+               2026 <a href="https://www.mtu.edu">Michigan Technological University</a></li>
+         </ul>
+      </div>
+   </div>
+</footer>
+
+<!--[if (!IE)|(gt IE 8)]><!--> 
+	<script src="//www.mtu.edu/mtu_resources/script/n/jquery.js"></script> 
+<!--<![endif]-->
+
+<!--[if lte IE 8]>
+	<script src="//www.mtu.edu/mtu_resources/script/n/jquery-ie.js"></script>
+<![endif]-->
+
+<script src="//www.mtu.edu/mtu_resources/assets/js/app.js"></script>
+<script>
+            var OUC = OUC || {};
+            OUC.globalProps = OUC.globalProps || {};
+            OUC.props = OUC.props || {};
+            
+            
+                OUC.globalProps['path'] = "/gradschool/resources-for/nsf-grfp/index.html";
+                OUC.globalProps['domain'] = "https://www.mtu.edu";
+                OUC.globalProps['index-file'] = "index";
+                OUC.globalProps['extension'] = "html";
+            
+            var key;
+            for (key in OUC.globalProps) {
+            OUC.props[key] = OUC.globalProps[key];
+            }
+        </script>
+      <script>
+	$(function(){
+		var $domain      = OUC.globalProps['domain'];
+		var $currentPage = OUC.globalProps['path'];
+		var $extension   = OUC.globalProps['extension'];
+		var $indexFile   = OUC.globalProps['index-file'];
+		
+		$currentPage = $domain + $currentPage.replace(/index\.\w+/i, '');
+		
+		
+		$('.leftnav .sublinks ul li').each(function(index, anchorTag){
+
+			$link =  $("> a", this).attr('href');
+			$link = $domain+$link.replace(/index\.\w+/i, '');
+			var $count1 = ($link.match(/\//g) || []).length;
+			
+			// check if link matches current page
+			/*if ($currentPage.includes($link) && $count1 > 4)
+			{
+				$(this).addClass('active');
+				// break out of the loop
+				return false;
+			}*/
+		});
+
+		$('.category-nav-bar > li.main-nav-item').each(function(index, anchorTag){
+
+			$link =  $("a", this).attr('href');
+			if($link) {
+				$link = $domain+$link.replace(/index\.\w+/i, '');
+			}
+			// check if link matches current page
+			if ($currentPage.includes($link))
+			{
+				$(this).addClass('in');
+				// break out of the loop
+				return false;
+			}
+		});
+	});
+</script>
+<div id="hidden" style="display:none;"><a id="de" href="https://a.cms.omniupdate.com/11/?skin=oucampus&amp;account=MTU&amp;site=www&amp;action=de&amp;path=/gradschool/resources-for/nsf-grfp/index.pcf">©</a></div>
+   </body>
+</html>

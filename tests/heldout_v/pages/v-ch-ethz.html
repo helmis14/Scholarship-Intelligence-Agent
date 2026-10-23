@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+
+<html lang="de">
+    <head>
+    <meta charset="utf-8" >
+    <meta name="content-page-ref" content="2cSrD3z1pndOmV4mHNaR9Ci2KMA4IwF-2qn54vQgd3FQszSarGNvLnar962seTfD"/>
+<link rel="canonical" href="https://ethz.ch/de.html">
+<link rel="alternate" href="https://ethz.ch/de.html" hreflang="de">
+<link rel="alternate" href="https://ethz.ch/en.html" hreflang="en">
+<link rel="alternate" href="https://ethz.ch/de.fr.html" hreflang="fr">
+<link rel="alternate" href="https://ethz.ch/de.it.html" hreflang="it">
+<script>
+
+    // promise polyfill
+    !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?t():"function"==typeof define&&define.amd?define(t):t()}(0,function(){"use strict";function e(e){var t=this.constructor;return this.then(function(n){return t.resolve(e()).then(function(){return n})},function(n){return t.resolve(e()).then(function(){return t.reject(n)})})}function t(e){return new this(function(t,n){function o(e,n){if(n&&("object"==typeof n||"function"==typeof n)){var f=n.then;if("function"==typeof f)return void f.call(n,function(t){o(e,t)},function(n){r[e]={status:"rejected",reason:n},0==--i&&t(r)})}r[e]={status:"fulfilled",value:n},0==--i&&t(r)}if(!e||"undefined"==typeof e.length)return n(new TypeError(typeof e+" "+e+" is not iterable(cannot read property Symbol(Symbol.iterator))"));var r=Array.prototype.slice.call(e);if(0===r.length)return t([]);for(var i=r.length,f=0;r.length>f;f++)o(f,r[f])})}function n(e){return!(!e||"undefined"==typeof e.length)}function o(){}function r(e){if(!(this instanceof r))throw new TypeError("Promises must be constructed via new");if("function"!=typeof e)throw new TypeError("not a function");this._state=0,this._handled=!1,this._value=undefined,this._deferreds=[],l(e,this)}function i(e,t){for(;3===e._state;)e=e._value;0!==e._state?(e._handled=!0,r._immediateFn(function(){var n=1===e._state?t.onFulfilled:t.onRejected;if(null!==n){var o;try{o=n(e._value)}catch(r){return void u(t.promise,r)}f(t.promise,o)}else(1===e._state?f:u)(t.promise,e._value)})):e._deferreds.push(t)}function f(e,t){try{if(t===e)throw new TypeError("A promise cannot be resolved with itself.");if(t&&("object"==typeof t||"function"==typeof t)){var n=t.then;if(t instanceof r)return e._state=3,e._value=t,void c(e);if("function"==typeof n)return void l(function(e,t){return function(){e.apply(t,arguments)}}(n,t),e)}e._state=1,e._value=t,c(e)}catch(o){u(e,o)}}function u(e,t){e._state=2,e._value=t,c(e)}function c(e){2===e._state&&0===e._deferreds.length&&r._immediateFn(function(){e._handled||r._unhandledRejectionFn(e._value)});for(var t=0,n=e._deferreds.length;n>t;t++)i(e,e._deferreds[t]);e._deferreds=null}function l(e,t){var n=!1;try{e(function(e){n||(n=!0,f(t,e))},function(e){n||(n=!0,u(t,e))})}catch(o){if(n)return;n=!0,u(t,o)}}var a=setTimeout;r.prototype["catch"]=function(e){return this.then(null,e)},r.prototype.then=function(e,t){var n=new this.constructor(o);return i(this,new function(e,t,n){this.onFulfilled="function"==typeof e?e:null,this.onRejected="function"==typeof t?t:null,this.promise=n}(e,t,n)),n},r.prototype["finally"]=e,r.all=function(e){return new r(function(t,o){function r(e,n){try{if(n&&("object"==typeof n||"function"==typeof n)){var u=n.then;if("function"==typeof u)return void u.call(n,function(t){r(e,t)},o)}i[e]=n,0==--f&&t(i)}catch(c){o(c)}}if(!n(e))return o(new TypeError("Promise.all accepts an array"));var i=Array.prototype.slice.call(e);if(0===i.length)return t([]);for(var f=i.length,u=0;i.length>u;u++)r(u,i[u])})},r.allSettled=t,r.resolve=function(e){return e&&"object"==typeof e&&e.constructor===r?e:new r(function(t){t(e)})},r.reject=function(e){return new r(function(t,n){n(e)})},r.race=function(e){return new r(function(t,o){if(!n(e))return o(new TypeError("Promise.race accepts an array"));for(var i=0,f=e.length;f>i;i++)r.resolve(e[i]).then(t,o)})},r._immediateFn="function"==typeof setImmediate&&function(e){setImmediate(e)}||function(e){a(e,0)},r._unhandledRejectionFn=function(e){void 0!==console&&console&&console.warn("Possible Unhandled Promise Rejection:",e)};var s=function(){if("undefined"!=typeof self)return self;if("undefined"!=typeof window)return window;if("undefined"!=typeof global)return global;throw Error("unable to locate global object")}();"function"!=typeof s.Promise?s.Promise=r:s.Promise.prototype["finally"]?s.Promise.allSettled||(s.Promise.allSettled=t):s.Promise.prototype["finally"]=e});
+
+    const storageKeySuffix = '';
+    window.ethSitemap = {
+      storageKey: '/content/main/de' + storageKeySuffix
+    };
+
+    window.ethSitemap.loaded = new Promise(function (resolve, reject) {
+      const xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+          if (xmlhttp.status == 200) {
+            if (xmlhttp.responseText) {
+              window.ethSitemap.data = JSON.parse(xmlhttp.responseText);
+              resolve(window.ethSitemap.data);
+              window.sessionStorage.setItem(window.ethSitemap.storageKey, xmlhttp.responseText)
+            }
+          } else {
+            reject();
+          }
+        }
+      };
+
+      xmlhttp.open("GET", "/de/.navigation" + storageKeySuffix + ".json", true);
+      xmlhttp.send();
+    });
+
+  </script>
+<script>    
+    
+    const accountType = window.localStorage.getItem('ch.ethz.user.type');
+
+    var isInternal = window.sessionStorage.getItem('ch.ethz.user.isInternal');
+    if (!isInternal) {
+    	fetch("/bin/ethz/base/stats").then((response) => response.json()).then((data) => {
+    		isInternal = data.is_internal;
+    	    window.sessionStorage.setItem('ch.ethz.user.isInternal', isInternal);
+    	});
+    }
+    
+    const isAuthor = this.getCookieValue('is_author');
+	
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'wait_for_update': 500
+    });
+
+    dataLayer.push({
+        'event': 'pageData',
+        'ch1': '', 
+        'ch2': '', 
+        'ch3': '', 
+        'page_title': 'ETH Zürich - Homepage',
+        'internal_page_path': '/',
+        'logged_in': 'false',
+        'account_type': accountType ? accountType : '', 
+        'is_author': isAuthor != '' ? 'true' : 'false',
+        'section': 'Hauptseite',
+        'institut': '',
+        'group': '',
+        'is_internal': isInternal == 'true' ? 'true' : 'false',
+    });
+    
+    function getCookieValue(cname) {
+        var name = cname + '=';
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return '';
+      };
+    </script>
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5KC3PX6');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    
+<meta property="og:url" content="https://ethz.ch/de.html" >
+    <meta property="og:title" content="ETH Z&uuml;rich - Homepage" >
+    <meta property="og:site_name" content="ETH Zürich" >
+    <meta property="og:image" content="https://ethz.ch/etc/designs/ethz/img/header/eth_default_og.jpg" >
+    <meta property="og:image:alt" content="" ><meta name="twitter:card" content="summary" />
+            <meta name="twitter:site" content="" />
+            <meta name="twitter:title" content="ETH Z&uuml;rich - Homepage" />
+            <meta name="twitter:image" content="https://ethz.ch/etc/designs/ethz/img/header/eth_default_og.jpg" />
+            <meta name="twitter:image:alt" content="" />
+        <meta name="google-site-verification" content="urBl10ePyRfXUeiUSLVIHjE6vz_-LI-CP_8bASPYDeI">
+    <meta name="Systemueberwachung" content="ETHZ" >
+    <meta name="ethz_lmd" content="2026-10-19T11:35:39.001Z" >
+
+    
+    <meta name="pagetype" content="web" >
+
+
+    
+
+
+
+
+<link rel="stylesheet" href="/etc.clientlibs/ethz/design/clientlibs/css.css" type="text/css">
+<script src="/etc.clientlibs/ethz/design/clientlibs/default.js"></script>
+
+
+<meta name="msapplication-TileColor" content="#007894">
+    <meta name="theme-color" content="#007894">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#007894-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="icon" sizes="192x192" href="/etc/designs/ethz/img/icons/ETH-APP-Icons-Theme-white/192-xxxhpdi.png">
+    <meta name="msapplication-TileImage" content="/etc/designs/ethz/img/icons/ETH-APP-Icons-Theme-white/144-xxhdpi.png">
+
+    <meta name="content-language" content="de">
+
+    
+
+<title>ETH Zürich - Homepage | ETH Zürich</title>
+<meta name="apple-mobile-web-app-title" content="ETH Zürich - Homepage | ETH Zürich"/>
+
+</head>
+<body id="eth-petrol" class="homepagewide noImageTeaser eth-petrol">
+
+    <!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KC3PX6"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+<!-- skipLinks -->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="skipLinksDiv">
+        <ul id="skipLinks">
+                    
+            <li data-order="0"><a accesskey="0" href="/de/" class="accesskey" title="Direkt auf die Startseite springen">Startseite</a></li>
+            <li data-order="1"><a accesskey="1" href="#navList" class="accesskey" title="Direkt zur Navigation springen">Navigation</a></li>
+            <li data-order="2"><a accesskey="2" href="https://ethz.ch/de/utils/search.html" class="accesskey" title="Direkt zur Suche springen">Suche</a></li>
+            <li data-order="3"><a accesskey="3" href="#content" class="accesskey" title="Direkt zum Inhalt springen">Inhalt</a></li>
+            <li data-order="4"><a accesskey="4" href="#footer" class="accesskey" title="Direkt zum Footer springen">Footer</a></li>
+
+            
+            
+              
+              
+                  
+              
+            
+            
+                <li data-order="5">
+                    <a accesskey="5" href="/de/utils/kontakt.html" class="accesskey" title="Direkt zu Kontakt springen">
+                      Kontakt
+                    </a>
+                </li>
+            
+
+            
+            
+                                    
+	                    <li data-order="6"><a accesskey="6" href="/de/footer/inhaltsverzeichnis.html" class="accesskey" title="Inhaltsverzeichnis">Inhaltsverzeichnis</a></li>
+                
+            
+            
+        </ul>
+</div>
+
+<div class="site-wrapper">
+        <!-- header -->
+        <header class="site-header header--with-department-dropdown">
+    
+<div class="header__logos header__container">
+        <a href="https://ethz.ch/de.html" title="Zur Startseite der ETH Zürich">
+            <svg viewBox="0 0 120 20" xmlns="http://www.w3.org/2000/svg" class="main-eth-logo" aria-label="ETH homepage">
+    <path d="M43.6892 7.59685H39.3218L40.8555 0H3.90295L0 19.6252H14.7315L15.7334 14.5606H7.02833L7.52612 12.0283H16.2369L17.1209 7.59685H8.43034L8.92687 5.06457H22.7592L19.8638 19.6252H25.8707L28.7649 5.06457H33.8077L30.9135 19.6252H36.9665L38.4642 12.0283H42.8303L41.3338 19.6252H47.3577L51.2632 0H45.2229L43.6892 7.59685ZM69.4622 2.53228H71.4717L71.9695 0H69.9695L69.4622 2.53228ZM74.616 2.53228H76.6267L77.1232 0H75.1232L74.616 2.53228ZM93.4111 2.53228H95.4205L95.9196 0H93.9183L93.4111 2.53228ZM103.47 6.27247C99.9631 6.27247 97.5024 8.76677 96.7148 13.1172C96.5907 13.7981 96.5275 14.4888 96.5258 15.181C96.5258 18.1527 98.3109 20 101.189 20C102.013 20.0022 102.829 19.8372 103.588 19.515C104.347 19.1928 105.033 18.7199 105.606 18.1248L105.623 18.1058L104.509 16.7333L104.489 16.7093L104.467 16.7321C104.087 17.2105 103.604 17.597 103.055 17.8628C102.506 18.1287 101.905 18.2671 101.295 18.2679C99.9234 18.2679 98.4571 17.4411 98.4571 15.1266C98.4621 14.4552 98.5331 13.786 98.6688 13.1286C98.8751 11.7182 99.4666 10.3928 100.378 9.29981C100.745 8.89298 101.193 8.56784 101.694 8.34522C102.194 8.1226 102.734 8.00742 103.281 8.00708C103.806 7.9833 104.326 8.10937 104.782 8.37067C105.238 8.63197 105.611 9.0178 105.858 9.4834L105.874 9.50999L107.293 8.29956L107.313 8.28183L107.298 8.26031C106.89 7.62018 106.321 7.09939 105.649 6.75041C104.977 6.40142 104.225 6.23657 103.47 6.27247ZM116.295 5.98822C115.59 5.9532 114.886 6.07022 114.23 6.33141C113.573 6.59261 112.98 6.99193 112.49 7.50252L113.998 0H112.054L108.15 19.6252H110.093L111.714 11.3807C112.408 7.90642 115.092 7.73043 115.621 7.73043C115.937 7.69809 116.256 7.73604 116.555 7.84158C116.855 7.94713 117.128 8.11768 117.354 8.3411C117.581 8.56453 117.755 8.83536 117.866 9.13432C117.977 9.43329 118.02 9.75306 117.994 10.0709C117.984 10.4893 117.939 10.9062 117.858 11.3168L116.209 19.6252H118.15L119.855 11.1364C119.943 10.6954 119.989 10.2471 119.991 9.79741C120.026 9.29629 119.955 8.79341 119.783 8.32176C119.611 7.85011 119.342 7.42034 118.993 7.06064C118.644 6.70095 118.223 6.41946 117.758 6.23464C117.293 6.04981 116.795 5.96584 116.295 5.98822ZM90.0967 19.5929L90.0904 19.6258H92.0066L94.6215 6.33134H92.7375L90.0967 19.5929ZM54.9538 8.19447L54.9481 8.23056H61.4522L52.8769 18.021L52.8731 18.0261L52.5511 19.6258H61.7868L62.1503 17.7266H55.2462L63.8466 7.93618L63.8504 7.92985L64.1736 6.33134H55.3129L54.9538 8.19447ZM86.9064 6.16928C86.2145 6.15103 85.5279 6.29363 84.8999 6.58596C84.272 6.87828 83.7198 7.31243 83.2864 7.85451L83.5838 6.3611L83.5888 6.33134H81.6985L79.0854 19.5929L79.0803 19.6258H80.999L82.597 11.4909C83.006 9.4049 84.5932 7.88996 86.3739 7.88996C86.7328 7.88131 87.0882 7.96143 87.4089 8.12327C87.7297 8.28511 88.0059 8.52371 88.2133 8.81805L88.2322 8.8421L89.7879 7.43415L89.7728 7.41516C89.4206 7.00234 88.9794 6.67558 88.4828 6.4597C87.9861 6.24383 87.447 6.1445 86.9064 6.16928ZM75.3318 6.33134H77.275L77.27 6.363L74.6588 19.6258H72.7678L72.7741 19.5929L73.0243 18.2128C72.5408 18.7377 71.9491 19.1504 71.2906 19.422C70.6321 19.6935 69.9226 19.8176 69.2114 19.7854C68.7188 19.8075 68.227 19.7247 67.7685 19.5423C67.31 19.3599 66.8951 19.0821 66.5511 18.727C66.2071 18.372 65.9418 17.9479 65.7726 17.4825C65.6033 17.0171 65.5341 16.521 65.5694 16.0268C65.5748 15.6225 65.6206 15.2198 65.7061 14.8246L65.7282 14.7043L67.3803 6.33134H69.2978L67.6677 14.5283C67.5904 14.9334 67.5468 15.3442 67.5372 15.7565C67.5127 16.0718 67.5576 16.3887 67.6687 16.6847C67.7798 16.9806 67.9545 17.2483 68.1802 17.4688C68.406 17.6892 68.6773 17.857 68.9749 17.9602C69.2724 18.0635 69.589 18.0995 69.902 18.0659C70.4219 18.0659 73.0457 17.8912 73.7306 14.4619L75.3318 6.33134Z"/>
+</svg> </a>
+        <h2 class="screenreader">Header</h2>
+    </div>
+
+    <div id="navTopRoot" class="header__nav-primary eth-petrol">
+    <div class="header__navbar header__container">
+        <div id="mainNav" data-init="mainNav" data-current="navitem3124909298" data-children="[{&quot;id&quot;:&quot;navitem1699314208&quot;,&quot;title&quot;:&quot;News &amp; Veranstaltungen&quot;},{&quot;id&quot;:&quot;navitem2148954952&quot;,&quot;title&quot;:&quot;Die ETH Z&uuml;rich&quot;},{&quot;id&quot;:&quot;navitem2545226228&quot;,&quot;title&quot;:&quot;Studium an der ETH Z&uuml;rich&quot;},{&quot;id&quot;:&quot;navitem806359815&quot;,&quot;title&quot;:&quot;Doktorat&quot;},{&quot;id&quot;:&quot;navitem1784977154&quot;,&quot;title&quot;:&quot;Forschung&quot;},{&quot;id&quot;:&quot;navitem4049299624&quot;,&quot;title&quot;:&quot;Wirtschaft &amp; Wissenstransfer&quot;},{&quot;id&quot;:&quot;navitem299000988&quot;,&quot;title&quot;:&quot;Campus&quot;}]">
+            <div class="nav-primary__html">
+                <div class="header__mobile-only">
+                        <hr>
+                        <h3 class="header__nav-primary-title">Services</h3>
+                        <ul>
+        <li>
+        <a href="/studierende/de.html" title="">Studierendenportal</a>
+    </li>
+<li>
+        <a href="https://www.alumni.ethz.ch/" title="">Alumni-Vereinigung</a>
+    </li>
+<li>
+            <a href="/staffnet/de.html" title="">
+                Staffnet</a>
+        </li>
+        <li>
+                <a class="contact" href="/de/utils/kontakt.html" title="Öffnet eine Kontaktseite">
+                    Kontakt</a>
+            </li>
+        <li>
+                <a class="login footer__login-link" href="/login/de.html?resource=%2Fcontent%2Fmain%2Fde.html" title="Login mit ETH Userkonto">
+        <span aria-hidden="true" class="icon--lock icon--is-before"></span>
+        <span class="footer__login-text">Login</span>
+    </a>
+</li>
+        </ul>
+</div>
+                </div>
+        </div>
+        <div class="header__search-trigger no_translate">
+    <h3 class="screenreader">Suche</h3>
+    <div
+      id="search-app"
+      data-init="searchApp"
+      data-is-overlay="true"
+      data-search-page-link="/de/utils/search.html"
+      data-location-page-link="/de/utils/location.html"
+      data-api-url="/bin/ethz/search"
+      data-current-site-supported-langs='["en","de"]'
+      data-is-main-site="true"
+      data-all-sites-supported-langs='["de","en","fr","it"]'
+      data-most-searched-quick-links='["ETHIS", "Jobs", "Scholarship", "PhD", "Admission", "Application"]'
+      data-locale="htmlElement">
+    </div>
+</div>
+
+<div class="header__search-link-container no_translate">
+  <a class="header__search-link" href="/de/utils/search.html"><span aria-hidden="true" class="icon--search"></span><span class="visually-hidden">Suche</span></a>
+</div><div class="header__language header__mobile-only">
+            <a class="header__easy-lang-link" href="https://leichtesprache.ethz.ch/">
+                    <span aria-hidden="true" class="icon--local_library"></span>
+                    <span class="visually-hidden">Leichte Sprache</span>
+                </a>
+            <label for="lang-selector" class="hidden">
+            de</label>
+        <select id="lang-selector" class="custom-select custom-select--link custom-select--dark">
+            <option value="de" selected="selected">
+                DE</option>
+            <option value="https://ethz.ch/en.html">
+                    EN</option>
+            <option value="https://ethz.ch/de.fr.html">
+                    FR (TA)</option>
+            <option value="https://ethz.ch/de.it.html">
+                    IT (TA)</option>
+            </select>
+    </div>
+    </div>
+</div>
+
+<!-- navigation -->
+    <div class="header__nav-meta header__desktop-only">
+        <div class="header__container">
+            <nav aria-labelledby="header__departments-title" class="header__departments">
+                <h3 id="header__departments-title" class="hidden">
+                    Departemente</h3>
+                <ul>
+                    <li class="item--organization">
+                        <a href="https://ethz.ch/de.html" title="Zur Startseite der ETH Zürich">
+                            ETH Zürich</a>
+                    </li>
+                    <li class="item--departments">
+                                
+
+
+    
+
+    <label for="departement-selector" class="hidden">
+        Wählen Sie ein Departement
+    </label>
+    <select id="departement-selector" class="custom-select custom-select--departments custom-select--link custom-select--dark">
+        <option value="" selected="selected" disabled="disabled" hidden="hidden">
+            Departemente
+        </option>
+        
+            <optgroup label="Architektur und Bauwissenschaften">
+                
+                    <option value="https://arch.ethz.ch/">
+                        D-ARCH: Architektur
+                    </option>
+                
+                    <option value="https://baug.ethz.ch/">
+                        D-BAUG: Bau, Umwelt und Geomatik
+                    </option>
+                
+            </optgroup>
+        
+            <optgroup label="Ingenieurwissenschaften">
+                
+                    <option value="https://bsse.ethz.ch/">
+                        D-BSSE: Biosysteme
+                    </option>
+                
+                    <option value="https://inf.ethz.ch/de/">
+                        D-INFK: Informatik
+                    </option>
+                
+                    <option value="https://ee.ethz.ch/de/">
+                        D-ITET: Informationstechnologie und Elektrotechnik
+                    </option>
+                
+                    <option value="https://mat.ethz.ch/">
+                        D-MATL: Materialwissenschaft
+                    </option>
+                
+                    <option value="https://mavt.ethz.ch/de/">
+                        D-MAVT: Maschinenbau und Verfahrenstechnik
+                    </option>
+                
+            </optgroup>
+        
+            <optgroup label="Naturwissenschaften und Mathematik">
+                
+                    <option value="https://biol.ethz.ch/">
+                        D-BIOL: Biologie
+                    </option>
+                
+                    <option value="https://chab.ethz.ch/">
+                        D-CHAB: Chemie und Angewandte Biowissenschaften
+                    </option>
+                
+                    <option value="https://math.ethz.ch/de/">
+                        D-MATH: Mathematik
+                    </option>
+                
+                    <option value="https://www.phys.ethz.ch/de/">
+                        D-PHYS: Physik
+                    </option>
+                
+            </optgroup>
+        
+            <optgroup label="Systemorientierte Naturwissenschaften">
+                
+                    <option value="https://eaps.ethz.ch/">
+                        D-EAPS: Erd- und Planetenwissenschaften
+                    </option>
+                
+                    <option value="https://hest.ethz.ch/">
+                        D-HEST: Gesundheitswissenschaften und Technologie
+                    </option>
+                
+                    <option value="https://usys.ethz.ch/">
+                        D-USYS: Umweltsystemwissenschaften
+                    </option>
+                
+            </optgroup>
+        
+            <optgroup label="Management und Sozialwissenschaften">
+                
+                    <option value="https://mtec.ethz.ch/">
+                        D-MTEC: Management, Technologie und Ökonomie
+                    </option>
+                
+                    <option value="https://gess.ethz.ch/">
+                        D-GESS: Geistes-, Sozial- und Staatswissenschaften
+                    </option>
+                
+            </optgroup>
+        
+    </select>
+</li>
+                        </ul>
+            </nav>
+            <nav aria-labelledby="header__services-title" class="header__services">
+                <h3 id="header__services-title" class="hidden">Sprachauswahl</h3>
+                <ul>
+                    <li>
+                            <a class="header__easy-lang-link" href="https://leichtesprache.ethz.ch/" title="ETH Zürich in Leichter Sprache">
+                                <span aria-hidden="true" class="icon--local_library icon--is-before"></span>
+                                Leichte Sprache
+                            </a>
+                        </li>
+                    <li>
+                        <label for="lang-selector-long" class="hidden">
+            de</label>
+        <select id="lang-selector-long" class="custom-select custom-select--link custom-select--dark">
+            <option value="de" selected="selected">
+                Deutsch</option>
+            <option value="https://ethz.ch/en.html">
+                    English</option>
+            <option value="https://ethz.ch/de.fr.html">
+                    Français (TA)</option>
+            <option value="https://ethz.ch/de.it.html">
+                    Italiano (TA)</option>
+            </select>
+    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    
+</header><!-- content -->
+        <section id="content" class="site-content">
+        	<h2 class="visually-hidden">Direkt zum Inhalt springen</h2>
+            <div id="contentContainer" class="site-content__wrapper site-content--wide site-content--homepage-wide">
+                <section id="contentMain" class="content-main">
+                    <h1 class="visually-hidden">ETH Z&uuml;rich: Übersicht und Aktuelles</h1>
+                    <!-- carousel, image, homehero or nothing -->
+                        <section class="basecomponent homepage-wide-section">
+                            <div class="homehero basecomponent"><div class="homehero__wrapper  is-last is-themed eth-blue">
+            <h2 class="visually-hidden">UNI-POLY Ruderregatta</h2>
+            <div
+              id="homeHero"
+              data-init="homeHeroApp"
+              data-heading="UNI-POLY Ruderregatta"
+              data-card-alignment-horizontal="right"
+              data-card-alignment-vertical="top"
+              data-image-props="{&quot;src&quot;:&quot;/de/_jcr_content/homehero/imageLarge.imageformat.1632x918.388288799.jpg&quot;}"
+              data-mobile-image-props="{&quot;src&quot;:&quot;/de/_jcr_content/homehero/imageSmall.imageformat.489x489.651654431.jpg&quot;}"
+              data-link-props="{&quot;icon&quot;:&quot;call_made&quot;,&quot;href&quot;:&quot;https://www.asvz.ch/event/621-uni-poly-ruderregatta&quot;,&quot;text&quot;:&quot;Diesen Samstag ab 15 Uhr duellieren sich die Ruderteams der ETH und der Uni in der allj&auml;hrlichen Ruderregatta.&quot;,&quot;label&quot;:&quot;Zur Webseite&quot;}">
+            </div>
+        </div>
+    </div>
+<div class="orginfo basecomponent">
+    
+  
+    
+  
+</div>
+</section>
+                    <!-- social media image -->
+    <div class="par parsys basecomponent"><div class="par parsys basecomponent contains-multitopicteaser contains-singletopicteaser">
+
+<section class="homepage-wide-section basecomponent">
+        <div class="newsfeed2homepage basecomponent">
+  
+    <div id="cmp_par_newsfeed2homepage_12_1723144517_977425650" data-init="newsfeed" data-has-top-story data-hide-author data-hide-show-more="true" data-show-comments data-show-more-label="Mehr laden" data-show-all-label="Alle News" data-from-label="von" data-see-all-url="https://ethz.ch/de/news-und-veranstaltungen/eth-news.html" data-offset="0" data-number-of-news="5" data-heading-level="2" data-title="News" data-api-url="/de/_jcr_content/par/newsfeed2homepage_12_1723144517.newsfeed.FROM-TO.json">
+    </div>
+  
+  
+</div>
+</section>
+        <section class="homepage-wide-section basecomponent">
+        <div class="multitopicteaser basecomponent">
+    
+
+        <div class="multitopicteaser__wrapper
+                    multitopicteaser__wrapper--full-width
+                     is-themed eth-petrol">
+
+            
+
+            
+                <div id="cmp_par_multitopicteaser_cop_1437726188_977425650" data-init="multiTopicTeaserGroupApp" data-heading="An der ETH studieren" data-heading-level="2" data-lead="<p></p>" data-cards="[{&#34;heading&#34;:&#34;Studienangebot&#34;,&#34;imageProps&#34;:{&#34;src&#34;:&#34;/de/_jcr_content/par/multitopicteaser_cop_1437726188/1/image.imageformat.800x450.dpr1.1568913861.jpg&#34;,&#34;srcset&#34;:&#34;/de/_jcr_content/par/multitopicteaser_cop_1437726188/1/image.imageformat.800x450.dpr1.1568913861.jpg 1x, /de/_jcr_content/par/multitopicteaser_cop_1437726188/1/image.imageformat.800x450.dpr2.1568913861.jpg 2x, /de/_jcr_content/par/multitopicteaser_cop_1437726188/1/image.imageformat.800x450.dpr3.1568913861.jpg 3x&#34;},&#34;links&#34;:[{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Zum Bachelorstudium&#34;,&#34;href&#34;:&#34;/de/studium/bachelor.html&#34;},{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Zum Masterstudium&#34;,&#34;href&#34;:&#34;/de/studium/master.html&#34;},{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Zum Weiterbildungsangebot&#34;,&#34;href&#34;:&#34;https://sce.ethz.ch/programme-und-kurse/suche-angebote.html?utm_source&#61;mainsite&amp;utm_medium&#61;kachel&amp;utm_campaign&#61;ethhomepage&#34;}],&#34;lead&#34;:&#34;&lt;p&gt;Erfahren Sie, welcher Studiengang am besten zu Ihnen passt.&lt;\/p&gt;&#34;},{&#34;heading&#34;:&#34;Studium beginnen&#34;,&#34;imageProps&#34;:{&#34;src&#34;:&#34;/de/_jcr_content/par/multitopicteaser_cop_1437726188/2/image.imageformat.800x450.dpr1.2020541063.jpg&#34;,&#34;srcset&#34;:&#34;/de/_jcr_content/par/multitopicteaser_cop_1437726188/2/image.imageformat.800x450.dpr1.2020541063.jpg 1x, /de/_jcr_content/par/multitopicteaser_cop_1437726188/2/image.imageformat.800x450.dpr2.2020541063.jpg 2x, /de/_jcr_content/par/multitopicteaser_cop_1437726188/2/image.imageformat.800x450.dpr3.2020541063.jpg 3x&#34;},&#34;links&#34;:[{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Beratungsangebote&#34;,&#34;href&#34;:&#34;/studierende/de/beratung/beratung-coaching.html&#34;},{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Finanzielles&#34;,&#34;href&#34;:&#34;/de/studium/finanzielles.html&#34;},{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Informationen für Studieninteressierte (Bachelor)&#34;,&#34;href&#34;:&#34;/de/studium/bachelor/studieninteressierte.html&#34;}],&#34;lead&#34;:&#34;&lt;p&gt;Alles neu und viele Fragen? Hier finden Sie hilfreiche Informationen für den Start ins ETH-Studium.&lt;\/p&gt;&#34;},{&#34;heading&#34;:&#34;Für Studierende&#34;,&#34;imageProps&#34;:{&#34;src&#34;:&#34;/de/_jcr_content/par/multitopicteaser_cop_1437726188/3/image.imageformat.800x450.dpr1.1427688440.jpg&#34;,&#34;srcset&#34;:&#34;/de/_jcr_content/par/multitopicteaser_cop_1437726188/3/image.imageformat.800x450.dpr1.1427688440.jpg 1x, /de/_jcr_content/par/multitopicteaser_cop_1437726188/3/image.imageformat.800x450.dpr2.1427688440.jpg 2x, /de/_jcr_content/par/multitopicteaser_cop_1437726188/3/image.imageformat.800x450.dpr3.1427688440.jpg 3x&#34;},&#34;links&#34;:[{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Studierendenportal entdecken&#34;,&#34;href&#34;:&#34;/studierende/de.html&#34;},{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Semesterdaten (Akademischer Kalender)&#34;,&#34;href&#34;:&#34;/staffnet/de/news-und-veranstaltungen/akademischer-kalender.html&#34;},{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;myStudies&#34;,&#34;href&#34;:&#34;/studierende/de/studium/lehrbetrieb/webplattformen/mystudies.html&#34;}],&#34;lead&#34;:&#34;&lt;p&gt;Im Studierendenportal erhalten Sie Zugang zu den wichtigsten Informationen während Ihres Studiums.&lt;\/p&gt;&#34;}]" data-cards-width="small" data-theme="colored"></div>
+            
+
+        </div>
+    
+
+    
+
+</div>
+</section>
+        <section class="homepage-wide-section basecomponent">
+        <div class="multitopicteaser basecomponent">
+    
+
+        <div class="multitopicteaser__wrapper
+                    multitopicteaser__wrapper--text-width
+                     is-themed-light eth-blue">
+
+            
+
+            
+                <div id="cmp_par_multitopicteaser_977425650" data-init="multiTopicTeaserGroupApp" data-heading="Wussten Sie schon?" data-heading-level="2" data-lead="<p></p>" data-cards="[{&#34;heading&#34;:&#34;Institutionelle Positionierung&#34;,&#34;imageProps&#34;:{&#34;src&#34;:&#34;/de/_jcr_content/par/multitopicteaser/1/image.imageformat.800x450.dpr1.897310399.jpg&#34;,&#34;srcset&#34;:&#34;/de/_jcr_content/par/multitopicteaser/1/image.imageformat.800x450.dpr1.897310399.jpg 1x, /de/_jcr_content/par/multitopicteaser/1/image.imageformat.800x450.dpr2.897310399.jpg 2x, /de/_jcr_content/par/multitopicteaser/1/image.imageformat.800x450.dpr3.897310399.jpg 3x&#34;},&#34;links&#34;:[{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Informationen und Hilfsangebot&#34;,&#34;href&#34;:&#34;/staffnet/de/news-und-veranstaltungen/haltung-zu-geopolitischen-konflikten.html?utm_source&#61;teasercard&amp;utm_medium&#61;homepage&amp;utm_campaign&#61;institutionelle-positionierung&#34;}],&#34;lead&#34;:&#34;&lt;p&gt;Die Haltung der ETH Zürich zu geopolitischen Konflikten und Unterstützungsangebote für ETH-Angehörige aus Krisenregionen&lt;\/p&gt;&#34;},{&#34;heading&#34;:&#34;ETH-Klimarunde 2026&#34;,&#34;imageProps&#34;:{&#34;src&#34;:&#34;/de/_jcr_content/par/multitopicteaser/2/image.imageformat.800x450.dpr1.1001573654.jpg&#34;,&#34;srcset&#34;:&#34;/de/_jcr_content/par/multitopicteaser/2/image.imageformat.800x450.dpr1.1001573654.jpg 1x, /de/_jcr_content/par/multitopicteaser/2/image.imageformat.800x450.dpr2.1001573654.jpg 2x, /de/_jcr_content/par/multitopicteaser/2/image.imageformat.800x450.dpr3.1001573654.jpg 3x&#34;},&#34;links&#34;:[{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Zum Programm&#34;,&#34;href&#34;:&#34;https://c2sm.ethz.ch/events/eth-klimarunde-2026.html&#34;},{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Zur Anmeldung&#34;,&#34;href&#34;:&#34;https://c2sm.ethz.ch/events/eth-klimarunde-2026.html#anmeldung&#34;}],&#34;lead&#34;:&#34;&lt;p&gt;Wie hochauflösende Modelle helfen, &lt;br /&gt;\r\nWetterrisiken zu bewältigen&lt;\/p&gt;\r\n&lt;p&gt;&lt;i&gt;Dienstag, 10. November 2026, 16.30 - 20.00 Uhr&lt;\/i&gt;&lt;\/p&gt;\r\n&#34;}]" data-cards-width="default" data-theme="colored"></div>
+            
+
+        </div>
+    
+
+    
+
+</div>
+</section>
+        <section class="homepage-wide-section basecomponent">
+        <div class="multitopicteaser basecomponent">
+    
+
+        <div class="multitopicteaser__wrapper
+                    multitopicteaser__wrapper--full-width
+                     is-themed-light eth-petrol">
+
+            
+
+            
+                <div id="cmp_par_multitopicteaser_907_977425650" data-init="multiTopicTeaserGroupApp" data-heading="An der ETH forschen" data-heading-level="2" data-lead="<p></p>" data-cards="[{&#34;heading&#34;:&#34;Doktoratsstelle finden&#34;,&#34;imageProps&#34;:{&#34;src&#34;:&#34;/de/_jcr_content/par/multitopicteaser_907/1/image.imageformat.800x450.dpr1.58050521.jpg&#34;,&#34;srcset&#34;:&#34;/de/_jcr_content/par/multitopicteaser_907/1/image.imageformat.800x450.dpr1.58050521.jpg 1x, /de/_jcr_content/par/multitopicteaser_907/1/image.imageformat.800x450.dpr2.58050521.jpg 2x, /de/_jcr_content/par/multitopicteaser_907/1/image.imageformat.800x450.dpr3.58050521.jpg 3x&#34;},&#34;links&#34;:[{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Angebote Doktoratsstelle&#34;,&#34;href&#34;:&#34;https://ethz.ch/de/doktorat/angebot&#34;},{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Doktoratsprogramme&#34;,&#34;href&#34;:&#34;https://ethz.ch/de/doktorat/programme&#34;},{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Anmeldung zum Doktorat&#34;,&#34;href&#34;:&#34;https://ethz.ch/de/doktorat/programme&#34;}],&#34;lead&#34;:&#34;&lt;p&gt;Die ETH bietet überwiegend individuelle Doktorate an. Alle Professor:innen rekrutieren ihre Doktorand:innen persönlich.&lt;\/p&gt;&#34;},{&#34;heading&#34;:&#34;Postdocs an der ETH Zürich&#34;,&#34;imageProps&#34;:{&#34;src&#34;:&#34;/de/_jcr_content/par/multitopicteaser_907/2/image.imageformat.800x450.dpr1.532101445.jpg&#34;,&#34;srcset&#34;:&#34;/de/_jcr_content/par/multitopicteaser_907/2/image.imageformat.800x450.dpr1.532101445.jpg 1x, /de/_jcr_content/par/multitopicteaser_907/2/image.imageformat.800x450.dpr2.532101445.jpg 2x, /de/_jcr_content/par/multitopicteaser_907/2/image.imageformat.800x450.dpr3.532101445.jpg 3x&#34;},&#34;links&#34;:[{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Finanzierungsmöglichkeiten (Englisch)&#34;,&#34;href&#34;:&#34;https://grantsoffice.ethz.ch/funding-opportunities/for-postdocs.html&#34;},{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Nachwuchsförderung&#34;,&#34;href&#34;:&#34;/de/forschung/young-researchers.html&#34;}],&#34;lead&#34;:&#34;&lt;p&gt;Starten Sie Ihre akademische Karriere an einer der führenden Hochschulen der Welt. Erkunden Sie Ihre Möglichkeiten.&lt;br /&gt;\r\n&lt;\/p&gt;&#34;},{&#34;heading&#34;:&#34;Ausgeschriebene Professuren&#34;,&#34;imageProps&#34;:{&#34;src&#34;:&#34;/de/_jcr_content/par/multitopicteaser_907/3/image.imageformat.800x450.dpr1.987132961.jpg&#34;,&#34;srcset&#34;:&#34;/de/_jcr_content/par/multitopicteaser_907/3/image.imageformat.800x450.dpr1.987132961.jpg 1x, /de/_jcr_content/par/multitopicteaser_907/3/image.imageformat.800x450.dpr2.987132961.jpg 2x, /de/_jcr_content/par/multitopicteaser_907/3/image.imageformat.800x450.dpr3.987132961.jpg 3x&#34;},&#34;links&#34;:[{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Alle offenen Stellen&#34;,&#34;href&#34;:&#34;/de/die-eth-zuerich/arbeiten-lehren-forschen/faculty/faculty-affairs/ausgeschriebene-professuren.html&#34;},{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Portal für Professor:innen&#34;,&#34;href&#34;:&#34;/de/die-eth-zuerich/arbeiten-lehren-forschen/faculty.html&#34;}],&#34;lead&#34;:&#34;&lt;p&gt;An der&amp;nbsp;ETH Zürich&amp;nbsp;forschen und lehren mehr als 500 Professor:innen. Werden Sie Teil davon.&lt;br&gt;\r\n&lt;\/p&gt;&#34;}]" data-cards-width="small" data-theme="colored"></div>
+            
+
+        </div>
+    
+
+    
+
+</div>
+</section>
+        <section class="homepage-wide-section basecomponent">
+        <div class="multitopicteaser basecomponent">
+    
+
+        <div class="multitopicteaser__wrapper
+                    multitopicteaser__wrapper--full-width
+                     is-themed-light eth-petrol">
+
+            
+
+            
+                <div id="cmp_par_multitopicteaser_907_282583525_977425650" data-init="multiTopicTeaserGroupApp" data-heading="Wissenstransfer in die Gesellschaft" data-heading-level="2" data-lead="<p></p>" data-cards="[{&#34;heading&#34;:&#34;AI Governance Forum&#34;,&#34;imageProps&#34;:{&#34;src&#34;:&#34;/de/_jcr_content/par/multitopicteaser_907_282583525/1/image.imageformat.800x450.dpr1.37546972.jpg&#34;,&#34;srcset&#34;:&#34;/de/_jcr_content/par/multitopicteaser_907_282583525/1/image.imageformat.800x450.dpr1.37546972.jpg 1x, /de/_jcr_content/par/multitopicteaser_907_282583525/1/image.imageformat.800x450.dpr2.37546972.jpg 2x, /de/_jcr_content/par/multitopicteaser_907_282583525/1/image.imageformat.800x450.dpr3.37546972.jpg 3x&#34;},&#34;links&#34;:[{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Mehr zum AI Governance Forum&#34;,&#34;href&#34;:&#34;https://einstein-school.ethz.ch/news/news/2026/09/ai-governance-forum-einstein-school-und-europarat-diskutieren-die-ki-konvention.html&#34;}],&#34;lead&#34;:&#34;&lt;p&gt;  Die&amp;nbsp;Albert Einstein School of Public Policy und der Europarat bringen KI-Governance an die ETH.&lt;\/p&gt;&#34;},{&#34;heading&#34;:&#34;ETH Zürich &#64; Open-i 2026 - am 26. November 2026&#34;,&#34;imageProps&#34;:{&#34;src&#34;:&#34;/de/_jcr_content/par/multitopicteaser_907_282583525/2/image.imageformat.800x450.dpr1.215202879.jpg&#34;,&#34;srcset&#34;:&#34;/de/_jcr_content/par/multitopicteaser_907_282583525/2/image.imageformat.800x450.dpr1.215202879.jpg 1x, /de/_jcr_content/par/multitopicteaser_907_282583525/2/image.imageformat.800x450.dpr2.215202879.jpg 2x, /de/_jcr_content/par/multitopicteaser_907_282583525/2/image.imageformat.800x450.dpr3.215202879.jpg 3x&#34;},&#34;links&#34;:[{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Tickets mit 50% ETH-Rabatt&#34;,&#34;href&#34;:&#34;/de/news-und-veranstaltungen/veranstaltungen/eth-open-i.html&#34;}],&#34;lead&#34;:&#34;&lt;p&gt;Treffen Sie unsere Forschenden und entdecken Sie die Innovationen von morgen.&lt;\/p&gt;&#34;},{&#34;heading&#34;:&#34;Bewerbungen für ESA BIC CH offen&#34;,&#34;imageProps&#34;:{&#34;src&#34;:&#34;/de/_jcr_content/par/multitopicteaser_907_282583525/3/image.imageformat.800x450.dpr1.1384332782.jpg&#34;,&#34;srcset&#34;:&#34;/de/_jcr_content/par/multitopicteaser_907_282583525/3/image.imageformat.800x450.dpr1.1384332782.jpg 1x, /de/_jcr_content/par/multitopicteaser_907_282583525/3/image.imageformat.800x450.dpr2.1384332782.jpg 2x, /de/_jcr_content/par/multitopicteaser_907_282583525/3/image.imageformat.800x450.dpr3.1384332782.jpg 3x&#34;},&#34;links&#34;:[{&#34;icon&#34;:&#34;call_made&#34;,&#34;text&#34;:&#34;Mehr Infos zur ESA BIC CH Bewerbung&#34;,&#34;href&#34;:&#34;https://esabic.ch/application/&#34;}],&#34;lead&#34;:&#34;&lt;p&gt;Bis zum 31. Oktober für das Start-up Förderprogramm mit Weltraumbezug bewerben.&amp;nbsp;&lt;\/p&gt;&#34;}]" data-cards-width="small" data-theme="colored"></div>
+            
+
+        </div>
+    
+
+    
+
+</div>
+</section>
+        <section class="homepage-wide-section basecomponent">
+        <div class="singletopicteaser basecomponent"><div class="singletopicteaser__wrapper  is-themed-light eth-petrol">
+      <div
+        id="cmp_par_singletopicteaser_co_989235185_977425650"
+        data-init="singleTopicTeaserApp"
+        data-heading="An der ETH arbeiten"
+        data-heading-level="2"
+        data-lead="<p>Als Ort, an dem Zukunft entsteht, bietet die ETH Zürich ihren über 13'000 Mitarbeitenden und 200 Berufslernenden ein spannendes und visionäres Arbeitsumfeld, kulturelle Vielfalt sowie sehr gute Arbeitsbedingungen.</p>"
+        data-image-props="{&quot;src&quot;:&quot;/de/_jcr_content/par/singletopicteaser_co_989235185/image.imageformat.1564x880.1575085418.jpg&quot;,&quot;alt&quot;:&quot;&quot;}"
+        data-links="[{&quot;icon&quot;:&quot;&quot;,&quot;text&quot;:&quot;Arbeiten, Lehren und Forschen&quot;,&quot;href&quot;:&quot;/de/die-eth-zuerich/arbeiten-lehren-forschen.html&quot;},{&quot;icon&quot;:&quot;&quot;,&quot;text&quot;:&quot;Offene Stellen&quot;,&quot;href&quot;:&quot;https://jobs.ethz.ch/&quot;},{&quot;icon&quot;:&quot;&quot;,&quot;text&quot;:&quot;Deine Berufslehre&quot;,&quot;href&quot;:&quot;/de/die-eth-zuerich/arbeiten-lehren-forschen/berufsbildung.html&quot;}]"
+      ></div>
+    </div>
+  </div>
+</section>
+        <section class="homepage-wide-section basecomponent">
+        <div class="multitopicteaser basecomponent">
+    
+
+        <div class="multitopicteaser__wrapper
+                    multitopicteaser__wrapper--text-width
+                    ">
+
+            
+
+            
+                <div id="cmp_par_multitopicteaser_cop_103552340_977425650" data-init="multiTopicTeaserGroupApp" data-heading="Die ETH erleben" data-heading-level="2" data-lead="<p>Im Herzen Europas und weltweit vernetzt entwickelt die ETH Zürich Lösungen für die globalen Herausforderungen von heute und morgen. Sie zählt über 20&#39;000 Studierende aus über 120 Ländern.</p>" data-cards="[{&#34;heading&#34;:&#34;Auf dem Campus&#34;,&#34;imageProps&#34;:{&#34;src&#34;:&#34;/de/_jcr_content/par/multitopicteaser_cop_103552340/1/image.imageformat.800x450.dpr1.798491441.jpg&#34;,&#34;srcset&#34;:&#34;/de/_jcr_content/par/multitopicteaser_cop_103552340/1/image.imageformat.800x450.dpr1.798491441.jpg 1x, /de/_jcr_content/par/multitopicteaser_cop_103552340/1/image.imageformat.800x450.dpr2.798491441.jpg 2x, /de/_jcr_content/par/multitopicteaser_cop_103552340/1/image.imageformat.800x450.dpr3.798491441.jpg 3x&#34;},&#34;links&#34;:[{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Gastronomie-Angebote&#34;,&#34;href&#34;:&#34;/de/campus/erleben/gastronomie-und-einkaufen/gastronomie.html&#34;},{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Bibliothek&#34;,&#34;href&#34;:&#34;https://library.ethz.ch/&#34;},{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Sportangebote&#34;,&#34;href&#34;:&#34;/de/campus/erleben/eth-entdecken/sport-erholung-asvz.html&#34;}],&#34;lead&#34;:&#34;&lt;p&gt;&lt;\/p&gt;&#34;},{&#34;heading&#34;:&#34;Besuchen Sie uns&#34;,&#34;imageProps&#34;:{&#34;src&#34;:&#34;/de/_jcr_content/par/multitopicteaser_cop_103552340/2/image.imageformat.800x450.dpr1.2087027537.jpg&#34;,&#34;srcset&#34;:&#34;/de/_jcr_content/par/multitopicteaser_cop_103552340/2/image.imageformat.800x450.dpr1.2087027537.jpg 1x, /de/_jcr_content/par/multitopicteaser_cop_103552340/2/image.imageformat.800x450.dpr2.2087027537.jpg 2x, /de/_jcr_content/par/multitopicteaser_cop_103552340/2/image.imageformat.800x450.dpr3.2087027537.jpg 3x&#34;},&#34;links&#34;:[{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Campus erreichen&#34;,&#34;href&#34;:&#34;/de/campus/erreichen.html&#34;},{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Führungen und Touren auf dem Campus&#34;,&#34;href&#34;:&#34;/de/campus/erleben/eth-entdecken.html&#34;},{&#34;icon&#34;:&#34;&#34;,&#34;text&#34;:&#34;Personensuche&#34;,&#34;href&#34;:&#34;https://www.bi.id.ethz.ch/personensuche/personenFormular.view?lang&#61;de&#34;}],&#34;lead&#34;:&#34;&lt;p&gt;&lt;\/p&gt;&#34;}]" data-cards-width="default" data-theme="neutral"></div>
+            
+
+        </div>
+    
+
+    
+
+</div>
+</section>
+        <section class="homepage-wide-section basecomponent">
+        <div class="newsfeedhomepage basecomponent">
+  
+    
+      
+        
+    
+    <div class="newsfeedhomepage__wrapper newsfeedhomepage__wrapper--highlight newsfeedhomepage__wrapper--full-width   is-last is-themed eth-petrol">
+      <div class="newsfeedhomepage__wrapper-inner">
+        <div class="newsfeedhomepage__wrapper-inner-content">
+          <div class="newsfeedhomepage-header">
+            <h2>Weitere Meldungen aus dem ETH-Universum</h2>
+          </div>
+          <div>
+            <div class="newsList">
+              
+                
+                
+                <div data-href="https://bsse.ethz.ch/news-and-events/d-bsse-news/2026/10/advacing-drug-discovery-ai-guided-workflow-boosts-chemical-reaction-prediction-with-minimal-data.html" class="newsListBox linkedarea">
+                  <div class="info">
+                    <h3>
+                      
+                        <a href="https://bsse.ethz.ch/news-and-events/d-bsse-news/2026/10/advacing-drug-discovery-ai-guided-workflow-boosts-chemical-reaction-prediction-with-minimal-data.html">KI vereinfacht die Entwicklung neuer Medikamente</a>
+                      
+                      
+                    </h3>
+                    
+                      <div class="TagCloud TagCloud--raw TagCloud--newslist">
+                        <div class="TagCloud__list"><p class="TagCloud__item"><a class="eth-link" href="/de/news-und-veranstaltungen/eth-news/teaser.html?TAG&#61;bmV3czpmb3JtYXRlL2NoZW1pZQ&amp;path&#61;L2NvbnRlbnQvbWFpbi9kZS9qY3I6Y29udGVudC9wYXIvbmV3c2ZlZWRob21lcGFnZV9jb3A">Chemie</a></p></div>
+                      </div>
+                    
+                    <div class="contentInfo">
+                      <p>Um neue pharmazeutische Wirkstoffe herzustellen, müssen bestehende Moleküle verändert werden. Ein neues KI-Modell hilft Forschenden nun vorauszusagen, ob und an welcher Stelle sich ein Molekül chemisch verändern lässt. Die neue Methode, die Forschende der ETH Zürich gemeinsam mit der Industrie entwickelt haben, hilft am Computer aussichtsreiche Stellen auszuwählen, Laborexperimente einzusparen und so die Suche nach neuen Medikamenten zu beschleunigen. (auf Englisch)</p>
+                      <div class="dateInfo">
+                        <span class="dateInfo">
+                          <time datetime="2026-10-13T00:00:00Z">13.10.2026</time>
+                          
+                        </span>
+                        
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                
+                
+                <div data-href="/staffnet/de/news-und-veranstaltungen/intern-aktuell/archiv/2026/10/rainer-wallny-zum-fellow-der-american-physical-society-gewaehlt.html" class="newsListBox linkedarea">
+                  <div class="info">
+                    <h3>
+                      
+                        <a href="/staffnet/de/news-und-veranstaltungen/intern-aktuell/archiv/2026/10/rainer-wallny-zum-fellow-der-american-physical-society-gewaehlt.html">Rainer Wallny zum Fellow der American Physical Society gewählt</a>
+                      
+                      
+                    </h3>
+                    
+                      <div class="TagCloud TagCloud--raw TagCloud--newslist">
+                        <ul class="TagCloud__list"><li class="TagCloud__item"><a class="eth-link" href="/staffnet/de/news-und-veranstaltungen/intern-aktuell/archiv.html?TAG&#61;bmV3czpmb3JtYXRlL3BoeXNpay90ZWlsY2hlbnBoeXNpaw&amp;path&#61;L2NvbnRlbnQvbWFpbi9kZS9qY3I6Y29udGVudC9wYXIvbmV3c2ZlZWRob21lcGFnZV9jb3A">Teilchenphysik</a></li><li class="TagCloud__item"><a class="eth-link" href="/staffnet/de/news-und-veranstaltungen/intern-aktuell/archiv.html?TAG&#61;bmV3czpmb3JtYXRlL3BoeXNpaw&amp;path&#61;L2NvbnRlbnQvbWFpbi9kZS9qY3I6Y29udGVudC9wYXIvbmV3c2ZlZWRob21lcGFnZV9jb3A">Physik</a></li><li class="TagCloud__item"><a class="eth-link" href="/staffnet/de/news-und-veranstaltungen/intern-aktuell/archiv.html?TAG&#61;bmV3czpydWJyaWtlbi9pbnRlcm4tYWt0dWVsbC9laHJ1bmdlbi11bmQtcHJlaXNl&amp;path&#61;L2NvbnRlbnQvbWFpbi9kZS9qY3I6Y29udGVudC9wYXIvbmV3c2ZlZWRob21lcGFnZV9jb3A">Ehrungen und Preise</a></li></ul>
+                      </div>
+                    
+                    <div class="contentInfo">
+                      <p>Zu den neu ernannten Fellows der American Physical Society gehört Rainer Wallny. Seine Gruppe am Departement Physik befasst sich mit Datenanalyse und Hardwareentwicklung in der Elementarteilchenphysik.</p>
+                      <div class="dateInfo">
+                        <span class="dateInfo">
+                          <time datetime="2026-10-09T00:00:00Z">09.10.2026</time>
+                          
+                        </span>
+                        
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                
+                
+                <div data-href="https://inf.ethz.ch/de/news-und-veranstaltungen/spotlights/infk-news-channel/2026/10/martin-vechev-testet-neues-wasserzeichenverfahren-von-openai.html" class="newsListBox last-child linkedarea">
+                  <div class="info">
+                    <h3>
+                      
+                        <a href="https://inf.ethz.ch/de/news-und-veranstaltungen/spotlights/infk-news-channel/2026/10/martin-vechev-testet-neues-wasserzeichenverfahren-von-openai.html">Martin Vechev testet und beurteilt neues KI-Wasserzeichenverfahren von OpenAI</a>
+                      
+                      
+                    </h3>
+                    
+                      <div class="TagCloud TagCloud--raw TagCloud--newslist">
+                        <div class="TagCloud__list"><p class="TagCloud__item"><a class="eth-link" href="/de/news-und-veranstaltungen/eth-news/teaser.html?TAG&#61;bmV3czpmb3JtYXRlL2luZm9ybWF0aW9ucy11bmQtY29tcHV0ZXJ0ZWNobm9sb2dpZS9hcnRpZmljaWFsLWludGVsbGlnZW5jZQ&amp;path&#61;L2NvbnRlbnQvbWFpbi9kZS9qY3I6Y29udGVudC9wYXIvbmV3c2ZlZWRob21lcGFnZV9jb3A">Künstliche Intelligenz</a></p></div>
+                      </div>
+                    
+                    <div class="contentInfo">
+                      <p>ETH Zürich Professor Martin Vechev wurde von OpenAI in eine Gruppe von Forschenden berufen, die das neue Wasserzeichenverfahren des KI-Unternehmens testen und beurteilen sollen. Diese Technologie wurde im Zusammenhang mit den Transparenzanforderungen des EU-Gesetzes über künstliche Intelligenz entwickelt.</p>
+                      <div class="dateInfo">
+                        <span class="dateInfo">
+                          <time datetime="2026-10-08T00:00:00Z">08.10.2026</time>
+                          
+                        </span>
+                        
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+            </div>
+            
+              <div class="loadMoreNewsContainer">
+                <a href="/de/news-und-veranstaltungen/eth-news/meldungen.html" class="button button--secondary">
+                  <span>Weitere News</span>
+                </a>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+</div>
+</section>
+        </div></div>
+</section>
+            </div>
+        </section>
+
+        <!-- footer -->
+    	<footer id="footer" class="site-footer">
+    <div class="footer__container">
+        <h2 class="visually-hidden">
+            Footer</h2>
+        <nav aria-labelledby="footer-highlighted-heading" class="footer__highlighted">
+        <h3 id="footer-highlighted-heading" class="visually-hidden">
+            Empfohlene Links</h3>
+        <ul>
+            <li class="">
+                    <a href="/de/news-und-veranstaltungen/medien.html" title="">Medieninformationen</a>
+                </li>
+            </ul>
+    </nav>
+<div class="footer__row-main">
+            <div class="footer__row-main__inner footer__row">
+                <div class="footer__search-and-social">
+                    <div class="footer__search no_translate" aria-labelledby="footer-search-heading" role="search">
+                        <h3 id="footer-search-heading" class="footer__section-title">
+                            Suche</h3>
+                            <div class="site-search">
+                                <form action="/de/utils/search.html" method="GET" accept-charset="UTF-8">
+                                    <label for="searchinput" class="hidden">Suchbegriff oder Person</label>
+                                    <input id="searchinput" class="searchinput" type="text" placeholder="Suchbegriff oder Person" data-placeholder="Suchbegriff oder Person" name="q" aria-required="false" />
+                                    <button type="submit" class="searchsubmit" aria-label="Suche"><span aria-hidden="true" class="icon--search"></span></button>
+                                    <input type="hidden" name="language" value="de" />
+                                </form>
+                            </div>
+                        </div>
+                    <nav aria-labelledby="footer-social-heading" class="footer__social">
+                            <h3 id="footer-social-heading" class="footer__section-title">
+                                Folgen Sie uns</h3>
+                            <ul class="social-icons">
+			                    <li>
+		                                <a href="https://ethz.ch/de/utils/rss.html" class="social-icon" title="Abonnieren Sie den Newsfeed des ETH Zürich - Homepage"><img src="/etc/designs/ethz/img/icons/svg/rss-white.svg" alt="Abonnieren Sie den Newsfeed des ETH Zürich - Homepage"></a>
+		                                    </li>
+			                    <li>
+		                                <a href="https://www.linkedin.com/school/eth-zurich/" class="social-icon" title="ETH Zürich - Homepage auf LinkedIn"><img src="/etc/designs/ethz/img/icons/svg/linkedin-white.svg" alt="ETH Zürich - Homepage auf LinkedIn"></a>
+		                                    </li>
+			                    <li>
+		                                <a href="https://www.instagram.com/ethzurich/" class="social-icon" title="ETH Zürich - Homepage auf Instagram"><img src="/etc/designs/ethz/img/icons/svg/instagram-white.svg" alt="ETH Zürich - Homepage auf Instagram"></a>
+		                                    </li>
+			                    <li>
+		                                <a href="https://www.facebook.com/eth/" class="social-icon" title="ETH Zürich - Homepage auf Facebook"><img src="/etc/designs/ethz/img/icons/svg/facebook-white.svg" alt="ETH Zürich - Homepage auf Facebook"></a>
+		                                    </li>
+			                    <li>
+		                                <a href="https://www.youtube.com/user/ethzurich" class="social-icon" title="ETH Zürich - Homepage auf YouTube"><img src="/etc/designs/ethz/img/icons/svg/youtube-white.svg" alt="ETH Zürich - Homepage auf YouTube"></a>
+		                                    </li>
+			                    <li>
+		                                <a href="https://www.tiktok.com/@ethzurich" class="social-icon" title="ETH Zürich - Homepage auf TikTok"><img src="/etc/designs/ethz/img/icons/svg/tiktok-white.svg" alt="ETH Zürich - Homepage auf TikTok"></a>
+		                                    </li>
+			                    </ul>
+                        </nav>
+                    </div>
+
+                <nav aria-labelledby="footer-services-heading" class="footer__services">
+	                  <h3 id="footer-services-heading" class="footer__section-title">
+	                      Services</h3>
+	                  <ul>
+        <li>
+        <a href="/studierende/de.html" title="">Studierendenportal</a>
+    </li>
+<li>
+        <a href="https://www.alumni.ethz.ch/" title="">Alumni-Vereinigung</a>
+    </li>
+<li>
+            <a href="/staffnet/de.html" title="">
+                Staffnet</a>
+        </li>
+        <li>
+                <a class="contact" href="/de/utils/kontakt.html" title="Öffnet eine Kontaktseite">
+                    Kontakt</a>
+            </li>
+        <li>
+                <a class="login footer__login-link" href="/login/de.html?resource=%2Fcontent%2Fmain%2Fde.html" title="Login mit ETH Userkonto">
+        <span aria-hidden="true" class="icon--lock icon--is-before"></span>
+        <span class="footer__login-text">Login</span>
+    </a>
+</li>
+        </ul>
+</nav>
+                </div>
+        </div>
+        
+
+
+    
+
+    <nav aria-labelledby="footer-departments-heading" class="footer__departments footer-accordion-mobile js-footer-accordion-mobile">
+        <div class="footer__section-title footer-accordion-mobile__trigger js-footer-accordion-mobile__trigger">
+            <h3 id="footer-departments-heading">
+                Departemente
+            </h3>
+        </div>
+        <div class="footer__row footer-accordion-mobile__content">
+            <ul class="items">
+                
+                    
+                        
+                        
+                        <li class="item">
+                            <a href="https://arch.ethz.ch/">
+                                <span class="item__title"> D-ARCH</span>
+                                <span class="item__subtitle">Architektur </span>
+                            </a>
+                        </li>
+                   
+                        
+                        
+                        <li class="item">
+                            <a href="https://baug.ethz.ch/">
+                                <span class="item__title"> D-BAUG</span>
+                                <span class="item__subtitle">Bau, Umwelt und Geomatik </span>
+                            </a>
+                        </li>
+                   
+                        
+                        
+                        <li class="item">
+                            <a href="https://biol.ethz.ch/">
+                                <span class="item__title"> D-BIOL</span>
+                                <span class="item__subtitle">Biologie </span>
+                            </a>
+                        </li>
+                   
+                        
+                        
+                        <li class="item">
+                            <a href="https://bsse.ethz.ch/">
+                                <span class="item__title"> D-BSSE</span>
+                                <span class="item__subtitle">Biosysteme </span>
+                            </a>
+                        </li>
+                   
+                        
+                        
+                        <li class="item">
+                            <a href="https://chab.ethz.ch/">
+                                <span class="item__title"> D-CHAB</span>
+                                <span class="item__subtitle">Chemie und Angewandte Biowissenschaften </span>
+                            </a>
+                        </li>
+                   
+                        
+                        
+                        <li class="item">
+                            <a href="https://eaps.ethz.ch/">
+                                <span class="item__title"> D-EAPS</span>
+                                <span class="item__subtitle">Erd-​ und Planetenwissenschaften </span>
+                            </a>
+                        </li>
+                   
+                        
+                        
+                        <li class="item">
+                            <a href="https://gess.ethz.ch/">
+                                <span class="item__title"> D-GESS</span>
+                                <span class="item__subtitle">Geistes-, Sozial- und Staatswissenschaften </span>
+                            </a>
+                        </li>
+                   
+                        
+                        
+                        <li class="item">
+                            <a href="https://hest.ethz.ch/">
+                                <span class="item__title"> D-HEST</span>
+                                <span class="item__subtitle">Gesundheitswissenschaften und Technologie </span>
+                            </a>
+                        </li>
+                   
+                        
+                        
+                        <li class="item">
+                            <a href="https://inf.ethz.ch/de/">
+                                <span class="item__title"> D-INFK</span>
+                                <span class="item__subtitle">Informatik </span>
+                            </a>
+                        </li>
+                   
+                        
+                        
+                        <li class="item">
+                            <a href="https://ee.ethz.ch/de/">
+                                <span class="item__title"> D-ITET</span>
+                                <span class="item__subtitle">Informationstechnologie und Elektrotechnik </span>
+                            </a>
+                        </li>
+                   
+                        
+                        
+                        <li class="item">
+                            <a href="https://math.ethz.ch/">
+                                <span class="item__title"> D-MATH</span>
+                                <span class="item__subtitle">Mathematik </span>
+                            </a>
+                        </li>
+                   
+                        
+                        
+                        <li class="item">
+                            <a href="https://mat.ethz.ch/">
+                                <span class="item__title"> D-MATL</span>
+                                <span class="item__subtitle">Materialwissenschaft </span>
+                            </a>
+                        </li>
+                   
+                        
+                        
+                        <li class="item">
+                            <a href="https://mavt.ethz.ch/de/">
+                                <span class="item__title"> D-MAVT</span>
+                                <span class="item__subtitle">Maschinenbau und Verfahrenstechnik </span>
+                            </a>
+                        </li>
+                   
+                        
+                        
+                        <li class="item">
+                            <a href="https://mtec.ethz.ch/">
+                                <span class="item__title"> D-MTEC</span>
+                                <span class="item__subtitle">Management, Technologie und Ökonomie </span>
+                            </a>
+                        </li>
+                   
+                        
+                        
+                        <li class="item">
+                            <a href="https://www.phys.ethz.ch/de/">
+                                <span class="item__title"> D-PHYS</span>
+                                <span class="item__subtitle">Physik </span>
+                            </a>
+                        </li>
+                   
+                        
+                        
+                        <li class="item">
+                            <a href="https://usys.ethz.ch/">
+                                <span class="item__title"> D-USYS</span>
+                                <span class="item__subtitle">Umweltsystemwissenschaften </span>
+                            </a>
+                        </li>
+                   
+                
+            </ul>
+        </div>
+    </nav>
+    <script>
+        jQuery(document).ready(function() {
+            var toggleAccordion = function(e) {
+                e.preventDefault();
+                $(e.target)
+                    .closest('.js-footer-accordion-mobile')
+                    .toggleClass('is-open-mobile');
+            };
+            $('.js-footer-accordion-mobile__trigger').on('click', toggleAccordion);
+        });
+    </script>
+<nav aria-labelledby="footer-resources-heading" class="footer__row footer__resources">
+                <h3 id="footer-resources-heading" class="visually-hidden">
+                  Inhaltsverzeichnis und Rechtliches</h3>
+                <ul>
+                    <li><a href="/de/footer/inhaltsverzeichnis.html" title="Inhaltsverzeichnis"> Inhaltsverzeichnis</a></li>
+                    <li><a href="/de/footer/impressum.html" title="Impressum"> Impressum</a></li>
+                    <li><a href="/de/footer/barrierefreiheitserkl%C3%A4rung.html" title="Erkl&auml;rung zur Barrierefreiheit"> Erkl&auml;rung zur Barrierefreiheit</a></li>
+                    <li><a href="/de/footer/disclaimer-copyright.html" title="Disclaimer &amp; Copyright"> Disclaimer &amp; Copyright</a></li>
+                    <li><a href="/de/footer/datenschutz.html" title="Datenschutz"> Datenschutz</a></li>
+                    </ul>
+            </nav>
+        <div class="footer__copyright">
+            &copy; 2026 &nbsp;<a href="https://ethz.ch/">Eidgen&ouml;ssische
+                    Technische Hochschule Z&uuml;rich</a>
+        </div>
+    </div>
+</footer>
+</div>
+
+    <!-- lightbox by photoswipe -->
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- access statistics -->
+    <!-- Access statistics -->
+        
+
+
+
+<div id="info-banner">JavaScript wurde auf Ihrem Browser deaktiviert</div></body>
+</html>

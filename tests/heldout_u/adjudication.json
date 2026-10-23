@@ -1,0 +1,12 @@
+{
+ "_comment": "Round 42: adjudication of set-U labels questioned in the error analysis after the first and only scoring. labels.json and the frozen U results are NOT changed; decisions.py --adjudicate applies these overrides in memory and reports them as a separate result.",
+ "decided": "2026-10-21",
+ "cases": {
+  "u-qa-2": {
+   "verdict": "label wrong",
+   "fields": {"nationality": {"mode": "include", "countries": ["BA", "HR", "ME", "MK", "RS", "SI"]}},
+   "quote": "You can apply for the program if you are a citizen of Bosnia-Herzegovina, Croatia, Montenegro, North Macedonia, Serbia or Slovenia",
+   "why": "the labeller read only the region sentence at the top; the prerequisites lower on the page list the six countries"
+  }
+ }
+}

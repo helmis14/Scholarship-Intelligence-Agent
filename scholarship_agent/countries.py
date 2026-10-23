@@ -103,6 +103,7 @@ for _c, _names in _LOCAL.items():
             ALIASES.setdefault(_n, _c)
 # names official lists write with accents or in "name (qualifier)" form
 ALIASES.update({"áfrica do sul": "ZA", "viêt nam": "VN"})
+ALIASES.update({"bosnia-herzegovina": "BA", "bosnia & herzegovina": "BA", "bosnia herzegovina": "BA", "bosnia-hercegovina": "BA"})   # round 42
 ALIASES.update({"são tomé and príncipe": "ST", "sao tomé and príncipe": "ST", "são tomé e príncipe": "ST",
                 "congo (democratic republic)": "CD", "congo (democratic republic of the)": "CD", "dr congo": "CD",
                 "d.r. congo": "CD", "drc": "CD", "democratic republic of congo": "CD", "rd congo": "CD",
