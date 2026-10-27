@@ -31,7 +31,7 @@ This agent treats every opportunity as a claim to be checked:
  Mundus, EURAXESS)
 ```
 
-- **Discovery:** a registry of 111 official sources, adapters for DAAD, Erasmus Mundus and EURAXESS, published sitemaps, and an optional self-hosted SearXNG search. The search runs a country-by-country strategy across 231 countries and territories, including domestic-only and local-language queries, with a vocabulary for 42 languages.
+- **Discovery:** a registry of 650 official sources (124 countries with a destination-specific one), adapters for DAAD, Campus France (CampusBourses), Erasmus Mundus and EURAXESS, published sitemaps, and an optional self-hosted SearXNG search. The search runs a country-by-country strategy across 231 countries and territories, including domestic-only and local-language queries, with a vocabulary for 42 languages.
 - **Extraction:** a structured `Opportunity` record. Each field carries an `Evidence` record: value, source URL, verbatim sentence, retrieval time, source authority and status.
 - **Verification:** only an official page (programme, university, funder, government or official feed) can confirm a value. Aggregators and search results are leads only. When sources disagree, all values are kept as conflicts.
 - **Applicant side:**
@@ -123,7 +123,7 @@ python3 -m scholarship_agent coverage
 | Area | CLI (`python3 -m scholarship_agent ...`) | Claude Code |
 |---|---|---|
 | Profile and privacy | `setup`, `profile`, `export-data`, `delete-data --yes` | `/scholar-setup` |
-| Discovery | `discover`, `scrape <url>`, `adapter daad\|erasmus_mundus\|euraxess`, `strategy-plan`, `strategy-run`, `coverage`, `sources --check` | `/discover`, `/scholar-scrape`, `/sources` |
+| Discovery | `discover`, `scrape <url>`, `adapter daad\|campusfrance\|erasmus_mundus\|euraxess [--details]`, `strategy-plan`, `strategy-run`, `coverage`, `sources --check`, `check` (second reading of stored records) | `/discover`, `/scholar-scrape`, `/sources` |
 | Verification | `verify <id>`, `refresh`, `catalog-audit`, `show <id>`, `search` | `/verify` |
 | Fit | `match <id>`, `funding <id>`, `rank` | `/match`, `/scholar-rank` |
 | Planning | `plan <id>`, `documents <id>`, `deadlines`, `reminders` | `/plan`, `/documents`, `/deadlines` |

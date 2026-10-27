@@ -745,3 +745,124 @@ The check removes 11 wrong claims and holds 29 right answers for review: a lower
 is the setting for a deployment that puts precision first. Asking the extra field did not change the other readings
 (row 3 against row 2).
 
+## Round 47: English first, catalogue search and details, destination countries, study levels
+
+**Destination countries from the page's own words** (`destinations.py`). Until now `destination_countries` was the
+country a search had asked for. On 80 development pages labelled by one person (`tests/destinations_labels.json`,
+labels written before the extractor was run on a page; the extractor was built on the other 654 development pages):
+
+| Method | Exact | Pages with a wrong country | Precision | Recall |
+|---|---|---|---|---|
+| search hint (`search:XX` only) | 14 | 7 | 0.46 | 0.07 |
+| search hint passed down followed links (closer to live) | 16 | 25 | 0.32 | 0.14 |
+| text extractor, blind run | 27 | 1 | 0.94 | 0.19 |
+| text extractor after three fixes found on this sample | 27 | 0 | 1.00 | 0.19 |
+| text, else the hint | 27 | 5 | 0.79 | 0.22 |
+
+The hint is often the applicants' country or an unrelated search country, so a record now takes its destination from
+the page text only (the hint is kept as a `searched_for:` tag). Recall stays low: 36 of the 80 pages name only the host
+institution, and a fallback to the page's country domain was right 33 times and wrong 10 times (outbound programmes on
+national sites), so it was not added. The fixed numbers are not blind; confirm on a fresh labelled sample.
+
+**Study levels** (`tests/levels_eval.py`, all 720 labelled development pages; utility = exact − 2 × pages with an extra
+level − 0.5 × pages with only a missing level). A level is read only from sentences that offer it: degrees the applicant
+already holds or is finishing ("will have a bachelor's degree or equivalent", grades, copies of diplomas, final-year
+students), exclusions, teaching duties, personal stories and short menu headings are skipped, and other senses of the
+words are ignored ("exchange rate", "Academic Exchange Service", "master the", "Boston, MA", marketing "promotion").
+
+| | Exact | Pages with an extra level | Pages with only a missing level | Utility |
+|---|---|---|---|---|
+| before | 328 | 289 | 103 | −301.5 |
+| after | 429 | 164 | 127 | +37.5 |
+
+Utility rose on every one of the 14 sets; the four decisions of `tests/devpool.py` are unchanged (they do not read
+levels). The 21 rules were chosen on these same sets, so expect a smaller gain on new pages; no fresh set has level
+labels yet.
+
+**English first.** Titles and quotations from pages in other languages (56 of the 226 demo records) get an English
+translation stored next to the original (`translate.py`, `translate` command; Claude through the usual paid-call
+switches; each text paid once); the original stays the evidence and is one click away. Titles lose website names and
+catalogue numbers (`clean_title`, conservative: a title that would become generic keeps its last part). On the demo
+catalogue: 286 texts (55 titles, 231 quotations) of 56 records, 10 requests to Claude Haiku 5.5, USD 0.015; a spot check
+of titles and quotations found faithful translations, but the model kept website names in titles, so `clean_title` also
+runs on translated titles.
+
+**Search and details** (`site.py`). Search matches every word against the title, provider and quotations, in the original and in
+English, reads S1/S2/S3, master/doctorat and country names in English, Indonesian and other languages, filters by
+destination, level, funding, open applications, closing within N days and the applicant's citizenship (programmes that
+exclude it are hidden), and sorts by relevance or nearest deadline. The details add what the programme pays,
+requirements, documents, every applicant date and how to apply, each with its quotation. A requirement the sentence
+limits to some applicants ("except for MBA applicants, who require two years of work experience") and a document named
+only in advice ("contact the advising centre for tips on your essay") are marked "check", not stated as rules.
+
+## Round 48: more destinations, marked when inferred
+
+**More destinations, marked when inferred.** When the text names no destination, a university's or college's own page
+(ac.xx, edu.xx, US .edu, institution words in the host) takes the country of its web address, unless the page sends
+people elsewhere (study abroad, overseas universities, travel grants), is only for that country's own citizens, or
+relays another country's call (`destinations.host_destination`). On the 80 labelled pages: exact 27 → 56, wrong 0 → 1
+(a Spanish school on a .edu address), recall 0.19 → 0.52; on the other 654 development pages, read by the same person
+(not blind), it answers 192 with about 6 wrong. The demo catalogue goes from 50 to 135 of 226 records with a destination
+(42 countries). Inferred destinations carry a question mark and a note that the page does not name the country.
+
+## Round 49: a wider and more detailed catalogue, yearly deadlines, only programmes listed
+
+**More official sources.** 161 sources were added to the registry: universities, national agencies and ministries in 72
+countries, each checked on 2026-10-26 for robots permission and for a page that lists or describes scholarships.
+Countries with a destination-specific official source: 97 → 124. A new adapter reads Campus France's scholarship
+database (CampusBourses) through the JSON interface its own search page loads (`adapters/campusfrance.py`): 378
+programmes for study in France with the applicant countries ("Location"), levels, subjects and "Apply before" date, and
+from each programme's detail what it pays, the duration, documents, language and how to apply. Of the 376 new records:
+eligibility 257, funding 302 (amounts 143), documents 255, duration 131, an application link 266.
+
+**More detail from the structured sources.** DAAD detail pages are read section by section, without the contact
+blocks, portal notes and the selector of 200 countries of residence (`adapters/daad.programme_page`). Of 148 DAAD
+programmes: funding 19 → 135 (amounts 84), duration 10 → 66, documents 8 → 73, deadlines 14 → 60. Erasmus Mundus
+consortium sites are read for every programme rather than the first 15, with up to four of the site's own pages
+(scholarships and fees, admission and dates, the consortium); the study countries are those named beside the
+consortium's universities, associated partners left out. Of 209 joint masters: study countries 0 → 100, funding 5 → 150
+(amounts 73), dated deadlines 6 → 109, documents 4 → 142, eligibility 1 → 72 (831 requests, 97 failed or refused by
+robots). An adapter that runs again replaces its own records instead of merging the old reading as conflicts.
+
+**The live catalogue** (`data/catalog.db`, 2026-10-26, crawls still running): 409 → 1,610 records, 1,263 in search
+results, study countries named on listed records 76. Shares of listed records with: funding 78%, an applicant deadline
+59%, documents 58%, eligibility by nationality 51%, a destination 77% (at 626 records earlier the same day: funding 26%,
+deadline 22%, documents 19%, eligibility 39%, destination 41%).
+
+**Yearly deadlines.** "1 March and 1 September of each year", "Closing date ... 15 July of each year", "1 March for the
+summer semester and 15 September for the winter semester" are kept as expected deadlines with their day
+(`Deadline.recurs`), never as dated ones, and search results show the next such day as expected (`expected_deadline`). On the 735 development pages,
+11 gain such a date (one tax-form date was kept out by requiring an applicant word); the decisions do not change, by
+design: the deadline decision counts dated deadlines only.
+
+**Rules (development pool of 14 sets).** "The fellowship is worth 3,600 EUR per month", "grant: 1,500 EUR per month" and
+"base amount of up to 855 EUR per month" are read as stipends; a condition is not a negation ("if no guest room is
+available, an accommodation allowance of 500 EUR per month will be paid"); "Applicants from China, India and Vietnam: APS
+certificate ..." states a document, not who may apply. Utility 1469.5 → 1471.5 (+2 correct, no new wrong claim, no set
+falls). Tried and rejected: "applications can be submitted at any time" as rolling (a labelled page says not stated),
+a "Value" heading as a list of benefits (−5).
+
+**Search results list programmes only** (`site.listed`). Records stay in the catalogue for review but are not listed
+when the classifier could not place the page and its best guess is not an opportunity (news, events, research papers,
+glossaries, hubs that list many programmes, guidance), when the page is an aggregator or catalogue page, for past
+mobility projects, and for uncertain pages that state no term. Of 714 page-based records, 283 are left out. In a
+sample of 30 each, judged from the title and web address, 26 of the left-out records were not programmes (4 were: two
+JSPS fellowships, a Beihang scholarship and the P.E.O. peace scholarship) and 21 of the listed ones were.
+
+**Second reading of the live catalogue.** The new `check` command fetches each page-based record's page again and asks
+Claude Haiku 5.5 for its own reading (records from structured datasets are left out): 455 records read, 10 pages
+unreadable, $0.17. 88 records have a decision held for review (eligibility 29, funding 41, deadline 30, cycle 17).
+
+**Speed.** Reading a stored record 1.56 → 0.20 ms (field types are resolved once), and a new record is matched against
+the catalogue's titles rather than whole records, which made long crawls CPU-bound before.
+
+## Round 50: the crawl finished overnight, tighter listing, a sturdier check pass
+
+The registry crawl, the 161 new sources and a first pass of the country search ran overnight: 1,610 → 3,716 records,
+106 study countries named on listed records. The search stopped after 123 of 1,848 queries when the upstream engines
+throttled the local SearXNG; it is resumable (`strategy-run --resume`). Search results now also leave out pages named
+only by an office or topic ("Financial Aid | Example College", "Scholarships", "Login", "About Us") even when the
+classifier called them programme pages: 2,588 → 2,528 listed; "Scholarship - Vietnam High Achievers" names a
+programme and stays. The `check` pass stopped at the first request the model did not answer; a single failure is now
+skipped and three in a row end the run. `data/crawl/nightly.sh` (not committed) runs one pass of search, refresh,
+registry crawl and second reading (at most $0.20).

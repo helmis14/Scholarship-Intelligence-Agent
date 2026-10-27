@@ -107,6 +107,12 @@ CATALOG_MIGRATIONS = [
         note TEXT, at TEXT, status TEXT NOT NULL DEFAULT 'open', resolution TEXT);
     CREATE INDEX issue_reports_opp ON issue_reports (opportunity_id, status);
     """,
+    # round 47: English first. One row per translated text, keyed by a hash of prompt version, target, role and text;
+    # the original stays in the record as the evidence.
+    """
+    CREATE TABLE translations (key TEXT PRIMARY KEY, role TEXT, source TEXT NOT NULL, text TEXT NOT NULL,
+        target TEXT NOT NULL DEFAULT 'en', method TEXT, at TEXT);
+    """,
 ]
 
 PRIVATE_MIGRATIONS = [
@@ -150,6 +156,12 @@ PRIVATE_MIGRATIONS = [
         code_hash TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE, expires_at TEXT,
         used_at TEXT);
     """,
+    # round 48: accounts whose log-in is checked by Supabase Auth carry its user id; they have no local password
+    """
+    ALTER TABLE users ADD COLUMN auth_provider TEXT NOT NULL DEFAULT 'local';
+    ALTER TABLE users ADD COLUMN auth_subject TEXT;
+    CREATE UNIQUE INDEX users_subject ON users (auth_provider, auth_subject) WHERE auth_subject IS NOT NULL;
+    """,
 ]
 
 # round 46: private columns stored encrypted (crypto.FieldCipher); the table and column are the associated data.
@@ -177,7 +189,7 @@ def _connect(path: Path, private: bool) -> sqlite3.Connection:
         os.chmod(path.parent, 0o700)
         if not path.exists():
             path.touch(mode=0o600)
-    conn = sqlite3.connect(str(path))
+    conn = sqlite3.connect(str(path), timeout=30)   # several crawls may write at once; WAL lets them wait their turn
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON")
     conn.execute("PRAGMA journal_mode = WAL")
@@ -255,6 +267,22 @@ class Store:
             return c.execute("UPDATE issue_reports SET status = ?, resolution = ? WHERE id = ?",
                              (status, resolution[:500], report_id)).rowcount > 0
 
+    # ---------------------------------------------------------- translations (round 47)
+
+    def translations(self, keys: list[str]) -> dict[str, str]:
+        out, keys = {}, list(dict.fromkeys(keys))
+        for i in range(0, len(keys), 500):
+            chunk = keys[i:i + 500]
+            out.update({r["key"]: r["text"] for r in self.catalog.execute(
+                f"SELECT key, text FROM translations WHERE key IN ({','.join('?' * len(chunk))})", chunk)})
+        return out
+
+    def save_translations(self, rows: list[tuple[str, str, str, str]], method: str) -> None:
+        """rows: (key, role, original, English)."""
+        with self.catalog as c:
+            c.executemany("INSERT OR REPLACE INTO translations (key, role, source, text, method, at) VALUES (?,?,?,?,?,?)",
+                          [(k, r, src, t, method, now()) for k, r, src, t in rows])
+
     # ---------------------------------------------------------- opportunities
 
     def save_opportunity(self, opp: Opportunity, dedup_key: str, url_norm: str) -> None:
@@ -315,6 +343,11 @@ class Store:
             "SELECT data FROM opportunities WHERE dedup_key = ? OR (info_url_norm = ? AND ? != '') LIMIT 1",
             (dedup_key, url_norm, url_norm)).fetchone()
         return Opportunity.from_dict(json.loads(row["data"])) if row else None
+
+    def opportunity_names(self) -> list[tuple[str, str, str, str]]:
+        """(id, title, provider, discovered_via) of every record, in title order, without reading whole records."""
+        return [(r["id"], r["title"], r["provider_name"] or "", r["via"] or "") for r in self.catalog.execute(
+            "SELECT id, title, provider_name, json_extract(data, '$.discovered_via') via FROM opportunities ORDER BY title")]
 
     def list_opportunities(self) -> list[Opportunity]:
         return [Opportunity.from_dict(json.loads(r["data"]))

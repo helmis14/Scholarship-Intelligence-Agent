@@ -39,6 +39,14 @@ class AuthError(ValueError):
     """Wrong credentials, a locked account or an invalid token (HTTP 401/403)."""
 
 
+class PasswordMismatch(AuthError):
+    """A signed-in user confirmed with the wrong password (HTTP 403: the session itself is still valid)."""
+
+
+class ConfirmMismatch(PasswordMismatch):
+    """The e-mail address typed to confirm a deletion is not the account's (HTTP 403)."""
+
+
 def _now() -> datetime:
     return datetime.now(timezone.utc).replace(microsecond=0)
 
@@ -199,12 +207,68 @@ class Accounts:
     def change_password(self, user: dict, old: str, new: str) -> dict:
         if not verify_password(old or "", user["pw_hash"]):
             self._event(user["id"], "password_change_failed")
-            raise AuthError("the current password is wrong")
+            raise PasswordMismatch("the current password is wrong")
         check_password(new, user["email"])
         self.store.x("UPDATE users SET pw_hash = ? WHERE id = ?", (hash_password(new), user["id"]))
         self.store.x("DELETE FROM auth_tokens WHERE user_id = ?", (user["id"],))
         self._event(user["id"], "password_changed")
         return self._issue_token(user["id"])
+
+    # ------------------------------------------------------------------ Supabase log-in (round 48)
+
+    def from_supabase(self, sb: dict) -> dict:
+        """The local account of a Supabase user, created the first time it is seen. It has no local password; a
+        local account with the same (Supabase-confirmed) e-mail address is linked instead of duplicated."""
+        rows = self.store.q("SELECT * FROM users WHERE auth_provider = 'supabase' AND auth_subject = ?", (sb["id"],))
+        if not rows:
+            e = normalize_email(sb.get("email") or "")
+            lookup = self.store.cipher.lookup(e)
+            same = self.store.q("SELECT id FROM users WHERE email_lookup = ?", (lookup,))
+            if same:
+                self.store.x("UPDATE users SET auth_provider = 'supabase', auth_subject = ? WHERE id = ?", (sb["id"], same[0]["id"]))
+                self._event(same[0]["id"], "linked_supabase")
+            else:
+                import sqlite3
+                uid, pid = "usr_" + secrets.token_hex(10), "prf_" + secrets.token_hex(10)
+                try:
+                    self.store.x("INSERT INTO users (id, email_lookup, email, pw_hash, profile_id, created_at, consent, "
+                                 "auth_provider, auth_subject) VALUES (?,?,?,?,?,?,?,?,?)",
+                                 (uid, lookup, self.store.enc(e, "users", "email"), "", pid, now(), "{}", "supabase", sb["id"]))
+                    self._event(uid, "register_supabase")
+                except sqlite3.IntegrityError:   # the same new user's first two requests at once
+                    pass
+            rows = self.store.q("SELECT * FROM users WHERE auth_provider = 'supabase' AND auth_subject = ?", (sb["id"],))
+        u = self._user(rows[0]["id"])
+        if u["disabled"]:
+            raise AuthError("this account is disabled")
+        return u
+
+    @staticmethod
+    def consented(user: dict) -> bool:
+        c = json.loads(user.get("consent") or "{}")
+        return bool(c.get("terms_version") and c.get("privacy_version") and c.get("age_confirmed"))
+
+    def accept(self, user: dict, accept_terms: bool, accept_privacy: bool, age_confirmed: bool,
+               ai_drafting_consent: bool = False) -> dict:
+        """Record the terms, privacy notice and age confirmation (asked once, before any private data is kept)."""
+        if not (accept_terms and accept_privacy):
+            raise ValueError("accept the terms of service and the privacy notice to use an account")
+        if not age_confirmed:
+            raise ValueError("confirm that you are at least 18 years old (or have a parent's or guardian's consent "
+                             "where the law requires it)")
+        consent = json.loads(user.get("consent") or "{}") | {
+            "terms_version": TERMS_VERSION, "privacy_version": PRIVACY_VERSION, "accepted_at": now(),
+            "ai_drafting": bool(ai_drafting_consent), "age_confirmed": True}
+        self.store.x("UPDATE users SET consent = ? WHERE id = ?", (json.dumps(consent), user["id"]))
+        self._event(user["id"], "consent_accepted")
+        return consent
+
+    def delete_confirmed(self, user: dict, confirm: str) -> dict:
+        """Delete a Supabase-checked account's data here; the person types their e-mail address to confirm. The log-in
+        itself stays with Supabase (it may be shared with other apps of the same project)."""
+        if normalize_email(confirm or "x@x.x") != normalize_email(user["email"]):
+            raise ConfirmMismatch("the e-mail address does not match this account")
+        return self._delete_everything(user)
 
     def update_consent(self, user: dict, ai_drafting: bool) -> dict:
         consent = json.loads(user["consent"] or "{}") | {"ai_drafting": bool(ai_drafting), "ai_drafting_changed_at": now()}
@@ -221,9 +285,12 @@ class Accounts:
 
     def delete(self, user: dict, password: str) -> dict:
         """Delete the account, its sessions and every private record of its profile, in one step."""
-        from . import profile as profile_mod
         if not verify_password(password or "", user["pw_hash"]):
-            raise AuthError("the password is wrong")
+            raise PasswordMismatch("the password is wrong")
+        return self._delete_everything(user)
+
+    def _delete_everything(self, user: dict) -> dict:
+        from . import profile as profile_mod
         counts = profile_mod.delete(self.store, user["profile_id"])
         with self.store.private as c:
             counts["auth_tokens"] = c.execute("DELETE FROM auth_tokens WHERE user_id = ?", (user["id"],)).rowcount

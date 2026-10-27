@@ -166,3 +166,39 @@ def apply(o, out: dict, today: date) -> None:
     for f, theirs in disagreements(o, out, reading, today).items():
         out[f] = {"state": "needs_review",
                   "detail": f"{out[f]['state']}, but a second reading of the page says {theirs[:120]!r}; check the quotation"}
+
+
+def check_catalog(store, fetcher, llm, today: date, limit: int = 0, refresh: bool = False) -> dict:
+    """Round 49: the second reading for stored records, so the site holds what an independent reading disagrees with.
+    The catalogue keeps no page text, so each record's own page is fetched again (robots and rate limits apply) and
+    read once. Records of a structured dataset (adapter:...) are left out: their decisions come from the dataset, not
+    from one page. A failed request is skipped; three in a row (a dry run, a budget stop) end the run, keeping what was stored."""
+    from .extract import page_from_response
+    from .net import FetchError
+    from .normalize import dedup_key, normalize_url
+    todo = [o for o in store.list_opportunities()
+            if not o.discovered_via.startswith("adapter:") and (refresh or not o.second_reading)]
+    if limit:
+        todo = todo[:limit]
+    done, unreadable, failed, stopped = 0, 0, 0, ""
+    misses = 0   # answers missing in a row: one failed request is skipped, a budget stop ends the run
+    for o in todo:
+        try:
+            page = page_from_response(fetcher.get(o.info_url))
+        except FetchError:
+            unreadable += 1
+            continue
+        if len(page.text) < 300:   # an empty shell or a script-only page: nothing to read
+            unreadable += 1
+            continue
+        if attach_second_reading(o, page.text, llm, today) is None:
+            failed, misses = failed + 1, misses + 1
+            if misses >= 3:
+                stopped = "no answer from the model three times in a row (dry run, budget reached or requests failing)"
+                break
+            continue
+        misses = 0
+        store.save_opportunity(o, dedup_key(o.title, o.provider_name), normalize_url(o.info_url))
+        done += 1
+    return {"records_to_check": len(todo), "checked": done, "page_unreadable": unreadable, "no_answer": failed,
+            "stopped": stopped or None}

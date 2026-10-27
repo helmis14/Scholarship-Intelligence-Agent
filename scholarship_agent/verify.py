@@ -40,7 +40,7 @@ def _norm(s: str) -> str:
 
 
 ADAPTER_DOMAINS = {"adapter:daad": ["daad.de"], "adapter:erasmus_mundus": ["europa.eu"],
-                   "adapter:euraxess:import": ["europa.eu"]}
+                   "adapter:euraxess:import": ["europa.eu"], "adapter:campusfrance": ["campusfrance.org"]}
 
 
 def official_domains_for(opp: Opportunity, sources: list[Source]) -> list[str]:

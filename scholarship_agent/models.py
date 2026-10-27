@@ -9,6 +9,7 @@ the engine filters on (country, deadlines, status) also get their own columns.
 from __future__ import annotations
 
 import dataclasses
+import functools
 import hashlib
 from dataclasses import dataclass, field
 from enum import Enum
@@ -176,9 +177,15 @@ def _plain(v):
     return v
 
 
-def _build(cls, d):
+@functools.lru_cache(maxsize=None)
+def _hints(cls) -> dict:
+    """A dataclass's resolved field types, worked out once (get_type_hints evaluates the annotations each call)."""
     import typing
-    hints = typing.get_type_hints(cls)
+    return typing.get_type_hints(cls)
+
+
+def _build(cls, d):
+    hints = _hints(cls)
     kwargs = {}
     for f in dataclasses.fields(cls):
         if f.name not in d:
@@ -247,6 +254,7 @@ class Deadline(Model):
     timezone: Optional[str] = None      # "CET", "UTC+9" ... when stated
     cycle: Optional[str] = None         # "2026/2027"
     approximate: Optional[str] = None   # "usually early November" - EXPECTED deadlines live here
+    recurs: Optional[str] = None        # "03-01" when the source says the date recurs every year (EXPECTED, no year)
     label: str = ""                     # verbatim evidence quotation
     source_url: str = ""
     scope: str = "general"              # general | country | applicant_group | institution | programme
@@ -347,6 +355,7 @@ class Opportunity(Model):
     funding_parties: list[dict] = field(default_factory=list)
     # what the page the record rests on is (identity.PAGE_TYPES), kept apart from source_authority (who published it)
     page_type: str = "unknown"
+    page_language: str = ""             # round 47: <html lang>, else detected from the whole page text
     # {"state": confirmed | needs_review | rejected, "name", "reasons"} from identity.identity() on the fetched page
     programme_identity: dict = field(default_factory=dict)
     # round 29: distinctive words of the award this page is about (its title plus the award name it repeats); used to

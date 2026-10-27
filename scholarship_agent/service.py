@@ -95,13 +95,14 @@ class ScholarshipService:
         return _out(**r.to_dict())
 
     def run_adapter(self, name: str, limit: Optional[int] = None, details: bool = False, persist: bool = True) -> dict:
-        """Run a dedicated source adapter (daad, erasmus_mundus, euraxess) and store its records."""
+        """Run a dedicated source adapter (daad, erasmus_mundus, euraxess, campusfrance) and store its records."""
         from .adapters import ADAPTERS
         from .discovery import DiscoveryResult
         if name not in ADAPTERS:
             raise ValueError(f"unknown adapter {name!r}; one of {sorted(ADAPTERS)}")
         cls = ADAPTERS[name]
-        kw = {"daad": {"details": details}, "erasmus_mundus": {"follow_programme_sites": details}}.get(name, {})
+        kw = {"daad": {"details": details}, "campusfrance": {"details": details},
+              "erasmus_mundus": {"follow_programme_sites": details}}.get(name, {})
         adapter = cls(self.fetcher, today=self.today, **kw)
         job = self.store.start_job(f"adapter:{name}", {"limit": limit, "details": details})
         res = adapter.run(limit=limit)
@@ -112,13 +113,15 @@ class ScholarshipService:
                 d.persist(job, opp, opp.info_url, dres)
         for f in res.failures:
             self.store.record_ingestion(job, f.get("url", ""), "failed", f.get("error", ""))
+        refreshed = len(dres.opportunities_updated) - dres.duplicates_merged   # its own records read again
         self.store.finish_job(job, "ok" if not res.failures else "partial",
-                              res.summary() | {"new": len(dres.opportunities_new), "merged": dres.duplicates_merged})
+                              res.summary() | {"new": len(dres.opportunities_new), "merged": dres.duplicates_merged,
+                                               "refreshed": refreshed})
         types: dict[str, int] = {}
         for r in res.records:
             types[r.opportunity_type] = types.get(r.opportunity_type, 0) + 1
         return _out(**res.summary(), job_id=job, new=len(dres.opportunities_new), merged=dres.duplicates_merged,
-                    by_type=types, leads_sample=res.leads[:20],
+                    refreshed=refreshed, by_type=types, leads_sample=res.leads[:20],
                     records_sample=[{"id": r.id, "title": r.title, "type": r.opportunity_type,
                                      "deadlines": len(r.deadlines), "nationality": r.nationality.mode}
                                     for r in res.records[:10]])
@@ -286,13 +289,19 @@ class ScholarshipService:
     def decision_card(self, ref: str) -> dict:
         """The four decisions an applicant acts on, as a reader-facing card (round 46, for the web front end): each with
         a state (answered | check | not_stated), a plain value, the quotations and the official page. A value held for
-        review is shown with state "check": it is what the page seems to say, unconfirmed."""
+        review is shown with state "check": it is what the page seems to say, unconfirmed. Next to each English value
+        are its codes (mode/countries, code, dates), so a client can show the value in its own language."""
         from .audit import cycle_status, decision_evidence, field_status, funding_type
         from .countries import COUNTRIES
         from .models import DeadlineKind
+        from . import site
+        from .translate import english
         o = self._opp(ref)
         fs, ev = field_status(o, self.today), decision_evidence(o, self.today)
         name = lambda c: COUNTRIES.get(c, (c, ""))[0]   # noqa: E731
+        tr = english(self.store, o)
+        in_english = {k[:300]: v for k, v in tr["texts"].items()}
+        with_english = lambda qs: [q | {"translation": in_english.get(q.get("quote", ""), "")} for q in qs]   # noqa: E731
 
         def state(key: str, value_present: bool) -> str:
             st = fs.get(key, {}).get("state")
@@ -309,18 +318,28 @@ class ScholarshipService:
         dates = sorted({d.date for d in o.deadlines if d.date and d.kind in (DeadlineKind.SCHOLARSHIP, DeadlineKind.ADMISSION)})
         dl_quotes = [{"quote": d.label[:300], "url": d.source_url} for d in o.deadlines
                      if d.date in dates and d.label][:3]
+        for k in ("eligibility", "funding", "cycle"):
+            if k in ev:
+                ev[k]["quotes"] = with_english(ev[k].get("quotes", []))
+        dl_quotes = with_english(dl_quotes)
         card = {
             "eligibility": {"state": state("eligible_countries", bool(nat_value)), "value": nat_value or "Not stated on the page",
+                            "mode": n.mode if nat_value else "", "countries": list(n.countries[:60]),
                             "quotes": ev.get("eligibility", {}).get("quotes", [])},
             "funding": {"state": state("funding_type", ft in self.FUNDING_LABELS), "value": self.FUNDING_LABELS.get(ft, "Not stated on the page"),
-                        "quotes": ev.get("funding", {}).get("quotes", [])},
+                        "code": ft if ft in self.FUNDING_LABELS else "", "quotes": ev.get("funding", {}).get("quotes", [])},
             "deadline": {"state": state("deadline", bool(dates)), "value": ", ".join(dates) or "No dated deadline on the page",
-                         "quotes": dl_quotes},
+                         "dates": dates, "quotes": dl_quotes},
             "cycle": {"state": state("cycle", cyc["state"] in self.CYCLE_LABELS), "value": self.CYCLE_LABELS.get(cyc["state"], "Not stated"),
+                      "code": cyc["state"] if cyc["state"] in self.CYCLE_LABELS else "",
                       "detail": cyc.get("detail", ""), "quotes": ev.get("cycle", {}).get("quotes", [])},
         }
-        return _out(id=o.id, title=o.title, provider=o.provider_name, official_url=o.info_url, application_url=o.application_url,
-                    destination_countries=[name(c) for c in o.destination_countries], levels=o.study_levels,
+        return _out(id=o.id, title=tr["title"], title_original=o.title if tr["title"] != o.title else "",
+                    language=tr["language"], provider=o.provider_name, official_url=o.info_url,
+                    application_url=o.application_url, details=site.details(self.store, o, self.today),
+                    destination_countries=[name(c) for c in o.destination_countries],
+                    destination_country_codes=list(o.destination_countries),
+                    destination_inferred="destination:host" in o.tags, levels=o.study_levels,
                     last_checked=o.last_verified_at or o.updated_at, decisions=card, as_of=self.today.isoformat(),
                     note="Confirm every value on the official page before you apply. Values marked 'check' could not "
                          "be confirmed automatically.")
@@ -356,22 +375,17 @@ class ScholarshipService:
             raise NotFound(f"no issue report {report_id}")
         return _out(report_id=report_id, status=status)
 
-    def search_opportunities(self, country: str = "", level: str = "", text: str = "",
-                             status: str = "") -> dict:
-        out = []
-        for o in self.store.list_opportunities():
-            if country and country.upper() not in o.destination_countries:
-                continue
-            if level and level not in o.study_levels:
-                continue
-            if text and text.lower() not in (o.title + " " + o.provider_name).lower():
-                continue
-            if status and str(o.verification_status) != status:
-                continue
-            out.append({"id": o.id, "title": o.title, "provider": o.provider_name, "countries": o.destination_countries,
-                        "levels": o.study_levels, "verification_status": str(o.verification_status),
-                        "funding": funding.classify(o)["classification"]})
-        return _out(results=out, count=len(out))
+    def search_opportunities(self, country: str = "", level: str = "", text: str = "", status: str = "",
+                             funding: str = "", open_only: bool = False, citizenship: str = "", sort: str = "",
+                             limit: int = 60, offset: int = 0, within_days: int = 0, discipline: str = "") -> dict:
+        """Catalogue search for the site and the CLI (round 47, site.py): every word must match (title, provider,
+        quotations, in the original and in English; S2/master, Jepang/Japan and other synonyms), filters by destination,
+        level, funding, open applications and the applicant's citizenship, sorted by relevance or nearest deadline,
+        with counts per filter value."""
+        from . import site
+        return _out(**site.search(self.store, self.today, text=text, country=country, level=level, funding=funding,
+                                  open_only=open_only, citizenship=citizenship, status=status, sort=sort,
+                                  limit=limit, offset=offset, within_days=within_days, discipline=discipline))
 
     def sources_status(self, check: bool = False) -> dict:
         states = self.store.source_states()
@@ -430,9 +444,13 @@ class ScholarshipService:
 
     def rank(self, profile_id: str = "default", weights: Optional[dict] = None, top: int = 20,
              include_expired: bool = False) -> dict:
+        from . import site
         r = ranking.rank(self.store.list_opportunities(), self._profile(profile_id), weights, self.today,
                          include_expired)
         r["ranked"] = r["ranked"][:top]
+        by_id = {e.summary["id"]: e.summary for e in site.index(self.store, self.today)}
+        for x in r["ranked"]:   # the card the site shows: English title, codes, deadline
+            x["summary"] = by_id.get(x["opportunity_id"], {})
         return _out(**r)
 
     # ------------------------------------------------------------- planning and documents
@@ -557,11 +575,20 @@ class ScholarshipService:
 
     def track(self, ref: Optional[str] = None, status: Optional[str] = None, note: str = "",
               item: Optional[str] = None, item_status: Optional[str] = None, profile_id: str = "default") -> dict:
+        from .models import ALLOWED_TRANSITIONS
+        nxt = lambda st: sorted(str(x) for x in ALLOWED_TRANSITIONS.get(AppStatus(st), set()))   # noqa: E731
         if ref is None:
+            from . import site
             apps = tracker.list_applications(self.store, profile_id)
             for a in apps:
                 o = self.store.get_opportunity(a["opportunity_id"])
-                a["title"] = o.title if o else "(missing opportunity)"
+                a["summary"] = site.summary(self.store, o, self.today) if o else {}
+                a["title"] = a["summary"].get("title") or "(missing opportunity)"
+                a["allowed_next"] = nxt(a["status"])
+                items = tracker.checklist(self.store, a["id"])
+                a["checklist"] = {"done": sum(1 for i in items if i["status"] in ("done", "not_applicable")),
+                                  "total": len(items)}
+                a["documents"] = len(tracker.documents(self.store, a["id"]))
             return _out(applications=apps)
         o = self._opp(ref)
         app = tracker.ensure_application(self.store, profile_id, o.id)
@@ -569,7 +596,8 @@ class ScholarshipService:
             app = tracker.transition(self.store, app["id"], status, note)
         if item:
             tracker.mark_item(self.store, app["id"], item, item_status or "done")
-        return _out(application=tracker.get_application(self.store, app["id"]),
+        app = tracker.get_application(self.store, app["id"])
+        return _out(application=app | {"allowed_next": nxt(app["status"])},
                     checklist=tracker.checklist(self.store, app["id"]), title=o.title)
 
     def deadlines(self, within_days: int = 90, profile_id: str = "default", tracked_only: bool = False) -> dict:

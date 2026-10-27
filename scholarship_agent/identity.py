@@ -267,7 +267,7 @@ def identity(opp, *, page_title: Optional[str] = None, h1: str = "", text: str =
                 "reasons": [f"the page did not load, so it was not assessed: {kind_reason[:120]}"]}
     if kind_confidence == "low":
         # the page type itself is uncertain (extract.classify_page): a person decides, nothing is rejected or confirmed
-        return {"state": "needs_review", "name": segment,
+        return {"state": "needs_review", "name": segment, "page_kind": page_kind or "unknown",
                 "reasons": [f"page type uncertain (best guess: {page_kind or 'unknown'}): {kind_reason[:120]}"]}
     if page_kind and page_kind != "opportunity":
         return {"state": "rejected", "name": segment, "reasons": [f"the page is a {page_kind} page, not a programme"]}

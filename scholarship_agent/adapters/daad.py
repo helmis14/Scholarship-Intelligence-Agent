@@ -13,8 +13,10 @@ loads its complete dataset as static JavaScript files (TaffyDB):
 
 www2.daad.de serves no robots.txt (HTTP 404 = no published restriction). These are the files any
 visitor's browser downloads; no API key, login or query interface is used. Detail pages
-(`?detail=<sapProgid>`) carry funding value, duration and requirements and are fetched only
-when `details=True`, one request per programme, rate-limited.
+(`?detail=<sapProgid>`) carry funding value, duration, requirements, documents and the
+application deadline and are fetched only when `details=True`, one request per programme,
+rate-limited. Each is read section by section (round 49): contacts, portal notes and the
+selector of 200 countries are left out, so they cannot be read as terms of the programme.
 
 Lifecycle: a DAAD record is a *funding programme*. Deadlines differ by the applicant's country
 of origin and are stored per country in provider_metadata; dated ones also become Deadline rows.
@@ -22,6 +24,7 @@ of origin and are stored per country in provider_metadata; dated ones also becom
 
 from __future__ import annotations
 
+import html as htmllib
 import json
 import re
 from datetime import date
@@ -82,11 +85,53 @@ def _first_date(text: str) -> Optional[date]:
     return d[0] if d else None
 
 
+H3_RX = re.compile(r"<h3(?![^>]*print-only)[^>]*>(.*?)</h3>", re.S)
+TAB_END = re.compile(r'<div id="[^"]+" class="tab-pane|<!--! end of')
+# sections that are not terms of the programme: contacts, portal and advice notes, and the selector of 200 countries
+# of residence (a list that would read as an eligibility rule)
+SKIP_SECTION = re.compile(r"^(?:contact|please select your status|information and advi[cs]e? centres|general information on "
+                          r"the application via daad portal|please note|more detailed information|further information)", re.I)
+
+
+def detail_sections(page_html: str) -> list[tuple[str, str]]:
+    """(heading, html) of each section of a detail page in page order; a repeated heading keeps its first section."""
+    parts = H3_RX.split(page_html or "")
+    out, seen = [], set()
+    for i in range(1, len(parts), 2):
+        head = " ".join(htmllib.unescape(re.sub(r"<[^>]+>", " ", parts[i])).split())
+        if head and head.lower() not in seen:
+            seen.add(head.lower())
+            out.append((head, TAB_END.split(parts[i + 1])[0]))
+    return out
+
+
+def programme_page(url: str, page_html: str) -> Page:
+    """The detail page cut to the programme's own sections. A line of the deadline section that holds a date, and a
+    line of the value section that starts with an amount, gets its section's name: "15 December of each year" or
+    "1,500 EUR per month" alone has no word saying what it is."""
+    body = []
+    for head, html in detail_sections(page_html):
+        if SKIP_SECTION.match(head):
+            continue
+        label = {"application deadline": "Application deadline: ", "scholarship value": "Scholarship value: ",
+                 "value": "Scholarship value: "}.get(head.lower())
+        if label:   # a bare "1,500 EUR per month" or "15 December of each year" line says what it is
+            lines = [" ".join(htmllib.unescape(re.sub(r"<[^>]+>", " ", line)).split())
+                     for line in re.split(r"<(?:br|/?p|/?li|/?div)\b[^>]*>", html)]
+            keep = re.compile(r"[0-9]" if label.startswith("Application") else r"^(?:[0-9]|€|EUR\b)")
+            html = "".join(f"<p>{label if keep.search(line) else ''}{htmllib.escape(line)}</p>" for line in lines if line)
+        body.append(f"<h3>{htmllib.escape(head)}</h3>{html}")
+    if not body:   # not the expected layout: the whole page is read
+        return Page(url, page_html)
+    title = re.search(r"<title[^>]*>(.*?)</title>", page_html, re.S)
+    return Page(url, f"<html><head><title>{title.group(1) if title else ''}</title></head><body>{''.join(body)}</body></html>")
+
+
 class DAADAdapter:
     name = "daad"
 
-    def __init__(self, fetcher: Fetcher, today: Optional[date] = None, details: bool = False, detail_limit: int = 25,
-                 lang: str = "en"):
+    def __init__(self, fetcher: Fetcher, today: Optional[date] = None, details: bool = False,
+                 detail_limit: Optional[int] = None, lang: str = "en"):
         self.fetcher, self.today, self.details, self.detail_limit = fetcher, today or date.today(), details, detail_limit
         self.lang = "En" if lang == "en" else "De"
 
@@ -211,7 +256,7 @@ class DAADAdapter:
         except FetchError as e:
             res.failures.append({"url": opp.info_url, "error": e.reason})
             return
-        self.apply_detail(opp, page_from_response(resp))
+        self.apply_detail(opp, programme_page(resp.url, resp.text) if not resp.is_pdf else page_from_response(resp))
 
     def apply_detail(self, opp: Opportunity, page: Page) -> None:
         det, _ = extract_opportunity(page, provider_name=opp.provider_name, provider_type=opp.provider_type,
@@ -224,7 +269,16 @@ class DAADAdapter:
         for k in ("min_gpa", "max_age", "min_age", "min_work_years"):
             if getattr(opp, k) is None and getattr(det, k) is not None:
                 setattr(opp, k, getattr(det, k))
-        keep = {"title", "nationality", "study_levels"}  # the dataset is authoritative for these
-        opp.evidence += [e for e in det.evidence if e.field not in keep and not e.field.startswith("deadline")]
+        # round 49: the dates of the page's deadline section join the dataset's per-country ones
+        known = {(d.date, d.recurs) for d in opp.deadlines}
+        new = [d for d in det.deadlines if (d.date, d.recurs) not in known]
+        opp.deadlines += new
+        values = {d.date or d.approximate for d in new}
+        if new:
+            opp.uncertainties = [u for u in opp.uncertainties if "no deadline" not in u]
+        keep = {"title", "nationality", "study_levels", "destination"}  # the dataset is authoritative for these
+        opp.evidence += [e for e in det.evidence if e.field not in keep
+                         and (not e.field.startswith("deadline") or e.value in values)]
         opp.selection_criteria = det.selection_criteria or opp.selection_criteria
+        opp.application_url = opp.application_url or det.application_url
         opp.uncertainties += [u for u in det.uncertainties if "deadline" not in u and "nationality" not in u]

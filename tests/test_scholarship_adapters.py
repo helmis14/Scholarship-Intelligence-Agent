@@ -167,7 +167,7 @@ class TestServiceAdapters(unittest.TestCase):
             out = svc.run_adapter("daad")
             self.assertEqual((out["records"], out["new"]), (3, 3))
             again = svc.run_adapter("daad")
-            self.assertEqual((again["new"], again["merged"]), (0, 3))
+            self.assertEqual((again["new"], again["merged"], again["refreshed"]), (0, 0, 3))   # round 49: replaced
             self.assertEqual(len(store.list_opportunities()), 3)
             with self.assertRaises(ValueError):
                 svc.run_adapter("nope")

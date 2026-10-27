@@ -400,15 +400,24 @@ class Discovery:
         """Save a record, merging it into an existing one when it is the same opportunity."""
         key, url_norm = dedup_key(opp.title, opp.provider_name), normalize_url(opp.info_url)
         existing = self.store.get_opportunity(opp.id) or self.store.find_by_dedup(key, url_norm)
+        if existing and existing.id == opp.id and opp.discovered_via.startswith("adapter:") \
+                and existing.discovered_via == opp.discovered_via:
+            # round 49: a structured source read again replaces its own record: a fresh reading of the same source,
+            # not a second source to merge (merging would keep stale values beside new ones as conflicts)
+            opp.created_at = existing.created_at or opp.created_at
+            self.store.save_opportunity(opp, key, url_norm)
+            result.opportunities_updated.append(opp.id)
+            self.store.record_ingestion(job_id, url, "refreshed", opp_id=opp.id)
+            return opp, False
         if existing and existing.id != opp.id and opp.discovered_via.startswith("adapter:") \
                 and existing.discovered_via == opp.discovered_via:
             existing = None  # distinct ids from one structured source are distinct programmes
         if not existing:
-            for o in self.store.list_opportunities():
+            for oid, title, provider, via in self.store.opportunity_names():   # names only: the catalogue is large
                 # two records from the same structured source with different ids are different programmes
-                same_adapter = opp.discovered_via.startswith("adapter:") and o.discovered_via == opp.discovered_via
-                if not same_adapter and similar(o.title, o.provider_name, opp.title, opp.provider_name):
-                    existing = o
+                same_adapter = opp.discovered_via.startswith("adapter:") and via == opp.discovered_via
+                if not same_adapter and similar(title, provider, opp.title, opp.provider_name):
+                    existing = self.store.get_opportunity(oid)
                     break
         if existing and not any(t.startswith("section:") for t in opp.tags):  # sections always join their programme
             reason = distinct_reason(existing, opp)

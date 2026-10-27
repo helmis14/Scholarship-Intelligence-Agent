@@ -364,6 +364,38 @@ EVENT_WORDS = re.compile(r"\b(?:results?|publication|announce\w*|notification|in
                          re.I)
 APPROX_WORDS = re.compile(r"\b(usually|typically|normally|generally|expected|tentative(?:ly)?|approximately|around|"
                           r"early|mid|late)\b", re.I)
+# Round 49: a day and month the page says come back every year ("1 March and 1 September of each year", "Closing date
+# for applications is 15 July of each year", "1 March for the summer semester and 15 September for the winter
+# semester"). No year is written, so the next occurrence is expected, never confirmed: the deadline is EXPECTED with
+# recurs="MM-DD" and no date (decisions and benchmarks count dated deadlines only).
+RECURRING_RX = re.compile(r"\b(?:(?:of )?(?:each|every) (?:academic |calendar )?year|annually|annual (?:calls?|deadlines?|"
+                          r"competitions?|rounds?|intakes?)|jedes jahr(?:es)?|jährlich|chaque année|tous les ans|cada año|"
+                          r"todos los años|anualmente|ogni anno|setiap tahun|tiap tahun|elk jaar|jaarlijks|każdego roku|"
+                          r"her yıl)\b|毎年|매년|每年", re.I)
+SEMESTER_RX = re.compile(r"\bfor the (?:following |next |upcoming )?(?:academic year|(?:winter|summer|spring|fall|autumn) "
+                         r"(?:semester|term))\b|\b(?:winter|sommer)semester\b", re.I)
+_MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
+                "November", "December"]
+
+
+def _recurring(s: str, para: str = "") -> list[tuple[str, str]]:
+    """("MM-DD", text) for each day and month without a year in a sentence that says the date recurs every year."""
+    if not (RECURRING_RX.search(s) or RECURRING_RX.search(para) or (SEMESTER_RX.search(s) and not detect_cycle(s))):
+        return []
+    out: list[tuple[str, str]] = []
+    sentence = ascii_digits(s)
+    for rx, order in DM_PATTERNS:
+        for m in rx.finditer(sentence):
+            day, mon = (m.group(1), m.group(2)) if order == "dm" else (m.group(2), m.group(1))
+            try:
+                month = MONTHS[mon.lower()]
+                date(2027, month, int(day))   # a real day of that month (29 February is left out)
+            except (KeyError, ValueError):
+                continue
+            raw = s[m.start():m.end()]
+            if not any(raw in r or r in raw for _, r in out):
+                out.append((f"{month:02d}-{int(day):02d}", raw))
+    return sorted(out, key=lambda t: s.find(t[1]))
 
 
 def _kind(sentence: str) -> DeadlineKind:
@@ -404,7 +436,7 @@ def _deadline_units(text: str) -> list[tuple[str, str]]:
     for i, line in enumerate(lines[:-1]):
         if len(line) <= 60 and LABEL_LINE.match(line) and not parse_dates(line):
             nxt = lines[i + 1]
-            if len(nxt) <= 80 and parse_dates(nxt):
+            if len(nxt) <= 80 and (parse_dates(nxt) or _recurring(nxt)):   # "Application Deadline" / "15 July of each year"
                 units.append((f"{line} {nxt}", "", f"{line} {nxt}"))
     for i, line in enumerate(lines):
         if parse_dates(line) and not (DEADLINE_WORDS.search(line) or OPENING_WORDS.search(line)) \
@@ -540,7 +572,8 @@ def _date_role(s: str, raw: str, prev: list[str], raws: list[str]) -> Optional[D
                          r"(?:communicated|announced)|results? (?:will be )?(?:announced|published|communicated))\b"
                          r"[^.;]{0,40}$", before[-60:], re.I):
         return DeadlineKind.EVENT
-    if re.search(r"\b(?:aufenthalt\w*|stay|tenure|arrival|start of (?:the )?(?:programme|program|studies|fellowship|award))\b"
+    if re.search(r"\b(?:aufenthalt\w*|stay|tenure|arrival|start of (?:the )?(?:programme|program|studies|fellowship|award)|"
+                 r"(?:programme|program|course|studies|fellowship) (?:start|begin|beginning|commencement))\b"   # round 49
                  r"[^.;]{0,50}$", before[-70:], re.I):
         return DeadlineKind.EVENT
     if re.search(r"\bas of\s*$|\bt[ií]tulo\b[^.;]{0,25}$|\b(?:inscrit\w*|enrolled|registered|matricul\w+)\b[^.;]{0,70}\b(?:avant le|before|prior to|by|hasta)\s*$", before[-100:], re.I):
@@ -711,6 +744,25 @@ def extract_deadlines(text: str, url: str, today: date, title: str = "") -> list
         tm = TIME_RX.search(s)
         tz = TZ_RX.search(s)
         if not dates:
+            rec = _recurring(s, para)
+            # an applicant's date, not "Form 1042-S will be mailed no later than February 28th of each year"
+            if rec and re.search(r"appl|submi|deadline|clos|bewerb|candida|inscri|postul|convocatoria|pendaftaran", s, re.I):
+                raws = [r for _, r in rec]
+                both = OPENING_WORDS.search(s) and DEADLINE_WORDS.search(s)
+                for i, (md, raw) in enumerate(rec):
+                    k = kind
+                    if rng and raw in rng.group(1):   # "1 October to 15 January (midnight) for ... the winter semester"
+                        k = DeadlineKind.OPENING
+                    elif rng and raw in rng.group(2):
+                        k = _kind(s) if kind == DeadlineKind.OPENING else kind
+                    elif both and len(rec) == 2:
+                        k = DeadlineKind.OPENING if i == 0 else _kind(s)
+                    own = _date_role(s, raw, raws[:i], raws)
+                    k = own if own is not None else k
+                    out.append(Deadline(kind=k, certainty=DeadlineCertainty.EXPECTED, recurs=md, cycle=cycle,
+                                        approximate=f"every year on {int(md[3:])} {_MONTH_NAMES[int(md[:2]) - 1]}",
+                                        label=_quote(verbatim, raw), source_url=url))
+                continue
             mon = re.search(rf"\b({_MON})\b", s, re.I)
             if mon and APPROX_WORDS.search(s):
                 out.append(Deadline(kind=kind, certainty=DeadlineCertainty.EXPECTED, approximate=clean_snippet(verbatim, 160),
@@ -806,8 +858,11 @@ FUNDING_KEYS = [
     ("award", r"monetary award|award (?:of|amount)|amount of the grant|the grant (?:is|amounts to)|grant of|prize money|"
               r"\bcrédito\b|préstamo|\bloan\b|preisgeld|bursary of|"
               # "These fellowships, worth CHF 10,000 per semester", "a grant amounting to CHF 10'000"
-              r"(?:scholarships?|fellowships?|grants?),? worth|grant amounting to"),
-    ("stipend", r"\bstipends?\b|\d[\d.,]* ?(?:euro|€) (?:im|pro) monat|monthly allowance|maintenance|salary|bursary payment|(?<!processes )(?<!process )scholarship payments?|stipendienleistung|"
+              r"(?:scholarships?|fellowships?|grants?),? worth|grant amounting to|"
+              # round 49: "The fellowship is worth 3,600 EUR per month", "grant: 1,500 EUR per month"
+              r"(?:scholarships?|fellowships?|grants?) (?:is|are|will be) worth|"
+              r"\b(?:grant|funding|scholarship amount|scholarship value)\s*:\s*(?:up to\s*)?(?=[\d€$£])"),
+    ("stipend", r"\bstipends?\b|\b(?:monthly )?base amount\b|\d[\d.,]* ?(?:euro|€) (?:im|pro) monat|monthly allowance|maintenance|salary|bursary payment|(?<!processes )(?<!process )scholarship payments?|stipendienleistung|"
                 r"monatliche (?:rate|zahlung)|\bmonatlich\b|(?<!other )(?<!any )(?<!existing )(?<!graduate )financial support(?! to (?:aid|help|assist|support|enable|allow)\b)(?! (?:for|to) (?:students|applicants|those|people|yourself|individuals|young|recipients|[\w-]+ (?:students|scholars)))|"
                 r"monthly (?:scholarship|payment|rate|instalment)|monatlich(?:e|es)? (?:stipendium|rate)|"
                 r"allocation mensuelle|asignaci[oó]n mensual|manuten[cç][aã]o|uang saku|tunjangan bulanan"),
@@ -972,7 +1027,9 @@ def extract_funding(text: str) -> tuple[list[FundingComponent], list[str]]:
                 continue  # paid out of the allowance ("which you can use for housing, travel")
             matched.add(kind)
             # "not included" style negation within a few words of the keyword
-            before = re.split(r"\b(?:but|however|whereas|while)\b|;", low[max(0, m.start() - 40): m.start()])[-1]
+            # round 49: a condition is not a negation ("if no guest room is available, an accommodation allowance")
+            wide = re.sub(r"\bif\b[^,]*,", " ", low[max(0, m.start() - 80): m.start()])
+            before = re.split(r"\b(?:but|however|whereas|while)\b|;", wide[-40:])[-1]
             after = low[m.end(): m.end() + 25]
             negated = (bool(NEGATION.search(before)) or bool(re.match(r"[^,.;]{0,12}\bnot\b", after))) \
                 and not re.search(r"not only", before + low[m.start():m.end()] + after)
@@ -1114,27 +1171,63 @@ def extract_language(text: str) -> tuple[list[LanguageRequirement], str, list[st
     return reqs, moi, snips
 
 
-# Words match in any case; acronyms (BA, MA, S2) only as written.
+# Words match in any case; acronyms (BA, MA, S2) only as written. Not a level (tests/levels_eval.py): "master" as a verb,
+# a master class or "Boston, MA"; English "promotion" (German "Promotion" counts after an article); "non-degree" (a
+# student status); "exchange" other than exchange students ("exchange rate", "Academic Exchange Service").
 LEVEL_RX = {
     "bachelor": r"(?i:\bbachelor'?s?\b|\bundergraduate\b|\blicenciatura\b|\bgradua[cç][aã]o\b|\bsarjana\b)|\bBSc\b|\bBA\b|\bS1\b",
-    "master": r"(?i:\bmaster'?s?\b|\bm[aá]ster\b|\bmaestr[ií]a\b|\bmestrado\b|\bmagister\b|\bpostgraduate taught\b|"
-              r"\bgraduate (?:degree|study))|\bMSc\b|\bM\.Sc\b|\bMA\b|\bMBA\b|\bLLM\b|\bS2\b",
-    "phd": r"(?i:\bdoctoral\b|\bdoctorate\b|\bdoctorat\b|\bdoctorado\b|\bdoutorado\b|\bpromotion\b|\bdoktorand|"
-           r"\bprogram doktor\b)|\bPh\.?D\b|\bDPhil\b|\bS3\b",
+    "master": r"(?i:\bm[aá]ster'?s?\b(?!\s*(?:class|promissory|the|a|an|skills?)\b)|\bmaestr[ií]a\b|\bmestrado\b|"
+              r"\bmagister\b|\bpostgraduate taught\b|\bgraduate (?:degree|study))|\bMSc\b|\bM\.Sc\b|(?<!, )\bMA\b|\bMBA\b|"
+              r"\bLLM\b|\bS2\b",
+    "phd": r"(?i:\bdoctoral\b|\bdoctorate\b|\bdoctorat\b|\bdoctorado\b|\bdoutorado\b|\bdoktorand|\bprogram doktor\b)|"
+           r"\bPh\.?D\b|\bDPhil\b|\bS3\b|\b(?:[Dd]er|[Dd]ie|[Zz]ur|[Ee]ine[rn]?|[Ii]hre[rn]?) Promotion\b",
     "postdoc": r"(?i:\bpost-?doc(?:toral)?\b|\bpostdoctorado\b|\bpós-doutorado\b)",
-    "short_course": r"(?i:\bshort course\b|\bsummer school\b|\bnon-degree\b)",
-    "exchange": r"(?i:\bexchange\b|\bmobility\b|\bintercambio\b|\bé?change universitaire\b)",
+    "short_course": r"(?i:\bshort course\b|\bsummer school\b)",
+    "exchange": r"(?i:\bexchange students?\b|\bintercambio\b|\bé?change universitaire\b)",
 }
 
 
-PREREQ_RX = re.compile(r"\b(hold|holds|holding|holders?|completed|graduated|obtained|possess|have earned|"
-                       r"must have)\b", re.I)
+# a degree the applicant already has, or is finishing, is not a level the award is for
+PREREQ_RX = re.compile(r"\b(hold|holds|holding|holders?|completed|graduated|obtained|possess|have earned|must have|"
+                       r"(?:will|should|shall) have|equivalent|graduates? (?:of|from)|"
+                       r"(?:applicants?|candidates?|students?|those|persons?|individuals?|researchers?|scholars?) with (?:a|an)|"
+                       r"(?<!to )(?:earn\w*|achieved|awarded|receiv\w*|receipt of|obtain\w*)\s+"
+                       r"(?:a|an|the|their|your|his|her)?\s*(?:[\w'’/-]+\s+){0,4}?(?:degrees?|diplomas?|qualifications?)|"
+                       r"complete (?:their|your|his|her|a|an) (?:\w+ ){0,2}?(?:degree|studies|programme|program)|"
+                       r"(?<!upon )(?<!successful )(?<!until )(?<!or )completion of|"
+                       r"(?<!non-)final[- ]year|final (?:semester|term)|last year of|senior year|"
+                       r"post-?PhD|after (?:their|the|your|his|her|completing|completion of|obtaining|receiving) "
+                       r"(?:\w+ ){0,2}?(?:PhD|doctora\w*|Ph\.D)|years? (?:after|since|from) (?:the )?(?:completion|award)|"
+                       r"GPA|grade point average|graduation grade|academic (?:record|performance)|undergraduate record|"
+                       r"cop(?:y|ies) of|copie|photocop\w+|proof of|"
+                       # French, Spanish, Norwegian, Indonesian
+                       r"titulaire|d[ée]tention|t[ií]tulo|contar con|hayan? (?:estudiado|obtenido|cursado|concluido)|"
+                       r"avlagt|lulusan)\b", re.I)
+# a level named without being offered: an exclusion, teaching duties, a first-person story
+NOT_OFFERED_RX = re.compile(r"\bnot (?:\w+ ){0,2}?(?:eligible|funded|considered|accepted|supported)\b|\bineligible\b|"
+                            r"\b(?:do|does|will|can|shall)(?:n't| not) (?:\w+ )?"
+                            r"(?:fund|offer|support|accept|cover|apply|award)\b|\bexclud(?:ed|ing)\b|\bnicht gefördert\b|"
+                            r"\b(?:teaching|supervis(?:e|ing|ion)|lectures?|lecturing)\b|"
+                            r"(?-i:\b(?:my|me)\b|\bI (?:am|was|have|had|could|would|will|can|did|do)\b)", re.I)
+# "she pursued a PhD" is someone's story; "his or her degree" and "HE institutions" are not
+STORY_RX = re.compile(r"\b(?:[Ss]he|[Hh]e|[Hh]er|[Hh]is|[Hh]ers|[Hh]im)\b")
+EITHER_SEX_RX = re.compile(r"\b(?:his|he|him|her|she)\s*(?:or|/)\s*(?:her|she|his|he|him)\b", re.I)
+# with four words or fewer, a section of the site ("PhD Programmes", "Undergraduate study"), not who the award is for
+HEADING_RX = re.compile(r"\b(?:programs?|programmes?|studies|courses?|students|school|research|admissions?|prospectus|"
+                        r"council|office|degrees?|levels?|application form|study)\b", re.I)
+
+
+def _level_sentences(text: str) -> list[str]:
+    return [s for s in _sentences(text) if not (PREREQ_RX.search(s) or NOT_OFFERED_RX.search(s)
+                                                or (STORY_RX.search(s) and not EITHER_SEX_RX.search(s))
+                                                or (len(s.split()) <= 4 and HEADING_RX.search(s)))]
 
 
 def extract_levels(text: str) -> list[str]:
-    """Levels the award is *for*. Sentences about degrees an applicant must already hold are skipped."""
-    body = "\n".join(s for s in _sentences(text) if not PREREQ_RX.search(s))
-    return [lvl for lvl, rx in LEVEL_RX.items() if re.search(rx, body)]
+    """Levels the award is *for*. Sentences about degrees an applicant must already hold, and other sentences that
+    name a level without offering it, are skipped."""
+    sents = _level_sentences(text)
+    return [lvl for lvl, rx in LEVEL_RX.items() if any(re.search(rx, s) for s in sents)]
 
 
 NAT_CONTEXT = re.compile(r"citizens? of|nationals? of|nationality|eligible countr|applicants? from|residents? of|"
@@ -1296,6 +1389,11 @@ def _nat_units(text: str) -> list[tuple[str, str]]:
     return out
 
 
+DOC_FOR_RX = re.compile(r"\b(?:applicants?|students?|candidates?)\s+(?:from|of)\b[^.:;]{0,120}:\s*(?:an?\s+|the\s+)?"
+                        r"(?:APS|certificates?|documents?|proof|translations?|visas?|cop(?:y|ies)|original|apostille|"
+                        r"legali[sz]ation|diplomas?)\b|\b(?:must|need to|are required to|should)\s+(?:also\s+)?(?:submit|provide|"
+                        r"upload|present|attach|obtain)\b[^.;]{0,40}\b(?:APS|certificate|translation|apostille|legali[sz]ation)",
+                        re.I)
 # Round 28: negation is read explicitly, per clause. A clause names countries as eligible, excluded or neither.
 CLAUSE_SPLIT = re.compile(r";\s+|,\s+(?:but|while|whereas)\s+|\s+but\s+(?=(?:citizens?|nationals?|applicants?|students?)\b)", re.I)
 FEE_RULE = re.compile(r"\bliable to pay\b|\bfees? (?:will be|are|is) charged\b|\bpay\w*\s+(?:the\s+)?(?:tuition\s+)?fees?\s+if\b|\bfee[- ]paying status\b", re.I)
@@ -1442,6 +1540,8 @@ def extract_nationality(text: str) -> tuple[NationalityRule, list[str]]:
     for s, head in units:
         if FEE_RULE.search(s):
             continue  # "you must pay tuition fees if you are a citizen of ...": who pays fees, not who may apply
+        if DOC_FOR_RX.search(s):
+            continue  # round 49: "Applicants from China, India and Vietnam: APS certificate ...": a document, not who may apply
         if re.match(r"\W*(?:if|when|unless)\b[^.]*\bthen\b", s, re.I):
             continue  # "If you were born abroad as a non-US citizen then one of the following must be true": a branch
         if CONDITION_RX.search(s) or (RELATIVES_RX.search(s) and not re.search(
@@ -2225,8 +2325,18 @@ def extract_opportunity(page: Page, *, provider_name: str, provider_type, source
 
     title = page.title or "(untitled page)"
     opp = Opportunity(id=stable_id(normalize_url(url), prefix="sch"), title=title[:200], provider_name=provider_name,
-                      provider_type=provider_type, info_url=url, destination_countries=list(country_hint))
+                      provider_type=provider_type, info_url=url)
     add("title", title, title)
+    # round 47: where the study happens, from the page's own words only (destinations.py). The country a search asked
+    # for was the applicants' country or an unrelated one as often as the destination; it is kept as a tag.
+    from .destinations import extract_destinations
+    dest, dest_snips = extract_destinations(text, page.title or "")
+    opp.destination_countries = list(dest)
+    for c, snip in zip(dest, dest_snips):
+        add("destination", c, snip)
+    if country_hint:
+        opp.tags.append("searched_for:" + ",".join(country_hint))
+    opp.page_language = page.language
 
     for href, label in page.links:
         if re.search(r"apply (?:now|online|here)|application (?:form|portal)|online application|submit (?:an |your )?application",
@@ -2276,9 +2386,9 @@ def extract_opportunity(page: Page, *, provider_name: str, provider_type, source
         # prerequisite or an exclusion); a level with no such sentence is dropped
         from .evidence import study_levels_supported
         kept = []
+        sents = _level_sentences(text)
         for lvl in opp.study_levels:
-            snip = next((x for x in _sentences(text) if not PREREQ_RX.search(x) and re.search(LEVEL_RX[lvl], x)
-                         and not study_levels_supported([lvl], x)), "")
+            snip = next((x for x in sents if re.search(LEVEL_RX[lvl], x) and not study_levels_supported([lvl], x)), "")
             if snip:
                 kept.append(lvl)
                 add("study_levels", [lvl], snip, c=conf - 0.2)
@@ -2294,6 +2404,17 @@ def extract_opportunity(page: Page, *, provider_name: str, provider_type, source
         ev.append(Evidence(field="nationality", value=None, source_url=url, source_type=source_type,
                            snippet=clean_snippet(opp.nationality.note.split(": ", 2)[-1]), retrieved_at=retrieved_at,
                            confidence=0.3, note=opp.nationality.note, verdict="needs_review"))
+    if not opp.destination_countries:
+        # round 48: a university's own page is about study there, so the country of its web address, unless the page
+        # sends people elsewhere or is only for that country's citizens (destinations.host_destination). Marked as
+        # inferred: the page does not state it.
+        from .destinations import host_destination
+        hd, why = host_destination(url, text, page.title or "", opp.nationality.mode, opp.nationality.countries)
+        if hd:
+            opp.destination_countries = list(hd)
+            opp.tags.append("destination:host")
+            ev.append(Evidence(field="destination", value=hd[0], source_url=url, source_type=source_type, snippet="",
+                               retrieved_at=retrieved_at, confidence=conf - 0.3, note=why[:300]))
 
     from .org_names import describe
     from .parties import extract_parties, payer

@@ -11,7 +11,9 @@ Access method (inspected 2026-10-17):
 Lifecycle: a catalogue entry is a *joint master programme* (an admission programme run by a university
 consortium). Erasmus Mundus scholarships, their amounts, eligibility and deadlines are set and published
 by each consortium on its own website, not in the catalogue - so records start with those fields unknown,
-and `follow_programme_sites=True` reads the consortium site as the official source for them.
+and `follow_programme_sites=True` reads the consortium site as the official source for them: its home page
+and up to four of its own pages on scholarships and fees, admission and dates, and the consortium (round 49).
+The study countries are the consortium's: the countries named beside its universities on those pages.
 "Intra-Africa Scholarships Legacy" entries are past mobility projects and are stored as historical
 funded projects, not as open opportunities.
 """
@@ -24,7 +26,8 @@ from datetime import date
 from email.utils import parsedate_to_datetime
 from typing import Optional
 
-from ..extract import clean_snippet, extract_opportunity, page_from_response
+from .. import countries
+from ..extract import Page, clean_snippet, extract_opportunity, page_from_response
 from ..models import Evidence, Opportunity, ProviderType, SourceType, VerificationStatus, stable_id
 from ..net import Fetcher, FetchError
 from ..normalize import normalize_url
@@ -34,6 +37,50 @@ from .base import AdapterResult
 RSS = "https://www.eacea.ec.europa.eu/node/253/rss_en"
 CATALOGUE = "https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en"
 CARD_RX = re.compile(r"<article\s+class=\"ecl-card\"[^>]*>(.*?)</article>", re.S)
+# a consortium site's own pages worth reading, in order: what the scholarship pays, how and when to apply, who the
+# partner universities are
+SECTION_KINDS = [re.compile(r"scholarships?|funding|fees|tuition|costs", re.I),
+                 re.compile(r"admissions?|apply|applications?|eligib|key dates|deadlines?|requirements", re.I),
+                 re.compile(r"consortium|partners?|universities", re.I)]
+NOT_SECTION = re.compile(r"news|events?|blog|alumni|login|call for partners|\.(?:pdf|docx?|jpe?g|png)(?:$|[?#])", re.I)
+UNI_LINE = re.compile(r"universit|universidad|universidade|uniwersytet|univerzit|hochschule|[ée]cole|institut|polytechn|"
+                      r"politecnic|college|academy|akadem|school of", re.I)
+ASSOCIATED = re.compile(r"^(?:associated|associate) (?:partners?|members?|institutions?)\b", re.I | re.M)
+
+
+def section_pages(page: Page, limit: int = 4) -> list[str]:
+    """Up to `limit` links to the site's own pages on scholarships, admission and the consortium, in that order."""
+    from urllib.parse import urlsplit
+    host = (urlsplit(page.url).hostname or "").removeprefix("www.")
+    home = normalize_url(page.url)
+    found: list[list[str]] = [[] for _ in SECTION_KINDS]
+    for href, label in page.links:
+        if (urlsplit(href).hostname or "").removeprefix("www.") != host or NOT_SECTION.search(href + " " + label):
+            continue
+        u = normalize_url(href.split("#")[0])
+        if u == home:
+            continue
+        for i, rx in enumerate(SECTION_KINDS):
+            if rx.search(label) or rx.search(urlsplit(href).path):
+                if u not in found[i]:
+                    found[i].append(u)
+                break
+    firsts = [group[0] for group in found if group]   # the first link of each kind, then the others
+    return (firsts + [u for group in found for u in group[1:]])[:limit]
+
+
+def consortium_countries(text: str) -> list[tuple[str, str]]:
+    """(country, line) for each country named beside a university on a consortium page; associated partners, which
+    award no degree, are left out."""
+    m = ASSOCIATED.search(text or "")
+    out: list[tuple[str, str]] = []
+    for line in (text[:m.start()] if m else text or "").splitlines():
+        if len(line) > 220 or not UNI_LINE.search(line):
+            continue
+        for c in countries.mentions(line):
+            if c not in {x for x, _ in out}:
+                out.append((c, line))
+    return out
 
 
 def parse_rss(xml: str) -> list[dict]:
@@ -72,7 +119,7 @@ class ErasmusMundusAdapter:
     name = "erasmus_mundus"
 
     def __init__(self, fetcher: Fetcher, today: Optional[date] = None, max_pages: int = 12,
-                 follow_programme_sites: bool = False, site_limit: int = 15):
+                 follow_programme_sites: bool = False, site_limit: Optional[int] = None):
         self.fetcher, self.today, self.max_pages = fetcher, today or date.today(), max_pages
         self.follow, self.site_limit = follow_programme_sites, site_limit
 
@@ -166,23 +213,58 @@ class ErasmusMundusAdapter:
         opp.verification_status = VerificationStatus.EXTRACTED
         return opp
 
-    def read_programme_site(self, opp: Opportunity, res: AdapterResult) -> None:
+    def _page(self, url: str, res: AdapterResult) -> Optional[Page]:
         res.requests += 1
         try:
-            resp = self.fetcher.get(opp.info_url)
+            return page_from_response(self.fetcher.get(url))
         except FetchError as e:
-            res.failures.append({"url": opp.info_url, "error": e.reason})
+            res.failures.append({"url": url, "error": e.reason})
+            return None
+
+    def read_programme_site(self, opp: Opportunity, res: AdapterResult) -> None:
+        home = self._page(opp.info_url, res)
+        if home is None:
             return
-        site, _ = extract_opportunity(page_from_response(resp), provider_name=opp.provider_name,
-                                      provider_type=opp.provider_type, source_type=SourceType.OFFICIAL, country_hint=[],
-                                      retrieved_at=now(), today=self.today)
-        for attr in ("deadlines", "funding", "language_requirements", "required_documents"):
-            if getattr(site, attr):
-                setattr(opp, attr, getattr(site, attr))
-        if site.nationality.mode != "unknown":
-            opp.nationality = site.nationality
-        for k in ("min_gpa", "max_age", "min_age"):
-            if getattr(site, k) is not None:
-                setattr(opp, k, getattr(site, k))
-        opp.evidence += [e for e in site.evidence if e.field != "title"]
-        opp.conflicts += site.conflicts
+        pages = [home] + [p for p in (self._page(u, res) for u in section_pages(home)) if p is not None]
+        # scholarship and admission pages before the home page: they state the terms, the home page advertises
+        pages = pages[1:] + pages[:1]
+        ts = now()
+        dests: list[str] = []
+        for page in pages:
+            site, _ = extract_opportunity(page, provider_name=opp.provider_name, provider_type=opp.provider_type,
+                                          source_type=SourceType.OFFICIAL, country_hint=[], retrieved_at=ts,
+                                          today=self.today)
+            for attr in ("funding", "selection_criteria"):   # one page's terms, never a mix of pages
+                if getattr(site, attr) and not getattr(opp, attr):
+                    setattr(opp, attr, getattr(site, attr))
+            seen = {(d.kind, d.date, d.recurs, d.approximate) for d in opp.deadlines}
+            opp.deadlines += [d for d in site.deadlines if (d.kind, d.date, d.recurs, d.approximate) not in seen]
+            names = {r.test for r in opp.language_requirements}
+            opp.language_requirements += [r for r in site.language_requirements if r.test not in names]
+            names = {d.name for d in opp.required_documents}
+            opp.required_documents += [d for d in site.required_documents if d.name not in names]
+            if site.nationality.mode != "unknown" and opp.nationality.mode == "unknown":
+                opp.nationality = site.nationality
+            for k in ("min_gpa", "max_age", "min_age", "min_work_years"):
+                if getattr(site, k) is not None and getattr(opp, k) is None:
+                    setattr(opp, k, getattr(site, k))
+            opp.application_url = opp.application_url or site.application_url
+            if "destination:host" not in site.tags:   # the web address's country is not a consortium's
+                dests += [c for c in site.destination_countries if c not in dests]
+            opp.evidence += [e for e in site.evidence if e.field != "title" and not
+                             (e.field == "destination" and "destination:host" in site.tags)]
+            opp.conflicts += [c for c in site.conflicts if c not in opp.conflicts]
+            if re.search(r"consortium|partner|universit", page.url + " " + page.title, re.I):
+                named = consortium_countries(page.text)
+                if len(named) >= 2:   # a joint master is run in at least three countries
+                    for c, line in named:
+                        if c not in dests:
+                            dests.append(c)
+                            opp.evidence.append(Evidence(field="destination", value=c, source_url=page.url,
+                                                         source_type=SourceType.OFFICIAL, snippet=clean_snippet(line),
+                                                         retrieved_at=ts, confidence=0.7,
+                                                         status=VerificationStatus.EXTRACTED,
+                                                         note="a consortium university's country"))
+        opp.destination_countries = dests or opp.destination_countries
+        if opp.deadlines or opp.funding:
+            opp.uncertainties = [u for u in opp.uncertainties if "read the programme website" not in u]

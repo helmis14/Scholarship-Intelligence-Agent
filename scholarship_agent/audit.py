@@ -277,7 +277,7 @@ RISK_CYCLE = {"standard": {"not_announced"}, "strict": {"not_announced", "upcomi
 
 def _risk_gate(o: Opportunity, out: dict) -> None:
     import os
-    mode = os.environ.get("SCHOLAR_RISK_GATE", "standard").strip().lower()
+    mode = (os.environ.get("SCHOLAR_RISK_GATE") or "standard").strip().lower()   # empty means the default
     if mode not in ("standard", "strict"):
         return
 

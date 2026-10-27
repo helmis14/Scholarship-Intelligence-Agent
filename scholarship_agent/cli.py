@@ -64,11 +64,11 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("--provider", default="")
     s.add_argument("--countries")
 
-    s = sub.add_parser("adapter", help="run a dedicated source adapter: daad | erasmus_mundus | euraxess")
-    s.add_argument("name", choices=["daad", "erasmus_mundus", "euraxess"])
+    s = sub.add_parser("adapter", help="run a dedicated source adapter: daad | erasmus_mundus | euraxess | campusfrance")
+    s.add_argument("name", choices=["daad", "erasmus_mundus", "euraxess", "campusfrance"])
     s.add_argument("--limit", type=int)
     s.add_argument("--details", action="store_true",
-                   help="daad: fetch programme detail pages; erasmus_mundus: read consortium websites")
+                   help="daad, campusfrance: fetch programme details; erasmus_mundus: read consortium websites")
     s = sub.add_parser("euraxess-import", help="import a EURAXESS offer page you saved from your browser")
     s.add_argument("file")
     s.add_argument("--url", required=True, help="the offer's EURAXESS address")
@@ -209,6 +209,13 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("encrypt-private", help="encrypt private data written before encryption, rewrap old keys")
     sub.add_parser("new-key", help="print a new random key for SCHOLAR_DATA_KEY or SCHOLAR_LOOKUP_KEY")
     s = sub.add_parser("ai-usage", help="AI provider, paid/dry-run requests, tokens and estimated cost (no keys)")
+    s = sub.add_parser("translate", help="English translations of titles and quotations from pages in other languages "
+                                        "(paid model calls only with AI_PROVIDER and <PREFIX>_ALLOW_PAID=1; else a cost estimate)")
+    s.add_argument("--limit", type=int, default=0, help="translate at most this many texts")
+    s = sub.add_parser("check", help="second reading of stored records by an independent model; disagreements are "
+                                    "held for review (paid only with AI_PROVIDER and <PREFIX>_ALLOW_PAID=1)")
+    s.add_argument("--limit", type=int, default=0, help="check at most this many records")
+    s.add_argument("--refresh", action="store_true", help="read again records that already have a second reading")
     s = sub.add_parser("sources", help="source registry, coverage, freshness, failures")
     s.add_argument("--check", action="store_true", help="fetch every source now (network)")
     s.add_argument("--add", help="JSON object for a new local source")
@@ -367,6 +374,17 @@ def run(args, svc: ScholarshipService) -> dict:
         return svc.store.encrypt_private()
     if c == "ai-usage":
         return svc.ai_usage()
+    if c == "translate":
+        from .translate import translate_catalog
+        if svc.extractor_llm is None:
+            raise ValueError("no AI provider configured (set AI_PROVIDER=anthropic, see .env.example)")
+        return _with_usage(translate_catalog(svc.store, svc.extractor_llm, args.limit), svc.extractor_llm)
+    if c == "check":
+        from .ai_check import check_catalog
+        if svc.extractor_llm is None:
+            raise ValueError("no AI provider configured (set AI_PROVIDER=anthropic, see .env.example)")
+        return _with_usage(check_catalog(svc.store, svc.fetcher, svc.extractor_llm, svc.today, args.limit, args.refresh),
+                           svc.extractor_llm)
     if c == "sources":
         if args.add:
             return svc.add_source(json.loads(args.add))

@@ -7,9 +7,11 @@ Providers do not share a schema or lifecycle: see each module's docstring.
 """
 
 from .base import AdapterResult  # noqa: F401
+from .campusfrance import CampusFranceAdapter  # noqa: F401
 from .daad import DAADAdapter  # noqa: F401
 from .erasmus_mundus import ErasmusMundusAdapter  # noqa: F401
 from .euraxess import EuraxessAdapter  # noqa: F401
 
-ADAPTERS = {"daad": DAADAdapter, "erasmus_mundus": ErasmusMundusAdapter, "euraxess": EuraxessAdapter}
-__all__ = ["ADAPTERS", "AdapterResult", "DAADAdapter", "ErasmusMundusAdapter", "EuraxessAdapter"]
+ADAPTERS = {"daad": DAADAdapter, "erasmus_mundus": ErasmusMundusAdapter, "euraxess": EuraxessAdapter,
+            "campusfrance": CampusFranceAdapter}
+__all__ = ["ADAPTERS", "AdapterResult", "CampusFranceAdapter", "DAADAdapter", "ErasmusMundusAdapter", "EuraxessAdapter"]
