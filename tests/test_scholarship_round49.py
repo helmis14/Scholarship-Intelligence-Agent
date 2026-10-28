@@ -561,3 +561,42 @@ class TestExport(unittest.TestCase):
         self.assertIn("How to write it", doc)
         self.assertIn("Times New Roman", z.read("word/styles.xml").decode())
         self.assertIn("PAGE", z.read("word/footer1.xml").decode())
+
+
+class TestSiteSpeed(unittest.TestCase):
+    """Round 51: the country finder shares prefixes (same answers, much faster) and a changed catalogue is read again
+    behind the requests instead of during one."""
+    def test_country_mentions_keep_their_answers(self):
+        from scholarship_agent.countries import mentions
+        self.assertEqual(mentions("Open to South Sudan and Sudan"), ["SS", "SD"])
+        self.assertEqual(mentions("Nigerian students from Niger or Nigeria"), ["NG", "NE"])
+        self.assertEqual(mentions("Côte d'Ivoire, Guinea-Bissau, Bosnia & Herzegovina"), ["CI", "GW", "BA"])
+        self.assertEqual(mentions("a Dutch student visa for Indonesian students"), ["ID"])
+
+    def test_a_changed_catalogue_is_rebuilt_behind_the_requests(self):
+        import tempfile, time
+        from pathlib import Path
+        from unittest import mock
+        from scholarship_agent import site
+        from scholarship_agent.models import Deadline, DeadlineKind
+        from scholarship_agent.store import Store
+        st = Store(Path(tempfile.mkdtemp()))
+
+        def add(oid):
+            o = Opportunity(id=oid, title=f"Test Fellowship {oid}", provider_name="Test Foundation",
+                            provider_type=ProviderType.FOUNDATION, info_url=f"https://example.org/{oid}",
+                            page_type="scholarship_program",
+                            deadlines=[Deadline(kind=DeadlineKind.SCHOLARSHIP, date="2026-12-01",
+                                                certainty=DeadlineCertainty.CONFIRMED)])
+            st.save_opportunity(o, oid, o.info_url)
+
+        add("sch_a")
+        self.assertEqual(len(site.index(st, TODAY)), 1)
+        add("sch_b")
+        with mock.patch.object(site, "REBUILD_AFTER", 0):
+            self.assertEqual(len(site.index(st, TODAY)), 1)   # answered at once from the index it has
+            for _ in range(100):                             # ... while the new one is built behind it
+                if not site._BUILDING:
+                    break
+                time.sleep(0.02)
+            self.assertEqual(len(site.index(st, TODAY)), 2)

@@ -12,6 +12,7 @@ from __future__ import annotations
 import bisect
 import re
 import threading
+import time
 import unicodedata
 from collections import Counter
 from dataclasses import dataclass
@@ -178,18 +179,55 @@ def listed(o) -> bool:
 REBUILD_AFTER = 300   # seconds: while crawls write all day, rebuild at most this often (a rebuild reads every record)
 
 
-def index(store, today: date) -> list[Entry]:
-    import time
-    where = str(Path(store.dir).resolve())
-    key = (_signature(store), today.isoformat())
-    with _LOCK:
-        hit = _CACHE.get(where)
-    if hit and (hit[0] == key or (hit[0][1] == key[1] and time.monotonic() - hit[2] < REBUILD_AFTER)):
-        return hit[1]
+_BUILDING: set = set()
+
+
+def _build(store, today: date, where: str, key: tuple) -> list[Entry]:
     entries = [_entry(store, o, today) for o in store.list_opportunities() if listed(o)]
     with _LOCK:
         _CACHE[where] = (key, entries, time.monotonic())
     return entries
+
+
+def _build_behind(store, today: date, where: str) -> None:
+    """Round 51: a changed catalogue is read again in a thread of its own; requests keep the index they have meanwhile
+    (a rebuild reads every record and took seconds, which the visitor who happened to ask paid)."""
+    with _LOCK:
+        if where in _BUILDING:
+            return
+        _BUILDING.add(where)
+
+    def run():
+        st = None
+        try:
+            st = type(store)(Path(store.dir))   # a connection of its own: sqlite connections stay in their thread
+            _build(st, today, where, (_signature(st), today.isoformat()))
+        except Exception:   # the old index stays; the next request after REBUILD_AFTER tries again
+            pass
+        finally:
+            if st is not None:
+                st.close()
+            with _LOCK:
+                _BUILDING.discard(where)
+
+    threading.Thread(target=run, name="site-index", daemon=True).start()
+
+
+def index(store, today: date) -> list[Entry]:
+    where = str(Path(store.dir).resolve())
+    key = (_signature(store), today.isoformat())
+    with _LOCK:
+        hit = _CACHE.get(where)
+    if hit is None or hit[0][1] != key[1]:   # nothing yet, or a new day (cycles move with the date): build now
+        return _build(store, today, where, key)
+    if hit[0] != key and time.monotonic() - hit[2] >= REBUILD_AFTER:
+        _build_behind(store, today, where)
+    return hit[1]
+
+
+def warm(store, today: date) -> None:
+    """Build the index before the first visitor asks for it (round 51: called when the server starts)."""
+    _build_behind(store, today, str(Path(store.dir).resolve()))
 
 
 def parse_query(text: str) -> list[tuple[str, str]]:

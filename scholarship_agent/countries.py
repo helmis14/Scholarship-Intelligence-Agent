@@ -154,9 +154,31 @@ for _stem, _c in (("palestinien", "PS"), ("marocain", "MA"), ("algérien", "DZ")
 
 _BY_NAME = {name.lower(): code for code, (name, _) in COUNTRIES.items()}
 _BY_NAME.update(ALIASES)
+
+
+def _trie(words: list[str]) -> str:
+    """One pattern for many names, sharing their prefixes ("niger(?:ia(?:n)?)?"). Python tries an alternation one
+    branch at a time; the shared-prefix form fails at the first letter that fits no name, about twenty times faster on
+    long pages. Optional tails are greedy, so the longest name is tried first, as in a longest-first alternation."""
+    root: dict = {}
+    for w in words:
+        node = root
+        for ch in w:
+            node = node.setdefault(ch, {})
+        node[""] = {}
+
+    def build(node: dict) -> str:
+        alts = [re.escape(ch) + build(child) for ch, child in sorted(node.items()) if ch]
+        if not alts:
+            return ""
+        body = alts[0] if len(alts) == 1 else "(?:" + "|".join(alts) + ")"
+        return f"(?:{body})?" if "" in node else body
+
+    return build(root)
+
+
 # Longest names first so "South Sudan" wins over "Sudan", "Niger" does not eat "Nigeria".
-_NAME_RX = re.compile(r"\b(" + "|".join(sorted((re.escape(n) for n in list(_BY_NAME) + list(DEMONYMS)),
-                                               key=len, reverse=True)) + r")(?!\w)", re.I)
+_NAME_RX = re.compile(r"\b(" + _trie(sorted({n.lower() for n in list(_BY_NAME) + list(DEMONYMS)})) + r")(?!\w)", re.I)
 
 REGIONS = sorted({r for _, r in COUNTRIES.values()})
 

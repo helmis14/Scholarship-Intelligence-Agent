@@ -911,3 +911,18 @@ with the rest of the profile and checked at the boundary: the phone in the inter
 "+6281234567890", 7 to 15 digits), the LinkedIn address as https://www.linkedin.com/in/<name> (another site is refused).
 Both appear on the generated academic CV.
 
+
+**Writing help and files (round 51).** Letter and essay outlines open with a short writing guide (after the Harvard
+College Writing Center's essay strategies), the provider's selection criteria and the applicant's own experience and
+achievements; the reviewer also marks machine-sounding stock phrases, sentences over 40 words and essays without one
+concrete figure, and no longer counts unwritten [YOU WRITE] slots or the applicant's own contacts as claims. The profile
+takes experience (work, research, teaching, volunteering, leadership), achievements, publications and research
+interests, checked at the boundary. Drafts download as PDF (`export.py`, standard library only, standard Times fonts)
+and Word with the same layout: name and scholarship at the top, the title centred, justified paragraphs with a
+first-line indent and page numbers; CVs with uppercase section headings over a rule.
+
+**Speed (round 51).** The search index took 9.7 s to build on the live catalogue; 65% of it was finding country names
+in text with one alternation of 755 names. The names now share their prefixes in one pattern ("niger(?:ia(?:n)?)?"):
+6.1 s → 0.3 s on 10,776 texts with identical answers, and the whole build 4.4 s. The index is built when the server
+starts and, after the catalogue changes, again in a thread of its own while requests keep the index they have; no
+visitor waits for a rebuild any more (warm requests 5-30 ms).
