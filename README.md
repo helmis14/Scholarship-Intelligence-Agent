@@ -88,6 +88,11 @@ Every rule change is measured against frozen test sets. Each set holds official 
 
 See [docs/scholarship-agent/EVALUATION.md](docs/scholarship-agent/EVALUATION.md) for the method and the full history.
 
+## Panduan bahasa Indonesia
+
+Langkah demi langkah untuk menyiapkan, mengambil dan memperbarui data, memeriksa mutu, dan memakai mesin ini sebagai
+pelamar: **[docs/CARA-PAKAI.md](docs/CARA-PAKAI.md)**.
+
 ## Prerequisites
 
 - Python 3.10 or newer. The core uses the standard library only; there is no install step.
