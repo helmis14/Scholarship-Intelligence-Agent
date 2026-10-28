@@ -16,7 +16,7 @@ from datetime import date, datetime
 from pathlib import Path
 from typing import Optional
 
-from . import documents as docs_mod
+from . import documents as docs_mod, export as export_mod
 from . import eligibility, funding, planning, profile as profile_mod, ranking, registry, review, tracker
 from .discovery import Discovery
 from .models import SCHEMA_VERSION, AppStatus, Opportunity, Profile, VerificationStatus
@@ -569,7 +569,7 @@ class ScholarshipService:
              "created_at": d["created_at"], "review": d["review"]} for d in tracker.documents(self.store, aid)])
 
     def document_file(self, ref: str, kind: str, fmt: str, profile_id: str = "default") -> tuple[str, str, bytes]:
-        """(file name, media type, bytes) of a saved draft as Markdown or Word."""
+        """(file name, media type, bytes) of a saved draft as Markdown, Word or PDF (round 51: laid out to send)."""
         o = self._opp(ref)
         aid = tracker.application_id(profile_id, o.id)
         d = next((x for x in tracker.documents(self.store, aid) if x["kind"] == kind), None)
@@ -579,10 +579,16 @@ class ScholarshipService:
         name = f"{slug.strip('-')[:48] or o.id}_{kind}_v{d['version']}"
         if fmt == "md":
             return name + ".md", "text/markdown; charset=utf-8", d["content"].encode("utf-8")
+        p = self.store.get_profile(profile_id)
+        ed = profile_mod.highest_degree(p) if p else None
+        header = [" – ".join(x for x in ((p.name if p else "") or "[Your name]", ed.institution if ed else "") if x), o.title]
+        title = docs_mod.KINDS.get(kind, d["title"])
         if fmt == "docx":
             return (name + ".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-                    docs_mod.to_docx(d["content"]))
-        raise ValueError("format must be md or docx (PDF: open the .docx and export it)")
+                    export_mod.to_docx(d["content"], kind, header, title))
+        if fmt == "pdf":
+            return name + ".pdf", "application/pdf", export_mod.to_pdf(d["content"], kind, header, title)
+        raise ValueError("format must be md, docx or pdf")
 
     def export_document(self, ref: str, kind: str, fmt: str, out_dir: Path, profile_id: str = "default") -> dict:
         name, _, data = self.document_file(ref, kind, fmt, profile_id)

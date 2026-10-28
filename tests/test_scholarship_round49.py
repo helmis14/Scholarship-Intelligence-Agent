@@ -481,3 +481,83 @@ class TestWritingHelp(unittest.TestCase):
         xml = zipfile.ZipFile(io.BytesIO(to_docx(text))).read("word/document.xml").decode()
         self.assertIn("<w:i/>", xml)
         self.assertNotIn("&gt; How to write", xml)
+
+
+class TestExperienceInProfile(unittest.TestCase):
+    """Round 51: experience and achievements from the profile form reach the CV and the claim checks."""
+    def profile(self, **kw):
+        from scholarship_agent.models import Experience, Profile
+        from scholarship_agent.profile import normalize
+        base = dict(name="Rina", citizenships=["ID"], experience=[
+            Experience(kind="leadership", title="Volunteer coordinator", organization="PMI Depok", start="2023-01", end="2023-12",
+                       description="Led a team of 12 volunteers for 300 flood victims."),
+            Experience(kind="work", title=" ", organization="Dropped: no title")],
+            achievements=["  2023 · First prize, national essay competition ", ""])
+        base.update(kw)
+        return normalize(Profile(**base))
+
+    def test_rows_are_checked_and_blank_ones_dropped(self):
+        from scholarship_agent.models import Experience
+        p = self.profile()
+        self.assertEqual([e.title for e in p.experience], ["Volunteer coordinator"])
+        self.assertEqual(p.achievements, ["2023 · First prize, national essay competition"])
+        for bad in (Experience(kind="hobby", title="x"), Experience(kind="work", title="x", start="2023/01"),
+                    Experience(kind="work", title="x", start="2024-05", end="2023-01")):
+            with self.assertRaises(ValueError):
+                self.profile(experience=[bad])
+
+    def test_the_cv_and_the_reviewer_use_them(self):
+        from scholarship_agent import review
+        from scholarship_agent.documents import academic_cv
+        p = self.profile()
+        cv = academic_cv(p)
+        self.assertIn("## Leadership and volunteering\n- **Volunteer coordinator**, PMI Depok", cv)
+        self.assertIn("## Awards and achievements\n- 2023 · First prize, national essay competition", cv)
+        letter = "Dear Committee,\n\nIn 2023 I led a team of 12 volunteers in Depok for 300 flood victims.\n\nRina"
+        rv = review.review(letter, {"kind": "motivation_letter"}, p)
+        self.assertFalse([i for i in rv["issues"] if i["type"] in ("unsupported_claim", "missing_evidence")], rv["issues"])
+
+
+class TestExport(unittest.TestCase):
+    """Round 51: Word and PDF files laid out to send; the writer's notes stay out of the PDF."""
+    ESSAY = ("# Motivation letter - Test Award\n\n> How to write it:\n> - a note\n\n"
+             + "In 2023 I led a team of 12 volunteers in Depok. " * 3 + "\n\n[YOU WRITE: Plan]\n\n> Before you send it: delete these notes.\n")
+
+    def content(self, pdf: bytes) -> bytes:
+        import re, zlib
+        return b"".join(zlib.decompress(m) for m in re.findall(rb"stream\n(.*?)\nendstream", pdf, re.S))
+
+    def test_blocks_read_essays_and_cvs(self):
+        from scholarship_agent.export import blocks
+        self.assertEqual(blocks(self.ESSAY, "motivation_letter", ["Rina – UI", "Test Award"], "Motivation letter", notes=False),
+                         [("header", "Rina – UI"), ("header", "Test Award"), ("title", "Motivation Letter"),
+                          ("para", ("In 2023 I led a team of 12 volunteers in Depok. " * 3).strip()), ("para", "[YOU WRITE: Plan]")])
+        cv = "# Rina\n\nrina@x.test | +62812\n\n## Education\n- **Bachelor in CS**, UI (Jul 2024)\n  Thesis on floods\n"
+        self.assertEqual([t for t, _ in blocks(cv, "scholarship_cv")], ["name", "contact", "heading", "bullet", "sub"])
+
+    def test_the_pdf_is_a_pdf_with_page_numbers_and_without_the_notes(self):
+        from scholarship_agent.export import to_pdf
+        pdf = to_pdf(self.ESSAY, "motivation_letter", ["Rina Şahin – UI", "Test Award"], "Motivation letter")
+        self.assertTrue(pdf.startswith(b"%PDF-1.4") and pdf.rstrip().endswith(b"%%EOF"))
+        self.assertIn(b"/BaseFont /Times-Roman", pdf)
+        body = self.content(pdf)
+        self.assertIn(b"(- 1 -) Tj", body)
+        self.assertIn(b"Sahin", body)            # a letter outside WinAnsi falls back to its plain form
+        self.assertIn(b"[YOU WRITE: Plan]", body)   # unfinished parts stay visible
+        self.assertNotIn(b"How to write", body)  # the notes are for the writer only
+        long = "# Essay\n\n" + ("A sentence that goes on for a while to fill the page. " * 40 + "\n\n") * 6
+        many = to_pdf(long, "essay")   # about 2,600 words: several pages, each with its number
+        pages = many.count(b"/Type /Page ")
+        self.assertGreater(pages, 1)
+        self.assertIn(b"(- %d -) Tj" % pages, self.content(many))
+
+    def test_word_keeps_the_layout_and_the_notes(self):
+        import io, zipfile
+        from scholarship_agent.export import to_docx
+        z = zipfile.ZipFile(io.BytesIO(to_docx(self.ESSAY, "motivation_letter", ["Rina", "Test Award"], "Motivation letter")))
+        doc = z.read("word/document.xml").decode()
+        self.assertIn('<w:jc w:val="both"/>', doc)
+        self.assertIn('w:firstLine="720"', doc)
+        self.assertIn("How to write it", doc)
+        self.assertIn("Times New Roman", z.read("word/styles.xml").decode())
+        self.assertIn("PAGE", z.read("word/footer1.xml").decode())

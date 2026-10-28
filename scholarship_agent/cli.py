@@ -160,7 +160,7 @@ def build_parser() -> argparse.ArgumentParser:
     s = sub.add_parser("export", help="export a saved document")
     s.add_argument("ref")
     s.add_argument("kind")
-    s.add_argument("--format", default="docx", choices=["md", "docx"])
+    s.add_argument("--format", default="docx", choices=["md", "docx", "pdf"])
     s.add_argument("--out", default=None)
 
     s = sub.add_parser("deadlines", help="upcoming deadlines and urgent tasks")

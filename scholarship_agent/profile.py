@@ -49,6 +49,31 @@ def linkedin_url(v: str) -> str:
     return f"https://www.linkedin.com/in/{m.group(1)}"
 
 
+EXPERIENCE_KINDS = ("work", "research", "teaching", "volunteer", "leadership")
+MONTH_RX = re.compile(r"\d{4}-\d{2}(?:-\d{2})?")
+
+
+def experience_rows(rows) -> list:
+    """Round 51: entries from the profile form, checked; rows without a title are dropped."""
+    out = []
+    for e in rows:
+        e.kind = (e.kind or "work").strip().lower()
+        if e.kind not in EXPERIENCE_KINDS:
+            raise ValueError(f"experience: kind must be one of {', '.join(EXPERIENCE_KINDS)}")
+        e.title, e.organization = e.title.strip()[:200], e.organization.strip()[:200]
+        e.description = " ".join(e.description.split())[:1000]
+        for k in ("start", "end"):
+            v = (getattr(e, k) or "").strip()
+            if v and not MONTH_RX.fullmatch(v):
+                raise ValueError(f"experience: {k} must be a month, YYYY-MM")
+            setattr(e, k, v)
+        if e.start and e.end and e.end[:7] < e.start[:7]:
+            raise ValueError("experience: the end comes before the start")
+        if e.title:
+            out.append(e)
+    return out
+
+
 def normalize(p: Profile) -> Profile:
     p.phone = phone_number(p.phone)
     p.linkedin = linkedin_url(p.linkedin)
@@ -60,6 +85,9 @@ def normalize(p: Profile) -> Profile:
         if e.country:
             e.country = countries.code(e.country) or e.country
     p.target_levels = [lvl.lower() for lvl in p.target_levels]
+    p.experience = experience_rows(p.experience)
+    for k in ("achievements", "publications", "projects", "research_interests"):
+        setattr(p, k, [" ".join(x.split())[:300] for x in getattr(p, k) if isinstance(x, str) and x.strip()][:40])
     return p
 
 

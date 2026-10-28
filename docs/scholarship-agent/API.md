@@ -53,7 +53,7 @@ builds on a profile and none is saved yet: drafts, ranking, matching; HTTP 409 `
 | `documents_audit(ref, profile_id)` | `GET /applications/{opp}/readiness` | `matrix`, `drafts`, `missing`, `notes` |
 | `pre_submission_review(ref, profile_id)` | `GET /applications/{opp}/pre-submission` | `ready`, `blockers`, `next_deadline`, `eligibility` |
 | `application_documents(ref, profile_id)` | `GET /applications/{opp}/documents` | `application_id`, `documents` (latest version of each, with `review`) |
-| `document_file(ref, kind, fmt, profile_id)` | `GET /applications/{opp}/documents/{kind}/file?format=docx\|md` | file name, media type, bytes |
+| `document_file(ref, kind, fmt, profile_id)` | `GET /applications/{opp}/documents/{kind}/file?format=pdf\|docx\|md` | file name, media type, bytes (PDF and Word laid out to send: `export.py`) |
 | `export_document(ref, kind, fmt, out_dir, profile_id)` | CLI `export` (writes `document_file` to a folder) | `file` |
 | `track(ref, status, note, item, item_status, profile_id)` | `GET/PATCH /applications[/{opp}]` | `applications` or `application`, `checklist` |
 | `deadlines(within_days, profile_id, tracked_only)` | `GET /profiles/{id}/deadlines` | `confirmed`, `expected_unconfirmed`, `unknown`, `historical_recent`, `urgent_tasks` |

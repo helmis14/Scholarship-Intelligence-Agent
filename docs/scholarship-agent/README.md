@@ -39,7 +39,7 @@ required. Every command prints JSON.
 | `/scholar-rank` | `rank [--weights]` | weighted, explained ranking; hard failures excluded |
 | `/match` | `match <id>`, `funding <id>` | eligibility decision with evidence; funding class and estimate |
 | `/plan` | `plan <id>` | requirements matrix + dependency-ordered timeline |
-| `/prepare` | `prepare`, `brief`, `save-draft`, `export` | CV, briefs, drafts, review, versions, .docx |
+| `/prepare` | `prepare`, `brief`, `save-draft`, `export` | CV, briefs, drafts, review, versions, .pdf and .docx |
 | `/essay` | `essay <id> --kind` | essay brief, draft, review |
 | `/cv` | `cv <id>` | tailored academic CV from confirmed facts |
 | `/documents` | `documents <id>` | readiness audit |

@@ -18,11 +18,8 @@ briefing pack for the real recommender is generated.
 
 from __future__ import annotations
 
-import io
 import re
-import zipfile
 from typing import Optional, Protocol
-from xml.sax.saxutils import escape
 
 from . import countries
 from .models import Opportunity, Profile
@@ -266,8 +263,22 @@ def required_topics(prompt: str, criteria: list[str]) -> list[str]:
 
 # ------------------------------------------------------------- deterministic documents
 
-def _fmt_date(s: str) -> str:
-    return s or "present"
+MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
+
+
+def _fmt_date(s: str, empty: str = "present") -> str:
+    """'2024-07' or '2024-07-15' as 'Jul 2024'; a year stays as it is; nothing reads as `empty`."""
+    m = re.match(r"(\d{4})-(\d{2})", s or "")
+    if m and 1 <= int(m.group(2)) <= 12:
+        return f"{MONTHS[int(m.group(2)) - 1]} {m.group(1)}"
+    return s or empty
+
+
+def _span(start: str, end: str) -> str:
+    """' (Jan 2023 – Dec 2023)', ' (Jul 2024)' when only the end is known, '' when neither is."""
+    if not start and not end:
+        return ""
+    return f" ({_fmt_date(start, '')} – {_fmt_date(end)})" if start else f" ({_fmt_date(end)})"
 
 
 def academic_cv(p: Profile, opp: Optional[Opportunity] = None) -> str:
@@ -284,17 +295,20 @@ def academic_cv(p: Profile, opp: Optional[Opportunity] = None) -> str:
         line = f"- **{_degree(e['degree'])} in {e['field']}**, {e['institution']}"
         if e["country"]:
             line += f", {e['country']}"
-        line += f" ({e.get('start') or '?'} - {_fmt_date(e.get('end', ''))})"
+        line += _span(e.get("start", ""), e.get("end", ""))
         if e.get("gpa") is not None:
             line += f" - GPA {e['gpa']}" + (f"/{e['gpa_scale']}" if e.get("gpa_scale") else "")
         L.append(line)
     research = [x for x in fp["experience"] if x["kind"] in ("research", "teaching")]
-    work = [x for x in fp["experience"] if x["kind"] not in ("research", "teaching")]
-    for title, rows in (("Research and teaching experience", research), ("Professional experience", work)):
+    service = [x for x in fp["experience"] if x["kind"] in ("volunteer", "leadership")]
+    work = [x for x in fp["experience"] if x["kind"] not in ("research", "teaching", "volunteer", "leadership")]
+    for title, rows in (("Research and teaching experience", research), ("Professional experience", work),
+                        ("Leadership and volunteering", service)):
         if rows:
             L += ["", f"## {title}"]
             for x in rows:
-                L.append(f"- **{x['title']}**, {x['organization']} ({x.get('start') or '?'} - {_fmt_date(x.get('end', ''))})")
+                L.append("- " + ", ".join(v for v in (f"**{x['title']}**", x["organization"]) if v)
+                         + _span(x.get("start", ""), x.get("end", "")))
                 if x.get("description"):
                     L.append(f"  {x['description']}")
     for title, key in (("Publications", "publications"), ("Projects", "projects"), ("Awards and achievements", "achievements")):
@@ -335,6 +349,10 @@ def skeleton(kind: str, b: dict) -> str:
     L += ["> How to write it:"] + [f"> - {g}" for g in GUIDE]
     if b.get("selection_criteria"):
         L += ["> Selection criteria on the official page: " + "; ".join(c.strip().rstrip(".") for c in b["selection_criteria"][:6])]
+    own = [f"{x['title']}" + (f" ({x['organization']})" if x.get("organization") else "") for x in fp["experience"][:3]]
+    own += fp.get("achievements", [])[:3]
+    if own:   # the applicant's own material for the evidence paragraphs, from the profile
+        L += ["> From your profile, for the examples: " + "; ".join(own)]
     L.append("")
     parts = b.get("standard", {}).get("structure") or ["Opening - why this scholarship and this field"]
     first = parts[0] if "specific experience" in parts[0] else parts[0] + ", from a specific experience"
@@ -343,7 +361,8 @@ def skeleton(kind: str, b: dict) -> str:
         L += ["", f"I hold a {_degree(ed['degree'], True)} in {ed['field']} from {ed['institution']}."]
     if fp["experience"]:
         x = fp["experience"][0]
-        L.append(f"I worked as {x['title']} at {x['organization']}.")
+        verb = {"volunteer": "I volunteered as", "leadership": "I served as"}.get(x["kind"], "I worked as")
+        L += ([] if ed else [""]) + [f"{verb} {x['title']}" + (f" at {x['organization']}." if x["organization"] else ".")]
     if fp["research_interests"]:
         L.append("My research interests are " + ", ".join(fp["research_interests"]) + ".")
     for t in b["required_topics"][:6]:
@@ -455,33 +474,7 @@ def generate(kind: str, opp: Opportunity, p: Profile, llm: Optional[LLMProvider]
 
 # ------------------------------------------------------------- export
 
-def to_docx(markdown: str) -> bytes:
-    """Minimal .docx (headings bold, bullets as paragraphs). Stdlib only."""
-    paras = []
-    for line in markdown.splitlines():
-        if not line.strip() or line.startswith("<!--"):
-            paras.append("<w:p/>")
-            continue
-        bold, note = line.startswith("#"), line.startswith(">")
-        text = re.sub(r"^#+\s*|^>\s?", "", line)
-        text = re.sub(r"\*\*(.+?)\*\*", r"\1", text)
-        text = "• " + text[2:] if text.startswith("- ") else text
-        rpr = "<w:rPr><w:b/></w:rPr>" if bold else '<w:rPr><w:i/><w:color w:val="6D6C66"/></w:rPr>' if note else ""
-        paras.append(f'<w:p><w:r>{rpr}<w:t xml:space="preserve">{escape(text)}</w:t></w:r></w:p>')
-    doc = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
-           '<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>'
-           + "".join(paras) + "</w:body></w:document>")
-    buf = io.BytesIO()
-    with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
-        z.writestr("[Content_Types].xml",
-                   '<?xml version="1.0" encoding="UTF-8"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">'
-                   '<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>'
-                   '<Default Extension="xml" ContentType="application/xml"/>'
-                   '<Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>'
-                   '</Types>')
-        z.writestr("_rels/.rels",
-                   '<?xml version="1.0" encoding="UTF-8"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'
-                   '<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>'
-                   '</Relationships>')
-        z.writestr("word/document.xml", doc)
-    return buf.getvalue()
+def to_docx(markdown: str, kind: str = "", header: Optional[list[str]] = None, title: str = "") -> bytes:
+    """Word file of a draft (round 51: the layout lives in export.py, shared with the PDF)."""
+    from .export import to_docx as write
+    return write(markdown, kind, header, title)
