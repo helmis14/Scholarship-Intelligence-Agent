@@ -294,12 +294,17 @@ class ScholarshipService:
     CYCLE_LABELS = {"open": "Open", "closed": "Closed", "upcoming": "Opens later", "not_announced": "Next round not announced",
                     "rolling": "Rolling (any time)"}
 
-    def describe_catalog(self, limit: int = 0, refresh: bool = False) -> dict:
-        """Round 51: programme descriptions from the pages already stored (nothing is fetched): the official page of
-        each record first, then the other pages its evidence comes from."""
-        from .extract import Page, programme_description, short_description
-        done = kept = no_page = none_found = 0
+    def describe_catalog(self, limit: int = 0, refresh: bool = False, fetch: bool = False, listed_only: bool = False) -> dict:
+        """Round 51: programme descriptions from the pages already stored: the official page of each record first, then
+        the other pages its evidence comes from. With `fetch`, a record whose page is not stored has its official page
+        read again (robots and rate limits apply; no model is called)."""
+        from .extract import Page, page_from_response, programme_description, short_description
+        from .net import FetchError
+        from .site import listed
+        done = kept = no_page = none_found = fetched = 0
         for o in self.store.list_opportunities():
+            if listed_only and not listed(o):
+                continue
             if o.description and not refresh:
                 kept += 1
                 continue
@@ -311,6 +316,12 @@ class ScholarshipService:
                                                  "LIMIT 1", (u, u)).fetchone()
                 if row and (text := programme_description(Page(row[0], row[1]), o.title)):
                     break
+            if not text and fetch and o.info_url.startswith("http"):
+                try:
+                    text = programme_description(page_from_response(self.fetcher.get(o.info_url)), o.title)
+                    fetched += 1
+                except (FetchError, ValueError):
+                    pass
             if not text:
                 if any(self.store.catalog.execute("SELECT 1 FROM pages WHERE url = ? OR final_url = ?", (u, u)).fetchone()
                        for u in urls):
@@ -322,7 +333,8 @@ class ScholarshipService:
             done += 1
             if limit and done >= limit:
                 break
-        return _out(described=done, already_described=kept, page_without_description=none_found, no_stored_page=no_page)
+        return _out(described=done, already_described=kept, page_without_description=none_found, no_stored_page=no_page,
+                    pages_fetched=fetched)
 
     def decision_card(self, ref: str) -> dict:
         """The four decisions an applicant acts on, as a reader-facing card (round 46, for the web front end): each with

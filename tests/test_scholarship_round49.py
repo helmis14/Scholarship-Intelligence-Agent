@@ -717,3 +717,28 @@ class TestBackupRestore(unittest.TestCase):
         bad.write_bytes(b"not an archive")
         with self.assertRaises(Exception):
             backup.restore(bad, Path(tempfile.mkdtemp()) / "data", yes=True)
+
+
+class TestDescribeByFetching(unittest.TestCase):
+    def test_a_missing_page_is_read_again_for_its_description(self):
+        import tempfile
+        from pathlib import Path
+        from scholarship_agent.service import ScholarshipService
+        from scholarship_agent.store import Store
+        html = ('<html><head><meta name="description" content="The Example Award funds two years of doctoral research in '
+                'Germany for young scientists from Southeast Asia."></head><body></body></html>')
+
+        def t(url, headers):
+            if url.endswith("/robots.txt"):
+                return Response(url, 404, "text/plain", "")
+            return Response(url, 200, "text/html", html) if url == "https://example.org/award" else Response(url, 404, "text/html", "")
+        st = Store(Path(tempfile.mkdtemp()))
+        o = Opportunity(id="sch_a", title="Example Award", provider_name="P", provider_type=ProviderType.FOUNDATION,
+                        info_url="https://example.org/award", page_type="scholarship_program")
+        st.save_opportunity(o, o.id, o.info_url)
+        svc = ScholarshipService(store=st, fetcher=Fetcher(t, min_interval=0, sleep=lambda s: None), search=None, today=TODAY,
+                                 extractor_llm=None)
+        self.assertEqual(svc.describe_catalog()["described"], 0)                   # nothing stored, nothing fetched
+        r = svc.describe_catalog(fetch=True, listed_only=True)
+        self.assertEqual((r["described"], r["pages_fetched"]), (1, 1))
+        self.assertTrue(st.get_opportunity("sch_a").description.startswith("The Example Award funds two years"))

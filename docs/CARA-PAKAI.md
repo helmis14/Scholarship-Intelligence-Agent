@@ -98,6 +98,7 @@ Tenggat yang sudah lewat, siklus tahunan, dan syarat yang berubah diperbarui dar
 
 ```bash
 python3 -m scholarship_agent describe                     # isi deskripsi program dari halaman yang sudah tersimpan
+python3 -m scholarship_agent describe --fetch --listed    # baca ulang halaman yang tidak tersimpan (gratis, lama)
 ```
 
 Deskripsi ("ini program apa") diambil dari kata-kata halaman resmi sendiri; pembacaan halaman berikutnya mengisi sisanya.
@@ -111,7 +112,7 @@ hanya diperkirakan biayanya, tidak dikirim. Untuk menyalakannya dengan batas bia
 env -u ANTHROPIC_AUTH_TOKEN -u ANTHROPIC_BASE_URL bash -c 'set -a; . ./.env.local; set +a;
   export AI_PROVIDER=anthropic ANTHROPIC_ALLOW_PAID=1 ANTHROPIC_MODEL=claude-haiku-5-5 \
     ANTHROPIC_MAX_ESTIMATED_COST_USD=0.20 ANTHROPIC_MAX_REQUESTS_PER_RUN=600 ANTHROPIC_MAX_TOKENS=1500;
-  python3 -m scholarship_agent check --limit 100'
+  python3 -m scholarship_agent check --limit 100'      # --listed: hanya program yang tampil di situs
 python3 -m scholarship_agent ai-usage                     # biaya yang sudah terpakai
 ```
 

@@ -127,3 +127,18 @@ binding safeguards, or the person's consent) and out of the EU/UK if those users
 8. Copyright and database-right position of the quotations; takedown wording.
 9. Whether showing a ranking and an eligibility explanation counts as profiling or automated decision-making that needs
    extra notice or an opt-out.
+
+## Changes on 2026-10-28 (before going public)
+
+- Log-in runs through Supabase (e-mail and password are held by Supabase; this server sees only a verified session). A
+  CAPTCHA (Cloudflare Turnstile, through Supabase's bot protection) can be turned on for sign-up, log-in and password
+  reset; Cloudflare then receives technical browser signals. Both are processors to list in the notice and in the
+  records of processing.
+- A phone number is asked at sign-up and kept, encrypted, in the profile; it appears on the CV the person downloads.
+- Backups: one archive every night (catalogue, private database, keys), 14 kept; restore keeps the data it replaces as a
+  "pre-restore" archive. Deleted accounts therefore disappear from backups within 14 days.
+- Public programme pages (/p/<id>) and a sitemap carry catalogue data only, never personal data.
+- The operator's name, address and e-mail addresses are filled into the notice and the terms from the server's
+  settings (SCHOLAR_OPERATOR_NAME, SCHOLAR_OPERATOR_ADDRESS, SCHOLAR_CONTACT_EMAIL, SCHOLAR_PRIVACY_EMAIL,
+  SCHOLAR_TAKEDOWN_EMAIL). Counsel still writes liability, governing law, legal bases, transfers and response times.
+

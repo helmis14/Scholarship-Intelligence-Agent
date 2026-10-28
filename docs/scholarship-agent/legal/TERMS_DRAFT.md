@@ -1,4 +1,4 @@
-# Terms of service — DRAFT for legal review (version 2026-10-23)
+# Terms of service — DRAFT for legal review (version 2026-10-28)
 
 > Draft written by the engineering side. A lawyer must review and rewrite it, in particular the liability, governing
 > law and consumer-protection clauses. Fill in every [bracketed] item. The Indonesian version follows the English one;
@@ -18,7 +18,7 @@
    and submit only your own work. We refuse to invent facts and flag unsupported claims, but we cannot guarantee that a
    draft is accepted.
 5. **Your account.** Give a working e-mail address, keep your password secret, and tell us if your account is misused. You
-   must be [18 or older / the age set by counsel].
+   must be 18 or older (the sign-up form asks you to confirm it; counsel to confirm the age).
 6. **Your content.** Your profile and documents remain yours. You allow us to store and process them only to provide the
    service to you. You can export or delete them at any time.
 7. **Acceptable use.** No automated scraping of the service, no attempts to access other people's data, no false reports,
@@ -44,7 +44,7 @@
    penggunaan AI, dan hanya mengirim karya Anda sendiri. Kami menolak mengarang fakta dan menandai klaim yang tidak didukung,
    tetapi tidak dapat menjamin draf diterima.
 5. **Akun Anda.** Gunakan alamat e-mail yang aktif, rahasiakan kata sandi, dan beri tahu kami bila akun Anda disalahgunakan.
-   Anda harus berusia [18 tahun ke atas / usia yang ditetapkan penasihat hukum].
+   Anda harus berusia 18 tahun ke atas (formulir pendaftaran meminta Anda menyatakannya; usia ini dikonfirmasi penasihat hukum).
 6. **Konten Anda.** Profil dan dokumen Anda tetap milik Anda. Anda mengizinkan kami menyimpan dan memprosesnya hanya untuk
    memberikan layanan kepada Anda. Anda dapat mengekspor atau menghapusnya kapan saja.
 7. **Penggunaan yang wajar.** Dilarang mengambil data layanan secara otomatis, mencoba mengakses data orang lain, mengirim

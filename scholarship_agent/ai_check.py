@@ -168,16 +168,18 @@ def apply(o, out: dict, today: date) -> None:
                   "detail": f"{out[f]['state']}, but a second reading of the page says {theirs[:120]!r}; check the quotation"}
 
 
-def check_catalog(store, fetcher, llm, today: date, limit: int = 0, refresh: bool = False) -> dict:
+def check_catalog(store, fetcher, llm, today: date, limit: int = 0, refresh: bool = False, listed_only: bool = False) -> dict:
     """Round 49: the second reading for stored records, so the site holds what an independent reading disagrees with.
     The catalogue keeps no page text, so each record's own page is fetched again (robots and rate limits apply) and
     read once. Records of a structured dataset (adapter:...) are left out: their decisions come from the dataset, not
     from one page. A failed request is skipped; three in a row (a dry run, a budget stop) end the run, keeping what was stored."""
-    from .extract import page_from_response
+    from .extract import page_from_response, programme_description
     from .net import FetchError
     from .normalize import dedup_key, normalize_url
-    todo = [o for o in store.list_opportunities()
-            if not o.discovered_via.startswith("adapter:") and (refresh or not o.second_reading)]
+    from .site import listed
+    todo = [o for o in store.list_opportunities()   # round 51: listed_only, the programmes the site shows
+            if not o.discovered_via.startswith("adapter:") and (refresh or not o.second_reading)
+            and (not listed_only or listed(o))]
     if limit:
         todo = todo[:limit]
     done, unreadable, failed, stopped = 0, 0, 0, ""
@@ -191,6 +193,8 @@ def check_catalog(store, fetcher, llm, today: date, limit: int = 0, refresh: boo
         if len(page.text) < 300:   # an empty shell or a script-only page: nothing to read
             unreadable += 1
             continue
+        if not o.description:   # round 51: the page is here anyway; what the programme is, in its own words
+            o.description = programme_description(page, o.title)
         if attach_second_reading(o, page.text, llm, today) is None:
             failed, misses = failed + 1, misses + 1
             if misses >= 3:

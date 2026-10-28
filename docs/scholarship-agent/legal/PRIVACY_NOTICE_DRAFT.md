@@ -1,4 +1,4 @@
-# Privacy notice — DRAFT for legal review (version 2026-10-23)
+# Privacy notice — DRAFT for legal review (version 2026-10-28)
 
 > Draft written by the engineering side to match what the software does. A lawyer must review and rewrite it before
 > publication. Fill in every [bracketed] item. The Indonesian version follows the English one.
@@ -31,15 +31,22 @@ your profile to train AI models.
 turn on AI drafting, the facts you confirmed in your profile are sent to our AI provider [Anthropic, PBC, United States]
 to draft documents for you. You can turn this off at any time.
 
-**Who receives it.** Our hosting provider [name, country] and, if you use password reset, our e-mail provider [name].
-Each processes the data only for us under a written agreement. [Transfers outside your country and their safeguards, to be
-completed by counsel.]
+**Who receives it.** Our hosting provider [hosting provider, country]; Supabase, Inc. for logging in (your e-mail address
+and a protected form of your password, held in the region of our Supabase project); Cloudflare, Inc. when the sign-up,
+log-in or password-reset form shows a security check (CAPTCHA: technical signals from your browser, no profile data); and,
+if you use password reset, our e-mail provider [name]. Each processes the data only for us under a written agreement.
+[Transfers outside your country and their safeguards, to be completed by counsel.]
 
-**How long we keep it.** Until you delete your account. Earlier versions of your profile: the last 20. Backups: up to
-[N] days after deletion. Login sessions end after 30 days or 7 days without use.
+**How long we keep it.** Until you delete your account. Earlier versions of your profile: the last 20. Backups are made
+every night and kept for 14 days, so deleted data disappears from them at most 14 days after deletion. Login sessions
+end when they expire or when you log out.
 
-**Security.** Your profile, notes, documents and e-mail address are encrypted at rest (AES-256); passwords are stored as
-scrypt hashes; access uses expiring sessions over HTTPS.
+**Your browser.** The site keeps your login session, your language and, during sign-up, the phone number you typed in your
+browser's own storage. We use no advertising or tracking cookies.
+
+**Security.** Your profile, notes, documents and phone number are encrypted at rest (AES-256-GCM), and so are our
+backups' copies of them; passwords are held by our login provider as one-way hashes and never reach our servers in
+readable form after sign-up; every connection uses HTTPS with expiring sessions.
 
 **Your rights.** You can see and download all your data (Account → Export), correct your profile, delete your account and
 all your data in one step (Account → Delete), withdraw your AI-drafting consent, and contact us or the data protection
@@ -79,15 +86,23 @@ model AI.
 Bila Anda menyalakan bantuan penulisan dengan AI, fakta yang sudah Anda konfirmasi di profil dikirim ke penyedia AI kami
 [Anthropic, PBC, Amerika Serikat] untuk menyusun dokumen bagi Anda. Anda dapat mematikannya kapan saja.
 
-**Siapa yang menerimanya.** Penyedia hosting kami [nama, negara] dan, bila Anda memakai fitur atur ulang kata sandi,
-penyedia e-mail kami [nama]. Masing-masing memproses data hanya untuk kami berdasarkan perjanjian tertulis. [Transfer ke
-luar negeri dan pelindungannya, dilengkapi oleh penasihat hukum.]
+**Siapa yang menerimanya.** Penyedia hosting kami [penyedia hosting, negara]; Supabase, Inc. untuk login (alamat e-mail
+dan bentuk terlindungi dari kata sandi Anda, disimpan di wilayah proyek Supabase kami); Cloudflare, Inc. saat formulir
+daftar, masuk, atau atur ulang kata sandi menampilkan pemeriksaan keamanan (CAPTCHA: sinyal teknis dari browser Anda,
+tanpa data profil); dan, bila Anda memakai fitur atur ulang kata sandi, penyedia e-mail kami [nama]. Masing-masing
+memproses data hanya untuk kami berdasarkan perjanjian tertulis. [Transfer ke luar negeri dan pelindungannya, dilengkapi
+oleh penasihat hukum.]
 
-**Berapa lama kami menyimpannya.** Sampai Anda menghapus akun. Versi lama profil: 20 terakhir. Cadangan: paling lama [N]
-hari setelah penghapusan. Sesi login berakhir setelah 30 hari, atau 7 hari tanpa dipakai.
+**Berapa lama kami menyimpannya.** Sampai Anda menghapus akun. Versi lama profil: 20 terakhir. Cadangan dibuat setiap
+malam dan disimpan 14 hari, jadi data yang dihapus hilang dari cadangan paling lama 14 hari setelah penghapusan. Sesi
+login berakhir saat kedaluwarsa atau saat Anda keluar.
 
-**Keamanan.** Profil, catatan, dokumen dan alamat e-mail Anda disimpan terenkripsi (AES-256); kata sandi disimpan sebagai
-hash scrypt; akses memakai sesi yang kedaluwarsa melalui HTTPS.
+**Browser Anda.** Situs menyimpan sesi login, bahasa pilihan, dan (saat mendaftar) nomor telepon yang Anda ketik di
+penyimpanan browser Anda sendiri. Kami tidak memakai cookie iklan atau pelacak.
+
+**Keamanan.** Profil, catatan, dokumen dan nomor telepon Anda disimpan terenkripsi (AES-256-GCM), begitu pula salinannya
+di cadangan kami; kata sandi disimpan oleh penyedia login kami sebagai hash satu arah dan tidak pernah sampai ke server
+kami dalam bentuk yang bisa dibaca setelah pendaftaran; setiap koneksi memakai HTTPS dengan sesi yang kedaluwarsa.
 
 **Hak Anda.** Anda dapat melihat dan mengunduh semua data Anda (Akun → Ekspor), memperbaiki profil, menghapus akun beserta
 seluruh data dalam satu langkah (Akun → Hapus), menarik persetujuan bantuan AI, serta menghubungi kami atau lembaga
