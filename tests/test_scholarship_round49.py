@@ -301,3 +301,90 @@ class TestCampusFrance(unittest.TestCase):
         self.assertEqual(len(res.records), 2)
         self.assertEqual(res.records[0].nationality.mode, "unknown")   # no list to read the ids with
         self.assertTrue(res.notes)
+
+
+GA_DETAIL = ('<div id="GrainEntry"><div class="h3">Example Fellowship</div>'
+             '<div class="row"><div class="col-sm-3"><label>Country of origin:</label></div><div class="grain-data col-sm-9">'
+             'Indonesia, Viet Nam</div></div>'
+             '<div class="row"><div class="col-sm-3"><label>Target country:</label></div><div class="grain-data col-sm-9">'
+             'Austria</div></div>'
+             '<div class="row"><div class="col-sm-3"><label>Target group:</label></div><div class="grain-data col-sm-9">'
+             '  Graduates<br/>  PhD students<br/></div></div>'
+             '<div class="row"><div class="col-sm-3"><label>Funding organisation:</label></div><div class="grain-data col-sm-9">'
+             '<div>Example Foundation</div></div></div>'
+             '<div class="row"><div class="col-sm-3"><label>Grant benefit paid:</label></div><div class="grain-data col-sm-9">'
+             '<div>EUR 1,200 per month</div></div></div>'
+             '<div class="row" id="subdate"><div class="col-sm-3"><label>Closing date for applications:</label></div>'
+             '<div class="grain-data col-sm-9"><div class="sd"><div class="date">15.01.2027</div></div><div class="sd">'
+             '<div class="date">Annually (01.03.)</div></div></div></div>'
+             '<div class="row"><div class="col-sm-3"><label>Advice on how to apply:</label></div><div class="grain-data col-sm-9">'
+             '<div>Send a CV and a motivation letter.</div><div><a href="https://example.org/fellowship" target="_blank">'
+             'Further information</a></div></div></div><div class="linerow"> </div></div>')
+
+
+class TestGrantsAt(unittest.TestCase):
+    def test_list_and_detail_through_post(self):
+        import json
+        from scholarship_agent.adapters.grants_at import API, GrantsAtAdapter
+        bodies = []
+
+        def t(url, headers, data=None):
+            if url.endswith("/robots.txt"):
+                return Response(url, 404, "text/plain", "")
+            bodies.append((url, json.loads(data)))
+            answers = {"GetMetadata": {"FoerderArten": [{"ID": 11, "T": "Whole degree"}, {"ID": 7, "T": "Awards"}],
+                                       "Laender": [{"T": "Indonesia", "ISO": "ID"}, {"T": "Viet Nam", "ISO": "VN"},
+                                                   {"T": "Austria", "ISO": "AT"}]},
+                       "STIMAEntrySearchForTextParameters": [
+                           {"StipFoeID": 1, "HZGID": 0, "StipName": "Example Fellowship", "FoerderArtID": 11},
+                           {"StipFoeID": 1, "HZGID": 0, "StipName": "Example Fellowship", "FoerderArtID": 7},
+                           {"StipFoeID": 2, "HZGID": 0, "StipName": "Example Prize", "FoerderArtID": 7}],
+                       "GetDetailHtml": {"html": GA_DETAIL}}
+            return Response(url, 200, "application/json", json.dumps(answers[url[len(API):]]))
+        res = GrantsAtAdapter(Fetcher(t, min_interval=0, sleep=lambda s: None), today=TODAY, details=True, detail_limit=1).run()
+        self.assertEqual(len(res.records), 2)   # one record per programme, not per grant type
+        o = res.records[0]
+        self.assertEqual(bodies[1][1]["SearchParameters"], "foerderart:11;7,eingabetyp:4")
+        self.assertEqual((o.nationality.mode, o.nationality.countries, o.destination_countries), ("include", ["ID", "VN"], ["AT"]))
+        self.assertEqual((o.study_levels, o.provider_name, o.info_url), (["master", "phd"], "Example Foundation",
+                                                                        "https://example.org/fellowship"))
+        self.assertEqual([(d.date, d.recurs) for d in o.deadlines], [("2027-01-15", None), (None, "03-01")])
+        st = next(c for c in o.funding if c.kind == "stipend")
+        self.assertEqual((st.amount, st.currency, st.period), (1200.0, "EUR", "month"))
+        self.assertTrue(any(d.name == "CV" for d in o.required_documents))
+        self.assertEqual(res.records[1].opportunity_type, "award")
+        from scholarship_agent.adapters.grants_at import _valid
+        self.assertFalse(_valid("http://[malformed"))
+
+
+NSP_PAGE = ('<button class="accordion-button collapsed" type="button">\n Ministry of Example Affairs\n</button>'
+            '<div class="row mb-4 border-1 border-bottom"><div class="col-md-10"><h6> Example Post Matric Scholarship Scheme '
+            'For Graduate Students</h6><br><!--<h6>by Ministry</h6>-->'
+            '<span>Scheme  Open from : 01-06-2026 </span><span>Student Application  Open till : 31-12-2026 </span>'
+            '<span>Institute Verification Open till:15-01-2027 </span>'
+            '<div class="mb-4"><a href="https://scholarships.gov.in/public/schemeGuidelines/x.pdf" target="_blank">Specifications'
+            '</a></div></div></div>')
+
+
+class TestNSPIndia(unittest.TestCase):
+    def test_schemes_dates_and_form(self):
+        from scholarship_agent.adapters.nsp_india import BASE, NSPIndiaAdapter, parse_schemes
+        s = parse_schemes(NSP_PAGE)[0]
+        self.assertEqual((s["group"], s["title"]), ("Ministry of Example Affairs", "Example Post Matric Scholarship Scheme For Graduate Students"))
+        spaced = parse_schemes(NSP_PAGE.replace("schemeGuidelines/x.pdf", "schemeGuidelines/x y.pdf"))[0]
+        self.assertEqual(spaced["links"]["Specifications"], BASE + "public/schemeGuidelines/x%20y.pdf")
+        calls = []
+
+        def t(url, headers, data=None):
+            if url.endswith("/robots.txt"):
+                return Response(url, 404, "text/plain", "")
+            calls.append(data)
+            return Response(url, 200, "text/html", NSP_PAGE if data is None else NSP_PAGE.replace("Example Post", f"Example {len(calls)}"))
+        res = NSPIndiaAdapter(Fetcher(t, min_interval=0, sleep=lambda s: None), today=TODAY).run()
+        self.assertEqual(len(res.records), 3)   # one scheme from each of the three lists
+        self.assertIn(b"central_sponsored_state=sponserscheme", calls[1])
+        o = res.records[0]
+        self.assertEqual([(str(d.kind), d.date) for d in o.deadlines], [("opening", "2026-06-01"), ("scholarship", "2026-12-31")])
+        self.assertEqual((o.provider_name, o.destination_countries, o.info_url),
+                         ("Ministry of Example Affairs", ["IN"], BASE + "public/schemeGuidelines/x.pdf"))
+        self.assertIn("destination:host", o.tags)

@@ -14,6 +14,7 @@ import os
 import threading
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
@@ -57,7 +58,7 @@ class FetchError(Exception):
 Transport = Callable[[str, dict], Response]
 
 
-def curl_transport(url: str, headers: dict) -> Response:
+def curl_transport(url: str, headers: dict, data: Optional[bytes] = None) -> Response:
     """Same request via the system curl, which validates certificates against the OS trust store and fetches
     missing intermediates. Used only when Python's own TLS verification fails; certificates are still verified."""
     import subprocess
@@ -66,8 +67,10 @@ def curl_transport(url: str, headers: dict) -> Response:
     for k, v in headers.items():
         args += ["-H", f"{k}: {v}"]
     with tempfile.NamedTemporaryFile() as body:
+        if data is not None:
+            args += ["--data-binary", "@-"]
         args += ["-o", body.name, "-w", "%{http_code} %{content_type} %{url_effective}", "--", url]
-        r = subprocess.run(args, capture_output=True, timeout=40)
+        r = subprocess.run(args, capture_output=True, timeout=40, input=data)
         if r.returncode != 0:
             raise OSError(f"curl exit {r.returncode}: {r.stderr.decode('utf-8', 'replace')[:120]}")
         code, _, rest = r.stdout.decode("utf-8", "replace").partition(" ")
@@ -84,12 +87,12 @@ def _cert_failure(e: Exception) -> bool:
     return isinstance(getattr(e, "reason", e), ssl.SSLCertVerificationError) or "CERTIFICATE_VERIFY_FAILED" in str(e)
 
 
-def urllib_transport(url: str, headers: dict) -> Response:
+def urllib_transport(url: str, headers: dict, data: Optional[bytes] = None) -> Response:
     try:
-        return _urllib(url, headers)
+        return _urllib(url, headers, data)
     except urllib.error.URLError as e:
         if _cert_failure(e):
-            return curl_transport(url, headers)
+            return curl_transport(url, headers, data)
         raise
 
 
@@ -110,8 +113,8 @@ def _decoded(raw: bytes, encoding: str) -> bytes:
     return raw
 
 
-def _urllib(url: str, headers: dict) -> Response:
-    req = urllib.request.Request(url, headers=headers)
+def _urllib(url: str, headers: dict, data: Optional[bytes] = None) -> Response:
+    req = urllib.request.Request(url, data=data, headers=headers)   # a body makes it a POST
     try:
         with urllib.request.urlopen(req, timeout=20) as r:
             ctype = r.headers.get("Content-Type", "")
@@ -199,7 +202,24 @@ class Fetcher:
         with self._lock(parts.netloc):
             return self._get(url, parts)
 
-    def _get(self, url: str, parts) -> Response:
+    def post_json(self, url: str, payload: dict) -> Response:
+        """A JSON POST to a public interface a site's own page calls (round 50), under the same robots, rate-limit
+        and retry rules as get(). The transport receives the body as a third argument."""
+        import json
+        return self._post(url, json.dumps(payload).encode("utf-8"), "application/json; charset=utf-8")
+
+    def post_form(self, url: str, fields: dict) -> Response:
+        """A public search form a site's own page submits (round 51), under the same rules as get()."""
+        return self._post(url, urllib.parse.urlencode(fields).encode("utf-8"), "application/x-www-form-urlencoded")
+
+    def _post(self, url: str, body: bytes, content_type: str) -> Response:
+        parts = urlsplit(url)
+        if parts.scheme not in ("http", "https") or not parts.netloc:
+            raise FetchError(url, "unsupported URL")
+        with self._lock(parts.netloc):
+            return self._get(url, parts, body, content_type)
+
+    def _get(self, url: str, parts, body: Optional[bytes] = None, content_type: str = "") -> Response:
         if self.respect_robots:
             ok, why = self.robots_ok(url)
             if not ok:
@@ -209,8 +229,10 @@ class Fetcher:
             self._throttle(parts.netloc)
             try:
                 self.requests += 1
-                r = self.transport(url, {"User-Agent": USER_AGENT, "Accept": "text/html,application/xhtml+xml,*/*;q=0.5",
-                                         "Accept-Language": "en,*;q=0.5"})
+                headers = {"User-Agent": USER_AGENT, "Accept": "text/html,application/xhtml+xml,*/*;q=0.5",
+                           "Accept-Language": "en,*;q=0.5"}
+                r = self.transport(url, headers) if body is None else \
+                    self.transport(url, headers | {"Content-Type": content_type}, body)
             except Exception as e:  # network error: retry
                 last_err = f"{type(e).__name__}: {e}"
             else:

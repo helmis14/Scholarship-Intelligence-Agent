@@ -11,7 +11,11 @@ from .campusfrance import CampusFranceAdapter  # noqa: F401
 from .daad import DAADAdapter  # noqa: F401
 from .erasmus_mundus import ErasmusMundusAdapter  # noqa: F401
 from .euraxess import EuraxessAdapter  # noqa: F401
+from .grants_at import GrantsAtAdapter  # noqa: F401
+from .nsp_india import NSPIndiaAdapter  # noqa: F401
 
 ADAPTERS = {"daad": DAADAdapter, "erasmus_mundus": ErasmusMundusAdapter, "euraxess": EuraxessAdapter,
-            "campusfrance": CampusFranceAdapter}
-__all__ = ["ADAPTERS", "AdapterResult", "CampusFranceAdapter", "DAADAdapter", "ErasmusMundusAdapter", "EuraxessAdapter"]
+            "campusfrance": CampusFranceAdapter, "grants_at": GrantsAtAdapter,
+            "nsp_india": NSPIndiaAdapter}
+__all__ = ["ADAPTERS", "AdapterResult", "CampusFranceAdapter", "DAADAdapter", "ErasmusMundusAdapter", "EuraxessAdapter",
+           "GrantsAtAdapter", "NSPIndiaAdapter"]

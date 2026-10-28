@@ -95,13 +95,13 @@ class ScholarshipService:
         return _out(**r.to_dict())
 
     def run_adapter(self, name: str, limit: Optional[int] = None, details: bool = False, persist: bool = True) -> dict:
-        """Run a dedicated source adapter (daad, erasmus_mundus, euraxess, campusfrance) and store its records."""
+        """Run a dedicated source adapter (daad, erasmus_mundus, euraxess, campusfrance, grants_at, nsp_india) and store its records."""
         from .adapters import ADAPTERS
         from .discovery import DiscoveryResult
         if name not in ADAPTERS:
             raise ValueError(f"unknown adapter {name!r}; one of {sorted(ADAPTERS)}")
         cls = ADAPTERS[name]
-        kw = {"daad": {"details": details}, "campusfrance": {"details": details},
+        kw = {"daad": {"details": details}, "campusfrance": {"details": details}, "grants_at": {"details": details}, "nsp_india": {"details": details},
               "erasmus_mundus": {"follow_programme_sites": details}}.get(name, {})
         adapter = cls(self.fetcher, today=self.today, **kw)
         job = self.store.start_job(f"adapter:{name}", {"limit": limit, "details": details})

@@ -64,11 +64,11 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("--provider", default="")
     s.add_argument("--countries")
 
-    s = sub.add_parser("adapter", help="run a dedicated source adapter: daad | erasmus_mundus | euraxess | campusfrance")
-    s.add_argument("name", choices=["daad", "erasmus_mundus", "euraxess", "campusfrance"])
+    s = sub.add_parser("adapter", help="run a dedicated source adapter: daad | erasmus_mundus | euraxess | campusfrance | grants_at | nsp_india")
+    s.add_argument("name", choices=["daad", "erasmus_mundus", "euraxess", "campusfrance", "grants_at", "nsp_india"])
     s.add_argument("--limit", type=int)
     s.add_argument("--details", action="store_true",
-                   help="daad, campusfrance: fetch programme details; erasmus_mundus: read consortium websites")
+                   help="daad, campusfrance, grants_at: fetch programme details; nsp_india: read guidelines PDFs; erasmus_mundus: read consortium websites")
     s = sub.add_parser("euraxess-import", help="import a EURAXESS offer page you saved from your browser")
     s.add_argument("file")
     s.add_argument("--url", required=True, help="the offer's EURAXESS address")

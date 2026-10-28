@@ -40,14 +40,16 @@ def _norm(s: str) -> str:
 
 
 ADAPTER_DOMAINS = {"adapter:daad": ["daad.de"], "adapter:erasmus_mundus": ["europa.eu"],
-                   "adapter:euraxess:import": ["europa.eu"], "adapter:campusfrance": ["campusfrance.org"]}
+                   "adapter:euraxess:import": ["europa.eu"], "adapter:campusfrance": ["campusfrance.org"],
+                   "adapter:grants_at": ["grants.at", "scholarships.at"],
+                   "adapter:nsp_india": ["scholarships.gov.in"]}
 
 
 def official_domains_for(opp: Opportunity, sources: list[Source]) -> list[str]:
     if opp.discovered_via in ADAPTER_DOMAINS:
         doms = list(ADAPTER_DOMAINS[opp.discovered_via])
-        if opp.discovered_via == "adapter:erasmus_mundus" and opp.info_url:
-            # the catalogue (an official EU source) names the consortium site as the programme's own page
+        if opp.discovered_via in ("adapter:erasmus_mundus", "adapter:grants_at") and opp.info_url:
+            # the catalogue (an official EU or OeAD source) names the provider's site as the programme's own page
             from urllib.parse import urlsplit
             host = (urlsplit(opp.info_url).hostname or "").removeprefix("www.")
             if host:

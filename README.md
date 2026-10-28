@@ -4,6 +4,22 @@
 
 An AI-powered agent for global scholarship discovery and verification. It searches in many languages, backs every value with a quotation from the official source, analyses eligibility and funding, and tracks application deadlines. It runs on your own machine, keeps your data local, and refuses to claim anything an official page does not say.
 
+## At a glance (live catalogue, 28 October 2026)
+
+| | |
+|---|---|
+| Scholarship records collected | **5,388** (3,901 programmes in search results; news, hubs and guides are kept out) |
+| Open for applications | **494** programmes with a deadline still ahead, 52 opening soon, 21 rolling |
+| Countries where you can study | **115** named on listed programmes |
+| Official sources | **770** registry sources covering **124** countries, plus structured datasets from DAAD, Campus France, OeAD (grants.at), India's National Scholarship Portal and Erasmus Mundus |
+| Programmes with funding details | 69% (amounts on 24%) |
+| With an applicant deadline / eligibility by nationality / documents | 57% / 51% / 43% |
+| Wrong claims on the newest fresh test set | **2.1%** of answered decisions (set X, 126 programmes, strict gate + second reading) |
+
+The catalogue grows every night: a scheduled run resumes the country-by-country search, re-reads stale records on their
+official pages, re-crawls the registry and has a second model read every new record; on Sundays it also reads the
+structured datasets again for new calls and deadlines.
+
 > This is an independent open-source project. It is not affiliated with, endorsed by, or sponsored by any scholarship provider, university, government or AI company named in this repository. Always confirm an opportunity on the provider's own website before you apply.
 
 ## Why this exists
@@ -27,11 +43,12 @@ This agent treats every opportunity as a claim to be checked:
  multilingual      official page,       your profile, funding   timeline, CV, essays,  reminders (.ics),
  web search,       quote-check every    class, transparent      statements and         status, outcomes
  adapters          value, keep          weighted ranking        reviewer feedback
- (DAAD, Erasmus    conflicts
- Mundus, EURAXESS)
+ (DAAD, Campus     conflicts,
+ France, OeAD,     second reading
+ Erasmus Mundus)
 ```
 
-- **Discovery:** a registry of 650 official sources (124 countries with a destination-specific one), adapters for DAAD, Campus France (CampusBourses), Erasmus Mundus and EURAXESS, published sitemaps, and an optional self-hosted SearXNG search. The search runs a country-by-country strategy across 231 countries and territories, including domestic-only and local-language queries, with a vocabulary for 42 languages.
+- **Discovery:** a registry of 770 official sources (124 countries with a destination-specific one), adapters for DAAD, Campus France (CampusBourses), OeAD (grants.at), India's National Scholarship Portal, Erasmus Mundus and EURAXESS, published sitemaps, and an optional self-hosted SearXNG search. The search runs a country-by-country strategy across 231 countries and territories, including domestic-only and local-language queries, with a vocabulary for 42 languages.
 - **Extraction:** a structured `Opportunity` record. Each field carries an `Evidence` record: value, source URL, verbatim sentence, retrieval time, source authority and status.
 - **Verification:** only an official page (programme, university, funder, government or official feed) can confirm a value. Aggregators and search results are leads only. When sources disagree, all values are kept as conflicts.
 - **Applicant side:**
@@ -61,7 +78,7 @@ Every rule change is measured against frozen test sets. Each set holds official 
 
 - The remaining decisions are honest "not stated" answers where the label has a value.
 - Every decision the agent reports as known carries a clean quotation from the programme's own page (37/37 on set O, 45/45 on set P, 66/66 on set Q).
-- **Weakest areas:** the funding class when the award is a cash amount or a tuition discount tier (university pages, set P), and the applicant deadline on funder pages that list a whole timeline (set Q: 10 wrong deadlines out of 54). Wrong claims are 13-17% of decisions; the target for a public site is under 5%.
+- **Progress since:** with the strict risk gate and the second reading, wrong claims fell to 4.0% (set W) and **2.1%** (set X) of answered decisions, below the 5% target for a public site. The weakest decision left is the application cycle (open / closed), which the second reading does not check by default.
 - **Claude-assisted extraction** (`tests/decisions_ai.py`) adds a few correct answers on top of the rules without adding wrong claims (+5 correct on 276 decisions, $0.80); every model answer is quote-checked before it counts. On set P it added dates and cycle states, not funding classes ($0.66).
 
 - **Risk gate:** claim kinds whose measured precision is low (assistantship and fee-waiver funding, "announcement pending" cycles, deadlines with several dates; in `SCHOLAR_RISK_GATE=strict` also tuition-only and stipend-only funding, "any nationality" and "upcoming") are shown as unverified and sent to review. On the development pool this brings wrong claims from 7.6% to 6.0% (standard) or 4.4% (strict) of decisions, at the cost of more answers going to review; confirm on a fresh set before relying on it.
@@ -123,7 +140,7 @@ python3 -m scholarship_agent coverage
 | Area | CLI (`python3 -m scholarship_agent ...`) | Claude Code |
 |---|---|---|
 | Profile and privacy | `setup`, `profile`, `export-data`, `delete-data --yes` | `/scholar-setup` |
-| Discovery | `discover`, `scrape <url>`, `adapter daad\|campusfrance\|erasmus_mundus\|euraxess [--details]`, `strategy-plan`, `strategy-run`, `coverage`, `sources --check`, `check` (second reading of stored records) | `/discover`, `/scholar-scrape`, `/sources` |
+| Discovery | `discover`, `scrape <url>`, `adapter daad\|campusfrance\|grants_at\|nsp_india\|erasmus_mundus\|euraxess [--details]`, `strategy-plan`, `strategy-run`, `coverage`, `sources --check`, `check` (second reading of stored records) | `/discover`, `/scholar-scrape`, `/sources` |
 | Verification | `verify <id>`, `refresh`, `catalog-audit`, `show <id>`, `search` | `/verify` |
 | Fit | `match <id>`, `funding <id>`, `rank` | `/match`, `/scholar-rank` |
 | Planning | `plan <id>`, `documents <id>`, `deadlines`, `reminders` | `/plan`, `/documents`, `/deadlines` |
@@ -146,7 +163,7 @@ Full reference: [docs/scholarship-agent/README.md](docs/scholarship-agent/README
 
   Only levels 1 to 4 can confirm a value.
 - **Quote checks:** a value is reported only if its quotation is on the programme's own page, states the value, and names no other programme. Otherwise the decision goes to review.
-- **Date roles:** each date is typed by the words around it: application deadline, opening, nomination, document, payment, notification, programme stay, another programme's date, or an old reference. Only applicant deadlines with a year are reported as deadlines. Past deadlines are never projected forward.
+- **Date roles:** each date is typed by the words around it: application deadline, opening, nomination, document, payment, notification, programme stay, another programme's date, or an old reference. Only applicant deadlines with a year are reported as deadlines. A day the page says recurs ("15 July of each year") is kept as an expected date, never a confirmed one. Past deadlines are never projected forward.
 - **Nationality by scope:** negation ("non-U.S. citizens", "not an Australian citizen"), exclusions ("outside the EU/EEA and Switzerland"), groups (EU, EEA, EFTA), conditions and definitions are read per clause. Fee status, domicile and residence are kept apart from nationality.
 - **Funding by component:** "fully funded" needs documented full tuition *and* a living stipend or allowance. A stated discount, share or cap means partial funding.
 - **Uncertainty is explicit:** missing is reported as "not stated", never as "not required". Unverified evidence can give `UNCERTAIN`, never `INELIGIBLE`.
@@ -191,9 +208,9 @@ A rule change is kept only when it improves the pooled development score without
 
 - **Dates:** award-term and tenure dates, information sessions and sub-track deadlines. Uncertain deadlines should be sent to review.
 - **Eligibility:** exclusion lists ("not open to students from ... (A, B, C)") and two-nationality rules ("Spanish or Portuguese").
-- **Claude-assisted extraction** evaluated on the decision benchmarks, with quote checks kept.
 - **A rubric benchmark** for the quality of generated application documents.
-- **A website front end** on top of the HTTP API (`serve`), with e-mail confirmation or CAPTCHA on registration.
+- **Application cycle:** read "open / closed / not yet announced" more reliably, the largest remaining source of wrong claims.
+- **Coverage:** more structured national datasets (like DAAD and CampusBourses) and the countries still without an official source.
 
 ## License
 

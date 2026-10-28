@@ -349,7 +349,7 @@ DEADLINE_WORDS = re.compile(
     r"last date|until|no later than|bewerbungsschluss|bewerbungsfrist|frist|einsendeschluss|date limite|"
     r"date de clôture|clôture des candidatures|fecha l[ií]mite|plazo|cierre de (?:la )?convocatoria|prazo|"
     r"data limite|inscrições até|scadenza|(?-i:termine)|batas (?:akhir|waktu)|pendaftaran (?:ditutup|dibuka)|tenggat|"
-    r"applications? close|\bclose (?:on|at|by)\b|closing call|call closes|cierre|cerrará|finaliza(?:rá)?|hasta el|clôture|"
+    r"applications? close|\bclose (?:on|at|by)\b|\bclose dates?\b|closing call|call closes|cierre|cerrará|finaliza(?:rá)?|hasta el|clôture|"
     r"締切|마감|截止" + "|" + words_rx(deadline_words()), re.I)
 OPENING_WORDS = re.compile(r"\bopened\b|abierto desde|^\W*applications?\s*:|\bopens?\b|opening call|application (?:period|window)|bewerbungszeitraum|bewerbungsphase|periode pendaftaran|dibuka|from\s+\d|"
                            r"ouverture des candidatures|apertura|abertura das inscrições|bewerbungsbeginn|se abrirá|"
@@ -585,7 +585,10 @@ def _date_role(s: str, raw: str, prev: list[str], raws: list[str]) -> Optional[D
     if re.search(r"\b(?:fee )?payment\b|\bpay (?:the |your )?(?:tuition|fees?)\b", near, re.I) \
             and not re.search(r"\bappl", near, re.I):
         return DeadlineKind.OTHER   # "The deadline for tuition fee payment ... is 31 August": paying, not applying
-    if re.search(r"\b(?:campus|internal|university|departmental|faculty) deadline\b", near, re.I):
+    if re.search(r"\b(?:used|spent|redeemed|claimed|disbursed)\s+(?:before|by|no later than)\s*$", before[-40:], re.I):
+        return DeadlineKind.OTHER   # round 50: "Scholarship awards must be used before August 1, 2027"
+    if re.search(r"\b(?:campus|internal|university|departmental|faculty) deadline\b", near, re.I) \
+            or re.match(r"\W*(?:campus|internal|institutional) deadlines?\b", s, re.I):
         return DeadlineKind.NOMINATION   # round 39: "the campus deadline of Sept. 11" is the university's own step
     if re.search(r"nominat|selection deadline by|\bby (?:the )?(?:[\w']+ ){0,3}coordinators?\b|\bendorsement\b", near, re.I):
         return DeadlineKind.NOMINATION
@@ -768,9 +771,14 @@ def extract_deadlines(text: str, url: str, today: date, title: str = "") -> list
                 out.append(Deadline(kind=kind, certainty=DeadlineCertainty.EXPECTED, approximate=clean_snippet(verbatim, 160),
                                     cycle=cycle, label=clean_snippet(verbatim, 160), source_url=url))
             continue
-        both = OPENING_WORDS.search(s) and DEADLINE_WORDS.search(s)
         dated = sorted(d for d, _ in dates if d)
         in_order = sorted(dates, key=lambda t: s.find(t[1]))
+        # round 50: "receiving applications from 1st September 2026 to the 7th November 2026": a window, so the later
+        # date closes it even when no deadline word is written
+        window = len(dated) == 2 and len(in_order) == 2 and in_order[0][0] == dated[0] \
+            and re.search(r"applic", s, re.I) and not re.search(r"selection|interview|result|notif", s, re.I) and re.search(
+            r"\s(?:to|until|till|through|-|–|~|～)\s", s[s.find(in_order[0][1]) + len(in_order[0][1]):s.find(in_order[1][1])])
+        both = (OPENING_WORDS.search(s) and DEADLINE_WORDS.search(s)) or (window and kind == DeadlineKind.OPENING)
         base_kind = kind
         for d, raw in dates:
             kind = base_kind
@@ -861,7 +869,7 @@ FUNDING_KEYS = [
               r"(?:scholarships?|fellowships?|grants?),? worth|grant amounting to|"
               # round 49: "The fellowship is worth 3,600 EUR per month", "grant: 1,500 EUR per month"
               r"(?:scholarships?|fellowships?|grants?) (?:is|are|will be) worth|"
-              r"\b(?:grant|funding|scholarship amount|scholarship value)\s*:\s*(?:up to\s*)?(?=[\d€$£])"),
+              r"\b(?:grant|funding|scholarship amount|scholarship value)\s*:\s*(?:up to\s*)?(?=[\d€$£]|(?:usd|eur|chf|gbp)\s?\d)"),
     ("stipend", r"\bstipends?\b|\b(?:monthly )?base amount\b|\d[\d.,]* ?(?:euro|€) (?:im|pro) monat|monthly allowance|maintenance|salary|bursary payment|(?<!processes )(?<!process )scholarship payments?|stipendienleistung|"
                 r"monatliche (?:rate|zahlung)|\bmonatlich\b|(?<!other )(?<!any )(?<!existing )(?<!graduate )financial support(?! to (?:aid|help|assist|support|enable|allow)\b)(?! (?:for|to) (?:students|applicants|those|people|yourself|individuals|young|recipients|[\w-]+ (?:students|scholars)))|"
                 r"monthly (?:scholarship|payment|rate|instalment)|monatlich(?:e|es)? (?:stipendium|rate)|"

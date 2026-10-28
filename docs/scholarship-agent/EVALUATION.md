@@ -866,3 +866,40 @@ classifier called them programme pages: 2,588 → 2,528 listed; "Scholarship - V
 programme and stays. The `check` pass stopped at the first request the model did not answer; a single failure is now
 skipped and three in a row end the run. `data/crawl/nightly.sh` (not committed) runs one pass of search, refresh,
 registry crawl and second reading (at most $0.20).
+
+**Application cycle (development pool, 14 sets).** Of 47 wrong cycle claims, 8 were "upcoming" where the label says
+open: the closing date of a window was read as a second opening ("receiving NEW APPLICATIONS from 1st September 2026 to
+the 7th November 2026", "Open date | 19 Oct 2026 Close date | 30 Jun 2027"). The later date of an application window
+now closes it, and "close date" counts as a deadline word; a selection or interview window does not. Award usage dates
+("awards must be used before August 1, 2027") and campus deadlines that open a sentence are not applicant deadlines.
+Utility 1471.5 → 1488.5 (+9 correct, −4 wrong claims, no set falls).
+
+**Official national databases.** Six were checked: grants.at (OeAD, Austria) works like CampusBourses, a public JSON
+interface its own page calls (`adapters/grants_at.py`, about 1,144 programmes into and out of Austria: country of
+origin, target country, level, funder, amount, closing date and a link to the provider's page). The fetcher gained a
+JSON POST under the same robots and rate rules. Study in Taiwan's official list gave 71 programme pages for the
+registry (721 sources). Study in Korea is a notice board for a few GKS calls, JASSO's list is a PDF table whose columns
+interleave, India's portal lists domestic schemes, and Nuffic's finder, CampusChina and the Swedish Institute were gone,
+unreachable or blocked. The live run read all 1,144 grants.at programmes (1,115 new records,
+29 merged): nationality rule 905, study country 790, level 1,017, deadline 842, funding 600 (amounts 315), a provider
+link 607. One malformed provider link ended the first run after 32 minutes; such links are now skipped and one bad entry
+no longer ends a run. The 71 Taiwan pages gave 44 new records. Catalogue: 5,176 records, 3,714 in search results, 115
+study countries.
+
+## Round 51: India's National Scholarship Portal, Japanese foundations, open programmes
+
+**India.** `adapters/nsp_india.py` reads the portal's public scheme pages and its own filter form (the fetcher gained a
+form POST under the usual robots and rate rules): 168 schemes of ministries and states with their opening date and the
+"Student Application Open till" deadline; verification dates for institutions and officers are left out. 142 schemes
+had an applicant deadline still ahead. The guidelines PDFs (28 first failed on spaces in their file names, now quoted)
+added funding to 33, eligibility to 19 and documents to 32; the study country is marked as inferred, and the nationality
+rule comes only from a scheme's own guidelines.
+
+**Japan.** JASSO's yearly list of scholarships from private foundations and local governments (a PDF table) gave 81
+official sites; 49 passed the robots and reachability check and joined the registry (770 sources). Their crawl read 328
+pages: 44 new records, 89 merged into existing ones, 114 pages that were not programmes.
+
+**The catalogue:** 5,388 records, 3,901 in search results, 115 study countries. Listed programmes by application
+status: open 494 (a deadline still ahead), upcoming 52, rolling 21, closed 1,357, not stated 1,927. The nightly run
+now also reads the structured datasets again on Sundays.
+
