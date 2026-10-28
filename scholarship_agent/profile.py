@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from datetime import date
 from pathlib import Path
 from typing import Optional
@@ -24,7 +25,33 @@ def _codes(values: list[str]) -> list[str]:
     return out
 
 
+def phone_number(v: str) -> str:
+    """'+62 812-3456-7890' -> '+6281234567890'. The international form only (country code first, up to 15 digits)."""
+    digits = re.sub(r"[\s().-]", "", v or "")
+    if not digits:
+        return ""
+    if digits.startswith("00"):
+        digits = "+" + digits[2:]
+    if not re.fullmatch(r"\+[1-9]\d{6,14}", digits):
+        raise ValueError("phone: use the international form with the country code, e.g. +62 812 3456 7890")
+    return digits
+
+
+def linkedin_url(v: str) -> str:
+    """A LinkedIn profile address or name -> 'https://www.linkedin.com/in/<name>'."""
+    v = (v or "").strip()
+    if not v:
+        return ""
+    m = re.fullmatch(r"(?:https?://)?(?:[a-z]{2,3}\.)?linkedin\.com/in/([\w%-]{3,100})/?(?:\?.*)?", v, re.I) \
+        or re.fullmatch(r"@?([A-Za-z0-9][\w-]{2,99})", v)
+    if not m:
+        raise ValueError("linkedin: use your profile address, e.g. linkedin.com/in/your-name")
+    return f"https://www.linkedin.com/in/{m.group(1)}"
+
+
 def normalize(p: Profile) -> Profile:
+    p.phone = phone_number(p.phone)
+    p.linkedin = linkedin_url(p.linkedin)
     p.citizenships = _codes(p.citizenships)
     p.preferred_countries = _codes(p.preferred_countries)
     if p.residence_country:

@@ -421,6 +421,8 @@ class Profile(Model):
     id: str = "default"
     name: str = ""
     email: str = ""
+    phone: str = ""                                             # international form, "+6281234567890"
+    linkedin: str = ""                                          # "https://www.linkedin.com/in/<name>"
     citizenships: list[str] = field(default_factory=list)       # ISO alpha-2
     residence_country: str = ""
     date_of_birth: str = ""

@@ -256,7 +256,7 @@ def _fmt_date(s: str) -> str:
 def academic_cv(p: Profile, opp: Optional[Opportunity] = None) -> str:
     fp = fact_pack(p)
     L = [f"# {fp['name'] or '[YOUR NAME]'}", ""]
-    contact = [x for x in (p.email, fp["residence"]) if x]
+    contact = [x for x in (p.email, p.phone, p.linkedin, fp["residence"]) if x]
     if contact:
         L += [" | ".join(contact), ""]
     if opp is not None and fp["research_interests"]:

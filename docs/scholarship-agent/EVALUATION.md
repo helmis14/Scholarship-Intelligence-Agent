@@ -901,5 +901,13 @@ pages: 44 new records, 89 merged into existing ones, 114 pages that were not pro
 
 **The catalogue:** 5,388 records, 3,901 in search results, 115 study countries. Listed programmes by application
 status: open 494 (a deadline still ahead), upcoming 52, rolling 21, closed 1,357, not stated 1,927. The nightly run
-now also reads the structured datasets again on Sundays.
+now also reads the structured datasets again on Sundays. Seen while running the site on the live catalogue: the search index was rebuilt
+on every request while crawls kept writing (about 11 s each); it is now rebuilt at most every five minutes (warm search
+0.1 s). Home pages named after an office ("Home - Ghana Scholarships Authority") are not listed, and a sentence about
+sanctioned universities ("The four sanctioned universities in Iran are") no longer names a study country.
+
+**Applicant contacts (round 51).** The profile takes an optional phone number and LinkedIn address, stored encrypted
+with the rest of the profile and checked at the boundary: the phone in the international form ("+62 812-3456-7890" →
+"+6281234567890", 7 to 15 digits), the LinkedIn address as https://www.linkedin.com/in/<name> (another site is refused).
+Both appear on the generated academic CV.
 

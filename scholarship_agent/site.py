@@ -141,6 +141,9 @@ GUESS_RX = re.compile(r"best guess: (\w+)")
 # pages about a programme office, a process or a past round rather than a programme ("Contact SFA", "Financial Aid
 # Glossary", "Announcement of Successful Applications for ...")
 NOT_PROGRAMME_TITLE = re.compile(r"^(?:contact|about|staff|faqs?|frequently asked|glossary|forms?|policies|getting started)\b|"
+                                 # a site's home page named after an office, not a programme ("Home - X Scholarships Authority")
+                                 r"^home(?:page)?\s*(?:$|[|\u2013-]\s*(?:.*\b(?:authority|office|unit|administration|ministry|"
+                                 r"department|financial aid)\b))|"
                                  r"\b(?:contact us|staff|glossary|terminology|faqs?|frequently asked questions|"
                                  r"announcement of successful|successful applic\w+|recipients?|winners?|says|"
                                  r"inspired|resultados|results of|writing your|proposal preparation|projects funded)\b|"
@@ -172,16 +175,20 @@ def listed(o) -> bool:
     return bool(o.deadlines or o.funding or o.nationality.mode != "unknown" or o.required_documents)
 
 
+REBUILD_AFTER = 300   # seconds: while crawls write all day, rebuild at most this often (a rebuild reads every record)
+
+
 def index(store, today: date) -> list[Entry]:
+    import time
     where = str(Path(store.dir).resolve())
     key = (_signature(store), today.isoformat())
     with _LOCK:
         hit = _CACHE.get(where)
-    if hit and hit[0] == key:
+    if hit and (hit[0] == key or (hit[0][1] == key[1] and time.monotonic() - hit[2] < REBUILD_AFTER)):
         return hit[1]
     entries = [_entry(store, o, today) for o in store.list_opportunities() if listed(o)]
     with _LOCK:
-        _CACHE[where] = (key, entries)
+        _CACHE[where] = (key, entries, time.monotonic())
     return entries
 
 

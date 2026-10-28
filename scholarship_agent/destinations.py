@@ -110,7 +110,9 @@ NEG_HEAD = re.compile(r"not eligible|ineligible|can['’]?t apply|cannot apply|w
 # A sentence about coming back home, a testimonial or a biography, an exclusion, or a menu line
 SKIP = re.compile(r"\b(?:return\w*|come back|go back|back home|regres\w*|retorn\w*|volver|rückkehr\w*|"
                   r"zurückkehr\w*|retour|rentrer|kembali|pulang|home country|hjemland\w*|heimatland\w*|not eligible|"
-                  r"ineligible|no son elegibles|ne sont pas éligibles|nicht förderfähig|my|me|he|she|his|her|him)\b|"
+                  r"ineligible|no son elegibles|ne sont pas éligibles|nicht förderfähig|my|me|he|she|his|her|him|"
+                  # round 51: "The four sanctioned universities in Iran are": a rule about degrees, not where to study
+                  r"sanction\w*|not (?:accepted|recogni[sz]ed))\b|"
                   r"(?-i:\bI\b)|\||^\W*«|»\W*$", re.I)
 
 

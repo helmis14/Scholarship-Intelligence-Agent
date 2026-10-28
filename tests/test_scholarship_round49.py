@@ -388,3 +388,20 @@ class TestNSPIndia(unittest.TestCase):
         self.assertEqual((o.provider_name, o.destination_countries, o.info_url),
                          ("Ministry of Example Affairs", ["IN"], BASE + "public/schemeGuidelines/x.pdf"))
         self.assertIn("destination:host", o.tags)
+
+
+class TestProfileContacts(unittest.TestCase):
+    def test_phone_and_linkedin_are_normalised_or_refused(self):
+        import tempfile
+        from pathlib import Path
+        from scholarship_agent import profile
+        from scholarship_agent.documents import academic_cv
+        from scholarship_agent.store import Store
+        st = Store(Path(tempfile.mkdtemp()))
+        p = profile.upsert(st, {"name": "Ana", "phone": "0062 812-3456-7890", "linkedin": "id.linkedin.com/in/ana-s/"}, "p1")
+        self.assertEqual((p.phone, p.linkedin), ("+6281234567890", "https://www.linkedin.com/in/ana-s"))
+        self.assertIn("+6281234567890", academic_cv(p))
+        for patch in ({"phone": "0812345"}, {"linkedin": "https://example.com/in/ana"}):
+            with self.assertRaises(ValueError):
+                profile.upsert(st, patch, "p1")
+        st.close()
