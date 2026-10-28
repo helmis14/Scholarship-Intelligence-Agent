@@ -428,3 +428,23 @@ class TestContactsInReview(unittest.TestCase):
         from scholarship_agent.documents import _degree
         self.assertEqual((_degree("bachelor"), _degree("bachelor", True), _degree("high_school"), _degree("BSc")),
                          ("Bachelor", "Bachelor's degree", "High School", "BSc"))
+
+
+class TestWorkspaceWithoutProfile(unittest.TestCase):
+    """Round 51: a saved scholarship opens before the profile is filled in; only the drafts need the profile."""
+    def test_the_checklist_works_and_the_drafts_ask_for_the_profile(self):
+        import tempfile
+        from pathlib import Path
+        from scholarship_agent.models import RequiredDocument
+        from scholarship_agent.service import NotFound, ProfileMissing, ScholarshipService
+        from scholarship_agent.store import Store
+        st = Store(Path(tempfile.mkdtemp()))
+        o = Opportunity(id="sch_t1", title="Test Fellowship", provider_name="Test Foundation", provider_type=ProviderType.FOUNDATION,
+                        info_url="https://example.org/t1", required_documents=[RequiredDocument(name="Passport")])
+        st.save_opportunity(o, "k", "u")
+        svc = ScholarshipService(store=st, search=None, today=TODAY, extractor_llm=None)
+        self.assertEqual([r["name"] for r in svc.plan("sch_t1", "u1")["matrix"]], ["Passport"])
+        self.assertEqual([r["name"] for r in svc.documents_audit("sch_t1", "u1")["matrix"]], ["Passport"])
+        with self.assertRaises(ProfileMissing):
+            svc.prepare("sch_t1", None, "u1")
+        self.assertTrue(issubclass(ProfileMissing, NotFound))   # the command line still reports it as before

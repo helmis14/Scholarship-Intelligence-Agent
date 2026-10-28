@@ -21,7 +21,9 @@ Constructor: `store`, `fetcher` (`net.Fetcher`, injectable transport), `search`
 (fixed date for tests/replays), `sources` (registry list), `llm` (an
 `LLMProvider` with `complete(brief) -> str`).
 
-Errors: `service.NotFound` (unknown opportunity/profile, maps to HTTP 404),
+Errors: `service.NotFound` (unknown opportunity, maps to HTTP 404); its subclass `service.ProfileMissing` (the call
+builds on a profile and none is saved yet: drafts, ranking, matching; HTTP 409 `profile_required`; the checklist calls
+`plan` and `documents_audit` work without one),
 `tracker.TransitionError` and `ValueError` (invalid input or state, HTTP 400/409).
 
 | Method | Suggested route | Returns (top-level keys) |
@@ -75,7 +77,7 @@ Object shapes are the `to_dict()` forms of the dataclasses in
 
 Standard-library server for the multi-user service, meant to run on 127.0.0.1 behind a reverse proxy that terminates
 HTTPS (it refuses other addresses unless `SCHOLAR_ALLOW_PUBLIC_BIND=1`). JSON in and out, bodies up to 1 MB, errors as
-`{"error": code, "message": text}` with 400/401/404/405/413/415/429/500. Settings: `SCHOLAR_HTTPS=1` (HSTS),
+`{"error": code, "message": text}` with 400/401/404/405/409/413/415/429/500. Settings: `SCHOLAR_HTTPS=1` (HSTS),
 `SCHOLAR_TRUST_PROXY=1` (client address from X-Forwarded-For for rate limits), `SCHOLAR_CORS_ORIGINS` (allowed front
 ends), `SCHOLAR_SMTP_*` (password-reset e-mail), `SCHOLAR_ENV=production` with `SCHOLAR_DATA_KEY` and
 `SCHOLAR_LOOKUP_KEY` (encryption keys from a secret store; `new-key` prints a fresh one).

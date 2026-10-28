@@ -19,7 +19,7 @@ from typing import Optional
 from . import documents as docs_mod
 from . import eligibility, funding, planning, profile as profile_mod, ranking, registry, review, tracker
 from .discovery import Discovery
-from .models import SCHEMA_VERSION, AppStatus, Opportunity, VerificationStatus
+from .models import SCHEMA_VERSION, AppStatus, Opportunity, Profile, VerificationStatus
 from .net import Fetcher
 from .search import SearchProvider, default_provider
 from .store import Store
@@ -28,6 +28,10 @@ from .verify import verify as verify_opp
 
 class NotFound(LookupError):
     pass
+
+
+class ProfileMissing(NotFound):
+    """The call builds on the applicant's profile and none is saved yet."""
 
 
 def _out(**kw) -> dict:
@@ -64,10 +68,12 @@ class ScholarshipService:
             raise NotFound(f"no unique opportunity matches '{ref}' - use the id from /report or /rank")
         return o
 
-    def _profile(self, profile_id: str):
+    def _profile(self, profile_id: str, required: bool = True):
         p = self.store.get_profile(profile_id)
         if not p:
-            raise NotFound("no applicant profile yet - run /setup first")
+            if not required:   # round 51: the checklist comes from the official page; it needs nothing personal
+                return Profile(id=profile_id)
+            raise ProfileMissing("no applicant profile yet - run /setup first")
         return p
 
     # ------------------------------------------------------------- profile
@@ -458,7 +464,7 @@ class ScholarshipService:
     # ------------------------------------------------------------- planning and documents
 
     def plan(self, ref: str, profile_id: str = "default") -> dict:
-        o, p = self._opp(ref), self._profile(profile_id)
+        o, p = self._opp(ref), self._profile(profile_id, required=False)
         app = tracker.ensure_application(self.store, profile_id, o.id)
         have = {d["title"] for d in tracker.documents(self.store, app["id"])}
         m = planning.requirements_matrix(o, p, have, self.today)
@@ -517,7 +523,7 @@ class ScholarshipService:
         return _out(review=review.review(content, docs_mod.brief(kind, o, p), p))
 
     def documents_audit(self, ref: str, profile_id: str = "default") -> dict:
-        o, p = self._opp(ref), self._profile(profile_id)
+        o, p = self._opp(ref), self._profile(profile_id, required=False)
         app = tracker.ensure_application(self.store, profile_id, o.id)
         drafts = tracker.documents(self.store, app["id"])
         m = planning.requirements_matrix(o, p, {d["title"] for d in drafts}, self.today)
