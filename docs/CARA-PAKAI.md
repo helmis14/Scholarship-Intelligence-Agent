@@ -219,7 +219,23 @@ python3 -m scholarship_agent delete-data --yes             # hapus profil dan se
 python3 -m scholarship_agent security-status               # enkripsi aktif? berapa akun?
 ```
 
-## 6. Memeriksa mutu dan menguji
+## 6. Cadangan dan pemulihan data
+
+```bash
+python3 -m scholarship_agent backup                       # satu arsip: katalog, data pribadi, dan kuncinya
+python3 -m scholarship_agent backups                      # daftar cadangan: tanggal, ukuran, jumlah data
+python3 -m scholarship_agent restore ~/ScholarshipBackups/scholarship-backup-20261028-143912.tar.gz --yes
+```
+
+- Arsip disimpan di `~/ScholarshipBackups` (ganti dengan `--out` atau `SCHOLAR_BACKUP_DIR`), mode 0600; yang disimpan
+  hanya 7 terbaru (`--keep`). Katalog sekitar 112 MB menjadi arsip sekitar 15 MB.
+- Cadangan aman dibuat walau situs atau crawl sedang jalan (memakai antarmuka backup SQLite).
+- `restore` memeriksa checksum setiap berkas dulu, menyimpan data yang sekarang sebagai arsip `-pre-restore`, lalu
+  mengembalikan semuanya, juga kalau folder `data/` sudah hilang sama sekali. Tanpa `--yes` tidak terjadi apa-apa.
+- Arsip berisi kunci enkripsi: siapa pun yang memegang arsip bisa membuka data pribadi. Salin ke diska eksternal atau
+  tempat aman, jangan ke tempat umum.
+
+## 7. Memeriksa mutu dan menguji
 
 ```bash
 python3 -m unittest discover -s tests -t .                # semua tes (sekitar 700, kurang dari 20 detik)
@@ -230,7 +246,7 @@ python3 -m scholarship_agent heldout --set a              # uji pada set yang ti
 
 Aturan pembacaan baru hanya dipertahankan kalau total nilai benchmark naik dan tidak ada set yang turun.
 
-## 7. Masalah yang sering muncul
+## 8. Masalah yang sering muncul
 
 | Gejala | Penyebab dan solusi |
 |---|---|
@@ -238,7 +254,8 @@ Aturan pembacaan baru hanya dipertahankan kalau total nilai benchmark naik dan t
 | strategi berhenti dengan "cooling down" | mesin pencari sedang membatasi; tunggu, lalu `strategy-run --resume <JOB>` |
 | sangat lambat atau "database is locked" | dua proses menulis bersamaan; tunggu satu selesai |
 | pemeriksa kedua tidak memanggil Claude | `ANTHROPIC_ALLOW_PAID=1` atau batas biaya belum diisi (sengaja: tanpa itu hanya perkiraan) |
-| data pribadi tidak bisa dibuka | `data/private/keys.json` hilang atau berbeda; pulihkan dari cadangan |
+| data pribadi tidak bisa dibuka | `data/private/keys.json` hilang atau berbeda; pulihkan dengan `restore` dari cadangan |
+| data hilang atau rusak setelah crawl | `backups`, lalu `restore <arsip> --yes` dari cadangan sebelum crawl |
 
 Referensi teknis lengkap (bahasa Inggris): [docs/scholarship-agent/README.md](scholarship-agent/README.md), pencarian:
 [SEARCH.md](scholarship-agent/SEARCH.md), API: [API.md](scholarship-agent/API.md).

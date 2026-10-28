@@ -672,3 +672,48 @@ class TestSearchAndDescriptions(unittest.TestCase):
         a = Opportunity(id="a", title="T", provider_name="P", info_url="https://example.org/x")
         b = Opportunity(id="b", title="T", provider_name="P", info_url="https://example.org/x/", description="What it is.")
         self.assertEqual(merge(a, b).description, "What it is.")
+
+
+class TestBackupRestore(unittest.TestCase):
+    """Round 51: one archive holds the catalogue, the private data and its keys; a restore checks it, keeps the data it
+    replaces, and brings everything back after the data folder is gone."""
+    def test_backup_delete_restore_and_rotation(self):
+        import shutil, tarfile, tempfile, time
+        from pathlib import Path
+        from scholarship_agent import backup
+        from scholarship_agent.models import Profile
+        from scholarship_agent.store import Store
+        root = Path(tempfile.mkdtemp())
+        data, out = root / "data", root / "backups"
+        st = Store(data)
+        o = Opportunity(id="sch_1", title="Kept Fellowship", provider_name="P", provider_type=ProviderType.FOUNDATION,
+                        info_url="https://example.org/1")
+        st.save_opportunity(o, o.id, o.info_url)
+        st.save_profile(Profile(id="u1", name="Rina", citizenships=["ID"]))
+        st.close()
+        made = backup.create(data, out)
+        self.assertEqual(made["records"]["opportunities"], 1)
+        self.assertEqual(oct(Path(made["backup"]).stat().st_mode & 0o777), "0o600")
+        with tarfile.open(made["backup"]) as tar:
+            self.assertEqual(sorted(tar.getnames()), ["catalog.db", "manifest.json", "private/keys.json", "private/private.db"])
+        shutil.rmtree(data)                                   # the data is lost
+        with self.assertRaises(ValueError):
+            backup.restore(Path(made["backup"]), data)        # not without --yes
+        got = backup.restore(Path(made["backup"]), data, yes=True)
+        self.assertTrue(got["matches_backup"])
+        st = Store(data)
+        self.assertEqual((st.get_opportunity("sch_1").title, st.get_profile("u1").name), ("Kept Fellowship", "Rina"))
+        st.close()
+        for _ in range(3):                                    # only the newest are kept
+            time.sleep(1.01)
+            backup.create(data, out, keep=2)
+        self.assertEqual(len([r for r in backup.listing(out) if "pre-restore" not in r["backup"]]), 2)
+
+    def test_a_damaged_archive_is_refused(self):
+        import tempfile
+        from pathlib import Path
+        from scholarship_agent import backup
+        bad = Path(tempfile.mkdtemp()) / "scholarship-backup-20260101-000000.tar.gz"
+        bad.write_bytes(b"not an archive")
+        with self.assertRaises(Exception):
+            backup.restore(bad, Path(tempfile.mkdtemp()) / "data", yes=True)

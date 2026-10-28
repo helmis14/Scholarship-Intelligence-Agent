@@ -144,7 +144,7 @@ python3 -m scholarship_agent coverage
 
 | Area | CLI (`python3 -m scholarship_agent ...`) | Claude Code |
 |---|---|---|
-| Profile and privacy | `setup`, `profile`, `export-data`, `delete-data --yes` | `/scholar-setup` |
+| Profile and privacy | `setup`, `profile`, `export-data`, `delete-data --yes`, `backup`, `backups`, `restore <archive> --yes` | `/scholar-setup` |
 | Discovery | `discover`, `scrape <url>`, `adapter daad\|campusfrance\|grants_at\|nsp_india\|erasmus_mundus\|euraxess [--details]`, `strategy-plan`, `strategy-run`, `coverage`, `sources --check`, `check` (second reading of stored records) | `/discover`, `/scholar-scrape`, `/sources` |
 | Verification | `verify <id>`, `refresh`, `describe` (programme descriptions from stored pages), `catalog-audit`, `show <id>`, `search` | `/verify` |
 | Fit | `match <id>`, `funding <id>`, `rank` | `/match`, `/scholar-rank` |

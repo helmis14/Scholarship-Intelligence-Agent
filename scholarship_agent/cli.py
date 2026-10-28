@@ -216,6 +216,14 @@ def build_parser() -> argparse.ArgumentParser:
                                     "held for review (paid only with AI_PROVIDER and <PREFIX>_ALLOW_PAID=1)")
     s.add_argument("--limit", type=int, default=0, help="check at most this many records")
     s.add_argument("--refresh", action="store_true", help="read again records that already have a second reading")
+    s = sub.add_parser("backup", help="back up the catalogue, the private data and its keys into one archive")
+    s.add_argument("--out", help="folder for the archives (default SCHOLAR_BACKUP_DIR or ~/ScholarshipBackups)")
+    s.add_argument("--keep", type=int, default=7, help="keep this many newest backups (0 keeps all)")
+    s = sub.add_parser("backups", help="list the backups with their date, size and record counts")
+    s.add_argument("--out", help="folder of the archives")
+    s = sub.add_parser("restore", help="restore a backup archive (the current data is saved first as pre-restore)")
+    s.add_argument("archive", help="path of a scholarship-backup-*.tar.gz file")
+    s.add_argument("--yes", action="store_true", help="confirm: the current data is replaced")
     s = sub.add_parser("describe", help="fill in programme descriptions from the pages already stored (no fetching)")
     s.add_argument("--limit", type=int, default=0, help="describe at most this many records")
     s.add_argument("--refresh", action="store_true", help="read again records that already have a description")
@@ -388,6 +396,15 @@ def run(args, svc: ScholarshipService) -> dict:
             raise ValueError("no AI provider configured (set AI_PROVIDER=anthropic, see .env.example)")
         return _with_usage(check_catalog(svc.store, svc.fetcher, svc.extractor_llm, svc.today, args.limit, args.refresh),
                            svc.extractor_llm)
+    if c in ("backup", "backups", "restore"):   # round 51
+        from . import backup as bk
+        from .store import data_dir
+        out = Path(args.out) if getattr(args, "out", None) else None
+        if c == "backup":
+            return bk.create(data_dir(), out, args.keep)
+        if c == "backups":
+            return {"backups": bk.listing(out)}
+        return bk.restore(Path(args.archive), data_dir(), args.yes)
     if c == "describe":
         return svc.describe_catalog(args.limit, args.refresh)
     if c == "sources":
