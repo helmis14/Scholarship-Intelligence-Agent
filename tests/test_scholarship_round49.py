@@ -448,3 +448,36 @@ class TestWorkspaceWithoutProfile(unittest.TestCase):
         with self.assertRaises(ProfileMissing):
             svc.prepare("sch_t1", None, "u1")
         self.assertTrue(issubclass(ProfileMissing, NotFound))   # the command line still reports it as before
+
+
+class TestWritingHelp(unittest.TestCase):
+    """Round 51: outlines carry a short writing guide and the selection criteria; the reviewer flags stock phrasing."""
+    def test_machine_sounding_phrases_are_flagged_in_letters_only(self):
+        from scholarship_agent import review
+        from scholarship_agent.models import Profile
+        p = Profile(name="Ana", citizenships=["ID"])
+        text = "Dear Committee,\n\nI want to delve into public health, a field that is a rich tapestry of problems.\n\nAna"
+        letter = review.review(text, {"kind": "motivation_letter"}, p)
+        self.assertEqual(sorted(i["detail"].split("'")[1] for i in letter["issues"] if i["type"] == "machine_phrase"),
+                         ["delve into", "rich tapestry"])
+        self.assertFalse([i for i in review.review(text, {"kind": "academic_cv"}, p)["issues"] if i["type"] == "machine_phrase"])
+
+    def test_the_outline_has_the_guide_and_the_criteria_as_notes_the_reviewer_leaves_out(self):
+        import re
+        from scholarship_agent import review
+        from scholarship_agent.documents import skeleton, to_docx
+        from scholarship_agent.models import Profile
+        fact_pack = {"education": [], "experience": [], "research_interests": []}
+        b = {"FACT_PACK": fact_pack, "OPPORTUNITY_TEXT": {"title": "Test Award"}, "prompt": "", "word_limit": None,
+             "required_topics": [], "selection_criteria": ["Academic excellence.", "Leadership potential"],
+             "standard": {"structure": ["Opening", "Plan"]}}
+        text = skeleton("motivation_letter", b)
+        self.assertIn("> How to write it:", text)
+        self.assertIn("> Selection criteria on the official page: Academic excellence; Leadership potential", text)
+        self.assertTrue(text.rstrip().splitlines()[-1].startswith("> Before you send it"))
+        count = lambda x: review.review(x, {"kind": "motivation_letter"}, Profile(name="Ana"))["words"]
+        self.assertEqual(count(text), count(re.sub(r"^>.*\n?", "", text, flags=re.M)))   # the notes are not counted
+        import io, zipfile
+        xml = zipfile.ZipFile(io.BytesIO(to_docx(text))).read("word/document.xml").decode()
+        self.assertIn("<w:i/>", xml)
+        self.assertNotIn("&gt; How to write", xml)

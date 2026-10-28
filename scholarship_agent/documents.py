@@ -131,6 +131,23 @@ STANDARD = {
 }
 STANDARD["scholarship_cv"] = STANDARD["academic_cv"]
 
+# Round 51: how to write the parts, in our words after the Harvard College Writing Center's essay strategies
+# (https://writingcenter.fas.harvard.edu/pages/strategies-essay-writing): read the prompt for its verbs, make one main
+# point, give each paragraph a claim with its evidence and what that evidence shows, and close with the what, the
+# so-what and the now-what. Skeletons show it as "> " lines, which the reviewer leaves out and the applicant deletes.
+GUIDE = [
+    "Read the prompt for its verbs (describe, explain, discuss) and answer that question; a reader should be able to "
+    "repeat your main point after one reading.",
+    "In each paragraph: one claim in the first sentence, then your evidence (what you did, where, with what result), "
+    "then one sentence on what it shows.",
+    "Write for a reader who does not know you, your university or your country: give the context in a few words.",
+    "End with the what (your main point), the so-what (why it matters) and the now-what (what you will do after the "
+    "award, where and for whom).",
+]
+BEFORE_SENDING = ("Before you send it: write it in your own words (providers check for copied and machine-written text); "
+                  "read it aloud and cut every sentence that could stand in someone else's essay; check spelling and "
+                  "grammar; stay within the limit; delete these notes.")
+
 
 def standard(kind: str) -> dict:
     """Writing standard for a document kind: shared do/avoid lists plus the kind's structure."""
@@ -315,6 +332,10 @@ def skeleton(kind: str, b: dict) -> str:
         L += [f"> Prompt (from the source): {b['prompt']}", ""]
     if b["word_limit"]:
         L += [f"> Limit: {b['word_limit']} words", ""]
+    L += ["> How to write it:"] + [f"> - {g}" for g in GUIDE]
+    if b.get("selection_criteria"):
+        L += ["> Selection criteria on the official page: " + "; ".join(c.strip().rstrip(".") for c in b["selection_criteria"][:6])]
+    L.append("")
     parts = b.get("standard", {}).get("structure") or ["Opening - why this scholarship and this field"]
     first = parts[0] if "specific experience" in parts[0] else parts[0] + ", from a specific experience"
     L.append(f"[YOU WRITE: {first} - in your own words]")
@@ -331,6 +352,7 @@ def skeleton(kind: str, b: dict) -> str:
         L += ["", f"[YOU WRITE: {part}]"]
     if len(parts) < 2:
         L += ["", "[YOU WRITE: plans after the award and how you will use what you learn]"]
+    L += ["", f"> {BEFORE_SENDING}"]
     return "\n".join(L) + "\n"
 
 
@@ -440,11 +462,11 @@ def to_docx(markdown: str) -> bytes:
         if not line.strip() or line.startswith("<!--"):
             paras.append("<w:p/>")
             continue
-        bold = line.startswith("#")
-        text = re.sub(r"^#+\s*", "", line)
+        bold, note = line.startswith("#"), line.startswith(">")
+        text = re.sub(r"^#+\s*|^>\s?", "", line)
         text = re.sub(r"\*\*(.+?)\*\*", r"\1", text)
         text = "• " + text[2:] if text.startswith("- ") else text
-        rpr = "<w:rPr><w:b/></w:rPr>" if bold else ""
+        rpr = "<w:rPr><w:b/></w:rPr>" if bold else '<w:rPr><w:i/><w:color w:val="6D6C66"/></w:rPr>' if note else ""
         paras.append(f'<w:p><w:r>{rpr}<w:t xml:space="preserve">{escape(text)}</w:t></w:r></w:p>')
     doc = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
            '<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>'

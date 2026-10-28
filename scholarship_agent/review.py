@@ -33,6 +33,17 @@ GENERIC_RX = re.compile(r"\b(?:ever since i was (?:a )?(?:child|young|little)|si
                         r"it (?:would be|is) (?:a great |an )?honou?r (?:to|for)|i have always (?:been|wanted|dreamed)|"
                         r"hard-?working and (?:dedicated|motivated)|unique (?:opportunity|perspective)|"
                         r"webster'?s dictionary|the dictionary defines)", re.I)
+# Round 51: words and turns that readers now take as a sign of machine-written or stock text; a warning, never an error
+MACHINE_RX = re.compile(r"\b(?:delv(?:e|es|ed|ing) (?:into|deeper)|(?:rich |vibrant )?tapestry|(?:stands? as )?a testament to|"
+                        r"embark(?:ed|ing)? on (?:a|this|my) (?:journey|path)|navigat(?:e|ing) the (?:complexities|intricacies)|"
+                        r"ever-(?:evolving|changing) (?:landscape|world|field)|in the realm of|a myriad of|a plethora of|"
+                        r"multifaceted|unwavering (?:commitment|dedication|passion|determination)|"
+                        r"pivotal (?:role|moment)|profound(?:ly)? (?:impact|impacted|shaped)|resonat(?:e|es|ed) deeply|"
+                        r"i am writing to express|holistic approach|synergy|leverag(?:e|ing) my (?:skills|experience|expertise)|"
+                        r"underscor(?:e|es|ed|ing) the importance|invaluable (?:experience|insights?|opportunity)|"
+                        r"honed my (?:skills|abilities)|transformative (?:journey|experience)|a beacon of|meticulous(?:ly)?|"
+                        r"shed(?:s|ding)? light on|pav(?:e|es|ed|ing) the way)", re.I)
+SENTENCE_SPLIT = re.compile(r"(?<=[.!?])\s+")
 QUOTE_OPEN_RX = re.compile(r'^\s*(?:#[^\n]*\n+)?\s*["\u201c\u2018\']', re.S)
 COMMON_CAPS = {"I", "My", "The", "This", "In", "As", "At", "During", "Dear", "Kind", "Sincerely", "Thank", "When", "After",
                "Before", "Since", "Through", "With", "Our", "We", "It", "Its", "These", "That", "There", "Their",
@@ -122,6 +133,18 @@ def review(text: str, brief: dict, profile, other_docs: Optional[dict[str, str]]
         for h in hits[:6]:
             issues.append({"type": "generic_phrase", "severity": "warning",
                            "detail": f"filler a committee has read a thousand times: '{h}' - replace with a specific fact or example"})
+        for h in sorted({m.group(0).lower() for m in MACHINE_RX.finditer(body)})[:6]:
+            issues.append({"type": "machine_phrase", "severity": "warning",
+                           "detail": f"reads as machine-written or stock text: '{h}' - say it plainly, in your own words"})
+        prose = PLACEHOLDER.sub(" ", body)
+        long_ones = [x for x in SENTENCE_SPLIT.split(prose) if len(x.split()) > 40]
+        if len(long_ones) >= 2:
+            issues.append({"type": "long_sentences", "severity": "warning",
+                           "detail": f"{len(long_ones)} sentences over 40 words; split them so each says one thing"})
+        if len(prose.split()) > 150 and not re.search(r"\d", prose):
+            issues.append({"type": "no_specifics", "severity": "warning",
+                           "detail": "no number, date or figure anywhere; one concrete fact (a year, a size, a result) makes "
+                                     "an example believable"})
         if QUOTE_OPEN_RX.match(body):
             issues.append({"type": "generic_opening", "severity": "warning",
                            "detail": "opens with a quotation; open with a concrete moment or problem of your own"})
