@@ -451,12 +451,15 @@ class ScholarshipService:
                     estimate=funding.estimate(o, tuition_per_year, living_per_month, currency, fx))
 
     def rank(self, profile_id: str = "default", weights: Optional[dict] = None, top: int = 20,
-             include_expired: bool = False) -> dict:
+             include_expired: bool = False, listed_only: bool = False) -> dict:
+        """listed_only (round 51, the site): rank the programmes the site lists, from the records its index already
+        holds, instead of reading the whole catalogue (news, hubs and other pages included) on every request."""
         from . import site
-        r = ranking.rank(self.store.list_opportunities(), self._profile(profile_id), weights, self.today,
-                         include_expired)
+        entries = site.index(self.store, self.today)
+        opps = [e.opp for e in entries] if listed_only else self.store.list_opportunities()
+        r = ranking.rank(opps, self._profile(profile_id), weights, self.today, include_expired)
         r["ranked"] = r["ranked"][:top]
-        by_id = {e.summary["id"]: e.summary for e in site.index(self.store, self.today)}
+        by_id = {e.summary["id"]: e.summary for e in entries}
         for x in r["ranked"]:   # the card the site shows: English title, codes, deadline
             x["summary"] = by_id.get(x["opportunity_id"], {})
         return _out(**r)

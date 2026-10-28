@@ -7,7 +7,7 @@ This is an engineering review of what the code stores, sends and exposes, and a 
 | Data | File | Contains personal data | Shared |
 |---|---|---|---|
 | Scholarship records, deadlines, verifications, page cache, search jobs, issue reports | `catalog.db` | No (issue reports hold no profile id and no contact detail; e-mail addresses and phone numbers are removed from the note) | Could seed a website |
-| Applicant profile (name, optional phone number and LinkedIn address, citizenship, education, tests, experience, achievements), applications, checklists, documents and versions, reminders, outcomes | `private/private.db` (mode 0600, directory 0700) | **Yes** | Never |
+| Applicant profile (name, phone number (asked at sign-up), optional LinkedIn address, citizenship, education, tests, experience, achievements), applications, checklists, documents and versions, reminders, outcomes | `private/private.db` (mode 0600, directory 0700) | **Yes** | Never |
 | Model usage ledger (`llm_usage`) and response cache (`llm_cache`) | `catalog.db` | No: counts, latency and estimated cost only; cached responses are answers about public pages | No |
 | API keys | environment or a file outside the repository (`~/.config/...`) | Secret | Never committed; `.env.example` has empty values |
 

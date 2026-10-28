@@ -51,6 +51,7 @@ class Entry:
     summary: dict
     fields: list            # (weight, sorted unique words)
     mentioned: dict         # country code -> weight of the best field that names it
+    opp: object = None      # round 51: the record itself, so matching reads no catalogue per request
 
 
 def _words(text: str) -> list[str]:
@@ -125,7 +126,7 @@ def _entry(store, o, today: date) -> Entry:
     mentioned: dict = {}
     for w, t in reversed(texts):
         mentioned.update({c: w for c in countries.mentions(t)})
-    return Entry(s, [(w, _words(t)) for w, t in texts], mentioned)
+    return Entry(s, [(w, _words(t)) for w, t in texts], mentioned, o)
 
 
 _CACHE: dict = {}

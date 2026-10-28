@@ -12,8 +12,9 @@
 1. Account: your e-mail address, a protected form of your password (we cannot read it), the time you accepted these
    terms, your choices about AI drafting, and a record of account events such as logins and password changes (without
    your IP address).
-2. Applicant profile, only what you enter: name, citizenships, country of residence, education, grades and tests, work
-   and volunteer experience, achievements, languages, study plans and preferences.
+2. Applicant profile, only what you enter: name, the phone number asked when you create the account (shown on your
+   CV, never shared), citizenships, country of residence, education, grades and tests, work and volunteer experience,
+   achievements, languages, study plans and preferences.
 3. Your applications: which scholarships you track, their status, your notes, checklists, document drafts and outcomes.
 4. Reports you send about mistakes in scholarship information (without your account; we remove e-mail addresses and phone
    numbers from the text).
@@ -58,8 +59,9 @@ counsel decides].
 1. Akun: alamat e-mail Anda, bentuk terlindungi dari kata sandi Anda (kami tidak bisa membacanya), waktu Anda menyetujui
    ketentuan ini, pilihan Anda tentang bantuan penulisan dengan AI, dan catatan kejadian akun seperti login dan perubahan
    kata sandi (tanpa alamat IP Anda).
-2. Profil pelamar, hanya yang Anda isi: nama, kewarganegaraan, negara tempat tinggal, pendidikan, nilai dan tes,
-   pengalaman kerja dan relawan, prestasi, bahasa, rencana studi dan preferensi.
+2. Profil pelamar, hanya yang Anda isi: nama, nomor telepon yang diminta saat membuat akun (tampil di CV Anda, tidak
+   dibagikan), kewarganegaraan, negara tempat tinggal, pendidikan, nilai dan tes, pengalaman kerja dan relawan,
+   prestasi, bahasa, rencana studi dan preferensi.
 3. Lamaran Anda: beasiswa yang Anda pantau, statusnya, catatan, daftar periksa, draf dokumen dan hasilnya.
 4. Laporan kesalahan informasi beasiswa yang Anda kirim (tanpa akun Anda; alamat e-mail dan nomor telepon dalam teks
    kami hapus).

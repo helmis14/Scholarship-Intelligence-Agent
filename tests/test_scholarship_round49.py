@@ -600,3 +600,22 @@ class TestSiteSpeed(unittest.TestCase):
                     break
                 time.sleep(0.02)
             self.assertEqual(len(site.index(st, TODAY)), 2)
+
+
+class TestMatchesFromTheIndex(unittest.TestCase):
+    def test_the_site_ranks_listed_programmes_only(self):
+        import tempfile
+        from pathlib import Path
+        from scholarship_agent.models import Profile
+        from scholarship_agent.service import ScholarshipService
+        from scholarship_agent.store import Store
+        st = Store(Path(tempfile.mkdtemp()))
+        for oid, kind in (("sch_prog", "scholarship_program"), ("sch_news", "news")):
+            o = Opportunity(id=oid, title=f"Award {oid}", provider_name="Test Foundation", provider_type=ProviderType.FOUNDATION,
+                            info_url=f"https://example.org/{oid}", page_type=kind)
+            st.save_opportunity(o, oid, o.info_url)
+        st.save_profile(Profile(id="u1", name="Rina", citizenships=["ID"]))
+        svc = ScholarshipService(store=st, search=None, today=TODAY, extractor_llm=None)
+        seen = lambda r: {x["opportunity_id"] for x in r["ranked"] + r["excluded"]}
+        self.assertEqual(seen(svc.rank("u1", listed_only=True)), {"sch_prog"})
+        self.assertEqual(seen(svc.rank("u1")), {"sch_prog", "sch_news"})   # the command line still sees everything
