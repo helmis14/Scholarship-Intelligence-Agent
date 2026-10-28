@@ -169,7 +169,7 @@ def fact_pack(p: Profile) -> dict:
 def fact_text(p: Profile) -> str:
     """Flat text of everything the applicant has confirmed - review.py checks claims against this."""
     fp = fact_pack(p)
-    parts = [fp["name"], " ".join(fp["citizenships"]), fp["residence"]]
+    parts = [fp["name"], " ".join(fp["citizenships"]), fp["residence"], p.email, p.phone, p.linkedin]   # own contacts
     for e in fp["education"]:
         parts += [str(v) for v in e.values() if v not in (None, "")]
     for t in fp["tests"]:
@@ -264,7 +264,7 @@ def academic_cv(p: Profile, opp: Optional[Opportunity] = None) -> str:
               + ", ".join(fp["research_interests"]) + ".", ""]
     L.append("## Education")
     for e in fp["education"]:
-        line = f"- **{e['degree'].title()} in {e['field']}**, {e['institution']}"
+        line = f"- **{_degree(e['degree'])} in {e['field']}**, {e['institution']}"
         if e["country"]:
             line += f", {e['country']}"
         line += f" ({e.get('start') or '?'} - {_fmt_date(e.get('end', ''))})"
@@ -292,6 +292,19 @@ def academic_cv(p: Profile, opp: Optional[Opportunity] = None) -> str:
     return "\n".join(L).strip() + "\n"
 
 
+DEGREE_NAMES = {"high_school": ("High School", "high school diploma"), "diploma": ("Diploma", "diploma"),
+                "bachelor": ("Bachelor", "Bachelor's degree"), "master": ("Master", "Master's degree"), "phd": ("PhD", "PhD")}
+
+
+def _degree(code: str, long: bool = False) -> str:
+    """A profile degree code as it reads in a CV ("Bachelor") or in a sentence ("Bachelor's degree")."""
+    name = DEGREE_NAMES.get((code or "").lower())
+    if name:
+        return name[1] if long else name[0]
+    c = (code or "").replace("_", " ")
+    return c[:1].upper() + c[1:]
+
+
 def skeleton(kind: str, b: dict) -> str:
     """A factual scaffold for voice documents when no model writes the prose."""
     fp = b["FACT_PACK"]
@@ -303,9 +316,10 @@ def skeleton(kind: str, b: dict) -> str:
     if b["word_limit"]:
         L += [f"> Limit: {b['word_limit']} words", ""]
     parts = b.get("standard", {}).get("structure") or ["Opening - why this scholarship and this field"]
-    L.append(f"[YOU WRITE: {parts[0]} - in your own words, from a specific experience]")
+    first = parts[0] if "specific experience" in parts[0] else parts[0] + ", from a specific experience"
+    L.append(f"[YOU WRITE: {first} - in your own words]")
     if ed:
-        L += ["", f"I hold a {ed['degree']} in {ed['field']} from {ed['institution']}."]
+        L += ["", f"I hold a {_degree(ed['degree'], True)} in {ed['field']} from {ed['institution']}."]
     if fp["experience"]:
         x = fp["experience"][0]
         L.append(f"I worked as {x['title']} at {x['organization']}.")
@@ -334,7 +348,7 @@ def recommender_brief(opp: Opportunity, p: Profile, referee: str = "[REFEREE NAM
         L.append(f"- Recommendation deadline: {dl[0].date} ({dl[0].certainty})")
     L += ["", "## My record (confirmed facts)"]
     for e in fp["education"]:
-        L.append(f"- {e['degree'].title()} in {e['field']}, {e['institution']}" +
+        L.append(f"- {_degree(e['degree'])} in {e['field']}, {e['institution']}" +
                  (f", GPA {e['gpa']}/{e['gpa_scale']}" if e.get("gpa") is not None else ""))
     for x in fp["experience"]:
         L.append(f"- {x['title']}, {x['organization']}")
@@ -370,7 +384,7 @@ def email_draft(kind: str, opp: Opportunity, p: Profile, recipient: str = "[NAME
     if kind == "email_supervisor":
         body = [f"Subject: Prospective {('/'.join(fp['target_levels']) or 'graduate').upper()} applicant - {', '.join(fp['research_interests'][:2]) or '[topic]'}",
                 "", f"Dear {recipient},", "",
-                f"I am {who}" + (f", a {ed['degree']} graduate in {ed['field']} from {ed['institution']}" if ed else "") + ".",
+                f"I am {who}" + (f", holding a {_degree(ed['degree'], True)} in {ed['field']} from {ed['institution']}" if ed else "") + ".",
                 f"I intend to apply for {opp.title} and am writing to ask whether you would consider supervising "
                 "a project in [YOU WRITE: topic and why it fits this supervisor's published work - cite one specific paper].",
                 "", "I attach my CV. [YOU WRITE: one sentence on your most relevant result or project]", "",

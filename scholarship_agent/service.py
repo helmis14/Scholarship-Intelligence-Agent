@@ -10,6 +10,8 @@ directory or database. Nothing here prints, prompts, or sends anything.
 from __future__ import annotations
 
 import json
+import re
+import unicodedata
 from datetime import date, datetime
 from pathlib import Path
 from typing import Optional
@@ -552,23 +554,36 @@ class ScholarshipService:
                     next_deadline=nd.to_dict() if nd else None, eligibility=e["decision"],
                     reminder="This agent never submits applications or sends messages; you submit on the official portal.")
 
-    def export_document(self, ref: str, kind: str, fmt: str, out_dir: Path, profile_id: str = "default") -> dict:
+    def application_documents(self, ref: str, profile_id: str = "default") -> dict:
+        """The saved drafts of one application, the latest version of each, with the reviewer's verdict."""
+        o = self._opp(ref)
+        aid = tracker.application_id(profile_id, o.id)
+        return _out(application_id=aid, documents=[
+            {"kind": d["kind"], "title": d["title"], "version": d["version"], "content": d["content"],
+             "created_at": d["created_at"], "review": d["review"]} for d in tracker.documents(self.store, aid)])
+
+    def document_file(self, ref: str, kind: str, fmt: str, profile_id: str = "default") -> tuple[str, str, bytes]:
+        """(file name, media type, bytes) of a saved draft as Markdown or Word."""
         o = self._opp(ref)
         aid = tracker.application_id(profile_id, o.id)
         d = next((x for x in tracker.documents(self.store, aid) if x["kind"] == kind), None)
         if not d:
             raise NotFound(f"no saved {kind} for this application - run /prepare first")
+        slug = re.sub(r"[^a-z0-9]+", "-", unicodedata.normalize("NFKD", o.title).encode("ascii", "ignore").decode().lower())
+        name = f"{slug.strip('-')[:48] or o.id}_{kind}_v{d['version']}"
+        if fmt == "md":
+            return name + ".md", "text/markdown; charset=utf-8", d["content"].encode("utf-8")
+        if fmt == "docx":
+            return (name + ".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                    docs_mod.to_docx(d["content"]))
+        raise ValueError("format must be md or docx (PDF: open the .docx and export it)")
+
+    def export_document(self, ref: str, kind: str, fmt: str, out_dir: Path, profile_id: str = "default") -> dict:
+        name, _, data = self.document_file(ref, kind, fmt, profile_id)
         out_dir = Path(out_dir)
         out_dir.mkdir(parents=True, exist_ok=True)
-        safe = f"{o.id}_{kind}_v{d['version']}"
-        if fmt == "md":
-            path = out_dir / f"{safe}.md"
-            path.write_text(d["content"], encoding="utf-8")
-        elif fmt == "docx":
-            path = out_dir / f"{safe}.docx"
-            path.write_bytes(docs_mod.to_docx(d["content"]))
-        else:
-            raise ValueError("format must be md or docx (PDF: open the .docx and export it)")
+        path = out_dir / name
+        path.write_bytes(data)
         return _out(file=str(path))
 
     # ------------------------------------------------------------- tracking

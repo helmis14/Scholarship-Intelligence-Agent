@@ -405,3 +405,26 @@ class TestProfileContacts(unittest.TestCase):
             with self.assertRaises(ValueError):
                 profile.upsert(st, patch, "p1")
         st.close()
+
+
+class TestContactsInReview(unittest.TestCase):
+    def test_the_applicants_own_phone_is_not_an_unsupported_claim(self):
+        from scholarship_agent import review
+        from scholarship_agent.documents import academic_cv
+        from scholarship_agent.models import Profile
+        p = Profile(name="Ana", phone="+6281234567890", linkedin="https://www.linkedin.com/in/ana", citizenships=["ID"])
+        rv = review.review(academic_cv(p), {"kind": "academic_cv"}, p)
+        self.assertFalse([i for i in rv["issues"] if i["type"] == "unsupported_claim"])
+
+    def test_an_unwritten_slot_is_flagged_once_and_is_not_a_claim(self):
+        from scholarship_agent import review
+        from scholarship_agent.models import Profile
+        p = Profile(name="Ana", citizenships=["ID"])
+        text = "Dear Committee,\n\n[YOU WRITE: Opening: why this programme, from a specific experience]\n\nAna"
+        rv = review.review(text, {"kind": "motivation_letter"}, p)
+        self.assertEqual([i["type"] for i in rv["issues"] if i["severity"] == "error"], ["placeholder"])
+
+    def test_degrees_read_as_words_in_documents(self):
+        from scholarship_agent.documents import _degree
+        self.assertEqual((_degree("bachelor"), _degree("bachelor", True), _degree("high_school"), _degree("BSc")),
+                         ("Bachelor", "Bachelor's degree", "High School", "BSc"))

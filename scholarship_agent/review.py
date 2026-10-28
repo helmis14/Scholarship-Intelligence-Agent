@@ -70,17 +70,18 @@ def review(text: str, brief: dict, profile, other_docs: Optional[dict[str, str]]
                        "detail": f"prompt/criteria term not addressed: '{t}'"})
 
     for m in PLACEHOLDER.finditer(body):
-        issues.append({"type": "placeholder", "severity": "error", "detail": f"unfilled: {m.group(0)[:80]}"})
+        issues.append({"type": "placeholder", "severity": "error", "detail": f"unfilled: {m.group(0)[:160]}"})
 
+    claims = PLACEHOLDER.sub(" ", body)   # round 51: the slots the applicant still writes are not claims
     unsupported = set()
-    for m in NUM.finditer(body):
+    for m in NUM.finditer(claims):
         v = m.group(1)
         if len(v) == 1 and "." not in v and not m.group(2):
             continue  # "one", "2 years" style small counts are too noisy to flag
         if YEAR.fullmatch(v) or "." in v or m.group(2) == "%" or len(v) >= 2:
             if v not in facts and v.rstrip("0").rstrip(".") not in facts:
                 unsupported.add(v + (m.group(2) or ""))
-    for m in ORG.finditer(body):
+    for m in ORG.finditer(claims):
         name = m.group(1).strip()
         first = name.split()[0]
         if first in COMMON_CAPS and len(name.split()) <= 2:
@@ -96,10 +97,10 @@ def review(text: str, brief: dict, profile, other_docs: Optional[dict[str, str]]
         "award": " ".join(fp["achievements"]).lower(),
         "role": " ".join(str(v) for x in fp["experience"] for v in x.values() if v).lower() + " " + " ".join(fp["projects"]).lower(),
     }
-    for m in CLAIM_VERBS.finditer(body):
+    for m in CLAIM_VERBS.finditer(claims):
         verb = m.group(0).lower()
         cat = "publication" if verb.startswith("publish") else "role" if verb in ("founded", "led", "managed") else "award"
-        sent = next((s for s in re.split(r"(?<=[.!?])\s+", body) if m.group(0) in s), m.group(0))
+        sent = next((s for s in re.split(r"(?<=[.!?])\s+", claims) if m.group(0) in s), m.group(0))
         after = sent[sent.lower().find(verb) + len(verb):]
         key = [w for w in re.findall(r"[A-Za-z]{5,}", after) if w.lower() not in CLAIM_STOP and w.lower() not in domain]
         if not category_text[cat].strip() or not any(k.lower() in category_text[cat] for k in key):

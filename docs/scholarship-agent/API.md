@@ -50,7 +50,9 @@ Errors: `service.NotFound` (unknown opportunity/profile, maps to HTTP 404),
 | `review_draft(ref, kind, content, profile_id)` | `POST /reviews` | `review` |
 | `documents_audit(ref, profile_id)` | `GET /applications/{opp}/readiness` | `matrix`, `drafts`, `missing`, `notes` |
 | `pre_submission_review(ref, profile_id)` | `GET /applications/{opp}/pre-submission` | `ready`, `blockers`, `next_deadline`, `eligibility` |
-| `export_document(ref, kind, fmt, out_dir, profile_id)` | `GET /applications/{opp}/documents/{kind}.docx` | `file` |
+| `application_documents(ref, profile_id)` | `GET /applications/{opp}/documents` | `application_id`, `documents` (latest version of each, with `review`) |
+| `document_file(ref, kind, fmt, profile_id)` | `GET /applications/{opp}/documents/{kind}/file?format=docx\|md` | file name, media type, bytes |
+| `export_document(ref, kind, fmt, out_dir, profile_id)` | CLI `export` (writes `document_file` to a folder) | `file` |
 | `track(ref, status, note, item, item_status, profile_id)` | `GET/PATCH /applications[/{opp}]` | `applications` or `application`, `checklist` |
 | `deadlines(within_days, profile_id, tracked_only)` | `GET /profiles/{id}/deadlines` | `confirmed`, `expected_unconfirmed`, `unknown`, `historical_recent`, `urgent_tasks` |
 | `reminders(profile_id, notifier)` | scheduled job | `reminders`, `delivery` |
