@@ -16,7 +16,10 @@
    CV, never shared), citizenships, country of residence, education, grades and tests, work and volunteer experience,
    achievements, languages, study plans and preferences.
 3. Your applications: which scholarships you track, their status, your notes, checklists, document drafts and outcomes.
-4. Reports you send about mistakes in scholarship information (without your account; we remove e-mail addresses and phone
+4. Your plan: free or Premium, the date it is paid until, your chosen destination countries, and our note about your
+   payment (for example the date of a bank transfer). We may contact you by e-mail or phone about your account and
+   payments.
+5. Reports you send about mistakes in scholarship information (without your account; we remove e-mail addresses and phone
    numbers from the text).
 
 Please do not enter health information or other sensitive details unless they are needed for an application. If an essay
@@ -70,7 +73,9 @@ counsel decides].
    dibagikan), kewarganegaraan, negara tempat tinggal, pendidikan, nilai dan tes, pengalaman kerja dan relawan,
    prestasi, bahasa, rencana studi dan preferensi.
 3. Lamaran Anda: beasiswa yang Anda pantau, statusnya, catatan, daftar periksa, draf dokumen dan hasilnya.
-4. Laporan kesalahan informasi beasiswa yang Anda kirim (tanpa akun Anda; alamat e-mail dan nomor telepon dalam teks
+4. Paket Anda: gratis atau Premium, tanggal berlaku, negara tujuan pilihan Anda, dan catatan kami tentang pembayaran
+   Anda (misalnya tanggal transfer). Kami dapat menghubungi Anda lewat e-mail atau telepon soal akun dan pembayaran.
+5. Laporan kesalahan informasi beasiswa yang Anda kirim (tanpa akun Anda; alamat e-mail dan nomor telepon dalam teks
    kami hapus).
 
 Mohon jangan mengisi data kesehatan atau data sensitif lain kecuali memang diperlukan untuk lamaran. Bila esai Anda

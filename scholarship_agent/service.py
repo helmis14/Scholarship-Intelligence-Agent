@@ -427,7 +427,8 @@ class ScholarshipService:
 
     def search_opportunities(self, country: str = "", level: str = "", text: str = "", status: str = "",
                              funding: str = "", open_only: bool = False, citizenship: str = "", sort: str = "",
-                             limit: int = 60, offset: int = 0, within_days: int = 0, discipline: str = "") -> dict:
+                             limit: int = 60, offset: int = 0, within_days: int = 0, discipline: str = "",
+                             countries: Optional[list] = None) -> dict:
         """Catalogue search for the site and the CLI (round 47, site.py): every word must match (title, provider,
         quotations, in the original and in English; S2/master, Jepang/Japan and other synonyms), filters by destination,
         level, funding, open applications and the applicant's citizenship, sorted by relevance or nearest deadline,
@@ -435,7 +436,8 @@ class ScholarshipService:
         from . import site
         return _out(**site.search(self.store, self.today, text=text, country=country, level=level, funding=funding,
                                   open_only=open_only, citizenship=citizenship, status=status, sort=sort,
-                                  limit=limit, offset=offset, within_days=within_days, discipline=discipline))
+                                  limit=limit, offset=offset, within_days=within_days, discipline=discipline,
+                                  countries=countries))
 
     def sources_status(self, check: bool = False) -> dict:
         states = self.store.source_states()

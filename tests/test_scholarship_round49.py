@@ -742,3 +742,20 @@ class TestDescribeByFetching(unittest.TestCase):
         r = svc.describe_catalog(fetch=True, listed_only=True)
         self.assertEqual((r["described"], r["pages_fetched"]), (1, 1))
         self.assertTrue(st.get_opportunity("sch_a").description.startswith("The Example Award funds two years"))
+
+
+class TestSearchWithinCountries(unittest.TestCase):
+    def test_only_programmes_in_the_allowed_destinations(self):
+        import tempfile
+        from pathlib import Path
+        from scholarship_agent import site
+        from scholarship_agent.store import Store
+        st = Store(Path(tempfile.mkdtemp()))
+        for oid, cc in (("sch_de", ["DE"]), ("sch_jp", ["JP"]), ("sch_both", ["DE", "NL"])):
+            o = Opportunity(id=oid, title=f"Award {oid}", provider_name="P", provider_type=ProviderType.FOUNDATION,
+                            info_url=f"https://example.org/{oid}", page_type="scholarship_program", destination_countries=cc)
+            st.save_opportunity(o, oid, o.info_url)
+        ids = lambda **kw: sorted(s["id"] for s in site.search(st, TODAY, **kw)["results"])   # noqa: E731
+        self.assertEqual(ids(countries=["DE"]), ["sch_both", "sch_de"])
+        self.assertEqual(ids(countries=[]), [])
+        self.assertEqual(len(ids()), 3)

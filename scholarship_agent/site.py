@@ -18,6 +18,7 @@ from collections import Counter
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
+from typing import Optional
 
 from . import countries
 from .audit import APPLICANT_KINDS, cycle_status, field_status, funding_type
@@ -389,14 +390,18 @@ def _correct(terms: list, entries) -> tuple[list, list]:
 
 def search(store, today: date, text: str = "", country: str = "", level: str = "", funding: str = "",
            open_only: bool = False, citizenship: str = "", status: str = "", sort: str = "", limit: int = 60,
-           offset: int = 0, within_days: int = 0, discipline: str = "") -> dict:
+           offset: int = 0, within_days: int = 0, discipline: str = "", countries: Optional[list] = None) -> dict:
+    """`countries` (round 51): only programmes in one of these destinations (a plan's allowed countries)."""
     entries = index(store, today)
     terms, corrected = _correct(parse_query(text), entries)
     country, citizenship = country.upper(), citizenship.upper()
+    allowed = {c.upper() for c in countries} if countries is not None else None
     pool = []
     for e in entries:
         s = e.summary
         if country and country not in s["countries"]:
+            continue
+        if allowed is not None and not allowed & set(s["countries"]):
             continue
         if level and level not in s["levels"]:
             continue
