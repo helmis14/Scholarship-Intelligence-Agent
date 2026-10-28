@@ -322,6 +322,7 @@ class Opportunity(Model):
     destination_countries: list[str] = field(default_factory=list)
     institution: str = ""
     programs: list[str] = field(default_factory=list)
+    description: str = ""               # round 51: the official page's own short account of the programme, verbatim
     study_levels: list[str] = field(default_factory=list)   # bachelor | master | phd | postdoc | short_course | exchange
     disciplines: list[str] = field(default_factory=list)
     nationality: NationalityRule = field(default_factory=NationalityRule)

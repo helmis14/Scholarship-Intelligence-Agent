@@ -294,6 +294,36 @@ class ScholarshipService:
     CYCLE_LABELS = {"open": "Open", "closed": "Closed", "upcoming": "Opens later", "not_announced": "Next round not announced",
                     "rolling": "Rolling (any time)"}
 
+    def describe_catalog(self, limit: int = 0, refresh: bool = False) -> dict:
+        """Round 51: programme descriptions from the pages already stored (nothing is fetched): the official page of
+        each record first, then the other pages its evidence comes from."""
+        from .extract import Page, programme_description, short_description
+        done = kept = no_page = none_found = 0
+        for o in self.store.list_opportunities():
+            if o.description and not refresh:
+                kept += 1
+                continue
+            urls = list(dict.fromkeys([o.info_url] + [e.source_url for e in o.evidence if e.source_url]))
+            summary = (o.provider_metadata or {}).get("summary")   # a dataset's own summary (Campus France)
+            text = short_description(summary) if isinstance(summary, str) and len(summary.split()) >= 8 else ""
+            for u in ([] if text else urls):
+                row = self.store.catalog.execute("SELECT url, text FROM pages WHERE (url = ? OR final_url = ?) AND text != '' "
+                                                 "LIMIT 1", (u, u)).fetchone()
+                if row and (text := programme_description(Page(row[0], row[1]), o.title)):
+                    break
+            if not text:
+                if any(self.store.catalog.execute("SELECT 1 FROM pages WHERE url = ? OR final_url = ?", (u, u)).fetchone()
+                       for u in urls):
+                    none_found += 1
+                else:
+                    no_page += 1
+                continue
+            self.store.set_description(o.id, text)
+            done += 1
+            if limit and done >= limit:
+                break
+        return _out(described=done, already_described=kept, page_without_description=none_found, no_stored_page=no_page)
+
     def decision_card(self, ref: str) -> dict:
         """The four decisions an applicant acts on, as a reader-facing card (round 46, for the web front end): each with
         a state (answered | check | not_stated), a plain value, the quotations and the official page. A value held for

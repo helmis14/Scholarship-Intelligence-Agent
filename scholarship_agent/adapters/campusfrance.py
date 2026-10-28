@@ -177,6 +177,9 @@ class CampusFranceAdapter:
                                  "managed_by_campus_france": bool(row.get("tcampus")),
                                  "updated": row.get("updatedAt", ""), "summary": row.get("synthese", "")}
         opp.verification_status = VerificationStatus.EXTRACTED   # programme terms come from the detail page
+        if len((row.get("synthese") or "").split()) >= 8:   # round 51: the database's own summary describes the programme
+            from ..extract import short_description
+            opp.description = short_description(row["synthese"])
         return opp
 
     def enrich_from_detail(self, opp: Opportunity, res: AdapterResult) -> None:

@@ -2316,6 +2316,53 @@ def _dollar_currency(comps, snippets, url: str) -> None:
             c.currency = cur
 
 
+# Round 51: what the programme is, in the page's own words: its meta description when that describes the programme,
+# else the first paragraph that does. Words about the scholarship (or two of the title's own words) must be there, and
+# nothing that belongs to the site rather than the programme (cookies, log-in, newsletters).
+DESC_WORDS = re.compile(r"\b(?:scholarships?|grants?|fellowships?|funding|funded|awards?|bursar(?:y|ies)|stipends?|"
+                        r"programmes?|programs?|tuition|bourses?|becas?|beasiswa|stipendi\w*|students?|applicants?|"
+                        r"research(?:ers)?|stud(?:y|ies))\b", re.I)
+DESC_NOISE = re.compile(r"cookie|javascript|click here|all rights reserved|\blog ?in\b|\bsign ?in\b|subscribe|newsletter|"
+                        r"skip to (?:main )?content|privacy policy|accept all|404|page not found", re.I)
+
+
+def short_description(text: str) -> str:
+    """Whole sentences up to about 170 characters (never more than 330)."""
+    out = ""
+    for sent in re.split(r"(?<=[.!?])\s+", " ".join((text or "").split())):
+        if out and len(out) + len(sent) > 320:
+            break
+        out = (out + " " + sent).strip()
+        if len(out) >= 170:
+            break
+    return out if len(out) <= 330 else out[:320].rsplit(" ", 1)[0] + "…"
+
+
+def programme_description(page: Page, title: str) -> str:
+    """The page's own short account of the programme (at most about two sentences), or "" when it has none."""
+    own = set(re.findall(r"[^\W\d_]{4,}", (title or "").lower())) - {"scholarship", "scholarships", "programme", "program",
+                                                                       "grant", "grants", "fellowship", "funding"}
+
+    def fits(text: str, least: int) -> bool:
+        n = len(text.split())
+        if not least <= n <= 140 or DESC_NOISE.search(text):
+            return False
+        low = text.lower()
+        return bool(DESC_WORDS.search(text)) or sum(w in low for w in own) >= 2
+
+    trim = short_description
+    meta = " ".join((page.description or "").split())
+    if meta and fits(meta, 8) and meta.lower().strip(" .") != (title or "").lower().strip(" ."):
+        return trim(meta)
+    ld = jsonld_fields(page) or {}
+    if isinstance(ld.get("description"), str) and fits(ld["description"], 8):
+        return trim(ld["description"])
+    for line in page.text.splitlines():   # the first paragraph about the programme
+        if len(line) > 140 and fits(line, 22):
+            return trim(line)
+    return ""
+
+
 def extract_opportunity(page: Page, *, provider_name: str, provider_type, source_type: SourceType,
                         country_hint: list[str], retrieved_at: str, today: date) -> tuple[Opportunity, list[str]]:
     """Build an Opportunity whose every populated field has an Evidence entry."""
@@ -2489,4 +2536,5 @@ def extract_opportunity(page: Page, *, provider_name: str, provider_type, source
     for d in opp.deadlines:
         d.retrieved_at = retrieved_at
     opp.evidence = ev
+    opp.description = programme_description(page, opp.title)
     return opp, flags

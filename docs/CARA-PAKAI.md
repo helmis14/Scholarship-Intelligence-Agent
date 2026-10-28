@@ -96,6 +96,12 @@ python3 -m scholarship_agent refresh --limit 300          # baca ulang catatan y
 
 Tenggat yang sudah lewat, siklus tahunan, dan syarat yang berubah diperbarui dari halaman resminya.
 
+```bash
+python3 -m scholarship_agent describe                     # isi deskripsi program dari halaman yang sudah tersimpan
+```
+
+Deskripsi ("ini program apa") diambil dari kata-kata halaman resmi sendiri; pembacaan halaman berikutnya mengisi sisanya.
+
 ### 3.6 Pemeriksa kedua dengan Claude (berbayar, pilihan)
 
 Pemeriksa kedua membaca ulang halaman resmi dan menandai nilai yang meragukan. Tanpa izin eksplisit setiap permintaan

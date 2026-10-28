@@ -146,7 +146,7 @@ python3 -m scholarship_agent coverage
 |---|---|---|
 | Profile and privacy | `setup`, `profile`, `export-data`, `delete-data --yes` | `/scholar-setup` |
 | Discovery | `discover`, `scrape <url>`, `adapter daad\|campusfrance\|grants_at\|nsp_india\|erasmus_mundus\|euraxess [--details]`, `strategy-plan`, `strategy-run`, `coverage`, `sources --check`, `check` (second reading of stored records) | `/discover`, `/scholar-scrape`, `/sources` |
-| Verification | `verify <id>`, `refresh`, `catalog-audit`, `show <id>`, `search` | `/verify` |
+| Verification | `verify <id>`, `refresh`, `describe` (programme descriptions from stored pages), `catalog-audit`, `show <id>`, `search` | `/verify` |
 | Fit | `match <id>`, `funding <id>`, `rank` | `/match`, `/scholar-rank` |
 | Planning | `plan <id>`, `documents <id>`, `deadlines`, `reminders` | `/plan`, `/documents`, `/deadlines` |
 | Documents | `prepare`, `cv <id>`, `essay <id>`, `brief`, `save-draft`, `review <id>`, `export` | `/prepare`, `/cv`, `/essay`, `/review` |

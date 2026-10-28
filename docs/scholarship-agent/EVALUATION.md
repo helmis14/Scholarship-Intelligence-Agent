@@ -926,3 +926,16 @@ in text with one alternation of 755 names. The names now share their prefixes in
 6.1 s → 0.3 s on 10,776 texts with identical answers, and the whole build 4.4 s. The index is built when the server
 starts and, after the catalogue changes, again in a thread of its own while requests keep the index they have; no
 visitor waits for a rebuild any more (warm requests 5-30 ms).
+
+**Search and descriptions (round 51).** Site search on the live catalogue, before → after: "kedokteran" 0 → 838
+results, "pertanian" 0 → 535, "informatika" 0 → 385, "lingkungan" 0 → 383, "psikologi" 0 → 84, "perempuan" 0 → 82,
+"riset kanker" 0 → 9, "hukum belanda" and "teknik jepang" from partial matches to full ones, "seni" (art) no longer
+finds "Senior ...", and the misspellings "enginering" and "scholarhsip japan" are corrected and say so. Indonesian words
+for fields and groups are matched through the English words of the pages (the Indonesian word only as a whole word),
+words shorter than five letters match whole only, plurals find their singular, and a word of five letters or more that
+fewer than three programmes use is replaced by the closest word (one letter different) that ten times as many use.
+Programmes now carry a short description in the official page's own words (meta description or first paragraph about
+the programme, or a dataset's own summary); `describe` fills it from stored pages without fetching (393 of 5,388 today:
+most stored pages keep only their hash), and later reads fill the rest. Where none exists the site writes one sentence
+from the checked fields. Reading accuracy on the labelled pages is unchanged (devpool difference 0 on all 14 sets).
+

@@ -324,6 +324,11 @@ class Store:
                           (opp.institution.strip().lower(), opp.institution,
                            (opp.destination_countries or [""])[0], "{}"))
 
+    def set_description(self, opp_id: str, text: str) -> None:
+        """Round 51: only the programme description changes; the record keeps its dates, statuses and evidence."""
+        with self.catalog as c:
+            c.execute("UPDATE opportunities SET data = json_set(data, '$.description', ?) WHERE id = ?", (text, opp_id))
+
     def get_opportunity(self, opp_id: str) -> Optional[Opportunity]:
         row = self.catalog.execute("SELECT data FROM opportunities WHERE id = ?", (opp_id,)).fetchone()
         return Opportunity.from_dict(json.loads(row["data"])) if row else None

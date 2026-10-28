@@ -216,6 +216,9 @@ def build_parser() -> argparse.ArgumentParser:
                                     "held for review (paid only with AI_PROVIDER and <PREFIX>_ALLOW_PAID=1)")
     s.add_argument("--limit", type=int, default=0, help="check at most this many records")
     s.add_argument("--refresh", action="store_true", help="read again records that already have a second reading")
+    s = sub.add_parser("describe", help="fill in programme descriptions from the pages already stored (no fetching)")
+    s.add_argument("--limit", type=int, default=0, help="describe at most this many records")
+    s.add_argument("--refresh", action="store_true", help="read again records that already have a description")
     s = sub.add_parser("sources", help="source registry, coverage, freshness, failures")
     s.add_argument("--check", action="store_true", help="fetch every source now (network)")
     s.add_argument("--add", help="JSON object for a new local source")
@@ -385,6 +388,8 @@ def run(args, svc: ScholarshipService) -> dict:
             raise ValueError("no AI provider configured (set AI_PROVIDER=anthropic, see .env.example)")
         return _with_usage(check_catalog(svc.store, svc.fetcher, svc.extractor_llm, svc.today, args.limit, args.refresh),
                            svc.extractor_llm)
+    if c == "describe":
+        return svc.describe_catalog(args.limit, args.refresh)
     if c == "sources":
         if args.add:
             return svc.add_source(json.loads(args.add))

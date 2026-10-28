@@ -278,7 +278,7 @@ def verify(store: Store, opp: Opportunity, fetcher: Fetcher, sources: list[Sourc
             d.certainty = DeadlineCertainty.EXPECTED if d.kind in APPLICANT_KINDS else DeadlineCertainty.UNKNOWN
             if "not confirmed by verification" not in d.warnings:
                 d.warnings.append("not confirmed by verification")
-        for attr in ("funding", "language_requirements", "required_documents"):
+        for attr in ("funding", "language_requirements", "required_documents", "description"):
             if not getattr(opp, attr) and getattr(fresh, attr):
                 setattr(opp, attr, getattr(fresh, attr))
         if opp.nationality.mode == "unknown":

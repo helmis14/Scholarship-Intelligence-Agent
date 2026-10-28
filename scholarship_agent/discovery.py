@@ -190,6 +190,8 @@ def merge(old: Opportunity, new: Opportunity) -> Opportunity:
     for e in new.evidence:
         if (e.field, e.source_url, repr(e.value)) not in known:
             old.evidence.append(e)
+    if not old.description and new.description and normalize_url(new.info_url) == normalize_url(old.info_url):
+        old.description = new.description   # round 51: the programme's own page describes it, not a section of it
     simple = ("min_gpa", "max_age", "min_age", "min_work_years", "application_url", "moi_policy", "current_cycle",
               "funding_duration")
     for f in simple:

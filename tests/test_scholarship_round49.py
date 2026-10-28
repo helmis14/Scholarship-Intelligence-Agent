@@ -619,3 +619,56 @@ class TestMatchesFromTheIndex(unittest.TestCase):
         seen = lambda r: {x["opportunity_id"] for x in r["ranked"] + r["excluded"]}
         self.assertEqual(seen(svc.rank("u1", listed_only=True)), {"sch_prog"})
         self.assertEqual(seen(svc.rank("u1")), {"sch_prog", "sch_news"})   # the command line still sees everything
+
+
+class TestSearchAndDescriptions(unittest.TestCase):
+    """Round 51: Indonesian words find English pages, short words match whole, typos are corrected and said, and every
+    programme can say what it is."""
+    def store(self, titles):
+        import tempfile
+        from pathlib import Path
+        from scholarship_agent.store import Store
+        st = Store(Path(tempfile.mkdtemp()))
+        for i, (title, extra) in enumerate(titles):
+            o = Opportunity(id=f"sch_{i}", title=title, provider_name="Test Foundation", provider_type=ProviderType.FOUNDATION,
+                            info_url=f"https://example.org/{i}", page_type="scholarship_program", **extra)
+            st.save_opportunity(o, o.id, o.info_url)
+        return st
+
+    def test_indonesian_words_plural_whole_words_and_typos(self):
+        from scholarship_agent import site
+        st = self.store([("Medicine Fellowship for Young Doctors", {}), ("Senior Researcher Grant", {}),
+                         ("Arts and Music Scholarship", {}), ("Engineering Excellence Award", {}),
+                         ("Engineering Masters Scholarship", {}), ("Global Engineering Grant", {})])
+        titles = lambda q: [s["title"] for s in site.search(st, TODAY, text=q)["results"]]   # noqa: E731
+        self.assertEqual(titles("kedokteran"), ["Medicine Fellowship for Young Doctors"])
+        self.assertEqual(titles("seni"), ["Arts and Music Scholarship"])          # not "Senior"
+        self.assertEqual(len(titles("engineering awards")), 1)                     # the plural finds "Award"
+        r = site.search(st, TODAY, text="enginering")
+        self.assertEqual((r["count"], r["corrected"]), (3, [{"from": "enginering", "to": "engineering"}]))
+
+    def test_the_page_describes_the_programme_in_its_own_words(self):
+        from scholarship_agent.extract import Page, programme_description
+        meta = ('<html><head><title>X</title><meta name="description" content="The Example Scholarship funds two years of '
+                'master study in Germany for graduates from developing countries."></head><body><p>Accept all cookies</p>'
+                '</body></html>')
+        self.assertTrue(programme_description(Page("https://example.org/a", meta), "Example Scholarship").startswith(
+            "The Example Scholarship funds two years"))
+        noise = '<html><head><meta name="description" content="We use cookies to improve your experience on this site, ok?"></head></html>'
+        self.assertEqual(programme_description(Page("https://example.org/b", noise), "Example Scholarship"), "")
+        para = "<html><body><p>" + ("The Example Fellowship supports early-career researchers in public health with a "
+                                    "monthly stipend, travel costs and mentoring for twelve months. " * 3) + "</p></body></html>"
+        got = programme_description(Page("https://example.org/c", para), "Example Fellowship")
+        self.assertTrue(got.startswith("The Example Fellowship supports") and len(got) <= 330)
+
+    def test_a_dataset_summary_becomes_the_description_and_merges_keep_it(self):
+        from scholarship_agent.discovery import merge
+        from scholarship_agent.service import ScholarshipService
+        summary = "The French Embassy awards scholarships to meritorious students who wish to study in France at Master level."
+        st = self.store([("France Excellence", {"provider_metadata": {"summary": summary}})])
+        svc = ScholarshipService(store=st, search=None, today=TODAY, extractor_llm=None)
+        self.assertEqual(svc.describe_catalog()["described"], 1)
+        self.assertEqual(st.get_opportunity("sch_0").description, summary)
+        a = Opportunity(id="a", title="T", provider_name="P", info_url="https://example.org/x")
+        b = Opportunity(id="b", title="T", provider_name="P", info_url="https://example.org/x/", description="What it is.")
+        self.assertEqual(merge(a, b).description, "What it is.")

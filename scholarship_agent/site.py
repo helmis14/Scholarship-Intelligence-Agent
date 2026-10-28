@@ -35,7 +35,29 @@ LEVEL_SYNONYMS = {w: lvl for lvl, ws in LEVEL_WORDS.items() for w in ws.split()}
 FUNDING_SYNONYMS = {"penuh": "fully_funded", "fully": "fully_funded", "full": "fully_funded"}
 # words every programme here shares, or that only glue a query together
 STOP = set("scholarship scholarships beasiswa program programme programs programmes funded funding the for in of and "
-           "to a an di untuk dan ke yang beca becas bourse bourses stipendium study studi kuliah".split())
+           "to a an di untuk dan ke yang beca becas bourse bourses stipendium study studi kuliah luar negeri bidang "
+           "jurusan dengan atau tentang".split())
+# Round 51: what people study and look for, typed in Indonesian, found through the English words the pages use. The
+# Indonesian word itself still counts, but only as a whole word ("seni" is art, not the start of "senior").
+WORD_SYNONYMS = {k: v.split() for k, v in {
+    "kedokteran": "medicine medical", "dokter": "medicine medical doctor", "kesehatan": "health", "masyarakat": "public community",
+    "keperawatan": "nursing", "farmasi": "pharmacy pharmaceutical", "gizi": "nutrition", "psikologi": "psychology",
+    "teknik": "engineering", "informatika": "informatics computer computing", "komputer": "computer computing",
+    "ilmu": "science sciences", "sains": "science sciences", "matematika": "mathematics", "fisika": "physics",
+    "kimia": "chemistry", "biologi": "biology", "pertanian": "agriculture agricultural", "kehutanan": "forestry",
+    "perikanan": "fisheries", "kelautan": "marine ocean", "pangan": "food", "lingkungan": "environment environmental",
+    "iklim": "climate", "energi": "energy", "hukum": "law laws legal", "ekonomi": "economics economic economy",
+    "bisnis": "business", "manajemen": "management", "akuntansi": "accounting", "keuangan": "finance financial",
+    "pendidikan": "education", "guru": "teacher teachers teaching", "seni": "art arts", "musik": "music", "desain": "design",
+    "arsitektur": "architecture", "sastra": "literature", "bahasa": "language languages linguistics",
+    "budaya": "culture cultural", "sejarah": "history", "filsafat": "philosophy", "agama": "religion religious theology",
+    "politik": "politics political", "pemerintahan": "government governance", "sosial": "social",
+    "internasional": "international", "hubungan": "relations", "pariwisata": "tourism", "jurnalistik": "journalism",
+    "komunikasi": "communication communications", "riset": "research", "penelitian": "research", "kanker": "cancer",
+    "perempuan": "women female", "wanita": "women female", "disabilitas": "disability disabled",
+    "pengungsi": "refugee refugees", "pemuda": "youth young", "pascasarjana": "postgraduate graduate",
+    "magang": "internship internships", "pelatihan": "training", "kursus": "course courses",
+}.items()}
 OPEN_STATES = ("open", "upcoming", "rolling")
 SORTS = ("relevance", "deadline", "recent", "title")
 
@@ -58,12 +80,25 @@ def _words(text: str) -> list[str]:
     return sorted(set(norm(text).split()))
 
 
-def _has(words: list[str], token: str) -> bool:
-    """A word of the field starts with the token (whole word for tokens shorter than 3 characters)."""
+def _has(words: list[str], token: str, prefix: bool = True) -> bool:
+    """A word of the field is the token, or starts with it when `prefix` and the token has five characters or more
+    (round 51: was three, so "seni" found "senior" and "data" found "database")."""
     i = bisect.bisect_left(words, token)
     if i >= len(words):
         return False
-    return words[i] == token if len(token) < 3 else words[i].startswith(token)
+    return words[i].startswith(token) if prefix and len(token) >= 5 else words[i] == token
+
+
+def _alternatives(token: str) -> list[tuple[str, bool]]:
+    """(word, prefix allowed) that count as the token: its English synonyms, else its singular form too."""
+    if token in WORD_SYNONYMS:
+        return [(token, False)] + [(w, True) for w in WORD_SYNONYMS[token]]
+    out = [(token, True)]
+    if len(token) > 4 and token.endswith("ies"):
+        out.append((token[:-3] + "y", True))
+    elif len(token) > 4 and token.endswith("s") and not token.endswith("ss"):
+        out.append((token[:-1], True))
+    return out
 
 
 def _next_day(md: str, today: date):
@@ -97,7 +132,7 @@ def summary(store, o, today: date) -> dict:
     return {
         "id": o.id, "title": tr["title"], "title_original": o.title if tr["title"] != o.title else "",
         "language": tr["language"], "translated": bool(tr.get("title_translated")),
-        "provider": o.provider_name, "countries": list(o.destination_countries),
+        "provider": o.provider_name, "description": o.description[:330], "countries": list(o.destination_countries),
         "countries_inferred": "destination:host" in o.tags,
         "levels": list(o.study_levels), "disciplines": list(o.disciplines[:12]),
         "funding": ft if ft not in ("not_stated", "funding_unclear") else "",
@@ -122,6 +157,7 @@ def _entry(store, o, today: date) -> Entry:
     texts = [(5, s["title"] + " " + o.title),
              (3, " ".join([o.provider_name, o.institution] + o.programs + o.disciplines
                           + [countries.name(c) for c in o.destination_countries])),
+             (2, o.description),
              (1, " ".join(quotes))]
     mentioned: dict = {}
     for w, t in reversed(texts):
@@ -183,8 +219,13 @@ REBUILD_AFTER = 300   # seconds: while crawls write all day, rebuild at most thi
 _BUILDING: set = set()
 
 
+class Built(list):
+    """The index entries, with room for what is computed from them once (the vocabulary for spelling)."""
+    vocab = None
+
+
 def _build(store, today: date, where: str, key: tuple) -> list[Entry]:
-    entries = [_entry(store, o, today) for o in store.list_opportunities() if listed(o)]
+    entries = Built(_entry(store, o, today) for o in store.list_opportunities() if listed(o))
     with _LOCK:
         _CACHE[where] = (key, entries, time.monotonic())
     return entries
@@ -268,7 +309,8 @@ def _term_score(e: Entry, kind: str, value: str) -> int:
         return 4 if value in s["countries"] else e.mentioned.get(value, 0)
     if kind in ("level", "funding"):
         return 0
-    return max((w for w, words in e.fields if _has(words, value)), default=0)
+    alts = _alternatives(value)
+    return max((w for w, words in e.fields if any(_has(words, t, pre) for t, pre in alts)), default=0)
 
 
 def fit(s: dict, citizenship: str) -> str:
@@ -302,11 +344,54 @@ def _deadline_key(s: dict) -> tuple:
     return (3, -_ord(s["last_deadline"]))
 
 
+LETTERS = "abcdefghijklmnopqrstuvwxyz"
+
+
+def _edits1(w: str) -> set:
+    splits = [(w[:i], w[i:]) for i in range(len(w) + 1)]
+    return ({a + b[1:] for a, b in splits if b} | {a + b[1] + b[0] + b[2:] for a, b in splits if len(b) > 1}
+            | {a + c + b[1:] for a, b in splits if b for c in LETTERS} | {a + c + b for a, b in splits for c in LETTERS})
+
+
+def _vocabulary(entries) -> tuple[Counter, list]:
+    """How many programmes use each word, and the words in order (built once per index)."""
+    v = getattr(entries, "vocab", None)
+    if v is None:
+        counts = Counter(w for e in entries for w in {x for _, words in e.fields for x in words})
+        v = (counts, sorted(counts))
+        try:
+            entries.vocab = v
+        except AttributeError:   # a plain list (tests): computed each time
+            pass
+    return v
+
+
+def _correct(terms: list, entries) -> tuple[list, list]:
+    """Round 51: a word of five letters or more that no programme has is replaced by the closest word that many
+    programmes have ("enginering" -> "engineering"); returns the new terms and what was changed."""
+    (vocab, known), changed, out = _vocabulary(entries), [], []
+    for kind, value in terms:
+        if kind == "word" and len(value) >= 5 and value not in WORD_SYNONYMS:
+            i, uses = bisect.bisect_left(known, value), 0   # programmes with a word that starts with it (a few at most)
+            while i < len(known) and known[i].startswith(value) and uses < 3:
+                uses += vocab[known[i]]
+                i += 1
+            uses += sum(vocab.get(t, 0) for t, _ in _alternatives(value)[1:])
+            if uses < 3:   # a typo that a page happens to share ("scholarhsip") still counts as unknown
+                best = max((w for w in _edits1(value) if vocab.get(w, 0) >= max(2, 10 * uses)), key=lambda w: vocab[w],
+                           default=None)
+                if best:
+                    changed.append({"from": value, "to": best})
+                    value = best
+        out.append((kind, value))
+    return out, changed
+
+
 def search(store, today: date, text: str = "", country: str = "", level: str = "", funding: str = "",
            open_only: bool = False, citizenship: str = "", status: str = "", sort: str = "", limit: int = 60,
            offset: int = 0, within_days: int = 0, discipline: str = "") -> dict:
     entries = index(store, today)
-    terms = parse_query(text)
+    terms, corrected = _correct(parse_query(text), entries)
     country, citizenship = country.upper(), citizenship.upper()
     pool = []
     for e in entries:
@@ -361,7 +446,7 @@ def search(store, today: date, text: str = "", country: str = "", level: str = "
     if citizenship:
         page = [s | {"fit": fit(s, citizenship)} for s in page]
     return {"results": page, "count": len(found), "match": match if terms else "", "sort": sort,
-            "query": [{"kind": k, "value": v} for k, v in terms],
+            "query": [{"kind": k, "value": v} for k, v in terms], "corrected": corrected,
             "facets": {k: dict(v.most_common(40)) for k, v in facets.items()}}
 
 
@@ -434,7 +519,8 @@ def details(store, o, today: date) -> dict:
             "requirements": req, "documents": docs, "dates": dates,
             "selection": [{"quote": c, "translation": tr["texts"].get(c, "")} for c in o.selection_criteria[:6]],
             "apply": {"official_url": o.info_url, "application_url": o.application_url},
-            "about": {"institution": o.institution, "programs": list(o.programs[:12]), "disciplines": list(o.disciplines[:24]),
+            "about": {"description": o.description, "institution": o.institution, "programs": list(o.programs[:12]),
+                      "disciplines": list(o.disciplines[:24]),
                       "renewal": o.renewal_conditions[:400], "type": o.opportunity_type if o.opportunity_type != "unknown" else ""},
             "language": tr["language"], "title_original": o.title if tr["title"] != o.title else ""}
 
