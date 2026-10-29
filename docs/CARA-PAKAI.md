@@ -92,6 +92,7 @@ python3 -m scholarship_agent sources --check              # cek semua sumber mas
 ```bash
 python3 -m scholarship_agent refresh --plan               # lihat dulu apa yang akan dibaca ulang
 python3 -m scholarship_agent refresh --limit 300          # baca ulang catatan yang paling perlu diperbarui
+python3 -m scholarship_agent refresh --undated --limit 200   # baca ulang program yang tampil tapi belum punya tanggal
 ```
 
 Tenggat yang sudah lewat, siklus tahunan, dan syarat yang berubah diperbarui dari halaman resminya.

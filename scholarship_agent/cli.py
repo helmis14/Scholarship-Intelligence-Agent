@@ -116,6 +116,9 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("--max-age-days", type=int, default=None, help="stale interval (default from schedule)")
     s.add_argument("--limit", type=int, default=20)
     s.add_argument("--plan", action="store_true", help="show the prioritised refresh plan without fetching")
+    s.add_argument("--undated", action="store_true",
+                   help="re-read the official pages of listed programmes with no coming date (round 52)")
+
     s = sub.add_parser("show", help="full stored record for one opportunity")
     s.add_argument("ref")
     s = sub.add_parser("search", help="search the local catalog")
@@ -306,7 +309,7 @@ def run(args, svc: ScholarshipService) -> dict:
     if c == "verify":
         return svc.verify(args.ref, args.official_url)
     if c == "refresh":
-        return svc.refresh(args.max_age_days, args.limit, plan_only=args.plan)
+        return svc.refresh(args.max_age_days, args.limit, plan_only=args.plan, undated=args.undated)
     if c == "show":
         return svc.get_opportunity(args.ref)
     if c == "search":

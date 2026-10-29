@@ -378,9 +378,21 @@ _MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", 
                 "November", "December"]
 
 
+# Round 52: a deadline written as a day and month with no year anywhere in the sentence ("Deadline February 1",
+# "Application deadline: 15 March") is the programme's standing yearly date; like the semester dates it is expected,
+# never confirmed.
+YEARLESS_DEADLINE_RX = re.compile(rf"\b(?:deadline|closing date|due date|apply by|applications? (?:are )?due|"
+                                  rf"bewerbungsschluss|date limite|batas (?:akhir|waktu)|tenggat)\W{{0,4}}"
+                                  rf"(?:(?:is|on|by)\s+)?(?:\d{{1,2}}(?:st|nd|rd|th)?\s+(?:of\s+)?(?:{_MON})|(?:{_MON})\s+\d{{1,2}}\b)",
+                                  re.I)
+ANY_YEAR_RX = re.compile(r"\b(?:19|20)\d\d\b|\b\d{1,2}[./-]\d{1,2}[./-]\d{2,4}\b")
+
+
 def _recurring(s: str, para: str = "") -> list[tuple[str, str]]:
     """("MM-DD", text) for each day and month without a year in a sentence that says the date recurs every year."""
-    if not (RECURRING_RX.search(s) or RECURRING_RX.search(para) or (SEMESTER_RX.search(s) and not detect_cycle(s))):
+    yearless = YEARLESS_DEADLINE_RX.search(s) and not ANY_YEAR_RX.search(s) and not detect_cycle(s)
+    if not (RECURRING_RX.search(s) or RECURRING_RX.search(para) or (SEMESTER_RX.search(s) and not detect_cycle(s))
+            or yearless):
         return []
     out: list[tuple[str, str]] = []
     sentence = ascii_digits(s)

@@ -202,12 +202,21 @@ class ScholarshipService:
         return _out(**verify_opp(self.store, self._opp(ref), self.fetcher, self.sources, official_url=official_url,
                                  today=self.today))
 
-    def refresh(self, max_age_days: Optional[int] = None, limit: int = 20, plan_only: bool = False) -> dict:
+    def refresh(self, max_age_days: Optional[int] = None, limit: int = 20, plan_only: bool = False,
+                undated: bool = False) -> dict:
         """Re-verify due records in priority order (upcoming deadlines, conflicts, past-cycle-only, stale,
-        incomplete). Schedule this; it only re-reads official pages and never invents a new cycle."""
+        incomplete). Schedule this; it only re-reads official pages and never invents a new cycle.
+        `undated` (round 52): instead, the listed programmes with no coming date, least recently checked first."""
         from . import freshness
         cfg = freshness.schedule({"stale_days": max_age_days} if max_age_days is not None else None)
-        order = freshness.plan(self.store, self.today, cfg)
+        if undated:
+            from . import site
+            rows = [e.summary for e in site.index(self.store, self.today)
+                    if not (e.summary["next_deadline"] or e.summary["expected_deadline"])]
+            rows.sort(key=lambda s: s["last_checked"] or "")
+            order = [{"opportunity_id": s["id"], "due": True, "priority": 0, "reasons": ["no coming date"]} for s in rows]
+        else:
+            order = freshness.plan(self.store, self.today, cfg)
         due = [r for r in order if r["due"]]
         if plan_only:
             return _out(schedule=cfg, due=len(due), plan=order[:max(limit, 50)])
@@ -390,6 +399,8 @@ class ScholarshipService:
                     destination_countries=[name(c) for c in o.destination_countries],
                     destination_country_codes=list(o.destination_countries),
                     destination_inferred="destination:host" in o.tags, levels=o.study_levels,
+                    likely_round=None if any(d >= self.today.isoformat() for d in dates) or site.next_recurring(o, self.today)
+                    else site.likely_round(o, sorted({d.date for d in o.deadlines if d.date and d.kind in site.APPLICANT_KINDS}), self.today),
                     last_checked=o.last_verified_at or o.updated_at, decisions=card, as_of=self.today.isoformat(),
                     note="Confirm every value on the official page before you apply. Values marked 'check' could not "
                          "be confirmed automatically.")

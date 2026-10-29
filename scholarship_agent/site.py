@@ -121,6 +121,31 @@ def next_recurring(o, today: date):
     return min((d for d in days if d), default=None)
 
 
+ANNUAL_RX = re.compile(r"\b(annual(ly)?|every year|each year|yearly|jährlich|jedes jahr|setiap tahun|tiap tahun|"
+                       r"chaque année|annuel(le)?|cada año|anual(mente)?|ogni anno)\b", re.I)
+
+
+def likely_round(o, dates: list, today: date):
+    """Round 52: when the last applicant deadline has passed and no new one is known, the same month a year on is
+    where the next round would fall if the programme runs every year. Month only, never a day; `basis` says whether
+    the record shows it is yearly (words on the page, or the same month in two years) or only had one round."""
+    if not dates:
+        return None
+    last = dates[-1]
+    passed = today.toordinal() - _ord(last)
+    if passed <= 0 or passed > 730:
+        return None
+    y, m = int(last[:4]) + 1, int(last[5:7])
+    while (y, m) < (today.year, today.month):
+        y += 1
+    months: dict = {}
+    for d in dates:
+        months.setdefault(d[5:7], set()).add(d[:4])
+    text = " ".join([o.title, o.description] + [e.snippet or "" for e in o.evidence])
+    yearly = any(len(v) >= 2 for v in months.values()) or bool(ANNUAL_RX.search(text))
+    return {"month": f"{y:04d}-{m:02d}", "after": last, "basis": "yearly" if yearly else "last_round"}
+
+
 def summary(store, o, today: date) -> dict:
     tr = english(store, o)
     fs = field_status(o, today)
@@ -142,6 +167,7 @@ def summary(store, o, today: date) -> dict:
         "cycle": cyc["state"] if cyc["state"] != "not_stated" else "",
         "next_deadline": ahead[0] if ahead else None, "last_deadline": dates[-1] if dates and not ahead else None,
         "expected_deadline": None if ahead else next_recurring(o, today),
+        "likely_round": None if ahead or next_recurring(o, today) else likely_round(o, dates, today),
         "last_checked": (o.last_verified_at or o.updated_at or "")[:10],
         "verification_status": str(o.verification_status),
         "quotes": len({e.snippet for e in o.evidence if e.snippet}), "documents": len(o.required_documents),
@@ -340,6 +366,8 @@ def _deadline_key(s: dict) -> tuple:
         return (1, 0)
     if s.get("expected_deadline"):   # round 49: the next day of a yearly deadline, expected rather than confirmed
         return (2, _ord(s["expected_deadline"]))
+    if s.get("likely_round"):   # round 52: a month estimated from the last round
+        return (2, _ord(s["likely_round"]["month"] + "-28"))
     if s["cycle"] != "closed":
         return (2, 10 ** 7)
     return (3, -_ord(s["last_deadline"]))
