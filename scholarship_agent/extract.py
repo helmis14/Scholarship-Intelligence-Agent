@@ -187,7 +187,14 @@ class Page:
         self.html_title = " ".join(p.title.split())      # programme identity checks (identity.py)
         self.description = p.meta.get("og:description") or p.meta.get("description", "")
         self.og_type = (p.meta.get("og:type") or "").lower()
-        self.links = [(urljoin(url, h), t) for h, t in p.links if not h.startswith(("mailto:", "javascript:", "tel:"))]
+        self.links = []
+        for h, t in p.links:
+            if h.startswith(("mailto:", "javascript:", "tel:")):
+                continue
+            try:
+                self.links.append((urljoin(url, h), t))
+            except ValueError:   # round 52: a malformed link ("http://[broken") must not stop the page
+                continue
         self.tables = p.tables
         self.html_lang = p.html_lang
         from .retrieval import APP_ROOT, JS_REQUIRED    # signs that the content is rendered by JavaScript

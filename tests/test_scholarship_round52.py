@@ -32,6 +32,12 @@ class TestYearlessDeadline(unittest.TestCase):
         self.assertEqual(read("Results will be announced on 1 June.").deadlines, [])
 
 
+class TestMalformedLink(unittest.TestCase):
+    def test_a_broken_link_is_skipped(self):
+        p = Page("https://example.edu/s", '<html><body><a href="http://[broken/x">x</a><a href="/ok">ok</a></body></html>')
+        self.assertEqual([u for u, _ in p.links], ["https://example.edu/ok"])
+
+
 class TestLikelyRound(unittest.TestCase):
     def test_the_month_a_year_after_the_last_round(self):
         o = read("Application deadline: 15 March 2026.")

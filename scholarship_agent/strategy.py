@@ -46,8 +46,26 @@ QUERY_CATEGORIES: dict[str, tuple[str, ...]] = {   # order = priority when the p
     "exchange": ("bilateral exchange scholarship {country}", "regional cooperation scholarship {country}"),
     "public_agency": ("{country} national scholarship agency funding students",),
     "international_org": ("international organization scholarship {country} nationals",),
+    # round 52: universities' and government offices' own sites, by the country's academic and government domains
+    "official_sites": ("scholarship international students site:{acad}", "{term} site:{acad}", "scholarship site:{gov}",
+                       "{term} site:{gov}", "master's scholarship site:{acad}", "PhD scholarship funding site:{acad}",
+                       "fully funded scholarship site:{acad}"),
 }
 CCTLD_FIX = {"GB": "uk"}
+# round 52: second-level domains reserved for universities and for government in countries that have them
+OFFICIAL_DOMAINS = {
+    "US": ("edu", "gov"), "GB": ("ac.uk", "gov.uk"), "AU": ("edu.au", "gov.au"), "NZ": ("ac.nz", "govt.nz"),
+    "ID": ("ac.id", "go.id"), "MY": ("edu.my", "gov.my"), "TH": ("ac.th", "go.th"), "JP": ("ac.jp", "go.jp"),
+    "KR": ("ac.kr", "go.kr"), "CN": ("edu.cn", "gov.cn"), "TW": ("edu.tw", "gov.tw"), "HK": ("edu.hk", "gov.hk"),
+    "SG": ("edu.sg", "gov.sg"), "IN": ("ac.in", "gov.in"), "PK": ("edu.pk", "gov.pk"), "BD": ("ac.bd", "gov.bd"),
+    "LK": ("ac.lk", "gov.lk"), "NP": ("edu.np", "gov.np"), "PH": ("edu.ph", "gov.ph"), "VN": ("edu.vn", "gov.vn"),
+    "TR": ("edu.tr", "gov.tr"), "IL": ("ac.il", "gov.il"), "SA": ("edu.sa", "gov.sa"), "AE": ("ac.ae", "gov.ae"),
+    "QA": ("edu.qa", "gov.qa"), "EG": ("edu.eg", "gov.eg"), "ZA": ("ac.za", "gov.za"), "NG": ("edu.ng", "gov.ng"),
+    "KE": ("ac.ke", "go.ke"), "GH": ("edu.gh", "gov.gh"), "TZ": ("ac.tz", "go.tz"), "UG": ("ac.ug", "go.ug"),
+    "BR": ("edu.br", "gov.br"), "MX": ("edu.mx", "gob.mx"), "AR": ("edu.ar", "gob.ar"), "CO": ("edu.co", "gov.co"),
+    "PE": ("edu.pe", "gob.pe"), "CA": ("ca", "gc.ca"), "BN": ("edu.bn", "gov.bn"), "KZ": ("edu.kz", "gov.kz"),
+    "MA": ("ac.ma", "gov.ma"), "JO": ("edu.jo", "gov.jo"), "OM": ("edu.om", "gov.om"), "KW": ("edu.kw", "gov.kw"),
+}
 LEVEL_WORD = {"bachelor": "undergraduate", "master": "master's", "phd": "PhD", "postdoc": "postdoctoral"}
 
 
@@ -82,6 +100,8 @@ class StrategyConfig:
         bad_cat = set(c.categories) - set(QUERY_CATEGORIES)
         if bad_cat:
             raise ValueError(f"unknown query categories: {sorted(bad_cat)}")
+        if c.concepts == ["none"]:   # round 52: provider categories only
+            c.concepts = []
         bad_con = set(c.concepts) - set(languages.concepts())
         if bad_con:
             raise ValueError(f"unknown concepts: {sorted(bad_con)}")
@@ -120,6 +140,17 @@ def plan(cfg: StrategyConfig) -> list[dict]:
         for cat in cfg.categories:
             qs = []
             for tpl in QUERY_CATEGORIES[cat]:
+                if cat == "official_sites":
+                    if cc not in OFFICIAL_DOMAINS:
+                        continue
+                    acad, gov = OFFICIAL_DOMAINS[cc]
+                    terms = [t for lang in langs for t in TERMS.get(lang, [])[:1]]
+                    if "{term}" in tpl and not terms:
+                        continue
+                    for term in terms[:1] if "{term}" in tpl else [""]:
+                        qs.append((" ".join(tpl.format(term=term, acad=acad, gov=gov).split()),
+                                   langs[0] if "{term}" in tpl else "en"))
+                    continue
                 if cat == "local_language":
                     for lang in langs:
                         for term in TERMS.get(lang, [])[:1]:
